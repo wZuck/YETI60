@@ -167,7 +167,7 @@ def main():
     main_sheet.add("D1", "Power_Protection:PRTR5V0U2X", "PRTR5V0U2X", 193.04, 91.44,
                    {"1": "GND", "2": "D+", "3": "D-", "4": "USB_5V"}, "Package_TO_SOT_SMD:SOT-143")
     for ref, net, resistor_net, y in (("R30", "D-", "USB_DM", 121.92), ("R31", "D+", "USB_DP", 142.24)):
-        main_sheet.add(ref, "Device:R", "27", 193.04, y, {"1": net, "2": resistor_net},
+        main_sheet.add(ref, "Device:R", "0", 193.04, y, {"1": net, "2": resistor_net},
                        "Resistor_SMD:R_0402_1005Metric", [337.5, 126 + (0 if ref == "R30" else 2), 0, "B"])
     for ref, value, net, x, y in (("C30", "10u/10V", "+3.3V", 40.64, 172.72),
                                   ("C31", "100n/16V", "+3.3V", 66.04, 172.72),

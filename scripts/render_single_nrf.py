@@ -168,7 +168,7 @@ def header(im, subtitle, small=False):
     d = ImageDraw.Draw(im)
     scale = im.width / 2000
     def pos(x, y): return (int(x*scale), int(y*scale))
-    d.text(pos(85, 55), 'Y A E C K B   /   E C 6 0', font=font(int(23*scale), True), fill=ACCENT)
+    d.text(pos(85, 55), 'Y E T I 6 0   /   E C 6 0', font=font(int(23*scale), True), fill=ACCENT)
     d.text(pos(80, 105), 'Single nRF52840', font=font(int(68*scale)), fill=WHITE)
     d.text(pos(84, 191), subtitle, font=font(int(27*scale)), fill=MUTED)
     d.line((*pos(85, 250), *pos(1915, 250)), fill=(47, 65, 80), width=1)

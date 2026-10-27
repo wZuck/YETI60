@@ -1,0 +1,8 @@
+{
+  "operations": [],
+  "requires_native_DRC": true,
+  "notes": [
+    "Straight inductor-side segments widened to 0.35mm; diagonal and IC necks remain 0.2mm to retain existing BAT_NTC via clearance.",
+    "Direct same-layer power shortcuts were blocked by existing copper; feedback and second output-capacitor routes remain under review."
+  ]
+}

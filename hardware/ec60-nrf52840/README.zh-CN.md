@@ -1,4 +1,6 @@
-# EC60 单 nRF52840 改版
+[English](README.md) | 简体中文
+
+# YETI60 单 nRF52840 改版
 
 > **最新 CAD 验证通过：严格 DRC 0 错误、0 处未连接。** 见 [修复验证报告](../../docs/audit/pcb-review-2026-10-27.zh-CN.md) 和 `audit-current.json`。两个主控焊盘内过孔需要[填孔盖铜](fabrication-notes.zh-CN.md)，尚未实板验证。
 
@@ -35,3 +37,7 @@
 先运行 `scripts/build_single_nrf.py`，使用 KiCad CLI 导出 XML 网表，再用 KiCad 自带 Python 执行 `scripts/build_single_nrf_pcb.py`。布局生成器仅写入 `.unrouted.kicad_pcb`，避免覆盖后续已布线板。运行 `python3 scripts/check_single_nrf.py` 检查网表连接。
 
 重建完成不代表生产批准。当前板已完成本轮布线与严格 DRC；后续需要电源器件具体料号审核、特殊制板工艺确认、子板与电池装配、固件和实物验证。信号干扰分析暂不进行。
+
+## 全面复查进行中
+
+R30/R31 已按 nRF52840 内置 USB PHY 终端电阻要求改为 0 Ω。电源局部路径、装配及新渲染仍待继续，详见[阶段记录](../../docs/audit/yeti60-review-checkpoint.zh-CN.md)。旧 PCB 单板渲染不是当前装配验收结果。

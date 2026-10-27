@@ -19,7 +19,7 @@ for fp in board.GetFootprints():
         fp.Reference().SetLayer(pcb.Dwgs_User)
         fp.SetFPID(pcb.LIB_ID('YAECKB','EC60_BoardOutline'))
         pcb.PCB_IO_KICAD_SEXPR().FootprintSave(str(BASE/'YAECKB.pretty'),fp)
-for text,y in (('YAECKB / EC60 by Cipulot',141.5),('NRF-1.0-dev / REAR USB',143)):
+for text,y in (('YETI60 / EC60 by Cipulot',141.5),('NRF-1.0-dev / REAR USB',143)):
     if any(isinstance(t,pcb.PCB_TEXT) and t.GetText()==text for t in board.GetDrawings()):continue
     t=pcb.PCB_TEXT(board);t.SetText(text);t.SetLayer(pcb.B_SilkS);t.SetMirrored(True)
     t.SetPosition(pcb.VECTOR2I(pcb.FromMM(214),pcb.FromMM(y)))
