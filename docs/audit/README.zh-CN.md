@@ -1,43 +1,24 @@
-> 最新 PCB 修复验证见 [详细报告](pcb-review-2026-10-27.zh-CN.md)：严格 DRC 0 错误、0 处未连接，逐引脚物理连通及阶段版回归通过。两个主控焊盘内过孔需填孔盖铜，尚未实板验证。
+[English](README.md) | 简体中文
 
-> 2026-10-27 方案更新：当前主设计是 [单 nRF52840 PCB](../../hardware/ec60-nrf52840/README.zh-CN.md)。下文与现有报告中的 STM32／SPI 接口审查属于历史参考，不代表新 PCB 通过验证。新板先完成电路、布局、布线与基本 ERC/DRC，再模拟信号干扰；干扰模拟尚未开始。
+# YETI60 审查索引
 
-# 持续审查记录
+优先阅读[电气／固件／装配全面复查](yeti60-comprehensive-review.zh-CN.md)。当前 CAD 导通通过，但电源回路、目标应用及最终机械／制造结构尚未批准生产。
 
-更新：2026-10-27。目标保持为检查机械、3D 打印、PCB、电路、生产文件和固件，并完成可验证的蓝牙改版。蓝牙控制器为 nRF52840，Type-C 只能在数字键／Esc 一侧的后面。当前**尚未完成全部审查，不能生产或认定整机可靠性已验证**。
+| 范围 | 证据 | 边界 |
+|---|---|---|
+| 当前 PCB | [严格 CAD](../../hardware/ec60-nrf52840/audit-current.json)、[功能复查](yeti60-electrical.json) | DRC 0 错误／0 断线，268 对引脚通过；路径测量不证明稳定性或 SI |
+| 当前 nRF 核心 | [模拟](yeti60-firmware-simulation.json)、[轨迹](yeti60-firmware-trace.csv) | 实际 C 核心运行 ASan/UBSan，外设／传输接口为模拟，不证明目标／无线运行 |
+| 当前装配 | [装配](yeti60-assembly.json)、[元数据](yeti60-pcb-mechanical-metadata.json) | 暂定 Z 结构、源板／壳／定位板及电池空间，未批准制造公差 |
+| 装配图片 | [渲染](../../renders/yeti60-assembly/README.zh-CN.md) | 壳／板来自源，其他外形含示意 |
+| STM32 参考 | [修复测试](firmware.json)、[上游复现](firmware-upstream-reproduction.json) | 行列越界、滞回和配置修复，不是 nRF 固件 |
+| 历史 SPI 接口 | [BLE-IF](../../hardware/ec60-ble-interface/validation.json) | 已停止采用的双主控原型 |
+| 上游 BOM/CPL | [生产参考](manufacturing-reference.json) | OPA350 误标 U1 恢复为 U3，覆盖原 BOM 51 个位号，不对应新 PCB |
+| 定位板／源 CAD | [板](plate.json)、[机械](mechanical.json)、[壳注册](case-assembly.json) | 3 处 owner 元数据修复、63 闭合轮廓、29 孔及源壳体有效性，不批准树脂打印 |
+| 后侧 USB | [基准](typec-location.json)、[旧通路](case-assembly.json) | 后侧子板，旧 8×2 mm 芯体不批准真实插头／线缆／CC |
+| 原生产包 | [Gerber](gerber-reference.json) | 38 外形图元、653 PTH、28 NPTH 在量化误差内一致；铜／阻焊／钢网仍待审查 |
 
-## 已完成且有证据的部分
+旧上游 PCB 报告有 25 个 DRC 错误，两块原定位板各有 Edge.Cuts 文字错误；它们是参考源结果，不是当前 YETI60 的零错误 CAD，不要混用生产文件。
 
-| 范围 | 当前证据 | 结论边界 |
-| --- | --- | --- |
-| EC 扫描核心 | [修复后的主机测试](firmware.json)、[上游越界复现](firmware-upstream-reproduction.json) | 修复 5 行数组访问第 6 行、15 列数组访问第 16 列、反向滞回及未完全初始化配置；ASan/UBSan、75 个位置和滞回测试通过。ADC/GPIO 是模拟，不等于目标固件构建或硬件验证 |
-| 接口原理图 | [网表与 ERC](../../hardware/ec60-ble-interface/validation.json) | BLE-IF-0.2 电气错误清零，实际元件连接关系保留；原有库、网格和别名警告还存在，不等于最终蓝牙电路完成 |
-| BOM / CPL | [交叉检查](manufacturing-reference.json) | 原 CPL 中 OPA350 被误写为 U1，造成重复位号和 U3 缺失；按封装、位置、角度、面别和元件值唯一匹配后生成修正版，覆盖 BOM 的 51 个位号。仅对应未改版 EC60 |
-| 定位板 DXF | [几何与孔位](plate.json) | 修复三处字典 owner handle 元数据；几何数值保持；63 个折线轮廓闭合，29 个圆孔与 PCB 安装孔对应，最大中心偏差约 0.0534 mm。尚未批准螺纹和公差叠加 |
-| STEP 实体 | [实体检查](mechanical.json) | 上下壳各为一个有效实体；修复后的 DXF 再读无错误或自动修复。不证明壁厚、收缩、支撑、嵌件及打印可行性 |
-| 上下壳装配 | [原坐标装配检查](case-assembly.json) | 四组固定孔轴心对应，实体交集体积为 0；检查容差为 1e-5 mm³。不包含键盘内部所有零件和制造公差 |
-| 后侧 USB 开口 | [装配与后向通路](case-assembly.json)、[PCB 方向基准](typec-location.json) | 原开口在后侧中央，朝 +STEP Y。8×2 mm 诊断芯体能向后穿出，不是实际插头包络验证。主板板载 USB1 与壳孔横向相差约 124.3 mm，必须通过后侧 USB 子板接 J1 |
-| 原生产包外形与钻孔 | [重新绘图比较](gerber-reference.json) | 38 个外形图元匹配，653 个 PTH 和 28 个 NPTH 钻孔在输出量化误差内匹配。铜层、阻焊、钢网和丝印几何尚未完成对比 |
+运行 `python3 scripts/run_audit.py`，需要 KiCad CLI/Python、clang、uv 和固定的 CAD 依赖。各阶段失败独立记录，依赖失败时跳过；局部通过不代表整体生产批准。总审查未完成时命令仍返回非零。`outcome.json`、`source-inventory.json` 是全范围记录，哈希清单不等于逐项功能审核。上游子模块的本地编辑器设置不作为设计提交。
 
-## 当前不能放行的具体原因
-
-- [主板 DRC](pcb-drc.json) 有 25 个错误：16 个板边铜间距、4 个封装类型、2 个电气间距、2 个热焊盘连接及 1 个 Edge.Cuts 文字错误。两块上游定位板各有 1 个 Edge.Cuts 文字错误。错误没有通过忽略或降低规则来消除。
-- 最终 nRF52840 模块、电池保护、充电、电源路径、模拟电源分区和可布线 PCB 尚未完成。现有 KiCad 项目只是接口原型。
-- 树脂版嵌件尚未设计。原上盖四个金属攻丝底孔直径约 2.529 mm，不能视为树脂嵌件孔；目前没有已核准打印的外壳 STL。
-- 主板、1.2 mm 定位板、轴体、gasket、底部元件、电池、天线及线缆的完整 Z 向装配还未验证。
-- 后侧 USB 子板的实际插座、插头金属壳、包胶及出线空间尚未落实。8×2 mm 诊断芯体比实际插头小，不能用其通过结果批准 Type-C 装配。
-- STM32 目标构建、nRF52840 的 SPI/BLE 固件、USB 枚举、模式切换、断连清键、唤醒、充电和合盖射频仍需实现及实测。原仓库旧 `.bin` 不等于修复源码的构建产物。
-
-## 重复检查
-
-```sh
-python3 scripts/run_audit.py
-```
-
-需要 KiCad CLI、KiCad Python、clang 和 uv；审查依赖固定在 `requirements-audit.txt`。macOS 默认使用 KiCad 应用内的 Python，其他环境可通过 `KICAD_PYTHON` 指定。检查会在临时目录重新生成接口图和原 PCB 生产文件，不覆盖手工修改的接口源码，也不修改两个上游子模块。
-
-总结果保存在 [outcome.json](outcome.json)。当前命令返回 1 表示审查尚未完成，不能当作完成标志。各阶段的结果分别记录，某个阶段失败后不会拿其旧输出代替新结果；依赖它的阶段会跳过。原 PCB 的 DRC 报告保留在 `drc/`。
-
-[source-inventory.json](source-inventory.json) 记录非忽略源文件及资产的哈希，用于发现遗漏和版本变化。**记录哈希不代表已逐项完成语义或功能审查**。审查输出和 Git 内部状态不参与该清单，避免自引用。
-
-仍需按以上完整范围推进；当前文件、检查器、绿色局部结果或哈希清单都不能代替最终整机验证。
+继续暂缓信号／射频模拟；不宣称树脂嵌件、完整插头线缆、电池包、最终 EC 结构或实机固件／射频已经验证。

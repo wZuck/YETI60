@@ -1,0 +1,48 @@
+{
+  "recipe_sha256": "9b18da7df3e84248dad2ebdf629b196e30901ea66105f2c2c10a526764eb37d3",
+  "project": "YETI60",
+  "assembly_report_sha256": "215d2f51d375e0fd9ee28ead1e078652036da9f27937dbc4d5e6f23d96cc9349",
+  "geometry_sources": {
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e45415e3f5cf36a821e26047ffe5098127dd1948eb1f87d23fe1012b71199d76",
+    "felk60/felk60_bottom.step": "f4987879940643cb5b0d66145b944efb435994abe4d18808da4e45d16bb8c44b",
+    "felk60/felk60_top_hhkb.step": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51"
+  },
+  "provisional_stack": {
+    "bottom_gasket_ledge_z": 3.19,
+    "top_gasket_ledge_z": 6.39,
+    "compressed_gasket_each_mm": 1.0,
+    "plate_bottom_z": 4.19,
+    "plate_thickness_mm": 1.2,
+    "pcb_to_plate_gap_mm": 4.6,
+    "pcb_top_z": -0.40999999999999925,
+    "pcb_bottom_z": -1.9999999999999993,
+    "pcb_gap_basis": "PROVISIONAL parameter; Topre dome/housing/standoff stack is not dimensionally qualified"
+  },
+  "source_derived": [
+    "FELK60 top and bottom STEP",
+    "current PCB finished-thickness envelope (surface copper artwork omitted)",
+    "audited HHKB plate DXF extruded 1.2mm"
+  ],
+  "illustrative": [
+    "switches, stems and keycaps",
+    "resin color/material and key legends",
+    "backside component body envelopes",
+    "battery candidate volume; no pack selected"
+  ],
+  "outputs": {
+    "battery-space.png": {
+      "sha256": "7ad06dae591c7bed7e9b19ceb630b5ea85da588fa5e98f743e1180a943d5ddc8",
+      "bytes": 2020895
+    },
+    "assembled.png": {
+      "sha256": "401589d2eb5e1e8342d59c24cfa2c97341f9576014c3a0d2bb4c9c4569b29d50",
+      "bytes": 1705666
+    },
+    "exploded.png": {
+      "sha256": "c4bef275b3cf66abc036e885fa86c8e9c5731f4518eefa89601bd1281c8d56dd",
+      "bytes": 1958987
+    }
+  },
+  "production_approved": false
+}

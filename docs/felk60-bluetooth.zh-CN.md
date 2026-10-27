@@ -1,3 +1,5 @@
+[English](felk60-bluetooth.md) | 简体中文
+
 > **历史方案，已停止采用。** 当前按用户要求改为单颗 nRF52840，移除 STM32 和双主控 SPI 桥接。见 [当前设计](../hardware/ec60-nrf52840/README.zh-CN.md)。
 
 # FELK60 / EC60 蓝牙改版

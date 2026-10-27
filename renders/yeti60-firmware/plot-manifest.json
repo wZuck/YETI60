@@ -1,0 +1,10 @@
+{
+  "trace_sha256": "a82aea2c41fdbcbe3622f4506c9c4398f1980a199c4f3e91822fd11317988b78",
+  "recipe_sha256": "302aa1ec8af835e88bca68d2b99cc9d8c5a4f9d843a788646b10a099e1840b91",
+  "matplotlib": "3.11.2",
+  "outputs": {
+    "debounce.png": "80e9f8b22d1444af8271c81eb033b1053adb6f5a5fa0d642b8a44ed6296768b1",
+    "debounce.svg": "f40414e83cdaa91348ebb38b4019777baff6b43e52caf44e4aa25700b693e1c0"
+  },
+  "limits": "First four successful single-key frames only; mock ADC/GPIO and wait-based model clock, not physical latency or noise"
+}

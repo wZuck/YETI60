@@ -73,14 +73,14 @@ def prepare():
     # Plan-view outlines follow the footprint; these heights are illustrative.
     white, metal, black = (.88, .87, .80), (.60, .65, .67), (.08, .10, .12)
     (proxy_dir / 'J2-illustrative.wrl').write_text(box_vrml([
-        ((0, 3.2, 1.65), (9.8, 1.2, 3.3), white),
-        ((-4.35, -.3, 1.65), (1.1, 6, 3.3), white),
-        ((4.35, -.3, 1.65), (1.1, 6, 3.3), white),
-        ((0, -.3, .35), (8, 6, .7), white),
-        *[((x, 0, 1.4), (.45, 5.4, .45), metal) for x in (-2, 0, 2)]
+        ((0, -3.8, 2.75), (9.9, 1.2, 5.5), white),
+        ((-4.4, -1.4, 2.75), (1.1, 6, 5.5), white),
+        ((4.4, -1.4, 2.75), (1.1, 6, 5.5), white),
+        ((0, -1.4, .35), (8, 6, .7), white),
+        *[((x, -1.2, 2.5), (.45, 5.4, .45), metal) for x in (-2, 0, 2)]
     ]))
     (proxy_dir / 'SW100-illustrative.wrl').write_text(box_vrml([
-        ((0, 0, .8), (9, 3.6, 1.6), metal),
+        ((0, 0, 1.75), (9, 3.6, 3.5), metal),
         ((-2.5, -2.5, 1), (1.6, 2, 1.5), black),
     ]))
     board = loads(SOURCE.read_text())

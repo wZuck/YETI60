@@ -1,3 +1,5 @@
+English | [简体中文](readme.zh-CN.md)
+
 # EC60
 
 60% Electrostatic Capacitive PCB, GH60 mounting compatible, with multi-layout support
@@ -17,3 +19,5 @@ Flashing example for this keyboard:
     make ec60:via:flash
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
+
+This is the upstream STM32 reference. These commands do not build or flash the YETI60 nRF52840 application.

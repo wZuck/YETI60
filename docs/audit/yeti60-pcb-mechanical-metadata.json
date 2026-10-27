@@ -1,0 +1,1762 @@
+{
+  "source": "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb",
+  "source_sha256": "e45415e3f5cf36a821e26047ffe5098127dd1948eb1f87d23fe1012b71199d76",
+  "pcb_thickness_mm": 1.59,
+  "parts": [
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R7",
+      "value": "100",
+      "back": true,
+      "position_pcb_mm": [
+        88.609562,
+        140.689604
+      ],
+      "angle_deg": 90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        88.114562,
+        139.734604,
+        89.104562,
+        141.644604
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R23",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        312.987146,
+        181.76966
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        312.492146,
+        180.81466,
+        313.482146,
+        182.72466
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C11",
+      "value": "100n",
+      "back": true,
+      "position_pcb_mm": [
+        104.16124,
+        146.698339
+      ],
+      "angle_deg": 180.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        103.22624,
+        146.213339,
+        105.09624,
+        147.183339
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R8",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        98.835337,
+        180.086979
+      ],
+      "angle_deg": 90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        98.340337,
+        179.131979,
+        99.330337,
+        181.041979
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R24",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        334.865009,
+        181.485717
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        334.370009,
+        180.530717,
+        335.360009,
+        182.440717
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "U5",
+      "value": "BQ24074RGT",
+      "back": true,
+      "position_pcb_mm": [
+        118.0,
+        145.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        115.845,
+        142.845,
+        120.155,
+        147.155
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "U7",
+      "value": "TPS22919DCK",
+      "back": true,
+      "position_pcb_mm": [
+        144.0,
+        143.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        142.525,
+        141.83,
+        145.475,
+        144.34
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R15",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        166.135337,
+        182.11966
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        165.640337,
+        181.16466,
+        166.630337,
+        183.07466
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R31",
+      "value": "0",
+      "back": true,
+      "position_pcb_mm": [
+        337.5,
+        128.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        336.545,
+        127.505,
+        338.455,
+        128.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R30",
+      "value": "0",
+      "back": true,
+      "position_pcb_mm": [
+        337.5,
+        126.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        336.545,
+        125.505,
+        338.455,
+        126.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C46",
+      "value": "10u/10V",
+      "back": true,
+      "position_pcb_mm": [
+        136.2,
+        148.5
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        134.695,
+        147.745,
+        137.705,
+        149.255
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R11",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        119.535337,
+        182.386979
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        119.040337,
+        181.431979,
+        120.030337,
+        183.341979
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C41",
+      "value": "10u/10V",
+      "back": true,
+      "position_pcb_mm": [
+        120.0,
+        149.5
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        118.495,
+        148.745,
+        121.505,
+        150.255
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C43",
+      "value": "10u/10V",
+      "back": true,
+      "position_pcb_mm": [
+        132.0,
+        141.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        130.495,
+        140.245,
+        133.505,
+        141.755
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R50",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        105.0,
+        141.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        104.045,
+        140.505,
+        105.955,
+        141.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C48",
+      "value": "1u/10V",
+      "back": true,
+      "position_pcb_mm": [
+        107.0,
+        147.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        106.065,
+        146.515,
+        107.935,
+        147.485
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "U3",
+      "value": "OPA350",
+      "back": true,
+      "position_pcb_mm": [
+        103.04624,
+        151.108116
+      ],
+      "angle_deg": 90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        100.32124,
+        147.383116,
+        105.77124,
+        154.833116
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C12",
+      "value": "100n",
+      "back": true,
+      "position_pcb_mm": [
+        304.205454,
+        176.552094
+      ],
+      "angle_deg": 180.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        303.270454,
+        176.067094,
+        305.140454,
+        177.037094
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R12",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        218.935337,
+        180.496979
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        218.440337,
+        179.541979,
+        219.430337,
+        181.451979
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R19",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        283.157833,
+        176.723189
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        282.662833,
+        175.768189,
+        283.652833,
+        177.678189
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R42",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        121.0,
+        141.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        120.045,
+        140.505,
+        121.955,
+        141.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R26",
+      "value": "10k",
+      "back": true,
+      "position_pcb_mm": [
+        332.0,
+        123.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        331.045,
+        122.505,
+        332.955,
+        123.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R10",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        148.235337,
+        176.786979
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        147.280337,
+        176.291979,
+        149.190337,
+        177.281979
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C31",
+      "value": "100n/16V",
+      "back": true,
+      "position_pcb_mm": [
+        337.5,
+        121.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        336.565,
+        120.515,
+        338.435,
+        121.485
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R3",
+      "value": "100",
+      "back": true,
+      "position_pcb_mm": [
+        97.241473,
+        153.786865
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        96.746473,
+        152.831865,
+        97.736473,
+        154.741865
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R53",
+      "value": "100",
+      "back": true,
+      "position_pcb_mm": [
+        141.0,
+        145.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        140.045,
+        144.505,
+        141.955,
+        145.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R47",
+      "value": "100",
+      "back": true,
+      "position_pcb_mm": [
+        137.0,
+        141.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        136.045,
+        140.505,
+        137.955,
+        141.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "SW1",
+      "value": "EVQPUC02K_RESET",
+      "back": true,
+      "position_pcb_mm": [
+        326.0,
+        123.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        322.075,
+        120.725,
+        329.925,
+        126.275
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C30",
+      "value": "10u/10V",
+      "back": true,
+      "position_pcb_mm": [
+        334.0,
+        119.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        332.495,
+        118.245,
+        335.505,
+        119.755
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R18",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        251.335337,
+        180.486979
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        250.840337,
+        179.531979,
+        251.830337,
+        181.441979
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "U8",
+      "value": "TPS22919DCK",
+      "back": true,
+      "position_pcb_mm": [
+        107.0,
+        143.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        105.525,
+        141.83,
+        108.475,
+        144.34
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R45",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        127.0,
+        141.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        126.045,
+        140.505,
+        127.955,
+        141.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C32",
+      "value": "4.7u/10V",
+      "back": true,
+      "position_pcb_mm": [
+        334.5,
+        122.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        332.995,
+        121.245,
+        336.005,
+        122.755
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R48",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        106.0,
+        116.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        105.045,
+        115.505,
+        106.955,
+        116.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C47",
+      "value": "10n",
+      "back": true,
+      "position_pcb_mm": [
+        144.0,
+        148.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        143.065,
+        147.515,
+        144.935,
+        148.485
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "U1",
+      "value": "MDBT50Q-1MV2",
+      "back": true,
+      "position_pcb_mm": [
+        347.0,
+        125.0
+      ],
+      "angle_deg": 90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        338.725,
+        118.8,
+        355.275,
+        131.2
+      ],
+      "height_envelope_mm": 2.05,
+      "height_basis": "Raytac module specification"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R46",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        129.0,
+        139.5
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        128.045,
+        139.005,
+        129.955,
+        139.995
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "D1",
+      "value": "PRTR5V0U2X",
+      "back": true,
+      "position_pcb_mm": [
+        90.512704,
+        118.365736
+      ],
+      "angle_deg": 180.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        88.887704,
+        116.640736,
+        92.137704,
+        120.090736
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R54",
+      "value": "100",
+      "back": true,
+      "position_pcb_mm": [
+        109.0,
+        145.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        108.045,
+        144.505,
+        109.955,
+        145.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R16",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        106.071491,
+        155.815551
+      ],
+      "angle_deg": 180.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        105.116491,
+        155.320551,
+        107.026491,
+        156.310551
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "J1",
+      "value": "REAR_USB_DAUGHTERBOARD",
+      "back": true,
+      "position_pcb_mm": [
+        119.572837,
+        123.527723
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        116.860337,
+        120.127723,
+        122.410337,
+        126.927723
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R13",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        151.535337,
+        184.796979
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        151.040337,
+        183.841979,
+        152.030337,
+        185.751979
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R44",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        125.0,
+        141.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        124.045,
+        140.505,
+        125.955,
+        141.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R41",
+      "value": "7.50k/1%",
+      "back": true,
+      "position_pcb_mm": [
+        113.0,
+        142.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        112.045,
+        141.505,
+        113.955,
+        142.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C42",
+      "value": "10u/10V",
+      "back": true,
+      "position_pcb_mm": [
+        122.0,
+        146.5
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        120.495,
+        145.745,
+        123.505,
+        147.255
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "U4",
+      "value": "74HC4051",
+      "back": true,
+      "position_pcb_mm": [
+        306.699794,
+        180.313679
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        302.561454,
+        177.282369,
+        311.090244,
+        183.343769
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R17",
+      "value": "1k",
+      "back": true,
+      "position_pcb_mm": [
+        103.68124,
+        156.325551
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        103.18624,
+        155.370551,
+        104.17624,
+        157.280551
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C40",
+      "value": "1u/10V",
+      "back": true,
+      "position_pcb_mm": [
+        118.0,
+        151.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        116.495,
+        150.245,
+        119.505,
+        151.755
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "U2",
+      "value": "74HC4051",
+      "back": true,
+      "position_pcb_mm": [
+        145.256616,
+        183.952026
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        141.118276,
+        180.920716,
+        149.647066,
+        186.982116
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R21",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        280.515337,
+        182.146979
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        279.560337,
+        181.651979,
+        281.470337,
+        182.641979
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "JP1",
+      "value": "Ext_Res",
+      "back": true,
+      "position_pcb_mm": [
+        106.071491,
+        157.45267
+      ],
+      "angle_deg": 180.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        104.396491,
+        156.69767,
+        107.746491,
+        158.20767
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R32",
+      "value": "2.2k",
+      "back": true,
+      "position_pcb_mm": [
+        316.0,
+        125.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        315.045,
+        124.505,
+        316.955,
+        125.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "L1",
+      "value": "1.5uH_74438336015",
+      "back": true,
+      "position_pcb_mm": [
+        128.5,
+        145.0
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        126.48,
+        143.025,
+        130.52,
+        146.975
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R43",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        123.0,
+        141.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        122.045,
+        140.505,
+        123.955,
+        141.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": [
+        147.05,
+        120.6,
+        156.95,
+        128.2
+      ],
+      "ref": "J2",
+      "value": "PROTECTED_1S_4V2_NTC10K",
+      "back": true,
+      "position_pcb_mm": [
+        152.0,
+        125.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        146.375,
+        119.875,
+        157.625,
+        130.125
+      ],
+      "height_envelope_mm": 5.5,
+      "height_basis": "JST PH SMT side-entry drawing; verify final part and mating wire envelope"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C44",
+      "value": "100n/16V",
+      "back": true,
+      "position_pcb_mm": [
+        137.0,
+        144.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        135.495,
+        143.245,
+        138.505,
+        144.755
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R4",
+      "value": "100",
+      "back": true,
+      "position_pcb_mm": [
+        96.050987,
+        153.786512
+      ],
+      "angle_deg": 90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        95.555987,
+        152.831512,
+        96.545987,
+        154.741512
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C45",
+      "value": "10u/10V",
+      "back": true,
+      "position_pcb_mm": [
+        133.0,
+        148.5
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        131.495,
+        147.745,
+        134.505,
+        149.255
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "D2",
+      "value": "STATUS",
+      "back": true,
+      "position_pcb_mm": [
+        316.0,
+        123.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        314.455,
+        122.205,
+        317.505,
+        123.795
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C9",
+      "value": "100n",
+      "back": true,
+      "position_pcb_mm": [
+        142.762276,
+        180.488098
+      ],
+      "angle_deg": 180.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        141.827276,
+        180.003098,
+        143.697276,
+        180.973098
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R51",
+      "value": "1M/1%",
+      "back": true,
+      "position_pcb_mm": [
+        146.0,
+        146.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        145.045,
+        145.505,
+        146.955,
+        146.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R9",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        135.235337,
+        179.186979
+      ],
+      "angle_deg": 90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        134.740337,
+        178.231979,
+        135.730337,
+        180.141979
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R20",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        299.825337,
+        177.106979
+      ],
+      "angle_deg": 180.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        298.870337,
+        176.611979,
+        300.780337,
+        177.601979
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C13",
+      "value": "1u",
+      "back": true,
+      "position_pcb_mm": [
+        104.16124,
+        144.317075
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        103.22624,
+        143.832075,
+        105.09624,
+        144.802075
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R6",
+      "value": "100",
+      "back": true,
+      "position_pcb_mm": [
+        78.191567,
+        143.368517
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        77.236567,
+        142.873517,
+        79.146567,
+        143.863517
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "U6",
+      "value": "TPS63031DSK",
+      "back": true,
+      "position_pcb_mm": [
+        133.0,
+        145.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        130.72,
+        143.475,
+        134.905,
+        146.525
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R52",
+      "value": "1M/1%",
+      "back": true,
+      "position_pcb_mm": [
+        146.0,
+        148.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        145.045,
+        147.505,
+        146.955,
+        148.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R25",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        331.144284,
+        181.422204
+      ],
+      "angle_deg": 180.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        330.189284,
+        180.927204,
+        332.099284,
+        181.917204
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "F1",
+      "value": "500mA",
+      "back": true,
+      "position_pcb_mm": [
+        88.609827,
+        114.198524
+      ],
+      "angle_deg": 90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        87.464827,
+        111.893524,
+        89.754827,
+        116.503524
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R14",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        185.535337,
+        181.296979
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        185.040337,
+        180.341979,
+        186.030337,
+        182.251979
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R49",
+      "value": "100k",
+      "back": true,
+      "position_pcb_mm": [
+        142.0,
+        141.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        141.045,
+        140.505,
+        142.955,
+        141.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "C10",
+      "value": "220p",
+      "back": true,
+      "position_pcb_mm": [
+        101.93124,
+        155.47925
+      ],
+      "angle_deg": 180.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        100.99624,
+        154.99425,
+        102.86624,
+        155.96425
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R5",
+      "value": "100",
+      "back": true,
+      "position_pcb_mm": [
+        98.432243,
+        153.786512
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        97.937243,
+        152.831512,
+        98.927243,
+        154.741512
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "SW100",
+      "value": "JS102011SAQN_POWER",
+      "back": true,
+      "position_pcb_mm": [
+        112.0,
+        121.0
+      ],
+      "angle_deg": 0.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        106.975,
+        116.725,
+        117.025,
+        125.525
+      ],
+      "height_envelope_mm": 3.5,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R40",
+      "value": "8.87k/1%",
+      "back": true,
+      "position_pcb_mm": [
+        117.25,
+        148.1
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        116.755,
+        147.145,
+        117.745,
+        149.055
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    }
+  ],
+  "mount_holes": [
+    {
+      "ref": "H26",
+      "center_pcb_mm": [
+        223.837704,
+        189.30966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H5",
+      "center_pcb_mm": [
+        238.125204,
+        151.20966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H25",
+      "center_pcb_mm": [
+        145.256454,
+        189.30966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H9",
+      "center_pcb_mm": [
+        276.225204,
+        151.20966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H19",
+      "center_pcb_mm": [
+        161.925204,
+        151.20966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H6",
+      "center_pcb_mm": [
+        123.825204,
+        151.20966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H14",
+      "center_pcb_mm": [
+        290.512704,
+        132.15966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H18",
+      "center_pcb_mm": [
+        266.700204,
+        170.25966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H17",
+      "center_pcb_mm": [
+        152.400204,
+        170.25966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H13",
+      "center_pcb_mm": [
+        138.112704,
+        132.15966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H16",
+      "center_pcb_mm": [
+        252.412704,
+        132.15966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H10",
+      "center_pcb_mm": [
+        314.325204,
+        151.20966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H24",
+      "center_pcb_mm": [
+        97.631468,
+        189.30966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H3",
+      "center_pcb_mm": [
+        76.200204,
+        132.15966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "REF**",
+      "center_pcb_mm": [
+        97.012704,
+        131.80966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "REF**",
+      "center_pcb_mm": [
+        200.012704,
+        150.90966
+      ],
+      "drill_mm": [
+        5.0,
+        2.2
+      ]
+    },
+    {
+      "ref": "REF**",
+      "center_pcb_mm": [
+        331.862704,
+        131.80966
+      ],
+      "drill_mm": [
+        5.0,
+        2.2
+      ]
+    },
+    {
+      "ref": "H11",
+      "center_pcb_mm": [
+        304.800204,
+        170.25966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H7",
+      "center_pcb_mm": [
+        309.432392,
+        189.30966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H4",
+      "center_pcb_mm": [
+        114.300204,
+        170.25966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H12",
+      "center_pcb_mm": [
+        228.600204,
+        170.25966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H15",
+      "center_pcb_mm": [
+        176.212704,
+        132.15966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H8",
+      "center_pcb_mm": [
+        147.637704,
+        113.10966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H1",
+      "center_pcb_mm": [
+        109.537704,
+        113.10966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H23",
+      "center_pcb_mm": [
+        319.087704,
+        113.10966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H22",
+      "center_pcb_mm": [
+        261.937704,
+        113.10966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H2",
+      "center_pcb_mm": [
+        223.837704,
+        113.10966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H21",
+      "center_pcb_mm": [
+        214.312704,
+        132.15966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    },
+    {
+      "ref": "H20",
+      "center_pcb_mm": [
+        185.737704,
+        113.10966
+      ],
+      "drill_mm": [
+        2.2,
+        2.2
+      ]
+    }
+  ],
+  "limits": [
+    "Bounding rectangles include native footprint courtyard/graphics but exclude text; they are conservative XY approximations",
+    "U1 module height and J2 header height/body outline are sourced; remaining component envelopes and mating wires remain conditional"
+  ]
+}
