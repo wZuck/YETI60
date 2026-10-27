@@ -25,7 +25,7 @@ with tempfile.TemporaryDirectory(prefix='yaeckb-route-import-') as folder:
     # The router exports protected arcs as coarse chords. Restore the exact
     # retained KiCad arcs/segments/vias instead of importing those approximations.
     temp=Path(folder)/'new.kicad_pcb'
-    pcb.SaveBoard(str(temp),board)
+    pcb.SaveBoard(str(temp),board,True)
     merged=loads(temp.read_text())
     fine_nets=set(nrf_nets())
     for item in merged:
@@ -48,5 +48,5 @@ board.BuildConnectivity()
 filler = pcb.ZONE_FILLER(board)
 filler.Fill(board.Zones())
 out = BASE / (NAME + '.kicad_pcb')
-pcb.SaveBoard(str(out), board)
+pcb.SaveBoard(str(out), board, True)
 print(out)

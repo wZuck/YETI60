@@ -70,4 +70,4 @@ for pad in u.Pads():
     items.append((track,track.GetEffectiveShape(),pcb.B_Cu))
     print('ESCAPE',pad.GetNumber(),net,[pcb.ToMM(found.x),pcb.ToMM(found.y)],flush=True)
     board.BuildConnectivity();conn=board.GetConnectivity()
-pcb.SaveBoard(str(path),board)
+pcb.SaveBoard(str(path),board,True)

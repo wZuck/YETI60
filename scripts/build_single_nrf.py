@@ -11,10 +11,13 @@ import shutil
 import uuid
 
 from kicad_sexpr import Atom as A, child, children, dumps, form as F, loads, symbol_pins
+from schematic_metadata import reconcile, extend_filters
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "EC60/PCB/EC60_PCB"
 DEST = ROOT / "hardware/ec60-nrf52840"
+FROZEN = json.loads((DEST / "frozen-footprints.json").read_text()) if (DEST / "frozen-footprints.json").exists() else {}
+APPROVED_FILTERS = {}
 LIBRARIES = Path("/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols")
 PROJECT = "EC60-nRF52840"
 LIB_CACHE = {}
@@ -83,6 +86,7 @@ class Sheet:
         self.libs[name] = symbol
         props = {p[1]: p[2] for p in children(symbol, "property")}
         fp = footprint if footprint is not None else props.get("Footprint", "")
+        fp = FROZEN.get(ref, {}).get("id", fp)
         pins = symbol_pins(symbol)
         unknown = set(nets) - set(pins)
         if unknown:
@@ -128,6 +132,7 @@ class Sheet:
     def write(self):
         libs = F("lib_symbols", *self.libs.values())
         self.root.insert(5, libs)
+        reconcile(self.root, FROZEN, APPROVED_FILTERS)
         (DEST / (self.name + ".kicad_sch")).write_text("\n".join(
             ["(" + str(self.root[0]), *["  " + dumps(v) for v in self.root[1:]], ")", ""]))
 
@@ -278,6 +283,12 @@ def main():
                 if isinstance(value, list):
                     relink(value)
         relink(content)
+        reconcile(content, FROZEN, APPROVED_FILTERS)
+        for instance in children(content, "symbol"):
+            props = {p[1]: p for p in children(instance, "property")}
+            ref = props.get("Reference", [None, None, None])[2]
+            if ref in FROZEN and "Footprint" in props:
+                props["Footprint"][2] = FROZEN[ref]["id"]
         for definition in children(child(content, "lib_symbols"), "symbol"):
             SYMBOLS[str(definition[1]).split(":")[-1]] = copy.deepcopy(definition)
         (DEST / (name + ".kicad_sch")).write_text(dumps(content) + "\n")
@@ -304,6 +315,7 @@ def main():
     for name, definition in SYMBOLS.items():
         sym = copy.deepcopy(definition)
         sym[1] = name
+        extend_filters(sym, APPROVED_FILTERS)
         library.append(sym)
     (DEST / "YAECKB.kicad_sym").write_text(dumps(library) + "\n")
     (DEST / "sym-lib-table").write_text('(sym_lib_table (lib (name "YAECKB") (type "KiCad") (uri "${KIPRJMOD}/YAECKB.kicad_sym") (options "") (descr "Single nRF52840 design")))\n')

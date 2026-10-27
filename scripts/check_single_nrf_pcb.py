@@ -39,10 +39,16 @@ def main():
     target = pcb.LoadBoard(str(path))
     actual = {f.GetReference():f for f in target.GetFootprints()}
     document = ET.parse(BASE/'netlist.xml').getroot()
+    rules=json.loads(path.with_suffix('.kicad_pro').read_text())
+    require(rules['board']['design_settings']['rules']['min_track_width']==.127,'Project rule contract overwritten')
+    require(any(c['name']=='NRF_IO' and c['clearance']==.15 for c in rules['net_settings']['classes']),'nRF IO class missing')
     expected = {(n.get('ref'),n.get('pin')):net.get('name') for net in document.findall('./nets/net') for n in net.findall('node')}
     for comp in document.findall('./components/comp'):
         ref = comp.get('ref')
         require(ref in actual, 'Missing PCB footprint '+ref)
+        require(actual[ref].GetValue()==comp.findtext('value'),'Component value mismatch '+ref)
+        actual_id=str(actual[ref].GetFPID().GetLibNickname())+':'+str(actual[ref].GetFPID().GetLibItemName())
+        require(actual_id==comp.findtext('footprint'),'Footprint ID mismatch '+ref)
         seen = set()
         for pad in actual[ref].Pads():
             key = ref,pad.GetNumber()
@@ -60,13 +66,15 @@ def main():
         require(a==b, 'Changed electrode copper '+fp.GetReference())
         electrodes+=1
     require(source.GetCopperLayerCount()==target.GetCopperLayerCount()==4,'Layer stack mismatch')
+    require(source.GetDesignSettings().GetBoardThickness()==target.GetDesignSettings().GetBoardThickness(),'Board thickness changed')
     require(outline(source)==outline(target),'Changed board outline')
     for ref in ('REF**',):
         a=next(f for f in source.GetFootprints() if f.GetReference()==ref)
         ap=sorted((p.GetPosition().x,p.GetPosition().y,p.GetDrillSize().x,p.GetDrillSize().y) for p in a.Pads())
         bp=sorted((p.GetPosition().x,p.GetPosition().y,p.GetDrillSize().x,p.GetDrillSize().y) for p in actual[ref].Pads())
         require(ap==bp,'Changed mounting holes')
-    result={'pcb':str(path.relative_to(ROOT)),'netlist_parity':'pass','electrode_footprints_preserved':electrodes,'mounting_holes':'pass','copper_layers':4,'interference_simulation':'not_started'}
+    display_path=str(path.relative_to(ROOT)) if ROOT in path.parents else str(path)
+    result={'pcb':display_path,'netlist_parity':'pass','electrode_footprints_preserved':electrodes,'mounting_holes':'pass','copper_layers':4,'interference_simulation':'not_started'}
     (BASE/'pcb-contract-check.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result))
 

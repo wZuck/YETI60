@@ -1,0 +1,108 @@
+{
+  "changes": [
+    {
+      "net": "COL14",
+      "operation": "complete-connection",
+      "layer": "In2.Cu",
+      "segments": 26
+    },
+    {
+      "net": "AFE_3V3",
+      "operation": "complete-connection",
+      "layer": "F.Cu",
+      "segments": 102
+    },
+    {
+      "net": "AFE_3V3",
+      "operation": "complete-connection",
+      "layer": "In1.Cu",
+      "segments": 17
+    },
+    {
+      "net": "BAT_CELL",
+      "operation": "complete-connection",
+      "layer": "In1.Cu",
+      "segments": 11
+    },
+    {
+      "net": "CHG_CE_N",
+      "operation": "complete-connection",
+      "layer": "In1.Cu",
+      "segments": 44
+    },
+    {
+      "net": "USB_DP",
+      "operation": "complete-connection",
+      "layer": "F.Cu",
+      "segments": 8
+    },
+    {
+      "net": "+3.3V",
+      "operation": "complete-connection",
+      "layer": "B.Cu",
+      "segments": 45
+    },
+    {
+      "net": "+3.3V",
+      "operation": "complete-connection",
+      "layer": "B.Cu",
+      "segments": 6
+    },
+    {
+      "net": "+3.3V",
+      "operation": "complete-connection",
+      "layer": "B.Cu",
+      "segments": 4
+    },
+    {
+      "net": "+3.3V",
+      "operation": "complete-connection",
+      "layer": "B.Cu",
+      "segments": 21
+    },
+    {
+      "net": "+3.3V",
+      "operation": "complete-connection",
+      "layer": "B.Cu",
+      "segments": 1
+    },
+    {
+      "net": "AFE_EN",
+      "operation": "complete-connection",
+      "layer": "B.Cu",
+      "segments": 6
+    },
+    {
+      "net": "AMUX_SEL_0",
+      "operation": "complete-connection",
+      "layer": "F.Cu",
+      "segments": 209
+    },
+    {
+      "net": "AMUX_SEL_1",
+      "operation": "complete-connection",
+      "layer": "F.Cu",
+      "segments": 210
+    },
+    {
+      "net": "AMUX_SEL_1",
+      "operation": "complete-connection",
+      "layer": "B.Cu",
+      "segments": 11
+    },
+    {
+      "net": "APLEX_EN_PIN_0",
+      "operation": "complete-connection",
+      "layer": "B.Cu",
+      "segments": 17
+    },
+    {
+      "net": "AMUX_SEL_2",
+      "operation": "complete-connection",
+      "layer": "F.Cu",
+      "segments": 216
+    }
+  ],
+  "removed_routes": [],
+  "requires_native_DRC": true
+}

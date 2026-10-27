@@ -20,6 +20,10 @@ NAME = "EC60-nRF52840"
 FP_ROOT = Path("/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints")
 XML = DEST / "netlist.xml"
 PLUGIN = pcb.PCB_IO_KICAD_SEXPR()
+FROZEN = json.loads((DEST / "frozen-footprints.json").read_text()) if (DEST / "frozen-footprints.json").exists() else {}
+
+def baseline_footprint(ref, footprint):
+    return FROZEN.get(ref, {}).get("baseline", footprint)
 
 
 def xy(x, y):
@@ -70,7 +74,7 @@ def main():
     old_to_new = defaultdict(set)
     for fp in children(source, "footprint"):
         target = components.get(reference(fp))
-        if target is None or str(fp[1]).split(":")[-1] != target.findtext("footprint").split(":")[-1]:
+        if target is None or str(fp[1]).split(":")[-1] != baseline_footprint(reference(fp), target.findtext("footprint")).split(":")[-1]:
             continue
         for pad in children(fp, "pad"):
             node = (reference(fp), str(pad[1]))
@@ -99,10 +103,12 @@ def main():
         if tag == "footprint":
             ref = reference(entry)
             target = components.get(ref)
+            if target is not None and ref in FROZEN:
+                continue  # Load the verified local snapshot, including its metadata.
             if target is None and ref not in ("REF**", "G***"):
                 continue
             if target is not None:
-                expected = target.findtext("footprint").split(":")[-1]
+                expected = baseline_footprint(ref, target.findtext("footprint")).split(":")[-1]
                 if str(entry[1]).split(":")[-1] != expected:
                     continue
                 for pad in children(entry, "pad"):
@@ -146,15 +152,15 @@ def main():
     placements = {
         "U1": [347, 125, 90, "B"], "U5": [118, 145, 0, "B"],
         "U6": [133, 145, 0, "B"], "U7": [144, 143, 0, "B"], "U8": [107, 143, 0, "B"],
-        "L1": [128.5, 145, 90, "B"], "J2": [152, 125, 0, "B"],
+        "L1": [128.5, 145, 270, "B"], "J2": [152, 125, 0, "B"],
         "J3": [320, 122.5, 0, "B"], "SW1": [326, 123, 0, "B"], "SW100": [112, 121, 0, "B"],
         "C30": [334, 119, 0, "B"], "C31": [337.5, 121, 0, "B"], "C32": [334.5, 122, 0, "B"],
         "R26": [332, 123, 0, "B"], "R30": [337.5, 126, 0, "B"], "R31": [337.5, 128, 0, "B"],
         "R32": [316, 125, 0, "B"], "D2": [316, 123, 0, "B"],
-        "R40": [116, 141, 0, "B"], "R41": [113, 142, 0, "B"], "R42": [121, 141, 0, "B"],
+        "R40": [117.25, 148.1, 270, "B"], "R41": [113, 142, 0, "B"], "R42": [121, 141, 0, "B"],
         "R43": [123, 141, 0, "B"], "R44": [125, 141, 0, "B"], "R45": [127, 141, 0, "B"],
         "R46": [129, 139.5, 0, "B"], "R47": [137, 141, 0, "B"], "R48": [106, 116, 0, "B"],
-        "C40": [116.5, 149, 0, "B"], "C41": [120, 149.5, 0, "B"], "C42": [122, 146.5, 0, "B"],
+        "C40": [118, 151, 0, "B"], "C41": [120, 149.5, 0, "B"], "C42": [122, 146.5, 0, "B"],
         "C43": [132, 141, 0, "B"], "C44": [137, 144, 0, "B"],
         "C45": [133, 148.5, 0, "B"], "C46": [136.2, 148.5, 0, "B"],
         "R49": [142, 141, 0, "B"], "R50": [105, 141, 0, "B"], "R51": [146, 146, 0, "B"],
@@ -167,7 +173,7 @@ def main():
         if not fp_name:
             raise ValueError("No footprint on " + ref)
         old = originals_in_board.get(ref)
-        same = old is not None and str(old.GetFPID().GetLibItemName()) == fp_name.split(":")[-1]
+        same = old is not None and str(old.GetFPID().GetLibItemName()) == baseline_footprint(ref, fp_name).split(":")[-1]
         if same:
             fp = old
         else:
@@ -193,7 +199,13 @@ def main():
                 fp.Flip(fp.GetPosition(), False)
             fp.SetOrientationDegrees(angle)
         elif not same:
-            raise ValueError("New component has no placement: " + ref)
+            if ref not in original:
+                raise ValueError("New component has no placement: " + ref)
+            previous = original[ref]
+            fp.SetPosition(previous.GetPosition())
+            if previous.IsFlipped() != fp.IsFlipped():
+                fp.Flip(fp.GetPosition(), False)
+            fp.SetOrientationDegrees(previous.GetOrientationDegrees())
         if ref in ("J1", "U2", "U4"):
             fp.SetAttributes(pcb.FP_SMD)
         for pad in fp.Pads():
@@ -204,23 +216,41 @@ def main():
         placed[ref] = fp
     for fp in board.GetFootprints():
         if fp.GetReference() == "REF**":
+            if "REF**" in FROZEN:
+                fp.SetFPID(footprint_id(FROZEN["REF**"]["id"]))
+            fp.SetAttributes(fp.GetAttributes() | pcb.FP_BOARD_ONLY | pcb.FP_EXCLUDE_FROM_BOM | pcb.FP_EXCLUDE_FROM_POS_FILES)
             fp.Reference().SetLayer(pcb.Dwgs_User)
             for item in list(fp.GraphicalItems()):
                 if item.GetLayer() in (pcb.F_Cu, pcb.B_Cu):
                     fp.Remove(item)
-    for ref in ():
+    # BQ24074 thermal/ground pad must join the inner ground copper. This
+    # through-via is on the thermal pad; tent its opposite (front) face.
+    for ref in ("U5",):
         fp = placed[ref]
-        for dx, dy in ((-2.5, -2.5), (2.5, 2.5)):
+        for dx, dy in ((-.35, 0),):
             via = pcb.PCB_VIA(board)
             via.SetPosition(pcb.VECTOR2I(fp.GetPosition().x + pcb.FromMM(dx), fp.GetPosition().y + pcb.FromMM(dy)))
-            via.SetWidth(pcb.FromMM(.6))
+            via.SetWidth(pcb.FromMM(.5))
             via.SetDrill(pcb.FromMM(.3))
             via.SetViaType(pcb.VIATYPE_THROUGH)
             via.SetLayerPair(pcb.F_Cu, pcb.B_Cu)
             via.SetNet(nets["GND"])
+            via.SetFrontTentingMode(pcb.TENTING_MODE_TENTED)
             board.Add(via)
+    # The outer-row escapes cannot pass between the inner module pads at
+    # 0.127/0.15 mm. These two vias require filled and copper-capped holes.
+    for pin in ("39", "51"):
+        pad = next(p for p in placed["U1"].Pads() if p.GetNumber() == pin)
+        via = pcb.PCB_VIA(board)
+        via.SetPosition(pad.GetPosition())
+        via.SetWidth(pcb.FromMM(.5))
+        via.SetDrill(pcb.FromMM(.3))
+        via.SetViaType(pcb.VIATYPE_THROUGH)
+        via.SetLayerPair(pcb.F_Cu, pcb.B_Cu)
+        via.SetNet(pad.GetNet())
+        board.Add(via)
     for fp in placed.values():
-        if str(fp.GetFPID().GetLibNickname()) == "YAECKB":
+        if str(fp.GetFPID().GetLibNickname()) == "YAECKB" and fp.GetReference() not in FROZEN:
             PLUGIN.FootprintSave(str(library), fp)
     (DEST / "fp-lib-table").write_text('(fp_lib_table (lib (name "YAECKB") (type "KiCad") (uri "${KIPRJMOD}/YAECKB.pretty") (options "") (descr "EC60 retained electrode geometry and service pads")))\n')
     project_path = DEST / (NAME + ".kicad_pro")
@@ -228,7 +258,7 @@ def main():
     config["meta"] = {"filename": NAME + ".kicad_pro", "version": 1}
     project_path.write_text(json.dumps(config, indent=2) + "\n")
     out = DEST / (NAME + ".unrouted.kicad_pcb")
-    pcb.SaveBoard(str(out), board)
+    pcb.SaveBoard(str(out), board, True)
     (DEST / "pcb-placement-contract.json").write_text(json.dumps({fp.GetReference(): {
         "position_nm": [fp.GetPosition().x, fp.GetPosition().y],
         "angle": fp.GetOrientationDegrees(), "flipped": fp.IsFlipped()

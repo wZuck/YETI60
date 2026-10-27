@@ -1,0 +1,30 @@
+{
+  "removed_items": 45,
+  "groups": [
+    {
+      "net": "AMUX_SEL_0",
+      "items": 8
+    },
+    {
+      "net": "AMUX_SEL_1",
+      "items": 5
+    },
+    {
+      "net": "AMUX_SEL_2",
+      "items": 10
+    },
+    {
+      "net": "AMUX_SEL_2",
+      "items": 8
+    },
+    {
+      "net": "APLEX_EN_PIN_1",
+      "items": 5
+    },
+    {
+      "net": "APLEX_EN_PIN_1",
+      "items": 9
+    }
+  ],
+  "criterion": "no pad or copper-zone terminal; GND excluded"
+}

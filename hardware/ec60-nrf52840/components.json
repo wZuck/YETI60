@@ -2,7 +2,7 @@
   "U1": {
     "value": "MDBT50Q-1MV2",
     "symbol": "RF_Module:MDBT50Q-1MV2",
-    "footprint": "RF_Module:Raytac_MDBT50Q",
+    "footprint": "YAECKB:Raytac_MDBT50Q__U1",
     "pins": {
       "1": "GND",
       "2": "GND",
@@ -46,7 +46,7 @@
   "R6": {
     "value": "100",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R6",
     "pins": {
       "2": "ROW_DRV0",
       "1": "ROW0"
@@ -58,7 +58,7 @@
   "R7": {
     "value": "100",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R7",
     "pins": {
       "1": "ROW_DRV1",
       "2": "ROW1"
@@ -70,7 +70,7 @@
   "R3": {
     "value": "100",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R3",
     "pins": {
       "1": "ROW_DRV2",
       "2": "ROW2"
@@ -82,7 +82,7 @@
   "R5": {
     "value": "100",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R5",
     "pins": {
       "1": "ROW_DRV3",
       "2": "ROW3"
@@ -94,7 +94,7 @@
   "R4": {
     "value": "100",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R4",
     "pins": {
       "2": "ROW_DRV4",
       "1": "ROW4"
@@ -106,7 +106,7 @@
   "J1": {
     "value": "REAR_USB_DAUGHTERBOARD",
     "symbol": "Connector_Generic:Conn_01x04",
-    "footprint": "YAECKB:JST-SR-4",
+    "footprint": "YAECKB:JST-SR-4__J1",
     "pins": {
       "1": "VBUS",
       "2": "D-",
@@ -120,7 +120,7 @@
   "F1": {
     "value": "500mA",
     "symbol": "Device:Polyfuse",
-    "footprint": "Fuse:Fuse_1206_3216Metric",
+    "footprint": "YAECKB:Fuse_1206_3216Metric__F1",
     "pins": {
       "1": "USB_5V",
       "2": "VBUS"
@@ -132,7 +132,7 @@
   "D1": {
     "value": "PRTR5V0U2X",
     "symbol": "Power_Protection:PRTR5V0U2X",
-    "footprint": "Package_TO_SOT_SMD:SOT-143",
+    "footprint": "YAECKB:SOT-143__D1",
     "pins": {
       "1": "GND",
       "2": "D+",
@@ -146,7 +146,7 @@
   "R30": {
     "value": "27",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R30",
     "pins": {
       "1": "D-",
       "2": "USB_DM"
@@ -158,7 +158,7 @@
   "R31": {
     "value": "27",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R31",
     "pins": {
       "1": "D+",
       "2": "USB_DP"
@@ -170,7 +170,7 @@
   "C30": {
     "value": "10u/10V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "footprint": "YAECKB:C_0603_1608Metric__C30",
     "pins": {
       "1": "+3.3V",
       "2": "GND"
@@ -182,7 +182,7 @@
   "C31": {
     "value": "100n/16V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "footprint": "YAECKB:C_0402_1005Metric__C31",
     "pins": {
       "1": "+3.3V",
       "2": "GND"
@@ -194,7 +194,7 @@
   "C32": {
     "value": "4.7u/10V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "footprint": "YAECKB:C_0603_1608Metric__C32",
     "pins": {
       "1": "USB_5V",
       "2": "GND"
@@ -206,7 +206,7 @@
   "C13": {
     "value": "1u",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "footprint": "YAECKB:C_0402_1005Metric__C13",
     "pins": {
       "1": "AFE_3V3",
       "2": "GND"
@@ -218,7 +218,7 @@
   "R26": {
     "value": "10k",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R26",
     "pins": {
       "1": "+3.3V",
       "2": "RESET_N"
@@ -230,7 +230,7 @@
   "SW1": {
     "value": "EVQPUC02K_RESET",
     "symbol": "Switch:SW_Push",
-    "footprint": "Button_Switch_SMD:Panasonic_EVQPUL_EVQPUC",
+    "footprint": "YAECKB:Panasonic_EVQPUL_EVQPUC__SW1",
     "pins": {
       "1": "RESET_N",
       "2": "GND"
@@ -242,7 +242,7 @@
   "J3": {
     "value": "SWD_POGO",
     "symbol": "Connector_Generic:Conn_02x03_Odd_Even",
-    "footprint": "YAECKB:SWD_Pogo_2x03",
+    "footprint": "YAECKB:SWD_Pogo_2x03__J3",
     "pins": {
       "1": "+3.3V",
       "2": "SWDIO",
@@ -258,7 +258,7 @@
   "R32": {
     "value": "2.2k",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R32",
     "pins": {
       "1": "STATUS_LED",
       "2": "LED_A"
@@ -270,7 +270,7 @@
   "D2": {
     "value": "STATUS",
     "symbol": "Device:LED",
-    "footprint": "LED_SMD:LED_0603_1608Metric",
+    "footprint": "YAECKB:LED_0603_1608Metric__D2",
     "pins": {
       "1": "GND",
       "2": "LED_A"
@@ -315,7 +315,7 @@
   "U5": {
     "value": "BQ24074RGT",
     "symbol": "Battery_Management:BQ24074RGT",
-    "footprint": "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm",
+    "footprint": "YAECKB:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm__U5",
     "pins": {
       "1": "BAT_NTC",
       "2": "BAT_CELL",
@@ -340,7 +340,7 @@
   "U6": {
     "value": "TPS63031DSK",
     "symbol": "Regulator_Switching:TPS63031DSK",
-    "footprint": "Package_SON:WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm",
+    "footprint": "YAECKB:WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm__U6",
     "pins": {
       "1": "+3.3V",
       "2": "BUCK_L2",
@@ -361,7 +361,7 @@
   "L1": {
     "value": "1.5uH_74438336015",
     "symbol": "Device:L",
-    "footprint": "Inductor_SMD:L_Wuerth_MAPI-3015",
+    "footprint": "YAECKB:L_Wuerth_MAPI-3015__L1",
     "pins": {
       "1": "BUCK_L1",
       "2": "BUCK_L2"
@@ -373,7 +373,7 @@
   "R40": {
     "value": "8.87k/1%",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R40",
     "pins": {
       "1": "ICHG_SET",
       "2": "GND"
@@ -385,7 +385,7 @@
   "R41": {
     "value": "7.50k/1%",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R41",
     "pins": {
       "1": "ILIM_SET",
       "2": "GND"
@@ -397,7 +397,7 @@
   "R42": {
     "value": "100k",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R42",
     "pins": {
       "1": "CHG_EN1",
       "2": "GND"
@@ -409,7 +409,7 @@
   "R43": {
     "value": "100k",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R43",
     "pins": {
       "1": "CHG_EN2",
       "2": "GND"
@@ -421,7 +421,7 @@
   "R44": {
     "value": "100k",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R44",
     "pins": {
       "1": "CHG_CE_N",
       "2": "GND"
@@ -433,7 +433,7 @@
   "R45": {
     "value": "100k",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R45",
     "pins": {
       "1": "CHG_N",
       "2": "+3.3V"
@@ -445,7 +445,7 @@
   "R46": {
     "value": "100k",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R46",
     "pins": {
       "1": "PGOOD_N",
       "2": "+3.3V"
@@ -457,7 +457,7 @@
   "R47": {
     "value": "100",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R47",
     "pins": {
       "1": "VSYS",
       "2": "REG_VINA"
@@ -469,7 +469,7 @@
   "R48": {
     "value": "100k",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R48",
     "pins": {
       "1": "REG_EN",
       "2": "GND"
@@ -481,7 +481,7 @@
   "SW100": {
     "value": "JS102011SAQN_POWER",
     "symbol": "Switch:SW_SPDT",
-    "footprint": "Button_Switch_SMD:SW_SPDT_CK_JS102011SAQN",
+    "footprint": "YAECKB:SW_SPDT_CK_JS102011SAQN__SW100",
     "pins": {
       "1": "VSYS",
       "2": "REG_EN",
@@ -494,7 +494,7 @@
   "C40": {
     "value": "1u/10V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "footprint": "YAECKB:C_0603_1608Metric__C40",
     "pins": {
       "1": "USB_5V",
       "2": "GND"
@@ -506,7 +506,7 @@
   "C41": {
     "value": "10u/10V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "footprint": "YAECKB:C_0603_1608Metric__C41",
     "pins": {
       "1": "BAT_CELL",
       "2": "GND"
@@ -518,7 +518,7 @@
   "C42": {
     "value": "10u/10V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "footprint": "YAECKB:C_0603_1608Metric__C42",
     "pins": {
       "1": "VSYS",
       "2": "GND"
@@ -530,7 +530,7 @@
   "C43": {
     "value": "10u/10V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "footprint": "YAECKB:C_0603_1608Metric__C43",
     "pins": {
       "1": "VSYS",
       "2": "GND"
@@ -542,7 +542,7 @@
   "C44": {
     "value": "100n/16V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "footprint": "YAECKB:C_0603_1608Metric__C44",
     "pins": {
       "1": "REG_VINA",
       "2": "GND"
@@ -554,7 +554,7 @@
   "C45": {
     "value": "10u/10V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "footprint": "YAECKB:C_0603_1608Metric__C45",
     "pins": {
       "1": "+3.3V",
       "2": "GND"
@@ -566,7 +566,7 @@
   "C46": {
     "value": "10u/10V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "footprint": "YAECKB:C_0603_1608Metric__C46",
     "pins": {
       "1": "+3.3V",
       "2": "GND"
@@ -578,7 +578,7 @@
   "J2": {
     "value": "PROTECTED_1S_4V2_NTC10K",
     "symbol": "Connector_Generic:Conn_01x03",
-    "footprint": "Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal",
+    "footprint": "YAECKB:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal__J2",
     "pins": {
       "1": "BAT_CELL",
       "2": "GND",
@@ -591,7 +591,7 @@
   "U7": {
     "value": "TPS22919DCK",
     "symbol": "Power_Management:TPS22919DCK",
-    "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+    "footprint": "YAECKB:SOT-363_SC-70-6__U7",
     "pins": {
       "1": "BAT_CELL",
       "2": "GND",
@@ -606,7 +606,7 @@
   "U8": {
     "value": "TPS22919DCK",
     "symbol": "Power_Management:TPS22919DCK",
-    "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+    "footprint": "YAECKB:SOT-363_SC-70-6__U8",
     "pins": {
       "1": "+3.3V",
       "2": "GND",
@@ -621,7 +621,7 @@
   "R49": {
     "value": "100k",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R49",
     "pins": {
       "1": "BAT_MEAS_EN",
       "2": "GND"
@@ -633,7 +633,7 @@
   "R50": {
     "value": "100k",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R50",
     "pins": {
       "1": "AFE_EN",
       "2": "GND"
@@ -645,7 +645,7 @@
   "R51": {
     "value": "1M/1%",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R51",
     "pins": {
       "1": "BAT_MEAS_TOP",
       "2": "BAT_ADC"
@@ -657,7 +657,7 @@
   "R52": {
     "value": "1M/1%",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R52",
     "pins": {
       "1": "BAT_ADC",
       "2": "GND"
@@ -669,7 +669,7 @@
   "R53": {
     "value": "100",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R53",
     "pins": {
       "1": "BAT_MEAS_TOP_QOD",
       "2": "BAT_MEAS_TOP"
@@ -681,7 +681,7 @@
   "R54": {
     "value": "100",
     "symbol": "Device:R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "footprint": "YAECKB:R_0402_1005Metric__R54",
     "pins": {
       "1": "AFE_3V3_QOD",
       "2": "AFE_3V3"
@@ -693,7 +693,7 @@
   "C47": {
     "value": "10n",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "footprint": "YAECKB:C_0402_1005Metric__C47",
     "pins": {
       "1": "BAT_ADC",
       "2": "GND"
@@ -705,7 +705,7 @@
   "C48": {
     "value": "1u/10V",
     "symbol": "Device:C",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "footprint": "YAECKB:C_0402_1005Metric__C48",
     "pins": {
       "1": "AFE_3V3",
       "2": "GND"

@@ -26,6 +26,7 @@ def main():
     cad = [uv, "run", "--with-requirements", str(ROOT / "requirements-audit.txt"), "python"]
     stages = [
         ("single-nrf-connectivity", [sys.executable, "scripts/check_single_nrf.py"], []),
+        ("single-nrf-native-pcb", [kicad_python, "scripts/audit_single_nrf.py"], ["single-nrf-connectivity"]),
         ("pcb-metadata", [kicad_python, "scripts/extract_pcb_metadata.py"], []),
         ("generated-interface", [sys.executable, "scripts/check_generated_interface.py"], []),
         ("interface-erc", [sys.executable, "scripts/check_ble_interface.py"], ["generated-interface"]),
@@ -70,7 +71,6 @@ def main():
                                          "excluded": "Git internals, ignored local state, and audit outputs to avoid self-hashing",
                                          "semantic_review_complete": False}, ensure_ascii=False, indent=2) + "\n")
     pending = [
-        "routed BLE PCB and complete nRF52840/power/charge circuit with final ERC/DRC",
         "single nRF52840 target build and on-device EC scanning/USB/BLE behaviour",
         "signal interference simulation after single-MCU PCB design completion",
         "rear USB daughterboard, actual connector/plug and cable assembled fit",
@@ -79,6 +79,8 @@ def main():
         "copper/mask/paste Gerber parity and procurement ratings",
         "physical EC calibration, charging, runtime, wake and enclosed RF tests",
     ]
+    if states.get("single-nrf-native-pcb") != "passed":
+        pending.insert(0, "routed BLE PCB and complete nRF52840/power/charge circuit with final ERC/DRC")
     outcome = {"status": "audit-incomplete-production-not-approved", "stages": results,
                "pending_requirements": pending, "production_approved": False,
                "inventory": str(inventory_path.relative_to(ROOT))}
