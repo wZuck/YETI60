@@ -1,0 +1,31 @@
+{
+  "source": "EC60/Firmware/ec60",
+  "cases": [
+    {
+      "case": "row-bounds",
+      "exit_code": -6,
+      "output": "",
+      "errors": "/Users/wzy/workspace/YAECKB/EC60/Firmware/ec60/ec_switch_matrix.c:47:9: runtime error: index 5 out of bounds for type 'const uint32_t[5]' (aka 'const unsigned int[5]')\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/wzy/workspace/YAECKB/EC60/Firmware/ec60/ec_switch_matrix.c:47:9"
+    },
+    {
+      "case": "scan-bounds",
+      "exit_code": -6,
+      "output": "",
+      "errors": "/Users/wzy/workspace/YAECKB/EC60/Firmware/ec60/ec_switch_matrix.c:167:13: runtime error: index 15 out of bounds for type 'uint16_t[15]' (aka 'unsigned short[15]')\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /Users/wzy/workspace/YAECKB/EC60/Firmware/ec60/ec_switch_matrix.c:167:13"
+    }
+  ],
+  "source_sha256": {
+    "EC60/Firmware/ec60/config.h": "dea651dae0263d4d665c0f7ccb6295ba4333e00aeb511f6f50412f78b4b3362c",
+    "EC60/Firmware/ec60/ec60.c": "87e32b4f162a18fdb02b3a78adbf9993a12ba826185101feaaf7684376ffda2d",
+    "EC60/Firmware/ec60/ec60.h": "13881f20bde88a3481f8872a3dc4d1e9908cde4f93f123a752f36341cbc8f249",
+    "EC60/Firmware/ec60/ec_switch_matrix.c": "61cfe8d9e7433c3b7dddc098111b4105a58cc2e2e676b6854c80688a2879b2f2",
+    "EC60/Firmware/ec60/ec_switch_matrix.h": "e276a05b62f69a9e1012c0b8c5faba91aa4cbd01ae54686da8a4c250e5b65748",
+    "EC60/Firmware/ec60/halconf.h": "aa67b5ef162b13d933633d08b5577506b87e0447d4320307009ad16aa9d60dcd",
+    "EC60/Firmware/ec60/matrix.c": "8ace0be089a76b59b562346ae70140b6bdec52ad84bee84d4f7f11b505634587",
+    "EC60/Firmware/ec60/mcuconf.h": "d7081188134403b89f5843fe15bb2f7bfdf88376f5d436c13f0fa5115b848f9d"
+  },
+  "limitations": [
+    "mock ADC/GPIO; no timing, noise or physical calibration proof",
+    "not a QMK target build or BLE firmware test"
+  ]
+}

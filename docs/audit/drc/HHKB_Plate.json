@@ -1,0 +1,1032 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-27T02:10:41",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "key": "pth_inside_courtyard"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "key": "npth_inside_courtyard"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.7",
+    "schematic_parity": [],
+    "source": "HHKB_Plate.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Text or graphic on Edge.Cuts layer",
+            "items": [
+                {
+                    "description": "REF** 的参考字段",
+                    "pos": {
+                        "x": 75.312704,
+                        "y": 201.70966
+                    },
+                    "uuid": "e74dee53-a6a2-4a9b-a28e-b86026d21d55"
+                }
+            ],
+            "severity": "error",
+            "type": "text_on_edge_cuts"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[<no net>]在 F.Cu 和 B.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 71.494492,
+                        "y": 102.292204
+                    },
+                    "uuid": "e8071591-9dc4-4836-b2c1-12b722a5c199"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "Isolated copper fill",
+            "items": [
+                {
+                    "description": "填充区[<no net>]在 F.Cu 和 B.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 71.494492,
+                        "y": 102.292204
+                    },
+                    "uuid": "e8071591-9dc4-4836-b2c1-12b722a5c199"
+                }
+            ],
+            "severity": "warning",
+            "type": "isolated_copper"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW30",
+                    "pos": {
+                        "x": 300.037704,
+                        "y": 189.30966
+                    },
+                    "uuid": "00ce0edf-5d35-4fed-8356-4a9f8ad803c3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW28",
+                    "pos": {
+                        "x": 280.987704,
+                        "y": 132.15966
+                    },
+                    "uuid": "077100e7-4ead-4515-838c-1e84e474005f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW3",
+                    "pos": {
+                        "x": 100.012704,
+                        "y": 113.10966
+                    },
+                    "uuid": "0b513012-9caa-44eb-89b0-f2fd47b6e202"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW21",
+                    "pos": {
+                        "x": 147.637704,
+                        "y": 132.15966
+                    },
+                    "uuid": "0cbb5642-6a22-4d93-aa68-2128785c1f8d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW12",
+                    "pos": {
+                        "x": 271.462704,
+                        "y": 113.10966
+                    },
+                    "uuid": "1257b3b5-98aa-4efb-9027-d112424778f5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW19",
+                    "pos": {
+                        "x": 109.537704,
+                        "y": 132.15966
+                    },
+                    "uuid": "1376bdd0-fb53-4484-95a1-f90962c019fc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW9",
+                    "pos": {
+                        "x": 214.312704,
+                        "y": 113.10966
+                    },
+                    "uuid": "15485157-9b95-4c49-8215-9e628d2b5bf2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW8",
+                    "pos": {
+                        "x": 195.262704,
+                        "y": 113.10966
+                    },
+                    "uuid": "1a76c524-0987-4e25-9d8d-03fd905162a7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW7",
+                    "pos": {
+                        "x": 176.212704,
+                        "y": 113.10966
+                    },
+                    "uuid": "1d77dc35-67d5-4fab-9ef3-0a36ece06c82"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW39",
+                    "pos": {
+                        "x": 209.550204,
+                        "y": 151.20966
+                    },
+                    "uuid": "21c53d1f-4b6d-407a-a5c7-dcef836753a0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW42",
+                    "pos": {
+                        "x": 266.700204,
+                        "y": 151.20966
+                    },
+                    "uuid": "24a8031d-1120-438f-9731-c0ded7ae26af"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW64",
+                    "pos": {
+                        "x": 109.537704,
+                        "y": 189.30966
+                    },
+                    "uuid": "25af9c4b-25f2-42b2-ad8e-d4d702892018"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW11",
+                    "pos": {
+                        "x": 252.412704,
+                        "y": 113.10966
+                    },
+                    "uuid": "27e69915-0c18-4ac2-aefd-e7218ed4dff2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW18",
+                    "pos": {
+                        "x": 85.725204,
+                        "y": 132.15966
+                    },
+                    "uuid": "2953efd1-c15e-49ee-a0ee-ae823755b740"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW40",
+                    "pos": {
+                        "x": 228.600204,
+                        "y": 151.20966
+                    },
+                    "uuid": "2a50be5c-6cc1-4b2b-817a-484872582e73"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW5",
+                    "pos": {
+                        "x": 138.112704,
+                        "y": 113.10966
+                    },
+                    "uuid": "2e58d54d-2141-4423-8498-a158073950f2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW13",
+                    "pos": {
+                        "x": 290.512704,
+                        "y": 113.10966
+                    },
+                    "uuid": "359b9e68-586f-4ad5-9333-6483a0f46c44"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW59",
+                    "pos": {
+                        "x": 295.275204,
+                        "y": 170.25966
+                    },
+                    "uuid": "3a2b3890-1ea5-4f11-acfd-338997fef679"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW32",
+                    "pos": {
+                        "x": 335.756454,
+                        "y": 151.20966
+                    },
+                    "uuid": "4944229a-9b44-4168-9e2e-e9b590b02ec0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW51",
+                    "pos": {
+                        "x": 142.875204,
+                        "y": 170.25966
+                    },
+                    "uuid": "5a0d497c-1035-4856-bb40-98c57fa660af"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW54",
+                    "pos": {
+                        "x": 200.025204,
+                        "y": 170.25966
+                    },
+                    "uuid": "5c91124d-f0fc-4a11-861a-50e6b8b9bcf0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW53",
+                    "pos": {
+                        "x": 180.975204,
+                        "y": 170.25966
+                    },
+                    "uuid": "5eb06cfa-0765-4281-8485-600dcc1941c6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW52",
+                    "pos": {
+                        "x": 161.925204,
+                        "y": 170.25966
+                    },
+                    "uuid": "624b68cd-4c83-45b1-82bc-af3ecf866bdd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW35",
+                    "pos": {
+                        "x": 133.350204,
+                        "y": 151.20966
+                    },
+                    "uuid": "67f68f36-1274-441f-83bf-15fb6a42469d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW20",
+                    "pos": {
+                        "x": 128.587704,
+                        "y": 132.15966
+                    },
+                    "uuid": "6cc39fae-804a-4a84-93be-c7b898270145"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW37",
+                    "pos": {
+                        "x": 171.450204,
+                        "y": 151.20966
+                    },
+                    "uuid": "711922f6-a8e1-4817-a0a8-d53f7e80a325"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW38",
+                    "pos": {
+                        "x": 190.500204,
+                        "y": 151.20966
+                    },
+                    "uuid": "75931a22-e9a9-4a52-821f-50e39a9a1011"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW30",
+                    "pos": {
+                        "x": 321.468954,
+                        "y": 170.25966
+                    },
+                    "uuid": "785e91ad-75b6-4fea-b217-19830a09a96a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW4",
+                    "pos": {
+                        "x": 119.062704,
+                        "y": 113.10966
+                    },
+                    "uuid": "78cff246-8f55-4642-b310-d59eeb7d963e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW30",
+                    "pos": {
+                        "x": 276.225204,
+                        "y": 189.30966
+                    },
+                    "uuid": "7a154671-d5c5-48ca-843f-a30a36d7a520"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW36",
+                    "pos": {
+                        "x": 152.400204,
+                        "y": 151.20966
+                    },
+                    "uuid": "7ccaf0ed-4216-4779-96b1-342cf6fed482"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW10",
+                    "pos": {
+                        "x": 233.362704,
+                        "y": 113.10966
+                    },
+                    "uuid": "7dbd6df0-61ff-4e8a-a97b-f90dcc97a37d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW50",
+                    "pos": {
+                        "x": 123.825204,
+                        "y": 170.25966
+                    },
+                    "uuid": "80387b4c-10e2-4dc6-b93d-454bb62a0d41"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW30",
+                    "pos": {
+                        "x": 342.900204,
+                        "y": 132.15966
+                    },
+                    "uuid": "8381cc91-f460-497c-b386-1145e14d11c8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW23",
+                    "pos": {
+                        "x": 185.737704,
+                        "y": 132.15966
+                    },
+                    "uuid": "85af59b7-7b8e-4d9b-a755-bb208e2ac52a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'locallib'",
+            "items": [
+                {
+                    "description": "封装 REF**",
+                    "pos": {
+                        "x": 214.312704,
+                        "y": 151.20966
+                    },
+                    "uuid": "872be21f-d1ac-489b-8b4e-7d114137e90e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW30",
+                    "pos": {
+                        "x": 204.787704,
+                        "y": 189.30966
+                    },
+                    "uuid": "889bc775-fc26-46ea-a344-de383d43d080"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW30",
+                    "pos": {
+                        "x": 319.087704,
+                        "y": 132.15966
+                    },
+                    "uuid": "98d19188-dc92-4795-92fa-952ef9c90897"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW56",
+                    "pos": {
+                        "x": 238.125204,
+                        "y": 170.25966
+                    },
+                    "uuid": "9ac7b5ff-e28b-4d44-b9c4-408cbbb05227"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW30",
+                    "pos": {
+                        "x": 347.662704,
+                        "y": 170.25966
+                    },
+                    "uuid": "9b00b29f-8d25-42f1-8d12-22b64414bc5b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW65",
+                    "pos": {
+                        "x": 133.350204,
+                        "y": 189.30966
+                    },
+                    "uuid": "9e7341b0-e4de-4318-964d-4d6e60b211f5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW44",
+                    "pos": {
+                        "x": 304.800204,
+                        "y": 151.20966
+                    },
+                    "uuid": "a46904f7-6051-4292-994d-3e99dfc35072"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW57",
+                    "pos": {
+                        "x": 257.175204,
+                        "y": 170.25966
+                    },
+                    "uuid": "a8aec95b-340b-4fb8-a4e0-c7ef653c4ddd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW17",
+                    "pos": {
+                        "x": 347.662704,
+                        "y": 113.10966
+                    },
+                    "uuid": "abe7c6cd-f31c-452c-bd0d-ad77c9414430"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW34",
+                    "pos": {
+                        "x": 114.300204,
+                        "y": 151.20966
+                    },
+                    "uuid": "ad3f115c-7dfb-4ae2-8099-cfeefd8330fe"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 REF**",
+                    "pos": {
+                        "x": 204.787704,
+                        "y": 189.30966
+                    },
+                    "uuid": "af3eef00-7616-47ec-9b06-5a212888d4bd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW25",
+                    "pos": {
+                        "x": 223.837704,
+                        "y": 132.15966
+                    },
+                    "uuid": "af7cb7a6-2746-494c-a047-ab589f912a25"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW29",
+                    "pos": {
+                        "x": 300.037704,
+                        "y": 132.15966
+                    },
+                    "uuid": "afc48cca-248e-4102-9726-889fd6bd02fb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW27",
+                    "pos": {
+                        "x": 261.937704,
+                        "y": 132.15966
+                    },
+                    "uuid": "b51553a2-bbab-45ab-8bf6-21aa60d04699"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW24",
+                    "pos": {
+                        "x": 204.787704,
+                        "y": 132.15966
+                    },
+                    "uuid": "b710e071-0a4f-475e-a299-0d6565ec51f3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW54",
+                    "pos": {
+                        "x": 88.106454,
+                        "y": 151.20966
+                    },
+                    "uuid": "ba490039-f843-443a-9197-8d2c7a36c463"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW54",
+                    "pos": {
+                        "x": 92.868954,
+                        "y": 170.25966
+                    },
+                    "uuid": "c4b07709-e8a7-4080-a37d-b6b950469776"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 H1",
+                    "pos": {
+                        "x": 109.537704,
+                        "y": 113.10966
+                    },
+                    "uuid": "caa81211-a176-417f-94a2-7bb48bacac8a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW14",
+                    "pos": {
+                        "x": 309.562704,
+                        "y": 113.10966
+                    },
+                    "uuid": "cb7c5717-8a6d-45d2-bdb6-65c7adf7bc04"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW22",
+                    "pos": {
+                        "x": 166.687704,
+                        "y": 132.15966
+                    },
+                    "uuid": "cd4aed20-3987-4996-954d-06b90bb3be41"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW58",
+                    "pos": {
+                        "x": 276.225204,
+                        "y": 170.25966
+                    },
+                    "uuid": "d2762c6a-3dd4-48ba-a27a-988ba4a118fb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW41",
+                    "pos": {
+                        "x": 247.650204,
+                        "y": 151.20966
+                    },
+                    "uuid": "d478465a-9422-4ce2-bd42-a541b38a26c3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW2",
+                    "pos": {
+                        "x": 80.962704,
+                        "y": 113.10966
+                    },
+                    "uuid": "dcb0d6f1-0329-4004-9b25-96e7597ad29d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW26",
+                    "pos": {
+                        "x": 242.887704,
+                        "y": 132.15966
+                    },
+                    "uuid": "e89f5596-52d7-4492-931e-7ca4b2bb4055"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW43",
+                    "pos": {
+                        "x": 285.750204,
+                        "y": 151.20966
+                    },
+                    "uuid": "e9e990f9-8116-4687-96b5-d5d4f5a6ddde"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW15",
+                    "pos": {
+                        "x": 328.612704,
+                        "y": 113.10966
+                    },
+                    "uuid": "efd205de-ec1f-440e-8fba-ef942b6a1dcc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW6",
+                    "pos": {
+                        "x": 157.162704,
+                        "y": 113.10966
+                    },
+                    "uuid": "f0276c9b-9ed1-484f-903f-91c64121e6a5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "当前配置中不包含封装库 'cipulot_parts'",
+            "items": [
+                {
+                    "description": "封装 SW55",
+                    "pos": {
+                        "x": 219.075204,
+                        "y": 170.25966
+                    },
+                    "uuid": "fa937f52-67ae-487d-ba07-9905d78ee18c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        }
+    ]
+}

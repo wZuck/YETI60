@@ -1,0 +1,84 @@
+{
+  "status": "case-registration-no-volume-overlap-and-rear-path-checked-full-fit-unverified",
+  "source_sha256": {
+    "felk60/felk60_bottom.step": "f4987879940643cb5b0d66145b944efb435994abe4d18808da4e45d16bb8c44b",
+    "felk60/felk60_top_hhkb.step": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
+    "design-constraints.json": "0ac8be9970ea5778acd7566d3145c131cea202b4d7f1dc4389e241e5e7bff621",
+    "EC60/PCB/EC60_PCB/EC60.kicad_pcb": "76be7d1a3c985cbf20460e3bcba5624bae55af28ed2b70b27ec155bbd56ec12a"
+  },
+  "PCB_to_STEP_xy": "STEP x = PCB x; STEP y = -PCB y; PCB z placement unverified",
+  "case_screw_axes": [
+    {
+      "xy_mm": [
+        64.3127017681627,
+        -101.209701345696
+      ],
+      "axis_offset_mm": 0.0,
+      "top_pilot_diameter_mm": 2.529,
+      "bottom_clearance_diameter_mm": 3.4
+    },
+    {
+      "xy_mm": [
+        64.3127145775006,
+        -191.209701345696
+      ],
+      "axis_offset_mm": 0.0,
+      "top_pilot_diameter_mm": 2.529,
+      "bottom_clearance_diameter_mm": 3.4
+    },
+    {
+      "xy_mm": [
+        364.312714577498,
+        -191.209658647903
+      ],
+      "axis_offset_mm": 0.0,
+      "top_pilot_diameter_mm": 2.529,
+      "bottom_clearance_diameter_mm": 3.4
+    },
+    {
+      "xy_mm": [
+        364.31270176816,
+        -101.209658647903
+      ],
+      "axis_offset_mm": 0.0,
+      "top_pilot_diameter_mm": 2.529,
+      "bottom_clearance_diameter_mm": 3.4
+    }
+  ],
+  "case_intersection_volume_mm3": 0.0,
+  "volume_tolerance_mm3": 1e-05,
+  "rear_USB_aperture": {
+    "bounds_mm": [
+      209.84270196741775,
+      -103.1096806329971,
+      -9.26000000000008,
+      218.782702038581,
+      -102.6096793606029,
+      -6.050000000000023
+    ],
+    "center_mm": [
+      214.31270200299937,
+      -102.8596799968,
+      -7.655000000000051
+    ],
+    "width_mm": 8.94000007116324,
+    "height_mm": 3.210000000000057,
+    "outward_direction": "+STEP_Y (keyboard rear)",
+    "diagnostic_probe_cross_section_mm": [
+      8.0,
+      2.0
+    ],
+    "probe_collision_volume_mm3": [
+      0.0,
+      0.0
+    ],
+    "onboard_USB1_x_offset_mm": 124.29999800299937,
+    "required_connector_path": "rear USB daughterboard -> EC60 J1"
+  },
+  "unverified": [
+    "actual daughterboard connector and plug/overmould envelope",
+    "PCB/plate/switch/gasket full Z assembly",
+    "resin inserts and fabrication tolerance; original top bores remain metal-thread pilots",
+    "battery, radio module, antenna and cables"
+  ]
+}

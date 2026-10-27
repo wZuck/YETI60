@@ -1,0 +1,37 @@
+{
+  "keyboard": "FELK60 case with EC60-derived EC PCB",
+  "wireless_controller": "nRF52840",
+  "case_material": "resin-provisional",
+  "external_usb_c": {
+    "required_face": "rear",
+    "rear_definition": "Esc and number-row side, away from the typist",
+    "front_definition": "spacebar side, near the typist",
+    "front_port_allowed": false,
+    "connector_path": "rear-daughterboard-to-J1",
+    "onboard_USB1_external_port_allowed": false,
+    "pcb_frame": "top view, X left-to-right, Y rear-to-front",
+    "baseline_rear_row_references": [
+      "SW2",
+      "SW3",
+      "SW15",
+      "SW16"
+    ],
+    "baseline_front_row_references": [
+      "SW64",
+      "SW75"
+    ],
+    "baseline_port_reference": "USB1",
+    "final_assembly_verified": false
+  },
+  "production_approved": false,
+  "mcu_count": 1,
+  "scan_controller": "nRF52840",
+  "usb_controller": "nRF52840",
+  "stm32_allowed": false,
+  "pcb_modifications_allowed": true,
+  "signal_interference_analysis": {
+    "phase": "after PCB design completion",
+    "blocking_current_layout": false,
+    "status": "not_started"
+  }
+}

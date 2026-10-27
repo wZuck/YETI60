@@ -1,0 +1,5569 @@
+[
+  {
+    "source": "EC60/PCB/EC60_PCB/EC60.kicad_pcb",
+    "source_sha256": "76be7d1a3c985cbf20460e3bcba5624bae55af28ed2b70b27ec155bbd56ec12a",
+    "board_thickness_mm": 1.59,
+    "copper_layer_count": 4,
+    "aux_origin_mm": [
+      71.735337,
+      103.286979
+    ],
+    "edge_bounding_box_including_stroke_mm": [
+      71.662704,
+      103.75966,
+      285.3,
+      94.900001
+    ],
+    "footprints": [
+      {
+        "reference": "SW70",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          266.700204,
+          189.30966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW33",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring_stepped&normal",
+        "xy_mm": [
+          88.106454,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H26",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          223.837704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              223.837704,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW1",
+        "value": "BOOT0",
+        "footprint": "PinHeader_1x02_P2.54mm_Vertical",
+        "xy_mm": [
+          97.036267,
+          124.782816
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "1",
+            "xy_mm": [
+              97.036267,
+              124.782816
+            ],
+            "drill_mm": [
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "number": "2",
+            "xy_mm": [
+              97.036267,
+              127.322816
+            ],
+            "drill_mm": [
+              1.0,
+              1.0
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW60",
+        "value": "EC_SW_1u&1.75u",
+        "footprint": "ecs_pad_no_ring_1u1.75u",
+        "xy_mm": [
+          314.325204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW28",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          280.987704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW43",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          285.750204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H5",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          238.125204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              238.125204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "H25",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          145.256454,
+          189.30966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              145.256454,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "H9",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          276.225204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              276.225204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW10",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          233.362704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW17",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          347.662704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW11",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          252.412704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H19",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          161.925204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              161.925204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW55",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          219.075204,
+          170.25966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H6",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          123.825204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              123.825204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "H14",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          290.512704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              290.512704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW24",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          204.787704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H18",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          266.700204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              266.700204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW27",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          261.937704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW65",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          133.350204,
+          189.30966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW72",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          319.087704,
+          189.30966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW45",
+        "value": "ISO_|",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          323.850204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW47",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          83.343954,
+          170.25966
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW21",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          147.637704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW50",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          123.825204,
+          170.25966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW53",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          180.975204,
+          170.25966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H17",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          152.400204,
+          170.25966
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              152.400204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW59",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          295.275204,
+          170.25966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H13",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          138.112704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              138.112704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "H16",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          252.412704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              252.412704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW56",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          238.125204,
+          170.25966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW66",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          161.925204,
+          189.30966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW62",
+        "value": "EC_SW_1u&1.75u",
+        "footprint": "ecs_pad_no_ring_1u1.75u",
+        "xy_mm": [
+          340.518954,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H10",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          314.325204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              314.325204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW23",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          185.737704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW20",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          128.587704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H24",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          97.631468,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              97.631468,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW46",
+        "value": "ANSI_Enter",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          335.756454,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW69",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring_stepped&normal",
+        "xy_mm": [
+          238.125204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW29",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          300.037704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW3",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          100.012704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H3",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          76.200204,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              76.200204,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "REF**",
+        "value": "60_Outline",
+        "footprint": "60_Outline-Modded-Extreme",
+        "xy_mm": [
+          214.312704,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 12,
+        "drilled_pads": [
+          {
+            "number": "1",
+            "xy_mm": [
+              200.012704,
+              150.90966
+            ],
+            "drill_mm": [
+              5.0,
+              2.2
+            ]
+          },
+          {
+            "number": "1",
+            "xy_mm": [
+              331.862704,
+              131.80966
+            ],
+            "drill_mm": [
+              5.0,
+              2.2
+            ]
+          },
+          {
+            "number": "1",
+            "xy_mm": [
+              97.012704,
+              131.80966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "H11",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          304.800204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              304.800204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "H7",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          309.432392,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              309.432392,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW39",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          209.550204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW2",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          80.962704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW57",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          257.175204,
+          170.25966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW19",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          109.537704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW51",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          142.875204,
+          170.25966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW48",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring_1u_edge_cut",
+        "xy_mm": [
+          92.868954,
+          170.25966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H4",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          114.300204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              114.300204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW7",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          176.212704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW5",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          138.112704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW8",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          195.262704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW64",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          109.537704,
+          189.30966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW74",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          276.225204,
+          189.30966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW26",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          242.887704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW58",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          276.225204,
+          170.25966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW41",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          247.650204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW38",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          190.500204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW30",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          319.087704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW9",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          214.312704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H12",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          228.600204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              228.600204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "H15",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          176.212704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              176.212704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW35",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          133.350204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H8",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          147.637704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              147.637704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW25",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          223.837704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW54",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          200.025204,
+          170.25966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H1",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          109.537704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              109.537704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "H23",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          319.087704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              319.087704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW15",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          328.612704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW52",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          161.925204,
+          170.25966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW16",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          338.137704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW71",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring_stepped&normal",
+        "xy_mm": [
+          300.037704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW61",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          330.993954,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW36",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          152.400204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H22",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          261.937704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              261.937704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW75",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          214.312704,
+          189.30966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW42",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          266.700204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW49",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring_1u_edge_cut",
+        "xy_mm": [
+          104.775204,
+          170.25966
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW63",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          85.725204,
+          189.30966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW67",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          176.212704,
+          189.30966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H2",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          223.837704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              223.837704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW12",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          271.462704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW22",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          166.687704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW14",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          309.562704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW4",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          119.062704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW31",
+        "value": "ANSI_\\",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          342.900204,
+          132.15966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW37",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          171.450204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW40",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          228.600204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW44",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          304.800204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H21",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          214.312704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              214.312704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW34",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          114.300204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW32",
+        "value": "ISO_Enter",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          345.281454,
+          141.68466
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW18",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          85.725204,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H20",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          185.737704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              185.737704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW73",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          342.900204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW6",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          157.162704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW13",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring",
+        "xy_mm": [
+          290.512704,
+          113.10966
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW68",
+        "value": "EC_SW",
+        "footprint": "ecs_pad_no_ring_stepped&normal",
+        "xy_mm": [
+          204.787704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R7",
+        "value": "100",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          88.609562,
+          140.689604
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R23",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          312.987146,
+          181.76966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C11",
+        "value": "100n",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          104.16124,
+          146.698339
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R8",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          98.835337,
+          180.086979
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "G***",
+        "value": "LOGO",
+        "footprint": "LOGO",
+        "xy_mm": [
+          343.198521,
+          180.380401
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 28,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R24",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          334.865009,
+          181.485717
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R1",
+        "value": "5.1k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          83.641617,
+          105.566078
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C2",
+        "value": "1u",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          87.716853,
+          117.415736
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R15",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          166.135337,
+          182.11966
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C7",
+        "value": "100n",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          101.885337,
+          137.366979
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R11",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          119.535337,
+          182.386979
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "U3",
+        "value": "OPA350",
+        "footprint": "SOIC-8_3.9x4.9mm_P1.27mm",
+        "xy_mm": [
+          103.04624,
+          151.108116
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C12",
+        "value": "100n",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          304.205454,
+          176.552094
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "G***",
+        "value": "LOGO",
+        "footprint": "LOGO",
+        "xy_mm": [
+          348.854004,
+          105.370578
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 28,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R12",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          218.935337,
+          180.496979
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R19",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          283.157833,
+          176.723189
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R26",
+        "value": "10k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          105.668235,
+          144.958959
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R10",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          148.235337,
+          176.786979
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C8",
+        "value": "100n",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          104.16124,
+          145.507707
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R3",
+        "value": "100",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          97.241473,
+          153.786865
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "G***",
+        "value": "LOGO",
+        "footprint": "LOGO",
+        "xy_mm": [
+          121.146565,
+          152.549378
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 28,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R18",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          251.335337,
+          180.486979
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "Y1",
+        "value": "8 MHz",
+        "footprint": "Resonator_SMD_Murata_CSTxExxV-3Pin_3.0x1.1mm",
+        "xy_mm": [
+          104.89216,
+          141.170588
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C6",
+        "value": "100n",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          95.487067,
+          137.363627
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "D1",
+        "value": "PRTR5V0U2X",
+        "footprint": "SOT-143",
+        "xy_mm": [
+          90.512704,
+          118.365736
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C5",
+        "value": "100n",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          94.197987,
+          146.538088
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R16",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          106.071491,
+          155.815551
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "J1",
+        "value": "JST",
+        "footprint": "JST-SR-4",
+        "xy_mm": [
+          119.572837,
+          123.527723
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 1,
+        "drilled_pads": []
+      },
+      {
+        "reference": "U5",
+        "value": "XC6206PxxxMR",
+        "footprint": "SOT-23",
+        "xy_mm": [
+          86.972708,
+          120.151684
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R13",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          151.535337,
+          184.796979
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "USB1",
+        "value": "XUNPU-TYPEC-312DSS-ACP16",
+        "footprint": "XUNPU-TYPEC-312DSS-ACP16-Assembly",
+        "xy_mm": [
+          90.012704,
+          102.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              92.902704,
+              108.55966
+            ],
+            "drill_mm": [
+              0.65,
+              0.65
+            ]
+          },
+          {
+            "number": "",
+            "xy_mm": [
+              87.122704,
+              108.55966
+            ],
+            "drill_mm": [
+              0.65,
+              0.65
+            ]
+          },
+          {
+            "number": "13",
+            "xy_mm": [
+              85.692704,
+              104.90966
+            ],
+            "drill_mm": [
+              0.6,
+              1.2
+            ]
+          },
+          {
+            "number": "13",
+            "xy_mm": [
+              94.332704,
+              104.90966
+            ],
+            "drill_mm": [
+              0.6,
+              1.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "C3",
+        "value": "1u",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          84.624957,
+          120.609184
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C4",
+        "value": "100n",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          104.235337,
+          138.386979
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "U4",
+        "value": "74HC4051",
+        "footprint": "TSSOP16",
+        "xy_mm": [
+          306.699794,
+          180.313679
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 1,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R17",
+        "value": "1k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          103.68124,
+          156.325551
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "U2",
+        "value": "74HC4051",
+        "footprint": "TSSOP16",
+        "xy_mm": [
+          145.256616,
+          183.952026
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 1,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R21",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          280.515337,
+          182.146979
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "JP1",
+        "value": "Ext_Res",
+        "footprint": "R_0603_1608Metric_Pad0.98x0.95mm_HandSolder",
+        "xy_mm": [
+          106.071491,
+          157.45267
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 14,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R4",
+        "value": "100",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          96.050987,
+          153.786512
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C9",
+        "value": "100n",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          142.762276,
+          180.488098
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R28",
+        "value": "10k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          96.664567,
+          148.429194
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R9",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          135.235337,
+          179.186979
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R27",
+        "value": "10k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          100.325337,
+          137.746979
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C1",
+        "value": "4.7u",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          96.694567,
+          147.397549
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R20",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          299.825337,
+          177.106979
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C13",
+        "value": "1u",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          104.16124,
+          144.317075
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R6",
+        "value": "100",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          78.191567,
+          143.368517
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R25",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          331.144284,
+          181.422204
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "F1",
+        "value": "500mA",
+        "footprint": "Fuse_1206_3216Metric",
+        "xy_mm": [
+          88.609827,
+          114.198524
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "U1",
+        "value": "STM32F401CBUx",
+        "footprint": "QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm",
+        "xy_mm": [
+          98.924567,
+          142.620588
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R2",
+        "value": "5.1k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          96.440868,
+          105.566078
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R14",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          185.535337,
+          181.296979
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R22",
+        "value": "100k",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          89.80019,
+          140.689604
+        ],
+        "rotation_degrees": 90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "C10",
+        "value": "220p",
+        "footprint": "C_0402_1005Metric",
+        "xy_mm": [
+          101.93124,
+          155.47925
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "R5",
+        "value": "100",
+        "footprint": "R_0402_1005Metric",
+        "xy_mm": [
+          98.432243,
+          153.786512
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      }
+    ]
+  },
+  {
+    "source": "EC60/PCB/HHKB_Plate/HHKB_Plate.kicad_pcb",
+    "source_sha256": "8b0e062def5abacc87287212f66ea2a75d80a3a4232a7de37ef84e4f89adba00",
+    "board_thickness_mm": 1.2,
+    "copper_layer_count": 2,
+    "aux_origin_mm": [
+      71.735337,
+      103.286979
+    ],
+    "edge_bounding_box_including_stroke_mm": [
+      71.662704,
+      103.75966,
+      285.3,
+      94.9
+    ],
+    "footprints": [
+      {
+        "reference": "SW30",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          300.037704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW28",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          280.987704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW3",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          100.012704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW21",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          147.637704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          261.937704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              261.937704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW12",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          271.462704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW19",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          109.537704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW9",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          214.312704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          252.412704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              252.412704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW8",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          195.262704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW7",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          176.212704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          266.700204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              266.700204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW39",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          209.550204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW42",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          266.700204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW64",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          109.537704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW11",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          252.412704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW18",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          85.725204,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW40",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          228.600204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW5",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          138.112704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          147.637704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              147.637704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW13",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          290.512704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW59",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          295.275204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          97.631468,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              97.631468,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          276.225204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              276.225204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW32",
+        "value": "ISO_Enter",
+        "footprint": "plate_cut_wide_ecs_pad",
+        "xy_mm": [
+          335.756454,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          123.825204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              123.825204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW51",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          142.875204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW54",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          200.025204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW53",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          180.975204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW52",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          161.925204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW35",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          133.350204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          228.600204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              228.600204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW20",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          128.587704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW37",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          171.450204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          76.200204,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              76.200204,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          114.300204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              114.300204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW38",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          190.500204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW30",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          321.468954,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW4",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          119.062704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW30",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          276.225204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW36",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          152.400204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW10",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          233.362704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW50",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          123.825204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW30",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          342.900204,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW23",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          185.737704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "REF**",
+        "value": "60_Outline",
+        "footprint": "60_Outline-Modded-Extreme",
+        "xy_mm": [
+          214.312704,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 12,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              331.914704,
+              131.82166
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          },
+          {
+            "number": "",
+            "xy_mm": [
+              200.012704,
+              150.90966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          },
+          {
+            "number": "",
+            "xy_mm": [
+              97.012704,
+              131.80966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          223.837704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              223.837704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW30",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          204.787704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          185.737704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              185.737704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          314.325204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              314.325204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          304.800204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              304.800204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW30",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          319.087704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW56",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          238.125204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW30",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          347.662704,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW65",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          133.350204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          290.512704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              290.512704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW44",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          304.800204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          145.256454,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              145.256454,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW57",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          257.175204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW17",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          347.662704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW34",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          114.300204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          238.125204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              238.125204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "REF**",
+        "value": "Value ",
+        "footprint": "plate_cut_6U_space_stab_ecs_pad",
+        "xy_mm": [
+          204.787704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW25",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          223.837704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW29",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          300.037704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          214.312704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              214.312704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW27",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          261.937704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW24",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          204.787704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW54",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          88.106454,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW54",
+        "value": "EC_SW",
+        "footprint": "plate_cut_wide_ecs_pad",
+        "xy_mm": [
+          92.868954,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H1",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          109.537704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              109.537704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW14",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          309.562704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW22",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          166.687704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          223.837704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              223.837704,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW58",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          276.225204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          319.087704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              319.087704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW41",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          247.650204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          176.212704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              176.212704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW2",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          80.962704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          138.112704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              138.112704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          161.925204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              161.925204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW26",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          242.887704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW43",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          285.750204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW15",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          328.612704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW6",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          157.162704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          152.400204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              152.400204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          309.432392,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              309.432392,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW55",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          219.075204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "G***",
+        "value": "LOGO",
+        "footprint": "LOGO",
+        "xy_mm": [
+          335.161355,
+          189.309724
+        ],
+        "rotation_degrees": 180.0,
+        "layer": "B.Cu",
+        "attributes": 28,
+        "drilled_pads": []
+      }
+    ]
+  },
+  {
+    "source": "EC60/PCB/JIS_Plate/JIS_Plate.kicad_pcb",
+    "source_sha256": "0d1e241389c41de2f507c33e1404e631ce97ea07695c453fa1f45a2a2a3dec27",
+    "board_thickness_mm": 1.2,
+    "copper_layer_count": 2,
+    "aux_origin_mm": [
+      71.735337,
+      103.286979
+    ],
+    "edge_bounding_box_including_stroke_mm": [
+      71.662704,
+      103.75966,
+      285.3,
+      94.9
+    ],
+    "footprints": [
+      {
+        "reference": "SW28",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          280.987704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW3",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          100.012704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW21",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          147.637704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          261.937704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              261.937704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW12",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          271.462704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW19",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          109.537704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW9",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          214.312704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          252.412704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              252.412704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW8",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          195.262704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW7",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          176.212704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW73",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          340.518954,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          266.700204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              266.700204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW54",
+        "value": "EC_SW",
+        "footprint": "plate_cut_wide_ecs_pad",
+        "xy_mm": [
+          200.025204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW39",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          209.550204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW42",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          266.700204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW64",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          109.537704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW11",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          252.412704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW18",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          85.725204,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW40",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          228.600204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW5",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          138.112704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          147.637704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              147.637704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW66",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          161.925204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW13",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          290.512704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW59",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          295.275204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          97.631468,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              97.631468,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          276.225204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              276.225204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW32",
+        "value": "ISO_Enter",
+        "footprint": "plate_cut_wide_ecs_pad",
+        "xy_mm": [
+          345.281454,
+          141.68466
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW63",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          85.725204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          123.825204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              123.825204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW51",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          142.875204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW54",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          200.025204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW53",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          180.975204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW52",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          161.925204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW35",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          133.350204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          228.600204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              228.600204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW20",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          128.587704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW37",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          171.450204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          76.200204,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              76.200204,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          114.300204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              114.300204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW38",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          190.500204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW4",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          119.062704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW36",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          152.400204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW10",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          233.362704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW54",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          238.125204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW50",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          123.825204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW73",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          314.325204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW23",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          185.737704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "REF**",
+        "value": "60_Outline",
+        "footprint": "60_Outline-Modded-Extreme",
+        "xy_mm": [
+          214.312704,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 12,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              331.914704,
+              131.82166
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          },
+          {
+            "number": "",
+            "xy_mm": [
+              200.012704,
+              150.90966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          },
+          {
+            "number": "",
+            "xy_mm": [
+              97.012704,
+              131.80966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          223.837704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              223.837704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          185.737704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              185.737704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          314.325204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              314.325204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          304.800204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              304.800204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW30",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          319.087704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW56",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          238.125204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW54",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          295.275204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW65",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          133.350204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW70",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          266.700204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          290.512704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              290.512704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW44",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          304.800204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          145.256454,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              145.256454,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW57",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          257.175204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW17",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          347.662704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW34",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          114.300204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          238.125204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              238.125204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW25",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          223.837704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW29",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          300.037704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          214.312704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              214.312704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW27",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          261.937704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW24",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          204.787704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW54",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          88.106454,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW73",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          342.900204,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW54",
+        "value": "EC_SW",
+        "footprint": "plate_cut_wide_ecs_pad",
+        "xy_mm": [
+          92.868954,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "H1",
+        "value": "MountingHole",
+        "footprint": "HOLE_M2",
+        "xy_mm": [
+          109.537704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 13,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              109.537704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW72",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          319.087704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW14",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          309.562704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW22",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          166.687704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          223.837704,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              223.837704,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW45",
+        "value": "ISO_|",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          323.850204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW58",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          276.225204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          319.087704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              319.087704,
+              113.10966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW41",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          247.650204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          176.212704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              176.212704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW2",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          80.962704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          138.112704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              138.112704,
+              132.15966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          161.925204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              161.925204,
+              151.20966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW26",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          242.887704,
+          132.15966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW43",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          285.750204,
+          151.20966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW15",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          328.612704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "SW6",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          157.162704,
+          113.10966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          152.400204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              152.400204,
+              170.25966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "",
+        "value": "",
+        "footprint": "",
+        "xy_mm": [
+          309.432392,
+          189.30966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 0,
+        "drilled_pads": [
+          {
+            "number": "",
+            "xy_mm": [
+              309.432392,
+              189.30966
+            ],
+            "drill_mm": [
+              2.2,
+              2.2
+            ]
+          }
+        ]
+      },
+      {
+        "reference": "SW55",
+        "value": "EC_SW",
+        "footprint": "plate_cut_ecs_pad",
+        "xy_mm": [
+          219.075204,
+          170.25966
+        ],
+        "rotation_degrees": 0.0,
+        "layer": "F.Cu",
+        "attributes": 2,
+        "drilled_pads": []
+      },
+      {
+        "reference": "G***",
+        "value": "LOGO",
+        "footprint": "LOGO",
+        "xy_mm": [
+          353.020745,
+          175.617525
+        ],
+        "rotation_degrees": -90.0,
+        "layer": "B.Cu",
+        "attributes": 28,
+        "drilled_pads": []
+      }
+    ]
+  }
+]

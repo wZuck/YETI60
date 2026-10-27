@@ -1,0 +1,49 @@
+{
+  "status": "upstream-CPL-defect-confirmed-reference-copy-corrected-not-fabrication-approved",
+  "bom_references": 51,
+  "cpl_rows": 51,
+  "original_CPL_duplicates": [
+    "U1"
+  ],
+  "corrections": [
+    {
+      "original_reference": "U1",
+      "correct_reference": "U3",
+      "value": "OPA350",
+      "evidence": "unique match of value, package, XY, rotation and side"
+    }
+  ],
+  "corrected_CPL_BOM_coverage": "exactly-once",
+  "position_tolerance_mm": 0.002,
+  "rotation_tolerance_degrees": 0.001,
+  "gerber_zip_crc": "passed",
+  "gerber_members": [
+    "GERBER-EC60/",
+    "GERBER-EC60/EC60-PTH.drl",
+    "GERBER-EC60/EC60-NPTH.drl",
+    "GERBER-EC60/EC60-Edge_Cuts.gbr",
+    "GERBER-EC60/EC60-In2_Cu.gbr",
+    "GERBER-EC60/EC60-job.gbrjob",
+    "GERBER-EC60/EC60-F_Mask.gbr",
+    "GERBER-EC60/EC60-F_Paste.gbr",
+    "GERBER-EC60/EC60-In1_Cu.gbr",
+    "GERBER-EC60/EC60-B_Silkscreen.gbr",
+    "GERBER-EC60/EC60-B_Mask.gbr",
+    "GERBER-EC60/EC60-B_Cu.gbr",
+    "GERBER-EC60/EC60-F_Silkscreen.gbr",
+    "GERBER-EC60/EC60-F_Cu.gbr",
+    "GERBER-EC60/EC60-B_Paste.gbr"
+  ],
+  "source_sha256": {
+    "EC60/Production/EC60_PCB/BOM-EC60.csv": "86703c17e18743cf6879a81df9b4d529a594dac8dac5fa739214a7d83cc77392",
+    "EC60/Production/EC60_PCB/POS-EC60.csv": "12a17d7394b06a69797dc9786f5a93ffcf7490c6e721cda75f308a64fad57c1b",
+    "EC60/Production/EC60_PCB/GERBER-EC60.zip": "6ed1a2dcb061df4e07a07c1987e422ac9e8409c2925f044d3109c750e3ed5d31",
+    "EC60/PCB/EC60_PCB/EC60.kicad_pcb": "76be7d1a3c985cbf20460e3bcba5624bae55af28ed2b70b27ec155bbd56ec12a",
+    "hardware/reference-production/POS-EC60.corrected.csv": "c50b60fed0e6b38ecdfd342f4f34978fbdd0b5bf7a5598ca759bffeeee2ad4d7"
+  },
+  "unverified": [
+    "Gerber geometry vs PCB source",
+    "LCSC component ordering and electrical ratings",
+    "board DRC findings and final BLE production files"
+  ]
+}

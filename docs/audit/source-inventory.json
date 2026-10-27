@@ -1,0 +1,744 @@
+{
+  "files": [
+    {
+      "path": ".DS_Store",
+      "bytes": 8196,
+      "sha256": "3ffbca591420dcc8b229287a9d55cc66097225e3ddbdc87b54e433cd9672d2df",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 74,
+      "sha256": "9f31dd8ed41e44f2109a459277b87bd69d10db44e9585312386fcd09b8b05376",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": ".gitmodules",
+      "bytes": 154,
+      "sha256": "83746437e942a229fc101d31ba569642e5ea09ee5fde52c3e516746619bba9d2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/.gitattributes",
+      "bytes": 66,
+      "sha256": "1a1dbe176bc233b499d35a57db7513f2941c99ab9759f177830c9149be99005b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/.github/FUNDING.yml",
+      "bytes": 768,
+      "sha256": "2d24c651ee735f28a579d2c2aa48b022830df0e32beb189391ac7d4ca97d1140",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/.gitignore",
+      "bytes": 11,
+      "sha256": "ac244209df6370a954b10db85f1630454dd22ca7e616f351cad19d49e8aa6ce1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/Connectivity.png",
+      "bytes": 109174,
+      "sha256": "0240c8b2a39184d39ac7e1ffdebe237ef278f2d954ba49a000489a24c5ecdcc5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/EC60_JIS_Plate.step",
+      "bytes": 3682227,
+      "sha256": "ff99cbc74f88472ce68f77bff5f14de361a095efc761759b22467809f5bd1368",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/EC60_PCB.step",
+      "bytes": 4303415,
+      "sha256": "b36c7de2ef8b824c3a6fe07b86b6149fa53ebf68af01ee5234b014f197d3fbd2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/Layout_option.png",
+      "bytes": 63235,
+      "sha256": "9c8fe681e7f4b5c5c83c590de3cce69129f8d7ce2595bb0b175041d1578d260f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/PCB_back.png",
+      "bytes": 1120902,
+      "sha256": "a565aed9611540eb88b1a0a25b3505601fc616ee5f43fd82272c3b1915939c65",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/PCB_front.png",
+      "bytes": 1285508,
+      "sha256": "202a651823ff0d1be87dbb9964c1fd88694443dddbd95ea06c131661d500c574",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/PCB_render_back.png",
+      "bytes": 372386,
+      "sha256": "b36fe4f28ca52b0cc1cb0dca234e7314dbb93506fa38ca9a8ff8d640ce5d75bb",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/PCB_render_front.png",
+      "bytes": 312208,
+      "sha256": "32cbc136f58dd7abc6688d2c67d22e3702f3f20a3b368bce5fe133663a9989b9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/Plate_render_hhkb.png",
+      "bytes": 208403,
+      "sha256": "1feacde92410adb5f94ff215c9be056e8f2b2121fd8d02d8a2d1737e5754499e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/Plate_render_jis.png",
+      "bytes": 217019,
+      "sha256": "358a0a7512024696e272f8dd5e285717fe4376f4fa6319b38c5c6bbc7e02ae5d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Assets/Test_assembly v4.f3d",
+      "bytes": 1533534,
+      "sha256": "c299e6125876d8e95530b9181639080f5d5620f28725f4d42dcddbbde5561a15",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/binaries/cipulot_ec60_vial.bin",
+      "bytes": 77120,
+      "sha256": "cfb7cd836e9aced962e5299a3c1d3817713ce0590d9a3188e0002a25ac29e7d3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/binaries/vial.json",
+      "bytes": 9114,
+      "sha256": "e13a27b05cbc368fcc0393b346c14be81ea81d0e9ffa2b334bc4a7dfe6c7713e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/config.h",
+      "bytes": 1511,
+      "sha256": "dea651dae0263d4d665c0f7ccb6295ba4333e00aeb511f6f50412f78b4b3362c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/ec60.c",
+      "bytes": 698,
+      "sha256": "87e32b4f162a18fdb02b3a78adbf9993a12ba826185101feaaf7684376ffda2d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/ec60.h",
+      "bytes": 1936,
+      "sha256": "13881f20bde88a3481f8872a3dc4d1e9908cde4f93f123a752f36341cbc8f249",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/ec_switch_matrix.c",
+      "bytes": 5132,
+      "sha256": "61cfe8d9e7433c3b7dddc098111b4105a58cc2e2e676b6854c80688a2879b2f2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/ec_switch_matrix.h",
+      "bytes": 1201,
+      "sha256": "e276a05b62f69a9e1012c0b8c5faba91aa4cbd01ae54686da8a4c250e5b65748",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/halconf.h",
+      "bytes": 746,
+      "sha256": "aa67b5ef162b13d933633d08b5577506b87e0447d4320307009ad16aa9d60dcd",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/info.json",
+      "bytes": 13184,
+      "sha256": "bf786c9aa68efd54b26a6b56b9edc9ed9bc47520265fe71e4c095f73005330de",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/keymaps/default/keymap.c",
+      "bytes": 3909,
+      "sha256": "f4cf83bb16c16178bb8d82cb6d866de1451c9d2b82f827c634bd354b1a7a5ecf",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/keymaps/via/keymap.c",
+      "bytes": 3909,
+      "sha256": "f4cf83bb16c16178bb8d82cb6d866de1451c9d2b82f827c634bd354b1a7a5ecf",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/keymaps/via/rules.mk",
+      "bytes": 17,
+      "sha256": "c694b71bc1323fe6d0c312d9d2c0fbc039eb4a08bef54b99ec8fa99c9930ed6a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/keymaps/vial/config.h",
+      "bytes": 220,
+      "sha256": "fb5cec87c47bd67ea5003d7851f7cf15cc4c29d3a043e7b15c2b347a56b74ac1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/keymaps/vial/keymap.c",
+      "bytes": 3909,
+      "sha256": "f4cf83bb16c16178bb8d82cb6d866de1451c9d2b82f827c634bd354b1a7a5ecf",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/keymaps/vial/rules.mk",
+      "bytes": 35,
+      "sha256": "209a5cf059306af5092121fe6f8f2c2d00b0fb51cdcdee7006554cd3764baa05",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/keymaps/vial/vial.json",
+      "bytes": 9114,
+      "sha256": "e13a27b05cbc368fcc0393b346c14be81ea81d0e9ffa2b334bc4a7dfe6c7713e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/matrix.c",
+      "bytes": 2692,
+      "sha256": "8ace0be089a76b59b562346ae70140b6bdec52ad84bee84d4f7f11b505634587",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/mcuconf.h",
+      "bytes": 779,
+      "sha256": "d7081188134403b89f5843fe15bb2f7bfdf88376f5d436c13f0fa5115b848f9d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/readme.md",
+      "bytes": 690,
+      "sha256": "6ab152656664a45376df39fd9dfba3bcf4b21d11e2f1486abb8eb2412746276b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Firmware/ec60/rules.mk",
+      "bytes": 743,
+      "sha256": "5dd7ac015e7409e1b8da7b6c9b3c081663ecf6f7f188e2582bbe759755cd127b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/LICENSE",
+      "bytes": 1064,
+      "sha256": "81c744b47d33f725e1f59de43989214daba1bcd8be85ba117c486ec96c43b591",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/EC60_PCB/.history/.gitignore",
+      "bytes": 87,
+      "sha256": "1e18182125437ce3d2ec460b357a9ea06f059d795052de04a9a9f1044b8e20ba",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/EC60_PCB/.history/README.txt",
+      "bytes": 554,
+      "sha256": "79c41e25e7633a1deff5e5a7456573c64f0061d508b7e0e5753d985456fe29e7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/EC60_PCB/EC60.kicad_pcb",
+      "bytes": 5808592,
+      "sha256": "76be7d1a3c985cbf20460e3bcba5624bae55af28ed2b70b27ec155bbd56ec12a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/EC60_PCB/EC60.kicad_prl",
+      "bytes": 2698,
+      "sha256": "086a6da4bf2f34a57a1fc474928f9ec423207c09bfc4c9c1b1cb61994a971bd9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/EC60_PCB/EC60.kicad_pro",
+      "bytes": 15093,
+      "sha256": "8a029062d26c897347445ebfd1d80888625fdb7ca29028407b24102e43b01e42",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/EC60_PCB/EC60.kicad_sch",
+      "bytes": 180359,
+      "sha256": "2c1ea6112370db376bdb93157749f25bebdbc0e59f536bc067e924015a601518",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/EC60_PCB/analog.kicad_sch",
+      "bytes": 79877,
+      "sha256": "13d67ce76498bb92123d60cda2b26bdc0aafa5fd212ec9dd080ba686ad707eb1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/EC60_PCB/fp-info-cache",
+      "bytes": 3147085,
+      "sha256": "c66d270f4a3bccaee8f91c4b85037eaa6bdffff3187b0c5a72f50e88abaa65ef",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/EC60_PCB/matrix.kicad_sch",
+      "bytes": 137842,
+      "sha256": "ae52163fb944479e1b38b900127babfbfe226de3697d624eb9e652fda9094c9d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/EC60_PCB/mounting.kicad_sch",
+      "bytes": 18622,
+      "sha256": "dd958c54e6b17a8801fda781b4341db9447bee2268fdc4f5513e5d2cf3fa8b9a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/HHKB_Plate/HHKB_Plate.kicad_pcb",
+      "bytes": 821490,
+      "sha256": "8b0e062def5abacc87287212f66ea2a75d80a3a4232a7de37ef84e4f89adba00",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/HHKB_Plate/HHKB_Plate.kicad_prl",
+      "bytes": 2636,
+      "sha256": "a847700546fef4bc42e3bd04eaa6ff2537a28b3d34ead6e16ddb09bb3a659370",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/HHKB_Plate/HHKB_Plate.kicad_pro",
+      "bytes": 15117,
+      "sha256": "7091801c58359f89c7302d161adf6bd7162d4103c4d4e5863a89b45a682bbb8e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/HHKB_Plate/fp-info-cache",
+      "bytes": 3138868,
+      "sha256": "7e42bf72499516491bfea8a01f829a1fd9e4ed98bcdf74e8210068fc9aa4518f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/JIS_Plate/JIS_Plate.kicad_pcb",
+      "bytes": 844564,
+      "sha256": "0d1e241389c41de2f507c33e1404e631ce97ea07695c453fa1f45a2a2a3dec27",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/JIS_Plate/JIS_Plate.kicad_pro",
+      "bytes": 10128,
+      "sha256": "7d4c810f9306bd07a0df8dcc4469d172028458ceed72f145c03fcc1fdc460d63",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/PCB/JIS_Plate/fp-info-cache",
+      "bytes": 3138868,
+      "sha256": "7e42bf72499516491bfea8a01f829a1fd9e4ed98bcdf74e8210068fc9aa4518f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Production/EC60_PCB/BOM-EC60.csv",
+      "bytes": 845,
+      "sha256": "86703c17e18743cf6879a81df9b4d529a594dac8dac5fa739214a7d83cc77392",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Production/EC60_PCB/GERBER-EC60.zip",
+      "bytes": 846060,
+      "sha256": "6ed1a2dcb061df4e07a07c1987e422ac9e8409c2925f044d3109c750e3ed5d31",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/Production/EC60_PCB/POS-EC60.csv",
+      "bytes": 3025,
+      "sha256": "12a17d7394b06a69797dc9786f5a93ffcf7490c6e721cda75f308a64fad57c1b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "EC60/README.md",
+      "bytes": 1760,
+      "sha256": "fe87b7190888d8516b8488b46bfcab951c860f27f5f2081cb2380e5f33ba7384",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "README.md",
+      "bytes": 830,
+      "sha256": "c174d20bbac687b2f90244a4f2aca896f8807a73b6dbf7a435a24f013a1367ff",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "design-constraints.json",
+      "bytes": 746,
+      "sha256": "0ac8be9970ea5778acd7566d3145c131cea202b4d7f1dc4389e241e5e7bff621",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/felk60-bluetooth.zh-CN.md",
+      "bytes": 10225,
+      "sha256": "e6884622951a0da07a60474137ddb0c22324fc46aaa18835b81031da6bd84d9a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "felk60/README.md",
+      "bytes": 807,
+      "sha256": "4f87e3dfeb91b344024f9dcdfd9ad3329633b054de6ea204435536a88354b32a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "felk60/felk60_bottom.step",
+      "bytes": 479740,
+      "sha256": "f4987879940643cb5b0d66145b944efb435994abe4d18808da4e45d16bb8c44b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "felk60/felk60_plate_hhkb.dxf",
+      "bytes": 31542,
+      "sha256": "3ca0b6dd510c27040b8b21104a5edf13b2d784f81893290d6fab6ac5295f893a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "felk60/felk60_top_hhkb.step",
+      "bytes": 241099,
+      "sha256": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "felk60/image.jpg",
+      "bytes": 101402,
+      "sha256": "1f5b2a28078ca43d358020dd5c4bbf85f06fefd1f9549b43f24adcbb37f0116f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/LICENSE.GPL-2.0",
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/README.md",
+      "bytes": 1639,
+      "sha256": "024e255c66163b2067d9e73f80b1017853e779281611b2d320c8ae78bd146d54",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/config.h",
+      "bytes": 1511,
+      "sha256": "dea651dae0263d4d665c0f7ccb6295ba4333e00aeb511f6f50412f78b4b3362c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/ec60.c",
+      "bytes": 698,
+      "sha256": "87e32b4f162a18fdb02b3a78adbf9993a12ba826185101feaaf7684376ffda2d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/ec60.h",
+      "bytes": 1936,
+      "sha256": "13881f20bde88a3481f8872a3dc4d1e9908cde4f93f123a752f36341cbc8f249",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/ec_switch_matrix.c",
+      "bytes": 6206,
+      "sha256": "29aec2664732097a1c692485e81e7fd6758fba56b2f6b577de6df604291a62f5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/ec_switch_matrix.h",
+      "bytes": 1201,
+      "sha256": "e276a05b62f69a9e1012c0b8c5faba91aa4cbd01ae54686da8a4c250e5b65748",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/halconf.h",
+      "bytes": 746,
+      "sha256": "aa67b5ef162b13d933633d08b5577506b87e0447d4320307009ad16aa9d60dcd",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/info.json",
+      "bytes": 13184,
+      "sha256": "bf786c9aa68efd54b26a6b56b9edc9ed9bc47520265fe71e4c095f73005330de",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/keymaps/default/keymap.c",
+      "bytes": 3909,
+      "sha256": "f4cf83bb16c16178bb8d82cb6d866de1451c9d2b82f827c634bd354b1a7a5ecf",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/keymaps/via/keymap.c",
+      "bytes": 3909,
+      "sha256": "f4cf83bb16c16178bb8d82cb6d866de1451c9d2b82f827c634bd354b1a7a5ecf",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/keymaps/via/rules.mk",
+      "bytes": 17,
+      "sha256": "c694b71bc1323fe6d0c312d9d2c0fbc039eb4a08bef54b99ec8fa99c9930ed6a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/keymaps/vial/config.h",
+      "bytes": 220,
+      "sha256": "fb5cec87c47bd67ea5003d7851f7cf15cc4c29d3a043e7b15c2b347a56b74ac1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/keymaps/vial/keymap.c",
+      "bytes": 3909,
+      "sha256": "f4cf83bb16c16178bb8d82cb6d866de1451c9d2b82f827c634bd354b1a7a5ecf",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/keymaps/vial/rules.mk",
+      "bytes": 35,
+      "sha256": "209a5cf059306af5092121fe6f8f2c2d00b0fb51cdcdee7006554cd3764baa05",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/keymaps/vial/vial.json",
+      "bytes": 9114,
+      "sha256": "e13a27b05cbc368fcc0393b346c14be81ea81d0e9ffa2b334bc4a7dfe6c7713e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/matrix.c",
+      "bytes": 2698,
+      "sha256": "4a897d846a1bef3150dee028406400b89b19671d9f29948e8b8fbd62df5fb757",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/mcuconf.h",
+      "bytes": 779,
+      "sha256": "d7081188134403b89f5843fe15bb2f7bfdf88376f5d436c13f0fa5115b848f9d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/readme.md",
+      "bytes": 690,
+      "sha256": "6ab152656664a45376df39fd9dfba3bcf4b21d11e2f1486abb8eb2412746276b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "firmware/ec60/rules.mk",
+      "bytes": 743,
+      "sha256": "5dd7ac015e7409e1b8da7b6c9b3c081663ecf6f7f188e2582bbe759755cd127b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/ec60-ble-interface/EC60-BLE-Interface.kicad_pro",
+      "bytes": 65,
+      "sha256": "c3c03447fc3c7f595afabd2fb0b8f4c4053a70a7f5cfa3e8af8366a3c9ae7350",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/ec60-ble-interface/EC60-BLE-Interface.kicad_sch",
+      "bytes": 187227,
+      "sha256": "e210400af53d275efdf61033b70e5245640c9ad47e77414f2b61bdef5551ac57",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/ec60-ble-interface/LICENSE.EC60",
+      "bytes": 1064,
+      "sha256": "81c744b47d33f725e1f59de43989214daba1bcd8be85ba117c486ec96c43b591",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/ec60-ble-interface/README.md",
+      "bytes": 1577,
+      "sha256": "3bfe083b70f1c6a322c26a2c4179344069ecf2864325c965e6ffc3ca007914d9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/ec60-ble-interface/YAECKB.kicad_sym",
+      "bytes": 12610,
+      "sha256": "00d5db1abd9a7192b8c4b2b71021168aca0c665ac71bf9c92b20467e60fe67a5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/ec60-ble-interface/analog.kicad_sch",
+      "bytes": 79877,
+      "sha256": "13d67ce76498bb92123d60cda2b26bdc0aafa5fd212ec9dd080ba686ad707eb1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/ec60-ble-interface/matrix.kicad_sch",
+      "bytes": 137842,
+      "sha256": "ae52163fb944479e1b38b900127babfbfe226de3697d624eb9e652fda9094c9d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/ec60-ble-interface/mounting.kicad_sch",
+      "bytes": 18622,
+      "sha256": "dd958c54e6b17a8801fda781b4341db9447bee2268fdc4f5513e5d2cf3fa8b9a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/ec60-ble-interface/sym-lib-table",
+      "bytes": 130,
+      "sha256": "c5459c406b1497a5ae846488b509c14fd983a2a3c6843993340f3c27edb7e60e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/ec60-ble-interface/validation.json",
+      "bytes": 1982,
+      "sha256": "1f8dcfdd26ae4a534893209adcff1d4de3567d4e63844a086f3162ea3d2a8d5d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/reference-production/POS-EC60.corrected.csv",
+      "bytes": 3078,
+      "sha256": "09c260de776cc580826f9a528b4d12d4e37b4deb67c8557890c4c77a0947beca",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/reference-production/README.md",
+      "bytes": 830,
+      "sha256": "6b596f8adb0a353172ed595d3db8b6ffef673a6fa4ac5947c0671bd5a101e42f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "mechanical/README.md",
+      "bytes": 872,
+      "sha256": "7105d4ae28016ca6c48ecae0b1c4f2c664aef7927463d229565530dff53e05c1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "mechanical/felk60_plate_hhkb.audited.dxf",
+      "bytes": 48498,
+      "sha256": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "requirements-audit.txt",
+      "bytes": 65,
+      "sha256": "61ffc79f3192d3094d4104bf86d836bf366ef2f8a79382199f41f86fe159b6eb",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/build_ble_interface.py",
+      "bytes": 8610,
+      "sha256": "499a76c220b9954ed054823d3a552f25b0aa73a52ec1889372b2a9364e97386c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_ble_interface.py",
+      "bytes": 6889,
+      "sha256": "8401315ef4f6b69b218b54a07ad4c323c97550f58054d6bbec2035cbdb36f44e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_case_assembly.py",
+      "bytes": 7845,
+      "sha256": "8f2c92036a16ee2cb66900a0575fe2f2fb98e7d7ce21494c71039766dc76be42",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_firmware.py",
+      "bytes": 2583,
+      "sha256": "4ea7689aa095d585caef296e3fbc01b0f19f5b518971e69bc1f731bcf8edc125",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_generated_interface.py",
+      "bytes": 870,
+      "sha256": "699aae353fe6e8ac650b81f21f0a1e58cd3370fbcf01d4abfaaf31c2636ab883",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_gerber_reference.py",
+      "bytes": 5710,
+      "sha256": "de01d478a42ef305daea70fc44887f7105ad4f9fe713b197053781119365cae7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_manufacturing_reference.py",
+      "bytes": 4964,
+      "sha256": "55a6cb60cbb725b1576c7d1196b7d303bc4e746656840ba16e60b85c3a3e32aa",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_mechanical.py",
+      "bytes": 4691,
+      "sha256": "98d4e9afe15e7180443360c0bbfbdb95a6bf5cbd5a0762fd2919b5d35383693e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_pcb.py",
+      "bytes": 2694,
+      "sha256": "ac0cce92e297e42f9c77db5b1bd3a0e47ba6c5f6824ec1d1d6bc5af080e47c22",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_plate.py",
+      "bytes": 5532,
+      "sha256": "4691fd692a707cc8a757d985a6540fe577a9ed50d2609b808fb7c87cb6f76b65",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_typec_location.py",
+      "bytes": 2427,
+      "sha256": "a2fb9b1d06a6a661d4b59b13b6d60853e666b105d702bd6fbb9448dd23d95215",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/extract_pcb_metadata.py",
+      "bytes": 2203,
+      "sha256": "d790e183378a74d5b96d229fd45c5a58ef594cf7ad81404e778c600260d1320f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/run_audit.py",
+      "bytes": 4875,
+      "sha256": "d68f55c911f1779fd88e843147b790172ab7b833422d82457387823dda77522a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/firmware/scanner_test.c",
+      "bytes": 2977,
+      "sha256": "8324b164e35366aa70297a9c93ab3009270cae517e9d3cf8d41e470f67ece04c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/firmware/stubs/analog.h",
+      "bytes": 129,
+      "sha256": "40660722bfe3df506e4ddaa1f9b220e6d41fcef7c76efe6e8c06a0e476dd2a03",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/firmware/stubs/atomic_util.h",
+      "bytes": 164,
+      "sha256": "dee0d305e5b231cfca3d545b00af4e41cbe90eb82ba0abbc11f5e0ca1bcb8f88",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/firmware/stubs/config_common.h",
+      "bytes": 176,
+      "sha256": "e43489b195236005ae057ff5de85415d5416b0a77407e2adf35ba8d9c457fcee",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/firmware/stubs/debug.h",
+      "bytes": 13,
+      "sha256": "b3adf106d95b8934f690943f2921308b90be5b766c4c8ba250c792de56400201",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/firmware/stubs/matrix.h",
+      "bytes": 85,
+      "sha256": "d5c3b957b6c69a07a8b1ca3c3f7e1aca9d8f0e3a2cf9a8e6ef1e227702778e34",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/firmware/stubs/print.h",
+      "bytes": 97,
+      "sha256": "dab81852d8fe8e85cc3a7ebc29ed9915ea57a0ce29e3ba78cfce85d897c61901",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/firmware/stubs/quantum.h",
+      "bytes": 454,
+      "sha256": "6c31049eeafe9c44a417ca49015e04b6c41e0ed276bbbf117f2bbd29282dfca3",
+      "coverage": "inventoried-not-automatically-approved"
+    }
+  ],
+  "excluded": "Git internals, ignored local state, and audit outputs to avoid self-hashing",
+  "semantic_review_complete": false
+}

@@ -1,0 +1,97 @@
+{
+  "status": "BRep-and-repaired-DXF-valid-assembly-unverified",
+  "step": [
+    {
+      "path": "felk60/felk60_bottom.step",
+      "sha256": "f4987879940643cb5b0d66145b944efb435994abe4d18808da4e45d16bb8c44b",
+      "brep_valid": true,
+      "solids": 1,
+      "shells": 1,
+      "bounds_mm": [
+        51.4627013981153,
+        -206.30970210039504,
+        -19.39959445791606,
+        377.1627129952796,
+        -91.10965778645951,
+        11.790000000000116
+      ],
+      "size_mm": [
+        325.7000115971643,
+        115.20004431393554,
+        31.189594457916176
+      ],
+      "volume_mm3": 327539.8249088373
+    },
+    {
+      "path": "felk60/felk60_top_hhkb.step",
+      "sha256": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
+      "brep_valid": true,
+      "solids": 1,
+      "shells": 1,
+      "bounds_mm": [
+        51.46271307318996,
+        -216.30970227830204,
+        -7.410000099999956,
+        377.1627172535981,
+        -96.35965799320394,
+        11.79000000000003
+      ],
+      "size_mm": [
+        325.70000418040814,
+        119.9500442850981,
+        19.200000099999986
+      ],
+      "volume_mm3": 116671.72587909391
+    }
+  ],
+  "original_plate_dxf": {
+    "path": "felk60/felk60_plate_hhkb.dxf",
+    "sha256": "3ca0b6dd510c27040b8b21104a5edf13b2d784f81893290d6fab6ac5295f893a",
+    "units": 4,
+    "units_are_mm": true,
+    "entities": {
+      "LWPOLYLINE": 63,
+      "CIRCLE": 29
+    },
+    "audit_errors": 0,
+    "audit_fixes": 3,
+    "open_polylines": 0,
+    "size_mm": [
+      285.00063999358,
+      107.14238079416589,
+      0.0
+    ],
+    "circle_diameters_mm": [
+      1.623
+    ],
+    "coordinate_note": "DXF X is mirrored relative to positive-X EC60 PCB coordinates; assembly transform must be explicit"
+  },
+  "checked_plate_dxf": {
+    "path": "mechanical/felk60_plate_hhkb.audited.dxf",
+    "sha256": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "units": 4,
+    "units_are_mm": true,
+    "entities": {
+      "LWPOLYLINE": 63,
+      "CIRCLE": 29
+    },
+    "audit_errors": 0,
+    "audit_fixes": 0,
+    "open_polylines": 0,
+    "size_mm": [
+      285.00063999358,
+      107.14238079416589,
+      0.0
+    ],
+    "circle_diameters_mm": [
+      1.623
+    ],
+    "coordinate_note": "DXF X is mirrored relative to positive-X EC60 PCB coordinates; assembly transform must be explicit"
+  },
+  "unverified": [
+    "top/bottom/PCB/plate assembly transforms and interference",
+    "resin inserts, wall thickness, shrinkage, supports and print orientation",
+    "battery/module/connector envelopes and antenna keepout",
+    "final production STL watertight mesh and physical fit"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "checkpoint_date": "2026-10-27",
+  "status": "routing-in-progress",
+  "production_approved": false,
+  "mcu_count": 1,
+  "mcu": "nRF52840 / MDBT50Q-1MV2",
+  "ERC_errors": 0,
+  "DRC_errors": 12,
+  "unconnected_items": 35,
+  "interference_simulation": "not_started_user_ordered_after_PCB_completion",
+  "source_sha256": {
+    "EC60-nRF52840.kicad_pcb": "13be9a780d8b85a1b51219fd30ed4e340e410896c5576eff2c915257a16fdc3b",
+    "EC60-nRF52840.kicad_sch": "4dd601e268ddfe580c7360050bf912cef2b9a2b7726b1933edade2642890f403",
+    "netlist.xml": "547d144370e328ecfdc881f6242227fc2f4a043e14415cbdf7aa9e150dacff1b"
+  }
+}
