@@ -1,6 +1,6 @@
 # EC60 上游 QMK 说明
 
-[English](readme.md) | 简体中文
+[英文](readme.md) | 简体中文
 
 60% 静电容 PCB，兼容 GH60 安装孔，支持多种布局。维护者：[Cipulot](https://github.com/cipulot)。硬件：EC60；原硬件可获取状态为 TBD。
 

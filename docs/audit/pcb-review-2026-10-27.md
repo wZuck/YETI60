@@ -1,4 +1,4 @@
-English | [简体中文](pcb-review-2026-10-27.zh-CN.md)
+English | [Chinese](pcb-review-2026-10-27.zh-CN.md)
 
 # Single-nRF52840 CAD closure checkpoint
 

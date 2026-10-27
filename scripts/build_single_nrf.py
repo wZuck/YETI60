@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Generate the single-nRF52840 EC60 schematic and component contract.
 
-The old dual-MCU interface is retained only as historical reference.
 Signal-interference simulation is intentionally deferred until PCB completion.
 """
 import copy

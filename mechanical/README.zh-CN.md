@@ -1,4 +1,4 @@
-[English](README.md) | 简体中文
+[英文](README.md) | 简体中文
 
 # 机械审查副本
 
@@ -13,3 +13,5 @@
 重建检查：先更新 `docs/audit/pcb-metadata.json`，再运行 `uv run --with ezdxf python scripts/check_plate.py`。具体来源哈希、孔位匹配和检查范围见 `docs/audit/plate.json`。
 
 当前 YETI60 的[条件装配报告](../docs/audit/yeti60-assembly.json)采用当前 PCB 和明确暂定板间距，区分 STEP 基材与成品板厚；见[全面复查](../docs/audit/yeti60-comprehensive-review.zh-CN.md)及[装配图](../renders/yeti60-assembly/README.zh-CN.md)。重建顺序为 KiCad Python 导出元数据，再在 CAD 环境运行 `check_yeti60_assembly.py`。
+
+渲染保持 FELK60 原始壳体实体尺寸：在原始 CAD 坐标系中，上下壳的联合包围尺寸为 325.700 × 125.200 × 31.190 毫米。网格线性离散偏差为 0.015 毫米，包围坐标差值检查小于 0.02 毫米。7° 展示旋转为刚性变换，不改变外壳尺寸。详见[渲染几何验证](../docs/audit/yeti60-render-geometry.json)。

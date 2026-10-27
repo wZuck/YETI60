@@ -1,4 +1,4 @@
-[English](pcb-review-2026-10-27.md) | 简体中文
+[英文](pcb-review-2026-10-27.md) | 简体中文
 
 # 单 nRF52840 PCB 修复与验证
 

@@ -1,4 +1,4 @@
-[English](README.md) | 简体中文
+[英文](README.md) | 简体中文
 
 # 上游 EC60 生产文件核查副本
 

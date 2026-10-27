@@ -7,16 +7,6 @@
       "exit_code": 0
     },
     {
-      "stage": "generated-interface",
-      "state": "passed",
-      "exit_code": 0
-    },
-    {
-      "stage": "interface-erc",
-      "state": "passed",
-      "exit_code": 0
-    },
-    {
       "stage": "scanner-sanitizers",
       "state": "passed",
       "exit_code": 0
@@ -59,8 +49,8 @@
     }
   ],
   "pending_requirements": [
-    "routed BLE PCB and complete nRF52840/power/charge circuit with final ERC/DRC",
-    "STM32 and nRF52840 target builds and on-device USB/SPI/BLE behaviour",
+    "regulator feedback/output-capacitor and charger input/battery capacitor placement review",
+    "nRF52840 target build and on-device USB/BLE behaviour",
     "rear USB daughterboard, actual connector/plug and cable assembled fit",
     "resin-ready insert geometry, validated print mesh and full mechanical tolerance stack",
     "PCB/plate/switch/gasket/battery/module/antenna/cable complete assembly",
@@ -68,5 +58,6 @@
     "physical EC calibration, charging, runtime, wake and enclosed RF tests"
   ],
   "production_approved": false,
-  "inventory": "docs/audit/source-inventory.json"
+  "inventory": "docs/audit/source-inventory.json",
+  "scope": "Historical upstream audit; retired prototype stages removed. Current single-nRF results are indexed in docs/audit/README.md."
 }

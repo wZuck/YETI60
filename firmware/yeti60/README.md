@@ -1,6 +1,6 @@
 # YETI60 nRF52840 control-core simulation
 
-English | [简体中文](README.zh-CN.md)
+English | [Chinese](README.zh-CN.md)
 
 `core.c` is a new portable control core bound to the current MDBT50Q-1MV2 pin assignment. `board_pins.h` is generated from the schematic XML and module pin contract. Scan ADC is P0.04/AIN2; battery ADC is P0.05/AIN3.
 

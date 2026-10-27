@@ -1,4 +1,4 @@
-[English](fabrication-notes.md) | 简体中文
+[英文](fabrication-notes.md) | 简体中文
 
 # 当前 PCB 的特殊制板要求
 

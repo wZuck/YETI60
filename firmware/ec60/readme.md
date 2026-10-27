@@ -1,4 +1,4 @@
-English | [简体中文](readme.zh-CN.md)
+English | [Chinese](readme.zh-CN.md)
 
 # EC60
 

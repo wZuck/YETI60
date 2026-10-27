@@ -13,8 +13,7 @@ for p in files:
     if not peer.exists():errors.append(f'{p.relative_to(ROOT)}: missing {peer.name}')
     if f'({peer.name})' not in p.read_text():errors.append(f'{p.relative_to(ROOT)}: missing peer navigation')
     if not zh:
-        # Four CJK characters in the language switch are expected.
-        body='\n'.join(l for l in p.read_text().splitlines() if '简体中文' not in l)
+        body=p.read_text()
         if re.search(r'[\u4e00-\u9fff]',body):errors.append(f'{p.relative_to(ROOT)}: default prose contains untranslated Chinese')
     for link in re.findall(r'\]\(([^)]+)\)',p.read_text()):
         target=link.split('#',1)[0].split(' ',1)[0].strip('<>')

@@ -1,4 +1,4 @@
-English | [简体中文](README.zh-CN.md)
+English | [Chinese](README.zh-CN.md)
 
 # YETI60 single-nRF52840 PCB renders
 

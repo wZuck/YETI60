@@ -28,8 +28,6 @@ def main():
         ("single-nrf-connectivity", [sys.executable, "scripts/check_single_nrf.py"], []),
         ("single-nrf-native-pcb", [kicad_python, "scripts/audit_single_nrf.py"], ["single-nrf-connectivity"]),
         ("pcb-metadata", [kicad_python, "scripts/extract_pcb_metadata.py"], []),
-        ("generated-interface", [sys.executable, "scripts/check_generated_interface.py"], []),
-        ("interface-erc", [sys.executable, "scripts/check_ble_interface.py"], ["generated-interface"]),
         ("scanner-sanitizers", [sys.executable, "scripts/check_firmware.py", "--output", "docs/audit/firmware.json"], []),
         ("plate-dxf", cad + ["scripts/check_plate.py"], ["pcb-metadata"]),
         ("step-solids", cad + ["scripts/check_mechanical.py"], ["plate-dxf"]),

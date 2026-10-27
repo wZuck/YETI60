@@ -1,4 +1,4 @@
-English | [简体中文](yeti60-comprehensive-review.zh-CN.md)
+English | [Chinese](yeti60-comprehensive-review.zh-CN.md)
 
 # YETI60 comprehensive electrical, firmware and assembly review
 
@@ -75,3 +75,5 @@ The **maximum pack envelope** must include its protection board and growth/swell
 [Assembled, exploded and battery-space renders](../../renders/yeti60-assembly/README.md) use the same provisional transforms as the checks. Case, plate and PCB geometry are source-derived; keycaps, switch bodies, component envelopes, material appearance and the battery-space block are illustrative. They do not prove manufactured fit. [Current PCB-only renders and animation](../../renders/ec60-nrf52840/README.md) are regenerated for YETI60.
 
 Project-owned documents use English by default with parallel `.zh-CN.md` versions. Upstream attribution, licenses, and compatibility filenames such as `EC60-nRF52840.*` and `YAECKB.pretty` remain intact. The intermediate review was pushed as `8f1b0fc`; the remaining layout/manufacturing items above are deliberately still open.
+
+Assembly images now use Cycles physical lighting and source-sized FELK60 case tessellation. The original case solids receive no geometry modifiers or resizing. [Geometry verification](yeti60-render-geometry.json) records bounding sizes and mesh tolerances; [render documentation](../../renders/yeti60-assembly/README.md) distinguishes source geometry from illustrative keycaps, switches and finishes.

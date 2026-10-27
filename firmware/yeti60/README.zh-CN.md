@@ -1,6 +1,6 @@
 # YETI60 nRF52840 控制核心模拟
 
-[English](README.md) | 简体中文
+[英文](README.md) | 简体中文
 
 `core.c` 是按当前 MDBT50Q-1MV2 引脚设计的新可移植控制核心。`board_pins.h` 从原理图 XML 和模块引脚契约生成；扫描使用 P0.04/AIN2，电池测量使用 P0.05/AIN3。
 

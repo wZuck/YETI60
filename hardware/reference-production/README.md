@@ -1,4 +1,4 @@
-English | [简体中文](README.zh-CN.md)
+English | [Chinese](README.zh-CN.md)
 
 # Upstream EC60 manufacturing-reference correction
 

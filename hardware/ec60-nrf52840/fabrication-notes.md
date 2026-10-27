@@ -1,4 +1,4 @@
-English | [简体中文](fabrication-notes.zh-CN.md)
+English | [Chinese](fabrication-notes.zh-CN.md)
 
 # YETI60 special PCB fabrication requirements
 

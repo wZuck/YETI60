@@ -1,0 +1,41 @@
+{
+  "status": "source-sized-case-geometry-verified",
+  "geometry_sources": {
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e45415e3f5cf36a821e26047ffe5098127dd1948eb1f87d23fe1012b71199d76",
+    "felk60/felk60_bottom.step": "f4987879940643cb5b0d66145b944efb435994abe4d18808da4e45d16bb8c44b",
+    "felk60/felk60_top_hhkb.step": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51"
+  },
+  "case_scale": [
+    1,
+    1,
+    1
+  ],
+  "case_modifiers": [],
+  "linear_mesh_deflection_mm": 0.015,
+  "max_bounding_deviation_acceptance_mm": 0.02,
+  "source_frame_case_union_bounds_mm": [
+    51.4627013981153,
+    -216.30970227830204,
+    -19.39959445791606,
+    377.1627172535981,
+    -91.10965778645951,
+    11.790000000000116
+  ],
+  "source_frame_case_union_size_mm": [
+    325.7000158554828,
+    125.20004449184253,
+    31.189594457916176
+  ],
+  "desk_presentation_case_size_mm": [
+    325.7000157554826,
+    126.20250382589025,
+    32.0227193561023
+  ],
+  "presentation": "rigid 7 degree rotation about X; original relative shell placement unchanged",
+  "not_verified": [
+    "actual keycap and dome dimensions",
+    "finished resin shrinkage and insert geometry",
+    "manufacturing tolerances and physically assembled stack"
+  ]
+}

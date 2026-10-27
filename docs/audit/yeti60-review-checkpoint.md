@@ -1,6 +1,6 @@
 # YETI60 comprehensive review — checkpoint
 
-English | [简体中文](yeti60-review-checkpoint.zh-CN.md)
+English | [Chinese](yeti60-review-checkpoint.zh-CN.md)
 
 This checkpoint saves work in progress at the user's request. It is not a completed assembly or production review.
 

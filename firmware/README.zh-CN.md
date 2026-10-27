@@ -1,4 +1,4 @@
-[English](README.md) | 简体中文
+[英文](README.md) | 简体中文
 
 # EC60 扫描固件审查副本
 

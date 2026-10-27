@@ -1,6 +1,9 @@
 {
-  "recipe_sha256": "9b18da7df3e84248dad2ebdf629b196e30901ea66105f2c2c10a526764eb37d3",
   "project": "YETI60",
+  "renderer": "Blender 5.0.1 / Cycles",
+  "samples": 256,
+  "recipe_sha256": "49e154fe14649dbce48300cec50d4825e3dd0d21983b8699060359c8d39cab26",
+  "mesh_export_recipe_sha256": "cba08081f976ceb6db059e1faab433d15f25b955baca12f94fa583e47810d8b2",
   "assembly_report_sha256": "215d2f51d375e0fd9ee28ead1e078652036da9f27937dbc4d5e6f23d96cc9349",
   "geometry_sources": {
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e45415e3f5cf36a821e26047ffe5098127dd1948eb1f87d23fe1012b71199d76",
@@ -8,6 +11,58 @@
     "felk60/felk60_top_hhkb.step": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51"
   },
+  "case_scale": [
+    1,
+    1,
+    1
+  ],
+  "units": "source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation",
+  "tessellation_linear_deflection_mm": 0.015,
+  "source_case_bounds_mm": {
+    "top": {
+      "brep": [
+        51.46271307318996,
+        -216.30970227830204,
+        -7.410000099999956,
+        377.1627172535981,
+        -96.35965799320394,
+        11.79000000000003
+      ],
+      "mesh": [
+        51.46271317319,
+        -216.309702178302,
+        -7.40999999999995,
+        377.162717153598,
+        -96.359657993204,
+        11.79
+      ]
+    },
+    "bottom": {
+      "brep": [
+        51.4627013981153,
+        -206.30970210039504,
+        -19.39959445791606,
+        377.1627129952796,
+        -91.10965778645951,
+        11.790000000000116
+      ],
+      "mesh": [
+        51.4627013981154,
+        -206.309702000395,
+        -19.39959375430877,
+        377.162712995279,
+        -91.1096578864596,
+        11.79
+      ]
+    }
+  },
+  "case_geometry_modifiers": [],
+  "illustrative": [
+    "sculpted keycaps, legends, switch housings and stems",
+    "resin/PBT finish and colours",
+    "backside component envelopes",
+    "unselected battery maximum space envelope"
+  ],
   "provisional_stack": {
     "bottom_gasket_ledge_z": 3.19,
     "top_gasket_ledge_z": 6.39,
@@ -19,29 +74,22 @@
     "pcb_bottom_z": -1.9999999999999993,
     "pcb_gap_basis": "PROVISIONAL parameter; Topre dome/housing/standoff stack is not dimensionally qualified"
   },
-  "source_derived": [
-    "FELK60 top and bottom STEP",
-    "current PCB finished-thickness envelope (surface copper artwork omitted)",
-    "audited HHKB plate DXF extruded 1.2mm"
-  ],
-  "illustrative": [
-    "switches, stems and keycaps",
-    "resin color/material and key legends",
-    "backside component body envelopes",
-    "battery candidate volume; no pack selected"
-  ],
   "outputs": {
     "battery-space.png": {
-      "sha256": "7ad06dae591c7bed7e9b19ceb630b5ea85da588fa5e98f743e1180a943d5ddc8",
-      "bytes": 2020895
+      "sha256": "ce99545aa37c72d87de31d4fa13e420e17c2aef26982f820d93d3df311181a31",
+      "bytes": 3657122
+    },
+    "rear.png": {
+      "sha256": "1b84f5b78becda3c26b79381692c65f897c1a3f8df63f58955e0a077ebbb0cf5",
+      "bytes": 3643983
     },
     "assembled.png": {
-      "sha256": "401589d2eb5e1e8342d59c24cfa2c97341f9576014c3a0d2bb4c9c4569b29d50",
-      "bytes": 1705666
+      "sha256": "fe32c1bcc4bba92d198361504e2ff9e131d2d95ba62406e63ba85a593a8752c5",
+      "bytes": 3781488
     },
     "exploded.png": {
-      "sha256": "c4bef275b3cf66abc036e885fa86c8e9c5731f4518eefa89601bd1281c8d56dd",
-      "bytes": 1958987
+      "sha256": "97844fa1737e4c2961260d86e6f825c0e4c87065d9902bd62cb1fca8d376f397",
+      "bytes": 3937215
     }
   },
   "production_approved": false

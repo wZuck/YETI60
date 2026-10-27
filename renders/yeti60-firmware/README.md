@@ -1,4 +1,4 @@
-English | [简体中文](README.zh-CN.md)
+English | [Chinese](README.zh-CN.md)
 
 # YETI60 host-simulation trace
 

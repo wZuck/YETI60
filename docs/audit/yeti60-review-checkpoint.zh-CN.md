@@ -1,6 +1,6 @@
 # YETI60 全面复查阶段记录
 
-[English](yeti60-review-checkpoint.md) | 简体中文
+[英文](yeti60-review-checkpoint.md) | 简体中文
 
 按用户要求保存当前进展；这不是已经完成的装配审查或生产批准。
 

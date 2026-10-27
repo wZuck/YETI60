@@ -1,4 +1,4 @@
-[English](yeti60-comprehensive-review.md) | 简体中文
+[英文](yeti60-comprehensive-review.md) | 简体中文
 
 # YETI60 电气、固件与装配全面复查
 
@@ -74,3 +74,5 @@
 [装配、爆炸及电池空间图](../../renders/yeti60-assembly/README.zh-CN.md)采用与检查相同的暂定坐标。壳体、板和定位板来自源几何；键帽、轴体、元件包络、材质及电池空间块为示意，不能证明实物装配。[当前 PCB 单板图与动画](../../renders/ec60-nrf52840/README.zh-CN.md)已按 YETI60 更新。
 
 项目文档默认英文，并提供 `.zh-CN.md`；上游署名、许可证以及 `EC60-nRF52840.*`、`YAECKB.pretty` 等兼容标识保留。中途进展已作为 `8f1b0fc` 推送，上述布局和制造待办仍明确保持未完成。
+
+装配图现采用 Cycles 物理光照与 FELK60 原尺寸壳体网格，原始壳体不缩放，也不使用改变几何的修改器。[几何验证](yeti60-render-geometry.json)记录包围尺寸及网格偏差；[渲染说明](../../renders/yeti60-assembly/README.zh-CN.md)区分源几何与示意键帽、轴体及表面处理。
