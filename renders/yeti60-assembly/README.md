@@ -18,7 +18,7 @@ The combined case envelope in the original CAD coordinate frame is **325.700 × 
 
 [Geometry verification](../../docs/audit/yeti60-render-geometry.json) and [render manifest](render-manifest.json) record original source hashes, case dimensions, render recipe, tessellation and image hashes. The 1.2 mm plate and current PCB use the same coordinates as the [assembly check](../../docs/audit/yeti60-assembly.json).
 
-**Appearance realism does not qualify unspecified parts.** Resin colour and finish, sculpted keycaps, legends, switch housings/stems and component envelopes are illustrative. The provisional 4.6 mm PCB-to-plate gap still requires an actual dome/fastener stack. The green block is a maximum pack-space envelope; no battery is selected. The rear opening remains the original source geometry; a final USB daughterboard, mating plug and cable are not represented as validated parts.
+**Appearance realism does not qualify unspecified parts.** Resin colour and finish, sculpted keycaps, legends, switch housings/stems and component envelopes are illustrative. The provisional 4.6 mm PCB-to-plate gap still requires an actual dome/fastener stack. The green block is a candidate pack-space envelope; no battery is selected. The rear opening remains the original source geometry; a final USB daughterboard, mating plug and cable are not represented as validated parts.
 
 ## Rebuild
 

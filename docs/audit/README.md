@@ -1,23 +1,26 @@
 English | [Chinese](README.zh-CN.md)
 
-# YETI60 audit index
+# YETI60 current audit
 
-Start with the [comprehensive electrical / firmware / assembly review](yeti60-comprehensive-review.md). Current CAD connectivity passes; the power-loop layout, target application and final mechanical/manufacturing stack are not production-approved.
+The [comprehensive review](yeti60-comprehensive-review.md) explains unfinished hardware work. Check success is not production approval.
 
-| Scope | Evidence | Boundary |
-|---|---|---|
-| Current PCB | [Strict CAD](../../hardware/ec60-nrf52840/audit-current.json), [functional review](yeti60-electrical.json) | 0 DRC errors/opens and 268 physical pairs; power-path measurements are not stability or SI proof |
-| Current nRF control core | [Simulation](yeti60-firmware-simulation.json), [trace](yeti60-firmware-trace.csv) | Actual portable C under host ASan/UBSan; peripheral and transport mocks, no target/radio claim |
-| Current fit | [Assembly](yeti60-assembly.json), [metadata](yeti60-pcb-mechanical-metadata.json) | Conditional Z stack, source PCB/plate/case checks and provisional pack envelope; manufacturing tolerance not approved |
-| Assembly images | [Renders](../../renders/yeti60-assembly/README.md) | Source-derived shell/plate/PCB, illustrative remaining bodies |
-| STM32 reference | [Repaired tests](firmware.json), [upstream reproduction](firmware-upstream-reproduction.json) | Original row/column bounds, hysteresis and config repairs; not nRF firmware |
-| Upstream BOM/CPL | [Manufacturing reference](manufacturing-reference.json) | OPA350 mislabeled U1 restored to U3; 51 original BOM refs, not the new PCB |
-| Plate/source CAD | [Plate](plate.json), [mechanical](mechanical.json), [case registration](case-assembly.json) | Three owner-handle metadata repairs, 63 closed profiles, 29 holes, source shell validity; not resin print approval |
-| Rear USB | [Datums](typec-location.json), [original path](case-assembly.json) | Rear-only daughterboard; old 8×2 mm probe does not qualify plug/cable/CC assembly |
-| Original fabrication files | [Gerber reference](gerber-reference.json) | 38 outline primitives, 653 PTH and 28 NPTH matched quantization; copper/mask/paste parity remained open |
+| Scope | Current evidence |
+|---|---|
+| Unified result | [Stage outcomes](outcome.json), [integration](integration.json) |
+| Schematic and PCB | [Fresh schematic parity/ERC](schematic-current.json), [strict CAD](../../hardware/ec60-nrf52840/audit-current.json), [electrical review](yeti60-electrical.json) |
+| Firmware core | [Host sanitizer simulation](yeti60-firmware-simulation.json), [trace](yeti60-firmware-trace.csv) |
+| Mechanical | [Read-only plate comparison](plate.json), [PCB metadata](yeti60-pcb-mechanical-metadata.json), [conditional assembly](yeti60-assembly.json) |
+| Render provenance | [Geometry](yeti60-render-geometry.json), [assembly images](../../renders/yeti60-assembly/README.md), [PCB images/animation](../../renders/ec60-nrf52840/README.md) |
+| Documents and files | [Document checks](documentation-check.json), [source inventory](source-inventory.json) |
 
-The older upstream PCB report has 25 DRC errors and two plate files each have an Edge.Cuts text error. Those are reference-source findings, not the current YETI60 board's zero-error CAD result. Do not mix their manufacturing files.
+Run `python3 scripts/run_audit.py` from the root. Requires KiCad CLI/Python, clang and uv; CAD dependencies are pinned in `requirements-audit.txt`. `KICAD_PYTHON` and `YETI_CAD_PYTHON` select installed runtimes; KiCad Python defaults to its macOS path. `--baseline <commit>` selects a connectivity baseline. `--refresh-renders` rebuilds PCB and assembly images, using `requirements-render.txt` for Blender and ffmpeg for PCB animation.
 
-Run `python3 scripts/run_audit.py` with KiCad CLI/Python, clang, uv and pinned `requirements-audit.txt`. It records stage failures separately, skips dependent stages after failure and does not turn a partial green result into a production approval. The final command remains nonzero while the overall production review is incomplete. `outcome.json` retains historical upstream results with retired prototype stages removed; `source-inventory.json` records current root-project files. An inventory hash is not semantic or functional review. Local upstream submodule settings are not published as design changes.
+Exit 0 means every implemented current-design check passed. Failed stages return 1 and block dependent stages. `--require-production` returns 2 when checks pass but production requirements remain open. Every run records unresolved `design-constraints.json` requirements; no run currently grants production approval.
 
-SI/RF analysis remains deferred; no chosen resin insert, complete plug/wire assembly, cell pack, qualified EC stack or on-device firmware/RF result is asserted.
+Integration ties schematic, connectors, PCB, firmware pins, trace, fit geometry and each render output to current sources and recipes. Design files must remain byte-identical during validation. The inventory records files, not semantic approval; upstream submodule contents and local editor state are excluded.
+
+Retired generators, routing snapshots, duplicate legacy firmware and historical audit outputs are removed. Upstream submodules, attribution and licenses remain. Only the current single-nRF design is checked. Power layout, target firmware, final mechanical stack, battery, USB daughterboard/cables, switch access, resin inserts, fabrication and physical tests remain open. SI/RF is deferred.
+
+Fault-injection tests verify rejection of reversed USB data contracts, stale traces, component collisions, stale individual views and changed image bytes. They run only after the unmodified integration check passes.
+
+A fresh checkout requires `git submodule update --init --recursive` for the pinned EC60 and FELK60 source geometry.

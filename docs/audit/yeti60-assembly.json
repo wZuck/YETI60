@@ -6,6 +6,12 @@
     "felk60/felk60_top_hhkb.step": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51"
   },
+  "verification_recipe_sha256": {
+    "scripts/check_yeti60_assembly.py": "6a2da9b00965bad753f53c51fd708b9042a1330d7dd6382316ba2fd5b607fe26",
+    "scripts/cad_geometry.py": "838142046e53f4927f294dddbbb06d0152e018043229b30cc54809519f80545f",
+    "scripts/export_yeti60_mechanical_metadata.py": "22ebeac89f8839f7fddb0a84dbcf6be2244dc7c55e3382cd6805f8e58d94525e"
+  },
+  "mechanical_metadata_sha256": "662c45cb1aff086d25ee262c025b280ca154502ef4e97e2150b9400f5e7a751b",
   "pcb_frame_to_case": "X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z",
   "nominal_stack": {
     "bottom_gasket_ledge_z": 3.19,

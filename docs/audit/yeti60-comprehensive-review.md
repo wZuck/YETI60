@@ -16,7 +16,7 @@ English | [Chinese](yeti60-comprehensive-review.zh-CN.md)
 ## Circuit and routing checks
 
 - Strict native DRC: **0 errors, 0 opens**. All **268** physical pin pairs and schematic/PCB parity pass. The comparison to the previous verified design has no connectivity regressions.
-- **Fixed a functional migration issue:** R30/R31 were inherited 27 Ω USB series resistors. They are now **0 Ω links**, synchronized across PCB, schematic, netlist, generators and local footprint values. The nRF52840 PHY already contains its own series termination. [Nordic verified answer](https://devzone.nordicsemi.com/f/nordic-q-a/94955/resistors-for-d-and-d-).
+- **Fixed a functional migration issue:** R30/R31 were inherited 27 Ω USB series resistors. They are now **0 Ω links**, synchronized across PCB, schematic, netlist and local footprint values. The nRF52840 PHY already contains its own series termination. [Nordic verified answer](https://devzone.nordicsemi.com/f/nordic-q-a/94955/resistors-for-d-and-d-).
 - Scan input U1.20 is P0.04/AIN2; battery input U1.21 is P0.05/AIN3. Mux channel order is generated from the actual U2/U4 COL0–COL14 nets, not assumed from the old STM32 GPIO names.
 - Inductor-side straight tracks were widened to 0.35 mm. Diagonal/IC necks remain 0.2 mm to preserve clearance to the existing NTC via. No global clearance rule was relaxed.
 - The strict report retains 102 non-assembled-geometry courtyard warnings and 5 off-center via-endpoint warnings with valid copper contact. ERC has 0 electrical errors and inherited grid/alias warnings. Special filled/capped U1 vias-in-pad remain required.
@@ -68,12 +68,19 @@ Evidence: [assembly report](yeti60-assembly.json), [current footprint/height met
 
 No battery is selected. Under the provisional 4.6 mm stack, one candidate envelope is **50×20×2.9 mm**, at case coordinates X=155–205, Y=−179 to −159 mm. It clears the conservative component XY keepouts and 3 mm-radius mounting-fastener exclusion boxes. The modeled distance is at least 0.50 mm above and 0.51 mm below.
 
-The **maximum pack envelope** must include its protection board and growth/swelling allowance; these are not individually modeled or approved. Insulation consumes the stated external gaps. A nominal 3 mm cell must not be assumed to fit a 2.9 mm budget. Changing the eventual dome/standoff gap changes the available thickness: over the sampled 4.0–5.2 mm gaps, flat-floor pack thickness after two 0.5 mm clearances varies from about 3.51 to 2.31 mm. Cable routing, NTC and final cell documentation remain required.
+The **full pack envelope** must include its protection board and growth/swelling allowance; these are not individually modeled or approved. Insulation consumes the stated external gaps. A nominal 3 mm cell must not be assumed to fit a 2.9 mm budget. Changing the eventual dome/standoff gap changes the available thickness: over the sampled 4.0–5.2 mm gaps, flat-floor pack thickness after two 0.5 mm clearances varies from about 3.51 to 2.31 mm. Cable routing, NTC and final cell documentation remain required.
 
 ## Render outputs and document policy
 
 [Assembled, exploded and battery-space renders](../../renders/yeti60-assembly/README.md) use the same provisional transforms as the checks. Case, plate and PCB geometry are source-derived; keycaps, switch bodies, component envelopes, material appearance and the battery-space block are illustrative. They do not prove manufactured fit. [Current PCB-only renders and animation](../../renders/ec60-nrf52840/README.md) are regenerated for YETI60.
 
-Project-owned documents use English by default with parallel `.zh-CN.md` versions. Upstream attribution, licenses, and compatibility filenames such as `EC60-nRF52840.*` and `YAECKB.pretty` remain intact. The intermediate review was pushed as `8f1b0fc`; the remaining layout/manufacturing items above are deliberately still open.
+Project-owned documents use English by default with parallel `.zh-CN.md` versions. Upstream attribution, licenses, and compatibility filenames such as `EC60-nRF52840.*` and `YAECKB.pretty` remain intact. The remaining layout/manufacturing items above are still open.
 
 Assembly images now use Cycles physical lighting and source-sized FELK60 case tessellation. The original case solids receive no geometry modifiers or resizing. [Geometry verification](yeti60-render-geometry.json) records bounding sizes and mesh tolerances; [render documentation](../../renders/yeti60-assembly/README.md) distinguishes source geometry from illustrative keycaps, switches and finishes.
+
+
+## Current integration audit
+
+Retired build/routing scripts, duplicate legacy firmware and historical reports are removed. The unified audit checks the current schematic, PCB, pin contract, core, mechanical stack and render provenance together: [stages](outcome.json), [integration](integration.json). Each view carries individual input hashes; partial refresh cannot validate old images. Plate checking is read-only and assembly collisions fail validation.
+
+A regression test reproduced synchronous reentry during initialization/power/connection GPIO callbacks and scan HID reporting. The core now holds its busy guard throughout those callbacks, including scan faults; ASan/UBSan tests cover the fix. This remains a single-owner API, not a thread-safe application. Target USB/BLE integration and physical testing are unfinished.

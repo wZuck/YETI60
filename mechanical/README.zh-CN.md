@@ -1,17 +1,15 @@
 [英文](README.md) | 简体中文
 
-# 机械审查副本
+# YETI60 机械检查
 
-`felk60_plate_hhkb.audited.dxf` 来自 fredlb/FELK60 原定位板 DXF。仅修复三处 DXF 字典 owner handle 元数据；逐实体核对圆、折线、圆弧凸度及层名，几何数值在 1e-9 mm 比较精度内保持一致。
+`felk60_plate_hhkb.audited.dxf` 来自 fredlb/FELK60。只修复三处 DXF 字典所有者句柄；圆、折线、圆弧凸度和图层几何在记录的 1e-9 毫米比较精度内不变。
 
-它是二维定位板加工参考，FELK60 原说明要求 **1.2 mm 定位板，优先不锈钢**，不等于树脂打印的定位板或已批准生产的壳体。螺纹、孔位公差、开口与轴体间隙、gasket 压缩量、外壳嵌件和整机干涉仍需验证。
+FELK60 要求 **1.2 毫米定位板，优先不锈钢**，以及约 2 毫米厚、压缩 50% 的垫片。这不是树脂定位板规格。原上盖 M3 底孔约 2.529 毫米，尚未完成树脂嵌件设计。
 
-本目录尚无已核准的树脂外壳 STL。不要将原 STEP 直接视为已经适配嵌件、收缩率和打印支撑的最终文件。
+当前[装配报告](../docs/audit/yeti60-assembly.json)使用明确暂定的 PCB 至定位板间距，检查当前 PCB 与原始壳体、定位板几何。原生 STEP 基材厚度与声明的含铜、阻焊成品厚度分别记录。见[全面复查](../docs/audit/yeti60-comprehensive-review.zh-CN.md)和[装配渲染](../renders/yeti60-assembly/README.zh-CN.md)。
 
-原上下壳的有效实体、四组固定孔注册、零实体交集及后侧中央 USB 通路已完成局部检查，结果在 `docs/audit/mechanical.json` 和 `case-assembly.json`。原上盖金属攻丝底孔直径约 2.529 mm，树脂嵌件孔仍需改版。后侧开口不能直接与 EC60 偏左的板载 USB1 对接，必须保留后侧 USB 子板路径。
+尚无获准生产的树脂 STL、选定嵌件、树脂收缩余量、合格轴体与胶碗堆叠、最终电池或完整后侧 USB 线缆及插头装配。
 
-重建检查：先更新 `docs/audit/pcb-metadata.json`，再运行 `uv run --with ezdxf python scripts/check_plate.py`。具体来源哈希、孔位匹配和检查范围见 `docs/audit/plate.json`。
+运行 `python3 scripts/run_audit.py` 导出当前 PCB 元数据、只读核对定位板几何、检查条件装配及渲染几何。发现 PCB、定位板、元件包络或电池候选包络碰撞时验证失败。依赖固定在 `requirements-audit.txt`。
 
-当前 YETI60 的[条件装配报告](../docs/audit/yeti60-assembly.json)采用当前 PCB 和明确暂定板间距，区分 STEP 基材与成品板厚；见[全面复查](../docs/audit/yeti60-comprehensive-review.zh-CN.md)及[装配图](../renders/yeti60-assembly/README.zh-CN.md)。重建顺序为 KiCad Python 导出元数据，再在 CAD 环境运行 `check_yeti60_assembly.py`。
-
-渲染保持 FELK60 原始壳体实体尺寸：在原始 CAD 坐标系中，上下壳的联合包围尺寸为 325.700 × 125.200 × 31.190 毫米。网格线性离散偏差为 0.015 毫米，包围坐标差值检查小于 0.02 毫米。7° 展示旋转为刚性变换，不改变外壳尺寸。详见[渲染几何验证](../docs/audit/yeti60-render-geometry.json)。
+渲染保持 FELK60 原始壳体尺寸：原始 CAD 坐标系中，上下壳联合包围尺寸为 325.700 × 125.200 × 31.190 毫米。网格线性离散偏差为 0.015 毫米，包围坐标差值检查小于 0.02 毫米。7° 展示旋转为刚性变换，不改变外壳尺寸。见[渲染几何验证](../docs/audit/yeti60-render-geometry.json)。

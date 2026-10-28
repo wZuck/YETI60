@@ -21,6 +21,9 @@ MESH = WORK/'render-meshes.json'
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 data = json.loads(REPORT.read_text()); meshdata = json.loads(MESH.read_text())
 assert sha(REPORT) == meshdata['assembly_report_sha256']
+assert sha(ROOT/'scripts/export_yeti60_render_meshes.py') == meshdata['export_recipe_sha256']
+assert sha(ROOT/'scripts/cad_geometry.py') == meshdata['geometry_helper_sha256']
+assert meshdata['geometry_sources'] == data['source_sha256']
 for name,h in data['source_sha256'].items(): assert sha(ROOT/name)==h,name
 parser=argparse.ArgumentParser(); parser.add_argument('--preview',action='store_true'); parser.add_argument('--view',choices=['assembled','rear','exploded','battery-space']); args=parser.parse_args()
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -173,7 +176,17 @@ for view in views:
         for name in ['top','plate','switches','caps','pcb']: groups[name].hide_render=True
         groups['battery'].hide_render=False; capture(view,(.23,-.29,.47),(0,0,-.006),65)
 if not args.preview:
+    previous_path=OUT/'render-manifest.json'
+    previous=json.loads(previous_path.read_text()) if previous_path.exists() else {}
+    prior_outputs=previous.get('outputs',{})
+    rendered_outputs={}
+    for view in views:
+        path=OUT/(view+'.png')
+        rendered_outputs[path.name]={'sha256':sha(path),'bytes':path.stat().st_size,'recipe_sha256':sha(Path(__file__)),'assembly_report_sha256':sha(REPORT),'mesh_export_recipe_sha256':meshdata['export_recipe_sha256']}
+    # Preserve evidence for untouched views; never stamp them as freshly rendered.
+    for name,item in prior_outputs.items():
+        if name not in rendered_outputs: rendered_outputs[name]=item
     for name,h in data['source_sha256'].items(): assert sha(ROOT/name)==h,name
-    manifest={'project':'YETI60','renderer':'Blender '+bpy.app.version_string+' / Cycles','samples':scene.cycles.samples,'recipe_sha256':sha(Path(__file__)),'mesh_export_recipe_sha256':sha(ROOT/'scripts/export_yeti60_render_meshes.py'),'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'case_scale':[1,1,1],'units':'source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation','tessellation_linear_deflection_mm':meshdata['tessellation_linear_deflection_mm'],'source_case_bounds_mm':{name:{'brep':meshdata['meshes'][name]['brep_bounds_mm'],'mesh':meshdata['meshes'][name]['mesh_bounds_mm']} for name in ['top','bottom']},'case_geometry_modifiers':[],'illustrative':['sculpted keycaps, legends, switch housings and stems','resin/PBT finish and colours','backside component envelopes','unselected battery maximum space envelope'],'provisional_stack':data['nominal_stack'],'outputs':{p.name:{'sha256':sha(p),'bytes':p.stat().st_size} for p in OUT.glob('*.png')},'production_approved':False}
+    manifest={'project':'YETI60','renderer':'Blender '+bpy.app.version_string+' / Cycles','samples':scene.cycles.samples,'recipe_sha256':sha(Path(__file__)),'mesh_export_recipe_sha256':sha(ROOT/'scripts/export_yeti60_render_meshes.py'),'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'case_scale':[1,1,1],'units':'source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation','tessellation_linear_deflection_mm':meshdata['tessellation_linear_deflection_mm'],'source_case_bounds_mm':{name:{'brep':meshdata['meshes'][name]['brep_bounds_mm'],'mesh':meshdata['meshes'][name]['mesh_bounds_mm']} for name in ['top','bottom']},'case_geometry_modifiers':[],'illustrative':['sculpted keycaps, legends, switch housings and stems','resin/PBT finish and colours','backside component envelopes','unselected battery maximum space envelope'],'provisional_stack':data['nominal_stack'],'outputs':rendered_outputs,'production_approved':False}
     (OUT/'render-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print('YETI60 physical studio renders complete')

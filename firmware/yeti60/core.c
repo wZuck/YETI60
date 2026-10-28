@@ -87,6 +87,7 @@ int yeti_init(struct yeti_core *s, const struct yeti_hal *hal,
   s->hal = hal_copy;
   s->cfg = cfg_copy;
   s->initialized = true;
+  s->busy = true;
   high_z(s);
   io(s, PIN_AFE_EN, Y_LOW);
   io(s, PIN_BAT_MEAS_EN, Y_LOW);
@@ -94,6 +95,7 @@ int yeti_init(struct yeti_core *s, const struct yeti_hal *hal,
   io(s, PIN_CHG_CE_N, Y_HIGH);
   io(s, PIN_CHG_EN1, Y_LOW);
   io(s, PIN_CHG_EN2, Y_LOW);
+  s->busy = false;
   return 0;
 }
 int yeti_power(struct yeti_core *s, bool on) {
@@ -101,6 +103,7 @@ int yeti_power(struct yeti_core *s, bool on) {
     return -1;
   if (on == s->powered)
     return 0;
+  s->busy = true;
   if (on) {
     high_z(s);
     io(s, PIN_AFE_EN, Y_HIGH);
@@ -123,6 +126,7 @@ int yeti_power(struct yeti_core *s, bool on) {
     s->dirty = true;
     hid(s);
   }
+  s->busy = false;
   return 0;
 }
 int yeti_scan(struct yeti_core *s) {
@@ -151,9 +155,9 @@ int yeti_scan(struct yeti_core *s) {
         inhibit(s);
         memset(s->matrix, 0, sizeof(s->matrix));
         memset(s->count, 0, sizeof(s->count));
-        s->busy = false;
         s->dirty = true;
         hid(s);
+        s->busy = false;
         return -2;
       }
       samples[r][c] = (uint16_t)v;
@@ -177,8 +181,8 @@ int yeti_scan(struct yeti_core *s) {
         s->count[r][c] = 0;
       }
     }
-  s->busy = false;
   hid(s);
+  s->busy = false;
   return 0;
 }
 int yeti_battery_mv(struct yeti_core *s, uint32_t *mv) {
@@ -200,6 +204,7 @@ int yeti_connections(struct yeti_core *s, enum yeti_usb usb, unsigned host_ma,
   if (!s || !s->initialized || s->busy ||
       (usb < Y_USB_OFF || usb > Y_USB_SUSPENDED))
     return -1;
+  s->busy = true;
   bool suspend = usb == Y_USB_SUSPENDED,
        large = usb == Y_USB_CONFIGURED && host_ma >= 500;
   /* Disable charging while changing the USB current-limit mode. */
@@ -218,5 +223,6 @@ int yeti_connections(struct yeti_core *s, enum yeti_usb usb, unsigned host_ma,
     memset(s->last_report, 0, 8);
   }
   hid(s);
+  s->busy = false;
   return 0;
 }

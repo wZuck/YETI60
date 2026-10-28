@@ -17,8 +17,7 @@ The renderer checks the input against the CAD source hash and confirms it is unc
 J2 has an illustrative body using the sourced 5.5 mm side-entry PH height; its full mating geometry is not qualified. SW100 remains illustrative and U5 uses a generic WQFN model. These caveats appear in the images. Native tile-size differences are center-padded without stretching the PCB. Model/recipe/source/output hashes and substitutions are recorded in `render-manifest.json`.
 
 ```sh
-python3 -m pip install --target /tmp/yeti60-render-python pillow==11.3.0
-KICAD_AUDIT_PYTHONPATH=/tmp/yeti60-render-python python3 scripts/render_single_nrf.py
+uv run --with-requirements requirements-audit.txt python scripts/render_single_nrf.py
 ```
 
 Run from the repository root with KiCad 10, its standard 3D model library and ffmpeg installed. `--stills-only`, `--frames`, `--fps`, `--jobs` control output; environment overrides are `KICAD_CLI`, `KICAD10_3DMODEL_DIR`, `RENDER_FONT`, `RENDER_MONO_FONT`. The cache keys source, recipe, model hashes, renderer version and animation parameters. Temporary snapshots and frames live in ignored `.render-work/`; only project-authored proxies are stored in `models/`.

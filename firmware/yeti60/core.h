@@ -6,6 +6,9 @@
 enum yeti_mode { Y_HIZ, Y_LOW, Y_HIGH, Y_OD_LOW, Y_OD_RELEASE };
 enum yeti_usb { Y_USB_OFF, Y_USB_POWERED, Y_USB_CONFIGURED, Y_USB_SUSPENDED };
 enum yeti_link { Y_NONE, Y_USB, Y_BLE };
+/* Single-owner API: queue cross-thread/ISR requests to the owner. busy blocks
+ * synchronous HAL callback reentry; it is not an atomic thread lock. HAL
+ * callbacks must return normally, and init requires a quiescent instance. */
 struct yeti_hal {
   void *ctx;
   void (*gpio)(void *, uint8_t, enum yeti_mode);

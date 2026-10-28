@@ -33,5 +33,57 @@
     "phase": "after PCB design completion",
     "blocking_current_layout": false,
     "status": "not_started"
-  }
+  },
+  "open_requirements": [
+    {
+      "id": "power-layout",
+      "status": "open",
+      "description": "Shorten regulator feedback/output-capacitor and charger input/battery capacitor paths; validate power performance"
+    },
+    {
+      "id": "target-firmware",
+      "status": "open",
+      "description": "Implement and build nRF HAL, USB/BLE stacks, actual keymap and calibration"
+    },
+    {
+      "id": "mechanical-stack",
+      "status": "open",
+      "description": "Qualify dome/housing/fastener stack; 4.6 mm PCB-to-plate gap is provisional"
+    },
+    {
+      "id": "battery",
+      "status": "open",
+      "description": "Select protected pack, NTC, mounting and cable within verified full-pack envelope"
+    },
+    {
+      "id": "usb-daughterboard",
+      "status": "open",
+      "description": "Select and verify rear daughterboard, separate CC terminations, connector and cable fit"
+    },
+    {
+      "id": "switch-access",
+      "status": "open",
+      "description": "Define closed-case access to internal SW100"
+    },
+    {
+      "id": "resin-inserts",
+      "status": "open",
+      "description": "Define inserts, print shrinkage and dimensional tolerances"
+    },
+    {
+      "id": "fabrication",
+      "status": "open",
+      "description": "Verify filled/capped U1 vias, manufacturing output parity and component ratings"
+    },
+    {
+      "id": "physical-tests",
+      "status": "open",
+      "description": "Measure EC thresholds, power, charging, runtime and wake behavior"
+    },
+    {
+      "id": "signal-interference",
+      "status": "deferred",
+      "description": "SI/RF analysis deferred by user until PCB design completion"
+    }
+  ]
 }

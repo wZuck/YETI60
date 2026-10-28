@@ -21,4 +21,6 @@ This is native host simulation with mocked GPIO, ADC and HID transports, **not**
 
 The test timing and thresholds are illustrative configuration values, not physical calibration. The battery conversion assumes a 12-bit SAADC using a 0.6 V reference, gain 1/6 and the board's 1M:1M divider. Hardware must serialize access to the shared SAADC and configure that reference/gain. USB current limits must reflect host enumeration; the charger NTC protection remains a hardware function.
 
-Results and source hashes: [yeti60-firmware-simulation.json](../../docs/audit/yeti60-firmware-simulation.json). The older GPL EC60 reference scanner is preserved separately in `firmware/ec60/`; its tests do not establish nRF support.
+Results and source hashes: [yeti60-firmware-simulation.json](../../docs/audit/yeti60-firmware-simulation.json). Original GPL EC60 sources remain in the `EC60` submodule; duplicate legacy tests are outside this pipeline.
+
+Use one owner for the core and queue other threads or interrupt requests. The busy flag rejects synchronous callback reentry; it is not an atomic thread lock. GPIO, wait and HID callbacks must return normally; initialize only a quiescent core. Tests cover reentry rejection during initialization, power, connection and scan callbacks, including fault reporting.

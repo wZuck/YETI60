@@ -1,63 +1,162 @@
 {
-  "status": "audit-incomplete-production-not-approved",
+  "status": "checks-passed-production-incomplete",
+  "checks_passed": true,
+  "production_approved": false,
   "stages": [
     {
-      "stage": "pcb-metadata",
+      "stage": "schematic-current",
       "state": "passed",
-      "exit_code": 0
+      "exit_code": 0,
+      "seconds": 2.62
     },
     {
-      "stage": "scanner-sanitizers",
+      "stage": "pin-contract",
       "state": "passed",
-      "exit_code": 0
+      "exit_code": 0,
+      "seconds": 0.03
     },
     {
-      "stage": "plate-dxf",
+      "stage": "pcb-geometry-contract",
       "state": "passed",
-      "exit_code": 0
+      "exit_code": 0,
+      "seconds": 1.47
     },
     {
-      "stage": "step-solids",
+      "stage": "pcb-native-drc",
       "state": "passed",
-      "exit_code": 0
+      "exit_code": 0,
+      "seconds": 18.56
     },
     {
-      "stage": "case-registration-rear-port",
+      "stage": "connectivity-regression",
       "state": "passed",
-      "exit_code": 0
+      "exit_code": 0,
+      "seconds": 7.87
     },
     {
-      "stage": "rear-port-datums",
+      "stage": "electrical-review",
       "state": "passed",
-      "exit_code": 0
+      "exit_code": 0,
+      "seconds": 0.93
     },
     {
-      "stage": "bom-cpl",
+      "stage": "firmware-pin-header",
       "state": "passed",
-      "exit_code": 0
+      "exit_code": 0,
+      "seconds": 0.04
     },
     {
-      "stage": "gerber-profile-drills",
+      "stage": "firmware-simulation",
       "state": "passed",
-      "exit_code": 0
+      "exit_code": 0,
+      "seconds": 1.35
     },
     {
-      "stage": "upstream-pcb-drc",
-      "state": "failed",
-      "exit_code": 1,
-      "output_tail": "{\n  \"status\": \"fabrication-blocked-by-DRC\",\n  \"boards\": [\n    {\n      \"source\": \"EC60/PCB/EC60_PCB/EC60.kicad_pcb\",\n      \"source_sha256\": \"76be7d1a3c985cbf20460e3bcba5624bae55af28ed2b70b27ec155bbd56ec12a\",\n      \"drc\": {\n        \"error:clearance\": 2,\n        \"error:copper_edge_clearance\": 16,\n        \"error:footprint_type_mismatch\": 4,\n        \"error:starved_thermal\": 2,\n        \"error:text_on_edge_cuts\": 1,\n        \"warning:lib_footprint_issues\": 105,\n        \"warning:lib_footprint_mismatch\": 48,\n        \"warning:silk_over_copper\": 54,\n        \"warning:silk_overlap\": 31,\n        \"warning:track_dangling\": 1\n      },\n      \"unconnected\": 0,\n      \"schematic_parity_checked\": false,\n      \"report\": \"docs/audit/drc/EC60.json\"\n    },\n    {\n      \"source\": \"EC60/PCB/HHKB_Plate/HHKB_Plate.kicad_pcb\",\n      \"source_sha256\": \"8b0e062def5abacc87287212f66ea2a75d80a3a4232a7de37ef84e4f89adba00\",\n      \"drc\": {\n        \"error:text_on_edge_cuts\": 1,\n        \"warning:isolated_copper\": 2,\n        \"warning:lib_footprint_issues\": 63\n      },\n      \"unconnected\": 0,\n      \"schematic_parity_checked\": false,\n      \"report\": \"docs/audit/drc/HHKB_Plate.json\"\n    },\n    {\n      \"source\": \"EC60/PCB/JIS_Plate/JIS_Plate.kicad_pcb\",\n      \"source_sha256\": \"0d1e241389c41de2f507c33e1404e631ce97ea07695c453fa1f45a2a2a3dec27\",\n      \"drc\": {\n        \"error:text_on_edge_cuts\": 1,\n        \"warning:isolated_copper\": 2,\n        \"warning:lib_footprint_issues\": 67\n      },\n      \"unconnected\": 0,\n      \"schematic_parity_checked\": false,\n      \"report\": \"docs/audit/drc/JIS_Plate.json\"\n    }\n  ],\n  \"limitations\": [\n    \"these are upstream boards, not the final BLE PCB\",\n    \"DRC is not assembly, component-rating or Gerber-parity proof\"\n  ]\n}\n"
+      "stage": "firmware-plot",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.63
+    },
+    {
+      "stage": "mechanical-metadata",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.73
+    },
+    {
+      "stage": "plate-source",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.26
+    },
+    {
+      "stage": "assembly-fit",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 21.91
+    },
+    {
+      "stage": "render-geometry",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 7.81
+    },
+    {
+      "stage": "documentation",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.05
+    },
+    {
+      "stage": "cross-domain-integration",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.07
+    },
+    {
+      "stage": "integration-fault-injection",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.21
+    },
+    {
+      "stage": "design-inputs-unchanged",
+      "state": "passed",
+      "changed": []
     }
   ],
-  "pending_requirements": [
-    "regulator feedback/output-capacitor and charger input/battery capacitor placement review",
-    "nRF52840 target build and on-device USB/BLE behaviour",
-    "rear USB daughterboard, actual connector/plug and cable assembled fit",
-    "resin-ready insert geometry, validated print mesh and full mechanical tolerance stack",
-    "PCB/plate/switch/gasket/battery/module/antenna/cable complete assembly",
-    "copper/mask/paste Gerber parity and procurement ratings",
-    "physical EC calibration, charging, runtime, wake and enclosed RF tests"
+  "open_requirements": [
+    {
+      "id": "power-layout",
+      "status": "open",
+      "description": "Shorten regulator feedback/output-capacitor and charger input/battery capacitor paths; validate power performance"
+    },
+    {
+      "id": "target-firmware",
+      "status": "open",
+      "description": "Implement and build nRF HAL, USB/BLE stacks, actual keymap and calibration"
+    },
+    {
+      "id": "mechanical-stack",
+      "status": "open",
+      "description": "Qualify dome/housing/fastener stack; 4.6 mm PCB-to-plate gap is provisional"
+    },
+    {
+      "id": "battery",
+      "status": "open",
+      "description": "Select protected pack, NTC, mounting and cable within verified full-pack envelope"
+    },
+    {
+      "id": "usb-daughterboard",
+      "status": "open",
+      "description": "Select and verify rear daughterboard, separate CC terminations, connector and cable fit"
+    },
+    {
+      "id": "switch-access",
+      "status": "open",
+      "description": "Define closed-case access to internal SW100"
+    },
+    {
+      "id": "resin-inserts",
+      "status": "open",
+      "description": "Define inserts, print shrinkage and dimensional tolerances"
+    },
+    {
+      "id": "fabrication",
+      "status": "open",
+      "description": "Verify filled/capped U1 vias, manufacturing output parity and component ratings"
+    },
+    {
+      "id": "physical-tests",
+      "status": "open",
+      "description": "Measure EC thresholds, power, charging, runtime and wake behavior"
+    },
+    {
+      "id": "signal-interference",
+      "status": "deferred",
+      "description": "SI/RF analysis deferred by user until PCB design completion"
+    }
   ],
-  "production_approved": false,
-  "inventory": "docs/audit/source-inventory.json",
-  "scope": "Historical upstream audit; retired prototype stages removed. Current single-nRF results are indexed in docs/audit/README.md."
+  "scope": "Current single-nRF design, host core, conditional mechanical fit and artifact provenance; no target or physical certification",
+  "inventory": "docs/audit/source-inventory.json"
 }

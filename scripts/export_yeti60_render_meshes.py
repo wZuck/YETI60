@@ -14,7 +14,7 @@ from OCP.TopAbs import TopAbs_FACE, TopAbs_REVERSED
 from OCP.TopExp import TopExp_Explorer
 from OCP.TopLoc import TopLoc_Location
 from OCP.TopoDS import TopoDS
-from check_case_assembly import load, bounds
+from cad_geometry import load, bounds
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / '.assembly-work'
 REPORT = ROOT / 'docs/audit/yeti60-assembly.json'
@@ -47,7 +47,7 @@ def main():
     meshes = {}
     for name,path in [('bottom',ROOT/'felk60/felk60_bottom.step'),('top',ROOT/'felk60/felk60_top_hhkb.step'),('plate',WORK/'plate.step'),('pcb',WORK/'pcb-placed.step')]:
         meshes[name] = tessellate(path)
-    out = {'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'tessellation_linear_deflection_mm':.015,'tessellation_angular_deflection_rad':.08,'case_scale':[1,1,1],'meshes':meshes}
+    out = {'export_recipe_sha256':sha(Path(__file__)), 'geometry_helper_sha256':sha(ROOT/'scripts/cad_geometry.py'), 'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'tessellation_linear_deflection_mm':.015,'tessellation_angular_deflection_rad':.08,'case_scale':[1,1,1],'meshes':meshes}
     (WORK/'render-meshes.json').write_text(json.dumps(out,separators=(',',':')))
     case = [meshes[n] for n in ['top','bottom']]
     bb = [min(m['brep_bounds_mm'][i] for m in case) for i in range(3)] + [max(m['brep_bounds_mm'][i] for m in case) for i in range(3,6)]

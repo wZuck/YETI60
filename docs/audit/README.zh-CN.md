@@ -1,23 +1,26 @@
 [英文](README.md) | 简体中文
 
-# YETI60 审查索引
+# YETI60 当前审计
 
-优先阅读[电气／固件／装配全面复查](yeti60-comprehensive-review.zh-CN.md)。当前 CAD 导通通过，但电源回路、目标应用及最终机械／制造结构尚未批准生产。
+[全面复查](yeti60-comprehensive-review.zh-CN.md)说明尚未完成的硬件工作。检查通过不等于批准生产。
 
-| 范围 | 证据 | 边界 |
-|---|---|---|
-| 当前 PCB | [严格 CAD](../../hardware/ec60-nrf52840/audit-current.json)、[功能复查](yeti60-electrical.json) | DRC 0 错误／0 断线，268 对引脚通过；路径测量不证明稳定性或 SI |
-| 当前 nRF 核心 | [模拟](yeti60-firmware-simulation.json)、[轨迹](yeti60-firmware-trace.csv) | 实际 C 核心运行 ASan/UBSan，外设／传输接口为模拟，不证明目标／无线运行 |
-| 当前装配 | [装配](yeti60-assembly.json)、[元数据](yeti60-pcb-mechanical-metadata.json) | 暂定 Z 结构、源板／壳／定位板及电池空间，未批准制造公差 |
-| 装配图片 | [渲染](../../renders/yeti60-assembly/README.zh-CN.md) | 壳／板来自源，其他外形含示意 |
-| STM32 参考 | [修复测试](firmware.json)、[上游复现](firmware-upstream-reproduction.json) | 行列越界、滞回和配置修复，不是 nRF 固件 |
-| 上游 BOM/CPL | [生产参考](manufacturing-reference.json) | OPA350 误标 U1 恢复为 U3，覆盖原 BOM 51 个位号，不对应新 PCB |
-| 定位板／源 CAD | [板](plate.json)、[机械](mechanical.json)、[壳注册](case-assembly.json) | 3 处 owner 元数据修复、63 闭合轮廓、29 孔及源壳体有效性，不批准树脂打印 |
-| 后侧 USB | [基准](typec-location.json)、[旧通路](case-assembly.json) | 后侧子板，旧 8×2 mm 芯体不批准真实插头／线缆／CC |
-| 原生产包 | [Gerber](gerber-reference.json) | 38 外形图元、653 PTH、28 NPTH 在量化误差内一致；铜／阻焊／钢网仍待审查 |
+| 范围 | 当前证据 |
+|---|---|
+| 统一结果 | [各阶段结果](outcome.json)、[一致性](integration.json) |
+| 原理图与 PCB | [重新导出的原理图一致性及 ERC](schematic-current.json)、[严格 CAD 检查](../../hardware/ec60-nrf52840/audit-current.json)、[电气复查](yeti60-electrical.json) |
+| 固件核心 | [主机消毒器模拟](yeti60-firmware-simulation.json)、[轨迹](yeti60-firmware-trace.csv) |
+| 机械 | [只读定位板比较](plate.json)、[PCB 元数据](yeti60-pcb-mechanical-metadata.json)、[条件装配](yeti60-assembly.json) |
+| 渲染来源 | [几何](yeti60-render-geometry.json)、[装配图](../../renders/yeti60-assembly/README.zh-CN.md)、[PCB 图与动画](../../renders/ec60-nrf52840/README.zh-CN.md) |
+| 文档及文件 | [文档检查](documentation-check.json)、[源码清单](source-inventory.json) |
 
-旧上游 PCB 报告有 25 个 DRC 错误，两块原定位板各有 Edge.Cuts 文字错误；它们是参考源结果，不是当前 YETI60 的零错误 CAD，不要混用生产文件。
+在根目录运行 `python3 scripts/run_audit.py`。需要 KiCad CLI／Python、clang 和 uv，CAD 依赖固定在 `requirements-audit.txt`。可用 `KICAD_PYTHON`、`YETI_CAD_PYTHON` 指定已安装运行环境，KiCad Python 默认采用 macOS 路径。`--baseline <commit>` 指定连通回归基线；`--refresh-renders` 重建 PCB 与装配图，Blender 依赖见 `requirements-render.txt`，PCB 动画需要 ffmpeg。
 
-运行 `python3 scripts/run_audit.py`，需要 KiCad CLI/Python、clang、uv 和固定的 CAD 依赖。各阶段失败独立记录，依赖失败时跳过；局部通过不代表整体生产批准。总审查未完成时命令仍返回非零。`outcome.json` 保留上游历史审查结果，已移除停用原型的步骤；`source-inventory.json` 记录当前主项目文件。哈希清单不等于逐项功能审核。上游子模块的本地编辑器设置不作为设计提交。
+退出码 0 表示所有已实现的当前方案检查通过。阶段失败返回 1，并阻止依赖阶段执行。使用 `--require-production` 时，若检查通过但生产要求仍未完成则返回 2。每次运行均记录 `design-constraints.json` 中的未完成要求，目前不会授予生产批准。
 
-继续暂缓信号／射频模拟；不宣称树脂嵌件、完整插头线缆、电池包、最终 EC 结构或实机固件／射频已经验证。
+一致性检查将原理图、连接器、PCB、固件引脚、轨迹、配合几何和每张渲染图绑定到当前源码与生成脚本。验证期间设计文件必须保持字节不变。文件清单不代表逐文件语义批准，不包含上游子模块内部文件及本地编辑器设置。
+
+已移除过时生成器、布线快照、重复历史固件及历史审计输出，保留上游子模块、署名和许可证。当前只检查单 nRF 方案。电源布局、目标固件、最终机械堆叠、电池、USB 子板及线缆、开关操作空间、树脂嵌件、制造和实物测试仍待完成。信号及射频分析暂缓。
+
+故障注入测试确认反接的 USB 数据契约、过期轨迹、元件碰撞、单张旧图和图片字节变化均会被拒绝；仅在未修改数据的一致性检查通过后执行。
+
+新检出仓库需运行 `git submodule update --init --recursive`，取得固定版本的 EC60 与 FELK60 源几何。

@@ -19,8 +19,7 @@ J2 使用厂家侧插 PH 的 5.5 mm 高度建立示意本体，完整对插几�
 在根目录安装 KiCad 10、标准模型库、ffmpeg 和 Pillow 后执行：
 
 ```sh
-python3 -m pip install --target /tmp/yeti60-render-python pillow==11.3.0
-KICAD_AUDIT_PYTHONPATH=/tmp/yeti60-render-python python3 scripts/render_single_nrf.py
+uv run --with-requirements requirements-audit.txt python scripts/render_single_nrf.py
 ```
 
 `--stills-only`、`--frames`、`--fps`、`--jobs` 控制输出；环境变量可覆盖 `KICAD_CLI`、`KICAD10_3DMODEL_DIR`、`RENDER_FONT`、`RENDER_MONO_FONT`。缓存关联源、脚本、模型哈希、渲染器版本及动画参数。临时副本和帧位于已忽略的 `.render-work/`；`models/` 只保留项目自建示意模型。

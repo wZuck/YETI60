@@ -10,6 +10,6 @@ The current [assembly report](../docs/audit/yeti60-assembly.json) evaluates the 
 
 No production-ready resin STL, chosen insert, resin shrinkage allowance, qualified switch/dome stack, final battery or complete rear USB cable/plug assembly is approved.
 
-Rebuild: run KiCad Python `scripts/export_yeti60_mechanical_metadata.py`, then a Python environment containing `requirements-audit.txt` to run `scripts/check_yeti60_assembly.py`. The older `check_plate.py`, `check_mechanical.py` and `check_case_assembly.py` preserve historical upstream checks.
+Run `python3 scripts/run_audit.py` to export current PCB metadata, verify plate geometry without modifying the DXF, check conditional assembly fit and validate render geometry. Detected PCB, plate, component-envelope or battery-candidate collisions fail validation. Dependencies are pinned in `requirements-audit.txt`.
 
 The render pipeline preserves the original FELK60 case solids at their source size: the combined case bounding box in the original CAD frame is 325.700 × 125.200 × 31.190 mm. Tessellation uses 0.015 mm linear deflection and checks bounding deviations below 0.02 mm. The 7° presentation transform is rigid; it does not resize the case. See [render geometry verification](../docs/audit/yeti60-render-geometry.json).

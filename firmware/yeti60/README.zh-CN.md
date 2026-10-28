@@ -21,4 +21,6 @@ python3 scripts/simulate_yeti60_firmware.py
 
 阈值和等待时间均为示例配置，不能作为实物校准结果。电池换算假定 12 位 SAADC、0.6 V 参考、1/6 增益及 1M:1M 分压；硬件必须正确配置并串行使用共享 ADC。USB 电流限制须遵循枚举授权，NTC 保护由充电芯片硬件承担。
 
-结果与源码哈希见 [模拟报告](../../docs/audit/yeti60-firmware-simulation.json)。原 GPL EC60 扫描参考保留在 `firmware/ec60/`，其测试不能证明 nRF 支持。
+结果与源码哈希见 [模拟报告](../../docs/audit/yeti60-firmware-simulation.json)。原 GPL EC60 源码保留在 `EC60` 子模块，重复历史测试不再进入当前流程。
+
+核心由单一执行上下文持有，其他线程或中断请求应排队。忙标记拒绝同步回调重入，并非原子线程锁。GPIO、等待和 HID 回调必须正常返回；初始化要求核心静止。测试覆盖初始化、供电、连接和扫描回调期间的重入拒绝，包括故障报告。

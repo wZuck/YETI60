@@ -12,15 +12,25 @@ struct sim {
   uint64_t now, afe_on, discharged, released, bat_on;
   unsigned adc_reads, frame_reads, reports, events;
   int fail_at;
-  bool reject_report, reenter;
+  bool reject_report, reenter, reenter_callbacks;
   uint16_t sample[5][15];
   uint8_t report[8];
   enum yeti_link link;
   struct yeti_core *core;
 };
+static void reject_reentry(struct sim *s) {
+  if (!s->reenter_callbacks)
+    return;
+  uint32_t mv;
+  assert(yeti_power(s->core, false) == -1);
+  assert(yeti_scan(s->core) == -1);
+  assert(yeti_battery_mv(s->core, &mv) == -1);
+  assert(yeti_connections(s->core, Y_USB_OFF, 0, false) == -1);
+}
 static bool high(enum yeti_mode m) { return m == Y_HIGH; }
 static void gpio(void *ctx, uint8_t pin, enum yeti_mode mode) {
   struct sim *s = ctx;
+  reject_reentry(s);
   assert(pin < 64);
   s->events++;
   bool controlled = pin == PIN_APLEX_OUT_PIN_0 || pin == PIN_ADC;
@@ -54,7 +64,10 @@ static void gpio(void *ctx, uint8_t pin, enum yeti_mode mode) {
     raised += high(s->pins[yeti_rows[i]]);
   assert(raised <= 1);
 }
-static void delay(void *ctx, uint32_t us) { ((struct sim *)ctx)->now += us; }
+static void delay(void *ctx, uint32_t us) {
+  reject_reentry(ctx);
+  ((struct sim *)ctx)->now += us;
+}
 static int adc(void *ctx, uint8_t ain, uint32_t acquisition) {
   struct sim *s = ctx;
   assert(acquisition == 40);
@@ -91,6 +104,7 @@ static int adc(void *ctx, uint8_t ain, uint32_t acquisition) {
 }
 static bool report(void *ctx, enum yeti_link link, const uint8_t data[8]) {
   struct sim *s = ctx;
+  reject_reentry(s);
   s->reports++;
   if (s->reject_report)
     return false;
@@ -308,6 +322,27 @@ static void retry_and_contract_edges(void) {
   puts("contract-edges: enum rejection, aliased reinit, modifier report, "
        "failed old-host release retry and overrange ADC pass");
 }
+static void callback_exclusion(void) {
+  struct yeti_core c;
+  struct sim s;
+  init(&c, &s);
+  s.reenter_callbacks = true;
+  assert(yeti_init(&c, &c.hal, &c.cfg) == 0 && !c.busy);
+  assert(yeti_power(&c, true) == 0 && !c.busy);
+  assert(yeti_connections(&c, Y_USB_CONFIGURED, 500, false) == 0 && !c.busy);
+  s.sample[0][0] = 2500;
+  scan(&c, &s);
+  scan(&c, &s);
+  assert(!c.busy && s.report[2] == 4);
+  s.frame_reads = 0;
+  s.fail_at = 0;
+  assert(yeti_scan(&c) == -2 && !c.busy);
+  assert(s.report[2] == 0);
+  assert(yeti_power(&c, false) == 0 && !c.busy);
+  assert(s.report[2] == 0);
+  puts("callbacks: GPIO, wait and HID callbacks cannot reenter active "
+       "operations");
+}
 int main(void) {
   const char *trace_path = getenv("YETI_SIM_TRACE");
   if (trace_path) {
@@ -327,6 +362,8 @@ int main(void) {
   power_hid();
   trace_phase = "contract-edges";
   retry_and_contract_edges();
+  trace_phase = "callbacks";
+  callback_exclusion();
   puts("YETI60 host simulation passed; transport, ADC and GPIO are mocked, not "
        "nRF peripheral emulation.");
   if (trace_file)

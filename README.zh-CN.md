@@ -23,8 +23,8 @@
 - [控制核心、模拟和轨迹](firmware/yeti60/README.zh-CN.md)
 - [装配渲染](renders/yeti60-assembly/README.zh-CN.md)
 - [PCB 渲染及 360° 动画](renders/ec60-nrf52840/README.zh-CN.md)
-- [审查索引和历史证据](docs/audit/README.zh-CN.md)
+- [当前审查索引](docs/audit/README.zh-CN.md)
 
-外壳暂按树脂，信号／射频模拟继续暂缓。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。中途进展已作为 `8f1b0fc` 推送。
+外壳暂按树脂，信号／射频模拟继续暂缓。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
 
 基于 [Cipulot/EC60](https://github.com/Cipulot/EC60) 和 [fredlb/felk60](https://github.com/fredlb/felk60)，保留上游作者、许可证和原名称。`EC60-nRF52840.*` 文件名及 `YAECKB` 库标识为技术兼容保留，公开项目名统一为 **YETI60**。

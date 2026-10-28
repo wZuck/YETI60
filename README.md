@@ -23,8 +23,8 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 - [Firmware core, simulation and trace](firmware/yeti60/README.md)
 - [Assembly renders](renders/yeti60-assembly/README.md)
 - [PCB renders and 360° animation](renders/ec60-nrf52840/README.md)
-- [Audit index and historical evidence](docs/audit/README.md)
+- [Current audit index](docs/audit/README.md)
 
-The case material is provisionally resin. SI/RF analysis remains deferred. Project-owned prose defaults to English with a parallel `.zh-CN.md`; machine-readable field names stay stable. The earlier checkpoint was pushed as `8f1b0fc`.
+The case material is provisionally resin. SI/RF analysis remains deferred. Project-owned prose defaults to English with a parallel `.zh-CN.md`; machine-readable field names stay stable.
 
 Based on [Cipulot/EC60](https://github.com/Cipulot/EC60) and [fredlb/felk60](https://github.com/fredlb/felk60). Upstream authors, licenses and original project names are retained. Existing `EC60-nRF52840.*` filenames and `YAECKB` library identifiers remain for technical compatibility; the public project name is **YETI60**.
