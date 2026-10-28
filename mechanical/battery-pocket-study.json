@@ -1,0 +1,40 @@
+{
+  "revision": "YETI60-P1-BAT-RECESS-STUDY",
+  "scope": "Optional geometry study; baseline 200 mAh assembly remains separate",
+  "pack_bounds_case_mm": [
+    240.0,
+    -142.0,
+    -10.8,
+    300.0,
+    -106.0,
+    -4.6
+  ],
+  "pack_max_envelope_mm": [
+    60.0,
+    36.0,
+    6.2
+  ],
+  "cell_reference": "Honcell HCP-503450, minimum 1000 mAh at 0.2C and 23+-2 C; bare-cell reference, not approved pack",
+  "pocket_bounds_case_mm": [
+    239.25,
+    -142.75,
+    -11.0,
+    300.75,
+    -105.25,
+    0.0
+  ],
+  "pocket_corner_radius_mm": 1.0,
+  "floor_tolerance_allowance_mm": 0.3,
+  "required_remaining_wall_mm": 3.0,
+  "pack_retention_and_floor_gap_mm": 0.2,
+  "pack_top_clearance_to_fastener_nominal_mm": 0.7,
+  "maximum_charge_current_mA": 100,
+  "protection": "Custom PCM with independent charge-temperature interruption, third-wire 10k NTC; PHR-3 custom polarity",
+  "supplier_acceptance": "Assembler must sign full envelope including tabs, folded connections, PCM, thermal protection, NTC, wrapping and post-cycle growth; 60x36x6.2 is a design budget, not the bare cell dimensions",
+  "not_verified": [
+    "Resin strength, creep, drop test or insert pullout",
+    "Full wire routing and service removability",
+    "Supplier pack drawing and temperature/current limits"
+  ],
+  "pack_xy_and_case_tolerance_allowance_mm": 0.4
+}

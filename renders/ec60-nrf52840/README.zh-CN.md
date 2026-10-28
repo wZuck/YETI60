@@ -10,7 +10,7 @@
 
 [MP4](pcb-turntable.mp4) · [GIF](pcb-turntable.gif) · [感应面](pcb-front.png) · [器件面](pcb-back.png)
 
-MP4 为 1600×1000、24 fps、144 帧、6 秒；循环 GIF 为 960×600、12 fps。正反 PNG 为 2400×1500，总览为 2400×1900。
+MP4 为 1600×1000、24 fps、72 帧、3 秒；循环 GIF 为 960×600、12 fps。正反 PNG 为 2400×1500，总览为 2400×1900。
 
 脚本先核对 CAD 源哈希，结束时确认源文件未变，只在渲染副本中调整模型引用。旧 KiCad 6 WRL 路径解析到标准 STEP；J1 使用同型号标准件并按原焊盘修正原点，U2/U4 去掉失效重复模型并保留原 SSOP STEP。
 
@@ -19,7 +19,7 @@ J2 使用厂家侧插 PH 的 5.5 mm 高度建立示意本体，完整对插几�
 在根目录安装 KiCad 10、标准模型库、ffmpeg 和 Pillow 后执行：
 
 ```sh
-uv run --with-requirements requirements-audit.txt python scripts/render_single_nrf.py
+uv run --with-requirements requirements-audit.txt python scripts/render_single_nrf.py --frames 72 --fps 24
 ```
 
 `--stills-only`、`--frames`、`--fps`、`--jobs` 控制输出；环境变量可覆盖 `KICAD_CLI`、`KICAD10_3DMODEL_DIR`、`RENDER_FONT`、`RENDER_MONO_FONT`。缓存关联源、脚本、模型哈希、渲染器版本及动画参数。临时副本和帧位于已忽略的 `.render-work/`；`models/` 只保留项目自建示意模型。

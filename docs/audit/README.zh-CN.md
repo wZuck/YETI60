@@ -24,3 +24,5 @@
 故障注入测试确认反接的 USB 数据契约、过期轨迹、元件碰撞、单张旧图和图片字节变化均会被拒绝；仅在未修改数据的一致性检查通过后执行。
 
 新检出仓库需运行 `git submodule update --init --recursive`，取得固定版本的 EC60 与 FELK60 源几何。
+
+当前材料、装配工程图、电池槽和条件功耗模型另见[工程资料检查](yeti60-engineering.json)。运行 `python3 scripts/check_yeti60_engineering.py` 核对本阶段证据，`python3 tests/audit/test_engineering.py` 验证错误图纸、薄壁及未经批准的大电池兼容声明会被拒绝。这不替代尚未刷新的完整集成结果或实物验收。

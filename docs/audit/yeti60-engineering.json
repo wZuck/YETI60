@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "scope": [
+    "74-part mainboard purchase requirements",
+    "current-source engineering sheets in separate languages",
+    "optional BRep recess and tolerance geometry",
+    "conditional power arithmetic with unmeasured assumptions"
+  ],
+  "production_approved": false,
+  "check_recipe_sha256": "13f19d5a6ce39ce88ffb90b1335054acf1fbd1a3e27540323e15d2df46e07b95",
+  "evidence_sha256": {
+    "yeti60-bom.json": "d28127b5500318c7c8a9168ee5e4767a9e9759c0235e9de8aedeb6a5396df130",
+    "yeti60-power-budget.json": "ec81f249db9cff5a125c8caf371c6e0196dba88a0eebf2d341d1f9aec840e0f8",
+    "yeti60-battery-pocket.json": "e8cadd2e3be6c13029eb3e419644a700057e066e82dadca53f01ec7f5a3285df",
+    "yeti60-assembly-drawings.json": "f971bf392464cb5eb459cd2c084b53066aa9325cd9f4cf921ad8ce50d50165b2"
+  },
+  "limits": [
+    "Larger battery charging compatibility is explicitly not approved",
+    "No physical hardware verification or RF/SI claim"
+  ]
+}

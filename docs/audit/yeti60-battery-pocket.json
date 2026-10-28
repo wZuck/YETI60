@@ -1,0 +1,85 @@
+{
+  "status": "optional-pocket-geometric-checks-passed",
+  "production_approved": false,
+  "source_sha256": {
+    "mechanical/battery-pocket-study.json": "f5b907b355e6d7f923c3fd0d83ca9adbe6544ab3848dc2f6222fdd9737f71731",
+    "mechanical/generated/yeti60-bottom.step": "40332df5f914fc9594f38516d77aad0a00581b47151a0fd5c6cb3e7364440e14",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "mechanical/assembly-spec.json": "fa63a7ad0986f37e5efba12f681b8771a3b6477c3c35f4d38956f0be6771b139",
+    "docs/audit/yeti60-assembly.json": "60bc2bb2f39e7f8cec7e213908efa6874b92bd7fefe341f9496f299c8c79c932",
+    "scripts/study_yeti60_battery_pocket.py": "e973ffec40ab0415aea78dfbc4d3750213d9c0b9ca738ee931b97ebb10c13617",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/build_yeti60_mechanical.py": "14434a1a0a7ee7884455fdb1b0638f33694f3938d532552877a22d575cb1eeb1",
+    "scripts/check_yeti60_assembly.py": "86fc336b8062ff448e5ac4aa744a4113dee30f3606d604b997ca4fa25e7ca853"
+  },
+  "output": "mechanical/generated/yeti60-bottom-battery-pocket.step",
+  "output_sha256": "cfb0db7937e698fb73996429189b931cb73f2c5b7e2d4fd02d06a70e4d00d0f6",
+  "external_bounds_mm": [
+    51.462701398115,
+    -206.30970210030003,
+    -19.39959445791356,
+    377.162712995288,
+    -91.1096578864537,
+    11.790000000000015
+  ],
+  "case_scale": [
+    1,
+    1,
+    1
+  ],
+  "solid_count": 1,
+  "removed_volume_mm3": 11734.443063467916,
+  "pocket_bounds_case_mm": [
+    239.25,
+    -142.75,
+    -11.0,
+    300.75,
+    -105.25,
+    0.0
+  ],
+  "pack_bounds_case_mm": [
+    240.0,
+    -142.0,
+    -10.8,
+    300.0,
+    -106.0,
+    -4.6
+  ],
+  "pack_max_envelope_mm": [
+    60.0,
+    36.0,
+    6.2
+  ],
+  "pack_case_overlap_mm3": [
+    0.0,
+    0.0
+  ],
+  "expanded_pack_xy_tolerance_mm": 0.4,
+  "expanded_pack_case_overlap_mm3": [
+    0.0,
+    0.0
+  ],
+  "component_envelope_collisions": [],
+  "minimum_pack_to_fastener_envelope_mm": 0.7000000000000002,
+  "minimum_remaining_wall_normal_mm": 3.452488654934928,
+  "remaining_wall_after_tolerance_mm": 3.152488654934928,
+  "wall_method": "Exact minimum BRep distance between conservative full rectangular pocket-floor region and original large sloping exterior underside face; includes rounded-pocket corners conservatively",
+  "underside_plane": {
+    "normal": [
+      1.7345173336965853e-08,
+      -0.12186934340504113,
+      -0.992546151641335
+    ],
+    "point": [
+      464.31271622946,
+      -202.8165976086,
+      -7.103162571506
+    ]
+  },
+  "insert_keepouts_removed_volume_mm3": 0.0,
+  "not_verified": [
+    "Resin strength, creep, drop test or insert pullout",
+    "Full wire routing and service removability",
+    "Supplier pack drawing and temperature/current limits"
+  ]
+}

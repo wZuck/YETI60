@@ -1,7 +1,7 @@
 {
   "status": "conditional-fit-review",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "41b085368c0a723f8c3111786340207cdde2f98d9a41d502c46478e9c1a606ad",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "81d7b0595eb77fa5cdc196dcdd24e11cfca2cdd80f83c0e9a381e749fbe1fec5",
     "mechanical/generated/yeti60-bottom.step": "40332df5f914fc9594f38516d77aad0a00581b47151a0fd5c6cb3e7364440e14",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "mechanical/assembly-spec.json": "fa63a7ad0986f37e5efba12f681b8771a3b6477c3c35f4d38956f0be6771b139",
@@ -12,7 +12,7 @@
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/export_yeti60_mechanical_metadata.py": "22ebeac89f8839f7fddb0a84dbcf6be2244dc7c55e3382cd6805f8e58d94525e"
   },
-  "mechanical_metadata_sha256": "8a11ffa7649189df58631e92b2be38096a4aebaf6f5a030a2bd279ba966b56a2",
+  "mechanical_metadata_sha256": "41dc95d7f95d1c3cbdfb1d9ac919ea2c1f0dc85bc52b7b56d18424c5849a2958",
   "pcb_frame_to_case": "X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z",
   "nominal_stack": {
     "bottom_gasket_ledge_z": 3.19,

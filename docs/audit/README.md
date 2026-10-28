@@ -24,3 +24,5 @@ Retired generators, routing snapshots, duplicate legacy firmware and historical 
 Fault-injection tests verify rejection of reversed USB data contracts, stale traces, component collisions, stale individual views and changed image bytes. They run only after the unmodified integration check passes.
 
 A fresh checkout requires `git submodule update --init --recursive` for the pinned EC60 and FELK60 source geometry.
+
+Current procurement, engineering assembly sheets, battery recess and conditional power calculations have a separate [engineering evidence check](yeti60-engineering.json). Run `python3 scripts/check_yeti60_engineering.py`; `python3 tests/audit/test_engineering.py` verifies rejection of changed drawings, thin walls and unapproved larger-pack compatibility claims. This does not replace the pending full-integration refresh or physical acceptance.

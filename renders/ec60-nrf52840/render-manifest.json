@@ -1,12 +1,12 @@
 {
   "source": "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb",
-  "source_sha256": "e45415e3f5cf36a821e26047ffe5098127dd1948eb1f87d23fe1012b71199d76",
+  "source_sha256": "81d7b0595eb77fa5cdc196dcdd24e11cfca2cdd80f83c0e9a381e749fbe1fec5",
   "recipe_sha256": "f20d90f64dd3dab6732df83540b66039a110a11959b10e581047430e9edc0b29",
   "renderer": "10.0.7",
   "animation": {
-    "frames": 144,
+    "frames": 72,
     "fps": 24,
-    "seconds": 6.0,
+    "seconds": 3.0,
     "dimensions": [
       1600,
       1000
@@ -558,24 +558,24 @@
   ],
   "outputs": {
     "pcb-turntable.mp4": {
-      "sha256": "bdce57a0a426cf95735744dc20999dce4d8ae032b6c79e9ef4c20283468d5d8c",
-      "bytes": 1844212
+      "sha256": "5c022f999761e65d1ecb59bf929aee0ebef72cebb25607afeef16aa5aa4e83bc",
+      "bytes": 1092515
     },
     "pcb-turntable.gif": {
-      "sha256": "494b10864b02fa68b4ffbbe4b96d03f668ddf07d846bb6c79d24208e507b7437",
-      "bytes": 4480488
+      "sha256": "e662dfba0f1ca1c1c977a2cfc1e73d55fcd9fe97ba07526cb5a170be8de61d93",
+      "bytes": 2340182
     },
     "pcb-back.png": {
-      "sha256": "c2690322436a6abdda1039481c33032c16f79eeee0b4e6603cb44e652e4c153a",
-      "bytes": 1007765
+      "sha256": "9f207076719ac56736a3d06df11dca23d9677930e16653f4fad78a6a4a1cae7d",
+      "bytes": 1004475
     },
     "pcb-front.png": {
-      "sha256": "ff28109dbfcb0b6a629b5dbf8b3fb91834fa676abfaa8488e6b33623a4b20c70",
-      "bytes": 976487
+      "sha256": "b1d6a13dbe5907952c502374300b5d0a6d4d4f3b9d2e7c457f3601c8ee87d69d",
+      "bytes": 976259
     },
     "pcb-overview.png": {
-      "sha256": "33d11ba161985a5a7ba97007e5e6d6ce9bdbd38a863874ee614e07f2b1ad478d",
-      "bytes": 918339
+      "sha256": "3db889bafbc3d1057fb4b2cc3d3ee7d2b12070dd5e5a1f0965ee5432c226af0f",
+      "bytes": 917013
     }
   },
   "limits": [

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Export the pinned daughterboard contract and a resolved render-only STEP."""
-import hashlib,json,subprocess,tempfile,sys
+import hashlib,json,subprocess,tempfile,sys,re
 from pathlib import Path
 import pcbnew as pcb
 from kicad_sexpr import loads,dumps,children,child,Atom
@@ -34,9 +34,10 @@ def main():
                 name=Path(old).name.replace('.wrl','.step');path=byname.get(name)
                 if path is None:raise FileNotFoundError(ref+' model '+name)
             assert path.is_file();model[1]=str(path)
-            resolved.append({'reference':ref,'original':old,'path':str(path),'sha256':sha(path),'kind':'source HRO connector' if ref=='J1' else 'standard package geometry; J2 is a mating-compatible JST substitute'})
+            resolved.append({'reference':ref,'original':old,'model_root':'repository' if path.is_relative_to(ROOT) else 'kicad-3dmodels','path':str(path.relative_to(ROOT if path.is_relative_to(ROOT) else MODELS)),'sha256':sha(path),'kind':'source HRO connector' if ref=='J1' else 'standard package geometry; J2 is a mating-compatible JST substitute'})
     target.write_text(dumps(tree)+'\n')
     subprocess.run([CLI,'pcb','export','step','--user-origin','0x0mm','-f','-o',str(WORK/'daughterboard.step'),str(target)],check=True,capture_output=True)
-    report={'status':'contract-passed','source_commit':commit,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [original,UP/'UDB.kicad_sch']},'finished_pcb_thickness_mm':pcb.ToMM(b.GetDesignSettings().GetBoardThickness()),'mount_holes_pcb_mm':[[pcb.ToMM(fps[r].GetPosition().x),pcb.ToMM(fps[r].GetPosition().y)] for r in ['MH1','MH2','MH3','MH4']],'connector_pin_contract':{'1':'VBUS through F1','2':'D-','3':'D+','4':'GND'},'separate_CC_terminations_ohm':[5100,5100],'model_resolutions':resolved,'exported_step':str((WORK/'daughterboard.step').relative_to(ROOT)),'export_recipe_sha256':sha(Path(__file__).resolve()),'limits':['Standard package substitutions do not qualify the supplier part height','JST mating harness uses a separately checked conservative housing envelope']}
+    step=WORK/'daughterboard.step';content=re.sub(r"(FILE_NAME\('[^']*',')[^']*",r"\g<1>2000-01-01T00:00:00",step.read_text());step.write_text('\n'.join(line.rstrip() for line in content.splitlines())+'\n')
+    report={'exported_step_sha256':sha(step),'status':'contract-passed','source_commit':commit,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [original,UP/'UDB.kicad_sch']},'finished_pcb_thickness_mm':pcb.ToMM(b.GetDesignSettings().GetBoardThickness()),'mount_holes_pcb_mm':[[pcb.ToMM(fps[r].GetPosition().x),pcb.ToMM(fps[r].GetPosition().y)] for r in ['MH1','MH2','MH3','MH4']],'connector_pin_contract':{'1':'VBUS through F1','2':'D-','3':'D+','4':'GND'},'separate_CC_terminations_ohm':[5100,5100],'model_resolutions':resolved,'exported_step':str((WORK/'daughterboard.step').relative_to(ROOT)),'export_recipe_sha256':sha(Path(__file__).resolve()),'limits':['Standard package substitutions do not qualify the supplier part height','JST mating harness uses a separately checked conservative housing envelope']}
     (ROOT/'docs/audit/yeti60-daughterboard.json').write_text(json.dumps(report,indent=2)+'\n');print('Pinned daughterboard pin/CC contract and native STEP exported')
 if __name__=='__main__':main()

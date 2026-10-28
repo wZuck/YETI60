@@ -1,4 +1,5 @@
 {
+  "exported_step_sha256": "75599af49f0adb6f7640af5e71ca928fc43819c26ce161b0292952ccfd35fdc8",
   "status": "contract-passed",
   "source_commit": "2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea",
   "source_sha256": {
@@ -38,55 +39,62 @@
     {
       "reference": "F1",
       "original": "${KISYS3DMOD}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl",
-      "path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Resistor_SMD.3dshapes/R_1206_3216Metric.step",
+      "model_root": "kicad-3dmodels",
+      "path": "Resistor_SMD.3dshapes/R_1206_3216Metric.step",
       "sha256": "f5d1ea5c47935091292bd1c6c698e0df88d3d4bbf92bf66b4c97e49df5be9ebc",
       "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
     },
     {
       "reference": "R2",
       "original": "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.wrl",
-      "path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+      "model_root": "kicad-3dmodels",
+      "path": "Resistor_SMD.3dshapes/R_0402_1005Metric.step",
       "sha256": "91507e5af4251cb4ef38e04889c9b98da29904432bd83786bba13ae9b605eacb",
       "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
     },
     {
       "reference": "R1",
       "original": "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.wrl",
-      "path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+      "model_root": "kicad-3dmodels",
+      "path": "Resistor_SMD.3dshapes/R_0402_1005Metric.step",
       "sha256": "91507e5af4251cb4ef38e04889c9b98da29904432bd83786bba13ae9b605eacb",
       "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
     },
     {
       "reference": "J2",
       "original": "${ACHERON_3D}/SM04B-SRSS-TB.STEP",
-      "path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Connector_JST.3dshapes/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step",
+      "model_root": "kicad-3dmodels",
+      "path": "Connector_JST.3dshapes/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step",
       "sha256": "4b0f89a75d3758add0041ca9e5ded3a780c23ef4e3e99bcc398b41177dff5d0f",
       "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
     },
     {
       "reference": "J1",
       "original": "${ACHERON_3D}/TYPE-C-31-M-12.step",
-      "path": "/Users/wzy/workspace/YAECKB/hardware/usb-daughterboard/upstream/libraries/locallib.pretty/HRO  TYPE-C-31-M-12.step",
+      "model_root": "repository",
+      "path": "hardware/usb-daughterboard/upstream/libraries/locallib.pretty/HRO  TYPE-C-31-M-12.step",
       "sha256": "272b7208e6c8beb3f21766a3a1c444a005e1706a99f6e2ab6c035c4f558c2d9d",
       "kind": "source HRO connector"
     },
     {
       "reference": "U1",
       "original": "${KISYS3DMOD}/Package_SON.3dshapes/USON-10_2.5x1.0mm_P0.5mm.wrl",
-      "path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Package_SON.3dshapes/USON-10_2.5x1.0mm_P0.5mm.step",
+      "model_root": "kicad-3dmodels",
+      "path": "Package_SON.3dshapes/USON-10_2.5x1.0mm_P0.5mm.step",
       "sha256": "d9d0628ead2ac2bab888344afbd0ef8b0f5a4ba37641ccc66dcbe300e3a74ac0",
       "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
     },
     {
       "reference": "D1",
       "original": "${KISYS3DMOD}/Diode_SMD.3dshapes/D_SOD-123.wrl",
-      "path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Diode_SMD.3dshapes/D_SOD-123.step",
+      "model_root": "kicad-3dmodels",
+      "path": "Diode_SMD.3dshapes/D_SOD-123.step",
       "sha256": "b3dc4065573abc72e3d5b4cca0e908f72a24205a41b6284b1f75ccacbe99adf8",
       "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
     }
   ],
   "exported_step": ".assembly-work/daughterboard/daughterboard.step",
-  "export_recipe_sha256": "b5e048bf80954551059626771cdbcd0b275a8c122eb0655925eeb99d79eda0d5",
+  "export_recipe_sha256": "d832aea521e11484b7451fa7f09677852d3457bc521b308a26bd0fe47d93d80f",
   "limits": [
     "Standard package substitutions do not qualify the supplier part height",
     "JST mating harness uses a separately checked conservative housing envelope"

@@ -4,7 +4,7 @@ English | [Chinese](README.zh-CN.md)
 
 A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
 
-> **Design checkpoint:** the PCB, target firmware and derived resin-case design have advanced beyond the published renders. Images and the earlier cross-domain integration report are historical until the remaining assembly/cable checks and render refresh complete. See [checkpoint details](docs/design-checkpoint.md).
+> **Design checkpoint:** the PCB, target firmware and derived resin-case design have advanced beyond the published renders. PCB images/animation now match the cleaned board; current engineering assembly sheets and the optional recess study are linked below. Older studio assembly renders and the previous full integration report remain historical. See [checkpoint details](docs/design-checkpoint.md).
 
 ## Current review
 
@@ -16,8 +16,11 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 | Firmware | New schematic-bound control core passes host ASan/UBSan simulation; normal/calibrator target binaries now build; on-device USB/BLE and EC calibration remain pending |
 | Mechanical | Source PCB/plate/case nominal geometry has no overlap at the explicitly provisional Z stack; final dome/fastener/resin tolerances are unqualified |
 | Battery | Custom 200 mAh pack design envelope 50×20×2.9 mm; supplier drawing, thermal protection and capacity approval pending |
-| Visualization | Published images are pending regeneration from this checkpoint |
+| Visualization | PCB images/animation and separate engineering sheets updated; older studio assembly renders pending refresh |
 
+- [Engineering assembly sheets and sequence](docs/engineering/assembly.md)
+- [Battery recess feasibility](docs/engineering/battery-study.md)
+- [Power, runtime and charging calculation](docs/engineering/power-budget.md)
 - [Materials and procurement table](docs/engineering/materials.md)
 - [PCB marking cleanup](docs/engineering/board-markings.md)
 - [Complete review](docs/audit/yeti60-comprehensive-review.md)
