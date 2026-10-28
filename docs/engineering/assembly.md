@@ -6,7 +6,7 @@ These engineering sheets use the current, unscaled FELK60-derived shell meshes, 
 
 ![Source-sized engineering assembly sheet](images/assembly.png)
 
-[Vector assembly drawing](images/assembly.svg) · [Optional battery-pocket drawing](images/battery-pocket.svg) · [Optional recess study](battery-study.md)
+[Vector assembly drawing](images/assembly.svg) · [Default battery-pocket drawing](images/battery-pocket.svg) · [Default recess design](battery-study.md)
 
 ## Assembly datums
 
@@ -30,9 +30,13 @@ The standoff's insulating film lies **between PCB top and brass shoulder**, whil
 2. Deburr the 1.2 mm steel plate and tap its 29 mounting pilots to M2. Inspect its matched Topre-compatible housings, stabilizers and 6U spacebar hardware with the actual donor set. Fit the 60 housings/sliders and matched dome/spring set in the correct stack; keep every spring centered on its installed electrode.
 3. Fit 29 brass adapter standoffs to the plate. Place 0.10 mm polyimide rings between each shoulder and PCB sensing face. Locate the PCB without shifting electrode centers, then fit 29 PEEK washers and M1.6×5 screws underneath. Tighten progressively using a first-article-qualified torque; no unverified torque value is prescribed.
 4. Fit the rear daughterboard on its four bonded M2 insert seats using the proposed M2×4 screws/insulating washers. Confirm USB mouth alignment and actual cable plug access before proceeding. Connect the four-wire harness only after continuity and polarity checks. The 150 mm harness length is provisional pending the full bend/strain-relief routing check.
-5. Use the baseline 200 mAh pack only with the baseline electrical configuration. Insulate and secure the pouch within its envelope without crushing it. For the optional recessed bottom, follow the separate pack/charger qualification gates; do not treat the 1000 mAh envelope as a ready-to-install battery. Keep the pack and harness clear of screw heads and the service opening.
+5. Install only a supplier-signed P2 1600 mAh protected pack within the full 85×43×4.8 mm envelope. Verify independent thermal interruption, third-wire NTC and custom polarity. Retention/insulation must fit the 0.2 mm floor budget without pouch pressure. Nominal pack-to-fastener clearance is 0.7 mm. Do not mix with the old small-pack charge configuration.
 6. With the case open and battery polarity verified, flash the USB calibrator through the **custom** J3 probe mapping. Follow the [firmware calibration procedure](../../firmware/target/README.md), preserve settings when loading the normal HEX, then check all 60 keys and USB/BLE operation on hardware.
 7. Fit the gasket pads to their existing ledges and close the shell progressively. Proposed M3×5 screws with 0.30 mm shims give nominal 2.50 mm insert engagement from the recorded shell seats; inspect thread bottoming and heads in their recesses. Verify full key travel, connector clearance, no pinched leads and external switch access. Fit feet after checking the underside seating surfaces.
+
+The user-selected rear daughterboard remains **C5 JSH**, with no UDB S substitution. Retain pinned revision `2b6c52a`, the 14×12.5 mm four-hole mounting rectangle and the four-wire J1 interface.
+
+Full-speed charging requires the board on and a USB host accepting the 500 mA configuration. Board-off hardware charging is USB100 only, with complete charge time unverified; see [charge-state behavior](power-budget.md) for charge-only adapters.
 
 ## Wiring
 
@@ -44,6 +48,6 @@ The standoff's insulating film lies **between PCB top and brass shoulder**, whil
 
 ## Rebuild and acceptance
 
-Use KiCad Python for `export_yeti60_mechanical_metadata.py` and `export_yeti60_daughterboard.py`. With `requirements-audit.txt`, run `check_yeti60_assembly.py`, `export_yeti60_render_meshes.py`, `study_yeti60_battery_pocket.py`, then `draw_yeti60_assembly.py`. Finally run `python3 scripts/check_yeti60_engineering.py` and the existing target/DRC checks. Source/output hashes are in [drawing evidence](../audit/yeti60-assembly-drawings.json).
+Use KiCad Python for `export_yeti60_mechanical_metadata.py` and `export_yeti60_daughterboard.py`. With `requirements-audit.txt`, run `build_yeti60_mechanical.py`, `check_yeti60_assembly.py`, `export_yeti60_render_meshes.py`, `study_yeti60_battery_pocket.py`, `screen_yeti60_batteries.py`, then `draw_yeti60_assembly.py`. Finally run `python3 scripts/check_yeti60_engineering.py` and the existing target/DRC checks. Source/output hashes are in [drawing evidence](../audit/yeti60-assembly-drawings.json).
 
 No sample exists yet. Shell and pack BRep checks establish the stated conditional geometry, not actual dome compression, acoustic feel, resin creep or electrical operation. The harness routing, exact donor part compatibility, supplier part heights, printed-shell tolerances and all physical checks remain first-article requirements. RF/SI remains deferred by the user.

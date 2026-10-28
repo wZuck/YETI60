@@ -1,60 +1,62 @@
 English | [Chinese](battery-study.zh-CN.md)
 
-# Bottom-case recess and larger battery feasibility
+# Default single-cell battery and bottom recess
 
-**An interior recess can accommodate a 60×36×6.2 mm complete-pack design envelope without changing the FELK60 exterior envelope. It does not make a 1000 mAh pack electrically interchangeable with the current 200 mAh pack.** The current charger setting and safety timer require a separate large-pack electrical revision; see [power and charging calculation](power-budget.md).
+P2 selects **YETI60-BAT-1600-1S**, a custom protected pack based on Honcell HCP404074. The complete-pack design envelope is **85×43×4.8 mm**. The recess is included in the canonical [bottom STEP](../../mechanical/generated/yeti60-bottom.step); there is one default bottom, with the FELK60 exterior unchanged. C5 JSH remains the USB daughterboard.
 
-![Optional recess, source coordinates and section](images/battery-pocket.png)
+This is the largest candidate found in the documented catalog/grid search. It is not an all-market or continuous-position maximum, and the finished pack still needs a supplier-signed drawing.
 
-## Geometry and reproducible calculation
+![Default battery recess and critical section](images/battery-pocket.png)
 
-The source is the derived tough-resin bottom STEP with bonded inserts and switch access, in the original FELK60 coordinates (X right, Y negative toward the typist, Z upward). Current PCB bottom is z=−2.00. The exterior union remains **325.700×125.200×31.190 mm**. This is one checked candidate location, not a global proof of the largest possible pack.
+## Selection method and reliable sources
 
-| Quantity | Checked value |
+The [catalog snapshot](../../hardware/bom/cell-catalog.json) contains 249 Honcell and 402 Epec 3.7 V entries, retrieved on 2026-10-28 from the [Honcell table](https://www.honcell.com/lithium-battery/cells/hcp-lipo-battery-cells/1316) and [Epec table](https://www.epectec.com/batteries/lithium-prismatic-cells.html). No stock or price claim is made. Published values are retained, including the suspicious HCP256371 thickness of 25 mm; model codes are not used to silently correct data.
+
+`screen_yeti60_batteries.py` tests entries of at least 1000 mAh, both 0°/90° orientations, a 1 mm XY grid, and pack tops at −4.6/−5.5/−6/−8 mm. Screening adds 10 mm to cell length, 2 mm to width and 0.8 mm to thickness for tabs/protection/wrapping/growth. It preserves the daughterboard/insert compartment, shell screw zones, component envelopes plus 0.5 mm, and ±0.4 mm pack XY allowance, requiring at least 3 mm wall after a 0.3 mm allowance. See the [screening report](../audit/yeti60-cell-screening.json). Finer positioning, other angles, other pack constructions or other catalogs could change the result.
+
+| Found candidate | Published capacity | Screening outcome |
+|---|---:|---|
+| Honcell HCP404074 | 1600 mAh minimum in its individual sheet | Largest found; rounded complete envelope then checked with exact BRep geometry |
+| Epec 502699 | 1450 mAh catalog value | Lower-capacity geometric candidate; not individually qualified |
+| Epec 453969 | 1360 mAh catalog value | Lower-capacity geometric candidate; not individually qualified |
+
+The [manufacturer's individual HCP404074 PDF](https://www.honcell.com/Public/Uploads/uploadfile/files/20240401/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf), pp1–2, gives minimum 1600 / typical 1620 mAh at 0.2C and 23±2°C, 3.7 V nominal, 4.2 V charging, and 3.0 V discharge cutoff. Body maxima are 74.5×40.5×4.0 mm delivered, with thickness up to 4.3 mm after cycling; length excludes 6±1 mm tabs. The default pack budget rounds the screening size 84.5×42.5×4.8 upward to 85×43×4.8 mm. These allowances are engineering requirements, not a manufacturer's finished-pack drawing.
+
+**Source discrepancy:** the charge rows label 0.2C as 270 mA and 1C as 1350 mA, inconsistent with 1600 mAh. Their explicit conditions are 270 mA over 0…45°C and 1350 mA over 15…45°C. Do not replace these with calculated 320/1600 mA or use the reference charge graph to promise a charge time. The supplier must correct/confirm the current limits, capacity test and permitted charger voltage tolerance in writing before order release.
+
+## Exact selected geometry
+
+| Quantity | Default P2 value |
 |---|---|
-| Pack maximum complete envelope | 60.0×36.0×6.2 mm |
-| Pack bounds | X 240.0…300.0; Y −142.0…−106.0; Z −10.8…−4.6 mm |
-| Recess bounds | X 239.25…300.75; Y −142.75…−105.25 mm |
-| Recess floor / original inner floor | z=−11.00 / −5.91 mm; local depth 5.09 mm |
-| Recess corner radius | 1.00 mm |
-| Removed solid volume | 11734.443 mm³, approximately 11.734 cm³ |
-| Minimum wall normal to sloping exterior bottom | 3.452489 mm |
-| Wall after 0.30 mm manufacturing allowance | 3.152489 mm; exceeds the **chosen** 3.0 mm geometric design floor |
-| Nominal gap to conservative PCB fastener envelope | 0.700 mm |
-| Floor retention / gap budget | 0.200 mm; include actual tape and isolation thickness |
-| Nominal and XY-expanded pack overlap with shells | 0 mm³; XY expansion ±0.40 mm includes ±0.25 pack placement and ±0.15 case allowance |
-| Component-envelope and protected insert conflicts | None in the checked source |
-| Resulting bottom solid | One valid BRep solid; original exterior bounding coordinates retained |
+| Complete pack | 85×43×4.8 mm, including protection, NTC, folded tabs, wrap and after-cycle growth |
+| Pack bounds | X 228.5…313.5; Y −149…−106; Z −9.4…−4.6 mm |
+| Pocket bounds | X 227.5…314.5; Y −150…−105 mm; corner radius 1 mm |
+| Floor | z=−9.60 mm; original local inner floor −5.91; removal depth 3.69 mm |
+| Removed volume | 14443.182 mm³ = 14.443 cm³ |
+| Minimum normal wall | 3.958500 mm; **3.658500 mm** after the 0.30 mm allowance |
+| Pack-to-fastener nominal clearance | 0.700 mm |
+| Floor retention/gap budget | 0.200 mm, including tape/insulation thickness |
+| Pack/case overlap | Zero for nominal and ±0.40 mm expanded XY envelopes |
+| Components / protected insert zones | No collisions in the checked geometry |
+| Minimum expanded-pack component gap | 0.555 mm to D2; exceeds the 0.50 mm requirement after ±0.40 mm XY allowance |
+| Case union envelope | 325.700×125.200×31.190 mm; no scaling |
 
-The original underside is a plane at the 7° typing angle: floor thickness decreases toward the front. Vertical ray checks showed approximately 11.98 mm at Y=−115, 8.91 mm at −140 and 4.00 mm at −180. This is why moving the pocket to the rear is preferable to uniformly thinning the front floor.
-
-The validation uses the **exact minimum BRep distance** from a conservative rectangle covering the new floor to the original large sloping exterior underside face. This covers the full floor area and its corners, rather than relying only on grid samples. For that plane:
+The exact BRep distance is measured from a conservative full rectangular pocket floor to the original 7° exterior underside, covering the entire floor rather than samples. With original plane normal `n` and point `p`:
 
 ```text
-z_outer(x,y) = z0 − [nx(x−x0)+ny(y−y0)]/nz
-vertical wall = z_floor − z_outer
-normal wall = vertical wall × cos(7°)
-worst-case wall = minimum normal wall − 0.30 mm
+z_outer(x,y) = pz − [nx(x−px)+ny(y−py)]/nz
+normal_wall = (z_floor − z_outer) × cos(7°)
+remaining_wall = min(normal_wall) − 0.30 mm
 ```
 
-The report records the actual plane normal/location and exact BRep distance. The rounded pocket also clears the full rectangular pack with XY manufacturing/placement allowances. The 0.70 mm fastener gap has an illustrative remaining vertical budget of `0.70−0.15(case floor)−0.05(retention)−0.15(PCB stack)−0.10(head)=0.25 mm`; these are imposed manufacturing requirements, not measured supplier tolerances. Final hardware must satisfy them. The unchanged near-module and daughterboard regions are not cut.
+The canonical bottom must remain one valid solid, have unchanged exterior bounding coordinates and zero material inside the cutter. Nominal and expanded pack boxes are checked against both shells. The 0.70 mm fastener gap leaves an illustrative `0.70−0.15(case floor)−0.05(retention)−0.15(PCB stack)−0.10(head)=0.25 mm`; these are imposed manufacturing budgets, not measured tolerances. A 3 mm residual wall is a geometric criterion, not resin strength certification.
 
-Run with the pinned CAD runtime: `python scripts/study_yeti60_battery_pocket.py`. The editable [study specification](../../mechanical/battery-pocket-study.json), [optional STEP](../../mechanical/generated/yeti60-bottom-battery-pocket.step) and [audit](../audit/yeti60-battery-pocket.json) are separate from the baseline bottom. Regenerate the baseline assembly report first if PCB geometry changes.
+## Electrical and procurement contract
 
-## Capacity evidence and pack construction
+P2 retains BQ24074 with R40=2.21k, R55=69.8k and R56=1.82k, all 1%; USB500 is enabled only after configuration. See the [current, timer, termination and runtime calculations](power-budget.md). The pack must independently interrupt charging outside a guaranteed **actual cell window within 15…43°C**, target 18…40°C including all sensor/IC tolerances, and provide separate third-wire 10k 103AT-2 NTC feedback. Ordinary voltage/current-only PCM or a two-wire pouch is not an equivalent substitute. J2/PHR-3 is custom: 1 PACK+, 2 PACK−, 3 NTC to PACK−.
 
-[Honcell HCP-503450, 2024 bare-cell sheet](https://www.honcell.com/Public/Uploads/uploadfile/files/20241220/DATASHEETHCP5034503.7V1000mAhCELL2024.pdf) specifies minimum 1000 mAh at 0.2C/23±2°C, nominal 3.7 V, body maximum 50×34 mm excluding tabs, thickness maximum 5.0 mm delivered / 5.4 mm after cycling, 4.2 V charge termination and 3.0 V discharge cutoff. The standard charge row is 200 mA over 0…45°C; the higher maximum-current row has a different temperature condition. These are cell specifications, not an assembled pack approval.
+The supplier must sign the complete envelope and lead exit/bend geometry, protection thresholds, thermal interruption, NTC coupling, charge-current limits and capacity. Insulate and retain the pack without pouch compression; the whole mounting system must fit the 0.2 mm floor budget. Do not use the old small-pack electrical configuration with this battery or the P2 charger with the old small pack.
 
-The proposed **60×36×6.2 mm** budget adds room for folded connections, PCM, independent charge-temperature protection, NTC and wrapping. That allocation is an engineering requirement, not a manufacturer drawing. The assembler must verify tab bend limits, weld insulation, protection/NTC thickness, after-cycle growth and capacity, and sign the final complete-pack drawing. A generic two-wire “503450” pack is not a substitute for the custom three-wire polarity/thermal contract.
+FELK60 supplies exterior and plate datums; DELTA OMEGA at `64db818` informs separate battery/insulation/fastener BOM rows; [PH60 Rev.3](https://github.com/ph-design/PH60) informs purpose-designed battery accommodation. Their cell allowances do not establish YETI60 capacity. Resin creep/drop/insert pullout, full harness serviceability, supplier pack qualification and charge-to-termination remain physical acceptance work. No sample exists; RF/SI is deferred.
 
-Do not scale capacity from cavity volume or infer capacity from the six-digit size code. The existing 200 mAh/2.9 mm pack is itself a supplier-unqualified custom design target. The 1000 mAh value has a published cell minimum, but finished-pack qualification and electrical compatibility remain separate gates.
-
-## Reference designs and decision
-
-| Reference | Relevant idea | Not transferable |
-|---|---|---|
-| FELK60, pinned source `624e6a7` | Keep outside dimensions, plate and gasket registration; alter only the selected internal floor region | Original metal-thread pilots do not qualify resin inserts |
-| DELTA OMEGA, inspected `64db818` | Separate battery, insulation, fasteners and keycap clearance in the BOM | Its split MX geometry and battery envelope do not fit this case by assumption |
-| [PH60 Rev.3](https://github.com/ph-design/PH60) | Purpose-designed removable battery tray; README lists up to 100×50×5 mm | Different case/PCB; its allowance and runtime do not validate this recess |
-
-Use the **baseline bottom + 200 mAh electrical configuration** for the currently frozen P1 design. Keep the larger recess as a manufactured-prototype option for the next electrical revision. Do not enlarge the external shell or silently replace the baseline pack. A compliant removable cradle or adhesive arrangement must respect the 0.2 mm floor budget, avoid pouch pressure and protect cable exits. Complete wire routing, actual resin strength/creep, vibration/drop behavior, insert pullout and physical pack acceptance are still required; the selected 3 mm wall criterion is a geometric engineering target, not a resin strength certification.
+Rebuild in order: mechanical metadata, `build_yeti60_mechanical.py`, `check_yeti60_assembly.py`, `export_yeti60_render_meshes.py`, `study_yeti60_battery_pocket.py`, `screen_yeti60_batteries.py`, `draw_yeti60_assembly.py`. The [specification](../../mechanical/battery-pocket-study.json) and [BRep report](../audit/yeti60-battery-pocket.json) record the exact default.

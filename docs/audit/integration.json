@@ -1,21 +1,21 @@
 {
   "status": "passed",
   "controller_count": 1,
-  "physical_pin_pairs": 268,
+  "physical_pin_pairs": 270,
   "matched_mount_holes": 29,
   "assembly_condition": "provisional stack only",
-  "firmware_condition": "host mocked HAL; target application unimplemented",
+  "firmware_condition": "normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested",
   "production_approved": false,
   "open_requirements": [
     {
       "id": "power-layout",
       "status": "open",
-      "description": "Shorten regulator feedback/output-capacitor and charger input/battery capacitor paths; validate power performance"
+      "description": "P2 local layout and current/timer/termination calculations completed; regulator transient, derating and thermal performance require hardware qualification"
     },
     {
       "id": "target-firmware",
       "status": "open",
-      "description": "Implement and build nRF HAL, USB/BLE stacks, actual keymap and calibration"
+      "description": "Normal and calibrator ARM builds and linked USB500 descriptors verified; on-device enumeration, BLE and per-key calibration pending"
     },
     {
       "id": "mechanical-stack",
@@ -25,22 +25,22 @@
     {
       "id": "battery",
       "status": "open",
-      "description": "Select protected pack, NTC, mounting and cable within verified full-pack envelope"
+      "description": "Default custom 1600 mAh full envelope selected and checked; supplier current-sheet correction, complete drawing, independent 15..43 C thermal protection and full charge acceptance pending"
     },
     {
       "id": "usb-daughterboard",
       "status": "open",
-      "description": "Select and verify rear daughterboard, separate CC terminations, connector and cable fit"
+      "description": "C5 JSH retained by user; native electrical and mounting geometry checked; mating plug/harness routing and serviceability require final acceptance"
     },
     {
       "id": "switch-access",
       "status": "open",
-      "description": "Define closed-case access to internal SW100"
+      "description": "8 mm SW100 service port designed; physical access acceptance pending"
     },
     {
       "id": "resin-inserts",
       "status": "open",
-      "description": "Define inserts, print shrinkage and dimensional tolerances"
+      "description": "Cold-bond insert seats and imposed tolerances designed; resin shrinkage, strength and insert pullout require first articles"
     },
     {
       "id": "fabrication",

@@ -12,7 +12,7 @@ def main():
  'U2':('Nexperia 74HC4051PW,118','TSSOP16 HC, not HCT; candidate MPN against native footprint','TSSOP16、HC 系列，不能用 HCT；候选型号须按原生焊盘复核'),
  'U4':('Nexperia 74HC4051PW,118','TSSOP16 HC, not HCT; candidate MPN against native footprint','TSSOP16、HC 系列，不能用 HCT；候选型号须按原生焊盘复核'),
  'U3':('TI OPA350UA','SOIC-8; do not substitute dual OPA2350 or MSOP','SOIC-8；不能替换为双路 OPA2350 或 MSOP 封装'),
- 'U5':('TI BQ24074RGTR','VQFN16 RGT; thermal pad soldering and 100 mA setup required','RGT 封装 VQFN16；须焊接散热焊盘并按 100 mA 方案设置'),
+ 'U5':('TI BQ24074RGTR','VQFN16 RGT; thermal pad soldering and P2 ISET/TMR/ITERM setup required','RGT 封装 VQFN16；须焊接散热焊盘并按 P2 充电电流／计时／终止电流方案设置'),
  'U6':('TI TPS63031DSKR','Fixed 3.3 V DSK; not adjustable TPS63030','DSK 封装固定 3.3 V；不能直接用可调 TPS63030'),
  'U7':('TI TPS22919DCKR','SC70-6; confirm exact reel suffix','SC70-6；确认编带订货后缀'),
  'U8':('TI TPS22919DCKR','SC70-6; confirm exact reel suffix','SC70-6；确认编带订货后缀'),
@@ -37,12 +37,12 @@ def main():
   k=(value,package,mpn,en,zh);g=groups.setdefault(k,{'refs':[],'quantity':0});g['refs'].append(ref);g['quantity']+=qty
  rows=[]
  for (v,p,m,en,zh),g in groups.items():rows.append({'references':', '.join(sorted(g['refs'],key=key)),'quantity':g['quantity'],'value':v,'package':p,'candidate_mpn':m,'notes_en':en,'notes_zh':zh})
- rows.sort(key=lambda x:key(x['references'].split(',')[0]));assert sum(x['quantity'] for x in rows)==74
+ rows.sort(key=lambda x:key(x['references'].split(',')[0]));assert sum(x['quantity'] for x in rows)==76
  for zh in [False,True]:
   path=OUT/('mainboard.zh-CN.csv' if zh else 'mainboard.csv')
   with path.open('w',newline='') as f:
    w=csv.writer(f,lineterminator="\n");w.writerow(['位号','数量','设计值','封装','指定或候选型号','要求'] if zh else ['References','Quantity','Design value','Package','Specified or candidate MPN','Requirements'])
    for r in rows:w.writerow([r['references'],r['quantity'],r['value'],r['package'],(r['candidate_mpn'].replace('Vendor MPN unselected','厂商型号待选').replace('0603 status LED; vendor MPN unselected','0603 指示灯，厂商型号待选').replace('1206 resettable fuse, 0.5 A hold','1206 自恢复保险丝，保持电流 0.5 A').replace(', candidate','，候选') if zh else r['candidate_mpn']),r['notes_zh' if zh else 'notes_en']])
- report={'outputs':{str(p.relative_to(ROOT)):sha(p) for p in [OUT/'mainboard.csv',OUT/'mainboard.zh-CN.csv']},'status':'purchase-requirements-exported-not-order-release','fitted_mainboard_parts':74,'unpopulated_sites':['JP1'],'excluded_geometry_and_fixture_references':sorted(omitted),'rows':rows,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [net,meta,ROOT/'mechanical/assembly-spec.json',Path(__file__).resolve()]},'limits':['No stock or price assumptions','Candidate MPNs and passive effective capacitance require supplier qualification','60 mechanical key assemblies are external to the PCB BOM']}
- (ROOT/'docs/audit/yeti60-bom.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n');print('74 fitted mainboard components; JP1 DNP; virtual electrodes and fixtures excluded')
+ report={'outputs':{str(p.relative_to(ROOT)):sha(p) for p in [OUT/'mainboard.csv',OUT/'mainboard.zh-CN.csv']},'status':'purchase-requirements-exported-not-order-release','fitted_mainboard_parts':76,'unpopulated_sites':['JP1'],'excluded_geometry_and_fixture_references':sorted(omitted),'rows':rows,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [net,meta,ROOT/'mechanical/assembly-spec.json',Path(__file__).resolve()]},'limits':['No stock or price assumptions','Candidate MPNs and passive effective capacitance require supplier qualification','60 mechanical key assemblies are external to the PCB BOM']}
+ (ROOT/'docs/audit/yeti60-bom.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n');print('76 fitted mainboard components; JP1 DNP; virtual electrodes and fixtures excluded')
 if __name__=='__main__':main()

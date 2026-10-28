@@ -50,13 +50,6 @@
     "evidence": "primary publisher or project owner; local project sources where explicitly stated",
     "download_sha256": "61fec8c0c9f8c33175be2237a8ebba73c6cfc0a3572fe3835fd341079c103d03"
   },
-  "hcp503450": {
-    "url": "https://www.honcell.com/Public/Uploads/uploadfile/files/20241220/DATASHEETHCP5034503.7V1000mAhCELL2024.pdf",
-    "locator": "2024 bare-cell sheet p1 and p2 footnotes: min1000mAh at0.2C,23+-2C; 50x34mm excluding tabs; 5.4mm after cycling; pack dimensions not given",
-    "access_date": "2026-10-28",
-    "evidence": "primary publisher or project owner; local project sources where explicitly stated",
-    "download_sha256": "0ece2d6da5af605d983197e401ddb90b0f59fd024d8a7f490e81fe2a4228f900"
-  },
   "jst-sh": {
     "url": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
     "locator": "4-position SH/SR header and crimp housing/contact drawings",
@@ -88,5 +81,24 @@
     "evidence": "primary publisher or project owner; local project sources where explicitly stated",
     "download_sha256": null,
     "retrieval_note": "Read via web; local PDF download unavailable. No local-content hash asserted."
+  },
+  "hcp404074": {
+    "url": "https://www.honcell.com/Public/Uploads/uploadfile/files/20240401/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf",
+    "locator": "2024 bare-cell pp1-2; minimum1600mAh at0.2C23+-2C; max74.5x40.5x4.3 after cycling excluding tabs; current rows inconsistent with rated capacity, supplier correction required",
+    "access_date": "2026-10-28",
+    "evidence": "Primary manufacturer PDF, both pages visually inspected",
+    "download_sha256": "91a4d764e6563675e1f79765e40f1425c64211175b0382de41b2ffd0c3e147e0"
+  },
+  "honcell-catalog": {
+    "url": "https://www.honcell.com/lithium-battery/cells/hcp-lipo-battery-cells/1316",
+    "locator": "249 3.7V tabular cells; snapshot used for bounded screening, no availability claim",
+    "access_date": "2026-10-28",
+    "download_sha256": "b079349da948f809b20545eeee0f924a91fccdf3765d872be42eddfa3448a11d"
+  },
+  "epec-catalog": {
+    "url": "https://www.epectec.com/batteries/lithium-prismatic-cells.html",
+    "locator": "402 3.7V tabular cells; snapshot used for bounded screening, no availability claim",
+    "access_date": "2026-10-28",
+    "download_sha256": "75a6cee8818003ac44522101cb8b923eac9468f08d796ca06f18757be733838d"
   }
 }

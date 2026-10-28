@@ -14,4 +14,4 @@ FELK60 要求 **1.2 毫米定位板，优先不锈钢**，以及约 2 毫米厚�
 
 渲染保持 FELK60 原始壳体尺寸：原始 CAD 坐标系中，上下壳联合包围尺寸为 325.700 × 125.200 × 31.190 毫米。网格线性离散偏差为 0.015 毫米，包围坐标差值检查小于 0.02 毫米。7° 展示旋转为刚性变换，不改变外壳尺寸。见[渲染几何验证](../docs/audit/yeti60-render-geometry.json)。
 
-当前[工程装配图及步骤](../docs/engineering/assembly.zh-CN.md)与[可选电池下挖研究](../docs/engineering/battery-study.zh-CN.md)分别保存。后者通过完整 60×36×6.2 mm 包络及壁厚检查，但大电池充电电路尚需独立改版，不能替换基准 200 mAh 配置。
+默认 P2 [工程装配图](../docs/engineering/assembly.zh-CN.md)与[单电芯选型和凹槽设计](../docs/engineering/battery-study.zh-CN.md)已同步。正式 `generated/yeti60-bottom.step` 包含 85×43×4.8 mm、1600 mAh 电池包的凹槽，不保留旧可选底壳副本。独立温度保护、供应商签图和实物验收仍是采购／生产条件。

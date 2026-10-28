@@ -1,10 +1,10 @@
 {
   "outputs": {
-    "hardware/bom/mainboard.csv": "0dc447a0720e16c9f1aa7a46d3cba20180a8b24fcf4502be245fce057798a475",
-    "hardware/bom/mainboard.zh-CN.csv": "560c69a6c5a039acfe3fdb1377ae3ec6978b581247d57b0b5c350005850d8eb2"
+    "hardware/bom/mainboard.csv": "b68f08a7c6f67770eb9ca9fb7b3f7a0bbc130be16878714e3d3258c603f7a34f",
+    "hardware/bom/mainboard.zh-CN.csv": "2b744bf81a9bd99f633d9c58fe6f9575563deb9f86609137a79036c459a2d71d"
   },
   "status": "purchase-requirements-exported-not-order-release",
-  "fitted_mainboard_parts": 74,
+  "fitted_mainboard_parts": 76,
   "unpopulated_sites": [
     "JP1"
   ],
@@ -322,7 +322,7 @@
     {
       "references": "R40",
       "quantity": 1,
-      "value": "8.87k/1%",
+      "value": "2.21k/1%",
       "package": "R_0402_1005Metric",
       "candidate_mpn": "Vendor MPN unselected",
       "notes_en": "0402, 1%, >= 50 mW; 0 ohm links where specified",
@@ -341,6 +341,24 @@
       "references": "R51, R52",
       "quantity": 2,
       "value": "1M/1%",
+      "package": "R_0402_1005Metric",
+      "candidate_mpn": "Vendor MPN unselected",
+      "notes_en": "0402, 1%, >= 50 mW; 0 ohm links where specified",
+      "notes_zh": "0402、1%、不低于 50 mW；零欧姆位置须按指定值"
+    },
+    {
+      "references": "R55",
+      "quantity": 1,
+      "value": "69.8k/1%",
+      "package": "R_0402_1005Metric",
+      "candidate_mpn": "Vendor MPN unselected",
+      "notes_en": "0402, 1%, >= 50 mW; 0 ohm links where specified",
+      "notes_zh": "0402、1%、不低于 50 mW；零欧姆位置须按指定值"
+    },
+    {
+      "references": "R56",
+      "quantity": 1,
+      "value": "1.82k/1%",
       "package": "R_0402_1005Metric",
       "candidate_mpn": "Vendor MPN unselected",
       "notes_en": "0402, 1%, >= 50 mW; 0 ohm links where specified",
@@ -397,8 +415,8 @@
       "value": "BQ24074RGT",
       "package": "VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm",
       "candidate_mpn": "TI BQ24074RGTR",
-      "notes_en": "VQFN16 RGT; thermal pad soldering and 100 mA setup required",
-      "notes_zh": "RGT 封装 VQFN16；须焊接散热焊盘并按 100 mA 方案设置"
+      "notes_en": "VQFN16 RGT; thermal pad soldering and P2 ISET/TMR/ITERM setup required",
+      "notes_zh": "RGT 封装 VQFN16；须焊接散热焊盘并按 P2 充电电流／计时／终止电流方案设置"
     },
     {
       "references": "U6",
@@ -420,10 +438,10 @@
     }
   ],
   "source_sha256": {
-    "hardware/ec60-nrf52840/netlist.xml": "81048018e8fd010c5471d3a03e6393d1ddb958120fc4b72069fb5dfc20f3cd0c",
+    "hardware/ec60-nrf52840/netlist.xml": "06d7a8a5e13789597747e2c0b2bd7792460cb2a4ab5e200281f07dc3d1937dfb",
     "hardware/ec60-nrf52840/metadata-audit.json": "9a5a76d3a1d93b7c876ceb873875bb01f0ec38759e85d67b1e47a125952e7a66",
-    "mechanical/assembly-spec.json": "fa63a7ad0986f37e5efba12f681b8771a3b6477c3c35f4d38956f0be6771b139",
-    "scripts/export_yeti60_bom.py": "a8953db73ee6f859e2f028f206f70e0317fdc7f1e26b260817e80df3d9c0ce9c"
+    "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
+    "scripts/export_yeti60_bom.py": "77d62c01e7b822f1b2ce8f9663d94da2608e4006a2f12c3a9b5afaa1661398b9"
   },
   "limits": [
     "No stock or price assumptions",

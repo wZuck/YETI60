@@ -1,5 +1,5 @@
 {
-  "revision": "YETI60-P1",
+  "revision": "YETI60-P2",
   "units": "mm",
   "scope": "Engineering prototype design; physical first-article acceptance follows manufacture",
   "case": {
@@ -108,37 +108,38 @@
     "washer_material": "PEEK"
   },
   "battery": {
-    "part": "YETI60-BAT-200-1S",
+    "part": "YETI60-BAT-1600-1S",
     "type": "Custom protected 1S 4.2 V lithium-polymer pack with independent thermal protection and third-wire NTC",
-    "nominal_capacity_mAh": 200,
-    "cell_reference": "DNK 252040; preliminary reference only, assembler must confirm the signed pack drawing",
+    "nominal_capacity_mAh": 1600,
+    "cell_reference": "Honcell HCP404074; minimum 1600 mAh, full pack requires a supplier-signed drawing",
     "full_envelope_including_growth": [
-      50.0,
-      20.0,
-      2.9
+      85.0,
+      43.0,
+      4.8
     ],
     "bounds_xy": [
-      155.9,
-      -179.3,
-      205.9,
-      -159.3
+      228.5,
+      -149.0,
+      313.5,
+      -106.0
     ],
-    "maximum_charge_current_mA": 100,
-    "charger_input_mode": "USB100 only",
+    "maximum_charge_current_mA": 450,
+    "charger_input_mode": "USB500 only after a host selects the 500 mA USB configuration; USB100 before enumeration",
     "thermal_protection_actual_window_C": [
-      0,
-      45
+      15,
+      43
     ],
     "thermal_protection_target_window_C": [
-      5,
+      18,
       40
     ],
     "temperature_protection": "Pack PCM must independently interrupt charging outside its guaranteed window; a voltage/current-only PCM is not a substitute",
     "ntc": "10k 103AT-2 compatible, thermally coupled to cell, separate from PCM thermal protection",
     "connector": "JST PHR-3; pin1 PACK+, pin2 PACK-, pin3 NTC to PACK-",
-    "procurement_status": "Manufacturing specification defined; signed supplier drawing and first article required before procurement approval",
+    "procurement_status": "Default selected single-cell pack design; supplier must resolve the source charge-row inconsistency and sign full-pack/temperature limits before order release",
     "position_tolerance": 0.25,
-    "fastener_exclusion_radius": 3.4
+    "fastener_exclusion_radius": 3.4,
+    "top_z": -4.6
   },
   "daughterboard": {
     "part": "Unified Daughterboard C5 JSH",

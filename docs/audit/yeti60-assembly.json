@@ -1,18 +1,18 @@
 {
   "status": "conditional-fit-review",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "81d7b0595eb77fa5cdc196dcdd24e11cfca2cdd80f83c0e9a381e749fbe1fec5",
-    "mechanical/generated/yeti60-bottom.step": "40332df5f914fc9594f38516d77aad0a00581b47151a0fd5c6cb3e7364440e14",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",
+    "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "mechanical/assembly-spec.json": "fa63a7ad0986f37e5efba12f681b8771a3b6477c3c35f4d38956f0be6771b139",
+    "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51"
   },
   "verification_recipe_sha256": {
-    "scripts/check_yeti60_assembly.py": "86fc336b8062ff448e5ac4aa744a4113dee30f3606d604b997ca4fa25e7ca853",
+    "scripts/check_yeti60_assembly.py": "6b3c40841f1ecee300f29677417598cb7efde4e3d7aca12ff9a18d349dc1f660",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/export_yeti60_mechanical_metadata.py": "22ebeac89f8839f7fddb0a84dbcf6be2244dc7c55e3382cd6805f8e58d94525e"
   },
-  "mechanical_metadata_sha256": "41dc95d7f95d1c3cbdfb1d9ac919ea2c1f0dc85bc52b7b56d18424c5849a2958",
+  "mechanical_metadata_sha256": "5b986d915c6475ef328615fb2dc12f8786ed19319f2ef605a259cb671d90d4d0",
   "pcb_frame_to_case": "X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z",
   "nominal_stack": {
     "bottom_gasket_ledge_z": 3.19,
@@ -1679,6 +1679,38 @@
     },
     {
       "physical_body_bbox_pcb_mm": null,
+      "ref": "R56",
+      "value": "1.82k/1%",
+      "back": true,
+      "position_pcb_mm": [
+        115.1,
+        146.85
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        114.605,
+        145.895,
+        115.595,
+        147.805
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
+      "bounds_case_mm": [
+        114.605,
+        -147.805,
+        -4.999999999999999,
+        115.595,
+        -145.895,
+        -1.9999999999999993
+      ],
+      "collision_volume_mm3": [
+        0.0,
+        0.0
+      ],
+      "min_case_distance_mm": 0.9100000000000028
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
       "ref": "SW1",
       "value": "EVQPUC02K_RESET",
       "back": true,
@@ -2996,6 +3028,38 @@
     },
     {
       "physical_body_bbox_pcb_mm": null,
+      "ref": "R55",
+      "value": "69.8k/1%",
+      "back": true,
+      "position_pcb_mm": [
+        117.7,
+        148.4
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        117.205,
+        147.445,
+        118.195,
+        149.355
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
+      "bounds_case_mm": [
+        117.205,
+        -149.355,
+        -4.999999999999999,
+        118.195,
+        -147.445,
+        -1.9999999999999993
+      ],
+      "collision_volume_mm3": [
+        0.0,
+        0.0
+      ],
+      "min_case_distance_mm": 0.9100000000000019
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
       "ref": "F1",
       "value": "500mA",
       "back": true,
@@ -3189,26 +3253,26 @@
     {
       "physical_body_bbox_pcb_mm": null,
       "ref": "R40",
-      "value": "8.87k/1%",
+      "value": "2.21k/1%",
       "back": true,
       "position_pcb_mm": [
-        117.25,
+        116.7,
         148.1
       ],
       "angle_deg": -90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        116.755,
+        116.205,
         147.145,
-        117.745,
+        117.195,
         149.055
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        116.755,
+        116.205,
         -149.055,
         -4.999999999999999,
-        117.745,
+        117.195,
         -147.145,
         -1.9999999999999993
       ],
@@ -3270,26 +3334,28 @@
   "battery_candidates": [
     {
       "bounds_case_mm": [
-        155.9,
-        -179.3,
-        -5.399999999999999,
-        205.9,
-        -159.3,
-        -2.499999999999999
+        228.5,
+        -149.0,
+        -9.399999999999999,
+        313.5,
+        -106.0,
+        -4.6
       ],
       "size_mm": [
-        50.0,
-        20.0,
-        2.9
+        85.0,
+        43.0,
+        4.8
       ],
       "case_overlap_mm3": [
         0.0,
         0.0
       ],
-      "component_xy_and_fastener_keepouts_clear": true,
+      "component_and_fastener_3d_envelopes_clear": true,
+      "minimum_component_clearance_mm": 0.9549999999999841,
+      "minimum_fastener_clearance_mm": 0.7000000000000002,
       "envelope_must_include_swelling_and_protection": true,
-      "bottom_case_distance_mm": 0.5099999999999874,
-      "top_insulation_gap_mm": 0.5,
+      "bottom_case_distance_mm": 0.20000000000000107,
+      "top_insulation_gap_mm": 2.6000000000000005,
       "status": "custom-pack-design-envelope-supplier-qualification-pending"
     }
   ],
@@ -3303,37 +3369,38 @@
     "top": "mechanical/generated/yeti60-top.step"
   },
   "selected_battery": {
-    "part": "YETI60-BAT-200-1S",
+    "part": "YETI60-BAT-1600-1S",
     "type": "Custom protected 1S 4.2 V lithium-polymer pack with independent thermal protection and third-wire NTC",
-    "nominal_capacity_mAh": 200,
-    "cell_reference": "DNK 252040; preliminary reference only, assembler must confirm the signed pack drawing",
+    "nominal_capacity_mAh": 1600,
+    "cell_reference": "Honcell HCP404074; minimum 1600 mAh, full pack requires a supplier-signed drawing",
     "full_envelope_including_growth": [
-      50.0,
-      20.0,
-      2.9
+      85.0,
+      43.0,
+      4.8
     ],
     "bounds_xy": [
-      155.9,
-      -179.3,
-      205.9,
-      -159.3
+      228.5,
+      -149.0,
+      313.5,
+      -106.0
     ],
-    "maximum_charge_current_mA": 100,
-    "charger_input_mode": "USB100 only",
+    "maximum_charge_current_mA": 450,
+    "charger_input_mode": "USB500 only after a host selects the 500 mA USB configuration; USB100 before enumeration",
     "thermal_protection_actual_window_C": [
-      0,
-      45
+      15,
+      43
     ],
     "thermal_protection_target_window_C": [
-      5,
+      18,
       40
     ],
     "temperature_protection": "Pack PCM must independently interrupt charging outside its guaranteed window; a voltage/current-only PCM is not a substitute",
     "ntc": "10k 103AT-2 compatible, thermally coupled to cell, separate from PCM thermal protection",
     "connector": "JST PHR-3; pin1 PACK+, pin2 PACK-, pin3 NTC to PACK-",
-    "procurement_status": "Manufacturing specification defined; signed supplier drawing and first article required before procurement approval",
+    "procurement_status": "Default selected single-cell pack design; supplier must resolve the source charge-row inconsistency and sign full-pack/temperature limits before order release",
     "position_tolerance": 0.25,
-    "fastener_exclusion_radius": 3.4
+    "fastener_exclusion_radius": 3.4,
+    "top_z": -4.6
   },
   "selected_fasteners": {
     "part": "YETI60-STANDOFF-46",

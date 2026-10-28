@@ -72,10 +72,10 @@
     "firmware/target/config/calibrator.conf": "86995e8b7d104ac6a55f036a708e3550eab19a86de36aa9ed2d2905b2690ea93",
     "firmware/target/config/calibrator.overlay": "5a849c4c53cfea592de62d42a5f242c365c40b604707989943770c0d275f924d",
     "firmware/target/config/west.yml": "52f07739d0adea79fed6c99663496a36cef7c334ee852cbe6cd9ac18adeec083",
-    "firmware/target/config/yeti60.conf": "84c18dea833d41d4b9432bbd1e15d449ce6b8740352c15356e39a83bba501b8f",
+    "firmware/target/config/yeti60.conf": "9e53af30c7b8219ec0a54b74a0278b18e05da42d4cee261fbb54002dde974883",
     "firmware/target/config/yeti60.keymap": "10f4e1732eea0da0342164f0cd86db7983e033360e616c401903419611200b58",
     "firmware/target/dts/bindings/kscan/yeti,ec60.yaml": "f9519f67d55c79e5049e197ffca79c90a6130b86624e57a511f976b725f25fcb",
-    "firmware/target/src/scanner.c": "af941bae15e82a1fc59ef23b8d7e1c1007720e5b059dd62d937a96216b171403",
+    "firmware/target/src/scanner.c": "ee061298261f5b6c3b51f693b5cd8900e7e2d83acd3e63a96b0a21e71dc30a13",
     "firmware/target/zephyr/module.yml": "a01205a117d62428445681e30fdbad1195a7ce097c5e72394e6a49fb16492d6a",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
     "firmware/yeti60/core.c": "4858b1610b9b0ee99be908739d24667c264b3d07e47f7208d43b13394397855f",
@@ -85,20 +85,20 @@
   "variants": {
     "normal": {
       "outputs": {
-        "firmware/releases/normal/yeti60.elf": "ed31cfddd4ba5fd8b3237429a539f2ef3a81764a55bb5cbc14199c805833f079",
-        "firmware/releases/normal/yeti60.bin": "11607af76b1567854885fae3707f768e33b08cae885cd79d0ddae07a19744b27",
-        "firmware/releases/normal/yeti60.hex": "5272a34122cf1f02576122ecd5b9c7260ecac15e4b32528740143c7cc16c2b18"
+        "firmware/releases/normal/yeti60.elf": "3ffbabd97b7896df969ca3622b4be4e2950263ac963ead7a3e76056cfda9232f",
+        "firmware/releases/normal/yeti60.bin": "8bbb5746babf3a643f237ab923fe075f0ab594a91413e9d46a66aede965dfb01",
+        "firmware/releases/normal/yeti60.hex": "e9b4939e5b568f7fa58e11ee425a07358b858e2a4045dde2056ff51301a099c7"
       },
-      "configuration_sha256": "39cc4db1642370dfc21295b9413ad5d1d781d3037de87dfeb9e4020b3ccfbee6",
+      "configuration_sha256": "7349d38bf8fd62a528aabeed847c192bbdb91bbf6338d6f06ae44b15bc810e50",
       "devicetree_sha256": "5407808eb8eb235ed31a469b80f0bad001c7be13cf8d08907bcd5904da730171"
     },
     "calibrator": {
       "outputs": {
-        "firmware/releases/calibrator/yeti60.elf": "66f2a37433f40c8406439d0f62db550a93b44093edfed7528dc935d9ea09e3ce",
-        "firmware/releases/calibrator/yeti60.bin": "c2e4336cc07c28b1bf25e9c9b4d7a8325eaf9ba405fffeb3a97f18ca152b030b",
-        "firmware/releases/calibrator/yeti60.hex": "e85f4ae1c03decf4334cbb5178647f47b1ca470284065bf77fb918b94892f554"
+        "firmware/releases/calibrator/yeti60.elf": "a33b75399f9bbd4dcba48e3f53f695a0fb06d00d586323d20460d745f250844e",
+        "firmware/releases/calibrator/yeti60.bin": "ee4cafb03e999c18c516f5ed802d680a248d6055e464036d1842a07ce0f4fba4",
+        "firmware/releases/calibrator/yeti60.hex": "c05d216a99b55a77ee8301fadb8486fdd8c3d389f9748305a6f32bd1d93e646c"
       },
-      "configuration_sha256": "13f5e1fe880c0f36d52f5b34e50512ea875a6480e211ac170a36ee21a753a21e",
+      "configuration_sha256": "a59a1621838216a4820fc25051b1a98a0e0af9f88d9fd411dee93b0a9a0f73a2",
       "devicetree_sha256": "0b5c790c7bb9b5bd17ffb65761838cb3bbd0ca937dccfd02997d40908db7f830"
     }
   },

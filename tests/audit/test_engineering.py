@@ -18,6 +18,10 @@ class EngineeringEvidence(unittest.TestCase):
    with self.assertRaises(AssertionError):audit.main()
  def test_reject_unqualified_large_pack_approval(self):
   self.reject('docs/audit/yeti60-power-budget.json',lambda d:d['charging'].update(larger_pack_drop_in_approved=True))
+ def test_reject_excess_charge_current(self):
+  self.reject('docs/audit/yeti60-power-budget.json',lambda d:d['charging'].update(programmed_charge_mA_min_typ_max=[357,403,451]))
+ def test_reject_excess_termination_current(self):
+  self.reject('docs/audit/yeti60-power-budget.json',lambda d:d['charging'].update(termination_mA_min_typ_max=[18,25,33]))
  def test_reject_thin_recess_wall(self):
   self.reject('docs/audit/yeti60-battery-pocket.json',lambda d:d.update(remaining_wall_after_tolerance_mm=2.9))
  def test_reject_changed_assembly_image(self):

@@ -1,0 +1,626 @@
+{
+  "status": "bounded-grid-screening-complete",
+  "global_optimum_claimed": false,
+  "catalog_models": 651,
+  "screened_capacity_floor_mAh": 1000,
+  "candidate_count": 23,
+  "largest_found": {
+    "model": "HCP404074",
+    "capacity": 1600.0,
+    "T": 4.0,
+    "W": 40.5,
+    "L": 74.5,
+    "source": "honcell",
+    "pack_size": [
+      84.5,
+      42.5,
+      4.8
+    ],
+    "bounds": [
+      228.0,
+      -148.5,
+      -9.4,
+      312.5,
+      -106.0,
+      -4.6
+    ],
+    "floor": -9.6,
+    "remaining_wall_after_allowance": 3.749899698090866,
+    "screening_only": true
+  },
+  "fitting_candidates": [
+    {
+      "model": "HCP404074",
+      "capacity": 1600.0,
+      "T": 4.0,
+      "W": 40.5,
+      "L": 74.5,
+      "source": "honcell",
+      "pack_size": [
+        84.5,
+        42.5,
+        4.8
+      ],
+      "bounds": [
+        228.0,
+        -148.5,
+        -9.4,
+        312.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -9.6,
+      "remaining_wall_after_allowance": 3.749899698090866,
+      "screening_only": true
+    },
+    {
+      "model": "502699",
+      "capacity": 1450.0,
+      "T": 5.2,
+      "W": 27.0,
+      "L": 100.5,
+      "source": "epec",
+      "pack_size": [
+        110.5,
+        29.0,
+        6.0
+      ],
+      "bounds": [
+        227.0,
+        -135.0,
+        -11.5,
+        337.5,
+        -106.0,
+        -5.5
+      ],
+      "floor": -11.7,
+      "remaining_wall_after_allowance": 3.3107889156135757,
+      "screening_only": true
+    },
+    {
+      "model": "453969",
+      "capacity": 1360.0,
+      "T": 4.7,
+      "W": 40.0,
+      "L": 70.5,
+      "source": "epec",
+      "pack_size": [
+        80.5,
+        42.0,
+        5.5
+      ],
+      "bounds": [
+        230.0,
+        -148.0,
+        -10.100000000000001,
+        310.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.3,
+      "remaining_wall_after_allowance": 3.116052063644513,
+      "screening_only": true
+    },
+    {
+      "model": "503465",
+      "capacity": 1230.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 66.5,
+      "source": "epec",
+      "pack_size": [
+        76.5,
+        37.0,
+        6.0
+      ],
+      "bounds": [
+        232.0,
+        -143.0,
+        -10.600000000000001,
+        308.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.8,
+      "remaining_wall_after_allowance": 3.229125704849586,
+      "screening_only": true
+    },
+    {
+      "model": "483564",
+      "capacity": 1200.0,
+      "T": 5.0,
+      "W": 36.0,
+      "L": 65.5,
+      "source": "epec",
+      "pack_size": [
+        75.5,
+        38.0,
+        5.8
+      ],
+      "bounds": [
+        232.0,
+        -144.0,
+        -10.4,
+        307.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.6,
+      "remaining_wall_after_allowance": 3.3057655917727047,
+      "screening_only": true
+    },
+    {
+      "model": "384069",
+      "capacity": 1150.0,
+      "T": 4.0,
+      "W": 41.0,
+      "L": 70.5,
+      "source": "epec",
+      "pack_size": [
+        80.5,
+        43.0,
+        4.8
+      ],
+      "bounds": [
+        230.0,
+        -149.0,
+        -9.4,
+        310.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -9.6,
+      "remaining_wall_after_allowance": 3.688965026388293,
+      "screening_only": true
+    },
+    {
+      "model": "284486",
+      "capacity": 1150.0,
+      "T": 3.0,
+      "W": 45.0,
+      "L": 87.5,
+      "source": "epec",
+      "pack_size": [
+        97.5,
+        47.0,
+        3.8
+      ],
+      "bounds": [
+        227.0,
+        -153.0,
+        -9.3,
+        324.5,
+        -106.0,
+        -5.5
+      ],
+      "floor": -9.5,
+      "remaining_wall_after_allowance": 3.3007422679318372,
+      "screening_only": true
+    },
+    {
+      "model": "483757",
+      "capacity": 1100.0,
+      "T": 5.0,
+      "W": 38.0,
+      "L": 58.5,
+      "source": "epec",
+      "pack_size": [
+        68.5,
+        40.0,
+        5.8
+      ],
+      "bounds": [
+        236.0,
+        -146.0,
+        -10.4,
+        304.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.6,
+      "remaining_wall_after_allowance": 3.062026904962411,
+      "screening_only": true
+    },
+    {
+      "model": "503562",
+      "capacity": 1100.0,
+      "T": 5.2,
+      "W": 36.0,
+      "L": 63.5,
+      "source": "epec",
+      "pack_size": [
+        73.5,
+        38.0,
+        6.0
+      ],
+      "bounds": [
+        233.0,
+        -144.0,
+        -10.600000000000001,
+        306.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.8,
+      "remaining_wall_after_allowance": 3.1072563614444393,
+      "screening_only": true
+    },
+    {
+      "model": "483756",
+      "capacity": 1100.0,
+      "T": 5.0,
+      "W": 38.0,
+      "L": 57.5,
+      "source": "epec",
+      "pack_size": [
+        67.5,
+        40.0,
+        5.8
+      ],
+      "bounds": [
+        236.0,
+        -146.0,
+        -10.4,
+        303.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.6,
+      "remaining_wall_after_allowance": 3.062026904962411,
+      "screening_only": true
+    },
+    {
+      "model": "503070",
+      "capacity": 1100.0,
+      "T": 5.2,
+      "W": 31.0,
+      "L": 71.5,
+      "source": "epec",
+      "pack_size": [
+        81.5,
+        33.0,
+        6.0
+      ],
+      "bounds": [
+        229.0,
+        -139.0,
+        -10.600000000000001,
+        310.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.8,
+      "remaining_wall_after_allowance": 3.7166030784701753,
+      "screening_only": true
+    },
+    {
+      "model": "414257",
+      "capacity": 1060.0,
+      "T": 4.3,
+      "W": 43.0,
+      "L": 58.5,
+      "source": "epec",
+      "pack_size": [
+        68.5,
+        45.0,
+        5.1
+      ],
+      "bounds": [
+        236.0,
+        -151.0,
+        -9.7,
+        304.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -9.899999999999999,
+      "remaining_wall_after_allowance": 3.1474624940856035,
+      "screening_only": true
+    },
+    {
+      "model": "HCP503848",
+      "capacity": 1050.0,
+      "T": 5.0,
+      "W": 38.0,
+      "L": 48.0,
+      "source": "honcell",
+      "pack_size": [
+        58.0,
+        40.0,
+        5.8
+      ],
+      "bounds": [
+        241.0,
+        -146.0,
+        -10.4,
+        299.0,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.6,
+      "remaining_wall_after_allowance": 3.062026904962411,
+      "screening_only": true
+    },
+    {
+      "model": "502290",
+      "capacity": 1050.0,
+      "T": 5.2,
+      "W": 23.0,
+      "L": 91.5,
+      "source": "epec",
+      "pack_size": [
+        101.5,
+        25.0,
+        6.0
+      ],
+      "bounds": [
+        227.0,
+        -131.0,
+        -11.5,
+        328.5,
+        -106.0,
+        -5.5
+      ],
+      "floor": -11.7,
+      "remaining_wall_after_allowance": 3.7982662892341628,
+      "screening_only": true
+    },
+    {
+      "model": "503162",
+      "capacity": 1050.0,
+      "T": 5.2,
+      "W": 32.0,
+      "L": 63.5,
+      "source": "epec",
+      "pack_size": [
+        73.5,
+        34.0,
+        6.0
+      ],
+      "bounds": [
+        233.0,
+        -140.0,
+        -10.600000000000001,
+        306.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.8,
+      "remaining_wall_after_allowance": 3.594733735065028,
+      "screening_only": true
+    },
+    {
+      "model": "453463",
+      "capacity": 1050.0,
+      "T": 4.7,
+      "W": 35.0,
+      "L": 64.5,
+      "source": "epec",
+      "pack_size": [
+        74.5,
+        37.0,
+        5.5
+      ],
+      "bounds": [
+        233.0,
+        -143.0,
+        -10.100000000000001,
+        307.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.3,
+      "remaining_wall_after_allowance": 3.725398780670247,
+      "screening_only": true
+    },
+    {
+      "model": "502868",
+      "capacity": 1030.0,
+      "T": 5.2,
+      "W": 29.0,
+      "L": 69.5,
+      "source": "epec",
+      "pack_size": [
+        79.5,
+        31.0,
+        6.0
+      ],
+      "bounds": [
+        230.0,
+        -137.0,
+        -10.600000000000001,
+        309.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.8,
+      "remaining_wall_after_allowance": 3.9603417652804707,
+      "screening_only": true
+    },
+    {
+      "model": "384260",
+      "capacity": 1030.0,
+      "T": 4.0,
+      "W": 43.0,
+      "L": 61.5,
+      "source": "epec",
+      "pack_size": [
+        71.5,
+        45.0,
+        4.8
+      ],
+      "bounds": [
+        234.0,
+        -151.0,
+        -9.4,
+        305.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -9.6,
+      "remaining_wall_after_allowance": 3.445226339577999,
+      "screening_only": true
+    },
+    {
+      "model": "503456",
+      "capacity": 1020.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 57.5,
+      "source": "epec",
+      "pack_size": [
+        67.5,
+        37.0,
+        6.0
+      ],
+      "bounds": [
+        236.0,
+        -143.0,
+        -10.600000000000001,
+        303.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.8,
+      "remaining_wall_after_allowance": 3.229125704849586,
+      "screening_only": true
+    },
+    {
+      "model": "403468",
+      "capacity": 1010.0,
+      "T": 4.2,
+      "W": 35.0,
+      "L": 69.5,
+      "source": "epec",
+      "pack_size": [
+        79.5,
+        37.0,
+        5.0
+      ],
+      "bounds": [
+        230.0,
+        -143.0,
+        -9.600000000000001,
+        309.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -9.8,
+      "remaining_wall_after_allowance": 4.221671856490908,
+      "screening_only": true
+    },
+    {
+      "model": "HCP523450",
+      "capacity": 1000.0,
+      "T": 5.2,
+      "W": 34.0,
+      "L": 50.0,
+      "source": "honcell",
+      "pack_size": [
+        60.0,
+        36.0,
+        6.0
+      ],
+      "bounds": [
+        240.0,
+        -142.0,
+        -10.600000000000001,
+        300.0,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.8,
+      "remaining_wall_after_allowance": 3.350995048254733,
+      "screening_only": true
+    },
+    {
+      "model": "453266",
+      "capacity": 1000.0,
+      "T": 4.7,
+      "W": 33.0,
+      "L": 67.5,
+      "source": "epec",
+      "pack_size": [
+        77.5,
+        35.0,
+        5.5
+      ],
+      "bounds": [
+        231.0,
+        -141.0,
+        -10.100000000000001,
+        308.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.3,
+      "remaining_wall_after_allowance": 3.969137467480542,
+      "screening_only": true
+    },
+    {
+      "model": "503460",
+      "capacity": 1000.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 61.5,
+      "source": "epec",
+      "pack_size": [
+        71.5,
+        37.0,
+        6.0
+      ],
+      "bounds": [
+        234.0,
+        -143.0,
+        -10.600000000000001,
+        305.5,
+        -106.0,
+        -4.6
+      ],
+      "floor": -10.8,
+      "remaining_wall_after_allowance": 3.229125704849586,
+      "screening_only": true
+    }
+  ],
+  "rules": {
+    "position_grid_mm": 1,
+    "rotations_degrees": [
+      0,
+      90
+    ],
+    "pack_allowance_L_W_T_mm": [
+      10,
+      2,
+      0.8
+    ],
+    "top_z_options_mm": [
+      -4.6,
+      -5.5,
+      -6,
+      -8
+    ],
+    "pocket_XY_margin_mm": 0.75,
+    "wall_after_allowance_mm": 3,
+    "wall_allowance_mm": 0.3,
+    "component_clearance_mm": 0.5,
+    "pack_XY_expansion_mm": 0.4,
+    "protected_udb_rectangle": [
+      201.2,
+      -121.9,
+      225.4,
+      -101.3
+    ]
+  },
+  "limits": [
+    "Not an all-market or continuous-position maximum",
+    "Catalog dimensions may contain errors: HCP256371 T=25 is preserved, not silently corrected",
+    "Full pack and selected bare-cell PDF must be separately qualified"
+  ],
+  "source_sha256": {
+    "hardware/bom/cell-catalog.json": "98fe095d43641be7223ac597f2b52361140730707bfa32773f47c23237177624",
+    "docs/audit/yeti60-assembly.json": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
+    "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
+    "docs/audit/yeti60-battery-pocket.json": "225c7f05911aeff0ea832b9bb6aedb998191420d0603cd95658f230df76566e5",
+    "scripts/screen_yeti60_batteries.py": "a6315aa3ae9e251e4968fc1c49eae44908d04acd40da65c6646af84a6e89dc9a"
+  }
+}

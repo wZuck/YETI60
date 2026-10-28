@@ -1,6 +1,6 @@
 {
   "source": "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb",
-  "source_sha256": "81d7b0595eb77fa5cdc196dcdd24e11cfca2cdd80f83c0e9a381e749fbe1fec5",
+  "source_sha256": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",
   "pcb_thickness_mm": 1.59,
   "parts": [
     {
@@ -512,6 +512,25 @@
         140.505,
         137.955,
         141.495
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
+      "ref": "R56",
+      "value": "1.82k/1%",
+      "back": true,
+      "position_pcb_mm": [
+        115.1,
+        146.85
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        114.605,
+        145.895,
+        115.595,
+        147.805
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
@@ -1302,6 +1321,25 @@
     },
     {
       "physical_body_bbox_pcb_mm": null,
+      "ref": "R55",
+      "value": "69.8k/1%",
+      "back": true,
+      "position_pcb_mm": [
+        117.7,
+        148.4
+      ],
+      "angle_deg": -90.0,
+      "xy_courtyard_and_graphics_bbox_pcb_mm": [
+        117.205,
+        147.445,
+        118.195,
+        149.355
+      ],
+      "height_envelope_mm": 3.0,
+      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
+    },
+    {
+      "physical_body_bbox_pcb_mm": null,
       "ref": "F1",
       "value": "500mA",
       "back": true,
@@ -1417,17 +1455,17 @@
     {
       "physical_body_bbox_pcb_mm": null,
       "ref": "R40",
-      "value": "8.87k/1%",
+      "value": "2.21k/1%",
       "back": true,
       "position_pcb_mm": [
-        117.25,
+        116.7,
         148.1
       ],
       "angle_deg": -90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        116.755,
+        116.205,
         147.145,
-        117.745,
+        117.195,
         149.055
       ],
       "height_envelope_mm": 3.0,

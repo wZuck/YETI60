@@ -66,7 +66,7 @@ steel=material('Stainless steel plate',(.52,.54,.56),.3,metal=1)
 black=material('Switch housing',(.025,.03,.027),.38)
 metalmat=material('Component metal',(.5,.51,.48),.32,metal=.8)
 cream=material('Connector plastic',(.63,.62,.52),.4)
-battery_mat=material('Unselected space envelope',(.04,.31,.17),.28,metal=.3)
+battery_mat=material('Selected custom pack envelope',(.04,.31,.17),.28,metal=.3)
 desk_mat=material('Warm studio backdrop',(.34,.32,.28),.65)
 groups={}
 for name in ['bottom','top','plate','pcb','caps','switches','battery']:
@@ -140,7 +140,7 @@ for row,(y,keys) in enumerate(sorted(rows.items(),reverse=True)):
         if text:
             curve=bpy.data.curves.new('Pad printed legend','FONT'); curve.body=text; curve.align_x='CENTER'; curve.align_y='CENTER'; curve.size=.0026 if len(text)<4 else .002; curve.resolution_u=12; curve.extrude=.000001
             o=bpy.data.objects.new('Legend '+text,curve); scene.collection.objects.link(o); o.location=point((x,y,top-.54)); o.rotation_euler[0]=math.atan([-.10,-.05,0,.06,.11][row]); o.data.materials.append(light_ink if accent else ink); o.parent=groups['caps']
-if data['battery_candidates']: box('Maximum space only / no battery selected',data['battery_candidates'][0]['bounds_case_mm'],battery_mat,'battery',.5)
+if data['battery_candidates']: box('YETI60-BAT-1600-1S / full pack envelope',data['battery_candidates'][0]['bounds_case_mm'],battery_mat,'battery',.5)
 groups['battery'].hide_render=True
 bpy.context.view_layer.update()
 verts=[root.matrix_world @ (groups['bottom'].matrix_local @ Vector(point(v))) for v in meshdata['meshes']['bottom']['vertices_mm']]
@@ -187,6 +187,6 @@ if not args.preview:
     for name,item in prior_outputs.items():
         if name not in rendered_outputs: rendered_outputs[name]=item
     for name,h in data['source_sha256'].items(): assert sha(ROOT/name)==h,name
-    manifest={'project':'YETI60','renderer':'Blender '+bpy.app.version_string+' / Cycles','samples':scene.cycles.samples,'recipe_sha256':sha(Path(__file__)),'mesh_export_recipe_sha256':sha(ROOT/'scripts/export_yeti60_render_meshes.py'),'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'case_scale':[1,1,1],'units':'source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation','tessellation_linear_deflection_mm':meshdata['tessellation_linear_deflection_mm'],'source_case_bounds_mm':{name:{'brep':meshdata['meshes'][name]['brep_bounds_mm'],'mesh':meshdata['meshes'][name]['mesh_bounds_mm']} for name in ['top','bottom']},'case_geometry_modifiers':[],'illustrative':['sculpted keycaps, legends, switch housings and stems','resin/PBT finish and colours','backside component envelopes','unselected battery maximum space envelope'],'provisional_stack':data['nominal_stack'],'outputs':rendered_outputs,'production_approved':False}
+    manifest={'project':'YETI60','renderer':'Blender '+bpy.app.version_string+' / Cycles','samples':scene.cycles.samples,'recipe_sha256':sha(Path(__file__)),'mesh_export_recipe_sha256':sha(ROOT/'scripts/export_yeti60_render_meshes.py'),'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'case_scale':[1,1,1],'units':'source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation','tessellation_linear_deflection_mm':meshdata['tessellation_linear_deflection_mm'],'source_case_bounds_mm':{name:{'brep':meshdata['meshes'][name]['brep_bounds_mm'],'mesh':meshdata['meshes'][name]['mesh_bounds_mm']} for name in ['top','bottom']},'case_geometry_modifiers':[],'illustrative':['sculpted keycaps, legends, switch housings and stems','resin/PBT finish and colours','backside component envelopes','custom 1600 mAh full-pack design envelope, supplier drawing pending'],'provisional_stack':data['nominal_stack'],'outputs':rendered_outputs,'production_approved':False}
     (OUT/'render-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print('YETI60 physical studio renders complete')

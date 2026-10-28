@@ -20,7 +20,7 @@ def verify():
     cad=read(HW/'audit-current.json'); assert cad['status']=='cad-checks-passed'; hashes(cad['source_sha256'],HW)
     assert cad['mcu_count']==1 and not cad['failed_pin_pairs'] and not cad['failed_critical_paths']
     pcb=read(HW/'pcb-contract-check.json'); assert pcb['netlist_parity']=='pass' and pcb['copper_layers']==4
-    regression=read(HW/'connectivity-changes.json'); assert not regression['regressed_pairs']
+    regression=read(HW/'connectivity-changes.json'); assert not regression['regressed_pairs']; hashes(regression['source_sha256'])
     electrical=read(AUD/'yeti60-electrical.json'); assert sha(HW/'EC60-nRF52840.kicad_pcb')==electrical['source_sha256']
     sim=read(AUD/'yeti60-firmware-simulation.json'); assert sim['status']=='passed'; hashes(sim['source_sha256']); assert sha(ROOT/sim['trace_file'])==sim['trace_sha256']
     plate=read(AUD/'plate.json'); assert plate['status']=='passed'; hashes(plate['source_sha256'])
@@ -46,8 +46,13 @@ def verify():
                 for key in ['recipe_sha256','assembly_report_sha256','mesh_export_recipe_sha256']:
                     assert item[key]==m[key],name+' was not rendered from current inputs'
     plot=read(ROOT/'renders/yeti60-firmware/plot-manifest.json'); assert plot['trace_sha256']==sim['trace_sha256']; assert plot['recipe_sha256']==sha(ROOT/'scripts/plot_yeti60_simulation.py'); hashes(plot['outputs'],ROOT/'renders/yeti60-firmware')
+    engineering=read(AUD/'yeti60-engineering.json');assert engineering['status']=='passed';hashes(engineering['evidence_sha256'],AUD)
+    target=read(AUD/'yeti60-target-build.json');assert target['status']=='built';hashes(target['source_sha256'])
+    for variant in target['variants'].values():hashes(variant['outputs'])
+    target_check=read(AUD/'yeti60-target-check.json');assert target_check['status']=='passed' and target_check['build_manifest_sha256']==sha(AUD/'yeti60-target-build.json')
+    assert all(v['USB_configuration_mA']==500 for v in target_check['variants'].values())
     assert read(AUD/'documentation-check.json')['status']=='passed'
-    return {'status':'passed','controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':29,'assembly_condition':'provisional stack only','firmware_condition':'host mocked HAL; target application unimplemented','production_approved':False,'open_requirements':config['open_requirements']}
+    return {'status':'passed','controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':29,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements']}
 def main():
     try: report=verify()
     except (AssertionError,KeyError,FileNotFoundError,ValueError) as error:

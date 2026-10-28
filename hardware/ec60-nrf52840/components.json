@@ -331,7 +331,9 @@
       "12": "ILIM_SET",
       "13": "USB_5V",
       "16": "ICHG_SET",
-      "17": "GND"
+      "17": "GND",
+      "14": "TMR_SET",
+      "15": "ITERM_SET"
     },
     "uuid": "6a6316e2-cde3-56ae-9d99-6ead19773147",
     "sheet": "power",
@@ -371,7 +373,7 @@
     "datasheet": ""
   },
   "R40": {
-    "value": "8.87k/1%",
+    "value": "2.21k/1%",
     "symbol": "Device:R",
     "footprint": "YAECKB:R_0402_1005Metric__R40",
     "pins": {
@@ -711,6 +713,30 @@
       "2": "GND"
     },
     "uuid": "5e2c3d11-7ac1-5a01-8461-c3d8b1f4c58a",
+    "sheet": "power",
+    "datasheet": ""
+  },
+  "R55": {
+    "value": "69.8k/1%",
+    "symbol": "Device:R",
+    "footprint": "YAECKB:R_0402_1005Metric__R55",
+    "pins": {
+      "1": "TMR_SET",
+      "2": "GND"
+    },
+    "uuid": "39f81028-8d68-4f5c-a93a-f3d1cbeaf30a",
+    "sheet": "power",
+    "datasheet": ""
+  },
+  "R56": {
+    "value": "1.82k/1%",
+    "symbol": "Device:R",
+    "footprint": "YAECKB:R_0402_1005Metric__R56",
+    "pins": {
+      "1": "ITERM_SET",
+      "2": "GND"
+    },
+    "uuid": "b6cd56a1-8239-465e-ad0a-cbcbc5755389",
     "sheet": "power",
     "datasheet": ""
   }

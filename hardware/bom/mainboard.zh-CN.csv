@@ -22,14 +22,16 @@ R17,1,1k,R_0402_1005Metric,厂商型号待选,0402、1%、不低于 50 mW；零�
 R26,1,10k,R_0402_1005Metric,厂商型号待选,0402、1%、不低于 50 mW；零欧姆位置须按指定值
 "R30, R31",2,0,R_0402_1005Metric,厂商型号待选,0402、1%、不低于 50 mW；零欧姆位置须按指定值
 R32,1,2.2k,R_0402_1005Metric,厂商型号待选,0402、1%、不低于 50 mW；零欧姆位置须按指定值
-R40,1,8.87k/1%,R_0402_1005Metric,厂商型号待选,0402、1%、不低于 50 mW；零欧姆位置须按指定值
+R40,1,2.21k/1%,R_0402_1005Metric,厂商型号待选,0402、1%、不低于 50 mW；零欧姆位置须按指定值
 R41,1,7.50k/1%,R_0402_1005Metric,厂商型号待选,0402、1%、不低于 50 mW；零欧姆位置须按指定值
 "R51, R52",2,1M/1%,R_0402_1005Metric,厂商型号待选,0402、1%、不低于 50 mW；零欧姆位置须按指定值
+R55,1,69.8k/1%,R_0402_1005Metric,厂商型号待选,0402、1%、不低于 50 mW；零欧姆位置须按指定值
+R56,1,1.82k/1%,R_0402_1005Metric,厂商型号待选,0402、1%、不低于 50 mW；零欧姆位置须按指定值
 SW1,1,EVQPUC02K_RESET,Panasonic_EVQPUL_EVQPUC,Panasonic EVQPUC02K,复位轻触开关；按厂商图纸复核
 SW100,1,JS102011SAQN_POWER,SW_SPDT_CK_JS102011SAQN,C&K JS102011SAQN,电源拨动开关；从底部检修孔操作
 U1,1,MDBT50Q-1MV2,Raytac_MDBT50Q,Raytac MDBT50Q-1MV2,指定模组；订货后缀及认证版本须确认
 "U2, U4",2,74HC4051,TSSOP16,"Nexperia 74HC4051PW,118",TSSOP16、HC 系列，不能用 HCT；候选型号须按原生焊盘复核
 U3,1,OPA350,SOIC-8_3.9x4.9mm_P1.27mm,TI OPA350UA,SOIC-8；不能替换为双路 OPA2350 或 MSOP 封装
-U5,1,BQ24074RGT,VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm,TI BQ24074RGTR,RGT 封装 VQFN16；须焊接散热焊盘并按 100 mA 方案设置
+U5,1,BQ24074RGT,VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm,TI BQ24074RGTR,RGT 封装 VQFN16；须焊接散热焊盘并按 P2 充电电流／计时／终止电流方案设置
 U6,1,TPS63031DSK,WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm,TI TPS63031DSKR,DSK 封装固定 3.3 V；不能直接用可调 TPS63030
 "U7, U8",2,TPS22919DCK,SOT-363_SC-70-6,TI TPS22919DCKR,SC70-6；确认编带订货后缀

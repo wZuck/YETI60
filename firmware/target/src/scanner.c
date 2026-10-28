@@ -176,13 +176,13 @@ static void run(void *a, void *b, void *c) {
     }
     enum usb_dc_status_code usb = zmk_usb_get_status();
     if (usb != old) {
-      enum yeti_usb state = usb == USB_DC_CONFIGURED     ? Y_USB_CONFIGURED
-                            : usb == USB_DC_SUSPEND      ? Y_USB_SUSPENDED
-                            : usb == USB_DC_DISCONNECTED ? Y_USB_OFF
-                                                         : Y_USB_POWERED;
-      /* Keep USB100 even after enumeration: enough for selected low-current
-       * pack. */
-      yeti_connections(&core, state, 100, false);
+      enum yeti_usb state = usb == USB_DC_SUSPEND ? Y_USB_SUSPENDED
+                            : zmk_usb_is_hid_ready() ? Y_USB_CONFIGURED
+                            : (usb == USB_DC_DISCONNECTED || usb == USB_DC_UNKNOWN)
+                                ? Y_USB_OFF : Y_USB_POWERED;
+      /* Legacy Zephyr bMaxPower uses 2 mA units. Resume preserves the
+       * accepted configuration; suspend/reset never enables charging. */
+      yeti_connections(&core, state, CONFIG_USB_MAX_POWER * 2, false);
       old = usb;
     }
     if (atomic_get(&enabled)) {

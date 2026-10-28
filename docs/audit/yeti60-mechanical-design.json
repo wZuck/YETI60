@@ -1,16 +1,17 @@
 {
   "status": "generated-valid-solids",
   "source_sha256": {
-    "mechanical/assembly-spec.json": "fa63a7ad0986f37e5efba12f681b8771a3b6477c3c35f4d38956f0be6771b139",
+    "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
     "felk60/felk60_top_hhkb.step": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
     "felk60/felk60_bottom.step": "f4987879940643cb5b0d66145b944efb435994abe4d18808da4e45d16bb8c44b",
-    "scripts/build_yeti60_mechanical.py": "14434a1a0a7ee7884455fdb1b0638f33694f3938d532552877a22d575cb1eeb1",
-    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b"
+    "scripts/build_yeti60_mechanical.py": "e82ac56116be00aa657ac8411eb21ca1c5673d13ad29063e0d0da930d35f8943",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "mechanical/battery-pocket-study.json": "6983679949ebb0b6bde4a7fd28b44a813305e1663c5d995cf95cf5eff22be23f"
   },
   "outputs": {
-    "mechanical/generated/yeti60-bottom.step": "40332df5f914fc9594f38516d77aad0a00581b47151a0fd5c6cb3e7364440e14",
-    "mechanical/generated/yeti60-standoff-46.step": "11dac3a13e57d1f4fe1c3f0feda963e20c7d05939908a4b4b5ebcb9db23cbbb7",
-    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b"
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
+    "mechanical/generated/yeti60-standoff-46.step": "11dac3a13e57d1f4fe1c3f0feda963e20c7d05939908a4b4b5ebcb9db23cbbb7"
   },
   "original_case_bounds": {
     "top": [
@@ -56,7 +57,8 @@
   "changes": [
     "Four bonded M3 insert seats",
     "Four bonded M2 daughterboard insert seats",
-    "8 mm underside power-switch service port"
+    "8 mm underside power-switch service port",
+    "Default 1600 mAh single-cell battery recess"
   ],
   "threads": "CAD uses thread envelopes; manufacturing drawing specifies actual threads",
   "physical_acceptance": false

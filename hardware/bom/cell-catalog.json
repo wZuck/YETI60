@@ -1,0 +1,5230 @@
+{
+  "retrieved": "2026-10-28",
+  "units": {
+    "capacity": "mAh",
+    "T": "mm",
+    "W": "mm",
+    "L": "mm"
+  },
+  "scope": "Tabular 3.7V cells only; source values retained, no stock or finished-pack approval implied",
+  "sources": {
+    "honcell": {
+      "url": "https://www.honcell.com/lithium-battery/cells/hcp-lipo-battery-cells/1316",
+      "count": 249
+    },
+    "epec": {
+      "url": "https://www.epectec.com/batteries/lithium-prismatic-cells.html",
+      "count": 402
+    }
+  },
+  "cells": [
+    {
+      "model": "HCP250811",
+      "capacity": 5.0,
+      "T": 2.5,
+      "W": 8.0,
+      "L": 11.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP250910",
+      "capacity": 8.0,
+      "T": 2.5,
+      "W": 9.0,
+      "L": 10.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP200815",
+      "capacity": 9.0,
+      "T": 2.0,
+      "W": 8.0,
+      "L": 15.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP300910",
+      "capacity": 12.0,
+      "T": 3.0,
+      "W": 9.5,
+      "L": 10.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP300812",
+      "capacity": 13.0,
+      "T": 3.0,
+      "W": 8.5,
+      "L": 12.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP301012",
+      "capacity": 13.0,
+      "T": 3.0,
+      "W": 10.5,
+      "L": 12.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP351011",
+      "capacity": 15.0,
+      "T": 3.5,
+      "W": 10.5,
+      "L": 11.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP181520",
+      "capacity": 20.0,
+      "T": 1.8,
+      "W": 15.0,
+      "L": 20.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP401012",
+      "capacity": 20.0,
+      "T": 4.0,
+      "W": 10.5,
+      "L": 12.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP301114",
+      "capacity": 25.0,
+      "T": 3.0,
+      "W": 11.5,
+      "L": 14.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP381018",
+      "capacity": 30.0,
+      "T": 3.8,
+      "W": 11.0,
+      "L": 18.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP401215",
+      "capacity": 35.0,
+      "T": 4.0,
+      "W": 12.5,
+      "L": 15.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP351215",
+      "capacity": 40.0,
+      "T": 3.5,
+      "W": 12.5,
+      "L": 15.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP391415",
+      "capacity": 45.0,
+      "T": 3.9,
+      "W": 14.5,
+      "L": 15.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP202025",
+      "capacity": 50.0,
+      "T": 2.0,
+      "W": 20.5,
+      "L": 25.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP521114",
+      "capacity": 53.0,
+      "T": 5.2,
+      "W": 11.0,
+      "L": 14.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP501218",
+      "capacity": 60.0,
+      "T": 5.0,
+      "W": 12.5,
+      "L": 17.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP301520",
+      "capacity": 65.0,
+      "T": 3.0,
+      "W": 15.5,
+      "L": 20.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP251235",
+      "capacity": 70.0,
+      "T": 2.5,
+      "W": 12.5,
+      "L": 35.3,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP451418",
+      "capacity": 75.0,
+      "T": 4.5,
+      "W": 14.0,
+      "L": 18.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP501220",
+      "capacity": 80.0,
+      "T": 5.0,
+      "W": 12.5,
+      "L": 20.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP451223",
+      "capacity": 85.0,
+      "T": 4.5,
+      "W": 12.5,
+      "L": 23.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP501223",
+      "capacity": 90.0,
+      "T": 5.0,
+      "W": 12.5,
+      "L": 23.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP501130",
+      "capacity": 95.0,
+      "T": 5.0,
+      "W": 11.0,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP451326",
+      "capacity": 100.0,
+      "T": 4.5,
+      "W": 13.5,
+      "L": 26.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP261635",
+      "capacity": 105.0,
+      "T": 2.6,
+      "W": 16.0,
+      "L": 35.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP481619",
+      "capacity": 110.0,
+      "T": 4.8,
+      "W": 16.5,
+      "L": 19.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP351725",
+      "capacity": 115.0,
+      "T": 3.7,
+      "W": 17.5,
+      "L": 25.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP481624",
+      "capacity": 120.0,
+      "T": 4.8,
+      "W": 16.5,
+      "L": 24.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP422023",
+      "capacity": 125.0,
+      "T": 4.2,
+      "W": 20.5,
+      "L": 23.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP451226",
+      "capacity": 130.0,
+      "T": 4.5,
+      "W": 12.0,
+      "L": 26.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP471230",
+      "capacity": 138.0,
+      "T": 4.7,
+      "W": 12.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP402025",
+      "capacity": 140.0,
+      "T": 4.0,
+      "W": 20.5,
+      "L": 25.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP501232",
+      "capacity": 145.0,
+      "T": 5.0,
+      "W": 12.5,
+      "L": 32.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP551035",
+      "capacity": 155.0,
+      "T": 5.5,
+      "W": 10.0,
+      "L": 35.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP601230",
+      "capacity": 160.0,
+      "T": 6.0,
+      "W": 12.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP412025",
+      "capacity": 165.0,
+      "T": 4.1,
+      "W": 20.5,
+      "L": 25.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP421529",
+      "capacity": 170.0,
+      "T": 4.25,
+      "W": 15.5,
+      "L": 29.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP521528",
+      "capacity": 175.0,
+      "T": 5.2,
+      "W": 15.5,
+      "L": 28.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP502025",
+      "capacity": 180.0,
+      "T": 5.0,
+      "W": 20.5,
+      "L": 25.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP481240",
+      "capacity": 185.0,
+      "T": 4.8,
+      "W": 12.5,
+      "L": 40.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP751717",
+      "capacity": 190.0,
+      "T": 7.5,
+      "W": 17.5,
+      "L": 17.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP451730",
+      "capacity": 195.0,
+      "T": 4.5,
+      "W": 17.0,
+      "L": 30.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP272332",
+      "capacity": 200.0,
+      "T": 2.7,
+      "W": 23.5,
+      "L": 32.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP351743",
+      "capacity": 205.0,
+      "T": 3.5,
+      "W": 17.5,
+      "L": 43.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP452322",
+      "capacity": 210.0,
+      "T": 4.5,
+      "W": 23.5,
+      "L": 22.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP452030",
+      "capacity": 215.0,
+      "T": 4.5,
+      "W": 20.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP402525",
+      "capacity": 220.0,
+      "T": 4.0,
+      "W": 25.0,
+      "L": 25.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP702024",
+      "capacity": 225.0,
+      "T": 7.0,
+      "W": 20.5,
+      "L": 24.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP501730",
+      "capacity": 230.0,
+      "T": 5.0,
+      "W": 17.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP412523",
+      "capacity": 235.0,
+      "T": 4.1,
+      "W": 25.5,
+      "L": 23.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP402528",
+      "capacity": 240.0,
+      "T": 4.0,
+      "W": 25.5,
+      "L": 28.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP502030",
+      "capacity": 250.0,
+      "T": 5.0,
+      "W": 20.0,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP602425",
+      "capacity": 255.0,
+      "T": 6.0,
+      "W": 24.5,
+      "L": 25.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP522028",
+      "capacity": 260.0,
+      "T": 5.2,
+      "W": 20.5,
+      "L": 28.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP382035",
+      "capacity": 265.0,
+      "T": 3.8,
+      "W": 20.5,
+      "L": 35.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP382730",
+      "capacity": 270.0,
+      "T": 3.8,
+      "W": 27.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP601434",
+      "capacity": 275.0,
+      "T": 6.0,
+      "W": 14.5,
+      "L": 34.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP801528",
+      "capacity": 280.0,
+      "T": 8.0,
+      "W": 15.5,
+      "L": 28.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP402035",
+      "capacity": 285.0,
+      "T": 4.0,
+      "W": 20.5,
+      "L": 35.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP552028",
+      "capacity": 295.0,
+      "T": 5.5,
+      "W": 20.5,
+      "L": 28.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP451743",
+      "capacity": 300.0,
+      "T": 4.5,
+      "W": 17.0,
+      "L": 43.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP502228",
+      "capacity": 305.0,
+      "T": 5.0,
+      "W": 22.5,
+      "L": 28.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP302938",
+      "capacity": 310.0,
+      "T": 3.0,
+      "W": 29.5,
+      "L": 38.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP702025",
+      "capacity": 315.0,
+      "T": 7.0,
+      "W": 20.5,
+      "L": 25.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP802025",
+      "capacity": 320.0,
+      "T": 8.0,
+      "W": 20.5,
+      "L": 25.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP701435",
+      "capacity": 325.0,
+      "T": 7.0,
+      "W": 14.5,
+      "L": 35.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP552133",
+      "capacity": 330.0,
+      "T": 5.5,
+      "W": 21.5,
+      "L": 33.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP502035",
+      "capacity": 335.0,
+      "T": 5.0,
+      "W": 20.5,
+      "L": 35.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP771730",
+      "capacity": 340.0,
+      "T": 7.7,
+      "W": 17.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP801437",
+      "capacity": 345.0,
+      "T": 8.0,
+      "W": 14.5,
+      "L": 37.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP482533",
+      "capacity": 350.0,
+      "T": 4.8,
+      "W": 25.5,
+      "L": 33.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP552330",
+      "capacity": 355.0,
+      "T": 5.5,
+      "W": 23.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP322545",
+      "capacity": 360.0,
+      "T": 3.2,
+      "W": 25.5,
+      "L": 45.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP502530",
+      "capacity": 365.0,
+      "T": 5.0,
+      "W": 25.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP742224",
+      "capacity": 370.0,
+      "T": 7.4,
+      "W": 22.0,
+      "L": 24.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP502233",
+      "capacity": 375.0,
+      "T": 5.0,
+      "W": 22.5,
+      "L": 33.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP652427",
+      "capacity": 380.0,
+      "T": 6.5,
+      "W": 24.5,
+      "L": 27.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP551640",
+      "capacity": 385.0,
+      "T": 5.5,
+      "W": 16.5,
+      "L": 40.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP822030",
+      "capacity": 390.0,
+      "T": 8.2,
+      "W": 20.5,
+      "L": 30.8,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP502534",
+      "capacity": 395.0,
+      "T": 5.0,
+      "W": 25.5,
+      "L": 34.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP801831",
+      "capacity": 400.0,
+      "T": 8.0,
+      "W": 18.5,
+      "L": 31.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP802026",
+      "capacity": 405.0,
+      "T": 8.0,
+      "W": 20.5,
+      "L": 26.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP432738",
+      "capacity": 410.0,
+      "T": 4.3,
+      "W": 27.5,
+      "L": 38.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP403040",
+      "capacity": 415.0,
+      "T": 4.0,
+      "W": 30.5,
+      "L": 40.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP551358",
+      "capacity": 420.0,
+      "T": 5.5,
+      "W": 13.5,
+      "L": 58.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP702730",
+      "capacity": 425.0,
+      "T": 7.0,
+      "W": 27.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP582728",
+      "capacity": 430.0,
+      "T": 5.8,
+      "W": 27.0,
+      "L": 28.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP552535",
+      "capacity": 435.0,
+      "T": 5.5,
+      "W": 25.5,
+      "L": 35.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP922224",
+      "capacity": 440.0,
+      "T": 9.2,
+      "W": 22.0,
+      "L": 24.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP402447",
+      "capacity": 445.0,
+      "T": 4.0,
+      "W": 24.5,
+      "L": 47.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP602530",
+      "capacity": 450.0,
+      "T": 6.0,
+      "W": 25.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP622530",
+      "capacity": 455.0,
+      "T": 6.2,
+      "W": 25.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP702338",
+      "capacity": 460.0,
+      "T": 7.0,
+      "W": 23.5,
+      "L": 38.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP522040",
+      "capacity": 465.0,
+      "T": 5.0,
+      "W": 20.5,
+      "L": 40.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP801740",
+      "capacity": 470.0,
+      "T": 8.0,
+      "W": 17.5,
+      "L": 40.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP402055",
+      "capacity": 475.0,
+      "T": 4.0,
+      "W": 20.5,
+      "L": 55.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP462540",
+      "capacity": 480.0,
+      "T": 4.6,
+      "W": 25.5,
+      "L": 40.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP563030",
+      "capacity": 485.0,
+      "T": 5.6,
+      "W": 30.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP702032",
+      "capacity": 490.0,
+      "T": 7.0,
+      "W": 20.5,
+      "L": 32.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP353048",
+      "capacity": 495.0,
+      "T": 3.5,
+      "W": 30.5,
+      "L": 48.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP602535",
+      "capacity": 500.0,
+      "T": 6.0,
+      "W": 25.5,
+      "L": 34.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP452446",
+      "capacity": 580.0,
+      "T": 4.5,
+      "W": 24.5,
+      "L": 46.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP702339",
+      "capacity": 600.0,
+      "T": 7.0,
+      "W": 23.5,
+      "L": 39.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP602248",
+      "capacity": 630.0,
+      "T": 6.0,
+      "W": 22.5,
+      "L": 48.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP503040",
+      "capacity": 650.0,
+      "T": 5.0,
+      "W": 30.5,
+      "L": 40.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP902037",
+      "capacity": 700.0,
+      "T": 9.0,
+      "W": 20.5,
+      "L": 37.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP852044",
+      "capacity": 720.0,
+      "T": 8.5,
+      "W": 20.5,
+      "L": 44.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP503240",
+      "capacity": 735.0,
+      "T": 5.0,
+      "W": 32.4,
+      "L": 40.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP803030",
+      "capacity": 770.0,
+      "T": 8.0,
+      "W": 30.5,
+      "L": 30.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP304552",
+      "capacity": 800.0,
+      "T": 3.0,
+      "W": 45.0,
+      "L": 52.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP752050",
+      "capacity": 850.0,
+      "T": 7.5,
+      "W": 20.5,
+      "L": 50.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP383562",
+      "capacity": 900.0,
+      "T": 3.8,
+      "W": 35.5,
+      "L": 62.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP523450",
+      "capacity": 1000.0,
+      "T": 5.2,
+      "W": 34.0,
+      "L": 50.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP503848",
+      "capacity": 1050.0,
+      "T": 5.0,
+      "W": 38.0,
+      "L": 48.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP663539",
+      "capacity": 1100.0,
+      "T": 6.6,
+      "W": 35.5,
+      "L": 39.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP703440",
+      "capacity": 1150.0,
+      "T": 7.0,
+      "W": 34.5,
+      "L": 40.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP653450",
+      "capacity": 1200.0,
+      "T": 6.5,
+      "W": 34.5,
+      "L": 50.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP515245",
+      "capacity": 1250.0,
+      "T": 5.1,
+      "W": 52.0,
+      "L": 45.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP703448",
+      "capacity": 1300.0,
+      "T": 7.0,
+      "W": 34.0,
+      "L": 48.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP256371",
+      "capacity": 1350.0,
+      "T": 25.0,
+      "W": 63.5,
+      "L": 71.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP633750",
+      "capacity": 1400.0,
+      "T": 6.3,
+      "W": 37.5,
+      "L": 50.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP604055",
+      "capacity": 1450.0,
+      "T": 6.0,
+      "W": 40.0,
+      "L": 55.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP504058",
+      "capacity": 1500.0,
+      "T": 5.0,
+      "W": 40.0,
+      "L": 58.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP564551",
+      "capacity": 1550.0,
+      "T": 5.6,
+      "W": 45.0,
+      "L": 51.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP404074",
+      "capacity": 1600.0,
+      "T": 4.0,
+      "W": 40.5,
+      "L": 74.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP405055",
+      "capacity": 1610.0,
+      "T": 4.3,
+      "W": 50.5,
+      "L": 55.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP903445",
+      "capacity": 1700.0,
+      "T": 9.0,
+      "W": 34.5,
+      "L": 45.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP623664",
+      "capacity": 1750.0,
+      "T": 6.2,
+      "W": 36.0,
+      "L": 64.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP813846",
+      "capacity": 1750.0,
+      "T": 8.1,
+      "W": 38.5,
+      "L": 46.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP804055",
+      "capacity": 1800.0,
+      "T": 8.0,
+      "W": 40.0,
+      "L": 55.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP634256",
+      "capacity": 1850.0,
+      "T": 6.3,
+      "W": 42.5,
+      "L": 56.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP103450",
+      "capacity": 1900.0,
+      "T": 10.0,
+      "W": 34.0,
+      "L": 50.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP753856",
+      "capacity": 1950.0,
+      "T": 7.5,
+      "W": 38.5,
+      "L": 56.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP113047",
+      "capacity": 2000.0,
+      "T": 11.0,
+      "W": 30.5,
+      "L": 47.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP654560",
+      "capacity": 2050.0,
+      "T": 6.5,
+      "W": 45.0,
+      "L": 60.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP405085",
+      "capacity": 2100.0,
+      "T": 4.0,
+      "W": 50.0,
+      "L": 85.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP406075",
+      "capacity": 2150.0,
+      "T": 4.0,
+      "W": 60.0,
+      "L": 75.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP534564",
+      "capacity": 2200.0,
+      "T": 5.3,
+      "W": 45.5,
+      "L": 64.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP643381",
+      "capacity": 2200.0,
+      "T": 6.4,
+      "W": 33.5,
+      "L": 81.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP704552",
+      "capacity": 2250.0,
+      "T": 7.0,
+      "W": 45.0,
+      "L": 52.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP605064",
+      "capacity": 2300.0,
+      "T": 6.0,
+      "W": 50.0,
+      "L": 64.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP114043",
+      "capacity": 2350.0,
+      "T": 10.8,
+      "W": 40.0,
+      "L": 43.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP703875",
+      "capacity": 2400.0,
+      "T": 7.0,
+      "W": 38.0,
+      "L": 75.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP346378",
+      "capacity": 2450.0,
+      "T": 3.4,
+      "W": 63.0,
+      "L": 78.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP306887",
+      "capacity": 2500.0,
+      "T": 3.0,
+      "W": 68.5,
+      "L": 87.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP584877",
+      "capacity": 2550.0,
+      "T": 5.8,
+      "W": 48.0,
+      "L": 77.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP853565",
+      "capacity": 2600.0,
+      "T": 8.5,
+      "W": 35.0,
+      "L": 65.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP113453",
+      "capacity": 2620.0,
+      "T": 11.0,
+      "W": 34.0,
+      "L": 53.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP852990",
+      "capacity": 2650.0,
+      "T": 8.5,
+      "W": 29.0,
+      "L": 90.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP744560",
+      "capacity": 2700.0,
+      "T": 7.4,
+      "W": 45.5,
+      "L": 60.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP123450",
+      "capacity": 2750.0,
+      "T": 12.0,
+      "W": 34.0,
+      "L": 50.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP703986",
+      "capacity": 2800.0,
+      "T": 7.0,
+      "W": 39.5,
+      "L": 86.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP845251",
+      "capacity": 2850.0,
+      "T": 8.4,
+      "W": 52.5,
+      "L": 51.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP5735107",
+      "capacity": 2900.0,
+      "T": 5.7,
+      "W": 35.5,
+      "L": 107.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP505280",
+      "capacity": 2950.0,
+      "T": 5.0,
+      "W": 52.0,
+      "L": 80.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP104060",
+      "capacity": 3000.0,
+      "T": 10.0,
+      "W": 40.0,
+      "L": 60.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP645464",
+      "capacity": 3050.0,
+      "T": 6.4,
+      "W": 54.0,
+      "L": 64.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP124052",
+      "capacity": 3100.0,
+      "T": 12.0,
+      "W": 40.5,
+      "L": 52.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP507075",
+      "capacity": 3150.0,
+      "T": 5.0,
+      "W": 70.0,
+      "L": 75.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP845160",
+      "capacity": 3200.0,
+      "T": 8.4,
+      "W": 51.5,
+      "L": 60.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP745060",
+      "capacity": 3250.0,
+      "T": 7.4,
+      "W": 50.5,
+      "L": 60.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP436185",
+      "capacity": 3300.0,
+      "T": 4.3,
+      "W": 61.5,
+      "L": 85.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP705076",
+      "capacity": 3450.0,
+      "T": 7.0,
+      "W": 50.5,
+      "L": 76.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP756060",
+      "capacity": 3550.0,
+      "T": 7.5,
+      "W": 60.5,
+      "L": 60.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP506378",
+      "capacity": 3650.0,
+      "T": 5.0,
+      "W": 63.0,
+      "L": 78.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP855160",
+      "capacity": 3700.0,
+      "T": 8.5,
+      "W": 51.0,
+      "L": 60.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP904860",
+      "capacity": 3750.0,
+      "T": 9.0,
+      "W": 48.0,
+      "L": 60.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP124450",
+      "capacity": 3800.0,
+      "T": 12.5,
+      "W": 44.5,
+      "L": 50.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP506290",
+      "capacity": 3850.0,
+      "T": 5.0,
+      "W": 62.5,
+      "L": 90.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP745080",
+      "capacity": 3900.0,
+      "T": 7.4,
+      "W": 50.5,
+      "L": 80.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP714486",
+      "capacity": 3950.0,
+      "T": 7.1,
+      "W": 44.5,
+      "L": 86.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP6830158",
+      "capacity": 4000.0,
+      "T": 6.8,
+      "W": 30.5,
+      "L": 158.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP113969",
+      "capacity": 4050.0,
+      "T": 10.8,
+      "W": 39.5,
+      "L": 69.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP605980",
+      "capacity": 4100.0,
+      "T": 6.0,
+      "W": 59.0,
+      "L": 80.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP124065",
+      "capacity": 4150.0,
+      "T": 11.8,
+      "W": 40.0,
+      "L": 65.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP855085",
+      "capacity": 4200.0,
+      "T": 8.5,
+      "W": 50.5,
+      "L": 85.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP516391",
+      "capacity": 4250.0,
+      "T": 5.1,
+      "W": 63.5,
+      "L": 91.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP114762",
+      "capacity": 4300.0,
+      "T": 11.0,
+      "W": 47.0,
+      "L": 62.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP805181",
+      "capacity": 4400.0,
+      "T": 8.0,
+      "W": 51.5,
+      "L": 81.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP5552102",
+      "capacity": 4500.0,
+      "T": 5.5,
+      "W": 52.5,
+      "L": 102.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP586087",
+      "capacity": 4700.0,
+      "T": 5.8,
+      "W": 60.5,
+      "L": 87.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP605898",
+      "capacity": 4750.0,
+      "T": 6.0,
+      "W": 58.0,
+      "L": 98.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP735977",
+      "capacity": 4800.0,
+      "T": 7.3,
+      "W": 59.5,
+      "L": 77.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP846370",
+      "capacity": 4850.0,
+      "T": 8.4,
+      "W": 63.0,
+      "L": 70.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP105267",
+      "capacity": 4900.0,
+      "T": 10.0,
+      "W": 52.5,
+      "L": 67.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP905283",
+      "capacity": 5000.0,
+      "T": 9.0,
+      "W": 52.5,
+      "L": 83.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP5149133",
+      "capacity": 5100.0,
+      "T": 5.1,
+      "W": 49.5,
+      "L": 133.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP953998",
+      "capacity": 5200.0,
+      "T": 9.5,
+      "W": 39.5,
+      "L": 98.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP8045131",
+      "capacity": 5300.0,
+      "T": 8.0,
+      "W": 45.5,
+      "L": 131.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP113597",
+      "capacity": 5400.0,
+      "T": 10.8,
+      "W": 35.0,
+      "L": 97.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP757477",
+      "capacity": 5500.0,
+      "T": 7.5,
+      "W": 74.0,
+      "L": 77.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP775598",
+      "capacity": 5550.0,
+      "T": 7.7,
+      "W": 55.0,
+      "L": 98.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP5757109",
+      "capacity": 5600.0,
+      "T": 5.7,
+      "W": 57.5,
+      "L": 109.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP965974",
+      "capacity": 5650.0,
+      "T": 9.6,
+      "W": 59.5,
+      "L": 74.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP4664143",
+      "capacity": 5800.0,
+      "T": 4.6,
+      "W": 64.5,
+      "L": 143.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP5165112",
+      "capacity": 5850.0,
+      "T": 5.1,
+      "W": 65.0,
+      "L": 112.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP956170",
+      "capacity": 5900.0,
+      "T": 9.5,
+      "W": 61.5,
+      "L": 70.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP866090",
+      "capacity": 6000.0,
+      "T": 8.6,
+      "W": 60.5,
+      "L": 90.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP4595105",
+      "capacity": 6100.0,
+      "T": 4.5,
+      "W": 95.0,
+      "L": 105.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP105083",
+      "capacity": 6150.0,
+      "T": 10.0,
+      "W": 50.0,
+      "L": 83.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP116168",
+      "capacity": 6200.0,
+      "T": 10.9,
+      "W": 61.0,
+      "L": 67.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP5774108",
+      "capacity": 6250.0,
+      "T": 5.75,
+      "W": 74.0,
+      "L": 108.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP4672133",
+      "capacity": 6300.0,
+      "T": 4.6,
+      "W": 72.0,
+      "L": 133.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP966870",
+      "capacity": 6350.0,
+      "T": 9.6,
+      "W": 68.0,
+      "L": 70.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP1042100",
+      "capacity": 6400.0,
+      "T": 10.0,
+      "W": 42.0,
+      "L": 100.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP756195",
+      "capacity": 6500.0,
+      "T": 7.5,
+      "W": 61.0,
+      "L": 95.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP7859103",
+      "capacity": 6550.0,
+      "T": 7.8,
+      "W": 59.0,
+      "L": 103.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP985976",
+      "capacity": 6650.0,
+      "T": 9.8,
+      "W": 59.5,
+      "L": 76.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP116472",
+      "capacity": 6750.0,
+      "T": 10.5,
+      "W": 64.0,
+      "L": 72.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP835895",
+      "capacity": 6800.0,
+      "T": 8.3,
+      "W": 58.0,
+      "L": 95.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP8648128",
+      "capacity": 6850.0,
+      "T": 8.6,
+      "W": 48.0,
+      "L": 128.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP985798",
+      "capacity": 6900.0,
+      "T": 9.8,
+      "W": 57.5,
+      "L": 98.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP776598",
+      "capacity": 6950.0,
+      "T": 7.7,
+      "W": 65.0,
+      "L": 98.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP4670140",
+      "capacity": 7000.0,
+      "T": 4.6,
+      "W": 70.0,
+      "L": 140.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP1045120",
+      "capacity": 7200.0,
+      "T": 10.0,
+      "W": 45.0,
+      "L": 120.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP668196",
+      "capacity": 7250.0,
+      "T": 6.6,
+      "W": 81.0,
+      "L": 96.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP977679",
+      "capacity": 7400.0,
+      "T": 9.7,
+      "W": 76.0,
+      "L": 79.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP7054150",
+      "capacity": 7450.0,
+      "T": 7.0,
+      "W": 54.0,
+      "L": 150.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP5662158",
+      "capacity": 7500.0,
+      "T": 5.6,
+      "W": 62.0,
+      "L": 158.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP5869147",
+      "capacity": 7600.0,
+      "T": 5.8,
+      "W": 69.5,
+      "L": 147.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP678996",
+      "capacity": 7700.0,
+      "T": 6.7,
+      "W": 89.0,
+      "L": 96.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP967775",
+      "capacity": 7800.0,
+      "T": 9.6,
+      "W": 77.0,
+      "L": 75.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP6255165",
+      "capacity": 7850.0,
+      "T": 6.2,
+      "W": 55.0,
+      "L": 165.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP43104138",
+      "capacity": 7900.0,
+      "T": 4.3,
+      "W": 104.0,
+      "L": 138.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP837585",
+      "capacity": 7950.0,
+      "T": 8.3,
+      "W": 75.0,
+      "L": 85.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP5578130",
+      "capacity": 8000.0,
+      "T": 5.5,
+      "W": 78.0,
+      "L": 130.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP8158111",
+      "capacity": 8100.0,
+      "T": 8.1,
+      "W": 58.0,
+      "L": 111.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP7545152",
+      "capacity": 8200.0,
+      "T": 7.5,
+      "W": 45.0,
+      "L": 152.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP8568102",
+      "capacity": 8400.0,
+      "T": 8.5,
+      "W": 68.5,
+      "L": 102.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP709598",
+      "capacity": 8450.0,
+      "T": 7.0,
+      "W": 95.0,
+      "L": 98.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP9850113",
+      "capacity": 8500.0,
+      "T": 9.8,
+      "W": 50.0,
+      "L": 113.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP126090",
+      "capacity": 8650.0,
+      "T": 12.0,
+      "W": 60.0,
+      "L": 90.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP7090100",
+      "capacity": 8700.0,
+      "T": 7.0,
+      "W": 90.0,
+      "L": 100.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP859089",
+      "capacity": 8800.0,
+      "T": 8.5,
+      "W": 90.0,
+      "L": 89.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP8266115",
+      "capacity": 8900.0,
+      "T": 8.2,
+      "W": 66.0,
+      "L": 115.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP9262113",
+      "capacity": 8950.0,
+      "T": 9.2,
+      "W": 62.0,
+      "L": 113.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP7972121",
+      "capacity": 9000.0,
+      "T": 7.9,
+      "W": 72.5,
+      "L": 121.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP1255098",
+      "capacity": 9250.0,
+      "T": 12.5,
+      "W": 50.0,
+      "L": 98.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP10559103",
+      "capacity": 9300.0,
+      "T": 10.5,
+      "W": 59.0,
+      "L": 103.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP5880128",
+      "capacity": 9400.0,
+      "T": 5.8,
+      "W": 80.0,
+      "L": 127.5,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP8958156",
+      "capacity": 9500.0,
+      "T": 8.9,
+      "W": 58.0,
+      "L": 156.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP8090100",
+      "capacity": 9600.0,
+      "T": 8.0,
+      "W": 90.0,
+      "L": 100.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP9265115",
+      "capacity": 9950.0,
+      "T": 9.2,
+      "W": 65.0,
+      "L": 115.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP8158145",
+      "capacity": 10000.0,
+      "T": 8.1,
+      "W": 58.0,
+      "L": 145.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP9055160",
+      "capacity": 11000.0,
+      "T": 8.9,
+      "W": 55.0,
+      "L": 160.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP7080138",
+      "capacity": 11600.0,
+      "T": 7.0,
+      "W": 80.0,
+      "L": 138.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP6586201",
+      "capacity": 13000.0,
+      "T": 6.5,
+      "W": 86.0,
+      "L": 201.0,
+      "source": "honcell"
+    },
+    {
+      "model": "HCP1255160",
+      "capacity": 14000.0,
+      "T": 12.0,
+      "W": 55.0,
+      "L": 160.0,
+      "source": "honcell"
+    },
+    {
+      "model": "351017",
+      "capacity": 30.0,
+      "T": 3.7,
+      "W": 10.5,
+      "L": 18.5,
+      "source": "epec"
+    },
+    {
+      "model": "401120",
+      "capacity": 45.0,
+      "T": 4.2,
+      "W": 12.0,
+      "L": 21.5,
+      "source": "epec"
+    },
+    {
+      "model": "501127",
+      "capacity": 70.0,
+      "T": 5.2,
+      "W": 12.0,
+      "L": 28.5,
+      "source": "epec"
+    },
+    {
+      "model": "431218",
+      "capacity": 50.0,
+      "T": 4.5,
+      "W": 13.0,
+      "L": 19.5,
+      "source": "epec"
+    },
+    {
+      "model": "381225",
+      "capacity": 80.0,
+      "T": 4.0,
+      "W": 13.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "451229",
+      "capacity": 105.0,
+      "T": 4.7,
+      "W": 13.0,
+      "L": 30.5,
+      "source": "epec"
+    },
+    {
+      "model": "401233",
+      "capacity": 110.0,
+      "T": 4.2,
+      "W": 13.0,
+      "L": 34.5,
+      "source": "epec"
+    },
+    {
+      "model": "401234",
+      "capacity": 115.0,
+      "T": 4.2,
+      "W": 13.0,
+      "L": 35.5,
+      "source": "epec"
+    },
+    {
+      "model": "401239",
+      "capacity": 135.0,
+      "T": 4.2,
+      "W": 13.0,
+      "L": 40.5,
+      "source": "epec"
+    },
+    {
+      "model": "501250",
+      "capacity": 245.0,
+      "T": 5.2,
+      "W": 13.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "381323",
+      "capacity": 70.0,
+      "T": 4.0,
+      "W": 14.0,
+      "L": 24.5,
+      "source": "epec"
+    },
+    {
+      "model": "401329",
+      "capacity": 100.0,
+      "T": 4.2,
+      "W": 14.0,
+      "L": 30.5,
+      "source": "epec"
+    },
+    {
+      "model": "501417",
+      "capacity": 60.0,
+      "T": 5.2,
+      "W": 15.0,
+      "L": 18.5,
+      "source": "epec"
+    },
+    {
+      "model": "351422",
+      "capacity": 60.0,
+      "T": 3.7,
+      "W": 15.0,
+      "L": 23.5,
+      "source": "epec"
+    },
+    {
+      "model": "401428",
+      "capacity": 110.0,
+      "T": 4.2,
+      "W": 15.0,
+      "L": 29.5,
+      "source": "epec"
+    },
+    {
+      "model": "601430",
+      "capacity": 195.0,
+      "T": 6.2,
+      "W": 15.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "401455",
+      "capacity": 260.0,
+      "T": 4.2,
+      "W": 15.0,
+      "L": 56.5,
+      "source": "epec"
+    },
+    {
+      "model": "351621",
+      "capacity": 70.0,
+      "T": 3.7,
+      "W": 17.0,
+      "L": 22.5,
+      "source": "epec"
+    },
+    {
+      "model": "451622",
+      "capacity": 110.0,
+      "T": 4.7,
+      "W": 17.0,
+      "L": 23.5,
+      "source": "epec"
+    },
+    {
+      "model": "451623",
+      "capacity": 115.0,
+      "T": 4.7,
+      "W": 17.0,
+      "L": 24.5,
+      "source": "epec"
+    },
+    {
+      "model": "401723",
+      "capacity": 105.0,
+      "T": 4.2,
+      "W": 18.0,
+      "L": 24.5,
+      "source": "epec"
+    },
+    {
+      "model": "481729",
+      "capacity": 185.0,
+      "T": 5.0,
+      "W": 18.0,
+      "L": 30.5,
+      "source": "epec"
+    },
+    {
+      "model": "451730",
+      "capacity": 180.0,
+      "T": 4.7,
+      "W": 18.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "401830",
+      "capacity": 175.0,
+      "T": 4.2,
+      "W": 19.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "401834",
+      "capacity": 205.0,
+      "T": 4.2,
+      "W": 19.0,
+      "L": 35.5,
+      "source": "epec"
+    },
+    {
+      "model": "382020",
+      "capacity": 100.0,
+      "T": 4.0,
+      "W": 21.0,
+      "L": 21.5,
+      "source": "epec"
+    },
+    {
+      "model": "302023",
+      "capacity": 95.0,
+      "T": 3.2,
+      "W": 21.0,
+      "L": 24.5,
+      "source": "epec"
+    },
+    {
+      "model": "552024",
+      "capacity": 205.0,
+      "T": 5.7,
+      "W": 21.0,
+      "L": 25.5,
+      "source": "epec"
+    },
+    {
+      "model": "382025",
+      "capacity": 140.0,
+      "T": 4.0,
+      "W": 21.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "352028",
+      "capacity": 150.0,
+      "T": 3.7,
+      "W": 21.0,
+      "L": 29.5,
+      "source": "epec"
+    },
+    {
+      "model": "302029",
+      "capacity": 135.0,
+      "T": 3.2,
+      "W": 21.0,
+      "L": 30.5,
+      "source": "epec"
+    },
+    {
+      "model": "402030",
+      "capacity": 200.0,
+      "T": 4.2,
+      "W": 21.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "352065",
+      "capacity": 440.0,
+      "T": 3.7,
+      "W": 21.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "352068",
+      "capacity": 460.0,
+      "T": 3.7,
+      "W": 21.0,
+      "L": 69.5,
+      "source": "epec"
+    },
+    {
+      "model": "402226",
+      "capacity": 180.0,
+      "T": 4.2,
+      "W": 23.0,
+      "L": 27.5,
+      "source": "epec"
+    },
+    {
+      "model": "402246",
+      "capacity": 385.0,
+      "T": 4.2,
+      "W": 23.0,
+      "L": 47.5,
+      "source": "epec"
+    },
+    {
+      "model": "222528",
+      "capacity": 110.0,
+      "T": 2.4,
+      "W": 26.0,
+      "L": 29.5,
+      "source": "epec"
+    },
+    {
+      "model": "252529",
+      "capacity": 140.0,
+      "T": 2.7,
+      "W": 26.0,
+      "L": 30.5,
+      "source": "epec"
+    },
+    {
+      "model": "502533",
+      "capacity": 385.0,
+      "T": 5.2,
+      "W": 26.0,
+      "L": 34.5,
+      "source": "epec"
+    },
+    {
+      "model": "402535",
+      "capacity": 315.0,
+      "T": 4.2,
+      "W": 26.0,
+      "L": 36.5,
+      "source": "epec"
+    },
+    {
+      "model": "442839",
+      "capacity": 470.0,
+      "T": 4.6,
+      "W": 29.0,
+      "L": 40.5,
+      "source": "epec"
+    },
+    {
+      "model": "602844",
+      "capacity": 760.0,
+      "T": 6.2,
+      "W": 29.0,
+      "L": 45.5,
+      "source": "epec"
+    },
+    {
+      "model": "502868",
+      "capacity": 1030.0,
+      "T": 5.2,
+      "W": 29.0,
+      "L": 69.5,
+      "source": "epec"
+    },
+    {
+      "model": "402942",
+      "capacity": 480.0,
+      "T": 4.2,
+      "W": 30.0,
+      "L": 43.5,
+      "source": "epec"
+    },
+    {
+      "model": "4030160",
+      "capacity": 2210.0,
+      "T": 4.2,
+      "W": 31.0,
+      "L": 161.5,
+      "source": "epec"
+    },
+    {
+      "model": "303031",
+      "capacity": 240.0,
+      "T": 3.2,
+      "W": 31.0,
+      "L": 32.5,
+      "source": "epec"
+    },
+    {
+      "model": "303040",
+      "capacity": 340.0,
+      "T": 3.2,
+      "W": 31.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "523048",
+      "capacity": 770.0,
+      "T": 5.4,
+      "W": 31.0,
+      "L": 49.5,
+      "source": "epec"
+    },
+    {
+      "model": "5031134",
+      "capacity": 2450.0,
+      "T": 5.2,
+      "W": 32.0,
+      "L": 135.5,
+      "source": "epec"
+    },
+    {
+      "model": "403232",
+      "capacity": 365.0,
+      "T": 4.2,
+      "W": 33.0,
+      "L": 33.5,
+      "source": "epec"
+    },
+    {
+      "model": "283234",
+      "capacity": 270.0,
+      "T": 3.0,
+      "W": 33.0,
+      "L": 35.5,
+      "source": "epec"
+    },
+    {
+      "model": "503378",
+      "capacity": 1470.0,
+      "T": 5.2,
+      "W": 34.0,
+      "L": 79.5,
+      "source": "epec"
+    },
+    {
+      "model": "383434",
+      "capacity": 420.0,
+      "T": 4.0,
+      "W": 35.0,
+      "L": 35.5,
+      "source": "epec"
+    },
+    {
+      "model": "283435",
+      "capacity": 300.0,
+      "T": 3.0,
+      "W": 35.0,
+      "L": 36.5,
+      "source": "epec"
+    },
+    {
+      "model": "503439",
+      "capacity": 660.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 40.5,
+      "source": "epec"
+    },
+    {
+      "model": "333440",
+      "capacity": 440.0,
+      "T": 3.5,
+      "W": 35.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "483446",
+      "capacity": 780.0,
+      "T": 5.0,
+      "W": 35.0,
+      "L": 47.5,
+      "source": "epec"
+    },
+    {
+      "model": "523450",
+      "capacity": 950.0,
+      "T": 5.4,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "453455",
+      "capacity": 900.0,
+      "T": 4.7,
+      "W": 35.0,
+      "L": 56.5,
+      "source": "epec"
+    },
+    {
+      "model": "503478",
+      "capacity": 1500.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 79.5,
+      "source": "epec"
+    },
+    {
+      "model": "343545",
+      "capacity": 540.0,
+      "T": 3.6,
+      "W": 36.0,
+      "L": 46.5,
+      "source": "epec"
+    },
+    {
+      "model": "483564",
+      "capacity": 1200.0,
+      "T": 5.0,
+      "W": 36.0,
+      "L": 65.5,
+      "source": "epec"
+    },
+    {
+      "model": "4735108",
+      "capacity": 2080.0,
+      "T": 4.9,
+      "W": 36.0,
+      "L": 109.5,
+      "source": "epec"
+    },
+    {
+      "model": "353645",
+      "capacity": 550.0,
+      "T": 3.7,
+      "W": 37.0,
+      "L": 46.5,
+      "source": "epec"
+    },
+    {
+      "model": "483757",
+      "capacity": 1100.0,
+      "T": 5.0,
+      "W": 38.0,
+      "L": 58.5,
+      "source": "epec"
+    },
+    {
+      "model": "503765",
+      "capacity": 1350.0,
+      "T": 5.2,
+      "W": 38.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "323840",
+      "capacity": 450.0,
+      "T": 3.4,
+      "W": 39.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "353845",
+      "capacity": 600.0,
+      "T": 3.7,
+      "W": 39.0,
+      "L": 46.5,
+      "source": "epec"
+    },
+    {
+      "model": "403956",
+      "capacity": 930.0,
+      "T": 4.2,
+      "W": 40.0,
+      "L": 57.5,
+      "source": "epec"
+    },
+    {
+      "model": "404030",
+      "capacity": 430.0,
+      "T": 4.2,
+      "W": 41.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "504068",
+      "capacity": 1540.0,
+      "T": 5.2,
+      "W": 41.0,
+      "L": 69.5,
+      "source": "epec"
+    },
+    {
+      "model": "384069",
+      "capacity": 1150.0,
+      "T": 4.0,
+      "W": 41.0,
+      "L": 70.5,
+      "source": "epec"
+    },
+    {
+      "model": "254086",
+      "capacity": 890.0,
+      "T": 2.7,
+      "W": 41.0,
+      "L": 87.5,
+      "source": "epec"
+    },
+    {
+      "model": "474147",
+      "capacity": 950.0,
+      "T": 4.9,
+      "W": 42.0,
+      "L": 48.5,
+      "source": "epec"
+    },
+    {
+      "model": "574172",
+      "capacity": 1950.0,
+      "T": 5.9,
+      "W": 42.0,
+      "L": 73.5,
+      "source": "epec"
+    },
+    {
+      "model": "484256",
+      "capacity": 1250.0,
+      "T": 5.0,
+      "W": 43.0,
+      "L": 57.5,
+      "source": "epec"
+    },
+    {
+      "model": "414257",
+      "capacity": 1060.0,
+      "T": 4.3,
+      "W": 43.0,
+      "L": 58.5,
+      "source": "epec"
+    },
+    {
+      "model": "384260",
+      "capacity": 1030.0,
+      "T": 4.0,
+      "W": 43.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "504358",
+      "capacity": 1400.0,
+      "T": 5.2,
+      "W": 44.0,
+      "L": 59.5,
+      "source": "epec"
+    },
+    {
+      "model": "304360",
+      "capacity": 700.0,
+      "T": 3.2,
+      "W": 44.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "6043110",
+      "capacity": 3490.0,
+      "T": 6.2,
+      "W": 44.0,
+      "L": 111.5,
+      "source": "epec"
+    },
+    {
+      "model": "284486",
+      "capacity": 1150.0,
+      "T": 3.0,
+      "W": 45.0,
+      "L": 87.5,
+      "source": "epec"
+    },
+    {
+      "model": "404547",
+      "capacity": 900.0,
+      "T": 4.2,
+      "W": 46.0,
+      "L": 48.5,
+      "source": "epec"
+    },
+    {
+      "model": "504560",
+      "capacity": 1510.0,
+      "T": 5.2,
+      "W": 46.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "404594",
+      "capacity": 1960.0,
+      "T": 4.2,
+      "W": 46.0,
+      "L": 95.5,
+      "source": "epec"
+    },
+    {
+      "model": "7045125",
+      "capacity": 5000.0,
+      "T": 7.2,
+      "W": 46.0,
+      "L": 126.5,
+      "source": "epec"
+    },
+    {
+      "model": "424696",
+      "capacity": 1900.0,
+      "T": 4.4,
+      "W": 47.0,
+      "L": 97.5,
+      "source": "epec"
+    },
+    {
+      "model": "354755",
+      "capacity": 960.0,
+      "T": 3.7,
+      "W": 48.0,
+      "L": 56.5,
+      "source": "epec"
+    },
+    {
+      "model": "504756",
+      "capacity": 1500.0,
+      "T": 5.2,
+      "W": 48.0,
+      "L": 57.5,
+      "source": "epec"
+    },
+    {
+      "model": "454783",
+      "capacity": 2100.0,
+      "T": 4.7,
+      "W": 48.0,
+      "L": 84.5,
+      "source": "epec"
+    },
+    {
+      "model": "424795",
+      "capacity": 2200.0,
+      "T": 4.4,
+      "W": 48.0,
+      "L": 96.5,
+      "source": "epec"
+    },
+    {
+      "model": "504868",
+      "capacity": 1890.0,
+      "T": 5.2,
+      "W": 49.0,
+      "L": 69.5,
+      "source": "epec"
+    },
+    {
+      "model": "365065",
+      "capacity": 1300.0,
+      "T": 3.8,
+      "W": 51.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "355068",
+      "capacity": 1320.0,
+      "T": 3.7,
+      "W": 51.0,
+      "L": 69.5,
+      "source": "epec"
+    },
+    {
+      "model": "455085",
+      "capacity": 2260.0,
+      "T": 4.7,
+      "W": 51.0,
+      "L": 86.5,
+      "source": "epec"
+    },
+    {
+      "model": "505088",
+      "capacity": 2700.0,
+      "T": 5.2,
+      "W": 51.0,
+      "L": 89.5,
+      "source": "epec"
+    },
+    {
+      "model": "485149",
+      "capacity": 1300.0,
+      "T": 5.0,
+      "W": 52.0,
+      "L": 50.5,
+      "source": "epec"
+    },
+    {
+      "model": "405160",
+      "capacity": 1360.0,
+      "T": 4.2,
+      "W": 52.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "455475",
+      "capacity": 2150.0,
+      "T": 4.7,
+      "W": 55.0,
+      "L": 76.5,
+      "source": "epec"
+    },
+    {
+      "model": "525573",
+      "capacity": 2480.0,
+      "T": 5.4,
+      "W": 56.0,
+      "L": 74.5,
+      "source": "epec"
+    },
+    {
+      "model": "425580",
+      "capacity": 2170.0,
+      "T": 4.4,
+      "W": 56.0,
+      "L": 81.5,
+      "source": "epec"
+    },
+    {
+      "model": "305589",
+      "capacity": 1650.0,
+      "T": 3.2,
+      "W": 56.0,
+      "L": 90.5,
+      "source": "epec"
+    },
+    {
+      "model": "5058130",
+      "capacity": 4700.0,
+      "T": 5.2,
+      "W": 59.0,
+      "L": 131.5,
+      "source": "epec"
+    },
+    {
+      "model": "3560110",
+      "capacity": 2750.0,
+      "T": 3.7,
+      "W": 61.0,
+      "L": 111.5,
+      "source": "epec"
+    },
+    {
+      "model": "506064",
+      "capacity": 2740.0,
+      "T": 5.2,
+      "W": 61.0,
+      "L": 65.5,
+      "source": "epec"
+    },
+    {
+      "model": "456066",
+      "capacity": 1500.0,
+      "T": 4.7,
+      "W": 61.0,
+      "L": 67.5,
+      "source": "epec"
+    },
+    {
+      "model": "456066",
+      "capacity": 1900.0,
+      "T": 4.7,
+      "W": 61.0,
+      "L": 67.5,
+      "source": "epec"
+    },
+    {
+      "model": "456180",
+      "capacity": 2650.0,
+      "T": 4.7,
+      "W": 62.0,
+      "L": 81.5,
+      "source": "epec"
+    },
+    {
+      "model": "506194",
+      "capacity": 3500.0,
+      "T": 5.2,
+      "W": 62.0,
+      "L": 95.5,
+      "source": "epec"
+    },
+    {
+      "model": "406250",
+      "capacity": 1350.0,
+      "T": 4.2,
+      "W": 63.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "306281",
+      "capacity": 1500.0,
+      "T": 3.2,
+      "W": 63.0,
+      "L": 82.5,
+      "source": "epec"
+    },
+    {
+      "model": "5664102",
+      "capacity": 4540.0,
+      "T": 5.8,
+      "W": 65.0,
+      "L": 103.5,
+      "source": "epec"
+    },
+    {
+      "model": "506883",
+      "capacity": 3400.0,
+      "T": 5.2,
+      "W": 69.0,
+      "L": 84.5,
+      "source": "epec"
+    },
+    {
+      "model": "457090",
+      "capacity": 3450.0,
+      "T": 4.7,
+      "W": 71.0,
+      "L": 91.5,
+      "source": "epec"
+    },
+    {
+      "model": "407095",
+      "capacity": 3250.0,
+      "T": 4.2,
+      "W": 71.0,
+      "L": 96.5,
+      "source": "epec"
+    },
+    {
+      "model": "357274",
+      "capacity": 1700.0,
+      "T": 3.7,
+      "W": 73.0,
+      "L": 75.5,
+      "source": "epec"
+    },
+    {
+      "model": "5080100",
+      "capacity": 5000.0,
+      "T": 5.2,
+      "W": 81.0,
+      "L": 101.5,
+      "source": "epec"
+    },
+    {
+      "model": "2790108",
+      "capacity": 3080.0,
+      "T": 2.9,
+      "W": 91.0,
+      "L": 109.5,
+      "source": "epec"
+    },
+    {
+      "model": "3497132",
+      "capacity": 4300.0,
+      "T": 3.6,
+      "W": 98.0,
+      "L": 133.5,
+      "source": "epec"
+    },
+    {
+      "model": "349867",
+      "capacity": 2570.0,
+      "T": 3.6,
+      "W": 99.0,
+      "L": 68.5,
+      "source": "epec"
+    },
+    {
+      "model": "651120",
+      "capacity": 80.0,
+      "T": 6.7,
+      "W": 12.0,
+      "L": 21.5,
+      "source": "epec"
+    },
+    {
+      "model": "501127",
+      "capacity": 90.0,
+      "T": 5.2,
+      "W": 12.0,
+      "L": 28.5,
+      "source": "epec"
+    },
+    {
+      "model": "601219",
+      "capacity": 75.0,
+      "T": 6.2,
+      "W": 13.0,
+      "L": 20.5,
+      "source": "epec"
+    },
+    {
+      "model": "381225",
+      "capacity": 70.0,
+      "T": 4.0,
+      "W": 13.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "401225",
+      "capacity": 80.0,
+      "T": 4.2,
+      "W": 13.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "351230",
+      "capacity": 90.0,
+      "T": 3.7,
+      "W": 13.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "401230",
+      "capacity": 105.0,
+      "T": 4.2,
+      "W": 13.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "551230",
+      "capacity": 150.0,
+      "T": 5.7,
+      "W": 13.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "501235",
+      "capacity": 165.0,
+      "T": 5.2,
+      "W": 13.0,
+      "L": 36.5,
+      "source": "epec"
+    },
+    {
+      "model": "381239",
+      "capacity": 130.0,
+      "T": 4.0,
+      "W": 13.0,
+      "L": 40.5,
+      "source": "epec"
+    },
+    {
+      "model": "501240",
+      "capacity": 185.0,
+      "T": 5.2,
+      "W": 13.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "551326",
+      "capacity": 125.0,
+      "T": 5.7,
+      "W": 14.0,
+      "L": 27.5,
+      "source": "epec"
+    },
+    {
+      "model": "551417",
+      "capacity": 70.0,
+      "T": 5.7,
+      "W": 15.0,
+      "L": 18.5,
+      "source": "epec"
+    },
+    {
+      "model": "751419",
+      "capacity": 120.0,
+      "T": 7.7,
+      "W": 15.0,
+      "L": 20.5,
+      "source": "epec"
+    },
+    {
+      "model": "491425",
+      "capacity": 120.0,
+      "T": 5.1,
+      "W": 15.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "501647",
+      "capacity": 330.0,
+      "T": 5.2,
+      "W": 17.0,
+      "L": 48.5,
+      "source": "epec"
+    },
+    {
+      "model": "451717",
+      "capacity": 65.0,
+      "T": 4.7,
+      "W": 18.0,
+      "L": 18.5,
+      "source": "epec"
+    },
+    {
+      "model": "401719",
+      "capacity": 70.0,
+      "T": 4.2,
+      "W": 18.0,
+      "L": 20.5,
+      "source": "epec"
+    },
+    {
+      "model": "451730",
+      "capacity": 185.0,
+      "T": 4.7,
+      "W": 18.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "501730",
+      "capacity": 210.0,
+      "T": 5.2,
+      "W": 18.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "651730",
+      "capacity": 275.0,
+      "T": 6.7,
+      "W": 18.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "681730",
+      "capacity": 280.0,
+      "T": 7.0,
+      "W": 18.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "501737",
+      "capacity": 270.0,
+      "T": 5.2,
+      "W": 18.0,
+      "L": 38.5,
+      "source": "epec"
+    },
+    {
+      "model": "961738",
+      "capacity": 560.0,
+      "T": 9.8,
+      "W": 18.0,
+      "L": 39.5,
+      "source": "epec"
+    },
+    {
+      "model": "401855",
+      "capacity": 370.0,
+      "T": 4.2,
+      "W": 19.0,
+      "L": 56.5,
+      "source": "epec"
+    },
+    {
+      "model": "401928",
+      "capacity": 160.0,
+      "T": 4.2,
+      "W": 20.0,
+      "L": 29.5,
+      "source": "epec"
+    },
+    {
+      "model": "681936",
+      "capacity": 430.0,
+      "T": 7.0,
+      "W": 20.0,
+      "L": 37.5,
+      "source": "epec"
+    },
+    {
+      "model": "402020",
+      "capacity": 110.0,
+      "T": 4.2,
+      "W": 21.0,
+      "L": 21.5,
+      "source": "epec"
+    },
+    {
+      "model": "252025",
+      "capacity": 85.0,
+      "T": 2.7,
+      "W": 21.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "402025",
+      "capacity": 150.0,
+      "T": 4.2,
+      "W": 21.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "422025",
+      "capacity": 160.0,
+      "T": 4.4,
+      "W": 21.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "502025",
+      "capacity": 200.0,
+      "T": 5.2,
+      "W": 21.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "552025",
+      "capacity": 220.0,
+      "T": 5.7,
+      "W": 21.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "302030",
+      "capacity": 140.0,
+      "T": 3.2,
+      "W": 21.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "402030",
+      "capacity": 200.0,
+      "T": 4.2,
+      "W": 21.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "452030",
+      "capacity": 230.0,
+      "T": 4.7,
+      "W": 21.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "502030",
+      "capacity": 260.0,
+      "T": 5.2,
+      "W": 21.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "652030",
+      "capacity": 340.0,
+      "T": 6.7,
+      "W": 21.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "802030",
+      "capacity": 420.0,
+      "T": 8.2,
+      "W": 21.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "752065",
+      "capacity": 1030.0,
+      "T": 7.7,
+      "W": 21.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "552120",
+      "capacity": 165.0,
+      "T": 5.7,
+      "W": 22.0,
+      "L": 21.5,
+      "source": "epec"
+    },
+    {
+      "model": "902143",
+      "capacity": 810.0,
+      "T": 9.2,
+      "W": 22.0,
+      "L": 44.5,
+      "source": "epec"
+    },
+    {
+      "model": "502240",
+      "capacity": 420.0,
+      "T": 5.2,
+      "W": 23.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "502290",
+      "capacity": 1050.0,
+      "T": 5.2,
+      "W": 23.0,
+      "L": 91.5,
+      "source": "epec"
+    },
+    {
+      "model": "752299",
+      "capacity": 1800.0,
+      "T": 7.7,
+      "W": 23.0,
+      "L": 100.5,
+      "source": "epec"
+    },
+    {
+      "model": "722353",
+      "capacity": 900.0,
+      "T": 7.4,
+      "W": 24.0,
+      "L": 54.5,
+      "source": "epec"
+    },
+    {
+      "model": "802523",
+      "capacity": 350.0,
+      "T": 8.2,
+      "W": 26.0,
+      "L": 24.5,
+      "source": "epec"
+    },
+    {
+      "model": "352535",
+      "capacity": 275.0,
+      "T": 3.7,
+      "W": 26.0,
+      "L": 36.5,
+      "source": "epec"
+    },
+    {
+      "model": "402535",
+      "capacity": 320.0,
+      "T": 4.2,
+      "W": 26.0,
+      "L": 36.5,
+      "source": "epec"
+    },
+    {
+      "model": "602535",
+      "capacity": 500.0,
+      "T": 6.2,
+      "W": 26.0,
+      "L": 36.5,
+      "source": "epec"
+    },
+    {
+      "model": "802535",
+      "capacity": 690.0,
+      "T": 8.2,
+      "W": 26.0,
+      "L": 36.5,
+      "source": "epec"
+    },
+    {
+      "model": "452540",
+      "capacity": 420.0,
+      "T": 4.7,
+      "W": 26.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "352573",
+      "capacity": 650.0,
+      "T": 3.7,
+      "W": 26.0,
+      "L": 74.5,
+      "source": "epec"
+    },
+    {
+      "model": "382631",
+      "capacity": 260.0,
+      "T": 4.0,
+      "W": 27.0,
+      "L": 32.5,
+      "source": "epec"
+    },
+    {
+      "model": "652631",
+      "capacity": 500.0,
+      "T": 6.7,
+      "W": 27.0,
+      "L": 32.5,
+      "source": "epec"
+    },
+    {
+      "model": "652632",
+      "capacity": 550.0,
+      "T": 6.7,
+      "W": 27.0,
+      "L": 33.5,
+      "source": "epec"
+    },
+    {
+      "model": "502633",
+      "capacity": 380.0,
+      "T": 5.2,
+      "W": 27.0,
+      "L": 34.5,
+      "source": "epec"
+    },
+    {
+      "model": "502649",
+      "capacity": 650.0,
+      "T": 5.2,
+      "W": 27.0,
+      "L": 50.5,
+      "source": "epec"
+    },
+    {
+      "model": "752663",
+      "capacity": 1350.0,
+      "T": 7.7,
+      "W": 27.0,
+      "L": 64.5,
+      "source": "epec"
+    },
+    {
+      "model": "502699",
+      "capacity": 1450.0,
+      "T": 5.2,
+      "W": 27.0,
+      "L": 100.5,
+      "source": "epec"
+    },
+    {
+      "model": "7527110",
+      "capacity": 2700.0,
+      "T": 7.7,
+      "W": 28.0,
+      "L": 111.5,
+      "source": "epec"
+    },
+    {
+      "model": "902740",
+      "capacity": 950.0,
+      "T": 9.2,
+      "W": 28.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "682842",
+      "capacity": 800.0,
+      "T": 7.0,
+      "W": 29.0,
+      "L": 43.5,
+      "source": "epec"
+    },
+    {
+      "model": "602990",
+      "capacity": 1800.0,
+      "T": 6.2,
+      "W": 30.0,
+      "L": 91.5,
+      "source": "epec"
+    },
+    {
+      "model": "403030",
+      "capacity": 300.0,
+      "T": 4.2,
+      "W": 31.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "683030",
+      "capacity": 590.0,
+      "T": 7.0,
+      "W": 31.0,
+      "L": 31.5,
+      "source": "epec"
+    },
+    {
+      "model": "553035",
+      "capacity": 550.0,
+      "T": 5.7,
+      "W": 31.0,
+      "L": 36.5,
+      "source": "epec"
+    },
+    {
+      "model": "353040",
+      "capacity": 380.0,
+      "T": 3.7,
+      "W": 31.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "403040",
+      "capacity": 430.0,
+      "T": 4.2,
+      "W": 31.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "503040",
+      "capacity": 600.0,
+      "T": 5.2,
+      "W": 31.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "523040",
+      "capacity": 600.0,
+      "T": 5.4,
+      "W": 31.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "103048",
+      "capacity": 1500.0,
+      "T": 10.2,
+      "W": 31.0,
+      "L": 49.5,
+      "source": "epec"
+    },
+    {
+      "model": "403048",
+      "capacity": 550.0,
+      "T": 4.2,
+      "W": 31.0,
+      "L": 49.5,
+      "source": "epec"
+    },
+    {
+      "model": "603048",
+      "capacity": 820.0,
+      "T": 6.2,
+      "W": 31.0,
+      "L": 49.5,
+      "source": "epec"
+    },
+    {
+      "model": "623048",
+      "capacity": 800.0,
+      "T": 6.4,
+      "W": 31.0,
+      "L": 49.5,
+      "source": "epec"
+    },
+    {
+      "model": "673048",
+      "capacity": 850.0,
+      "T": 6.9,
+      "W": 31.0,
+      "L": 49.5,
+      "source": "epec"
+    },
+    {
+      "model": "703048",
+      "capacity": 1000.0,
+      "T": 7.2,
+      "W": 31.0,
+      "L": 49.5,
+      "source": "epec"
+    },
+    {
+      "model": "803048",
+      "capacity": 1200.0,
+      "T": 8.2,
+      "W": 31.0,
+      "L": 49.5,
+      "source": "epec"
+    },
+    {
+      "model": "503080",
+      "capacity": 1350.0,
+      "T": 5.2,
+      "W": 31.0,
+      "L": 81.5,
+      "source": "epec"
+    },
+    {
+      "model": "4531134",
+      "capacity": 2200.0,
+      "T": 4.7,
+      "W": 32.0,
+      "L": 135.5,
+      "source": "epec"
+    },
+    {
+      "model": "723154",
+      "capacity": 1300.0,
+      "T": 7.4,
+      "W": 32.0,
+      "L": 55.5,
+      "source": "epec"
+    },
+    {
+      "model": "503162",
+      "capacity": 1050.0,
+      "T": 5.2,
+      "W": 32.0,
+      "L": 63.5,
+      "source": "epec"
+    },
+    {
+      "model": "6532100",
+      "capacity": 1800.0,
+      "T": 6.7,
+      "W": 33.0,
+      "L": 101.5,
+      "source": "epec"
+    },
+    {
+      "model": "583247",
+      "capacity": 910.0,
+      "T": 6.0,
+      "W": 33.0,
+      "L": 48.5,
+      "source": "epec"
+    },
+    {
+      "model": "723250",
+      "capacity": 1240.0,
+      "T": 7.4,
+      "W": 33.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "503258",
+      "capacity": 970.0,
+      "T": 5.2,
+      "W": 33.0,
+      "L": 59.5,
+      "source": "epec"
+    },
+    {
+      "model": "653378",
+      "capacity": 1950.0,
+      "T": 6.7,
+      "W": 34.0,
+      "L": 79.5,
+      "source": "epec"
+    },
+    {
+      "model": "5534120",
+      "capacity": 2700.0,
+      "T": 5.7,
+      "W": 35.0,
+      "L": 121.5,
+      "source": "epec"
+    },
+    {
+      "model": "7534135",
+      "capacity": 4200.0,
+      "T": 7.7,
+      "W": 35.0,
+      "L": 136.5,
+      "source": "epec"
+    },
+    {
+      "model": "703425",
+      "capacity": 580.0,
+      "T": 7.2,
+      "W": 35.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "343434",
+      "capacity": 350.0,
+      "T": 3.6,
+      "W": 35.0,
+      "L": 35.5,
+      "source": "epec"
+    },
+    {
+      "model": "503441",
+      "capacity": 700.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 42.5,
+      "source": "epec"
+    },
+    {
+      "model": "653443",
+      "capacity": 780.0,
+      "T": 6.7,
+      "W": 35.0,
+      "L": 44.5,
+      "source": "epec"
+    },
+    {
+      "model": "763444",
+      "capacity": 1200.0,
+      "T": 7.8,
+      "W": 35.0,
+      "L": 45.5,
+      "source": "epec"
+    },
+    {
+      "model": "483446",
+      "capacity": 800.0,
+      "T": 5.0,
+      "W": 35.0,
+      "L": 47.5,
+      "source": "epec"
+    },
+    {
+      "model": "503446",
+      "capacity": 650.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 47.5,
+      "source": "epec"
+    },
+    {
+      "model": "533446",
+      "capacity": 820.0,
+      "T": 5.5,
+      "W": 35.0,
+      "L": 47.5,
+      "source": "epec"
+    },
+    {
+      "model": "653446",
+      "capacity": 1000.0,
+      "T": 6.7,
+      "W": 35.0,
+      "L": 47.5,
+      "source": "epec"
+    },
+    {
+      "model": "803446",
+      "capacity": 1400.0,
+      "T": 8.2,
+      "W": 35.0,
+      "L": 47.5,
+      "source": "epec"
+    },
+    {
+      "model": "103450",
+      "capacity": 1800.0,
+      "T": 10.2,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "363450",
+      "capacity": 600.0,
+      "T": 3.8,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "383450",
+      "capacity": 650.0,
+      "T": 4.0,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "403450",
+      "capacity": 680.0,
+      "T": 4.2,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "423450",
+      "capacity": 750.0,
+      "T": 4.4,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "453450",
+      "capacity": 800.0,
+      "T": 4.7,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "483450",
+      "capacity": 900.0,
+      "T": 5.0,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "503450",
+      "capacity": 850.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "553450",
+      "capacity": 1100.0,
+      "T": 5.7,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "603450",
+      "capacity": 1100.0,
+      "T": 6.2,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "653450",
+      "capacity": 1200.0,
+      "T": 6.7,
+      "W": 35.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "503456",
+      "capacity": 1020.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 57.5,
+      "source": "epec"
+    },
+    {
+      "model": "653457",
+      "capacity": 1400.0,
+      "T": 6.7,
+      "W": 35.0,
+      "L": 58.5,
+      "source": "epec"
+    },
+    {
+      "model": "453463",
+      "capacity": 1050.0,
+      "T": 4.7,
+      "W": 35.0,
+      "L": 64.5,
+      "source": "epec"
+    },
+    {
+      "model": "503465",
+      "capacity": 1230.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "703496",
+      "capacity": 2300.0,
+      "T": 7.2,
+      "W": 35.0,
+      "L": 97.5,
+      "source": "epec"
+    },
+    {
+      "model": "383562",
+      "capacity": 850.0,
+      "T": 4.0,
+      "W": 36.0,
+      "L": 63.5,
+      "source": "epec"
+    },
+    {
+      "model": "503562",
+      "capacity": 1100.0,
+      "T": 5.2,
+      "W": 36.0,
+      "L": 63.5,
+      "source": "epec"
+    },
+    {
+      "model": "863644",
+      "capacity": 1450.0,
+      "T": 8.8,
+      "W": 37.0,
+      "L": 45.5,
+      "source": "epec"
+    },
+    {
+      "model": "403468",
+      "capacity": 1010.0,
+      "T": 4.2,
+      "W": 35.0,
+      "L": 69.5,
+      "source": "epec"
+    },
+    {
+      "model": "453654",
+      "capacity": 930.0,
+      "T": 4.7,
+      "W": 37.0,
+      "L": 55.5,
+      "source": "epec"
+    },
+    {
+      "model": "483756",
+      "capacity": 1100.0,
+      "T": 5.0,
+      "W": 38.0,
+      "L": 57.5,
+      "source": "epec"
+    },
+    {
+      "model": "503758",
+      "capacity": 1200.0,
+      "T": 5.2,
+      "W": 38.0,
+      "L": 59.5,
+      "source": "epec"
+    },
+    {
+      "model": "373759",
+      "capacity": 850.0,
+      "T": 3.9,
+      "W": 38.0,
+      "L": 60.5,
+      "source": "epec"
+    },
+    {
+      "model": "503759",
+      "capacity": 1100.0,
+      "T": 5.2,
+      "W": 38.0,
+      "L": 60.5,
+      "source": "epec"
+    },
+    {
+      "model": "573759",
+      "capacity": 1300.0,
+      "T": 5.9,
+      "W": 38.0,
+      "L": 60.5,
+      "source": "epec"
+    },
+    {
+      "model": "503876",
+      "capacity": 1660.0,
+      "T": 5.2,
+      "W": 39.0,
+      "L": 77.5,
+      "source": "epec"
+    },
+    {
+      "model": "453880",
+      "capacity": 1560.0,
+      "T": 4.7,
+      "W": 39.0,
+      "L": 81.5,
+      "source": "epec"
+    },
+    {
+      "model": "653946",
+      "capacity": 1250.0,
+      "T": 6.7,
+      "W": 40.0,
+      "L": 47.5,
+      "source": "epec"
+    },
+    {
+      "model": "503956",
+      "capacity": 1200.0,
+      "T": 5.2,
+      "W": 40.0,
+      "L": 57.5,
+      "source": "epec"
+    },
+    {
+      "model": "453969",
+      "capacity": 1360.0,
+      "T": 4.7,
+      "W": 40.0,
+      "L": 70.5,
+      "source": "epec"
+    },
+    {
+      "model": "653985",
+      "capacity": 2580.0,
+      "T": 6.7,
+      "W": 40.0,
+      "L": 86.5,
+      "source": "epec"
+    },
+    {
+      "model": "584060",
+      "capacity": 1450.0,
+      "T": 6.0,
+      "W": 41.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "504068",
+      "capacity": 1550.0,
+      "T": 5.2,
+      "W": 41.0,
+      "L": 69.5,
+      "source": "epec"
+    },
+    {
+      "model": "504070",
+      "capacity": 1600.0,
+      "T": 5.2,
+      "W": 41.0,
+      "L": 71.5,
+      "source": "epec"
+    },
+    {
+      "model": "574172",
+      "capacity": 1900.0,
+      "T": 5.9,
+      "W": 42.0,
+      "L": 73.5,
+      "source": "epec"
+    },
+    {
+      "model": "354190",
+      "capacity": 1450.0,
+      "T": 3.7,
+      "W": 42.0,
+      "L": 91.5,
+      "source": "epec"
+    },
+    {
+      "model": "604256",
+      "capacity": 1400.0,
+      "T": 6.2,
+      "W": 43.0,
+      "L": 57.5,
+      "source": "epec"
+    },
+    {
+      "model": "624257",
+      "capacity": 1680.0,
+      "T": 6.4,
+      "W": 43.0,
+      "L": 58.5,
+      "source": "epec"
+    },
+    {
+      "model": "654258",
+      "capacity": 1800.0,
+      "T": 6.7,
+      "W": 43.0,
+      "L": 59.5,
+      "source": "epec"
+    },
+    {
+      "model": "554260",
+      "capacity": 1560.0,
+      "T": 5.7,
+      "W": 43.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "864269",
+      "capacity": 2960.0,
+      "T": 8.8,
+      "W": 43.0,
+      "L": 70.5,
+      "source": "epec"
+    },
+    {
+      "model": "7042100",
+      "capacity": 3600.0,
+      "T": 7.2,
+      "W": 43.0,
+      "L": 101.5,
+      "source": "epec"
+    },
+    {
+      "model": "5043110",
+      "capacity": 2900.0,
+      "T": 5.2,
+      "W": 44.0,
+      "L": 111.5,
+      "source": "epec"
+    },
+    {
+      "model": "704377",
+      "capacity": 2800.0,
+      "T": 7.2,
+      "W": 44.0,
+      "L": 78.5,
+      "source": "epec"
+    },
+    {
+      "model": "3545105",
+      "capacity": 1800.0,
+      "T": 3.7,
+      "W": 46.0,
+      "L": 106.5,
+      "source": "epec"
+    },
+    {
+      "model": "6545125",
+      "capacity": 4550.0,
+      "T": 6.7,
+      "W": 46.0,
+      "L": 126.5,
+      "source": "epec"
+    },
+    {
+      "model": "8045131",
+      "capacity": 4700.0,
+      "T": 8.2,
+      "W": 46.0,
+      "L": 132.5,
+      "source": "epec"
+    },
+    {
+      "model": "8045135",
+      "capacity": 5000.0,
+      "T": 8.2,
+      "W": 46.0,
+      "L": 136.5,
+      "source": "epec"
+    },
+    {
+      "model": "754547",
+      "capacity": 1760.0,
+      "T": 7.7,
+      "W": 46.0,
+      "L": 48.5,
+      "source": "epec"
+    },
+    {
+      "model": "384552",
+      "capacity": 940.0,
+      "T": 4.0,
+      "W": 46.0,
+      "L": 53.5,
+      "source": "epec"
+    },
+    {
+      "model": "604566",
+      "capacity": 2100.0,
+      "T": 6.2,
+      "W": 46.0,
+      "L": 67.5,
+      "source": "epec"
+    },
+    {
+      "model": "704783",
+      "capacity": 3350.0,
+      "T": 7.2,
+      "W": 48.0,
+      "L": 84.5,
+      "source": "epec"
+    },
+    {
+      "model": "564793",
+      "capacity": 3000.0,
+      "T": 5.8,
+      "W": 48.0,
+      "L": 94.5,
+      "source": "epec"
+    },
+    {
+      "model": "654794",
+      "capacity": 3540.0,
+      "T": 6.7,
+      "W": 48.0,
+      "L": 95.5,
+      "source": "epec"
+    },
+    {
+      "model": "704798",
+      "capacity": 4000.0,
+      "T": 7.2,
+      "W": 48.0,
+      "L": 99.5,
+      "source": "epec"
+    },
+    {
+      "model": "7548107",
+      "capacity": 4800.0,
+      "T": 7.7,
+      "W": 49.0,
+      "L": 108.5,
+      "source": "epec"
+    },
+    {
+      "model": "5048168",
+      "capacity": 5000.0,
+      "T": 5.2,
+      "W": 49.0,
+      "L": 169.5,
+      "source": "epec"
+    },
+    {
+      "model": "6049105",
+      "capacity": 3200.0,
+      "T": 6.2,
+      "W": 50.0,
+      "L": 106.5,
+      "source": "epec"
+    },
+    {
+      "model": "7549105",
+      "capacity": 4800.0,
+      "T": 7.7,
+      "W": 50.0,
+      "L": 106.5,
+      "source": "epec"
+    },
+    {
+      "model": "385060",
+      "capacity": 1400.0,
+      "T": 4.0,
+      "W": 51.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "505060",
+      "capacity": 1600.0,
+      "T": 5.2,
+      "W": 51.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "535060",
+      "capacity": 1600.0,
+      "T": 5.5,
+      "W": 51.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "425065",
+      "capacity": 1400.0,
+      "T": 4.4,
+      "W": 51.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "505065",
+      "capacity": 1700.0,
+      "T": 5.2,
+      "W": 51.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "655065",
+      "capacity": 2400.0,
+      "T": 6.7,
+      "W": 51.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "505068",
+      "capacity": 1800.0,
+      "T": 5.2,
+      "W": 51.0,
+      "L": 69.5,
+      "source": "epec"
+    },
+    {
+      "model": "105078",
+      "capacity": 4500.0,
+      "T": 10.2,
+      "W": 51.0,
+      "L": 79.5,
+      "source": "epec"
+    },
+    {
+      "model": "425085",
+      "capacity": 1850.0,
+      "T": 4.4,
+      "W": 51.0,
+      "L": 86.5,
+      "source": "epec"
+    },
+    {
+      "model": "605085",
+      "capacity": 3000.0,
+      "T": 6.2,
+      "W": 51.0,
+      "L": 86.5,
+      "source": "epec"
+    },
+    {
+      "model": "855085",
+      "capacity": 3800.0,
+      "T": 8.7,
+      "W": 51.0,
+      "L": 86.5,
+      "source": "epec"
+    },
+    {
+      "model": "705097",
+      "capacity": 3400.0,
+      "T": 7.2,
+      "W": 51.0,
+      "L": 98.5,
+      "source": "epec"
+    },
+    {
+      "model": "9050140",
+      "capacity": 7500.0,
+      "T": 9.2,
+      "W": 51.0,
+      "L": 141.5,
+      "source": "epec"
+    },
+    {
+      "model": "855165",
+      "capacity": 3400.0,
+      "T": 8.7,
+      "W": 52.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "105176",
+      "capacity": 4700.0,
+      "T": 10.2,
+      "W": 52.0,
+      "L": 77.5,
+      "source": "epec"
+    },
+    {
+      "model": "555260",
+      "capacity": 2000.0,
+      "T": 5.7,
+      "W": 53.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "6052103",
+      "capacity": 4000.0,
+      "T": 6.2,
+      "W": 53.0,
+      "L": 104.5,
+      "source": "epec"
+    },
+    {
+      "model": "7352105",
+      "capacity": 5000.0,
+      "T": 7.5,
+      "W": 53.0,
+      "L": 106.5,
+      "source": "epec"
+    },
+    {
+      "model": "4555107",
+      "capacity": 3000.0,
+      "T": 4.7,
+      "W": 56.0,
+      "L": 108.5,
+      "source": "epec"
+    },
+    {
+      "model": "556066",
+      "capacity": 2580.0,
+      "T": 5.7,
+      "W": 61.0,
+      "L": 67.5,
+      "source": "epec"
+    },
+    {
+      "model": "456194",
+      "capacity": 3150.0,
+      "T": 4.7,
+      "W": 62.0,
+      "L": 95.5,
+      "source": "epec"
+    },
+    {
+      "model": "906370",
+      "capacity": 4900.0,
+      "T": 9.2,
+      "W": 64.0,
+      "L": 71.5,
+      "source": "epec"
+    },
+    {
+      "model": "686483",
+      "capacity": 4500.0,
+      "T": 7.0,
+      "W": 65.0,
+      "L": 84.5,
+      "source": "epec"
+    },
+    {
+      "model": "586567",
+      "capacity": 2800.0,
+      "T": 6.0,
+      "W": 66.0,
+      "L": 68.5,
+      "source": "epec"
+    },
+    {
+      "model": "4567100",
+      "capacity": 3700.0,
+      "T": 4.7,
+      "W": 72.0,
+      "L": 101.5,
+      "source": "epec"
+    },
+    {
+      "model": "7567105",
+      "capacity": 6700.0,
+      "T": 7.7,
+      "W": 72.0,
+      "L": 106.5,
+      "source": "epec"
+    },
+    {
+      "model": "8867220",
+      "capacity": 10000.0,
+      "T": 9.0,
+      "W": 73.0,
+      "L": 221.5,
+      "source": "epec"
+    },
+    {
+      "model": "507085",
+      "capacity": 3600.0,
+      "T": 5.2,
+      "W": 71.0,
+      "L": 86.5,
+      "source": "epec"
+    },
+    {
+      "model": "5572196",
+      "capacity": 10000.0,
+      "T": 5.7,
+      "W": 73.0,
+      "L": 197.5,
+      "source": "epec"
+    },
+    {
+      "model": "567398",
+      "capacity": 5000.0,
+      "T": 5.8,
+      "W": 74.0,
+      "L": 99.5,
+      "source": "epec"
+    },
+    {
+      "model": "647575",
+      "capacity": 4500.0,
+      "T": 6.6,
+      "W": 76.0,
+      "L": 76.5,
+      "source": "epec"
+    },
+    {
+      "model": "9675135",
+      "capacity": 10000.0,
+      "T": 9.8,
+      "W": 76.0,
+      "L": 136.5,
+      "source": "epec"
+    },
+    {
+      "model": "907665",
+      "capacity": 5500.0,
+      "T": 9.2,
+      "W": 77.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "641362",
+      "capacity": 420.0,
+      "T": 6.6,
+      "W": 14.0,
+      "L": 63.5,
+      "source": "epec"
+    },
+    {
+      "model": "251520",
+      "capacity": 35.0,
+      "T": 2.7,
+      "W": 16.0,
+      "L": 21.5,
+      "source": "epec"
+    },
+    {
+      "model": "251644",
+      "capacity": 140.0,
+      "T": 2.7,
+      "W": 17.0,
+      "L": 45.5,
+      "source": "epec"
+    },
+    {
+      "model": "701834",
+      "capacity": 380.0,
+      "T": 7.2,
+      "W": 19.0,
+      "L": 35.5,
+      "source": "epec"
+    },
+    {
+      "model": "651938",
+      "capacity": 420.0,
+      "T": 6.7,
+      "W": 20.0,
+      "L": 39.5,
+      "source": "epec"
+    },
+    {
+      "model": "302035",
+      "capacity": 180.0,
+      "T": 3.2,
+      "W": 21.0,
+      "L": 36.5,
+      "source": "epec"
+    },
+    {
+      "model": "652035",
+      "capacity": 400.0,
+      "T": 6.7,
+      "W": 21.0,
+      "L": 36.5,
+      "source": "epec"
+    },
+    {
+      "model": "502040",
+      "capacity": 360.0,
+      "T": 5.2,
+      "W": 21.0,
+      "L": 41.5,
+      "source": "epec"
+    },
+    {
+      "model": "552045",
+      "capacity": 470.0,
+      "T": 5.7,
+      "W": 21.0,
+      "L": 46.5,
+      "source": "epec"
+    },
+    {
+      "model": "462079",
+      "capacity": 800.0,
+      "T": 4.8,
+      "W": 21.0,
+      "L": 80.5,
+      "source": "epec"
+    },
+    {
+      "model": "302225",
+      "capacity": 135.0,
+      "T": 3.2,
+      "W": 23.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "402248",
+      "capacity": 350.0,
+      "T": 4.2,
+      "W": 23.0,
+      "L": 49.5,
+      "source": "epec"
+    },
+    {
+      "model": "532248",
+      "capacity": 500.0,
+      "T": 5.5,
+      "W": 23.0,
+      "L": 49.5,
+      "source": "epec"
+    },
+    {
+      "model": "652339",
+      "capacity": 600.0,
+      "T": 6.7,
+      "W": 24.0,
+      "L": 40.5,
+      "source": "epec"
+    },
+    {
+      "model": "452425",
+      "capacity": 300.0,
+      "T": 4.7,
+      "W": 25.0,
+      "L": 26.5,
+      "source": "epec"
+    },
+    {
+      "model": "702527",
+      "capacity": 500.0,
+      "T": 7.2,
+      "W": 26.0,
+      "L": 28.5,
+      "source": "epec"
+    },
+    {
+      "model": "502549",
+      "capacity": 600.0,
+      "T": 5.2,
+      "W": 26.0,
+      "L": 50.5,
+      "source": "epec"
+    },
+    {
+      "model": "552549",
+      "capacity": 700.0,
+      "T": 5.7,
+      "W": 26.0,
+      "L": 50.5,
+      "source": "epec"
+    },
+    {
+      "model": "422728",
+      "capacity": 260.0,
+      "T": 4.4,
+      "W": 28.0,
+      "L": 29.5,
+      "source": "epec"
+    },
+    {
+      "model": "502845",
+      "capacity": 600.0,
+      "T": 5.2,
+      "W": 29.0,
+      "L": 46.5,
+      "source": "epec"
+    },
+    {
+      "model": "602937",
+      "capacity": 600.0,
+      "T": 6.2,
+      "W": 30.0,
+      "L": 38.5,
+      "source": "epec"
+    },
+    {
+      "model": "7030100",
+      "capacity": 1900.0,
+      "T": 7.2,
+      "W": 31.0,
+      "L": 101.5,
+      "source": "epec"
+    },
+    {
+      "model": "5030130",
+      "capacity": 2100.0,
+      "T": 5.2,
+      "W": 31.0,
+      "L": 131.5,
+      "source": "epec"
+    },
+    {
+      "model": "503037",
+      "capacity": 500.0,
+      "T": 5.2,
+      "W": 31.0,
+      "L": 38.5,
+      "source": "epec"
+    },
+    {
+      "model": "353038",
+      "capacity": 360.0,
+      "T": 3.7,
+      "W": 31.0,
+      "L": 39.5,
+      "source": "epec"
+    },
+    {
+      "model": "603038",
+      "capacity": 610.0,
+      "T": 6.2,
+      "W": 31.0,
+      "L": 39.5,
+      "source": "epec"
+    },
+    {
+      "model": "503070",
+      "capacity": 1100.0,
+      "T": 5.2,
+      "W": 31.0,
+      "L": 71.5,
+      "source": "epec"
+    },
+    {
+      "model": "753150",
+      "capacity": 1200.0,
+      "T": 7.7,
+      "W": 32.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "223255",
+      "capacity": 350.0,
+      "T": 2.4,
+      "W": 33.0,
+      "L": 56.5,
+      "source": "epec"
+    },
+    {
+      "model": "453266",
+      "capacity": 1000.0,
+      "T": 4.7,
+      "W": 33.0,
+      "L": 67.5,
+      "source": "epec"
+    },
+    {
+      "model": "283436",
+      "capacity": 300.0,
+      "T": 3.0,
+      "W": 35.0,
+      "L": 37.5,
+      "source": "epec"
+    },
+    {
+      "model": "323436",
+      "capacity": 350.0,
+      "T": 3.4,
+      "W": 35.0,
+      "L": 37.5,
+      "source": "epec"
+    },
+    {
+      "model": "403436",
+      "capacity": 450.0,
+      "T": 4.2,
+      "W": 35.0,
+      "L": 37.5,
+      "source": "epec"
+    },
+    {
+      "model": "353442",
+      "capacity": 500.0,
+      "T": 3.7,
+      "W": 35.0,
+      "L": 43.5,
+      "source": "epec"
+    },
+    {
+      "model": "503447",
+      "capacity": 750.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 48.5,
+      "source": "epec"
+    },
+    {
+      "model": "823458",
+      "capacity": 1750.0,
+      "T": 8.4,
+      "W": 35.0,
+      "L": 59.5,
+      "source": "epec"
+    },
+    {
+      "model": "503460",
+      "capacity": 1000.0,
+      "T": 5.2,
+      "W": 35.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "5035110",
+      "capacity": 4400.0,
+      "T": 5.2,
+      "W": 36.0,
+      "L": 111.5,
+      "source": "epec"
+    },
+    {
+      "model": "6035125",
+      "capacity": 2000.0,
+      "T": 6.2,
+      "W": 36.0,
+      "L": 126.5,
+      "source": "epec"
+    },
+    {
+      "model": "4535130",
+      "capacity": 2250.0,
+      "T": 4.7,
+      "W": 36.0,
+      "L": 131.5,
+      "source": "epec"
+    },
+    {
+      "model": "6035135",
+      "capacity": 3000.0,
+      "T": 6.2,
+      "W": 36.0,
+      "L": 136.5,
+      "source": "epec"
+    },
+    {
+      "model": "8035135",
+      "capacity": 4000.0,
+      "T": 8.2,
+      "W": 36.0,
+      "L": 136.5,
+      "source": "epec"
+    },
+    {
+      "model": "503555",
+      "capacity": 950.0,
+      "T": 5.2,
+      "W": 36.0,
+      "L": 56.5,
+      "source": "epec"
+    },
+    {
+      "model": "703675",
+      "capacity": 1950.0,
+      "T": 7.2,
+      "W": 37.0,
+      "L": 76.5,
+      "source": "epec"
+    },
+    {
+      "model": "953770",
+      "capacity": 2500.0,
+      "T": 9.7,
+      "W": 38.0,
+      "L": 71.5,
+      "source": "epec"
+    },
+    {
+      "model": "633872",
+      "capacity": 2100.0,
+      "T": 6.5,
+      "W": 39.0,
+      "L": 73.5,
+      "source": "epec"
+    },
+    {
+      "model": "603960",
+      "capacity": 1500.0,
+      "T": 6.2,
+      "W": 40.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "904049",
+      "capacity": 1600.0,
+      "T": 9.2,
+      "W": 41.0,
+      "L": 50.5,
+      "source": "epec"
+    },
+    {
+      "model": "504050",
+      "capacity": 1000.0,
+      "T": 5.2,
+      "W": 41.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "374076",
+      "capacity": 1200.0,
+      "T": 3.9,
+      "W": 41.0,
+      "L": 77.5,
+      "source": "epec"
+    },
+    {
+      "model": "704169",
+      "capacity": 2000.0,
+      "T": 7.2,
+      "W": 42.0,
+      "L": 70.5,
+      "source": "epec"
+    },
+    {
+      "model": "414469",
+      "capacity": 1300.0,
+      "T": 4.3,
+      "W": 45.0,
+      "L": 70.5,
+      "source": "epec"
+    },
+    {
+      "model": "9045145",
+      "capacity": 6300.0,
+      "T": 9.2,
+      "W": 46.0,
+      "L": 146.5,
+      "source": "epec"
+    },
+    {
+      "model": "904570",
+      "capacity": 3000.0,
+      "T": 9.2,
+      "W": 46.0,
+      "L": 71.5,
+      "source": "epec"
+    },
+    {
+      "model": "7646146",
+      "capacity": 7500.0,
+      "T": 7.8,
+      "W": 47.0,
+      "L": 147.5,
+      "source": "epec"
+    },
+    {
+      "model": "724656",
+      "capacity": 1950.0,
+      "T": 7.4,
+      "W": 47.0,
+      "L": 57.5,
+      "source": "epec"
+    },
+    {
+      "model": "304665",
+      "capacity": 900.0,
+      "T": 3.2,
+      "W": 47.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "654666",
+      "capacity": 2000.0,
+      "T": 6.7,
+      "W": 47.0,
+      "L": 67.5,
+      "source": "epec"
+    },
+    {
+      "model": "754666",
+      "capacity": 2300.0,
+      "T": 7.7,
+      "W": 47.0,
+      "L": 67.5,
+      "source": "epec"
+    },
+    {
+      "model": "754666",
+      "capacity": 2400.0,
+      "T": 7.7,
+      "W": 47.0,
+      "L": 67.5,
+      "source": "epec"
+    },
+    {
+      "model": "954666",
+      "capacity": 3000.0,
+      "T": 9.7,
+      "W": 47.0,
+      "L": 67.5,
+      "source": "epec"
+    },
+    {
+      "model": "484777",
+      "capacity": 2000.0,
+      "T": 5.0,
+      "W": 48.0,
+      "L": 78.5,
+      "source": "epec"
+    },
+    {
+      "model": "804777",
+      "capacity": 3800.0,
+      "T": 8.2,
+      "W": 48.0,
+      "L": 78.5,
+      "source": "epec"
+    },
+    {
+      "model": "354795",
+      "capacity": 1600.0,
+      "T": 3.7,
+      "W": 48.0,
+      "L": 96.5,
+      "source": "epec"
+    },
+    {
+      "model": "654795",
+      "capacity": 3000.0,
+      "T": 6.7,
+      "W": 48.0,
+      "L": 96.5,
+      "source": "epec"
+    },
+    {
+      "model": "684795",
+      "capacity": 3900.0,
+      "T": 7.0,
+      "W": 48.0,
+      "L": 96.5,
+      "source": "epec"
+    },
+    {
+      "model": "584854",
+      "capacity": 1600.0,
+      "T": 6.0,
+      "W": 49.0,
+      "L": 55.5,
+      "source": "epec"
+    },
+    {
+      "model": "454950",
+      "capacity": 1200.0,
+      "T": 4.7,
+      "W": 50.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "804950",
+      "capacity": 2000.0,
+      "T": 8.2,
+      "W": 50.0,
+      "L": 51.5,
+      "source": "epec"
+    },
+    {
+      "model": "804983",
+      "capacity": 3750.0,
+      "T": 8.2,
+      "W": 50.0,
+      "L": 84.5,
+      "source": "epec"
+    },
+    {
+      "model": "854983",
+      "capacity": 3600.0,
+      "T": 8.7,
+      "W": 50.0,
+      "L": 84.5,
+      "source": "epec"
+    },
+    {
+      "model": "3550115",
+      "capacity": 2000.0,
+      "T": 3.7,
+      "W": 51.0,
+      "L": 116.5,
+      "source": "epec"
+    },
+    {
+      "model": "6750115",
+      "capacity": 4500.0,
+      "T": 6.9,
+      "W": 51.0,
+      "L": 116.5,
+      "source": "epec"
+    },
+    {
+      "model": "9050115",
+      "capacity": 5300.0,
+      "T": 9.2,
+      "W": 51.0,
+      "L": 116.5,
+      "source": "epec"
+    },
+    {
+      "model": "4050135",
+      "capacity": 1800.0,
+      "T": 4.2,
+      "W": 51.0,
+      "L": 136.5,
+      "source": "epec"
+    },
+    {
+      "model": "4250158",
+      "capacity": 3400.0,
+      "T": 4.4,
+      "W": 51.0,
+      "L": 159.5,
+      "source": "epec"
+    },
+    {
+      "model": "955056",
+      "capacity": 2800.0,
+      "T": 9.7,
+      "W": 51.0,
+      "L": 57.5,
+      "source": "epec"
+    },
+    {
+      "model": "385072",
+      "capacity": 1500.0,
+      "T": 4.0,
+      "W": 51.0,
+      "L": 73.5,
+      "source": "epec"
+    },
+    {
+      "model": "455072",
+      "capacity": 1800.0,
+      "T": 4.7,
+      "W": 51.0,
+      "L": 73.5,
+      "source": "epec"
+    },
+    {
+      "model": "505080",
+      "capacity": 2000.0,
+      "T": 5.2,
+      "W": 51.0,
+      "L": 81.5,
+      "source": "epec"
+    },
+    {
+      "model": "945145",
+      "capacity": 2100.0,
+      "T": 9.6,
+      "W": 52.0,
+      "L": 46.5,
+      "source": "epec"
+    },
+    {
+      "model": "405280",
+      "capacity": 1800.0,
+      "T": 4.2,
+      "W": 53.0,
+      "L": 81.5,
+      "source": "epec"
+    },
+    {
+      "model": "605280",
+      "capacity": 2600.0,
+      "T": 6.2,
+      "W": 53.0,
+      "L": 81.5,
+      "source": "epec"
+    },
+    {
+      "model": "705280",
+      "capacity": 3000.0,
+      "T": 7.2,
+      "W": 53.0,
+      "L": 81.5,
+      "source": "epec"
+    },
+    {
+      "model": "405560",
+      "capacity": 1350.0,
+      "T": 4.2,
+      "W": 56.0,
+      "L": 61.5,
+      "source": "epec"
+    },
+    {
+      "model": "505565",
+      "capacity": 2000.0,
+      "T": 5.2,
+      "W": 56.0,
+      "L": 66.5,
+      "source": "epec"
+    },
+    {
+      "model": "465585",
+      "capacity": 2200.0,
+      "T": 4.8,
+      "W": 56.0,
+      "L": 86.5,
+      "source": "epec"
+    },
+    {
+      "model": "505585",
+      "capacity": 2600.0,
+      "T": 5.2,
+      "W": 56.0,
+      "L": 86.5,
+      "source": "epec"
+    },
+    {
+      "model": "655585",
+      "capacity": 3300.0,
+      "T": 6.7,
+      "W": 56.0,
+      "L": 86.5,
+      "source": "epec"
+    },
+    {
+      "model": "6070150",
+      "capacity": 7500.0,
+      "T": 6.2,
+      "W": 71.0,
+      "L": 151.5,
+      "source": "epec"
+    }
+  ]
+}

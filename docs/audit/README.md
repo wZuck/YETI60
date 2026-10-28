@@ -2,7 +2,7 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 current audit
 
-The [comprehensive review](yeti60-comprehensive-review.md) explains unfinished hardware work. Check success is not production approval.
+The [P2 checkpoint](../design-checkpoint.md) describes the current design and remaining physical/supplier work. The comprehensive review records current evidence and acceptance limits. Passing checks is not production approval.
 
 | Scope | Current evidence |
 |---|---|
@@ -19,10 +19,10 @@ Exit 0 means every implemented current-design check passed. Failed stages return
 
 Integration ties schematic, connectors, PCB, firmware pins, trace, fit geometry and each render output to current sources and recipes. Design files must remain byte-identical during validation. The inventory records files, not semantic approval; upstream submodule contents and local editor state are excluded.
 
-Retired generators, routing snapshots, duplicate legacy firmware and historical audit outputs are removed. Upstream submodules, attribution and licenses remain. Only the current single-nRF design is checked. Power layout, target firmware, final mechanical stack, battery, USB daughterboard/cables, switch access, resin inserts, fabrication and physical tests remain open. SI/RF is deferred.
+Only the current single-nRF design is checked. Target firmware builds, C5 selection, battery/recess and charger calculations are implemented; supplier approval, complete harness/plug acceptance, part ratings, manufacturing and physical tests remain open. SI/RF is deferred.
 
 Fault-injection tests verify rejection of reversed USB data contracts, stale traces, component collisions, stale individual views and changed image bytes. They run only after the unmodified integration check passes.
 
 A fresh checkout requires `git submodule update --init --recursive` for the pinned EC60 and FELK60 source geometry.
 
-Current procurement, engineering assembly sheets, battery recess and conditional power calculations have a separate [engineering evidence check](yeti60-engineering.json). Run `python3 scripts/check_yeti60_engineering.py`; `python3 tests/audit/test_engineering.py` verifies rejection of changed drawings, thin walls and unapproved larger-pack compatibility claims. This does not replace the pending full-integration refresh or physical acceptance.
+Procurement, default 1600 mAh recess/catalog screening, separate assembly sheets and power calculations are part of the same audit pipeline. [Engineering evidence](yeti60-engineering.json) checks current source/output hashes and arithmetic. Five negative engineering cases reject changed drawings, thin walls, unapproved drop-in claims, excessive charge current and excessive termination current; the target fault test rejects a USB100 linked descriptor.

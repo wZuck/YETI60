@@ -6,7 +6,7 @@
 
 ![原尺寸工程装配图](images/assembly.zh-CN.png)
 
-[矢量装配图](images/assembly.zh-CN.svg) · [可选电池槽图](images/battery-pocket.zh-CN.svg) · [底壳下挖研究](battery-study.zh-CN.md)
+[矢量装配图](images/assembly.zh-CN.svg) · [默认电池槽图](images/battery-pocket.zh-CN.svg) · [底壳下挖研究](battery-study.zh-CN.md)
 
 ## 装配基准
 
@@ -30,9 +30,13 @@
 2. 1.2 mm 钢板去毛刺，并将 29 个安装底孔攻为 M2。用实际配套 Topre 兼容来源核对轴座、稳定机构和 6U 空格附件。按配套结构安装 60 套滑块／轴座、胶碗及弹簧，每个感应弹簧必须对中实际使用的电极。
 3. 将 29 个黄铜转接支柱装到定位板。每个支柱肩与 PCB 感应面之间放 0.10 mm 聚酰亚胺绝缘环。PCB 对位时不能偏移感应中心，底部装 29 个 PEEK 垫片和 M1.6×5 螺钉。分步均匀拧紧，扭矩须经首件确认，不给出未经验证的数值。
 4. 将后侧子板装到四个冷粘 M2 嵌件座，按建议采用 M2×4 螺钉及绝缘薄垫。先检查 USB 口对位和实际插头出线空间，再继续装配。四芯线束逐线测通并确认极性后才能插接；150 mm 长度仍待完整弯折／应力释放路径验收。
-5. 基准电气配置仅使用基准 200 mAh 电池包。在规定包络内绝缘、固定软包，不能挤压。可选下挖底壳须另外满足电池包及充电电路验收条件，不能把 1000 mAh 包络视为可直接安装的现货电池。电池和线束不得碰螺钉头或堵塞检修孔。
+5. 仅安装符合 P2 规格、由供方签图的 1600 mAh 保护电池包，完整包络 85×43×4.8 mm。确认独立温度断充、第三线 NTC 和自定义线序；固定／绝缘层须计入 0.2 mm 槽底预算，不能挤压软包。电池到螺钉头名义间隙为 0.7 mm。不得混用旧小电池充电配置。
 6. 开壳状态核对电池极性，通过 **自定义** J3 探针接口先刷写 USB 校准版。按[固件校准流程](../../firmware/target/README.zh-CN.md)操作，保留设置分区刷普通版，然后实测全部 60 键及 USB／蓝牙。
 7. 将胶棉放到原有支承台，逐步均匀合壳。建议 M3×5 加 0.30 mm 薄垫，按记录的壳体座面可得名义 2.50 mm 嵌件啮合；确认螺钉不顶底且头部进入沉孔。检查完整按键行程、接口空间、无夹线以及关壳后可操作电源开关，最后核对底部支承面并安装脚垫。
+
+后侧子板按用户决定保留 **C5 JSH**，不切换 UDB S。继续使用锁定版本 `2b6c52a`、14×12.5 mm 四孔安装矩形及四线 J1 接口。
+
+快速充电需要开启主板并连接接受 500 mA 配置的 USB 主机。关机时仅由硬件 USB100 慢充，完整充满时间尚未验证；仅充电适配器的行为见[充电状态说明](power-budget.zh-CN.md)。
 
 ## 接线
 
@@ -44,6 +48,6 @@
 
 ## 复现及验收
 
-用 KiCad Python 运行 `export_yeti60_mechanical_metadata.py` 和 `export_yeti60_daughterboard.py`；使用 `requirements-audit.txt` 依次运行 `check_yeti60_assembly.py`、`export_yeti60_render_meshes.py`、`study_yeti60_battery_pocket.py`、`draw_yeti60_assembly.py`。最后运行 `python3 scripts/check_yeti60_engineering.py`，并执行既有目标固件及 DRC 检查。[图纸证据](../audit/yeti60-assembly-drawings.json)记录来源及产物哈希。
+用 KiCad Python 运行 `export_yeti60_mechanical_metadata.py` 和 `export_yeti60_daughterboard.py`；使用 `requirements-audit.txt` 依次运行 `check_yeti60_assembly.py`、`export_yeti60_render_meshes.py`、`study_yeti60_battery_pocket.py`、`screen_yeti60_batteries.py`、`draw_yeti60_assembly.py`。最后运行 `python3 scripts/check_yeti60_engineering.py`，并执行既有目标固件及 DRC 检查。[图纸证据](../audit/yeti60-assembly-drawings.json)记录来源及产物哈希。
 
 当前没有实物。壳体及电池包实体检查只证明明确条件下的几何关系，不证明实际胶碗压缩、手感、树脂蠕变或电气工作。完整线束路径、具体配套轴体兼容性、供方元件高度、打印壳体公差及全部实物检查仍是首件要求。信号／射频分析按用户要求继续暂缓。

@@ -6,4 +6,4 @@
 
 板面的大圆形及重叠圆形是连接到电路的静电容感应电极和地屏蔽，属于功能铜层，予以保留。删除这些结构会改变感应性能，不符合保留当前功能设计的要求。
 
-执行 `python3 scripts/check_yeti60_board_markings.py`，将完整 KiCad 语法树与固定提交 `27894700dd021e40957199dce596f0e5130db60c` 对比，仅允许删除上述一条文字。[机器检查结果](../audit/yeti60-board-markings.json)记录当前 PCB 哈希，严格 DRC 和导通回归已重跑。根目录阶段说明已注明：PCB 预览及动画已按清理后的来源刷新；旧摄影风格装配图仍是历史结果。
+执行 `python3 scripts/check_yeti60_board_markings.py` 核对历史装饰清理提交 `03c2be3` 相对 `2789470` 只删除上述文字；当前 P2 另有明确的充电电路变更，不再声称整块 PCB 铜层完全不变。检查继续要求全部独立指导文字和原有位号保留，电极／板框／安装孔由 `check_single_nrf_pcb.py` 单独核对。[机器报告](../audit/yeti60-board-markings.json)记录当前板哈希。

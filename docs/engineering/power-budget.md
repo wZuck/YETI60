@@ -33,22 +33,44 @@ t = capacity×f_usable/I_battery
 
 Two 100k pull-downs (R44, R50) draw 66 µA when `/CE` and AFE_EN are high. R48 draws separately from VSYS, approximated by battery voltage. The 0.100 mA allowance covers remaining passive/output and dynamic logic loads; it is **assumed**. PCM current is also unknown (10 µA planning / 20 µA stress assumed). End-to-end regulator efficiency includes regulator quiescent losses, so its quiescent current is not added again. No status LED load is assumed; an enabled LED adds approximately `(3.3−Vf)/2200` A at full duty.
 
-| Scenario | OPA mA | Assumed MCU average mA | Assumed η | Assumed battery V | 3.3 V rail mA | Battery mA | 200 mAh hours | 1000 mAh hours |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Lower demand | 5.2 | 3 | 90% | 3.7 | 8.390 | 8.366 | 19.13 | 95.63 |
-| Planning | 5.2 | 6 | 85% | 3.7 | 11.390 | 12.003 | 13.33 | 66.65 |
-| Stress | 7.5 | 10 | 80% | 3.3 | 17.690 | 22.172 | 7.22 | 36.08 |
+| Scenario | OPA mA | Assumed MCU average mA | Assumed η | Assumed battery V | 3.3 V rail mA | Battery mA | Default 1600 mAh hours |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Lower demand | 5.2 | 3 | 90% | 3.7 | 8.390 | 8.366 | 153.01 |
+| Planning | 5.2 | 6 | 85% | 3.7 | 11.390 | 12.003 | 106.64 |
+| Stress | 7.5 | 10 | 80% | 3.3 | 17.690 | 22.172 | 57.73 |
 
-All runtime columns assume **f_usable=0.80**, an engineering reserve for aging, voltage cutoff and environment, not a manufacturer guarantee. The 200 mAh value is the baseline custom-pack target; 1000 mAh references the Honcell bare-cell minimum and requires a qualified finished pack. These are scenarios, not a guaranteed 7–19 h or 36–96 h product range. At the planning point: `3.3×11.39=37.587 mW`, battery power is `44.40981 mW`, and `3.7×0.2×0.8 / 0.04440981 = 13.33 h`. Capacity increase alone scales this scenario by five.
+All scenarios assume an 80% usable-capacity factor for aging, cutoff and environment; it is not a manufacturer guarantee. The default 1600 mAh is the HCP404074 bare-cell minimum, subject to finished-pack acceptance. Do not advertise 57.73–153.01 h as a guaranteed range. At the planning point, `3.3×11.39=37.587 mW`, battery power is `44.40981 mW`, and `3.7×1.6×0.8 / 0.04440981 = 106.64 h`. No hardware measurement supports a runtime claim yet.
 
 Reproduce with `python3 scripts/calculate_yeti60_power.py`. [CSV](../../hardware/bom/power-scenarios.csv) and [JSON](../audit/yeti60-power-budget.json) contain unrounded intermediate values and source hashes. [Source registry](sources.json) identifies versions, locators, retrieval dates and available download hashes.
 
-## Charging and larger-pack compatibility
+## Default P2 charging design
 
-Current R40=8.87k gives `890/8870=100.34 mA` nominal programmed current, but USB100 caps total input at 100 mA. System power and charger overhead reduce the actual battery charge current. Even the impossible zero-system-load ideal needs `1000/100 = 10 h` before CV taper for a 1000 mAh pack; a hypothetical 85 mA average needs 11.76 h. These are arithmetic examples, not predicted full-charge times.
+Retain [BQ24074, SLUS810N pp12–13 and 27–28](https://www.ti.com/lit/ds/symlink/bq24074.pdf). R40 changes from 8.87k to 2.21k/1%; add R55=69.8k/1% from TMR to ground and R56=1.82k/1% from ITERM to ground. The old small-pack configuration is not interchangeable.
 
-U5 TMR (pin14) is explicitly unconnected. Its default fast-charge timer is **4/5/6 h minimum/typical/maximum**, and precharge is 24/30/36 min. TI §9.3.5.6 describes proportional timer slowing under DPPM, input-voltage or thermal regulation; it does not approve arbitrary charge duration. The approximately 100 mA ISET reference and finite timer make a full 1000 mAh recharge incompatible with an unqualified drop-in claim. A resistor alone within the documented TMR range (18–72k) reaches at most 7.2 h at the minimum timer factor, still needing evaluation against charge current and CV time. Do not disable or repeatedly reset safety timers as a substitute for a proper charge design.
+```text
+I_CHG = K_ISET / R40; K_ISET = 797 / 890 / 975 AΩ
+minimum = 797/(2210×1.01) = 357.06 mA
+typical = 890/2210 = 402.71 mA
+maximum = 975/(2210×0.99) = 445.63 mA
 
-**Decision:** the recessed case can be evaluated geometrically for a larger pack, but the current PCB/firmware remains the 200 mAh/USB100 electrical configuration. A larger-pack electrical variant must separately qualify ISET, input budget after USB enumeration, TMR, termination, pack temperature window and maximum charge current. Keep its firmware/configuration distinct from the 200 mAh pack. The current BQ24074/103AT-2 typical temperature range extends beyond a 0…45°C cell specification; the custom pack must provide the independent thermal interruption already required by the assembly specification.
+t_fast = 10 × R55(kΩ) × K_TMR / 3600 hours
+K_TMR = 36 / 48 / 60 seconds/kΩ
+minimum / typical / maximum = 6.9102 / 9.3067 / 11.7497 hours
 
-The power switch disables the 3.3 V converter, not the complete charger/battery path. BQ bias, converter shutdown, PCM leakage and cell self-discharge remain. No storage-life or weeks-long idle-runtime claim is justified. Before release, use a calibrated battery-side power analyzer with the normal firmware, debugger/USB disconnected, logging off, testing typing, connected idle, advertising, reconnect, switch-off, and charge-to-termination over the accepted temperature/voltage range.
+I_TERM = K_ITERM × R56 / R40
+K_ITERM(USB500) = 0.0225 / 0.0300 / 0.0375
+minimum / typical / maximum = 18.16 / 24.71 / 31.51 mA
+cell 0.02C endpoint = 1600×0.02 = 32 mA
+```
+
+R55's full tolerance range, 69.102…70.498k, stays inside the documented 18…72k range. Precharge timing is one tenth of fast-charge timing. USB100 termination factors are 0.008/0.010/0.012: their limits are not exactly one third of the USB500 limits. JSON records unrounded calculations including resistor tolerances.
+
+The pinned legacy Zephyr `CONFIG_USB_MAX_POWER=250` means 500 mA, verified in both linked ELF descriptors. Only an accepted host configuration enables USB500 and charging; before enumeration, input remains USB100 and charging is disabled. Suspend disables charging and makes the input high impedance; resume retains the accepted configuration. BQ USB500 input-limit min/typ/max is 450/475/500 mA, **not constant 500 mA into the cell**. With an assumed 40 mA system input reserve, `450−40=410 mA` remains above the minimum 357.06 mA setting. The high-current tolerance corner can enter PowerPath current limiting. The 40 mA reserve requires measurement; thermal regulation, cable loss and CV taper also reduce charge current.
+
+The control policy above applies while 3.3 V is on and target firmware runs. **With SW100 off**, hardware pull-downs R42/R43/R44 set EN1=0, EN2=0 and /CE=0, permitting autonomous USB100 slow charging. The board cannot enumerate or select 500 mA in that state, and complete charge time is unverified. A charge-only adapter cannot configure USB while the board is on, so firmware disables charging; switching the board off restores hardware USB100 slow charging. Qualify full-speed charging with the board on and a host accepting 500 mA, and separately test off-state slow charging/timer behavior. Independent pack thermal protection must work without the MCU.
+
+The ideal CC arithmetic at the minimum programmed current is `1600/357.06=4.48 h`, leaving approximately 2.43 h before the minimum fast timer for CV taper. This does not prove full-charge time and excludes deep-discharge precharge, cold operation, thermal limiting and abnormal host power. TI's dynamic timer slows in specified limiting conditions; do not disable or repeatedly reset it to evade acceptance. Supplier curves and first articles must demonstrate termination within the permitted timing/current/temperature conditions; revise the design if they cannot.
+
+The HCP404074 sheet has inconsistent rate/current labels; see [battery selection](battery-study.md). Maximum 445.63 mA exceeds the explicitly stated 270 mA standard current but stays below the 1350 mA maximum stated for 15…45°C. The factory pack must therefore independently guarantee charging only within an actual cell window inside 15…43°C, target 18…40°C including all tolerances. BQ24074 with 103AT-2 alone does not enforce that window; third-wire NTC feedback or a voltage/current-only PCM is insufficient. Written supplier confirmation is required before procurement release.
+
+The switch disables the 3.3 V converter; charger bias, PCM leakage and self-discharge remain. Before release, use a calibrated battery-side analyzer for typing, connected idle, advertising, reconnect, switch-off and full-charge tests across accepted temperature/voltage conditions. Measure runtime using normal firmware, USB/debugger disconnected and logging off. RF/SI remains deferred by the user.

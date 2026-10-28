@@ -2,13 +2,14 @@
   "project": "YETI60",
   "renderer": "Blender 5.0.1 / Cycles",
   "samples": 256,
-  "recipe_sha256": "46662a4bd3b58f8f46fdbadba41713d02ceb63dbd6e8d96dd395cd919d1881e7",
-  "mesh_export_recipe_sha256": "0210782daacbc8913f3bd2e607d8a3be14ac12a2080bcdb1f2e79da485f90318",
-  "assembly_report_sha256": "194ca2371199b4847e9a08fceb7b41c5dffd790883aa9bd464d32070811baf73",
+  "recipe_sha256": "a4903eb7f344b2ede069220982ae998cf04b4a89e6d5d8582386beecde6abe7a",
+  "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279",
+  "assembly_report_sha256": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
   "geometry_sources": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e45415e3f5cf36a821e26047ffe5098127dd1948eb1f87d23fe1012b71199d76",
-    "felk60/felk60_bottom.step": "f4987879940643cb5b0d66145b944efb435994abe4d18808da4e45d16bb8c44b",
-    "felk60/felk60_top_hhkb.step": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",
+    "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51"
   },
   "case_scale": [
@@ -21,37 +22,37 @@
   "source_case_bounds_mm": {
     "top": {
       "brep": [
-        51.46271307318996,
-        -216.30970227830204,
-        -7.410000099999956,
-        377.1627172535981,
-        -96.35965799320394,
-        11.79000000000003
+        51.46271307318946,
+        -216.30970227830005,
+        -7.410000100000153,
+        377.1627172535937,
+        -96.35965799319872,
+        11.790000000000006
       ],
       "mesh": [
         51.46271317319,
-        -216.309702178302,
-        -7.40999999999995,
-        377.162717153598,
-        -96.359657993204,
+        -216.3097021783,
+        -7.41,
+        377.16271715359,
+        -96.3596579932,
         11.79
       ]
     },
     "bottom": {
       "brep": [
-        51.4627013981153,
-        -206.30970210039504,
-        -19.39959445791606,
-        377.1627129952796,
-        -91.10965778645951,
-        11.790000000000116
+        51.462701398115,
+        -206.30970210030003,
+        -19.39959445791356,
+        377.162712995288,
+        -91.1096578864537,
+        11.790000000000015
       ],
       "mesh": [
-        51.4627013981154,
-        -206.309702000395,
-        -19.39959375430877,
-        377.162712995279,
-        -91.1096578864596,
+        51.462701398115,
+        -206.3097020003,
+        -19.399593818045705,
+        377.16271299527,
+        -91.10965788646,
         11.79
       ]
     }
@@ -61,7 +62,7 @@
     "sculpted keycaps, legends, switch housings and stems",
     "resin/PBT finish and colours",
     "backside component envelopes",
-    "unselected battery maximum space envelope"
+    "custom 1600 mAh full-pack design envelope, supplier drawing pending"
   ],
   "provisional_stack": {
     "bottom_gasket_ledge_z": 3.19,
@@ -72,36 +73,36 @@
     "pcb_to_plate_gap_mm": 4.6,
     "pcb_top_z": -0.40999999999999925,
     "pcb_bottom_z": -1.9999999999999993,
-    "pcb_gap_basis": "PROVISIONAL parameter; Topre dome/housing/standoff stack is not dimensionally qualified"
+    "pcb_gap_basis": "4.5 mm machined shoulder plus 0.1 mm insulating film; physical dome/housing acceptance requires first article"
   },
   "outputs": {
     "assembled.png": {
-      "sha256": "f87d121a0a525b4144b444c16a78aec2e6fccc4ff7994c31a42232ee083881d4",
-      "bytes": 3782059,
-      "recipe_sha256": "46662a4bd3b58f8f46fdbadba41713d02ceb63dbd6e8d96dd395cd919d1881e7",
-      "assembly_report_sha256": "194ca2371199b4847e9a08fceb7b41c5dffd790883aa9bd464d32070811baf73",
-      "mesh_export_recipe_sha256": "0210782daacbc8913f3bd2e607d8a3be14ac12a2080bcdb1f2e79da485f90318"
+      "sha256": "05d965b99b0933270c5eb5770fd63a87930f3f8a238112a3c79894c5f6f0e55f",
+      "bytes": 3781239,
+      "recipe_sha256": "a4903eb7f344b2ede069220982ae998cf04b4a89e6d5d8582386beecde6abe7a",
+      "assembly_report_sha256": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
+      "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279"
     },
     "rear.png": {
-      "sha256": "ce21108bb6861540ce4ad6c89c2704d1f2e440e6f3da62d3301c4b748ece0896",
-      "bytes": 3643738,
-      "recipe_sha256": "46662a4bd3b58f8f46fdbadba41713d02ceb63dbd6e8d96dd395cd919d1881e7",
-      "assembly_report_sha256": "194ca2371199b4847e9a08fceb7b41c5dffd790883aa9bd464d32070811baf73",
-      "mesh_export_recipe_sha256": "0210782daacbc8913f3bd2e607d8a3be14ac12a2080bcdb1f2e79da485f90318"
+      "sha256": "c1bc827c7677c39254b039a6748b927e8b6ca850c4c72a740a6d55b577bef804",
+      "bytes": 3644584,
+      "recipe_sha256": "a4903eb7f344b2ede069220982ae998cf04b4a89e6d5d8582386beecde6abe7a",
+      "assembly_report_sha256": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
+      "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279"
     },
     "exploded.png": {
-      "sha256": "97e9ecd5892be0dfce2c0fcd46374695f32f9b3b0e7c7c2f86575852b480f0ec",
-      "bytes": 3937115,
-      "recipe_sha256": "46662a4bd3b58f8f46fdbadba41713d02ceb63dbd6e8d96dd395cd919d1881e7",
-      "assembly_report_sha256": "194ca2371199b4847e9a08fceb7b41c5dffd790883aa9bd464d32070811baf73",
-      "mesh_export_recipe_sha256": "0210782daacbc8913f3bd2e607d8a3be14ac12a2080bcdb1f2e79da485f90318"
+      "sha256": "08dd4ffa9385c1c1081cca02617d1bd4ce580b0a58c7ae8db6e3922956fc42a4",
+      "bytes": 3936475,
+      "recipe_sha256": "a4903eb7f344b2ede069220982ae998cf04b4a89e6d5d8582386beecde6abe7a",
+      "assembly_report_sha256": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
+      "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279"
     },
     "battery-space.png": {
-      "sha256": "22b6a1bb27a6a11c5ea6d845f6d6763ba40da717f5c5f4ffb87628c918a82cb3",
-      "bytes": 3657172,
-      "recipe_sha256": "46662a4bd3b58f8f46fdbadba41713d02ceb63dbd6e8d96dd395cd919d1881e7",
-      "assembly_report_sha256": "194ca2371199b4847e9a08fceb7b41c5dffd790883aa9bd464d32070811baf73",
-      "mesh_export_recipe_sha256": "0210782daacbc8913f3bd2e607d8a3be14ac12a2080bcdb1f2e79da485f90318"
+      "sha256": "6099e6b25a735e716b08072a7ac1c81881e62fd37a8246017ff07de619653a60",
+      "bytes": 3694617,
+      "recipe_sha256": "a4903eb7f344b2ede069220982ae998cf04b4a89e6d5d8582386beecde6abe7a",
+      "assembly_report_sha256": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
+      "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279"
     }
   },
   "production_approved": false

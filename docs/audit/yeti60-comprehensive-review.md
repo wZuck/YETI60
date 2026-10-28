@@ -1,86 +1,35 @@
 English | [Chinese](yeti60-comprehensive-review.zh-CN.md)
 
-# YETI60 comprehensive electrical, firmware and assembly review
+# YETI60 P2 electrical, firmware and assembly review
 
-**Result: CAD connectivity passes; this is not a production-ready or fully qualified assembly.** This review covers the current single-nRF52840 PCB, host-executed control core and source-derived case/plate geometry. It intentionally leaves SI/RF simulation deferred as previously requested.
+The current single-nRF52840 design has native CAD checks, buildable USB/BLE targets and conditional assembly evidence. No physical sample exists; passing these checks does not approve production. See [the checkpoint](../design-checkpoint.md) for the selected configuration and [stage outcomes](outcome.json) for the complete current run.
 
-## Findings requiring further engineering
+## Electrical and routing
 
-1. **Power layout still needs revision.** U6 VOUT-to-FB and the second output capacitor currently connect through approximately 29–30 mm of copper-path primitives. Charger input and battery capacitor paths are about 9.35 mm / two vias and 16.19 mm / two vias. TI specifies short, wide power paths and nearby passives; zero DRC errors do not establish loop stability or acceptable transient behavior. A simple capacitor-rotation trial collided with retained sensing-ground copper and was reverted. The verified PCB remains intact. This is a layout concern, not a claim that oscillation has been measured. [TI TPS63031 layout guidance](https://www.ti.com/lit/ds/symlink/tps63031.pdf), [BQ24074 datasheet](https://www.ti.com/lit/gpn/bq24074).
-2. **Target binaries are built; physical firmware validation is pending.** The actual new portable C core passes host simulation, but ADC/GPIO/HID HALs are mocked. Normal and calibrator target applications now build with the schematic-bound nRF GPIO/SAADC driver and ZMK USB/BLE stacks. On-device enumeration, pairing and physical EC calibration still require a sample.
-3. **The final Z stack and resin construction are unqualified.** PCB-top to plate-bottom spacing is an explicit provisional 4.6 mm parameter; no exact dome/housing/fastener stack is selected. Original M3 metal-thread pilots remain approximately 2.529 mm and are not a resin-insert design.
-4. **The internal power switch is not externally accessible.** SW100 has no defined enclosure opening or actuator extension. An internal setup switch may be acceptable, but an accessible power control requires a mechanical/placement decision.
-5. **Hole correspondence has limited tolerance margin.** All 29 plate holes correspond, with a maximum center offset of 0.05337 mm. For a nominal 2.0 mm M2 screw in the 2.2 mm PCB clearance, the worst remaining radial margin is only 0.04663 mm before manufacturing tolerances. This correspondence check does not approve a screw/print tolerance stack.
-6. **Battery, rear daughterboard and cable envelopes are not selected.** The candidate pack spaces below are geometric budgets, not part selections. The daughterboard still needs actual connector/plug/overmould/cable and separate CC1/CC2 terminations. The old 8×2 mm diagnostic aperture probe does not qualify a real Type-C assembly.
+Strict DRC and schematic parity have **0 errors and 0 opens**, with **270 physical pin pairs** connected. Regression checks preserve previously connected baseline pairs and separately identify new component pairs. Functional EC electrodes, the PCB outline and all mounting centers remain at their source geometry. The removed central branding was decoration; electrode rings and ground shielding remain functional copper.
 
-## Circuit and routing checks
+U1 is one Raytac MDBT50Q-1MV2. U1.20 uses P0.04/AIN2 for scan data; U1.21 uses P0.05/AIN3 for the battery divider. R30/R31 remain 0 Ω because the nRF USB PHY incorporates termination. Mux channel mapping comes from the schematic nets. U8 gates the analog front end and U7 gates the 1M:1M divider; firmware avoids back-powering the unpowered AFE and allows battery measurement to settle.
 
-- Strict native DRC: **0 errors, 0 opens**. All **268** physical pin pairs and schematic/PCB parity pass. The comparison to the previous verified design has no connectivity regressions.
-- **Fixed a functional migration issue:** R30/R31 were inherited 27 Ω USB series resistors. They are now **0 Ω links**, synchronized across PCB, schematic, netlist and local footprint values. The nRF52840 PHY already contains its own series termination. [Nordic verified answer](https://devzone.nordicsemi.com/f/nordic-q-a/94955/resistors-for-d-and-d-).
-- Scan input U1.20 is P0.04/AIN2; battery input U1.21 is P0.05/AIN3. Mux channel order is generated from the actual U2/U4 COL0–COL14 nets, not assumed from the old STM32 GPIO names.
-- Inductor-side straight tracks were widened to 0.35 mm. Diagonal/IC necks remain 0.2 mm to preserve clearance to the existing NTC via. No global clearance rule was relaxed.
-- The strict report retains 102 non-assembled-geometry courtyard warnings and 5 off-center via-endpoint warnings with valid copper contact. ERC has 0 electrical errors and inherited grid/alias warnings. Special filled/capped U1 vias-in-pad remain required.
+The local TPS63031 output-capacitor/feedback paths have been shortened; BQ24074 and its capacitor paths use the specified back-side HDI layer transitions. The P2 input-capacitor route must have at least 0.25 mm trace width; the low-current ITERM route can use 0.127 mm. [Electrical evidence](yeti60-electrical.json) records current source hashes, conservative contacted-primitive lengths, minimum widths and via counts. These measurements do not extract ground-return inductance or establish transient/thermal performance. Native warnings retain 102 non-assembled geometry courtyard notices and nine off-center via-contact notices, with no dangling track/via warning in the reviewed P2 layout.
 
-These conservative path measurements sum complete contacted primitives; they can overestimate the exact centerline length and do not extract return-path inductance:
+Nine 0.40/0.20 mm B.Cu–In2.Cu microvias require the [asymmetric HDI stack and filling/planarization](../../hardware/ec60-nrf52840/fabrication-notes.md). U1.39/U1.51 separately require filled, planarized and copper-capped through vias-in-pad. Upper sensing dielectric remains 0.20 mm and finished board thickness 1.59 mm. Fabricator acceptance, capacitor DC-bias derating and regulator/charger temperature tests remain necessary. SI/RF is deferred.
 
-| Connection | Conservative copper length (mm) | Vias |
-|---|---:|---:|
-| U6.4 → L1.1 | 3.515 | 0 |
-| U6.2 → L1.2 | 3.515 | 0 |
-| U6.5 → C43.1 | 3.233 | 0 |
-| U6.8 → C44.1 | 2.427 | 0 |
-| U6.1 → C45.1 | 2.062 | 0 |
-| U6.1 → C46.1 | 29.243 | 0 |
-| U6.1 → U6.10 | 30.036 | 0 |
-| U5.13 → C40.1 | 9.348 | 2 |
-| U5.2 → C41.1 | 16.186 | 2 |
-| U5.10 → C42.1 | 2.805 | 0 |
+## Battery, charging and power
 
-Evidence: [CAD report](../../hardware/ec60-nrf52840/audit-current.json), [functional electrical report](yeti60-electrical.json), [fabrication notes](../../hardware/ec60-nrf52840/fabrication-notes.md).
+Default **1600 mAh** uses the HCP404074 reference cell and a custom complete **85×43×4.8 mm** pack. [Selection evidence](../engineering/battery-study.md) states the bounded 651-model catalog search, full-pack allowance and source discrepancies. The original charge-row rates do not match their mA values; supplier correction is required. A generic two-wire cell or voltage/current-only PCM is not equivalent to the specified independent thermal protection and third-wire NTC.
 
-## Firmware simulation
+R40=2.21k, R55/TMR=69.8k and R56/ITERM=1.82k, all 1%, program 402.71 mA nominal / 445.63 mA maximum, a 6.9102 h minimum fast timer, and at most 31.51 mA termination. The factory pack must guarantee an actual cell charging window within 15…43°C. [Equations and scenarios](../engineering/power-budget.md) include tolerance limits, USB input reserve, ideal CC/CV arithmetic and a planning runtime of 106.64 h. These are calculations, not a full-charge or runtime guarantee. Signed pack dimensions/protection and complete physical charging acceptance remain open.
 
-The host executable compiles `firmware/yeti60/core.c` with ASan/UBSan. It covers 75 positions, mutually exclusive mux banks, channel order, one-row drive, open-drain discharge/release, explicit waits, hysteresis, two-frame debounce, 2,000 deterministic noise-band frames, invalid configuration, ADC error/overrange, atomic failed-frame release, high-Z analog shutdown, shared-ADC exclusion and the 50 ms battery-divider wait. USB100/USB500/suspend policy, modifiers/6KRO rollover, held-key transport handover and failed-send retries are exercised.
+## Firmware
 
-This review also fixed aliased configuration/HAL reinitialization, invalid USB enum acceptance, and loss of the old-host key-release retry during a failed handover. Those cases now execute in the simulator.
+Normal and USB-CDC calibrator ARM ELF/BIN/HEX build from frozen ZMK/Zephyr dependencies. The linked configuration descriptor in each ELF requests 500 mA; before host configuration, charging is disabled with USB100 selected. Suspend disables charging/input, and resume retains accepted configuration. A negative test rejects an ELF descriptor requesting only 100 mA. HEX checks preserve the settings partition.
 
-![Actual core trace](../../renders/yeti60-firmware/debounce.png)
+The actual portable C core runs under ASan/UBSan with scan/mux sequencing, hysteresis/debounce, fault shutdown, report switching, USB modes and reentry tests; HAL behavior is mocked there. Target code supplies GPIO/SAADC, ZMK HID/BLE and persistent calibration. On-device enumeration, bonding, thresholds and key travel remain untested. The [target instructions](../../firmware/target/README.md) define SWD and release/press/save calibration; no pre-calibrated threshold claim is made.
 
-[Raw trace](yeti60-firmware-trace.csv) · [Simulation results and source hashes](yeti60-firmware-simulation.json) · [Control-core documentation](../../firmware/yeti60/README.md).
+## Assembly, materials and render provenance
 
-The trace clock sums configured waits and mock ADC acquisition; it excludes actual CPU, ISR and radio scheduling costs. Thresholds are illustrative ADC codes. It is not a physical latency/noise result, target binary or instruction-level nRF peripheral simulation. Actual USB descriptor power limits, low-frequency RC configuration, HAL behavior, wake policy and BLE stack remain to be integrated.
+The derived resin case retains the FELK60 exterior union **325.700×125.200×31.190 mm**, with bonded insert seats, SW100 access and the default battery recess. The 1.2 mm steel plate, 4.50 mm standoff plus 0.10 mm insulation, 1.59 mm PCB and M1.6 underside screws form the specified 4.60 mm gap. All 29 mounting centers match; the imposed worst radial screw budget is approximately 0.07663 mm. Actual donor housings/domes, threads and resin shrinkage still require first articles.
 
-## PCB / case / plate fit
+The selected pack clears the checked shells, component and fastener envelopes. After ±0.40 mm XY allowance, minimum component gap is 0.555 mm; nominal head clearance is 0.700 mm. Exact pocket-floor distance leaves 3.6585 mm wall after the 0.30 mm allowance. The wall target does not certify strength, creep or impact behavior. Keep the **C5 JSH** daughterboard and four M2 positions; the complete mating plug/harness bend/service route remains an acceptance item.
 
-The original 7° FELK60 shell geometry, current PCB outline/holes and the audited HHKB plate are registered in the same coordinate frame. Gasket support ledges at Z=3.19 and 6.39 mm, with the source's 2 mm gaskets at 50% compression, place the 1.2 mm plate at Z=4.19–5.39 mm. The provisional 4.6 mm plate gap sets finished PCB top/bottom at −0.41 / −2.00 mm.
-
-- PCB-to-case and plate-to-case overlap volumes: **0 mm³** at the stated nominal stack.
-- PCB minimum case distance: approximately **0.80 mm**.
-- Raytac module envelope minimum case distance: **1.86 mm**.
-- J2 height is **5.5 mm**, read from the [JST SMT side-entry drawing](https://www.jst.com/wp-content/uploads/2025/06/ePH.pdf). Its physical body outline is distinct from the larger pad/courtyard rectangle. The nominal housing-envelope clearance is about **1.91 mm**, excluding the mating plug/wires.
-- The provisional 3.5 mm SW100 envelope has only **0.41 mm** nominal case distance. Final part geometry and stack tolerance need confirmation.
-- Native exported substrate-body thickness is 1.50 mm; the PCB declaration including copper/mask is **1.59 mm**. The mechanical check rebuilds a conservative 1.59 mm finished-board envelope from the exact native bottom face, preserving XY and holes. It does not stretch or silently change the design PCB.
-- PCB/case overlap was also checked at provisional gaps 4.0, 4.3, 4.6, 4.9 and 5.2 mm. That sweep is not qualification of the EC dome mechanism or of every component at every gap.
-
-Evidence: [assembly report](yeti60-assembly.json), [current footprint/height metadata](yeti60-pcb-mechanical-metadata.json). Known source heights and explicitly provisional envelopes are distinguished in those records.
-
-## Battery-space budget
-
-No battery is selected. Under the provisional 4.6 mm stack, one candidate envelope is **50×20×2.9 mm**, at case coordinates X=155–205, Y=−179 to −159 mm. It clears the conservative component XY keepouts and 3 mm-radius mounting-fastener exclusion boxes. The modeled distance is at least 0.50 mm above and 0.51 mm below.
-
-The **full pack envelope** must include its protection board and growth/swelling allowance; these are not individually modeled or approved. Insulation consumes the stated external gaps. A nominal 3 mm cell must not be assumed to fit a 2.9 mm budget. Changing the eventual dome/standoff gap changes the available thickness: over the sampled 4.0–5.2 mm gaps, flat-floor pack thickness after two 0.5 mm clearances varies from about 3.51 to 2.31 mm. Cable routing, NTC and final cell documentation remain required.
-
-## Render outputs and document policy
-
-[Assembled, exploded and battery-space renders](../../renders/yeti60-assembly/README.md) use the same provisional transforms as the checks. Case, plate and PCB geometry are source-derived; keycaps, switch bodies, component envelopes, material appearance and the battery-space block are illustrative. They do not prove manufactured fit. [Current PCB-only renders and animation](../../renders/ec60-nrf52840/README.md) are regenerated for YETI60.
-
-Project-owned documents use English by default with parallel `.zh-CN.md` versions. Upstream attribution, licenses, and compatibility filenames such as `EC60-nRF52840.*` and `YAECKB.pretty` remain intact. The remaining layout/manufacturing items above are still open.
-
-Assembly images now use Cycles physical lighting and source-sized FELK60 case tessellation. The original case solids receive no geometry modifiers or resizing. [Geometry verification](yeti60-render-geometry.json) records bounding sizes and mesh tolerances; [render documentation](../../renders/yeti60-assembly/README.md) distinguishes source geometry from illustrative keycaps, switches and finishes.
-
-
-## Current integration audit
-
-Retired build/routing scripts, duplicate legacy firmware and historical reports are removed. The unified audit checks the current schematic, PCB, pin contract, core, mechanical stack and render provenance together: [stages](outcome.json), [integration](integration.json). Each view carries individual input hashes; partial refresh cannot validate old images. Plate checking is read-only and assembly collisions fail validation.
-
-A regression test reproduced synchronous reentry during initialization/power/connection GPIO callbacks and scan HID reporting. The core now holds its busy guard throughout those callbacks, including scan faults; ASan/UBSan tests cover the fix. This remains a single-owner API, not a thread-safe application. Target USB/BLE builds pass; physical testing remains pending.
+The [76-part mainboard BOM and mechanical materials](../engineering/materials.md), [separate engineering assembly sheets](../engineering/assembly.md), [PCB animation](../../renders/ec60-nrf52840/README.md) and [studio assembly views](../../renders/yeti60-assembly/README.md) share current source hashes. Case/plate/PCB geometry is unscaled; caps, housings, finishes, component bodies and battery construction have explicitly illustrative parts. Full integration rejects stale individual views or changed image bytes. English and Chinese documents remain separate, with upstream attribution and compatibility library identifiers retained.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Verify PCB repairs preserve previously connected schematic pin pairs."""
-import pcbnew as p,json,subprocess,tempfile,argparse
+import pcbnew as p,json,subprocess,tempfile,argparse,hashlib
 from pathlib import Path
 from itertools import combinations
 import xml.etree.ElementTree as E
@@ -26,15 +26,24 @@ def groups(path):
    out[(f.GetReference(),pad.GetNumber())]=labels[k]
  return out
 before=groups(old);after=groups(hw/'EC60-nRF52840.kicad_pcb');regress=[];improve=[]
-for net in E.parse(hw/'netlist.xml').findall('./nets/net'):
- if net.get('name')=='GND':continue
- nodes=[(v.get('ref'),v.get('pin')) for v in net.findall('node')]
- for a,b in combinations(nodes,2):
-  was=before[a]==before[b];now=after[a]==after[b]
-  item={'net':net.get('name'),'a':a,'b':b}
-  if was and not now:regress.append(item)
-  if now and not was:improve.append(item)
-result={'reference_commit':revision,'regressed_pairs':regress,'improved_pairs':improve,'scope':'all non-GND schematic pad pairs; GND checked by native DRC and explicit supply checks'}
+baseline_xml=E.fromstring(subprocess.check_output(['git','show',revision+':hardware/ec60-nrf52840/netlist.xml'],cwd=base))
+current_xml=E.parse(hw/'netlist.xml').getroot()
+pair_contract={}
+for document in [baseline_xml,current_xml]:
+ for net in document.findall('./nets/net'):
+  if net.get('name')=='GND':continue
+  nodes=[(v.get('ref'),v.get('pin')) for v in net.findall('node')]
+  for a,b in combinations(sorted(nodes),2):pair_contract[(a,b)]=net.get('name')
+added=[]
+for (a,b),name in pair_contract.items():
+ now=a in after and b in after and after[a]==after[b]
+ item={'net':name,'a':a,'b':b}
+ if a not in before or b not in before:
+  added.append({**item,'connected':now});continue
+ was=before[a]==before[b]
+ if was and not now:regress.append(item)
+ if now and not was:improve.append(item)
+result={'reference_commit':revision,'regressed_pairs':regress,'improved_pairs':improve,'new_component_pairs':added,'scope':'Union of baseline and current non-GND schematic pad pairs; missing new pads do not count as old regressions. Current native audit verifies every new pair and GND.','source_sha256':{str(q.relative_to(base)):hashlib.sha256(q.read_bytes()).hexdigest() for q in [hw/'EC60-nRF52840.kicad_pcb',hw/'netlist.xml',Path(__file__).resolve()]}}
 (hw/'connectivity-changes.json').write_text(json.dumps(result,indent=2)+'\n')
 from collections import Counter
 print('Regressions',Counter(v['net'] for v in regress));print('Improvements',Counter(v['net'] for v in improve))

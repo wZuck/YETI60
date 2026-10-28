@@ -29,15 +29,25 @@ def main():
     add('electrical-review',native,'check_yeti60_electrical.py',deps=['pin-contract'])
     add('firmware-pin-header',py,'generate_yeti60_pin_contract.py',['--check'],['pin-contract'])
     add('firmware-target-artifacts',py,'check_yeti60_target.py',deps=['firmware-pin-header'])
+    stages.append(('target-power-fault-injection',py+['tests/audit/test_target.py'],['firmware-target-artifacts']))
     add('firmware-simulation',py,'simulate_yeti60_firmware.py',deps=['firmware-pin-header'])
     add('firmware-plot',cad,'plot_yeti60_simulation.py',deps=['firmware-simulation'])
     add('mechanical-metadata',native,'export_yeti60_mechanical_metadata.py',deps=['pcb-geometry-contract'])
+    add('daughterboard-native-cad',native,'export_yeti60_daughterboard.py')
     add('mechanical-design',cad,'build_yeti60_mechanical.py')
     add('plate-source',cad,'check_plate.py')
     add('assembly-fit',cad,'check_yeti60_assembly.py',deps=['mechanical-metadata','plate-source','mechanical-design'])
     add('render-geometry',cad,'export_yeti60_render_meshes.py',deps=['assembly-fit'])
+    add('board-guidance',py,'check_yeti60_board_markings.py',deps=['pcb-geometry-contract'])
+    add('purchase-bom',py,'export_yeti60_bom.py',deps=['pin-contract'])
+    add('power-calculation',py,'calculate_yeti60_power.py',deps=['pin-contract'])
+    add('battery-pocket',cad,'study_yeti60_battery_pocket.py',deps=['assembly-fit'])
+    add('cell-screening',cad,'screen_yeti60_batteries.py',deps=['battery-pocket'])
+    add('assembly-drawings',cad,'draw_yeti60_assembly.py',deps=['render-geometry','battery-pocket','daughterboard-native-cad'])
+    add('engineering-evidence',py,'check_yeti60_engineering.py',deps=['purchase-bom','power-calculation','cell-screening','assembly-drawings'])
+    stages.append(('engineering-fault-injection',py+['tests/audit/test_engineering.py'],['engineering-evidence']))
     if a.refresh_renders:
-        add('pcb-renders',cad,'render_single_nrf.py',deps=['pcb-native-drc'])
+        add('pcb-renders',cad,'render_single_nrf.py',['--frames','72','--fps','24','--jobs','2'],deps=['pcb-native-drc'])
         add('assembly-renders',[uv,'run','--python','3.11','--with-requirements',str(ROOT/'requirements-render.txt'),'python'],'render_yeti60_assembly.py',deps=['render-geometry'])
     add('documentation',py,'check_project_docs.py')
     dependencies=[name for name,_,_ in stages]
@@ -60,7 +70,7 @@ def main():
     records.append({'stage':'design-inputs-unchanged','state':'failed' if changed else 'passed','changed':changed})
     okay=all(x['state']=='passed' for x in records)
     config=json.loads((ROOT/'design-constraints.json').read_text());pending=[x for x in config['open_requirements'] if x['status']!='closed']
-    outcome={'status':'checks-passed-production-incomplete' if okay else 'checks-failed','checks_passed':okay,'production_approved':False,'stages':records,'open_requirements':pending,'scope':'Current single-nRF design, host core, conditional mechanical fit and artifact provenance; no target or physical certification','inventory':'docs/audit/source-inventory.json'}
+    outcome={'status':'checks-passed-production-incomplete' if okay else 'checks-failed','checks_passed':okay,'production_approved':False,'stages':records,'open_requirements':pending,'scope':'Current single-nRF design, built ARM targets, host simulation, conditional mechanical/charging design and artifact provenance; no physical certification','inventory':'docs/audit/source-inventory.json'}
     inventory();(AUD/'outcome.json').write_text(json.dumps(outcome,indent=2)+'\n')
     print(outcome['status'],flush=True)
     return 1 if not okay else (2 if a.require_production else 0)

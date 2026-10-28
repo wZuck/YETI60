@@ -2,7 +2,7 @@
 
 English | [Chinese](README.zh-CN.md)
 
-These images use Blender Cycles path tracing, softbox lighting, fine resin/PBT surface roughness, rounded sculpted keycaps and contact shadows. Images contain no overlaid prose. The case is generated directly from the original FELK60 STEP solids, with **no case scaling, bevel modifiers, silhouette editing or relative movement of the two shells**.
+These images use Blender Cycles path tracing, softbox lighting, fine resin/PBT surface roughness, rounded sculpted keycaps and contact shadows. Images contain no overlaid prose. The case is generated directly from the current FELK60-derived P2 STEP solids, with **no case scaling, bevel modifiers, silhouette editing or relative movement of the two shells**.
 
 ![Assembled front view](assembled.png)
 
@@ -10,7 +10,7 @@ These images use Blender Cycles path tracing, softbox lighting, fine resin/PBT s
 
 ![Exploded assembly study](exploded.png)
 
-![Unselected battery space](battery-space.png)
+![Default pack envelope](battery-space.png)
 
 ## Dimensions and scope
 
@@ -18,7 +18,7 @@ The combined case envelope in the original CAD coordinate frame is **325.700 × 
 
 [Geometry verification](../../docs/audit/yeti60-render-geometry.json) and [render manifest](render-manifest.json) record original source hashes, case dimensions, render recipe, tessellation and image hashes. The 1.2 mm plate and current PCB use the same coordinates as the [assembly check](../../docs/audit/yeti60-assembly.json).
 
-**Appearance realism does not qualify unspecified parts.** Resin colour and finish, sculpted keycaps, legends, switch housings/stems and component envelopes are illustrative. The provisional 4.6 mm PCB-to-plate gap still requires an actual dome/fastener stack. The green block is a candidate pack-space envelope; no battery is selected. The rear opening remains the original source geometry; a final USB daughterboard, mating plug and cable are not represented as validated parts.
+**Appearance realism does not qualify unspecified parts.** Resin colour and finish, sculpted keycaps, legends, switch housings/stems and component envelopes are illustrative. The provisional 4.6 mm PCB-to-plate gap still requires an actual dome/fastener stack. The green block is the selected custom 1600 mAh full-pack envelope (85×43×4.8 mm); supplier drawings and thermal protection remain unqualified. The rear opening remains the original source geometry; a final USB daughterboard, mating plug and cable are not represented as validated parts.
 
 ## Rebuild
 

@@ -1,26 +1,26 @@
 {
-  "revision": "YETI60-P1-BAT-RECESS-STUDY",
-  "scope": "Optional geometry study; baseline 200 mAh assembly remains separate",
+  "revision": "YETI60-P2-DEFAULT-BATTERY",
+  "scope": "Default 1600 mAh single-cell pack recess; not a legacy optional variant",
   "pack_bounds_case_mm": [
-    240.0,
-    -142.0,
-    -10.8,
-    300.0,
+    228.5,
+    -149.0,
+    -9.4,
+    313.5,
     -106.0,
     -4.6
   ],
   "pack_max_envelope_mm": [
-    60.0,
-    36.0,
-    6.2
+    85.0,
+    43.0,
+    4.8
   ],
-  "cell_reference": "Honcell HCP-503450, minimum 1000 mAh at 0.2C and 23+-2 C; bare-cell reference, not approved pack",
+  "cell_reference": "Honcell HCP404074, minimum 1600 mAh at 0.2C and 23+-2 C; bare-cell specification",
   "pocket_bounds_case_mm": [
-    239.25,
-    -142.75,
-    -11.0,
-    300.75,
-    -105.25,
+    227.5,
+    -150.0,
+    -9.6,
+    314.5,
+    -105.0,
     0.0
   ],
   "pocket_corner_radius_mm": 1.0,
@@ -28,9 +28,9 @@
   "required_remaining_wall_mm": 3.0,
   "pack_retention_and_floor_gap_mm": 0.2,
   "pack_top_clearance_to_fastener_nominal_mm": 0.7,
-  "maximum_charge_current_mA": 100,
-  "protection": "Custom PCM with independent charge-temperature interruption, third-wire 10k NTC; PHR-3 custom polarity",
-  "supplier_acceptance": "Assembler must sign full envelope including tabs, folded connections, PCM, thermal protection, NTC, wrapping and post-cycle growth; 60x36x6.2 is a design budget, not the bare cell dimensions",
+  "maximum_charge_current_mA": 450,
+  "protection": "Factory PCM with independent charge-temperature interruption guaranteed inside 15..43 C, third-wire 10k NTC and voltage/current protection; PHR-3 custom polarity",
+  "supplier_acceptance": "Assembler must sign full envelope including tabs, folded connections, PCM, thermal protection, NTC, wrapping and post-cycle growth; 85x43x4.8 is a design budget, not the bare cell dimensions",
   "not_verified": [
     "Resin strength, creep, drop test or insert pullout",
     "Full wire routing and service removability",
