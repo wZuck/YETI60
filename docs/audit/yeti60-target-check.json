@@ -4,18 +4,18 @@
     "normal": {
       "arm_elf": true,
       "hex_checksums": "passed",
-      "programmed_bytes": 226202,
+      "programmed_bytes": 226690,
       "settings_partition_preserved": true,
       "USB_configuration_mA": 500
     },
     "calibrator": {
       "arm_elf": true,
       "hex_checksums": "passed",
-      "programmed_bytes": 301742,
+      "programmed_bytes": 302226,
       "settings_partition_preserved": true,
       "USB_configuration_mA": 500
     }
   },
-  "build_manifest_sha256": "96b32e2994c09e640cd4f2cdccdccb3dfa57058fda30c66a51336258b6901475",
+  "build_manifest_sha256": "206726ae3991db892e37e2fe3d0ba0c460238dc2dca44153db217586e534f330",
   "physical_verification": false
 }

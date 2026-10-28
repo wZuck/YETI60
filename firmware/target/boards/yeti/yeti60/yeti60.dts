@@ -23,6 +23,11 @@
 &gpiote { status = "okay"; };
 &gpio0 { status = "okay"; };
 &gpio1 { status = "okay"; };
+/* MDBT50Q-1MV2 integrates the REG1 radio-rail inductor. REG0 remains LDO
+ * because the board does not populate the external DCCH inductor. */
+&reg1 {
+    regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
+};
 &adc { status = "okay"; };
 &usbd { status = "okay"; };
 &flash0 {

@@ -29,7 +29,7 @@ def main():
         assert not subprocess.check_output(['git','-C',str(directory),'status','--porcelain','--untracked-files=no']), 'Modified dependency: '+name
         revisions[name] = subprocess.check_output(['git','-C',str(directory),'rev-parse','HEAD'],text=True).strip()
         assert revisions[name] == locked, 'Dependency revision differs from lock: '+name
-    assert revisions['zmk']=='4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85'
+    assert revisions['zmk']=='0862fc0f8c864834007986efcaf52f292ea6d37d'
     records = {}
     for variant in ['normal','calibrator']:
         command = base+['west','build','-p','always','-s','zmk/app','-d',f'/yeti/.firmware-work/{variant}','-b','yeti60','--','-DZephyr_DIR=/work/zephyr/share/zephyr-package/cmake','-DZMK_CONFIG=/yeti/firmware/target/config','-DZMK_EXTRA_MODULES=/yeti/firmware/target','-DBOARD_ROOT=/yeti/firmware/target']

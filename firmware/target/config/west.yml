@@ -3,8 +3,8 @@ manifest:
   - -babblesim
   projects:
   - name: zmk
-    url: https://github.com/zmkfirmware/zmk
-    revision: 4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85
+    url: https://github.com/wZuck/zmk
+    revision: 0862fc0f8c864834007986efcaf52f292ea6d37d
     west-commands: scripts/west-commands.yml
   - name: zephyr
     url: https://github.com/zmkfirmware/zephyr

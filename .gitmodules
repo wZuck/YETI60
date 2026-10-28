@@ -7,3 +7,6 @@
 [submodule "hardware/usb-daughterboard/upstream"]
 	path = hardware/usb-daughterboard/upstream
 	url = https://github.com/Unified-Daughterboard/UDB-C-JSH.git
+[submodule "zmk"]
+	path = zmk
+	url = https://github.com/wZuck/zmk.git

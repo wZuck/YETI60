@@ -9,6 +9,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/settings/settings.h>
 #include <zephyr/shell/shell.h>
+#include <zephyr/sys/util.h>
 #include <zmk/usb.h>
 
 static struct yeti_core core;
@@ -22,6 +23,9 @@ static atomic_t calibration_loaded;
 static uint16_t raw[5][15], released[5][15], pressed[5][15];
 static unsigned cursor;
 static int calibration_mode;
+static bool idle_scan;
+static bool afe_asleep;
+static int64_t idle_since;
 struct calibration {
   uint32_t version;
   uint16_t low[5][15], high[5][15];
@@ -122,6 +126,7 @@ static void run(void *a, void *b, void *c) {
   ARG_UNUSED(c);
   uint16_t previous[YETI_ROWS] = {0};
   enum usb_dc_status_code old = USB_DC_UNKNOWN;
+  idle_since = k_uptime_get();
   while (true) {
     if (scan_device == NULL) {
       k_sleep(K_MSEC(20));
@@ -186,8 +191,10 @@ static void run(void *a, void *b, void *c) {
       old = usb;
     }
     if (atomic_get(&enabled)) {
+      if (afe_asleep && yeti_afe(&core, true) == 0)
+        afe_asleep = false;
       cursor = 0;
-      int err = yeti_scan(&core);
+      int err = afe_asleep ? -1 : yeti_scan(&core);
       if (!err && calibration_mode) {
         for (unsigned r = 0; r < 5; r++)
           for (unsigned c = 0; c < 15; c++) {
@@ -199,19 +206,42 @@ static void run(void *a, void *b, void *c) {
       }
       if (!calibrated)
         memset(core.matrix, 0, sizeof(core.matrix));
+      bool changed = false;
       for (unsigned row = 0; row < YETI_ROWS; row++) {
-        uint16_t changed = previous[row] ^ core.matrix[row];
+        uint16_t bits = previous[row] ^ core.matrix[row];
+        changed |= bits != 0;
         for (unsigned col = 0; col < YETI_COLS; col++)
-          if ((changed & BIT(col)) && callback)
+          if ((bits & BIT(col)) && callback)
             callback(scan_device, row, col, (core.matrix[row] & BIT(col)) != 0);
         previous[row] = core.matrix[row];
       }
+      bool any_key = false;
+      for (unsigned row = 0; row < YETI_ROWS; row++)
+        any_key |= core.matrix[row] != 0;
+      if (any_key || changed || calibration_mode) {
+        idle_since = k_uptime_get();
+        idle_scan = false;
+      } else if (!idle_scan &&
+                 k_uptime_get() - idle_since >= CONFIG_YETI60_IDLE_AFTER_MS) {
+        idle_scan = true;
+      }
+      if (!err && !io_fault && idle_scan && !any_key && !calibration_mode &&
+          IS_ENABLED(CONFIG_YETI60_AFE_IDLE_GATING)) {
+        if (yeti_afe(&core, false) == 0)
+          afe_asleep = true;
+      }
       if (err || io_fault) {
         yeti_power(&core, false);
+        afe_asleep = false;
+        idle_scan = false;
         k_sleep(K_MSEC(100));
       }
+    } else if (!afe_asleep && IS_ENABLED(CONFIG_YETI60_AFE_IDLE_GATING)) {
+      if (yeti_afe(&core, false) == 0)
+        afe_asleep = true;
     }
-    k_sleep(K_MSEC(4));
+    k_sleep(K_MSEC(idle_scan ? CONFIG_YETI60_IDLE_SCAN_MS
+                             : CONFIG_YETI60_ACTIVE_SCAN_MS));
   }
 }
 K_THREAD_DEFINE(scan_thread, 4096, run, NULL, NULL, NULL, 10, 0, 0);

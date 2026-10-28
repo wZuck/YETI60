@@ -32,11 +32,12 @@ struct yeti_core {
   uint8_t last_report[8];
   uint8_t pending_release; /* Transport bitmask; retry old-host key releases. */
   enum yeti_link link;
-  bool initialized, powered, busy, dirty;
+  bool initialized, powered, afe_on, busy, dirty;
 };
 int yeti_init(struct yeti_core *, const struct yeti_hal *,
               const struct yeti_config *);
 int yeti_power(struct yeti_core *, bool);
+int yeti_afe(struct yeti_core *, bool);
 int yeti_scan(struct yeti_core *);
 int yeti_battery_mv(struct yeti_core *, uint32_t *);
 int yeti_connections(struct yeti_core *, enum yeti_usb, unsigned host_ma,

@@ -4,6 +4,8 @@
 
 [P2 阶段记录](../design-checkpoint.zh-CN.md)说明当前设计和待供方／实物验收项目；完整复查记录当前证据和验收边界。检查通过不等于批准生产。
 
+[可行性与元件匹配评估](2026-10-28-feasibility-assessment.zh-CN.md)
+
 | 范围 | 当前证据 |
 |---|---|
 | 统一结果 | [各阶段结果](outcome.json)、[一致性](integration.json) |

@@ -5,14 +5,14 @@
   },
   "status": "conditional-sensitivity-model-not-measurement",
   "source_sha256": {
-    "firmware/target/src/scanner.c": "ee061298261f5b6c3b51f693b5cd8900e7e2d83acd3e63a96b0a21e71dc30a13",
-    "firmware/yeti60/core.c": "4858b1610b9b0ee99be908739d24667c264b3d07e47f7208d43b13394397855f",
-    "firmware/target/config/yeti60.conf": "9e53af30c7b8219ec0a54b74a0278b18e05da42d4cee261fbb54002dde974883",
-    "firmware/target/boards/yeti/yeti60/yeti60.dts": "45b7ab59b87ba610d89ffecbf3f4b7ec34453ff3712e77e3e18428b0a1021ebb",
-    "docs/engineering/sources.json": "1fe53711ee7bf2b0fa1ffb9a1da2a940ad133bdcf0754764bd8ac136ae2b59cd",
+    "firmware/target/src/scanner.c": "e812217c1198d86e7bc56b033b835d32428e192106874a02d41e6d4199f0f0e2",
+    "firmware/yeti60/core.c": "353ef280b7c84966dd6851e22ed98ad974bd58bbc5ae78b03a0623493e98ad49",
+    "firmware/target/config/yeti60.conf": "2275fd710d346cb4b92e5c3587d3b676e9ff0d4d4ac2985c6b8f491b44f22184",
+    "firmware/target/boards/yeti/yeti60/yeti60.dts": "97272ab737e22fe1a1669e3abe67025e8298e9fccf5a61db9aeaa4cc71aa6c98",
+    "docs/engineering/sources.json": "0e7807295fc61339348cef85df2e619cc404d201bd556cf773f91662f7c989f5",
     "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
     "hardware/ec60-nrf52840/netlist.xml": "06d7a8a5e13789597747e2c0b2bd7792460cb2a4ab5e200281f07dc3d1937dfb",
-    "scripts/calculate_yeti60_power.py": "a9ac775d3b2cc8b46f2b1ac99c0af2654cd09e61f2a704da6000790a6f510342"
+    "scripts/calculate_yeti60_power.py": "d12823ad1673db0038904dfa5534d12f0b455f11f9aac80a08e69c7d7d427604"
   },
   "equations": {
     "rail_mA": "I_OPA + I_MCU_average + 2*3.3/100k*1000 + 0.008 + 0.016 + 0.100",
@@ -66,12 +66,19 @@
     "note": "2us per conversion is an engineering timing budget, not a measured duration. ADC blocking can allow CPU sleep; do not treat all acquisition time as CPU busy."
   },
   "current_firmware": {
-    "AFE_on_between_frames": true,
+    "AFE_always_on": false,
+    "AFE_idle_gating": true,
+    "active_scan_ms": 4,
+    "idle_scan_ms": 30,
+    "idle_after_ms": 30000,
     "deep_sleep_enabled": false,
+    "deep_sleep_blocker": "EC keys are not a System OFF GPIO wake source",
     "battery_reporting": false,
-    "REG1_DCDC_enabled_by_custom_board": false,
+    "REG1_DCDC_enabled_by_custom_board": true,
+    "REG0_DCDC_enabled": false,
     "LED": "No status LED drive in current adapter; assumed off"
   },
+  "power_model_scope": "Scenarios below conservatively assume the AFE is on continuously; idle gating is implemented but is not credited until measured.",
   "not_claimed": [
     "Guaranteed current or runtime range",
     "Measured BLE duty cycle, connection interval, SAADC/CPU occupancy",

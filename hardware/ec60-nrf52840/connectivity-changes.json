@@ -1,33 +1,8 @@
 {
-  "reference_commit": "004919895992db7432644d420d133dab4cb42eb8",
+  "reference_commit": "39ae3cc59d0e98faf3aea6630d677b6c8c9ea990",
   "regressed_pairs": [],
   "improved_pairs": [],
-  "new_component_pairs": [
-    {
-      "net": "ITERM_SET",
-      "a": [
-        "R56",
-        "1"
-      ],
-      "b": [
-        "U5",
-        "15"
-      ],
-      "connected": true
-    },
-    {
-      "net": "TMR_SET",
-      "a": [
-        "R55",
-        "1"
-      ],
-      "b": [
-        "U5",
-        "14"
-      ],
-      "connected": true
-    }
-  ],
+  "new_component_pairs": [],
   "scope": "Union of baseline and current non-GND schematic pad pairs; missing new pads do not count as old regressions. Current native audit verifies every new pair and GND.",
   "source_sha256": {
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",

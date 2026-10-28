@@ -13,7 +13,7 @@ python3 scripts/simulate_yeti60_firmware.py
 
 测试将实际核心 C 源码编入主机程序，并启用 ASan/UBSan。覆盖全部 75 个扫描位置、多路选择器地址及分组、开漏充放电顺序、单行驱动、等待时序、滞回与两帧去抖、ADC 故障中止整帧及释放按键、模拟前端断电高阻、USB100/USB500/挂起控制、按住按键时 USB/BLE 报告切换、启动协议溢出、发送失败重试、重入排除和电池分压开启后 50 ms 等待。固定种子的 2000 帧噪声场景检查滞回带内的逻辑行为。
 
-核心还检查 HAL／配置自引用重新初始化、无效 USB 模式值，以及切换输出时旧主机清键失败后的重试。成功扫描帧导出为 [CSV 轨迹](../../docs/audit/yeti60-firmware-trace.csv)，并提供[根据轨迹绘制的图表](../../renders/yeti60-firmware/README.zh-CN.md)。
+核心还检查 HAL／配置自引用重新初始化、无效 USB 模式值，以及切换输出时旧主机清键失败后的重试。`yeti_afe()` 可在保持 `powered` 状态和按键矩阵的同时关断 U8／AFE_3V3；关断后 `yeti_scan()` 拒绝扫描，重新上电时等待配置的稳定时间。主机测试覆盖关断、拒绝扫描和恢复。成功扫描帧导出为 [CSV 轨迹](../../docs/audit/yeti60-firmware-trace.csv)，并提供[根据轨迹绘制的图表](../../renders/yeti60-firmware/README.zh-CN.md)。
 
 ## 限制
 

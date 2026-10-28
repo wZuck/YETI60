@@ -98,28 +98,36 @@ int yeti_init(struct yeti_core *s, const struct yeti_hal *hal,
   s->busy = false;
   return 0;
 }
+static void afe_up(struct yeti_core *s) {
+  high_z(s);
+  io(s, PIN_AFE_EN, Y_HIGH);
+  wait(s, s->cfg.afe_settle_us);
+  rows_low(s);
+  for (unsigned i = 0; i < 3; i++)
+    io(s, yeti_sel[i], Y_LOW);
+  inhibit(s);
+  io(s, PIN_APLEX_OUT_PIN_0, Y_OD_LOW);
+}
+static void afe_down(struct yeti_core *s) {
+  rows_low(s);
+  inhibit(s);
+  io(s, PIN_APLEX_OUT_PIN_0, Y_OD_LOW);
+  high_z(s);
+  io(s, PIN_AFE_EN, Y_LOW);
+}
 int yeti_power(struct yeti_core *s, bool on) {
   if (!s || !s->initialized || s->busy)
     return -1;
-  if (on == s->powered)
+  if (on == s->powered && (!on || s->afe_on))
     return 0;
   s->busy = true;
   if (on) {
-    high_z(s);
-    io(s, PIN_AFE_EN, Y_HIGH);
-    wait(s, s->cfg.afe_settle_us);
-    rows_low(s);
-    for (unsigned i = 0; i < 3; i++)
-      io(s, yeti_sel[i], Y_LOW);
-    inhibit(s);
-    io(s, PIN_APLEX_OUT_PIN_0, Y_OD_LOW);
+    afe_up(s);
+    s->afe_on = true;
     s->powered = true;
   } else {
-    rows_low(s);
-    inhibit(s);
-    io(s, PIN_APLEX_OUT_PIN_0, Y_OD_LOW);
-    high_z(s);
-    io(s, PIN_AFE_EN, Y_LOW);
+    afe_down(s);
+    s->afe_on = false;
     s->powered = false;
     memset(s->matrix, 0, sizeof(s->matrix));
     memset(s->count, 0, sizeof(s->count));
@@ -129,8 +137,22 @@ int yeti_power(struct yeti_core *s, bool on) {
   s->busy = false;
   return 0;
 }
+int yeti_afe(struct yeti_core *s, bool on) {
+  if (!s || !s->initialized || s->busy || !s->powered)
+    return -1;
+  if (on == s->afe_on)
+    return 0;
+  s->busy = true;
+  if (on)
+    afe_up(s);
+  else
+    afe_down(s);
+  s->afe_on = on;
+  s->busy = false;
+  return 0;
+}
 int yeti_scan(struct yeti_core *s) {
-  if (!s || !s->initialized || !s->powered || s->busy)
+  if (!s || !s->initialized || !s->powered || !s->afe_on || s->busy)
     return -1;
   s->busy = true;
   uint16_t samples[YETI_ROWS][YETI_COLS];

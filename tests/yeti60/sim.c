@@ -322,6 +322,23 @@ static void retry_and_contract_edges(void) {
   puts("contract-edges: enum rejection, aliased reinit, modifier report, "
        "failed old-host release retry and overrange ADC pass");
 }
+static void afe_gating(void) {
+  struct yeti_core c;
+  struct sim s;
+  init(&c, &s);
+  assert(yeti_power(&c, true) == 0 && c.afe_on);
+  scan(&c, &s);
+  assert(yeti_afe(&c, false) == 0 && !c.afe_on && c.powered);
+  assert(yeti_scan(&c) == -1);
+  assert(yeti_afe(&c, true) == 0 && c.afe_on);
+  scan(&c, &s);
+  assert(yeti_afe(&c, false) == 0 && !c.afe_on);
+  assert(yeti_power(&c, true) == 0 && c.afe_on && c.powered);
+  assert(yeti_power(&c, false) == 0 && !c.powered && !c.afe_on);
+  assert(yeti_afe(&c, true) == -1);
+  puts("afe-gating: AFE can be removed while powered, scan rejects it, and "
+       "power-on restores it");
+}
 static void callback_exclusion(void) {
   struct yeti_core c;
   struct sim s;
@@ -362,6 +379,8 @@ int main(void) {
   power_hid();
   trace_phase = "contract-edges";
   retry_and_contract_edges();
+  trace_phase = "afe-gating";
+  afe_gating();
   trace_phase = "callbacks";
   callback_exclusion();
   puts("YETI60 host simulation passed; transport, ADC and GPIO are mocked, not "

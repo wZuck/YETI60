@@ -4,6 +4,8 @@ English | [Chinese](README.zh-CN.md)
 
 The [P2 checkpoint](../design-checkpoint.md) describes the current design and remaining physical/supplier work. The comprehensive review records current evidence and acceptance limits. Passing checks is not production approval.
 
+[Feasibility and component compatibility assessment](2026-10-28-feasibility-assessment.md)
+
 | Scope | Current evidence |
 |---|---|
 | Unified result | [Stage outcomes](outcome.json), [integration](integration.json) |

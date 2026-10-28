@@ -1,0 +1,154 @@
+{
+  "revision": "YETI60-P2-INTERCONNECT-1",
+  "units": "mm",
+  "scope": "Controlled internal routes, prototype design; supplier and physical qualification remain open",
+  "sources": {
+    "SH": {
+      "url": "https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf",
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "header": "SM04B-SRSS-TB(LF)(SN)",
+      "housing": "SHR-04V-S",
+      "contact": "SSH-003T-P0.2-H",
+      "housing_width": 5,
+      "housing_depth": 5,
+      "housing_height": 2.8,
+      "mated_depth_reference": 6.25,
+      "header_back_local_y": -1.675,
+      "header_front_local_y": 2.575
+    },
+    "PH": {
+      "url": "https://www.jst.com/wp-content/uploads/2025/06/ePH.pdf",
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "header": "S3B-PH-SM4-TB(LF)(SN)",
+      "housing": "PHR-3",
+      "contact": "SPH-004T-P0.5S",
+      "housing_width": 7.8,
+      "housing_depth": 6.35,
+      "housing_height": 4.5,
+      "mated_depth_reference": 9.6,
+      "header_back_local_y": -1.6,
+      "header_front_local_y": 4.4
+    }
+  },
+  "wire": {
+    "gauge": "AWG28 stranded copper",
+    "insulation_od_max": 0.8,
+    "SH_allowed_od": [
+      0.4,
+      0.8
+    ],
+    "PH_contact_allowed_od": [
+      0.5,
+      0.9
+    ],
+    "minimum_static_bend_radius": 4,
+    "bend_rule_basis": "Chosen engineering requirement, not a vendor bend-radius guarantee; wire supplier must approve",
+    "case_and_route_position_allowance": 0.25,
+    "minimum_air_gap_after_allowance": 0.15,
+    "manufactured_free_length_tolerance": 0.5,
+    "length_definition": "Along each conductor insulation between the two housing wire-exit planes, or housing exit to pack strain-relief face; not a crimp cut-length"
+  },
+  "usb": {
+    "part": "YETI60-CABLE-USB-P2",
+    "pin_map": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4"
+    },
+    "colors": {
+      "1": "red",
+      "2": "white",
+      "3": "green",
+      "4": "black"
+    },
+    "lateral_offsets": [
+      1.5,
+      0.5,
+      -0.5,
+      -1.5
+    ],
+    "nominal_centerline_length": 150,
+    "main_exit_below_pcb": 1.6,
+    "daughterboard_exit_above_pcb": 1.4,
+    "endpoint_height_basis": "Engineering lead-exit datums bounded by conservative mated envelopes; vendor drawing must confirm",
+    "radius": 6,
+    "high_z": -3.2,
+    "low_z": -4.8,
+    "rear_y": -106,
+    "first_corner_x": 134.5,
+    "drop_x": 200,
+    "drop_y": -115,
+    "end_straight": 2,
+    "front_y_search": [
+      -145,
+      -139
+    ]
+  },
+  "battery": {
+    "part": "YETI60-CABLE-BAT-P2",
+    "pin_map": {
+      "1": "PACK+",
+      "2": "PACK-",
+      "3": "NTC"
+    },
+    "colors": {
+      "1": "red",
+      "2": "black",
+      "3": "yellow"
+    },
+    "lateral_offsets": [
+      2,
+      0,
+      -2
+    ],
+    "main_exit_below_pcb": 2.75,
+    "radius": 7,
+    "rear_y": -106,
+    "side_x": 221,
+    "drop_y": -119,
+    "pack_exit_local": [
+      0,
+      14,
+      4.3
+    ],
+    "pack_exit_axis": "-X; local origin is pack minimum X/Y/Z, not cell origin",
+    "minimum_pack_lead_transition_zone_length": 5
+  },
+  "plug_envelope_allowance": 0.2,
+  "guides": {
+    "part": "YETI60-GUIDE-P2",
+    "rear_x": [
+      170,
+      190
+    ],
+    "rear_y": -106,
+    "rear_depth": 2,
+    "rear_width": 7,
+    "front_x": 207,
+    "front_depth": 1.8,
+    "front_width": 6,
+    "groove_radius": 0.5,
+    "base_bond_gap": 0.1,
+    "base_to_bridge_bond_gap": 0.05,
+    "minimum_floor_web": 0.3,
+    "retention_film_thickness": 0.1,
+    "material": "Dimensionally qualified tough polymer; no conductive or sharp clamp against insulation",
+    "installation": "Lay completed harnesses into open grooves, bond the removable bridge at side lands, retain upper wires with 0.1mm insulating film; no threading plugs through closed holes",
+    "physical_acceptance": "Verify groove finish, bonding, wire position within +/-0.1mm and removal without insulation damage"
+  },
+  "not_verified": [
+    "Actual wire springback, dynamic flex, insulation abrasion and retention pull force",
+    "External USB cable overmould selection",
+    "Supplier complete pack drawing and electrical/thermal qualification",
+    "SI/RF, deferred by user"
+  ]
+}

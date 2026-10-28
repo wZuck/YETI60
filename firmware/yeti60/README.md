@@ -13,7 +13,7 @@ python3 scripts/simulate_yeti60_firmware.py
 
 The host executable runs the actual core C source under AddressSanitizer and UndefinedBehaviorSanitizer. Coverage includes all 75 scan positions, mux bank/address and open-drain sequencing, one driven row at a time, explicit settling/discharge/acquisition waits, hysteresis and two-frame debounce, ADC failure with atomic frame abort, released keys on fault, AFE high-Z shutdown, USB100/USB500/suspend controls, held-key USB/BLE report handover, boot-protocol rollover, send retries, reentrancy exclusion and a 50 ms battery-divider settling delay. A deterministic 2,000-frame noise scenario checks logic behavior within the hysteresis band.
 
-The core also checks aliased HAL/configuration reinitialization, invalid USB mode values and retrying a failed old-host release during transport changes. Successful scan frames are exported as a [CSV trace](../../docs/audit/yeti60-firmware-trace.csv), with a [trace-derived plot](../../renders/yeti60-firmware/README.md).
+The core also checks aliased HAL/configuration reinitialization, invalid USB mode values and retrying a failed old-host release during transport changes. `yeti_afe()` can remove U8/AFE_3V3 while preserving the `powered` state and key matrix; `yeti_scan()` rejects an off AFE and a wake waits for the configured settling time. Host tests cover shutdown, scan rejection and recovery. Successful scan frames are exported as a [CSV trace](../../docs/audit/yeti60-firmware-trace.csv), with a [trace-derived plot](../../renders/yeti60-firmware/README.md).
 
 ## Limits
 

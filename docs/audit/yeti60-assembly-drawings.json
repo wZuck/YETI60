@@ -6,8 +6,8 @@
     "docs/audit/yeti60-battery-pocket.json": "225c7f05911aeff0ea832b9bb6aedb998191420d0603cd95658f230df76566e5",
     "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
     "mechanical/battery-pocket-study.json": "6983679949ebb0b6bde4a7fd28b44a813305e1663c5d995cf95cf5eff22be23f",
-    "docs/audit/yeti60-daughterboard.json": "5be70e48a9b47bb2d3eba12f27940355eebda2f978c8e446e2dfa12b2acf294a",
-    "scripts/export_yeti60_daughterboard.py": "d832aea521e11484b7451fa7f09677852d3457bc521b308a26bd0fe47d93d80f"
+    "docs/audit/yeti60-daughterboard.json": "7ad0b7179f6cd2c628e1df496451769489ddc05c003e9715d2c284a4304695e0",
+    "scripts/export_yeti60_daughterboard.py": "9ea256a59ebd621fd8668c40789b7e0c67ba1459fa8e80fe9003494b386cbdbf"
   },
   "geometry_sources": {
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",
@@ -18,14 +18,14 @@
   },
   "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279",
   "outputs": {
-    "docs/engineering/images/assembly.zh-CN.png": "b1edc9a7df0a784b6ec2c850dcfcfc1c50830449003741bb7009e51c4b54dcd2",
+    "docs/engineering/images/assembly.zh-CN.png": "7546e35a231a3148b61baa0e7fabf8908c575c84d444213d10f47bef8d0c622f",
     "docs/engineering/images/battery-pocket.svg": "d0240dc8a9376b56cddd8bba1c33aeb05ecd0b6a17bbb1372efd6478c5b62414",
     "docs/engineering/images/battery-pocket.zh-CN.png": "36eab5df3a6fdf655ea06b00cba32562dd2d90b47daaf09d9db01e0377fb1243",
     "docs/engineering/images/battery-pocket.zh-CN.svg": "a7de68063ff210f245bc3ab47addddcc9ead673edf4f0f86fd41e0fd25544822",
-    "docs/engineering/images/assembly.zh-CN.svg": "7cae939de7b0fff1dab41da7bcaaf7093e251ea7d66cdfd3a3cbf37d36c746dc",
+    "docs/engineering/images/assembly.zh-CN.svg": "da876262b6ab496461534b2057f40d37d226e41381171c19631796d8ae369f3a",
     "docs/engineering/images/battery-pocket.png": "f9dfadf4fdaede1cde16119d5fb74ae056446e355a9d91f0f71818f06efb131b",
-    "docs/engineering/images/assembly.svg": "2b0e06c7ba969e2517f2a6d42d4f620fad007e41e8bb5262d982b54ec7ccc488",
-    "docs/engineering/images/assembly.png": "db906be0c0260863dd2b1d79d624179854601c5aa21370102a16afafab9b6356"
+    "docs/engineering/images/assembly.svg": "d122c0957ab0481be042a5f8b714583e40a73cb0186c4acaec13c9f8d6a6428d",
+    "docs/engineering/images/assembly.png": "2ed29a7ef5fdb549e5dd8d448f3adeed3314d96bf6014910286c4d41d3541335"
   },
   "limits": [
     "Exploded offsets are for presentation, original case meshes are unscaled",
