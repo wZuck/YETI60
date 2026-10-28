@@ -18,6 +18,8 @@
 | 电池 | 定制 200 mAh 电池包设计包络为 50×20×2.9 mm；供应商签图、独立温度保护及容量验收待完成 |
 | 可视化 | 现有图像待按本阶段设计重新生成 |
 
+- [材料与采购表](docs/engineering/materials.zh-CN.md)
+- [PCB 标记清理](docs/engineering/board-markings.zh-CN.md)
 - [完整复查](docs/audit/yeti60-comprehensive-review.zh-CN.md)
 - [硬件及特殊制板要求](hardware/ec60-nrf52840/README.zh-CN.md)
 - [控制核心、模拟和轨迹](firmware/yeti60/README.zh-CN.md)

@@ -18,6 +18,8 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 | Battery | Custom 200 mAh pack design envelope 50×20×2.9 mm; supplier drawing, thermal protection and capacity approval pending |
 | Visualization | Published images are pending regeneration from this checkpoint |
 
+- [Materials and procurement table](docs/engineering/materials.md)
+- [PCB marking cleanup](docs/engineering/board-markings.md)
 - [Complete review](docs/audit/yeti60-comprehensive-review.md)
 - [Hardware and fabrication notes](hardware/ec60-nrf52840/README.md)
 - [Firmware core, simulation and trace](firmware/yeti60/README.md)

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "baseline_commit": "27894700dd021e40957199dce596f0e5130db60c",
+  "source_sha256": "81d7b0595eb77fa5cdc196dcdd24e11cfca2cdd80f83c0e9a381e749fbe1fec5",
+  "removed_nonfunctional_markings": [
+    "YETI60 / EC60 by Cipulot"
+  ],
+  "retained": "Every other native item, including all copper, mask, footprints, pads, holes, outline, numbers and fabrication/assembly text",
+  "upstream_attribution": "Retained in project documentation",
+  "electrical_geometry_unchanged": true
+}
