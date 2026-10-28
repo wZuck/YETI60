@@ -1,17 +1,18 @@
 {
   "status": "conditional-fit-review",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e45415e3f5cf36a821e26047ffe5098127dd1948eb1f87d23fe1012b71199d76",
-    "felk60/felk60_bottom.step": "f4987879940643cb5b0d66145b944efb435994abe4d18808da4e45d16bb8c44b",
-    "felk60/felk60_top_hhkb.step": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "41b085368c0a723f8c3111786340207cdde2f98d9a41d502c46478e9c1a606ad",
+    "mechanical/generated/yeti60-bottom.step": "40332df5f914fc9594f38516d77aad0a00581b47151a0fd5c6cb3e7364440e14",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "mechanical/assembly-spec.json": "fa63a7ad0986f37e5efba12f681b8771a3b6477c3c35f4d38956f0be6771b139",
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51"
   },
   "verification_recipe_sha256": {
-    "scripts/check_yeti60_assembly.py": "6a2da9b00965bad753f53c51fd708b9042a1330d7dd6382316ba2fd5b607fe26",
-    "scripts/cad_geometry.py": "838142046e53f4927f294dddbbb06d0152e018043229b30cc54809519f80545f",
+    "scripts/check_yeti60_assembly.py": "86fc336b8062ff448e5ac4aa744a4113dee30f3606d604b997ca4fa25e7ca853",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/export_yeti60_mechanical_metadata.py": "22ebeac89f8839f7fddb0a84dbcf6be2244dc7c55e3382cd6805f8e58d94525e"
   },
-  "mechanical_metadata_sha256": "662c45cb1aff086d25ee262c025b280ca154502ef4e97e2150b9400f5e7a751b",
+  "mechanical_metadata_sha256": "8a11ffa7649189df58631e92b2be38096a4aebaf6f5a030a2bd279ba966b56a2",
   "pcb_frame_to_case": "X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z",
   "nominal_stack": {
     "bottom_gasket_ledge_z": 3.19,
@@ -22,7 +23,7 @@
     "pcb_to_plate_gap_mm": 4.6,
     "pcb_top_z": -0.40999999999999925,
     "pcb_bottom_z": -1.9999999999999993,
-    "pcb_gap_basis": "PROVISIONAL parameter; Topre dome/housing/standoff stack is not dimensionally qualified"
+    "pcb_gap_basis": "4.5 mm machined shoulder plus 0.1 mm insulating film; physical dome/housing acceptance requires first article"
   },
   "mounting_hole_matches": [
     {
@@ -30,208 +31,469 @@
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        304.800204,
+        -170.25966
+      ],
+      "plate_center_case_mm": [
+        304.800204,
+        -170.25966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     },
     {
       "pcb_ref": "H10",
       "center_offset_mm": 2.842170943040401e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167,
+      "pcb_center_case_mm": [
+        314.325204,
+        -151.20966
+      ],
+      "plate_center_case_mm": [
+        314.325204,
+        -151.20966000000004
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
     },
     {
       "pcb_ref": "H18",
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        266.700204,
+        -170.25966
+      ],
+      "plate_center_case_mm": [
+        266.700204,
+        -170.25966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     },
     {
       "pcb_ref": "H12",
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        228.600204,
+        -170.25966
+      ],
+      "plate_center_case_mm": [
+        228.600204,
+        -170.25966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     },
     {
       "pcb_ref": "H9",
       "center_offset_mm": 2.842170943040401e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167,
+      "pcb_center_case_mm": [
+        276.225204,
+        -151.20966
+      ],
+      "plate_center_case_mm": [
+        276.225204,
+        -151.20966000000004
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
     },
     {
       "pcb_ref": "H5",
       "center_offset_mm": 2.842170943040401e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167,
+      "pcb_center_case_mm": [
+        238.125204,
+        -151.20966
+      ],
+      "plate_center_case_mm": [
+        238.125204,
+        -151.20966000000004
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
     },
     {
       "pcb_ref": "H17",
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        152.400204,
+        -170.25966
+      ],
+      "plate_center_case_mm": [
+        152.400204,
+        -170.25966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     },
     {
       "pcb_ref": "H19",
       "center_offset_mm": 4.0194366942304644e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.0999999999999599
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.0999999999999599,
+      "pcb_center_case_mm": [
+        161.925204,
+        -151.20966
+      ],
+      "plate_center_case_mm": [
+        161.92520400000004,
+        -151.20966000000004
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999995995
     },
     {
       "pcb_ref": "H4",
       "center_offset_mm": 1.4210854715202004e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999998588
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999998588,
+      "pcb_center_case_mm": [
+        114.300204,
+        -170.25966
+      ],
+      "plate_center_case_mm": [
+        114.30020400000001,
+        -170.25966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999998593
     },
     {
       "pcb_ref": "H6",
       "center_offset_mm": 3.1776437161565096e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999996831
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999996831,
+      "pcb_center_case_mm": [
+        123.825204,
+        -151.20966
+      ],
+      "plate_center_case_mm": [
+        123.82520400000001,
+        -151.20966000000004
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.1299999999999684
     },
     {
       "pcb_ref": "REF**",
       "center_offset_mm": 0.05336665625652582,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.04663334374347427
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.04663334374347427,
+      "pcb_center_case_mm": [
+        331.862704,
+        -131.80966
+      ],
+      "plate_center_case_mm": [
+        331.91470400000003,
+        -131.82166
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.0766333437434743
     },
     {
       "pcb_ref": "H14",
       "center_offset_mm": 2.842170943040401e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167,
+      "pcb_center_case_mm": [
+        290.512704,
+        -132.15966
+      ],
+      "plate_center_case_mm": [
+        290.512704,
+        -132.15966000000003
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
     },
     {
       "pcb_ref": "H16",
       "center_offset_mm": 4.0194366942304644e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.0999999999999599
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.0999999999999599,
+      "pcb_center_case_mm": [
+        252.412704,
+        -132.15966
+      ],
+      "plate_center_case_mm": [
+        252.41270400000002,
+        -132.15966000000003
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999995995
     },
     {
       "pcb_ref": "H22",
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        261.937704,
+        -113.10966
+      ],
+      "plate_center_case_mm": [
+        261.937704,
+        -113.10966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     },
     {
       "pcb_ref": "H2",
       "center_offset_mm": 2.842170943040401e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167,
+      "pcb_center_case_mm": [
+        223.837704,
+        -113.10966
+      ],
+      "plate_center_case_mm": [
+        223.83770400000003,
+        -113.10966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
     },
     {
       "pcb_ref": "REF**",
       "center_offset_mm": 0.012500000000017053,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.08749999999998304
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.08749999999998304,
+      "pcb_center_case_mm": [
+        200.012704,
+        -150.90966
+      ],
+      "plate_center_case_mm": [
+        200.02520400000003,
+        -150.90966000000003
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.11749999999998308
     },
     {
       "pcb_ref": "H21",
       "center_offset_mm": 4.0194366942304644e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.0999999999999599
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.0999999999999599,
+      "pcb_center_case_mm": [
+        214.312704,
+        -132.15966
+      ],
+      "plate_center_case_mm": [
+        214.31270400000002,
+        -132.15966000000003
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999995995
     },
     {
       "pcb_ref": "H15",
       "center_offset_mm": 2.842170943040401e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167,
+      "pcb_center_case_mm": [
+        176.212704,
+        -132.15966
+      ],
+      "plate_center_case_mm": [
+        176.212704,
+        -132.15966000000003
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
     },
     {
       "pcb_ref": "H13",
       "center_offset_mm": 2.842170943040401e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167,
+      "pcb_center_case_mm": [
+        138.112704,
+        -132.15966
+      ],
+      "plate_center_case_mm": [
+        138.112704,
+        -132.15966000000003
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
     },
     {
       "pcb_ref": "REF**",
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        97.012704,
+        -131.80966
+      ],
+      "plate_center_case_mm": [
+        97.012704,
+        -131.80966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     },
     {
       "pcb_ref": "H3",
       "center_offset_mm": 2.842170943040401e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167,
+      "pcb_center_case_mm": [
+        76.200204,
+        -132.15966
+      ],
+      "plate_center_case_mm": [
+        76.200204,
+        -132.15966000000003
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
     },
     {
       "pcb_ref": "H20",
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        185.737704,
+        -113.10966
+      ],
+      "plate_center_case_mm": [
+        185.737704,
+        -113.10966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     },
     {
       "pcb_ref": "H8",
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        147.637704,
+        -113.10966
+      ],
+      "plate_center_case_mm": [
+        147.637704,
+        -113.10966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     },
     {
       "pcb_ref": "H1",
       "center_offset_mm": 1.4210854715202004e-14,
       "plate_pilot_diameter_mm": 1.623,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999998588
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999998588,
+      "pcb_center_case_mm": [
+        109.537704,
+        -113.10966
+      ],
+      "plate_center_case_mm": [
+        109.53770400000002,
+        -113.10966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999998593
     },
     {
       "pcb_ref": "H7",
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.6230000000000189,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        309.432392,
+        -189.30966
+      ],
+      "plate_center_case_mm": [
+        309.432392,
+        -189.30966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     },
     {
       "pcb_ref": "H24",
       "center_offset_mm": 1.3999999993075107e-05,
       "plate_pilot_diameter_mm": 1.6229999999999833,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09998600000000701
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09998600000000701,
+      "pcb_center_case_mm": [
+        97.631468,
+        -189.30966
+      ],
+      "plate_center_case_mm": [
+        97.631454,
+        -189.30966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12998600000000707
     },
     {
       "pcb_ref": "H26",
       "center_offset_mm": 2.842170943040401e-14,
       "plate_pilot_diameter_mm": 1.6230000000000189,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.09999999999997167,
+      "pcb_center_case_mm": [
+        223.837704,
+        -189.30966
+      ],
+      "plate_center_case_mm": [
+        223.83770400000003,
+        -189.30966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
     },
     {
       "pcb_ref": "H25",
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.6229999999999833,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        145.256454,
+        -189.30966
+      ],
+      "plate_center_case_mm": [
+        145.256454,
+        -189.30966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     },
     {
       "pcb_ref": "H23",
       "center_offset_mm": 0.0,
       "plate_pilot_diameter_mm": 1.6230000000000189,
       "pcb_min_clearance_diameter_mm": 2.2,
-      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009
+      "nominal_M2_radial_margin_before_tolerances_mm": 0.10000000000000009,
+      "pcb_center_case_mm": [
+        319.087704,
+        -113.10966
+      ],
+      "plate_center_case_mm": [
+        319.087704,
+        -113.10966
+      ],
+      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
     }
   ],
   "max_hole_center_offset_mm": 0.05336665625652582,
   "min_M2_radial_margin_before_tolerances_mm": 0.04663334374347427,
-  "power_switch_access": "SW100 remains internal; no external actuator opening or extension is defined",
+  "power_switch_access": "8 mm underside service port; insulated-tool access to SW100",
   "plate_profile_chord_error_mm": 0.002,
   "active_key_positions": [
     {
@@ -543,8 +805,8 @@
     0.0
   ],
   "pcb_case_distances_mm": [
-    0.7999600063505738,
-    5.261172494013115
+    0.7999600063555761,
+    5.261172494015233
   ],
   "plate_case_overlap_mm3": [
     0.0,
@@ -581,7 +843,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000854
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -613,7 +875,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000065
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -645,7 +907,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000827
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -677,7 +939,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000659
+      "min_case_distance_mm": 0.9099999999999859
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -709,7 +971,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000659
+      "min_case_distance_mm": 0.9099999999999859
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -741,7 +1003,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000827
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -773,7 +1035,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000845
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -805,7 +1067,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000065
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -837,7 +1099,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000925
+      "min_case_distance_mm": 0.9100000000000126
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -869,7 +1131,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000934
+      "min_case_distance_mm": 0.9100000000000135
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -901,7 +1163,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000819
+      "min_case_distance_mm": 0.9100000000000019
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -933,7 +1195,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000065
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -965,7 +1227,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000081
+      "min_case_distance_mm": 0.910000000000001
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -997,7 +1259,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000854
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1029,7 +1291,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000854
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1061,7 +1323,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000827
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1093,7 +1355,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000792
+      "min_case_distance_mm": 0.9099999999999993
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1125,7 +1387,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000685
+      "min_case_distance_mm": 0.9099999999999886
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1157,7 +1419,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000659
+      "min_case_distance_mm": 0.9099999999999859
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1189,7 +1451,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000676
+      "min_case_distance_mm": 0.9099999999999877
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1221,7 +1483,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000854
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1253,7 +1515,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000952
+      "min_case_distance_mm": 0.9100000000000152
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1285,7 +1547,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000685
+      "min_case_distance_mm": 0.9099999999999886
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1317,7 +1579,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000961
+      "min_case_distance_mm": 0.9100000000000161
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1349,7 +1611,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000792
+      "min_case_distance_mm": 0.9099999999999993
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1381,7 +1643,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000836
+      "min_case_distance_mm": 0.9100000000000037
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1413,7 +1675,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000854
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1445,7 +1707,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000934
+      "min_case_distance_mm": 0.9100000000000135
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1477,7 +1739,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000097
+      "min_case_distance_mm": 0.910000000000017
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1509,7 +1771,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000659
+      "min_case_distance_mm": 0.9099999999999859
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1541,7 +1803,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000845
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1573,7 +1835,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000854
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1605,7 +1867,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000952
+      "min_case_distance_mm": 0.9100000000000152
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1637,7 +1899,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000978
+      "min_case_distance_mm": 0.9100000000000179
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1669,7 +1931,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000827
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1701,7 +1963,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 1.860000000000091
+      "min_case_distance_mm": 1.860000000000011
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1733,7 +1995,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000863
+      "min_case_distance_mm": 0.9100000000000064
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1765,7 +2027,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000961
+      "min_case_distance_mm": 0.9100000000000161
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1797,7 +2059,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000836
+      "min_case_distance_mm": 0.9100000000000037
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1829,7 +2091,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000783
+      "min_case_distance_mm": 0.9099999999999984
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1861,7 +2123,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 3.30953676067386
+      "min_case_distance_mm": 3.3095367606594372
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1893,7 +2155,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000641
+      "min_case_distance_mm": 0.9099999999999842
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1925,7 +2187,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000854
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1957,7 +2219,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000854
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1989,7 +2251,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000827
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2021,7 +2283,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000065
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2053,7 +2315,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000783
+      "min_case_distance_mm": 0.9099999999999984
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2085,7 +2347,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000081
+      "min_case_distance_mm": 0.910000000000001
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2117,7 +2379,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000632
+      "min_case_distance_mm": 0.9099999999999833
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2149,7 +2411,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000065
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2181,7 +2443,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000774
+      "min_case_distance_mm": 0.9099999999999975
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2213,7 +2475,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000934
+      "min_case_distance_mm": 0.9100000000000135
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2245,7 +2507,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000827
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2277,7 +2539,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000854
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": [
@@ -2314,7 +2576,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 1.9096881610031937
+      "min_case_distance_mm": 1.9096881609882155
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2346,7 +2608,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000845
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2378,7 +2640,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000792
+      "min_case_distance_mm": 0.9099999999999993
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2410,7 +2672,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000819
+      "min_case_distance_mm": 0.9100000000000019
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2442,7 +2704,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000943
+      "min_case_distance_mm": 0.9100000000000144
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2474,7 +2736,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000659
+      "min_case_distance_mm": 0.9099999999999859
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2506,7 +2768,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000836
+      "min_case_distance_mm": 0.9100000000000037
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2538,7 +2800,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000668
+      "min_case_distance_mm": 0.9099999999999868
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2570,7 +2832,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000676
+      "min_case_distance_mm": 0.9099999999999877
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2602,7 +2864,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000845
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2634,7 +2896,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000845
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2666,7 +2928,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000836
+      "min_case_distance_mm": 0.9100000000000037
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2698,7 +2960,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000827
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2730,7 +2992,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000659
+      "min_case_distance_mm": 0.9099999999999859
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2762,7 +3024,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000978
+      "min_case_distance_mm": 0.9100000000000179
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2794,7 +3056,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000659
+      "min_case_distance_mm": 0.9099999999999859
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2826,7 +3088,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000854
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2858,7 +3120,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000783
+      "min_case_distance_mm": 0.9099999999999984
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2890,7 +3152,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000792
+      "min_case_distance_mm": 0.9099999999999993
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2922,7 +3184,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.4100000000000792
+      "min_case_distance_mm": 0.40999999999999925
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2954,7 +3216,7 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000819
+      "min_case_distance_mm": 0.9100000000000019
     }
   ],
   "colliding_envelopes": [],
@@ -3008,82 +3270,98 @@
   "battery_candidates": [
     {
       "bounds_case_mm": [
-        155,
-        -179,
+        155.9,
+        -179.3,
         -5.399999999999999,
-        205,
-        -159,
+        205.9,
+        -159.3,
         -2.499999999999999
       ],
       "size_mm": [
-        50,
-        20,
+        50.0,
+        20.0,
         2.9
       ],
       "case_overlap_mm3": [
         0.0,
         0.0
       ],
-      "envelope_must_include_swelling_and_protection": true,
       "component_xy_and_fastener_keepouts_clear": true,
-      "bottom_case_distance_mm": 0.5100000000000673,
-      "top_insulation_gap_mm": 0.5,
-      "status": "provisional-pack-envelope-not-a-selected-battery"
-    },
-    {
-      "bounds_case_mm": [
-        312,
-        -180,
-        -5.399999999999999,
-        352,
-        -160,
-        -2.499999999999999
-      ],
-      "size_mm": [
-        40,
-        20,
-        2.9
-      ],
-      "case_overlap_mm3": [
-        0.0,
-        0.0
-      ],
       "envelope_must_include_swelling_and_protection": true,
-      "component_xy_and_fastener_keepouts_clear": true,
-      "bottom_case_distance_mm": 0.5100000000000673,
+      "bottom_case_distance_mm": 0.5099999999999874,
       "top_insulation_gap_mm": 0.5,
-      "status": "provisional-pack-envelope-not-a-selected-battery"
-    },
-    {
-      "bounds_case_mm": [
-        187,
-        -197,
-        -5.399999999999999,
-        217,
-        -177,
-        -2.499999999999999
-      ],
-      "size_mm": [
-        30,
-        20,
-        2.9
-      ],
-      "case_overlap_mm3": [
-        0.0,
-        0.0
-      ],
-      "envelope_must_include_swelling_and_protection": true,
-      "component_xy_and_fastener_keepouts_clear": true,
-      "bottom_case_distance_mm": 0.5100000000000584,
-      "top_insulation_gap_mm": 0.5,
-      "status": "provisional-pack-envelope-not-a-selected-battery"
+      "status": "custom-pack-design-envelope-supplier-qualification-pending"
     }
   ],
   "not_verified": [
-    "Final switch/dome/fastener PCB-to-plate gap and tolerances",
-    "Actual battery/protection/NTC, swelling/insulation, cable bend and daughterboard envelope",
-    "J2 mating plug and current component height assumptions except sourced Raytac and JST body heights",
-    "Resin insert conversion and print shrinkage; original M3 metal-thread pilots are retained",
-    "Generic keycap shapes in renders are illustrative, not qualified OEM CAD"
-  ]
+    "Physical first-article dome/housing fit, printed-resin properties and insert pullout",
+    "Supplier-signed custom battery drawing, thermal protection and production capacity acceptance",
+    "Actual enclosure USB enumeration, pairing, charging, runtime and wake measurements"
+  ],
+  "case_files": {
+    "bottom": "mechanical/generated/yeti60-bottom.step",
+    "top": "mechanical/generated/yeti60-top.step"
+  },
+  "selected_battery": {
+    "part": "YETI60-BAT-200-1S",
+    "type": "Custom protected 1S 4.2 V lithium-polymer pack with independent thermal protection and third-wire NTC",
+    "nominal_capacity_mAh": 200,
+    "cell_reference": "DNK 252040; preliminary reference only, assembler must confirm the signed pack drawing",
+    "full_envelope_including_growth": [
+      50.0,
+      20.0,
+      2.9
+    ],
+    "bounds_xy": [
+      155.9,
+      -179.3,
+      205.9,
+      -159.3
+    ],
+    "maximum_charge_current_mA": 100,
+    "charger_input_mode": "USB100 only",
+    "thermal_protection_actual_window_C": [
+      0,
+      45
+    ],
+    "thermal_protection_target_window_C": [
+      5,
+      40
+    ],
+    "temperature_protection": "Pack PCM must independently interrupt charging outside its guaranteed window; a voltage/current-only PCM is not a substitute",
+    "ntc": "10k 103AT-2 compatible, thermally coupled to cell, separate from PCM thermal protection",
+    "connector": "JST PHR-3; pin1 PACK+, pin2 PACK-, pin3 NTC to PACK-",
+    "procurement_status": "Manufacturing specification defined; signed supplier drawing and first article required before procurement approval",
+    "position_tolerance": 0.25,
+    "fastener_exclusion_radius": 3.4
+  },
+  "selected_fasteners": {
+    "part": "YETI60-STANDOFF-46",
+    "material": "Machined brass",
+    "body_diameter": 3.5,
+    "shoulder_length": 4.5,
+    "top_thread": "M2x0.4",
+    "top_stud_length": 1.0,
+    "bottom_thread": "M1.6x0.35",
+    "bottom_thread_depth": 3.2,
+    "thread_concentricity": 0.02,
+    "screw": "M1.6x5 pan head",
+    "screw_major_diameter_max": 1.6,
+    "washer": "M2 DIN 9021",
+    "washer_od_max": 6.0,
+    "washer_id": 2.2,
+    "washer_thickness": 0.8,
+    "insulation_thickness": 0,
+    "pcb_hole_minus_tolerance": 0.05,
+    "pcb_hole_position_tolerance": 0.075,
+    "plate_hole_position_tolerance": 0.05,
+    "shoulder_length_tolerance": 0.03,
+    "top_insulator_material": "Polyimide film",
+    "top_insulator_thickness": 0.1,
+    "top_insulator_thickness_tolerance": 0.02,
+    "top_insulator_od": 4.5,
+    "top_insulator_id": 1.8,
+    "washer_material": "PEEK"
+  },
+  "minimum_fastener_radial_margin_worst_case_mm": 0.0766333437434743
 }

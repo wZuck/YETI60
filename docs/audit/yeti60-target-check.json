@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "variants": {
+    "normal": {
+      "arm_elf": true,
+      "hex_checksums": "passed",
+      "programmed_bytes": 226182,
+      "settings_partition_preserved": true
+    },
+    "calibrator": {
+      "arm_elf": true,
+      "hex_checksums": "passed",
+      "programmed_bytes": 301722,
+      "settings_partition_preserved": true
+    }
+  },
+  "build_manifest_sha256": "ed77e1d9c9211b69f6c343190c820a08505824ce0146ab76a2b50f437741337d",
+  "physical_verification": false
+}

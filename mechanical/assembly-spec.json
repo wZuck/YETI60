@@ -1,0 +1,164 @@
+{
+  "revision": "YETI60-P1",
+  "units": "mm",
+  "scope": "Engineering prototype design; physical first-article acceptance follows manufacture",
+  "case": {
+    "material": "SLA tough engineering resin; fully post-cured before finishing bores",
+    "external_geometry": "Original FELK60 external dimensions and shell registration",
+    "linear_tolerance": 0.15,
+    "top_insert": {
+      "thread": "M3x0.5",
+      "outside_diameter": 4.6,
+      "length": 3.0,
+      "bore_diameter": 4.85,
+      "bore_depth": 3.5,
+      "bore_start_z": 4.79,
+      "installation": "Cold bonded knurled brass insert; no heat insertion into thermoset resin",
+      "bore_tolerance": 0.05
+    },
+    "daughterboard_insert": {
+      "thread": "M2x0.4",
+      "outside_diameter": 3.2,
+      "length": 2.5,
+      "bore_diameter": 3.35,
+      "bore_depth": 2.9,
+      "bore_start_z": -10.91,
+      "bore_tolerance": 0.05
+    },
+    "service_port": {
+      "center_xy": [
+        112.0,
+        -121.0
+      ],
+      "diameter": 8.0,
+      "purpose": "Insulated-tool access to SW100 with the case closed"
+    },
+    "top_screw_axes": [
+      [
+        64.312702,
+        -101.209701
+      ],
+      [
+        64.312715,
+        -191.209701
+      ],
+      [
+        364.312715,
+        -191.209659
+      ],
+      [
+        364.312702,
+        -101.209659
+      ]
+    ],
+    "daughterboard_screw_axes": [
+      [
+        207.312702,
+        -105.3597
+      ],
+      [
+        221.312702,
+        -105.3597
+      ],
+      [
+        207.312702,
+        -117.8597
+      ],
+      [
+        221.312702,
+        -117.8597
+      ]
+    ],
+    "finished_bore_position_tolerance": 0.05
+  },
+  "stack": {
+    "plate_bottom_z": 4.19,
+    "plate_thickness": 1.2,
+    "pcb_to_plate_gap": 4.6,
+    "spacer_length_tolerance": 0.05,
+    "pcb_thickness": 1.59,
+    "pcb_thickness_tolerance": 0.1
+  },
+  "pcb_fastener": {
+    "part": "YETI60-STANDOFF-46",
+    "material": "Machined brass",
+    "body_diameter": 3.5,
+    "shoulder_length": 4.5,
+    "top_thread": "M2x0.4",
+    "top_stud_length": 1.0,
+    "bottom_thread": "M1.6x0.35",
+    "bottom_thread_depth": 3.2,
+    "thread_concentricity": 0.02,
+    "screw": "M1.6x5 pan head",
+    "screw_major_diameter_max": 1.6,
+    "washer": "M2 DIN 9021",
+    "washer_od_max": 6.0,
+    "washer_id": 2.2,
+    "washer_thickness": 0.8,
+    "insulation_thickness": 0,
+    "pcb_hole_minus_tolerance": 0.05,
+    "pcb_hole_position_tolerance": 0.075,
+    "plate_hole_position_tolerance": 0.05,
+    "shoulder_length_tolerance": 0.03,
+    "top_insulator_material": "Polyimide film",
+    "top_insulator_thickness": 0.1,
+    "top_insulator_thickness_tolerance": 0.02,
+    "top_insulator_od": 4.5,
+    "top_insulator_id": 1.8,
+    "washer_material": "PEEK"
+  },
+  "battery": {
+    "part": "YETI60-BAT-200-1S",
+    "type": "Custom protected 1S 4.2 V lithium-polymer pack with independent thermal protection and third-wire NTC",
+    "nominal_capacity_mAh": 200,
+    "cell_reference": "DNK 252040; preliminary reference only, assembler must confirm the signed pack drawing",
+    "full_envelope_including_growth": [
+      50.0,
+      20.0,
+      2.9
+    ],
+    "bounds_xy": [
+      155.9,
+      -179.3,
+      205.9,
+      -159.3
+    ],
+    "maximum_charge_current_mA": 100,
+    "charger_input_mode": "USB100 only",
+    "thermal_protection_actual_window_C": [
+      0,
+      45
+    ],
+    "thermal_protection_target_window_C": [
+      5,
+      40
+    ],
+    "temperature_protection": "Pack PCM must independently interrupt charging outside its guaranteed window; a voltage/current-only PCM is not a substitute",
+    "ntc": "10k 103AT-2 compatible, thermally coupled to cell, separate from PCM thermal protection",
+    "connector": "JST PHR-3; pin1 PACK+, pin2 PACK-, pin3 NTC to PACK-",
+    "procurement_status": "Manufacturing specification defined; signed supplier drawing and first article required before procurement approval",
+    "position_tolerance": 0.25,
+    "fastener_exclusion_radius": 3.4
+  },
+  "daughterboard": {
+    "part": "Unified Daughterboard C5 JSH",
+    "source_commit": "2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea",
+    "pcb_bottom_z": -10.91,
+    "pcb_thickness": 1.6062,
+    "source_to_case_x_offset": 139.308202,
+    "source_to_case_y_offset": -46.8167,
+    "cable": "150 mm four-wire JST-SH compatible harness; electrical pin1-to-pin1 continuity",
+    "pin_contract": {
+      "1": "VBUS",
+      "2": "D-",
+      "3": "D+",
+      "4": "GND"
+    },
+    "wire_colors": {
+      "1": "red",
+      "2": "white",
+      "3": "green",
+      "4": "black"
+    }
+  }
+}

@@ -4,3 +4,6 @@
 [submodule "EC60"]
 	path = EC60
 	url = https://github.com/4pplet/EC60.git
+[submodule "hardware/usb-daughterboard/upstream"]
+	path = hardware/usb-daughterboard/upstream
+	url = https://github.com/Unified-Daughterboard/UDB-C-JSH.git

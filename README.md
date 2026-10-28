@@ -4,7 +4,7 @@ English | [Chinese](README.zh-CN.md)
 
 A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
 
-![Nominal assembled study](renders/yeti60-assembly/assembled.png)
+> **Design checkpoint:** the PCB, target firmware and derived resin-case design have advanced beyond the published renders. Images and the earlier cross-domain integration report are historical until the remaining assembly/cable checks and render refresh complete. See [checkpoint details](docs/design-checkpoint.md).
 
 ## Current review
 
@@ -12,11 +12,11 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 
 | Scope | Evidence and result |
 |---|---|
-| PCB | Strict DRC 0 errors / 0 opens; 268 physical pin pairs pass. Inherited USB resistors corrected to 0 Ω; local power paths still need revision |
-| Firmware | New schematic-bound control core passes host ASan/UBSan simulation; actual ADC/GPIO/USB/BLE HAL and target binary remain unfinished |
+| PCB | Strict DRC 0 errors / 0 opens; 268 physical pin pairs pass. Inherited USB resistors corrected to 0 Ω; shortened local power routes use seven filled back-side microvias; HDI fabrication required |
+| Firmware | New schematic-bound control core passes host ASan/UBSan simulation; normal/calibrator target binaries now build; on-device USB/BLE and EC calibration remain pending |
 | Mechanical | Source PCB/plate/case nominal geometry has no overlap at the explicitly provisional Z stack; final dome/fastener/resin tolerances are unqualified |
-| Battery | No pack selected. A conditional 50×20×2.9 mm envelope is available under the provisional stack, not a part recommendation |
-| Visualization | Current PCB images/animation and assembled/exploded/battery-space studies, with illustrative model limits declared |
+| Battery | Custom 200 mAh pack design envelope 50×20×2.9 mm; supplier drawing, thermal protection and capacity approval pending |
+| Visualization | Published images are pending regeneration from this checkpoint |
 
 - [Complete review](docs/audit/yeti60-comprehensive-review.md)
 - [Hardware and fabrication notes](hardware/ec60-nrf52840/README.md)

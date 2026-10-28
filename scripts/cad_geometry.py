@@ -34,5 +34,3 @@ def intersection_volume(first, second):
     properties = GProp_GProps()
     BRepGProp.VolumeProperties_s(operation.Shape(), properties)
     return abs(properties.Mass())
-
-

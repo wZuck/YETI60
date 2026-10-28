@@ -45,7 +45,7 @@ def main():
     data = json.loads(REPORT.read_text())
     for name,h in data['source_sha256'].items(): assert sha(ROOT/name)==h,name
     meshes = {}
-    for name,path in [('bottom',ROOT/'felk60/felk60_bottom.step'),('top',ROOT/'felk60/felk60_top_hhkb.step'),('plate',WORK/'plate.step'),('pcb',WORK/'pcb-placed.step')]:
+    for name,path in [('bottom',ROOT/data['case_files']['bottom']),('top',ROOT/data['case_files']['top']),('plate',WORK/'plate.step'),('pcb',WORK/'pcb-placed.step')]:
         meshes[name] = tessellate(path)
     out = {'export_recipe_sha256':sha(Path(__file__)), 'geometry_helper_sha256':sha(ROOT/'scripts/cad_geometry.py'), 'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'tessellation_linear_deflection_mm':.015,'tessellation_angular_deflection_rad':.08,'case_scale':[1,1,1],'meshes':meshes}
     (WORK/'render-meshes.json').write_text(json.dumps(out,separators=(',',':')))

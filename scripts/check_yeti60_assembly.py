@@ -56,7 +56,7 @@ def build_plate(z):
     return shape,sorted(centers,key=lambda c:(-c['y'],c['x']))
 def main():
     meta=json.loads((ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json').read_text());pcbpath=ROOT/meta['source'];assert sha(pcbpath)==meta['source_sha256']
-    bottom=load(ROOT/'felk60/felk60_bottom.step');top=load(ROOT/'felk60/felk60_top_hhkb.step')
+    spec=json.loads((ROOT/'mechanical/assembly-spec.json').read_text());bottom=load(ROOT/'mechanical/generated/yeti60-bottom.step');top=load(ROOT/'mechanical/generated/yeti60-top.step')
     subprocess.run([CLI,'pcb','export','step','--board-only','--user-origin','0x0mm','-f','-o',str(WORK/'pcb-body.step'),str(pcbpath)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
     body=load(WORK/'pcb-body.step');native_bounds=bounds(body);native_thickness=native_bounds[5]-native_bounds[2]
     faces=TopExp_Explorer(body,TopAbs_FACE);base_face=None;largest=0
@@ -77,7 +77,7 @@ def main():
     # compression leave 1mm + 1.2mm plate + 1mm in the 3.2mm gap.
     plate_bottom=4.19;plate,keys=build_plate(plate_bottom);write_step(plate,WORK/'plate.step')
     plate_collision=[intersection_volume(plate,s) for s in (bottom,top)]
-    nominal_gap=4.6 # Explicit provisional PCB-top to plate-bottom distance.
+    nominal_gap=spec['stack']['pcb_to_plate_gap']
     pcb_top=plate_bottom-nominal_gap;shift=pcb_top-meta['pcb_thickness_mm'];placed=move(body,z=shift);write_step(placed,WORK/'pcb-placed.step')
     pcb_collisions=[intersection_volume(placed,s) for s in (bottom,top)];pcb_distances=[distance(placed,s) for s in (bottom,top)]
     envelopes=[];hits=[]
@@ -93,36 +93,31 @@ def main():
         center=(-circle.dxf.center.x,circle.dxf.center.y)
         choices=[(math.dist(center,h['center_pcb_mm']),i,h) for i,h in enumerate(meta['mount_holes']) if i not in used]
         offset,i,h=min(choices,key=lambda v:v[0]);used.add(i)
-        hole_matches.append({'pcb_ref':h['ref'],'center_offset_mm':offset,'plate_pilot_diameter_mm':2*circle.dxf.radius,'pcb_min_clearance_diameter_mm':min(h['drill_mm']),'nominal_M2_radial_margin_before_tolerances_mm':min(h['drill_mm'])/2-1-offset})
+        hole_matches.append({'pcb_ref':h['ref'],'center_offset_mm':offset,'plate_pilot_diameter_mm':2*circle.dxf.radius,'pcb_min_clearance_diameter_mm':min(h['drill_mm']),'nominal_M2_radial_margin_before_tolerances_mm':min(h['drill_mm'])/2-1-offset,'pcb_center_case_mm':[h['center_pcb_mm'][0],-h['center_pcb_mm'][1]],'plate_center_case_mm':[-circle.dxf.center.x,-circle.dxf.center.y],'M1_6_radial_margin_worst_case_mm':(min(h['drill_mm'])-spec['pcb_fastener']['pcb_hole_minus_tolerance']-spec['pcb_fastener']['screw_major_diameter_max'])/2-offset-spec['pcb_fastener']['pcb_hole_position_tolerance']-spec['pcb_fastener']['plate_hole_position_tolerance']-spec['pcb_fastener']['thread_concentricity']})
     assert len(hole_matches)==len(meta['mount_holes'])==29
     assert max(h['center_offset_mm'] for h in hole_matches)<.1
     # Current board and component envelopes at several plausible stack gaps.
     sweep=[]
     for gap in (4.0,4.3,4.6,4.9,5.2):
         z=plate_bottom-gap-meta['pcb_thickness_mm'];shape=move(body,z=z);sweep.append({'pcb_to_plate_gap_mm':gap,'pcb_bottom_z':z,'pcb_case_overlap_mm3':[intersection_volume(shape,c) for c in (bottom,top)],'flat_floor_pack_thickness_budget_mm':round(z-.5-(-5.91+.5),3)})
-    # Free XY cells below the board, with insulation and fastener exclusions.
-    step=1.;xmin,xmax=74,354;ymin,ymax=-197,-105;W,H=int(xmax-xmin),int(ymax-ymin)
-    free=[[True]*W for _ in range(H)];exclusions=[]
+    # The selected custom pack envelope includes its PCM, NTC, wrapping and growth.
+    battery=spec['battery'];width,depth,height=battery['full_envelope_including_growth'];x0,y0,x1,y1=battery['bounds_xy']
+    assert abs(x1-x0-width)<1e-6 and abs(y1-y0-depth)<1e-6
+    bb=[x0,y0,shift-.5-height,x1,y1,shift-.5];pack=box(bb)
+    exclusions=[]
     for e in envelopes:
-        bb=e['bounds_case_mm'];exclusions.append([bb[0]-1,bb[1]-1,bb[3]+1,bb[4]+1])
+        b=e['bounds_case_mm'];exclusions.append([b[0]-1,b[1]-1,b[3]+1,b[4]+1])
     for h in meta['mount_holes']:
-        x,y=h['center_pcb_mm'];exclusions.append([x-3,-y-3,x+3,-y+3])
-    for y in range(H):
-        for x in range(W):
-            xx,yy=xmin+x+.5,ymin+y+.5
-            if any(a<=xx<=c and b<=yy<=d for a,b,c,d in exclusions):free[y][x]=False
-    # 0.5mm each above/below, before allocating actual pack swelling/protection.
-    pack_height=math.floor((shift-.5-(-5.91+.5))*10)/10
-    candidates=[]
-    for width,height in [(60,30),(50,30),(50,20),(40,30),(40,20),(30,20)]:
-        found=None
-        for j in range(H-height+1):
-            for i in range(W-width+1):
-                if all(all(row[i:i+width]) for row in free[j:j+height]):found=[xmin+i,ymin+j,shift-.5-pack_height,xmin+i+width,ymin+j+height,shift-.5];break
-            if found:break
-        if found:
-            s=box(found);v=[intersection_volume(s,c) for c in (bottom,top)];candidates.append({'bounds_case_mm':found,'size_mm':[width,height,pack_height],'case_overlap_mm3':v,'envelope_must_include_swelling_and_protection':True,'component_xy_and_fastener_keepouts_clear':True,'bottom_case_distance_mm':distance(s,bottom),'top_insulation_gap_mm':.5,'status':'provisional-pack-envelope-not-a-selected-battery'})
-    report={'status':'conditional-fit-review','source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [pcbpath,ROOT/'felk60/felk60_bottom.step',ROOT/'felk60/felk60_top_hhkb.step',ROOT/'mechanical/felk60_plate_hhkb.audited.dxf']},'verification_recipe_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),ROOT/'scripts/cad_geometry.py',ROOT/'scripts/export_yeti60_mechanical_metadata.py']},'mechanical_metadata_sha256':sha(ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json'),'pcb_frame_to_case':'X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z','nominal_stack':{'bottom_gasket_ledge_z':3.19,'top_gasket_ledge_z':6.39,'compressed_gasket_each_mm':1.,'plate_bottom_z':plate_bottom,'plate_thickness_mm':1.2,'pcb_to_plate_gap_mm':nominal_gap,'pcb_top_z':pcb_top,'pcb_bottom_z':shift,'pcb_gap_basis':'PROVISIONAL parameter; Topre dome/housing/standoff stack is not dimensionally qualified'},'mounting_hole_matches':hole_matches,'max_hole_center_offset_mm':max(h['center_offset_mm'] for h in hole_matches),'min_M2_radial_margin_before_tolerances_mm':min(h['nominal_M2_radial_margin_before_tolerances_mm'] for h in hole_matches),'power_switch_access':'SW100 remains internal; no external actuator opening or extension is defined','plate_profile_chord_error_mm':.002,'active_key_positions':keys,'native_step_substrate_body_thickness_mm':native_thickness,'finished_board_envelope_thickness_mm':meta['pcb_thickness_mm'],'finished_envelope_basis':'Native STEP bottom face extruded to declared finished copper/mask thickness; conservative full board envelope','pcb_case_overlap_mm3':pcb_collisions,'pcb_case_distances_mm':pcb_distances,'plate_case_overlap_mm3':plate_collision,'component_envelopes':envelopes,'colliding_envelopes':[e['ref'] for e in hits],'pcb_gap_sweep':sweep,'battery_candidates':candidates,'not_verified':['Final switch/dome/fastener PCB-to-plate gap and tolerances','Actual battery/protection/NTC, swelling/insulation, cable bend and daughterboard envelope','J2 mating plug and current component height assumptions except sourced Raytac and JST body heights','Resin insert conversion and print shrinkage; original M3 metal-thread pilots are retained','Generic keycap shapes in renders are illustrative, not qualified OEM CAD']}
+        x,y=h['center_pcb_mm'];r=battery['fastener_exclusion_radius'];exclusions.append([x-r,-y-r,x+r,-y+r])
+    assert not any(x0<c and a<x1 and y0<d and b<y1 for a,b,c,d in exclusions),'Battery overlaps component or fastener exclusion'
+    candidates=[{'bounds_case_mm':bb,'size_mm':[width,depth,height],'case_overlap_mm3':[intersection_volume(pack,s) for s in (bottom,top)],'component_xy_and_fastener_keepouts_clear':True,'envelope_must_include_swelling_and_protection':True,'bottom_case_distance_mm':distance(pack,bottom),'top_insulation_gap_mm':.5,'status':'custom-pack-design-envelope-supplier-qualification-pending'}]
+    report={'status':'conditional-fit-review','source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [pcbpath,ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.json',ROOT/'mechanical/felk60_plate_hhkb.audited.dxf']},'verification_recipe_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),ROOT/'scripts/cad_geometry.py',ROOT/'scripts/export_yeti60_mechanical_metadata.py']},'mechanical_metadata_sha256':sha(ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json'),'pcb_frame_to_case':'X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z','nominal_stack':{'bottom_gasket_ledge_z':3.19,'top_gasket_ledge_z':6.39,'compressed_gasket_each_mm':1.,'plate_bottom_z':plate_bottom,'plate_thickness_mm':1.2,'pcb_to_plate_gap_mm':nominal_gap,'pcb_top_z':pcb_top,'pcb_bottom_z':shift,'pcb_gap_basis':'4.5 mm machined shoulder plus 0.1 mm insulating film; physical dome/housing acceptance requires first article'},'mounting_hole_matches':hole_matches,'max_hole_center_offset_mm':max(h['center_offset_mm'] for h in hole_matches),'min_M2_radial_margin_before_tolerances_mm':min(h['nominal_M2_radial_margin_before_tolerances_mm'] for h in hole_matches),'power_switch_access':'8 mm underside service port; insulated-tool access to SW100','plate_profile_chord_error_mm':.002,'active_key_positions':keys,'native_step_substrate_body_thickness_mm':native_thickness,'finished_board_envelope_thickness_mm':meta['pcb_thickness_mm'],'finished_envelope_basis':'Native STEP bottom face extruded to declared finished copper/mask thickness; conservative full board envelope','pcb_case_overlap_mm3':pcb_collisions,'pcb_case_distances_mm':pcb_distances,'plate_case_overlap_mm3':plate_collision,'component_envelopes':envelopes,'colliding_envelopes':[e['ref'] for e in hits],'pcb_gap_sweep':sweep,'battery_candidates':candidates,'not_verified':['Final switch/dome/fastener PCB-to-plate gap and tolerances','Actual battery/protection/NTC, swelling/insulation, cable bend and daughterboard envelope','J2 mating plug and current component height assumptions except sourced Raytac and JST body heights','Resin insert conversion and print shrinkage; original M3 metal-thread pilots are retained','Generic keycap shapes in renders are illustrative, not qualified OEM CAD']}
+    report['case_files']={'bottom':'mechanical/generated/yeti60-bottom.step','top':'mechanical/generated/yeti60-top.step'}
+    report['selected_battery']=spec['battery']
+    report['selected_fasteners']=spec['pcb_fastener']
+    report['minimum_fastener_radial_margin_worst_case_mm']=min(h['M1_6_radial_margin_worst_case_mm'] for h in hole_matches)
+    assert report['minimum_fastener_radial_margin_worst_case_mm']>0
+    report['not_verified']=['Physical first-article dome/housing fit, printed-resin properties and insert pullout','Supplier-signed custom battery drawing, thermal protection and production capacity acceptance','Actual enclosure USB enumeration, pairing, charging, runtime and wake measurements']
     (ROOT/'docs/audit/yeti60-assembly.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'PCB_overlap':pcb_collisions,'PCB_distance':pcb_distances,'plate_overlap':plate_collision,'colliding_envelopes':report['colliding_envelopes'],'battery_candidates':len(candidates)},indent=2))
     if max(pcb_collisions+plate_collision)>1e-5 or hits or any(max(c['case_overlap_mm3'])>1e-5 for c in candidates):
         raise SystemExit('Assembly geometry has collisions; inspect report')

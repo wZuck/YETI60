@@ -3,7 +3,7 @@
   "production_approved": false,
   "mcu_count": 1,
   "source_sha256": {
-    "EC60-nRF52840.kicad_pcb": "e45415e3f5cf36a821e26047ffe5098127dd1948eb1f87d23fe1012b71199d76",
+    "EC60-nRF52840.kicad_pcb": "41b085368c0a723f8c3111786340207cdde2f98d9a41d502c46478e9c1a606ad",
     "EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82",
     "netlist.xml": "81048018e8fd010c5471d3a03e6393d1ddb958120fc4b72069fb5dfc20f3cd0c",
     "frozen-footprints.json": "ed6547e01f077bfb97dc1b2110206e9503b6ab059a1a225d49671aeb645ea6ee",
@@ -308,7 +308,7 @@
   "unexpected_component_courtyard_warnings": [],
   "unconnected_items": 0,
   "warnings_by_type": {
-    "track_not_centered_on_via": 5,
+    "track_not_centered_on_via": 9,
     "missing_courtyard": 102
   },
   "potentially_truncated_categories": [],

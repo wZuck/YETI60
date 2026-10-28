@@ -4,9 +4,11 @@
 Upstream Git submodules and ignored generated caches retain their own docs.
 """
 from pathlib import Path
-import re,json
+import re,json,configparser
+config=configparser.ConfigParser();config.read(Path(__file__).resolve().parents[1]/'.gitmodules')
+upstream=[Path(__file__).resolve().parents[1]/config[section]['path'] for section in config.sections()]
 ROOT=Path(__file__).resolve().parents[1]
-files=sorted(p for p in ROOT.rglob('*.md') if not set(p.relative_to(ROOT).parts)&{'EC60','felk60','.git','.render-work','.assembly-work','.history','__pycache__'})
+files=sorted(p for p in ROOT.rglob('*.md') if not any(p.is_relative_to(folder) for folder in upstream) and not set(p.relative_to(ROOT).parts)&{'EC60','felk60','.git','.render-work','.assembly-work','.history','__pycache__'})
 errors=[]
 for p in files:
     zh=p.name.endswith('.zh-CN.md');peer=p.with_name(p.name.replace('.zh-CN.md','.md') if zh else p.stem+'.zh-CN.md')
