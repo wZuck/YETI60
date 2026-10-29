@@ -2,7 +2,7 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 acceptance and test procedure
 
-[Remediation plan and closing evidence](remediation-plan.md) · [Guarded per-key calibration](calibration.md)
+[Remediation plan and closing evidence](remediation-plan.md) · [Guarded per-key calibration](calibration.md) · [USB path review](USB-paths.md)
 
 **Design acceptance is on hold.** Both alternatives build and pass the implemented electrical/CAD checks, but the new interference screen found antenna layout risks. Raytac has GND copper inside its manufacturer's minimum antenna projection; E73 has copper in a provisional antenna-end screen and lacks a vendor-approved numeric keepout. Nearby metal plate projections affect both. See [interference results, calculations and sources](interference.md). No physical board exists; no physical row below is a pass.
 
@@ -25,7 +25,7 @@ The current [acceptance record](../audit/acceptance.json) separates successful t
 | Firmware | Normal and calibrator ARM ELF/BIN/HEX for each option; host ASan/UBSan tests | Build and portable-core checks; GPIO/ADC/USB/BLE are mocked in host tests |
 | Noise behavior | 2000 hysteresis-band frames plus 2000 correlated-ripple / isolated-burst frames per option | Expected debounce behavior passes; two sustained over-threshold frames still cause synthetic false keys |
 | Analog front end | Pinned official TI OPA350 model; 28 sensitivity cases | AC/transient model checks pass; physical noise margin is unknown |
-| RF / USB SI | Actual four-layer copper intersections, plate BRep projection and USB track sums | RF blockers open; no RF field solution, antenna match, impedance extraction or USB eye acceptance |
+| RF / USB SI | Actual four-layer copper intersections, plate BRep projection and contact-aware USB main/stub paths | RF blockers and long TVS branches open; no RF field solution, antenna match, impedance extraction or USB eye acceptance |
 | Assembly | 60 keys, 29 mounts, original case scale; current component/pack/harness envelopes | Conditional CAD fit only; real dome compression, supplier pack, resin and fasteners remain unqualified |
 
 ## Reproduce the checks
@@ -37,7 +37,7 @@ python3 scripts/run_acceptance.py --refresh-guide
 python3 scripts/check_yeti60_acceptance.py
 ```
 
-The first command reruns both full audits, regenerates their guides when requested, runs native layout screening, SPICE, plate screening and negative tests, then writes acceptance evidence. Exit 0 means the checks executed and their evidence is consistent, including recorded failures/open gates. It does **not** mean the keyboard passed acceptance. `python3 scripts/check_yeti60_acceptance.py --require-accepted` exits 2 while acceptance is on hold. Missing dependencies, stale evidence or failed test execution exit nonzero. Existing 3D renders are hash-checked; PCB/case changes require their normal regeneration workflow.
+The first command reruns both full audits, regenerates their guides when requested, runs native layout screening, SPICE, plate screening and negative tests, then writes acceptance evidence. Exit 0 means the checks executed and their evidence is consistent, including recorded failures/open gates. It does **not** mean the keyboard passed acceptance. `python3 scripts/check_yeti60_acceptance.py --require-design` exits 2 while a design gate is open or failed; `--require-accepted` exits 2 while any required gate remains open. Gate states are derived from fresh evidence; design closure cannot close physical or supplier gates. Missing dependencies, stale evidence or failed test execution exit nonzero. Existing 3D renders are hash-checked; PCB/case changes require their normal regeneration workflow.
 
 ## First-article sequence
 
@@ -51,7 +51,7 @@ Use a separate copy of the [measurement template](first-article-template.csv) fo
 | 4 / 18–20 | SWD flash correct calibrator HEX, readback/verify, USB descriptor capture, sample logs | Correct module pin map and E73 UICR NFC-as-GPIO when applicable; 60 actual key positions identified; no ADC saturation or missing channels |
 | 5 / 21–25 | Dry-fit actual housings, domes, springs, spacers, film, fasteners and protected pack | 29 mounts align, no PCB bow/forced shell closure, service switch accessible, pouch not compressed, inserts secure. Record actual stack and donor parts; custom 1600mAh pack supplier approval remains mandatory |
 | 6 / 26–27 | Per-key calibration and interference matrix from the [test plan](interference.md#physical-interference-matrix) | Released/pressed distributions have positive guarded margin in every tested mode; zero false/missed/stuck keys in specified runs. Keep raw samples and threshold values |
-| 7 / 27 | USB analyzer, battery-side current logger, thermocouples, temperature-sensor substitution by a qualified bench operator | Before configuration/suspend/switch-off use the documented USB100 behavior; only configured host enables USB500. Charge current, termination, rail limits and independent 15–43°C interruption meet the [power](../engineering/power-budget.md) and [pack](../engineering/battery-pack-specification.md) specifications. Do not heat/cool or short a pouch to force faults |
+| 7 / 27 | USB analyzer, battery-side current logger, thermocouples, temperature-sensor substitution by a qualified bench operator | Before configuration use USB100 with charging disabled; configured host enables USB500 charging. Active-firmware suspend disables charging and selects EN1/EN2=1/1 standby input high impedance. SW100-off autonomous USB100 slow charging needs separate source qualification. Charge current, termination, rail limits and independent 15–43°C interruption meet the [power](../engineering/power-budget.md) and [pack](../engineering/battery-pack-specification.md) specifications. Do not heat/cool or short a pouch to force faults |
 | 8 / 27 | USB plug/unplug and suspend/resume 100 cycles; BLE connect/reconnect/profile switching 100 cycles; host HID event log | No stuck/lost key state, enumeration failure, unexpected reset or unhandled report loss. All five profiles retain intended bonds; verify on intended host systems |
 | 9 / 28 | Normal firmware, debugger disconnected, battery analyzer; type/idle/advertise/reconnect/off and a complete usable discharge | Record measured currents and delivered capacity; reconcile runtime against the model. Do not use predicted hours as the measured acceptance value |
 

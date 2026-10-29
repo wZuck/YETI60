@@ -26,14 +26,14 @@
     },
     {
       "path": "docs/assembly/build-guide.md",
-      "bytes": 28606,
-      "sha256": "a149c3bb786dda6acc023d68a400cc13f9ebf62c8665fdee68e63f21ebf86e23",
+      "bytes": 28789,
+      "sha256": "bb41f42efe459e2e86d6f0a43c820ca323ba1e82e2830618580f26f4daeaa7d8",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/assembly/build-guide.zh-CN.md",
-      "bytes": 26013,
-      "sha256": "24d1d611e08a89ae838eb103d704bf7732b5679ec268c4a687ecc2dfae9dc894",
+      "bytes": 26174,
+      "sha256": "aaf792957d69eb2f7727381d6e7fc8bd8fc451dff5985f3f803242da1f84cc04",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -638,26 +638,26 @@
     },
     {
       "path": "docs/assembly/images/26-step.png",
-      "bytes": 187049,
-      "sha256": "0a0e1c340c0cc00eeba6743790ab6ee7439abe2dbf71037922e3fd7068122e3c",
+      "bytes": 187487,
+      "sha256": "e4f415538c7a4c554ef08847a5895cbd4da5618f29e1493ed1cb21c68aabaf4e",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/assembly/images/26-step.svg",
-      "bytes": 412247,
-      "sha256": "d5a1d475461e697257e31e0e325d0bb83b99fded09d71760f078a0fa30225047",
+      "bytes": 412386,
+      "sha256": "6407f0b952454d1df1a81b27d99a42b2f2acdacec5f82fc3d223452bb8c063b1",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/assembly/images/26-step.zh-CN.png",
-      "bytes": 204913,
-      "sha256": "01e30cddeef6420b18c121f12ab960ef13bd814d1cf67bbbf9e3f9b381541aa8",
+      "bytes": 209136,
+      "sha256": "16e037f52df4338fe090bfd874b2b306b633b534ad7b48a7ec160c0a3a44ce18",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/assembly/images/26-step.zh-CN.svg",
-      "bytes": 508028,
-      "sha256": "37831f25d0894e6c0c46aa8da8ede873000f88ee8d0efd64dfa9f027005c9b01",
+      "bytes": 515250,
+      "sha256": "61dd0a3d634d30f5c77aeb36aa9a51fd52feb33483ee7383257d15bfc7934a2a",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -710,8 +710,8 @@
     },
     {
       "path": "docs/assembly/steps.json",
-      "bytes": 48449,
-      "sha256": "4151b28fa3bdd4846ee50f6de2bd5060d577894128c3c0bf6796b35ca0c25f7d",
+      "bytes": 48793,
+      "sha256": "c2a25bec463a696d01f1c1cb874c9385a79ad2f195d8a2185f09d644cf344c2b",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1191,7 +1191,7 @@
     {
       "path": "hardware/ec60-nrf52840/DRC-strict.json",
       "bytes": 41116,
-      "sha256": "f81e2aa375fd76262cb70befdaea5a5d31d0bc2be239b2c2bc3eee1fb7d9acf3",
+      "sha256": "9e30b1b87870e76788330237ab03a0a84bec5e65928a19fa948a8bb6758f2629",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1215,7 +1215,7 @@
     {
       "path": "hardware/ec60-nrf52840/ERC.json",
       "bytes": 117023,
-      "sha256": "41cd8300e0601a2858a91819b56cde0994022dfd21ff280b7ed869168a741e3d",
+      "sha256": "89e55c607f6bebc6e2ac57e9a66307c733f4fcde6975131aca44e0c6e9e5cbe5",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2678,8 +2678,8 @@
     },
     {
       "path": "scripts/check_yeti60_fabrication.py",
-      "bytes": 2743,
-      "sha256": "1b0a82dd8e9704b90664ce806faae4ae6515e1fe35448d52601585b50f082c14",
+      "bytes": 3655,
+      "sha256": "b5f2a8337ff22082d92c133c69435f26adaf953892201b6a54f4277c619faeb6",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2714,8 +2714,8 @@
     },
     {
       "path": "scripts/draw_yeti60_build_guide.py",
-      "bytes": 34697,
-      "sha256": "b295917c9fc85bcb354c7bff42870e9fcf7b976e7f026d284a3f563097c48057",
+      "bytes": 34702,
+      "sha256": "08380182b19b18e3fa3a8808dbb1545fc1959da95226fa2593f01ebb1cdea70c",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2846,8 +2846,8 @@
     },
     {
       "path": "tests/audit/test_fabrication.py",
-      "bytes": 1906,
-      "sha256": "ea878f18b85d5c8a9cd4c06135a47bea3f9e5b9729dfefb0bd8630bb3cfe7435",
+      "bytes": 2767,
+      "sha256": "3acfe56a0e56951b10320c9c3b5e3dc86597d493bd2fa067a30e92ac347c4f62",
       "coverage": "inventoried-not-automatically-approved"
     },
     {

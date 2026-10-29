@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Negative evidence tests: reject changed AFE, stale data and false acceptance."""
 import copy
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -11,6 +12,7 @@ sys.path.insert(0,str(ROOT/'scripts'))
 import screen_yeti60_interference as layout
 import simulate_yeti60_interference as analog
 import check_yeti60_acceptance as acceptance
+from yeti60_acceptance_gates import design_and_pending_gates,summarize
 
 
 class EvidenceFaults(unittest.TestCase):
@@ -18,6 +20,20 @@ class EvidenceFaults(unittest.TestCase):
         self.assertEqual(layout.classify([0,0,.5,0],True),'failed-vendor-keepout')
         self.assertIn('risk',layout.classify([.5,0,0,0],False))
         self.assertIn('still-required',layout.classify([0,0,0,0],True))
+
+    def test_vendor_projection_follows_native_bottom_placement(self):
+        module=layout.pcb.FOOTPRINT(None)
+        module.SetLayer(layout.pcb.B_Cu)
+        module.SetPosition(layout.pcb.VECTOR2I(layout.pcb.FromMM(356.25),layout.pcb.FromMM(125.25)))
+        module.SetOrientationDegrees(90)
+        _,roi,formal=layout.vendor_projection(module,'raytac')
+        self.assertTrue(formal)
+        for a,b in zip(roi,[360.2,120.,364.,130.5]):self.assertAlmostEqual(a,b)
+        module.SetPosition(layout.pcb.VECTOR2I(layout.pcb.FromMM(346),layout.pcb.FromMM(117)))
+        module.SetOrientationDegrees(0)
+        _,roi,formal=layout.vendor_projection(module,'e73')
+        self.assertFalse(formal)
+        self.assertEqual(roi,[361.,117.,364.,130.])
 
     def test_native_polygon_intersection(self):
         a=layout.rect([0,0,10,10]);b=layout.rect([5,5,15,15]);a.BooleanIntersection(b)
@@ -36,16 +52,30 @@ class EvidenceFaults(unittest.TestCase):
             with self.assertRaises(AssertionError):acceptance.fresh({'vector.csv':digest},Path(folder))
 
     def test_false_production_or_physical_pass_rejected(self):
-        record={'execution_status':'completed','acceptance_status':'hold','production_approved':False,
-                'physical_test_performed':False,'field_solver_performed':False,'open_gates':['a','b','c','d'],
+        read=lambda n:json.loads((ROOT/'docs/audit'/n).read_text())
+        gates=design_and_pending_gates(read('interference-layout.json'),read('interference-plate.json'),read('USB-signal-paths.json'),
+                                     {name:{'status':'passed'} for name in ['e73','raytac']})
+        record={'execution_status':'completed',**summarize(gates),'gates':gates,'field_solver_performed':False,
                 'variants':{n:{'CAD_checks_passed':True,'firmware_build_and_host_checks_passed':True,
-                               'physical_acceptance':'not-run','RF_acceptance':'hold'} for n in ['e73','raytac']}}
+                               'physical_acceptance':'not-run','RF_acceptance':'not-run'} for n in ['e73','raytac']}}
         acceptance.validate(record)
         for key in ['production_approved','physical_test_performed','field_solver_performed']:
             bad=copy.deepcopy(record);bad[key]=True
             with self.assertRaises(AssertionError):acceptance.validate(bad)
         bad=copy.deepcopy(record);bad['variants']['e73']['physical_acceptance']='passed'
         with self.assertRaises(AssertionError):acceptance.validate(bad)
+
+    def test_design_pass_does_not_close_hardware_or_supplier_gates(self):
+        gates=[{'id':'layout','scope':'design','state':'passed','description':'layout'},
+               {'id':'hardware','scope':'physical','state':'not-run','description':'hardware'},
+               {'id':'pack','scope':'supplier','state':'open','description':'pack'}]
+        result=summarize(gates)
+        self.assertEqual(result['design_review_status'],'passed')
+        self.assertTrue(result['ready_for_engineering_first_article'])
+        self.assertEqual(result['acceptance_status'],'hold')
+        self.assertFalse(result['production_approved'])
+        gates[0]['state']='failed'
+        self.assertEqual(summarize(gates)['design_review_status'],'hold')
 
 
 if __name__=='__main__':unittest.main()

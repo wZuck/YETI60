@@ -468,7 +468,7 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 1. Using normal firmware, test every key over USB, held keys, multiple keys and reset/reconnect behavior.
 2. With the accepted battery, disconnect USB and test BLE. Fn+Q/W/E/R/T select profiles 0/1/2/3/4 in the current keymap; verify pairing and retained bonds on the intended hosts.
-3. Check configured-host USB500 behavior separately from preconfiguration, suspend and switch-off USB100 behavior. Record actual current/temperature; the predicted runtime is not an acceptance measurement.
+3. Check preconfiguration USB100 with charging disabled, configured-host USB500 charging, and active-firmware suspend with charging disabled and EN1/EN2=1/1 standby input high impedance. SW100-off hardware defaults to autonomous USB100 slow charging; qualify that mode separately with the intended source. Record measured current and temperature; predicted runtime is not acceptance data.
 
 **Check before continuing:** A successful firmware build is not this test. Complete the pack's thermal/charge qualification before relying on charging; no battery-percentage reporting is enabled.
 

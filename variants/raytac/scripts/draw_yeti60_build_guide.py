@@ -329,7 +329,7 @@ def main():
                         ax.text(6,45-i*10,line,color='#d8e5c4',fontfamily='monospace',fontsize=16)
                     ax.text(50,4,'Normal HEX: preserve 0xF0000-0xFFFFF' if not zh else '普通固件：保留 0xF0000–0xFFFFF',ha='center',fontsize=12)
                 else:
-                    tests = ['USB HID  /  60 keys','BLE  /  profiles 0 1 2 3 4','USB500  /  suspend  /  USB100'] if not zh else ['USB HID ／60 个按键','蓝牙／配置 0 1 2 3 4','USB500 ／挂起／USB100']
+                    tests = ['USB HID  /  60 keys','BLE  /  profiles 0 1 2 3 4','USB500 / suspend: input Hi-Z'] if not zh else ['USB HID ／60 个按键','蓝牙／配置 0 1 2 3 4','USB500 ／挂起：输入高阻']
                     for i,line in enumerate(tests):
                         y=48-i*16;ax.add_patch(Rectangle((5,y-3),5,5,fill=False,ec='#64808a',lw=1.4));ax.text(15,y,line,va='center',fontsize=17)
             else:

@@ -5,6 +5,7 @@ This is a layout screen, not an electromagnetic field solver or USB compliance t
 """
 import hashlib
 import json
+import math
 from pathlib import Path
 import pcbnew as pcb
 
@@ -33,27 +34,35 @@ def rings(poly):
     return result
 
 
-def classify(ground_areas, formal):
-    if any(area > .001 for area in ground_areas):
+def classify(copper_areas, formal):
+    if any(area > .001 for area in copper_areas):
         return 'failed-vendor-keepout' if formal else 'risk-copper-in-provisional-antenna-band'
     return 'minimum-projection-clear-metal-and-vendor-review-still-required'
 
 
-def screen(folder, name):
+def vendor_projection(module, name):
+    assert module.GetLayer()==pcb.B_Cu, 'Vendor transform expects a bottom-mounted module'
+    angle=math.radians(module.GetOrientationDegrees())
+    assert abs(math.sin(2*angle))<1e-6, 'Screen rectangle requires an orthogonal placement'
+    ox,oy=pcb.ToMM(module.GetPosition().x),pcb.ToMM(module.GetPosition().y)
+    # Vendor library coordinates are top-side local coordinates. Bottom placement
+    # mirrors local Y before the native clockwise rotation in PCB coordinates.
+    def bounds(local):
+        points=[(ox+math.cos(angle)*x-math.sin(angle)*y,
+                 oy-math.sin(angle)*x-math.cos(angle)*y)
+                for x in [local[0],local[2]] for y in [local[1],local[3]]]
+        return [min(q[i] for q in points) for i in [0,1]]+[max(q[i] for q in points) for i in [0,1]]
+    if name=='raytac':return bounds([-5.25,-7.75,5.25,7.75]),bounds([-5.25,-7.75,5.25,-3.95]),True
+    assert name=='e73'
+    return bounds([0,-13,18,0]),bounds([15,-13,18,0]),False
+
+
+def screen(folder, name, draw_outputs=True):
     path = folder/'hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb'
     board = pcb.LoadBoard(str(path))
     module = next(f for f in board.GetFootprints() if f.GetReference()=='U1')
-    # Rectangles are in top-view PCB coordinates, transformed from vendor drawings.
-    # Raytac: local y=-7.75..-3.95, x=+-5.25; bottom rotation +90 degrees.
-    # E73: vendor x=15..18, y=-13..0; bottom rotation -90 degrees.
-    if name=='raytac':
-        expected=(347.,125.,90.); body=[339.25,119.75,354.75,130.25]
-        roi=[350.95,119.75,354.75,130.25]; formal=True
-    else:
-        expected=(354.6,116.5,-90.); body=[341.6,116.5,354.6,134.5]
-        roi=[341.6,131.5,354.6,134.5]; formal=False
+    body,roi,formal=vendor_projection(module,name)
     actual=(pcb.ToMM(module.GetPosition().x),pcb.ToMM(module.GetPosition().y),module.GetOrientationDegrees())
-    assert all(abs(a-b)<1e-5 for a,b in zip(actual,expected)), 'Update vendor-to-PCB transform after module movement'
     region=rect(roi); layer_records=[]; primitives=[]
     for layer in LAYERS:
         # Union before measuring: overlapping pad/track/zone copper is counted once.
@@ -93,14 +102,15 @@ def screen(folder, name):
     record={'module':module.GetValue(),'module_origin_mm':list(actual[:2]),'rotation_deg':actual[2],
             'body_pcb_bounds_mm':body,'screen_bounds_mm':roi,'screen_area_mm2':round(region.Area()/1e12,6),
             'formal_vendor_dimension':formal,'layers':layer_records,
-            'status':classify([r['GND_union_mm2'] for r in layer_records],formal),
+            'status':classify([r['GND_union_mm2']+r['non_GND_union_mm2'] for r in layer_records],formal),
             'USB':{'nets':usb,'positive_total_track_mm':plus,'negative_total_track_mm':minus,
                    'aggregate_length_difference_mm':round(abs(plus-minus),6),
                    'status':'requires-return-path-impedance-and-eye-verification',
                    'limits':'Track sums include branch stubs; exclude pads, series resistors, module routing, C5 and cable. No impedance or pair-coupling extraction.'},
             'source_sha256':{str(path.relative_to(ROOT)):sha(path)}}
-    draw(name,body,roi,primitives)
-    draw(name,body,roi,primitives,True)
+    if draw_outputs:
+        draw(name,body,roi,primitives)
+        draw(name,body,roi,primitives,True)
     return record
 
 

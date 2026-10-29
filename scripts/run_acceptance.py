@@ -9,6 +9,7 @@ from pathlib import Path
 import subprocess
 import sys
 from datetime import datetime,timezone
+from yeti60_acceptance_gates import design_and_pending_gates,summarize
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -29,7 +30,8 @@ def main():
     commands=[command,[kp,'scripts/study_yeti60_rf_lands.py'],
               cad+['scripts/study_yeti60_rf_remediation.py'],[kp,'scripts/screen_yeti60_interference.py'],
               [sys.executable,'scripts/simulate_yeti60_interference.py'],
-              cad+['scripts/check_yeti60_antenna_plate.py'],[kp,'tests/audit/test_interference.py']]
+              cad+['scripts/check_yeti60_antenna_plate.py'],[kp,'scripts/check_yeti60_signal_paths.py'],
+              [kp,'tests/audit/test_signal_paths.py'],[kp,'tests/audit/test_interference.py']]
     executed=[]
     for command in commands:
         print('Running: '+' '.join(command),flush=True)
@@ -47,22 +49,22 @@ def main():
                         'audit_stage_count':len(result['stages']),'DRC_errors':sum(b['drc_errors_by_type'].values()),
                         'unconnected_items':b['unconnected_items'],'DRC_warnings':b['warnings_by_type'],
                         'physical_signal_pairs':len(b['physical_pin_pairs']),
-                        'RF_acceptance':'hold','physical_acceptance':'not-run'}
+                        'RF_acceptance':'not-run','physical_acceptance':'not-run'}
         evidence += [outcome,board,host,target,fit,guide,folder/'docs/audit/integration.json',folder/'docs/audit/calibration.json']
     evidence += [ROOT/'docs/audit'/n for n in ['variants.json','interference-layout.json','interference-analog.json','interference-plate.json',
-                                            'rf-remediation-candidate.json','rf-remediation-lands.json']]
+                                            'rf-remediation-candidate.json','rf-remediation-lands.json','USB-signal-paths.json']]
     sources=[Path(__file__),ROOT/'scripts/check_yeti60_acceptance.py',ROOT/'tests/audit/test_interference.py',
+             ROOT/'scripts/yeti60_acceptance_gates.py',ROOT/'tests/audit/test_signal_paths.py',
              ROOT/'design-constraints.json',ROOT/'docs/testing/vendor-sources.json',
              *sorted((ROOT/'docs/testing').glob('*.md'))]
     outputs=[*sorted((ROOT/'docs/testing').glob('*.csv')),*sorted((ROOT/'docs/testing/images').glob('*'))]
-    report={'execution_status':'completed','acceptance_status':'hold','production_approved':False,
-            'physical_test_performed':False,'field_solver_performed':False,
+    read=lambda n:json.loads((ROOT/'docs/audit'/n).read_text())
+    gates=design_and_pending_gates(read('interference-layout.json'),read('interference-plate.json'),read('USB-signal-paths.json'),
+                                 {name:json.loads(((ROOT if name=='e73' else ROOT/'variants/raytac')/'docs/audit/calibration.json').read_text()) for name in variants})
+    for name,record in variants.items():
+        record['RF_layout_acceptance']='passed' if all(g['state']=='passed' for g in gates if g['id'] in [name+'.antenna-host-copper',name+'.antenna-plate-projection']) else 'hold'
+    report={'execution_status':'completed',**summarize(gates),'gates':gates,'field_solver_performed':False,
             'executed_at_UTC':datetime.now(timezone.utc).isoformat(),'commands':executed,'variants':variants,
-            'open_gates':['Raytac manufacturer antenna keepout contains GND copper on all four layers',
-                          'E73 provisional antenna-end copper and nearby plate metal; vendor-approved host keepout absent',
-                          'USB differential impedance/return-path/eye and actual enumeration unqualified',
-                          'Actual key capacitance, per-key margin and RF/charging susceptibility unmeasured',
-                          'Physical charging, supplier pack/thermal protection and assembly tolerances unqualified'],
             'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources},
             'evidence_sha256':{str(p.relative_to(ROOT)):sha(p) for p in evidence},
             'outputs':{str(p.relative_to(ROOT)):sha(p) for p in outputs}}

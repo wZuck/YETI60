@@ -2,6 +2,7 @@
 """Enforce the user's ordinary-JLC process constraint against native geometry."""
 import hashlib
 import json
+import math
 from pathlib import Path
 import pcbnew as pcb
 
@@ -26,6 +27,16 @@ def main():
         assert (via.TopLayer(), via.BottomLayer()) == (pcb.F_Cu, pcb.B_Cu)
         assert pcb.ToMM(via.GetDrillValue()) >= .3-1e-8
         assert pcb.ToMM(via.GetWidth(pcb.F_Cu)) >= .5-1e-8
+    # Same-net holes still need real laminate between drills. Copper clearance alone
+    # does not reject coincident/repeated layer-change vias.
+    minimum_hole_gap = math.inf
+    rules = json.loads(BOARD.with_suffix('.kicad_pro').read_text())['board']['design_settings']['rules']
+    required_gap = max(rules['min_hole_clearance'], rules['min_hole_to_hole'])
+    for index, via in enumerate(vias):
+        for other in vias[:index]:
+            gap = (via.GetPosition()-other.GetPosition()).EuclideanNorm()/1e6 - pcb.ToMM(via.GetDrillValue()+other.GetDrillValue())/2
+            minimum_hole_gap = min(minimum_hole_gap, gap)
+            assert gap >= required_gap-1e-6, ('Via drills overlap or violate laminate clearance', via.m_Uuid.AsString(), other.m_Uuid.AsString(), gap)
     module = next(f for f in board.GetFootprints() if f.GetReference() == 'U1')
     collisions = []
     for pad in module.Pads():
@@ -41,6 +52,8 @@ def main():
               'minimum_via_drill_mm':min(pcb.ToMM(v.GetDrillValue()) for v in vias),
               'minimum_via_diameter_mm':min(pcb.ToMM(v.GetWidth(pcb.F_Cu)) for v in vias),
               'module_via_in_pad':collisions,
+              'minimum_via_drill_edge_gap_mm':minimum_hole_gap,
+              'required_drill_edge_gap_mm':required_gap,
               'nominal_order_thickness_mm':1.6,
               'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [BOARD,profile_path,Path(__file__)]},
               'limits':['Ordinary JLC ordering/DFM review remains required',

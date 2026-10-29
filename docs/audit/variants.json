@@ -1,6 +1,6 @@
 {
   "status": "both-variant-checks-passed-production-incomplete",
-  "mode": "existing-reports-and-current-integration",
+  "mode": "full-audits-and-current-integration",
   "production_approved": false,
   "variants": {
     "e73": {
@@ -44,8 +44,8 @@
     "tests/audit/test_variant_packages.py": "11c5f4a5c4426f98060e31ec880858e5c06941712f78bbf9f2eea524483f31ff"
   },
   "outcome_sha256": {
-    "docs/audit/outcome.json": "a48b6a0fcef884f1d032fee990c2301184538b1c7e7b8f5b2bc219fa3c80e093",
-    "variants/raytac/docs/audit/outcome.json": "d2483cc3fbfd3a92ec8cc7915a9c063d7d43cca6db32b994e149103884dce78d"
+    "docs/audit/outcome.json": "09766e7a439c3986b830b2d1152c8dc0a7bdcb5556ddf767961c78f0a0e44f15",
+    "variants/raytac/docs/audit/outcome.json": "dfb702d89f50f9f3888b46eda3e5d61be956c63bf199bf3b4f3a24cca845321b"
   },
   "scope": "Both complete designs in this branch; no physical acceptance or RF/SI certification"
 }
