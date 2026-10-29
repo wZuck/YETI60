@@ -78,7 +78,7 @@ static int adc(void *ctx, uint8_t ain, uint32_t acquisition) {
     assert(s->now - s->bat_on >= 50000);
     return 2389;
   }
-  assert(ain == 2 && ain == YETI_ADC_AIN);
+    assert(ain == 4 && ain == YETI_ADC_AIN);
   assert(high(s->pins[PIN_AFE_EN]));
   unsigned c = s->frame_reads / 5, r = s->frame_reads % 5;
   assert(c < 15);

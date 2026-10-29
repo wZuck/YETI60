@@ -3,27 +3,27 @@
 #include <stdint.h>
 #define YETI_ROWS 5
 #define YETI_COLS 15
-#define YETI_ADC_AIN 2
+#define YETI_ADC_AIN 4
 #define YETI_BAT_AIN 3
 #define PIN_ROW_DRV0 13
-#define PIN_ROW_DRV1 14
-#define PIN_ROW_DRV2 15
-#define PIN_ROW_DRV3 16
-#define PIN_ROW_DRV4 17
+#define PIN_ROW_DRV1 43
+#define PIN_ROW_DRV2 24
+#define PIN_ROW_DRV3 41
+#define PIN_ROW_DRV4 0
 #define PIN_AMUX_SEL_0 20
 #define PIN_AMUX_SEL_1 22
-#define PIN_AMUX_SEL_2 24
-#define PIN_APLEX_EN_PIN_0 32
-#define PIN_APLEX_EN_PIN_1 34
+#define PIN_AMUX_SEL_2 15
+#define PIN_APLEX_EN_PIN_0 1
+#define PIN_APLEX_EN_PIN_1 9
 #define PIN_APLEX_OUT_PIN_0 26
-#define PIN_ADC 4
+#define PIN_ADC 28
 #define PIN_BAT_ADC 5
-#define PIN_BAT_MEAS_EN 27
-#define PIN_AFE_EN 19
-#define PIN_CHG_EN1 6
-#define PIN_CHG_EN2 7
-#define PIN_CHG_CE_N 8
-static const uint8_t yeti_rows[] = {13, 14, 15, 16, 17};
-static const uint8_t yeti_sel[] = {20, 22, 24};
-static const uint8_t yeti_en[] = {32, 34};
+#define PIN_BAT_MEAS_EN 29
+#define PIN_AFE_EN 31
+#define PIN_CHG_EN1 3
+#define PIN_CHG_EN2 2
+#define PIN_CHG_CE_N 45
+static const uint8_t yeti_rows[] = {13, 43, 24, 41, 0};
+static const uint8_t yeti_sel[] = {20, 22, 15};
+static const uint8_t yeti_en[] = {1, 9};
 static const uint8_t yeti_channels[] = {0, 3, 1, 2, 5, 7, 6, 4, 0, 3, 1, 2, 5, 7, 6};

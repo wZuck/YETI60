@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Import the vendor reference footprint and freeze the E73 pin proposal.
+"""Import the vendor reference footprint and freeze the E73 pin contract.
 
 Run with KiCad Python. This prepares source data; it does not route a PCB.
 """
@@ -55,13 +55,13 @@ def main():
                      'vendor_land_angle_deg':pad.GetOrientationDegrees()})
     result = {
         'module':'Ebyte E73-2G4M08S1C','chip':'nRF52840','controller_count_per_board':1,
-        'status':'pin-assignment-proposal-not-routed-not-built', 'production_approved':False,
+        'status':'module-reference-pin-contract', 'production_approved':False,
         'body_nominal_mm':[18,13,3], 'body_dimension_tolerance_mm':.1,
         'vendor_origin_basis':'Unmodified Altium library origin; body X=0..18 and Y=-13..0, component view',
         'castellated_pitch_mm':1.27,'pins':pins,
         'power':{'VDD_pin':19,'VDDH_pin':23,'rail_V':3.3,'USB_VBUS_pin':27,
                  'DCCH_pin_25':'unconnected; REG0 DC/DC disabled',
-                 'REG1_mode':'must confirm module inductor/provisioning before firmware release'},
+                 'REG1_mode':'LDO; no assumption about internal DC/DC inductors'},
         'firmware_requirements':['Use internal LF RC; pins P0.00/P0.01 are allocated to GPIO',
                                  'Configure both NFC pins as GPIO; verify linked UICR/NFCPINS setting',
                                  'Scan ADC is P0.28/AIN4; battery ADC remains P0.05/AIN3',
@@ -73,14 +73,10 @@ def main():
         'footprint_output':'hardware/module-options/Ebyte.pretty/E73-2G4M08S1C.kicad_mod',
         'footprint_sha256':sha(library/'E73-2G4M08S1C.kicad_mod'),
         'generator_sha256':sha(Path(__file__)),
-        'remaining':['Native E73 schematic, board placement/routing and ordinary-process DRC',
-                     'Module supply/DC-DC review; variant firmware builds, host and fault tests',
-                     'Worst-case module height/case/harness checks and variant render/guide regeneration',
-                     'Complete fabrication, BOM, provenance and cross-domain checks',
-                     'Supplier and physical acceptance; RF/SI deferred by user'],
+        'scope':'Vendor reference geometry and assigned pin identities; full design readiness is recorded by the audit pipeline',
     }
     (ROOT/'hardware/module-options/e73.json').write_text(json.dumps(result,indent=2)+'\n')
-    print('Imported 43 vendor lands; 32 proposed connections, including five bottom lands; PCB/firmware pending')
+    print('Imported 43 vendor lands; 32 assigned connections, including five bottom lands; reference data only')
 
 
 if __name__=='__main__':

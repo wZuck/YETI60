@@ -2,7 +2,7 @@
   "module": "Ebyte E73-2G4M08S1C",
   "chip": "nRF52840",
   "controller_count_per_board": 1,
-  "status": "pin-assignment-proposal-not-routed-not-built",
+  "status": "module-reference-pin-contract",
   "production_approved": false,
   "body_nominal_mm": [
     18,
@@ -665,7 +665,7 @@
     "rail_V": 3.3,
     "USB_VBUS_pin": 27,
     "DCCH_pin_25": "unconnected; REG0 DC/DC disabled",
-    "REG1_mode": "must confirm module inductor/provisioning before firmware release"
+    "REG1_mode": "LDO; no assumption about internal DC/DC inductors"
   },
   "firmware_requirements": [
     "Use internal LF RC; pins P0.00/P0.01 are allocated to GPIO",
@@ -681,12 +681,6 @@
   "vendor_pcblib_sha256": "d135b78527a6d0b2003667511bb9c1bb56994f92b95c5052b46a88d5f1ba5591",
   "footprint_output": "hardware/module-options/Ebyte.pretty/E73-2G4M08S1C.kicad_mod",
   "footprint_sha256": "e605ed7cfcdb3c2fb42cb453e9d5f49136733d7f3b5230380d765cf81f8a4e8f",
-  "generator_sha256": "00f83827276289e037ac564fcd08be69c3777f56d9324d1e49b13bab1d949b7c",
-  "remaining": [
-    "Native E73 schematic, board placement/routing and ordinary-process DRC",
-    "Module supply/DC-DC review; variant firmware builds, host and fault tests",
-    "Worst-case module height/case/harness checks and variant render/guide regeneration",
-    "Complete fabrication, BOM, provenance and cross-domain checks",
-    "Supplier and physical acceptance; RF/SI deferred by user"
-  ]
+  "generator_sha256": "3d6113d10c55d9ed22e110d7b99b7536a5afeb47f6c1c368874e2c77afa98d5c",
+  "scope": "Vendor reference geometry and assigned pin identities; full design readiness is recorded by the audit pipeline"
 }

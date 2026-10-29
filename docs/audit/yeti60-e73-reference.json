@@ -1,5 +1,5 @@
 {
-  "status": "pin-proposal-and-reference-footprint-checked-not-PCB-validation",
+  "status": "vendor-reference-and-pin-contract-passed",
   "module": "Ebyte E73-2G4M08S1C",
   "controller_count_per_board": 1,
   "assigned_GPIO_functions": 21,
@@ -11,12 +11,11 @@
     32,
     34
   ],
-  "PCB_routed": false,
-  "E73_firmware_built": false,
+  "scope": "Reference geometry and pin identities only; native PCB and linked firmware are checked separately",
   "production_approved": false,
   "source_sha256": {
-    "hardware/module-options/e73.json": "fba94f7bf542085a8a3c403c95a43033332517279eabfa0f7f1e868b0e4d1dd8",
+    "hardware/module-options/e73.json": "e0975740fd7d73c34cd4ce1c356f17d0790ef9d2576e5108c860cb3406e9a785",
     "hardware/module-options/Ebyte.pretty/E73-2G4M08S1C.kicad_mod": "e605ed7cfcdb3c2fb42cb453e9d5f49136733d7f3b5230380d765cf81f8a4e8f",
-    "scripts/check_e73_proposal.py": "01eb9517c36034d916ffe4e85cd88bfca5fc787dd321c3a0cfb9a67cbc818bc4"
+    "scripts/check_e73_reference.py": "e67330fbfa982fe943c26d0535882113054cd8c54c8e7df321cc5f80d3169a79"
   }
 }

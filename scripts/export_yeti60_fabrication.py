@@ -79,7 +79,7 @@ def main():
                     'required_process':'JLC ordinary four-layer JLC04161H-7628, nominal order 1.6 mm; mechanical through holes only; no blind/buried, resin-filled or copper-capped process required',
                     'production_approved':False}
         (work/'manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
-        target = OUT/'yeti60-p2-dfm-review.zip'
+        target = OUT/'yeti60-e73-p2-dfm-review.zip'
         with zipfile.ZipFile(target, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
             for path in sorted(work.iterdir()):
                 info = zipfile.ZipInfo(path.name, (2000,1,1,0,0,0))

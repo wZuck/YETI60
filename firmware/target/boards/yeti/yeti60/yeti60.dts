@@ -2,7 +2,7 @@
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
 / {
-    model = "YETI60 single nRF52840";
+    model = "YETI60 E73 single nRF52840";
     compatible = "yeti,yeti60";
     chosen {
         zephyr,sram = &sram0;
@@ -23,10 +23,10 @@
 &gpiote { status = "okay"; };
 &gpio0 { status = "okay"; };
 &gpio1 { status = "okay"; };
-/* MDBT50Q-1MV2 integrates the REG1 radio-rail inductor. REG0 remains LDO
- * because the board does not populate the external DCCH inductor. */
+/* E73 uses REG1 LDO: no dependency on undocumented internal DC/DC parts.
+ * VDD and VDDH share 3.3 V. DCCH is unconnected; REG0 also remains LDO. */
 &reg1 {
-    regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
+    regulator-initial-mode = <NRF5X_REG_MODE_LDO>;
 };
 &adc { status = "okay"; };
 &usbd { status = "okay"; };

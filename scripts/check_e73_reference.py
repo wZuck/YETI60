@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the E73 pin proposal and reference footprint, not a routed design."""
+"""Validate the E73 vendor reference footprint and assigned pin contract."""
 import hashlib
 import json
 from pathlib import Path
@@ -38,14 +38,15 @@ def main():
         assert [pcb.ToMM(pad.GetPosition().x),pcb.ToMM(pad.GetPosition().y)]==pins[number]['vendor_land_center_mm']
         assert [pcb.ToMM(pad.GetSize().x),pcb.ToMM(pad.GetSize().y)]==pins[number]['vendor_land_size_mm']
     assert not data['production_approved']
-    report={'status':'pin-proposal-and-reference-footprint-checked-not-PCB-validation',
+    report={'status':'vendor-reference-and-pin-contract-passed',
             'module':data['module'],'controller_count_per_board':1,'assigned_GPIO_functions':21,
             'connected_outer_lands':27,'connected_bottom_lands':bottom,
-            'PCB_routed':False,'E73_firmware_built':False,'production_approved':False,
+            'scope':'Reference geometry and pin identities only; native PCB and linked firmware are checked separately',
+            'production_approved':False,
             'source_sha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
                              for p in [path,footprint,Path(__file__)]}}
-    (ROOT/'docs/audit/e73-pin-proposal.json').write_text(json.dumps(report,indent=2)+'\n')
-    print('21 GPIO functions unique; USB/SWD/power pins and 43 vendor lands match. PCB and firmware not validated yet.')
+    (ROOT/'docs/audit/yeti60-e73-reference.json').write_text(json.dumps(report,indent=2)+'\n')
+    print('21 GPIO functions unique; USB/SWD/power pins and 43 vendor reference lands match.')
 
 
 if __name__=='__main__':

@@ -43,13 +43,6 @@
     "download_sha256": null,
     "retrieval_note": "Read via web; local PDF download unavailable. No local-content hash asserted."
   },
-  "raytac": {
-    "url": "https://www.raytac.com/download/index.php?index_id=43",
-    "locator": "Version L 2023-05-24; REG1 inductor internal; current target selects REG1 DC/DC in devicetree; physical RF/EC measurement pending",
-    "access_date": "2026-10-28",
-    "evidence": "primary publisher or project owner; local project sources where explicitly stated",
-    "download_sha256": "61fec8c0c9f8c33175be2237a8ebba73c6cfc0a3572fe3835fd341079c103d03"
-  },
   "jst-sh": {
     "url": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
     "locator": "4-position SH/SR header and crimp housing/contact drawings",
@@ -115,5 +108,17 @@
     "url": "https://keeb.io/products/skuf-silicone-rubber-keyboard-feet",
     "retrieved": "2026-10-29",
     "scope": "41.8x5.8x2mm silicone, 45A, adhesive-backed; four required by source case geometry"
+  },
+  "ebyte-e73": {
+    "url": "https://www.ebyte.com/product/444.html",
+    "manual": "https://www.ebyte.com/downpdf/444.html",
+    "footprint_archive": "https://www.ebyte.com/pdf-down/2158.html",
+    "access_date": "2026-10-29",
+    "locator": "E73-2G4M08S1C; 43 vendor lands, 18 x 13 x 3 mm; REG1 LDO selected, so no internal DC/DC inductor assumption"
+  },
+  "nordic-uicr": {
+    "url": "https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/uicr.html",
+    "access_date": "2026-10-29",
+    "locator": "UICR base 0x10001000; NFCPINS offset 0x20c, PROTECT bit 0 = Disabled"
   }
 }

@@ -1,18 +1,18 @@
 {
   "outputs": {
-    "hardware/bom/power-scenarios.csv": "5697c8108d5b7c37fc0036bf95017a9e78130a86b4f47ffd28ac9f2494db4276",
-    "hardware/bom/power-scenarios.zh-CN.csv": "8a1d8b920b3da73c05e78b604225d5e2beefe7e97f61efe52da660408bfc5140"
+    "hardware/bom/power-scenarios.csv": "8b82974cabedf2d808fa63f7b84b7937267a1fa90ae53fc09f0c99e4e6b89f10",
+    "hardware/bom/power-scenarios.zh-CN.csv": "509e66fd9b116d87a305af8e56736e98ac2fbc8d271cf28cb150e3788fe80d89"
   },
   "status": "conditional-sensitivity-model-not-measurement",
   "source_sha256": {
     "firmware/target/src/scanner.c": "684e34685f1d364209f2ac7722fa1b79b3473dc7aafb9fc8f15c7b22de3c57d4",
     "firmware/yeti60/core.c": "353ef280b7c84966dd6851e22ed98ad974bd58bbc5ae78b03a0623493e98ad49",
-    "firmware/target/config/yeti60.conf": "2275fd710d346cb4b92e5c3587d3b676e9ff0d4d4ac2985c6b8f491b44f22184",
-    "firmware/target/boards/yeti/yeti60/yeti60.dts": "d0d64e831bb5c10b665878d4cd76c4d058e99c37b478df8ce105cc00ded684c4",
-    "docs/engineering/sources.json": "d7d9dec5692284b1d8c7c31b39b35e30e7e650021202cdf5213c69746b442305",
+    "firmware/target/config/yeti60.conf": "5617251dda3535d9214d6ecf166fc10c11a2d8519602b0e2e9e6507d7a8fd923",
+    "firmware/target/boards/yeti/yeti60/yeti60.dts": "2434f8a86afd1571c7c34d320e18f71195bac5ee3cc32dd75f098fc6088ec8a8",
+    "docs/engineering/sources.json": "4a594663f041fb65e1813b8c79698f43a4470fea086a2bf04272cc21f7726c56",
     "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
-    "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
-    "scripts/calculate_yeti60_power.py": "765e1fc5942e9648327d9b597c52e75f53cd34690d961e817732af81fd8110a9"
+    "hardware/ec60-nrf52840/netlist.xml": "846b2d13a1782c6a841ee0831c1cce9fa0bfcf14bc1ce6c84d44d1846a9dc798",
+    "scripts/calculate_yeti60_power.py": "b287d66217aeb91da39cd2f3475628c6209f46e2954fa360fa6f1b57f753bd40"
   },
   "equations": {
     "rail_mA": "I_OPA + I_MCU_average + 2*3.3/100k*1000 + 0.008 + 0.016 + 0.100",
@@ -24,38 +24,38 @@
     {
       "scenario": "lower-demand",
       "opamp_mA": 5.2,
-      "mcu_average_mA_ASSUMED": 3,
+      "mcu_average_mA_ASSUMED": 6.3,
       "efficiency_ASSUMED": 0.9,
       "battery_voltage_V_ASSUMED": 3.7,
-      "rail_3v3_mA": 8.389999999999999,
-      "battery_mA": 8.365714414414414,
-      "battery_power_mW": 30.953143333333333,
+      "rail_3v3_mA": 11.69,
+      "battery_mA": 11.635984684684685,
+      "battery_power_mW": 43.05314333333334,
       "usable_capacity_factor_ASSUMED": 0.8,
-      "runtime_default_pack_hours": 153.00546212700206
+      "runtime_default_pack_hours": 110.00358239425492
     },
     {
       "scenario": "planning",
       "opamp_mA": 5.2,
-      "mcu_average_mA_ASSUMED": 6,
+      "mcu_average_mA_ASSUMED": 8,
       "efficiency_ASSUMED": 0.85,
       "battery_voltage_V_ASSUMED": 3.7,
-      "rail_3v3_mA": 11.389999999999999,
-      "battery_mA": 12.002651351351352,
-      "battery_power_mW": 44.40981,
+      "rail_3v3_mA": 13.389999999999999,
+      "battery_mA": 14.101220508744037,
+      "battery_power_mW": 52.174515882352935,
       "usable_capacity_factor_ASSUMED": 0.8,
-      "runtime_default_pack_hours": 106.64310430510736
+      "runtime_default_pack_hours": 90.77228451298126
     },
     {
       "scenario": "stress",
       "opamp_mA": 7.5,
-      "mcu_average_mA_ASSUMED": 10,
+      "mcu_average_mA_ASSUMED": 15,
       "efficiency_ASSUMED": 0.8,
       "battery_voltage_V_ASSUMED": 3.3,
-      "rail_3v3_mA": 17.689999999999998,
-      "battery_mA": 22.171999999999993,
-      "battery_power_mW": 73.16759999999998,
+      "rail_3v3_mA": 22.689999999999998,
+      "battery_mA": 28.421999999999997,
+      "battery_power_mW": 93.79259999999998,
       "usable_capacity_factor_ASSUMED": 0.8,
-      "runtime_default_pack_hours": 57.730470864153006
+      "runtime_default_pack_hours": 45.03553585250862
     }
   ],
   "timing_us": {
@@ -74,7 +74,8 @@
     "deep_sleep_enabled": false,
     "deep_sleep_blocker": "EC keys are not a System OFF GPIO wake source",
     "battery_reporting": false,
-    "REG1_DCDC_enabled_by_custom_board": true,
+    "REG1_DCDC_enabled_by_custom_board": false,
+    "REG1_mode": "LDO",
     "REG0_DCDC_enabled": false,
     "LED": "No status LED drive in current adapter; assumed off"
   },

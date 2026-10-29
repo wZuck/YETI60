@@ -85,7 +85,10 @@ def prepare():
     ]))
     board = loads(SOURCE.read_text())
     resolutions = []
-    proxies = {'J2': 'J2-illustrative.wrl', 'SW100': 'SW100-illustrative.wrl'}
+    (proxy_dir / 'E73-envelope.wrl').write_text(box_vrml([
+        ((9, 6.5, 1.5), (18, 13, 3), (.08, .22, .13)),
+    ]))
+    proxies = {'J2': 'J2-illustrative.wrl', 'SW100': 'SW100-illustrative.wrl', 'U1':'E73-envelope.wrl'}
     geometry_only = set(json.loads((BASE / 'metadata-audit.json').read_text())['non_purchased_geometry_references']) | {'REF**'}
     for fp in children(board, 'footprint'):
         ref = next(str(p[2]) for p in children(fp, 'property') if str(p[1]) == 'Reference')
@@ -98,7 +101,7 @@ def prepare():
             fp.append([Atom('model'), str(path), [Atom('offset'), [Atom('xyz'), Atom('0'), Atom('0'), Atom('0')]],
                        [Atom('scale'), [Atom('xyz'), Atom('1'), Atom('1'), Atom('1')]],
                        [Atom('rotate'), [Atom('xyz'), Atom('0'), Atom('0'), Atom('0')]]])
-            resolutions.append({'ref': ref, 'kind': 'illustrative-proxy', 'model': str(path.relative_to(ROOT)), 'height_qualified': False})
+            resolutions.append({'ref': ref, 'kind': 'manufacturer-sized-body-envelope' if ref=='U1' else 'illustrative-proxy', 'model': str(path.relative_to(ROOT)), 'height_qualified': ref=='U1', 'surface_detail_qualified':False})
             continue
         loaded = 0
         for model in old_models:

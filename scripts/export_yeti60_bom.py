@@ -8,7 +8,7 @@ def key(ref):return (re.sub(r'\d','',ref),int(re.search(r'\d+',ref)[0]))
 def main():
  net=ROOT/'hardware/ec60-nrf52840/netlist.xml';meta=ROOT/'hardware/ec60-nrf52840/metadata-audit.json';skip=set(json.loads(meta.read_text())['non_purchased_geometry_references']);groups={};omitted=[]
  special={
- 'U1':('Raytac MDBT50Q-1MV2','Exact module; supplier order code and certification suffix to confirm','指定模组；订货后缀及认证版本须确认'),
+ 'U1':('Ebyte E73-2G4M08S1C','Exact module; supplier order code and certification suffix to confirm','指定模组；订货后缀及认证版本须确认'),
  'U2':('Nexperia 74HC4051PW,118','TSSOP16 HC, not HCT; candidate MPN against native footprint','TSSOP16、HC 系列，不能用 HCT；候选型号须按原生焊盘复核'),
  'U4':('Nexperia 74HC4051PW,118','TSSOP16 HC, not HCT; candidate MPN against native footprint','TSSOP16、HC 系列，不能用 HCT；候选型号须按原生焊盘复核'),
  'U3':('TI OPA350UA','SOIC-8; do not substitute dual OPA2350 or MSOP','SOIC-8；不能替换为双路 OPA2350 或 MSOP 封装'),

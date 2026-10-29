@@ -281,28 +281,28 @@
       ],
       "actions": [
         [
-          "Confirm Raytac MDBT50Q-1MV2, including the actual ordering suffix; do not use the stock nice!nano board.",
+          "Confirm Ebyte E73-2G4M08S1C, including the actual ordering suffix; do not use the stock nice!nano board.",
           "Match the module drawing, pin 1 and antenna end to the native footprint. Check the underside lands before placement.",
           "Keep paste and metal debris out of the antenna area. Place the module flat without sliding it across neighboring pads."
         ],
         [
-          "确认使用 Raytac MDBT50Q-1MV2 及正确订货后缀，不使用库存 nice!nano 开发板。",
+          "确认使用 Ebyte E73-2G4M08S1C 及正确订货后缀，不使用库存 nice!nano 开发板。",
           "根据模组图纸核对一脚、天线端和原生焊盘方向，放置前检查底部焊盘。",
           "天线区域不沾锡膏和金属碎屑；模组平放，不在相邻焊盘上拖动。"
         ]
       ],
       "check": [
-        "This is a module soldered directly to the PCB, with underside joints. No headers or second controller are installed.",
-        "这是直接焊接在 PCB 上的模组，包含底部焊点；不安装排针或第二颗主控。"
+        "E73 is soldered directly to this PCB: connected bottom lands 12, 24, 28, 32 and 34 require reflow and inspection. No headers or second controller are installed.",
+        "E73 直接焊接在本版本 PCB 上：实际连接的底部 12、24、28、32、34 焊盘须回流焊并检查，不装排针或第二颗主控。"
       ],
       "labels": [
         [
-          "MDBT50Q-1MV2 only",
+          "E73-2G4M08S1C only",
           "Native pad 1 and module orientation",
           "Underside lands require reflow"
         ],
         [
-          "仅使用 MDBT50Q-1MV2",
+          "仅使用 E73-2G4M08S1C",
           "按原生焊盘 1 核对方向",
           "底部焊盘需要回流焊接"
         ]
@@ -580,12 +580,12 @@
         [
           "Power off before mating the custom six-pogo fixture. Use J3 pin 1 as 3.3 V target reference, not a second supply.",
           "Connect 2 SWDIO, 3 GND, 4 SWDCLK, 5 RESET_N and 6 GND using the actual pad numbers. Power the board through the checked USB path.",
-          "Select nRF52840 in the probe tool, program firmware/releases/calibrator/yeti60.hex, verify its contents and reset. Reserve calibration until the EC mechanical stack is installed."
+          "Select nRF52840 in the probe tool, program firmware/releases/calibrator/yeti60-e73.hex, verify its contents and reset. Reserve calibration until the EC mechanical stack is installed."
         ],
         [
           "对接自定义六针治具前先断电，J3 的 1 脚是 3.3 V 目标参考，不用作第二路供电。",
           "按实际编号连接 2 SWDIO、3 地、4 SWDCLK、5 RESET_N、6 地，再通过已检查的 USB 通路为板子供电。",
-          "在调试工具中选择 nRF52840，写入 firmware/releases/calibrator/yeti60.hex，执行校验并复位；装好静电容机械结构后再校准。"
+          "在调试工具中选择 nRF52840，写入 firmware/releases/calibrator/yeti60-e73.hex，执行校验并复位；装好静电容机械结构后再校准。"
         ]
       ],
       "check": [
@@ -904,12 +904,12 @@
         [
           "With the complete mechanical stack supported at its intended preload, boot the calibrator and open its USB CDC console. Execute console commands one at a time, allowing release sampling before starting the press stage.",
           "Run yeti_calibrate release with every key released, then yeti_calibrate press and fully press/release each of the 60 keys. Release all keys and run yeti_calibrate save; inspect the reported result.",
-          "Power down before reconnecting SWD. Program and verify firmware/releases/normal/yeti60.hex using range/sector-aware flashing that preserves 0xF0000–0xFFFFF. Restart and check that calibration is retained."
+          "Power down before reconnecting SWD. Program and verify firmware/releases/normal/yeti60-e73.hex using range/sector-aware flashing that preserves 0xF0000–0xFFFFF. Restart and check that calibration is retained."
         ],
         [
           "完整机械结构按预定预压状态支撑，启动校准固件并打开 USB CDC 控制台。 三条命令分步执行，待松键采样完成后再进入按键采样阶段，不一次粘贴三条命令。",
           "全部松键执行 yeti_calibrate release，再执行 yeti_calibrate press，完整按下并松开每个实际按键；最后全部松键执行 yeti_calibrate save，并检查返回结果。",
-          "重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。"
+          "重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60-e73.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。"
         ]
       ],
       "check": [

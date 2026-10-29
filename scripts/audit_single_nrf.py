@@ -77,10 +77,11 @@ summary={'status':('cad-checks-passed' if not counts and not parity_errors and n
     'physical_pin_pairs':critical,'failed_pin_pairs':sum(not x['physically_connected'] for x in critical),
     'split_nets':split_nets,
     'critical_paths':[{ 'from':'.'.join(a),'to':'.'.join(b),'connected':cache[uid(pads[a])]==cache[uid(pads[b])]} for a,b in [
-        (('U6','1'),('U1','28')),(('U6','1'),('U1','30')),(('U5','8'),('U5','17')),(('U5','17'),('U1','1')),
-        (('U6','4'),('L1','1')),(('U6','2'),('L1','2')),(('U1','20'),('U3','6')),
-        (('J1','2'),('R30','1')),(('R30','2'),('U1','34')),(('J1','3'),('R31','1')),(('R31','2'),('U1','35')),
-        (('U1','51'),('J3','2')),(('U1','53'),('J3','4'))]],
+        (('U6','1'),('U1','19')),(('U6','1'),('U1','23')),(('U5','8'),('U5','17')),(('U5','17'),('U1','5')),
+        (('U5','17'),('U1','21')),(('U5','17'),('U1','24')),
+        (('U6','4'),('L1','1')),(('U6','2'),('L1','2')),(('U1','4'),('U3','6')),
+        (('J1','2'),('R30','1')),(('R30','2'),('U1','29')),(('J1','3'),('R31','1')),(('R31','2'),('U1','31')),
+        (('U1','37'),('J3','2')),(('U1','39'),('J3','4'))]],
     'interference_simulation':'not_started_user_ordered_after_PCB_completion',
     'limits':['Ordinary JLC through-via process checked separately; no module via-in-pad or special fill/capping','DRC does not certify regulator stability, capacitor DC bias or thermal performance','C5 native electrical/mounting checks do not verify mating plug/harness serviceability or physical assembly','Normal/calibrator target builds verified separately; on-device USB/BLE and physical EC calibration untested']}
 summary['failed_critical_paths']=sum(not x['connected'] for x in summary['critical_paths'])

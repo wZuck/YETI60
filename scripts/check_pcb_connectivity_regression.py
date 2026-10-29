@@ -9,7 +9,15 @@ base=Path(__file__).resolve().parents[1];hw=base/'hardware/ec60-nrf52840'
 revision=subprocess.check_output(['git','rev-parse','--verify',args.baseline+'^{commit}'],cwd=base,text=True).strip()
 folder=tempfile.TemporaryDirectory(prefix='yaeckb-connectivity-baseline-');old=Path(folder.name)/'baseline.kicad_pcb'
 old.write_bytes(subprocess.check_output(['git','show',revision+':hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb'],cwd=base))
-def groups(path):
+baseline_xml=E.fromstring(subprocess.check_output(['git','show',revision+':hardware/ec60-nrf52840/netlist.xml'],cwd=base))
+current_xml=E.parse(hw/'netlist.xml').getroot()
+def aliases(document):
+ out={}
+ for net in document.findall('./nets/net'):
+  module=sorted([v.get('pin') for v in net.findall('node') if v.get('ref')=='U1'],key=int)
+  for index,pin in enumerate(module):out[('U1',pin)]=('U1',net.get('name')+'#'+str(index))
+ return out
+def groups(path,alias):
  b=p.LoadBoard(str(path));b.BuildConnectivity();c=b.GetConnectivity();items={x.m_Uuid.AsString():x for x in list(b.GetTracks())+[v for f in b.GetFootprints() for v in f.Pads()]};labels={};out={};count=0
  for f in b.GetFootprints():
   for pad in f.Pads():
@@ -23,16 +31,15 @@ def groups(path):
      seen.add(ak);labels[ak]=count
      todo.extend(items[v.m_Uuid.AsString()] for v in c.GetConnectedItems(a) if v.GetNetCode()==pad.GetNetCode() and v.m_Uuid.AsString() in items)
     count+=1
-   out[(f.GetReference(),pad.GetNumber())]=labels[k]
+   key=(f.GetReference(),pad.GetNumber());out[alias.get(key,key)]=labels[k]
  return out
-before=groups(old);after=groups(hw/'EC60-nRF52840.kicad_pcb');regress=[];improve=[]
-baseline_xml=E.fromstring(subprocess.check_output(['git','show',revision+':hardware/ec60-nrf52840/netlist.xml'],cwd=base))
-current_xml=E.parse(hw/'netlist.xml').getroot()
+before=groups(old,aliases(baseline_xml));after=groups(hw/'EC60-nRF52840.kicad_pcb',aliases(current_xml));regress=[];improve=[]
 pair_contract={}
 for document in [baseline_xml,current_xml]:
+ alias=aliases(document)
  for net in document.findall('./nets/net'):
   if net.get('name')=='GND':continue
-  nodes=[(v.get('ref'),v.get('pin')) for v in net.findall('node')]
+  nodes=[alias.get((v.get('ref'),v.get('pin')),(v.get('ref'),v.get('pin'))) for v in net.findall('node')]
   for a,b in combinations(sorted(nodes),2):pair_contract[(a,b)]=net.get('name')
 added=[]
 for (a,b),name in pair_contract.items():

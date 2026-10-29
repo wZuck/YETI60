@@ -2,7 +2,7 @@
 
 # YETI60 单 nRF52840 PCB
 
-单颗 Raytac MDBT50Q-1MV2 承担静电容扫描、原生 USB 和 BLE；OPA350、复用器、充电及稳压芯片为外围，不是第二主控。移除 STM32 和板载 USB1，后侧 Type-C 子板连接 J1；保留 EC60 感应几何、板框、安装位置及四层结构。
+单颗 Ebyte E73-2G4M08S1C 承担静电容扫描、原生 USB 和 BLE；OPA350、复用器、充电及稳压芯片为外围，不是第二主控。移除 STM32 和板载 USB1，后侧 Type-C 子板连接 J1；保留 EC60 感应几何、板框、安装位置及四层结构。
 
 严格 CAD DRC 为 0 错误、0 断线，270 对引脚导通；这**不能批准整机硬件或替代电源实测**。见[全面复查](../../docs/audit/yeti60-comprehensive-review.zh-CN.md)。
 
