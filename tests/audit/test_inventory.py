@@ -32,6 +32,20 @@ class InventoryAllocation(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, 'Package mismatch'):
             planner.allocate(self.stock, self.bom)
 
+    def test_shared_pool_is_labelled_without_inflating_allocated_quantity(self):
+        rows = planner.allocate(self.stock, self.bom)
+        caps = [r for r in rows if r['references'] in ['C9, C11, C12', 'C31']]
+        self.assertEqual(sum(r['from_stock'] for r in caps), 4)
+        self.assertTrue(all(r['received_pool_units'] == 100 for r in caps))
+        self.assertTrue(all('shared by source row' in planner.stock_note(r) for r in caps))
+        self.assertTrue(all('共享' in planner.stock_note(r, True) for r in caps))
+
+    def test_unmatched_parts_are_marked_for_purchase(self):
+        rows = planner.allocate(self.stock, self.bom)
+        module = next(r for r in rows if r['references'] == 'U1')
+        self.assertEqual((module['from_stock'], module['buy']), (0, 1))
+        self.assertIn('purchase required', planner.stock_note(module))
+
     def test_wrong_value_is_rejected(self):
         self.stock['mainboard'][0]['design_values'] = ['15p']
         with self.assertRaisesRegex(AssertionError, 'Value mismatch'):

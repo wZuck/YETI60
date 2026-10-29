@@ -85,43 +85,43 @@ These are separate fabrication orders/files: the mainboard ZIP does not contain 
 
 0402 resistors: 1%, >=50 mW; fit 0-ohm links where specified. The 220 pF capacitor is C0G; others X5R/X7R, 10% or better, >=10 V (16 V where specified), with effective DC-biased capacitance to be qualified. Values below are current circuit requirements; unselected MPNs are not frozen parts.
 
-| References | Quantity | Value/function | Package | Specified/candidate MPN |
-|---|---:|---|---|---|
-| C9, C11, C12 | 3 | 100n | C_0402_1005Metric | Vendor MPN unselected |
-| C10 | 1 | 220p | C_0402_1005Metric | Vendor MPN unselected |
-| C13 | 1 | 1u | C_0402_1005Metric | Vendor MPN unselected |
-| C30, C41, C42, C43, C45, C46 | 6 | 10u/10V | C_0603_1608Metric | Vendor MPN unselected |
-| C31 | 1 | 100n/16V | C_0402_1005Metric | Vendor MPN unselected |
-| C32 | 1 | 4.7u/10V | C_0603_1608Metric | Vendor MPN unselected |
-| C40 | 1 | 1u/10V | C_0603_1608Metric | Vendor MPN unselected |
-| C44 | 1 | 100n/16V | C_0603_1608Metric | Vendor MPN unselected |
-| C47 | 1 | 10n | C_0402_1005Metric | Vendor MPN unselected |
-| C48 | 1 | 1u/10V | C_0402_1005Metric | Vendor MPN unselected |
-| D1 | 1 | PRTR5V0U2X | SOT-143 | Nexperia PRTR5V0U2X |
-| D2 | 1 | STATUS | LED_0603_1608Metric | 0603 status LED; vendor MPN unselected |
-| F1 | 1 | 500mA | Fuse_1206_3216Metric | 1206 resettable fuse, 0.5 A hold |
-| J1 | 1 | REAR_USB_DAUGHTERBOARD | JST-SR-4 | JST SM04B-SRSS-TB(LF)(SN), candidate |
-| J2 | 1 | PROTECTED_1S_4V2_NTC10K | JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal | JST S3B-PH-SM4-TB(LF)(SN) |
-| L1 | 1 | 1.5uH_74438336015 | L_Wuerth_MAPI-3015 | Wurth 74438336015 |
-| R3, R4, R5, R6, R7, R47, R53, R54 | 8 | 100 | R_0402_1005Metric | Vendor MPN unselected |
-| R8, R9, R10, R11, R12, R13, R14, R15, R16, R18, R19, R20, R21, R23, R24, R25, R42, R43, R44, R45, R46, R48, R49, R50 | 24 | 100k | R_0402_1005Metric | Vendor MPN unselected |
-| R17 | 1 | 1k | R_0402_1005Metric | Vendor MPN unselected |
-| R26 | 1 | 10k | R_0402_1005Metric | Vendor MPN unselected |
-| R30, R31 | 2 | 0 | R_0402_1005Metric | Vendor MPN unselected |
-| R32 | 1 | 2.2k | R_0402_1005Metric | Vendor MPN unselected |
-| R40 | 1 | 2.21k/1% | R_0402_1005Metric | Vendor MPN unselected |
-| R41 | 1 | 7.50k/1% | R_0402_1005Metric | Vendor MPN unselected |
-| R51, R52 | 2 | 1M/1% | R_0402_1005Metric | Vendor MPN unselected |
-| R55 | 1 | 69.8k/1% | R_0402_1005Metric | Vendor MPN unselected |
-| R56 | 1 | 1.69k/1% | R_0402_1005Metric | Vendor MPN unselected |
-| SW1 | 1 | EVQPUC02K_RESET | Panasonic_EVQPUL_EVQPUC | Panasonic EVQPUC02K |
-| SW100 | 1 | JS102011SAQN_POWER | SW_SPDT_CK_JS102011SAQN | C&K JS102011SAQN |
-| U1 | 1 | MDBT50Q-1MV2 | Raytac_MDBT50Q | Raytac MDBT50Q-1MV2 |
-| U2, U4 | 2 | 74HC4051 | TSSOP16 | Nexperia 74HC4051PW,118 |
-| U3 | 1 | OPA350 | SOIC-8_3.9x4.9mm_P1.27mm | TI OPA350UA |
-| U5 | 1 | BQ24074RGT | VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm | TI BQ24074RGTR |
-| U6 | 1 | TPS63031DSK | WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm | TI TPS63031DSKR |
-| U7, U8 | 2 | TPS22919DCK | SOT-363_SC-70-6 | TI TPS22919DCKR |
+| References | Quantity | Value/function | Package | Specified/candidate MPN | Planned stock use | To buy | Inventory note |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| C9, C11, C12 | 3 | 100n | C_0402_1005Metric | Vendor MPN unselected | 3 | 0 | In inventory: Samsung CL05B104KO5NNNC; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
+| C10 | 1 | 220p | C_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| C13 | 1 | 1u | C_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
+| C30, C41, C42, C43, C45, C46 | 6 | 10u/10V | C_0603_1608Metric | Vendor MPN unselected | 0 | 6 | No matched usable stock; purchase required |
+| C31 | 1 | 100n/16V | C_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Samsung CL05B104KO5NNNC; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
+| C32 | 1 | 4.7u/10V | C_0603_1608Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| C40 | 1 | 1u/10V | C_0603_1608Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| C44 | 1 | 100n/16V | C_0603_1608Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| C47 | 1 | 10n | C_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| C48 | 1 | 1u/10V | C_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
+| D1 | 1 | PRTR5V0U2X | SOT-143 | Nexperia PRTR5V0U2X | 0 | 1 | No matched usable stock; purchase required |
+| D2 | 1 | STATUS | LED_0603_1608Metric | 0603 status LED; vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| F1 | 1 | 500mA | Fuse_1206_3216Metric | 1206 resettable fuse, 0.5 A hold | 0 | 1 | No matched usable stock; purchase required |
+| J1 | 1 | REAR_USB_DAUGHTERBOARD | JST-SR-4 | JST SM04B-SRSS-TB(LF)(SN), candidate | 0 | 1 | No matched usable stock; purchase required |
+| J2 | 1 | PROTECTED_1S_4V2_NTC10K | JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal | JST S3B-PH-SM4-TB(LF)(SN) | 0 | 1 | No matched usable stock; purchase required |
+| L1 | 1 | 1.5uH_74438336015 | L_Wuerth_MAPI-3015 | Wurth 74438336015 | 0 | 1 | No matched usable stock; purchase required |
+| R3, R4, R5, R6, R7, R47, R53, R54 | 8 | 100 | R_0402_1005Metric | Vendor MPN unselected | 0 | 8 | No matched usable stock; purchase required |
+| R8, R9, R10, R11, R12, R13, R14, R15, R16, R18, R19, R20, R21, R23, R24, R25, R42, R43, R44, R45, R46, R48, R49, R50 | 24 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 24 | No matched usable stock; purchase required |
+| R17 | 1 | 1k | R_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Uniroyal 0402WGF1001TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly |
+| R26 | 1 | 10k | R_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Uniroyal 0402WGF1002TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly |
+| R30, R31 | 2 | 0 | R_0402_1005Metric | Vendor MPN unselected | 2 | 0 | In inventory: Uniroyal 0402WGF0000TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly |
+| R32 | 1 | 2.2k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R40 | 1 | 2.21k/1% | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R41 | 1 | 7.50k/1% | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R51, R52 | 2 | 1M/1% | R_0402_1005Metric | Vendor MPN unselected | 0 | 2 | No matched usable stock; purchase required |
+| R55 | 1 | 69.8k/1% | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R56 | 1 | 1.69k/1% | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| SW1 | 1 | EVQPUC02K_RESET | Panasonic_EVQPUL_EVQPUC | Panasonic EVQPUC02K | 0 | 1 | No matched usable stock; purchase required |
+| SW100 | 1 | JS102011SAQN_POWER | SW_SPDT_CK_JS102011SAQN | C&K JS102011SAQN | 0 | 1 | No matched usable stock; purchase required |
+| U1 | 1 | MDBT50Q-1MV2 | Raytac_MDBT50Q | Raytac MDBT50Q-1MV2 | 0 | 1 | No matched usable stock; purchase required |
+| U2, U4 | 2 | 74HC4051 | TSSOP16 | Nexperia 74HC4051PW,118 | 0 | 2 | No matched usable stock; purchase required |
+| U3 | 1 | OPA350 | SOIC-8_3.9x4.9mm_P1.27mm | TI OPA350UA | 0 | 1 | No matched usable stock; purchase required |
+| U5 | 1 | BQ24074RGT | VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm | TI BQ24074RGTR | 0 | 1 | No matched usable stock; purchase required |
+| U6 | 1 | TPS63031DSK | WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm | TI TPS63031DSKR | 0 | 1 | No matched usable stock; purchase required |
+| U7, U8 | 2 | TPS22919DCK | SOT-363_SC-70-6 | TI TPS22919DCKR | 0 | 2 | No matched usable stock; purchase required |
 
 JP1 quantity is **0**, DNP. J3 is six PCB SWD contact pads, with no fitted header. Mainboard totals: 43 resistors, 17 capacitors and 16 other components = 76.
 
@@ -129,14 +129,14 @@ JP1 quantity is **0**, DNP. J3 is six PCB SWD contact pads, with no fitted heade
 
 Prepare **one bare C5 JSH PCB and the seven parts below** instead of buying a populated C5. [Local stock-adjusted CSV](hardware/bom/daughterboard.csv) · [Pinned upstream BOM](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_bom.csv) · [Pinned upstream Gerber archive](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip).
 
-| References | Quantity | Manufacturer and specified MPN | Package / connector footprint | LCSC code |
-|---|---:|---|---|---|
-| D1 | 1 | FTR SMF6.0A | SOD-123FL | C708002 |
-| F1 | 1 | Shenzhen JDT Fuse ASMD1206-150 | F1206 | C135342 |
-| J2 | 1 | JST SM04B-SRSS-TB(LF)(SN) | SM04B-SRSS-TB(LF)(SN)_mounting-reliefs | C160404 |
-| J1 | 1 | Korean Hroparts TYPE-C-31-M-12 | TYPE-C-31-M-12 | C165948 |
-| R1, R2 | 2 | Uniroyal 0402WGF5101TCE | R0402 | C25905 |
-| U1 | 1 | Texas Instruments TPD4E05U06DQAR | uSON-10 | C138714 |
+| References | Quantity | Manufacturer and specified MPN | Package / connector footprint | LCSC code | Planned stock use | To buy | Inventory note |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| D1 | 1 | FTR SMF6.0A | SOD-123FL | C708002 | 0 | 1 | No matched usable stock; purchase required |
+| F1 | 1 | Shenzhen JDT Fuse ASMD1206-150 | F1206 | C135342 | 0 | 1 | No matched usable stock; purchase required |
+| J2 | 1 | JST SM04B-SRSS-TB(LF)(SN) | SM04B-SRSS-TB(LF)(SN)_mounting-reliefs | C160404 | 0 | 1 | No matched usable stock; purchase required |
+| J1 | 1 | Korean Hroparts TYPE-C-31-M-12 | TYPE-C-31-M-12 | C165948 | 0 | 1 | 6 domestic substitutes recorded received; geometry/pinout unconfirmed, no credit |
+| R1, R2 | 2 | Uniroyal 0402WGF5101TCE | R0402 | C25905 | 2 | 0 | Matching stock; recorded received pool 100, plan to use 2; count before assembly |
+| U1 | 1 | Texas Instruments TPD4E05U06DQAR | uSON-10 | C138714 | 0 | 1 | No matched usable stock; purchase required |
 
 The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose parts plus one bare PCB**. The stock domestic TYPE-C-31-M-12 is not credited until its geometry is confirmed. These are daughterboard reference numbers, separate from mainboard references. The USB harness, four M2 screws and washers are separate assembly items below. LCSC codes identify the pinned upstream entries, not current prices or stock guarantees. BOM data: Copyright (c) 2023 Unified Daughterboard Project, [MIT license](hardware/usb-daughterboard/LICENSE.upstream).
 

@@ -8,6 +8,8 @@ The [mainboard purchase CSV](../../hardware/bom/mainboard-purchase.csv) gives ev
 
 ## Stock allocated to the mainboard
 
+The README mainboard and optional C5 tables show stock use, remaining purchases and an inventory note on each component row. Received pool counts are shared by inventory source row: C9/C11/C12 and C31 draw from the same 100-part pool, not separate pools. The same-family C5 USB receptacle is marked as unconfirmed stock and receives no purchase credit. The allocation generator updates both language tables; the materials check rejects stale quantities or notes.
+
 | Inventory row | Stock MPN and rating | Recorded received units | Recorded in transit, excluded | References | Use | Recorded balance after planned use |
 |---|---|---:|---:|---|---:|---:|
 | 48 | Samsung CL05B104KO5NNNC, 100 nF, 16 V, 10%, X7R, 0402 | 100 | 100 | C9, C11, C12, C31 | 4 | 96 |
