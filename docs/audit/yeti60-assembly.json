@@ -1,28 +1,30 @@
 {
   "status": "conditional-fit-review",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
     "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
-    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51"
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed"
   },
   "verification_recipe_sha256": {
-    "scripts/check_yeti60_assembly.py": "6b3c40841f1ecee300f29677417598cb7efde4e3d7aca12ff9a18d349dc1f660",
+    "scripts/check_yeti60_assembly.py": "396544c7e880b81069aa3d67b7289694ae4dab8a2eb195686f297fe8728f023f",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/export_yeti60_mechanical_metadata.py": "22ebeac89f8839f7fddb0a84dbcf6be2244dc7c55e3382cd6805f8e58d94525e"
   },
-  "mechanical_metadata_sha256": "5b986d915c6475ef328615fb2dc12f8786ed19319f2ef605a259cb671d90d4d0",
+  "mechanical_metadata_sha256": "da6b081f6e1437a2ddf16d78b1f73ce972747d6285368d49907533003f3ddb24",
   "pcb_frame_to_case": "X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z",
   "nominal_stack": {
     "bottom_gasket_ledge_z": 3.19,
     "top_gasket_ledge_z": 6.39,
-    "compressed_gasket_each_mm": 1.0,
-    "plate_bottom_z": 4.19,
+    "compressed_bottom_gasket_mm": 1.0162,
+    "compressed_top_gasket_mm": 0.9837999999999998,
+    "plate_bottom_z": 4.2062,
     "plate_thickness_mm": 1.2,
     "pcb_to_plate_gap_mm": 4.6,
-    "pcb_top_z": -0.40999999999999925,
-    "pcb_bottom_z": -1.9999999999999993,
+    "pcb_top_z": -0.3937999999999997,
+    "pcb_bottom_z": -1.9999999999999998,
     "pcb_gap_basis": "4.5 mm machined shoulder plus 0.1 mm insulating film; physical dome/housing acceptance requires first article"
   },
   "mounting_hole_matches": [
@@ -40,7 +42,7 @@
         304.800204,
         -170.25966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     },
     {
       "pcb_ref": "H10",
@@ -56,7 +58,7 @@
         314.325204,
         -151.20966000000004
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999997158
     },
     {
       "pcb_ref": "H18",
@@ -72,7 +74,7 @@
         266.700204,
         -170.25966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     },
     {
       "pcb_ref": "H12",
@@ -88,7 +90,7 @@
         228.600204,
         -170.25966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     },
     {
       "pcb_ref": "H9",
@@ -104,7 +106,7 @@
         276.225204,
         -151.20966000000004
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999997158
     },
     {
       "pcb_ref": "H5",
@@ -120,7 +122,7 @@
         238.125204,
         -151.20966000000004
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999997158
     },
     {
       "pcb_ref": "H17",
@@ -136,7 +138,7 @@
         152.400204,
         -170.25966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     },
     {
       "pcb_ref": "H19",
@@ -152,7 +154,7 @@
         161.92520400000004,
         -151.20966000000004
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999995995
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999995981
     },
     {
       "pcb_ref": "H4",
@@ -168,7 +170,7 @@
         114.30020400000001,
         -170.25966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999998593
+      "M1_6_radial_margin_worst_case_mm": 0.1149999999999858
     },
     {
       "pcb_ref": "H6",
@@ -184,7 +186,7 @@
         123.82520400000001,
         -151.20966000000004
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.1299999999999684
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999996825
     },
     {
       "pcb_ref": "REF**",
@@ -200,7 +202,7 @@
         331.91470400000003,
         -131.82166
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.0766333437434743
+      "M1_6_radial_margin_worst_case_mm": 0.06163334374347418
     },
     {
       "pcb_ref": "H14",
@@ -216,7 +218,7 @@
         290.512704,
         -132.15966000000003
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999997158
     },
     {
       "pcb_ref": "H16",
@@ -232,7 +234,7 @@
         252.41270400000002,
         -132.15966000000003
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999995995
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999995981
     },
     {
       "pcb_ref": "H22",
@@ -248,7 +250,7 @@
         261.937704,
         -113.10966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     },
     {
       "pcb_ref": "H2",
@@ -264,7 +266,7 @@
         223.83770400000003,
         -113.10966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999997158
     },
     {
       "pcb_ref": "REF**",
@@ -280,7 +282,7 @@
         200.02520400000003,
         -150.90966000000003
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.11749999999998308
+      "M1_6_radial_margin_worst_case_mm": 0.10249999999998294
     },
     {
       "pcb_ref": "H21",
@@ -296,7 +298,7 @@
         214.31270400000002,
         -132.15966000000003
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999995995
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999995981
     },
     {
       "pcb_ref": "H15",
@@ -312,7 +314,7 @@
         176.212704,
         -132.15966000000003
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999997158
     },
     {
       "pcb_ref": "H13",
@@ -328,7 +330,7 @@
         138.112704,
         -132.15966000000003
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999997158
     },
     {
       "pcb_ref": "REF**",
@@ -344,7 +346,7 @@
         97.012704,
         -131.80966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     },
     {
       "pcb_ref": "H3",
@@ -360,7 +362,7 @@
         76.200204,
         -132.15966000000003
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999997158
     },
     {
       "pcb_ref": "H20",
@@ -376,7 +378,7 @@
         185.737704,
         -113.10966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     },
     {
       "pcb_ref": "H8",
@@ -392,7 +394,7 @@
         147.637704,
         -113.10966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     },
     {
       "pcb_ref": "H1",
@@ -408,7 +410,7 @@
         109.53770400000002,
         -113.10966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999998593
+      "M1_6_radial_margin_worst_case_mm": 0.1149999999999858
     },
     {
       "pcb_ref": "H7",
@@ -424,7 +426,7 @@
         309.432392,
         -189.30966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     },
     {
       "pcb_ref": "H24",
@@ -440,7 +442,7 @@
         97.631454,
         -189.30966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12998600000000707
+      "M1_6_radial_margin_worst_case_mm": 0.11498600000000693
     },
     {
       "pcb_ref": "H26",
@@ -456,7 +458,7 @@
         223.83770400000003,
         -189.30966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.12999999999997172
+      "M1_6_radial_margin_worst_case_mm": 0.11499999999997158
     },
     {
       "pcb_ref": "H25",
@@ -472,7 +474,7 @@
         145.256454,
         -189.30966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     },
     {
       "pcb_ref": "H23",
@@ -488,7 +490,7 @@
         319.087704,
         -113.10966
       ],
-      "M1_6_radial_margin_worst_case_mm": 0.13000000000000014
+      "M1_6_radial_margin_worst_case_mm": 0.115
     }
   ],
   "max_hole_center_offset_mm": 0.05336665625652582,
@@ -797,16 +799,16 @@
       "cutout_width": 14.599999999999966
     }
   ],
-  "native_step_substrate_body_thickness_mm": 1.5,
-  "finished_board_envelope_thickness_mm": 1.59,
+  "native_step_substrate_body_thickness_mm": 1.5162,
+  "finished_board_envelope_thickness_mm": 1.6062,
   "finished_envelope_basis": "Native STEP bottom face extruded to declared finished copper/mask thickness; conservative full board envelope",
   "pcb_case_overlap_mm3": [
     0.0,
     0.0
   ],
   "pcb_case_distances_mm": [
-    0.7999600063555761,
-    5.261172494015233
+    0.7999600063555573,
+    5.245161432385325
   ],
   "plate_case_overlap_mm3": [
     0.0,
@@ -834,16 +836,16 @@
       "bounds_case_mm": [
         88.114562,
         -141.644604,
-        -4.999999999999999,
+        -5.0,
         89.104562,
         -139.734604,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -866,16 +868,16 @@
       "bounds_case_mm": [
         312.492146,
         -182.72466,
-        -4.999999999999999,
+        -5.0,
         313.482146,
         -180.81466,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985
+      "min_case_distance_mm": 0.9099999999999842
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -898,16 +900,16 @@
       "bounds_case_mm": [
         103.22624,
         -147.183339,
-        -4.999999999999999,
+        -5.0,
         105.09624,
         -146.213339,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028
+      "min_case_distance_mm": 0.9100000000000019
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -930,16 +932,16 @@
       "bounds_case_mm": [
         98.340337,
         -181.041979,
-        -4.999999999999999,
+        -5.0,
         99.330337,
         -179.131979,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999859
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -962,16 +964,16 @@
       "bounds_case_mm": [
         334.370009,
         -182.440717,
-        -4.999999999999999,
+        -5.0,
         335.360009,
         -180.530717,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999859
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -994,16 +996,16 @@
       "bounds_case_mm": [
         115.845,
         -147.155,
-        -4.999999999999999,
+        -5.0,
         120.155,
         -142.845,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028
+      "min_case_distance_mm": 0.9100000000000019
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1026,16 +1028,16 @@
       "bounds_case_mm": [
         142.525,
         -144.34,
-        -4.999999999999999,
+        -5.0,
         145.475,
         -141.83,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046
+      "min_case_distance_mm": 0.9100000000000037
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1058,16 +1060,16 @@
       "bounds_case_mm": [
         165.640337,
         -183.07466,
-        -4.999999999999999,
+        -5.0,
         166.630337,
         -181.16466,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985
+      "min_case_distance_mm": 0.9099999999999842
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1090,16 +1092,16 @@
       "bounds_case_mm": [
         336.545,
         -128.495,
-        -4.999999999999999,
+        -5.0,
         338.455,
         -127.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000126
+      "min_case_distance_mm": 0.9100000000000117
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1122,16 +1124,16 @@
       "bounds_case_mm": [
         336.545,
         -126.495,
-        -4.999999999999999,
+        -5.0,
         338.455,
         -125.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000135
+      "min_case_distance_mm": 0.9100000000000126
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1154,16 +1156,16 @@
       "bounds_case_mm": [
         134.695,
         -149.255,
-        -4.999999999999999,
+        -5.0,
         137.705,
         -147.745,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000019
+      "min_case_distance_mm": 0.910000000000001
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1186,16 +1188,16 @@
       "bounds_case_mm": [
         119.040337,
         -183.341979,
-        -4.999999999999999,
+        -5.0,
         120.030337,
         -181.431979,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985
+      "min_case_distance_mm": 0.9099999999999842
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1203,31 +1205,31 @@
       "value": "10u/10V",
       "back": true,
       "position_pcb_mm": [
-        120.0,
-        149.5
+        119.6,
+        151.0
       ],
       "angle_deg": 0.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        118.495,
-        148.745,
-        121.505,
-        150.255
+        118.095,
+        150.245,
+        121.105,
+        151.755
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        118.495,
-        -150.255,
-        -4.999999999999999,
-        121.505,
-        -148.745,
-        -1.9999999999999993
+        118.095,
+        -151.755,
+        -5.0,
+        121.105,
+        -150.245,
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000001
+      "min_case_distance_mm": 0.9100000000000001
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1250,16 +1252,16 @@
       "bounds_case_mm": [
         130.495,
         -141.755,
-        -4.999999999999999,
+        -5.0,
         133.505,
         -140.245,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1282,16 +1284,16 @@
       "bounds_case_mm": [
         104.045,
         -141.495,
-        -4.999999999999999,
+        -5.0,
         105.955,
         -140.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1314,16 +1316,16 @@
       "bounds_case_mm": [
         106.065,
         -147.485,
-        -4.999999999999999,
+        -5.0,
         107.935,
         -146.515,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028
+      "min_case_distance_mm": 0.9100000000000019
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1346,16 +1348,16 @@
       "bounds_case_mm": [
         100.32124,
         -154.833116,
-        -4.999999999999999,
+        -5.0,
         105.77124,
         -147.383116,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999993
+      "min_case_distance_mm": 0.9099999999999984
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1378,16 +1380,16 @@
       "bounds_case_mm": [
         303.270454,
         -177.037094,
-        -4.999999999999999,
+        -5.0,
         305.140454,
         -176.067094,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999886
+      "min_case_distance_mm": 0.9099999999999877
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1410,16 +1412,16 @@
       "bounds_case_mm": [
         218.440337,
         -181.451979,
-        -4.999999999999999,
+        -5.0,
         219.430337,
         -179.541979,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999859
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1442,16 +1444,16 @@
       "bounds_case_mm": [
         282.662833,
         -177.678189,
-        -4.999999999999999,
+        -5.0,
         283.652833,
         -175.768189,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999877
+      "min_case_distance_mm": 0.9099999999999868
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1474,16 +1476,16 @@
       "bounds_case_mm": [
         120.045,
         -141.495,
-        -4.999999999999999,
+        -5.0,
         121.955,
         -140.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1506,16 +1508,16 @@
       "bounds_case_mm": [
         331.045,
         -123.495,
-        -4.999999999999999,
+        -5.0,
         332.955,
         -122.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000152
+      "min_case_distance_mm": 0.9100000000000144
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1538,16 +1540,16 @@
       "bounds_case_mm": [
         147.280337,
         -177.281979,
-        -4.999999999999999,
+        -5.0,
         149.190337,
         -176.291979,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999886
+      "min_case_distance_mm": 0.9099999999999877
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1570,16 +1572,16 @@
       "bounds_case_mm": [
         336.565,
         -121.485,
-        -4.999999999999999,
+        -5.0,
         338.435,
         -120.515,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000161
+      "min_case_distance_mm": 0.9100000000000152
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1602,16 +1604,16 @@
       "bounds_case_mm": [
         96.746473,
         -154.741865,
-        -4.999999999999999,
+        -5.0,
         97.736473,
         -152.831865,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999993
+      "min_case_distance_mm": 0.9099999999999984
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1634,16 +1636,16 @@
       "bounds_case_mm": [
         140.045,
         -145.495,
-        -4.999999999999999,
+        -5.0,
         141.955,
         -144.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000037
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1666,48 +1668,48 @@
       "bounds_case_mm": [
         136.045,
         -141.495,
-        -4.999999999999999,
+        -5.0,
         137.955,
         -140.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
       "ref": "R56",
-      "value": "1.82k/1%",
+      "value": "1.69k/1%",
       "back": true,
       "position_pcb_mm": [
-        115.1,
-        146.85
+        117.72,
+        148.1
       ],
       "angle_deg": -90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        114.605,
-        145.895,
-        115.595,
-        147.805
+        117.225,
+        147.145,
+        118.215,
+        149.055
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        114.605,
-        -147.805,
-        -4.999999999999999,
-        115.595,
-        -145.895,
-        -1.9999999999999993
+        117.225,
+        -149.055,
+        -5.0,
+        118.215,
+        -147.145,
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028
+      "min_case_distance_mm": 0.910000000000001
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1730,16 +1732,16 @@
       "bounds_case_mm": [
         322.075,
         -126.275,
-        -4.999999999999999,
+        -5.0,
         329.925,
         -120.725,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000135
+      "min_case_distance_mm": 0.9100000000000126
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1762,16 +1764,16 @@
       "bounds_case_mm": [
         332.495,
         -119.755,
-        -4.999999999999999,
+        -5.0,
         335.505,
         -118.245,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000017
+      "min_case_distance_mm": 0.9100000000000161
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1794,16 +1796,16 @@
       "bounds_case_mm": [
         250.840337,
         -181.441979,
-        -4.999999999999999,
+        -5.0,
         251.830337,
         -179.531979,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999859
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1826,16 +1828,16 @@
       "bounds_case_mm": [
         105.525,
         -144.34,
-        -4.999999999999999,
+        -5.0,
         108.475,
         -141.83,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046
+      "min_case_distance_mm": 0.9100000000000037
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1858,16 +1860,16 @@
       "bounds_case_mm": [
         126.045,
         -141.495,
-        -4.999999999999999,
+        -5.0,
         127.955,
         -140.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1890,16 +1892,16 @@
       "bounds_case_mm": [
         332.995,
         -122.755,
-        -4.999999999999999,
+        -5.0,
         336.005,
         -121.245,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000152
+      "min_case_distance_mm": 0.9100000000000144
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1922,16 +1924,16 @@
       "bounds_case_mm": [
         105.045,
         -116.495,
-        -4.999999999999999,
+        -5.0,
         106.955,
         -115.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000179
+      "min_case_distance_mm": 0.910000000000017
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1954,16 +1956,16 @@
       "bounds_case_mm": [
         143.065,
         -148.485,
-        -4.999999999999999,
+        -5.0,
         144.935,
         -147.515,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028
+      "min_case_distance_mm": 0.9100000000000019
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1986,16 +1988,16 @@
       "bounds_case_mm": [
         338.725,
         -131.2,
-        -4.049999999999999,
+        -4.05,
         355.275,
         -118.8,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 1.860000000000011
+      "min_case_distance_mm": 1.86000000000001
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2018,16 +2020,16 @@
       "bounds_case_mm": [
         128.045,
         -139.995,
-        -4.999999999999999,
+        -5.0,
         129.955,
         -139.005,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000064
+      "min_case_distance_mm": 0.9100000000000055
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2050,16 +2052,16 @@
       "bounds_case_mm": [
         88.887704,
         -120.090736,
-        -4.999999999999999,
+        -5.0,
         92.137704,
         -116.640736,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000161
+      "min_case_distance_mm": 0.9100000000000152
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2082,16 +2084,16 @@
       "bounds_case_mm": [
         108.045,
         -145.495,
-        -4.999999999999999,
+        -5.0,
         109.955,
         -144.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000037
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2114,16 +2116,16 @@
       "bounds_case_mm": [
         105.116491,
         -156.310551,
-        -4.999999999999999,
+        -5.0,
         107.026491,
         -155.320551,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999984
+      "min_case_distance_mm": 0.9099999999999975
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2146,16 +2148,16 @@
       "bounds_case_mm": [
         116.860337,
         -126.927723,
-        -4.999999999999999,
+        -5.0,
         122.410337,
         -120.127723,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 3.3095367606594372
+      "min_case_distance_mm": 3.309536760659437
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2178,16 +2180,16 @@
       "bounds_case_mm": [
         151.040337,
         -185.751979,
-        -4.999999999999999,
+        -5.0,
         152.030337,
         -183.841979,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999842
+      "min_case_distance_mm": 0.9099999999999833
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2210,16 +2212,16 @@
       "bounds_case_mm": [
         124.045,
         -141.495,
-        -4.999999999999999,
+        -5.0,
         125.955,
         -140.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2242,16 +2244,16 @@
       "bounds_case_mm": [
         112.045,
         -142.495,
-        -4.999999999999999,
+        -5.0,
         113.955,
         -141.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2274,16 +2276,16 @@
       "bounds_case_mm": [
         120.495,
         -147.255,
-        -4.999999999999999,
+        -5.0,
         123.505,
         -145.745,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028
+      "min_case_distance_mm": 0.9100000000000019
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2306,16 +2308,16 @@
       "bounds_case_mm": [
         302.561454,
         -183.343769,
-        -4.999999999999999,
+        -5.0,
         311.090244,
         -177.282369,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985
+      "min_case_distance_mm": 0.9099999999999842
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2338,16 +2340,16 @@
       "bounds_case_mm": [
         103.18624,
         -157.280551,
-        -4.999999999999999,
+        -5.0,
         104.17624,
         -155.370551,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999984
+      "min_case_distance_mm": 0.9099999999999975
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2355,25 +2357,25 @@
       "value": "1u/10V",
       "back": true,
       "position_pcb_mm": [
-        118.0,
-        151.0
+        123.5,
+        148.1
       ],
       "angle_deg": 0.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        116.495,
-        150.245,
-        119.505,
-        151.755
+        121.995,
+        147.345,
+        125.005,
+        148.855
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        116.495,
-        -151.755,
-        -4.999999999999999,
-        119.505,
-        -150.245,
-        -1.9999999999999993
+        121.995,
+        -148.855,
+        -5.0,
+        125.005,
+        -147.345,
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
@@ -2402,16 +2404,16 @@
       "bounds_case_mm": [
         141.118276,
         -186.982116,
-        -4.999999999999999,
+        -5.0,
         149.647066,
         -180.920716,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999833
+      "min_case_distance_mm": 0.9099999999999824
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2434,16 +2436,16 @@
       "bounds_case_mm": [
         279.560337,
         -182.641979,
-        -4.999999999999999,
+        -5.0,
         281.470337,
         -181.651979,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985
+      "min_case_distance_mm": 0.9099999999999842
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2466,16 +2468,16 @@
       "bounds_case_mm": [
         104.396491,
         -158.20767,
-        -4.999999999999999,
+        -5.0,
         107.746491,
         -156.69767,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999975
+      "min_case_distance_mm": 0.9099999999999966
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2498,16 +2500,16 @@
       "bounds_case_mm": [
         315.045,
         -125.495,
-        -4.999999999999999,
+        -5.0,
         316.955,
         -124.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000135
+      "min_case_distance_mm": 0.9100000000000126
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2530,16 +2532,16 @@
       "bounds_case_mm": [
         126.48,
         -146.975,
-        -4.999999999999999,
+        -5.0,
         130.52,
         -143.025,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028
+      "min_case_distance_mm": 0.9100000000000019
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2562,16 +2564,16 @@
       "bounds_case_mm": [
         122.045,
         -141.495,
-        -4.999999999999999,
+        -5.0,
         123.955,
         -140.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": [
@@ -2599,10 +2601,10 @@
       "bounds_case_mm": [
         147.05,
         -128.2,
-        -7.499999999999999,
+        -7.5,
         156.95,
         -120.6,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
@@ -2631,16 +2633,16 @@
       "bounds_case_mm": [
         135.495,
         -144.755,
-        -4.999999999999999,
+        -5.0,
         138.505,
         -143.245,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046
+      "min_case_distance_mm": 0.9100000000000037
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2663,16 +2665,16 @@
       "bounds_case_mm": [
         95.555987,
         -154.741512,
-        -4.999999999999999,
+        -5.0,
         96.545987,
         -152.831512,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999993
+      "min_case_distance_mm": 0.9099999999999984
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2695,16 +2697,16 @@
       "bounds_case_mm": [
         131.495,
         -149.255,
-        -4.999999999999999,
+        -5.0,
         134.505,
         -147.745,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000019
+      "min_case_distance_mm": 0.910000000000001
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2727,16 +2729,16 @@
       "bounds_case_mm": [
         314.455,
         -123.795,
-        -4.999999999999999,
+        -5.0,
         317.505,
         -122.205,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000144
+      "min_case_distance_mm": 0.9100000000000135
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2759,16 +2761,16 @@
       "bounds_case_mm": [
         141.827276,
         -180.973098,
-        -4.999999999999999,
+        -5.0,
         143.697276,
         -180.003098,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999859
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2791,16 +2793,16 @@
       "bounds_case_mm": [
         145.045,
         -146.495,
-        -4.999999999999999,
+        -5.0,
         146.955,
         -145.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000037
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2823,16 +2825,16 @@
       "bounds_case_mm": [
         134.740337,
         -180.141979,
-        -4.999999999999999,
+        -5.0,
         135.730337,
         -178.231979,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999868
+      "min_case_distance_mm": 0.9099999999999859
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2855,16 +2857,16 @@
       "bounds_case_mm": [
         298.870337,
         -177.601979,
-        -4.999999999999999,
+        -5.0,
         300.780337,
         -176.611979,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999877
+      "min_case_distance_mm": 0.9099999999999868
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2887,16 +2889,16 @@
       "bounds_case_mm": [
         103.22624,
         -144.802075,
-        -4.999999999999999,
+        -5.0,
         105.09624,
         -143.832075,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046
+      "min_case_distance_mm": 0.9100000000000037
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2919,16 +2921,16 @@
       "bounds_case_mm": [
         77.236567,
         -143.863517,
-        -4.999999999999999,
+        -5.0,
         79.146567,
         -142.873517,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046
+      "min_case_distance_mm": 0.9100000000000037
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2951,16 +2953,16 @@
       "bounds_case_mm": [
         130.72,
         -146.525,
-        -4.999999999999999,
+        -5.0,
         134.905,
         -143.475,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000037
+      "min_case_distance_mm": 0.9100000000000028
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2983,16 +2985,16 @@
       "bounds_case_mm": [
         145.045,
         -148.495,
-        -4.999999999999999,
+        -5.0,
         146.955,
         -147.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028
+      "min_case_distance_mm": 0.9100000000000019
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3015,16 +3017,16 @@
       "bounds_case_mm": [
         330.189284,
         -181.917204,
-        -4.999999999999999,
+        -5.0,
         332.099284,
         -180.927204,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999859
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3032,31 +3034,31 @@
       "value": "69.8k/1%",
       "back": true,
       "position_pcb_mm": [
-        117.7,
-        148.4
+        118.7,
+        148.25
       ],
       "angle_deg": -90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        117.205,
-        147.445,
-        118.195,
-        149.355
+        118.205,
+        147.295,
+        119.195,
+        149.205
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        117.205,
-        -149.355,
-        -4.999999999999999,
-        118.195,
-        -147.445,
-        -1.9999999999999993
+        118.205,
+        -149.205,
+        -5.0,
+        119.195,
+        -147.295,
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000019
+      "min_case_distance_mm": 0.910000000000001
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3079,16 +3081,16 @@
       "bounds_case_mm": [
         87.464827,
         -116.503524,
-        -4.999999999999999,
+        -5.0,
         89.754827,
         -111.893524,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000179
+      "min_case_distance_mm": 0.910000000000017
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3111,16 +3113,16 @@
       "bounds_case_mm": [
         185.040337,
         -182.251979,
-        -4.999999999999999,
+        -5.0,
         186.030337,
         -180.341979,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999859
+      "min_case_distance_mm": 0.909999999999985
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3143,16 +3145,16 @@
       "bounds_case_mm": [
         141.045,
         -141.495,
-        -4.999999999999999,
+        -5.0,
         142.955,
         -140.505,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055
+      "min_case_distance_mm": 0.9100000000000046
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3175,16 +3177,16 @@
       "bounds_case_mm": [
         100.99624,
         -155.96425,
-        -4.999999999999999,
+        -5.0,
         102.86624,
         -154.99425,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999984
+      "min_case_distance_mm": 0.9099999999999975
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3207,16 +3209,16 @@
       "bounds_case_mm": [
         97.937243,
         -154.741512,
-        -4.999999999999999,
+        -5.0,
         98.927243,
         -152.831512,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999993
+      "min_case_distance_mm": 0.9099999999999984
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3239,16 +3241,16 @@
       "bounds_case_mm": [
         106.975,
         -125.525,
-        -5.499999999999999,
+        -5.5,
         117.025,
         -116.725,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.40999999999999925
+      "min_case_distance_mm": 0.40999999999999837
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3271,23 +3273,23 @@
       "bounds_case_mm": [
         116.205,
         -149.055,
-        -4.999999999999999,
+        -5.0,
         117.195,
         -147.145,
-        -1.9999999999999993
+        -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000019
+      "min_case_distance_mm": 0.910000000000001
     }
   ],
   "colliding_envelopes": [],
   "pcb_gap_sweep": [
     {
       "pcb_to_plate_gap_mm": 4.0,
-      "pcb_bottom_z": -1.3999999999999997,
+      "pcb_bottom_z": -1.4000000000000001,
       "pcb_case_overlap_mm3": [
         0.0,
         0.0
@@ -3296,7 +3298,7 @@
     },
     {
       "pcb_to_plate_gap_mm": 4.3,
-      "pcb_bottom_z": -1.6999999999999995,
+      "pcb_bottom_z": -1.7,
       "pcb_case_overlap_mm3": [
         0.0,
         0.0
@@ -3305,7 +3307,7 @@
     },
     {
       "pcb_to_plate_gap_mm": 4.6,
-      "pcb_bottom_z": -1.9999999999999993,
+      "pcb_bottom_z": -1.9999999999999998,
       "pcb_case_overlap_mm3": [
         0.0,
         0.0
@@ -3314,7 +3316,7 @@
     },
     {
       "pcb_to_plate_gap_mm": 4.9,
-      "pcb_bottom_z": -2.3,
+      "pcb_bottom_z": -2.3000000000000007,
       "pcb_case_overlap_mm3": [
         0.0,
         0.0
@@ -3323,7 +3325,7 @@
     },
     {
       "pcb_to_plate_gap_mm": 5.2,
-      "pcb_bottom_z": -2.5999999999999996,
+      "pcb_bottom_z": -2.6000000000000005,
       "pcb_case_overlap_mm3": [
         0.0,
         0.0
@@ -3355,7 +3357,7 @@
       "minimum_fastener_clearance_mm": 0.7000000000000002,
       "envelope_must_include_swelling_and_protection": true,
       "bottom_case_distance_mm": 0.20000000000000107,
-      "top_insulation_gap_mm": 2.6000000000000005,
+      "top_insulation_gap_mm": 2.5999999999999996,
       "status": "custom-pack-design-envelope-supplier-qualification-pending"
     }
   ],
@@ -3364,6 +3366,25 @@
     "Supplier-signed custom battery drawing, thermal protection and production capacity acceptance",
     "Actual enclosure USB enumeration, pairing, charging, runtime and wake measurements"
   ],
+  "ordinary_board_thickness_budget": {
+    "finished_range_mm": [
+      1.44,
+      1.76
+    ],
+    "CAD_nominal_mm": 1.6062,
+    "PCB_top_fixed": true,
+    "minimum_component_case_gap_over_thickness_range_mm": 0.256199999999998,
+    "minimum_gap_after_case_tolerance_mm": 0.10619999999999799,
+    "minimum_max_thickness_board_case_gap_mm": 0.7999600063555562,
+    "PCB_outline_allowance_mm": 0.2,
+    "minimum_pack_to_worst_depth_fastener_mm": 0.5462000000000007,
+    "minimum_washer_component_gap_mm": 0.1775440000000117,
+    "washer_radial_position_allowance_mm": 0.15,
+    "nominal_screw_engagement_range_mm": [
+      2.3400000000000003,
+      2.66
+    ]
+  },
   "case_files": {
     "bottom": "mechanical/generated/yeti60-bottom.step",
     "top": "mechanical/generated/yeti60-top.step"
@@ -3400,7 +3421,13 @@
     "procurement_status": "Default selected single-cell pack design; supplier must resolve the source charge-row inconsistency and sign full-pack/temperature limits before order release",
     "position_tolerance": 0.25,
     "fastener_exclusion_radius": 3.4,
-    "top_z": -4.6
+    "top_z": -4.6,
+    "minimum_required_continuous_charge_rating_mA": 500,
+    "maximum_charge_current_scope": "450 mA engineering ceiling for the programmed charger; not a supplier-certified pack rating",
+    "charger_CV_acceptance_range_V": [
+      4.16,
+      4.23
+    ]
   },
   "selected_fasteners": {
     "part": "YETI60-STANDOFF-46",
@@ -3414,12 +3441,12 @@
     "thread_concentricity": 0.02,
     "screw": "M1.6x5 pan head",
     "screw_major_diameter_max": 1.6,
-    "washer": "M2 DIN 9021",
-    "washer_od_max": 6.0,
+    "washer": "Custom PEEK washer",
+    "washer_od_max": 4.0,
     "washer_id": 2.2,
     "washer_thickness": 0.8,
     "insulation_thickness": 0,
-    "pcb_hole_minus_tolerance": 0.05,
+    "pcb_hole_minus_tolerance": 0.08,
     "pcb_hole_position_tolerance": 0.075,
     "plate_hole_position_tolerance": 0.05,
     "shoulder_length_tolerance": 0.03,
@@ -3430,5 +3457,5 @@
     "top_insulator_id": 1.8,
     "washer_material": "PEEK"
   },
-  "minimum_fastener_radial_margin_worst_case_mm": 0.0766333437434743
+  "minimum_fastener_radial_margin_worst_case_mm": 0.06163334374347418
 }

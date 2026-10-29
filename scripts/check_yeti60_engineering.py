@@ -9,7 +9,7 @@ def hashes(mapping):
  for p,h in mapping.items():assert sha(ROOT/p)==h,'Stale engineering source/output: '+p
 
 def main():
- for name in ['yeti60-bom','yeti60-power-budget','yeti60-battery-pocket','yeti60-assembly-drawings','yeti60-cell-screening']:
+ for name in ['yeti60-bom','yeti60-power-budget','yeti60-battery-pocket','yeti60-assembly-drawings','yeti60-cell-screening','yeti60-interconnect-drawings']:
   r=read('docs/audit/'+name+'.json');hashes(r['source_sha256']);hashes(r.get('outputs',{}))
  b=read('docs/audit/yeti60-bom.json');assert sum(x['quantity'] for x in b['rows'])==b['fitted_mainboard_parts']==76
  assert b['unpopulated_sites']==['JP1'] and not any('SW2,' in x['references'] for x in b['rows'])
@@ -20,7 +20,9 @@ def main():
  c=p['charging'];assert not p['current_firmware']['deep_sleep_enabled'] and not c['larger_pack_drop_in_approved']
  assert c['USB_configured_requested_mA']==500 and not c['charging_before_configuration'] and not c['charging_during_suspend']
  assert c['programmed_charge_mA_min_typ_max'][-1]<=spec['battery']['maximum_charge_current_mA']==450
- assert c['termination_mA_min_typ_max'][-1]<=c['cell_charge_endpoint_mA']==32
+ assert c['termination_mA_min_typ_max'][-1]<=29.3<c['cell_charge_endpoint_mA']==32
+ assert c['minimum_required_pack_charge_rating_mA']==spec['battery']['minimum_required_continuous_charge_rating_mA']==500
+ assert c['programmed_charge_design_ceiling_mA']==450 and c['charger_CV_min_typ_max_V']==[4.16,4.20,4.23]
  assert c['fastcharge_timer_h_min_typ_max'][0]>c['ideal_CC_at_minimum_programmed_current_h']
  assert c['pack_temperature_actual_window_C']==[15,43]
  assert c['hardware_off_defaults']['input_limit_mA']==100 and c['hardware_off_defaults']['charging_enabled']
@@ -32,6 +34,6 @@ def main():
  assert max(g['pack_case_overlap_mm3']+g['expanded_pack_case_overlap_mm3'])<1e-6 and not g['component_envelope_collisions'];assert g['minimum_pack_to_fastener_envelope_mm']>=.7-1e-6
  assert sha(ROOT/g['output'])==g['output_sha256']
  d=read('docs/audit/yeti60-assembly-drawings.json');assert d['recipe_sha256']==sha(ROOT/'scripts/draw_yeti60_assembly.py');hashes(d['geometry_sources']);hashes(d['outputs']);assert len(d['outputs'])==8
- report={'status':'passed','scope':['76-part mainboard purchase requirements','current-source engineering sheets in separate languages','default 1600 mAh pack, bounded catalog screening, BRep recess and tolerance geometry','conditional power arithmetic with unmeasured assumptions'],'production_approved':False,'check_recipe_sha256':sha(Path(__file__).resolve()),'evidence_sha256':{n:sha(ROOT/'docs/audit'/n) for n in ['yeti60-bom.json','yeti60-power-budget.json','yeti60-battery-pocket.json','yeti60-assembly-drawings.json','yeti60-cell-screening.json']},'limits':['P2 charge design calculated; supplier pack/thermal approval and physical charge-to-termination remain pending','No physical hardware verification or RF/SI claim']}
+ report={'status':'passed','scope':['76-part mainboard purchase requirements','current-source engineering sheets in separate languages','default 1600 mAh pack, bounded catalog screening, BRep recess and tolerance geometry','conditional power arithmetic with unmeasured assumptions'],'production_approved':False,'check_recipe_sha256':sha(Path(__file__).resolve()),'evidence_sha256':{n:sha(ROOT/'docs/audit'/n) for n in ['yeti60-bom.json','yeti60-power-budget.json','yeti60-battery-pocket.json','yeti60-assembly-drawings.json','yeti60-cell-screening.json','yeti60-interconnect-drawings.json']},'limits':['P2 charge design calculated; supplier pack/thermal approval and physical charge-to-termination remain pending','No physical hardware verification or RF/SI claim']}
  (ROOT/'docs/audit/yeti60-engineering.json').write_text(json.dumps(report,indent=2)+'\n');print('Engineering sources, drawings, purchase quantities and conditional calculations agree')
 if __name__=='__main__':main()

@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/Users/wzy/workspace/YAECKB/hardware/ec60-nrf52840/EC60-nRF52840.kicad_sch</source>
-    <date>2026-10-28T20:31:01</date>
+    <date>2026-10-29T00:55:02</date>
     <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -1296,7 +1296,7 @@
       </units>
     </comp>
     <comp ref="R56">
-      <value>1.82k/1%</value>
+      <value>1.69k/1%</value>
       <footprint>YAECKB:R_0402_1005Metric__R56</footprint>
       <fields>
         <field name="Footprint">YAECKB:R_0402_1005Metric__R56</field>

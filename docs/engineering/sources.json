@@ -100,5 +100,20 @@
     "locator": "402 3.7V tabular cells; snapshot used for bounded screening, no availability claim",
     "access_date": "2026-10-28",
     "download_sha256": "75a6cee8818003ac44522101cb8b923eac9468f08d796ca06f18757be733838d"
+  },
+  "jlc-ordinary": {
+    "url": "https://jlcpcb.com/capabilities/pcb-capabilities/",
+    "retrieved": "2026-10-29",
+    "scope": "Ordinary mechanical through vias, nominal 1.6mm +/-10%, regular outline tolerance +/-0.2mm; excludes HDI and special filling"
+  },
+  "jlc-stock-stack": {
+    "url": "https://jlcpcb.com/impedance",
+    "retrieved": "2026-10-29",
+    "scope": "JLC04161H-7628: 0.035/0.2104/0.0152/1.065/0.0152/0.2104/0.035mm; mask thickness in CAD is assumed"
+  },
+  "skuf-feet": {
+    "url": "https://keeb.io/products/skuf-silicone-rubber-keyboard-feet",
+    "retrieved": "2026-10-29",
+    "scope": "41.8x5.8x2mm silicone, 45A, adhesive-backed; four required by source case geometry"
   }
 }

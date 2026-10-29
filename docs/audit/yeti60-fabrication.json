@@ -1,0 +1,61 @@
+{
+  "purpose": "DFM and assembly review only; not manufacturing release",
+  "source_sha256": {
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "hardware/bom/mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
+    "hardware/bom/mainboard.zh-CN.csv": "6480581ab2117d3891a9b0e1c51c5991440e4ff3d2908679ac1cf1339d0ddb77",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "hardware/ec60-nrf52840/fabrication-notes.md": "ff5de047a96a3b3f53326aeb13f82f6509fb92d3d61d1f68c5c5200bf7f73e85",
+    "hardware/ec60-nrf52840/fabrication-notes.zh-CN.md": "769a66505af1195a0c45d4367f4f1458d01c923364f7f63835061258e5f103fc",
+    "docs/engineering/fabrication-review.md": "1196a0d34ee524e8c8e4c56391b51850d1ece5f869e782da548ee78ae1d81d7a",
+    "docs/engineering/fabrication-review.zh-CN.md": "a63a3a1fa4bc92aa1cc163b1bfa93f00736f6607ccaae3b1e2615fb62a7ba7f4",
+    "scripts/export_yeti60_fabrication.py": "a1c1caaaab3d5d603466ac626a40aa91f220ac967dcf731d1827e0f16390a058"
+  },
+  "files_sha256": {
+    "EC60-nRF52840-B_Cu.gbl": "52c77abca139c047bc5a1cae2d2ccb03e54a59132dbdf46a673242f6e0cf47e3",
+    "EC60-nRF52840-B_Fab.gbr": "a2bb457badff29bf0eeaf78af595531b08787b3a836a35dae534ec55d79ac2a8",
+    "EC60-nRF52840-B_Mask.gbs": "6847ab8124c7a69dbde5088b3a8f436f9eee2cea5efcec6c0ab1ae5ca012b768",
+    "EC60-nRF52840-B_Paste.gbp": "9130dd4b7ac49482c5226501a0abf93a85f5f7d52b7bf6db29e900bd1e3949c2",
+    "EC60-nRF52840-B_Silkscreen.gbo": "7d6be3ee550bc82325597dfca40b36339af7c5682e462c315d1b83464fa31f63",
+    "EC60-nRF52840-Edge_Cuts.gm1": "21d523e15b3ae8d4abe43cd2f8a08b80f70c9d748e2a52e5fbf6b41ad9392163",
+    "EC60-nRF52840-F_Cu.gtl": "c999fc9aee55fd90afa2482fc90c4a5e807986e1deaca9ab826f3a41a5e3a89c",
+    "EC60-nRF52840-F_Fab.gbr": "35e6f4dba0a709bfaf9867b6cd2a82c333200e3f59129f58263fa5f38f58abcd",
+    "EC60-nRF52840-F_Mask.gts": "c91e614f5dbe773ec61f6ea05019c6c8adff2b20de087af48aada183afe72d9d",
+    "EC60-nRF52840-F_Paste.gtp": "385373eda09d2280890ecefa746822c9af8242de2aba6ad4c013a72d7aaa5c93",
+    "EC60-nRF52840-F_Silkscreen.gto": "a78b0de98438de2d5baf45a807cec3a073ca0352b2729006ec4d68e884a88bec",
+    "EC60-nRF52840-In1_Cu.g1": "83eaa379a3cd5cc422ecb7f20965688f41c84e4b5cd00e8b8c644ea4782d328b",
+    "EC60-nRF52840-In2_Cu.g2": "7f464d1b89d7add0b0f342b997dfae77c0d7f4d62c13fc7c471128bc8054f208",
+    "EC60-nRF52840-NPTH.drl": "40e4fff7f05318a1b3fad9125cfd64180664e8ef8e74751555e3fc77d40381d8",
+    "EC60-nRF52840-PTH.drl": "f431aacbc20c17dcfc651eaece67e37ea80046cd1fe22847f988b2df5c595f49",
+    "EC60-nRF52840-job.gbrjob": "4826dea939449673e0515c9e6d1487f27b143db23587abbc30b7cffe74249929",
+    "drill-report.txt": "6ab925342da852e7226337c6d4bace738ec14b0e9612d1be1272aba2c7ec9bd3",
+    "fabrication-notes.md": "ff5de047a96a3b3f53326aeb13f82f6509fb92d3d61d1f68c5c5200bf7f73e85",
+    "fabrication-notes.zh-CN.md": "769a66505af1195a0c45d4367f4f1458d01c923364f7f63835061258e5f103fc",
+    "fabrication-review.md": "1196a0d34ee524e8c8e4c56391b51850d1ece5f869e782da548ee78ae1d81d7a",
+    "fabrication-review.zh-CN.md": "a63a3a1fa4bc92aa1cc163b1bfa93f00736f6607ccaae3b1e2615fb62a7ba7f4",
+    "mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
+    "mainboard.zh-CN.csv": "6480581ab2117d3891a9b0e1c51c5991440e4ff3d2908679ac1cf1339d0ddb77",
+    "pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "positions.csv": "a93d3bef4ebe88f63d8719bfaaa5e068b7ab544f56a58faad5ee89731adf858f",
+    "yeti60.ipc": "d893e3a982a84e131b64da5b0eb491f78f97aa143fa36cf53c83af0c1bf16b89"
+  },
+  "copper_layers": [
+    "F.Cu",
+    "In1.Cu",
+    "In2.Cu",
+    "B.Cu"
+  ],
+  "blind_drill_file": null,
+  "blind_drill_hits": 0,
+  "placement_parts": 76,
+  "DNP": [
+    "JP1"
+  ],
+  "placement_frame": "KiCad absolute origin, mm; bottom X not negated; assembler must verify first article orientation",
+  "required_process": "JLC ordinary four-layer JLC04161H-7628, nominal order 1.6 mm; mechanical through holes only; no blind/buried, resin-filled or copper-capped process required",
+  "production_approved": false,
+  "status": "review-package-generated-not-order-release",
+  "outputs": {
+    "hardware/fabrication/yeti60-p2-dfm-review.zip": "29bcd6e3a0c50f0d6be1efd694780e0c29b2c13b59d66431943374a4026a9288"
+  }
+}

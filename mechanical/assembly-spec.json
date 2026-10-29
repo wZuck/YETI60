@@ -72,12 +72,17 @@
     "finished_bore_position_tolerance": 0.05
   },
   "stack": {
-    "plate_bottom_z": 4.19,
+    "plate_bottom_z": 4.2062,
     "plate_thickness": 1.2,
     "pcb_to_plate_gap": 4.6,
     "spacer_length_tolerance": 0.05,
-    "pcb_thickness": 1.59,
-    "pcb_thickness_tolerance": 0.1
+    "pcb_thickness": 1.6062,
+    "pcb_thickness_tolerance": 0.17,
+    "ordinary_manufacturer_finished_thickness_range_mm": [
+      1.44,
+      1.76
+    ],
+    "PCB_order_nominal_mm": 1.6
   },
   "pcb_fastener": {
     "part": "YETI60-STANDOFF-46",
@@ -91,12 +96,12 @@
     "thread_concentricity": 0.02,
     "screw": "M1.6x5 pan head",
     "screw_major_diameter_max": 1.6,
-    "washer": "M2 DIN 9021",
-    "washer_od_max": 6.0,
+    "washer": "Custom PEEK washer",
+    "washer_od_max": 4.0,
     "washer_id": 2.2,
     "washer_thickness": 0.8,
     "insulation_thickness": 0,
-    "pcb_hole_minus_tolerance": 0.05,
+    "pcb_hole_minus_tolerance": 0.08,
     "pcb_hole_position_tolerance": 0.075,
     "plate_hole_position_tolerance": 0.05,
     "shoulder_length_tolerance": 0.03,
@@ -139,7 +144,13 @@
     "procurement_status": "Default selected single-cell pack design; supplier must resolve the source charge-row inconsistency and sign full-pack/temperature limits before order release",
     "position_tolerance": 0.25,
     "fastener_exclusion_radius": 3.4,
-    "top_z": -4.6
+    "top_z": -4.6,
+    "minimum_required_continuous_charge_rating_mA": 500,
+    "maximum_charge_current_scope": "450 mA engineering ceiling for the programmed charger; not a supplier-certified pack rating",
+    "charger_CV_acceptance_range_V": [
+      4.16,
+      4.23
+    ]
   },
   "daughterboard": {
     "part": "Unified Daughterboard C5 JSH",

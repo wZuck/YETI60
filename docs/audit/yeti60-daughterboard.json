@@ -1,5 +1,5 @@
 {
-  "exported_step_sha256": "d9184678d254b96ef1c3cff9953c325f3581b2d6a364b680fb3f602940cc7653",
+  "exported_step_sha256": "d39e4f1ea393125461292acd87f5fd46bd66c4857b4f34610b4613628226482d",
   "status": "contract-passed",
   "source_commit": "2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea",
   "source_sha256": {
@@ -97,19 +97,19 @@
   "render_parts": {
     "pcb": {
       "path": ".assembly-work/daughterboard/pcb.step",
-      "sha256": "c44d9369f633b2b7544dc62dbc53023f3e583f4673b1d07a498e7c20d3a8b660"
+      "sha256": "7f4dd72d16ce85c578c80c58ad0cc259ebccbca0f5eb568adacd5639afe91f25"
     },
     "usb": {
       "path": ".assembly-work/daughterboard/usb.step",
-      "sha256": "144e08b485504e17609edaeb90d44efbac69a15a2661076fffcc5b3a8a79df06"
+      "sha256": "186df190406546d52a152076a33db081079234ff9b4c42cb70aa60c24655a2f6"
     },
     "sh": {
       "path": ".assembly-work/daughterboard/sh.step",
-      "sha256": "1cf59860d09569204b012fdf19780e22afc237acdefc9b9e07f9f8d13d1eb199"
+      "sha256": "f718edf6ec9e766787091dacb3380779a22b15a58db04492d5828405ae0c5eee"
     },
     "components": {
       "path": ".assembly-work/daughterboard/components.step",
-      "sha256": "e6837b9517c157e698c36783d635ed5c6c474fc941f8e391adc46409e26fa442"
+      "sha256": "9de936157d56a0fabc045bad68963920094a2329f7f0f47dbed60ec1d242ae5e"
     }
   },
   "SH_model_offset_xyz_mm": [
@@ -118,7 +118,7 @@
     0
   ],
   "SH_alignment_basis": "Native signal pad row y=-0.55 minus standard JST row y=-2 gives +1.45 PCB Y; STEP model offset is -1.45 Y. Previous +2.425 placed the body 3.875mm too far rearward.",
-  "export_recipe_sha256": "9ea256a59ebd621fd8668c40789b7e0c67ba1459fa8e80fe9003494b386cbdbf",
+  "export_recipe_sha256": "5a86317b593a5df998741124d8eb8a4c9113f105d7ec7b7d2021200bbb7ebe2f",
   "limits": [
     "Standard package substitutions do not qualify the supplier part height",
     "JST mating harness uses a separately checked conservative housing envelope"

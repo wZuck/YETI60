@@ -53,7 +53,7 @@ The canonical bottom must remain one valid solid, have unchanged exterior boundi
 
 ## Electrical and procurement contract
 
-P2 retains BQ24074 with R40=2.21k, R55=69.8k and R56=1.82k, all 1%; USB500 is enabled only after configuration. See the [current, timer, termination and runtime calculations](power-budget.md). The pack must independently interrupt charging outside a guaranteed **actual cell window within 15…43°C**, target 18…40°C including all sensor/IC tolerances, and provide separate third-wire 10k 103AT-2 NTC feedback. Ordinary voltage/current-only PCM or a two-wire pouch is not an equivalent substitute. J2/PHR-3 is custom: 1 PACK+, 2 PACK−, 3 NTC to PACK−.
+P2 retains BQ24074 with R40=2.21k, R55=69.8k and R56=1.69k, all 1%; USB500 is enabled only after configuration. See the [current, timer, termination and runtime calculations](power-budget.md). The pack must independently interrupt charging outside a guaranteed **actual cell window within 15…43°C**, target 18…40°C including all sensor/IC tolerances, and provide separate third-wire 10k 103AT-2 NTC feedback. Ordinary voltage/current-only PCM or a two-wire pouch is not an equivalent substitute. J2/PHR-3 is custom: 1 PACK+, 2 PACK−, 3 NTC to PACK−.
 
 The supplier must sign the complete envelope and lead exit/bend geometry, protection thresholds, thermal interruption, NTC coupling, charge-current limits and capacity. Insulate and retain the pack without pouch compression; the whole mounting system must fit the 0.2 mm floor budget. Do not use the old small-pack electrical configuration with this battery or the P2 charger with the old small pack.
 

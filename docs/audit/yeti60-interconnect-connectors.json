@@ -50,14 +50,14 @@
   "main_battery_wire_exit_case_mm": [
     152.0,
     -117.0,
-    -4.749999999999999
+    -4.75
   ],
   "prose_scope": "Matching lands and conservative envelopes do not qualify supplier tolerances or crimp quality",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",
-    "hardware/ec60-nrf52840/components.json": "6880dd1b5b31b3d683c4d780be71602bc92812799afc11aee8c94bf9369f800f",
-    "mechanical/interconnect-spec.json": "dd20b9fbf823b597b865b6801909c91e7aa824a648518e34b8dd3b3d53151f7a",
-    "docs/audit/yeti60-assembly.json": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "hardware/ec60-nrf52840/components.json": "977cf7b8e77fda59f3f633f3af4a23e58a423ea0f0ecfcbbd8dded89f3a59c1b",
+    "mechanical/interconnect-spec.json": "b94140e220f435a720bbfdde1c2ccdc59e207d1615581a2abc3016e0da226a3d",
+    "docs/audit/yeti60-assembly.json": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
     "hardware/ec60-nrf52840/YAECKB.pretty/JST-SR-4__J1.kicad_mod": "1e791e4505712fa9296ed34f36e25e3a0a5b0167d4691488ce0ef5326efe7a4d",
     "hardware/ec60-nrf52840/YAECKB.pretty/JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal__J2.kicad_mod": "efa97452c93659b1ebc0573930cd343d2cb372b2932f80d1580f579ad1dc3b1f",
     "scripts/export_yeti60_interconnects.py": "e00be22d05015ee6538a70acedd1ac22e00e18b554518bfcdc84f329b72376ed"

@@ -1,15 +1,19 @@
 English | [Chinese](fabrication-notes.zh-CN.md)
 
-# YETI60 special PCB fabrication requirements
+# YETI60 ordinary JLC fabrication requirements
 
-U1.39 (ROW_DRV2, 343.25 / 120.35 mm) and U1.51 (SWDIO, 348.85 / 120.35 mm) each use a through via with **0.50 mm copper diameter and 0.30 mm drill inside the module pad**. The module position is retained.
+Use **ordinary four-layer FR-4, JLC04161H-7628, nominal order thickness 1.6 mm**. The user excludes HDI and special via fill/capping. The current PCB uses mechanically drilled F.Cu–B.Cu through vias only, minimum land/drill **0.50/0.30 mm**. There are **no blind/buried/laser vias and no module vias-in-pad**. Do not order older HDI exports.
 
-**Both require resin filling, planarization and copper capping to preserve a flat solderable pad. Ordinary open vias or soldermask tenting are not substitutes.** Confirm this process with the PCB and assembly vendors; geometric DRC does not verify fabrication execution.
+The former nine local blind vias were removed. Local charger/capacitor/timer/termination routes were rerouted; R55/R56 and C40/C41 were relocated. U1.39 and U1.51 now use off-pad through vias; the SWDIO escape adds one intermediate ordinary through via. These routes require native DRC/netlist/physical-connectivity checks; no inference from hole count alone establishes correctness.
 
-U5 also has a ground/thermal-pad via. Solder-paste aperture and solder-wicking control require separate assembly review.
+## Stock stack and thickness
 
-Current CAD checks do not replace board bring-up, charging thermal tests, regulator stability and effective capacitor-value validation, daughterboard or enclosure assembly. SI/RF analysis remains deferred.
+[Published JLC stock stack](https://jlcpcb.com/impedance): F.Cu 0.035, 7628 prepreg 0.2104, In1.Cu 0.0152, FR-4 core 1.065, In2.Cu 0.0152, 7628 prepreg 0.2104, B.Cu 0.035 mm. CAD additionally models 0.010 mm mask on each face, yielding a **1.6062 mm CAD envelope**. This mask thickness is an engineering model, not a supplier guarantee. Order the ordinary **1.6 mm** product, not a custom 1.6062 mm laminate. [JLC specifies +/-10% finished thickness, 1.44–1.76 mm](https://jlcpcb.com/capabilities/pcb-capabilities/); inspect actual boards and retain the recorded assembly tolerance limits.
 
-## Back-side HDI power routing
+The 0.2104 mm sensing dielectric replaces the former 0.200 mm assumption. Electrode copper geometry is retained; capacitance and physical per-key calibration still require hardware qualification. No asymmetric 0.150 mm laser dielectric is requested.
 
-Nine filled and planarized **0.40 mm diameter / 0.20 mm laser-drill microvias** connect B.Cu to In2.Cu at U6/C45/C46, U5/C40/C41 and the P2 ITERM/R56 route. Fabricate them as blind microvias, not through holes. Nominal stack: front mask 0.010, F.Cu 0.035, upper dielectric 0.200, In1.Cu 0.0175, core 1.115, In2.Cu 0.0175, lower laser dielectric 0.150, B.Cu 0.035, back mask 0.010 mm. Finished envelope is 1.590 mm. Preserve the upper sensing dielectric thickness. Use ENIG and a vendor-qualified lower laser dielectric; qualify laser aspect ratio, filling, planarization, dielectric tolerance and final warpage with the fabricator. Do not substitute the original symmetric stack or open microvias.
+## Assembly and process review
+
+Use green mask and ordinary ENIG finish. Ordinary tenting is permitted; resin filling, planarization and copper capping are not required. U5 retains an ordinary open thermal via in the ground/exposed-pad area: the assembler must review stencil apertures, solder loss and thermal-pad wetting. Do not interpret a tentative CAD check as solder-process qualification.
+
+The [review archive and checklist](../../docs/engineering/fabrication-review.md) include Gerbers, separate PTH/NPTH through drills, IPC-D-356 and 76-part placements. Supplier ordering review, final passive ratings/effective capacitance, waveform/temperature tests and mechanical first articles remain required. RF/SI is deferred.

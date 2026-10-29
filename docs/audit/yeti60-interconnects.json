@@ -1,0 +1,1311 @@
+{
+  "status": "controlled-route-geometry-passed",
+  "production_approved": false,
+  "source_sha256": {
+    "mechanical/interconnect-spec.json": "b94140e220f435a720bbfdde1c2ccdc59e207d1615581a2abc3016e0da226a3d",
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "docs/audit/yeti60-assembly.json": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
+    "docs/audit/yeti60-daughterboard.json": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
+    "docs/audit/yeti60-interconnect-connectors.json": "4d3a26aa47e9357e65c14f5775880f249308a783bf1a64be32e8e2d305853d1a",
+    "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "scripts/check_yeti60_interconnects.py": "b761c91f2ead83e9e60eda3be6240516d857b7c89601905a957f8f93dd202e67",
+    "scripts/interconnect_geometry.py": "a3ea2cd5cbe15cfa5aebaf89d961e3387e9c183e147564f27fa4d5aa9477c5c2",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed"
+  },
+  "generated_step_sha256": {
+    ".assembly-work/interconnect/usb-1.step": "93e046f181f3e16b430bf07aa6355979730919774c213d438375d896c7011811",
+    ".assembly-work/interconnect/usb-2.step": "192c323e0b196e83058bcffc9d1837b929de7d3946a98e802e599806ba5b97c1",
+    ".assembly-work/interconnect/usb-3.step": "1571ac526129439093a7898a100e5e974b6df6a7b2e133a4222d846df6eae57d",
+    ".assembly-work/interconnect/usb-4.step": "c2ce99d0b5deedff37f19ca7102c85ea3c13f2665b6d3059c3dc6e5bdd66cf62",
+    ".assembly-work/interconnect/battery-1.step": "442d36aee64b8cb5f78b93ec43d2fac48898d22225df4b273e3673213d271fda",
+    ".assembly-work/interconnect/battery-2.step": "36e7617ec245e890368df49e1196a4f0e29329def6bfcfaadd560355ffc5d202",
+    ".assembly-work/interconnect/battery-3.step": "de200cbf01f451a11686ba2f326bcaa7423517542d7438a49de99e21e4b2c1c0",
+    ".assembly-work/interconnect/housing-main-sh.step": "0f61a1584928b185465abc31ca41d0111933d48d8c48be916458ab9ea87ce5b3",
+    ".assembly-work/interconnect/housing-main-ph.step": "5edb7c10ad3d1dbdf66118f6b84e3aa8eecf967eb6585c3bc5ec2826979913ea",
+    ".assembly-work/interconnect/housing-c5-sh.step": "c443fc1af169de9b72e10273fc74ba0ba34ff4d35a88cf8d0b885fae65753ef5",
+    ".assembly-work/interconnect/rear-1-base.step": "282cfa132a56d6a19f6ab3ccfa14ce9c201ecaa4c5c8e2bc87c2a92f0fba1a9d",
+    ".assembly-work/interconnect/rear-1-bridge.step": "d57c673760722c634f2bf47ab7e5f3eb158c0edcf05c3a3004906bf94f31720d",
+    ".assembly-work/interconnect/rear-2-base.step": "ae7b9c148f6dbf874f4377f14dc2eed5e00acce746661ee78a0e2a9867dfb19c",
+    ".assembly-work/interconnect/rear-2-bridge.step": "ffe7801e13f69589353f2c1a19d908a0c43a116a3dbfd664056d9a51ad20776e",
+    ".assembly-work/interconnect/front-base.step": "a30dbcec5e2f6ef9aff8e0bfaa1ec9e1c1027383098f27aeb65f89a6513e1ff7"
+  },
+  "published_guide_sha256": {
+    "mechanical/generated/interconnect-guides/rear-1-base.step": "282cfa132a56d6a19f6ab3ccfa14ce9c201ecaa4c5c8e2bc87c2a92f0fba1a9d",
+    "mechanical/generated/interconnect-guides/rear-1-base.stl": "096e6af6b8a45b2e6f479d563503f9351ff8575935061a24be79a538ee99eefc",
+    "mechanical/generated/interconnect-guides/rear-1-bridge.step": "d57c673760722c634f2bf47ab7e5f3eb158c0edcf05c3a3004906bf94f31720d",
+    "mechanical/generated/interconnect-guides/rear-1-bridge.stl": "ead90386944f501196aa0615c242a747564104c4fa44af902c691ef4938c3d76",
+    "mechanical/generated/interconnect-guides/rear-2-base.step": "ae7b9c148f6dbf874f4377f14dc2eed5e00acce746661ee78a0e2a9867dfb19c",
+    "mechanical/generated/interconnect-guides/rear-2-base.stl": "0227e0dafe31b35ca2a4e32a5993388f70826fb9f1131c345639b49243693897",
+    "mechanical/generated/interconnect-guides/rear-2-bridge.step": "ffe7801e13f69589353f2c1a19d908a0c43a116a3dbfd664056d9a51ad20776e",
+    "mechanical/generated/interconnect-guides/rear-2-bridge.stl": "a177b0199ce9d417af3ebd272ca86175faa96dd4a64014865edd06e47d59c5ba",
+    "mechanical/generated/interconnect-guides/front-base.step": "a30dbcec5e2f6ef9aff8e0bfaa1ec9e1c1027383098f27aeb65f89a6513e1ff7",
+    "mechanical/generated/interconnect-guides/front-base.stl": "7752a3d378895ab5fd20f79999fe3a013fb64ad4a61becb5d0e4012255b7caa7"
+  },
+  "wire_diameter_max_mm": 0.8,
+  "radial_case_and_route_allowance_mm": 0.25,
+  "minimum_air_gap_after_allowance_mm": 0.15,
+  "usb_front_y_mm": -140.90041607170048,
+  "wires": {
+    "usb": [
+      {
+        "pin": 1,
+        "color": "red",
+        "free_length_mm": 147.64380550980766,
+        "minimum_bend_radius_mm": 4.5,
+        "wire_exit_start_case_mm": [
+          124.21033700000001,
+          -122.027723,
+          -3.5999999999999996
+        ],
+        "wire_exit_end_case_mm": [
+          212.812702,
+          -121.63470000000001,
+          -7.9038
+        ],
+        "nominal_bounds_case_mm": [
+          124.21033700000001,
+          -139.80041617170048,
+          -8.303800100000007,
+          213.2127021,
+          -104.0999999,
+          -2.7999998999999973
+        ],
+        "minimum_expanded_case_gap_mm": 0.2672470307176532,
+        "minimum_expanded_obstacle_gap_mm": 0.3500000000000001,
+        "expanded_obstacle_gaps_mm": {
+          "C43": 17.60415784630864,
+          "R47": 18.825180569387346,
+          "R45": 17.827276999999995,
+          "R46": 16.327276999999995,
+          "R44": 17.827276999999995,
+          "R43": 17.82910548003735,
+          "J2": 12.962464933429967,
+          "R49": 20.700711466702973,
+          "PCB-fastener-16": 0.3500000000000001,
+          "PCB-fastener-17": 22.508896048637894,
+          "PCB-fastener-18": 9.046228959254822,
+          "PCB-fastener-21": 5.809659999999994,
+          "PCB-fastener-22": 5.809659999999994,
+          "C5-complete-board": 1.9637273232299894,
+          "C5-fastener-0": 5.251103073913607,
+          "C5-fastener-2": 3.219957297853504
+        },
+        "pack_overlap_mm3": 0.0
+      },
+      {
+        "pin": 2,
+        "color": "white",
+        "free_length_mm": 149.21460183660255,
+        "minimum_bend_radius_mm": 5.5,
+        "wire_exit_start_case_mm": [
+          124.21033700000001,
+          -123.027723,
+          -3.5999999999999996
+        ],
+        "wire_exit_end_case_mm": [
+          213.812702,
+          -121.63470000000001,
+          -7.9038
+        ],
+        "nominal_bounds_case_mm": [
+          124.21033700000001,
+          -140.80041617170048,
+          -8.303800100000007,
+          214.2127021,
+          -105.0999999,
+          -2.7999998999999973
+        ],
+        "minimum_expanded_case_gap_mm": 0.26724700365170817,
+        "minimum_expanded_obstacle_gap_mm": 0.3500000000000001,
+        "expanded_obstacle_gaps_mm": {
+          "U7": 21.565632635477204,
+          "C43": 16.60415784630864,
+          "R47": 17.825180569387346,
+          "R45": 16.827276999999995,
+          "R46": 15.327276999999995,
+          "R44": 16.827276999999995,
+          "R43": 16.82921412955156,
+          "J2": 11.962464933429947,
+          "R49": 19.70071146670297,
+          "PCB-fastener-16": 0.3500000000000001,
+          "PCB-fastener-17": 21.509870807195952,
+          "PCB-fastener-18": 8.046228959254812,
+          "PCB-fastener-21": 4.809659999999994,
+          "PCB-fastener-22": 4.809659999999994,
+          "C5-complete-board": 1.9637273232299894,
+          "C5-fastener-0": 6.0594820854170806,
+          "C5-fastener-2": 4.107082297690178
+        },
+        "pack_overlap_mm3": 0.0
+      },
+      {
+        "pin": 3,
+        "color": "green",
+        "free_length_mm": 150.78539816339747,
+        "minimum_bend_radius_mm": 5.5,
+        "wire_exit_start_case_mm": [
+          124.21033700000001,
+          -124.027723,
+          -3.5999999999999996
+        ],
+        "wire_exit_end_case_mm": [
+          214.812702,
+          -121.63470000000001,
+          -7.9038
+        ],
+        "nominal_bounds_case_mm": [
+          124.21033700000001,
+          -141.80041617170048,
+          -8.303800100000007,
+          215.2127021,
+          -106.09999989999999,
+          -2.7999998999999973
+        ],
+        "minimum_expanded_case_gap_mm": 0.26724697658576246,
+        "minimum_expanded_obstacle_gap_mm": 0.3500000000000001,
+        "expanded_obstacle_gaps_mm": {
+          "U7": 20.56563263547721,
+          "C43": 15.60415784630864,
+          "R47": 16.825180569387335,
+          "R45": 15.827276999999995,
+          "R46": 14.327276999999995,
+          "R44": 15.827276999999995,
+          "L1": 18.347277000000005,
+          "R43": 15.829336505940413,
+          "J2": 10.962464933429962,
+          "R49": 18.70071146670297,
+          "PCB-fastener-16": 0.3500000000000001,
+          "PCB-fastener-17": 20.51093764915949,
+          "PCB-fastener-18": 7.0462289592548,
+          "PCB-fastener-21": 3.809659999999994,
+          "PCB-fastener-22": 3.809659999999994,
+          "C5-complete-board": 1.9637273232299894,
+          "C5-fastener-0": 6.9138139995714525,
+          "C5-fastener-2": 5.036677972632361
+        },
+        "pack_overlap_mm3": 0.0
+      },
+      {
+        "pin": 4,
+        "color": "black",
+        "free_length_mm": 152.35619449019237,
+        "minimum_bend_radius_mm": 4.5,
+        "wire_exit_start_case_mm": [
+          124.21033700000001,
+          -125.027723,
+          -3.5999999999999996
+        ],
+        "wire_exit_end_case_mm": [
+          215.812702,
+          -121.63470000000001,
+          -7.9038
+        ],
+        "nominal_bounds_case_mm": [
+          124.21033700000001,
+          -142.80041617170048,
+          -8.303800100000007,
+          216.2127021,
+          -107.09999989999999,
+          -2.7999998999999973
+        ],
+        "minimum_expanded_case_gap_mm": 0.26724694951981,
+        "minimum_expanded_obstacle_gap_mm": 0.3500000000000001,
+        "expanded_obstacle_gaps_mm": {
+          "U7": 19.56563263547723,
+          "C43": 14.60415784630864,
+          "R47": 15.825180569387351,
+          "R45": 14.827276999999995,
+          "R46": 13.327276999999995,
+          "R44": 14.827276999999995,
+          "L1": 17.347277000000005,
+          "R43": 14.829475385808422,
+          "J2": 9.962464933429946,
+          "C44": 18.326505836207485,
+          "U6": 17.841759919534663,
+          "R49": 17.70071146670298,
+          "PCB-fastener-16": 0.3500000000000001,
+          "PCB-fastener-17": 19.51211026136937,
+          "PCB-fastener-18": 6.046228959254815,
+          "PCB-fastener-21": 2.809659999999994,
+          "PCB-fastener-22": 2.809659999999994,
+          "C5-complete-board": 1.9637273232299894,
+          "C5-fastener-0": 7.8001724589320105,
+          "C5-fastener-2": 5.989000333945561
+        },
+        "pack_overlap_mm3": 0.0
+      }
+    ],
+    "battery": [
+      {
+        "pin": 1,
+        "color": "red",
+        "free_length_mm": 110.63963493601159,
+        "minimum_bend_radius_mm": 5.0,
+        "wire_exit_start_case_mm": [
+          150.0,
+          -117.0,
+          -4.75
+        ],
+        "wire_exit_end_case_mm": [
+          228.5,
+          -133.0,
+          -4.999999999999998
+        ],
+        "nominal_bounds_case_mm": [
+          149.5999999,
+          -133.4000001,
+          -5.4000001,
+          228.5,
+          -103.59999990000001,
+          -4.349999899999999
+        ],
+        "minimum_expanded_case_gap_mm": 0.24031213077086266,
+        "minimum_expanded_obstacle_gap_mm": 0.3500000000000001,
+        "expanded_obstacle_gaps_mm": {
+          "PCB-fastener-14": 0.3500000000000001,
+          "PCB-fastener-16": 6.150570321681401,
+          "PCB-fastener-17": 25.37887652811008,
+          "PCB-fastener-21": 6.381135563733645,
+          "PCB-fastener-22": 0.36478118569394036,
+          "C5-complete-board": 0.5488
+        },
+        "pack_overlap_mm3": 0.0
+      },
+      {
+        "pin": 2,
+        "color": "black",
+        "free_length_mm": 107.4980422824218,
+        "minimum_bend_radius_mm": 6.999999999999999,
+        "wire_exit_start_case_mm": [
+          152.0,
+          -117.0,
+          -4.75
+        ],
+        "wire_exit_end_case_mm": [
+          228.5,
+          -135.0,
+          -4.999999999999998
+        ],
+        "nominal_bounds_case_mm": [
+          151.5999999,
+          -135.4000001,
+          -5.4000001,
+          228.5,
+          -105.59999990000001,
+          -4.349999899999999
+        ],
+        "minimum_expanded_case_gap_mm": 0.260081489345088,
+        "minimum_expanded_obstacle_gap_mm": 0.5488,
+        "expanded_obstacle_gaps_mm": {
+          "PCB-fastener-14": 0.5636460734563348,
+          "PCB-fastener-16": 4.187735674600348,
+          "PCB-fastener-17": 23.3804759277797,
+          "PCB-fastener-21": 4.409469074478068,
+          "C5-complete-board": 0.5488
+        },
+        "pack_overlap_mm3": 0.0
+      },
+      {
+        "pin": 3,
+        "color": "yellow",
+        "free_length_mm": 104.35644962883201,
+        "minimum_bend_radius_mm": 5.0,
+        "wire_exit_start_case_mm": [
+          154.0,
+          -117.0,
+          -4.75
+        ],
+        "wire_exit_end_case_mm": [
+          228.5,
+          -137.0,
+          -4.999999999999998
+        ],
+        "nominal_bounds_case_mm": [
+          153.5999999,
+          -137.4000001,
+          -5.4000001,
+          228.5,
+          -107.5999999,
+          -4.349999899999999
+        ],
+        "minimum_expanded_case_gap_mm": 0.26000000000000956,
+        "minimum_expanded_obstacle_gap_mm": 0.5488,
+        "expanded_obstacle_gaps_mm": {
+          "PCB-fastener-14": 2.217708630878652,
+          "PCB-fastener-16": 2.275682179333271,
+          "PCB-fastener-17": 21.38236558601005,
+          "PCB-fastener-21": 2.4740338211357504,
+          "C5-complete-board": 0.5488
+        },
+        "pack_overlap_mm3": 0.0
+      }
+    ]
+  },
+  "minimum_expanded_harness_to_harness_gap_mm": 0.3999999999999998,
+  "mated_housings": [
+    {
+      "name": "main-SH",
+      "bounds_case_mm": [
+        119.21033700000001,
+        -126.027723,
+        -5.1,
+        124.21033700000001,
+        -121.027723,
+        -2.1
+      ],
+      "minimum_expanded_case_gap_mm": 3.929604238058441,
+      "geometry": "Conservative complete envelope; intentional overlap with its mating header excluded"
+    },
+    {
+      "name": "main-PH",
+      "bounds_case_mm": [
+        148.1,
+        -123.35,
+        -7.5,
+        155.9,
+        -117.0,
+        -2
+      ],
+      "minimum_expanded_case_gap_mm": 1.6903105509772758,
+      "geometry": "Conservative complete envelope; intentional overlap with its mating header excluded"
+    },
+    {
+      "name": "C5-SH",
+      "bounds_case_mm": [
+        211.812702,
+        -121.63470000000001,
+        -9.3038,
+        216.812702,
+        -116.63470000000001,
+        -6.203800000000001
+      ],
+      "minimum_expanded_case_gap_mm": 1.4062000000000001,
+      "geometry": "Conservative complete envelope; intentional overlap with its mating header excluded"
+    }
+  ],
+  "guide_stations": [
+    {
+      "station": "rear-1",
+      "center_xy": [
+        170,
+        -106
+      ],
+      "floor_z": -5.9100000000000215,
+      "floor_z_sample_range": [
+        -5.910000000000023,
+        -5.9100000000000215
+      ],
+      "base_conforms_to_actual_case": true,
+      "base_to_floor_bond_gap": 0.1,
+      "lower_wire_z": -4.9,
+      "upper_wire_z": -3.2,
+      "retention_film_top_z": -2.7
+    },
+    {
+      "station": "rear-2",
+      "center_xy": [
+        190,
+        -106
+      ],
+      "floor_z": -5.9100000000000215,
+      "floor_z_sample_range": [
+        -5.910000000000023,
+        -5.9100000000000215
+      ],
+      "base_conforms_to_actual_case": true,
+      "base_to_floor_bond_gap": 0.1,
+      "lower_wire_z": -4.9,
+      "upper_wire_z": -3.2,
+      "retention_film_top_z": -2.7
+    },
+    {
+      "station": "front",
+      "center_xy": [
+        207,
+        -140.90041607170048
+      ],
+      "floor_z": -5.9100000000000055,
+      "base_to_floor_bond_gap": 0.1,
+      "wire_z": -4.9
+    }
+  ],
+  "ordinary_board_thickness_checks": [
+    {
+      "finished_pcb_thickness_mm": 1.44,
+      "main_connector_z_shift_mm": 0.16620000000000013,
+      "minimum_expanded_wire_case_gap_mm": 0.24031213077086266,
+      "maximum_required_free_length_change_mm": 0.019170987422256758,
+      "fixed_guide_positions": true
+    },
+    {
+      "finished_pcb_thickness_mm": 1.76,
+      "main_connector_z_shift_mm": -0.15379999999999994,
+      "minimum_expanded_wire_case_gap_mm": 0.24031213077086266,
+      "maximum_required_free_length_change_mm": 0.021876072217764886,
+      "fixed_guide_positions": true
+    }
+  ],
+  "render_parts": [
+    {
+      "name": "usb-1",
+      "path": ".assembly-work/interconnect/usb-1.step",
+      "sha256": "93e046f181f3e16b430bf07aa6355979730919774c213d438375d896c7011811",
+      "category": "wire",
+      "color": "red"
+    },
+    {
+      "name": "usb-2",
+      "path": ".assembly-work/interconnect/usb-2.step",
+      "sha256": "192c323e0b196e83058bcffc9d1837b929de7d3946a98e802e599806ba5b97c1",
+      "category": "wire",
+      "color": "white"
+    },
+    {
+      "name": "usb-3",
+      "path": ".assembly-work/interconnect/usb-3.step",
+      "sha256": "1571ac526129439093a7898a100e5e974b6df6a7b2e133a4222d846df6eae57d",
+      "category": "wire",
+      "color": "green"
+    },
+    {
+      "name": "usb-4",
+      "path": ".assembly-work/interconnect/usb-4.step",
+      "sha256": "c2ce99d0b5deedff37f19ca7102c85ea3c13f2665b6d3059c3dc6e5bdd66cf62",
+      "category": "wire",
+      "color": "black"
+    },
+    {
+      "name": "battery-1",
+      "path": ".assembly-work/interconnect/battery-1.step",
+      "sha256": "442d36aee64b8cb5f78b93ec43d2fac48898d22225df4b273e3673213d271fda",
+      "category": "wire",
+      "color": "red"
+    },
+    {
+      "name": "battery-2",
+      "path": ".assembly-work/interconnect/battery-2.step",
+      "sha256": "36e7617ec245e890368df49e1196a4f0e29329def6bfcfaadd560355ffc5d202",
+      "category": "wire",
+      "color": "black"
+    },
+    {
+      "name": "battery-3",
+      "path": ".assembly-work/interconnect/battery-3.step",
+      "sha256": "de200cbf01f451a11686ba2f326bcaa7423517542d7438a49de99e21e4b2c1c0",
+      "category": "wire",
+      "color": "yellow"
+    },
+    {
+      "name": "main-SH",
+      "path": ".assembly-work/interconnect/housing-main-sh.step",
+      "sha256": "0f61a1584928b185465abc31ca41d0111933d48d8c48be916458ab9ea87ce5b3",
+      "category": "mating-housing",
+      "color": "ivory"
+    },
+    {
+      "name": "main-PH",
+      "path": ".assembly-work/interconnect/housing-main-ph.step",
+      "sha256": "5edb7c10ad3d1dbdf66118f6b84e3aa8eecf967eb6585c3bc5ec2826979913ea",
+      "category": "mating-housing",
+      "color": "ivory"
+    },
+    {
+      "name": "C5-SH",
+      "path": ".assembly-work/interconnect/housing-c5-sh.step",
+      "sha256": "c443fc1af169de9b72e10273fc74ba0ba34ff4d35a88cf8d0b885fae65753ef5",
+      "category": "mating-housing",
+      "color": "ivory"
+    },
+    {
+      "name": "rear-1-base",
+      "path": ".assembly-work/interconnect/rear-1-base.step",
+      "sha256": "282cfa132a56d6a19f6ab3ccfa14ce9c201ecaa4c5c8e2bc87c2a92f0fba1a9d",
+      "category": "guide",
+      "color": "gray"
+    },
+    {
+      "name": "rear-1-bridge",
+      "path": ".assembly-work/interconnect/rear-1-bridge.step",
+      "sha256": "d57c673760722c634f2bf47ab7e5f3eb158c0edcf05c3a3004906bf94f31720d",
+      "category": "guide",
+      "color": "gray"
+    },
+    {
+      "name": "rear-2-base",
+      "path": ".assembly-work/interconnect/rear-2-base.step",
+      "sha256": "ae7b9c148f6dbf874f4377f14dc2eed5e00acce746661ee78a0e2a9867dfb19c",
+      "category": "guide",
+      "color": "gray"
+    },
+    {
+      "name": "rear-2-bridge",
+      "path": ".assembly-work/interconnect/rear-2-bridge.step",
+      "sha256": "ffe7801e13f69589353f2c1a19d908a0c43a116a3dbfd664056d9a51ad20776e",
+      "category": "guide",
+      "color": "gray"
+    },
+    {
+      "name": "front-base",
+      "path": ".assembly-work/interconnect/front-base.step",
+      "sha256": "a30dbcec5e2f6ef9aff8e0bfaa1ec9e1c1027383098f27aeb65f89a6513e1ff7",
+      "category": "guide",
+      "color": "gray"
+    }
+  ],
+  "centerline_recipes": {
+    "usb": [
+      {
+        "kind": "line",
+        "start": [
+          124.21033700000001,
+          -123.527723,
+          -3.5999999999999996
+        ],
+        "end": [
+          125.21033700000001,
+          -123.527723,
+          -3.5999999999999996
+        ],
+        "length": 1.0
+      },
+      {
+        "kind": "arc",
+        "start": [
+          125.21033700000001,
+          -123.527723,
+          -3.5999999999999996
+        ],
+        "mid": [
+          125.9849336692415,
+          -123.527723,
+          -3.5497899122574066
+        ],
+        "end": [
+          126.74656614957374,
+          -123.527723,
+          -3.3999999999999995
+        ],
+        "center": [
+          125.21033700000001,
+          -123.527723,
+          2.4000000000000004
+        ],
+        "normal": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "radius": 6.0,
+        "length": 1.553529252037332
+      },
+      {
+        "kind": "arc",
+        "start": [
+          126.74656614957374,
+          -123.527723,
+          -3.3999999999999995
+        ],
+        "mid": [
+          127.50819862990598,
+          -123.527723,
+          -3.250210087742593
+        ],
+        "end": [
+          128.28279529914747,
+          -123.527723,
+          -3.1999999999999993
+        ],
+        "center": [
+          128.28279529914747,
+          -123.527723,
+          -9.2
+        ],
+        "normal": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "radius": 6.000000000000002,
+        "length": 1.5535292520373327
+      },
+      {
+        "kind": "line",
+        "start": [
+          128.28279529914747,
+          -123.527723,
+          -3.1999999999999993
+        ],
+        "end": [
+          129.2,
+          -123.527723,
+          -3.1999999999999993
+        ],
+        "length": 0.9172047008525226
+      },
+      {
+        "kind": "arc",
+        "start": [
+          129.2,
+          -123.527723,
+          -3.1999999999999993
+        ],
+        "mid": [
+          133.44264068711928,
+          -121.77036368711929,
+          -3.1999999999999997
+        ],
+        "end": [
+          135.2,
+          -117.527723,
+          -3.2
+        ],
+        "center": [
+          129.2,
+          -117.527723,
+          -3.1999999999999993
+        ],
+        "normal": [
+          1.046728305789182e-16,
+          0.0,
+          1.0
+        ],
+        "radius": 6.0,
+        "length": 9.42477796076938
+      },
+      {
+        "kind": "line",
+        "start": [
+          135.2,
+          -117.527723,
+          -3.2
+        ],
+        "end": [
+          135.2,
+          -112.0,
+          -3.2
+        ],
+        "length": 5.527722999999995
+      },
+      {
+        "kind": "arc",
+        "start": [
+          135.2,
+          -112.0,
+          -3.2
+        ],
+        "mid": [
+          136.9573593128807,
+          -107.75735931288071,
+          -3.2
+        ],
+        "end": [
+          141.2,
+          -106.0,
+          -3.2
+        ],
+        "center": [
+          141.2,
+          -112.0,
+          -3.2
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "radius": 6.0,
+        "length": 9.42477796076938
+      },
+      {
+        "kind": "line",
+        "start": [
+          141.2,
+          -106.0,
+          -3.2
+        ],
+        "end": [
+          194.0,
+          -106.0,
+          -3.2
+        ],
+        "length": 52.80000000000001
+      },
+      {
+        "kind": "arc",
+        "start": [
+          194.0,
+          -106.0,
+          -3.2
+        ],
+        "mid": [
+          198.2426406871193,
+          -107.75735931288071,
+          -3.2
+        ],
+        "end": [
+          200.0,
+          -112.0,
+          -3.2
+        ],
+        "center": [
+          194.0,
+          -112.0,
+          -3.2
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "radius": 6.0,
+        "length": 9.42477796076938
+      },
+      {
+        "kind": "line",
+        "start": [
+          200.0,
+          -112.0,
+          -3.2
+        ],
+        "end": [
+          200,
+          -115,
+          -3.2
+        ],
+        "length": 3.0
+      },
+      {
+        "kind": "arc",
+        "start": [
+          200,
+          -115,
+          -3.2
+        ],
+        "mid": [
+          200.0,
+          -116.59687194226713,
+          -3.4164025036314984
+        ],
+        "end": [
+          200.0,
+          -118.07855485577242,
+          -4.050000000000001
+        ],
+        "center": [
+          200.0,
+          -115.0,
+          -9.2
+        ],
+        "normal": [
+          1.0,
+          0.0,
+          -0.0
+        ],
+        "radius": 5.999999999999999,
+        "length": 3.232702867038348
+      },
+      {
+        "kind": "arc",
+        "start": [
+          200.0,
+          -118.07855485577242,
+          -4.050000000000001
+        ],
+        "mid": [
+          200.0,
+          -119.56023776927772,
+          -4.6835974963685025
+        ],
+        "end": [
+          200.0,
+          -121.15710971154485,
+          -4.900000000000001
+        ],
+        "center": [
+          200.0,
+          -121.15710971154485,
+          1.0999999999999988
+        ],
+        "normal": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "radius": 5.999999999999997,
+        "length": 3.232702867038347
+      },
+      {
+        "kind": "line",
+        "start": [
+          200.0,
+          -121.15710971154485,
+          -4.900000000000001
+        ],
+        "end": [
+          200.0,
+          -134.90041607170048,
+          -4.9
+        ],
+        "length": 13.743306360155628
+      },
+      {
+        "kind": "arc",
+        "start": [
+          200.0,
+          -134.90041607170048,
+          -4.9
+        ],
+        "mid": [
+          201.7573593128807,
+          -139.14305675881977,
+          -4.9
+        ],
+        "end": [
+          206.0,
+          -140.90041607170048,
+          -4.9
+        ],
+        "center": [
+          206.0,
+          -134.90041607170048,
+          -4.9
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "radius": 6.0,
+        "length": 9.42477796076938
+      },
+      {
+        "kind": "line",
+        "start": [
+          206.0,
+          -140.90041607170048,
+          -4.9
+        ],
+        "end": [
+          208.312702,
+          -140.90041607170048,
+          -4.9
+        ],
+        "length": 2.3127020000000016
+      },
+      {
+        "kind": "arc",
+        "start": [
+          208.312702,
+          -140.90041607170048,
+          -4.9
+        ],
+        "mid": [
+          212.5553426871193,
+          -139.14305675881977,
+          -4.9
+        ],
+        "end": [
+          214.312702,
+          -134.90041607170048,
+          -4.9
+        ],
+        "center": [
+          208.312702,
+          -134.90041607170048,
+          -4.9
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "radius": 6.0,
+        "length": 9.42477796076938
+      },
+      {
+        "kind": "line",
+        "start": [
+          214.312702,
+          -134.90041607170048,
+          -4.9
+        ],
+        "end": [
+          214.312702,
+          -131.07626065014932,
+          -4.9
+        ],
+        "length": 3.824155421551154
+      },
+      {
+        "kind": "arc",
+        "start": [
+          214.312702,
+          -131.07626065014932,
+          -4.9
+        ],
+        "mid": [
+          214.312702,
+          -128.95359722887878,
+          -5.288021739172541
+        ],
+        "end": [
+          214.312702,
+          -127.10548032507467,
+          -6.401900000000001
+        ],
+        "center": [
+          214.312702,
+          -131.07626065014932,
+          -10.9
+        ],
+        "normal": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "radius": 6.0,
+        "length": 4.339277237721223
+      },
+      {
+        "kind": "arc",
+        "start": [
+          214.312702,
+          -127.10548032507467,
+          -6.401900000000001
+        ],
+        "mid": [
+          214.312702,
+          -125.25736342127055,
+          -7.515778260827461
+        ],
+        "end": [
+          214.312702,
+          -123.13470000000001,
+          -7.903800000000002
+        ],
+        "center": [
+          214.312702,
+          -123.13470000000001,
+          -1.9038000000000022
+        ],
+        "normal": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "radius": 5.999999999999999,
+        "length": 4.339277237721222
+      },
+      {
+        "kind": "line",
+        "start": [
+          214.312702,
+          -123.13470000000001,
+          -7.903800000000002
+        ],
+        "end": [
+          214.312702,
+          -121.63470000000001,
+          -7.9038
+        ],
+        "length": 1.5
+      }
+    ],
+    "battery": [
+      {
+        "kind": "arc",
+        "start": [
+          152.0,
+          -117.0,
+          -4.75
+        ],
+        "mid": [
+          152.0,
+          -116.48765246170201,
+          -4.768775179096436
+        ],
+        "end": [
+          152.0,
+          -115.97805332820151,
+          -4.825
+        ],
+        "center": [
+          152.0,
+          -117.0,
+          -11.75
+        ],
+        "normal": [
+          -0.9999999999999999,
+          0.0,
+          0.0
+        ],
+        "radius": 7.0,
+        "length": 1.0256121955509196
+      },
+      {
+        "kind": "arc",
+        "start": [
+          152.0,
+          -115.97805332820151,
+          -4.825
+        ],
+        "mid": [
+          152.0,
+          -115.46845419470101,
+          -4.881224820903564
+        ],
+        "end": [
+          152.0,
+          -114.95610665640302,
+          -4.9
+        ],
+        "center": [
+          152.0,
+          -114.95610665640302,
+          2.0999999999999996
+        ],
+        "normal": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "radius": 7.000000000000001,
+        "length": 1.0256121955509199
+      },
+      {
+        "kind": "line",
+        "start": [
+          152.0,
+          -114.95610665640302,
+          -4.9
+        ],
+        "end": [
+          152.0,
+          -113.0,
+          -4.9
+        ],
+        "length": 1.9561066564030227
+      },
+      {
+        "kind": "arc",
+        "start": [
+          152.0,
+          -113.0,
+          -4.9
+        ],
+        "mid": [
+          154.05025253169416,
+          -108.05025253169417,
+          -4.9
+        ],
+        "end": [
+          159.0,
+          -106.0,
+          -4.9
+        ],
+        "center": [
+          159.0,
+          -113.0,
+          -4.9
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "radius": 7.0,
+        "length": 10.995574287564276
+      },
+      {
+        "kind": "line",
+        "start": [
+          159.0,
+          -106.0,
+          -4.9
+        ],
+        "end": [
+          214.0,
+          -106.0,
+          -4.9
+        ],
+        "length": 55.0
+      },
+      {
+        "kind": "arc",
+        "start": [
+          214.0,
+          -106.0,
+          -4.9
+        ],
+        "mid": [
+          218.94974746830584,
+          -108.05025253169417,
+          -4.9
+        ],
+        "end": [
+          221.0,
+          -113.0,
+          -4.9
+        ],
+        "center": [
+          214.0,
+          -113.0,
+          -4.9
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "radius": 7.0,
+        "length": 10.995574287564276
+      },
+      {
+        "kind": "line",
+        "start": [
+          221.0,
+          -113.0,
+          -4.9
+        ],
+        "end": [
+          221,
+          -119,
+          -4.9
+        ],
+        "length": 6.0
+      },
+      {
+        "kind": "arc",
+        "start": [
+          221,
+          -119,
+          -4.9
+        ],
+        "mid": [
+          221.0,
+          -119.41833001326704,
+          -4.91251118068873
+        ],
+        "end": [
+          221.0,
+          -119.83516465442449,
+          -4.949999999999999
+        ],
+        "center": [
+          221.0,
+          -119.0,
+          -11.9
+        ],
+        "normal": [
+          1.0,
+          0.0,
+          -0.0
+        ],
+        "radius": 7.0,
+        "length": 0.8371588405365445
+      },
+      {
+        "kind": "arc",
+        "start": [
+          221.0,
+          -119.83516465442449,
+          -4.949999999999999
+        ],
+        "mid": [
+          221.0,
+          -120.25199929558195,
+          -4.9874888193112685
+        ],
+        "end": [
+          221.0,
+          -120.67032930884898,
+          -4.999999999999998
+        ],
+        "center": [
+          221.0,
+          -120.67032930884898,
+          2.0000000000000018
+        ],
+        "normal": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "radius": 6.999999999999999,
+        "length": 0.8371588405365444
+      },
+      {
+        "kind": "line",
+        "start": [
+          221.0,
+          -120.67032930884898,
+          -4.999999999999998
+        ],
+        "end": [
+          221.0,
+          -128.0,
+          -4.999999999999998
+        ],
+        "length": 7.329670691151023
+      },
+      {
+        "kind": "arc",
+        "start": [
+          221.0,
+          -128.0,
+          -4.999999999999998
+        ],
+        "mid": [
+          223.05025253169416,
+          -132.94974746830584,
+          -4.999999999999998
+        ],
+        "end": [
+          228.0,
+          -135.0,
+          -4.999999999999998
+        ],
+        "center": [
+          228.0,
+          -128.0,
+          -4.999999999999998
+        ],
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "radius": 7.0,
+        "length": 10.995574287564276
+      },
+      {
+        "kind": "line",
+        "start": [
+          228.0,
+          -135.0,
+          -4.999999999999998
+        ],
+        "end": [
+          228.5,
+          -135.0,
+          -4.999999999999998
+        ],
+        "length": 0.5
+      }
+    ]
+  },
+  "case_modification_required": false,
+  "assumptions": [
+    "All wires are held flat in the named grooves and preformed route; free bundling is not qualified",
+    "Lead exit Z datums and actual harness tolerances require supplier confirmation",
+    "No strain, springback, fatigue, pull-out or SI/RF certification"
+  ],
+  "not_verified": [
+    "Actual wire springback, dynamic flex, insulation abrasion and retention pull force",
+    "External USB cable overmould selection",
+    "Supplier complete pack drawing and electrical/thermal qualification",
+    "SI/RF, deferred by user"
+  ]
+}

@@ -82,12 +82,12 @@
     "endpoint_height_basis": "Engineering lead-exit datums bounded by conservative mated envelopes; vendor drawing must confirm",
     "radius": 6,
     "high_z": -3.2,
-    "low_z": -4.8,
+    "low_z": -4.9,
     "rear_y": -106,
-    "first_corner_x": 134.5,
+    "first_corner_x": 135.2,
     "drop_x": 200,
     "drop_y": -115,
-    "end_straight": 2,
+    "end_straight": 1.5,
     "front_y_search": [
       -145,
       -139
@@ -118,10 +118,11 @@
     "pack_exit_local": [
       0,
       14,
-      4.3
+      4.4
     ],
     "pack_exit_axis": "-X; local origin is pack minimum X/Y/Z, not cell origin",
-    "minimum_pack_lead_transition_zone_length": 5
+    "minimum_pack_lead_transition_zone_length": 5,
+    "rear_z": -4.9
   },
   "plug_envelope_allowance": 0.2,
   "guides": {
@@ -132,7 +133,7 @@
     ],
     "rear_y": -106,
     "rear_depth": 2,
-    "rear_width": 7,
+    "rear_width": 5.4,
     "front_x": 207,
     "front_depth": 1.8,
     "front_width": 6,
@@ -142,7 +143,7 @@
     "minimum_floor_web": 0.3,
     "retention_film_thickness": 0.1,
     "material": "Dimensionally qualified tough polymer; no conductive or sharp clamp against insulation",
-    "installation": "Lay completed harnesses into open grooves, bond the removable bridge at side lands, retain upper wires with 0.1mm insulating film; no threading plugs through closed holes",
+    "installation": "Lay completed harnesses into open grooves; secure removable bridges with 0.05mm removable nonconductive tape on side lands, then retain upper wires with film/tape total thickness <=0.10mm wrapped down the sides. Never permanently glue bridges or thread plugs through closed holes.",
     "physical_acceptance": "Verify groove finish, bonding, wire position within +/-0.1mm and removal without insulation damage"
   },
   "not_verified": [

@@ -1,0 +1,21 @@
+{
+  "status": "ordinary-process-geometry-passed",
+  "production_approved": false,
+  "profile": "JLC-ordinary-4L-7628",
+  "through_vias": 765,
+  "blind_buried_vias": 0,
+  "minimum_via_drill_mm": 0.3,
+  "minimum_via_diameter_mm": 0.5,
+  "module_via_in_pad": [],
+  "nominal_order_thickness_mm": 1.6,
+  "source_sha256": {
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "scripts/check_yeti60_fabrication.py": "1b0a82dd8e9704b90664ce806faae4ae6515e1fe35448d52601585b50f082c14"
+  },
+  "limits": [
+    "Ordinary JLC ordering/DFM review remains required",
+    "U5 ordinary open thermal via requires paste-wicking review; no resin filling/capping specified",
+    "Nominal CAD stack does not certify actual board thickness or hardware behavior"
+  ]
+}

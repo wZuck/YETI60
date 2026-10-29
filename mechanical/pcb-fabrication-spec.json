@@ -1,0 +1,30 @@
+{
+  "profile": "JLC-ordinary-4L-7628",
+  "source_url": "https://jlcpcb.com/impedance",
+  "capabilities_url": "https://jlcpcb.com/capabilities/pcb-capabilities/",
+  "retrieved": "2026-10-29",
+  "status": "ordinary-routing-and-native-DRC-passed-DFM-acceptance-pending",
+  "production_approved": false,
+  "nominal_order_thickness_mm": 1.6,
+  "ordinary_thickness_acceptance_range_mm": [
+    1.44,
+    1.76
+  ],
+  "stackup": "JLC04161H-7628",
+  "outer_copper_mm": 0.035,
+  "inner_copper_mm": 0.0152,
+  "outer_dielectrics_mm": [
+    0.2104,
+    0.2104
+  ],
+  "core_mm": 1.065,
+  "CAD_mask_each_mm_ASSUMED": 0.01,
+  "CAD_finished_envelope_mm": 1.6062,
+  "minimum_via_diameter_mm": 0.5,
+  "minimum_via_drill_mm": 0.3,
+  "via_type": "F.Cu to B.Cu mechanically drilled through only",
+  "blind_buried_laser_allowed": false,
+  "resin_fill_copper_cap_required": false,
+  "surface_finish": "ENIG, ordinary selectable finish; not a via fill process",
+  "scope": "Ordinary four-layer FR-4; no special lamination or custom asymmetric stack. Manufacturer ordering review and hardware qualification remain open."
+}

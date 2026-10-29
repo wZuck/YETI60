@@ -9,10 +9,10 @@
     "firmware/yeti60/core.c": "353ef280b7c84966dd6851e22ed98ad974bd58bbc5ae78b03a0623493e98ad49",
     "firmware/target/config/yeti60.conf": "2275fd710d346cb4b92e5c3587d3b676e9ff0d4d4ac2985c6b8f491b44f22184",
     "firmware/target/boards/yeti/yeti60/yeti60.dts": "97272ab737e22fe1a1669e3abe67025e8298e9fccf5a61db9aeaa4cc71aa6c98",
-    "docs/engineering/sources.json": "0e7807295fc61339348cef85df2e619cc404d201bd556cf773f91662f7c989f5",
-    "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
-    "hardware/ec60-nrf52840/netlist.xml": "06d7a8a5e13789597747e2c0b2bd7792460cb2a4ab5e200281f07dc3d1937dfb",
-    "scripts/calculate_yeti60_power.py": "d12823ad1673db0038904dfa5534d12f0b455f11f9aac80a08e69c7d7d427604"
+    "docs/engineering/sources.json": "d7d9dec5692284b1d8c7c31b39b35e30e7e650021202cdf5213c69746b442305",
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
+    "scripts/calculate_yeti60_power.py": "765e1fc5942e9648327d9b597c52e75f53cd34690d961e817732af81fd8110a9"
   },
   "equations": {
     "rail_mA": "I_OPA + I_MCU_average + 2*3.3/100k*1000 + 0.008 + 0.016 + 0.100",
@@ -89,17 +89,24 @@
   "charging": {
     "ISET_resistor_ohm": 2210,
     "TMR_resistor_ohm": 69800,
-    "ITERM_resistor_ohm": 1820,
+    "ITERM_resistor_ohm": 1690,
     "resistor_tolerance_fraction": 0.01,
+    "programmed_charge_design_ceiling_mA": 450,
+    "minimum_required_pack_charge_rating_mA": 500,
+    "charger_CV_min_typ_max_V": [
+      4.16,
+      4.2,
+      4.23
+    ],
     "programmed_charge_mA_min_typ_max": [
       357.06285560682767,
       402.71493212669685,
       445.63279857397504
     ],
     "termination_mA_min_typ_max": [
-      18.162492719860218,
-      24.705882352941178,
-      31.506238859180037
+      16.865171811298776,
+      22.941176470588232,
+      29.255793226381464
     ],
     "fastcharge_timer_h_min_typ_max": [
       6.910200000000001,

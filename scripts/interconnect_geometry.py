@@ -38,6 +38,7 @@ def tangent(piece, end=False):
 
 def s_bend(start, direction, height, radius, rise_axis=(0, 0, 1)):
     """Two tangent circular arcs; both end tangents remain horizontal."""
+    if abs(height)<1e-8:return [],tuple(start),0.
     d = unit(direction); z = mul(unit(rise_axis), 1 if height > 0 else -1)
     assert abs(dot(d, z)) < 1e-7
     theta = math.acos(1-abs(height)/(2*radius)); run = 2*radius*math.sin(theta)

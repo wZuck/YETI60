@@ -1,7 +1,7 @@
 {
   "source": "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb",
-  "source_sha256": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",
-  "pcb_thickness_mm": 1.59,
+  "source_sha256": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+  "pcb_thickness_mm": 1.6062,
   "parts": [
     {
       "physical_body_bbox_pcb_mm": null,
@@ -237,15 +237,15 @@
       "value": "10u/10V",
       "back": true,
       "position_pcb_mm": [
-        120.0,
-        149.5
+        119.6,
+        151.0
       ],
       "angle_deg": 0.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        118.495,
-        148.745,
-        121.505,
-        150.255
+        118.095,
+        150.245,
+        121.105,
+        151.755
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
@@ -519,18 +519,18 @@
     {
       "physical_body_bbox_pcb_mm": null,
       "ref": "R56",
-      "value": "1.82k/1%",
+      "value": "1.69k/1%",
       "back": true,
       "position_pcb_mm": [
-        115.1,
-        146.85
+        117.72,
+        148.1
       ],
       "angle_deg": -90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        114.605,
-        145.895,
-        115.595,
-        147.805
+        117.225,
+        147.145,
+        118.215,
+        149.055
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
@@ -921,15 +921,15 @@
       "value": "1u/10V",
       "back": true,
       "position_pcb_mm": [
-        118.0,
-        151.0
+        123.5,
+        148.1
       ],
       "angle_deg": 0.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        116.495,
-        150.245,
-        119.505,
-        151.755
+        121.995,
+        147.345,
+        125.005,
+        148.855
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
@@ -1325,15 +1325,15 @@
       "value": "69.8k/1%",
       "back": true,
       "position_pcb_mm": [
-        117.7,
-        148.4
+        118.7,
+        148.25
       ],
       "angle_deg": -90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        117.205,
-        147.445,
-        118.195,
-        149.355
+        118.205,
+        147.295,
+        119.195,
+        149.205
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"

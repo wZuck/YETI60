@@ -47,7 +47,25 @@ def main():
     meshes = {}
     for name,path in [('bottom',ROOT/data['case_files']['bottom']),('top',ROOT/data['case_files']['top']),('plate',WORK/'plate.step'),('pcb',WORK/'pcb-placed.step')]:
         meshes[name] = tessellate(path)
-    out = {'export_recipe_sha256':sha(Path(__file__)), 'geometry_helper_sha256':sha(ROOT/'scripts/cad_geometry.py'), 'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'tessellation_linear_deflection_mm':.015,'tessellation_angular_deflection_rad':.08,'case_scale':[1,1,1],'meshes':meshes}
+    harness_path=ROOT/'docs/audit/yeti60-interconnects.json'
+    harness=json.loads(harness_path.read_text()); daughter=json.loads((ROOT/'docs/audit/yeti60-daughterboard.json').read_text())
+    for source,h in harness['source_sha256'].items(): assert sha(ROOT/source)==h,source
+    extras=[]
+    for part in harness['render_parts']:
+        assert sha(ROOT/part['path'])==part['sha256']
+        name='interconnect-'+part['name'];meshes[name]=tessellate(ROOT/part['path']);extras.append({**part,'mesh':name,'group':'interconnect'})
+    spec=json.loads((ROOT/'mechanical/assembly-spec.json').read_text())['daughterboard']
+    shifts=[spec['source_to_case_x_offset'],spec['source_to_case_y_offset'],spec['pcb_bottom_z']]
+    connector=json.loads((ROOT/'docs/audit/yeti60-interconnect-connectors.json').read_text())['headers']['J1']['step']
+    components=[('main-sh',connector,[0,0,data['nominal_stack']['pcb_bottom_z']],'header','cream','pcb')]
+    components += [('C5-'+name,part,shifts,'daughterboard',{'pcb':'pcb','usb':'metal','sh':'cream','components':'black'}[name],'daughterboard') for name,part in daughter['render_parts'].items()]
+    for name,part,offset,category,color,group in components:
+        assert sha(ROOT/part['path'])==part['sha256']
+        d=tessellate(ROOT/part['path'])
+        d['vertices_mm']=[[v[i]+offset[i] for i in range(3)] for v in d['vertices_mm']]
+        for field in ['brep_bounds_mm','mesh_bounds_mm']: d[field]=[v+offset[i%3] for i,v in enumerate(d[field])]
+        meshes[name]=d;extras.append({'name':name,'mesh':name,'category':category,'color':color,'group':group})
+    out = {'interconnect_report_sha256':sha(harness_path),'daughterboard_report_sha256':sha(ROOT/'docs/audit/yeti60-daughterboard.json'),'extra_parts':extras,'export_recipe_sha256':sha(Path(__file__)), 'geometry_helper_sha256':sha(ROOT/'scripts/cad_geometry.py'), 'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'tessellation_linear_deflection_mm':.015,'tessellation_angular_deflection_rad':.08,'case_scale':[1,1,1],'meshes':meshes}
     (WORK/'render-meshes.json').write_text(json.dumps(out,separators=(',',':')))
     case = [meshes[n] for n in ['top','bottom']]
     bb = [min(m['brep_bounds_mm'][i] for m in case) for i in range(3)] + [max(m['brep_bounds_mm'][i] for m in case) for i in range(3,6)]

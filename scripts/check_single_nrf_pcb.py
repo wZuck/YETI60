@@ -66,7 +66,8 @@ def main():
         require(a==b, 'Changed electrode copper '+fp.GetReference())
         electrodes+=1
     require(source.GetCopperLayerCount()==target.GetCopperLayerCount()==4,'Layer stack mismatch')
-    require(source.GetDesignSettings().GetBoardThickness()==target.GetDesignSettings().GetBoardThickness(),'Board thickness changed')
+    profile=json.loads((ROOT/'mechanical/pcb-fabrication-spec.json').read_text())
+    require(abs(pcb.ToMM(target.GetDesignSettings().GetBoardThickness())-profile['CAD_finished_envelope_mm'])<1e-6,'Ordinary-stack board thickness mismatch')
     require(outline(source)==outline(target),'Changed board outline')
     for ref in ('REF**',):
         a=next(f for f in source.GetFootprints() if f.GetReference()==ref)

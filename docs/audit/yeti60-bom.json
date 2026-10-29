@@ -1,7 +1,7 @@
 {
   "outputs": {
-    "hardware/bom/mainboard.csv": "b68f08a7c6f67770eb9ca9fb7b3f7a0bbc130be16878714e3d3258c603f7a34f",
-    "hardware/bom/mainboard.zh-CN.csv": "2b744bf81a9bd99f633d9c58fe6f9575563deb9f86609137a79036c459a2d71d"
+    "hardware/bom/mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
+    "hardware/bom/mainboard.zh-CN.csv": "6480581ab2117d3891a9b0e1c51c5991440e4ff3d2908679ac1cf1339d0ddb77"
   },
   "status": "purchase-requirements-exported-not-order-release",
   "fitted_mainboard_parts": 76,
@@ -358,7 +358,7 @@
     {
       "references": "R56",
       "quantity": 1,
-      "value": "1.82k/1%",
+      "value": "1.69k/1%",
       "package": "R_0402_1005Metric",
       "candidate_mpn": "Vendor MPN unselected",
       "notes_en": "0402, 1%, >= 50 mW; 0 ohm links where specified",
@@ -438,9 +438,9 @@
     }
   ],
   "source_sha256": {
-    "hardware/ec60-nrf52840/netlist.xml": "06d7a8a5e13789597747e2c0b2bd7792460cb2a4ab5e200281f07dc3d1937dfb",
+    "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
     "hardware/ec60-nrf52840/metadata-audit.json": "9a5a76d3a1d93b7c876ceb873875bb01f0ec38759e85d67b1e47a125952e7a66",
-    "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
     "scripts/export_yeti60_bom.py": "77d62c01e7b822f1b2ce8f9663d94da2608e4006a2f12c3a9b5afaa1661398b9"
   },
   "limits": [

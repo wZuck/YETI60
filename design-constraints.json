@@ -86,5 +86,13 @@
       "status": "deferred",
       "description": "SI/RF analysis deferred by user until PCB design completion"
     }
-  ]
+  ],
+  "fabrication": {
+    "supplier": "JLCPCB",
+    "process": "ordinary-four-layer-FR4",
+    "profile": "mechanical/pcb-fabrication-spec.json",
+    "HDI_allowed": false,
+    "blind_buried_vias_allowed": false,
+    "resin_fill_copper_cap_required": false
+  }
 }

@@ -24,6 +24,8 @@ assert sha(REPORT) == meshdata['assembly_report_sha256']
 assert sha(ROOT/'scripts/export_yeti60_render_meshes.py') == meshdata['export_recipe_sha256']
 assert sha(ROOT/'scripts/cad_geometry.py') == meshdata['geometry_helper_sha256']
 assert meshdata['geometry_sources'] == data['source_sha256']
+assert meshdata['interconnect_report_sha256']==sha(ROOT/'docs/audit/yeti60-interconnects.json')
+assert meshdata['daughterboard_report_sha256']==sha(ROOT/'docs/audit/yeti60-daughterboard.json')
 for name,h in data['source_sha256'].items(): assert sha(ROOT/name)==h,name
 parser=argparse.ArgumentParser(); parser.add_argument('--preview',action='store_true'); parser.add_argument('--view',choices=['assembled','rear','exploded','battery-space']); args=parser.parse_args()
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -69,7 +71,7 @@ cream=material('Connector plastic',(.63,.62,.52),.4)
 battery_mat=material('Selected custom pack envelope',(.04,.31,.17),.28,metal=.3)
 desk_mat=material('Warm studio backdrop',(.34,.32,.28),.65)
 groups={}
-for name in ['bottom','top','plate','pcb','caps','switches','battery']:
+for name in ['bottom','top','plate','pcb','caps','switches','battery','interconnect','daughterboard']:
     o=bpy.data.objects.new(name,None); scene.collection.objects.link(o); groups[name]=o
 root=bpy.data.objects.new('Rigid 7 degree presentation transform',None); scene.collection.objects.link(root)
 for o in groups.values(): o.parent=root
@@ -92,9 +94,42 @@ def box(name,bb,mat,group,bevel=0):
     if bevel:
         mod=o.modifiers.new('Illustrative component edge radius','BEVEL'); mod.width=bevel*.001; mod.segments=3
     return o
+extra_materials={'ivory':cream,'cream':cream,'gray':black,'pcb':pcb_mat,'metal':metalmat,'black':black}
+for color,rgb in {'red':(.45,.012,.008),'white':(.8,.8,.75),'green':(.01,.25,.04),'yellow':(.65,.4,.005)}.items():extra_materials[color]=material('Wire insulation '+color,rgb,.4)
+for part in meshdata['extra_parts']:
+    d=meshdata['meshes'][part['mesh']]
+    object_mesh(part['name']+' / checked CAD',[point(v) for v in d['vertices_mm']],d['triangles'],extra_materials[part['color']],part['group'],smooth=part['category']=='wire')
 for p in data['component_envelopes']:
+    if p['ref']=='J1':continue
     mat=cream if p['ref'].startswith('J') else black if p['ref'].startswith('U') else metalmat
     box(p['ref']+' / height envelope',p['bounds_case_mm'],mat,'pcb',.12)
+
+def ring(name,x,y,z0,z1,outer,inner,mat,group):
+    vertices=[];n=48
+    radii=[outer,outer,inner,inner] if inner else [outer,outer]
+    levels=[z0,z1,z0,z1] if inner else [z0,z1]
+    for radius,z in zip(radii,levels):
+        vertices.extend(point((x+radius*math.cos(2*math.pi*i/n),y+radius*math.sin(2*math.pi*i/n),z)) for i in range(n))
+    faces=[]
+    for i in range(n):
+        j=(i+1)%n;faces.append((i,j,n+j,n+i))
+        if inner:
+            faces.extend([(2*n+i,3*n+i,3*n+j,2*n+j),(i,2*n+i,2*n+j,j),(n+i,n+j,3*n+j,3*n+i)])
+    if not inner:faces.extend([tuple(reversed(range(n))),tuple(range(n,2*n))])
+    return object_mesh(name,vertices,faces,mat,group,smooth=False)
+
+brass=material('Machined brass standoffs',(.50,.31,.075),.27,metal=1)
+film=material('Polyimide insulation',(.43,.20,.025),.3)
+ptop=data['nominal_stack']['pcb_top_z'];pbot=data['nominal_stack']['pcb_bottom_z'];plate_z=data['nominal_stack']['plate_bottom_z']
+for i,hole in enumerate(data['mounting_hole_matches'],1):
+    x,y=hole['pcb_center_case_mm']
+    ring('Standoff lower female envelope '+str(i),x,y,ptop+.1,ptop+.1+3.2,1.75,.8,brass,'plate')
+    ring('Standoff blind top '+str(i),x,y,ptop+.1+3.2,plate_z,1.75,0,brass,'plate')
+    ring('M2 upper stud '+str(i),x,y,plate_z,plate_z+1,1,0,brass,'plate')
+    ring('Top insulating film '+str(i),x,y,ptop,ptop+.1,2.25,.9,film,'pcb')
+    ring('PEEK washer '+str(i),x,y,pbot-.8,pbot,2,1.1,black,'pcb')
+    ring('M1.6 shank envelope '+str(i),x,y,pbot-.8,pbot-.8+5,.8,0,metalmat,'pcb')
+    ring('M1.6 head envelope '+str(i),x,y,pbot-1.9,pbot-.8,1.6,0,metalmat,'pcb')
 
 def rounded(w,h,r,n=8):
     out=[]
@@ -182,11 +217,11 @@ if not args.preview:
     rendered_outputs={}
     for view in views:
         path=OUT/(view+'.png')
-        rendered_outputs[path.name]={'sha256':sha(path),'bytes':path.stat().st_size,'recipe_sha256':sha(Path(__file__)),'assembly_report_sha256':sha(REPORT),'mesh_export_recipe_sha256':meshdata['export_recipe_sha256']}
+        rendered_outputs[path.name]={'sha256':sha(path),'bytes':path.stat().st_size,'recipe_sha256':sha(Path(__file__)),'assembly_report_sha256':sha(REPORT),'mesh_export_recipe_sha256':meshdata['export_recipe_sha256'],'interconnect_report_sha256':meshdata['interconnect_report_sha256'],'daughterboard_report_sha256':meshdata['daughterboard_report_sha256']}
     # Preserve evidence for untouched views; never stamp them as freshly rendered.
     for name,item in prior_outputs.items():
         if name not in rendered_outputs: rendered_outputs[name]=item
     for name,h in data['source_sha256'].items(): assert sha(ROOT/name)==h,name
-    manifest={'project':'YETI60','renderer':'Blender '+bpy.app.version_string+' / Cycles','samples':scene.cycles.samples,'recipe_sha256':sha(Path(__file__)),'mesh_export_recipe_sha256':sha(ROOT/'scripts/export_yeti60_render_meshes.py'),'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'case_scale':[1,1,1],'units':'source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation','tessellation_linear_deflection_mm':meshdata['tessellation_linear_deflection_mm'],'source_case_bounds_mm':{name:{'brep':meshdata['meshes'][name]['brep_bounds_mm'],'mesh':meshdata['meshes'][name]['mesh_bounds_mm']} for name in ['top','bottom']},'case_geometry_modifiers':[],'illustrative':['sculpted keycaps, legends, switch housings and stems','resin/PBT finish and colours','backside component envelopes','custom 1600 mAh full-pack design envelope, supplier drawing pending'],'provisional_stack':data['nominal_stack'],'outputs':rendered_outputs,'production_approved':False}
+    manifest={'interconnect_report_sha256':meshdata['interconnect_report_sha256'],'daughterboard_report_sha256':meshdata['daughterboard_report_sha256'],'interconnect_geometry':'Seven continuous round wires, complete conservative mating envelopes, conformal guides and native C5 CAD; supplier lead-exit datums pending','project':'YETI60','renderer':'Blender '+bpy.app.version_string+' / Cycles','samples':scene.cycles.samples,'recipe_sha256':sha(Path(__file__)),'mesh_export_recipe_sha256':sha(ROOT/'scripts/export_yeti60_render_meshes.py'),'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'case_scale':[1,1,1],'units':'source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation','tessellation_linear_deflection_mm':meshdata['tessellation_linear_deflection_mm'],'source_case_bounds_mm':{name:{'brep':meshdata['meshes'][name]['brep_bounds_mm'],'mesh':meshdata['meshes'][name]['mesh_bounds_mm']} for name in ['top','bottom']},'case_geometry_modifiers':[],'illustrative':['sculpted keycaps, legends, switch housings and stems','resin/PBT finish and colours','backside component envelopes and fastener thread/head envelopes','custom 1600 mAh full-pack design envelope, supplier drawing pending'],'provisional_stack':data['nominal_stack'],'outputs':rendered_outputs,'production_approved':False}
     (OUT/'render-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print('YETI60 physical studio renders complete')

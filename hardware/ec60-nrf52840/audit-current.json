@@ -3,12 +3,12 @@
   "production_approved": false,
   "mcu_count": 1,
   "source_sha256": {
-    "EC60-nRF52840.kicad_pcb": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",
+    "EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
     "EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82",
-    "netlist.xml": "06d7a8a5e13789597747e2c0b2bd7792460cb2a4ab5e200281f07dc3d1937dfb",
+    "netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
     "frozen-footprints.json": "97d1179dd2c7d7d1128fea0ca6ae9d2355d5bdb0bf0f7b1c1b61350f365e1f6b",
     "YAECKB.kicad_sym": "e852545b743cb29ad045980306260d08724b9168366e0fb3e6f737242201a3cf",
-    "power.kicad_sch": "47aad3e49fec99c3c51c167ccb503752ff97304f30cd8800856229c2f8499451",
+    "power.kicad_sch": "1d35fb87ed82b68c829c1d409eacc09322cc079e40bdb6129543fc92412fe3cb",
     "matrix.kicad_sch": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
     "mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
     "analog.kicad_sch": "50213cf793f4cadf9313ddc3fcc5c6755896291a56e8ca56dec564b0b9f07bf2",
@@ -191,7 +191,7 @@
     "YAECKB.pretty/SW_SPDT_CK_JS102011SAQN__SW100.kicad_mod": "7beaa0485a8021208ff7c2d594e7ec8d6c2c196ff941a5511c0c743e8541fbe7",
     "YAECKB.pretty/R_0402_1005Metric__R40.kicad_mod": "93eeb5aad5dd6e2f33d2f353b436bbc6111b41b8cbd2944591d8764e4a7f2114",
     "YAECKB.pretty/R_0402_1005Metric__R55.kicad_mod": "02b1317605ddea8b85213752672a8ebca1c15f1641d84b2e0287c66317f6a5ca",
-    "YAECKB.pretty/R_0402_1005Metric__R56.kicad_mod": "3da51ce6691b9a189edac8d8ce37aa97a9612a09a70aa2b64f328920438ad22a"
+    "YAECKB.pretty/R_0402_1005Metric__R56.kicad_mod": "fb6e93da1221ccd76f4b6340cef8f4f777da7ac3dc4a92b42ce14effa8feda63"
   },
   "enabled_previously_ignored_checks": [
     "footprint_filters_mismatch",
@@ -310,7 +310,8 @@
   "unexpected_component_courtyard_warnings": [],
   "unconnected_items": 0,
   "warnings_by_type": {
-    "track_not_centered_on_via": 9,
+    "track_dangling": 1,
+    "track_not_centered_on_via": 5,
     "missing_courtyard": 102
   },
   "potentially_truncated_categories": [],
@@ -2007,7 +2008,7 @@
   ],
   "interference_simulation": "not_started_user_ordered_after_PCB_completion",
   "limits": [
-    "U1.39 and U1.51 vias-in-pad require resin filling, planarization and copper capping",
+    "Ordinary JLC through-via process checked separately; no module via-in-pad or special fill/capping",
     "DRC does not certify regulator stability, capacitor DC bias or thermal performance",
     "C5 native electrical/mounting checks do not verify mating plug/harness serviceability or physical assembly",
     "Normal/calibrator target builds verified separately; on-device USB/BLE and physical EC calibration untested"

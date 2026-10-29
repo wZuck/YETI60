@@ -47,7 +47,7 @@ Reproduce with `python3 scripts/calculate_yeti60_power.py`. [CSV](../../hardware
 
 ## Default P2 charging design
 
-Retain [BQ24074, SLUS810N pp12–13 and 27–28](https://www.ti.com/lit/ds/symlink/bq24074.pdf). R40 changes from 8.87k to 2.21k/1%; add R55=69.8k/1% from TMR to ground and R56=1.82k/1% from ITERM to ground. The old small-pack configuration is not interchangeable.
+Retain [BQ24074, SLUS810N pp12–13 and 27–28](https://www.ti.com/lit/ds/symlink/bq24074.pdf). R40 changes from 8.87k to 2.21k/1%; add R55=69.8k/1% from TMR to ground and R56=1.69k/1% from ITERM to ground. The old small-pack configuration is not interchangeable.
 
 ```text
 I_CHG = K_ISET / R40; K_ISET = 797 / 890 / 975 AΩ
@@ -61,9 +61,13 @@ minimum / typical / maximum = 6.9102 / 9.3067 / 11.7497 hours
 
 I_TERM = K_ITERM × R56 / R40
 K_ITERM(USB500) = 0.0225 / 0.0300 / 0.0375
-minimum / typical / maximum = 18.16 / 24.71 / 31.51 mA
+minimum / typical / maximum = 16.87 / 22.94 / 29.26 mA
 cell 0.02C endpoint = 1600×0.02 = 32 mA
 ```
+
+R56 was reduced from 1.82k to 1.69k in response to the feasibility assessment: maximum termination falls from 31.51 to 29.26 mA, increasing margin to the provisional 32 mA endpoint from 0.49 to 2.74 mA. Lower termination extends CV taper; full-charge/timer acceptance remains required.
+
+The 450 mA value is the **programmed-charge engineering ceiling**, not a certified battery rating. Procurement now requires at least **500 mA continuous pack charging capability** within the accepted temperature window; calculated maximum 445.63 mA then has 54.37 mA rating margin. Supplier confirmation of the inconsistent cell sheet remains mandatory. BQ24074 specifies **4.16/4.20/4.23 V minimum/typical/maximum** regulation over its stated junction-temperature range; the cell supplier must accept the full 4.16–4.23 V range, including the effect of the low voltage corner on delivered capacity. A nominal 4.2 V label is insufficient.
 
 R55's full tolerance range, 69.102…70.498k, stays inside the documented 18…72k range. Precharge timing is one tenth of fast-charge timing. USB100 termination factors are 0.008/0.010/0.012: their limits are not exactly one third of the USB500 limits. JSON records unrounded calculations including resistor tolerances.
 

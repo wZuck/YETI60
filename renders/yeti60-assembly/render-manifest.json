@@ -1,16 +1,20 @@
 {
+  "interconnect_report_sha256": "5538fa4136171afd7192592f0224dc740514467e26ba5d3ae5629c2a9b96ec77",
+  "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
+  "interconnect_geometry": "Seven continuous round wires, complete conservative mating envelopes, conformal guides and native C5 CAD; supplier lead-exit datums pending",
   "project": "YETI60",
   "renderer": "Blender 5.0.1 / Cycles",
   "samples": 256,
-  "recipe_sha256": "a4903eb7f344b2ede069220982ae998cf04b4a89e6d5d8582386beecde6abe7a",
-  "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279",
-  "assembly_report_sha256": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
+  "recipe_sha256": "9d11783c4ed5fd33f5583837b36bd95d4905f0f10a0f0b5bad37e7f0eb98feea",
+  "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
+  "assembly_report_sha256": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
   "geometry_sources": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
     "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "mechanical/assembly-spec.json": "14b338ecec1cb80f256f788949c01aabc115b4b39107c7b4f59115c34ae5c890",
-    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51"
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed"
   },
   "case_scale": [
     1,
@@ -61,48 +65,57 @@
   "illustrative": [
     "sculpted keycaps, legends, switch housings and stems",
     "resin/PBT finish and colours",
-    "backside component envelopes",
+    "backside component envelopes and fastener thread/head envelopes",
     "custom 1600 mAh full-pack design envelope, supplier drawing pending"
   ],
   "provisional_stack": {
     "bottom_gasket_ledge_z": 3.19,
     "top_gasket_ledge_z": 6.39,
-    "compressed_gasket_each_mm": 1.0,
-    "plate_bottom_z": 4.19,
+    "compressed_bottom_gasket_mm": 1.0162,
+    "compressed_top_gasket_mm": 0.9837999999999998,
+    "plate_bottom_z": 4.2062,
     "plate_thickness_mm": 1.2,
     "pcb_to_plate_gap_mm": 4.6,
-    "pcb_top_z": -0.40999999999999925,
-    "pcb_bottom_z": -1.9999999999999993,
+    "pcb_top_z": -0.3937999999999997,
+    "pcb_bottom_z": -1.9999999999999998,
     "pcb_gap_basis": "4.5 mm machined shoulder plus 0.1 mm insulating film; physical dome/housing acceptance requires first article"
   },
   "outputs": {
     "assembled.png": {
-      "sha256": "05d965b99b0933270c5eb5770fd63a87930f3f8a238112a3c79894c5f6f0e55f",
-      "bytes": 3781239,
-      "recipe_sha256": "a4903eb7f344b2ede069220982ae998cf04b4a89e6d5d8582386beecde6abe7a",
-      "assembly_report_sha256": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
-      "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279"
+      "sha256": "d9b4245005b06434a6572d4d055b5844ef543e0c983a03e92024f5b6d8f688df",
+      "bytes": 3782124,
+      "recipe_sha256": "9d11783c4ed5fd33f5583837b36bd95d4905f0f10a0f0b5bad37e7f0eb98feea",
+      "assembly_report_sha256": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
+      "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
+      "interconnect_report_sha256": "5538fa4136171afd7192592f0224dc740514467e26ba5d3ae5629c2a9b96ec77",
+      "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58"
     },
     "rear.png": {
-      "sha256": "c1bc827c7677c39254b039a6748b927e8b6ca850c4c72a740a6d55b577bef804",
-      "bytes": 3644584,
-      "recipe_sha256": "a4903eb7f344b2ede069220982ae998cf04b4a89e6d5d8582386beecde6abe7a",
-      "assembly_report_sha256": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
-      "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279"
+      "sha256": "186a2f9d4b5612543068897b93c69d5a8a7162108d66a79b111994ce4a833a34",
+      "bytes": 3644656,
+      "recipe_sha256": "9d11783c4ed5fd33f5583837b36bd95d4905f0f10a0f0b5bad37e7f0eb98feea",
+      "assembly_report_sha256": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
+      "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
+      "interconnect_report_sha256": "5538fa4136171afd7192592f0224dc740514467e26ba5d3ae5629c2a9b96ec77",
+      "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58"
     },
     "exploded.png": {
-      "sha256": "08dd4ffa9385c1c1081cca02617d1bd4ce580b0a58c7ae8db6e3922956fc42a4",
-      "bytes": 3936475,
-      "recipe_sha256": "a4903eb7f344b2ede069220982ae998cf04b4a89e6d5d8582386beecde6abe7a",
-      "assembly_report_sha256": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
-      "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279"
+      "sha256": "ecc1c17338620e3bb2ef9fd62b80f1514400e6e453c0080b7678426ebfddda36",
+      "bytes": 3941490,
+      "recipe_sha256": "9d11783c4ed5fd33f5583837b36bd95d4905f0f10a0f0b5bad37e7f0eb98feea",
+      "assembly_report_sha256": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
+      "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
+      "interconnect_report_sha256": "5538fa4136171afd7192592f0224dc740514467e26ba5d3ae5629c2a9b96ec77",
+      "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58"
     },
     "battery-space.png": {
-      "sha256": "6099e6b25a735e716b08072a7ac1c81881e62fd37a8246017ff07de619653a60",
-      "bytes": 3694617,
-      "recipe_sha256": "a4903eb7f344b2ede069220982ae998cf04b4a89e6d5d8582386beecde6abe7a",
-      "assembly_report_sha256": "d54884413eb4a9aabbd825a00c63b9362506b1f14e1a35154045d49091be0dae",
-      "mesh_export_recipe_sha256": "bf873b328f108e07961c620bb8f0ba4ee572e5ebfad076546927c98b757e5279"
+      "sha256": "9af474cb7117f27f938532faaeb6a36ec6101053873a28a6e0a257439b3d287c",
+      "bytes": 3824296,
+      "recipe_sha256": "9d11783c4ed5fd33f5583837b36bd95d4905f0f10a0f0b5bad37e7f0eb98feea",
+      "assembly_report_sha256": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
+      "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
+      "interconnect_report_sha256": "5538fa4136171afd7192592f0224dc740514467e26ba5d3ae5629c2a9b96ec77",
+      "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58"
     }
   },
   "production_approved": false

@@ -20,6 +20,7 @@ udb_report=json.loads((ROOT/'docs/audit/yeti60-daughterboard.json').read_text())
 udb=tessellate(UDB);uspec=json.loads((ROOT/'mechanical/assembly-spec.json').read_text())['daughterboard']
 for v in udb['vertices_mm']:v[0]+=uspec['source_to_case_x_offset'];v[1]+=uspec['source_to_case_y_offset'];v[2]+=uspec['pcb_bottom_z']
 mesh['meshes']['daughterboard']=udb
+PCB_T=fit['finished_board_envelope_thickness_mm'];PCB_TOP=fit['nominal_stack']['pcb_top_z'];PLATE_Z=fit['nominal_stack']['plate_bottom_z']
 COL={'daughterboard':'#547a83','bottom':'#a1abb3','top':'#adb7bd','plate':'#c8d2d8','pcb':'#36836c'}
 
 def projected(v,offset=0):
@@ -51,7 +52,7 @@ def main():
   cad(ax,'daughterboard',15)
   cad(ax,'pcb',90)
   for h in fit['mounting_hole_matches']:
-   x,y=h['pcb_center_case_mm'];rect3(ax,[x-1.75,y-1.75,-.31,x+1.75,y+1.75,4.19],90,'#b69b55')
+   x,y=h['pcb_center_case_mm'];rect3(ax,[x-1.75,y-1.75,PCB_TOP+.1,x+1.75,y+1.75,PLATE_Z],90,'#b69b55')
   p=fit['battery_candidates'][0]['bounds_case_mm'];rect3(ax,p,35,'#849c72')
   cad(ax,'plate',160)
   for k in fit['active_key_positions']:rect3(ax,[k['x']-6.9,k['y']-6.6,5.39,k['x']+6.9,k['y']+6.6,10.9],160,'#57616b')
@@ -62,15 +63,15 @@ def main():
    (('M01 上壳，原尺寸派生 CAD' if zh else 'M01 Top shell, derived unscaled CAD'),(345,-190,236),(175,235)),
    (('M03–M07 定位板及 60 套感应机构' if zh else 'M03–M07 Plate + 60 EC mechanisms'),(345,-180,167),(175,170)),
    (('M09–M12 29 套支柱／绝缘／螺钉' if zh else 'M09–M12 29 fastener/insulator sets'),(340,-170,93),(175,116)),
-   (('主板，成品厚 1.59 mm' if zh else 'Main PCB, 1.59 mm finished'),(345,-180,88),(175,94)),
+   (('主板，CAD 包络 1.6062 mm' if zh else 'Main PCB, 1.6062 mm CAD envelope'),(345,-180,88),(175,94)),
    (('默认电池包 85×43×4.8 mm' if zh else 'Default pack 85 x 43 x 4.8 mm'),(313,-128,30),(175,43)),
    (('M02 底壳，含嵌件孔及检修孔' if zh else 'M02 Bottom, insert seats/service port'),(345,-175,-5),(175,-22))]:label(ax,txt,xyz,loc)
   ax.set_xlim(-181,335);ax.set_ylim(-59,340);ax.set_anchor('N')
   label(ax,('后侧 USB 子板，原生 CAD' if zh else 'Rear USB daughterboard, native CAD'),(214.3,-111,7),(175,14))
   ax.text(-175,-50,('外壳包围尺寸 325.700×125.200×31.190 mm；分解高度仅为示意' if zh else 'Case envelope 325.700 x 125.200 x 31.190 mm; exploded offsets are illustrative'),fontsize=9)
   side=fig.add_subplot(gs[0,1]);title(side,'02','紧固件剖面 / mm' if zh else 'Fastener section / mm');side.set_xlim(-7,18);side.set_ylim(-5.4,7);side.axis('off')
-  for bb,col in [((-6,4.19,12,1.2),'#acbbc3'),((-6,-2,12,1.59),'#36836c'),((-1.75,-.31,3.5,4.5),'#b69b55'),((-2.25,-.41,4.5,.1),'#d4a741'),((-3,-2.8,6,.8),'#7793a1'),((-.8,-2.8,1.6,5),'#b4bcc3'),((-1.6,-3.9,3.2,1.1),'#8999a2'),((-1,4.19,2,1),'#b69b55')]:side.add_patch(Rectangle(bb[:2],bb[2],bb[3],fc=col,ec='#294453',lw=.5))
-  dim(side,-.41,4.19,'4.60',8);dim(side,-2,-.41,'1.59',11);side.text(-6,5.8,('1.2 不锈钢板，M2 螺纹' if zh else '1.2 stainless plate, M2 threads'),fontsize=9)
+  for bb,col in [((-6,PLATE_Z,12,1.2),'#acbbc3'),((-6,-2,12,PCB_T),'#36836c'),((-1.75,PCB_TOP+.1,3.5,4.5),'#b69b55'),((-2.25,PCB_TOP,4.5,.1),'#d4a741'),((-2,-2.8,4,.8),'#7793a1'),((-.8,-2.8,1.6,5),'#b4bcc3'),((-1.6,-3.9,3.2,1.1),'#8999a2'),((-1,PLATE_Z,2,1),'#b69b55')]:side.add_patch(Rectangle(bb[:2],bb[2],bb[3],fc=col,ec='#294453',lw=.5))
+  dim(side,PCB_TOP,PLATE_Z,'4.60',8);dim(side,-2,PCB_TOP,f'{PCB_T:.4f}',11);side.text(-6,5.8,('1.2 不锈钢板，M2 螺纹' if zh else '1.2 stainless plate, M2 threads'),fontsize=9)
   side.text(-6,-5,('4.50 黄铜肩 + 0.10 绝缘膜\nPEEK 垫片 0.8；M1.6×5 螺钉' if zh else '4.50 brass shoulder + 0.10 film\n0.8 PEEK washer; M1.6 x 5 screw'),fontsize=9)
   boxax=fig.add_subplot(gs[1,1]);title(boxax,'03','接线及装配顺序' if zh else 'Connections and sequence');boxax.axis('off')
   texts=(['后侧 USB 子板 → 主板 J1','1 VBUS  2 D−  3 D+  4 GND','电池 → J2：1 正极 2 地 3 NTC','J3：1 3.3V  2 SWDIO  3 地','      4 SWDCLK  5 复位 6 地','','① 冷粘嵌件并检查螺纹','② 组装定位板、轴座和胶碗弹簧','③ 绝缘支柱后固定 PCB','④ 固定子板／电池，逐线检查极性','⑤ 校准后合壳并检查行程','','轴座／键帽为示意；不是公差验收图'] if zh else ['Rear USB daughterboard -> main J1','1 VBUS   2 D-   3 D+   4 GND','Battery -> J2: 1 +   2 GND   3 NTC','J3: 1 3.3V  2 SWDIO  3 GND','    4 SWDCLK  5 RESET  6 GND','','1  Cold-bond inserts; inspect threads','2  Plate, housings, domes and springs','3  Insulate standoffs; fasten PCB','4  Secure UDB/pack; check every pin','5  Calibrate, close case, check travel','','Housing/cap shapes illustrative; not an acceptance drawing'])
@@ -100,8 +101,9 @@ def main():
   sec.set_xlim(left-1,right+38);sec.set_ylim(-16,0);sec.set_xlabel('X / mm');sec.set_ylabel('Z / mm');sec.grid(alpha=.15)
   fig.suptitle('YETI60  /  '+('默认 1600 mAh 电池槽' if zh else 'Default 1600 mAh battery recess'),fontsize=20,fontweight='bold',x=.06,ha='left');fig.subplots_adjust(top=.81,wspace=.24,bottom=.15)
   save(fig,'battery-pocket.zh-CN' if zh else 'battery-pocket')
- for p in OUT.iterdir():
-  if p.suffix in ['.png','.svg']:outputs[str(p.relative_to(ROOT))]=sha(p)
+ for stem in ['assembly','assembly.zh-CN','battery-pocket','battery-pocket.zh-CN']:
+  for ext in ['png','svg']:
+   p=OUT/(stem+'.'+ext);outputs[str(p.relative_to(ROOT))]=sha(p)
  report={'status':'generated','recipe_sha256':sha(Path(__file__).resolve()),'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [fitpath,ROOT/'docs/audit/yeti60-battery-pocket.json',ROOT/'mechanical/assembly-spec.json',ROOT/'mechanical/battery-pocket-study.json',ROOT/'docs/audit/yeti60-daughterboard.json',ROOT/'scripts/export_yeti60_daughterboard.py']},'geometry_sources':mesh['geometry_sources'],'mesh_export_recipe_sha256':mesh['export_recipe_sha256'],'outputs':outputs,'limits':['Exploded offsets are for presentation, original case meshes are unscaled','Thread/housing/keycap envelopes schematic; CAD is not a first-article acceptance','Default custom pack still requires a supplier-signed drawing and physical acceptance']}
  (ROOT/'docs/audit/yeti60-assembly-drawings.json').write_text(json.dumps(report,indent=2)+'\n');print('English and Chinese assembly/pocket engineering sheets generated')
 if __name__=='__main__':main()

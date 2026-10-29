@@ -28,3 +28,5 @@ Fault-injection tests verify rejection of reversed USB data contracts, stale tra
 A fresh checkout requires `git submodule update --init --recursive` for the pinned EC60 and FELK60 source geometry.
 
 Procurement, default 1600 mAh recess/catalog screening, separate assembly sheets and power calculations are part of the same audit pipeline. [Engineering evidence](yeti60-engineering.json) checks current source/output hashes and arithmetic. Five negative engineering cases reject changed drawings, thin walls, unapproved drop-in claims, excessive charge current and excessive termination current; the target fault test rejects a USB100 linked descriptor.
+
+[Ordinary-process checks](yeti60-ordinary-process.json) · [Fabrication archive](yeti60-fabrication.json) · [README materials parity](yeti60-materials.json) · [Interconnects](yeti60-interconnects.json) · [Assessment response](../engineering/assessment-response.md)

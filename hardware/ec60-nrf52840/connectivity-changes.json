@@ -1,12 +1,12 @@
 {
-  "reference_commit": "39ae3cc59d0e98faf3aea6630d677b6c8c9ea990",
+  "reference_commit": "77ca063f263041471a6a5d2bc98a29a9b530d3f9",
   "regressed_pairs": [],
   "improved_pairs": [],
   "new_component_pairs": [],
   "scope": "Union of baseline and current non-GND schematic pad pairs; missing new pads do not count as old regressions. Current native audit verifies every new pair and GND.",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4a65e5012bf8a9139d2a77b76ecb4894ae3c7ae2b2c5fbc49287427ea346d08a",
-    "hardware/ec60-nrf52840/netlist.xml": "06d7a8a5e13789597747e2c0b2bd7792460cb2a4ab5e200281f07dc3d1937dfb",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
     "scripts/check_pcb_connectivity_regression.py": "4f6318f4e3823399607ae95f41fe8a471dea3dd53bb44d5ebc1da4b25682c657"
   }
 }
