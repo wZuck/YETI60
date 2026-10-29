@@ -32,8 +32,9 @@
   "pcb_modifications_allowed": true,
   "signal_interference_analysis": {
     "phase": "after PCB design completion",
-    "blocking_current_layout": false,
-    "status": "not_started"
+    "blocking_current_layout": true,
+    "status": "screening-completed-design-blockers-open",
+    "report": "docs/testing/interference.md"
   },
   "open_requirements": [
     {
@@ -83,8 +84,8 @@
     },
     {
       "id": "signal-interference",
-      "status": "deferred",
-      "description": "SI/RF analysis deferred by user until PCB design completion"
+      "status": "open",
+      "description": "Both variants screened: Raytac vendor antenna keepout has GND copper; E73 provisional antenna-end band has copper and nearby plate metal. TI AFE simulation completed; RF, USB SI and physical immunity qualification remain open"
     }
   ],
   "fabrication": {

@@ -10,6 +10,8 @@ Mainboard parts are on the back; mainboard views are mirrored horizontally for l
 
 Steps 12–13 apply only to a bare C5 build; skip them with a populated daughterboard. The other checks still apply.
 
+**Before assembly:** both antenna layouts have unresolved risks. These instructions support an engineering prototype; Bluetooth acceptance is open. Read [acceptance and interference testing](../testing/README.md) and record the selected board, firmware hashes and measured results.
+
 Step index
 
 - [01 Prepare the boards, parts and tools](#step-01)

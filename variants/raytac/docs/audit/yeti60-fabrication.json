@@ -6,10 +6,10 @@
     "hardware/bom/mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
     "hardware/bom/mainboard.zh-CN.csv": "6480581ab2117d3891a9b0e1c51c5991440e4ff3d2908679ac1cf1339d0ddb77",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
-    "hardware/ec60-nrf52840/fabrication-notes.md": "ff5de047a96a3b3f53326aeb13f82f6509fb92d3d61d1f68c5c5200bf7f73e85",
-    "hardware/ec60-nrf52840/fabrication-notes.zh-CN.md": "769a66505af1195a0c45d4367f4f1458d01c923364f7f63835061258e5f103fc",
-    "docs/engineering/fabrication-review.md": "60ffa94372c7f2489c3ca6de60db3017577a64376f79663652b9181515f7bd39",
-    "docs/engineering/fabrication-review.zh-CN.md": "63a1e85542a301c98597f8e37db81bec6b690469f2e7070dc83afbee6f3ecd69",
+    "hardware/ec60-nrf52840/fabrication-notes.md": "41d5f0ba8b971f164eeafa8d5157909068d8a6f4df305adceb2730b9dd925c58",
+    "hardware/ec60-nrf52840/fabrication-notes.zh-CN.md": "f0641b5d0bfc0098bc97534155f722f203232f8fe33cf19cc9f8eed4c2827fc5",
+    "docs/engineering/fabrication-review.md": "331cf5990edb535ee2af440a7a49c8997e1a743594ec91c33eea74df2fb0a57f",
+    "docs/engineering/fabrication-review.zh-CN.md": "aa0639d3d9d63f2d9540cb0caa616f7de4a9c43bcb9bf157a88c007f3e4d79cc",
     "scripts/export_yeti60_fabrication.py": "cb7aa0502eb330316b0121ec0b9d091079e7e59c618c00d3846529a31e0cd390"
   },
   "files_sha256": {
@@ -30,10 +30,10 @@
     "EC60-nRF52840-PTH.drl": "f431aacbc20c17dcfc651eaece67e37ea80046cd1fe22847f988b2df5c595f49",
     "EC60-nRF52840-job.gbrjob": "4826dea939449673e0515c9e6d1487f27b143db23587abbc30b7cffe74249929",
     "drill-report.txt": "6ab925342da852e7226337c6d4bace738ec14b0e9612d1be1272aba2c7ec9bd3",
-    "fabrication-notes.md": "ff5de047a96a3b3f53326aeb13f82f6509fb92d3d61d1f68c5c5200bf7f73e85",
-    "fabrication-notes.zh-CN.md": "769a66505af1195a0c45d4367f4f1458d01c923364f7f63835061258e5f103fc",
-    "fabrication-review.md": "60ffa94372c7f2489c3ca6de60db3017577a64376f79663652b9181515f7bd39",
-    "fabrication-review.zh-CN.md": "63a1e85542a301c98597f8e37db81bec6b690469f2e7070dc83afbee6f3ecd69",
+    "fabrication-notes.md": "41d5f0ba8b971f164eeafa8d5157909068d8a6f4df305adceb2730b9dd925c58",
+    "fabrication-notes.zh-CN.md": "f0641b5d0bfc0098bc97534155f722f203232f8fe33cf19cc9f8eed4c2827fc5",
+    "fabrication-review.md": "331cf5990edb535ee2af440a7a49c8997e1a743594ec91c33eea74df2fb0a57f",
+    "fabrication-review.zh-CN.md": "aa0639d3d9d63f2d9540cb0caa616f7de4a9c43bcb9bf157a88c007f3e4d79cc",
     "mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
     "mainboard.zh-CN.csv": "6480581ab2117d3891a9b0e1c51c5991440e4ff3d2908679ac1cf1339d0ddb77",
     "pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
@@ -57,6 +57,6 @@
   "production_approved": false,
   "status": "review-package-generated-not-order-release",
   "outputs": {
-    "hardware/fabrication/yeti60-raytac-p2-dfm-review.zip": "14766ca2b7481e5e70dc556a77ee720c5212e69657ff44db5323412f6c681c16"
+    "hardware/fabrication/yeti60-raytac-p2-dfm-review.zip": "c7884d28bc7d99035e0bd9d0d1baceddfa10909f41b7f8f8d91a840237f41490"
   }
 }

@@ -1,0 +1,128 @@
+{
+  "execution_status": "completed",
+  "acceptance_status": "hold",
+  "production_approved": false,
+  "physical_test_performed": false,
+  "field_solver_performed": false,
+  "executed_at_UTC": "2026-10-29T10:50:05.013733+00:00",
+  "commands": [
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "scripts/run_all_variants.py",
+        "--check-existing"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "scripts/screen_yeti60_interference.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "scripts/simulate_yeti60_interference.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Users/wzy/.cache/uv/archive-v0/HmtF19uEMj6N0RiV/bin/python",
+        "scripts/check_yeti60_antenna_plate.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "tests/audit/test_interference.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "variants": {
+    "e73": {
+      "CAD_checks_passed": true,
+      "firmware_build_and_host_checks_passed": true,
+      "audit_stage_count": 46,
+      "DRC_errors": 0,
+      "unconnected_items": 0,
+      "DRC_warnings": {
+        "track_dangling": 7,
+        "track_not_centered_on_via": 5,
+        "missing_courtyard": 102
+      },
+      "physical_signal_pairs": 270,
+      "RF_acceptance": "hold",
+      "physical_acceptance": "not-run"
+    },
+    "raytac": {
+      "CAD_checks_passed": true,
+      "firmware_build_and_host_checks_passed": true,
+      "audit_stage_count": 43,
+      "DRC_errors": 0,
+      "unconnected_items": 0,
+      "DRC_warnings": {
+        "track_dangling": 1,
+        "track_not_centered_on_via": 5,
+        "missing_courtyard": 102
+      },
+      "physical_signal_pairs": 270,
+      "RF_acceptance": "hold",
+      "physical_acceptance": "not-run"
+    }
+  },
+  "open_gates": [
+    "Raytac manufacturer antenna keepout contains GND copper on all four layers",
+    "E73 provisional antenna-end copper and nearby plate metal; vendor-approved host keepout absent",
+    "USB differential impedance/return-path/eye and actual enumeration unqualified",
+    "Actual key capacitance, per-key margin and RF/charging susceptibility unmeasured",
+    "Physical charging, supplier pack/thermal protection and assembly tolerances unqualified"
+  ],
+  "source_sha256": {
+    "scripts/run_acceptance.py": "30aebe8c10655a28b6414bf6b54db509cc0b26c3b5e032274158944062edb5e7",
+    "scripts/check_yeti60_acceptance.py": "ca6d49efe3d5cde819bf8323b4c37bbddfda17e79e01bf52633fd8ed2fedde7a",
+    "tests/audit/test_interference.py": "d479602531d81e2d485177960c64de731c2fdd842f37fbebeb5b05a4a0777e3a",
+    "design-constraints.json": "a068d1cbc8b97748c2971bad1931341018620a95f0e5dd639244f1a55c40fd54",
+    "docs/testing/vendor-sources.json": "1d5c24a284cd7ad42603ac9a15bec76663d8c892efe6529d6dd625dcfc5a6951",
+    "docs/testing/README.md": "7353b863bd16cbff60777b230c86e2b9adf63a5937ad43f7f1dc1e51f6b0f2e7",
+    "docs/testing/README.zh-CN.md": "39758443c0e5affda31431d9ec027a6dc607196e878dc447955a64e605dc9b16",
+    "docs/testing/interference.md": "3316bc9d8786b3c851c9513cf620056839977ceed168dab96682ffe37f528248",
+    "docs/testing/interference.zh-CN.md": "25f659aa887248202c5b9088cd11eecf22f859eee3841e947cae317b03b73100"
+  },
+  "evidence_sha256": {
+    "docs/audit/outcome.json": "859e2492370583c081a454b3f4dbfe205d8e4b69ac74f0ba5fe73264f042261c",
+    "hardware/ec60-nrf52840/audit-current.json": "e63e011d3230a30db1d0da5adfa23094d105e5f6e093ed985756e0b34c3b485d",
+    "docs/audit/yeti60-firmware-simulation.json": "96c17ac3fe37051b7e271aeb263f245e0cce5b658a6ba8cf8115c9cc51081dfd",
+    "docs/audit/yeti60-target-check.json": "0d508d58ce5185ce86e94c5ae20c6992db093048cd4347b89730946a1b78a161",
+    "docs/audit/yeti60-assembly.json": "7dc2967d0557782c819bf0954acce9fd60c5efd3d66bcab210cf485b3116a291",
+    "docs/audit/yeti60-build-guide-check.json": "f66f6d6cdfc8b2660297ab90bb9f2657ae00d5d580dd0d4923e6776120cf4ba0",
+    "docs/audit/integration.json": "14cc03864197e382df1fab7cc130d98039ee0677d220fffab7a33218701906b4",
+    "variants/raytac/docs/audit/outcome.json": "9bec0489bcdc1abd4be45392946e12050783b518863b66a25bdb8b8b440cd42f",
+    "variants/raytac/hardware/ec60-nrf52840/audit-current.json": "5818123c8efd7e1642959b9cbb8427b8d822868abd57752c7569ebb1aa246e8c",
+    "variants/raytac/docs/audit/yeti60-firmware-simulation.json": "2055639f1e4038e8c60745f41040e70879709cda773ede6446d41886e26579ca",
+    "variants/raytac/docs/audit/yeti60-target-check.json": "57eaf5d907a23a87a6da46479b8bf98d98065708c7bd7cb4b186b6561e263e40",
+    "variants/raytac/docs/audit/yeti60-assembly.json": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
+    "variants/raytac/docs/audit/yeti60-build-guide-check.json": "5c907bdbc47382539667514d625e01e5307b384eabb70eaf305b5b5e91d954ef",
+    "variants/raytac/docs/audit/integration.json": "14cc03864197e382df1fab7cc130d98039ee0677d220fffab7a33218701906b4",
+    "docs/audit/variants.json": "5145d1117911c3741964732c38c8029c9a71f9fc2546eb3c3435be2e41579c44",
+    "docs/audit/interference-layout.json": "73acfd0b5a6b7f7a1d1aa02bbdd686294657c0e852898155d9204e4c7bff4e83",
+    "docs/audit/interference-analog.json": "540d02a4c2b1137cdeff7bd002e5ec7e382177c8b91b421ef808f35613bd3532",
+    "docs/audit/interference-plate.json": "aa30dfb46b71e8a7698951c114d423a2f49b7fc2c4ccc6413960577ead40c342"
+  },
+  "outputs": {
+    "docs/testing/afe-ac.csv": "e55e2b360919748eb0176f16d55899128a400682bdfc983a91fbd91be58c97fc",
+    "docs/testing/afe-sensitivity.csv": "dd8f1837761143e8952fdcb604b0b5111e26cd0c14c0abd9db79ab47f6b41f39",
+    "docs/testing/afe-transient.csv": "de8801ea23295b77c3b58f44b58597fbd6cbce92f2797f042fa91e48e3724aad",
+    "docs/testing/first-article-template.csv": "92581d8fe393e109aa69788aa6f8b17599d3ac7fc5196facca4b93170dd1a86a",
+    "docs/testing/images/afe-disturbance.png": "b5ddd27aa4adfa89bc89b3237a4d9be0797a1ff78531f0b73e8380ae67143222",
+    "docs/testing/images/afe-disturbance.zh-CN.png": "58e3177b6fcb0867f393b1dac45ddac3d17a783deb23162b352894fedcbca64e",
+    "docs/testing/images/e73-antenna-copper.svg": "1eef6fc2ba38c2f16ad062f9ef23cf59d47631e94f3aa278581bfdb640a3625e",
+    "docs/testing/images/e73-antenna-copper.zh-CN.svg": "9d623489948d4e20b2a1992b2b986ecc769ec602047c9d3d05526bb24024ec70",
+    "docs/testing/images/raytac-antenna-copper.svg": "d241f03e1cd46d09762a3fb0066de31ee21fac03c3b98f152dbd527344a8a650",
+    "docs/testing/images/raytac-antenna-copper.zh-CN.svg": "4e422a8bea033c6a3f1297ea92d9e0e3dbd568de27942624c4c32501a114c4a6"
+  }
+}

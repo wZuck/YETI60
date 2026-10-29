@@ -8,6 +8,7 @@ The [P2 checkpoint](../design-checkpoint.md) describes the current design and re
 
 | Scope | Current evidence |
 |---|---|
+| Interference and acceptance | [Current holds, simulations and physical procedure](../../../../docs/testing/README.md); CAD passes do not close RF acceptance |
 | Unified result | [Stage outcomes](outcome.json), [integration](integration.json) |
 | Schematic and PCB | [Fresh schematic parity/ERC](schematic-current.json), [strict CAD](../../hardware/ec60-nrf52840/audit-current.json), [electrical review](yeti60-electrical.json) |
 | Firmware core | [Host sanitizer simulation](yeti60-firmware-simulation.json), [trace](yeti60-firmware-trace.csv) |
@@ -22,7 +23,7 @@ Exit 0 means every implemented current-design check passed. Failed stages return
 
 Integration ties schematic, connectors, PCB, firmware pins, trace, fit geometry and each render output to current sources and recipes. Design files must remain byte-identical during validation. The inventory records files, not semantic approval; upstream submodule contents and local editor state are excluded.
 
-Only the current single-nRF design is checked. Target firmware builds, C5 selection, battery/recess and charger calculations are implemented; supplier approval, complete harness/plug acceptance, part ratings, manufacturing and physical tests remain open. SI/RF is deferred.
+Only the current single-nRF design is checked. Target firmware builds, C5 selection, battery/recess and charger calculations are implemented; supplier approval, complete harness/plug acceptance, part ratings, manufacturing and physical tests remain open. SI/RF screening has started; antenna layout blockers remain open.
 
 Fault-injection tests verify rejection of reversed USB data contracts, stale traces, component collisions, stale individual views and changed image bytes. They run only after the unmodified integration check passes.
 

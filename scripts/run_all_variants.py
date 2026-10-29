@@ -60,6 +60,7 @@ def parity():
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--refresh-renders',action='store_true')
+    parser.add_argument('--refresh-guide',action='store_true')
     parser.add_argument('--check-existing',action='store_true',help='Verify current reports and integration without rerunning both full audits')
     parser.add_argument('--baseline',default='52b8d56be0b162c7f9585936349c08ddcb7c338f')
     args=parser.parse_args();results={}
@@ -67,6 +68,7 @@ def main():
     for name,folder in OPTIONS.items():
         command=[sys.executable,'scripts/run_audit.py','--baseline',args.baseline]
         if args.refresh_renders:command.append('--refresh-renders')
+        if args.refresh_guide:command.append('--refresh-guide')
         if args.check_existing:
             outcome=json.loads((folder/'docs/audit/outcome.json').read_text())
             code=0 if outcome['checks_passed'] and all(s['state']=='passed' for s in outcome['stages']) else 1

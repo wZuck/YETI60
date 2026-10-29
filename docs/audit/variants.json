@@ -23,14 +23,14 @@
     "variant_manufacturing_packages": {
       "e73": {
         "module": "E73-2G4M08S1C",
-        "sha256": "583f9996943e4e0570252af55f7547c2d94309197cf7c24701f2c266a81a9e12",
+        "sha256": "9af8cf423c3b7df9d767f608184eb25df8c922e6efcf65422873dce5e8e3aa9d",
         "copper_layers": 4,
         "blind_drill_hits": 0,
         "placements": 76
       },
       "raytac": {
         "module": "MDBT50Q-1MV2",
-        "sha256": "14766ca2b7481e5e70dc556a77ee720c5212e69657ff44db5323412f6c681c16",
+        "sha256": "c7884d28bc7d99035e0bd9d0d1baceddfa10909f41b7f8f8d91a840237f41490",
         "copper_layers": 4,
         "blind_drill_hits": 0,
         "placements": 76
@@ -40,12 +40,12 @@
   },
   "error": null,
   "source_sha256": {
-    "scripts/run_all_variants.py": "f5ba1cbf0db97cb51b4141362aee9e8221f0e4a78fd9e322e97860b61ef059ea",
+    "scripts/run_all_variants.py": "911917319d652ef813af0e31dd0b573858c065a7b43af4efcf63d4302342bdb0",
     "tests/audit/test_variant_packages.py": "11c5f4a5c4426f98060e31ec880858e5c06941712f78bbf9f2eea524483f31ff"
   },
   "outcome_sha256": {
-    "docs/audit/outcome.json": "148a8c20afa25d404df89a77f6cf24ad5b4172da8437690ab7c79995af47834d",
-    "variants/raytac/docs/audit/outcome.json": "bbe2390a0aa10c5548c7be336b849b1a030f8141b994e70d4978485da2c38d54"
+    "docs/audit/outcome.json": "859e2492370583c081a454b3f4dbfe205d8e4b69ac74f0ba5fe73264f042261c",
+    "variants/raytac/docs/audit/outcome.json": "9bec0489bcdc1abd4be45392946e12050783b518863b66a25bdb8b8b440cd42f"
   },
   "scope": "Both complete designs in this branch; no physical acceptance or RF/SI certification"
 }

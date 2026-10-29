@@ -7,25 +7,25 @@
       "stage": "schematic-current",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.56
+      "seconds": 2.68
     },
     {
       "stage": "pin-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.03
+      "seconds": 0.04
     },
     {
       "stage": "e73-vendor-reference",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.81
+      "seconds": 0.51
     },
     {
       "stage": "e73-module-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.8
+      "seconds": 0.82
     },
     {
       "stage": "e73-pin-fault-injection",
@@ -37,31 +37,31 @@
       "stage": "pcb-geometry-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.27
+      "seconds": 1.28
     },
     {
       "stage": "ordinary-fabrication-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.87
+      "seconds": 0.86
     },
     {
       "stage": "ordinary-fabrication-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.43
+      "seconds": 2.4
     },
     {
       "stage": "pcb-native-drc",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 22.55
+      "seconds": 22.24
     },
     {
       "stage": "connectivity-regression",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 10.65
+      "seconds": 10.7
     },
     {
       "stage": "electrical-review",
@@ -73,13 +73,13 @@
       "stage": "firmware-pin-header",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.06
+      "seconds": 0.04
     },
     {
       "stage": "firmware-target-artifacts",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.2
+      "seconds": 0.21
     },
     {
       "stage": "target-power-fault-injection",
@@ -91,79 +91,79 @@
       "stage": "firmware-simulation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.58
+      "seconds": 4.47
     },
     {
       "stage": "firmware-plot",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.92
+      "seconds": 0.65
     },
     {
       "stage": "mechanical-metadata",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.77
+      "seconds": 0.75
     },
     {
       "stage": "daughterboard-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.48
+      "seconds": 3.29
     },
     {
       "stage": "mechanical-design",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.67
+      "seconds": 2.6
     },
     {
       "stage": "plate-source",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.36
+      "seconds": 0.26
     },
     {
       "stage": "assembly-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 31.77
+      "seconds": 31.88
     },
     {
       "stage": "interconnect-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.2
+      "seconds": 1.77
     },
     {
       "stage": "interconnect-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 21.99
+      "seconds": 22.07
     },
     {
       "stage": "render-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 12.13
+      "seconds": 12.15
     },
     {
       "stage": "interconnect-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.75
+      "seconds": 3.64
     },
     {
       "stage": "board-guidance",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.69
+      "seconds": 1.7
     },
     {
       "stage": "purchase-bom",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.05
+      "seconds": 0.04
     },
     {
       "stage": "inventory-purchase-plan",
@@ -181,7 +181,7 @@
       "stage": "illustration-native-map",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.32
+      "seconds": 1.3
     },
     {
       "stage": "plate-copper-firmware-map",
@@ -199,26 +199,25 @@
       "stage": "illustration-regeneration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 44.57
+      "seconds": 44.97
     },
     {
       "stage": "illustrated-build-guide",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.39
+      "seconds": 0.38
     },
     {
       "stage": "inventory-allocation-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.06
+      "seconds": 0.05
     },
     {
       "stage": "fabrication-review-package",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.39,
-      "targeted_revalidation": true
+      "seconds": 4.16
     },
     {
       "stage": "power-calculation",
@@ -230,63 +229,49 @@
       "stage": "battery-pocket",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.22
+      "seconds": 2.07
     },
     {
       "stage": "cell-screening",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.79
+      "seconds": 4.76
     },
     {
       "stage": "assembly-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 8.73
+      "seconds": 8.52
     },
     {
       "stage": "engineering-evidence",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.05
+      "seconds": 0.04
     },
     {
       "stage": "engineering-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.14
-    },
-    {
-      "stage": "pcb-renders",
-      "state": "passed",
-      "exit_code": 0,
-      "seconds": 136.35
-    },
-    {
-      "stage": "assembly-renders",
-      "state": "passed",
-      "exit_code": 0,
-      "seconds": 712.78
+      "seconds": 0.13
     },
     {
       "stage": "documentation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.58
+      "seconds": 0.38
     },
     {
       "stage": "cross-domain-integration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.2,
-      "targeted_revalidation": true
+      "seconds": 0.17
     },
     {
       "stage": "integration-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.47,
-      "targeted_revalidation": true
+      "seconds": 0.41
     },
     {
       "stage": "design-inputs-unchanged",
@@ -342,49 +327,10 @@
     },
     {
       "id": "signal-interference",
-      "status": "deferred",
-      "description": "SI/RF analysis deferred by user until PCB design completion"
+      "status": "open",
+      "description": "Both variants screened: Raytac vendor antenna keepout has GND copper; E73 provisional antenna-end band has copper and nearby plate metal. TI AFE simulation completed; RF, USB SI and physical immunity qualification remain open"
     }
   ],
   "scope": "Current single-nRF design, built ARM targets, host simulation, conditional mechanical/charging design and artifact provenance; no physical certification",
-  "inventory": "docs/audit/source-inventory.json",
-  "targeted_revalidation": {
-    "reason": "Fabrication manifests now identify their controller module; archives and dependent integration/fault checks were regenerated and passed",
-    "completed_UTC": "2026-10-29T09:54:55.687863+00:00",
-    "records": [
-      {
-        "stage": "fabrication-review-package",
-        "previous_state": "passed",
-        "command": [
-          "python3",
-          "scripts/export_yeti60_fabrication.py"
-        ],
-        "exit_code": 0,
-        "recipe_sha256": "57ee6368f05b210ad055d2856c3a3aacce4428f9d8b93eac29f63f2e0b4e68c2",
-        "report_sha256": "a8b08c472de05fa413a62f9f7a2f7fb32e84cae9c393063fe716aa2b3bc0a850"
-      },
-      {
-        "stage": "cross-domain-integration",
-        "previous_state": "passed",
-        "command": [
-          "python3",
-          "scripts/check_project_integration.py"
-        ],
-        "exit_code": 0,
-        "recipe_sha256": "f9a0e03cd21274560085eeb21b3fa65b5185ad340545105fb925d62e4168bd28",
-        "report_sha256": "694a829b81fd88c13f3e2326766926d3a6c9e041533af3e71efe1b5a3b00458d"
-      },
-      {
-        "stage": "integration-fault-injection",
-        "previous_state": "passed",
-        "command": [
-          "python3",
-          "tests/audit/test_integration.py"
-        ],
-        "exit_code": 0,
-        "recipe_sha256": "9b0d887058de958c6ba08ee9d94e4623025e5825f63ad532c7ca1cb8b90fd3c3",
-        "report_sha256": "694a829b81fd88c13f3e2326766926d3a6c9e041533af3e71efe1b5a3b00458d"
-      }
-    ]
-  }
+  "inventory": "docs/audit/source-inventory.json"
 }

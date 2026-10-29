@@ -8,8 +8,8 @@ Both alternatives are stored in this branch. Each keyboard uses one nRF52840 mod
 
 | Alternative | PCB and complete materials | Firmware | Process and status |
 |---|---|---|---|
-| Ebyte E73-2G4M08S1C | [Main preparation list](../../README.md), [native PCB](../../hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [Normal](../../firmware/releases/normal/yeti60-e73.hex), [calibrator](../../firmware/releases/calibrator/yeti60-e73.hex) | Ordinary four-layer; 0 DRC errors / 0 opens; 48 audit stages pass |
-| Raytac MDBT50Q-1MV2 | [Raytac preparation list](../../variants/raytac/README.md), [native PCB](../../variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [Normal](../../variants/raytac/firmware/releases/normal/yeti60-raytac.hex), [calibrator](../../variants/raytac/firmware/releases/calibrator/yeti60-raytac.hex) | Ordinary four-layer; 0 DRC errors / 0 opens; 43 audit stages pass |
+| Ebyte E73-2G4M08S1C | [Main preparation list](../../README.md), [native PCB](../../hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [Normal](../../firmware/releases/normal/yeti60-e73.hex), [calibrator](../../firmware/releases/calibrator/yeti60-e73.hex) | Ordinary four-layer; 0 DRC errors / 0 opens; CAD/build audit passes |
+| Raytac MDBT50Q-1MV2 | [Raytac preparation list](../../variants/raytac/README.md), [native PCB](../../variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [Normal](../../variants/raytac/firmware/releases/normal/yeti60-raytac.hex), [calibrator](../../variants/raytac/firmware/releases/calibrator/yeti60-raytac.hex) | Ordinary four-layer; 0 DRC errors / 0 opens; CAD/build audit passes |
 
 Fabricate one selected mainboard per keyboard, with a populated or self-built C5 JSH as chosen. Do not count both mainboards in one keyboard. Each alternative allocates the same 10 stocked mainboard passives and requires 66 more components; these are mutually exclusive plans, not two inventory deductions. Neither module is present in the supplied inventory snapshot.
 
@@ -70,3 +70,5 @@ Run `scripts/check_e73_reference.py` and `scripts/check_e73_variant.py` using Ki
 | Raytac | [Raytac DFM review ZIP](../../variants/raytac/hardware/fabrication/yeti60-raytac-p2-dfm-review.zip) | REG1 DC/DC | 106.64 hours |
 
 Runtime figures are sensitivity-model points documented by each option, not measurements or guarantees. Both archives identify their module and contain four copper layers, zero blind drills and 76 placements; C5 is handled separately as listed in the complete materials table. E73/Raytac retain 114/108 DRC warnings respectively, with zero errors and opens; see their native audit reports.
+
+[Acceptance and interference results](../testing/README.md): antenna layout holds remain open for both alternatives; both independent 28-step soldering/assembly guides link to the first-article procedure.

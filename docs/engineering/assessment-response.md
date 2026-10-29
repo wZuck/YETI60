@@ -2,7 +2,7 @@ English | [Chinese](assessment-response.zh-CN.md)
 
 # Response to the P2 feasibility assessment
 
-The [2026-10-28 assessment](../audit/2026-10-28-feasibility-assessment.md) is retained as a dated review. This document records subsequent decisions and acceptance work. The later user requirement **JLC ordinary manufacturing only** overrides its proposed HDI procurement route. C5 JSH, one nRF52840 and the custom 1600 mAh single cell remain the chosen architecture. RF/SI is deferred.
+The [2026-10-28 assessment](../audit/2026-10-28-feasibility-assessment.md) is retained as a dated review. This document records subsequent decisions and acceptance work. The later user requirement **JLC ordinary manufacturing only** overrides its proposed HDI procurement route. C5 JSH, one nRF52840 and the custom 1600 mAh single cell remain the chosen architecture. RF/SI screening has started; antenna layout blockers remain open.
 
 | Assessment finding | Response or adjustment | Acceptance evidence still required |
 |---|---|---|

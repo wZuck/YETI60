@@ -1,0 +1,59 @@
+{
+  "status": "analog-model-checks-passed-hardware-immunity-unverified",
+  "physical_test_performed": false,
+  "production_approved": false,
+  "engine": "** ngspice-47 : Circuit level simulation program",
+  "model": {
+    "url": "https://www.ti.com/lit/zip/sbom071",
+    "archive_sha256": "4a7d9342611e78eb5c49221bdfe18000ad6293564fd24aad239e0c7c176142e0",
+    "member": "OPAx350.LIB",
+    "member_sha256": "4fd8ddfc56c146339fde8c2874196765d92cbe755aa08347fd823d987c34180d",
+    "version": "TI Final 1.5, 2022-06-01",
+    "redistributed": false
+  },
+  "topology": "Non-inverting OPA350, R16=100k, R17=1k, C10=220p, selected column bleeder=100k",
+  "nominal": {
+    "mux_ohm": 100,
+    "ADC_load_pF": 10,
+    "C10_pF": 220,
+    "rshunt_ohm": "1e12",
+    "DC_output_V": 0.501949141,
+    "step_output_delta_mV": 99.02303499999998,
+    "at_5us_after_step_delta_mV": 18.458858999999993,
+    "at_45us_after_step_delta_mV": 86.84053899999999,
+    "gain_10Hz_V_per_V": 100.96033719532045,
+    "gain_1kHz_V_per_V": 99.95179940568717,
+    "gain_100kHz_V_per_V": 6.858281828168013,
+    "gain_1MHz_V_per_V": 0.2611063378833946
+  },
+  "sensitivity_cases": 28,
+  "calculation": {
+    "ideal_noise_gain": 101,
+    "nominal_R_C_time_constant_us": 22.022,
+    "nominal_R_C_pole_Hz": 7227.088506579573
+  },
+  "source_sha256": {
+    "tests/interference/afe.cir": "e65c3bfdc83402178ec50c4d6643ae38a9614ffead3a8819ac16d5c8afebbc8b",
+    "scripts/simulate_yeti60_interference.py": "081931d189bdfc23812bd25e42b78c9c13cfad480f51439ca88a2c5e846e124f",
+    "hardware/ec60-nrf52840/netlist.xml": "846b2d13a1782c6a841ee0831c1cce9fa0bfcf14bc1ce6c84d44d1846a9dc798",
+    "variants/raytac/hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992"
+  },
+  "outputs": {
+    "docs/testing/afe-ac.csv": "e55e2b360919748eb0176f16d55899128a400682bdfc983a91fbd91be58c97fc",
+    "docs/testing/afe-transient.csv": "de8801ea23295b77c3b58f44b58597fbd6cbce92f2797f042fa91e48e3724aad",
+    "docs/testing/afe-sensitivity.csv": "dd8f1837761143e8952fdcb604b0b5111e26cd0c14c0abd9db79ab47f6b41f39",
+    "docs/testing/afe-ngspice.log": "62f8add7958da56886c69c22f8e3e39f5f425b54f67218f3b52cda3de811aefa"
+  },
+  "assumptions": [
+    "Mux Ron=60/100/200 ohm, ADC capacitive load=5/10/50pF are sensitivity assumptions, not measured or guaranteed values",
+    "C10=198/220/242pF is an imposed +/-10% sensitivity sweep; confirm fitted component tolerance",
+    "1mV disturbance at column bleeder ground with 5mV DC bias; not a measured keyboard disturbance",
+    "rshunt=1e12 required for TI-model convergence; alternate 1e13 DC/gain cross-check within 1mV/0.1V/V"
+  ],
+  "not_verified": [
+    "No extracted key/mutual capacitances, mux switching charge injection or ADC sample-and-hold model",
+    "No power-regulator or charger switching model or RF rectification; AC sweep stops at 1MHz",
+    "No 2.4GHz radiated susceptibility, USB eye, ESD or whole-board electromagnetic simulation",
+    "No physical pressed/released distributions or calibrated noise margin"
+  ]
+}

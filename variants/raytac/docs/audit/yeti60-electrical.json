@@ -91,7 +91,7 @@
   "measurement_limit": "Sum of complete contacted track primitives: conservative graph-path length, not an exact geometric trace-length or loop-inductance extraction. Ground return is not included.",
   "remaining": [
     "No regulator transient/SPICE or capacitor-derating validation",
-    "USB pair impedance/return-path SI is deferred with signal interference analysis",
+    "USB track-length screening completed; pair impedance, return path and eye qualification remain open",
     "Rear Type-C daughterboard and its separate CC1/CC2 5.1k resistors remain an external assembly requirement"
   ],
   "sources": [

@@ -2016,7 +2016,7 @@
       "connected": true
     }
   ],
-  "interference_simulation": "not_started_user_ordered_after_PCB_completion",
+  "interference_simulation": "see_shared_acceptance_report_RF_blockers_open",
   "limits": [
     "Ordinary JLC through-via process checked separately; no module via-in-pad or special fill/capping",
     "DRC does not certify regulator stability, capacitor DC bias or thermal performance",

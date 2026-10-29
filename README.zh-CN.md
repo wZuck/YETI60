@@ -2,11 +2,13 @@
 
 # YETI60
 
-> **同一分支，两套方案：**主目录默认使用 Ebyte E73-2G4M08S1C；Raytac MDBT50Q-1MV2 位于 [variants/raytac](variants/raytac/README.zh-CN.md)。见[完整选择说明](docs/engineering/module-options.zh-CN.md)。两套方案的已实现检查均通过：E73 48 项、Raytac 43 项。见[合并检查记录](docs/audit/variants.json)。实物及供应商验收仍待完成。
+> **同一分支，两套方案：**主目录默认使用 Ebyte E73-2G4M08S1C；Raytac MDBT50Q-1MV2 位于 [variants/raytac](variants/raytac/README.zh-CN.md)。见[完整选择说明](docs/engineering/module-options.zh-CN.md)。两套方案已实现的 CAD／构建检查均通过。见[合并检查记录](docs/audit/variants.json)。实物及供应商验收仍待完成。
 
 以 Cipulot EC60 为基础、使用 FELK60 外壳的单 nRF52840 静电容键盘 PCB。保留感应几何、板框和安装孔位置；后侧 USB 子板连接 J1。
 
 > **P2 阶段提交：**保留 C5 JSH 子板；默认改为定制 1600 mAh 单电芯，正式底壳含凹槽，充电设定和 USB500 固件同步更新。工程装配图、PCB 动画及装配渲染记录来源哈希。见[阶段记录](docs/design-checkpoint.zh-CN.md)。
+
+> **验收／射频阻塞：**本次布局检查发现天线区域铜及邻近定位板金属风险。制作或装配前先阅读[测试结果与首件验收流程](docs/testing/README.zh-CN.md)；DRC／构建通过不能关闭这些问题。
 
 ## 当前复查
 
@@ -36,7 +38,7 @@
 - [PCB 渲染及 360° 动画](renders/ec60-nrf52840/README.zh-CN.md)
 - [当前审查索引](docs/audit/README.zh-CN.md)
 
-外壳暂按树脂，信号／射频模拟继续暂缓。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
+外壳暂按树脂，信号／射频检查已开始，天线布局阻塞项及实物验收仍待解决。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
 
 基于 [Cipulot/EC60](https://github.com/Cipulot/EC60) 和 [fredlb/felk60](https://github.com/fredlb/felk60)，保留上游作者、许可证和原名称。`EC60-nRF52840.*` 文件名及 `YAECKB` 库标识为技术兼容保留，公开项目名统一为 **YETI60**。
 

@@ -16,4 +16,4 @@ The 0.2104 mm sensing dielectric replaces the former 0.200 mm assumption. Electr
 
 Use green mask and ordinary ENIG finish. Ordinary tenting is permitted; resin filling, planarization and copper capping are not required. U5 retains an ordinary open thermal via in the ground/exposed-pad area: the assembler must review stencil apertures, solder loss and thermal-pad wetting. Do not interpret a tentative CAD check as solder-process qualification.
 
-The [review archive and checklist](../../docs/engineering/fabrication-review.md) include Gerbers, separate PTH/NPTH through drills, IPC-D-356 and 76-part placements. Supplier ordering review, final passive ratings/effective capacitance, waveform/temperature tests and mechanical first articles remain required. RF/SI is deferred.
+The [review archive and checklist](../../docs/engineering/fabrication-review.md) include Gerbers, separate PTH/NPTH through drills, IPC-D-356 and 76-part placements. Supplier ordering review, final passive ratings/effective capacitance, waveform/temperature tests and mechanical first articles remain required. RF/SI screening has started; antenna layout blockers remain open.

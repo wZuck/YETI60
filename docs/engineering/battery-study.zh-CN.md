@@ -57,6 +57,6 @@ P2 保留 BQ24074，R40=2.21k、R55=69.8k、R56=1.69k，均为 1%；主机接受
 
 供方须签署完整尺寸、出线／弯折、保护阈值、独立温度断充、NTC 贴合、电流限制和容量。软包须绝缘固定，不得受挤压；固定结构须满足 0.2 mm 槽底预算。不能将旧小电池充电配置用于该电池，也不能用 P2 充电器给旧小电池充电。
 
-FELK60 提供外形和定位板基准；`64db818` 的 DELTA OMEGA 参考材料表中电池／绝缘／紧固件分列方式；[PH60 Rev.3](https://github.com/ph-design/PH60)参考专用电池空间设计思路，其他项目的包络不能证明本项目容量。树脂蠕变、跌落、嵌件抗拔、完整线束可维修性、供方组包及充到终止电流仍需实物验收。目前没有样机，信号干扰分析按用户要求延后。
+FELK60 提供外形和定位板基准；`64db818` 的 DELTA OMEGA 参考材料表中电池／绝缘／紧固件分列方式；[PH60 Rev.3](https://github.com/ph-design/PH60)参考专用电池空间设计思路，其他项目的包络不能证明本项目容量。树脂蠕变、跌落、嵌件抗拔、完整线束可维修性、供方组包及充到终止电流仍需实物验收。目前没有样机，信号干扰检查已开始，天线布局阻塞项仍待解决。
 
 重建顺序：机械元数据、`build_yeti60_mechanical.py`、`check_yeti60_assembly.py`、`export_yeti60_render_meshes.py`、`study_yeti60_battery_pocket.py`、`screen_yeti60_batteries.py`、`draw_yeti60_assembly.py`。[规格文件](../../mechanical/battery-pocket-study.json)和[实体报告](../audit/yeti60-battery-pocket.json)记录默认方案的精确值。

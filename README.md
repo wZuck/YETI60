@@ -2,11 +2,13 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60
 
-> **Two alternatives in this branch:** the main directories use Ebyte E73-2G4M08S1C; Raytac MDBT50Q-1MV2 is in [variants/raytac](variants/raytac/README.md). See [selection instructions](docs/engineering/module-options.md). Both alternatives pass their implemented checks: E73 48 stages and Raytac 43 stages. See the [combined record](docs/audit/variants.json). Physical and supplier qualification remain open.
+> **Two alternatives in this branch:** the main directories use Ebyte E73-2G4M08S1C; Raytac MDBT50Q-1MV2 is in [variants/raytac](variants/raytac/README.md). See [selection instructions](docs/engineering/module-options.md). Both alternatives pass their implemented CAD/build checks. See the [combined record](docs/audit/variants.json). Physical and supplier qualification remain open.
 
 A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
 
 > **P2 design checkpoint:** C5 JSH is retained. The default is now a custom 1600 mAh single-cell pack with a canonical recessed bottom, revised charger settings and USB500 firmware. Engineering sheets, PCB animation and assembly renders record their source hashes. See [checkpoint details](docs/design-checkpoint.md).
+
+> **Acceptance / RF hold:** the new layout screen found antenna copper and nearby plate-metal risks. Read the [test results and first-article procedure](docs/testing/README.md) before fabrication or assembly. DRC/build passes do not close these findings.
 
 ## Current review
 
@@ -36,7 +38,7 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 - [PCB renders and 360° animation](renders/ec60-nrf52840/README.md)
 - [Current audit index](docs/audit/README.md)
 
-The case material is provisionally resin. SI/RF analysis remains deferred. Project-owned prose defaults to English with a parallel `.zh-CN.md`; machine-readable field names stay stable.
+The case material is provisionally resin. SI/RF screening has started; antenna layout blockers and physical qualification remain open. Project-owned prose defaults to English with a parallel `.zh-CN.md`; machine-readable field names stay stable.
 
 Based on [Cipulot/EC60](https://github.com/Cipulot/EC60) and [fredlb/felk60](https://github.com/fredlb/felk60). Upstream authors, licenses and original project names are retained. Existing `EC60-nRF52840.*` filenames and `YAECKB` library identifiers remain for technical compatibility; the public project name is **YETI60**.
 

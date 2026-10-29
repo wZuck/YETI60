@@ -1,0 +1,25 @@
+YETI60 OPA350 disturbance bench - actual feedback topology, assumed mux/load
+.options rshunt=1e12 gmin=1e-12
+.include OPAx350.LIB
+VCC vcc 0 DC 3.3
+* A disturbance at the selected 100k column bleeder ground. 5mV bias keeps
+* the small-signal benchmark away from output saturation; not a measured key.
+Vdist src 0 DC 0.005 AC 1 PULSE(0.005 0.006 20u 10n 10n 100u 250u)
+Rcolumn src col 100k
+* 100 ohm on-resistance and 10pF ADC load are engineering assumptions.
+Rmux col sense 100
+C10 sense 0 220p
+R16 out inv 100k
+R17 inv 0 1k
+XU3 sense inv vcc 0 out OPAx350
+Cload out 0 10p
+.control
+set wr_singlescale
+set wr_vecnames
+ac dec 60 10 1Meg
+wrdata ac.txt v(out)
+tran 100n 110u
+wrdata transient.txt v(sense) v(out)
+quit
+.endc
+.end

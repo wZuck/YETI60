@@ -39,7 +39,7 @@
     "42": "AFE_EN"
   },
   "lf_clock": "internal RC",
-  "interference_analysis": "deferred-until-PCB-complete",
+  "interference_analysis": "screened-open-see-shared-docs/testing/interference.md",
   "battery_ADC": "divider 1M/1M, 10nF; enable U7 then wait at least 50ms before sampling",
   "AFE_power": "enable U8 then settle/calibrate; GPIOs must not back-power disabled AFE",
   "USB": "rear daughterboard to J1; nRF native USB"

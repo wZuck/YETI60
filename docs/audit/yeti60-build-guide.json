@@ -191,7 +191,7 @@
     "firmware/target/config/yeti60.keymap": "10f4e1732eea0da0342164f0cd86db7983e033360e616c401903419611200b58",
     "firmware/target/boards/yeti/yeti60/yeti60.dts": "2434f8a86afd1571c7c34d320e18f71195bac5ee3cc32dd75f098fc6088ec8a8",
     "scripts/export_yeti60_build_map.py": "37fb2a09e5697df4509ffb92b7e3ad2a75ae54441a90c82406f3970b47e07da8",
-    "scripts/draw_yeti60_build_guide.py": "831bb774e7a22f245603eb5e408e027ea8dcbfcbc9d6f7893dfb498297a52ad1"
+    "scripts/draw_yeti60_build_guide.py": "cb73a06e8cb4cae02d5797a1a1dbf715c3c4f68ea2a28e4627efb48df75e4785"
   },
   "outputs": {
     "docs/assembly/images/01-step.png": "a54fb1490a2764234c23aadfa63ec9dcbd2fd52ec2b615925c279cbbb1af87a8",
@@ -250,7 +250,7 @@
     "docs/assembly/images/27-step.svg": "ffa93bb796ff4e6119a43c167b0282ab2b4159e05e24a12c07b6db7441420cf0",
     "docs/assembly/images/28-step.png": "6ceb115d4d2f4059de3c2ae31873ef3250b3ba3eed0dd0068d6ce200fb7117d4",
     "docs/assembly/images/28-step.svg": "1235359089ad98febabd0a5dc030ff6ba1203062cb8ab8192a475db0e0548afc",
-    "docs/assembly/build-guide.md": "313cbc1b9726f9b973a747b0dcac16fd8072e0aad9527fbc921e908293c90d2f",
+    "docs/assembly/build-guide.md": "4aa06105b4a621027b8801f6f5c592e7db216a7315f00c7e4ad2a2144f048e27",
     "docs/assembly/images/01-step.zh-CN.png": "3d6974ed9e07dee1192810058c843153410a005bd2c3a82371ddf9aee3ad50e0",
     "docs/assembly/images/01-step.zh-CN.svg": "834ad61fbeb33386dddfe4fe0b7169297ec71e4b11ef899285ba521f8de9f257",
     "docs/assembly/images/02-step.zh-CN.png": "1e2a115c412036bc6532937d4d9bb813481caeabea7ca68ebd485a014eff36e4",
@@ -307,7 +307,7 @@
     "docs/assembly/images/27-step.zh-CN.svg": "ca46c149148d4cfd814bf747dd978c72eba1a2165d29d451dd2a74a94994ae5f",
     "docs/assembly/images/28-step.zh-CN.png": "1f2aa619e4b70655dd0c3e51e9f54e998c48166a3b0b075d7678c63dc837f509",
     "docs/assembly/images/28-step.zh-CN.svg": "77f4bd649c498e73b02a214c4a019e5c1723a3d89c28eefa81b80aa5b650c15d",
-    "docs/assembly/build-guide.zh-CN.md": "8b8e28f384514bb89b36156d84f0a8ef7e5fb86496cfe74ac77488137f267b0f"
+    "docs/assembly/build-guide.zh-CN.md": "54d7980d2d5492b0050a13b6fea21f4fdb772491e69cbffa1661ed1f206034de"
   },
   "steps": [
     {

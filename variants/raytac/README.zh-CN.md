@@ -8,6 +8,8 @@
 
 > **P2 阶段提交：**保留 C5 JSH 子板；默认改为定制 1600 mAh 单电芯，正式底壳含凹槽，充电设定和 USB500 固件同步更新。工程装配图、PCB 动画及装配渲染记录来源哈希。见[阶段记录](docs/design-checkpoint.zh-CN.md)。
 
+> **验收／射频阻塞：**本次布局检查发现天线区域铜及邻近定位板金属风险。制作或装配前先阅读[测试结果与首件验收流程](../../docs/testing/README.zh-CN.md)；DRC／构建通过不能关闭这些问题。
+
 ## 当前复查
 
 **CAD 导通检查通过，尚未批准生产或证明整机硬件运行。** [完整复查](docs/audit/yeti60-comprehensive-review.zh-CN.md)记录当前 P2 设计和待供方、公差、线束及实物验收事项。
@@ -36,7 +38,7 @@
 - [PCB 渲染及 360° 动画](renders/ec60-nrf52840/README.zh-CN.md)
 - [当前审查索引](docs/audit/README.zh-CN.md)
 
-外壳暂按树脂，信号／射频模拟继续暂缓。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
+外壳暂按树脂，信号／射频检查已开始，天线布局阻塞项及实物验收仍待解决。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
 
 基于 [Cipulot/EC60](https://github.com/Cipulot/EC60) 和 [fredlb/felk60](https://github.com/fredlb/felk60)，保留上游作者、许可证和原名称。`EC60-nRF52840.*` 文件名及 `YAECKB` 库标识为技术兼容保留，公开项目名统一为 **YETI60**。
 

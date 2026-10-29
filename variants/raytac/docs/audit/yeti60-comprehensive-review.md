@@ -12,7 +12,7 @@ U1 is one Raytac MDBT50Q-1MV2. U1.20 uses P0.04/AIN2 for scan data; U1.21 uses P
 
 Power routes now use ordinary through-via construction. Input capacitor C40 and charger control resistors were relocated for ordinary routing. The input-capacitor path retains at least 0.25 mm copper; low-current ITERM can use 0.127 mm. [Electrical evidence](yeti60-electrical.json) records current conservative contacted-primitive lengths/widths/via counts, without claiming return inductance, transient or thermal acceptance. Current warning counts are recorded in the strict audit rather than assumed unchanged.
 
-The former nine blind vias and two module signal vias-in-pad have been removed. Use [ordinary JLC four-layer fabrication](../../hardware/ec60-nrf52840/fabrication-notes.md), nominal order 1.6 mm, CAD envelope 1.6062 mm, 0.2104 mm sensing dielectric and mechanically drilled through vias only. Capacitor derating, soldering and regulator/charger thermal performance remain unqualified; RF/SI is deferred.
+The former nine blind vias and two module signal vias-in-pad have been removed. Use [ordinary JLC four-layer fabrication](../../hardware/ec60-nrf52840/fabrication-notes.md), nominal order 1.6 mm, CAD envelope 1.6062 mm, 0.2104 mm sensing dielectric and mechanically drilled through vias only. Capacitor derating, soldering and regulator/charger thermal performance remain unqualified; RF/SI screening has started; antenna layout blockers remain open.
 
 ## Battery, charging and power
 

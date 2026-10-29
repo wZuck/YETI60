@@ -81,7 +81,7 @@ summary={'status':('cad-checks-passed' if not counts and not parity_errors and n
         (('U6','4'),('L1','1')),(('U6','2'),('L1','2')),(('U1','20'),('U3','6')),
         (('J1','2'),('R30','1')),(('R30','2'),('U1','34')),(('J1','3'),('R31','1')),(('R31','2'),('U1','35')),
         (('U1','51'),('J3','2')),(('U1','53'),('J3','4'))]],
-    'interference_simulation':'not_started_user_ordered_after_PCB_completion',
+    'interference_simulation':'see_shared_acceptance_report_RF_blockers_open',
     'limits':['Ordinary JLC through-via process checked separately; no module via-in-pad or special fill/capping','DRC does not certify regulator stability, capacitor DC bias or thermal performance','C5 native electrical/mounting checks do not verify mating plug/harness serviceability or physical assembly','Normal/calibrator target builds verified separately; on-device USB/BLE and physical EC calibration untested']}
 summary['failed_critical_paths']=sum(not x['connected'] for x in summary['critical_paths'])
 if summary['failed_critical_paths']:summary['status']='requires-routing-and-review'
