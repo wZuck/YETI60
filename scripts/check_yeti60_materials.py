@@ -27,6 +27,12 @@ def main():
         assert sum(int(r[1]) for r in fitted) == 76
         for row in fitted:
             assert row[:5] in tables, 'README component row stale: '+row[0]+suffix
+        daughter_path = ROOT/('hardware/bom/daughterboard'+suffix+'.csv')
+        sources.append(daughter_path)
+        daughter = list(csv.reader(daughter_path.open()))[1:]
+        assert sum(int(r[1]) for r in daughter) == 7
+        for row in daughter:
+            assert row[:5] in tables, 'README daughterboard row stale: '+row[0]+suffix
         for line in material.read_text().splitlines():
             if not re.match(r'^\| M\d{2} \|',line):
                 continue
@@ -34,7 +40,7 @@ def main():
             matches = [r for r in tables if r[0] == cells[0]]
             assert len(matches) == 1 and matches[0][2] == cells[2], 'README mechanical quantity stale: '+cells[0]
     report = {'status':'readme-materials-match-bom', 'fitted_mainboard_parts':76,
-              'mechanical_rows_per_language':20, 'production_approved':False,
+              'mechanical_rows_per_language':20, 'optional_daughterboard_parts':7, 'production_approved':False,
               'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources}}
     (ROOT/'docs/audit/yeti60-materials.json').write_text(json.dumps(report,indent=2)+'\n')
     print('Both READMEs contain all 76 fitted PCB parts and the 20 mechanical material rows')

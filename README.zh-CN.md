@@ -111,7 +111,22 @@
 | U6 | 1 | TPS63031DSK | WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm | TI TPS63031DSKR |
 | U7, U8 | 2 | TPS22919DCK | SOT-363_SC-70-6 | TI TPS22919DCKR |
 
-JP1 数量 **0**，保持不装；J3 为 PCB 上的六个 SWD 接触焊盘，不另装排针。主板统计为 43 个电阻、17 个电容及 16 个其他器件，共 76 件。子板的 7 个元件已计入成品子板；若自行焊子板，使用[上游逐项清单](hardware/usb-daughterboard/upstream/production/UDB-C-JSH_5.0_bom.csv)。
+JP1 数量 **0**，保持不装；J3 为 PCB 上的六个 SWD 接触焊盘，不另装排针。主板统计为 43 个电阻、17 个电容及 16 个其他器件，共 76 件。
+
+### 可选：自行焊接 C5 JSH 子板
+
+准备 **C5 JSH 裸板一块及下方七只元件**，替代购买成品子板。[本仓库库存抵扣表](hardware/bom/daughterboard.zh-CN.csv) · [上游固定版本材料表](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_bom.csv) · [上游固定版本制板文件](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)。
+
+| 位号 | 数量 | 厂商及指定型号 | 封装／连接器焊盘 | LCSC 编号 |
+|---|---:|---|---|---|
+| D1 | 1 | FTR SMF6.0A | SOD-123FL | C708002 |
+| F1 | 1 | Shenzhen JDT Fuse ASMD1206-150 | F1206 | C135342 |
+| J2 | 1 | JST SM04B-SRSS-TB(LF)(SN) | SM04B-SRSS-TB(LF)(SN)_mounting-reliefs | C160404 |
+| J1 | 1 | Korean Hroparts TYPE-C-31-M-12 | TYPE-C-31-M-12 | C165948 |
+| R1, R2 | 2 | Uniroyal 0402WGF5101TCE | R0402 | C25905 |
+| U1 | 1 | Texas Instruments TPD4E05U06DQAR | uSON-10 | C138714 |
+
+库存两只 5.1 kΩ 电阻可供 R1／R2 使用，因此自焊选项还需 **五只散件及一块裸板**。国产 TYPE-C-31-M-12 的实物尺寸未确认，暂不抵扣。这些位号属于子板，不能与主板同名位号混用。USB 线束、四只 M2 螺丝及垫圈另按下方准备。LCSC 编号来自固定版本的上游清单，不代表当前价格或库存保证。材料数据版权属于 Unified Daughterboard Project（2023），保留 [MIT 许可证](hardware/usb-daughterboard/LICENSE.upstream)。
 
 ### 壳体、静电容结构与紧固件
 

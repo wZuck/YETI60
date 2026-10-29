@@ -20,6 +20,8 @@ for p in files:
     for link in re.findall(r'\]\(([^)]+)\)',p.read_text()):
         target=link.split('#',1)[0].split(' ',1)[0].strip('<>')
         if not target or re.match(r'^[a-z]+:',target) or target.startswith('/'):continue
+        if any((p.parent/target).resolve().is_relative_to(folder) for folder in upstream):
+            errors.append(f'{p.relative_to(ROOT)}: local link crosses Git submodule; use a pinned upstream URL: {target}')
         if not (p.parent/target).exists():errors.append(f'{p.relative_to(ROOT)}: broken local link {target}')
 report={'status':'passed' if not errors else 'failed','policy':'project-owned prose defaults to English with parallel zh-CN; upstream submodules/licenses and machine-readable data retain stable identifiers','markdown_files':len(files),'pairs':len(files)//2,'errors':errors}
 (ROOT/'docs/audit/documentation-check.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2));raise SystemExit(bool(errors))

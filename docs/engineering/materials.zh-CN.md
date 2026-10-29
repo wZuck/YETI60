@@ -14,7 +14,7 @@ P2 阶段，2026-10-29。数量均为单把键盘净用量，不含备件。这�
 |---|---:|---|
 | 主板 PCB | 1 | 当前 EC60-nRF52840 源文件；JLC 普通四层 FR-4、标称 1.6 mm；CAD 包络 1.6062 mm；只用普通通孔，不要求填孔盖铜 |
 | 主板焊装元件 | 76 | 分组材料表列出数值、位号、封装、指定／候选型号及待确认项目 |
-| USB 子板 | 1 块成品 | Unified Daughterboard C5 JSH，锁定提交 `2b6c52a`；[上游材料表](../../hardware/usb-daughterboard/upstream/production/UDB-C-JSH_5.0_bom.csv)有 7 个焊装元件，购买成品时不要重复计入散件 |
+| USB 子板 | 1 块成品 | Unified Daughterboard C5 JSH，锁定提交 `2b6c52a`；[上游材料表](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_bom.csv)有 7 个焊装元件，购买成品时不要重复计入散件 |
 | USB 内部线束 | 1 | 中心线路径 150 mm，逐根长度按连接规格；四芯、两端 SH 兼容插壳；电气直通：1→1 为 VBUS、2→2 为 D−、3→3 为 D+、4→4 为地；插头及控制路径 CAD 检查已加入，实物压接／弯折／维修仍待验收 |
 | 电池包 | 1 | 默认 YETI60-BAT-1600-1S，以 HCP404074 为参考，完整 85×43×4.8 mm；独立温度断充须保证实际电芯充电窗口在 15…43°C 内，另带 10k NTC；PHR-3：1 正极、2 负极、3 温度线。须由供方签署图纸和限值 |
 | USB-C 数据线 | 1 | 主机外接数据线，不能用仅充电线 |

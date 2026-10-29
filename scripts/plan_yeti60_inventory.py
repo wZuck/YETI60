@@ -93,6 +93,22 @@ def main():
     cc = next(r for r in daughter if r['Designator'] == 'R1 R2')
     assert cc['Value'] == '5.1k' and cc['Manufacturer Part Number'] in optional['mpn']
     assert optional['references'] == ['R1', 'R2'] and not optional['credited_in_default_plan']
+    for zh in [False, True]:
+        path = ROOT / ('hardware/bom/daughterboard.zh-CN.csv' if zh else 'hardware/bom/daughterboard.csv')
+        with path.open('w', newline='') as target:
+            writer = csv.writer(target, lineterminator='\n')
+            writer.writerow(['位号', '数量', '厂商及指定型号', '封装', 'LCSC 编号', '计划用库存', '净补购数量'] if zh else
+                            ['References', 'Quantity', 'Manufacturer and specified MPN', 'Package', 'LCSC code', 'Planned stock use', 'Net purchase'])
+            for part in daughter:
+                refs = part['Designator'].split()
+                qty = len(refs)
+                stock_use = min(qty, optional['received_units']) if refs == optional['references'] else 0
+                # Upstream leaves connector Package fields blank; retain its actual footprint name there.
+                package = part['Package'] or part['Footprint']
+                writer.writerow([', '.join(refs), qty, part['Manufacturer'] + ' ' + part['Manufacturer Part Number'],
+                                 package, part['LCSC Part Number'], stock_use, qty - stock_use])
+        outputs.append(path)
+    assert sum(len(part['Designator'].split()) for part in daughter) == 7
     sources = [INPUT, BOM, ROOT / 'hardware/bom/mainboard.zh-CN.csv', Path(__file__).resolve(),
                ROOT / 'hardware/usb-daughterboard/upstream/production/UDB-C-JSH_5.0_bom.csv',
                ROOT / 'README.md', ROOT / 'README.zh-CN.md',
@@ -104,6 +120,9 @@ def main():
         'planned_stock_parts': sum(r['from_stock'] for r in rows),
         'net_purchase_parts': sum(r['buy'] for r in rows),
         'in_transit_credited': 0, 'optional_c5_parts_credited': 0,
+        'bare_c5_option': {'required': 7, 'planned_stock': min(2, optional['received_units']),
+                          'buy': 7 - min(2, optional['received_units']), 'bare_pcb_quantity': 1,
+                          'included_in_default_populated_option': False},
         'physical_remaining_count_confirmed': False, 'production_approved': False,
         'rows': rows,
         'source_sha256': {str(p.relative_to(ROOT)): sha(p) for p in sources},

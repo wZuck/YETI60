@@ -111,7 +111,22 @@ Use the [stock-adjusted mainboard purchase CSV](hardware/bom/mainboard-purchase.
 | U6 | 1 | TPS63031DSK | WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm | TI TPS63031DSKR |
 | U7, U8 | 2 | TPS22919DCK | SOT-363_SC-70-6 | TI TPS22919DCKR |
 
-JP1 quantity is **0**, DNP. J3 is six PCB SWD contact pads, with no fitted header. Mainboard totals: 43 resistors, 17 capacitors and 16 other components = 76. The daughter's seven components are included in its populated assembly; use the [upstream itemized BOM](hardware/usb-daughterboard/upstream/production/UDB-C-JSH_5.0_bom.csv) if assembling it yourself.
+JP1 quantity is **0**, DNP. J3 is six PCB SWD contact pads, with no fitted header. Mainboard totals: 43 resistors, 17 capacitors and 16 other components = 76.
+
+### Optional: solder a bare C5 JSH daughterboard
+
+Prepare **one bare C5 JSH PCB and the seven parts below** instead of buying a populated C5. [Local stock-adjusted CSV](hardware/bom/daughterboard.csv) · [Pinned upstream BOM](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_bom.csv) · [Pinned upstream Gerber archive](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip).
+
+| References | Quantity | Manufacturer and specified MPN | Package / connector footprint | LCSC code |
+|---|---:|---|---|---|
+| D1 | 1 | FTR SMF6.0A | SOD-123FL | C708002 |
+| F1 | 1 | Shenzhen JDT Fuse ASMD1206-150 | F1206 | C135342 |
+| J2 | 1 | JST SM04B-SRSS-TB(LF)(SN) | SM04B-SRSS-TB(LF)(SN)_mounting-reliefs | C160404 |
+| J1 | 1 | Korean Hroparts TYPE-C-31-M-12 | TYPE-C-31-M-12 | C165948 |
+| R1, R2 | 2 | Uniroyal 0402WGF5101TCE | R0402 | C25905 |
+| U1 | 1 | Texas Instruments TPD4E05U06DQAR | uSON-10 | C138714 |
+
+The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose parts plus one bare PCB**. The stock domestic TYPE-C-31-M-12 is not credited until its geometry is confirmed. These are daughterboard reference numbers, separate from mainboard references. The USB harness, four M2 screws and washers are separate assembly items below. LCSC codes identify the pinned upstream entries, not current prices or stock guarantees. BOM data: Copyright (c) 2023 Unified Daughterboard Project, [MIT license](hardware/usb-daughterboard/LICENSE.upstream).
 
 ### Case, EC mechanism and fasteners
 

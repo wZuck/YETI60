@@ -24,7 +24,7 @@ For each stock pool: `available = recorded received units`; allocate at most tha
 
 ## C5 JSH alternatives and uncertain stock
 
-The default is one populated daughterboard. Its seven parts are included, so do not buy them again. For a separate **bare C5 PCB build**, inventory row 55 supplies two Uniroyal 0402WGF5101TCE 5.1 kohm/1%/0402 resistors for C5 R1/R2, from 100 recorded received units. That alternative uses 12 stocked electronics in total across both boards and still needs the other five C5 parts. It does not reduce the 66-part mainboard shortfall. The [pinned upstream C5 BOM](../../hardware/usb-daughterboard/upstream/production/UDB-C-JSH_5.0_bom.csv) is authoritative for those five parts.
+The default is one populated daughterboard. Its seven parts are included, so do not buy them again. For a separate **bare C5 PCB build**, inventory row 55 supplies two Uniroyal 0402WGF5101TCE 5.1 kohm/1%/0402 resistors for C5 R1/R2, from 100 recorded received units. That alternative uses 12 stocked electronics in total across both boards and still needs the other five C5 parts. It does not reduce the 66-part mainboard shortfall. The [pinned upstream C5 BOM](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_bom.csv) is authoritative for those five parts.
 
 | Inventory rows | Candidate use | Decision and missing evidence |
 |---|---|---|
