@@ -152,8 +152,9 @@ static void run(void *a, void *b, void *c) {
       for (unsigned r = 0; r < 5; r++)
         for (unsigned c = 0; c < 15; c++) {
           /* Unused layout positions are not required to be pressed. */
-          static const uint16_t active[5] = {0x7fff, 0x3fff, 0x2fff, 0x1ffd,
-                                             0x4646};
+          /* HHKB right Shift/Fn use the alternate copper in SW60/SW62. */
+          static const uint16_t active[5] = {0x7fff, 0x3fff, 0x2fff, 0x6ffd,
+                                             0x0646};
           int span = (int)pressed[r][c] - released[r][c];
           if ((active[r] & BIT(c)) && (span < 32 || pressed[r][c] >= 4090))
             valid = false;

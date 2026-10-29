@@ -2,6 +2,8 @@ English | [Chinese](assembly.zh-CN.md)
 
 # Assembly drawings and build sequence
 
+Use the [28-step illustrated guide](../assembly/build-guide.md) for mainboard soldering from bare PCB, optional C5 self-assembly, staged bring-up, programming and complete installation. The dimensions below govern its mechanical illustrations.
+
 These engineering sheets use the current, unscaled FELK60-derived shell meshes, native plate/PCB geometry and native exported USB daughterboard CAD. They are separate from the older studio renders. Keycap/housing silhouettes, threads and exploded offsets are illustrative; the written dimensions govern. Quantities refer to the [materials table](materials.md).
 
 ![Source-sized engineering assembly sheet](images/assembly.png)

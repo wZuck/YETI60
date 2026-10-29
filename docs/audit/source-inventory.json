@@ -14,20 +14,710 @@
     },
     {
       "path": "README.md",
-      "bytes": 19273,
-      "sha256": "5b6d5f6d5558a16cbc4a9237195202908f717f4864f235f737f1a6ab82f57a38",
+      "bytes": 21214,
+      "sha256": "c7ae497564f7583c0b7620672585aae22c41a3dfb79135be3b523e151eb14075",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 18140,
-      "sha256": "3261ca8c49f576709797444daf6a43ae80a0d49088d6a5b960fcbbc654416dcc",
+      "bytes": 19958,
+      "sha256": "c90fc1fc908b7ed6b839af34e9ac85cc88cdd474761b85cbb94d39ec3db84f87",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "design-constraints.json",
-      "bytes": 3405,
-      "sha256": "525a33beff5ccefb7ed7f7ac72f66b4f4a45644d4b5eff51e3d6acb0ed3ae94f",
+      "bytes": 3514,
+      "sha256": "6baeeeed44b79a23b0fbced438d5e999855c85e0c67982b0f455410835ce1d69",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/build-guide.md",
+      "bytes": 28272,
+      "sha256": "6e8e91dd5249f1e4317cb23a319e3eecf850507eed0d3f1a5740cb5eb41eeee6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/build-guide.zh-CN.md",
+      "bytes": 25689,
+      "sha256": "9e64c07168825f3a28d654319b962cc2db0e59923266d53ac9c4db6dd84d32a2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/01-step.png",
+      "bytes": 256339,
+      "sha256": "f9f048efe38cb465f6ec9db5447614d95d5d77bad044bd60064687e2a95c0c3c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/01-step.svg",
+      "bytes": 658003,
+      "sha256": "7d04017b3c24833745172e54efdfff303badd82ba63fa1613ac2b370a6d661b1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/01-step.zh-CN.png",
+      "bytes": 272362,
+      "sha256": "314c841e3580fb9f53119126a8450b08edf6c145337a54a57bb69774bf1208db",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/01-step.zh-CN.svg",
+      "bytes": 757906,
+      "sha256": "3b82b0086becfed127474c0a0641308a90bf8b928af0c70d2992edd6d5c8b6b4",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/02-step.png",
+      "bytes": 246725,
+      "sha256": "eda8ea8eb4d8a66925d67dc2182d20ed501e236937f0358fb1321f2e2932214c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/02-step.svg",
+      "bytes": 909985,
+      "sha256": "1a4de95af65a886c3aed3864b750dad3f2ca29c9ddad1a19f5f58e25e0be06a8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/02-step.zh-CN.png",
+      "bytes": 262187,
+      "sha256": "1fd1ebc7fc006a370b228d481f6df4985a7f61659df7061fc93d89cbc52b8725",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/02-step.zh-CN.svg",
+      "bytes": 999536,
+      "sha256": "50731013201b98bc55f9b62a3f9a4655e0dc3b21ee8a3d27ee6923adce8c8193",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/03-step.png",
+      "bytes": 151601,
+      "sha256": "8b2c96dcd992471166f5f8d8e2abad5bb7b527c8d59bc713b863c6ede26ab167",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/03-step.svg",
+      "bytes": 556571,
+      "sha256": "9a46465fda6a758560431ea0bce6667d932cc23340f7a2f62f657a172829469d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/03-step.zh-CN.png",
+      "bytes": 166797,
+      "sha256": "e1ee4ccd485f79c1d1e630ace74be6b70893b98dbc4cce001d65e202f8bc5a09",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/03-step.zh-CN.svg",
+      "bytes": 662870,
+      "sha256": "be6f0cee64393e99448733321393d39617cc4a66b6cdaf321ac516d8063ae779",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/04-step.png",
+      "bytes": 201228,
+      "sha256": "dc1066dfcf9cc136a0a06ddae9aa54d391ee6ec0ac780f3741ce2a7734acf44a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/04-step.svg",
+      "bytes": 1347238,
+      "sha256": "1dc1dd8e7aae8ec47e3bfa9079049cb39dac1026ec53df115f7f1a5ee0ea3a27",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/04-step.zh-CN.png",
+      "bytes": 217498,
+      "sha256": "49a6e1b13abf94be036678d60dce536164aa4efa733dd445351d48fd0276581d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/04-step.zh-CN.svg",
+      "bytes": 1433916,
+      "sha256": "6ef200c3a7c5217cae5274425a0d2d63ef85fcdd65e990a3855e5295a8b4cd74",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/05-step.png",
+      "bytes": 163553,
+      "sha256": "32b0410fd5c29be69964b2561ef4b986f52efc484aec3b92b6fa5e5130a76211",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/05-step.svg",
+      "bytes": 1318895,
+      "sha256": "f0429aa968e91e1e837f9a88305e4def9ef872332a1f5cb9dfb6d71369339bc1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/05-step.zh-CN.png",
+      "bytes": 175111,
+      "sha256": "4db3f770a3a39feb435062eababa41734cbbd157596bd84a2ac8fdb221a87b87",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/05-step.zh-CN.svg",
+      "bytes": 1407024,
+      "sha256": "42215f0664f556e40cef96b77750fe532180a167ee8aaed498e307bdfa230f94",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/06-step.png",
+      "bytes": 145934,
+      "sha256": "8eca04d4405c9dc3ec7edc1ac1825124f0c6bc8363a13726202df87cd7d40291",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/06-step.svg",
+      "bytes": 560743,
+      "sha256": "841b3ce60c6c71cf8f6535618186df9997c5519e2d93cfce55f0b4f5c95797bf",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/06-step.zh-CN.png",
+      "bytes": 157459,
+      "sha256": "81d761077543a0126608362e285216ae0d09ee2cf95936318ca9c791f86e01c1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/06-step.zh-CN.svg",
+      "bytes": 642000,
+      "sha256": "ff391a3ca2ccd004e743becaa666e0f2c4be386381e27a9872f3c08175efd248",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/07-step.png",
+      "bytes": 138033,
+      "sha256": "484acd3b22c2625089c727cb0a47c918b38bb3c56996b84c09d9a1c37d703443",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/07-step.svg",
+      "bytes": 1017212,
+      "sha256": "6b88a66e509f868edb6b175d8cb00b5f6ebb690ac8e9dc6ae99bee1533c60b24",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/07-step.zh-CN.png",
+      "bytes": 154103,
+      "sha256": "9cc34eb58115acac9be65df41af3208ca75522f816d8dcd7043cd721bee2db17",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/07-step.zh-CN.svg",
+      "bytes": 1111111,
+      "sha256": "f256987e81f9b800d81c94bf1f584e92f7387926eae87c287b28866c0d1042aa",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/08-step.png",
+      "bytes": 115755,
+      "sha256": "8e52e7b4d6f317f5eb0a21963b1a19f8dbe0451ac79365db3817a8c61f9f264f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/08-step.svg",
+      "bytes": 541285,
+      "sha256": "24dc085a2be9b041ebab95c0a01f541530702e40c8c8c0dd1c2e61ecc0e57af8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/08-step.zh-CN.png",
+      "bytes": 128730,
+      "sha256": "2bcb5dae7c935b0eed6553e976972b00ed3922430aa9d7405ea976fec262751c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/08-step.zh-CN.svg",
+      "bytes": 631173,
+      "sha256": "5780647ef68bcf33c051f23c4d2aa780613e2aa8e33e52499da67a2aad562780",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/09-step.png",
+      "bytes": 129607,
+      "sha256": "aac471f284f5c89f9c16a3f4c9d9d2ae6b7ab9e02a20de662d73493770749cc0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/09-step.svg",
+      "bytes": 1031674,
+      "sha256": "1a0de6a3446ada59abf75b4f5b891ebc974b1202dd4b2af1c9f2f1d1dcc2986d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/09-step.zh-CN.png",
+      "bytes": 148277,
+      "sha256": "94bef1e29580f98056296cee6478318c2d08cb7dafae284db4d81c570d297585",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/09-step.zh-CN.svg",
+      "bytes": 1122591,
+      "sha256": "be3ac7e969002950d46b949777986cbce27ac3fbfad6cf8f1bc23a8000396a46",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/10-step.png",
+      "bytes": 128532,
+      "sha256": "31c70738031bf8dcadcb114df0a04311611fa940cd9faccaa24595074589d362",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/10-step.svg",
+      "bytes": 320473,
+      "sha256": "57b8c3b35464d6b1dd0db360cbc1db4546fe142d696ab9f14379f3fdf7a54fd6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/10-step.zh-CN.png",
+      "bytes": 149856,
+      "sha256": "d6948eabb88c299ce408b05db654887ba272397025fa505edb2cd3d1682f88cf",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/10-step.zh-CN.svg",
+      "bytes": 419480,
+      "sha256": "d6039dbc51f26f5d78e88e421e51da617c3180a278f457272efa864bc8f4d0b3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/11-step.png",
+      "bytes": 147607,
+      "sha256": "23b1df7f99bc4bbd7e81aefce64b2b565b4a830c88a0237e84ce701bd89e9170",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/11-step.svg",
+      "bytes": 556867,
+      "sha256": "7a84596788d1794da54f9a2768adb7c522734e5d08449a2ee926142a9b072fd4",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/11-step.zh-CN.png",
+      "bytes": 155101,
+      "sha256": "9a8107b3d60f58bb4885f089e96d95f727d06aa91bac3949e2322b2623cc5086",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/11-step.zh-CN.svg",
+      "bytes": 653962,
+      "sha256": "78db29327a1aeb9d5d133635478a41c0a43ba4c115371275812f5dd23405599c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/12-step.png",
+      "bytes": 135500,
+      "sha256": "0d5979e4d5cf6e7513fd7b11257ff19dbff0a2a8d02b8dabd18e142fc51f3db0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/12-step.svg",
+      "bytes": 341992,
+      "sha256": "65b97a3ec3e8c2f0c7ff42def0d48e06556fd3966d8aaacc5bcf81e10bcf5804",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/12-step.zh-CN.png",
+      "bytes": 152012,
+      "sha256": "c9857704691ea48216514124ad09f6c9dcf492806e7bd47657ed815aa33784b3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/12-step.zh-CN.svg",
+      "bytes": 437831,
+      "sha256": "6996806e5f6f7824e99ec66778ad8e1ffa36a5fb1ff7eace34ae8825c5bec764",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/13-step.png",
+      "bytes": 140277,
+      "sha256": "2ebdd09ba8850a2769ac11afc14309984f5b15e32d7115d36d997123cd7d3e8f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/13-step.svg",
+      "bytes": 346395,
+      "sha256": "44390b4f0b9a09ef8e236a9869196f48112bdd94e7db8b1e661252719b58d30e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/13-step.zh-CN.png",
+      "bytes": 161469,
+      "sha256": "ed4a0018452ef35229ba4702e2299bd0881ad220d7a15c0b6aa3885ad805d2c6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/13-step.zh-CN.svg",
+      "bytes": 459875,
+      "sha256": "d87010fc84e655e498233abb98c128a1f0fcf4c04f0910278115db06b049faac",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/14-step.png",
+      "bytes": 141584,
+      "sha256": "a6c3bf897af35a473daffee014efadfe71954203636e7d436b15e586a471fffb",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/14-step.svg",
+      "bytes": 331877,
+      "sha256": "62efd46e9fa0cfdca7b3db22c0677ff7fe31598272bd580fdb537fed9b68d759",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/14-step.zh-CN.png",
+      "bytes": 159120,
+      "sha256": "d0554648e9d791489217e4c51cf3f6f88323a78c3ec8a614bb74c3896cdf23c0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/14-step.zh-CN.svg",
+      "bytes": 453176,
+      "sha256": "39a2d915759bb43aa52ae176f174cb8513d3b263765e792fa169dac1e244561b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/15-step.png",
+      "bytes": 162999,
+      "sha256": "59ab9d604a45fec199f7488b4a21161237c8115b2663dc49dc7edbe4bc35601b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/15-step.svg",
+      "bytes": 567016,
+      "sha256": "b778ca5e5efef94a27dd38b2837c58258db0c956a2f02ef046bd63e073096995",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/15-step.zh-CN.png",
+      "bytes": 170580,
+      "sha256": "25a62ee8bb801d2b658787ed10ebd18347c8dbe29d45ce4e50355397f60b6ab6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/15-step.zh-CN.svg",
+      "bytes": 655644,
+      "sha256": "408ee6d9562c1f258578124823e5a4ed0b46e1a35388c94397a4b20e4cd5ff73",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/16-step.png",
+      "bytes": 144927,
+      "sha256": "374919447b37e449b76c183ee7132c636b6b3b6d8cbabaf1e027b4cd77acf1e7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/16-step.svg",
+      "bytes": 562761,
+      "sha256": "33f76e586b1267699601ac22d9313d123f753819e4fb06f47a94c31df73983f0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/16-step.zh-CN.png",
+      "bytes": 161905,
+      "sha256": "2b71e3a916448270890eb7071a32313262701075fd60fec8f9e0735bfd4ea440",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/16-step.zh-CN.svg",
+      "bytes": 667741,
+      "sha256": "4239efdae1a200a8b65d4b53f3d7df5266007ccf0c2f524c2af6c89c0ab7e0a6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/17-step.png",
+      "bytes": 162736,
+      "sha256": "bfd2b63623481090770d5a7d9fa305012c75b04c516ef179daf44d93d36640a4",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/17-step.svg",
+      "bytes": 402902,
+      "sha256": "780f15b0b7d6cf402834a08d7bcc1d5d9b30cfef06d213c6230035c2a1bee839",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/17-step.zh-CN.png",
+      "bytes": 184313,
+      "sha256": "4d08cf69482023c3d815300e9f5d528be3230d6d882aae94b05d5ef02f313646",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/17-step.zh-CN.svg",
+      "bytes": 492639,
+      "sha256": "b7e01c69de10c6bb49f32f7c5c86d2fe0c71b3ee631dac5682d3f68994e95f91",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/18-step.png",
+      "bytes": 272253,
+      "sha256": "2fa98a074beae0fc5392fadfe364709e44bb2fa6f3e4fd479b18cae22531435e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/18-step.svg",
+      "bytes": 559574,
+      "sha256": "887d7db3b7fc22caac8b71aca1f0aa40c5045aee824b5433287d41d9615a1ccd",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/18-step.zh-CN.png",
+      "bytes": 294594,
+      "sha256": "562c9dcfd93fef574ea4f31e9e906373bcee0a6fa5866670413ccad57468f3a7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/18-step.zh-CN.svg",
+      "bytes": 662321,
+      "sha256": "d17b2c79fbbd26103b324b76d0dda8d89af3199df95e5ae4f6d5520e7531d3f0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/19-step.png",
+      "bytes": 213266,
+      "sha256": "92d7852339d5eeeb02a86940e8b71f3036aa8ea64eae6ec02a9357562c74a34f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/19-step.svg",
+      "bytes": 412781,
+      "sha256": "c8c3680f848c6664907d2b6723173a793e80c4e076e435b6f950fff9836a5533",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/19-step.zh-CN.png",
+      "bytes": 234056,
+      "sha256": "ba62e0ebbf3cda18f4fb1911e5d637ae70576c371438dc346f7f593ecb7a1f6d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/19-step.zh-CN.svg",
+      "bytes": 518178,
+      "sha256": "5607c35d13d2bc71cb1b2514095957fcda39b78b221fab935ba91daf25a0001f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/20-step.png",
+      "bytes": 130680,
+      "sha256": "106bb50fef51ee18118464a22629d551907b37a6ea2707b5a00daa05fc780446",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/20-step.svg",
+      "bytes": 322073,
+      "sha256": "27ee70c0cc8b21531932720382296dd169f074204e973bef57bd72392f4a8cbc",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/20-step.zh-CN.png",
+      "bytes": 148177,
+      "sha256": "9ac26f3bcc5229d2ba15e6654eaf375bce471c3685ca21eddf460d08bd3dcaf7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/20-step.zh-CN.svg",
+      "bytes": 413542,
+      "sha256": "0dfee8dfc3ac2173280ec7bba49ea660d25ad716055b3fd17165e0349bdc352f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/21-step.png",
+      "bytes": 149813,
+      "sha256": "f55b091b6ab9ed82a8f39e3ad6c6e835c2143a016d4908ae79deff5884613189",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/21-step.svg",
+      "bytes": 372938,
+      "sha256": "d335c4b23f9873af4a8cce5209b3e27eccd74aa46efa69d199668c49ae9f8d09",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/21-step.zh-CN.png",
+      "bytes": 169130,
+      "sha256": "c14a2055d355cf4a94089ecd42b5224aa39a882eb3daecf373e201e5a154195c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/21-step.zh-CN.svg",
+      "bytes": 453240,
+      "sha256": "70f2efa3168d47deb6eb8c26c47240231a2e1bd957d2b4ed555dc689209eeea7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/22-step.png",
+      "bytes": 150099,
+      "sha256": "b2824c5bad673a648740c1c6a4368520032a6e8a52152bfd85ad0c160182b0d1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/22-step.svg",
+      "bytes": 372613,
+      "sha256": "b32190bb4cd93e6e16aecf397c0deb3f1c3308e6b64c98b0ba81f8afba0a585f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/22-step.zh-CN.png",
+      "bytes": 170522,
+      "sha256": "acff2d4ad8a60d59fa9dac1b862b74b8d5ed54a658923d61001fbc24ba765a32",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/22-step.zh-CN.svg",
+      "bytes": 474919,
+      "sha256": "3e69dbf8b5cccb1a545594b172a1b360fc993c4b6aa649539ee7e4170897a979",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/23-step.png",
+      "bytes": 169066,
+      "sha256": "5afbcd29df2e22c9ed64ade80225fa541ad0022f71feb6f481dfd796b00d869b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/23-step.svg",
+      "bytes": 399007,
+      "sha256": "744421dc13b8bc631a82e2c3f653c9f7051939eb0192b9ba112a159b44d51c4d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/23-step.zh-CN.png",
+      "bytes": 184759,
+      "sha256": "0ffa05c974399c9c34422f212d00d0949ef88dfea1d3d928849d0c96b2181543",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/23-step.zh-CN.svg",
+      "bytes": 490246,
+      "sha256": "1445077b6ed270b6bf8f6eaa9d60e619cce748eee173073ce43395a2edcd3df7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/24-step.png",
+      "bytes": 304992,
+      "sha256": "1e4c137bd80b6b7fc258bda08d1106d46983248daee7b1b7f5c7c4c2b16b6474",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/24-step.svg",
+      "bytes": 565826,
+      "sha256": "3f5e9ec77ed76ba420548cbd71942333812cb7f4c1ce9f0255f3d2fd2a50549e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/24-step.zh-CN.png",
+      "bytes": 322268,
+      "sha256": "92e47a381e3a7c6ee3bffe027524423daf17c244f369a1a73c846baa2d399392",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/24-step.zh-CN.svg",
+      "bytes": 655743,
+      "sha256": "e6b0ef458b80fedd5b6c39f78cd93c0775ea03058df7e9868c40fe2c0e1714a4",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/25-step.png",
+      "bytes": 184862,
+      "sha256": "51026efb6e58b59f60f4ca05444679f968e4807b2cb50a1011e7623cd6ff6afe",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/25-step.svg",
+      "bytes": 412285,
+      "sha256": "bb8ececbc5ca93795041433559e6c07e2f309f606217193f64c13933039d45d7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/25-step.zh-CN.png",
+      "bytes": 206855,
+      "sha256": "c726c2dd57a6fb2e2f59977c36a9e06212680164c2feec6420bd58c64f7e8437",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/25-step.zh-CN.svg",
+      "bytes": 518871,
+      "sha256": "788bd30f3f73a62dcdb2a708966d8cf087926047d7703766df1d79e9c714f52c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/26-step.png",
+      "bytes": 187049,
+      "sha256": "0a0e1c340c0cc00eeba6743790ab6ee7439abe2dbf71037922e3fd7068122e3c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/26-step.svg",
+      "bytes": 412247,
+      "sha256": "d5a1d475461e697257e31e0e325d0bb83b99fded09d71760f078a0fa30225047",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/26-step.zh-CN.png",
+      "bytes": 204913,
+      "sha256": "01e30cddeef6420b18c121f12ab960ef13bd814d1cf67bbbf9e3f9b381541aa8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/26-step.zh-CN.svg",
+      "bytes": 508028,
+      "sha256": "37831f25d0894e6c0c46aa8da8ede873000f88ee8d0efd64dfa9f027005c9b01",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/27-step.png",
+      "bytes": 271648,
+      "sha256": "3550beda02069b71c2b41623b39cb6e3bad4ba13bdd450ac2fe7f51c9a69fb0d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/27-step.svg",
+      "bytes": 511871,
+      "sha256": "8350f22280e649066a57090702545e4c53f1102998cc9f72590ff72ccff820a3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/27-step.zh-CN.png",
+      "bytes": 284341,
+      "sha256": "52082b3b0c196b32c0f7b518c5d0c0cea4f817e6a4335c774b2823e08e3c6944",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/27-step.zh-CN.svg",
+      "bytes": 592784,
+      "sha256": "3c2fa4ff08cf74f15507df577dc4ba0b673bf871b56b7c7ddfd592d17ce97a17",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/28-step.png",
+      "bytes": 141936,
+      "sha256": "d86901a4df71a3c2f73d171be050a45a62c4f8f9a578fdea019de52f4dfdb980",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/28-step.svg",
+      "bytes": 356466,
+      "sha256": "f57b229e5d26167eb388251b3dd86f2d0d0cc8733257f368f79b0ccb67bbd517",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/28-step.zh-CN.png",
+      "bytes": 164132,
+      "sha256": "cc54e0ab20ad278962b91d508229751317d2e0921743c1fea9134ce1459976b2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/images/28-step.zh-CN.svg",
+      "bytes": 455043,
+      "sha256": "9b5d89851c699236eaff1c4eff3ee10d9c4386f27eb8b8e452318904686ad198",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/assembly/steps.json",
+      "bytes": 48335,
+      "sha256": "18fd20b5bccfa68a8327bd9c121184584b0c175ed9aab987746e54eeb51d0706",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -44,14 +734,14 @@
     },
     {
       "path": "docs/engineering/assembly.md",
-      "bytes": 6446,
-      "sha256": "9c3330047ef58c72b6e67bacf78dc409ab94eff52b2fe6614a283988b863db6c",
+      "bytes": 6691,
+      "sha256": "f300e4a4ad9afc5c2850f885f91e947a3f650c934372ed8558157e675a0478ce",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/engineering/assembly.zh-CN.md",
-      "bytes": 5735,
-      "sha256": "2d1f51e6706ee0e3cba78ce87615f68d224093e3c54203b33ed3dfce6c578503",
+      "bytes": 5924,
+      "sha256": "ae046c86bc1def9bf63ed421cf76936afe4ddeacb048ae2b9498b0c76db4518d",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -248,50 +938,50 @@
     },
     {
       "path": "firmware/README.md",
-      "bytes": 1005,
-      "sha256": "d219dd77deac817fef89d9adfaee14993a9c2de1d38a912f787af9cfa2147af2",
+      "bytes": 1539,
+      "sha256": "9d1207cc31338341153f12301a41b2225e342acb77633e1a4a6f0f79524703c2",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/README.zh-CN.md",
-      "bytes": 925,
-      "sha256": "72e6d85e91389586093f05ffe5449c843776dd75afa457945f555a1a6130db88",
+      "bytes": 1410,
+      "sha256": "7d13970430a2b098a3289b79d7fe23730af650ff9c9e3360404841ea6ce39220",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/calibrator/yeti60.bin",
-      "bytes": 302244,
-      "sha256": "f710d172d1ea8fed8238eeff73da485269b27b700c81bbf13187cc9be5964e39",
+      "bytes": 302228,
+      "sha256": "9628d9d0042d91a133558cbe69e0e7a6eaee0c50c7232833ebeff54fa1648a48",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/calibrator/yeti60.elf",
-      "bytes": 7477732,
-      "sha256": "5235bfcb7aeeaf8da06628d06c9d16f62ceb4ee287e2b6d5c3223b6bec059213",
+      "bytes": 7477724,
+      "sha256": "5bd3020aa2fd10b09808f9ba78226b2fde766aeeb11c3f3c9550a8d2292156e8",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/calibrator/yeti60.hex",
-      "bytes": 831372,
-      "sha256": "6cd4b8db0fe563a848317a8b93de28b88577ce9779674b59483d4e0f0f0b3093",
+      "bytes": 831328,
+      "sha256": "f93e38b79cbb7f43c1a7edf2f9071295cb31c30a89077fb7476fa8533e59d254",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/normal/yeti60.bin",
-      "bytes": 226708,
-      "sha256": "13061591af37d5289cf0fae9a330980dac42e0a7d45c1242fd965ea38291e947",
+      "bytes": 226692,
+      "sha256": "b065e5deda5f72de97acf804677085f8ce649a8394dc91f15192a7734f365f64",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/normal/yeti60.elf",
-      "bytes": 3990888,
-      "sha256": "3a6a7db47345094103555a208268b72cfbe7842ed170f1896774ab13db5a17f5",
+      "bytes": 3990872,
+      "sha256": "d804585569daae658cdebf3ddece5b2a6c0c1909aa00a32232870e23769dae60",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/normal/yeti60.hex",
-      "bytes": 623608,
-      "sha256": "551bbbda066b44b52f7882e00f8713f6d888b1dc30225454c1b4aa5a97729440",
+      "bytes": 623564,
+      "sha256": "087cd8f4c937dc40f6227fd9e58a8a9857d1635edd8ab73675b14cb29716db32",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -339,7 +1029,7 @@
     {
       "path": "firmware/target/boards/yeti/yeti60/yeti60.dts",
       "bytes": 1757,
-      "sha256": "97272ab737e22fe1a1669e3abe67025e8298e9fccf5a61db9aeaa4cc71aa6c98",
+      "sha256": "d0d64e831bb5c10b665878d4cd76c4d058e99c37b478df8ce105cc00ded684c4",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -386,8 +1076,8 @@
     },
     {
       "path": "firmware/target/src/scanner.c",
-      "bytes": 10677,
-      "sha256": "e812217c1198d86e7bc56b033b835d32428e192106874a02d41e6d4199f0f0e2",
+      "bytes": 10752,
+      "sha256": "684e34685f1d364209f2ac7722fa1b79b3473dc7aafb9fc8f15c7b22de3c57d4",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -489,7 +1179,7 @@
     {
       "path": "hardware/ec60-nrf52840/DRC-strict.json",
       "bytes": 41116,
-      "sha256": "df33a20479b42c26b652ce0c70de499a6f7aeaf40d6e8bd63d96cca3e2526a62",
+      "sha256": "49b8d6afe7215bf60d12a090df2e8b680017007f76ff97075876f875c923d526",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -513,7 +1203,7 @@
     {
       "path": "hardware/ec60-nrf52840/ERC.json",
       "bytes": 117023,
-      "sha256": "f26e613757782734c93de3562accc4d727d8d279338d65e9521c7999248d5bba",
+      "sha256": "24126a9574f95cb2a049d858cc155a880ba85243c43ca6665762226b8346d6bb",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1635,7 +2325,7 @@
     {
       "path": "hardware/ec60-nrf52840/connectivity-changes.json",
       "bytes": 701,
-      "sha256": "a104563de2d1100dca542ba15f0abc62e16f8a6d5372fb3514c636451609f2a9",
+      "sha256": "8ede680b1d79339ca71e772bf0c018144df17f271b311a71a658bb2028b8e5a2",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2042,8 +2732,8 @@
     },
     {
       "path": "scripts/check_project_integration.py",
-      "bytes": 7408,
-      "sha256": "86291535aa7c5e1bd66cd516f86bbc0ec197ff7f9f54d2e68a387b056514c85d",
+      "bytes": 7993,
+      "sha256": "7308970c8b9cfcbee74bd960718f979f91906c039d886409267d9a6e86dba4f4",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2077,6 +2767,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/check_yeti60_build_guide.py",
+      "bytes": 2864,
+      "sha256": "857b12230e6c024477c1a7d1e5a52d148d021e9def9a2516f0b96171923386d0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/check_yeti60_electrical.py",
       "bytes": 4076,
       "sha256": "9dfbd0d3ea570c466377b6a4b4cbeb7bab68474d8b3c11d63ae4a10f1594628e",
@@ -2101,6 +2797,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/check_yeti60_key_geometry.py",
+      "bytes": 4231,
+      "sha256": "556493619766ed77efc43337751d96aaa43a4b6162fa19c96bc5c867c6191be1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/check_yeti60_materials.py",
       "bytes": 2237,
       "sha256": "3a04a377075178aac8ce2519df1cfb1ced7ea24c5c16deea7e61d8d9dacd28ed",
@@ -2119,6 +2821,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/draw_yeti60_build_guide.py",
+      "bytes": 34089,
+      "sha256": "d2193a2f4c8147fbac7331717349593086cd35bbdae405d8b4e069b1fd6cb948",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/draw_yeti60_interconnects.py",
       "bytes": 7349,
       "sha256": "520c419a32c4bb4275eec482cdc029d275c4eb808688ee8a23ad6690ccd58e23",
@@ -2128,6 +2836,12 @@
       "path": "scripts/export_yeti60_bom.py",
       "bytes": 6159,
       "sha256": "77d62c01e7b822f1b2ce8f9663d94da2608e4006a2f12c3a9b5afaa1661398b9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/export_yeti60_build_map.py",
+      "bytes": 5950,
+      "sha256": "37fb2a09e5697df4509ffb92b7e3ad2a75ae54441a90c82406f3970b47e07da8",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2204,8 +2918,8 @@
     },
     {
       "path": "scripts/run_audit.py",
-      "bytes": 8158,
-      "sha256": "c087b92a24c788420aea1115e92220242cc21aa5fa65eecfad1c0f905a145694",
+      "bytes": 8612,
+      "sha256": "c6ff4d1a326f40df8e7adf94418b4556c1ead561abbf883fb1f63189713b4eb0",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2248,6 +2962,12 @@
       "path": "tests/audit/test_inventory.py",
       "bytes": 2255,
       "sha256": "76b7f3d9f932d40cb6fdbd014c9177c1fb3c42980699c1eece5d72977c2b8d9b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/audit/test_key_geometry.py",
+      "bytes": 1725,
+      "sha256": "90c5ebcc5c851bc14e4e3c8aefca9793aa2a841ad7433d8f36bc1de0dc503b3e",
       "coverage": "inventoried-not-automatically-approved"
     },
     {

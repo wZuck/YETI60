@@ -22,6 +22,7 @@
 - [可行性评估回应](docs/engineering/assessment-response.zh-CN.md)
 - [普通工艺制板审查包](docs/engineering/fabrication-review.zh-CN.md)
 - [工程装配图及步骤](docs/engineering/assembly.zh-CN.md)
+- [28 步逐图焊接与安装指南](docs/assembly/build-guide.zh-CN.md)
 - [电池下挖可行性](docs/engineering/battery-study.zh-CN.md)
 - [功耗、续航及充电计算](docs/engineering/power-budget.zh-CN.md)
 - [材料与采购表](docs/engineering/materials.zh-CN.md)
@@ -56,6 +57,17 @@
 | Uniroyal 0402WGF1002TCE，10 kΩ／1%／0402 | R26 | 1 |
 
 将 [扣除计划库存后的主板补购表](hardware/bom/mainboard-purchase.zh-CN.csv)、[库存判断说明](docs/engineering/inventory-allocation.zh-CN.md) 与下方完整准备清单配合使用。其他总成和结构材料仍需补购或确认兼容性。成品 C5 已包含七只元件；若改为自焊 C5 裸板，库存两只 5.1 kΩ 电阻可供 C5 的 R1／R2 使用。库存 nice!nano、110 mAh 电芯、0805 电容及过短的 PCB 螺丝不能直接替代指定物料。此次库存分配不改变板子或外壳尺寸。
+
+### 需要下单制作哪些 PCB
+
+数量为一把键盘的净用量，板厂起订数量另计。购买成品 C5 时，只制作 **一块主板**；自行焊子板时，制作 **一块主板加一块 C5 JSH 裸板**。
+
+| PCB | 数量 | 尺寸与工艺 | 源文件及制板文件 |
+|---|---:|---|---|
+| YETI60 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [可编辑 KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb)、[当前 Gerber／钻孔审查压缩包](hardware/fabrication/yeti60-p2-dfm-review.zip)、[制板工艺要求](hardware/ec60-nrf52840/fabrication-notes.zh-CN.md) |
+| Unified Daughterboard C5 JSH 子板 | 自焊时 1 块；买成品时 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](hardware/bom/daughterboard.zh-CN.csv) |
+
+两块板使用各自的制板文件，主板压缩包不包含 C5。两个压缩包均有四层铜，C5 不能按双层板下单。主板文件目前用于制造审查，最终物料、钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及五个走线支架属于机械件，不是额外 PCB。自行回流焊时，主板用 **B.Paste**，C5 用 **F.Paste**，钢网和温度曲线须与实际物料匹配。
 
 ### 电子总成、电池和连接线
 

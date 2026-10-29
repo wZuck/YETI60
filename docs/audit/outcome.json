@@ -7,7 +7,7 @@
       "stage": "schematic-current",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.4
+      "seconds": 3.28
     },
     {
       "stage": "pin-contract",
@@ -25,43 +25,43 @@
       "stage": "ordinary-fabrication-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.9
+      "seconds": 0.89
     },
     {
       "stage": "ordinary-fabrication-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.44
+      "seconds": 2.43
     },
     {
       "stage": "pcb-native-drc",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 20.28
+      "seconds": 19.96
     },
     {
       "stage": "connectivity-regression",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 8.12
+      "seconds": 8.02
     },
     {
       "stage": "electrical-review",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.94
+      "seconds": 0.93
     },
     {
       "stage": "firmware-pin-header",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.07
+      "seconds": 0.05
     },
     {
       "stage": "firmware-target-artifacts",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.15
+      "seconds": 0.14
     },
     {
       "stage": "target-power-fault-injection",
@@ -73,13 +73,13 @@
       "stage": "firmware-simulation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.25
+      "seconds": 4.26
     },
     {
       "stage": "firmware-plot",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.88
+      "seconds": 0.67
     },
     {
       "stage": "mechanical-metadata",
@@ -91,13 +91,13 @@
       "stage": "daughterboard-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.29
+      "seconds": 3.43
     },
     {
       "stage": "mechanical-design",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.64
+      "seconds": 2.63
     },
     {
       "stage": "plate-source",
@@ -109,43 +109,49 @@
       "stage": "assembly-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 32.27
+      "seconds": 32.05
     },
     {
       "stage": "interconnect-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.08
+      "seconds": 2.05
     },
     {
       "stage": "interconnect-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 22.2
+      "seconds": 22.04
     },
     {
       "stage": "render-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 12.02
+      "seconds": 11.97
     },
     {
       "stage": "interconnect-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.65
+      "seconds": 3.64
     },
     {
       "stage": "board-guidance",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.62
+      "seconds": 1.66
     },
     {
       "stage": "purchase-bom",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.04
+      "seconds": 0.05
+    },
+    {
+      "stage": "inventory-purchase-plan",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.03
     },
     {
       "stage": "readme-materials",
@@ -154,10 +160,28 @@
       "seconds": 0.03
     },
     {
-      "stage": "inventory-purchase-plan",
+      "stage": "illustration-native-map",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.03
+      "seconds": 1.3
+    },
+    {
+      "stage": "plate-copper-firmware-map",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.17
+    },
+    {
+      "stage": "plate-map-fault-injection",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.23
+    },
+    {
+      "stage": "illustrated-build-guide",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.4
     },
     {
       "stage": "inventory-allocation-fault-injection",
@@ -169,7 +193,7 @@
       "stage": "fabrication-review-package",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.23
+      "seconds": 3.99
     },
     {
       "stage": "power-calculation",
@@ -187,19 +211,19 @@
       "stage": "cell-screening",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.7
+      "seconds": 4.62
     },
     {
       "stage": "assembly-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 8.61
+      "seconds": 8.8
     },
     {
       "stage": "engineering-evidence",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.05
+      "seconds": 0.04
     },
     {
       "stage": "engineering-fault-injection",
@@ -211,19 +235,19 @@
       "stage": "documentation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.27
+      "seconds": 0.3
     },
     {
       "stage": "cross-domain-integration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.14
+      "seconds": 0.18
     },
     {
       "stage": "integration-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.33
+      "seconds": 0.37
     },
     {
       "stage": "design-inputs-unchanged",
@@ -270,7 +294,7 @@
     {
       "id": "fabrication",
       "status": "open",
-      "description": "Verify filled/capped U1 vias, manufacturing output parity and component ratings"
+      "description": "Ordinary four-layer through-via conversion and output parity checked; confirm stock stackup/tolerances, open thermal-via soldering and final component ratings with the fabricator/assembler"
     },
     {
       "id": "physical-tests",

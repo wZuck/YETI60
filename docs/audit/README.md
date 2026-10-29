@@ -11,6 +11,7 @@ The [P2 checkpoint](../design-checkpoint.md) describes the current design and re
 | Unified result | [Stage outcomes](outcome.json), [integration](integration.json) |
 | Schematic and PCB | [Fresh schematic parity/ERC](schematic-current.json), [strict CAD](../../hardware/ec60-nrf52840/audit-current.json), [electrical review](yeti60-electrical.json) |
 | Firmware core | [Host sanitizer simulation](yeti60-firmware-simulation.json), [trace](yeti60-firmware-trace.csv) |
+| Illustrated installation | [28-step guide](../assembly/build-guide.md), [image/reference validation](yeti60-build-guide-check.json), [plate/copper/firmware mapping](yeti60-key-geometry.json) |
 | Mechanical | [Read-only plate comparison](plate.json), [PCB metadata](yeti60-pcb-mechanical-metadata.json), [conditional assembly](yeti60-assembly.json) |
 | Render provenance | [Geometry](yeti60-render-geometry.json), [assembly images](../../renders/yeti60-assembly/README.md), [PCB images/animation](../../renders/ec60-nrf52840/README.md) |
 | Documents and files | [Document checks](documentation-check.json), [source inventory](source-inventory.json) |

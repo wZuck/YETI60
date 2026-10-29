@@ -22,6 +22,7 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 - [Feasibility assessment response](docs/engineering/assessment-response.md)
 - [Ordinary fabrication review package](docs/engineering/fabrication-review.md)
 - [Engineering assembly sheets and sequence](docs/engineering/assembly.md)
+- [28-step illustrated soldering and installation guide](docs/assembly/build-guide.md)
 - [Battery recess feasibility](docs/engineering/battery-study.md)
 - [Power, runtime and charging calculation](docs/engineering/power-budget.md)
 - [Materials and procurement table](docs/engineering/materials.md)
@@ -56,6 +57,17 @@ The supplied order-derived inventory covers **10** of the 76 mainboard parts by 
 | Uniroyal 0402WGF1002TCE, 10 kohm / 1% / 0402 | R26 | 1 |
 
 Use the [stock-adjusted mainboard purchase CSV](hardware/bom/mainboard-purchase.csv) and [inventory decisions](docs/engineering/inventory-allocation.md) alongside the full preparation list below. Other assemblies and mechanical materials still require procurement or compatibility confirmation. A populated C5 includes its seven parts; if self-assembling a bare C5 instead, two stocked 5.1 kohm resistors can supply C5 R1/R2. The stock nice!nano, 110 mAh cell, 0805 capacitors and short PCB screws do not directly replace the specified parts. No board or case dimensions change for this allocation.
+
+### Which PCBs to fabricate
+
+Quantities are net boards per keyboard; the fabricator's minimum order quantity is separate. Fabricate **one mainboard** when buying a populated C5, or **one mainboard plus one C5 JSH bare board** when soldering the daughterboard yourself.
+
+| PCB | Quantity | Dimensions and process | Source and fabrication files |
+|---|---:|---|---|
+| YETI60 mainboard | 1 | 285.0 x 94.6 mm outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [current Gerber/drill review ZIP](hardware/fabrication/yeti60-p2-dfm-review.zip), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
+| Unified Daughterboard C5 JSH | 1 only for self-assembly; 0 if purchased populated | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](hardware/bom/daughterboard.csv) |
+
+These are separate fabrication orders/files: the mainboard ZIP does not contain C5. Both archives contain four copper layers; do not select a two-layer process for C5. The mainboard archive is for manufacturing review, with final component/stencil and supplier acceptance still pending. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and five routing guides are mechanical parts, not additional PCBs. For self-reflow, use mainboard **B.Paste** and C5 **F.Paste** with a qualified stencil/profile.
 
 ### Electronic assemblies, battery and cables
 

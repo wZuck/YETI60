@@ -59,6 +59,12 @@ def verify():
     assert inventory['required_mainboard_parts']==inventory['planned_stock_parts']+inventory['net_purchase_parts']==76
     assert inventory['in_transit_credited']==inventory['optional_c5_parts_credited']==0
     assert not inventory['physical_remaining_count_confirmed'] and not inventory['production_approved']
+    key_geometry=read(AUD/'yeti60-key-geometry.json');hashes(key_geometry['source_sha256'])
+    assert key_geometry['status']=='plate-copper-firmware-mapping-passed' and len(key_geometry['matches'])==60
+    guide=read(AUD/'yeti60-build-guide.json');hashes(guide['source_sha256']);hashes(guide['outputs'])
+    guide_check=read(AUD/'yeti60-build-guide-check.json')
+    assert guide_check['status']=='passed' and guide_check['guide_manifest_sha256']==sha(AUD/'yeti60-build-guide.json')
+    assert guide_check['verification_recipe_sha256']==sha(ROOT/'scripts/check_yeti60_build_guide.py')
     engineering=read(AUD/'yeti60-engineering.json');assert engineering['status']=='passed';hashes(engineering['evidence_sha256'],AUD)
     target=read(AUD/'yeti60-target-build.json');assert target['status']=='built';hashes(target['source_sha256'])
     for variant in target['variants'].values():hashes(variant['outputs'])

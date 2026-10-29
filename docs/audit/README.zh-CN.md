@@ -11,6 +11,7 @@
 | 统一结果 | [各阶段结果](outcome.json)、[一致性](integration.json) |
 | 原理图与 PCB | [重新导出的原理图一致性及 ERC](schematic-current.json)、[严格 CAD 检查](../../hardware/ec60-nrf52840/audit-current.json)、[电气复查](yeti60-electrical.json) |
 | 固件核心 | [主机消毒器模拟](yeti60-firmware-simulation.json)、[轨迹](yeti60-firmware-trace.csv) |
+| 逐图安装 | [28 步指南](../assembly/build-guide.zh-CN.md)、[图像及位号验证](yeti60-build-guide-check.json)、[定位板／铜箔／固件映射](yeti60-key-geometry.json) |
 | 机械 | [只读定位板比较](plate.json)、[PCB 元数据](yeti60-pcb-mechanical-metadata.json)、[条件装配](yeti60-assembly.json) |
 | 渲染来源 | [几何](yeti60-render-geometry.json)、[装配图](../../renders/yeti60-assembly/README.zh-CN.md)、[PCB 图与动画](../../renders/ec60-nrf52840/README.zh-CN.md) |
 | 文档及文件 | [文档检查](documentation-check.json)、[源码清单](source-inventory.json) |

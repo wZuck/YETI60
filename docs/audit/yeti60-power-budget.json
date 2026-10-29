@@ -5,10 +5,10 @@
   },
   "status": "conditional-sensitivity-model-not-measurement",
   "source_sha256": {
-    "firmware/target/src/scanner.c": "e812217c1198d86e7bc56b033b835d32428e192106874a02d41e6d4199f0f0e2",
+    "firmware/target/src/scanner.c": "684e34685f1d364209f2ac7722fa1b79b3473dc7aafb9fc8f15c7b22de3c57d4",
     "firmware/yeti60/core.c": "353ef280b7c84966dd6851e22ed98ad974bd58bbc5ae78b03a0623493e98ad49",
     "firmware/target/config/yeti60.conf": "2275fd710d346cb4b92e5c3587d3b676e9ff0d4d4ac2985c6b8f491b44f22184",
-    "firmware/target/boards/yeti/yeti60/yeti60.dts": "97272ab737e22fe1a1669e3abe67025e8298e9fccf5a61db9aeaa4cc71aa6c98",
+    "firmware/target/boards/yeti/yeti60/yeti60.dts": "d0d64e831bb5c10b665878d4cd76c4d058e99c37b478df8ce105cc00ded684c4",
     "docs/engineering/sources.json": "d7d9dec5692284b1d8c7c31b39b35e30e7e650021202cdf5213c69746b442305",
     "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
     "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
