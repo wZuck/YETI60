@@ -902,13 +902,13 @@
       ],
       "actions": [
         [
-          "With the complete mechanical stack supported at its intended preload, boot the calibrator and open its USB CDC console. Execute console commands one at a time, allowing release sampling before starting the press stage.",
-          "Run yeti_calibrate release with every key released, then yeti_calibrate press and fully press/release each of the 60 keys. Release all keys and run yeti_calibrate save; inspect the reported result.",
+          "Boot the calibrator with the complete mechanical stack at its intended preload. Run yeti_calibrate release with every key released; wait for the 128-frame completion message.",
+          "Use firmware/target/calibration-keys.csv. Hold each selected key BEFORE yeti_calibrate press ROW COL; keep holding until the 128-sample completion message. Repeat for all 60 keys, inspect yeti_calibrate status, then run yeti_calibrate save. Bare press is rejected.",
           "Power down before reconnecting SWD. Program and verify firmware/releases/normal/yeti60-raytac.hex using range/sector-aware flashing that preserves 0xF0000–0xFFFFF. Restart and check that calibration is retained."
         ],
         [
-          "完整机械结构按预定预压状态支撑，启动校准固件并打开 USB CDC 控制台。 三条命令分步执行，待松键采样完成后再进入按键采样阶段，不一次粘贴三条命令。",
-          "全部松键执行 yeti_calibrate release，再执行 yeti_calibrate press，完整按下并松开每个实际按键；最后全部松键执行 yeti_calibrate save，并检查返回结果。",
+          "完整机械结构按预定预压状态支撑，启动校准固件；全部松键执行 yeti_calibrate release，等待 128 帧采样完成提示。",
+          "按 firmware/target/calibration-keys.csv 操作，先按住目标键，再执行 yeti_calibrate press ROW COL；保持按住至 128 个采样完成后松开。逐个覆盖 60 键，检查 yeti_calibrate status，再执行 yeti_calibrate save；旧的无行列 press 命令会被拒绝。",
           "重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60-raytac.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。"
         ]
       ],
@@ -918,13 +918,13 @@
       ],
       "labels": [
         [
-          "release -> press -> save",
-          "Press all 60 keys",
+          "release -> press row col -> save",
+          "Hold until 128 samples complete",
           "Preserve final 64 KiB settings"
         ],
         [
-          "松键采样→按键采样→保存",
-          "完整按下全部 60 个键",
+          "松键→指定行列按键→保存",
+          "按住直到 128 个采样完成",
           "保留末尾 64 KiB 设置区"
         ]
       ]

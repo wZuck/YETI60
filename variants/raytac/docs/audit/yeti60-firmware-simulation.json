@@ -15,6 +15,8 @@
   "errors": "",
   "source_sha256": {
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
+    "firmware/yeti60/calibration.c": "0c90ae61fca8c2a7c1826d6e153abf08d73438d2dafbcc8398eb005888b8340e",
+    "firmware/yeti60/calibration.h": "abc7fb757d4585239dbe16e1c91a2d9352a9cda0255a8b86d400aaca6948cd8e",
     "firmware/yeti60/core.c": "353ef280b7c84966dd6851e22ed98ad974bd58bbc5ae78b03a0623493e98ad49",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "tests/yeti60/sim.c": "c55ac794f73755d440f7a10e471fd85683a302349ef963189960b96b7d1d6c07",

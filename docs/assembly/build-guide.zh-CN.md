@@ -452,8 +452,8 @@
 
 [放大矢量图](images/25-step.zh-CN.svg)
 
-1. 完整机械结构按预定预压状态支撑，启动校准固件并打开 USB CDC 控制台。 三条命令分步执行，待松键采样完成后再进入按键采样阶段，不一次粘贴三条命令。
-2. 全部松键执行 yeti_calibrate release，再执行 yeti_calibrate press，完整按下并松开每个实际按键；最后全部松键执行 yeti_calibrate save，并检查返回结果。
+1. 完整机械结构按预定预压状态支撑，启动校准固件；全部松键执行 yeti_calibrate release，等待 128 帧采样完成提示。
+2. 按 firmware/target/calibration-keys.csv 操作，先按住目标键，再执行 yeti_calibrate press ROW COL；保持按住至 128 个采样完成后松开。逐个覆盖 60 键，检查 yeti_calibrate status，再执行 yeti_calibrate save；旧的无行列 press 命令会被拒绝。
 3. 重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60-e73.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。
 
 **检查后再继续：** 保存校准后不使用全片擦除或恢复操作；量程不足、ADC 饱和须排查，没有有效校准时固件刻意不输出按键。

@@ -1,0 +1,38 @@
+{
+  "status": "candidate-only-not-applied-to-native-PCB",
+  "units": "mm",
+  "purpose": "Put antenna ends beyond both the PCB and original metal plate while preserving the FELK60 exterior",
+  "original_right_edge_X": 356.812704,
+  "proposed_PCB_wing_XY": [356.812704, 114.5, 361.2, 132.0],
+  "minimum_native_copper_to_edge": 0.5,
+  "additional_fabrication_outline_allowance": 0.2,
+  "bottom_relief_case_XYZ": [355.5, -133.0, -5.7, 364.8, -114.0, 0.2],
+  "bottom_relief_corner_radius": 0.8,
+  "minimum_floor_after_case_tolerance": 1.5,
+  "minimum_component_gap_after_case_tolerance": 0.1,
+  "minimum_board_gap_with_outline_and_assembly_allowances": 0.45,
+  "placements": {
+    "e73": {
+      "origin_PCB_XY": [346.0, 117.0],
+      "rotation_deg": 0,
+      "body_with_XY_tolerance_PCB": [345.9, 116.9, 364.1, 130.1],
+      "worst_bottom_Z": -5.2538,
+      "antenna_projection_PCB": [361.0, 117.0, 364.0, 130.0],
+      "antenna_region_basis": "Provisional last 3mm engineering band; vendor numeric keepout not available"
+    },
+    "raytac": {
+      "origin_PCB_XY": [356.25, 125.25],
+      "rotation_deg": 90,
+      "body_with_XY_tolerance_PCB": [348.3, 119.8, 364.2, 130.7],
+      "worst_bottom_Z": -4.4038,
+      "antenna_projection_PCB": [360.2, 120.0, 364.0, 130.5],
+      "antenna_region_basis": "Manufacturer minimum 3.8x10.5mm projection"
+    }
+  },
+  "limits": [
+    "Candidate BRep feasibility only; no native routing or fabrication approval",
+    "All module lands must be supported by the final board and pass native DRC",
+    "The final enclosure still requires measured RF and EC interference acceptance",
+    "Use ordinary JLC four-layer through-via process only"
+  ]
+}

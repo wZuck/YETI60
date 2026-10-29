@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 acceptance and test procedure
 
+[Remediation plan and closing evidence](remediation-plan.md) · [Guarded per-key calibration](calibration.md)
+
 **Design acceptance is on hold.** Both alternatives build and pass the implemented electrical/CAD checks, but the new interference screen found antenna layout risks. Raytac has GND copper inside its manufacturer's minimum antenna projection; E73 has copper in a provisional antenna-end screen and lacks a vendor-approved numeric keepout. Nearby metal plate projections affect both. See [interference results, calculations and sources](interference.md). No physical board exists; no physical row below is a pass.
 
 Choose one complete alternative throughout assembly, programming and testing:

@@ -34,10 +34,15 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--require-accepted',action='store_true');args=parser.parse_args()
     report=json.loads((ROOT/'docs/audit/acceptance.json').read_text());validate(report)
     fresh(report['source_sha256']);fresh(report['evidence_sha256']);fresh(report['outputs'])
-    for filename in ['interference-layout.json','interference-analog.json','interference-plate.json']:
+    for filename in ['interference-layout.json','interference-analog.json','interference-plate.json',
+                     'rf-remediation-candidate.json','rf-remediation-lands.json']:
         data=json.loads((ROOT/'docs/audit'/filename).read_text());fresh(data['source_sha256']);fresh(data.get('outputs',{}))
-        assert not data['physical_test_performed'] and not data['production_approved']
+        assert not data.get('physical_test_performed',data.get('physical_verification',False)) and not data['production_approved']
         for record in data.get('variants',{}).values():fresh(record.get('source_sha256',{}))
+    for folder in [ROOT,ROOT/'variants/raytac']:
+        data=json.loads((folder/'docs/audit/calibration.json').read_text())
+        assert data['status']=='passed' and not data['physical_verification']
+        fresh(data['source_sha256'],folder)
     print('Acceptance evidence current; CAD/build/model execution passed; RF design findings and physical acceptance remain ON HOLD.')
     return 2 if args.require_accepted else 0
 

@@ -39,7 +39,7 @@ def main():
         for name,h in record['outputs'].items():assert sha(ROOT/name)==h,'Changed firmware output: '+name
         folder=ROOT/'firmware/releases'/variant;elf=(folder/'yeti60-raytac.elf').read_bytes()
         assert elf[:6]==b'\x7fELF\x01\x01' and struct.unpack_from('<H',elf,18)[0]==40,'Not a 32-bit ARM ELF'
-        for symbol in [b'yeti_scan\0',b'bt_enable\0',b'zmk_hog_send_keyboard_report\0',b'zmk_usb_get_status\0']:
+        for symbol in [b'yeti_cal_thresholds\0',b'yeti_scan\0',b'bt_enable\0',b'zmk_hog_send_keyboard_report\0',b'zmk_usb_get_status\0']:
             assert symbol in elf,'Missing target implementation: '+str(symbol)
         assert len((folder/'yeti60-raytac.bin').read_bytes())<0xf0000
         offset=0;seen=set();ended=False

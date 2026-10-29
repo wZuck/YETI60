@@ -26,7 +26,8 @@ def main():
     command=[sys.executable,'scripts/run_all_variants.py']
     if args.refresh_guide:command.append('--refresh-guide')
     if args.check_existing_audits:command.append('--check-existing')
-    commands=[command,[kp,'scripts/screen_yeti60_interference.py'],
+    commands=[command,[kp,'scripts/study_yeti60_rf_lands.py'],
+              cad+['scripts/study_yeti60_rf_remediation.py'],[kp,'scripts/screen_yeti60_interference.py'],
               [sys.executable,'scripts/simulate_yeti60_interference.py'],
               cad+['scripts/check_yeti60_antenna_plate.py'],[kp,'tests/audit/test_interference.py']]
     executed=[]
@@ -47,8 +48,9 @@ def main():
                         'unconnected_items':b['unconnected_items'],'DRC_warnings':b['warnings_by_type'],
                         'physical_signal_pairs':len(b['physical_pin_pairs']),
                         'RF_acceptance':'hold','physical_acceptance':'not-run'}
-        evidence += [outcome,board,host,target,fit,guide,folder/'docs/audit/integration.json']
-    evidence += [ROOT/'docs/audit'/n for n in ['variants.json','interference-layout.json','interference-analog.json','interference-plate.json']]
+        evidence += [outcome,board,host,target,fit,guide,folder/'docs/audit/integration.json',folder/'docs/audit/calibration.json']
+    evidence += [ROOT/'docs/audit'/n for n in ['variants.json','interference-layout.json','interference-analog.json','interference-plate.json',
+                                            'rf-remediation-candidate.json','rf-remediation-lands.json']]
     sources=[Path(__file__),ROOT/'scripts/check_yeti60_acceptance.py',ROOT/'tests/audit/test_interference.py',
              ROOT/'design-constraints.json',ROOT/'docs/testing/vendor-sources.json',
              *sorted((ROOT/'docs/testing').glob('*.md'))]

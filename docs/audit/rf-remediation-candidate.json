@@ -1,0 +1,47 @@
+{
+  "status": "candidate-geometric-feasibility-passed-native-implementation-pending",
+  "production_approved": false,
+  "physical_verification": false,
+  "candidate_only": true,
+  "external_case_bounds_unchanged": true,
+  "variants": {
+    "e73": {
+      "case_overlap_mm3": [
+        0.0,
+        0.0
+      ],
+      "minimum_component_case_gap_mm": 0.44620000000000015,
+      "gap_after_case_tolerance_mm": 0.29620000000000013,
+      "antenna_plate_projection_overlap_mm3": 0,
+      "antenna_plate_lateral_gap_mm": 4.18679359295574,
+      "applied_to_native_PCB": false
+    },
+    "raytac": {
+      "case_overlap_mm3": [
+        0.0,
+        0.0
+      ],
+      "minimum_component_case_gap_mm": 0.6000000000000227,
+      "gap_after_case_tolerance_mm": 0.4500000000000227,
+      "antenna_plate_projection_overlap_mm3": 0,
+      "antenna_plate_lateral_gap_mm": 3.386829729012695,
+      "applied_to_native_PCB": false
+    }
+  },
+  "wing_case_gap_mm": 0.5,
+  "floor_samples": 595,
+  "minimum_sampled_floor_web_mm": 1.71,
+  "minimum_sampled_floor_web_after_case_tolerance_mm": 1.56,
+  "scope": "Conditional BRep screen, not native PCB, RF, strength or manufacturing approval",
+  "source_sha256": {
+    "mechanical/rf-remediation.json": "3fdd64dbc3a6d6e87ad0547d7c974460061132b7fe533e2a44e2f0f613f73171",
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "scripts/build_yeti60_mechanical.py": "e82ac56116be00aa657ac8411eb21ca1c5673d13ad29063e0d0da930d35f8943",
+    "scripts/check_yeti60_assembly.py": "12221f66129b35332273adaf3ed309dc20cd7994880842ceb98230b2fb97eeba",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/study_yeti60_rf_remediation.py": "3efa177bf1b9ba70c5deb9bc7e65b86a04fde4002e22db7db594a6a1794ffdbd"
+  }
+}

@@ -452,8 +452,8 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 [Vector enlargement](images/25-step.svg)
 
-1. With the complete mechanical stack supported at its intended preload, boot the calibrator and open its USB CDC console. Execute console commands one at a time, allowing release sampling before starting the press stage.
-2. Run yeti_calibrate release with every key released, then yeti_calibrate press and fully press/release each of the 60 keys. Release all keys and run yeti_calibrate save; inspect the reported result.
+1. Boot the calibrator with the complete mechanical stack at its intended preload. Run yeti_calibrate release with every key released; wait for the 128-frame completion message.
+2. Use firmware/target/calibration-keys.csv. Hold each selected key BEFORE yeti_calibrate press ROW COL; keep holding until the 128-sample completion message. Repeat for all 60 keys, inspect yeti_calibrate status, then run yeti_calibrate save. Bare press is rejected.
 3. Power down before reconnecting SWD. Program and verify firmware/releases/normal/yeti60-raytac.hex using range/sector-aware flashing that preserves 0xF0000–0xFFFFF. Restart and check that calibration is retained.
 
 **Check before continuing:** Do not use full-chip erase/recover after saving calibration. Rejected ranges or ADC saturation require diagnosis. Keys intentionally emit no events before valid calibration.

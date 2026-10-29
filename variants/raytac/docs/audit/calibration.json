@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "execution": "native host ASan/UBSan; no physical calibration performed",
+  "output": [
+    "Calibration: guarded worst-case populations accepted; insufficient, overlapping, noisy, saturated and out-of-range samples rejected (ASan/UBSan)."
+  ],
+  "minimum_samples": 64,
+  "capture_samples": 128,
+  "source_sha256": {
+    "firmware/yeti60/calibration.c": "0c90ae61fca8c2a7c1826d6e153abf08d73438d2dafbcc8398eb005888b8340e",
+    "firmware/yeti60/calibration.h": "abc7fb757d4585239dbe16e1c91a2d9352a9cda0255a8b86d400aaca6948cd8e",
+    "tests/yeti60/calibration.c": "ae585dbd2b7ef30e775f0b4baaf9985368099604a515c32e50632c5a85db8a66",
+    "scripts/test_yeti60_calibration.py": "70c91c499dda28df7d0ec16a906b35fb11d8c03823fc99da4be2d221a630315a"
+  },
+  "physical_verification": false
+}
