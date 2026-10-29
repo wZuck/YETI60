@@ -43,6 +43,20 @@ Quantities below are **net installed quantities for one complete keyboard, witho
 
 **Fabrication constraint: JLC ordinary four-layer FR-4 only. The previous blind-via/filled-and-capped design has been converted to mechanically drilled through vias; do not order the old HDI files.** Use the latest fabrication review after conversion. No second controller, per-key diodes or MX hot-swap sockets are required.
 
+### Use existing inventory first
+
+The supplied order-derived inventory covers **10** of the 76 mainboard parts by nominal value/package, leaving **66** to purchase for one keyboard. Count the actual unused stock and qualify capacitor effective capacitance before assembly. In-transit items are excluded. The original workbook is unchanged and is not published.
+
+| Stock MPN | References | Planned use |
+|---|---|---:|
+| Samsung CL05B104KO5NNNC, 100 nF / 16 V / X7R / 0402 | C9, C11, C12, C31 | 4 |
+| Samsung CL05A105KA5NQNC, 1 uF / 25 V / X5R / 0402 | C13, C48 | 2 |
+| Uniroyal 0402WGF0000TCE, 0 ohm / 0402 | R30, R31 | 2 |
+| Uniroyal 0402WGF1001TCE, 1 kohm / 1% / 0402 | R17 | 1 |
+| Uniroyal 0402WGF1002TCE, 10 kohm / 1% / 0402 | R26 | 1 |
+
+Use the [stock-adjusted mainboard purchase CSV](hardware/bom/mainboard-purchase.csv) and [inventory decisions](docs/engineering/inventory-allocation.md) alongside the full preparation list below. Other assemblies and mechanical materials still require procurement or compatibility confirmation. A populated C5 includes its seven parts; if self-assembling a bare C5 instead, two stocked 5.1 kohm resistors can supply C5 R1/R2. The stock nice!nano, 110 mAh cell, 0805 capacitors and short PCB screws do not directly replace the specified parts. No board or case dimensions change for this allocation.
+
 ### Electronic assemblies, battery and cables
 
 | Material | Quantity | Detailed specification and included items |

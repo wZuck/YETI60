@@ -1,0 +1,426 @@
+{
+  "status": "inventory-plan-reconciled-not-physical-stock-count",
+  "required_mainboard_parts": 76,
+  "planned_stock_parts": 10,
+  "net_purchase_parts": 66,
+  "in_transit_credited": 0,
+  "optional_c5_parts_credited": 0,
+  "physical_remaining_count_confirmed": false,
+  "production_approved": false,
+  "rows": [
+    {
+      "references": "C9, C11, C12",
+      "required": 3,
+      "from_stock": 3,
+      "buy": 0,
+      "value": "100n",
+      "package": "C_0402_1005Metric",
+      "stock_mpn": "Samsung CL05B104KO5NNNC",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": [
+        48
+      ]
+    },
+    {
+      "references": "C10",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "220p",
+      "package": "C_0402_1005Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "C13",
+      "required": 1,
+      "from_stock": 1,
+      "buy": 0,
+      "value": "1u",
+      "package": "C_0402_1005Metric",
+      "stock_mpn": "Samsung CL05A105KA5NQNC",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": [
+        57
+      ]
+    },
+    {
+      "references": "C30, C41, C42, C43, C45, C46",
+      "required": 6,
+      "from_stock": 0,
+      "buy": 6,
+      "value": "10u/10V",
+      "package": "C_0603_1608Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "C31",
+      "required": 1,
+      "from_stock": 1,
+      "buy": 0,
+      "value": "100n/16V",
+      "package": "C_0402_1005Metric",
+      "stock_mpn": "Samsung CL05B104KO5NNNC",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": [
+        48
+      ]
+    },
+    {
+      "references": "C32",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "4.7u/10V",
+      "package": "C_0603_1608Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "C40",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "1u/10V",
+      "package": "C_0603_1608Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "C44",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "100n/16V",
+      "package": "C_0603_1608Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "C47",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "10n",
+      "package": "C_0402_1005Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "C48",
+      "required": 1,
+      "from_stock": 1,
+      "buy": 0,
+      "value": "1u/10V",
+      "package": "C_0402_1005Metric",
+      "stock_mpn": "Samsung CL05A105KA5NQNC",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": [
+        57
+      ]
+    },
+    {
+      "references": "D1",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "PRTR5V0U2X",
+      "package": "SOT-143",
+      "stock_mpn": "",
+      "candidate_mpn": "Nexperia PRTR5V0U2X",
+      "source_rows": []
+    },
+    {
+      "references": "D2",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "STATUS",
+      "package": "LED_0603_1608Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "0603 status LED; vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "F1",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "500mA",
+      "package": "Fuse_1206_3216Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "1206 resettable fuse, 0.5 A hold",
+      "source_rows": []
+    },
+    {
+      "references": "J1",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "REAR_USB_DAUGHTERBOARD",
+      "package": "JST-SR-4",
+      "stock_mpn": "",
+      "candidate_mpn": "JST SM04B-SRSS-TB(LF)(SN), candidate",
+      "source_rows": []
+    },
+    {
+      "references": "J2",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "PROTECTED_1S_4V2_NTC10K",
+      "package": "JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal",
+      "stock_mpn": "",
+      "candidate_mpn": "JST S3B-PH-SM4-TB(LF)(SN)",
+      "source_rows": []
+    },
+    {
+      "references": "L1",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "1.5uH_74438336015",
+      "package": "L_Wuerth_MAPI-3015",
+      "stock_mpn": "",
+      "candidate_mpn": "Wurth 74438336015",
+      "source_rows": []
+    },
+    {
+      "references": "R3, R4, R5, R6, R7, R47, R53, R54",
+      "required": 8,
+      "from_stock": 0,
+      "buy": 8,
+      "value": "100",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "R8, R9, R10, R11, R12, R13, R14, R15, R16, R18, R19, R20, R21, R23, R24, R25, R42, R43, R44, R45, R46, R48, R49, R50",
+      "required": 24,
+      "from_stock": 0,
+      "buy": 24,
+      "value": "100k",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "R17",
+      "required": 1,
+      "from_stock": 1,
+      "buy": 0,
+      "value": "1k",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "Uniroyal 0402WGF1001TCE",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": [
+        51
+      ]
+    },
+    {
+      "references": "R26",
+      "required": 1,
+      "from_stock": 1,
+      "buy": 0,
+      "value": "10k",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "Uniroyal 0402WGF1002TCE",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": [
+        52
+      ]
+    },
+    {
+      "references": "R30, R31",
+      "required": 2,
+      "from_stock": 2,
+      "buy": 0,
+      "value": "0",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "Uniroyal 0402WGF0000TCE",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": [
+        50
+      ]
+    },
+    {
+      "references": "R32",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "2.2k",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "R40",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "2.21k/1%",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "R41",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "7.50k/1%",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "R51, R52",
+      "required": 2,
+      "from_stock": 0,
+      "buy": 2,
+      "value": "1M/1%",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "R55",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "69.8k/1%",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "R56",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "1.69k/1%",
+      "package": "R_0402_1005Metric",
+      "stock_mpn": "",
+      "candidate_mpn": "Vendor MPN unselected",
+      "source_rows": []
+    },
+    {
+      "references": "SW1",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "EVQPUC02K_RESET",
+      "package": "Panasonic_EVQPUL_EVQPUC",
+      "stock_mpn": "",
+      "candidate_mpn": "Panasonic EVQPUC02K",
+      "source_rows": []
+    },
+    {
+      "references": "SW100",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "JS102011SAQN_POWER",
+      "package": "SW_SPDT_CK_JS102011SAQN",
+      "stock_mpn": "",
+      "candidate_mpn": "C&K JS102011SAQN",
+      "source_rows": []
+    },
+    {
+      "references": "U1",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "MDBT50Q-1MV2",
+      "package": "Raytac_MDBT50Q",
+      "stock_mpn": "",
+      "candidate_mpn": "Raytac MDBT50Q-1MV2",
+      "source_rows": []
+    },
+    {
+      "references": "U2, U4",
+      "required": 2,
+      "from_stock": 0,
+      "buy": 2,
+      "value": "74HC4051",
+      "package": "TSSOP16",
+      "stock_mpn": "",
+      "candidate_mpn": "Nexperia 74HC4051PW,118",
+      "source_rows": []
+    },
+    {
+      "references": "U3",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "OPA350",
+      "package": "SOIC-8_3.9x4.9mm_P1.27mm",
+      "stock_mpn": "",
+      "candidate_mpn": "TI OPA350UA",
+      "source_rows": []
+    },
+    {
+      "references": "U5",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "BQ24074RGT",
+      "package": "VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm",
+      "stock_mpn": "",
+      "candidate_mpn": "TI BQ24074RGTR",
+      "source_rows": []
+    },
+    {
+      "references": "U6",
+      "required": 1,
+      "from_stock": 0,
+      "buy": 1,
+      "value": "TPS63031DSK",
+      "package": "WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm",
+      "stock_mpn": "",
+      "candidate_mpn": "TI TPS63031DSKR",
+      "source_rows": []
+    },
+    {
+      "references": "U7, U8",
+      "required": 2,
+      "from_stock": 0,
+      "buy": 2,
+      "value": "TPS22919DCK",
+      "package": "SOT-363_SC-70-6",
+      "stock_mpn": "",
+      "candidate_mpn": "TI TPS22919DCKR",
+      "source_rows": []
+    }
+  ],
+  "source_sha256": {
+    "hardware/bom/inventory-allocation.json": "353d8dd351e9e4f789a730736011fe9f73ea555d05c7d587668d559e6d963653",
+    "hardware/bom/mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
+    "hardware/bom/mainboard.zh-CN.csv": "6480581ab2117d3891a9b0e1c51c5991440e4ff3d2908679ac1cf1339d0ddb77",
+    "scripts/plan_yeti60_inventory.py": "aeb26762a23c88d174bcbf43e13fe6d609d5941709774836b78aa0fdb6a50207",
+    "hardware/usb-daughterboard/upstream/production/UDB-C-JSH_5.0_bom.csv": "ce6839496a7fb19a1e4c4fcca74f5610a714c74c635d351eae681d2bb52533b2",
+    "README.md": "b2f86c9d52519685e0f5674f821fe756883357e6d81934dab065a8d2d7850eca",
+    "README.zh-CN.md": "771cd4d14167431d6d9b4a1034600c3db7c0ec9a6a24d0ba4d339033c2effddb",
+    "docs/engineering/inventory-allocation.md": "72ee8c69fb848a149d2e858c4751532bc2671b699c86a0a5d3f3ec5eb3cc869e",
+    "docs/engineering/inventory-allocation.zh-CN.md": "6a4b4b181384b0cf153d95e17e468090e73cb66335e66f3435258ac2f8901c82"
+  },
+  "outputs": {
+    "hardware/bom/mainboard-purchase.csv": "e930eb69ca442bc5c1cc34661f1bae396a5ccb244fd4801caa3eb452b139db30",
+    "hardware/bom/mainboard-purchase.zh-CN.csv": "e9f325cc067ba9d44a9772cc96b53707fc09838c51b50025cefa69ab75ea3892"
+  }
+}

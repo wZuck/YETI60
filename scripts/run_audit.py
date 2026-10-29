@@ -46,6 +46,8 @@ def main():
     add('board-guidance',py,'check_yeti60_board_markings.py',deps=['pcb-geometry-contract'])
     add('purchase-bom',py,'export_yeti60_bom.py',deps=['pin-contract'])
     add('readme-materials',py,'check_yeti60_materials.py',deps=['purchase-bom'])
+    add('inventory-purchase-plan',py,'plan_yeti60_inventory.py',deps=['purchase-bom'])
+    stages.append(('inventory-allocation-fault-injection',py+['tests/audit/test_inventory.py'],['inventory-purchase-plan']))
     add('fabrication-review-package',py,'export_yeti60_fabrication.py',deps=['purchase-bom','ordinary-fabrication-contract','pcb-native-drc'])
     add('power-calculation',py,'calculate_yeti60_power.py',deps=['pin-contract'])
     add('battery-pocket',cad,'study_yeti60_battery_pocket.py',deps=['assembly-fit'])

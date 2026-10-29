@@ -45,6 +45,10 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/yeti60-assembly.json',
                      lambda data: data.update(colliding_envelopes=['injected collision']))
 
+    def test_inventory_cannot_credit_in_transit_parts(self):
+        self.rejects('docs/audit/yeti60-inventory.json',
+                     lambda data: data.update(in_transit_credited=1))
+
     def test_partial_render_keeps_stale_view(self):
         self.rejects('renders/yeti60-assembly/render-manifest.json',
                      lambda data: data['outputs']['rear.png'].update(recipe_sha256='0' * 64))

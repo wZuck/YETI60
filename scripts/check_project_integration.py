@@ -55,6 +55,10 @@ def verify():
                     assert item[key]==m[key],name+' was not rendered from current inputs'
     plot=read(ROOT/'renders/yeti60-firmware/plot-manifest.json'); assert plot['trace_sha256']==sim['trace_sha256']; assert plot['recipe_sha256']==sha(ROOT/'scripts/plot_yeti60_simulation.py'); hashes(plot['outputs'],ROOT/'renders/yeti60-firmware')
     materials=read(AUD/'yeti60-materials.json');assert materials['fitted_mainboard_parts']==76;hashes(materials['source_sha256'])
+    inventory=read(AUD/'yeti60-inventory.json');hashes(inventory['source_sha256']);hashes(inventory['outputs'])
+    assert inventory['required_mainboard_parts']==inventory['planned_stock_parts']+inventory['net_purchase_parts']==76
+    assert inventory['in_transit_credited']==inventory['optional_c5_parts_credited']==0
+    assert not inventory['physical_remaining_count_confirmed'] and not inventory['production_approved']
     engineering=read(AUD/'yeti60-engineering.json');assert engineering['status']=='passed';hashes(engineering['evidence_sha256'],AUD)
     target=read(AUD/'yeti60-target-build.json');assert target['status']=='built';hashes(target['source_sha256'])
     for variant in target['variants'].values():hashes(variant['outputs'])

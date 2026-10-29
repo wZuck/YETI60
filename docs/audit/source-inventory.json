@@ -14,14 +14,14 @@
     },
     {
       "path": "README.md",
-      "bytes": 16522,
-      "sha256": "f1b166e3c7ca5569197f59136065b7e933d89764edc0920ae6c53a2e65bd108f",
+      "bytes": 17864,
+      "sha256": "b2f86c9d52519685e0f5674f821fe756883357e6d81934dab065a8d2d7850eca",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 15481,
-      "sha256": "cc4e1bd24a4f22828f19e983295a8aee2c9d4ceb0a5f0564be840596318db0ea",
+      "bytes": 16755,
+      "sha256": "771cd4d14167431d6d9b4a1034600c3db7c0ec9a6a24d0ba4d339033c2effddb",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -199,15 +199,27 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "docs/engineering/inventory-allocation.md",
+      "bytes": 10015,
+      "sha256": "72ee8c69fb848a149d2e858c4751532bc2671b699c86a0a5d3f3ec5eb3cc869e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/inventory-allocation.zh-CN.md",
+      "bytes": 9423,
+      "sha256": "6a4b4b181384b0cf153d95e17e468090e73cb66335e66f3435258ac2f8901c82",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "docs/engineering/materials.md",
-      "bytes": 7150,
-      "sha256": "4824f7b6684ae3710e24659ccb1f4d6d719f3e920354448b6f3d1069a06ead15",
+      "bytes": 7538,
+      "sha256": "27f745d9d178fd376e841a7b0bf4d9bf3414d7d6dedeba01398a37fbe458e307",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/engineering/materials.zh-CN.md",
-      "bytes": 6432,
-      "sha256": "23d54783d350680f3d2795e8ed872af6d5a84484a7ea240ed2c9bc4fb977bd76",
+      "bytes": 6778,
+      "sha256": "3ee59e3a5cf71e7c123d8fa3767b24d19a35c3fb8d02f7a1a2d4fc4373cb8cfe",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -421,6 +433,24 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "hardware/bom/inventory-allocation.json",
+      "bytes": 2480,
+      "sha256": "353d8dd351e9e4f789a730736011fe9f73ea555d05c7d587668d559e6d963653",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/bom/mainboard-purchase.csv",
+      "bytes": 5176,
+      "sha256": "e930eb69ca442bc5c1cc34661f1bae396a5ccb244fd4801caa3eb452b139db30",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/bom/mainboard-purchase.zh-CN.csv",
+      "bytes": 4981,
+      "sha256": "e9f325cc067ba9d44a9772cc96b53707fc09838c51b50025cefa69ab75ea3892",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "hardware/bom/mainboard.csv",
       "bytes": 4961,
       "sha256": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
@@ -447,7 +477,7 @@
     {
       "path": "hardware/ec60-nrf52840/DRC-strict.json",
       "bytes": 41116,
-      "sha256": "3e147a4a80248bca83bea06476b0ef1804f64f6ff53c6a270597fc8c7f06c804",
+      "sha256": "df33a20479b42c26b652ce0c70de499a6f7aeaf40d6e8bd63d96cca3e2526a62",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -471,7 +501,7 @@
     {
       "path": "hardware/ec60-nrf52840/ERC.json",
       "bytes": 117023,
-      "sha256": "8d852cf2ac76c47d717b4884e57bd763a3ca8a924f1e4b26a898eb8df7115704",
+      "sha256": "f26e613757782734c93de3562accc4d727d8d279338d65e9521c7999248d5bba",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1593,7 +1623,7 @@
     {
       "path": "hardware/ec60-nrf52840/connectivity-changes.json",
       "bytes": 701,
-      "sha256": "e166a210004d29e68a51cd7cf2b1e9b29cb7c62506def2878f21da9ac8be3f28",
+      "sha256": "a104563de2d1100dca542ba15f0abc62e16f8a6d5372fb3514c636451609f2a9",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1994,8 +2024,8 @@
     },
     {
       "path": "scripts/check_project_integration.py",
-      "bytes": 6985,
-      "sha256": "c2eb69ac00d2c774b7855d249dc2273a8dc24ee929bdf4d86cdfe68ccd8aafb6",
+      "bytes": 7408,
+      "sha256": "86291535aa7c5e1bd66cd516f86bbc0ec197ff7f9f54d2e68a387b056514c85d",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2131,6 +2161,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/plan_yeti60_inventory.py",
+      "bytes": 6628,
+      "sha256": "aeb26762a23c88d174bcbf43e13fe6d609d5941709774836b78aa0fdb6a50207",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/plot_yeti60_simulation.py",
       "bytes": 2247,
       "sha256": "302aa1ec8af835e88bca68d2b99cc9d8c5a4f9d843a788646b10a099e1840b91",
@@ -2150,8 +2186,8 @@
     },
     {
       "path": "scripts/run_audit.py",
-      "bytes": 7935,
-      "sha256": "8911ed64eef33759788b4f865e80c1dda36d40912dbfd6dc607bfe18a2fb434c",
+      "bytes": 8147,
+      "sha256": "daf58e2ae32dc66295910a1851f84cbb17a5c542d2b7258ee390a36862290a71",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2186,8 +2222,14 @@
     },
     {
       "path": "tests/audit/test_integration.py",
-      "bytes": 2344,
-      "sha256": "a6cf65698829d63feadfad7f0e1f8a3ef1d637cbfdefd50cd0f5130d24a262d3",
+      "bytes": 2533,
+      "sha256": "9b0d887058de958c6ba08ee9d94e4623025e5825f63ad532c7ca1cb8b90fd3c3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/audit/test_inventory.py",
+      "bytes": 2255,
+      "sha256": "76b7f3d9f932d40cb6fdbd014c9177c1fb3c42980699c1eece5d72977c2b8d9b",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
