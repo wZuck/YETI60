@@ -2,7 +2,7 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60
 
-> **Two alternatives in this branch:** the main directories use Ebyte E73-2G4M08S1C; Raytac MDBT50Q-1MV2 is in [variants/raytac](variants/raytac/README.md). See [selection instructions](docs/engineering/module-options.md). E73 native DRC reaches 0 errors and 0 opens, and firmware is built. Complete evidence for both alternatives is being refreshed; production is not approved.
+> **Two alternatives in this branch:** the main directories use Ebyte E73-2G4M08S1C; Raytac MDBT50Q-1MV2 is in [variants/raytac](variants/raytac/README.md). See [selection instructions](docs/engineering/module-options.md). Both alternatives pass their implemented checks: E73 48 stages and Raytac 43 stages. See the [combined record](docs/audit/variants.json). Physical and supplier qualification remain open.
 
 A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
 
@@ -10,15 +10,15 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 
 ## Current review
 
-**E73 schematic/pin and target-build checks pass; PCB routing and full integration remain in progress.** The [comprehensive review](docs/audit/yeti60-comprehensive-review.md) documents the implemented P2 design and remaining supplier, tolerance, harness and physical acceptance.
+**Both alternatives pass their current CAD, build and integration checks; production and physical operation remain unqualified.** The [comprehensive review](docs/audit/yeti60-comprehensive-review.md) documents the implemented P2 design and remaining supplier, tolerance, harness and physical acceptance.
 
 | Scope | Evidence and result |
 |---|---|
-| PCB | E73 footprint and native netlist match; local routing and strict DRC closure remain in progress; not ready to fabricate |
+| PCB | E73: strict DRC 0 errors / 0 opens; 270 physical signal pairs and all critical paths pass; 114 warnings (102 virtual courtyards, 7 dangling stubs, 5 via alignment). Ordinary JLC four-layer, no blind/buried/module vias-in-pad |
 | Firmware | New schematic-bound control core passes host ASan/UBSan simulation; normal/calibrator target binaries now build; on-device USB/BLE and EC calibration remain pending |
 | Mechanical | Source PCB/plate/case nominal geometry has no overlap at the explicitly provisional Z stack; final dome/fastener/resin tolerances are unqualified |
 | Battery | Default custom 1600 mAh, complete 85×43×4.8 mm; supplier drawing/current clarification and independent thermal protection approval pending |
-| Visualization | Regeneration for E73 pending; existing images describe the Raytac baseline |
+| Visualization | Each alternative has its own checked 28-step bilingual guide, PCB animation and source-linked assembly renders |
 
 - [Internal connections and cable drawing](docs/engineering/interconnects.md)
 - [Feasibility assessment response](docs/engineering/assessment-response.md)
@@ -64,7 +64,7 @@ Use the [stock-adjusted mainboard purchase CSV](hardware/bom/mainboard-purchase.
 
 Quantities are net boards per keyboard; the fabricator's minimum order quantity is separate. Fabricate **one mainboard** when buying a populated C5, or **one mainboard plus one C5 JSH bare board** when soldering the daughterboard yourself.
 
-| PCB | E73 footprint and native netlist match; local routing and strict DRC closure remain in progress; not ready to fabricate |
+| PCB | E73: strict DRC 0 errors / 0 opens; 270 physical signal pairs and all critical paths pass; 114 warnings (102 virtual courtyards, 7 dangling stubs, 5 via alignment). Ordinary JLC four-layer, no blind/buried/module vias-in-pad |
 |---|---:|---|---|
 | YETI60 E73 mainboard | 1 | 285.0 x 94.6 mm outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [E73 Gerber/drill review ZIP](hardware/fabrication/yeti60-e73-p2-dfm-review.zip), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
 | Unified Daughterboard C5 JSH | 1 only for self-assembly; 0 if purchased populated | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](hardware/bom/daughterboard.csv) |

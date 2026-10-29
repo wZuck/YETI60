@@ -1,5 +1,5 @@
 {
-  "reference_commit": "8bafb0c9b456383b272ec51424ffc987200ba2ce",
+  "reference_commit": "52b8d56be0b162c7f9585936349c08ddcb7c338f",
   "regressed_pairs": [],
   "improved_pairs": [],
   "new_component_pairs": [],
@@ -7,6 +7,6 @@
   "source_sha256": {
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
     "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
-    "scripts/check_pcb_connectivity_regression.py": "4f6318f4e3823399607ae95f41fe8a471dea3dd53bb44d5ebc1da4b25682c657"
+    "scripts/check_pcb_connectivity_regression.py": "16b0d14a571b39a0b5aa88ae87f4caa20e7e0c78db457451671f34475dfe96a5"
   }
 }

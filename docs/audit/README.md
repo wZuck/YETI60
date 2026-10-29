@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 current audit
 
+This page records the main-directory E73 option. The same-branch Raytac audit has a [separate index](../../variants/raytac/docs/audit/README.md). From the repository root, `python3 scripts/run_all_variants.py` audits both sequentially; `--check-existing` verifies existing reports and current integration, while `--refresh-renders` rebuilds all images.
+
 The [P2 checkpoint](../design-checkpoint.md) describes the current design and remaining physical/supplier work. The comprehensive review records current evidence and acceptance limits. Passing checks is not production approval.
 
 [Feasibility and component compatibility assessment](2026-10-28-feasibility-assessment.md)

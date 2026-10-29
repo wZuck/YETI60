@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
 OPTIONS={'e73':ROOT,'raytac':ROOT/'variants/raytac'}
@@ -17,8 +18,17 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def verify_archive(path, module):
+    with zipfile.ZipFile(path) as archive:
+        manifest=json.loads(archive.read('manifest.json'))
+    assert manifest.get('controller_module')==module, 'Manufacturing archive belongs to a different module'
+    assert manifest['copper_layers']==['F.Cu','In1.Cu','In2.Cu','B.Cu']
+    assert manifest['blind_drill_hits']==0 and manifest['placement_parts']==76
+    return {'module':module,'sha256':sha(path),'copper_layers':4,'blind_drill_hits':0,'placements':76}
+
+
 def parity():
-    records={}
+    records={};packages={}
     for name,folder in OPTIONS.items():
         read=lambda p:json.loads((folder/p).read_text())
         with (folder/'hardware/bom/mainboard.csv').open() as source:
@@ -29,6 +39,11 @@ def parity():
                        'board':read('hardware/ec60-nrf52840/audit-current.json')}
         assert records[name]['board']['mcu_count']==1 and not records[name]['board']['unconnected_items']
         assert records[name]['board']['status']=='cad-checks-passed'
+        module=next(r['Design value'] for r in parts if r['References']=='U1')
+        packages[name]=verify_archive(folder/'hardware/fabrication'/('yeti60-'+name+'-p2-dfm-review.zip'),module)
+        target=read('docs/audit/yeti60-target-check.json')
+        assert target['status']=='passed' and set(target['variants'])=={'normal','calibrator'}
+        assert all(v['arm_elf'] and v['settings_partition_preserved'] and v['USB_configuration_mA']==500 for v in target['variants'].values())
     a,b=records['e73'],records['raytac']
     assert [r for r in a['parts'] if r['References']!='U1']==[r for r in b['parts'] if r['References']!='U1'], 'Non-module BOM diverged'
     assert a['fit']['mounting_hole_matches']==b['fit']['mounting_hole_matches'], 'Mounting geometry diverged'
@@ -38,7 +53,8 @@ def parity():
         assert option['inventory']['planned_stock_parts']==10 and option['inventory']['net_purchase_parts']==66
         assert len(option['keys']['matches'])==60
     return {'controllers_per_keyboard':1,'keys':60,'mounts':29,'non_module_BOM_identical':True,
-            'shared_case_and_battery':True,'stock_use_per_selected_keyboard':10,'mainboard_to_buy':66}
+            'shared_case_and_battery':True,'stock_use_per_selected_keyboard':10,'mainboard_to_buy':66,
+            'variant_manufacturing_packages':packages,'built_ARM_targets':4}
 
 
 def main():
@@ -63,10 +79,11 @@ def main():
     if okay:
         try:
             agreement=parity()
+            subprocess.run([sys.executable,'tests/audit/test_variant_packages.py'],cwd=ROOT,check=True)
             # A later variant must not invalidate evidence for the earlier one.
             for name,folder in OPTIONS.items():
                 subprocess.run([sys.executable,'scripts/check_project_integration.py'],cwd=folder,check=True)
-        except (AssertionError,subprocess.CalledProcessError) as failure:
+        except (AssertionError,KeyError,FileNotFoundError,zipfile.BadZipFile,subprocess.CalledProcessError) as failure:
             okay=False;error=str(failure)
     for folder in OPTIONS.values():
         spec=importlib.util.spec_from_file_location('inventory',folder/'scripts/run_audit.py')
@@ -74,7 +91,7 @@ def main():
     report={'status':'both-variant-checks-passed-production-incomplete' if okay else 'variant-checks-failed',
             'mode':'existing-reports-and-current-integration' if args.check_existing else 'full-audits-and-current-integration',
             'production_approved':False,'variants':results,'feature_parity':agreement,'error':error,
-            'source_sha256':{str(Path(__file__).relative_to(ROOT)):sha(Path(__file__))},
+            'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__),ROOT/'tests/audit/test_variant_packages.py']},
             'outcome_sha256':{r['audit']:sha(ROOT/r['audit']) for r in results.values()},
             'scope':'Both complete designs in this branch; no physical acceptance or RF/SI certification'}
     (ROOT/'docs/audit/variants.json').write_text(json.dumps(report,indent=2)+'\n')

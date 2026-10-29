@@ -2,6 +2,8 @@
 
 # YETI60 当前审计
 
+本页记录主目录 E73 方案；同一分支的 Raytac 独立审查见[对应索引](../../variants/raytac/docs/audit/README.zh-CN.md)。根目录运行 `python3 scripts/run_all_variants.py` 可顺序检查两套方案，`--check-existing` 核对现有报告及当前集成，`--refresh-renders` 更新全部图像。
+
 [P2 阶段记录](../design-checkpoint.zh-CN.md)说明当前设计和待供方／实物验收项目；完整复查记录当前证据和验收边界。检查通过不等于批准生产。
 
 [可行性与元件匹配评估](2026-10-28-feasibility-assessment.zh-CN.md)

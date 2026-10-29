@@ -71,6 +71,7 @@ def main():
         assert any('NPTH' in n for n in drills) and any('PTH' in n and 'NPTH' not in n for n in drills)
         files = {p.name:sha(p) for p in sorted(work.iterdir()) if p.is_file()}
         manifest = {'purpose':'DFM and assembly review only; not manufacturing release',
+                    'controller_module':next(r['value'] for r in bom['rows'] if r['references']=='U1'),
                     'source_sha256':source_hashes, 'files_sha256':files,
                     'copper_layers':['F.Cu','In1.Cu','In2.Cu','B.Cu'],
                     'blind_drill_file':blind_name, 'blind_drill_hits':len(hits),

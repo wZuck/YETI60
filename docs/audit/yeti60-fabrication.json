@@ -1,5 +1,6 @@
 {
   "purpose": "DFM and assembly review only; not manufacturing release",
+  "controller_module": "E73-2G4M08S1C",
   "source_sha256": {
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
     "hardware/bom/mainboard.csv": "5aac9c838ba556e40a72bfe6aa6c13b9109aeea2406ffd50a38ed8fd4f2a550b",
@@ -9,7 +10,7 @@
     "hardware/ec60-nrf52840/fabrication-notes.zh-CN.md": "769a66505af1195a0c45d4367f4f1458d01c923364f7f63835061258e5f103fc",
     "docs/engineering/fabrication-review.md": "b0c415a1cfe4ccb41fb69d0378f932f3a67fbe1f2cf969c681542384b49ffdfb",
     "docs/engineering/fabrication-review.zh-CN.md": "139b65b25930d533242ac68b67ca41bcc5598cd920b2d0c236238c973079fbaf",
-    "scripts/export_yeti60_fabrication.py": "eba2ad1a2ffb71de796b1aeb1a8be31dde44048a45a016ca82c5ee2515db3a97"
+    "scripts/export_yeti60_fabrication.py": "57ee6368f05b210ad055d2856c3a3aacce4428f9d8b93eac29f63f2e0b4e68c2"
   },
   "files_sha256": {
     "EC60-nRF52840-B_Cu.gbl": "fb20c4192c2f0f93b9826fa6a7037ab6ccaf3100f466d38f37bfb0f02c9acef1",
@@ -56,6 +57,6 @@
   "production_approved": false,
   "status": "review-package-generated-not-order-release",
   "outputs": {
-    "hardware/fabrication/yeti60-e73-p2-dfm-review.zip": "e92e0dd459bea2cb7abc38ac1c090fe6ff7b1edb9b8a36263c6503cd92fa0659"
+    "hardware/fabrication/yeti60-e73-p2-dfm-review.zip": "583f9996943e4e0570252af55f7547c2d94309197cf7c24701f2c266a81a9e12"
   }
 }

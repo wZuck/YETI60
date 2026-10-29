@@ -8,12 +8,12 @@
 
 | 方案 | PCB 与完整材料 | 固件 | 工艺与状态 |
 |---|---|---|---|
-| Ebyte E73-2G4M08S1C | [主目录清单](../../README.zh-CN.md)、[原生 PCB](../../hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [正常版](../../firmware/releases/normal/yeti60-e73.hex)、[校准版](../../firmware/releases/calibrator/yeti60-e73.hex) | 普通四层；原生 DRC 已达到 0 错误、0 未连接；正在完成全部证据更新 |
-| Raytac MDBT50Q-1MV2 | [Raytac 清单](../../variants/raytac/README.zh-CN.md)、[原生 PCB](../../variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | 见 [Raytac 固件说明](../../variants/raytac/firmware/target/README.zh-CN.md) | 保留已验证基线；正在复查同分支目录与发布文件 |
+| Ebyte E73-2G4M08S1C | [主目录清单](../../README.zh-CN.md)、[原生 PCB](../../hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [正常版](../../firmware/releases/normal/yeti60-e73.hex)、[校准版](../../firmware/releases/calibrator/yeti60-e73.hex) | 普通四层；DRC 0 错误／0 未连接；48 项审查通过 |
+| Raytac MDBT50Q-1MV2 | [Raytac 清单](../../variants/raytac/README.zh-CN.md)、[原生 PCB](../../variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [正常版](../../variants/raytac/firmware/releases/normal/yeti60-raytac.hex)、[校准版](../../variants/raytac/firmware/releases/calibrator/yeti60-raytac.hex) | 普通四层；DRC 0 错误／0 未连接；43 项审查通过 |
 
 一把键盘只需制作所选主板一块，另按选择购买成品或自焊 C5 JSH，不能把两种主板都计入同一把键盘的材料。主板两方案均可计划使用同一组库存无源元件 10 只，均需补购 66 只；它们是互斥选择，不是重复扣减库存。两种模组均不在所提供库存中。
 
-用 `python3 scripts/run_all_variants.py` 顺序检查两种方案；加入 `--refresh-renders` 同时更新图像。根目录的全方案汇总将写入 `docs/audit/variants.json`。当前正在生成完整汇总，不能将旧图片或旧审查记录当作新文件的验收依据。
+用 `python3 scripts/run_all_variants.py` 顺序检查两种方案；加入 `--refresh-renders` 同时更新图像。根目录的全方案汇总将写入 `docs/audit/variants.json`。[合并验证记录](../audit/variants.json)确认两套设计及对应制板包。实物验收和信号干扰仍未验证。
 
 ## E73 来源与引脚阶段记录
 
@@ -61,3 +61,12 @@
 | SWDCLK | 39 | SWDCLK | 外围半孔 |
 | APLEX_EN_PIN_1 | 41 | P0.09 | 外围半孔 |
 | PGOOD_N | 43 | P0.10 | 外围半孔 |
+
+## 制板包与条件功耗
+
+| 方案 | 制板包 | 固件电源模式 | 1600 mAh 条件规划续航 |
+|---|---|---|---|
+| E73 | [E73 制板审查包](../../hardware/fabrication/yeti60-e73-p2-dfm-review.zip) | REG1 LDO | 90.77 小时 |
+| Raytac | [Raytac 制板审查包](../../variants/raytac/hardware/fabrication/yeti60-raytac-p2-dfm-review.zip) | REG1 DC/DC | 106.64 小时 |
+
+续航是各方案功耗文档列出的敏感性模型点，不是实测或保证值。两个压缩包均带模组标识、四层铜、零盲孔及 76 个贴装位置；C5 子板另按完整材料表处理。E73 与 Raytac 分别保留 114／108 项 DRC 警告，错误及未连接均为零，详见各自原生审查报告。

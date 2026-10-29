@@ -2,7 +2,7 @@
 
 # YETI60
 
-> **同一分支，两套方案：**主目录默认使用 Ebyte E73-2G4M08S1C；Raytac MDBT50Q-1MV2 位于 [variants/raytac](variants/raytac/README.zh-CN.md)。见[完整选择说明](docs/engineering/module-options.zh-CN.md)。E73 原生 DRC 已达到 0 错误、0 未连接，固件已构建；两套方案完整证据正在更新，尚未批准生产。
+> **同一分支，两套方案：**主目录默认使用 Ebyte E73-2G4M08S1C；Raytac MDBT50Q-1MV2 位于 [variants/raytac](variants/raytac/README.zh-CN.md)。见[完整选择说明](docs/engineering/module-options.zh-CN.md)。两套方案的已实现检查均通过：E73 48 项、Raytac 43 项。见[合并检查记录](docs/audit/variants.json)。实物及供应商验收仍待完成。
 
 以 Cipulot EC60 为基础、使用 FELK60 外壳的单 nRF52840 静电容键盘 PCB。保留感应几何、板框和安装孔位置；后侧 USB 子板连接 J1。
 
@@ -10,15 +10,15 @@
 
 ## 当前复查
 
-**E73 原理图／引脚及目标构建检查通过，PCB 布线与完整集成验证仍在进行。** [完整复查](docs/audit/yeti60-comprehensive-review.zh-CN.md)记录当前 P2 设计和待供方、公差、线束及实物验收事项。
+**两套方案当前 CAD、构建及集成检查均通过；尚未获得生产及实物运行验收。** [完整复查](docs/audit/yeti60-comprehensive-review.zh-CN.md)记录当前 P2 设计和待供方、公差、线束及实物验收事项。
 
 | 范围 | 结果 |
 |---|---|
-| PCB | E73 封装与原生网络表匹配；局部布线及严格 DRC 尚未闭环，不可制板 |
+| PCB | E73：严格 DRC 0 错误／0 未连接，270 组信号引脚及全部关键路径通过；114 项警告（102 项虚拟元件边界、7 项走线末端、5 项过孔对中）。JLC 普通四层，无盲埋孔或模组盘中孔 |
 | 固件 | 按原理图绑定的新控制核心通过主机 ASan/UBSan；已完成 GPIO/SAADC 与 USB/BLE 目标集成，普通版和校准版构建通过；实机验证待进行 |
 | 机械 | 明确暂定 Z 结构下，源 PCB／定位板／壳体无实体相交；胶碗、螺钉和树脂公差未定型 |
 | 电池 | 默认定制 1600 mAh，完整包络 85×43×4.8 mm；供方签图、电流资料更正及独立温度保护验收待完成 |
-| 可视化 | 正在更新 E73 图像；现有图片仍对应 Raytac 基线 |
+| 可视化 | 两套方案分别提供已核对的 28 步双语指南、PCB 动画和绑定来源的装配渲染 |
 
 - [内部连接及线束装配图](docs/engineering/interconnects.zh-CN.md)
 - [可行性评估回应](docs/engineering/assessment-response.zh-CN.md)
@@ -64,7 +64,7 @@
 
 数量为一把键盘的净用量，板厂起订数量另计。购买成品 C5 时，只制作 **一块主板**；自行焊子板时，制作 **一块主板加一块 C5 JSH 裸板**。
 
-| PCB | E73 封装与原生网络表匹配；局部布线及严格 DRC 尚未闭环，不可制板 |
+| PCB | E73：严格 DRC 0 错误／0 未连接，270 组信号引脚及全部关键路径通过；114 项警告（102 项虚拟元件边界、7 项走线末端、5 项过孔对中）。JLC 普通四层，无盲埋孔或模组盘中孔 |
 |---|---:|---|---|
 | YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [可编辑 KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb)、[E73 Gerber／钻孔审查包](hardware/fabrication/yeti60-e73-p2-dfm-review.zip)、[制板工艺要求](hardware/ec60-nrf52840/fabrication-notes.zh-CN.md) |
 | Unified Daughterboard C5 JSH 子板 | 自焊时 1 块；买成品时 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](hardware/bom/daughterboard.zh-CN.csv) |
