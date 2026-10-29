@@ -10,11 +10,11 @@ ROOT=Path(__file__).resolve().parents[1]; AUD=ROOT/'docs/audit'; HW=ROOT/'hardwa
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def inventory():
     names=subprocess.check_output(['git','ls-files','-z','--cached','--others','--exclude-standard'],cwd=ROOT).decode().split('\0')
-    files=[{'path':n,'bytes':(ROOT/n).stat().st_size,'sha256':sha(ROOT/n),'coverage':'inventoried-not-automatically-approved'} for n in sorted(set(names)) if n and (ROOT/n).is_file() and not n.startswith('docs/audit/')]
+    files=[{'path':n,'bytes':(ROOT/n).stat().st_size,'sha256':sha(ROOT/n),'coverage':'inventoried-not-automatically-approved'} for n in sorted(set(names)) if n and (ROOT/n).is_file() and '/docs/audit/' not in '/'+n]
     (AUD/'source-inventory.json').write_text(json.dumps({'files':files,'excluded':'Git internals, ignored local state, upstream submodule contents, and audit outputs to avoid self-hashing','semantic_review_complete':False},indent=2)+'\n')
 def main():
     if not __debug__:raise SystemExit('Audit requires assertions enabled')
-    p=argparse.ArgumentParser();p.add_argument('--baseline',default='HEAD');p.add_argument('--refresh-renders',action='store_true');p.add_argument('--require-production',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--baseline',default='HEAD');p.add_argument('--refresh-renders',action='store_true');p.add_argument('--refresh-guide',action='store_true');p.add_argument('--require-production',action='store_true');a=p.parse_args()
     uv=shutil.which('uv') or str(Path.home()/'.local/bin/uv')
     kp=os.environ.get('KICAD_PYTHON','/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3')
     cad=[os.environ['YETI_CAD_PYTHON']] if 'YETI_CAD_PYTHON' in os.environ else [uv,'run','--with-requirements',str(ROOT/'requirements-audit.txt'),'python']
@@ -53,7 +53,11 @@ def main():
     add('illustration-native-map',native,'export_yeti60_build_map.py',deps=['purchase-bom','assembly-fit'])
     add('plate-copper-firmware-map',cad,'check_yeti60_key_geometry.py',deps=['illustration-native-map'])
     stages.append(('plate-map-fault-injection',cad+['tests/audit/test_key_geometry.py'],['plate-copper-firmware-map']))
-    add('illustrated-build-guide',py,'check_yeti60_build_guide.py',deps=['plate-copper-firmware-map','render-geometry'])
+    guide_deps=['plate-copper-firmware-map','render-geometry']
+    if a.refresh_renders or a.refresh_guide:
+        add('illustration-regeneration',cad,'draw_yeti60_build_guide.py',deps=guide_deps)
+        guide_deps=guide_deps+['illustration-regeneration']
+    add('illustrated-build-guide',py,'check_yeti60_build_guide.py',deps=guide_deps)
     stages.append(('inventory-allocation-fault-injection',py+['tests/audit/test_inventory.py'],['inventory-purchase-plan']))
     add('fabrication-review-package',py,'export_yeti60_fabrication.py',deps=['purchase-bom','ordinary-fabrication-contract','pcb-native-drc'])
     add('power-calculation',py,'calculate_yeti60_power.py',deps=['pin-contract'])

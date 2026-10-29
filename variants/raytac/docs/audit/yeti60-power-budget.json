@@ -1,0 +1,152 @@
+{
+  "outputs": {
+    "hardware/bom/power-scenarios.csv": "5697c8108d5b7c37fc0036bf95017a9e78130a86b4f47ffd28ac9f2494db4276",
+    "hardware/bom/power-scenarios.zh-CN.csv": "8a1d8b920b3da73c05e78b604225d5e2beefe7e97f61efe52da660408bfc5140"
+  },
+  "status": "conditional-sensitivity-model-not-measurement",
+  "source_sha256": {
+    "firmware/target/src/scanner.c": "684e34685f1d364209f2ac7722fa1b79b3473dc7aafb9fc8f15c7b22de3c57d4",
+    "firmware/yeti60/core.c": "353ef280b7c84966dd6851e22ed98ad974bd58bbc5ae78b03a0623493e98ad49",
+    "firmware/target/config/yeti60.conf": "2275fd710d346cb4b92e5c3587d3b676e9ff0d4d4ac2985c6b8f491b44f22184",
+    "firmware/target/boards/yeti/yeti60/yeti60.dts": "d0d64e831bb5c10b665878d4cd76c4d058e99c37b478df8ce105cc00ded684c4",
+    "docs/engineering/sources.json": "d7d9dec5692284b1d8c7c31b39b35e30e7e650021202cdf5213c69746b442305",
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
+    "scripts/calculate_yeti60_power.py": "765e1fc5942e9648327d9b597c52e75f53cd34690d961e817732af81fd8110a9"
+  },
+  "equations": {
+    "rail_mA": "I_OPA + I_MCU_average + 2*3.3/100k*1000 + 0.008 + 0.016 + 0.100",
+    "battery_mA": "3.3*I_rail/(V_bat*eta) + V_bat/100k*1000 + I_charger + I_PCM",
+    "runtime_hours": "capacity_mAh * usable_factor / I_battery",
+    "energy_equivalent": "runtime = (V_bat*capacity_Ah*usable_factor) / (P_rail/eta + V_bat*I_bias)"
+  },
+  "scenarios": [
+    {
+      "scenario": "lower-demand",
+      "opamp_mA": 5.2,
+      "mcu_average_mA_ASSUMED": 3,
+      "efficiency_ASSUMED": 0.9,
+      "battery_voltage_V_ASSUMED": 3.7,
+      "rail_3v3_mA": 8.389999999999999,
+      "battery_mA": 8.365714414414414,
+      "battery_power_mW": 30.953143333333333,
+      "usable_capacity_factor_ASSUMED": 0.8,
+      "runtime_default_pack_hours": 153.00546212700206
+    },
+    {
+      "scenario": "planning",
+      "opamp_mA": 5.2,
+      "mcu_average_mA_ASSUMED": 6,
+      "efficiency_ASSUMED": 0.85,
+      "battery_voltage_V_ASSUMED": 3.7,
+      "rail_3v3_mA": 11.389999999999999,
+      "battery_mA": 12.002651351351352,
+      "battery_power_mW": 44.40981,
+      "usable_capacity_factor_ASSUMED": 0.8,
+      "runtime_default_pack_hours": 106.64310430510736
+    },
+    {
+      "scenario": "stress",
+      "opamp_mA": 7.5,
+      "mcu_average_mA_ASSUMED": 10,
+      "efficiency_ASSUMED": 0.8,
+      "battery_voltage_V_ASSUMED": 3.3,
+      "rail_3v3_mA": 17.689999999999998,
+      "battery_mA": 22.171999999999993,
+      "battery_power_mW": 73.16759999999998,
+      "usable_capacity_factor_ASSUMED": 0.8,
+      "runtime_default_pack_hours": 57.730470864153006
+    }
+  ],
+  "timing_us": {
+    "busy_wait_per_frame": 1170,
+    "acquisition_per_frame": 3000,
+    "conversion_budget_per_frame": 150,
+    "frame_without_gpio_driver_overhead": 8320,
+    "note": "2us per conversion is an engineering timing budget, not a measured duration. ADC blocking can allow CPU sleep; do not treat all acquisition time as CPU busy."
+  },
+  "current_firmware": {
+    "AFE_always_on": false,
+    "AFE_idle_gating": true,
+    "active_scan_ms": 4,
+    "idle_scan_ms": 30,
+    "idle_after_ms": 30000,
+    "deep_sleep_enabled": false,
+    "deep_sleep_blocker": "EC keys are not a System OFF GPIO wake source",
+    "battery_reporting": false,
+    "REG1_DCDC_enabled_by_custom_board": true,
+    "REG0_DCDC_enabled": false,
+    "LED": "No status LED drive in current adapter; assumed off"
+  },
+  "power_model_scope": "Scenarios below conservatively assume the AFE is on continuously; idle gating is implemented but is not credited until measured.",
+  "not_claimed": [
+    "Guaranteed current or runtime range",
+    "Measured BLE duty cycle, connection interval, SAADC/CPU occupancy",
+    "End-to-end efficiency or battery capacity acceptance",
+    "USB calibration firmware power equal to normal BLE mode"
+  ],
+  "default_capacity_mAh": 1600,
+  "charging": {
+    "ISET_resistor_ohm": 2210,
+    "TMR_resistor_ohm": 69800,
+    "ITERM_resistor_ohm": 1690,
+    "resistor_tolerance_fraction": 0.01,
+    "programmed_charge_design_ceiling_mA": 450,
+    "minimum_required_pack_charge_rating_mA": 500,
+    "charger_CV_min_typ_max_V": [
+      4.16,
+      4.2,
+      4.23
+    ],
+    "programmed_charge_mA_min_typ_max": [
+      357.06285560682767,
+      402.71493212669685,
+      445.63279857397504
+    ],
+    "termination_mA_min_typ_max": [
+      16.865171811298776,
+      22.941176470588232,
+      29.255793226381464
+    ],
+    "fastcharge_timer_h_min_typ_max": [
+      6.910200000000001,
+      9.306666666666667,
+      11.749666666666668
+    ],
+    "USB_configured_requested_mA": 500,
+    "USB500_input_limit_mA_min_typ_max": [
+      450,
+      475,
+      500
+    ],
+    "preconfiguration_input_limit_mA": 100,
+    "charging_before_configuration": false,
+    "charging_during_suspend": false,
+    "control_policy_scope": "Powered target firmware; hardware-off defaults are separate",
+    "hardware_off_defaults": {
+      "EN1": 0,
+      "EN2": 0,
+      "CE_N": 0,
+      "input_limit_mA": 100,
+      "charging_enabled": true,
+      "full_charge_time_verified": false
+    },
+    "system_input_reserve_mA_ASSUMED": 40,
+    "minimum_input_available_after_assumed_reserve_mA": 410,
+    "ideal_CC_at_minimum_programmed_current_h": 4.4810037641154326,
+    "CV_budget_before_minimum_timer_h": 2.429196235884568,
+    "guaranteed_full_charge_time": false,
+    "larger_pack_drop_in_approved": false,
+    "design_revision": "P2 default 1600 mAh, revised PCB and firmware required",
+    "cell_charge_endpoint_mA": 32.0,
+    "pack_temperature_actual_window_C": [
+      15,
+      43
+    ],
+    "acceptance": [
+      "Supplier-signed pack drawing and corrected current/temperature limits",
+      "Verify full charge to termination before timer under USB load and temperature limits",
+      "Independent factory pack thermal interruption, not just voltage/current protection"
+    ]
+  }
+}

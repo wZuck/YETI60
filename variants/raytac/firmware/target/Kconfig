@@ -1,0 +1,5 @@
+config YETI60_SCAN
+    bool "YETI60 schematic-bound EC scanner"
+    default y if BOARD_YETI60
+    select ADC
+    select GPIO

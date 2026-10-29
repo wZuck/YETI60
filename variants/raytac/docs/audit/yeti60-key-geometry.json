@@ -1,0 +1,869 @@
+{
+  "status": "plate-copper-firmware-mapping-passed",
+  "physical_verification": false,
+  "sampling_disk_radius_mm": 3,
+  "sampling_grid_mm": 0.15,
+  "minimum_net_witness_area_mm2": 1,
+  "active_masks_hex": [
+    "0x7fff",
+    "0x3fff",
+    "0x2fff",
+    "0x6ffd",
+    "0x646"
+  ],
+  "matches": [
+    {
+      "index": 0,
+      "plate_center_case_mm": [
+        80.962704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 0,
+      "electrode": "SW2",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.3225,
+        "COL0": 6.255
+      }
+    },
+    {
+      "index": 1,
+      "plate_center_case_mm": [
+        100.012704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 1,
+      "electrode": "SW3",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL1": 6.3225
+      }
+    },
+    {
+      "index": 2,
+      "plate_center_case_mm": [
+        119.062704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 2,
+      "electrode": "SW4",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL2": 6.3225
+      }
+    },
+    {
+      "index": 3,
+      "plate_center_case_mm": [
+        138.112704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 3,
+      "electrode": "SW5",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL3": 6.3225
+      }
+    },
+    {
+      "index": 4,
+      "plate_center_case_mm": [
+        157.16270400000002,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 4,
+      "electrode": "SW6",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL4": 6.345
+      }
+    },
+    {
+      "index": 5,
+      "plate_center_case_mm": [
+        176.212704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 5,
+      "electrode": "SW7",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL5": 6.3225
+      }
+    },
+    {
+      "index": 6,
+      "plate_center_case_mm": [
+        195.262704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 6,
+      "electrode": "SW8",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL6": 6.3225
+      }
+    },
+    {
+      "index": 7,
+      "plate_center_case_mm": [
+        214.31270400000002,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 7,
+      "electrode": "SW9",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL7": 6.345
+      }
+    },
+    {
+      "index": 8,
+      "plate_center_case_mm": [
+        233.362704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 8,
+      "electrode": "SW10",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL8": 6.3225
+      }
+    },
+    {
+      "index": 9,
+      "plate_center_case_mm": [
+        252.412704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 9,
+      "electrode": "SW11",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL9": 6.3225
+      }
+    },
+    {
+      "index": 10,
+      "plate_center_case_mm": [
+        271.46270400000003,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 10,
+      "electrode": "SW12",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL10": 6.345
+      }
+    },
+    {
+      "index": 11,
+      "plate_center_case_mm": [
+        290.512704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 11,
+      "electrode": "SW13",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL11": 6.3225
+      }
+    },
+    {
+      "index": 12,
+      "plate_center_case_mm": [
+        309.562704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 12,
+      "electrode": "SW14",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.255,
+        "COL12": 6.3225
+      }
+    },
+    {
+      "index": 13,
+      "plate_center_case_mm": [
+        328.612704,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 13,
+      "electrode": "SW15",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.3225,
+        "COL13": 6.255
+      }
+    },
+    {
+      "index": 14,
+      "plate_center_case_mm": [
+        347.6627040000001,
+        -113.10966000000002
+      ],
+      "row": 0,
+      "col": 14,
+      "electrode": "SW17",
+      "copper_witness_area_mm2": {
+        "ROW0": 6.345,
+        "COL14": 6.255
+      }
+    },
+    {
+      "index": 15,
+      "plate_center_case_mm": [
+        85.72520399999999,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 0,
+      "electrode": "SW18",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.3225,
+        "COL0": 6.2775
+      }
+    },
+    {
+      "index": 16,
+      "plate_center_case_mm": [
+        109.53770399999999,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 1,
+      "electrode": "SW19",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.3225,
+        "COL1": 6.2775
+      }
+    },
+    {
+      "index": 17,
+      "plate_center_case_mm": [
+        128.587704,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 2,
+      "electrode": "SW20",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.345,
+        "COL2": 6.2775
+      }
+    },
+    {
+      "index": 18,
+      "plate_center_case_mm": [
+        147.637704,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 3,
+      "electrode": "SW21",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.345,
+        "COL3": 6.2775
+      }
+    },
+    {
+      "index": 19,
+      "plate_center_case_mm": [
+        166.68770400000002,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 4,
+      "electrode": "SW22",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.345,
+        "COL4": 6.255
+      }
+    },
+    {
+      "index": 20,
+      "plate_center_case_mm": [
+        185.737704,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 5,
+      "electrode": "SW23",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.345,
+        "COL5": 6.2775
+      }
+    },
+    {
+      "index": 21,
+      "plate_center_case_mm": [
+        204.78770400000002,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 6,
+      "electrode": "SW24",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.345,
+        "COL6": 6.255
+      }
+    },
+    {
+      "index": 22,
+      "plate_center_case_mm": [
+        223.83770400000003,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 7,
+      "electrode": "SW25",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.345,
+        "COL7": 6.255
+      }
+    },
+    {
+      "index": 23,
+      "plate_center_case_mm": [
+        242.88770399999999,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 8,
+      "electrode": "SW26",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.3225,
+        "COL8": 6.2775
+      }
+    },
+    {
+      "index": 24,
+      "plate_center_case_mm": [
+        261.937704,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 9,
+      "electrode": "SW27",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.345,
+        "COL9": 6.2775
+      }
+    },
+    {
+      "index": 25,
+      "plate_center_case_mm": [
+        280.987704,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 10,
+      "electrode": "SW28",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.345,
+        "COL10": 6.2775
+      }
+    },
+    {
+      "index": 26,
+      "plate_center_case_mm": [
+        300.03770399999996,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 11,
+      "electrode": "SW29",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.3225,
+        "COL11": 6.2775
+      }
+    },
+    {
+      "index": 27,
+      "plate_center_case_mm": [
+        319.08770400000003,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 12,
+      "electrode": "SW30",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.345,
+        "COL12": 6.255
+      }
+    },
+    {
+      "index": 28,
+      "plate_center_case_mm": [
+        342.90020400000003,
+        -132.15966
+      ],
+      "row": 1,
+      "col": 13,
+      "electrode": "SW31",
+      "copper_witness_area_mm2": {
+        "ROW1": 6.3225,
+        "COL13": 6.255
+      }
+    },
+    {
+      "index": 29,
+      "plate_center_case_mm": [
+        88.10645400000001,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 0,
+      "electrode": "SW33",
+      "copper_witness_area_mm2": {
+        "ROW2": 5.9625,
+        "COL0": 5.895
+      }
+    },
+    {
+      "index": 30,
+      "plate_center_case_mm": [
+        114.30020400000001,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 1,
+      "electrode": "SW34",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.345,
+        "COL1": 6.255
+      }
+    },
+    {
+      "index": 31,
+      "plate_center_case_mm": [
+        133.35020400000002,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 2,
+      "electrode": "SW35",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.345,
+        "COL2": 6.255
+      }
+    },
+    {
+      "index": 32,
+      "plate_center_case_mm": [
+        152.40020400000003,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 3,
+      "electrode": "SW36",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.345,
+        "COL3": 6.255
+      }
+    },
+    {
+      "index": 33,
+      "plate_center_case_mm": [
+        171.45020399999999,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 4,
+      "electrode": "SW37",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.3225,
+        "COL4": 6.2775
+      }
+    },
+    {
+      "index": 34,
+      "plate_center_case_mm": [
+        190.500204,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 5,
+      "electrode": "SW38",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.345,
+        "COL5": 6.2775
+      }
+    },
+    {
+      "index": 35,
+      "plate_center_case_mm": [
+        209.550204,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 6,
+      "electrode": "SW39",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.345,
+        "COL6": 6.2775
+      }
+    },
+    {
+      "index": 36,
+      "plate_center_case_mm": [
+        228.60020400000002,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 7,
+      "electrode": "SW40",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.345,
+        "COL7": 6.255
+      }
+    },
+    {
+      "index": 37,
+      "plate_center_case_mm": [
+        247.65020400000003,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 8,
+      "electrode": "SW41",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.345,
+        "COL8": 6.255
+      }
+    },
+    {
+      "index": 38,
+      "plate_center_case_mm": [
+        266.700204,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 9,
+      "electrode": "SW42",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.345,
+        "COL9": 6.2775
+      }
+    },
+    {
+      "index": 39,
+      "plate_center_case_mm": [
+        285.750204,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 10,
+      "electrode": "SW43",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.345,
+        "COL10": 6.2775
+      }
+    },
+    {
+      "index": 40,
+      "plate_center_case_mm": [
+        304.800204,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 11,
+      "electrode": "SW44",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.345,
+        "COL11": 6.2775
+      }
+    },
+    {
+      "index": 41,
+      "plate_center_case_mm": [
+        335.7564540000001,
+        -151.20966
+      ],
+      "row": 2,
+      "col": 13,
+      "electrode": "SW46",
+      "copper_witness_area_mm2": {
+        "ROW2": 6.255,
+        "COL13": 6.345
+      }
+    },
+    {
+      "index": 42,
+      "plate_center_case_mm": [
+        92.868954,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 0,
+      "electrode": "SW48",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.3225,
+        "COL0": 6.2775
+      }
+    },
+    {
+      "index": 43,
+      "plate_center_case_mm": [
+        123.825204,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 2,
+      "electrode": "SW50",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.2775,
+        "COL2": 6.345
+      }
+    },
+    {
+      "index": 44,
+      "plate_center_case_mm": [
+        142.875204,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 3,
+      "electrode": "SW51",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.2775,
+        "COL3": 6.345
+      }
+    },
+    {
+      "index": 45,
+      "plate_center_case_mm": [
+        161.925204,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 4,
+      "electrode": "SW52",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.2775,
+        "COL4": 6.345
+      }
+    },
+    {
+      "index": 46,
+      "plate_center_case_mm": [
+        180.97520400000002,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 5,
+      "electrode": "SW53",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.255,
+        "COL5": 6.345
+      }
+    },
+    {
+      "index": 47,
+      "plate_center_case_mm": [
+        200.02520400000003,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 6,
+      "electrode": "SW54",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.255,
+        "COL6": 6.345
+      }
+    },
+    {
+      "index": 48,
+      "plate_center_case_mm": [
+        219.075204,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 7,
+      "electrode": "SW55",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.2775,
+        "COL7": 6.345
+      }
+    },
+    {
+      "index": 49,
+      "plate_center_case_mm": [
+        238.12520400000002,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 8,
+      "electrode": "SW56",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.255,
+        "COL8": 6.345
+      }
+    },
+    {
+      "index": 50,
+      "plate_center_case_mm": [
+        257.175204,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 9,
+      "electrode": "SW57",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.2775,
+        "COL9": 6.345
+      }
+    },
+    {
+      "index": 51,
+      "plate_center_case_mm": [
+        276.22520399999996,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 10,
+      "electrode": "SW58",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.2775,
+        "COL10": 6.3225
+      }
+    },
+    {
+      "index": 52,
+      "plate_center_case_mm": [
+        295.27520400000003,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 11,
+      "electrode": "SW59",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.255,
+        "COL11": 6.345
+      }
+    },
+    {
+      "index": 53,
+      "plate_center_case_mm": [
+        321.468954,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 13,
+      "electrode": "SW60",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.2775,
+        "COL13": 6.3225
+      }
+    },
+    {
+      "index": 54,
+      "plate_center_case_mm": [
+        347.662704,
+        -170.25966
+      ],
+      "row": 3,
+      "col": 14,
+      "electrode": "SW62",
+      "copper_witness_area_mm2": {
+        "ROW3": 6.3225,
+        "COL14": 6.2775
+      }
+    },
+    {
+      "index": 55,
+      "plate_center_case_mm": [
+        109.53770399999999,
+        -189.30966
+      ],
+      "row": 4,
+      "col": 1,
+      "electrode": "SW64",
+      "copper_witness_area_mm2": {
+        "ROW4": 6.3225,
+        "COL1": 6.255
+      }
+    },
+    {
+      "index": 56,
+      "plate_center_case_mm": [
+        133.35020400000002,
+        -189.30966
+      ],
+      "row": 4,
+      "col": 2,
+      "electrode": "SW65",
+      "copper_witness_area_mm2": {
+        "ROW4": 6.3225,
+        "COL2": 6.255
+      }
+    },
+    {
+      "index": 57,
+      "plate_center_case_mm": [
+        204.78770400000002,
+        -189.30966
+      ],
+      "row": 4,
+      "col": 6,
+      "electrode": "SW68",
+      "copper_witness_area_mm2": {
+        "ROW4": 5.9625,
+        "COL6": 5.895
+      }
+    },
+    {
+      "index": 58,
+      "plate_center_case_mm": [
+        276.22520399999996,
+        -189.30966
+      ],
+      "row": 4,
+      "col": 9,
+      "electrode": "SW74",
+      "copper_witness_area_mm2": {
+        "ROW4": 6.3225,
+        "COL9": 6.255
+      }
+    },
+    {
+      "index": 59,
+      "plate_center_case_mm": [
+        300.03770399999996,
+        -189.30966
+      ],
+      "row": 4,
+      "col": 10,
+      "electrode": "SW71",
+      "copper_witness_area_mm2": {
+        "ROW4": 5.9625,
+        "COL10": 5.895
+      }
+    }
+  ],
+  "source_sha256": {
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "docs/audit/yeti60-assembly.json": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
+    "firmware/target/boards/yeti/yeti60/yeti60.dts": "d0d64e831bb5c10b665878d4cd76c4d058e99c37b478df8ce105cc00ded684c4",
+    "firmware/target/src/scanner.c": "684e34685f1d364209f2ac7722fa1b79b3473dc7aafb9fc8f15c7b22de3c57d4",
+    "scripts/export_yeti60_build_map.py": "37fb2a09e5697df4509ffb92b7e3ad2a75ae54441a90c82406f3970b47e07da8",
+    "scripts/check_yeti60_key_geometry.py": "556493619766ed77efc43337751d96aaa43a4b6162fa19c96bc5c867c6191be1"
+  },
+  "limits": [
+    "Copper-coverage geometry, not capacitance/signal simulation",
+    "Actual springs, domes, travel and calibration require hardware"
+  ]
+}

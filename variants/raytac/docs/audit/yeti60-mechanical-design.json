@@ -1,0 +1,65 @@
+{
+  "status": "generated-valid-solids",
+  "source_sha256": {
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "felk60/felk60_top_hhkb.step": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
+    "felk60/felk60_bottom.step": "f4987879940643cb5b0d66145b944efb435994abe4d18808da4e45d16bb8c44b",
+    "scripts/build_yeti60_mechanical.py": "e82ac56116be00aa657ac8411eb21ca1c5673d13ad29063e0d0da930d35f8943",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "mechanical/battery-pocket-study.json": "6983679949ebb0b6bde4a7fd28b44a813305e1663c5d995cf95cf5eff22be23f"
+  },
+  "outputs": {
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
+    "mechanical/generated/yeti60-standoff-46.step": "11dac3a13e57d1f4fe1c3f0feda963e20c7d05939908a4b4b5ebcb9db23cbbb7"
+  },
+  "original_case_bounds": {
+    "top": [
+      51.46271307318996,
+      -216.30970227830204,
+      -7.410000099999956,
+      377.1627172535981,
+      -96.35965799320394,
+      11.79000000000003
+    ],
+    "bottom": [
+      51.4627013981153,
+      -206.30970210039504,
+      -19.39959445791606,
+      377.1627129952796,
+      -91.10965778645951,
+      11.790000000000116
+    ]
+  },
+  "derived_case_bounds": {
+    "top": [
+      51.46271307318996,
+      -216.30970227830204,
+      -7.410000099999956,
+      377.1627172535981,
+      -96.35965799320394,
+      11.79000000000003
+    ],
+    "bottom": [
+      51.4627013981153,
+      -206.30970210039504,
+      -19.39959445791606,
+      377.1627129952796,
+      -91.10965778645951,
+      11.790000000000116
+    ]
+  },
+  "case_scale": [
+    1,
+    1,
+    1
+  ],
+  "changes": [
+    "Four bonded M3 insert seats",
+    "Four bonded M2 daughterboard insert seats",
+    "8 mm underside power-switch service port",
+    "Default 1600 mAh single-cell battery recess"
+  ],
+  "threads": "CAD uses thread envelopes; manufacturing drawing specifies actual threads",
+  "physical_acceptance": false
+}

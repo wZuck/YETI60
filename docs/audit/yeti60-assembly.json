@@ -1,7 +1,7 @@
 {
   "status": "conditional-fit-review",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
     "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
@@ -9,11 +9,11 @@
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed"
   },
   "verification_recipe_sha256": {
-    "scripts/check_yeti60_assembly.py": "396544c7e880b81069aa3d67b7289694ae4dab8a2eb195686f297fe8728f023f",
+    "scripts/check_yeti60_assembly.py": "12221f66129b35332273adaf3ed309dc20cd7994880842ceb98230b2fb97eeba",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
-    "scripts/export_yeti60_mechanical_metadata.py": "22ebeac89f8839f7fddb0a84dbcf6be2244dc7c55e3382cd6805f8e58d94525e"
+    "scripts/export_yeti60_mechanical_metadata.py": "eeea9300b7c98fbd973567caf6971ba692144ae2717dd9e74a8e949861afd750"
   },
-  "mechanical_metadata_sha256": "da6b081f6e1437a2ddf16d78b1f73ce972747d6285368d49907533003f3ddb24",
+  "mechanical_metadata_sha256": "eb0b698325cae9f6fa8ba2a2e3d7a3389ba3f01d2d2b187a48b825cc871d599a",
   "pcb_frame_to_case": "X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z",
   "nominal_stack": {
     "bottom_gasket_ledge_z": 3.19,
@@ -1968,36 +1968,41 @@
       "min_case_distance_mm": 0.9100000000000019
     },
     {
-      "physical_body_bbox_pcb_mm": null,
+      "physical_body_bbox_pcb_mm": [
+        341.5,
+        116.4,
+        354.70000000000005,
+        134.6
+      ],
       "ref": "U1",
-      "value": "MDBT50Q-1MV2",
+      "value": "E73-2G4M08S1C",
       "back": true,
       "position_pcb_mm": [
-        347.0,
-        125.0
+        354.6,
+        116.5
       ],
-      "angle_deg": 90.0,
+      "angle_deg": -90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        338.725,
-        118.8,
-        355.275,
-        131.2
+        340.275,
+        115.175,
+        355.925,
+        134.775
       ],
-      "height_envelope_mm": 2.05,
-      "height_basis": "Raytac module specification",
+      "height_envelope_mm": 3.1,
+      "height_basis": "Ebyte module specification: 3.0 mm nominal plus 0.1 mm tolerance",
       "bounds_case_mm": [
-        338.725,
-        -131.2,
-        -4.05,
-        355.275,
-        -118.8,
+        341.5,
+        -134.6,
+        -5.1,
+        354.70000000000005,
+        -116.4,
         -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 1.86000000000001
+      "min_case_distance_mm": 0.8100000000000085
     },
     {
       "physical_body_bbox_pcb_mm": null,

@@ -2,7 +2,7 @@ English | [Chinese](fabrication-review.zh-CN.md)
 
 # P2 fabrication and assembly review handoff
 
-The [review archive](module-options.md) is for fabricator/assembler DFM review. It does not authorize an order. Rebuild it with `python3 scripts/export_yeti60_fabrication.py`; the [manifest](../audit/yeti60-fabrication.json) binds the archive to the PCB, BOM and instructions.
+The [review archive](../../hardware/fabrication/yeti60-e73-p2-dfm-review.zip) is for fabricator/assembler DFM review. It does not authorize an order. Rebuild it with `python3 scripts/export_yeti60_fabrication.py`; the [manifest](../audit/yeti60-fabrication.json) binds the archive to the PCB, BOM and instructions.
 
 ## Supplied outputs
 

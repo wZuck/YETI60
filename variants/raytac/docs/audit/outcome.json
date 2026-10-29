@@ -1,0 +1,312 @@
+{
+  "status": "checks-passed-production-incomplete",
+  "checks_passed": true,
+  "production_approved": false,
+  "stages": [
+    {
+      "stage": "schematic-current",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 3.28
+    },
+    {
+      "stage": "pin-contract",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.04
+    },
+    {
+      "stage": "pcb-geometry-contract",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 1.7
+    },
+    {
+      "stage": "ordinary-fabrication-contract",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.89
+    },
+    {
+      "stage": "ordinary-fabrication-fault-injection",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 2.43
+    },
+    {
+      "stage": "pcb-native-drc",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 19.96
+    },
+    {
+      "stage": "connectivity-regression",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 8.02
+    },
+    {
+      "stage": "electrical-review",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.93
+    },
+    {
+      "stage": "firmware-pin-header",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.05
+    },
+    {
+      "stage": "firmware-target-artifacts",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.14
+    },
+    {
+      "stage": "target-power-fault-injection",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.09
+    },
+    {
+      "stage": "firmware-simulation",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 4.26
+    },
+    {
+      "stage": "firmware-plot",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.67
+    },
+    {
+      "stage": "mechanical-metadata",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.74
+    },
+    {
+      "stage": "daughterboard-native-cad",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 3.43
+    },
+    {
+      "stage": "mechanical-design",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 2.63
+    },
+    {
+      "stage": "plate-source",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.37
+    },
+    {
+      "stage": "assembly-fit",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 32.05
+    },
+    {
+      "stage": "interconnect-native-cad",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 2.05
+    },
+    {
+      "stage": "interconnect-fit",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 22.04
+    },
+    {
+      "stage": "render-geometry",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 11.97
+    },
+    {
+      "stage": "interconnect-drawings",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 3.64
+    },
+    {
+      "stage": "board-guidance",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 1.66
+    },
+    {
+      "stage": "purchase-bom",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.05
+    },
+    {
+      "stage": "inventory-purchase-plan",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.03
+    },
+    {
+      "stage": "readme-materials",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.03
+    },
+    {
+      "stage": "illustration-native-map",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 1.3
+    },
+    {
+      "stage": "plate-copper-firmware-map",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.17
+    },
+    {
+      "stage": "plate-map-fault-injection",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.23
+    },
+    {
+      "stage": "illustrated-build-guide",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.4
+    },
+    {
+      "stage": "inventory-allocation-fault-injection",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.05
+    },
+    {
+      "stage": "fabrication-review-package",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 3.99
+    },
+    {
+      "stage": "power-calculation",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.04
+    },
+    {
+      "stage": "battery-pocket",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 2.08
+    },
+    {
+      "stage": "cell-screening",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 4.62
+    },
+    {
+      "stage": "assembly-drawings",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 8.8
+    },
+    {
+      "stage": "engineering-evidence",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.04
+    },
+    {
+      "stage": "engineering-fault-injection",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.14
+    },
+    {
+      "stage": "documentation",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.3
+    },
+    {
+      "stage": "cross-domain-integration",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.18
+    },
+    {
+      "stage": "integration-fault-injection",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.37
+    },
+    {
+      "stage": "design-inputs-unchanged",
+      "state": "passed",
+      "changed": []
+    }
+  ],
+  "open_requirements": [
+    {
+      "id": "power-layout",
+      "status": "open",
+      "description": "P2 local layout and current/timer/termination calculations completed; regulator transient, derating and thermal performance require hardware qualification"
+    },
+    {
+      "id": "target-firmware",
+      "status": "open",
+      "description": "Normal and calibrator ARM builds and linked USB500 descriptors verified; on-device enumeration, BLE and per-key calibration pending"
+    },
+    {
+      "id": "mechanical-stack",
+      "status": "open",
+      "description": "Qualify dome/housing/fastener stack; 4.6 mm PCB-to-plate gap is provisional"
+    },
+    {
+      "id": "battery",
+      "status": "open",
+      "description": "Default custom 1600 mAh full envelope selected and checked; supplier current-sheet correction, complete drawing, independent 15..43 C thermal protection and full charge acceptance pending"
+    },
+    {
+      "id": "usb-daughterboard",
+      "status": "open",
+      "description": "C5 JSH retained by user; native electrical and mounting geometry checked; mating plug/harness routing and serviceability require final acceptance"
+    },
+    {
+      "id": "switch-access",
+      "status": "open",
+      "description": "8 mm SW100 service port designed; physical access acceptance pending"
+    },
+    {
+      "id": "resin-inserts",
+      "status": "open",
+      "description": "Cold-bond insert seats and imposed tolerances designed; resin shrinkage, strength and insert pullout require first articles"
+    },
+    {
+      "id": "fabrication",
+      "status": "open",
+      "description": "Ordinary four-layer through-via conversion and output parity checked; confirm stock stackup/tolerances, open thermal-via soldering and final component ratings with the fabricator/assembler"
+    },
+    {
+      "id": "physical-tests",
+      "status": "open",
+      "description": "Measure EC thresholds, power, charging, runtime and wake behavior"
+    },
+    {
+      "id": "signal-interference",
+      "status": "deferred",
+      "description": "SI/RF analysis deferred by user until PCB design completion"
+    }
+  ],
+  "scope": "Current single-nRF design, built ARM targets, host simulation, conditional mechanical/charging design and artifact provenance; no physical certification",
+  "inventory": "docs/audit/source-inventory.json"
+}

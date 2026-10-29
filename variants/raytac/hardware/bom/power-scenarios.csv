@@ -1,0 +1,4 @@
+Scenario,Assumed MCU average mA,Assumed efficiency,Assumed battery V,3.3V current mA,Battery current mA,Conditional 1600mAh hours
+lower-demand,3,0.9,3.7,8.39,8.366,153.01
+planning,6,0.85,3.7,11.39,12.003,106.64
+stress,10,0.8,3.3,17.69,22.172,57.73

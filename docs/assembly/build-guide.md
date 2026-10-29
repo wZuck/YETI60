@@ -196,17 +196,17 @@ References placed in this step: U2, U3, U4.
 
 [Vector enlargement](images/08-step.svg)
 
-1. Confirm Raytac MDBT50Q-1MV2, including the actual ordering suffix; do not use the stock nice!nano board.
+1. Confirm Ebyte E73-2G4M08S1C, including the actual ordering suffix; do not use the stock nice!nano board.
 2. Match the module drawing, pin 1 and antenna end to the native footprint. Check the underside lands before placement.
 3. Keep paste and metal debris out of the antenna area. Place the module flat without sliding it across neighboring pads.
 
-**Check before continuing:** This is a module soldered directly to the PCB, with underside joints. No headers or second controller are installed.
+**Check before continuing:** E73 is soldered directly to this PCB: connected bottom lands 12, 24, 28, 32 and 34 require reflow and inspection. No headers or second controller are installed.
 
 References placed in this step: U1.
 
 | References | Quantity | Design value | Package |
 |---|---:|---|---|
-| U1 | 1 | MDBT50Q-1MV2 | Raytac_MDBT50Q |
+| U1 | 1 | E73-2G4M08S1C | E73-2G4M08S1C |
 
 <a id="step-09"></a>
 
@@ -326,7 +326,7 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 1. Power off before mating the custom six-pogo fixture. Use J3 pin 1 as 3.3 V target reference, not a second supply.
 2. Connect 2 SWDIO, 3 GND, 4 SWDCLK, 5 RESET_N and 6 GND using the actual pad numbers. Power the board through the checked USB path.
-3. Select nRF52840 in the probe tool, program firmware/releases/calibrator/yeti60.hex, verify its contents and reset. Reserve calibration until the EC mechanical stack is installed.
+3. Select nRF52840 in the probe tool, program firmware/releases/calibrator/yeti60-e73.hex, verify its contents and reset. Reserve calibration until the EC mechanical stack is installed.
 
 **Check before continuing:** J3 is not the standard ARM connector pinout. Never attach two active 3.3 V supplies. Later normal-firmware updates must preserve settings at 0xF0000–0xFFFFF.
 
@@ -452,7 +452,7 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 1. With the complete mechanical stack supported at its intended preload, boot the calibrator and open its USB CDC console. Execute console commands one at a time, allowing release sampling before starting the press stage.
 2. Run yeti_calibrate release with every key released, then yeti_calibrate press and fully press/release each of the 60 keys. Release all keys and run yeti_calibrate save; inspect the reported result.
-3. Power down before reconnecting SWD. Program and verify firmware/releases/normal/yeti60.hex using range/sector-aware flashing that preserves 0xF0000–0xFFFFF. Restart and check that calibration is retained.
+3. Power down before reconnecting SWD. Program and verify firmware/releases/normal/yeti60-e73.hex using range/sector-aware flashing that preserves 0xF0000–0xFFFFF. Restart and check that calibration is retained.
 
 **Check before continuing:** Do not use full-chip erase/recover after saving calibration. Rejected ranges or ADC saturation require diagnosis. Keys intentionally emit no events before valid calibration.
 
@@ -504,4 +504,4 @@ Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_y
 
 The per-operation illustrated format follows the [DELTA OMEGA build guide](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md). Images and references are redrawn from YETI60 native data; its MX soldering operations do not apply here.
 
-Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Raytac MDBT50Q-1MV2 documentation](https://www.raytac.com/product/ins.php?index_id=24), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).
+Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Ebyte E73-2G4M08S1C documentation](https://www.ebyte.com/product/444.html), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).

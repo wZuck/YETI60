@@ -31,3 +31,5 @@ uv run --python 3.11 --with-requirements requirements-render.txt python scripts/
 ```
 
 `--preview --view assembled` produces a low-resolution study in ignored `.assembly-work/`. Final images are 2600 × 1734 pixels with 256 maximum Cycles samples and denoising. Studio setup follows the [Cycles renderer](https://www.blender.org/features/rendering/) and [Blender material API](https://docs.blender.org/api/5.0/bpy.types.Material.html). See the [full review](../../docs/audit/yeti60-comprehensive-review.md) for unresolved hardware requirements.
+
+The E73 module uses the manufacturer nominal 18 x 13 x 3 mm body. Mechanical checks separately include 0.1 mm edge allowances and a 3.1 mm height envelope. It is a dimensioned envelope, not a manufacturer surface-detail model; the FELK60 shell solids retain their source dimensions.

@@ -1,6 +1,6 @@
 {
   "source": "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb",
-  "source_sha256": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+  "source_sha256": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
   "pcb_thickness_mm": 1.6062,
   "parts": [
     {
@@ -688,23 +688,28 @@
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
     },
     {
-      "physical_body_bbox_pcb_mm": null,
+      "physical_body_bbox_pcb_mm": [
+        341.5,
+        116.4,
+        354.70000000000005,
+        134.6
+      ],
       "ref": "U1",
-      "value": "MDBT50Q-1MV2",
+      "value": "E73-2G4M08S1C",
       "back": true,
       "position_pcb_mm": [
-        347.0,
-        125.0
+        354.6,
+        116.5
       ],
-      "angle_deg": 90.0,
+      "angle_deg": -90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        338.725,
-        118.8,
-        355.275,
-        131.2
+        340.275,
+        115.175,
+        355.925,
+        134.775
       ],
-      "height_envelope_mm": 2.05,
-      "height_basis": "Raytac module specification"
+      "height_envelope_mm": 3.1,
+      "height_basis": "Ebyte module specification: 3.0 mm nominal plus 0.1 mm tolerance"
     },
     {
       "physical_body_bbox_pcb_mm": null,

@@ -278,7 +278,7 @@ def main():
                     ax.remove()
                     for i,(ref,region) in enumerate([('U3',[97,141,111,159]),('U2',[137,172,153,193]),('U4',[299,169,315,190])]):
                         a=axis(fig,[.045+i*.22,.31,.21,.49]);pcb(a,[ref],region,numbers=True)
-                elif step['id'] == '08': pcb(ax,refs,[336,116,357,134],numbers=True)
+                elif step['id'] == '08': pcb(ax,refs,[339,114.5,357,136.5],numbers=True)
                 elif step['id'] == '09':
                     ax.remove()
                     for i,(group,region) in enumerate([(['J1','SW100'],[104,115,131,132]),(['J2'],[143,116,162,134]),(['SW1','D2'],[310,115,334,132])]):

@@ -196,17 +196,17 @@
 
 [放大矢量图](images/08-step.zh-CN.svg)
 
-1. 确认使用 Raytac MDBT50Q-1MV2 及正确订货后缀，不使用库存 nice!nano 开发板。
+1. 确认使用 Ebyte E73-2G4M08S1C 及正确订货后缀，不使用库存 nice!nano 开发板。
 2. 根据模组图纸核对一脚、天线端和原生焊盘方向，放置前检查底部焊盘。
 3. 天线区域不沾锡膏和金属碎屑；模组平放，不在相邻焊盘上拖动。
 
-**检查后再继续：** 这是直接焊接在 PCB 上的模组，包含底部焊点；不安装排针或第二颗主控。
+**检查后再继续：** E73 直接焊接在本版本 PCB 上：实际连接的底部 12、24、28、32、34 焊盘须回流焊并检查，不装排针或第二颗主控。
 
 本步放置位号：U1.
 
 | 位号 | 数量 | 设计值 | 封装 |
 |---|---:|---|---|
-| U1 | 1 | MDBT50Q-1MV2 | Raytac_MDBT50Q |
+| U1 | 1 | E73-2G4M08S1C | E73-2G4M08S1C |
 
 <a id="step-09"></a>
 
@@ -326,7 +326,7 @@
 
 1. 对接自定义六针治具前先断电，J3 的 1 脚是 3.3 V 目标参考，不用作第二路供电。
 2. 按实际编号连接 2 SWDIO、3 地、4 SWDCLK、5 RESET_N、6 地，再通过已检查的 USB 通路为板子供电。
-3. 在调试工具中选择 nRF52840，写入 firmware/releases/calibrator/yeti60.hex，执行校验并复位；装好静电容机械结构后再校准。
+3. 在调试工具中选择 nRF52840，写入 firmware/releases/calibrator/yeti60-e73.hex，执行校验并复位；装好静电容机械结构后再校准。
 
 **检查后再继续：** J3 不是标准 ARM 接口脚序，不能并接两路主动 3.3 V 电源；后续更新普通固件须保留 0xF0000–0xFFFFF 设置区。
 
@@ -452,7 +452,7 @@
 
 1. 完整机械结构按预定预压状态支撑，启动校准固件并打开 USB CDC 控制台。 三条命令分步执行，待松键采样完成后再进入按键采样阶段，不一次粘贴三条命令。
 2. 全部松键执行 yeti_calibrate release，再执行 yeti_calibrate press，完整按下并松开每个实际按键；最后全部松键执行 yeti_calibrate save，并检查返回结果。
-3. 重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。
+3. 重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60-e73.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。
 
 **检查后再继续：** 保存校准后不使用全片擦除或恢复操作；量程不足、ADC 饱和须排查，没有有效校准时固件刻意不输出按键。
 
@@ -504,4 +504,4 @@
 
 编排参考 [DELTA OMEGA 安装指南](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md) 的逐工序图示形式；图像及位号按 YETI60 原生数据重新绘制，不沿用 MX 焊接步骤。
 
-焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Raytac MDBT50Q-1MV2 资料](https://www.raytac.com/product/ins.php?index_id=24) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。
+焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Ebyte E73-2G4M08S1C 资料](https://www.ebyte.com/product/444.html) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。

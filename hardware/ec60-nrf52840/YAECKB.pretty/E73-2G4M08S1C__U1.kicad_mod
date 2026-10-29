@@ -4,9 +4,9 @@
 	(generator_version "10.0")
 	(layer "F.Cu")
 	(property "Reference" "U1"
-		(at 8.525 -14.7003 180)
+		(at -0.5 -14.6 180)
 		(layer "F.SilkS")
-		(uuid "75c05a7c-1571-42ff-a4b8-34dd9b8277a9")
+		(uuid "72e0a7af-5cfe-489f-8c91-b1147882aeab")
 		(effects
 			(font
 				(size 1 1)
@@ -17,7 +17,8 @@
 	(property "Value" "E73-2G4M08S1C"
 		(at 8.525 1.7003 180)
 		(layer "F.Fab")
-		(uuid "ba19a6cf-ce57-4c84-b3c1-adaf45b9e496")
+		(hide yes)
+		(uuid "40062fee-e4fb-467f-a0ac-161f92aceb21")
 		(effects
 			(font
 				(size 1 1)
@@ -25,11 +26,11 @@
 			)
 		)
 	)
-	(property "Datasheet" ""
+	(property "Datasheet" "https://www.ebyte.com/downpdf/444.html"
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "49d540f5-5ae4-4478-88b5-dea718544387")
+		(uuid "4b1fe98f-a85f-4994-a719-5e9aea845a48")
 		(effects
 			(font
 				(size 1 1)
@@ -41,7 +42,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "fc61725e-e8de-44a8-8652-d9f2cc2631f8")
+		(uuid "3f261b41-0bfa-4432-a7fb-1970b908a780")
 		(effects
 			(font
 				(size 1 1)

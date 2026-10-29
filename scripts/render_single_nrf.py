@@ -301,7 +301,7 @@ def main():
                 'animation': {'frames': args.frames, 'fps': args.fps, 'seconds': args.frames/args.fps, 'dimensions': [1600,1000], 'rotation': 'full 360 degrees about X; gentle Z oscillation', 'quality': 'basic'} if not args.stills_only else None,
                 'stills': {'quality': 'high', 'native_dimensions': [2600,1600]},
                 'model_resolutions': resolutions, 'outputs': outputs,
-                'limits': ['render-only substitutions do not modify the design or frozen footprint library', 'J2 and SW100 are illustrative bodies; U5 uses a generic package model', 'Not an assembled keyboard, enclosure fit test, SI or RF simulation']}
+                'limits': ['render-only substitutions do not modify the design or frozen footprint library', 'E73 is an 18 x 13 x 3 mm nominal body envelope, not a manufacturer surface-detail model', 'J2 and SW100 are illustrative bodies; U5 uses a generic package model', 'Not an assembled keyboard, enclosure fit test, SI or RF simulation']}
     (OUT/'render-manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
     print('Render source hash verified unchanged; assets and manifest complete', flush=True)
 

@@ -2,7 +2,7 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60
 
-> **E73 implementation checkpoint — not ready for fabrication:** native E73 schematics, pin contracts and normal/calibrator ARM firmware are implemented and checked. Local routing, complete DRC, assembly, manufacturing outputs and illustrations are being refreshed. Older audit results and images below are not E73 validation. See [module alternatives and current status](docs/engineering/module-options.md); the Raytac design remains on [master](https://github.com/wZuck/YETI60/tree/master).
+> **Two alternatives in this branch:** the main directories use Ebyte E73-2G4M08S1C; Raytac MDBT50Q-1MV2 is in [variants/raytac](variants/raytac/README.md). See [selection instructions](docs/engineering/module-options.md). E73 native DRC reaches 0 errors and 0 opens, and firmware is built. Complete evidence for both alternatives is being refreshed; production is not approved.
 
 A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
 
@@ -66,7 +66,7 @@ Quantities are net boards per keyboard; the fabricator's minimum order quantity 
 
 | PCB | E73 footprint and native netlist match; local routing and strict DRC closure remain in progress; not ready to fabricate |
 |---|---:|---|---|
-| YETI60 mainboard | 1 | 285.0 x 94.6 mm outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [E73 fabrication progress](docs/engineering/module-options.md), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
+| YETI60 E73 mainboard | 1 | 285.0 x 94.6 mm outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [E73 Gerber/drill review ZIP](hardware/fabrication/yeti60-e73-p2-dfm-review.zip), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
 | Unified Daughterboard C5 JSH | 1 only for self-assembly; 0 if purchased populated | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](hardware/bom/daughterboard.csv) |
 
 These are separate fabrication orders/files: the mainboard ZIP does not contain C5. Both archives contain four copper layers; do not select a two-layer process for C5. The mainboard archive is for manufacturing review, with final component/stencil and supplier acceptance still pending. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and five routing guides are mechanical parts, not additional PCBs. For self-reflow, use mainboard **B.Paste** and C5 **F.Paste** with a qualified stencil/profile.

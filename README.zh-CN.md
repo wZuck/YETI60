@@ -2,7 +2,7 @@
 
 # YETI60
 
-> **E73 实现阶段，尚不能制板：**原生 E73 原理图、引脚契约及正常／校准 ARM 固件已完成并通过相应检查。PCB 正在完成局部布线，完整 DRC、装配、制板包及图示资料仍需重新生成。下方旧审查结果及图片不能当作 E73 验证。见[两种模组与当前状态](docs/engineering/module-options.zh-CN.md)；Raytac 方案使用 [master](https://github.com/wZuck/YETI60/tree/master)。
+> **同一分支，两套方案：**主目录默认使用 Ebyte E73-2G4M08S1C；Raytac MDBT50Q-1MV2 位于 [variants/raytac](variants/raytac/README.zh-CN.md)。见[完整选择说明](docs/engineering/module-options.zh-CN.md)。E73 原生 DRC 已达到 0 错误、0 未连接，固件已构建；两套方案完整证据正在更新，尚未批准生产。
 
 以 Cipulot EC60 为基础、使用 FELK60 外壳的单 nRF52840 静电容键盘 PCB。保留感应几何、板框和安装孔位置；后侧 USB 子板连接 J1。
 
@@ -66,7 +66,7 @@
 
 | PCB | E73 封装与原生网络表匹配；局部布线及严格 DRC 尚未闭环，不可制板 |
 |---|---:|---|---|
-| YETI60 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [可编辑 KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb)、[E73 制板文件进展](docs/engineering/module-options.zh-CN.md)、[制板工艺要求](hardware/ec60-nrf52840/fabrication-notes.zh-CN.md) |
+| YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [可编辑 KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb)、[E73 Gerber／钻孔审查包](hardware/fabrication/yeti60-e73-p2-dfm-review.zip)、[制板工艺要求](hardware/ec60-nrf52840/fabrication-notes.zh-CN.md) |
 | Unified Daughterboard C5 JSH 子板 | 自焊时 1 块；买成品时 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](hardware/bom/daughterboard.zh-CN.csv) |
 
 两块板使用各自的制板文件，主板压缩包不包含 C5。两个压缩包均有四层铜，C5 不能按双层板下单。主板文件目前用于制造审查，最终物料、钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及五个走线支架属于机械件，不是额外 PCB。自行回流焊时，主板用 **B.Paste**，C5 用 **F.Paste**，钢网和温度曲线须与实际物料匹配。
