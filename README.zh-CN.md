@@ -87,43 +87,43 @@
 
 0402 电阻均按 1%、不低于 50 mW 选型；0 Ω 位置使用零欧姆连接。220 pF 电容使用 C0G，其余按 X5R／X7R、10% 或更优、不低于 10 V（标注 16 V 的位置使用 16 V）；有效容量仍须核对偏压降额。以下数值是当前电路要求，未选型号处不得自行宣称已定型。
 
-| 位号 | 数量 | 数值／功能 | 封装 | 指定／候选型号 |
-|---|---:|---|---|---|
-| C9, C11, C12 | 3 | 100n | C_0402_1005Metric | 厂商型号待选 |
-| C10 | 1 | 220p | C_0402_1005Metric | 厂商型号待选 |
-| C13 | 1 | 1u | C_0402_1005Metric | 厂商型号待选 |
-| C30, C41, C42, C43, C45, C46 | 6 | 10u/10V | C_0603_1608Metric | 厂商型号待选 |
-| C31 | 1 | 100n/16V | C_0402_1005Metric | 厂商型号待选 |
-| C32 | 1 | 4.7u/10V | C_0603_1608Metric | 厂商型号待选 |
-| C40 | 1 | 1u/10V | C_0603_1608Metric | 厂商型号待选 |
-| C44 | 1 | 100n/16V | C_0603_1608Metric | 厂商型号待选 |
-| C47 | 1 | 10n | C_0402_1005Metric | 厂商型号待选 |
-| C48 | 1 | 1u/10V | C_0402_1005Metric | 厂商型号待选 |
-| D1 | 1 | PRTR5V0U2X | SOT-143 | Nexperia PRTR5V0U2X |
-| D2 | 1 | STATUS | LED_0603_1608Metric | 0603 指示灯，厂商型号待选 |
-| F1 | 1 | 500mA | Fuse_1206_3216Metric | 1206 自恢复保险丝，保持电流 0.5 A |
-| J1 | 1 | REAR_USB_DAUGHTERBOARD | JST-SR-4 | JST SM04B-SRSS-TB(LF)(SN)，候选 |
-| J2 | 1 | PROTECTED_1S_4V2_NTC10K | JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal | JST S3B-PH-SM4-TB(LF)(SN) |
-| L1 | 1 | 1.5uH_74438336015 | L_Wuerth_MAPI-3015 | Wurth 74438336015 |
-| R3, R4, R5, R6, R7, R47, R53, R54 | 8 | 100 | R_0402_1005Metric | 厂商型号待选 |
-| R8, R9, R10, R11, R12, R13, R14, R15, R16, R18, R19, R20, R21, R23, R24, R25, R42, R43, R44, R45, R46, R48, R49, R50 | 24 | 100k | R_0402_1005Metric | 厂商型号待选 |
-| R17 | 1 | 1k | R_0402_1005Metric | 厂商型号待选 |
-| R26 | 1 | 10k | R_0402_1005Metric | 厂商型号待选 |
-| R30, R31 | 2 | 0 | R_0402_1005Metric | 厂商型号待选 |
-| R32 | 1 | 2.2k | R_0402_1005Metric | 厂商型号待选 |
-| R40 | 1 | 2.21k/1% | R_0402_1005Metric | 厂商型号待选 |
-| R41 | 1 | 7.50k/1% | R_0402_1005Metric | 厂商型号待选 |
-| R51, R52 | 2 | 1M/1% | R_0402_1005Metric | 厂商型号待选 |
-| R55 | 1 | 69.8k/1% | R_0402_1005Metric | 厂商型号待选 |
-| R56 | 1 | 1.69k/1% | R_0402_1005Metric | 厂商型号待选 |
-| SW1 | 1 | EVQPUC02K_RESET | Panasonic_EVQPUL_EVQPUC | Panasonic EVQPUC02K |
-| SW100 | 1 | JS102011SAQN_POWER | SW_SPDT_CK_JS102011SAQN | C&K JS102011SAQN |
-| U1 | 1 | MDBT50Q-1MV2 | Raytac_MDBT50Q | Raytac MDBT50Q-1MV2 |
-| U2, U4 | 2 | 74HC4051 | TSSOP16 | Nexperia 74HC4051PW,118 |
-| U3 | 1 | OPA350 | SOIC-8_3.9x4.9mm_P1.27mm | TI OPA350UA |
-| U5 | 1 | BQ24074RGT | VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm | TI BQ24074RGTR |
-| U6 | 1 | TPS63031DSK | WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm | TI TPS63031DSKR |
-| U7, U8 | 2 | TPS22919DCK | SOT-363_SC-70-6 | TI TPS22919DCKR |
+| 位号 | 数量 | 数值／功能 | 封装 | 指定／候选型号 | 计划用库存 | 需补购 | 库存备注 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| C9, C11, C12 | 3 | 100n | C_0402_1005Metric | 厂商型号待选 | 3 | 0 | 已有：Samsung CL05B104KO5NNNC；订单已收货池 100 只（同来源行共享，不可逐行相加）；装配前清点；须确认有效容量 |
+| C10 | 1 | 220p | C_0402_1005Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| C13 | 1 | 1u | C_0402_1005Metric | 厂商型号待选 | 1 | 0 | 已有：Samsung CL05A105KA5NQNC；订单已收货池 50 只（同来源行共享，不可逐行相加）；装配前清点；须确认有效容量 |
+| C30, C41, C42, C43, C45, C46 | 6 | 10u/10V | C_0603_1608Metric | 厂商型号待选 | 0 | 6 | 未匹配可用库存；需补购 |
+| C31 | 1 | 100n/16V | C_0402_1005Metric | 厂商型号待选 | 1 | 0 | 已有：Samsung CL05B104KO5NNNC；订单已收货池 100 只（同来源行共享，不可逐行相加）；装配前清点；须确认有效容量 |
+| C32 | 1 | 4.7u/10V | C_0603_1608Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| C40 | 1 | 1u/10V | C_0603_1608Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| C44 | 1 | 100n/16V | C_0603_1608Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| C47 | 1 | 10n | C_0402_1005Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| C48 | 1 | 1u/10V | C_0402_1005Metric | 厂商型号待选 | 1 | 0 | 已有：Samsung CL05A105KA5NQNC；订单已收货池 50 只（同来源行共享，不可逐行相加）；装配前清点；须确认有效容量 |
+| D1 | 1 | PRTR5V0U2X | SOT-143 | Nexperia PRTR5V0U2X | 0 | 1 | 未匹配可用库存；需补购 |
+| D2 | 1 | STATUS | LED_0603_1608Metric | 0603 指示灯，厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| F1 | 1 | 500mA | Fuse_1206_3216Metric | 1206 自恢复保险丝，保持电流 0.5 A | 0 | 1 | 未匹配可用库存；需补购 |
+| J1 | 1 | REAR_USB_DAUGHTERBOARD | JST-SR-4 | JST SM04B-SRSS-TB(LF)(SN)，候选 | 0 | 1 | 未匹配可用库存；需补购 |
+| J2 | 1 | PROTECTED_1S_4V2_NTC10K | JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal | JST S3B-PH-SM4-TB(LF)(SN) | 0 | 1 | 未匹配可用库存；需补购 |
+| L1 | 1 | 1.5uH_74438336015 | L_Wuerth_MAPI-3015 | Wurth 74438336015 | 0 | 1 | 未匹配可用库存；需补购 |
+| R3, R4, R5, R6, R7, R47, R53, R54 | 8 | 100 | R_0402_1005Metric | 厂商型号待选 | 0 | 8 | 未匹配可用库存；需补购 |
+| R8, R9, R10, R11, R12, R13, R14, R15, R16, R18, R19, R20, R21, R23, R24, R25, R42, R43, R44, R45, R46, R48, R49, R50 | 24 | 100k | R_0402_1005Metric | 厂商型号待选 | 0 | 24 | 未匹配可用库存；需补购 |
+| R17 | 1 | 1k | R_0402_1005Metric | 厂商型号待选 | 1 | 0 | 已有：Uniroyal 0402WGF1001TCE；订单已收货池 100 只（同来源行共享，不可逐行相加）；装配前清点 |
+| R26 | 1 | 10k | R_0402_1005Metric | 厂商型号待选 | 1 | 0 | 已有：Uniroyal 0402WGF1002TCE；订单已收货池 100 只（同来源行共享，不可逐行相加）；装配前清点 |
+| R30, R31 | 2 | 0 | R_0402_1005Metric | 厂商型号待选 | 2 | 0 | 已有：Uniroyal 0402WGF0000TCE；订单已收货池 100 只（同来源行共享，不可逐行相加）；装配前清点 |
+| R32 | 1 | 2.2k | R_0402_1005Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| R40 | 1 | 2.21k/1% | R_0402_1005Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| R41 | 1 | 7.50k/1% | R_0402_1005Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| R51, R52 | 2 | 1M/1% | R_0402_1005Metric | 厂商型号待选 | 0 | 2 | 未匹配可用库存；需补购 |
+| R55 | 1 | 69.8k/1% | R_0402_1005Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| R56 | 1 | 1.69k/1% | R_0402_1005Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
+| SW1 | 1 | EVQPUC02K_RESET | Panasonic_EVQPUL_EVQPUC | Panasonic EVQPUC02K | 0 | 1 | 未匹配可用库存；需补购 |
+| SW100 | 1 | JS102011SAQN_POWER | SW_SPDT_CK_JS102011SAQN | C&K JS102011SAQN | 0 | 1 | 未匹配可用库存；需补购 |
+| U1 | 1 | MDBT50Q-1MV2 | Raytac_MDBT50Q | Raytac MDBT50Q-1MV2 | 0 | 1 | 未匹配可用库存；需补购 |
+| U2, U4 | 2 | 74HC4051 | TSSOP16 | Nexperia 74HC4051PW,118 | 0 | 2 | 未匹配可用库存；需补购 |
+| U3 | 1 | OPA350 | SOIC-8_3.9x4.9mm_P1.27mm | TI OPA350UA | 0 | 1 | 未匹配可用库存；需补购 |
+| U5 | 1 | BQ24074RGT | VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm | TI BQ24074RGTR | 0 | 1 | 未匹配可用库存；需补购 |
+| U6 | 1 | TPS63031DSK | WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm | TI TPS63031DSKR | 0 | 1 | 未匹配可用库存；需补购 |
+| U7, U8 | 2 | TPS22919DCK | SOT-363_SC-70-6 | TI TPS22919DCKR | 0 | 2 | 未匹配可用库存；需补购 |
 
 JP1 数量 **0**，保持不装；J3 为 PCB 上的六个 SWD 接触焊盘，不另装排针。主板统计为 43 个电阻、17 个电容及 16 个其他器件，共 76 件。
 
@@ -131,14 +131,14 @@ JP1 数量 **0**，保持不装；J3 为 PCB 上的六个 SWD 接触焊盘，不
 
 准备 **C5 JSH 裸板一块及下方七只元件**，替代购买成品子板。[本仓库库存抵扣表](hardware/bom/daughterboard.zh-CN.csv) · [上游固定版本材料表](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_bom.csv) · [上游固定版本制板文件](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)。
 
-| 位号 | 数量 | 厂商及指定型号 | 封装／连接器焊盘 | LCSC 编号 |
-|---|---:|---|---|---|
-| D1 | 1 | FTR SMF6.0A | SOD-123FL | C708002 |
-| F1 | 1 | Shenzhen JDT Fuse ASMD1206-150 | F1206 | C135342 |
-| J2 | 1 | JST SM04B-SRSS-TB(LF)(SN) | SM04B-SRSS-TB(LF)(SN)_mounting-reliefs | C160404 |
-| J1 | 1 | Korean Hroparts TYPE-C-31-M-12 | TYPE-C-31-M-12 | C165948 |
-| R1, R2 | 2 | Uniroyal 0402WGF5101TCE | R0402 | C25905 |
-| U1 | 1 | Texas Instruments TPD4E05U06DQAR | uSON-10 | C138714 |
+| 位号 | 数量 | 厂商及指定型号 | 封装／连接器焊盘 | LCSC 编号 | 计划用库存 | 需补购 | 库存备注 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| D1 | 1 | FTR SMF6.0A | SOD-123FL | C708002 | 0 | 1 | 未匹配可用库存；需补购 |
+| F1 | 1 | Shenzhen JDT Fuse ASMD1206-150 | F1206 | C135342 | 0 | 1 | 未匹配可用库存；需补购 |
+| J2 | 1 | JST SM04B-SRSS-TB(LF)(SN) | SM04B-SRSS-TB(LF)(SN)_mounting-reliefs | C160404 | 0 | 1 | 未匹配可用库存；需补购 |
+| J1 | 1 | Korean Hroparts TYPE-C-31-M-12 | TYPE-C-31-M-12 | C165948 | 0 | 1 | 已有同系列国产替代 6 只；尺寸及针脚待确认，暂不抵扣 |
+| R1, R2 | 2 | Uniroyal 0402WGF5101TCE | R0402 | C25905 | 2 | 0 | 已有同型号；订单已收货池 100 只，计划用 2 只；装配前清点 |
+| U1 | 1 | Texas Instruments TPD4E05U06DQAR | uSON-10 | C138714 | 0 | 1 | 未匹配可用库存；需补购 |
 
 库存两只 5.1 kΩ 电阻可供 R1／R2 使用，因此自焊选项还需 **五只散件及一块裸板**。国产 TYPE-C-31-M-12 的实物尺寸未确认，暂不抵扣。这些位号属于子板，不能与主板同名位号混用。USB 线束、四只 M2 螺丝及垫圈另按下方准备。LCSC 编号来自固定版本的上游清单，不代表当前价格或库存保证。材料数据版权属于 Unified Daughterboard Project（2023），保留 [MIT 许可证](hardware/usb-daughterboard/LICENSE.upstream)。
 

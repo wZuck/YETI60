@@ -1,18 +1,21 @@
 {
   "status": "readme-materials-match-bom",
   "fitted_mainboard_parts": 76,
+  "inventory_annotations_checked": true,
   "mechanical_rows_per_language": 20,
   "optional_daughterboard_parts": 7,
   "production_approved": false,
   "source_sha256": {
-    "scripts/check_yeti60_materials.py": "3a04a377075178aac8ce2519df1cfb1ced7ea24c5c16deea7e61d8d9dacd28ed",
-    "README.md": "c7ae497564f7583c0b7620672585aae22c41a3dfb79135be3b523e151eb14075",
+    "scripts/check_yeti60_materials.py": "cb6f935a557a44f9cdabde6947cc970bd3535c230c818f6b890c46dd81235493",
+    "README.md": "748cb64f07abb3da0f76fe6b241409036c45e75fc5f2c5dbba65711d0199b3a4",
     "hardware/bom/mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
     "docs/engineering/materials.md": "4ee4d676c7c65108ed7a5a091ba7ac3f3e9e428a27a507f55eecc83c682f49ed",
-    "hardware/bom/daughterboard.csv": "f8cde082f8e612557da15bb2a1ed8cffba324b4a7d5f7a2ddf72965e0caf224c",
-    "README.zh-CN.md": "c90fc1fc908b7ed6b839af34e9ac85cc88cdd474761b85cbb94d39ec3db84f87",
+    "hardware/bom/mainboard-purchase.csv": "b237ddb068315046ffb427e1139d721670fd2d2334d8d9d6063619def409cdb3",
+    "hardware/bom/daughterboard.csv": "7fcfb59fa599748199cb312a68ff7a9306123ccbb60be7ca49324350c300d9ea",
+    "README.zh-CN.md": "289be6b191d3f339152ae5e67b7dd39245388bb87efeafd9bf5a62baf9d80ece",
     "hardware/bom/mainboard.zh-CN.csv": "6480581ab2117d3891a9b0e1c51c5991440e4ff3d2908679ac1cf1339d0ddb77",
     "docs/engineering/materials.zh-CN.md": "6c2e2b958d6567fdc196aeaad69c0e524499dadeadc5043d1247e30cd50ad16b",
-    "hardware/bom/daughterboard.zh-CN.csv": "a08585c64aca5efd6a88c3220feca7b20b3041bbadfeedc0a4b47ee081c4acaf"
+    "hardware/bom/mainboard-purchase.zh-CN.csv": "70cad31b3c82dd24db6c3b5b7b812936ed17ff69616237bba30f07ed180a7cf7",
+    "hardware/bom/daughterboard.zh-CN.csv": "dd2084077ca8d174d99510ee6acd55399072c7668871e061bf21303115d91ced"
   }
 }
