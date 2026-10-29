@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60
 
+> **E73 development checkpoint — not ready for fabrication:** only the manufacturer reference footprint and proposed pin assignments have been added for E73. The PCB, firmware, full-audit reports and illustrations below still describe the Raytac baseline. See [module alternatives and pending validation](docs/engineering/module-options.md); use [master](https://github.com/wZuck/YETI60/tree/master) for the current Raytac design.
+
 A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
 
 > **P2 design checkpoint:** C5 JSH is retained. The default is now a custom 1600 mAh single-cell pack with a canonical recessed bottom, revised charger settings and USB500 firmware. Engineering sheets, PCB animation and assembly renders record their source hashes. See [checkpoint details](docs/design-checkpoint.md).

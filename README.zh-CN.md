@@ -2,6 +2,8 @@
 
 # YETI60
 
+> **E73 开发阶段记录，尚不能制板：**目前仅新增 E73 厂商参考封装及引脚分配提案。下方 PCB、固件、完整审查报告及示意图仍对应 Raytac 基线。见[两种模组方案与待完成验证](docs/engineering/module-options.zh-CN.md)；当前 Raytac 设计使用 [master](https://github.com/wZuck/YETI60/tree/master) 分支。
+
 以 Cipulot EC60 为基础、使用 FELK60 外壳的单 nRF52840 静电容键盘 PCB。保留感应几何、板框和安装孔位置；后侧 USB 子板连接 J1。
 
 > **P2 阶段提交：**保留 C5 JSH 子板；默认改为定制 1600 mAh 单电芯，正式底壳含凹槽，充电设定和 USB500 固件同步更新。工程装配图、PCB 动画及装配渲染记录来源哈希。见[阶段记录](docs/design-checkpoint.zh-CN.md)。

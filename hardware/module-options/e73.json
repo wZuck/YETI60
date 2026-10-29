@@ -1,0 +1,692 @@
+{
+  "module": "Ebyte E73-2G4M08S1C",
+  "chip": "nRF52840",
+  "controller_count_per_board": 1,
+  "status": "pin-assignment-proposal-not-routed-not-built",
+  "production_approved": false,
+  "body_nominal_mm": [
+    18,
+    13,
+    3
+  ],
+  "body_dimension_tolerance_mm": 0.1,
+  "vendor_origin_basis": "Unmodified Altium library origin; body X=0..18 and Y=-13..0, component view",
+  "castellated_pitch_mm": 1.27,
+  "pins": [
+    {
+      "number": 1,
+      "soc_function": "P1.11",
+      "location": "outer",
+      "proposed_net": "ROW_DRV1",
+      "vendor_land_center_mm": [
+        14.03,
+        -13.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 2,
+      "soc_function": "P1.10",
+      "location": "outer",
+      "proposed_net": "CHG_N",
+      "vendor_land_center_mm": [
+        12.76,
+        -13.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 3,
+      "soc_function": "P0.03",
+      "location": "outer",
+      "proposed_net": "CHG_EN1",
+      "vendor_land_center_mm": [
+        11.49,
+        -13.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 4,
+      "soc_function": "P0.28",
+      "location": "outer",
+      "proposed_net": "ADC",
+      "vendor_land_center_mm": [
+        10.22,
+        -13.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 5,
+      "soc_function": "GND",
+      "location": "outer",
+      "proposed_net": "GND",
+      "vendor_land_center_mm": [
+        8.95,
+        -13.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 6,
+      "soc_function": "P1.13",
+      "location": "outer",
+      "proposed_net": "CHG_CE_N",
+      "vendor_land_center_mm": [
+        7.68,
+        -13.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 7,
+      "soc_function": "P0.02",
+      "location": "outer",
+      "proposed_net": "CHG_EN2",
+      "vendor_land_center_mm": [
+        6.41,
+        -13.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 8,
+      "soc_function": "P0.29",
+      "location": "outer",
+      "proposed_net": "BAT_MEAS_EN",
+      "vendor_land_center_mm": [
+        5.14,
+        -13.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 9,
+      "soc_function": "P0.31",
+      "location": "outer",
+      "proposed_net": "AFE_EN",
+      "vendor_land_center_mm": [
+        3.8728,
+        -13.0003
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 10,
+      "soc_function": "P0.30",
+      "location": "outer",
+      "proposed_net": "STATUS_LED",
+      "vendor_land_center_mm": [
+        2.6,
+        -13.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 11,
+      "soc_function": "P0.00",
+      "location": "outer",
+      "proposed_net": "ROW_DRV4",
+      "vendor_land_center_mm": [
+        0.0,
+        -10.945
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 12,
+      "soc_function": "P0.26",
+      "location": "bottom",
+      "proposed_net": "APLEX_OUT_PIN_0",
+      "vendor_land_center_mm": [
+        2.3,
+        -10.30975
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 13,
+      "soc_function": "P0.01",
+      "location": "outer",
+      "proposed_net": "APLEX_EN_PIN_0",
+      "vendor_land_center_mm": [
+        0.0,
+        -9.675
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 14,
+      "soc_function": "P0.06",
+      "location": "bottom",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        2.3,
+        -9.03975
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 15,
+      "soc_function": "P0.05",
+      "location": "outer",
+      "proposed_net": "BAT_ADC",
+      "vendor_land_center_mm": [
+        0.0,
+        -8.405
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 16,
+      "soc_function": "P0.08",
+      "location": "bottom",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        2.3,
+        -7.76975
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 17,
+      "soc_function": "P1.09",
+      "location": "outer",
+      "proposed_net": "ROW_DRV3",
+      "vendor_land_center_mm": [
+        0.0,
+        -7.135
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 18,
+      "soc_function": "P0.04",
+      "location": "bottom",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        2.3,
+        -6.49975
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 19,
+      "soc_function": "VDD",
+      "location": "outer",
+      "proposed_net": "+3.3V",
+      "vendor_land_center_mm": [
+        0.0,
+        -5.865
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 20,
+      "soc_function": "P0.12",
+      "location": "bottom",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        2.3,
+        -5.22975
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 21,
+      "soc_function": "GND",
+      "location": "outer",
+      "proposed_net": "GND",
+      "vendor_land_center_mm": [
+        0.0,
+        -4.595
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 22,
+      "soc_function": "P0.07",
+      "location": "bottom",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        2.3,
+        -3.95975
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 23,
+      "soc_function": "VDDH",
+      "location": "outer",
+      "proposed_net": "+3.3V",
+      "vendor_land_center_mm": [
+        0.0,
+        -3.325
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 24,
+      "soc_function": "GND",
+      "location": "bottom",
+      "proposed_net": "GND",
+      "vendor_land_center_mm": [
+        2.3,
+        -2.69
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 25,
+      "soc_function": "DCCH",
+      "location": "outer",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        0.0,
+        -2.055
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 0.0
+    },
+    {
+      "number": 26,
+      "soc_function": "P0.18",
+      "location": "outer",
+      "proposed_net": "RESET_N",
+      "vendor_land_center_mm": [
+        2.6,
+        0.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 90.0
+    },
+    {
+      "number": 27,
+      "soc_function": "VBUS",
+      "location": "outer",
+      "proposed_net": "USB_5V",
+      "vendor_land_center_mm": [
+        3.87,
+        0.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 90.0
+    },
+    {
+      "number": 28,
+      "soc_function": "P0.15",
+      "location": "bottom",
+      "proposed_net": "AMUX_SEL_2",
+      "vendor_land_center_mm": [
+        4.505,
+        -2.3
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 29,
+      "soc_function": "D-",
+      "location": "outer",
+      "proposed_net": "USB_DM",
+      "vendor_land_center_mm": [
+        5.14,
+        0.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 90.0
+    },
+    {
+      "number": 30,
+      "soc_function": "P0.17",
+      "location": "bottom",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        5.775,
+        -2.3
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 31,
+      "soc_function": "D+",
+      "location": "outer",
+      "proposed_net": "USB_DP",
+      "vendor_land_center_mm": [
+        6.41,
+        0.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 90.0
+    },
+    {
+      "number": 32,
+      "soc_function": "P0.20",
+      "location": "bottom",
+      "proposed_net": "AMUX_SEL_0",
+      "vendor_land_center_mm": [
+        7.045,
+        -2.3
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 33,
+      "soc_function": "P0.13",
+      "location": "outer",
+      "proposed_net": "ROW_DRV0",
+      "vendor_land_center_mm": [
+        7.68,
+        0.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 90.0
+    },
+    {
+      "number": 34,
+      "soc_function": "P0.22",
+      "location": "bottom",
+      "proposed_net": "AMUX_SEL_1",
+      "vendor_land_center_mm": [
+        8.315,
+        -2.3
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 35,
+      "soc_function": "P0.24",
+      "location": "outer",
+      "proposed_net": "ROW_DRV2",
+      "vendor_land_center_mm": [
+        8.95,
+        0.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 90.0
+    },
+    {
+      "number": 36,
+      "soc_function": "P1.00",
+      "location": "bottom",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        9.585,
+        -2.3
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 37,
+      "soc_function": "SWDIO",
+      "location": "outer",
+      "proposed_net": "SWDIO",
+      "vendor_land_center_mm": [
+        10.22,
+        0.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 90.0
+    },
+    {
+      "number": 38,
+      "soc_function": "P1.02",
+      "location": "bottom",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        10.855,
+        -2.3
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 39,
+      "soc_function": "SWDCLK",
+      "location": "outer",
+      "proposed_net": "SWDCLK",
+      "vendor_land_center_mm": [
+        11.49,
+        0.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 90.0
+    },
+    {
+      "number": 40,
+      "soc_function": "P1.04",
+      "location": "bottom",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        12.125,
+        -2.3
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 41,
+      "soc_function": "P0.09",
+      "location": "outer",
+      "proposed_net": "APLEX_EN_PIN_1",
+      "vendor_land_center_mm": [
+        12.7572,
+        0.0003
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 90.0
+    },
+    {
+      "number": 42,
+      "soc_function": "P1.06",
+      "location": "bottom",
+      "proposed_net": null,
+      "vendor_land_center_mm": [
+        13.39,
+        -2.3
+      ],
+      "vendor_land_size_mm": [
+        1.2,
+        0.8
+      ],
+      "vendor_land_angle_deg": 270.0
+    },
+    {
+      "number": 43,
+      "soc_function": "P0.10",
+      "location": "outer",
+      "proposed_net": "PGOOD_N",
+      "vendor_land_center_mm": [
+        14.03,
+        0.0
+      ],
+      "vendor_land_size_mm": [
+        2.0,
+        0.8
+      ],
+      "vendor_land_angle_deg": 90.0
+    }
+  ],
+  "power": {
+    "VDD_pin": 19,
+    "VDDH_pin": 23,
+    "rail_V": 3.3,
+    "USB_VBUS_pin": 27,
+    "DCCH_pin_25": "unconnected; REG0 DC/DC disabled",
+    "REG1_mode": "must confirm module inductor/provisioning before firmware release"
+  },
+  "firmware_requirements": [
+    "Use internal LF RC; pins P0.00/P0.01 are allocated to GPIO",
+    "Configure both NFC pins as GPIO; verify linked UICR/NFCPINS setting",
+    "Scan ADC is P0.28/AIN4; battery ADC remains P0.05/AIN3",
+    "Preserve the corrected 60-key HHKB transform and active masks"
+  ],
+  "sources": {
+    "product": "https://www.ebyte.com/product/444.html",
+    "manual": "https://www.ebyte.com/downpdf/444.html",
+    "footprint_archive": "https://www.ebyte.com/pdf-down/2158.html"
+  },
+  "vendor_pcblib_sha256": "d135b78527a6d0b2003667511bb9c1bb56994f92b95c5052b46a88d5f1ba5591",
+  "footprint_output": "hardware/module-options/Ebyte.pretty/E73-2G4M08S1C.kicad_mod",
+  "footprint_sha256": "e605ed7cfcdb3c2fb42cb453e9d5f49136733d7f3b5230380d765cf81f8a4e8f",
+  "generator_sha256": "00f83827276289e037ac564fcd08be69c3777f56d9324d1e49b13bab1d949b7c",
+  "remaining": [
+    "Native E73 schematic, board placement/routing and ordinary-process DRC",
+    "Module supply/DC-DC review; variant firmware builds, host and fault tests",
+    "Worst-case module height/case/harness checks and variant render/guide regeneration",
+    "Complete fabrication, BOM, provenance and cross-domain checks",
+    "Supplier and physical acceptance; RF/SI deferred by user"
+  ]
+}
