@@ -1,6 +1,6 @@
 {
   "status": "both-variant-checks-passed-production-incomplete",
-  "mode": "full-audits-and-current-integration",
+  "mode": "existing-reports-and-current-integration",
   "production_approved": false,
   "variants": {
     "e73": {
@@ -36,16 +36,17 @@
         "placements": 76
       }
     },
-    "built_ARM_targets": 4
+    "built_ARM_targets": 4,
+    "shared_USB_charge_and_wired_priority_policy": true
   },
   "error": null,
   "source_sha256": {
-    "scripts/run_all_variants.py": "911917319d652ef813af0e31dd0b573858c065a7b43af4efcf63d4302342bdb0",
+    "scripts/run_all_variants.py": "3af991fcc1ce255e3f9dcb3bca70e8073d3c2a36ff10f5694056510fc28bf5ff",
     "tests/audit/test_variant_packages.py": "11c5f4a5c4426f98060e31ec880858e5c06941712f78bbf9f2eea524483f31ff"
   },
   "outcome_sha256": {
-    "docs/audit/outcome.json": "09766e7a439c3986b830b2d1152c8dc0a7bdcb5556ddf767961c78f0a0e44f15",
-    "variants/raytac/docs/audit/outcome.json": "dfb702d89f50f9f3888b46eda3e5d61be956c63bf199bf3b4f3a24cca845321b"
+    "docs/audit/outcome.json": "ac3a3c94a80370a9f629756a1af90f013dbae92b58c897825c4d33649310aec8",
+    "variants/raytac/docs/audit/outcome.json": "232d6f8041299a25f4dcffb6c37fa023a8da180bd0105b426e4872c5806786ca"
   },
   "scope": "Both complete designs in this branch; no physical acceptance or RF/SI certification"
 }

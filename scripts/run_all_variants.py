@@ -29,6 +29,8 @@ def verify_archive(path, module):
 
 def parity():
     records={};packages={}
+    for name in ['firmware/target/src/usb_policy.c','firmware/target/src/usb_policy.h','firmware/target/src/scanner.c']:
+        assert (ROOT/name).read_bytes()==(ROOT/'variants/raytac'/name).read_bytes(), 'USB charging/transport policy differs between options: '+name
     for name,folder in OPTIONS.items():
         read=lambda p:json.loads((folder/p).read_text())
         with (folder/'hardware/bom/mainboard.csv').open() as source:
@@ -44,6 +46,8 @@ def parity():
         target=read('docs/audit/yeti60-target-check.json')
         assert target['status']=='passed' and set(target['variants'])=={'normal','calibrator'}
         assert all(v['arm_elf'] and v['settings_partition_preserved'] and v['USB_configuration_mA']==500 for v in target['variants'].values())
+        host=read('docs/audit/yeti60-firmware-simulation.json')
+        assert host['status']=='passed' and any('USB policy: concurrent configured charging and USB preference' in line for line in host['output'])
     a,b=records['e73'],records['raytac']
     assert [r for r in a['parts'] if r['References']!='U1']==[r for r in b['parts'] if r['References']!='U1'], 'Non-module BOM diverged'
     assert a['fit']['mounting_hole_matches']==b['fit']['mounting_hole_matches'], 'Mounting geometry diverged'
@@ -54,7 +58,7 @@ def parity():
         assert len(option['keys']['matches'])==60
     return {'controllers_per_keyboard':1,'keys':60,'mounts':29,'non_module_BOM_identical':True,
             'shared_case_and_battery':True,'stock_use_per_selected_keyboard':10,'mainboard_to_buy':66,
-            'variant_manufacturing_packages':packages,'built_ARM_targets':4}
+            'variant_manufacturing_packages':packages,'built_ARM_targets':4,'shared_USB_charge_and_wired_priority_policy':True}
 
 
 def main():

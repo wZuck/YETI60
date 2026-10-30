@@ -177,7 +177,7 @@
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed"
   },
   "source_sha256": {
-    "docs/assembly/steps.json": "c2a25bec463a696d01f1c1cb874c9385a79ad2f195d8a2185f09d644cf344c2b",
+    "docs/assembly/steps.json": "abb207dd942abbbb132f36f9be40f6845a07c1b3772f5413c2d01ff7b8ad6e36",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
     "hardware/usb-daughterboard/upstream/UDB.kicad_pcb": "1d9e2732d68fbb83dfeadb0c33d573a14483963fae61aaa02cd57d2bb7f98b35",
     "hardware/bom/mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
@@ -186,8 +186,8 @@
     "mechanical/interconnect-spec.json": "b94140e220f435a720bbfdde1c2ccdc59e207d1615581a2abc3016e0da226a3d",
     "docs/audit/yeti60-assembly.json": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
     "docs/audit/yeti60-interconnects.json": "5538fa4136171afd7192592f0224dc740514467e26ba5d3ae5629c2a9b96ec77",
-    "docs/audit/yeti60-key-geometry.json": "f2277fe3d763c249b12a51237783aef9a6b8ac2c353302df47a336feebf2fbe6",
-    "firmware/target/README.md": "ccc1471bc7f44adff6c0b6394b047e00753a69c10d57b36165e976e1f288cff5",
+    "docs/audit/yeti60-key-geometry.json": "6b82f42d9eef3436648d8a40bd8b7355f08dc113620e5a0b62acd09bea156fec",
+    "firmware/target/README.md": "a5022a5554437975fb35f58cb94205a1d0e1977d4729081044f74d1127a112c9",
     "firmware/target/config/yeti60.keymap": "10f4e1732eea0da0342164f0cd86db7983e033360e616c401903419611200b58",
     "firmware/target/boards/yeti/yeti60/yeti60.dts": "60e1e147673900553b3d60a1203cb28749e5399c8dd81bbf6d0b58d2807f03b5",
     "scripts/export_yeti60_build_map.py": "37fb2a09e5697df4509ffb92b7e3ad2a75ae54441a90c82406f3970b47e07da8",
@@ -250,7 +250,7 @@
     "docs/assembly/images/27-step.svg": "8350f22280e649066a57090702545e4c53f1102998cc9f72590ff72ccff820a3",
     "docs/assembly/images/28-step.png": "d86901a4df71a3c2f73d171be050a45a62c4f8f9a578fdea019de52f4dfdb980",
     "docs/assembly/images/28-step.svg": "f57b229e5d26167eb388251b3dd86f2d0d0cc8733257f368f79b0ccb67bbd517",
-    "docs/assembly/build-guide.md": "bb41f42efe459e2e86d6f0a43c820ca323ba1e82e2830618580f26f4daeaa7d8",
+    "docs/assembly/build-guide.md": "ff1387e7a24e07798c3887892a5541b0486b60b93f74948c67d48a6e9e3c5656",
     "docs/assembly/images/01-step.zh-CN.png": "314c841e3580fb9f53119126a8450b08edf6c145337a54a57bb69774bf1208db",
     "docs/assembly/images/01-step.zh-CN.svg": "3b82b0086becfed127474c0a0641308a90bf8b928af0c70d2992edd6d5c8b6b4",
     "docs/assembly/images/02-step.zh-CN.png": "1fd1ebc7fc006a370b228d481f6df4985a7f61659df7061fc93d89cbc52b8725",
@@ -307,7 +307,7 @@
     "docs/assembly/images/27-step.zh-CN.svg": "3c2fa4ff08cf74f15507df577dc4ba0b673bf871b56b7c7ddfd592d17ce97a17",
     "docs/assembly/images/28-step.zh-CN.png": "cc54e0ab20ad278962b91d508229751317d2e0921743c1fea9134ce1459976b2",
     "docs/assembly/images/28-step.zh-CN.svg": "9b5d89851c699236eaff1c4eff3ee10d9c4386f27eb8b8e452318904686ad198",
-    "docs/assembly/build-guide.zh-CN.md": "aaf792957d69eb2f7727381d6e7fc8bd8fc451dff5985f3f803242da1f84cc04"
+    "docs/assembly/build-guide.zh-CN.md": "be289ec7d67e8313c08123268d6f57e0db01279cef738f5102ae7d9f2f709a13"
   },
   "steps": [
     {

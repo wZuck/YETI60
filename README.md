@@ -6,6 +6,8 @@ English | [Chinese](README.zh-CN.md)
 
 A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
 
+**Wired operation:** after a computer accepts the USB configuration, the keyboard charges the battery and sends HID input over USB at the same time. USB automatically takes priority over a retained Bluetooth preference; unplugging lets ZMK fall back to the active Bluetooth profile. The E73 and Raytac options use the same policy. The 500 mA descriptor is an input budget, not a constant battery charging current.
+
 > **P2 design checkpoint:** C5 JSH is retained. The default is now a custom 1600 mAh single-cell pack with a canonical recessed bottom, revised charger settings and USB500 firmware. Engineering sheets, PCB animation and assembly renders record their source hashes. See [checkpoint details](docs/design-checkpoint.md).
 
 > **Acceptance / RF hold:** the new layout screen found antenna copper and nearby plate-metal risks. Read the [test results and first-article procedure](docs/testing/README.md) before fabrication or assembly. DRC/build passes do not close these findings.

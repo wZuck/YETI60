@@ -2,6 +2,7 @@
 #define DT_DRV_COMPAT yeti_ec60
 #include "core.h"
 #include "calibration.h"
+#include "usb_policy.h"
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,7 +14,6 @@
 #include <zephyr/settings/settings.h>
 #include <zephyr/shell/shell.h>
 #include <zephyr/sys/util.h>
-#include <zmk/usb.h>
 
 static struct yeti_core core;
 static const struct device *scan_device;
@@ -142,7 +142,7 @@ static void run(void *a, void *b, void *c) {
   ARG_UNUSED(b);
   ARG_UNUSED(c);
   uint16_t previous[YETI_ROWS] = {0};
-  enum usb_dc_status_code old = USB_DC_UNKNOWN;
+  struct yeti_usb_policy usb_policy = {0};
   idle_since = k_uptime_get();
   while (true) {
     if (scan_device == NULL) {
@@ -223,17 +223,7 @@ static void run(void *a, void *b, void *c) {
                  low, high, guard, valid ? 1u : 0u);
         }
     }
-    enum usb_dc_status_code usb = zmk_usb_get_status();
-    if (usb != old) {
-      enum yeti_usb state = usb == USB_DC_SUSPEND ? Y_USB_SUSPENDED
-                            : zmk_usb_is_hid_ready() ? Y_USB_CONFIGURED
-                            : (usb == USB_DC_DISCONNECTED || usb == USB_DC_UNKNOWN)
-                                ? Y_USB_OFF : Y_USB_POWERED;
-      /* Legacy Zephyr bMaxPower uses 2 mA units. Resume preserves the
-       * accepted configuration; suspend/reset never enables charging. */
-      yeti_connections(&core, state, CONFIG_USB_MAX_POWER * 2, false);
-      old = usb;
-    }
+    (void)yeti_target_usb_poll(&usb_policy, &core);
     if (atomic_get(&enabled)) {
       if (afe_asleep && yeti_afe(&core, true) == 0)
         afe_asleep = false;

@@ -16,6 +16,19 @@ Flash the calibrator HEX first. Run `yeti_calibrate release` with all keys relea
 
 The Fn layer supplies F-keys, navigation and five Bluetooth profile selections. USB/BLE HID and host switching use the pinned ZMK implementation. P2 requests 500 mA (legacy Zephyr `CONFIG_USB_MAX_POWER=250`). Firmware enables USB500 charging only after host configuration, keeps USB100 with charging disabled before configuration, disables charging/input during suspend and retains the accepted configuration on resume. Both linked ELF descriptors are checked. Battery reporting is disabled until the pack and measurement integration are completed. Scan faults latch the analog front end off; reset after diagnosing the fault.
 
+## Wired charging and automatic USB priority
+
+Once a computer accepts the USB configuration, charging and USB HID operate concurrently. The target adapter explicitly selects ZMK's USB preference even if settings retained a BLE preference. An already selected USB preference is left alone, avoiding repeated settings writes. Detach leaves ZMK to fall back to the active BLE profile; no new pairing is required for an existing bond. A charge-only source does not enumerate and does not become a USB data host.
+
+| Host state | Charging while firmware runs | HID route |
+|---|---|---|
+| Powered, not configured | Disabled; USB100 input mode | Ready BLE profile, if connected |
+| Configured, 500 mA accepted | Enabled; USB500 input budget shared with system load | USB takes priority, including while BLE is connected |
+| USB suspended | Disabled; input high impedance | ZMK suspend handling; USB reports resume with the host |
+| USB detached | No USB charging | Active BLE profile when connected |
+
+The 500 mA value is not a fixed cell charge current. Charger programming, PowerPath load sharing, temperature, cable loss and the battery's charge phase govern actual current. The host regression compiles this actual adapter and the portable core with simulated USB/ZMK interfaces under ASan/UBSan. It tests concurrent charging/USB preference, retained BLE override, suspend/resume/reset/detach, failed-update retry and absence of repeated settings/GPIO writes. It does not execute a real USB or BLE stack.
+
 ## Idle power policy
 
 The scan thread keeps a 4 ms interval while a key is held or state changes. After 30 seconds without a pressed or changed key it switches to 30 ms, gates the AFE through U8/AFE_EN between idle frames, and restores it before the next scan. `YETI60_ACTIVE_SCAN_MS`, `YETI60_IDLE_SCAN_MS`, `YETI60_IDLE_AFTER_MS` and `YETI60_AFE_IDLE_GATING` control this behavior. This E73 variant selects REG1 LDO and leaves REG0 DC/DC disabled, avoiding a dependency on undocumented module inductors. VDD and VDDH share the regulated 3.3 V supply; DCCH is unconnected. BLE requests a 15–30 ms connection interval and 0 dBm; connectable advertising uses 200–300 ms through the ZMK fork's `ZMK_BLE_ADV_INT_MIN/MAX`. The host may still override connection parameters. `CONFIG_ZMK_SLEEP` remains disabled because EC keys are not a System OFF GPIO wake source; enabling it would leave no reliable key wake.

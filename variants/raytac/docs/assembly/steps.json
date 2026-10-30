@@ -938,12 +938,12 @@
       ],
       "actions": [
         [
-          "Using normal firmware, test every key over USB, held keys, multiple keys and reset/reconnect behavior.",
+          "Using normal firmware, connect to a computer and verify simultaneous battery charging and USB input, including when BLE was connected or preferred. Test every key, held keys, multiple keys and reset/reconnect behavior.",
           "With the accepted battery, disconnect USB and test BLE. Fn+Q/W/E/R/T select profiles 0/1/2/3/4 in the current keymap; verify pairing and retained bonds on the intended hosts.",
           "Check preconfiguration USB100 with charging disabled, configured-host USB500 charging, and active-firmware suspend with charging disabled and EN1/EN2=1/1 standby input high impedance. SW100-off hardware defaults to autonomous USB100 slow charging; qualify that mode separately with the intended source. Record measured current and temperature; predicted runtime is not acceptance data."
         ],
         [
-          "使用普通固件，通过 USB 检查逐键、长按、多键及复位重连。",
+          "使用普通固件连接电脑，确认一边充电一边通过 USB 输入，包括此前已连接或偏好蓝牙的情况；检查逐键、长按、多键及复位重连。",
           "使用验收过的电池，拔掉 USB 后检查蓝牙；当前键位 Fn+Q／W／E／R／T 分别选择 0／1／2／3／4 号配置，检查目标主机配对及绑定保留。",
           "分别检查配置前 USB100 且禁止充电、主机完成配置后的 USB500 充电，以及固件运行时 USB 挂起后禁止充电、EN1/EN2=1/1 待机输入高阻。SW100 关闭后硬件默认独立 USB100 慢充，应针对实际电源单独验证。记录实测电流和温度，不把估算续航当作验收数据。"
         ]
