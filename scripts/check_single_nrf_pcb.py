@@ -75,7 +75,7 @@ def main():
         bp=sorted((p.GetPosition().x,p.GetPosition().y,p.GetDrillSize().x,p.GetDrillSize().y) for p in actual[ref].Pads())
         require(ap==bp,'Changed mounting holes')
     display_path=str(path.relative_to(ROOT)) if ROOT in path.parents else str(path)
-    result={'pcb':display_path,'netlist_parity':'pass','electrode_footprints_preserved':electrodes,'mounting_holes':'pass','copper_layers':4,'interference_simulation':'not_started'}
+    result={'pcb':display_path,'netlist_parity':'pass','electrode_footprints_preserved':electrodes,'mounting_holes':'pass','copper_layers':4,'interference_simulation':'see_shared_acceptance_report_RF_blockers_open'}
     (BASE/'pcb-contract-check.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result))
 

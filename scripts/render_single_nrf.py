@@ -85,7 +85,10 @@ def prepare():
     ]))
     board = loads(SOURCE.read_text())
     resolutions = []
-    proxies = {'J2': 'J2-illustrative.wrl', 'SW100': 'SW100-illustrative.wrl'}
+    (proxy_dir / 'E73-envelope.wrl').write_text(box_vrml([
+        ((9, 6.5, 1.5), (18, 13, 3), (.08, .22, .13)),
+    ]))
+    proxies = {'J2': 'J2-illustrative.wrl', 'SW100': 'SW100-illustrative.wrl', 'U1':'E73-envelope.wrl'}
     geometry_only = set(json.loads((BASE / 'metadata-audit.json').read_text())['non_purchased_geometry_references']) | {'REF**'}
     for fp in children(board, 'footprint'):
         ref = next(str(p[2]) for p in children(fp, 'property') if str(p[1]) == 'Reference')
@@ -98,7 +101,7 @@ def prepare():
             fp.append([Atom('model'), str(path), [Atom('offset'), [Atom('xyz'), Atom('0'), Atom('0'), Atom('0')]],
                        [Atom('scale'), [Atom('xyz'), Atom('1'), Atom('1'), Atom('1')]],
                        [Atom('rotate'), [Atom('xyz'), Atom('0'), Atom('0'), Atom('0')]]])
-            resolutions.append({'ref': ref, 'kind': 'illustrative-proxy', 'model': str(path.relative_to(ROOT)), 'height_qualified': False})
+            resolutions.append({'ref': ref, 'kind': 'manufacturer-sized-body-envelope' if ref=='U1' else 'illustrative-proxy', 'model': str(path.relative_to(ROOT)), 'height_qualified': ref=='U1', 'surface_detail_qualified':False})
             continue
         loaded = 0
         for model in old_models:
@@ -298,7 +301,7 @@ def main():
                 'animation': {'frames': args.frames, 'fps': args.fps, 'seconds': args.frames/args.fps, 'dimensions': [1600,1000], 'rotation': 'full 360 degrees about X; gentle Z oscillation', 'quality': 'basic'} if not args.stills_only else None,
                 'stills': {'quality': 'high', 'native_dimensions': [2600,1600]},
                 'model_resolutions': resolutions, 'outputs': outputs,
-                'limits': ['render-only substitutions do not modify the design or frozen footprint library', 'J2 and SW100 are illustrative bodies; U5 uses a generic package model', 'Not an assembled keyboard, enclosure fit test, SI or RF simulation']}
+                'limits': ['render-only substitutions do not modify the design or frozen footprint library', 'E73 is an 18 x 13 x 3 mm nominal body envelope, not a manufacturer surface-detail model', 'J2 and SW100 are illustrative bodies; U5 uses a generic package model', 'Not an assembled keyboard, enclosure fit test, SI or RF simulation']}
     (OUT/'render-manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
     print('Render source hash verified unchanged; assets and manifest complete', flush=True)
 

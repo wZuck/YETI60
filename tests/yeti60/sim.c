@@ -78,7 +78,7 @@ static int adc(void *ctx, uint8_t ain, uint32_t acquisition) {
     assert(s->now - s->bat_on >= 50000);
     return 2389;
   }
-  assert(ain == 2 && ain == YETI_ADC_AIN);
+    assert(ain == 4 && ain == YETI_ADC_AIN);
   assert(high(s->pins[PIN_AFE_EN]));
   unsigned c = s->frame_reads / 5, r = s->frame_reads % 5;
   assert(c < 15);
@@ -209,6 +209,43 @@ static void noise(void) {
   printf("noise: 2000 frames of hysteresis-band samples; no false presses; %u "
          "expected transitions\n",
          transitions);
+}
+static void interference_bursts(void) {
+  struct yeti_core c;
+  struct sim s;
+  init(&c, &s);
+  assert(yeti_power(&c, true) == 0);
+  /* ADC codes are synthetic. Common-mode ripple is correlated across keys. */
+  for (unsigned frame = 0; frame < 2000; frame++) {
+    int ripple = (int)((frame * 97u) % 801u) - 400;
+    bool spike = frame % 17u == 0;
+    for (unsigned r = 0; r < 5; r++)
+      for (unsigned col = 0; col < 15; col++)
+        s.sample[r][col] = (uint16_t)(spike ? 2500 : 1000 + ripple);
+    scan(&c, &s);
+    for (unsigned r = 0; r < 5; r++)
+      assert(c.matrix[r] == 0);
+  }
+  /* Expose the limit: two correlated over-threshold samples ARE a press. */
+  for (unsigned r = 0; r < 5; r++)
+    for (unsigned col = 0; col < 15; col++)
+      s.sample[r][col] = 2100;
+  scan(&c, &s);
+  scan(&c, &s);
+  for (unsigned r = 0; r < 5; r++)
+    assert(c.matrix[r] == 0x7fff);
+  for (unsigned r = 0; r < 5; r++)
+    for (unsigned col = 0; col < 15; col++)
+      s.sample[r][col] = 1000;
+  scan(&c, &s);
+  for (unsigned r = 0; r < 5; r++)
+    assert(c.matrix[r] == 0x7fff);
+  scan(&c, &s);
+  for (unsigned r = 0; r < 5; r++)
+    assert(c.matrix[r] == 0);
+  puts("interference: 2000 correlated-ripple/burst frames rejected; two "
+       "sustained over-threshold frames cause 75 synthetic false keys as "
+       "expected; debounce does not establish hardware immunity");
 }
 static void failures(void) {
   struct yeti_core c;
@@ -373,6 +410,8 @@ int main(void) {
   single_keys();
   trace_phase = "noise";
   noise();
+  trace_phase = "interference-bursts";
+  interference_bursts();
   trace_phase = "faults";
   failures();
   trace_phase = "power-hid";

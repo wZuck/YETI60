@@ -2,7 +2,7 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 single-nRF52840 PCB
 
-One Raytac MDBT50Q-1MV2 handles the intended EC scan, native USB and BLE roles. OPA350, muxes, charger and regulator are peripherals, not additional controllers. STM32 and onboard USB1 are removed; a rear Type-C daughterboard connects to J1. Original EC60 sensing geometry, outline, mounting locations and four-layer structure are retained.
+One Ebyte E73-2G4M08S1C handles the intended EC scan, native USB and BLE roles. OPA350, muxes, charger and regulator are peripherals, not additional controllers. STM32 and onboard USB1 are removed; a rear Type-C daughterboard connects to J1. Original EC60 sensing geometry, outline, mounting locations and four-layer structure are retained.
 
 Strict CAD DRC has 0 errors and 0 opens with 270 physical pin pairs connected. Local power paths use ordinary through-via routing; hardware measurements remain pending. See the [comprehensive review](../../docs/audit/yeti60-comprehensive-review.md).
 

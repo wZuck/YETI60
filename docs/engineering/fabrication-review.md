@@ -2,7 +2,7 @@ English | [Chinese](fabrication-review.zh-CN.md)
 
 # P2 fabrication and assembly review handoff
 
-The [review archive](../../hardware/fabrication/yeti60-p2-dfm-review.zip) is for fabricator/assembler DFM review. It does not authorize an order. Rebuild it with `python3 scripts/export_yeti60_fabrication.py`; the [manifest](../audit/yeti60-fabrication.json) binds the archive to the PCB, BOM and instructions.
+The [review archive](../../hardware/fabrication/yeti60-e73-p2-dfm-review.zip) is for fabricator/assembler DFM review. It does not authorize an order. Rebuild it with `python3 scripts/export_yeti60_fabrication.py`; the [manifest](../audit/yeti60-fabrication.json) binds the archive to the PCB, BOM and instructions.
 
 ## Supplied outputs
 
@@ -27,4 +27,4 @@ The existing DRC/ERC warnings remain review inputs; a zero-error report is not a
 
 The BOM contains unselected passive MPNs, F1 and D2. Before assembly release, record exact orderable parts, resistor ratings/tolerance, fuse hold/trip/temperature behavior, LED polarity/Vf/current, and capacitor effective capacitance at operating bias, tolerance and temperature. Nominal 20 uF at C45/C46 is not proof of the regulator's required effective output capacitance. Request manufacturer bias data or measurements for the final selected capacitors and compare with the TPS63031 requirements.
 
-For the first lot, use the [assessment response and prototype gates](assessment-response.md). Battery procurement additionally requires the [pack specification](battery-pack-specification.md). Vendor DFM acceptance, quotations, physical waveforms and assembly yield remain open; no supplier was contacted by this workflow. SI/RF remains deferred.
+For the first lot, use the [assessment response and prototype gates](assessment-response.md). Battery procurement additionally requires the [pack specification](battery-pack-specification.md). Vendor DFM acceptance, quotations, physical waveforms and assembly yield remain open; no supplier was contacted by this workflow. SI/RF screening has started; antenna layout blockers remain open.

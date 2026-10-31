@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "baseline_commit": "27894700dd021e40957199dce596f0e5130db60c",
+  "source_sha256": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+  "removed_nonfunctional_markings": [
+    "YETI60 / EC60 by Cipulot"
+  ],
+  "retained": "All standalone guidance and existing footprint reference identifiers; electrode/outline/hole geometry checked separately by check_single_nrf_pcb.py",
+  "upstream_attribution": "Retained in project documentation",
+  "historical_decoration_only_commit": "03c2be3344a0150b3df0afc200a42cd271d601d7",
+  "electrical_geometry_unchanged": false,
+  "intentional_power_revision": "P2 changes R40 and adds R55/R56 and local routes; not a decoration-only current PCB"
+}

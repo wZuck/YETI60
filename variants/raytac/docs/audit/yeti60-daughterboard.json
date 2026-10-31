@@ -1,0 +1,126 @@
+{
+  "exported_step_sha256": "d39e4f1ea393125461292acd87f5fd46bd66c4857b4f34610b4613628226482d",
+  "status": "contract-passed",
+  "source_commit": "2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea",
+  "source_sha256": {
+    "hardware/usb-daughterboard/upstream/UDB.kicad_pcb": "1d9e2732d68fbb83dfeadb0c33d573a14483963fae61aaa02cd57d2bb7f98b35",
+    "hardware/usb-daughterboard/upstream/UDB.kicad_sch": "91b0aa1959e195d3565556cdd9dfcd7efa5a4db78779df2ce7dc54f18d92a552"
+  },
+  "finished_pcb_thickness_mm": 1.6062,
+  "mount_holes_pcb_mm": [
+    [
+      68.0045,
+      58.543
+    ],
+    [
+      82.0045,
+      58.543
+    ],
+    [
+      68.0045,
+      71.043
+    ],
+    [
+      82.0045,
+      71.043
+    ]
+  ],
+  "connector_pin_contract": {
+    "1": "VBUS through F1",
+    "2": "D-",
+    "3": "D+",
+    "4": "GND"
+  },
+  "separate_CC_terminations_ohm": [
+    5100,
+    5100
+  ],
+  "model_resolutions": [
+    {
+      "reference": "F1",
+      "original": "${KISYS3DMOD}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl",
+      "model_root": "kicad-3dmodels",
+      "path": "Resistor_SMD.3dshapes/R_1206_3216Metric.step",
+      "sha256": "f5d1ea5c47935091292bd1c6c698e0df88d3d4bbf92bf66b4c97e49df5be9ebc",
+      "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
+    },
+    {
+      "reference": "R2",
+      "original": "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.wrl",
+      "model_root": "kicad-3dmodels",
+      "path": "Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+      "sha256": "91507e5af4251cb4ef38e04889c9b98da29904432bd83786bba13ae9b605eacb",
+      "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
+    },
+    {
+      "reference": "R1",
+      "original": "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.wrl",
+      "model_root": "kicad-3dmodels",
+      "path": "Resistor_SMD.3dshapes/R_0402_1005Metric.step",
+      "sha256": "91507e5af4251cb4ef38e04889c9b98da29904432bd83786bba13ae9b605eacb",
+      "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
+    },
+    {
+      "reference": "J2",
+      "original": "${ACHERON_3D}/SM04B-SRSS-TB.STEP",
+      "model_root": "kicad-3dmodels",
+      "path": "Connector_JST.3dshapes/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step",
+      "sha256": "4b0f89a75d3758add0041ca9e5ded3a780c23ef4e3e99bcc398b41177dff5d0f",
+      "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
+    },
+    {
+      "reference": "J1",
+      "original": "${ACHERON_3D}/TYPE-C-31-M-12.step",
+      "model_root": "repository",
+      "path": "hardware/usb-daughterboard/upstream/libraries/locallib.pretty/HRO  TYPE-C-31-M-12.step",
+      "sha256": "272b7208e6c8beb3f21766a3a1c444a005e1706a99f6e2ab6c035c4f558c2d9d",
+      "kind": "source HRO connector"
+    },
+    {
+      "reference": "U1",
+      "original": "${KISYS3DMOD}/Package_SON.3dshapes/USON-10_2.5x1.0mm_P0.5mm.wrl",
+      "model_root": "kicad-3dmodels",
+      "path": "Package_SON.3dshapes/USON-10_2.5x1.0mm_P0.5mm.step",
+      "sha256": "d9d0628ead2ac2bab888344afbd0ef8b0f5a4ba37641ccc66dcbe300e3a74ac0",
+      "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
+    },
+    {
+      "reference": "D1",
+      "original": "${KISYS3DMOD}/Diode_SMD.3dshapes/D_SOD-123.wrl",
+      "model_root": "kicad-3dmodels",
+      "path": "Diode_SMD.3dshapes/D_SOD-123.step",
+      "sha256": "b3dc4065573abc72e3d5b4cca0e908f72a24205a41b6284b1f75ccacbe99adf8",
+      "kind": "standard package geometry; J2 is a mating-compatible JST substitute"
+    }
+  ],
+  "exported_step": ".assembly-work/daughterboard/daughterboard.step",
+  "render_parts": {
+    "pcb": {
+      "path": ".assembly-work/daughterboard/pcb.step",
+      "sha256": "7f4dd72d16ce85c578c80c58ad0cc259ebccbca0f5eb568adacd5639afe91f25"
+    },
+    "usb": {
+      "path": ".assembly-work/daughterboard/usb.step",
+      "sha256": "186df190406546d52a152076a33db081079234ff9b4c42cb70aa60c24655a2f6"
+    },
+    "sh": {
+      "path": ".assembly-work/daughterboard/sh.step",
+      "sha256": "f718edf6ec9e766787091dacb3380779a22b15a58db04492d5828405ae0c5eee"
+    },
+    "components": {
+      "path": ".assembly-work/daughterboard/components.step",
+      "sha256": "9de936157d56a0fabc045bad68963920094a2329f7f0f47dbed60ec1d242ae5e"
+    }
+  },
+  "SH_model_offset_xyz_mm": [
+    0,
+    -1.45,
+    0
+  ],
+  "SH_alignment_basis": "Native signal pad row y=-0.55 minus standard JST row y=-2 gives +1.45 PCB Y; STEP model offset is -1.45 Y. Previous +2.425 placed the body 3.875mm too far rearward.",
+  "export_recipe_sha256": "5a86317b593a5df998741124d8eb8a4c9113f105d7ec7b7d2021200bbb7ebe2f",
+  "limits": [
+    "Standard package substitutions do not qualify the supplier part height",
+    "JST mating harness uses a separately checked conservative housing envelope"
+  ]
+}

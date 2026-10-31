@@ -1,0 +1,33 @@
+{
+  "retrieved_UTC_date": "2026-10-29",
+  "files": [
+    {
+      "name": "Raytac MDBT50Q-1MV2 specification Version L",
+      "url": "https://www.raytac.com/download/index.php?index_id=43",
+      "sha256": "61fec8c0c9f8c33175be2237a8ebba73c6cfc0a3572fe3835fd341079c103d03",
+      "PDF_pages": [
+        7,
+        11
+      ],
+      "use": "Minimum 10.5x3.8mm antenna projection, no ground on every layer; dimensions and orientation"
+    },
+    {
+      "name": "Ebyte E73-2G4M08S1C manual",
+      "url": "https://www.ebyte.com/downpdf/444.html",
+      "sha256": "4ffa0c3e959bc193ed013d5e9c3062cceb720c22aac751637a21cc0b9dc149af",
+      "PDF_pages": [
+        9
+      ],
+      "use": "Module routing and antenna/metal guidance only; no numeric host antenna keepout provided"
+    },
+    {
+      "name": "TI OPAx350 PSpice model SBOM071E",
+      "url": "https://www.ti.com/lit/zip/sbom071",
+      "sha256": "4a7d9342611e78eb5c49221bdfe18000ad6293564fd24aad239e0c7c176142e0",
+      "member": "OPAx350.LIB",
+      "member_sha256": "4fd8ddfc56c146339fde8c2874196765d92cbe755aa08347fd823d987c34180d",
+      "use": "Analog model Final 1.5; not a board-level RF model"
+    }
+  ],
+  "redistributed": false
+}

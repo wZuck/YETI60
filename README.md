@@ -2,21 +2,27 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60
 
+> **Two alternatives in this branch:** the main directories use Ebyte E73-2G4M08S1C; Raytac MDBT50Q-1MV2 is in [variants/raytac](variants/raytac/README.md). See [selection instructions](docs/engineering/module-options.md). Both alternatives pass their implemented CAD/build checks. See the [combined record](docs/audit/variants.json). Physical and supplier qualification remain open.
+
 A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
+
+**Wired operation:** after a computer accepts the USB configuration, the keyboard charges the battery and sends HID input over USB at the same time. USB automatically takes priority over a retained Bluetooth preference; unplugging lets ZMK fall back to the active Bluetooth profile. The E73 and Raytac options use the same policy. The 500 mA descriptor is an input budget, not a constant battery charging current.
 
 > **P2 design checkpoint:** C5 JSH is retained. The default is now a custom 1600 mAh single-cell pack with a canonical recessed bottom, revised charger settings and USB500 firmware. Engineering sheets, PCB animation and assembly renders record their source hashes. See [checkpoint details](docs/design-checkpoint.md).
 
+> **Acceptance / RF hold:** the new layout screen found antenna copper and nearby plate-metal risks. Read the [test results and first-article procedure](docs/testing/README.md) before fabrication or assembly. DRC/build passes do not close these findings.
+
 ## Current review
 
-**CAD connectivity passes; production and complete hardware operation are not approved.** The [comprehensive review](docs/audit/yeti60-comprehensive-review.md) documents the implemented P2 design and remaining supplier, tolerance, harness and physical acceptance.
+**Both alternatives pass their current CAD, build and integration checks; production and physical operation remain unqualified.** The [comprehensive review](docs/audit/yeti60-comprehensive-review.md) documents the implemented P2 design and remaining supplier, tolerance, harness and physical acceptance.
 
 | Scope | Evidence and result |
 |---|---|
-| PCB | Strict DRC 0 errors / 0 opens; 270 physical pin pairs pass. Inherited USB resistors corrected to 0 Ω; ordinary mechanically drilled through vias, no blind/buried/module vias-in-pad; JLC ordinary four-layer stack |
+| PCB | E73: strict DRC 0 errors / 0 opens; 270 physical signal pairs and all critical paths pass; 114 warnings (102 virtual courtyards, 7 dangling stubs, 5 via alignment). Ordinary JLC four-layer, no blind/buried/module vias-in-pad |
 | Firmware | New schematic-bound control core passes host ASan/UBSan simulation; normal/calibrator target binaries now build; on-device USB/BLE and EC calibration remain pending |
 | Mechanical | Source PCB/plate/case nominal geometry has no overlap at the explicitly provisional Z stack; final dome/fastener/resin tolerances are unqualified |
 | Battery | Default custom 1600 mAh, complete 85×43×4.8 mm; supplier drawing/current clarification and independent thermal protection approval pending |
-| Visualization | Current source hashes tie PCB images/animation, separate engineering sheets and studio assembly renders to P2 |
+| Visualization | Each alternative has its own checked 28-step bilingual guide, PCB animation and source-linked assembly renders |
 
 - [Internal connections and cable drawing](docs/engineering/interconnects.md)
 - [Feasibility assessment response](docs/engineering/assessment-response.md)
@@ -34,7 +40,7 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 - [PCB renders and 360° animation](renders/ec60-nrf52840/README.md)
 - [Current audit index](docs/audit/README.md)
 
-The case material is provisionally resin. SI/RF analysis remains deferred. Project-owned prose defaults to English with a parallel `.zh-CN.md`; machine-readable field names stay stable.
+The case material is provisionally resin. SI/RF screening has started; antenna layout blockers and physical qualification remain open. Project-owned prose defaults to English with a parallel `.zh-CN.md`; machine-readable field names stay stable.
 
 Based on [Cipulot/EC60](https://github.com/Cipulot/EC60) and [fredlb/felk60](https://github.com/fredlb/felk60). Upstream authors, licenses and original project names are retained. Existing `EC60-nRF52840.*` filenames and `YAECKB` library identifiers remain for technical compatibility; the public project name is **YETI60**.
 
@@ -62,9 +68,9 @@ Use the [stock-adjusted mainboard purchase CSV](hardware/bom/mainboard-purchase.
 
 Quantities are net boards per keyboard; the fabricator's minimum order quantity is separate. Fabricate **one mainboard** when buying a populated C5, or **one mainboard plus one C5 JSH bare board** when soldering the daughterboard yourself.
 
-| PCB | Quantity | Dimensions and process | Source and fabrication files |
+| PCB | E73: strict DRC 0 errors / 0 opens; 270 physical signal pairs and all critical paths pass; 114 warnings (102 virtual courtyards, 7 dangling stubs, 5 via alignment). Ordinary JLC four-layer, no blind/buried/module vias-in-pad |
 |---|---:|---|---|
-| YETI60 mainboard | 1 | 285.0 x 94.6 mm outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [current Gerber/drill review ZIP](hardware/fabrication/yeti60-p2-dfm-review.zip), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
+| YETI60 E73 mainboard | 1 | 285.0 x 94.6 mm outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [E73 Gerber/drill review ZIP](hardware/fabrication/yeti60-e73-p2-dfm-review.zip), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
 | Unified Daughterboard C5 JSH | 1 only for self-assembly; 0 if purchased populated | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](hardware/bom/daughterboard.csv) |
 
 These are separate fabrication orders/files: the mainboard ZIP does not contain C5. Both archives contain four copper layers; do not select a two-layer process for C5. The mainboard archive is for manufacturing review, with final component/stencil and supplier acceptance still pending. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and five routing guides are mechanical parts, not additional PCBs. For self-reflow, use mainboard **B.Paste** and C5 **F.Paste** with a qualified stencil/profile.
@@ -116,7 +122,7 @@ These are separate fabrication orders/files: the mainboard ZIP does not contain 
 | R56 | 1 | 1.69k/1% | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
 | SW1 | 1 | EVQPUC02K_RESET | Panasonic_EVQPUL_EVQPUC | Panasonic EVQPUC02K | 0 | 1 | No matched usable stock; purchase required |
 | SW100 | 1 | JS102011SAQN_POWER | SW_SPDT_CK_JS102011SAQN | C&K JS102011SAQN | 0 | 1 | No matched usable stock; purchase required |
-| U1 | 1 | MDBT50Q-1MV2 | Raytac_MDBT50Q | Raytac MDBT50Q-1MV2 | 0 | 1 | No matched usable stock; purchase required |
+| U1 | 1 | E73-2G4M08S1C | E73-2G4M08S1C | Ebyte E73-2G4M08S1C | 0 | 1 | No matched usable stock; purchase required |
 | U2, U4 | 2 | 74HC4051 | TSSOP16 | Nexperia 74HC4051PW,118 | 0 | 2 | No matched usable stock; purchase required |
 | U3 | 1 | OPA350 | SOIC-8_3.9x4.9mm_P1.27mm | TI OPA350UA | 0 | 1 | No matched usable stock; purchase required |
 | U5 | 1 | BQ24074RGT | VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm | TI BQ24074RGTR | 0 | 1 | No matched usable stock; purchase required |

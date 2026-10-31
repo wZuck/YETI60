@@ -1,0 +1,1041 @@
+{
+  "revision": "YETI60-P2",
+  "steps": [
+    {
+      "id": "01",
+      "figure": "prepare",
+      "title": [
+        "Prepare the boards, parts and tools",
+        "准备板子、元件和工具"
+      ],
+      "actions": [
+        [
+          "Fabricate the main PCB; add one bare C5 JSH only if self-assembling it. Use the linked four-layer files in the README.",
+          "Order parts by exact value, package and rating. Keep the five matched stock pools separate from unqualified substitutes.",
+          "Prepare magnification, ESD handling, paste/stencil and controlled reflow equipment, tweezers, a multimeter, current-limited USB source and SWD probe. Keep the battery disconnected."
+        ],
+        [
+          "按 README 中的四层制板文件制作主板；自行焊子板时再制作一块 C5 JSH 裸板。",
+          "逐项核对阻值、容量、封装及额定参数，将已匹配的五种库存与未经确认的替代件分开放置。",
+          "准备放大观察、静电防护、锡膏／钢网、可控回流设备、镊子、万用表、限流 USB 电源及 SWD 探针；电池保持断开。"
+        ]
+      ],
+      "check": [
+        "Freeze actual MPNs and a compatible soldering profile before applying paste. A soldering iron alone cannot complete hidden underside joints.",
+        "先确认实际料号和兼容焊接曲线，再印锡膏；仅用烙铁不能完成底部隐藏焊点。"
+      ],
+      "labels": [
+        [
+          "1 mainboard; optional 1 bare C5",
+          "76 mainboard parts; optional 7 C5 parts",
+          "Battery disconnected throughout soldering"
+        ],
+        [
+          "主板 1 块；可选自焊 C5 裸板 1 块",
+          "主板 76 只；可选 C5 元件 7 只",
+          "全部焊接期间保持电池断开"
+        ]
+      ]
+    },
+    {
+      "id": "02",
+      "figure": "faces",
+      "title": [
+        "Identify and inspect the bare PCB",
+        "识别正反面并检查裸 PCB"
+      ],
+      "actions": [
+        [
+          "Identify the front sensing face and rear component face; the numbered illustrations show which face is visible.",
+          "Check the 29 mounting holes, board edge and clean sensing electrodes. Do not sand, tin or coat the sensing pads.",
+          "Inspect bare-board copper/mask defects and compare the received dimensions/thickness with the fabrication requirements."
+        ],
+        [
+          "区分正面感应电极与背面元件；按图中的视角说明辨认方向。",
+          "检查 29 个安装孔、板边及感应电极清洁度，不打磨、不上锡、不涂覆感应焊盘。",
+          "检查铜箔和阻焊缺陷，并按工艺说明核对实收尺寸及板厚。"
+        ]
+      ],
+      "check": [
+        "There are 74 alternative electrode sites but only 60 installed keys. Never populate sensing pads as switches or add per-key diodes.",
+        "PCB 有 74 个备选电极位置，实际安装 60 个按键；电极不是待焊开关，不增加每键二极管。"
+      ],
+      "labels": [
+        [
+          "Front: sensing electrodes",
+          "Back: all fitted electronics",
+          "29 mounting holes; 60 installed keys"
+        ],
+        [
+          "正面：感应电极",
+          "背面：全部焊装电子元件",
+          "29 个安装孔；实装 60 个按键"
+        ]
+      ]
+    },
+    {
+      "id": "03",
+      "figure": "paste",
+      "title": [
+        "Support the PCB and print solder paste",
+        "支撑主板并印刷锡膏"
+      ],
+      "actions": [
+        [
+          "Hold the PCB flat, component face upward, without scratching or bending the sensing face.",
+          "Align a qualified stencil to the current B.Paste pattern, with JP1 apertures blocked/omitted in the approved stencil plan. Print once, lift vertically and inspect deposits for bridges or missing paste.",
+          "Inspect U5/U6 exposed-pad apertures and the module lands especially carefully. Ordinary open thermal vias need process control against solder wicking."
+        ],
+        [
+          "用平整治具支撑 PCB，元件面向上，避免划伤或弯曲感应面。",
+          "将确认过的钢网对准当前 B.Paste 图形，按钢网方案封住或去掉 JP1 开口；印刷后垂直提起，检查连膏、少膏及偏移。",
+          "重点检查 U5／U6 裸露焊盘和主控模组焊盘；普通开放散热孔需要控制吸锡。"
+        ]
+      ],
+      "check": [
+        "The native paste drawing is not a qualified stencil recipe. Confirm aperture reduction/segmentation and paste/profile with the assembler; do not flood a thermal pad with solder.",
+        "原生锡膏层不等于已经验收的钢网配方；须确认减量／分窗、锡膏及温度曲线，不能向散热盘堆锡。"
+      ],
+      "labels": [
+        [
+          "B.Paste, component side",
+          "U5 / U6: hidden thermal lands",
+          "Flat support; vertical stencil lift"
+        ],
+        [
+          "使用元件面的 B.Paste",
+          "U5／U6：隐藏散热焊盘",
+          "平整支撑；垂直提起钢网"
+        ]
+      ]
+    },
+    {
+      "id": "04",
+      "figure": "pcb",
+      "install": "R",
+      "title": [
+        "Place all 43 resistors",
+        "放置全部 43 只电阻"
+      ],
+      "actions": [
+        [
+          "Sort 0402 resistors by value and use the reference table below, not body appearance.",
+          "Place R30/R31 as 0 ohm links. Fit R40=2.21k, R55=69.8k and R56=1.69k, all 1%; do not use approximate stock values.",
+          "Fit the remaining gain, pull-down, LED and divider resistors. Leave JP1 open."
+        ],
+        [
+          "按阻值分装 0402 电阻，逐一按下表位号放置，不能靠外观辨别阻值。",
+          "R30／R31 装零欧姆；R40=2.21k、R55=69.8k、R56=1.69k，均为 1%，不能用相近库存阻值替代。",
+          "完成其余增益、下拉、指示灯及分压电阻；JP1 保持空置。"
+        ]
+      ],
+      "check": [
+        "Count 43 fitted resistors. Resistors have no polarity; value and location are critical.",
+        "核对共 43 只电阻；电阻无极性，但阻值和位置必须正确。"
+      ],
+      "labels": [
+        [
+          "R30/R31 = 0 ohm",
+          "R40 2.21k; R55 69.8k; R56 1.69k",
+          "JP1 remains open"
+        ],
+        [
+          "R30／R31 为零欧姆",
+          "R40 2.21k；R55 69.8k；R56 1.69k",
+          "JP1 保持不装"
+        ]
+      ]
+    },
+    {
+      "id": "05",
+      "figure": "pcb",
+      "install": "C",
+      "title": [
+        "Place all 17 capacitors",
+        "放置全部 17 只电容"
+      ],
+      "actions": [
+        [
+          "Fit C10 as 220 pF C0G 0402, and C47 as 10 nF 0402. Follow the table for all remaining capacitors.",
+          "Use stock 100 nF only at C9/C11/C12/C31, and stock 1 uF only at C13/C48.",
+          "Keep C40/C44 and the bulk capacitors in their specified 0603 packages. Check voltage, dielectric and effective DC-biased capacitance."
+        ],
+        [
+          "C10 装 0402、220 pF、C0G，C47 装 0402、10 nF；其余按下表放置。",
+          "库存 100 nF 仅用于 C9／C11／C12／C31；库存 1 µF 仅用于 C13／C48。",
+          "C40／C44 和大容量电容保持指定的 0603 封装，确认耐压、介质及直流偏压下有效容量。"
+        ]
+      ],
+      "check": [
+        "Count 17 capacitors. These specified ceramic capacitors are non-polarized; do not substitute larger 0805 stock into 0603 sites.",
+        "核对共 17 只电容；指定陶瓷电容无极性，不能将库存 0805 直接装入 0603 焊盘。"
+      ],
+      "labels": [
+        [
+          "C10 = 220 pF C0G",
+          "0402 stock only at matched sites",
+          "0603 bulk capacitors stay 0603"
+        ],
+        [
+          "C10 为 220 pF、C0G",
+          "0402 库存只用于匹配位号",
+          "大容量电容保持 0603"
+        ]
+      ]
+    },
+    {
+      "id": "06",
+      "figure": "pcb",
+      "install": [
+        "U5",
+        "U6",
+        "U7",
+        "U8",
+        "L1",
+        "D1",
+        "F1"
+      ],
+      "title": [
+        "Place power and protection devices",
+        "放置电源及保护元件"
+      ],
+      "actions": [
+        [
+          "Align the actual package pin-1 marks to the native pad-1 positions for U5 BQ24074, U6 TPS63031 and U7/U8 TPS22919.",
+          "Fit L1 as the specified 1.5 uH part and F1 as the mainboard 1206/0.5 A fuse; the C5 fuse is different.",
+          "Fit D1 PRTR5V0U2X in its exact SOT-143 orientation. Inspect the underside-pad paste before setting down U5/U6."
+        ],
+        [
+          "将 U5 BQ24074、U6 TPS63031、U7／U8 TPS22919 的实际封装一脚标识与原生焊盘 1 对齐。",
+          "L1 使用指定的 1.5 µH 电感，F1 使用主板要求的 1206／0.5 A 保险丝；它与 C5 的保险丝不同。",
+          "D1 PRTR5V0U2X 按 SOT-143 原生脚序放置；放下 U5／U6 前先检查底部焊盘锡膏。"
+        ]
+      ],
+      "check": [
+        "Do not omit U5/U6 exposed ground pads or replace the inductor with a ferrite bead. Package dots must be checked against the actual supplier drawing.",
+        "不能漏焊 U5／U6 底部接地散热盘，也不能用磁珠代替电感；封装标识须按实际厂商图纸核对。"
+      ],
+      "labels": [
+        [
+          "U5 BQ24074; U6 TPS63031",
+          "Pad 1 locations from native PCB",
+          "Main F1 = 0.5 A; C5 F1 = 1.5 A"
+        ],
+        [
+          "U5 BQ24074；U6 TPS63031",
+          "一脚位置取自原生 PCB",
+          "主板 F1 为 0.5 A；C5 F1 为 1.5 A"
+        ]
+      ]
+    },
+    {
+      "id": "07",
+      "figure": "pcb",
+      "install": [
+        "U2",
+        "U3",
+        "U4"
+      ],
+      "title": [
+        "Place the EC analog front end",
+        "放置静电容模拟前端"
+      ],
+      "actions": [
+        [
+          "Fit U2 and U4 as 74HC4051PW TSSOP-16, not HCT or a different package.",
+          "Fit U3 OPA350UA SOIC-8; it is neither the dual OPA2350 nor an MSOP device.",
+          "Align pin 1, inspect the fine leads and avoid moving the surrounding 0402 parts."
+        ],
+        [
+          "U2／U4 使用 TSSOP-16 的 74HC4051PW，不能用 HCT 或其他封装。",
+          "U3 使用 SOIC-8 的 OPA350UA，不能用双路 OPA2350 或 MSOP 封装。",
+          "对齐一脚，检查细引脚，避免碰移周围的 0402 元件。"
+        ]
+      ],
+      "check": [
+        "All three ICs must match the native pad-1 marks and BOM. JP1 is still open.",
+        "三只芯片均须符合原生焊盘一脚位置与材料表；JP1 继续保持空置。"
+      ],
+      "labels": [
+        [
+          "U2 / U4 = 74HC4051PW",
+          "U3 = OPA350UA",
+          "Inspect each lead row"
+        ],
+        [
+          "U2／U4 为 74HC4051PW",
+          "U3 为 OPA350UA",
+          "逐排检查芯片引脚"
+        ]
+      ]
+    },
+    {
+      "id": "08",
+      "figure": "pcb",
+      "install": [
+        "U1"
+      ],
+      "title": [
+        "Place the single nRF52840 module",
+        "放置唯一的 nRF52840 模组"
+      ],
+      "actions": [
+        [
+          "Confirm Raytac MDBT50Q-1MV2, including the actual ordering suffix; do not use the stock nice!nano board.",
+          "Match the module drawing, pin 1 and antenna end to the native footprint. Check the underside lands before placement.",
+          "Keep paste and metal debris out of the antenna area. Place the module flat without sliding it across neighboring pads."
+        ],
+        [
+          "确认使用 Raytac MDBT50Q-1MV2 及正确订货后缀，不使用库存 nice!nano 开发板。",
+          "根据模组图纸核对一脚、天线端和原生焊盘方向，放置前检查底部焊盘。",
+          "天线区域不沾锡膏和金属碎屑；模组平放，不在相邻焊盘上拖动。"
+        ]
+      ],
+      "check": [
+        "This is a module soldered directly to the PCB, with underside joints. No headers or second controller are installed.",
+        "这是直接焊接在 PCB 上的模组，包含底部焊点；不安装排针或第二颗主控。"
+      ],
+      "labels": [
+        [
+          "MDBT50Q-1MV2 only",
+          "Native pad 1 and module orientation",
+          "Underside lands require reflow"
+        ],
+        [
+          "仅使用 MDBT50Q-1MV2",
+          "按原生焊盘 1 核对方向",
+          "底部焊盘需要回流焊接"
+        ]
+      ]
+    },
+    {
+      "id": "09",
+      "figure": "pcb",
+      "install": [
+        "J1",
+        "J2",
+        "SW1",
+        "SW100",
+        "D2"
+      ],
+      "title": [
+        "Place connectors, switches and the LED",
+        "放置连接器、开关和指示灯"
+      ],
+      "actions": [
+        [
+          "Fit main J1 SH and J2 PH in the native side-entry orientation; align the retention feet as well as signal pins.",
+          "Fit SW1 reset and SW100 power controls. Find OFF electrically: with power absent, SW100 pin 2 connects to GND pin 3 in OFF, not VSYS pin 1.",
+          "Fit D2 only with a qualified 0603 LED: cathode at pad 1 GND, anode at pad 2 LED_A. Confirm all these parts accept the common reflow process."
+        ],
+        [
+          "按原生侧插方向放置主板 J1 的 SH 座和 J2 的 PH 座，同时对齐固定脚及信号脚。",
+          "放置 SW1 复位键和 SW100 电源开关。断电测量 OFF 档：此时 SW100 的 2 脚应接到接地的 3 脚，而不是 VSYS 的 1 脚。",
+          "D2 使用经过确认的 0603 LED，阴极对应焊盘 1 GND，阳极对应焊盘 2 LED_A；确认本步元件兼容共同回流工艺。"
+        ]
+      ],
+      "check": [
+        "All 76 fitted parts are now placed. JP1 is absent and J3 is bare probe pads. If any chosen part cannot share the profile, revise the stencil/assembly plan before printing, rather than leaving unpopulated paste deposits.",
+        "至此已放置全部 76 只实装件，JP1 不装，J3 保持探针焊盘。若某个实际物料不能采用共同曲线，须在印膏前调整钢网／焊接方案，不能将未放件的锡膏留着回流。"
+      ],
+      "labels": [
+        [
+          "J1 SH; J2 PH, side entry",
+          "D2: pad 1 cathode / GND",
+          "SW100 OFF: pin 2 to pin 3"
+        ],
+        [
+          "J1 为 SH；J2 为 PH，均侧插",
+          "D2：焊盘 1 为阴极／地",
+          "SW100 关闭档：2 脚接 3 脚"
+        ]
+      ]
+    },
+    {
+      "id": "10",
+      "figure": "reflow",
+      "title": [
+        "Reflow, cool and inspect the solder joints",
+        "回流、冷却并检查焊点"
+      ],
+      "actions": [
+        [
+          "Run the qualified paste/component profile with a measured board-temperature record. Do not use an invented universal oven or hot-air setting.",
+          "Let the supported board cool before moving it. Inspect for shifted parts, tombstones, bridges, opens and solder balls.",
+          "Inspect accessible joints under magnification and arrange X-ray/process evidence for U5/U6/module underside joints. Repair defects with controlled rework, then clean and fully dry using a materials-compatible process."
+        ],
+        [
+          "使用经过确认的锡膏／元件曲线，并记录实测板温；不采用虚构的通用炉温或热风档位。",
+          "支撑板子充分冷却后再移动，检查偏移、立碑、连锡、虚焊及锡珠。",
+          "放大检查可见焊点，对 U5／U6／模组底部焊点取得 X 光或工艺验证证据；受控返修后按材料兼容流程清洁并彻底干燥。"
+        ]
+      ],
+      "check": [
+        "An attractive outer fillet does not prove an underside joint is soldered. Keep the battery and case away from all heating operations.",
+        "外侧焊点好看不能证明底部已经焊好；任何加热操作均不带电池和外壳进行。"
+      ],
+      "labels": [
+        [
+          "Measured reflow profile",
+          "Cool before handling",
+          "Inspect hidden joints, not only edges"
+        ],
+        [
+          "记录实测回流曲线",
+          "冷却后再拿取",
+          "检查隐藏焊点，不只看外侧"
+        ]
+      ]
+    },
+    {
+      "id": "11",
+      "figure": "inspection",
+      "title": [
+        "Complete the unpowered electrical checks",
+        "完成断电电气检查"
+      ],
+      "actions": [
+        [
+          "Disconnect USB, battery and debugger. Confirm SW100 OFF and inspect JP1 remains unbridged.",
+          "Measure settled resistance from VBUS/USB_5V, VSYS and +3.3V to GND. A brief capacitor-charging beep alone is not a short diagnosis.",
+          "Verify connector numbering, D2 polarity, fuse paths and solder bridges under magnification. Record results before applying power."
+        ],
+        [
+          "断开 USB、电池和调试器，确认 SW100 关闭、JP1 未被锡桥短接。",
+          "测量 VBUS／USB_5V、VSYS、+3.3V 对地的稳定电阻；不能仅凭电容充电时的短暂蜂鸣判断短路。",
+          "核对连接器编号、D2 极性及保险丝通路，并放大排查连锡；记录结果后再上电。"
+        ]
+      ],
+      "check": [
+        "Resolve persistent hard shorts or abnormal readings first. No universal resistance threshold is claimed for this populated circuit.",
+        "持续硬短路或异常读数须先排除；本电路没有凭空指定的通用电阻合格阈值。"
+      ],
+      "labels": [
+        [
+          "USB / battery / debugger removed",
+          "Check VBUS, VSYS and 3.3V to GND",
+          "JP1 open; SW100 OFF"
+        ],
+        [
+          "断开 USB／电池／调试器",
+          "检查电源各网络对地情况",
+          "JP1 空置；SW100 关闭"
+        ]
+      ]
+    },
+    {
+      "id": "12",
+      "figure": "daughter",
+      "optional": true,
+      "title": [
+        "Optional C5: print paste and place seven parts",
+        "自焊 C5 分支：印锡膏并放置七只元件"
+      ],
+      "actions": [
+        [
+          "Skip this step only if using a populated C5. For self-assembly, use the pinned four-layer C5 JSH board and local seven-part BOM.",
+          "Support its F.Cu component face upward and print the qualified F.Paste stencil. Place R1/R2=5.1k, U1 TPD4E05U06DQAR, D1 SMF6.0A and F1 ASMD1206-150.",
+          "Place USB-C J1 and SH J2, checking all signal and shell/retention lands. Align U1 pin 1 and the D1 cathode to the actual footprint/net drawing."
+        ],
+        [
+          "购买成品 C5 时跳过本分支；自焊时使用固定版本四层 C5 JSH 裸板及本仓库七只元件表。",
+          "将 F.Cu 元件面朝上支撑，按确认过的 F.Paste 钢网印膏；放置 R1／R2=5.1k、U1 TPD4E05U06DQAR、D1 SMF6.0A 及 F1 ASMD1206-150。",
+          "放置 USB-C 的 J1 和 SH 的 J2，核对信号脚及外壳／固定脚；按实际焊盘与网络图检查 U1 一脚和 D1 阴极。"
+        ]
+      ],
+      "check": [
+        "The two CC resistors are independent. Do not connect CC1 to CC2. Stock USB-C substitutes still require dimensional confirmation.",
+        "两个 CC 下拉电阻互相独立，不能将 CC1 与 CC2 短接；库存 USB-C 替代插座仍须确认尺寸。"
+      ],
+      "labels": [
+        [
+          "C5 uses F.Paste, not main B.Paste",
+          "7 parts; R1/R2 from stock",
+          "CC1 and CC2 remain separate"
+        ],
+        [
+          "C5 用 F.Paste，不是主板 B.Paste",
+          "共 7 只元件；R1／R2 用库存",
+          "CC1 与 CC2 保持独立"
+        ]
+      ]
+    },
+    {
+      "id": "13",
+      "figure": "daughter",
+      "optional": true,
+      "title": [
+        "Optional C5: reflow and inspect both USB rows",
+        "自焊 C5 分支：回流并检查 USB 两排触点"
+      ],
+      "actions": [
+        [
+          "Use a separately qualified C5 paste/component profile and let the board cool before inspection.",
+          "Inspect USB-C fine signal contacts and shell anchors; verify both reversible D+/D- contact groups connect to their intended nets without adjacent shorts.",
+          "Inspect the underside U1 USON joints and D1 polarity, then test SH numbered continuity, fuse continuity and separate CC pull-down paths."
+        ],
+        [
+          "按 C5 实际物料确认的曲线回流，冷却后再检查。",
+          "检查 USB-C 细信号脚与外壳固定脚，核对正反插两组 D+／D− 触点各自接到正确网络且相邻不短路。",
+          "检查 U1 的 USON 底部焊点及 D1 极性，再核对 SH 编号通路、保险丝导通及两个独立 CC 下拉。"
+        ]
+      ],
+      "check": [
+        "A mechanically fitting USB plug does not prove its contacts are soldered. The seven C5 parts are not part of the mainboard's count of 76.",
+        "USB 插头能插入不代表触点已经焊好；C5 的七只元件不包含在主板的 76 只中。"
+      ],
+      "labels": [
+        [
+          "Inspect USB contacts and shell anchors",
+          "U1 has hidden underside joints",
+          "D1 cathode to protected VCOM"
+        ],
+        [
+          "检查 USB 触点及外壳固定脚",
+          "U1 包含底部隐藏焊点",
+          "D1 阴极接保险丝后的 VCOM"
+        ]
+      ]
+    },
+    {
+      "id": "14",
+      "figure": "harness",
+      "title": [
+        "Check C5 and the four-wire USB harness",
+        "检查 C5 与四芯 USB 线束"
+      ],
+      "actions": [
+        [
+          "Use two SHR-04V-S housings and eight suitable contacts with AWG28 stranded conductors, OD <=0.8 mm each.",
+          "With every power source removed, check numbered continuity: C5 SH pin 1 to main J1 pin 1, then 2-to-2, 3-to-3 and 4-to-4; check adjacent isolation.",
+          "Verify crimps and latches before mating. Use the controlled individual lengths; the 150 mm centerline is not a universal equal-wire cut length."
+        ],
+        [
+          "使用两个 SHR-04V-S 插壳、八个匹配端子及 AWG28 多股导线，每根绝缘外径不超过 0.8 mm。",
+          "完全断电，逐编号测量 C5 的 SH 1 脚到主板 J1 的 1 脚，以及 2→2、3→3、4→4，并检查相邻线不短路。",
+          "插接前检查压接和卡扣；按受控的逐线长度制作，150 mm 中心线不等于四根线都剪 150 mm。"
+        ]
+      ],
+      "check": [
+        "Numbered continuity governs. Opposing plugs can look reversed; wire colors and visual left/right order are not sufficient.",
+        "以编号导通为准；相对的插头看起来可能反向，不能仅凭颜色或视觉左右顺序判断。"
+      ],
+      "labels": [
+        [
+          "1 VBUS; 2 D-; 3 D+; 4 GND",
+          "Check every numbered conductor",
+          "Electrical diagram, not plug viewing order"
+        ],
+        [
+          "1 电源；2 D−；3 D+；4 地",
+          "逐根核对编号导通",
+          "电气示意，不代表插头观察顺序"
+        ]
+      ]
+    },
+    {
+      "id": "15",
+      "figure": "power",
+      "title": [
+        "First USB power-up, without a battery",
+        "不接电池，首次 USB 上电"
+      ],
+      "actions": [
+        [
+          "Connect the checked C5/harness on an insulating fixture. Leave J2 empty and initially leave SW100 OFF.",
+          "Apply a controlled 5 V USB input with a conservative initial 100 mA current limit; this is a bring-up ceiling, not a measured expected current. Stop if it stays in current limit or parts heat abnormally.",
+          "Record USB_5V at C40 and VSYS at C43. Turn SW100 ON and check +3.3V at C45 against U6's actual specification. Power down before changing probe wiring."
+        ],
+        [
+          "在绝缘治具上连接已检查的 C5 与线束，J2 保持空置，SW100 初始关闭。",
+          "使用受控 5 V USB 输入，首次将限流保守设为 100 mA；这是上电检查上限，不是声称的正常耗电。若持续限流或异常发热，立即断电。",
+          "记录 C40 的 USB_5V 及 C43 的 VSYS；开启 SW100 后，在 C45 检查 +3.3V 是否符合 U6 的实际规格，改变探针接线前先断电。"
+        ]
+      ],
+      "check": [
+        "Do not raise the current limit to conceal a fault. VSYS is a PowerPath output and need not equal a hypothetical 3.7 V battery. The blank module is not expected to enumerate as a keyboard.",
+        "不能通过调高限流掩盖故障；VSYS 为电源路径输出，不要求等于假想的 3.7 V 电池电压，空白模组也不应被要求已枚举为键盘。"
+      ],
+      "labels": [
+        [
+          "J2 empty; controlled 5 V input",
+          "C40 USB_5V; C43 VSYS",
+          "C45 target +3.3V; investigate faults"
+        ],
+        [
+          "J2 空置；受控 5 V 输入",
+          "C40 为 USB_5V；C43 为 VSYS",
+          "C45 目标 +3.3V；异常先排查"
+        ]
+      ]
+    },
+    {
+      "id": "16",
+      "figure": "swd",
+      "title": [
+        "Program and verify the calibrator through J3",
+        "通过 J3 写入并验证校准固件"
+      ],
+      "actions": [
+        [
+          "Power off before mating the custom six-pogo fixture. Use J3 pin 1 as 3.3 V target reference, not a second supply.",
+          "Connect 2 SWDIO, 3 GND, 4 SWDCLK, 5 RESET_N and 6 GND using the actual pad numbers. Power the board through the checked USB path.",
+          "Select nRF52840 in the probe tool, program firmware/releases/calibrator/yeti60-raytac.hex, verify its contents and reset. Reserve calibration until the EC mechanical stack is installed."
+        ],
+        [
+          "对接自定义六针治具前先断电，J3 的 1 脚是 3.3 V 目标参考，不用作第二路供电。",
+          "按实际编号连接 2 SWDIO、3 地、4 SWDCLK、5 RESET_N、6 地，再通过已检查的 USB 通路为板子供电。",
+          "在调试工具中选择 nRF52840，写入 firmware/releases/calibrator/yeti60-raytac.hex，执行校验并复位；装好静电容机械结构后再校准。"
+        ]
+      ],
+      "check": [
+        "J3 is not the standard ARM connector pinout. Never attach two active 3.3 V supplies. Later normal-firmware updates must preserve settings at 0xF0000–0xFFFFF.",
+        "J3 不是标准 ARM 接口脚序，不能并接两路主动 3.3 V 电源；后续更新普通固件须保留 0xF0000–0xFFFFF 设置区。"
+      ],
+      "labels": [
+        [
+          "Custom J3 physical pad positions",
+          "Pin 1 = target voltage reference",
+          "Verify HEX; preserve settings later"
+        ],
+        [
+          "J3 使用图中的实际焊盘位置",
+          "1 脚为目标电压参考",
+          "写入后校验；后续保留设置区"
+        ]
+      ]
+    },
+    {
+      "id": "17",
+      "figure": "inserts",
+      "title": [
+        "Finish the resin shells and bond eight inserts",
+        "处理树脂壳并冷粘八个嵌件"
+      ],
+      "actions": [
+        [
+          "Use the current unscaled top/bottom files, fully post-cure the selected resin and inspect shell registration.",
+          "Finish four M3 insert seats in the top and four M2 daughterboard seats in the bottom to the specified dimensions.",
+          "Cold-bond with resin-compatible structural epoxy; keep adhesive out of threads, align the insert axes and allow full cure before loading."
+        ],
+        [
+          "使用当前原尺寸上下壳文件，按所选树脂充分后固化，检查壳体对位。",
+          "按指定尺寸精修上壳四个 M3 嵌件孔和底壳四个子板 M2 嵌件孔。",
+          "用兼容树脂的结构环氧胶冷粘，螺纹内不进胶，保持轴线正确，完全固化后再受力。"
+        ]
+      ],
+      "check": [
+        "Do not heat-insert into thermoset resin or substitute unqualified RTV. Confirm actual bore sizes, insert flushness and thread depth on samples.",
+        "不能在热固性树脂上采用热熔嵌件，也不直接用未经确认的 RTV 替代结构胶；先检查实孔、嵌件端面及螺纹深度。"
+      ],
+      "labels": [
+        [
+          "Top: 4 x M3 inserts",
+          "Bottom: 4 x M2 inserts",
+          "Cold bond; do not heat-insert"
+        ],
+        [
+          "上壳：4 个 M3 嵌件",
+          "底壳：4 个 M2 嵌件",
+          "冷粘固定，不采用热熔"
+        ]
+      ]
+    },
+    {
+      "id": "18",
+      "figure": "plate",
+      "title": [
+        "Prepare the steel plate and 60 housings",
+        "准备钢定位板并装配 60 套轴壳"
+      ],
+      "actions": [
+        [
+          "Deburr the 1.2 mm stainless plate, finish its 29 M2 threads and clean all metal debris away from the PCB.",
+          "Dry-fit matched independently mountable Topre-compatible housings/sliders at all 60 active positions.",
+          "Fit the matched stabilized housings, wires and clips for wide keys and the 6U HHKB spacebar. Test free movement before adding domes."
+        ],
+        [
+          "为 1.2 mm 不锈钢定位板去毛刺，完成 29 个 M2 螺纹，清除金属碎屑后再靠近 PCB。",
+          "在 60 个实际按键位置试装成套、可独立安装的兼容 Topre 轴壳及滑块。",
+          "宽键和 HHKB 6U 空格采用匹配的稳定轴壳、钢丝及卡扣；装胶碗前先检查滑动是否顺畅。"
+        ]
+      ],
+      "check": [
+        "Qualify a normal key, wide key and 6U spacebar first. Original HHKB integrated-plate housings and generic 7U MX stabilizers are not assumed compatible.",
+        "先验证普通键、宽键和 6U 空格样件；不假设原版 HHKB 一体板轴壳或通用 7U MX 卫星轴兼容。"
+      ],
+      "labels": [
+        [
+          "1.2 mm stainless plate",
+          "60 matched housing/slider sets",
+          "Normal / wide / 6U sample first"
+        ],
+        [
+          "1.2 mm 不锈钢定位板",
+          "60 套匹配的轴壳／滑块",
+          "先验证普通／宽键／6U 样件"
+        ]
+      ]
+    },
+    {
+      "id": "19",
+      "figure": "ec-stack",
+      "title": [
+        "Center the domes and conical sensing springs",
+        "对齐胶碗与锥形感应弹簧"
+      ],
+      "actions": [
+        [
+          "Use a jig to hold the plate/housings inverted without loading the slider stems.",
+          "Place matched domes with their crowns toward the sliders. Each conical spring has its narrow end toward the dome crown and wide base toward the PCB.",
+          "Use the active-key map to center 60 spring bases over their electrodes. Keep the 14 unused layout positions empty."
+        ],
+        [
+          "用治具倒置支撑定位板／轴壳，避免滑块轴心承压。",
+          "放置匹配胶碗，凸起顶部朝向滑块；每个锥形弹簧窄端朝胶碗顶部，宽底朝 PCB。",
+          "按实际按键位置图将 60 个弹簧宽底与电极居中，14 个未使用布局位置保持空置。"
+        ]
+      ],
+      "check": [
+        "Spring/dome shapes in the section are illustrative. Check the chosen parts' actual seating and return; do not solder conical springs to electrodes.",
+        "剖面中的胶碗／弹簧外形为示意，须检查所选实物的落位与回弹；锥形弹簧不焊接到电极上。"
+      ],
+      "labels": [
+        [
+          "Slider -> dome crown -> spring tip",
+          "Wide spring base toward sensing PCB",
+          "60 centered springs; no solder"
+        ],
+        [
+          "滑块→胶碗顶部→弹簧窄端",
+          "弹簧宽底朝向感应 PCB",
+          "60 个弹簧居中，不上锡"
+        ]
+      ]
+    },
+    {
+      "id": "20",
+      "figure": "fasteners",
+      "title": [
+        "Install the 29 insulated PCB fastener sets",
+        "安装 29 套绝缘 PCB 紧固件"
+      ],
+      "actions": [
+        [
+          "Install the adapter standoffs under the tapped plate: 4.50 mm brass shoulder, upper M2 stud and lower M1.6 female thread.",
+          "Place a 0.10 mm polyimide ring between every shoulder and the PCB sensing face, then lower the PCB without shifting the springs.",
+          "From the component side, fit 0.8 mm PEEK washers, OD <=4 mm, and 29 M1.6 x 5 screws. Tighten progressively with sample-qualified torque."
+        ],
+        [
+          "在已攻牙定位板下安装转接柱：黄铜肩高 4.50 mm，上部 M2 外牙，下部 M1.6 内牙。",
+          "每个铜柱肩与 PCB 感应面之间放置 0.10 mm 聚酰亚胺环，落下 PCB 时不移位弹簧。",
+          "从元件面安装 0.8 mm 厚、外径不超过 4 mm 的 PEEK 垫圈及 29 只 M1.6×5 螺丝，按样件确认的扭矩逐步均匀紧固。"
+        ]
+      ],
+      "check": [
+        "Nominal plate-to-PCB gap is 4.60 mm. Do not use the stock M1.6 x 2 screws, metal washers against sensing copper, or force misaligned holes.",
+        "标称板间距为 4.60 mm；不能用库存 M1.6×2 短螺丝，不能让金属垫圈压感应铜面，也不能强迫错位孔对齐。"
+      ],
+      "labels": [
+        [
+          "4.50 shoulder + 0.10 film = 4.60 mm",
+          "PEEK 0.8 mm, OD <=4 mm",
+          "29 x M1.6 x 5, from below"
+        ],
+        [
+          "4.50 铜柱肩＋0.10 膜＝4.60 mm",
+          "PEEK 厚 0.8 mm，外径≤4 mm",
+          "下方安装 29 只 M1.6×5"
+        ]
+      ]
+    },
+    {
+      "id": "21",
+      "figure": "lower",
+      "title": [
+        "Fit lower gaskets, C5 and open guide bases",
+        "安装下侧垫片、C5 和开口走线底座"
+      ],
+      "actions": [
+        [
+          "Cut the specified 2 mm gasket stock to the existing lower ledges, keeping ports, wires and service openings clear.",
+          "Fit C5 on its four M2 inserts with M2 x 4 screws and 0.30 mm insulating washers; inspect USB-mouth alignment.",
+          "Bond the two rear guide bases and one front base at the checked case coordinates. Leave the two rear bridges removable and support the plate/PCB assembly above the case while routing."
+        ],
+        [
+          "将指定的 2 mm 缓冲垫材料裁到原有下侧支承台阶，不覆盖端口、走线和检修开口。",
+          "用四只 M2×4 螺丝及 0.30 mm 绝缘垫圈固定 C5，检查 USB 开口对位。",
+          "按检查过的壳体坐标粘接两个后侧底座和一个前侧底座；两个后侧桥盖保持可拆，走线时用治具支撑尚未落下的定位板／PCB 总成。"
+        ]
+      ],
+      "check": [
+        "Do not scale the placed guide files or stack them at a common origin. Let base adhesive cure before installing wires.",
+        "不可缩放已定位的走线支架文件，也不能将它们按共同原点叠放；底座胶固化后再装线。"
+      ],
+      "labels": [
+        [
+          "Lower gasket on original ledges",
+          "C5: 4 x M2 x 4 + 0.30 washer",
+          "2 rear bases + 1 front base"
+        ],
+        [
+          "下侧垫片贴在原有台阶",
+          "C5：4 只 M2×4＋0.30 垫圈",
+          "后侧底座 2 个＋前侧底座 1 个"
+        ]
+      ]
+    },
+    {
+      "id": "22",
+      "figure": "battery",
+      "title": [
+        "Inspect and retain the qualified battery pack",
+        "检查并固定经过确认的电池包"
+      ],
+      "actions": [
+        [
+          "Accept only the specified protected single-cell 1600 mAh pack with supplier-approved full envelope <=85 x 43 x 4.8 mm, independent thermal interruption and separate NTC.",
+          "Before mating J2, measure pack polarity and verify the custom PHR-3 numbering: 1 positive, 2 negative, 3 10k NTC to negative.",
+          "Place nonconductive removable retention and edge protection in the pocket, keeping the total floor budget <=0.20 mm. Leave the pack electrically disconnected until all routing checks pass."
+        ],
+        [
+          "只接受指定受保护 1600 mAh 单电芯包，供方确认完整包络≤85×43×4.8 mm，具备独立温度切断和单独 NTC。",
+          "插 J2 前先测量极性，并核对自定义 PHR-3 编号：1 正极、2 负极、3 为接负极的 10k NTC。",
+          "在电池槽内布置绝缘、可拆固定及边缘保护，槽底总厚度预算不超过 0.20 mm；全部走线检查合格前，电池电气连接保持断开。"
+        ]
+      ],
+      "check": [
+        "No soldering or hot work near the pack. Do not use the stock 110 mAh cell, compress the pouch or infer polarity from plug shape.",
+        "电池附近不焊接、不加热；不使用库存 110 mAh 电芯，不挤压软包，不通过插头外形推断极性。"
+      ],
+      "labels": [
+        [
+          "Complete pack <=85 x 43 x 4.8 mm",
+          "J2: 1 + / 2 GND / 3 NTC",
+          "Floor tape + insulation <=0.20 mm"
+        ],
+        [
+          "完整电池包≤85×43×4.8 mm",
+          "J2：1 正／2 负／3 温度线",
+          "槽底胶带＋绝缘≤0.20 mm"
+        ]
+      ]
+    },
+    {
+      "id": "23",
+      "figure": "routing",
+      "title": [
+        "Lay the seven wires and close the removable guides",
+        "铺设七根导线并封好可拆走线桥"
+      ],
+      "actions": [
+        [
+          "Lay three lower battery wires in the rear bases, fit the two removable bridges using 0.05 mm side-land tape, then lay four upper USB wires.",
+          "Route the front USB loop through its base; preserve the checked bends and keep all wires away from screws, edges and the pouch.",
+          "Apply three upper insulating retention pieces, film plus adhesive <=0.10 mm, wrapped down the guide sides. Recheck continuity/polarity, mate J1 and finally J2, then lower the supported assembly without pinching wires."
+        ],
+        [
+          "后侧底座先铺三根下层电池线，侧边用总厚度 0.05 mm 胶带固定两个可拆桥盖，再铺四根上层 USB 线。",
+          "前侧 USB 回环放入对应底座，保持受控弯曲，导线不碰螺钉、锐边和电池软包。",
+          "贴三片上层绝缘固定膜，膜加胶总厚度≤0.10 mm，并沿桥盖侧面包下；复核导通／极性后插 J1，最后插 J2，再将治具支撑的总成落下，避免夹线。"
+        ]
+      ],
+      "check": [
+        "USB inner bend radii are at least 4.5 mm; battery at least 5 mm in the checked route. Do not permanently epoxy removable bridges or leave a floating retention strip.",
+        "受检路径中 USB 最小内侧弯曲半径至少 4.5 mm，电池线至少 5 mm；不将可拆桥盖永久粘死，不留下悬空固定膜。"
+      ],
+      "labels": [
+        [
+          "Lower: 3 battery wires",
+          "Upper: 4 USB wires",
+          "2 removable bridges + 3 retention films"
+        ],
+        [
+          "下层：3 根电池线",
+          "上层：4 根 USB 线",
+          "2 个可拆桥盖＋3 片固定膜"
+        ]
+      ]
+    },
+    {
+      "id": "24",
+      "figure": "caps",
+      "title": [
+        "Fit 60 matched keycaps and check travel",
+        "安装 60 个匹配键帽并检查行程"
+      ],
+      "actions": [
+        [
+          "Support the plate while pressing compatible caps onto the selected slider stems. Fit the matched 6U spacebar and stabilized wide caps without bending wires.",
+          "Check every cap's clearance, full travel and return, including the perimeter and adjacent wide keys.",
+          "Check the Fn key and all active positions against the HHKB mapping. Do not assume the stock 133-key set is compatible without a stem/spacebar check."
+        ],
+        [
+          "支撑定位板，再将兼容键帽压到所选滑块轴心上；安装匹配的 6U 空格及宽键键帽，不弯曲稳定钢丝。",
+          "逐键检查边缘及相邻宽键的间隙、完整行程与回弹。",
+          "按 HHKB 映射核对 Fn 及所有实际按键；未确认轴心和空格兼容性前，不直接使用库存 133 键套装。"
+        ]
+      ],
+      "check": [
+        "All 60 keys move freely before calibration. Correct binding mechanically instead of masking it with scan thresholds.",
+        "校准前 60 个键都应自由运动；机械卡滞先修复，不能靠调整扫描阈值掩盖。"
+      ],
+      "labels": [
+        [
+          "60 compatible caps",
+          "6U HHKB spacebar",
+          "Full travel and reliable return"
+        ],
+        [
+          "60 个兼容键帽",
+          "HHKB 6U 空格",
+          "完整行程并可靠回弹"
+        ]
+      ]
+    },
+    {
+      "id": "25",
+      "figure": "calibration",
+      "title": [
+        "Calibrate every key, save and load normal firmware",
+        "逐键校准、保存并写入普通固件"
+      ],
+      "actions": [
+        [
+          "Boot the calibrator with the complete mechanical stack at its intended preload. Run yeti_calibrate release with every key released; wait for the 128-frame completion message.",
+          "Use firmware/target/calibration-keys.csv. Hold each selected key BEFORE yeti_calibrate press ROW COL; keep holding until the 128-sample completion message. Repeat for all 60 keys, inspect yeti_calibrate status, then run yeti_calibrate save. Bare press is rejected.",
+          "Power down before reconnecting SWD. Program and verify firmware/releases/normal/yeti60-raytac.hex using range/sector-aware flashing that preserves 0xF0000–0xFFFFF. Restart and check that calibration is retained."
+        ],
+        [
+          "完整机械结构按预定预压状态支撑，启动校准固件；全部松键执行 yeti_calibrate release，等待 128 帧采样完成提示。",
+          "按 firmware/target/calibration-keys.csv 操作，先按住目标键，再执行 yeti_calibrate press ROW COL；保持按住至 128 个采样完成后松开。逐个覆盖 60 键，检查 yeti_calibrate status，再执行 yeti_calibrate save；旧的无行列 press 命令会被拒绝。",
+          "重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60-raytac.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。"
+        ]
+      ],
+      "check": [
+        "Do not use full-chip erase/recover after saving calibration. Rejected ranges or ADC saturation require diagnosis. Keys intentionally emit no events before valid calibration.",
+        "保存校准后不使用全片擦除或恢复操作；量程不足、ADC 饱和须排查，没有有效校准时固件刻意不输出按键。"
+      ],
+      "labels": [
+        [
+          "release -> press row col -> save",
+          "Hold until 128 samples complete",
+          "Preserve final 64 KiB settings"
+        ],
+        [
+          "松键→指定行列按键→保存",
+          "按住直到 128 个采样完成",
+          "保留末尾 64 KiB 设置区"
+        ]
+      ]
+    },
+    {
+      "id": "26",
+      "figure": "test",
+      "title": [
+        "Test USB, BLE and charge-state behavior open",
+        "开壳检查 USB、蓝牙及充电状态"
+      ],
+      "actions": [
+        [
+          "Using normal firmware, connect to a computer and verify simultaneous battery charging and USB input, including when BLE was connected or preferred. Test every key, held keys, multiple keys and reset/reconnect behavior.",
+          "With the accepted battery, disconnect USB and test BLE. Fn+Q/W/E/R/T select profiles 0/1/2/3/4 in the current keymap; verify pairing and retained bonds on the intended hosts.",
+          "Check preconfiguration USB100 with charging disabled, configured-host USB500 charging, and active-firmware suspend with charging disabled and EN1/EN2=1/1 standby input high impedance. SW100-off hardware defaults to autonomous USB100 slow charging; qualify that mode separately with the intended source. Record measured current and temperature; predicted runtime is not acceptance data."
+        ],
+        [
+          "使用普通固件连接电脑，确认一边充电一边通过 USB 输入，包括此前已连接或偏好蓝牙的情况；检查逐键、长按、多键及复位重连。",
+          "使用验收过的电池，拔掉 USB 后检查蓝牙；当前键位 Fn+Q／W／E／R／T 分别选择 0／1／2／3／4 号配置，检查目标主机配对及绑定保留。",
+          "分别检查配置前 USB100 且禁止充电、主机完成配置后的 USB500 充电，以及固件运行时 USB 挂起后禁止充电、EN1/EN2=1/1 待机输入高阻。SW100 关闭后硬件默认独立 USB100 慢充，应针对实际电源单独验证。记录实测电流和温度，不把估算续航当作验收数据。"
+        ]
+      ],
+      "check": [
+        "A successful firmware build is not this test. Complete the pack's thermal/charge qualification before relying on charging; no battery-percentage reporting is enabled.",
+        "构建成功不等于本步实测通过；依赖充电功能前先完成电池温度／充电验收，当前未开启电量百分比上报。"
+      ],
+      "labels": [
+        [
+          "USB: all 60 keys and reconnect",
+          "BLE: Fn + Q / W / E / R / T",
+          "Measure charge states and temperature"
+        ],
+        [
+          "USB：60 键及重连",
+          "蓝牙：Fn＋Q／W／E／R／T",
+          "测量充电状态与温度"
+        ]
+      ]
+    },
+    {
+      "id": "27",
+      "figure": "close",
+      "title": [
+        "Fit upper gaskets and close the shell",
+        "安装上侧垫片并合壳"
+      ],
+      "actions": [
+        [
+          "Remove USB and switch off before final handling; disconnect the pack if adjusting the internal wiring. Fit upper gaskets only on the original ledges.",
+          "Check no wire or retention film protrudes into mating surfaces. Close the shell without force, preserving plate registration and the qualified gasket compression.",
+          "Fit four M3 x 5 screws with 0.30 mm shims and tighten progressively. If key feel or sensing changes after closure, reopen and correct the stack before recalibrating."
+        ],
+        [
+          "最终操作前拔掉 USB 并关闭电源；调整内部走线时再断开电池。上侧垫片只贴在原有台阶。",
+          "检查导线和固定膜均不伸入合壳面，不用蛮力压合，保持定位板对位及确认过的垫片压缩量。",
+          "安装四只 M3×5 螺丝及 0.30 mm 垫片，逐步均匀紧固；若合壳后手感或感应改变，先开壳修正结构，再重新校准。"
+        ]
+      ],
+      "check": [
+        "Check no insert bottoms out, no pouch pressure and no clipped wires. The unqualified longer stock screws are not default substitutes.",
+        "检查螺丝不顶底、电池不受压、导线不被夹；未经确认的库存长螺丝不是默认替代件。"
+      ],
+      "labels": [
+        [
+          "Upper gasket on original ledges",
+          "4 x M3 x 5 + 0.30 mm shims",
+          "Close without forcing or pinching"
+        ],
+        [
+          "上侧垫片贴在原有台阶",
+          "4 只 M3×5＋0.30 mm 垫片",
+          "无强压、无夹线地合壳"
+        ]
+      ]
+    },
+    {
+      "id": "28",
+      "figure": "feet",
+      "title": [
+        "Fit four feet and repeat the final checks",
+        "安装四个脚垫并完成最终检查"
+      ],
+      "actions": [
+        [
+          "Clean the four original underside pockets and install four adhesive-backed SKUF feet, 41.8 x 5.8 x 2 mm. Do not cover the SW100 service port.",
+          "Set the keyboard on a flat surface; check stable support, USB access and SW100 operation through the 8 mm port using an insulated tool.",
+          "Repeat all 60 keys, wide-key return, USB/BLE reconnect and an unplugged power cycle. Save the measured bring-up/calibration/assembly records for this serial-numbered unit."
+        ],
+        [
+          "清洁底部四个原有脚垫槽，贴四只带背胶 SKUF 脚垫，规格 41.8×5.8×2 mm，不遮挡 SW100 检修孔。",
+          "在平面上检查支撑稳定、USB 插拔空间，并用绝缘工具通过 8 mm 检修孔操作 SW100。",
+          "再次检查全部 60 键、宽键回弹、USB／蓝牙重连及拔线后的重新上电，并为这台样机保存上电、校准和装配实测记录。"
+        ]
+      ],
+      "check": [
+        "Complete first-article acceptance remains required. No completed hardware, lifetime, charging or RF certification is implied by these illustrations.",
+        "仍须完成首件实测验收；这些示意图不代表已经取得实物、寿命、充电或射频认证。"
+      ],
+      "labels": [
+        [
+          "4 x SKUF feet, 41.8 x 5.8 x 2 mm",
+          "Keep the 8 mm service port clear",
+          "Repeat tests after shell closure"
+        ],
+        [
+          "4 只 SKUF，41.8×5.8×2 mm",
+          "保持 8 mm 检修孔畅通",
+          "合壳后再次逐项检查"
+        ]
+      ]
+    }
+  ]
+}

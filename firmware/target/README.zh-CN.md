@@ -12,14 +12,31 @@
 
 ## 校准与操作
 
-先刷校准版 HEX，通过 USB CDC 控制台执行 `yeti_calibrate release`、`yeti_calibrate press`、`yeti_calibrate save`。先保持全部按键松开采集，再逐个将实际安装的按键完全按下至少一次，全部松开后保存。扫描持有者线程生成逐键滞回阈值，拒绝幅度不足及 ADC 饱和，并将有效数据保存到 NVS。没有有效校准数据时不发送按键事件。刷普通固件时保持板型及设置分区一致。
+先刷校准版 HEX。全部松键执行 `yeti_calibrate release`，等待 128 帧完成提示。对 60 个实际按键分别操作：先将目标键完全按住，再执行 `yeti_calibrate press <row> <col>`，保持按住直到该键 128 个采样完成提示后再松开。用 `yeti_calibrate status` 检查样本数、最坏边界及保护裕量，全部有效后执行 `yeti_calibrate save`。不带行列的旧 `press` 命令会被拒绝。扫描持有者线程要求每状态至少 64 个有标签样本，拒绝饱和／重叠分布，以保守的六倍标准差保护值，在最坏边界之间选择严格分离的阈值。采样期间或没有有效校准时不发送按键。新指纹包含引脚、设备树、原生 PCB 和校准算法，旧的乐观校准会失效。写普通固件时须保持同一板型和设置分区。
 
 Fn 层提供功能键、方向键和五组蓝牙主机选择。USB／蓝牙 HID 与输出切换由固定版本 ZMK 实现。P2 申请 500 mA（旧版 Zephyr `CONFIG_USB_MAX_POWER=250`）。仅主机接受配置后启用 USB500 充电；此前保持 USB100 且不充电，挂起时禁充并关闭输入，恢复后保留已接受配置。两个链接 ELF 的描述符均已检查。电池报告暂时关闭，待电池与测量接口完成后接入。扫描故障会将模拟前端锁定断电，排查后重启。
 
+## 同时充电与自动优先 USB
+
+电脑接受 USB 配置后，充电与 USB 按键传输同时运行。目标适配层明确选择 ZMK 的 USB 偏好，即使历史设置保存的是蓝牙也会自动切换；已经选择 USB 时不重复写设置。拔线后由 ZMK 回退到当前已连接的蓝牙配置，已有绑定无需重新配对。只供电的电源不会完成枚举，也不会变成 USB 数据主机。
+
+| 主机状态 | 固件运行时充电状态 | 按键链路 |
+|---|---|---|
+| 已供电，尚未配置 | 禁止充电，USB100 输入模式 | 当前蓝牙配置已连接时可用 |
+| 已配置，接受 500 mA | 允许充电，USB500 输入预算与系统负载共用 | 优先 USB，蓝牙已连接也会切换 |
+| USB 挂起 | 禁止充电，输入高阻 | 由 ZMK 处理挂起，主机恢复后继续 USB 报告 |
+| USB 拔出 | 无 USB 充电 | 当前已连接的蓝牙配置 |
+
+500 mA 并非固定电芯充电电流；实际值受充电设定、负载分流、温度、线损及充电阶段影响。主机回归在 ASan/UBSan 下编译实际适配层和可移植核心，用模拟 USB／ZMK 接口检查同时充电与 USB 偏好、历史蓝牙覆盖、挂起／恢复／复位／拔线、失败后重试，以及不重复写设置或 GPIO。该测试没有运行真实 USB 或蓝牙协议栈。
+
 ## 空闲功耗策略
 
-扫描线程在有按键或状态变化时保持 4 ms 间隔；连续 30 s 无按键后改为 30 ms，并在空闲帧之间通过 U8/AFE_EN 关断 AFE，下一次扫描前重新稳定。参数由 `YETI60_ACTIVE_SCAN_MS`、`YETI60_IDLE_SCAN_MS`、`YETI60_IDLE_AFTER_MS` 和 `YETI60_AFE_IDLE_GATING` 控制。设备树把 REG1 设为 DC/DC；REG0 仍为 LDO，因为板上没有外部 DCCH 电感。BLE 连接优先请求 15–30 ms 间隔并使用 0 dBm；未连接时的可连接广播使用 200–300 ms 间隔（ZMK fork 的 `ZMK_BLE_ADV_INT_MIN/MAX`），主机仍可覆盖连接参数。`CONFIG_ZMK_SLEEP` 仍关闭：EC 键不是 System OFF 的 GPIO 唤醒源，直接启用会导致无法用按键唤醒。
+扫描线程在有按键或状态变化时保持 4 ms 间隔；连续 30 s 无按键后改为 30 ms，并在空闲帧之间通过 U8/AFE_EN 关断 AFE，下一次扫描前重新稳定。参数由 `YETI60_ACTIVE_SCAN_MS`、`YETI60_IDLE_SCAN_MS`、`YETI60_IDLE_AFTER_MS` 和 `YETI60_AFE_IDLE_GATING` 控制。E73 版本把 REG1 设为 LDO，并关闭 REG0 DC/DC，避免依赖未经核实的模组内部电感。VDD 与 VDDH 同接稳压 3.3 V，DCCH 不连接。BLE 连接优先请求 15–30 ms 间隔并使用 0 dBm；未连接时的可连接广播使用 200–300 ms 间隔（ZMK fork 的 `ZMK_BLE_ADV_INT_MIN/MAX`），主机仍可覆盖连接参数。`CONFIG_ZMK_SLEEP` 仍关闭：EC 键不是 System OFF 的 GPIO 唤醒源，直接启用会导致无法用按键唤醒。
 
 编译通过证明能够生成目标二进制。阈值、时序、USB 枚举、蓝牙配对、电流和唤醒仍需首件实测，启动及校准参数目前属于待测工程参数。此固件不声称已经通过实物验收。
 
-所有启用的 ZMK、Zephyr 和 HAL 依赖均锁定到提交；构建器拒绝与清单不同的依赖版本。引脚头文件与设备树的指纹会使旧校准数据失效。
+所有启用的 ZMK、Zephyr 和 HAL 依赖均锁定到提交；构建器拒绝不同依赖版本。引脚、设备树、原生 PCB 或校准算法的变化都会使旧校准失效。
+
+E73 发布文件位于 `firmware/releases/{normal,calibrator}/yeti60-e73.*`。HEX 额外将 0x1000120C 的 UICR.NFCPINS 写为 0xFFFFFFFE，释放 P0.09／P0.10 为 GPIO；首次刷写使用 HEX，单独的 BIN 不包含这条显式 UICR 记录。GPIO／ADC 分配专用于 E73，包括扫描 AIN4、电池 AIN3，不能刷写 Raytac 二进制。
+
+[逐键校准操作与拒绝条件](../../docs/testing/calibration.zh-CN.md)；[60 键行列命令表](calibration-keys.csv)。

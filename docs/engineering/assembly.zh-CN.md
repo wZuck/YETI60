@@ -52,4 +52,4 @@
 
 用 KiCad Python 运行 `export_yeti60_mechanical_metadata.py` 和 `export_yeti60_daughterboard.py`；使用 `requirements-audit.txt` 依次运行 `check_yeti60_assembly.py`、`export_yeti60_render_meshes.py`、`study_yeti60_battery_pocket.py`、`screen_yeti60_batteries.py`、`draw_yeti60_assembly.py`。最后运行 `python3 scripts/check_yeti60_engineering.py`，并执行既有目标固件及 DRC 检查。[图纸证据](../audit/yeti60-assembly-drawings.json)记录来源及产物哈希。
 
-当前没有实物。壳体及电池包实体检查只证明明确条件下的几何关系，不证明实际胶碗压缩、手感、树脂蠕变或电气工作。完整线束路径、具体配套轴体兼容性、供方元件高度、打印壳体公差及全部实物检查仍是首件要求。信号／射频分析按用户要求继续暂缓。
+当前没有实物。壳体及电池包实体检查只证明明确条件下的几何关系，不证明实际胶碗压缩、手感、树脂蠕变或电气工作。完整线束路径、具体配套轴体兼容性、供方元件高度、打印壳体公差及全部实物检查仍是首件要求。信号／射频检查已开始，天线布局阻塞项仍待解决。

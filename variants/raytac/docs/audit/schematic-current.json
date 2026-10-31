@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "fresh_netlist_matches_saved": true,
+  "component_values_and_footprints_match": true,
+  "components": 178,
+  "redesign_value_contract_components": 53,
+  "erc_counts": {
+    "warning": 184
+  },
+  "erc_ignored_checks": [
+    {
+      "description": "Global label only appears once in the schematic",
+      "key": "single_global_label"
+    },
+    {
+      "description": "Four connection points are joined together",
+      "key": "four_way_junction"
+    },
+    {
+      "description": "SPICE model issue",
+      "key": "simulation_model_issue"
+    },
+    {
+      "description": "Assigned footprint doesn't match footprint filters",
+      "key": "footprint_filter"
+    }
+  ],
+  "source_sha256": {
+    "hardware/ec60-nrf52840/power.kicad_sch": "1d35fb87ed82b68c829c1d409eacc09322cc079e40bdb6129543fc92412fe3cb",
+    "hardware/ec60-nrf52840/matrix.kicad_sch": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
+    "hardware/ec60-nrf52840/mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
+    "hardware/ec60-nrf52840/analog.kicad_sch": "50213cf793f4cadf9313ddc3fcc5c6755896291a56e8ca56dec564b0b9f07bf2",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_sch": "9a148ef1e3df59ae321f297162139e4de9aab2cc286106a87a8aae52b52e3973",
+    "hardware/ec60-nrf52840/components.json": "977cf7b8e77fda59f3f633f3af4a23e58a423ea0f0ecfcbbd8dded89f3a59c1b",
+    "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
+    "hardware/ec60-nrf52840/YAECKB.kicad_sym": "e852545b743cb29ad045980306260d08724b9168366e0fb3e6f737242201a3cf"
+  }
+}

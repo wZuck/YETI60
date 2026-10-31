@@ -31,3 +31,5 @@ uv run --python 3.11 --with-requirements requirements-render.txt python scripts/
 ```
 
 参数 `--preview --view assembled` 将低分辨率试图保存到已忽略的 `.assembly-work/`。最终图片为 2600 × 1734 像素，Cycles 最高 256 采样并启用降噪。材质与照明使用[官方渲染器](https://www.blender.org/features/rendering/)和[材质接口](https://docs.blender.org/api/5.0/bpy.types.Material.html)。尚未完成的硬件条件见[完整复查](../../docs/audit/yeti60-comprehensive-review.zh-CN.md)。
+
+E73 模组按厂商标称 18×13×3 mm 本体绘制，结构检查另计 0.1 mm 尺寸余量及 3.1 mm 高度包络。它是尺寸包络模型，表面细节并非厂商三维模型；FELK60 外壳仍直接使用原尺寸实体。

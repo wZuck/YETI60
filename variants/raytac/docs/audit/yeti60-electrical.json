@@ -1,0 +1,102 @@
+{
+  "status": "functional-contract-passed-layout-review-required",
+  "source_sha256": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+  "checks": {
+    "usb_series_links_0_ohm": true,
+    "scan_adc_module_pin20_P0_04_AIN2": true,
+    "battery_adc_module_pin21_P0_05_AIN3": true
+  },
+  "power_routes": [
+    {
+      "from": "U6.4",
+      "to": "L1.1",
+      "net": "BUCK_L1",
+      "conservative_track_length_mm": 3.515,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.2",
+      "to": "L1.2",
+      "net": "BUCK_L2",
+      "conservative_track_length_mm": 3.515,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.5",
+      "to": "C43.1",
+      "net": "VSYS",
+      "conservative_track_length_mm": 3.233,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.8",
+      "to": "C44.1",
+      "net": "REG_VINA",
+      "conservative_track_length_mm": 2.427,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.1",
+      "to": "C45.1",
+      "net": "+3.3V",
+      "conservative_track_length_mm": 2.062,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.1",
+      "to": "C46.1",
+      "net": "+3.3V",
+      "conservative_track_length_mm": 29.243,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.1",
+      "to": "U6.10",
+      "net": "+3.3V",
+      "conservative_track_length_mm": 30.036,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U5.13",
+      "to": "C40.1",
+      "net": "USB_5V",
+      "conservative_track_length_mm": 3.482,
+      "via_count": 1,
+      "min_trace_width_mm": 0.25
+    },
+    {
+      "from": "U5.2",
+      "to": "C41.1",
+      "net": "BAT_CELL",
+      "conservative_track_length_mm": 16.642,
+      "via_count": 2,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U5.10",
+      "to": "C42.1",
+      "net": "VSYS",
+      "conservative_track_length_mm": 2.805,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    }
+  ],
+  "measurement_limit": "Sum of complete contacted track primitives: conservative graph-path length, not an exact geometric trace-length or loop-inductance extraction. Ground return is not included.",
+  "remaining": [
+    "No regulator transient/SPICE or capacitor-derating validation",
+    "USB track-length screening completed; pair impedance, return path and eye qualification remain open",
+    "Rear Type-C daughterboard and its separate CC1/CC2 5.1k resistors remain an external assembly requirement"
+  ],
+  "sources": [
+    "https://devzone.nordicsemi.com/f/nordic-q-a/94955/resistors-for-d-and-d-",
+    "https://www.ti.com/lit/ds/symlink/tps63031.pdf",
+    "https://www.ti.com/lit/gpn/bq24074"
+  ]
+}

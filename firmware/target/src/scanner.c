@@ -1,6 +1,10 @@
 /* SPDX-License-Identifier: MIT */
 #define DT_DRV_COMPAT yeti_ec60
 #include "core.h"
+#include "calibration.h"
+#include "usb_policy.h"
+#include <errno.h>
+#include <stdlib.h>
 #include <string.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/adc.h>
@@ -10,7 +14,6 @@
 #include <zephyr/settings/settings.h>
 #include <zephyr/shell/shell.h>
 #include <zephyr/sys/util.h>
-#include <zmk/usb.h>
 
 static struct yeti_core core;
 static const struct device *scan_device;
@@ -20,7 +23,11 @@ static bool io_fault;
 static bool calibrated;
 static atomic_t calibration_command;
 static atomic_t calibration_loaded;
-static uint16_t raw[5][15], released[5][15], pressed[5][15];
+static uint16_t raw[5][15];
+static struct yeti_cal_stats released[5][15], pressed[5][15];
+static const uint16_t active[5] = {0x7fff, 0x3fff, 0x2fff, 0x6ffd, 0x0646};
+static unsigned pressed_row, pressed_col;
+static bool calibration_started;
 static unsigned cursor;
 static int calibration_mode;
 static bool idle_scan;
@@ -52,23 +59,33 @@ SETTINGS_STATIC_HANDLER_DEFINE(yeti60, "yeti60", NULL, load_calibration, NULL,
                                NULL);
 static int __unused command(const struct shell *shell, size_t argc,
                             char **argv) {
-  ARG_UNUSED(argc);
-  int mode = !strcmp(argv[1], "release") ? 1
-             : !strcmp(argv[1], "press") ? 2
-             : !strcmp(argv[1], "save")  ? 3
-                                         : 0;
-  if (!mode)
+  unsigned action = 0;
+  if (argc == 2 && !strcmp(argv[1], "release"))
+    action = 1;
+  else if (argc == 4 && !strcmp(argv[1], "press")) {
+    char *end;
+    unsigned long row = strtoul(argv[2], &end, 10);
+    if (end == argv[2] || *end || row >= 5)
+      return -EINVAL;
+    unsigned long col = strtoul(argv[3], &end, 10);
+    if (end == argv[3] || *end || col >= 15 || !(active[row] & BIT(col)))
+      return -EINVAL;
+    action = 2 | ((row * 15 + col) << 8);
+  } else if (argc == 2 && !strcmp(argv[1], "save"))
+    action = 3;
+  else if (argc == 2 && !strcmp(argv[1], "status"))
+    action = 4;
+  else
     return -EINVAL;
-  atomic_set(&calibration_command, mode);
-  shell_print(shell,
-              "Queued calibration step %d; release samples all keys up, press "
-              "samples each key fully down, save validates range.",
-              mode);
+  if (!atomic_cas(&calibration_command, 0, action))
+    return -EBUSY;
+  shell_print(shell, "Queued: hold the selected key BEFORE press row col; "
+                     "keep it held until capture completes. Use status for bounds.");
   return 0;
 }
 #if defined(CONFIG_SHELL)
-SHELL_CMD_ARG_REGISTER(yeti_calibrate, NULL, "release | press | save", command,
-                       2, 0);
+SHELL_CMD_ARG_REGISTER(yeti_calibrate, NULL,
+                       "release | press row col | status | save", command, 2, 2);
 #endif
 
 static const struct device *const ports[] = {
@@ -125,7 +142,7 @@ static void run(void *a, void *b, void *c) {
   ARG_UNUSED(b);
   ARG_UNUSED(c);
   uint16_t previous[YETI_ROWS] = {0};
-  enum usb_dc_status_code old = USB_DC_UNKNOWN;
+  struct yeti_usb_policy usb_policy = {0};
   idle_since = k_uptime_get();
   while (true) {
     if (scan_device == NULL) {
@@ -140,70 +157,94 @@ static void run(void *a, void *b, void *c) {
       calibrated = true;
     }
     int action = atomic_set(&calibration_command, 0);
-    if (action == 1) {
+    if ((action & 255) == 1) {
       calibrated = false;
+      calibration_started = true;
       calibration_mode = 1;
-      memset(released, 0xff, sizeof(released));
-      memset(pressed, 0, sizeof(pressed));
-    } else if (action == 2 && calibration_mode == 1)
-      calibration_mode = 2;
-    else if (action == 3 && calibration_mode == 2) {
-      bool valid = true;
       for (unsigned r = 0; r < 5; r++)
         for (unsigned c = 0; c < 15; c++) {
-          /* Unused layout positions are not required to be pressed. */
-          /* HHKB right Shift/Fn use the alternate copper in SW60/SW62. */
-          static const uint16_t active[5] = {0x7fff, 0x3fff, 0x2fff, 0x6ffd,
-                                             0x0646};
-          int span = (int)pressed[r][c] - released[r][c];
-          if ((active[r] & BIT(c)) && (span < 32 || pressed[r][c] >= 4090))
+          yeti_cal_reset(&released[r][c]);
+          yeti_cal_reset(&pressed[r][c]);
+        }
+    } else if ((action & 255) == 2) {
+      bool ready = calibration_started && calibration_mode == 0;
+      for (unsigned r = 0; r < 5; r++)
+        for (unsigned c = 0; c < 15; c++)
+          if ((active[r] & BIT(c)) &&
+              released[r][c].count < YETI_CAL_CAPTURE_SAMPLES)
+            ready = false;
+      unsigned index = (unsigned)action >> 8;
+      if (ready && index < 75 && (active[index / 15] & BIT(index % 15))) {
+        pressed_row = index / 15;
+        pressed_col = index % 15;
+        yeti_cal_reset(&pressed[pressed_row][pressed_col]);
+        calibrated = false;
+        calibration_mode = 2;
+      } else
+        printk("YETI60: wait for release/current key capture to complete.\n");
+    } else if ((action & 255) == 3) {
+      struct calibration candidate = {.version = YETI_CALIBRATION_VERSION};
+      bool valid = calibration_started && calibration_mode == 0;
+      for (unsigned r = 0; r < 5; r++)
+        for (unsigned c = 0; c < 15; c++) {
+          uint16_t guard;
+          candidate.low[r][c] = 4094;
+          candidate.high[r][c] = 4095;
+          if ((active[r] & BIT(c)) &&
+              !yeti_cal_thresholds(&released[r][c], &pressed[r][c],
+                                   &candidate.low[r][c], &candidate.high[r][c],
+                                   &guard)) {
             valid = false;
-          saved.low[r][c] =
-              span >= 32 ? released[r][c] + span * 35 / 100 : 4094;
-          saved.high[r][c] =
-              span >= 32 ? released[r][c] + span * 60 / 100 : 4095;
+            printk("YETI60 rejected key %u,%u: samples/margin/saturation\n", r, c);
+          }
         }
-      if (valid) {
-        saved.version = YETI_CALIBRATION_VERSION;
-        int rc = settings_save_one("yeti60/thresholds", &saved, sizeof(saved));
-        if (!rc) {
-          memcpy(core.cfg.low, saved.low, sizeof(saved.low));
-          memcpy(core.cfg.high, saved.high, sizeof(saved.high));
-          memset(core.matrix, 0, sizeof(core.matrix));
-          memset(core.count, 0, sizeof(core.count));
-          calibrated = true;
-        }
+      bool saved_ok = false;
+      if (valid && !settings_save_one("yeti60/thresholds", &candidate, sizeof(candidate))) {
+        saved_ok = true;
+        saved = candidate;
+        memcpy(core.cfg.low, saved.low, sizeof(saved.low));
+        memcpy(core.cfg.high, saved.high, sizeof(saved.high));
+        memset(core.matrix, 0, sizeof(core.matrix));
+        memset(core.count, 0, sizeof(core.count));
+        calibrated = true;
       }
-      printk("YETI60 calibration %s\n",
-             calibrated
-                 ? "saved"
-                 : "rejected; check every key and retry release/press/save");
-      calibration_mode = 0;
+      printk("YETI60 calibration %s\n", saved_ok ? "saved" : "rejected; inspect status and recapture");
+    } else if ((action & 255) == 4) {
+      printk("key,row,col,release_n,release_min,release_max,press_n,press_min,press_max,low,high,guard,valid\n");
+      for (unsigned r = 0; r < 5; r++)
+        for (unsigned c = 0; c < 15; c++) {
+          if (!(active[r] & BIT(c)))
+            continue;
+          uint16_t low = 0, high = 0, guard = 0;
+          bool valid = yeti_cal_thresholds(&released[r][c], &pressed[r][c], &low, &high, &guard);
+          printk("key,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u,%u\n", r, c,
+                 released[r][c].count, released[r][c].minimum, released[r][c].maximum,
+                 pressed[r][c].count, pressed[r][c].minimum, pressed[r][c].maximum,
+                 low, high, guard, valid ? 1u : 0u);
+        }
     }
-    enum usb_dc_status_code usb = zmk_usb_get_status();
-    if (usb != old) {
-      enum yeti_usb state = usb == USB_DC_SUSPEND ? Y_USB_SUSPENDED
-                            : zmk_usb_is_hid_ready() ? Y_USB_CONFIGURED
-                            : (usb == USB_DC_DISCONNECTED || usb == USB_DC_UNKNOWN)
-                                ? Y_USB_OFF : Y_USB_POWERED;
-      /* Legacy Zephyr bMaxPower uses 2 mA units. Resume preserves the
-       * accepted configuration; suspend/reset never enables charging. */
-      yeti_connections(&core, state, CONFIG_USB_MAX_POWER * 2, false);
-      old = usb;
-    }
+    (void)yeti_target_usb_poll(&usb_policy, &core);
     if (atomic_get(&enabled)) {
       if (afe_asleep && yeti_afe(&core, true) == 0)
         afe_asleep = false;
       cursor = 0;
       int err = afe_asleep ? -1 : yeti_scan(&core);
-      if (!err && calibration_mode) {
+      if (!err && calibration_mode == 1) {
         for (unsigned r = 0; r < 5; r++)
-          for (unsigned c = 0; c < 15; c++) {
-            if (calibration_mode == 1 && raw[r][c] < released[r][c])
-              released[r][c] = raw[r][c];
-            if (calibration_mode == 2 && raw[r][c] > pressed[r][c])
-              pressed[r][c] = raw[r][c];
-          }
+          for (unsigned c = 0; c < 15; c++)
+            yeti_cal_add(&released[r][c], raw[r][c]);
+        if (released[0][0].count >= YETI_CAL_CAPTURE_SAMPLES) {
+          calibration_mode = 0;
+          printk("YETI60 release capture complete; 128 frames.\n");
+        }
+      } else if (!err && calibration_mode == 2) {
+        struct yeti_cal_stats *stats = &pressed[pressed_row][pressed_col];
+        yeti_cal_add(stats, raw[pressed_row][pressed_col]);
+        if (stats->count >= YETI_CAL_CAPTURE_SAMPLES) {
+          calibration_mode = 0;
+          printk("YETI60 press capture complete %u,%u: n=%u min=%u max=%u\n",
+                 pressed_row, pressed_col, stats->count, stats->minimum, stats->maximum);
+        }
       }
       if (!calibrated)
         memset(core.matrix, 0, sizeof(core.matrix));

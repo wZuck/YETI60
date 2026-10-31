@@ -2,7 +2,7 @@ English | [Chinese](assessment-response.zh-CN.md)
 
 # Response to the P2 feasibility assessment
 
-The [2026-10-28 assessment](../audit/2026-10-28-feasibility-assessment.md) is retained as a dated review. This document records subsequent decisions and acceptance work. The later user requirement **JLC ordinary manufacturing only** overrides its proposed HDI procurement route. C5 JSH, one nRF52840 and the custom 1600 mAh single cell remain the chosen architecture. RF/SI is deferred.
+The [2026-10-28 assessment](../audit/2026-10-28-feasibility-assessment.md) is retained as a dated review. This document records subsequent decisions and acceptance work. The later user requirement **JLC ordinary manufacturing only** overrides its proposed HDI procurement route. C5 JSH, one nRF52840 and the custom 1600 mAh single cell remain the chosen architecture. RF/SI screening has started; antenna layout blockers remain open.
 
 | Assessment finding | Response or adjustment | Acceptance evidence still required |
 |---|---|---|
@@ -15,7 +15,7 @@ The [2026-10-28 assessment](../audit/2026-10-28-feasibility-assessment.md) is re
 | A4: incomplete passive/F1/D2 selection | README lists every fitted reference, value, package and selection status; preserve open selection status | Exact MPNs, regulator capacitor effective capacitance, fuse derating and LED current/Vf; nominal capacitance is not sufficient |
 | B: cable assembly unqualified | Add full mating envelopes, seven continuous swept wires, static bend-radius checks and removable routing guides; integrate into the audit and render provenance | Actual wire OD/length/exit height, springback, crimps, insertion/removal and insulation wear |
 | B: narrow mounting/pack tolerances | Preserve mount centers; track actual ordinary-board thickness, washer/head dimensions and resin tolerances explicitly | Incoming dimensional inspection and local mechanical samples; no silent waiver of negative clearance |
-| C: power/runtime assumptions | Retain idle scan/AFE gating/REG1 DC/DC; keep 106.64 h as a conservative continuous-AFE planning calculation, without invented savings | Battery-side current log, idle duty cycle, first-key latency, full-capacity/runtime tests |
+| C: power/runtime assumptions | Retain idle scan/AFE gating/REG1 LDO; keep 90.77 h as a conservative continuous-AFE planning calculation, without invented savings | Battery-side current log, idle duty cycle, first-key latency, full-capacity/runtime tests |
 | Charging/user behavior | Retain powered USB500 only after host configuration, board-off USB100 behavior and switch-off leakage documentation | Both full-charge cases and charging-only-adapter behavior on hardware |
 
 ## Engineering prototype gates

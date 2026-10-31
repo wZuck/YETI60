@@ -2,7 +2,7 @@
 
 # P2 制板与贴装审查交付
 
-[审查压缩包](../../hardware/fabrication/yeti60-p2-dfm-review.zip)供板厂和贴片厂进行可制造性审查，不代表已获下单许可。运行 `python3 scripts/export_yeti60_fabrication.py` 可重新生成；[清单](../audit/yeti60-fabrication.json)记录压缩包与 PCB、物料表、工艺说明的哈希关系。
+[审查压缩包](../../hardware/fabrication/yeti60-e73-p2-dfm-review.zip)供板厂和贴片厂进行可制造性审查，不代表已获下单许可。运行 `python3 scripts/export_yeti60_fabrication.py` 可重新生成；[清单](../audit/yeti60-fabrication.json)记录压缩包与 PCB、物料表、工艺说明的哈希关系。
 
 ## 交付内容
 
@@ -27,4 +27,4 @@
 
 物料表尚有未选定型号的阻容、F1 和 D2。贴装前须记录精确可订货型号、电阻额定参数和公差、保险丝保持／动作电流与温度特性、LED 极性／压降／电流，以及电容在工作偏压、公差、温度下的有效容量。C45／C46 标称共 20 uF 不能证明满足稳压器的有效输出容量要求。最终电容须取得厂商偏压数据或测量结果，再与 TPS63031 要求对照。
 
-首批按[评估回应及样机阶段门槛](assessment-response.zh-CN.md)执行。电池采购另须满足[电池包规格](battery-pack-specification.zh-CN.md)。厂商工艺确认、报价、实测波形和装配良率仍待完成；此工作流没有联系供应商。信号及射频干扰分析继续暂缓。
+首批按[评估回应及样机阶段门槛](assessment-response.zh-CN.md)执行。电池采购另须满足[电池包规格](battery-pack-specification.zh-CN.md)。厂商工艺确认、报价、实测波形和装配良率仍待完成；此工作流没有联系供应商。信号及射频检查已开始，天线布局阻塞项仍待解决。

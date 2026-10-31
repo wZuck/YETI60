@@ -25,3 +25,5 @@ uv run --with-requirements requirements-audit.txt python scripts/render_single_n
 `--stills-only`、`--frames`、`--fps`、`--jobs` 控制输出；环境变量可覆盖 `KICAD_CLI`、`KICAD10_3DMODEL_DIR`、`RENDER_FONT`、`RENDER_MONO_FONT`。缓存关联源、脚本、模型哈希、渲染器版本及动画参数。临时副本和帧位于已忽略的 `.render-work/`；`models/` 只保留项目自建示意模型。
 
 这些是 PCB 可视化；[整机装配研究](../yeti60-assembly/README.zh-CN.md)单独提供且有明确条件，两者均不批准制造、固件、信号或射频表现。
+
+E73 模组按厂商标称 18×13×3 mm 本体绘制，结构检查另计 0.1 mm 尺寸余量及 3.1 mm 高度包络。它是尺寸包络模型，表面细节并非厂商三维模型；FELK60 外壳仍直接使用原尺寸实体。

@@ -33,6 +33,23 @@ class OrdinaryProcess(unittest.TestCase):
     def test_reject_special_small_drill(self):
         self.rejects(lambda b:next(v for v in b.GetTracks() if v.GetClass() == 'PCB_VIA').SetDrill(audit.pcb.FromMM(.2)))
 
+    def test_reject_coincident_same_net_vias(self):
+        def change(board):
+            old = next(v for v in board.GetTracks() if v.GetClass() == 'PCB_VIA')
+            via = audit.pcb.PCB_VIA(board)
+            via.SetPosition(old.GetPosition());via.SetWidth(audit.pcb.FromMM(.5))
+            via.SetDrill(audit.pcb.FromMM(.3));via.SetViaType(audit.pcb.VIATYPE_THROUGH)
+            via.SetLayerPair(audit.pcb.F_Cu,audit.pcb.B_Cu);via.SetNetCode(old.GetNetCode())
+            board.Add(via)
+        self.rejects(change)
+
+    def test_reject_close_same_net_drills(self):
+        def change(board):
+            vias = [v for v in board.GetTracks() if v.GetClass() == 'PCB_VIA']
+            vias[1].SetPosition(vias[0].GetPosition()+audit.pcb.VECTOR2I(audit.pcb.FromMM(.4),0))
+            vias[1].SetNetCode(vias[0].GetNetCode())
+        self.rejects(change)
+
     def test_reject_module_via_in_pad(self):
         def change(board):
             module = next(f for f in board.GetFootprints() if f.GetReference() == 'U1')

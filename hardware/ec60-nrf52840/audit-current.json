@@ -3,16 +3,16 @@
   "production_approved": false,
   "mcu_count": 1,
   "source_sha256": {
-    "EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
-    "EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82",
-    "netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
-    "frozen-footprints.json": "97d1179dd2c7d7d1128fea0ca6ae9d2355d5bdb0bf0f7b1c1b61350f365e1f6b",
-    "YAECKB.kicad_sym": "e852545b743cb29ad045980306260d08724b9168366e0fb3e6f737242201a3cf",
+    "EC60-nRF52840.kicad_pcb": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
+    "EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
+    "netlist.xml": "846b2d13a1782c6a841ee0831c1cce9fa0bfcf14bc1ce6c84d44d1846a9dc798",
+    "frozen-footprints.json": "6c08b9386a88474b003973f0e15ea88924b287f3f3472b10f106c2b5a2096073",
+    "YAECKB.kicad_sym": "8066fe709c8de173776c239c890e8008ddde31c063d54f34f3aff5806e29f2d5",
     "power.kicad_sch": "1d35fb87ed82b68c829c1d409eacc09322cc079e40bdb6129543fc92412fe3cb",
     "matrix.kicad_sch": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
     "mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
     "analog.kicad_sch": "50213cf793f4cadf9313ddc3fcc5c6755896291a56e8ca56dec564b0b9f07bf2",
-    "EC60-nRF52840.kicad_sch": "9a148ef1e3df59ae321f297162139e4de9aab2cc286106a87a8aae52b52e3973",
+    "EC60-nRF52840.kicad_sch": "d974dd59cbe34f1b52f3e282c6bfd3988c9dd35cd400f22e5cbab2d62dfe201f",
     "YAECKB.pretty/ecs_pad_no_ring__SW70.kicad_mod": "7200d74e0efa27e93ddbbf2cf0f741e55b44e368fac0fe8446c0a205066e6e74",
     "YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW33.kicad_mod": "53afbf80d2514af57117fd375aa239054da60792f4551cff8a0c5d0a2470f3f9",
     "YAECKB.pretty/HOLE_M2__H26.kicad_mod": "6cd3e452085329b863a2120ba6aa2e483ecc4fa81aab24e4d9218f48f937554a",
@@ -23,7 +23,7 @@
     "YAECKB.pretty/HOLE_M2__H25.kicad_mod": "b06950cb1aee9a5d54dcd373d492eff2a97b79e4a6232e9200bae094f28966d9",
     "YAECKB.pretty/HOLE_M2__H9.kicad_mod": "31507c639d0ab3cd8b5c4094c3c0c483393e6ec2e046ded138b84c05d51022cf",
     "YAECKB.pretty/ecs_pad_no_ring__SW10.kicad_mod": "d6cf7e322b1348da972a8f7769fb422ccba14c71072565a7aa8d4cb603bee571",
-    "YAECKB.pretty/ecs_pad_no_ring__SW17.kicad_mod": "d87d5048ab39dadb8548665bdfde67576a2c06688a9d4d621a8af5d97ff20177",
+    "YAECKB.pretty/ecs_pad_no_ring__SW17.kicad_mod": "76af5cb1b07485a14a56b68b19e82d9fc50cc315c704f55e234b8b78e1ab7560",
     "YAECKB.pretty/ecs_pad_no_ring__SW11.kicad_mod": "6ac6091184ad8de7b856af8c38de782e5e9af17275061021ccc7665422c1be1d",
     "YAECKB.pretty/HOLE_M2__H19.kicad_mod": "e4947309e271712ee38a96d7d16156352d221e92c8e2ebe849c1d69a53436c20",
     "YAECKB.pretty/ecs_pad_no_ring__SW55.kicad_mod": "6e03d984407c11b670b6ceeba3f6c5b7e30e167d24b70f4fa16df6d0f6d3d08f",
@@ -101,7 +101,7 @@
     "YAECKB.pretty/ecs_pad_no_ring__SW22.kicad_mod": "b7a5eddc79efcf80dd5b1ae50aa82bd0ff9a99263360aae2aa3c2477895464c3",
     "YAECKB.pretty/ecs_pad_no_ring__SW14.kicad_mod": "bbbb64fd79a6710073dcb8de5a2883fa3dc776f8b67636ee70f3c5b1eabcb166",
     "YAECKB.pretty/ecs_pad_no_ring__SW4.kicad_mod": "5c129fed61c7ce1b641abbfcb4d6dfa1cfb5513c29565ff1b1e9498d105412bd",
-    "YAECKB.pretty/ecs_pad_no_ring__SW31.kicad_mod": "814c82bef16ba3f7609470427c010b2ddca42bb6693402ddda2d3e64609617c8",
+    "YAECKB.pretty/ecs_pad_no_ring__SW31.kicad_mod": "b01e217625fb063309b184a15787c1406eb88fc8b2e171acacd056c3bae365dc",
     "YAECKB.pretty/ecs_pad_no_ring__SW37.kicad_mod": "6848eeaa7be2f9be16cdf20246aeecf0c81015ece8cea56629a9e0817b78e55a",
     "YAECKB.pretty/ecs_pad_no_ring__SW40.kicad_mod": "809af14d6296ba391505b39c9af6f03a304da5b422c9b184ab9c73795113c048",
     "YAECKB.pretty/ecs_pad_no_ring__SW44.kicad_mod": "435d0ec4181db48c8801f0f725383d7f9b831175aecc13e34111444b37b08bd6",
@@ -150,7 +150,7 @@
     "YAECKB.pretty/C_0603_1608Metric__C32.kicad_mod": "2794ad849ec29df3dcdcd61337277701fb66b325e3b1cca1247aa34230035ced",
     "YAECKB.pretty/R_0402_1005Metric__R48.kicad_mod": "8b9be0e0ce2d3ba88e231b52552bf46efaa1d36b83300a3869142fca4551aa1c",
     "YAECKB.pretty/C_0402_1005Metric__C47.kicad_mod": "afb088ac48412ea1374be57715d27dfad06378001bcbc917ac40143c4c0fa86a",
-    "YAECKB.pretty/Raytac_MDBT50Q__U1.kicad_mod": "7ac749eb4b657b3d6a278c32608f7208a3d24188a2adc8c64ac291ffd704aa36",
+    "YAECKB.pretty/E73-2G4M08S1C__U1.kicad_mod": "cfd9834d36bb5f2066ceda2b6a6f91f16abfb4a4743935c48b656ed80f632315",
     "YAECKB.pretty/R_0402_1005Metric__R46.kicad_mod": "fd63d8b74380180e958243bb9819289b76acbb447be03c71172a130e64b7e0ee",
     "YAECKB.pretty/SOT-143__D1.kicad_mod": "8e59d02370b82590a9381a534bcc50e8251529719a286f7dec977426a9325bc5",
     "YAECKB.pretty/R_0402_1005Metric__R54.kicad_mod": "eb00fb5a419bd0dd57a7746ae9c579679eb2bc19dea3bbb3081594cdc95836be",
@@ -310,7 +310,7 @@
   "unexpected_component_courtyard_warnings": [],
   "unconnected_items": 0,
   "warnings_by_type": {
-    "track_dangling": 1,
+    "track_dangling": 7,
     "track_not_centered_on_via": 5,
     "missing_courtyard": 102
   },
@@ -361,13 +361,13 @@
     {
       "net": "+3.3V",
       "from": "C30.1",
-      "to": "U1.28",
+      "to": "U1.19",
       "physically_connected": true
     },
     {
       "net": "+3.3V",
       "from": "C30.1",
-      "to": "U1.30",
+      "to": "U1.23",
       "physically_connected": true
     },
     {
@@ -397,7 +397,7 @@
     {
       "net": "ADC",
       "from": "JP1.1",
-      "to": "U1.20",
+      "to": "U1.4",
       "physically_connected": true
     },
     {
@@ -469,7 +469,7 @@
     {
       "net": "AFE_EN",
       "from": "R50.1",
-      "to": "U1.42",
+      "to": "U1.9",
       "physically_connected": true
     },
     {
@@ -480,56 +480,56 @@
     },
     {
       "net": "AMUX_SEL_0",
-      "from": "U1.44",
+      "from": "U1.32",
       "to": "U2.11",
       "physically_connected": true
     },
     {
       "net": "AMUX_SEL_0",
-      "from": "U1.44",
+      "from": "U1.32",
       "to": "U4.11",
       "physically_connected": true
     },
     {
       "net": "AMUX_SEL_1",
-      "from": "U1.46",
+      "from": "U1.34",
       "to": "U2.10",
       "physically_connected": true
     },
     {
       "net": "AMUX_SEL_1",
-      "from": "U1.46",
+      "from": "U1.34",
       "to": "U4.10",
       "physically_connected": true
     },
     {
       "net": "AMUX_SEL_2",
-      "from": "U1.48",
+      "from": "U1.28",
       "to": "U2.9",
       "physically_connected": true
     },
     {
       "net": "AMUX_SEL_2",
-      "from": "U1.48",
+      "from": "U1.28",
       "to": "U4.9",
       "physically_connected": true
     },
     {
       "net": "APLEX_EN_PIN_0",
-      "from": "U1.47",
+      "from": "U1.13",
       "to": "U2.6",
       "physically_connected": true
     },
     {
       "net": "APLEX_EN_PIN_1",
-      "from": "U1.50",
+      "from": "U1.41",
       "to": "U4.6",
       "physically_connected": true
     },
     {
       "net": "APLEX_OUT_PIN_0",
       "from": "C10.1",
-      "to": "U1.19",
+      "to": "U1.12",
       "physically_connected": true
     },
     {
@@ -565,7 +565,7 @@
     {
       "net": "BAT_ADC",
       "from": "C47.1",
-      "to": "U1.21",
+      "to": "U1.15",
       "physically_connected": true
     },
     {
@@ -595,7 +595,7 @@
     {
       "net": "BAT_MEAS_EN",
       "from": "R49.1",
-      "to": "U1.16",
+      "to": "U1.8",
       "physically_connected": true
     },
     {
@@ -643,7 +643,7 @@
     {
       "net": "CHG_CE_N",
       "from": "R44.1",
-      "to": "U1.24",
+      "to": "U1.6",
       "physically_connected": true
     },
     {
@@ -655,7 +655,7 @@
     {
       "net": "CHG_EN1",
       "from": "R42.1",
-      "to": "U1.22",
+      "to": "U1.3",
       "physically_connected": true
     },
     {
@@ -667,7 +667,7 @@
     {
       "net": "CHG_EN2",
       "from": "R43.1",
-      "to": "U1.23",
+      "to": "U1.7",
       "physically_connected": true
     },
     {
@@ -679,7 +679,7 @@
     {
       "net": "CHG_N",
       "from": "R45.1",
-      "to": "U1.27",
+      "to": "U1.2",
       "physically_connected": true
     },
     {
@@ -1297,7 +1297,7 @@
     {
       "net": "PGOOD_N",
       "from": "R46.1",
-      "to": "U1.29",
+      "to": "U1.43",
       "physically_connected": true
     },
     {
@@ -1345,7 +1345,7 @@
     {
       "net": "RESET_N",
       "from": "J3.5",
-      "to": "U1.40",
+      "to": "U1.26",
       "physically_connected": true
     },
     {
@@ -1801,49 +1801,49 @@
     {
       "net": "ROW_DRV0",
       "from": "R6.2",
-      "to": "U1.37",
+      "to": "U1.33",
       "physically_connected": true
     },
     {
       "net": "ROW_DRV1",
       "from": "R7.1",
-      "to": "U1.36",
+      "to": "U1.1",
       "physically_connected": true
     },
     {
       "net": "ROW_DRV2",
       "from": "R3.1",
-      "to": "U1.39",
+      "to": "U1.35",
       "physically_connected": true
     },
     {
       "net": "ROW_DRV3",
       "from": "R5.1",
-      "to": "U1.38",
+      "to": "U1.17",
       "physically_connected": true
     },
     {
       "net": "ROW_DRV4",
       "from": "R4.2",
-      "to": "U1.41",
+      "to": "U1.11",
       "physically_connected": true
     },
     {
       "net": "STATUS_LED",
       "from": "R32.1",
-      "to": "U1.49",
+      "to": "U1.10",
       "physically_connected": true
     },
     {
       "net": "SWDCLK",
       "from": "J3.4",
-      "to": "U1.53",
+      "to": "U1.39",
       "physically_connected": true
     },
     {
       "net": "SWDIO",
       "from": "J3.2",
-      "to": "U1.51",
+      "to": "U1.37",
       "physically_connected": true
     },
     {
@@ -1873,7 +1873,7 @@
     {
       "net": "USB_5V",
       "from": "C32.1",
-      "to": "U1.32",
+      "to": "U1.27",
       "physically_connected": true
     },
     {
@@ -1885,13 +1885,13 @@
     {
       "net": "USB_DM",
       "from": "R30.2",
-      "to": "U1.34",
+      "to": "U1.29",
       "physically_connected": true
     },
     {
       "net": "USB_DP",
       "from": "R31.2",
-      "to": "U1.35",
+      "to": "U1.31",
       "physically_connected": true
     },
     {
@@ -1942,12 +1942,12 @@
   "critical_paths": [
     {
       "from": "U6.1",
-      "to": "U1.28",
+      "to": "U1.19",
       "connected": true
     },
     {
       "from": "U6.1",
-      "to": "U1.30",
+      "to": "U1.23",
       "connected": true
     },
     {
@@ -1957,7 +1957,17 @@
     },
     {
       "from": "U5.17",
-      "to": "U1.1",
+      "to": "U1.5",
+      "connected": true
+    },
+    {
+      "from": "U5.17",
+      "to": "U1.21",
+      "connected": true
+    },
+    {
+      "from": "U5.17",
+      "to": "U1.24",
       "connected": true
     },
     {
@@ -1971,7 +1981,7 @@
       "connected": true
     },
     {
-      "from": "U1.20",
+      "from": "U1.4",
       "to": "U3.6",
       "connected": true
     },
@@ -1982,7 +1992,7 @@
     },
     {
       "from": "R30.2",
-      "to": "U1.34",
+      "to": "U1.29",
       "connected": true
     },
     {
@@ -1992,21 +2002,21 @@
     },
     {
       "from": "R31.2",
-      "to": "U1.35",
+      "to": "U1.31",
       "connected": true
     },
     {
-      "from": "U1.51",
+      "from": "U1.37",
       "to": "J3.2",
       "connected": true
     },
     {
-      "from": "U1.53",
+      "from": "U1.39",
       "to": "J3.4",
       "connected": true
     }
   ],
-  "interference_simulation": "not_started_user_ordered_after_PCB_completion",
+  "interference_simulation": "see_shared_acceptance_report_RF_blockers_open",
   "limits": [
     "Ordinary JLC through-via process checked separately; no module via-in-pad or special fill/capping",
     "DRC does not certify regulator stability, capacitor DC bias or thermal performance",

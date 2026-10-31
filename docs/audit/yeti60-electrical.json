@@ -1,10 +1,10 @@
 {
   "status": "functional-contract-passed-layout-review-required",
-  "source_sha256": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+  "source_sha256": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
   "checks": {
     "usb_series_links_0_ohm": true,
-    "scan_adc_module_pin20_P0_04_AIN2": true,
-    "battery_adc_module_pin21_P0_05_AIN3": true
+    "scan_adc_module_pin4_P0_28_AIN4": true,
+    "battery_adc_module_pin15_P0_05_AIN3": true
   },
   "power_routes": [
     {
@@ -91,7 +91,7 @@
   "measurement_limit": "Sum of complete contacted track primitives: conservative graph-path length, not an exact geometric trace-length or loop-inductance extraction. Ground return is not included.",
   "remaining": [
     "No regulator transient/SPICE or capacitor-derating validation",
-    "USB pair impedance/return-path SI is deferred with signal interference analysis",
+    "USB track-length screening completed; pair impedance, return path and eye qualification remain open",
     "Rear Type-C daughterboard and its separate CC1/CC2 5.1k resistors remain an external assembly requirement"
   ],
   "sources": [

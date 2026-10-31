@@ -16,7 +16,7 @@ This is a reproducible **sensitivity calculation**, not measured runtime. No phy
 | BQ24074 | BAT sleep current 4.3 µA typical / 6.5 µA maximum, no input/no OUT load, TJ=85°C | [TI SLUS810N, p12](https://www.ti.com/lit/ds/symlink/bq24074.pdf); baseline bias approximation, actual loaded PowerPath needs measurement |
 | TPS63031 | VIN/VINA quiescent 25 / 35 µA typical/max; output quiescent 4 / 6 µA, specified test conditions | [TI SLVS696D, p5](https://www.ti.com/lit/ds/symlink/tps63031.pdf); efficiency depends on operating point; not simply “96%” |
 
-The current target has `CONFIG_ZMK_SLEEP=n`, slows the scan interval from 4 ms to 30 ms after 30 seconds without a pressed or changed key, and gates the AFE with U8 between idle scans. Any key or state change returns it to 4 ms. Battery reporting is disabled and the adapter does not drive the status LED. The devicetree selects REG1 DC/DC; REG0 remains LDO because the board has no external DCCH inductor. [Raytac Version L](https://www.raytac.com/download/index.php?index_id=43) states that the REG1 inductor is inside the module. The planning table below still assumes the AFE is on continuously, so it is conservative and does not credit idle gating; measured improvement is not a guaranteed runtime. Advertising and reconnection may consume more than an established link.
+The current target has `CONFIG_ZMK_SLEEP=n`, slows the scan interval from 4 ms to 30 ms after 30 seconds without a pressed or changed key, and gates the AFE with U8 between idle scans. Any key or state change returns it to 4 ms. Battery reporting is disabled and the adapter does not drive the status LED. The E73 devicetree explicitly selects REG1 LDO, with REG0 DC/DC disabled and DCCH unconnected. The planning table below still assumes the AFE is on continuously, so it is conservative and does not credit idle gating; measured improvement is not a guaranteed runtime. Advertising and reconnection may consume more than an established link.
 
 There are 75 sampled matrix positions per frame. Explicit waits are `15×3 + 75×(10+5) = 1170 µs`; acquisition is `75×40 = 3000 µs`; allocating 2 µs per conversion gives 150 µs; the loop then sleeps 4000 µs. The sum is **8320 µs before GPIO, driver and scheduler overhead**. ADC blocking may let the CPU sleep, so 4320/8320 is not a measured CPU duty ratio. Instrument the scan thread and battery current to establish it.
 
@@ -35,11 +35,13 @@ Two 100k pull-downs (R44, R50) draw 66 µA when `/CE` and AFE_EN are high. R48 d
 
 | Scenario | OPA mA | Assumed MCU average mA | Assumed η | Assumed battery V | 3.3 V rail mA | Battery mA | Default 1600 mAh hours |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Lower demand | 5.2 | 3 | 90% | 3.7 | 8.390 | 8.366 | 153.01 |
-| Planning | 5.2 | 6 | 85% | 3.7 | 11.390 | 12.003 | 106.64 |
-| Stress | 7.5 | 10 | 80% | 3.3 | 17.690 | 22.172 | 57.73 |
+| Lower demand | 5.2 | 6.3 | 90% | 3.7 | 11.690 | 11.636 | 110.00 |
+| Planning | 5.2 | 8 | 85% | 3.7 | 13.390 | 14.101 | 90.77 |
+| Stress | 7.5 | 15 | 80% | 3.3 | 22.690 | 28.422 | 45.04 |
 
-All scenarios assume an 80% usable-capacity factor for aging, cutoff and environment; it is not a manufacturer guarantee. The default 1600 mAh is the HCP404074 bare-cell minimum, subject to finished-pack acceptance. Do not advertise 57.73–153.01 h as a guaranteed range. At the planning point, `3.3×11.39=37.587 mW`, battery power is `44.40981 mW`, and `3.7×1.6×0.8 / 0.04440981 = 106.64 h`. No hardware measurement supports a runtime claim yet.
+This E73 variant uses REG1 LDO with REG0 DC/DC disabled. Both supply inputs use regulated 3.3 V, without relying on undocumented internal DC/DC inductors. MCU averages of 6.3/8/15 mA are assumed: 6.3 mA references the Nordic LDO flash CoreMark typical benchmark; the other values are engineering scenarios allowing peripheral/radio activity. None is a measured average or guaranteed bound.
+
+All scenarios assume an 80% usable-capacity factor for aging, cutoff and environment; it is not a manufacturer guarantee. The default 1600 mAh is the HCP404074 bare-cell minimum, subject to finished-pack acceptance. Do not advertise 45.04–110.00 h as a guaranteed range. At the planning point, `3.3×13.39=44.187 mW`, battery power is `52.17452 mW`, and `3.7×1.6×0.8 / 0.05217452 = 90.77 h`. No hardware measurement supports a runtime claim yet.
 
 Idle gating is not credited in the table: with a 30 ms idle frame and roughly 5 ms AFE settling plus the scan window, the average AFE current is substantially below 5.2 mA. Actual duty cycle, first-key latency, mux/ADC settling and RF interaction still require first-article measurement. The table intentionally keeps the conservative “AFE continuously on” basis for direct comparison with earlier calculations.
 
@@ -79,4 +81,4 @@ The ideal CC arithmetic at the minimum programmed current is `1600/357.06=4.48 h
 
 The HCP404074 sheet has inconsistent rate/current labels; see [battery selection](battery-study.md). Maximum 445.63 mA exceeds the explicitly stated 270 mA standard current but stays below the 1350 mA maximum stated for 15…45°C. The factory pack must therefore independently guarantee charging only within an actual cell window inside 15…43°C, target 18…40°C including all tolerances. BQ24074 with 103AT-2 alone does not enforce that window; third-wire NTC feedback or a voltage/current-only PCM is insufficient. Written supplier confirmation is required before procurement release.
 
-The switch disables the 3.3 V converter; charger bias, PCM leakage and self-discharge remain. Before release, use a calibrated battery-side analyzer for typing, connected idle, advertising, reconnect, switch-off and full-charge tests across accepted temperature/voltage conditions. Measure runtime using normal firmware, USB/debugger disconnected and logging off. RF/SI remains deferred by the user.
+The switch disables the 3.3 V converter; charger bias, PCM leakage and self-discharge remain. Before release, use a calibrated battery-side analyzer for typing, connected idle, advertising, reconnect, switch-off and full-charge tests across accepted temperature/voltage conditions. Measure runtime using normal firmware, USB/debugger disconnected and logging off. RF/SI screening has started; antenna layout blockers remain open.

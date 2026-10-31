@@ -1,0 +1,328 @@
+{
+  "execution_status": "completed",
+  "acceptance_status": "hold",
+  "design_review_status": "hold",
+  "ready_for_engineering_first_article": false,
+  "production_approved": false,
+  "physical_test_performed": false,
+  "open_gate_ids": [
+    "e73.antenna-host-copper",
+    "e73.antenna-plate-projection",
+    "e73.USB-protection-branches",
+    "e73.USB-SI",
+    "e73.physical-functional",
+    "e73.physical-RF-noise",
+    "e73.physical-power-thermal",
+    "e73.physical-mechanical",
+    "raytac.antenna-host-copper",
+    "raytac.antenna-plate-projection",
+    "raytac.USB-protection-branches",
+    "raytac.USB-SI",
+    "raytac.physical-functional",
+    "raytac.physical-RF-noise",
+    "raytac.physical-power-thermal",
+    "raytac.physical-mechanical",
+    "supplier-battery",
+    "manufacturer-DFM"
+  ],
+  "open_gates": [
+    "e73: host copper must clear the declared antenna screen on every layer; E73 region remains provisional",
+    "e73: metal plate must clear the declared antenna projection; proximity still needs physical RF validation",
+    "e73: TVS signal branches must be <=5mm under the imposed project layout target",
+    "e73: full cable/C5/pair impedance, return continuity and USB eye remain unqualified",
+    "e73: Flash/readback, 60 keys, USB/BLE transport and host cycle tests; no physical unit exists",
+    "e73: Final-enclosure range, coexistence and per-key interference margins; no physical unit exists",
+    "e73: Power transients, charging, temperature interruption and runtime; no physical unit exists",
+    "e73: Actual donor stack, resin, fasteners, plug and harness acceptance; no physical unit exists",
+    "raytac: host copper must clear the declared antenna screen on every layer; E73 region remains provisional",
+    "raytac: metal plate must clear the declared antenna projection; proximity still needs physical RF validation",
+    "raytac: TVS signal branches must be <=5mm under the imposed project layout target",
+    "raytac: full cable/C5/pair impedance, return continuity and USB eye remain unqualified",
+    "raytac: Flash/readback, 60 keys, USB/BLE transport and host cycle tests; no physical unit exists",
+    "raytac: Final-enclosure range, coexistence and per-key interference margins; no physical unit exists",
+    "raytac: Power transients, charging, temperature interruption and runtime; no physical unit exists",
+    "raytac: Actual donor stack, resin, fasteners, plug and harness acceptance; no physical unit exists",
+    "Supplier-signed complete pack, corrected cell limits and independent thermal-protection evidence required",
+    "Fabricator/assembler review and ordinary-process first-article inspection required"
+  ],
+  "gates": [
+    {
+      "id": "e73.antenna-host-copper",
+      "scope": "design",
+      "state": "failed",
+      "description": "e73: host copper must clear the declared antenna screen on every layer; E73 region remains provisional"
+    },
+    {
+      "id": "e73.antenna-plate-projection",
+      "scope": "design",
+      "state": "failed",
+      "description": "e73: metal plate must clear the declared antenna projection; proximity still needs physical RF validation"
+    },
+    {
+      "id": "e73.USB-protection-branches",
+      "scope": "design",
+      "state": "failed",
+      "description": "e73: TVS signal branches must be <=5mm under the imposed project layout target"
+    },
+    {
+      "id": "e73.guarded-calibration",
+      "scope": "design",
+      "state": "passed",
+      "description": "e73: guarded per-key calibration must pass the native sanitizer regression suite"
+    },
+    {
+      "id": "e73.USB-SI",
+      "scope": "qualification",
+      "state": "open",
+      "description": "e73: full cable/C5/pair impedance, return continuity and USB eye remain unqualified"
+    },
+    {
+      "id": "e73.physical-functional",
+      "scope": "physical",
+      "state": "not-run",
+      "description": "e73: Flash/readback, 60 keys, USB/BLE transport and host cycle tests; no physical unit exists"
+    },
+    {
+      "id": "e73.physical-RF-noise",
+      "scope": "physical",
+      "state": "not-run",
+      "description": "e73: Final-enclosure range, coexistence and per-key interference margins; no physical unit exists"
+    },
+    {
+      "id": "e73.physical-power-thermal",
+      "scope": "physical",
+      "state": "not-run",
+      "description": "e73: Power transients, charging, temperature interruption and runtime; no physical unit exists"
+    },
+    {
+      "id": "e73.physical-mechanical",
+      "scope": "physical",
+      "state": "not-run",
+      "description": "e73: Actual donor stack, resin, fasteners, plug and harness acceptance; no physical unit exists"
+    },
+    {
+      "id": "raytac.antenna-host-copper",
+      "scope": "design",
+      "state": "failed",
+      "description": "raytac: host copper must clear the declared antenna screen on every layer; E73 region remains provisional"
+    },
+    {
+      "id": "raytac.antenna-plate-projection",
+      "scope": "design",
+      "state": "failed",
+      "description": "raytac: metal plate must clear the declared antenna projection; proximity still needs physical RF validation"
+    },
+    {
+      "id": "raytac.USB-protection-branches",
+      "scope": "design",
+      "state": "failed",
+      "description": "raytac: TVS signal branches must be <=5mm under the imposed project layout target"
+    },
+    {
+      "id": "raytac.guarded-calibration",
+      "scope": "design",
+      "state": "passed",
+      "description": "raytac: guarded per-key calibration must pass the native sanitizer regression suite"
+    },
+    {
+      "id": "raytac.USB-SI",
+      "scope": "qualification",
+      "state": "open",
+      "description": "raytac: full cable/C5/pair impedance, return continuity and USB eye remain unqualified"
+    },
+    {
+      "id": "raytac.physical-functional",
+      "scope": "physical",
+      "state": "not-run",
+      "description": "raytac: Flash/readback, 60 keys, USB/BLE transport and host cycle tests; no physical unit exists"
+    },
+    {
+      "id": "raytac.physical-RF-noise",
+      "scope": "physical",
+      "state": "not-run",
+      "description": "raytac: Final-enclosure range, coexistence and per-key interference margins; no physical unit exists"
+    },
+    {
+      "id": "raytac.physical-power-thermal",
+      "scope": "physical",
+      "state": "not-run",
+      "description": "raytac: Power transients, charging, temperature interruption and runtime; no physical unit exists"
+    },
+    {
+      "id": "raytac.physical-mechanical",
+      "scope": "physical",
+      "state": "not-run",
+      "description": "raytac: Actual donor stack, resin, fasteners, plug and harness acceptance; no physical unit exists"
+    },
+    {
+      "id": "supplier-battery",
+      "scope": "supplier",
+      "state": "open",
+      "description": "Supplier-signed complete pack, corrected cell limits and independent thermal-protection evidence required"
+    },
+    {
+      "id": "manufacturer-DFM",
+      "scope": "supplier",
+      "state": "open",
+      "description": "Fabricator/assembler review and ordinary-process first-article inspection required"
+    }
+  ],
+  "field_solver_performed": false,
+  "executed_at_UTC": "2026-10-30T01:25:51.392351+00:00",
+  "commands": [
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "scripts/run_all_variants.py",
+        "--check-existing"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "scripts/study_yeti60_rf_lands.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Users/wzy/.cache/uv/archive-v0/HmtF19uEMj6N0RiV/bin/python",
+        "scripts/study_yeti60_rf_remediation.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "scripts/screen_yeti60_interference.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "scripts/simulate_yeti60_interference.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Users/wzy/.cache/uv/archive-v0/HmtF19uEMj6N0RiV/bin/python",
+        "scripts/check_yeti60_antenna_plate.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "scripts/check_yeti60_signal_paths.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "tests/audit/test_signal_paths.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "tests/audit/test_interference.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "variants": {
+    "e73": {
+      "CAD_checks_passed": true,
+      "firmware_build_and_host_checks_passed": true,
+      "audit_stage_count": 47,
+      "DRC_errors": 0,
+      "unconnected_items": 0,
+      "DRC_warnings": {
+        "track_dangling": 7,
+        "track_not_centered_on_via": 5,
+        "missing_courtyard": 102
+      },
+      "physical_signal_pairs": 270,
+      "RF_acceptance": "not-run",
+      "physical_acceptance": "not-run",
+      "RF_layout_acceptance": "hold"
+    },
+    "raytac": {
+      "CAD_checks_passed": true,
+      "firmware_build_and_host_checks_passed": true,
+      "audit_stage_count": 44,
+      "DRC_errors": 0,
+      "unconnected_items": 0,
+      "DRC_warnings": {
+        "track_dangling": 1,
+        "track_not_centered_on_via": 5,
+        "missing_courtyard": 102
+      },
+      "physical_signal_pairs": 270,
+      "RF_acceptance": "not-run",
+      "physical_acceptance": "not-run",
+      "RF_layout_acceptance": "hold"
+    }
+  },
+  "source_sha256": {
+    "scripts/run_acceptance.py": "72d5c9f59225e207dda16aef7f73718500befc689668107f5233cded9bc59b8d",
+    "scripts/check_yeti60_acceptance.py": "3d49bc9269f7283b0a3d48676da5d8b4d58f39d23a3546946f1ae6279af2df0b",
+    "tests/audit/test_interference.py": "3b1b744d01c8bfb1fe7d800def1f116ffdcfbf5e49cc7d8c0a4a7aeca4e9dbf3",
+    "scripts/yeti60_acceptance_gates.py": "0a9aee3e772a05081d2397f0052c6d0e23bb5f9fe5512dbdc1bc72df831fd14c",
+    "tests/audit/test_signal_paths.py": "568bb3bb04dd7a78dc1396a3783936ee16b2293ba78aacd4db48365b9260fd6e",
+    "design-constraints.json": "a068d1cbc8b97748c2971bad1931341018620a95f0e5dd639244f1a55c40fd54",
+    "docs/testing/vendor-sources.json": "1d5c24a284cd7ad42603ac9a15bec76663d8c892efe6529d6dd625dcfc5a6951",
+    "docs/testing/README.md": "fb7ce9d5487002eb6ffc0cf5a09e23450d5f4006fd8b05a511712fd2cdbadac3",
+    "docs/testing/README.zh-CN.md": "576fe41ce1bb4aabd24513fbe0c1241c43a2e2a23251f1d810186902e792262b",
+    "docs/testing/USB-paths.md": "28f494f3aafc09eb3653859788e5c0468c3ad4a2081e5defbd752276cf7d7507",
+    "docs/testing/USB-paths.zh-CN.md": "4c361d0d7708f596ea1485b3361b68dbfe7bb78e285a826e29b16dc12b1cb3cb",
+    "docs/testing/calibration.md": "536bd17ea641e942e4444d7e68a2fb7b5a8a401270be60f62d29e919b3b2467a",
+    "docs/testing/calibration.zh-CN.md": "3f5ef27b076598c321d5bba3167c0b13f8708c238da8be1e2de2a5c75a145892",
+    "docs/testing/interference.md": "3316bc9d8786b3c851c9513cf620056839977ceed168dab96682ffe37f528248",
+    "docs/testing/interference.zh-CN.md": "25f659aa887248202c5b9088cd11eecf22f859eee3841e947cae317b03b73100",
+    "docs/testing/remediation-plan.md": "9d48e55c75de69b05e09dd607f0f73e30c06ed6662b80b44436dec0293d9ddb0",
+    "docs/testing/remediation-plan.zh-CN.md": "83d5c10409cad58e2dc2589e734f5412f824ad8a4f9dbeff0205c0087df9622f"
+  },
+  "evidence_sha256": {
+    "docs/audit/outcome.json": "ac3a3c94a80370a9f629756a1af90f013dbae92b58c897825c4d33649310aec8",
+    "hardware/ec60-nrf52840/audit-current.json": "e63e011d3230a30db1d0da5adfa23094d105e5f6e093ed985756e0b34c3b485d",
+    "docs/audit/yeti60-firmware-simulation.json": "c65fd63604ff15411f0942862872ed484ca27904a7bd3b70386ad42405da221d",
+    "docs/audit/yeti60-target-check.json": "fd4220e71b0e027a629f044afa03657b54d1ca9650720d9d18fbed9be0fb7a06",
+    "docs/audit/yeti60-assembly.json": "7dc2967d0557782c819bf0954acce9fd60c5efd3d66bcab210cf485b3116a291",
+    "docs/audit/yeti60-build-guide-check.json": "6388ac62e6172e8586d3524023892b14ed0df473e105ddf9bfa7a9b7a1e9120a",
+    "docs/audit/integration.json": "14cc03864197e382df1fab7cc130d98039ee0677d220fffab7a33218701906b4",
+    "docs/audit/calibration.json": "ef9256a4e90bcc360f0ff2094f2182fec3b15d13116db7126dc41d1f5b8907c3",
+    "variants/raytac/docs/audit/outcome.json": "232d6f8041299a25f4dcffb6c37fa023a8da180bd0105b426e4872c5806786ca",
+    "variants/raytac/hardware/ec60-nrf52840/audit-current.json": "5818123c8efd7e1642959b9cbb8427b8d822868abd57752c7569ebb1aa246e8c",
+    "variants/raytac/docs/audit/yeti60-firmware-simulation.json": "f874465cf4b1d72457619a7635f0d992886b2595bc03e99b525088d7b3325d73",
+    "variants/raytac/docs/audit/yeti60-target-check.json": "3258dcab6acd6fd1f08cc19c1a77b0a1066bbb11cc009cc1a784bd66b3ae5e6d",
+    "variants/raytac/docs/audit/yeti60-assembly.json": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
+    "variants/raytac/docs/audit/yeti60-build-guide-check.json": "24c25dae088d63dc75af65eb33840615dde722817431779493421db272b3f12d",
+    "variants/raytac/docs/audit/integration.json": "14cc03864197e382df1fab7cc130d98039ee0677d220fffab7a33218701906b4",
+    "variants/raytac/docs/audit/calibration.json": "ef9256a4e90bcc360f0ff2094f2182fec3b15d13116db7126dc41d1f5b8907c3",
+    "docs/audit/variants.json": "0cdd0a90665ff17b9b00c59fe8dfef363244d236b36ccdd0e02ffc1182498783",
+    "docs/audit/interference-layout.json": "d676b7c07efd790cc5697f62dc716b7a0bfce8596a00f87ca7298fe8be1cf339",
+    "docs/audit/interference-analog.json": "540d02a4c2b1137cdeff7bd002e5ec7e382177c8b91b421ef808f35613bd3532",
+    "docs/audit/interference-plate.json": "8e287706f7e35af2d424caad6166daa616d9a510a3f64b05976618ee019afe54",
+    "docs/audit/rf-remediation-candidate.json": "bec5386473e34c431523c3a78d8a0cdaf64b6ca430ef0c3eda09a8373738c3b6",
+    "docs/audit/rf-remediation-lands.json": "1b35d0d3aa74741873cce1a05c962081be153e846b104381b928aca6b4b5d7ed",
+    "docs/audit/USB-signal-paths.json": "b622235c99c186ce8037acedf5da28909d186f66e9fea07b69e65430617a5d56"
+  },
+  "outputs": {
+    "docs/testing/afe-ac.csv": "e55e2b360919748eb0176f16d55899128a400682bdfc983a91fbd91be58c97fc",
+    "docs/testing/afe-sensitivity.csv": "dd8f1837761143e8952fdcb604b0b5111e26cd0c14c0abd9db79ab47f6b41f39",
+    "docs/testing/afe-transient.csv": "de8801ea23295b77c3b58f44b58597fbd6cbce92f2797f042fa91e48e3724aad",
+    "docs/testing/first-article-template.csv": "46ef94d559f77cd23277b82acfdf93ba58ee3b70f81463e908f331eb21aba0c9",
+    "docs/testing/images/afe-disturbance.png": "b5ddd27aa4adfa89bc89b3237a4d9be0797a1ff78531f0b73e8380ae67143222",
+    "docs/testing/images/afe-disturbance.zh-CN.png": "58e3177b6fcb0867f393b1dac45ddac3d17a783deb23162b352894fedcbca64e",
+    "docs/testing/images/e73-antenna-copper.svg": "1eef6fc2ba38c2f16ad062f9ef23cf59d47631e94f3aa278581bfdb640a3625e",
+    "docs/testing/images/e73-antenna-copper.zh-CN.svg": "9d623489948d4e20b2a1992b2b986ecc769ec602047c9d3d05526bb24024ec70",
+    "docs/testing/images/raytac-antenna-copper.svg": "d241f03e1cd46d09762a3fb0066de31ee21fac03c3b98f152dbd527344a8a650",
+    "docs/testing/images/raytac-antenna-copper.zh-CN.svg": "4e422a8bea033c6a3f1297ea92d9e0e3dbd568de27942624c4c32501a114c4a6"
+  }
+}

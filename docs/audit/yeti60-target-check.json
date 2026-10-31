@@ -4,18 +4,22 @@
     "normal": {
       "arm_elf": true,
       "hex_checksums": "passed",
-      "programmed_bytes": 226674,
+      "programmed_bytes": 228006,
       "settings_partition_preserved": true,
-      "USB_configuration_mA": 500
+      "USB_configuration_mA": 500,
+      "NFC_GPIO_UICR": true,
+      "REG1_mode": "LDO"
     },
     "calibrator": {
       "arm_elf": true,
       "hex_checksums": "passed",
-      "programmed_bytes": 302210,
+      "programmed_bytes": 303830,
       "settings_partition_preserved": true,
-      "USB_configuration_mA": 500
+      "USB_configuration_mA": 500,
+      "NFC_GPIO_UICR": true,
+      "REG1_mode": "LDO"
     }
   },
-  "build_manifest_sha256": "2f1abb78ea396b6cc136a2a3641a099a06e6c081db7151c96a103212d4dcbabc",
+  "build_manifest_sha256": "33a212fd7463dd45f766ce5bc1b2454cfdbf491ae5af66818be2bd3e19bec968",
   "physical_verification": false
 }

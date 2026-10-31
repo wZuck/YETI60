@@ -1,0 +1,200 @@
+Note: gnd in a subcircuit is not set to 0 automatically
+
+Note: Compatibility modes selected: ps lt a
+
+
+Circuit: yeti60 opa350 disturbance bench - actual feedback topology, assumed mux/load
+
+Reducing trtol to 1 for xspice 'A' devices
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 301
+Reducing trtol to 1 for xspice 'A' devices
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vcc                                        3.3
+src                                      0.005
+col                                 0.00499893
+sense                               0.00499893
+out                                   0.501949
+inv                                 0.00496979
+xu3.n3294772                           1.51574
+xu3.n2991553                           1.64954
+xu3.n3294626                          -10.6552
+xu3.n3294630                          0.968589
+xu3.n2992397                               3.3
+xu3.n2992375                           1.64962
+xu3.n2992413                        1.6513e-06
+xu3.n2991741                           1.64962
+xu3.mid                                1.64962
+xu3.n2991765                           1.64962
+xu3.n2991811                           1.64962
+xu3.n2991831                           1.64962
+xu3.n2991907                           1.64962
+xu3.n2991925                           1.64962
+xu3.n2991969                          0.363973
+xu3.n2992033                             3.282
+xu3.n2992029                         0.0167528
+xu3.n2992093                           1.64962
+xu3.n2992099                           1.64962
+xu3.sw_ol_opax350                      1.64962
+xu3.vimon                              1.65459
+xu3.vout_s                            0.501949
+xu3.n2991657                        0.00497696
+xu3.clamp                             0.363973
+xu3.vclp                              0.363754
+xu3.n3294524                          0.363754
+xu3.n3827259                          -10.6538
+xu3.n3828449                           1.64806
+xu3.n3850714                           1.74791
+xu3.n3850724                           1.64963
+xu3.n3850734                           1.64977
+xu3.n2991581                           1.64144
+xu3.n4029618                          0.172431
+xu3.n4029628                          0.363924
+xu3.n40409811                          -10.655
+xu3.n4243613                           1.64839
+xu3.n2991579                            1.6413
+xu3.n4243633                           1.55137
+xu3.n4243623                           1.64948
+xu3.esdp                            0.00499893
+xu3.esdn                            0.00496979
+xu3.n2992163                          0.501949
+xu3.n3294618                          0.363754
+xu3.cl_clamp                          0.363754
+xu3.claw_clamp                        0.363754
+xu3.n3201092                          -10.6552
+xu3.vcc_b                                  3.3
+xu3.vee_b                          1.64965e-06
+xu3.n2991563                        0.00483029
+xu3.n2991555                        0.00490325
+xu3.vcc_clp                              3.282
+xu3.vee_clp                          0.0167528
+xu3.n2992299                          -2.14625
+xu3.n2992295                          -2.14625
+xu3.n2992323                           2.87375
+xu3.n2992331                           2.87375
+xu3.n2992235                          0.501949
+xu3.n2991587                        0.00497696
+xu3.n2991583                        0.00483029
+xu3.vsense                            0.363973
+xu3.n4040935                           -10.655
+xu3.n2991573                        0.00499893
+xu3.n2991619                        0.00496979
+xu3.n2991623                               3.4
+xu3.n2991635                        -0.0999984
+xu3.n2991643                        0.00497696
+xu3.n2991667                           1.64956
+xu3.n3294682                          -10.6531
+xu3.n2991729                           1.64962
+xu3.n2991763                           1.64962
+xu3.n2991807                           81.6496
+xu3.n2991809                           1.64962
+xu3.n2991837                           1.64962
+xu3.n2991849                          -78.3504
+xu3.n2991901                            111.65
+xu3.n2991905                           1.64962
+xu3.n2991931                           1.64962
+xu3.n2991943                           -108.35
+xu3.n2991997                             3.282
+xu3.n2992001                         0.0167528
+xu3.v11                                1.64962
+xu3.v12                                1.64962
+xu3.n2992105                           1.64962
+xu3.n2992151                           1.65459
+xu3.n2992287                           2.87375
+xu3.n2992267                          -2.14625
+xu3.x_u1.7                            0.833786
+xu3.x_u1.8                            0.833786
+xu3.x_u1.3                         9.99157e-19
+xu3.x_u1.6                        -1.27559e-18
+xu3.x_u1.4                        -1.27559e-18
+xu3.x_u1.5                                   0
+xu3.x_u10.gvo+_int1                          0
+xu3.x_u10.gvo-_int1                          0
+xu3.x_u11.gvo+_int1                          0
+xu3.x_u11.gvo-_int1                          0
+xu3.x_u12.gvo+_int1                          0
+xu3.x_u12.gvo-_int1                          0
+xu3.x_u16.gsw+_int1                          0
+xu3.x_u18.g1_int1                  1.79947e-05
+xu3.x_u18.g1_int2                   0.00496995
+xu3.x_u19.g1_int1                  1.67512e-05
+xu3.x_u19.g1_int2                  -0.00496995
+xu3.x_u22.g1_int1                            0
+xu3.x_u23.g1_int1                            0
+xu3.x_u26.g1_int1                  4.96995e-06
+xu3.x_u27.g1_int1                            0
+xu3.x_u30.g1_int1                  7.16029e-10
+xu3.x_u31.g1_int1                 -1.28547e-06
+xu3.x_u32.g1_int1                     -12.3029
+xu3.x_u35.g1_int1                            0
+xu3.x_u36.3                                  0
+xu3.x_u36.5                                  0
+xu3.x_u37.3                                  0
+xu3.x_u37.5                                  0
+xu3.x_u4.e1_int1                   -9.5679e-05
+xu3.x_u6.g1_int1                      -1.64464
+b.xu3.x_u6.bg1#branch              7.65844e-10
+b.xu3.x_u4.be1#branch               4.4554e-14
+b.xu3.x_u35.bg1#branch                       0
+b.xu3.x_u32.bg1#branch             5.72899e-09
+b.xu3.x_u31.bg1#branch             5.98595e-16
+b.xu3.x_u30.bg1#branch            -3.33427e-19
+b.xu3.x_u27.bg1#branch                       0
+b.xu3.x_u26.bg1#branch            -2.31431e-15
+b.xu3.x_u23.bg1#branch                       0
+b.xu3.x_u22.bg1#branch                       0
+b.xu3.x_u19.bg1#branch             2.31431e-12
+b.xu3.x_u18.bg1#branch            -2.31431e-12
+b.xu3.x_u16.bgsw+#branch                     0
+b.xu3.x_u12.bgvo-#branch                     0
+b.xu3.x_u12.bgvo+#branch                     0
+b.xu3.x_u11.bgvo-#branch                     0
+b.xu3.x_u11.bgvo+#branch                     0
+b.xu3.x_u10.bgvo-#branch                     0
+b.xu3.x_u10.bgvo+#branch                     0
+h.xu3.x_h3.h_h3#branch            -1.53632e-09
+v.xu3.x_h3.vh_h3#branch            3.51466e-09
+h.xu3.x_h2.h_h2#branch            -1.53632e-09
+v.xu3.x_h2.vh_h2#branch             -3.853e-09
+h.xu3.x_h1.h_h1#branch            -1.54096e-09
+v.xu3.x_h1.vh_h1#branch            4.97002e-06
+e.xu3.x_u4.e1#branch               -9.0994e-12
+e.xu3.x_u37.e1#branch                        0
+e.xu3.x_u36.e1#branch                        0
+e.xu3.x_u1.e3#branch               1.19272e-11
+e.xu3.x_u1.e2#branch              -4.14434e-27
+e.xu3.x_u1.e1#branch              -7.01308e-27
+e.xu3.e_e4#branch                 -6.77544e-10
+e.xu3.e_e3#branch                 -4.66329e-10
+e.xu3.e_e1#branch                 -3.98186e-09
+v.xu3.v_v_orp#branch               -1.3382e-09
+v.xu3.v_v_orn#branch               9.99424e-10
+v.xu3.v_v_iscp#branch             -3.81011e-08
+v.xu3.v_v_iscn#branch              3.65647e-08
+v.xu3.v_v_grp#branch              -5.21009e-08
+v.xu3.v_v_grn#branch               5.05646e-08
+v.xu3.v_vcm_min#branch              4.8315e-11
+v.xu3.v_vcm_max#branch              -1.585e-09
+vdist#branch                      -1.30143e-11
+vcc#branch                         -0.00520497
+a.xu3.x_u19.ag1#branch_1_0        -7.80036e-15
+a.xu3.x_u18.ag1#branch_1_0        -8.37943e-15
+
+
+No. of Data Rows : 1119
+ngspice-47 done
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed

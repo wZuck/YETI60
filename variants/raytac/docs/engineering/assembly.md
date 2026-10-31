@@ -1,0 +1,55 @@
+English | [Chinese](assembly.zh-CN.md)
+
+# Assembly drawings and build sequence
+
+Use the [28-step illustrated guide](../assembly/build-guide.md) for mainboard soldering from bare PCB, optional C5 self-assembly, staged bring-up, programming and complete installation. The dimensions below govern its mechanical illustrations.
+
+These engineering sheets use the current, unscaled FELK60-derived shell meshes, native plate/PCB geometry and native exported USB daughterboard CAD. They are separate from the older studio renders. Keycap/housing silhouettes, threads and exploded offsets are illustrative; the written dimensions govern. Quantities refer to the [materials table](materials.md).
+
+![Source-sized engineering assembly sheet](images/assembly.png)
+
+[Vector assembly drawing](images/assembly.svg) · [Default battery-pocket drawing](images/battery-pocket.svg) · [Default recess design](battery-study.md)
+
+## Assembly datums
+
+| Interface | Requirement |
+|---|---|
+| Exterior shell union | 325.700×125.200×31.190 mm in the source frame; no scale change |
+| Lower/upper gasket ledges | z=3.19 / 6.39 mm; nominal compressed lower/upper gaskets 1.0162/0.9838 mm |
+| Stainless plate | Bottom z=4.2062; top z=5.4062; thickness 1.20 mm |
+| PCB | Top z=−0.3938; bottom z=−2.00; finished thickness 1.6062 mm |
+| PCB-to-plate gap | 4.60 mm = 4.50 mm brass shoulder + 0.10 mm polyimide film |
+| Mounting centers | 29 matched plate/PCB holes; maximum source center mismatch 0.05337 mm |
+| Worst radial screw margin | Approximately 0.06163 mm using M1.6 shank, specified hole/position/concentricity tolerances; this is a tight imposed tolerance |
+| Daughterboard | PCB bottom z=−10.91, thickness 1.6062 mm; 14×12.5 mm mounting rectangle |
+| SW100 access | Ø8 bottom service port centered at X=112, Y=−121 mm; insulated tool only |
+
+The standoff's insulating film lies **between PCB top and brass shoulder**, while the PEEK washer lies under the PCB. The bottom screw passes through the washer and PCB into the M1.6 female thread. Nominal engagement is `5−0.8−1.6062−0.10 = 2.4938 mm`, within the 3.2 mm female depth. The M2 stud enters the tapped plate from below. CAD thread envelopes do not represent actual thread flanks; confirm taps, engagement, head height and insulation on a first article. Do not force a misaligned screw through an electrode.
+
+## Sequence
+
+1. Manufacture one shell revision only. Use fully post-cured tough resin; inspect shrinkage before finishing insert bores. Cold-bond four M3 upper inserts and four M2 daughterboard inserts. Keep adhesive outside threads and allow full cure; thermoset resin is not a heat-insert material.
+2. Deburr the 1.2 mm steel plate and tap its 29 mounting pilots to M2. Inspect its matched Topre-compatible housings, stabilizers and 6U spacebar hardware with the actual matched independently mountable set. Fit the 60 housings/sliders and matched dome/spring set in the correct stack; keep every spring centered on its installed electrode.
+3. Fit 29 brass adapter standoffs to the plate. Place 0.10 mm polyimide rings between each shoulder and PCB sensing face. Locate the PCB without shifting electrode centers, then fit 29 PEEK washers and M1.6×5 screws underneath. Tighten progressively using a first-article-qualified torque; no unverified torque value is prescribed.
+4. Fit the rear daughterboard on its four bonded M2 insert seats using the proposed M2×4 screws/insulating washers. Confirm USB mouth alignment and actual cable plug access before proceeding. Connect the four-wire harness only after continuity and polarity checks. The 150 mm route centerline is controlled by individual conductor lengths and guides; physical strain relief remains unqualified.
+5. Install only a supplier-signed P2 1600 mAh protected pack within the full 85×43×4.8 mm envelope. Verify independent thermal interruption, third-wire NTC and custom polarity. Retention/insulation must fit the 0.2 mm floor budget without pouch pressure. Nominal pack-to-fastener clearance is 0.7 mm. Do not mix with the old small-pack charge configuration.
+6. With the case open and battery polarity verified, flash the USB calibrator through the **custom** J3 probe mapping. Follow the [firmware calibration procedure](../../firmware/target/README.md), preserve settings when loading the normal HEX, then check all 60 keys and USB/BLE operation on hardware.
+7. Fit the gasket pads to their existing ledges and close the shell progressively. Proposed M3×5 screws with 0.30 mm shims give nominal 2.50 mm insert engagement from the recorded shell seats; inspect thread bottoming and heads in their recesses. Verify full key travel, connector clearance, no pinched leads and external switch access. Fit feet after checking the underside seating surfaces.
+
+The user-selected rear daughterboard remains **C5 JSH**, with no UDB S substitution. Retain pinned revision `2b6c52a`, the 14×12.5 mm four-hole mounting rectangle and the four-wire J1 interface.
+
+Full-speed charging requires the board on and a USB host accepting the 500 mA configuration. Board-off hardware charging is USB100 only, with complete charge time unverified; see [charge-state behavior](power-budget.md) for charge-only adapters.
+
+## Wiring
+
+| Interface | Pin order | Assembly check |
+|---|---|---|
+| Daughterboard → J1 | 1 VBUS; 2 D−; 3 D+; 4 GND | Electrical 1-to-1 continuity at the numbered contacts, not visual left-to-right wire order |
+| Battery → J2 | 1 PACK+; 2 PACK−; 3 10k NTC to PACK− | Measure polarity first; verify NTC connection and independent thermal protection from the pack drawing |
+| J3 SWD | 1 3.3 V reference; 2 SWDIO; 3 GND; 4 SWDCLK; 5 RESET_N; 6 GND | Custom fixture; do not plug in an unverified standard ARM connector or back-feed an active supply |
+
+## Rebuild and acceptance
+
+Use KiCad Python for `export_yeti60_mechanical_metadata.py` and `export_yeti60_daughterboard.py`. With `requirements-audit.txt`, run `build_yeti60_mechanical.py`, `check_yeti60_assembly.py`, `export_yeti60_render_meshes.py`, `study_yeti60_battery_pocket.py`, `screen_yeti60_batteries.py`, then `draw_yeti60_assembly.py`. Finally run `python3 scripts/check_yeti60_engineering.py` and the existing target/DRC checks. Source/output hashes are in [drawing evidence](../audit/yeti60-assembly-drawings.json).
+
+No sample exists yet. Shell and pack BRep checks establish the stated conditional geometry, not actual dome compression, acoustic feel, resin creep or electrical operation. The harness routing, exact donor part compatibility, supplier part heights, printed-shell tolerances and all physical checks remain first-article requirements. RF/SI screening has started; antenna layout blockers remain open.

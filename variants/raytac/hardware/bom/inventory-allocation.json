@@ -1,0 +1,76 @@
+{
+  "source": {
+    "id": "owner-inventory-2026-10-29",
+    "sha256": "8a93ff0d1690e40ed8a3c9b1988946915bd4c6c8dc82e189426a1ef25d8a10de",
+    "sheet": "库存明细",
+    "received_units_column": "E",
+    "in_transit_units_column": "H",
+    "quantity_basis": "Order-derived received units, not a physical remaining-stock count",
+    "physical_remaining_count_confirmed": false,
+    "private_source_included": false
+  },
+  "mainboard": [
+    {
+      "source_row": 48,
+      "mpn": "Samsung CL05B104KO5NNNC",
+      "received_units": 100,
+      "in_transit_units": 100,
+      "references": ["C9", "C11", "C12", "C31"],
+      "design_values": ["100n", "100n/16V"],
+      "package": "C_0402_1005Metric",
+      "rating": "100 nF, 16 V, 10%, X7R, 0402"
+    },
+    {
+      "source_row": 57,
+      "mpn": "Samsung CL05A105KA5NQNC",
+      "received_units": 50,
+      "in_transit_units": 100,
+      "references": ["C13", "C48"],
+      "design_values": ["1u", "1u/10V"],
+      "package": "C_0402_1005Metric",
+      "rating": "1 uF, 25 V, 10%, X5R, 0402"
+    },
+    {
+      "source_row": 50,
+      "mpn": "Uniroyal 0402WGF0000TCE",
+      "received_units": 100,
+      "in_transit_units": 100,
+      "references": ["R30", "R31"],
+      "design_values": ["0"],
+      "package": "R_0402_1005Metric",
+      "rating": "0 ohm jumper, 0402; series rated current 1 A"
+    },
+    {
+      "source_row": 51,
+      "mpn": "Uniroyal 0402WGF1001TCE",
+      "received_units": 100,
+      "in_transit_units": 100,
+      "references": ["R17"],
+      "design_values": ["1k"],
+      "package": "R_0402_1005Metric",
+      "rating": "1 kohm, 1%, 62.5 mW, 0402"
+    },
+    {
+      "source_row": 52,
+      "mpn": "Uniroyal 0402WGF1002TCE",
+      "received_units": 100,
+      "in_transit_units": 100,
+      "references": ["R26"],
+      "design_values": ["10k"],
+      "package": "R_0402_1005Metric",
+      "rating": "10 kohm, 1%, 62.5 mW, 0402"
+    }
+  ],
+  "bare_daughterboard_option": {
+    "source_row": 55,
+    "mpn": "Uniroyal 0402WGF5101TCE",
+    "received_units": 100,
+    "in_transit_units": 100,
+    "references": ["R1", "R2"],
+    "rating": "5.1 kohm, 1%, 62.5 mW, 0402",
+    "credited_in_default_plan": false
+  },
+  "allocation_policy": "One unpopulated mainboard, one populated C5 JSH daughterboard; no in-transit stock credited; no spares; stock identity, unused quantity and capacitor effective capacitance require assembly acceptance",
+  "design_change_required": false,
+  "production_approved": false
+}

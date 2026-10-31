@@ -1,0 +1,1082 @@
+{
+  "status": "candidate-land-support-passed-native-routing-pending",
+  "candidate_only": true,
+  "production_approved": false,
+  "physical_verification": false,
+  "variants": {
+    "e73": {
+      "land_count": 43,
+      "all_lands_supported": true,
+      "native_copper_edge_rule_mm": 0.5,
+      "fabrication_allowance_mm": 0.2,
+      "combined_conservative_edge_allowance_passed": true,
+      "minimum_right_edge_margin_mm": 0.7699999999999818,
+      "pads": [
+        {
+          "number": "1",
+          "net": "ROW_DRV1",
+          "copper_bbox_mm": [
+            359.63,
+            129.0,
+            360.43,
+            131.0
+          ]
+        },
+        {
+          "number": "2",
+          "net": "CHG_N",
+          "copper_bbox_mm": [
+            358.36,
+            129.0,
+            359.16,
+            131.0
+          ]
+        },
+        {
+          "number": "3",
+          "net": "CHG_EN1",
+          "copper_bbox_mm": [
+            357.09,
+            129.0,
+            357.89,
+            131.0
+          ]
+        },
+        {
+          "number": "4",
+          "net": "ADC",
+          "copper_bbox_mm": [
+            355.82,
+            129.0,
+            356.62,
+            131.0
+          ]
+        },
+        {
+          "number": "5",
+          "net": "GND",
+          "copper_bbox_mm": [
+            354.55,
+            129.0,
+            355.35,
+            131.0
+          ]
+        },
+        {
+          "number": "6",
+          "net": "CHG_CE_N",
+          "copper_bbox_mm": [
+            353.28,
+            129.0,
+            354.08,
+            131.0
+          ]
+        },
+        {
+          "number": "7",
+          "net": "CHG_EN2",
+          "copper_bbox_mm": [
+            352.01,
+            129.0,
+            352.81,
+            131.0
+          ]
+        },
+        {
+          "number": "8",
+          "net": "BAT_MEAS_EN",
+          "copper_bbox_mm": [
+            350.74,
+            129.0,
+            351.54,
+            131.0
+          ]
+        },
+        {
+          "number": "9",
+          "net": "AFE_EN",
+          "copper_bbox_mm": [
+            349.4728,
+            129.0003,
+            350.2728,
+            131.0003
+          ]
+        },
+        {
+          "number": "10",
+          "net": "STATUS_LED",
+          "copper_bbox_mm": [
+            348.2,
+            129.0,
+            349.0,
+            131.0
+          ]
+        },
+        {
+          "number": "11",
+          "net": "ROW_DRV4",
+          "copper_bbox_mm": [
+            345.0,
+            127.545,
+            347.0,
+            128.345
+          ]
+        },
+        {
+          "number": "12",
+          "net": "APLEX_OUT_PIN_0",
+          "copper_bbox_mm": [
+            347.7,
+            126.90975,
+            348.9,
+            127.70975
+          ]
+        },
+        {
+          "number": "13",
+          "net": "APLEX_EN_PIN_0",
+          "copper_bbox_mm": [
+            345.0,
+            126.275,
+            347.0,
+            127.075
+          ]
+        },
+        {
+          "number": "14",
+          "net": "unconnected-(U1-P0.06-Pad14)",
+          "copper_bbox_mm": [
+            347.7,
+            125.63975,
+            348.9,
+            126.43975
+          ]
+        },
+        {
+          "number": "15",
+          "net": "BAT_ADC",
+          "copper_bbox_mm": [
+            345.0,
+            125.005,
+            347.0,
+            125.805
+          ]
+        },
+        {
+          "number": "16",
+          "net": "unconnected-(U1-P0.08-Pad16)",
+          "copper_bbox_mm": [
+            347.7,
+            124.36975,
+            348.9,
+            125.16975
+          ]
+        },
+        {
+          "number": "17",
+          "net": "ROW_DRV3",
+          "copper_bbox_mm": [
+            345.0,
+            123.735,
+            347.0,
+            124.535
+          ]
+        },
+        {
+          "number": "18",
+          "net": "unconnected-(U1-P0.04-Pad18)",
+          "copper_bbox_mm": [
+            347.7,
+            123.09975,
+            348.9,
+            123.89975
+          ]
+        },
+        {
+          "number": "19",
+          "net": "+3.3V",
+          "copper_bbox_mm": [
+            345.0,
+            122.465,
+            347.0,
+            123.265
+          ]
+        },
+        {
+          "number": "20",
+          "net": "unconnected-(U1-P0.12-Pad20)",
+          "copper_bbox_mm": [
+            347.7,
+            121.82975,
+            348.9,
+            122.62975
+          ]
+        },
+        {
+          "number": "21",
+          "net": "GND",
+          "copper_bbox_mm": [
+            345.0,
+            121.195,
+            347.0,
+            121.995
+          ]
+        },
+        {
+          "number": "22",
+          "net": "unconnected-(U1-P0.07-Pad22)",
+          "copper_bbox_mm": [
+            347.7,
+            120.55975,
+            348.9,
+            121.35975
+          ]
+        },
+        {
+          "number": "23",
+          "net": "+3.3V",
+          "copper_bbox_mm": [
+            345.0,
+            119.925,
+            347.0,
+            120.725
+          ]
+        },
+        {
+          "number": "24",
+          "net": "GND",
+          "copper_bbox_mm": [
+            347.7,
+            119.29,
+            348.9,
+            120.09
+          ]
+        },
+        {
+          "number": "25",
+          "net": "unconnected-(U1-DCCH-Pad25)",
+          "copper_bbox_mm": [
+            345.0,
+            118.655,
+            347.0,
+            119.455
+          ]
+        },
+        {
+          "number": "26",
+          "net": "RESET_N",
+          "copper_bbox_mm": [
+            348.2,
+            116.0,
+            349.0,
+            118.0
+          ]
+        },
+        {
+          "number": "27",
+          "net": "USB_5V",
+          "copper_bbox_mm": [
+            349.47,
+            116.0,
+            350.27,
+            118.0
+          ]
+        },
+        {
+          "number": "28",
+          "net": "AMUX_SEL_2",
+          "copper_bbox_mm": [
+            350.105,
+            118.7,
+            350.905,
+            119.9
+          ]
+        },
+        {
+          "number": "29",
+          "net": "USB_DM",
+          "copper_bbox_mm": [
+            350.74,
+            116.0,
+            351.54,
+            118.0
+          ]
+        },
+        {
+          "number": "30",
+          "net": "unconnected-(U1-P0.17-Pad30)",
+          "copper_bbox_mm": [
+            351.375,
+            118.7,
+            352.175,
+            119.9
+          ]
+        },
+        {
+          "number": "31",
+          "net": "USB_DP",
+          "copper_bbox_mm": [
+            352.01,
+            116.0,
+            352.81,
+            118.0
+          ]
+        },
+        {
+          "number": "32",
+          "net": "AMUX_SEL_0",
+          "copper_bbox_mm": [
+            352.645,
+            118.7,
+            353.445,
+            119.9
+          ]
+        },
+        {
+          "number": "33",
+          "net": "ROW_DRV0",
+          "copper_bbox_mm": [
+            353.28,
+            116.0,
+            354.08,
+            118.0
+          ]
+        },
+        {
+          "number": "34",
+          "net": "AMUX_SEL_1",
+          "copper_bbox_mm": [
+            353.915,
+            118.7,
+            354.715,
+            119.9
+          ]
+        },
+        {
+          "number": "35",
+          "net": "ROW_DRV2",
+          "copper_bbox_mm": [
+            354.55,
+            116.0,
+            355.35,
+            118.0
+          ]
+        },
+        {
+          "number": "36",
+          "net": "unconnected-(U1-P1.00-Pad36)",
+          "copper_bbox_mm": [
+            355.185,
+            118.7,
+            355.985,
+            119.9
+          ]
+        },
+        {
+          "number": "37",
+          "net": "SWDIO",
+          "copper_bbox_mm": [
+            355.82,
+            116.0,
+            356.62,
+            118.0
+          ]
+        },
+        {
+          "number": "38",
+          "net": "unconnected-(U1-P1.02-Pad38)",
+          "copper_bbox_mm": [
+            356.455,
+            118.7,
+            357.255,
+            119.9
+          ]
+        },
+        {
+          "number": "39",
+          "net": "SWDCLK",
+          "copper_bbox_mm": [
+            357.09,
+            116.0,
+            357.89,
+            118.0
+          ]
+        },
+        {
+          "number": "40",
+          "net": "unconnected-(U1-P1.04-Pad40)",
+          "copper_bbox_mm": [
+            357.725,
+            118.7,
+            358.525,
+            119.9
+          ]
+        },
+        {
+          "number": "41",
+          "net": "APLEX_EN_PIN_1",
+          "copper_bbox_mm": [
+            358.3572,
+            115.9997,
+            359.1572,
+            117.9997
+          ]
+        },
+        {
+          "number": "42",
+          "net": "unconnected-(U1-P1.06-Pad42)",
+          "copper_bbox_mm": [
+            358.99,
+            118.7,
+            359.79,
+            119.9
+          ]
+        },
+        {
+          "number": "43",
+          "net": "PGOOD_N",
+          "copper_bbox_mm": [
+            359.63,
+            116.0,
+            360.43,
+            118.0
+          ]
+        }
+      ],
+      "source_mutated": false
+    },
+    "raytac": {
+      "land_count": 61,
+      "all_lands_supported": true,
+      "native_copper_edge_rule_mm": 0.5,
+      "fabrication_allowance_mm": 0.2,
+      "combined_conservative_edge_allowance_passed": true,
+      "minimum_right_edge_margin_mm": 1.0,
+      "pads": [
+        {
+          "number": "1",
+          "net": "GND",
+          "copper_bbox_mm": [
+            359.8,
+            129.6,
+            360.2,
+            130.2
+          ]
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "copper_bbox_mm": [
+            358.7,
+            129.6,
+            359.1,
+            130.2
+          ]
+        },
+        {
+          "number": "3",
+          "net": "unconnected-(U1-P1.10-Pad3)",
+          "copper_bbox_mm": [
+            357.9,
+            129.6,
+            358.3,
+            130.2
+          ]
+        },
+        {
+          "number": "4",
+          "net": "unconnected-(U1-P1.11-Pad4)",
+          "copper_bbox_mm": [
+            356.3,
+            129.6,
+            356.7,
+            130.2
+          ]
+        },
+        {
+          "number": "5",
+          "net": "unconnected-(U1-P1.12-Pad5)",
+          "copper_bbox_mm": [
+            355.9,
+            128.7,
+            356.3,
+            129.3
+          ]
+        },
+        {
+          "number": "6",
+          "net": "unconnected-(U1-P1.13-Pad6)",
+          "copper_bbox_mm": [
+            355.5,
+            129.6,
+            355.9,
+            130.2
+          ]
+        },
+        {
+          "number": "7",
+          "net": "unconnected-(U1-P1.14-Pad7)",
+          "copper_bbox_mm": [
+            355.1,
+            128.7,
+            355.5,
+            129.3
+          ]
+        },
+        {
+          "number": "8",
+          "net": "unconnected-(U1-P1.15-Pad8)",
+          "copper_bbox_mm": [
+            354.7,
+            129.6,
+            355.1,
+            130.2
+          ]
+        },
+        {
+          "number": "9",
+          "net": "unconnected-(U1-P0.03-Pad9)",
+          "copper_bbox_mm": [
+            354.3,
+            128.7,
+            354.7,
+            129.3
+          ]
+        },
+        {
+          "number": "10",
+          "net": "unconnected-(U1-P0.29-Pad10)",
+          "copper_bbox_mm": [
+            353.9,
+            129.6,
+            354.3,
+            130.2
+          ]
+        },
+        {
+          "number": "11",
+          "net": "unconnected-(U1-P0.02-Pad11)",
+          "copper_bbox_mm": [
+            353.5,
+            128.7,
+            353.9,
+            129.3
+          ]
+        },
+        {
+          "number": "12",
+          "net": "unconnected-(U1-P0.31-Pad12)",
+          "copper_bbox_mm": [
+            353.1,
+            129.6,
+            353.5,
+            130.2
+          ]
+        },
+        {
+          "number": "13",
+          "net": "unconnected-(U1-P0.28-Pad13)",
+          "copper_bbox_mm": [
+            352.7,
+            128.7,
+            353.1,
+            129.3
+          ]
+        },
+        {
+          "number": "14",
+          "net": "unconnected-(U1-P0.30-Pad14)",
+          "copper_bbox_mm": [
+            352.3,
+            129.6,
+            352.7,
+            130.2
+          ]
+        },
+        {
+          "number": "15",
+          "net": "GND",
+          "copper_bbox_mm": [
+            348.8,
+            129.85,
+            349.4,
+            130.25
+          ]
+        },
+        {
+          "number": "16",
+          "net": "BAT_MEAS_EN",
+          "copper_bbox_mm": [
+            348.8,
+            129.05,
+            349.4,
+            129.45
+          ]
+        },
+        {
+          "number": "17",
+          "net": "unconnected-(U1-P0.00-Pad17)",
+          "copper_bbox_mm": [
+            348.8,
+            128.25,
+            349.4,
+            128.65
+          ]
+        },
+        {
+          "number": "18",
+          "net": "unconnected-(U1-P0.01-Pad18)",
+          "copper_bbox_mm": [
+            348.8,
+            127.45,
+            349.4,
+            127.85
+          ]
+        },
+        {
+          "number": "19",
+          "net": "APLEX_OUT_PIN_0",
+          "copper_bbox_mm": [
+            349.7,
+            127.05,
+            350.3,
+            127.45
+          ]
+        },
+        {
+          "number": "20",
+          "net": "ADC",
+          "copper_bbox_mm": [
+            348.8,
+            126.65,
+            349.4,
+            127.05
+          ]
+        },
+        {
+          "number": "21",
+          "net": "BAT_ADC",
+          "copper_bbox_mm": [
+            349.7,
+            126.25,
+            350.3,
+            126.65
+          ]
+        },
+        {
+          "number": "22",
+          "net": "CHG_EN1",
+          "copper_bbox_mm": [
+            348.8,
+            125.85,
+            349.4,
+            126.25
+          ]
+        },
+        {
+          "number": "23",
+          "net": "CHG_EN2",
+          "copper_bbox_mm": [
+            349.7,
+            125.45,
+            350.3,
+            125.85
+          ]
+        },
+        {
+          "number": "24",
+          "net": "CHG_CE_N",
+          "copper_bbox_mm": [
+            348.8,
+            125.05,
+            349.4,
+            125.45
+          ]
+        },
+        {
+          "number": "25",
+          "net": "unconnected-(U1-P1.08-Pad25)",
+          "copper_bbox_mm": [
+            349.7,
+            124.65,
+            350.3,
+            125.05
+          ]
+        },
+        {
+          "number": "26",
+          "net": "unconnected-(U1-P1.09-Pad26)",
+          "copper_bbox_mm": [
+            348.8,
+            124.25,
+            349.4,
+            124.65
+          ]
+        },
+        {
+          "number": "27",
+          "net": "CHG_N",
+          "copper_bbox_mm": [
+            349.7,
+            123.85,
+            350.3,
+            124.25
+          ]
+        },
+        {
+          "number": "28",
+          "net": "+3.3V",
+          "copper_bbox_mm": [
+            348.8,
+            123.45,
+            349.4,
+            123.85
+          ]
+        },
+        {
+          "number": "29",
+          "net": "PGOOD_N",
+          "copper_bbox_mm": [
+            349.7,
+            123.05,
+            350.3,
+            123.45
+          ]
+        },
+        {
+          "number": "30",
+          "net": "+3.3V",
+          "copper_bbox_mm": [
+            348.8,
+            122.65,
+            349.4,
+            123.05
+          ]
+        },
+        {
+          "number": "31",
+          "net": "unconnected-(U1-DCCH-Pad31)",
+          "copper_bbox_mm": [
+            348.8,
+            121.85,
+            349.4,
+            122.25
+          ]
+        },
+        {
+          "number": "32",
+          "net": "USB_5V",
+          "copper_bbox_mm": [
+            348.8,
+            121.05,
+            349.4,
+            121.45
+          ]
+        },
+        {
+          "number": "33",
+          "net": "GND",
+          "copper_bbox_mm": [
+            348.8,
+            120.25,
+            349.4,
+            120.65
+          ]
+        },
+        {
+          "number": "34",
+          "net": "USB_DM",
+          "copper_bbox_mm": [
+            349.9,
+            120.3,
+            350.3,
+            120.9
+          ]
+        },
+        {
+          "number": "35",
+          "net": "USB_DP",
+          "copper_bbox_mm": [
+            350.7,
+            120.3,
+            351.1,
+            120.9
+          ]
+        },
+        {
+          "number": "36",
+          "net": "ROW_DRV1",
+          "copper_bbox_mm": [
+            351.1,
+            121.2,
+            351.5,
+            121.8
+          ]
+        },
+        {
+          "number": "37",
+          "net": "ROW_DRV0",
+          "copper_bbox_mm": [
+            351.5,
+            120.3,
+            351.9,
+            120.9
+          ]
+        },
+        {
+          "number": "38",
+          "net": "ROW_DRV3",
+          "copper_bbox_mm": [
+            351.9,
+            121.2,
+            352.3,
+            121.8
+          ]
+        },
+        {
+          "number": "39",
+          "net": "ROW_DRV2",
+          "copper_bbox_mm": [
+            352.3,
+            120.3,
+            352.7,
+            120.9
+          ]
+        },
+        {
+          "number": "40",
+          "net": "RESET_N",
+          "copper_bbox_mm": [
+            352.7,
+            121.2,
+            353.1,
+            121.8
+          ]
+        },
+        {
+          "number": "41",
+          "net": "ROW_DRV4",
+          "copper_bbox_mm": [
+            353.1,
+            120.3,
+            353.5,
+            120.9
+          ]
+        },
+        {
+          "number": "42",
+          "net": "AFE_EN",
+          "copper_bbox_mm": [
+            353.5,
+            121.2,
+            353.9,
+            121.8
+          ]
+        },
+        {
+          "number": "43",
+          "net": "unconnected-(U1-P0.21-Pad43)",
+          "copper_bbox_mm": [
+            354.3,
+            121.2,
+            354.7,
+            121.8
+          ]
+        },
+        {
+          "number": "44",
+          "net": "AMUX_SEL_0",
+          "copper_bbox_mm": [
+            354.7,
+            120.3,
+            355.1,
+            120.9
+          ]
+        },
+        {
+          "number": "45",
+          "net": "unconnected-(U1-P0.23-Pad45)",
+          "copper_bbox_mm": [
+            355.1,
+            121.2,
+            355.5,
+            121.8
+          ]
+        },
+        {
+          "number": "46",
+          "net": "AMUX_SEL_1",
+          "copper_bbox_mm": [
+            355.5,
+            120.3,
+            355.9,
+            120.9
+          ]
+        },
+        {
+          "number": "47",
+          "net": "APLEX_EN_PIN_0",
+          "copper_bbox_mm": [
+            355.9,
+            121.2,
+            356.3,
+            121.8
+          ]
+        },
+        {
+          "number": "48",
+          "net": "AMUX_SEL_2",
+          "copper_bbox_mm": [
+            356.3,
+            120.3,
+            356.7,
+            120.9
+          ]
+        },
+        {
+          "number": "49",
+          "net": "STATUS_LED",
+          "copper_bbox_mm": [
+            356.7,
+            121.2,
+            357.1,
+            121.8
+          ]
+        },
+        {
+          "number": "50",
+          "net": "APLEX_EN_PIN_1",
+          "copper_bbox_mm": [
+            357.5,
+            121.2,
+            357.9,
+            121.8
+          ]
+        },
+        {
+          "number": "51",
+          "net": "SWDIO",
+          "copper_bbox_mm": [
+            357.9,
+            120.3,
+            358.3,
+            120.9
+          ]
+        },
+        {
+          "number": "52",
+          "net": "unconnected-(U1-P0.09-Pad52)",
+          "copper_bbox_mm": [
+            358.3,
+            121.2,
+            358.7,
+            121.8
+          ]
+        },
+        {
+          "number": "53",
+          "net": "SWDCLK",
+          "copper_bbox_mm": [
+            358.7,
+            120.3,
+            359.1,
+            120.9
+          ]
+        },
+        {
+          "number": "54",
+          "net": "unconnected-(U1-P0.10-Pad54)",
+          "copper_bbox_mm": [
+            359.1,
+            121.2,
+            359.5,
+            121.8
+          ]
+        },
+        {
+          "number": "55",
+          "net": "GND",
+          "copper_bbox_mm": [
+            359.8,
+            120.3,
+            360.2,
+            120.9
+          ]
+        },
+        {
+          "number": "56",
+          "net": "unconnected-(U1-P1.04-Pad56)",
+          "copper_bbox_mm": [
+            355.4,
+            127.05,
+            356.0,
+            127.45
+          ]
+        },
+        {
+          "number": "57",
+          "net": "unconnected-(U1-P1.06-Pad57)",
+          "copper_bbox_mm": [
+            355.4,
+            126.25,
+            356.0,
+            126.65
+          ]
+        },
+        {
+          "number": "58",
+          "net": "unconnected-(U1-P1.07-Pad58)",
+          "copper_bbox_mm": [
+            355.4,
+            125.45,
+            356.0,
+            125.85
+          ]
+        },
+        {
+          "number": "59",
+          "net": "unconnected-(U1-P1.05-Pad59)",
+          "copper_bbox_mm": [
+            355.4,
+            124.65,
+            356.0,
+            125.05
+          ]
+        },
+        {
+          "number": "60",
+          "net": "unconnected-(U1-P1.03-Pad60)",
+          "copper_bbox_mm": [
+            355.4,
+            123.85,
+            356.0,
+            124.25
+          ]
+        },
+        {
+          "number": "61",
+          "net": "unconnected-(U1-P1.01-Pad61)",
+          "copper_bbox_mm": [
+            355.4,
+            123.05,
+            356.0,
+            123.45
+          ]
+        }
+      ],
+      "source_mutated": false
+    }
+  },
+  "limits": [
+    "Original outline plus proposed rectangular wing only; corner fillets must preserve these margins",
+    "No routing, DRC, intercomponent collision or solder-joint strength acceptance"
+  ],
+  "source_sha256": {
+    "mechanical/rf-remediation.json": "3fdd64dbc3a6d6e87ad0547d7c974460061132b7fe533e2a44e2f0f613f73171",
+    "scripts/study_yeti60_rf_lands.py": "9a8078df7a5455a7e41793d49afc0b3c252ca586ffd0ff0ff26720ad426449f9",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
+    "variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82"
+  }
+}

@@ -17,6 +17,13 @@ def verify():
     assert config['mcu_count']==1 and config['wireless_controller']=='nRF52840' and not config['stm32_allowed']
     assert config['external_usb_c']['connector_path']=='rear-daughterboard-to-J1'
     parts=read(HW/'components.json')
+    assert parts['U1']['value']=='E73-2G4M08S1C','E73 branch contains a different MCU module'
+    module=read(AUD/'yeti60-e73-variant.json');hashes(module['source_sha256'])
+    assert module['status']=='e73-module-contract-passed' and module['vendor_lands']==43
+    assert module['connected_bottom_lands']==[12,24,28,32,34]
+    assert module['scan_ADC_AIN']==4 and module['battery_ADC_AIN']==3 and module['REG1_mode']=='LDO'
+    reference=read(AUD/'yeti60-e73-reference.json');hashes(reference['source_sha256'])
+    assert reference['status']=='vendor-reference-and-pin-contract-passed'
     assert parts['J1']['pins']=={'1':'VBUS','2':'D-','3':'D+','4':'GND'}
     assert parts['J2']['pins']=={'1':'BAT_CELL','2':'GND','3':'BAT_NTC'}
     schematic=read(AUD/'schematic-current.json'); assert schematic['status']=='passed'; hashes(schematic['source_sha256'])

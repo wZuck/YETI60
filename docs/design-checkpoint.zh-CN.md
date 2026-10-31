@@ -11,4 +11,4 @@
 - **固件：**普通版及 USB 串口校准版 ARM ELF／HEX 已由完全锁定的 ZMK／Zephyr 依赖构建；两个链接产物的 USB 描述符均申请 500 mA。只有主机接受配置后才允许 USB500 充电；挂起禁充，恢复保留已接受配置。HEX 检查保护设置分区。USB／BLE HID、配对及主机切换由 ZMK 提供，实机行为未测试。
 - **证据：**当前工程图、PCB 图／动画和摄影风格装配渲染都有来源与产物清单。电池、键帽、轴座及材质仍有设计包络或示意部分。[工程证据](audit/yeti60-engineering.json)和[集成检查](audit/integration.json)须匹配当前哈希。
 
-[功耗模型](engineering/power-budget.zh-CN.md)在规划假设下为 106.64 小时，非实测续航。供方电池／电流／温度保护批准、完整线束和插头可维修性、实际轴座胶碗、普通制板验收和器件额定值、树脂嵌件强度，以及首件装配／充电仍须验收。信号干扰分析按用户要求延后。当前方案见[材料表](engineering/materials.zh-CN.md)、[装配](engineering/assembly.zh-CN.md)和[电池选型](engineering/battery-study.zh-CN.md)；完整复查记录当前检查和验收边界。
+[功耗模型](engineering/power-budget.zh-CN.md)在规划假设下为 90.77 小时，非实测续航。供方电池／电流／温度保护批准、完整线束和插头可维修性、实际轴座胶碗、普通制板验收和器件额定值、树脂嵌件强度，以及首件装配／充电仍须验收。信号干扰检查已开始，天线布局阻塞项仍待解决。当前方案见[材料表](engineering/materials.zh-CN.md)、[装配](engineering/assembly.zh-CN.md)和[电池选型](engineering/battery-study.zh-CN.md)；完整复查记录当前检查和验收边界。

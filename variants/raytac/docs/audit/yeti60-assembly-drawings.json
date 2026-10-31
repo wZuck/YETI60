@@ -1,0 +1,36 @@
+{
+  "status": "generated",
+  "recipe_sha256": "f8c6191ff8a40eb45ae1f0d75ef440ad930fdda140f52669ab3a03ac7a65ec0f",
+  "source_sha256": {
+    "docs/audit/yeti60-assembly.json": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
+    "docs/audit/yeti60-battery-pocket.json": "873b13731f221a26340c5619ef5c44b3fe35522763c9a1a9235c67051c20177c",
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "mechanical/battery-pocket-study.json": "6983679949ebb0b6bde4a7fd28b44a813305e1663c5d995cf95cf5eff22be23f",
+    "docs/audit/yeti60-daughterboard.json": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
+    "scripts/export_yeti60_daughterboard.py": "5a86317b593a5df998741124d8eb8a4c9113f105d7ec7b7d2021200bbb7ebe2f"
+  },
+  "geometry_sources": {
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed"
+  },
+  "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
+  "outputs": {
+    "docs/engineering/images/assembly.png": "b29d0931ca160deac849bf1aa30dc81f0b665f955e883aa3d4b1a333514b68fa",
+    "docs/engineering/images/assembly.svg": "deebb80d74480fa43063fefd57943691654cbd9ccc41bc6148b5a2625b11e753",
+    "docs/engineering/images/assembly.zh-CN.png": "1b1f81a2fb788922053e261c7c4f2359bafb3a85829864ea9ba0e026dc0f839c",
+    "docs/engineering/images/assembly.zh-CN.svg": "2c3d73f7ed53a3af639c413fd1b0f8f4420678f45714d1b5aac67c168d5ad548",
+    "docs/engineering/images/battery-pocket.png": "5760bbc304af8ddbdfaca6291a592680c37798a21ac1e22e946deb5a496cd89a",
+    "docs/engineering/images/battery-pocket.svg": "d6c9bb5f7e2c0d413af679ef13360f7e36caa39bde174a2bf7483ae36ea722e7",
+    "docs/engineering/images/battery-pocket.zh-CN.png": "a6884616e71e1d574de22a1f09687014dd296bb055c14527b2b38d6fd5eba742",
+    "docs/engineering/images/battery-pocket.zh-CN.svg": "24ae6abbfaecc15e58f881cd261202217cc1c884a4edf501f9c380f9d7c34d8c"
+  },
+  "limits": [
+    "Exploded offsets are for presentation, original case meshes are unscaled",
+    "Thread/housing/keycap envelopes schematic; CAD is not a first-article acceptance",
+    "Default custom pack still requires a supplier-signed drawing and physical acceptance"
+  ]
+}

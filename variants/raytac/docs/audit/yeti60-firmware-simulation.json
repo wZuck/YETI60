@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "exit_code": 0,
+  "output": [
+    "single-keys: 75 positions, 300 frames, 22500 ADC reads; mux/row/OD/timing/reentrancy invariants pass",
+    "noise: 2000 frames of hysteresis-band samples; no false presses; 2 expected transitions",
+    "interference: 2000 correlated-ripple/burst frames rejected; two sustained over-threshold frames cause 75 synthetic false keys as expected; debounce does not establish hardware immunity",
+    "faults: invalid configuration, ADC fault, atomic frame abort, key release and AFE high-Z shutdown pass",
+    "power-hid: USB100/USB500/suspend, BLE-USB held-key handover, rollover, send retry and battery 4200 mV pass",
+    "contract-edges: enum rejection, aliased reinit, modifier report, failed old-host release retry and overrange ADC pass",
+    "afe-gating: AFE can be removed while powered, scan rejects it, and power-on restores it",
+    "callbacks: GPIO, wait and HID callbacks cannot reenter active operations",
+    "YETI60 host simulation passed; transport, ADC and GPIO are mocked, not nRF peripheral emulation.",
+    "USB policy: concurrent configured charging and USB preference; retained BLE override; suspend/resume/reset/detach; no repeated writes; retry failures passed"
+  ],
+  "errors": "",
+  "source_sha256": {
+    "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
+    "firmware/yeti60/calibration.c": "0c90ae61fca8c2a7c1826d6e153abf08d73438d2dafbcc8398eb005888b8340e",
+    "firmware/yeti60/calibration.h": "abc7fb757d4585239dbe16e1c91a2d9352a9cda0255a8b86d400aaca6948cd8e",
+    "firmware/yeti60/core.c": "353ef280b7c84966dd6851e22ed98ad974bd58bbc5ae78b03a0623493e98ad49",
+    "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
+    "tests/yeti60/sim.c": "c55ac794f73755d440f7a10e471fd85683a302349ef963189960b96b7d1d6c07",
+    "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
+    "hardware/ec60-nrf52840/pinmap.json": "000d19787d1cd75e35f61d23898b33ae8a522a3b4dd4074cd3f4fd9d6add51d3",
+    "scripts/simulate_yeti60_firmware.py": "7aee628f1ece266f0f38122dec997221bc4585073ac6adb4a819d5452c2247e0",
+    "scripts/generate_yeti60_pin_contract.py": "a05a3abe8b296786680addcfe6d72773fd8db44c26fc6678d00da252ffd9e36c",
+    "firmware/target/src/usb_policy.c": "785a7cb1fb08a6f4dde6141a0d96d91d97082cc771d671bb79374aeb56566372",
+    "firmware/target/src/usb_policy.h": "6bfa67e028a8a9c46f77afc545aae4b381c45420ac6164ee5c0c8803466820d3",
+    "tests/yeti60/usb_policy.c": "bc92682594c1f72697d49dd10f620ea99fa96daa6842fca5f8ffc5bddde15a4f",
+    "tests/yeti60/stubs/zephyr/kernel.h": "37eb67e5c8508640d8fbeb04bdea7becb091db814bcb693cb36befba95d52a17",
+    "tests/yeti60/stubs/zmk/endpoints.h": "9a3a89cf8c83d4ba0da307bb5bacf355009738b503edb2f089e838922a206814",
+    "tests/yeti60/stubs/zmk/usb.h": "d6c5581aadc5cfe4821f749c7feaa454eeb6649a06bdd0e4e6c2245d3ce83bb0"
+  },
+  "trace_file": "docs/audit/yeti60-firmware-trace.csv",
+  "trace_sha256": "02d6f2843713dd84a682c0bea3977652c20772c3781f2f5806284ea16c84909f",
+  "execution": "native host C core with address/undefined-behaviour sanitizers",
+  "nrf_gpio_contract": "generated from current module pin map and schematic XML; ADC AIN2 and battery AIN3",
+  "timing_model": "explicit illustrative waits; not analog settling validation",
+  "not_verified": [
+    "nRF52840 binary, peripheral register/HAL implementation or instruction-level emulation",
+    "actual USB enumeration and BLE pairing/radio/HID stack",
+    "analog waveforms, calibrated thresholds, RF coexistence and physical wake-up"
+  ]
+}

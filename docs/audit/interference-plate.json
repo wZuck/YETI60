@@ -1,0 +1,35 @@
+{
+  "status": "plate-proximity-screen-completed",
+  "physical_test_performed": false,
+  "production_approved": false,
+  "variants": {
+    "e73": {
+      "metal_plate_projection_mm2": 13.199388000000114,
+      "screen_area_mm2": 39.0,
+      "nearest_module_mounting_plane_to_plate_mm": 6.2062,
+      "status": "nearby-metal-requires-antenna-qualification",
+      "limits": "Projected plate metal, not a physical collision or computed RF loss. Antenna conductor Z is not supplied by vendor."
+    },
+    "raytac": {
+      "metal_plate_projection_mm2": 38.86003088156008,
+      "screen_area_mm2": 39.9,
+      "nearest_module_mounting_plane_to_plate_mm": 6.2062,
+      "status": "nearby-metal-requires-antenna-qualification",
+      "limits": "Projected plate metal, not a physical collision or computed RF loss. Antenna conductor Z is not supplied by vendor."
+    }
+  },
+  "source_sha256": {
+    "docs/audit/interference-layout.json": "d676b7c07efd790cc5697f62dc716b7a0bfce8596a00f87ca7298fe8be1cf339",
+    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "scripts/check_yeti60_assembly.py": "12221f66129b35332273adaf3ed309dc20cd7994880842ceb98230b2fb97eeba",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "docs/testing/afe-ac.csv": "e55e2b360919748eb0176f16d55899128a400682bdfc983a91fbd91be58c97fc",
+    "docs/testing/afe-transient.csv": "de8801ea23295b77c3b58f44b58597fbd6cbce92f2797f042fa91e48e3724aad",
+    "scripts/check_yeti60_antenna_plate.py": "c030e6439c23a1e73489438757eed2633caff85b0d7434da83fbeef16027c9be"
+  },
+  "outputs": {
+    "docs/testing/images/afe-disturbance.png": "b5ddd27aa4adfa89bc89b3237a4d9be0797a1ff78531f0b73e8380ae67143222",
+    "docs/testing/images/afe-disturbance.zh-CN.png": "58e3177b6fcb0867f393b1dac45ddac3d17a783deb23162b352894fedcbca64e"
+  }
+}

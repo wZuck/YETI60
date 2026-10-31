@@ -1,0 +1,65 @@
+{
+  "status": "header-lands-and-frame-passed",
+  "headers": {
+    "J1": {
+      "status": "rigidly-matching-land-pattern",
+      "native_to_standard_origin_shift_local_pcb_mm": [
+        0.0,
+        0.0625
+      ],
+      "standard_footprint": "JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal",
+      "standard_sha256": "fcf75d7a8c7a92e3748de7972eac2adc2bf2ea1adc2d10942df5f1be542d1320",
+      "native_sha256": "1e791e4505712fa9296ed34f36e25e3a0a5b0167d4691488ce0ef5326efe7a4d",
+      "signal_land_count": 4,
+      "mechanical_land_count": 2,
+      "board_position_pcb_mm": [
+        119.572837,
+        123.527723
+      ],
+      "board_angle_deg": -90.0,
+      "step": {
+        "path": ".assembly-work/interconnect/main-sh.step",
+        "sha256": "10d9c265c32c74bcc3722a9a173e96e1a07eb37b16f302a6f63707b2a99d7eab",
+        "model_source": "KiCad Connector_JST.3dshapes/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step",
+        "model_source_sha256": "4b0f89a75d3758add0041ca9e5ded3a780c23ef4e3e99bcc398b41177dff5d0f"
+      }
+    },
+    "J2": {
+      "status": "rigidly-matching-land-pattern",
+      "native_to_standard_origin_shift_local_pcb_mm": [
+        0.0,
+        0.0
+      ],
+      "standard_footprint": "JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal",
+      "standard_sha256": "ded6d2cb5c8abc245190e36876beda2fa8640b9f4e1924d6ef75e817283fd440",
+      "native_sha256": "efa97452c93659b1ebc0573930cd343d2cb372b2932f80d1580f579ad1dc3b1f",
+      "signal_land_count": 3,
+      "mechanical_land_count": 2,
+      "board_position_pcb_mm": [
+        152.0,
+        125.0
+      ],
+      "board_angle_deg": 0
+    }
+  },
+  "main_usb_wire_exit_case_mm": [
+    124.21033700000001,
+    -123.527723,
+    -3.5999999999999996
+  ],
+  "main_battery_wire_exit_case_mm": [
+    152.0,
+    -117.0,
+    -4.75
+  ],
+  "prose_scope": "Matching lands and conservative envelopes do not qualify supplier tolerances or crimp quality",
+  "source_sha256": {
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "hardware/ec60-nrf52840/components.json": "977cf7b8e77fda59f3f633f3af4a23e58a423ea0f0ecfcbbd8dded89f3a59c1b",
+    "mechanical/interconnect-spec.json": "b94140e220f435a720bbfdde1c2ccdc59e207d1615581a2abc3016e0da226a3d",
+    "docs/audit/yeti60-assembly.json": "777653060628b59fd86ccec85e842fa2a2e75a8d0c8ea5142a31292585a472cb",
+    "hardware/ec60-nrf52840/YAECKB.pretty/JST-SR-4__J1.kicad_mod": "1e791e4505712fa9296ed34f36e25e3a0a5b0167d4691488ce0ef5326efe7a4d",
+    "hardware/ec60-nrf52840/YAECKB.pretty/JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal__J2.kicad_mod": "efa97452c93659b1ebc0573930cd343d2cb372b2932f80d1580f579ad1dc3b1f",
+    "scripts/export_yeti60_interconnects.py": "e00be22d05015ee6538a70acedd1ac22e00e18b554518bfcdc84f329b72376ed"
+  }
+}

@@ -10,6 +10,8 @@
 
 步骤 12–13 仅用于自焊 C5，购买成品时跳过；其余步骤仍需执行。
 
+**装配前验收：** 两版天线均有未解决的布局风险；当前只能按工程样机装配，不能据此认定蓝牙已经验收。先阅读[验收与干扰测试](../testing/README.zh-CN.md)，记录板型、固件哈希及每项实测结果。
+
 步骤目录
 
 - [01 准备板子、元件和工具](#step-01)
@@ -196,17 +198,17 @@
 
 [放大矢量图](images/08-step.zh-CN.svg)
 
-1. 确认使用 Raytac MDBT50Q-1MV2 及正确订货后缀，不使用库存 nice!nano 开发板。
+1. 确认使用 Ebyte E73-2G4M08S1C 及正确订货后缀，不使用库存 nice!nano 开发板。
 2. 根据模组图纸核对一脚、天线端和原生焊盘方向，放置前检查底部焊盘。
 3. 天线区域不沾锡膏和金属碎屑；模组平放，不在相邻焊盘上拖动。
 
-**检查后再继续：** 这是直接焊接在 PCB 上的模组，包含底部焊点；不安装排针或第二颗主控。
+**检查后再继续：** E73 直接焊接在本版本 PCB 上：实际连接的底部 12、24、28、32、34 焊盘须回流焊并检查，不装排针或第二颗主控。
 
 本步放置位号：U1.
 
 | 位号 | 数量 | 设计值 | 封装 |
 |---|---:|---|---|
-| U1 | 1 | MDBT50Q-1MV2 | Raytac_MDBT50Q |
+| U1 | 1 | E73-2G4M08S1C | E73-2G4M08S1C |
 
 <a id="step-09"></a>
 
@@ -326,7 +328,7 @@
 
 1. 对接自定义六针治具前先断电，J3 的 1 脚是 3.3 V 目标参考，不用作第二路供电。
 2. 按实际编号连接 2 SWDIO、3 地、4 SWDCLK、5 RESET_N、6 地，再通过已检查的 USB 通路为板子供电。
-3. 在调试工具中选择 nRF52840，写入 firmware/releases/calibrator/yeti60.hex，执行校验并复位；装好静电容机械结构后再校准。
+3. 在调试工具中选择 nRF52840，写入 firmware/releases/calibrator/yeti60-e73.hex，执行校验并复位；装好静电容机械结构后再校准。
 
 **检查后再继续：** J3 不是标准 ARM 接口脚序，不能并接两路主动 3.3 V 电源；后续更新普通固件须保留 0xF0000–0xFFFFF 设置区。
 
@@ -450,9 +452,9 @@
 
 [放大矢量图](images/25-step.zh-CN.svg)
 
-1. 完整机械结构按预定预压状态支撑，启动校准固件并打开 USB CDC 控制台。 三条命令分步执行，待松键采样完成后再进入按键采样阶段，不一次粘贴三条命令。
-2. 全部松键执行 yeti_calibrate release，再执行 yeti_calibrate press，完整按下并松开每个实际按键；最后全部松键执行 yeti_calibrate save，并检查返回结果。
-3. 重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。
+1. 完整机械结构按预定预压状态支撑，启动校准固件；全部松键执行 yeti_calibrate release，等待 128 帧采样完成提示。
+2. 按 firmware/target/calibration-keys.csv 操作，先按住目标键，再执行 yeti_calibrate press ROW COL；保持按住至 128 个采样完成后松开。逐个覆盖 60 键，检查 yeti_calibrate status，再执行 yeti_calibrate save；旧的无行列 press 命令会被拒绝。
+3. 重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60-e73.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。
 
 **检查后再继续：** 保存校准后不使用全片擦除或恢复操作；量程不足、ADC 饱和须排查，没有有效校准时固件刻意不输出按键。
 
@@ -464,9 +466,9 @@
 
 [放大矢量图](images/26-step.zh-CN.svg)
 
-1. 使用普通固件，通过 USB 检查逐键、长按、多键及复位重连。
+1. 使用普通固件连接电脑，确认一边充电一边通过 USB 输入，包括此前已连接或偏好蓝牙的情况；检查逐键、长按、多键及复位重连。
 2. 使用验收过的电池，拔掉 USB 后检查蓝牙；当前键位 Fn+Q／W／E／R／T 分别选择 0／1／2／3／4 号配置，检查目标主机配对及绑定保留。
-3. 分别检查主机完成配置后的 USB500，以及配置前、挂起和关机 USB100 状态；记录实测电流／温度，不把估算续航当作验收数据。
+3. 分别检查配置前 USB100 且禁止充电、主机完成配置后的 USB500 充电，以及固件运行时 USB 挂起后禁止充电、EN1/EN2=1/1 待机输入高阻。SW100 关闭后硬件默认独立 USB100 慢充，应针对实际电源单独验证。记录实测电流和温度，不把估算续航当作验收数据。
 
 **检查后再继续：** 构建成功不等于本步实测通过；依赖充电功能前先完成电池温度／充电验收，当前未开启电量百分比上报。
 
@@ -504,4 +506,4 @@
 
 编排参考 [DELTA OMEGA 安装指南](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md) 的逐工序图示形式；图像及位号按 YETI60 原生数据重新绘制，不沿用 MX 焊接步骤。
 
-焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Raytac MDBT50Q-1MV2 资料](https://www.raytac.com/product/ins.php?index_id=24) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。
+焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Ebyte E73-2G4M08S1C 资料](https://www.ebyte.com/product/444.html) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。

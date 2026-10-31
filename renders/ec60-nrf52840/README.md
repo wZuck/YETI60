@@ -23,3 +23,5 @@ uv run --with-requirements requirements-audit.txt python scripts/render_single_n
 Run from the repository root with KiCad 10, its standard 3D model library and ffmpeg installed. `--stills-only`, `--frames`, `--fps`, `--jobs` control output; environment overrides are `KICAD_CLI`, `KICAD10_3DMODEL_DIR`, `RENDER_FONT`, `RENDER_MONO_FONT`. The cache keys source, recipe, model hashes, renderer version and animation parameters. Temporary snapshots and frames live in ignored `.render-work/`; only project-authored proxies are stored in `models/`.
 
 These are PCB visualizations. [Assembled studies](../yeti60-assembly/README.md) are separate and conditional; neither set certifies manufacturing, firmware, SI or RF performance.
+
+The E73 module uses the manufacturer nominal 18 x 13 x 3 mm body. Mechanical checks separately include 0.1 mm edge allowances and a 3.1 mm height envelope. It is a dimensioned envelope, not a manufacturer surface-detail model; the FELK60 shell solids retain their source dimensions.

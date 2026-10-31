@@ -1,7 +1,7 @@
 {
   "source": "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb",
-  "source_sha256": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
-  "recipe_sha256": "f20d90f64dd3dab6732df83540b66039a110a11959b10e581047430e9edc0b29",
+  "source_sha256": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
+  "recipe_sha256": "af17c5913f2d4a7b56ffb8ea27632de612c2ee6fc0e988dfc45028d5b6f39947",
   "renderer": "10.0.7",
   "animation": {
     "frames": 72,
@@ -276,10 +276,10 @@
     },
     {
       "ref": "U1",
-      "kind": "standard-model",
-      "original": "${KICAD10_3DMODEL_DIR}/RF_Module.3dshapes/Raytac_MDBT50Q.step",
-      "model": "RF_Module.3dshapes/Raytac_MDBT50Q.step",
-      "sha256": "24aec576333a0c2c487689ecdb5d9b3be3861ef684995ffd3a47f484e1828157"
+      "kind": "manufacturer-sized-body-envelope",
+      "model": "renders/ec60-nrf52840/models/E73-envelope.wrl",
+      "height_qualified": true,
+      "surface_detail_qualified": false
     },
     {
       "ref": "R46",
@@ -421,7 +421,8 @@
       "ref": "J2",
       "kind": "illustrative-proxy",
       "model": "renders/ec60-nrf52840/models/J2-illustrative.wrl",
-      "height_qualified": false
+      "height_qualified": false,
+      "surface_detail_qualified": false
     },
     {
       "ref": "C44",
@@ -560,7 +561,8 @@
       "ref": "SW100",
       "kind": "illustrative-proxy",
       "model": "renders/ec60-nrf52840/models/SW100-illustrative.wrl",
-      "height_qualified": false
+      "height_qualified": false,
+      "surface_detail_qualified": false
     },
     {
       "ref": "R40",
@@ -572,28 +574,29 @@
   ],
   "outputs": {
     "pcb-turntable.mp4": {
-      "sha256": "7787929e3b2e8c9d7a7d313c7e7c0589edf294958d68e042edb59baa9f4f5d3f",
-      "bytes": 1099391
+      "sha256": "db4ddb1ca23368978a0723f91dfeacefe13b4421ff79ba4cdb357f2b094c7d1e",
+      "bytes": 1103817
     },
     "pcb-turntable.gif": {
-      "sha256": "17ccef81f82fcd6e34f07060295619d38c0ef84d20e6fbd13fa2ac874e27b638",
-      "bytes": 2371926
+      "sha256": "679c6a9069fd8fca5ca43acc095f6d8e68c2b1664e29437bc40cb9325ebb83ec",
+      "bytes": 2543984
     },
     "pcb-back.png": {
-      "sha256": "81d9da3f07532cfcb7e6c2c847e91a841994e443057ed98987e4f00064b7e4c3",
-      "bytes": 1006250
+      "sha256": "e6fcf67a17ec4037b432e5e6b129c3387ebea36a9930cf1a1c315d790689c915",
+      "bytes": 1005173
     },
     "pcb-front.png": {
-      "sha256": "b616093070433ffcf0ebadb2f7eaf9c4114ff60145dc05ccb24c622d4f6c3348",
-      "bytes": 975818
+      "sha256": "baa1a8ebc3bfb76fad420131a75fdb6d2a355823de57071991eb66e2197b3475",
+      "bytes": 978850
     },
     "pcb-overview.png": {
-      "sha256": "5f45f07a6f0d380e72d801e985669577d4b79136dca8ce07d90c7061af6165ed",
-      "bytes": 918000
+      "sha256": "9466ff490677317837a3ad01fbd1c3a1e43326fd0b8899273a512e55e494e5bc",
+      "bytes": 917378
     }
   },
   "limits": [
     "render-only substitutions do not modify the design or frozen footprint library",
+    "E73 is an 18 x 13 x 3 mm nominal body envelope, not a manufacturer surface-detail model",
     "J2 and SW100 are illustrative bodies; U5 uses a generic package model",
     "Not an assembled keyboard, enclosure fit test, SI or RF simulation"
   ]

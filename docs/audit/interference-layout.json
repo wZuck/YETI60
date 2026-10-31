@@ -1,0 +1,690 @@
+{
+  "status": "screening-completed-design-blockers-open",
+  "physical_test_performed": false,
+  "field_solver_performed": false,
+  "production_approved": false,
+  "variants": {
+    "e73": {
+      "module": "E73-2G4M08S1C",
+      "module_origin_mm": [
+        354.6,
+        116.5
+      ],
+      "rotation_deg": -90.0,
+      "body_pcb_bounds_mm": [
+        341.6,
+        116.5,
+        354.6,
+        134.5
+      ],
+      "screen_bounds_mm": [
+        341.6,
+        131.5,
+        354.6,
+        134.5
+      ],
+      "screen_area_mm2": 39.0,
+      "formal_vendor_dimension": false,
+      "layers": [
+        {
+          "layer": "F.Cu",
+          "GND_union_mm2": 17.472466,
+          "non_GND_union_mm2": 10.52209,
+          "intersecting_items": [
+            {
+              "item": "SW31.1",
+              "net": "COL13"
+            },
+            {
+              "item": "SW31.2",
+              "net": "ROW1"
+            },
+            {
+              "item": "SW31.3",
+              "net": "GND"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "ROW1"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "ROW_DRV1"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "AMUX_SEL_1"
+            },
+            {
+              "item": "filled-zone",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "GND_union_mm2": 19.215827,
+          "non_GND_union_mm2": 3.31266,
+          "intersecting_items": [
+            {
+              "item": "PCB_TRACK",
+              "net": "COL13"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "COL13"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "COL13"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "COL13"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "COL13"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "ROW1"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "ROW1"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "ROW1"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "ROW1"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "ROW1"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "ROW1"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "ROW_DRV1"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_EN2"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "CHG_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "BAT_ADC"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "AMUX_SEL_1"
+            },
+            {
+              "item": "filled-zone",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "layer": "In2.Cu",
+          "GND_union_mm2": 33.178926,
+          "non_GND_union_mm2": 1.387969,
+          "intersecting_items": [
+            {
+              "item": "PCB_VIA",
+              "net": "ROW1"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "ROW_DRV1"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "AMUX_SEL_0"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "AMUX_SEL_1"
+            },
+            {
+              "item": "filled-zone",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "layer": "B.Cu",
+          "GND_union_mm2": 14.705965,
+          "non_GND_union_mm2": 1.408847,
+          "intersecting_items": [
+            {
+              "item": "PCB_VIA",
+              "net": "ROW1"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "ROW_DRV1"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "PGOOD_N"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "USB_5V"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "APLEX_EN_PIN_0"
+            },
+            {
+              "item": "PCB_VIA",
+              "net": "AMUX_SEL_1"
+            },
+            {
+              "item": "PCB_TRACK",
+              "net": "AMUX_SEL_1"
+            },
+            {
+              "item": "filled-zone",
+              "net": "GND"
+            }
+          ]
+        }
+      ],
+      "status": "risk-copper-in-provisional-antenna-band",
+      "USB": {
+        "nets": {
+          "D+": {
+            "total_track_mm": 253.806471,
+            "via_count": 3,
+            "layers": [
+              "B.Cu",
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "widths_mm": [
+              0.2,
+              0.25
+            ]
+          },
+          "USB_DP": {
+            "total_track_mm": 25.82,
+            "via_count": 2,
+            "layers": [
+              "B.Cu",
+              "In1.Cu"
+            ],
+            "widths_mm": [
+              0.127
+            ]
+          },
+          "D-": {
+            "total_track_mm": 262.79443,
+            "via_count": 6,
+            "layers": [
+              "B.Cu",
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "widths_mm": [
+              0.2,
+              0.25
+            ]
+          },
+          "USB_DM": {
+            "total_track_mm": 26.268132,
+            "via_count": 3,
+            "layers": [
+              "B.Cu",
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "widths_mm": [
+              0.127,
+              0.2
+            ]
+          }
+        },
+        "positive_total_track_mm": 279.626471,
+        "negative_total_track_mm": 289.06256199999996,
+        "aggregate_length_difference_mm": 9.436091,
+        "status": "requires-return-path-impedance-and-eye-verification",
+        "limits": "Track sums include branch stubs; exclude pads, series resistors, module routing, C5 and cable. No impedance or pair-coupling extraction."
+      },
+      "source_sha256": {
+        "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6"
+      }
+    },
+    "raytac": {
+      "module": "MDBT50Q-1MV2",
+      "module_origin_mm": [
+        347.0,
+        125.0
+      ],
+      "rotation_deg": 90.0,
+      "body_pcb_bounds_mm": [
+        339.25,
+        119.75,
+        354.75,
+        130.25
+      ],
+      "screen_bounds_mm": [
+        350.95,
+        119.75,
+        354.75,
+        130.25
+      ],
+      "screen_area_mm2": 39.9,
+      "formal_vendor_dimension": true,
+      "layers": [
+        {
+          "layer": "F.Cu",
+          "GND_union_mm2": 0.512205,
+          "non_GND_union_mm2": 0.0,
+          "intersecting_items": [
+            {
+              "item": "filled-zone",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "GND_union_mm2": 0.360876,
+          "non_GND_union_mm2": 0.0,
+          "intersecting_items": [
+            {
+              "item": "filled-zone",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "layer": "In2.Cu",
+          "GND_union_mm2": 0.512205,
+          "non_GND_union_mm2": 0.0,
+          "intersecting_items": [
+            {
+              "item": "filled-zone",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "layer": "B.Cu",
+          "GND_union_mm2": 0.4259,
+          "non_GND_union_mm2": 0.0,
+          "intersecting_items": [
+            {
+              "item": "filled-zone",
+              "net": "GND"
+            }
+          ]
+        }
+      ],
+      "status": "failed-vendor-keepout",
+      "USB": {
+        "nets": {
+          "D+": {
+            "total_track_mm": 253.806471,
+            "via_count": 3,
+            "layers": [
+              "B.Cu",
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "widths_mm": [
+              0.2,
+              0.25
+            ]
+          },
+          "USB_DP": {
+            "total_track_mm": 11.558144,
+            "via_count": 2,
+            "layers": [
+              "B.Cu",
+              "F.Cu"
+            ],
+            "widths_mm": [
+              0.127,
+              0.2
+            ]
+          },
+          "D-": {
+            "total_track_mm": 262.79443,
+            "via_count": 6,
+            "layers": [
+              "B.Cu",
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "widths_mm": [
+              0.2,
+              0.25
+            ]
+          },
+          "USB_DM": {
+            "total_track_mm": 8.195911,
+            "via_count": 2,
+            "layers": [
+              "B.Cu",
+              "In1.Cu"
+            ],
+            "widths_mm": [
+              0.2
+            ]
+          }
+        },
+        "positive_total_track_mm": 265.364615,
+        "negative_total_track_mm": 270.990341,
+        "aggregate_length_difference_mm": 5.625726,
+        "status": "requires-return-path-impedance-and-eye-verification",
+        "limits": "Track sums include branch stubs; exclude pads, series resistors, module routing, C5 and cable. No impedance or pair-coupling extraction."
+      },
+      "source_sha256": {
+        "variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873"
+      }
+    }
+  },
+  "source_sha256": {
+    "scripts/screen_yeti60_interference.py": "fb3bc69b0a34f40536fb759c07a3448455326829ad26d1aef31959871ccc2ee5"
+  },
+  "geometry_error_mm": 0.002,
+  "limits": [
+    "No measured antenna impedance, efficiency, detuning, RSSI or packet-error rate",
+    "Host copper only: internal module copper is absent from native host PCB",
+    "E73 ROI is provisional; obtain manufacturer-approved antenna keepout before release"
+  ]
+}

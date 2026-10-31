@@ -136,7 +136,7 @@ def main():
                         label_sites.append((ref, xy([part['at']])[0]))
                 if chosen and numbers:
                     for pad in part['pads']:
-                        if not pad['number'] or ref == 'U1' and pad['number'] not in ['1','28','30','32','34','35','51','53']:
+                        if not pad['number'] or ref == 'U1' and pad['number'] not in ['1','5','12','19','23','24','26','27','29','31','37','39']:
                             continue
                         p = xy([pad['at']])[0]
                         ax.text(*p, pad['number'], ha='center', va='center', fontsize=7, color='#182f2a')
@@ -278,7 +278,7 @@ def main():
                     ax.remove()
                     for i,(ref,region) in enumerate([('U3',[97,141,111,159]),('U2',[137,172,153,193]),('U4',[299,169,315,190])]):
                         a=axis(fig,[.045+i*.22,.31,.21,.49]);pcb(a,[ref],region,numbers=True)
-                elif step['id'] == '08': pcb(ax,refs,[336,116,357,134],numbers=True)
+                elif step['id'] == '08': pcb(ax,refs,[339,114.5,357,136.5],numbers=True)
                 elif step['id'] == '09':
                     ax.remove()
                     for i,(group,region) in enumerate([(['J1','SW100'],[104,115,131,132]),(['J2'],[143,116,162,134]),(['SW1','D2'],[310,115,334,132])]):
@@ -329,7 +329,7 @@ def main():
                         ax.text(6,45-i*10,line,color='#d8e5c4',fontfamily='monospace',fontsize=16)
                     ax.text(50,4,'Normal HEX: preserve 0xF0000-0xFFFFF' if not zh else '普通固件：保留 0xF0000–0xFFFFF',ha='center',fontsize=12)
                 else:
-                    tests = ['USB HID  /  60 keys','BLE  /  profiles 0 1 2 3 4','USB500  /  suspend  /  USB100'] if not zh else ['USB HID ／60 个按键','蓝牙／配置 0 1 2 3 4','USB500 ／挂起／USB100']
+                    tests = ['USB HID  /  60 keys','BLE  /  profiles 0 1 2 3 4','USB500 / suspend: input Hi-Z'] if not zh else ['USB HID ／60 个按键','蓝牙／配置 0 1 2 3 4','USB500 ／挂起：输入高阻']
                     for i,line in enumerate(tests):
                         y=48-i*16;ax.add_patch(Rectangle((5,y-3),5,5,fill=False,ec='#64808a',lw=1.4));ax.text(15,y,line,va='center',fontsize=17)
             else:
@@ -389,6 +389,7 @@ def main():
                ('[需要制作的 PCB 与完整材料](../../README.zh-CN.md#需要下单制作哪些-pcb) · [主板补购表](../../hardware/bom/mainboard-purchase.zh-CN.csv) · [子板自焊材料](../../hardware/bom/daughterboard.zh-CN.csv) · [结构尺寸](../engineering/assembly.zh-CN.md)' if zh else '[PCBs to fabricate and complete materials](../../README.md#which-pcbs-to-fabricate) · [Mainboard purchase plan](../../hardware/bom/mainboard-purchase.csv) · [C5 self-build parts](../../hardware/bom/daughterboard.csv) · [Assembly dimensions](../engineering/assembly.md)'),'',
                ('主板元件位于背面，主板图已按背面观察进行水平镜像；C5 图从 F.Cu 元件面观察。数字行侧为后方。金黄色圆圈标出原生焊盘 1，仍须与实际器件封装标识核对。PCB 线路省略，机械分解高度及未定型胶碗／轴壳／键帽外形为示意。' if zh else 'Mainboard parts are on the back; mainboard views are mirrored horizontally for looking at that face. C5 views look at its F.Cu component face. Rear means the number-row side. Gold rings identify native pad 1; compare them with the actual package mark. PCB tracks are omitted. Mechanical exploded offsets and unqualified dome/housing/cap shapes are illustrative.'),'',
                ('步骤 12–13 仅用于自焊 C5，购买成品时跳过；其余步骤仍需执行。' if zh else 'Steps 12–13 apply only to a bare C5 build; skip them with a populated daughterboard. The other checks still apply.'),'']
+        lines += [('**装配前验收：** 两版天线均有未解决的布局风险；当前只能按工程样机装配，不能据此认定蓝牙已经验收。先阅读[验收与干扰测试](../testing/README.zh-CN.md)，记录板型、固件哈希及每项实测结果。' if zh else '**Before assembly:** both antenna layouts have unresolved risks. These instructions support an engineering prototype; Bluetooth acceptance is open. Read [acceptance and interference testing](../testing/README.md) and record the selected board, firmware hashes and measured results.'), '']
         lines += [('步骤目录' if zh else 'Step index'), '']
         lines += [f"- [{step['id']} {step['title'][lang]}](#step-{step['id']})" for step in steps]
         lines += ['']
@@ -408,7 +409,7 @@ def main():
         lines += [('## 重建与依据' if zh else '## Rebuild and sources'),'',
                   ('使用 KiCad Python 执行 `scripts/export_yeti60_build_map.py`，再用 `requirements-audit.txt` 的 CAD 环境执行 `scripts/draw_yeti60_build_guide.py`。生成器核对 76 只主板元件均在放置步骤中出现一次、60 个实际电极、29 个安装孔及当前装配／线束来源。文件和图像哈希见 [指南验证记录](../audit/yeti60-build-guide.json)。' if zh else 'Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_yeti60_build_guide.py` with the CAD environment from `requirements-audit.txt`. The generator checks that all 76 mainboard components are placed exactly once, and checks the 60 active electrodes, 29 mounts and current assembly/harness sources. See the [guide evidence](../audit/yeti60-build-guide.json) for source and image hashes.'),'',
                   ('编排参考 [DELTA OMEGA 安装指南](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md) 的逐工序图示形式；图像及位号按 YETI60 原生数据重新绘制，不沿用 MX 焊接步骤。' if zh else 'The per-operation illustrated format follows the [DELTA OMEGA build guide](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md). Images and references are redrawn from YETI60 native data; its MX soldering operations do not apply here.'),'',
-                  ('焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Raytac MDBT50Q-1MV2 资料](https://www.raytac.com/product/ins.php?index_id=24) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。' if zh else 'Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Raytac MDBT50Q-1MV2 documentation](https://www.raytac.com/product/ins.php?index_id=24), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).'),'']
+                  ('焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Ebyte E73-2G4M08S1C 资料](https://www.ebyte.com/product/444.html) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。' if zh else 'Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Ebyte E73-2G4M08S1C documentation](https://www.ebyte.com/product/444.html), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).'),'']
         doc=ROOT/('docs/assembly/build-guide'+suffix+'.md');doc.write_text('\n'.join(lines));outputs[str(doc.relative_to(ROOT))]=sha(doc)
     source_paths=[STEPS,ROOT/native['pcb_source'],ROOT/native['daughterboard']['source'],
                   ROOT/'hardware/bom/mainboard.csv',ROOT/'hardware/bom/daughterboard.csv',

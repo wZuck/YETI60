@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/ec60-nrf52840';DEST=ROOT/'firmware/yeti60/board_pins.h'
 def generate():
     xml=ET.parse(BASE/'netlist.xml').getroot();pinmap=json.loads((BASE/'pinmap.json').read_text())['module_pin_nets']
-    module=next(p for p in xml.findall('./libparts/libpart') if p.get('part')=='MDBT50Q-1MV2')
+    module=next(p for p in xml.findall('./libparts/libpart') if p.get('part')=='E73-2G4M08S1C')
     names={p.get('num'):p.get('name') for p in module.findall('./pins/pin')};netgpio={}
     for pin,net in pinmap.items():
         match=re.fullmatch(r'P(\d)\.(\d+)',names[pin])

@@ -382,10 +382,10 @@
       "required": 1,
       "from_stock": 0,
       "buy": 1,
-      "value": "MDBT50Q-1MV2",
-      "package": "Raytac_MDBT50Q",
+      "value": "E73-2G4M08S1C",
+      "package": "E73-2G4M08S1C",
       "stock_mpn": "",
-      "candidate_mpn": "Raytac MDBT50Q-1MV2",
+      "candidate_mpn": "Ebyte E73-2G4M08S1C",
       "source_rows": [],
       "received_pool_units": 0
     },
@@ -452,18 +452,18 @@
   ],
   "source_sha256": {
     "hardware/bom/inventory-allocation.json": "353d8dd351e9e4f789a730736011fe9f73ea555d05c7d587668d559e6d963653",
-    "hardware/bom/mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
-    "hardware/bom/mainboard.zh-CN.csv": "6480581ab2117d3891a9b0e1c51c5991440e4ff3d2908679ac1cf1339d0ddb77",
+    "hardware/bom/mainboard.csv": "5aac9c838ba556e40a72bfe6aa6c13b9109aeea2406ffd50a38ed8fd4f2a550b",
+    "hardware/bom/mainboard.zh-CN.csv": "8bc03a93169a17a7c026bbd44e652307f039f4a0e3a5ea10ce555c22d9a2fdc5",
     "scripts/plan_yeti60_inventory.py": "596d3f009c53729751307b9ae2cc0fea06fa08be0bfb78b7a14b3a0c53c5322e",
     "hardware/usb-daughterboard/upstream/production/UDB-C-JSH_5.0_bom.csv": "ce6839496a7fb19a1e4c4fcca74f5610a714c74c635d351eae681d2bb52533b2",
-    "README.md": "8534253bce5bcff17593d7886237a5fe2e0fdd8e1fb1ed33e3fa0aee4cb6193f",
-    "README.zh-CN.md": "6f5cc9f82f1639d9e3c09482824de31a79ce008686e0ae61db941435b24c9d1e",
-    "docs/engineering/inventory-allocation.md": "c4070db27e3b0dcb370118d6d2382866246278edb6df0d3409a3ff22623bda82",
-    "docs/engineering/inventory-allocation.zh-CN.md": "141885db32fccac43c05c9b5ef5412ff59317a4c9f2422f0801d4c32915d3423"
+    "README.md": "6c64c3eb1eee9012f3d882098547bf7371f7e15d0debe15270164fbd50937a4c",
+    "README.zh-CN.md": "f2acf8378ba96259e631b583dd2ed0e0fe9bbff81a3894c284a4741d4371eb6d",
+    "docs/engineering/inventory-allocation.md": "39568e3f9088670a24ad9c83be32528a010eea182ccb0cb5d1d933ee8173fead",
+    "docs/engineering/inventory-allocation.zh-CN.md": "c1f5435c1254a1bf481cd1e4b5d10484d655c61068fe1008f1a682d36aed8a98"
   },
   "outputs": {
-    "hardware/bom/mainboard-purchase.csv": "b237ddb068315046ffb427e1139d721670fd2d2334d8d9d6063619def409cdb3",
-    "hardware/bom/mainboard-purchase.zh-CN.csv": "70cad31b3c82dd24db6c3b5b7b812936ed17ff69616237bba30f07ed180a7cf7",
+    "hardware/bom/mainboard-purchase.csv": "4ac541ab2105f650aa640db954f99224b1265f4b46712ce15e994f39b587fd27",
+    "hardware/bom/mainboard-purchase.zh-CN.csv": "49e1758b8991be35898f4a8b9804f37eb111326ecb64cc54576c70c3494ea089",
     "hardware/bom/daughterboard.csv": "7fcfb59fa599748199cb312a68ff7a9306123ccbb60be7ca49324350c300d9ea",
     "hardware/bom/daughterboard.zh-CN.csv": "dd2084077ca8d174d99510ee6acd55399072c7668871e061bf21303115d91ced"
   }

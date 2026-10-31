@@ -1,0 +1,52 @@
+{
+  "status": "both-variant-checks-passed-production-incomplete",
+  "mode": "existing-reports-and-current-integration",
+  "production_approved": false,
+  "variants": {
+    "e73": {
+      "exit_code": 0,
+      "audit": "docs/audit/outcome.json"
+    },
+    "raytac": {
+      "exit_code": 0,
+      "audit": "variants/raytac/docs/audit/outcome.json"
+    }
+  },
+  "feature_parity": {
+    "controllers_per_keyboard": 1,
+    "keys": 60,
+    "mounts": 29,
+    "non_module_BOM_identical": true,
+    "shared_case_and_battery": true,
+    "stock_use_per_selected_keyboard": 10,
+    "mainboard_to_buy": 66,
+    "variant_manufacturing_packages": {
+      "e73": {
+        "module": "E73-2G4M08S1C",
+        "sha256": "9af8cf423c3b7df9d767f608184eb25df8c922e6efcf65422873dce5e8e3aa9d",
+        "copper_layers": 4,
+        "blind_drill_hits": 0,
+        "placements": 76
+      },
+      "raytac": {
+        "module": "MDBT50Q-1MV2",
+        "sha256": "c7884d28bc7d99035e0bd9d0d1baceddfa10909f41b7f8f8d91a840237f41490",
+        "copper_layers": 4,
+        "blind_drill_hits": 0,
+        "placements": 76
+      }
+    },
+    "built_ARM_targets": 4,
+    "shared_USB_charge_and_wired_priority_policy": true
+  },
+  "error": null,
+  "source_sha256": {
+    "scripts/run_all_variants.py": "3af991fcc1ce255e3f9dcb3bca70e8073d3c2a36ff10f5694056510fc28bf5ff",
+    "tests/audit/test_variant_packages.py": "11c5f4a5c4426f98060e31ec880858e5c06941712f78bbf9f2eea524483f31ff"
+  },
+  "outcome_sha256": {
+    "docs/audit/outcome.json": "ac3a3c94a80370a9f629756a1af90f013dbae92b58c897825c4d33649310aec8",
+    "variants/raytac/docs/audit/outcome.json": "232d6f8041299a25f4dcffb6c37fa023a8da180bd0105b426e4872c5806786ca"
+  },
+  "scope": "Both complete designs in this branch; no physical acceptance or RF/SI certification"
+}

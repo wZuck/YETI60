@@ -71,6 +71,7 @@ def main():
         assert any('NPTH' in n for n in drills) and any('PTH' in n and 'NPTH' not in n for n in drills)
         files = {p.name:sha(p) for p in sorted(work.iterdir()) if p.is_file()}
         manifest = {'purpose':'DFM and assembly review only; not manufacturing release',
+                    'controller_module':next(r['value'] for r in bom['rows'] if r['references']=='U1'),
                     'source_sha256':source_hashes, 'files_sha256':files,
                     'copper_layers':['F.Cu','In1.Cu','In2.Cu','B.Cu'],
                     'blind_drill_file':blind_name, 'blind_drill_hits':len(hits),
@@ -79,7 +80,7 @@ def main():
                     'required_process':'JLC ordinary four-layer JLC04161H-7628, nominal order 1.6 mm; mechanical through holes only; no blind/buried, resin-filled or copper-capped process required',
                     'production_approved':False}
         (work/'manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
-        target = OUT/'yeti60-p2-dfm-review.zip'
+        target = OUT/'yeti60-e73-p2-dfm-review.zip'
         with zipfile.ZipFile(target, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
             for path in sorted(work.iterdir()):
                 info = zipfile.ZipInfo(path.name, (2000,1,1,0,0,0))

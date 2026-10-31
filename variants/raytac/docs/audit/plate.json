@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "source_sha256": {
+    "felk60/felk60_plate_hhkb.dxf": "3ca0b6dd510c27040b8b21104a5edf13b2d784f81893290d6fab6ac5295f893a",
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51"
+  },
+  "closed_profiles": 63,
+  "screw_circles": 29,
+  "geometry_comparison_precision_mm": 1e-09,
+  "read_only": true,
+  "scope": "Source geometry equivalence only; current PCB hole correspondence and provisional stack are checked separately"
+}

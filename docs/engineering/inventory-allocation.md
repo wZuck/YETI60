@@ -49,7 +49,7 @@ Spacer alternatives above are dimensional screening calculations, not accepted C
 | 47, 56 | 100/600 ohm ferrite beads | Impedance at a stated frequency is not 1.5 uH inductance. L1 remains Wurth 74438336015 or a separately qualified equivalent. |
 | 12 | MF-MSMF075-2, 1812, 0.75 A hold | Main F1 is 1206/0.5 A hold; C5 F1 is ASMD1206-150, 1206/1.5 A per upstream. The stock matches neither footprint/current requirement. |
 | 9 | USBLC6-2SC6, SOT-23-6 | Main D1 is PRTR5V0U2X SOT-143; C5 U1 is TPD4E05U06DQAR uSON-10. Different packages/pinouts; no direct substitution. |
-| 8, 39 | RP2040 and nice!nano nRF52840 board | U1 is the soldered Raytac MDBT50Q-1MV2 module. Neither stock item matches its footprint. Keep the single-controller design. |
+| 8, 39 | RP2040 and nice!nano nRF52840 board | U1 is the soldered Ebyte E73-2G4M08S1C module. Neither stock item matches its footprint. Keep the single-controller design. |
 | 37 | 301230, 110 mAh cell | Does not establish the required protected 1600 mAh pack, independent thermal interruption or third-wire NTC. Programmed charging is about 403 mA typical, about 3.66C for 110 mAh, with no stock-cell rating supporting that use. Buy the specified pack; do not connect this cell to the current charger configuration. |
 | 23 | M1.6 x 2 screws | Need 29 M1.6 x 5. Nominal reach is `2 − 0.8 − 1.6062 − 0.1 = −0.5062 mm`, so the stock screw cannot reach the adapter standoff. |
 | 24–25 | M2 female/female 6/18 mm standoffs | Need 4.50 mm shoulder, upper M2 stud, lower M1.6 female adapter. Wrong height and thread arrangement. |

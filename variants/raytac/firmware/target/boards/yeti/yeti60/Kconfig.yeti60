@@ -1,0 +1,35 @@
+config BOARD_YETI60
+    select SOC_NRF52840_QIAA
+
+config YETI60_ACTIVE_SCAN_MS
+    int "YETI60 active scan interval (milliseconds)"
+    default 4
+    range 1 50
+    depends on BOARD_YETI60
+    help
+      Delay between scan frames while a key is held or shortly after activity.
+
+config YETI60_IDLE_SCAN_MS
+    int "YETI60 idle scan interval (milliseconds)"
+    default 30
+    range 5 1000
+    depends on BOARD_YETI60
+    help
+      Delay between scan frames after YETI60_IDLE_AFTER_MS without a key.
+      This trades first-key latency for lower idle power.
+
+config YETI60_IDLE_AFTER_MS
+    int "YETI60 idle transition time (milliseconds)"
+    default 30000
+    range 100 60000
+    depends on BOARD_YETI60
+    help
+      Time with no pressed or changed key before entering the idle scan rate.
+
+config YETI60_AFE_IDLE_GATING
+    bool "Power down the EC analog front-end between idle scans"
+    default y
+    depends on BOARD_YETI60
+    help
+      Use U8/AFE_EN to remove AFE_3V3 while idle. The AFE is kept on while a
+      key is held, during calibration, and whenever activity is detected.

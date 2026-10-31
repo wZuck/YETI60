@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+<rect width="1200" height="600" fill="#f6f7f9"/>
+<text x="35" y="40" font-family="sans-serif" font-size="23">RAYTAC — 天线投影与实际主板铜</text>
+<text x="35" y="70" font-family="sans-serif" font-size="15">顶视；绿色为接地铜，橙色为其他网络，红框为检查区。未进行射频场仿真。</text>
+<rect x="45.0" y="120.0" width="201.5" height="136.5" fill="#fff" stroke="#718096"/>
+<polygon points="197.633,123.549 197.750,124.158 197.750,256.500 197.100,256.500 197.100,122.872" fill="#269b76" fill-opacity=".85"/>
+<rect x="197.09999999999985" y="120.0" width="49.40000000000015" height="136.5" fill="none" stroke="#d62728" stroke-width=".4" stroke-dasharray="4 3"/>
+<text x="45" y="395" font-family="sans-serif" font-size="20">F.Cu</text>
+<text x="45" y="425" font-family="sans-serif" font-size="16">接地铜 0.512205 mm²</text>
+<rect x="340.0" y="120.0" width="201.5" height="136.5" fill="#fff" stroke="#718096"/>
+<polygon points="492.423,171.864 492.746,172.729 492.750,172.845 492.750,256.500 492.100,256.500 492.100,171.622" fill="#269b76" fill-opacity=".85"/>
+<polygon points="492.633,123.549 492.750,124.158 492.750,131.869 492.490,132.754 492.100,133.092 492.100,122.872" fill="#269b76" fill-opacity=".85"/>
+<rect x="492.09999999999985" y="120.0" width="49.40000000000015" height="136.5" fill="none" stroke="#d62728" stroke-width=".4" stroke-dasharray="4 3"/>
+<text x="340" y="395" font-family="sans-serif" font-size="20">In1.Cu</text>
+<text x="340" y="425" font-family="sans-serif" font-size="16">接地铜 0.360876 mm²</text>
+<rect x="635.0" y="120.0" width="201.5" height="136.5" fill="#fff" stroke="#718096"/>
+<polygon points="787.633,123.549 787.750,124.158 787.750,256.500 787.100,256.500 787.100,122.872" fill="#269b76" fill-opacity=".85"/>
+<rect x="787.0999999999999" y="120.0" width="49.40000000000015" height="136.5" fill="none" stroke="#d62728" stroke-width=".4" stroke-dasharray="4 3"/>
+<text x="635" y="395" font-family="sans-serif" font-size="20">In2.Cu</text>
+<text x="635" y="425" font-family="sans-serif" font-size="16">接地铜 0.512205 mm²</text>
+<rect x="930.0" y="120.0" width="201.5" height="136.5" fill="#fff" stroke="#718096"/>
+<polygon points="1082.602,219.108 1082.750,219.788 1082.750,256.500 1082.100,256.500 1082.100,218.528" fill="#269b76" fill-opacity=".85"/>
+<polygon points="1082.633,123.549 1082.750,124.158 1082.750,195.712 1082.490,196.598 1082.100,196.935 1082.100,122.872" fill="#269b76" fill-opacity=".85"/>
+<rect x="1082.1" y="120.0" width="49.40000000000015" height="136.5" fill="none" stroke="#d62728" stroke-width=".4" stroke-dasharray="4 3"/>
+<text x="930" y="395" font-family="sans-serif" font-size="20">B.Cu</text>
+<text x="930" y="425" font-family="sans-serif" font-size="16">接地铜 0.425900 mm²</text>
+<text x="35" y="460" font-family="sans-serif" font-size="16">Raytac 厂商第 2.3 节最小投影为 10.5×3.8 mm；建议进一步扩大净空。</text>
+<text x="35" y="490" font-family="sans-serif" font-size="16">图中只画相交外轮廓，视觉上省略孔洞；JSON 并集面积保留原生孔洞。</text>
+<text x="35" y="520" font-family="sans-serif" font-size="16">定位板投影和距离另行检查；机械不相交不能证明射频净空合格。</text>
+</svg>

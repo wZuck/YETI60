@@ -281,28 +281,28 @@
       ],
       "actions": [
         [
-          "Confirm Raytac MDBT50Q-1MV2, including the actual ordering suffix; do not use the stock nice!nano board.",
+          "Confirm Ebyte E73-2G4M08S1C, including the actual ordering suffix; do not use the stock nice!nano board.",
           "Match the module drawing, pin 1 and antenna end to the native footprint. Check the underside lands before placement.",
           "Keep paste and metal debris out of the antenna area. Place the module flat without sliding it across neighboring pads."
         ],
         [
-          "确认使用 Raytac MDBT50Q-1MV2 及正确订货后缀，不使用库存 nice!nano 开发板。",
+          "确认使用 Ebyte E73-2G4M08S1C 及正确订货后缀，不使用库存 nice!nano 开发板。",
           "根据模组图纸核对一脚、天线端和原生焊盘方向，放置前检查底部焊盘。",
           "天线区域不沾锡膏和金属碎屑；模组平放，不在相邻焊盘上拖动。"
         ]
       ],
       "check": [
-        "This is a module soldered directly to the PCB, with underside joints. No headers or second controller are installed.",
-        "这是直接焊接在 PCB 上的模组，包含底部焊点；不安装排针或第二颗主控。"
+        "E73 is soldered directly to this PCB: connected bottom lands 12, 24, 28, 32 and 34 require reflow and inspection. No headers or second controller are installed.",
+        "E73 直接焊接在本版本 PCB 上：实际连接的底部 12、24、28、32、34 焊盘须回流焊并检查，不装排针或第二颗主控。"
       ],
       "labels": [
         [
-          "MDBT50Q-1MV2 only",
+          "E73-2G4M08S1C only",
           "Native pad 1 and module orientation",
           "Underside lands require reflow"
         ],
         [
-          "仅使用 MDBT50Q-1MV2",
+          "仅使用 E73-2G4M08S1C",
           "按原生焊盘 1 核对方向",
           "底部焊盘需要回流焊接"
         ]
@@ -580,12 +580,12 @@
         [
           "Power off before mating the custom six-pogo fixture. Use J3 pin 1 as 3.3 V target reference, not a second supply.",
           "Connect 2 SWDIO, 3 GND, 4 SWDCLK, 5 RESET_N and 6 GND using the actual pad numbers. Power the board through the checked USB path.",
-          "Select nRF52840 in the probe tool, program firmware/releases/calibrator/yeti60.hex, verify its contents and reset. Reserve calibration until the EC mechanical stack is installed."
+          "Select nRF52840 in the probe tool, program firmware/releases/calibrator/yeti60-e73.hex, verify its contents and reset. Reserve calibration until the EC mechanical stack is installed."
         ],
         [
           "对接自定义六针治具前先断电，J3 的 1 脚是 3.3 V 目标参考，不用作第二路供电。",
           "按实际编号连接 2 SWDIO、3 地、4 SWDCLK、5 RESET_N、6 地，再通过已检查的 USB 通路为板子供电。",
-          "在调试工具中选择 nRF52840，写入 firmware/releases/calibrator/yeti60.hex，执行校验并复位；装好静电容机械结构后再校准。"
+          "在调试工具中选择 nRF52840，写入 firmware/releases/calibrator/yeti60-e73.hex，执行校验并复位；装好静电容机械结构后再校准。"
         ]
       ],
       "check": [
@@ -902,14 +902,14 @@
       ],
       "actions": [
         [
-          "With the complete mechanical stack supported at its intended preload, boot the calibrator and open its USB CDC console. Execute console commands one at a time, allowing release sampling before starting the press stage.",
-          "Run yeti_calibrate release with every key released, then yeti_calibrate press and fully press/release each of the 60 keys. Release all keys and run yeti_calibrate save; inspect the reported result.",
-          "Power down before reconnecting SWD. Program and verify firmware/releases/normal/yeti60.hex using range/sector-aware flashing that preserves 0xF0000–0xFFFFF. Restart and check that calibration is retained."
+          "Boot the calibrator with the complete mechanical stack at its intended preload. Run yeti_calibrate release with every key released; wait for the 128-frame completion message.",
+          "Use firmware/target/calibration-keys.csv. Hold each selected key BEFORE yeti_calibrate press ROW COL; keep holding until the 128-sample completion message. Repeat for all 60 keys, inspect yeti_calibrate status, then run yeti_calibrate save. Bare press is rejected.",
+          "Power down before reconnecting SWD. Program and verify firmware/releases/normal/yeti60-e73.hex using range/sector-aware flashing that preserves 0xF0000–0xFFFFF. Restart and check that calibration is retained."
         ],
         [
-          "完整机械结构按预定预压状态支撑，启动校准固件并打开 USB CDC 控制台。 三条命令分步执行，待松键采样完成后再进入按键采样阶段，不一次粘贴三条命令。",
-          "全部松键执行 yeti_calibrate release，再执行 yeti_calibrate press，完整按下并松开每个实际按键；最后全部松键执行 yeti_calibrate save，并检查返回结果。",
-          "重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。"
+          "完整机械结构按预定预压状态支撑，启动校准固件；全部松键执行 yeti_calibrate release，等待 128 帧采样完成提示。",
+          "按 firmware/target/calibration-keys.csv 操作，先按住目标键，再执行 yeti_calibrate press ROW COL；保持按住至 128 个采样完成后松开。逐个覆盖 60 键，检查 yeti_calibrate status，再执行 yeti_calibrate save；旧的无行列 press 命令会被拒绝。",
+          "重新连接 SWD 前先断电；按写入范围／扇区操作方式写入并校验 firmware/releases/normal/yeti60-e73.hex，保留 0xF0000–0xFFFFF，重启检查校准仍然有效。"
         ]
       ],
       "check": [
@@ -918,13 +918,13 @@
       ],
       "labels": [
         [
-          "release -> press -> save",
-          "Press all 60 keys",
+          "release -> press row col -> save",
+          "Hold until 128 samples complete",
           "Preserve final 64 KiB settings"
         ],
         [
-          "松键采样→按键采样→保存",
-          "完整按下全部 60 个键",
+          "松键→指定行列按键→保存",
+          "按住直到 128 个采样完成",
           "保留末尾 64 KiB 设置区"
         ]
       ]
@@ -938,14 +938,14 @@
       ],
       "actions": [
         [
-          "Using normal firmware, test every key over USB, held keys, multiple keys and reset/reconnect behavior.",
+          "Using normal firmware, connect to a computer and verify simultaneous battery charging and USB input, including when BLE was connected or preferred. Test every key, held keys, multiple keys and reset/reconnect behavior.",
           "With the accepted battery, disconnect USB and test BLE. Fn+Q/W/E/R/T select profiles 0/1/2/3/4 in the current keymap; verify pairing and retained bonds on the intended hosts.",
-          "Check configured-host USB500 behavior separately from preconfiguration, suspend and switch-off USB100 behavior. Record actual current/temperature; the predicted runtime is not an acceptance measurement."
+          "Check preconfiguration USB100 with charging disabled, configured-host USB500 charging, and active-firmware suspend with charging disabled and EN1/EN2=1/1 standby input high impedance. SW100-off hardware defaults to autonomous USB100 slow charging; qualify that mode separately with the intended source. Record measured current and temperature; predicted runtime is not acceptance data."
         ],
         [
-          "使用普通固件，通过 USB 检查逐键、长按、多键及复位重连。",
+          "使用普通固件连接电脑，确认一边充电一边通过 USB 输入，包括此前已连接或偏好蓝牙的情况；检查逐键、长按、多键及复位重连。",
           "使用验收过的电池，拔掉 USB 后检查蓝牙；当前键位 Fn+Q／W／E／R／T 分别选择 0／1／2／3／4 号配置，检查目标主机配对及绑定保留。",
-          "分别检查主机完成配置后的 USB500，以及配置前、挂起和关机 USB100 状态；记录实测电流／温度，不把估算续航当作验收数据。"
+          "分别检查配置前 USB100 且禁止充电、主机完成配置后的 USB500 充电，以及固件运行时 USB 挂起后禁止充电、EN1/EN2=1/1 待机输入高阻。SW100 关闭后硬件默认独立 USB100 慢充，应针对实际电源单独验证。记录实测电流和温度，不把估算续航当作验收数据。"
         ]
       ],
       "check": [

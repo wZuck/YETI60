@@ -2,21 +2,27 @@
 
 # YETI60
 
+> **同一分支，两套方案：**主目录默认使用 Ebyte E73-2G4M08S1C；Raytac MDBT50Q-1MV2 位于 [variants/raytac](variants/raytac/README.zh-CN.md)。见[完整选择说明](docs/engineering/module-options.zh-CN.md)。两套方案已实现的 CAD／构建检查均通过。见[合并检查记录](docs/audit/variants.json)。实物及供应商验收仍待完成。
+
 以 Cipulot EC60 为基础、使用 FELK60 外壳的单 nRF52840 静电容键盘 PCB。保留感应几何、板框和安装孔位置；后侧 USB 子板连接 J1。
+
+**有线使用：**电脑接受 USB 配置后，键盘一边给电池充电，一边通过 USB 发送按键。USB 自动优先于历史保存的蓝牙偏好；拔线后由 ZMK 回退到当前蓝牙配置。E73 和 Raytac 两套方案采用同一策略。描述符中的 500 mA 是输入预算，并非恒定电池充电电流。
 
 > **P2 阶段提交：**保留 C5 JSH 子板；默认改为定制 1600 mAh 单电芯，正式底壳含凹槽，充电设定和 USB500 固件同步更新。工程装配图、PCB 动画及装配渲染记录来源哈希。见[阶段记录](docs/design-checkpoint.zh-CN.md)。
 
+> **验收／射频阻塞：**本次布局检查发现天线区域铜及邻近定位板金属风险。制作或装配前先阅读[测试结果与首件验收流程](docs/testing/README.zh-CN.md)；DRC／构建通过不能关闭这些问题。
+
 ## 当前复查
 
-**CAD 导通检查通过，尚未批准生产或证明整机硬件运行。** [完整复查](docs/audit/yeti60-comprehensive-review.zh-CN.md)记录当前 P2 设计和待供方、公差、线束及实物验收事项。
+**两套方案当前 CAD、构建及集成检查均通过；尚未获得生产及实物运行验收。** [完整复查](docs/audit/yeti60-comprehensive-review.zh-CN.md)记录当前 P2 设计和待供方、公差、线束及实物验收事项。
 
 | 范围 | 结果 |
 |---|---|
-| PCB | 严格 DRC 0 错误／0 断线，270 对实际引脚连接通过；USB 电阻已改为 0 Ω，电源局部路径已缩短，只用普通机械通孔，无盲埋孔及模组盘中孔，采用 JLC 普通四层叠层 |
+| PCB | E73：严格 DRC 0 错误／0 未连接，270 组信号引脚及全部关键路径通过；114 项警告（102 项虚拟元件边界、7 项走线末端、5 项过孔对中）。JLC 普通四层，无盲埋孔或模组盘中孔 |
 | 固件 | 按原理图绑定的新控制核心通过主机 ASan/UBSan；已完成 GPIO/SAADC 与 USB/BLE 目标集成，普通版和校准版构建通过；实机验证待进行 |
 | 机械 | 明确暂定 Z 结构下，源 PCB／定位板／壳体无实体相交；胶碗、螺钉和树脂公差未定型 |
 | 电池 | 默认定制 1600 mAh，完整包络 85×43×4.8 mm；供方签图、电流资料更正及独立温度保护验收待完成 |
-| 可视化 | P2 的 PCB 图／动画、独立工程图和摄影风格装配渲染由来源哈希绑定 |
+| 可视化 | 两套方案分别提供已核对的 28 步双语指南、PCB 动画和绑定来源的装配渲染 |
 
 - [内部连接及线束装配图](docs/engineering/interconnects.zh-CN.md)
 - [可行性评估回应](docs/engineering/assessment-response.zh-CN.md)
@@ -34,7 +40,7 @@
 - [PCB 渲染及 360° 动画](renders/ec60-nrf52840/README.zh-CN.md)
 - [当前审查索引](docs/audit/README.zh-CN.md)
 
-外壳暂按树脂，信号／射频模拟继续暂缓。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
+外壳暂按树脂，信号／射频检查已开始，天线布局阻塞项及实物验收仍待解决。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
 
 基于 [Cipulot/EC60](https://github.com/Cipulot/EC60) 和 [fredlb/felk60](https://github.com/fredlb/felk60)，保留上游作者、许可证和原名称。`EC60-nRF52840.*` 文件名及 `YAECKB` 库标识为技术兼容保留，公开项目名统一为 **YETI60**。
 
@@ -62,9 +68,9 @@
 
 数量为一把键盘的净用量，板厂起订数量另计。购买成品 C5 时，只制作 **一块主板**；自行焊子板时，制作 **一块主板加一块 C5 JSH 裸板**。
 
-| PCB | 数量 | 尺寸与工艺 | 源文件及制板文件 |
+| PCB | E73：严格 DRC 0 错误／0 未连接，270 组信号引脚及全部关键路径通过；114 项警告（102 项虚拟元件边界、7 项走线末端、5 项过孔对中）。JLC 普通四层，无盲埋孔或模组盘中孔 |
 |---|---:|---|---|
-| YETI60 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [可编辑 KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb)、[当前 Gerber／钻孔审查压缩包](hardware/fabrication/yeti60-p2-dfm-review.zip)、[制板工艺要求](hardware/ec60-nrf52840/fabrication-notes.zh-CN.md) |
+| YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [可编辑 KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb)、[E73 Gerber／钻孔审查包](hardware/fabrication/yeti60-e73-p2-dfm-review.zip)、[制板工艺要求](hardware/ec60-nrf52840/fabrication-notes.zh-CN.md) |
 | Unified Daughterboard C5 JSH 子板 | 自焊时 1 块；买成品时 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](hardware/bom/daughterboard.zh-CN.csv) |
 
 两块板使用各自的制板文件，主板压缩包不包含 C5。两个压缩包均有四层铜，C5 不能按双层板下单。主板文件目前用于制造审查，最终物料、钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及五个走线支架属于机械件，不是额外 PCB。自行回流焊时，主板用 **B.Paste**，C5 用 **F.Paste**，钢网和温度曲线须与实际物料匹配。
@@ -116,7 +122,7 @@
 | R56 | 1 | 1.69k/1% | R_0402_1005Metric | 厂商型号待选 | 0 | 1 | 未匹配可用库存；需补购 |
 | SW1 | 1 | EVQPUC02K_RESET | Panasonic_EVQPUL_EVQPUC | Panasonic EVQPUC02K | 0 | 1 | 未匹配可用库存；需补购 |
 | SW100 | 1 | JS102011SAQN_POWER | SW_SPDT_CK_JS102011SAQN | C&K JS102011SAQN | 0 | 1 | 未匹配可用库存；需补购 |
-| U1 | 1 | MDBT50Q-1MV2 | Raytac_MDBT50Q | Raytac MDBT50Q-1MV2 | 0 | 1 | 未匹配可用库存；需补购 |
+| U1 | 1 | E73-2G4M08S1C | E73-2G4M08S1C | Ebyte E73-2G4M08S1C | 0 | 1 | 未匹配可用库存；需补购 |
 | U2, U4 | 2 | 74HC4051 | TSSOP16 | Nexperia 74HC4051PW,118 | 0 | 2 | 未匹配可用库存；需补购 |
 | U3 | 1 | OPA350 | SOIC-8_3.9x4.9mm_P1.27mm | TI OPA350UA | 0 | 1 | 未匹配可用库存；需补购 |
 | U5 | 1 | BQ24074RGT | VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm | TI BQ24074RGTR | 0 | 1 | 未匹配可用库存；需补购 |
