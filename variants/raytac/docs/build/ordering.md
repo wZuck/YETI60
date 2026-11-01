@@ -36,3 +36,5 @@ C5 self-assembly uses **18.0x16.5 mm, four layers, 1.6 mm**, mounting rectangle 
 Supplier note: engineering prototype, ordinary four-layer JLC04161H-7628/1.6 mm/ENIG/mechanical through vias; preserve electrodes, 29 mount centres and rounded RF wing. No stack substitution or HDI/fill/capping. Test against native nets and return marked coordinates for any trace, space, edge, drill or mask concession before modifying files.
 
 See [fabrication requirements](../../hardware/ec60-nrf52840/fabrication-notes.md), [DFM checklist](../engineering/fabrication-review.md), [JLC capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/) and [stack information](https://jlcpcb.com/impedance). No quote or supplier acceptance has been obtained.
+
+Order the new 1.20 mm stainless plate separately using the [Deskeys plan and machining requirements](key-mechanism.md). It is neither the original undersized plate nor another PCB. No stabilizer mounting holes are added to the mainboard.

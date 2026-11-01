@@ -649,30 +649,30 @@
       ],
       "actions": [
         [
-          "Deburr the 1.2 mm stainless plate, finish its 29 M2 threads and clean all metal debris away from the PCB.",
-          "Dry-fit matched independently mountable Topre-compatible housings/sliders at all 60 active positions.",
-          "Fit the matched stabilized housings, wires and clips for wide keys and the 6U HHKB spacebar. Test free movement before adding domes."
+          "Use the Deskeys DXF, not the original smaller cutouts. Deburr the 1.20 mm stainless plate, finish its 29 M2 threads and remove debris.",
+          "Use K01 Deskeys T1 / 42g kit: 58 normal pairs and two extra-stem wide assemblies with pre-opened housings. Fit #5 rings; no drilling or additional MX stabilizers.",
+          "Fit the two passive spacebar side units and 6U wire at 95.25 mm spacing. Test the NicePBT BoW centered 6U cap; put only one dome/sensing spring under its active center."
         ],
         [
-          "为 1.2 mm 不锈钢定位板去毛刺，完成 29 个 M2 螺纹，清除金属碎屑后再靠近 PCB。",
-          "在 60 个实际按键位置试装成套、可独立安装的兼容 Topre 轴壳及滑块。",
-          "宽键和 HHKB 6U 空格采用匹配的稳定轴壳、钢丝及卡扣；装胶碗前先检查滑动是否顺畅。"
+          "使用 Deskeys 适配 DXF，不用原过小开孔。1.20 mm 钢板去毛刺，29 处攻 M2 螺纹并清理碎屑。",
+          "K01 选择 Deskeys T1／42g：58 套普通机构及两个带辅助柱、预开孔宽键总成，装 #5 圈；不用钻孔或另加 MX 卫星轴。",
+          "装空格左右被动侧轴和 6U 钢丝，侧柱距 95.25 mm；试装 NicePBT BoW 居中 6U 空格，只有中央有效轴下放一个胶碗／感应锥簧。"
         ]
       ],
       "check": [
-        "Qualify a normal key, wide key and 6U spacebar first. Original HHKB integrated-plate housings and generic 7U MX stabilizers are not assumed compatible.",
-        "先验证普通键、宽键和 6U 空格样件；不假设原版 HHKB 一体板轴壳或通用 7U MX 卫星轴兼容。"
+        "Follow docs/build/key-mechanism.md. Check clips, full travel, both ends of wide keys, and the actual 4.6 mm stack on the first article.",
+        "按 docs/build/key-mechanism.zh-CN.md 核对卡扣、完整行程、宽键两端回弹及首件真实 4.6 mm 结构。"
       ],
       "labels": [
         [
-          "1.2 mm stainless plate",
-          "60 matched housing/slider sets",
-          "Normal / wide / 6U sample first"
+          "1.20 mm Deskeys plate",
+          "58 normal + 2 wide pairs",
+          "6U centered / 95.25 mm sides"
         ],
         [
-          "1.2 mm 不锈钢定位板",
-          "60 套匹配的轴壳／滑块",
-          "先验证普通／宽键／6U 样件"
+          "1.20 mm Deskeys 适配板",
+          "58 套普通＋2 套宽键",
+          "居中 6U／两侧距 95.25 mm"
         ]
       ]
     },

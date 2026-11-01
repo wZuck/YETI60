@@ -69,7 +69,7 @@ def main():
     fit = json.loads(fitpath.read_text())
     matches = identify(native, fit['active_key_positions'])
     masks = verify(matches, DTS.read_text(), SCANNER.read_text())
-    sources = [ROOT/native['pcb_source'], ROOT/'mechanical/felk60_plate_hhkb.audited.dxf',
+    sources = [ROOT/native['pcb_source'], ROOT/'mechanical/felk60_plate_hhkb.deskeys.dxf',
                fitpath, DTS, SCANNER, ROOT/'scripts/export_yeti60_build_map.py', Path(__file__).resolve()]
     report = {'status':'plate-copper-firmware-mapping-passed', 'physical_verification':False,
               'sampling_disk_radius_mm':3, 'sampling_grid_mm':.15, 'minimum_net_witness_area_mm2':1,

@@ -1,0 +1,23 @@
+{
+  "cutouts": {
+    "normal": 58,
+    "wide": 2,
+    "spacebar-side": 2,
+    "outline": 1
+  },
+  "mount_centers_preserved": 29,
+  "key_centers_preserved": 60,
+  "spacebar_side_spacing_mm": 95.25,
+  "spacebar_centered": true,
+  "minimum_cutout_to_original_mount_pilot_web_mm": 1.2331879999999984,
+  "physical_fit_verified": false,
+  "PCB_mount_holes_added": 0,
+  "case_external_dimensions_changed": false,
+  "status": "drawing-based-plate-contract-passed",
+  "source_sha256": {
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "mechanical/felk60_plate_hhkb.deskeys.dxf": "f206d131de827efa501877fd3d7311e2b6fe07a6f195e7e15255a806bcf31199",
+    "mechanical/yeti60-deskeys.json": "a1d4eedf422c877f894211b8e22aea29981cdeaf94e1309aaaa0b3265c2326b1",
+    "scripts/check_yeti60_deskeys_plate.py": "709df6f125dc933becbfc518c55273b7dae5dab547486c27a7622e312c33f8e7"
+  }
+}

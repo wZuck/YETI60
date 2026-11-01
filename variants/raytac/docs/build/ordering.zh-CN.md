@@ -47,3 +47,5 @@ C5 是 **18.0×16.5 mm、4 层、1.6 mm**，安装孔矩形 14×12.5 mm。单独
 “YETI60 Raytac 工程首样，普通四层 FR-4，JLC04161H-7628，1.6 mm，标准沉金，普通机械通孔。保留全部感应铜、29 个安装中心和圆角支撑板框。不要改叠层或使用 HDI、填孔封盖。请按原生网表电测，列明任何线宽、间距、板边、钻孔及阻焊需调整处和坐标，修改前回传审图。”
 
 [工艺规定](../../hardware/ec60-nrf52840/fabrication-notes.zh-CN.md)与[制造审查清单](../engineering/fabrication-review.zh-CN.md)是配套交付文件。能力依据为 [JLC 官方能力表](https://jlcpcb.com/capabilities/pcb-capabilities/)及[普通叠层资料](https://jlcpcb.com/impedance)，不把界面截图或报价当作已经取得的制造批准。
+
+定位板另按[Deskeys 方案及加工要求](key-mechanism.zh-CN.md)下单新的 1.20 mm 不锈钢 DXF，不是原过小定位板，也不是另一张 PCB；原主板不增加卫星轴安装孔。

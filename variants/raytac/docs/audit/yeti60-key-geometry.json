@@ -617,14 +617,14 @@
     {
       "index": 43,
       "plate_center_case_mm": [
-        123.825204,
+        123.82520400000001,
         -170.25966
       ],
       "row": 3,
       "col": 2,
       "electrode": "SW50",
       "copper_witness_area_mm2": {
-        "ROW3": 6.2775,
+        "ROW3": 6.255,
         "COL2": 6.345
       }
     },
@@ -855,12 +855,12 @@
   ],
   "source_sha256": {
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
-    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
-    "docs/audit/yeti60-assembly.json": "69718f7ff604bebeb419c8d5bd0c10db52083150e08483e4c4dc84294b3fee09",
+    "mechanical/felk60_plate_hhkb.deskeys.dxf": "f206d131de827efa501877fd3d7311e2b6fe07a6f195e7e15255a806bcf31199",
+    "docs/audit/yeti60-assembly.json": "658fbf19a2347ebb1f1efef43ab51d068ab15e166fe936a1434bd9cad6a17cf3",
     "firmware/target/boards/yeti/yeti60/yeti60.dts": "60e1e147673900553b3d60a1203cb28749e5399c8dd81bbf6d0b58d2807f03b5",
     "firmware/target/src/scanner.c": "c9ab36cb3a1688a847b421c85fd095e7143dfb7e22c6c30ad963ce6043454a1f",
     "scripts/export_yeti60_build_map.py": "62694c8fba60c171afd8c0be787329aae29d02183c024656f289264ae64d386e",
-    "scripts/check_yeti60_key_geometry.py": "556493619766ed77efc43337751d96aaa43a4b6162fa19c96bc5c867c6191be1"
+    "scripts/check_yeti60_key_geometry.py": "397a771ceff2323f91aaa51e81a8892963db46c199c05b00bb62d3a874edea05"
   },
   "limits": [
     "Copper-coverage geometry, not capacitance/signal simulation",

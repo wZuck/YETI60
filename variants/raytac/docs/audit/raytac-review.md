@@ -2,7 +2,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 # Raytac review conclusions
 
-**All 49 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
+**All 52 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
 
 | Area | Result |
 |---|---|
@@ -20,6 +20,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 - Shared analog/discharge net labels unified without changing exported pin connectivity
 - 75-part purchase, stock allocation, placement and illustrated guide contracts reconciled
 - Complete explosion includes 75 electronic bodies, battery, seven wires, 60 domes/springs and hardware; tray camera/desk bounds checked
+- Deskeys T1/42g kit and NicePBT BoW centered 6U caps selected; adapted plate preserves all 60 centers, 29 mounts and outer profile; actual mechanism Z/travel awaits a first article
 
 ## Supplier and physical work still open
 

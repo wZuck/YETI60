@@ -153,12 +153,12 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 |---|---|---:|---|
 | M01 | Top shell | 1 | Derived FELK60 HHKB STEP, tough SLA resin, post-cured; no exterior scaling |
 | M02 | Bottom shell | 1 | Default P2 derived STEP with 1600 mAh recess; unchanged exterior |
-| M03 | Plate | 1 | Audited HHKB DXF; 1.2 mm stainless steel, tapped M2 at 29 matched mounting centers; deburr and insulate |
-| M04 | EC slider/housing sets | 60 | Matched independently mountable Topre-compatible sets; two wide openings need stabilized housings; supplier/plate fit not frozen |
-| M05 | Rubber domes | 60 positions | Matched to housings, travel and PCB sensing geometry; a sheet may supply multiple positions |
-| M06 | Conical EC springs | 60 | Matched to domes; these are electrical sensing elements, not MX switch springs |
-| M07 | Stabilizers and spacebar hardware | 1 matched set | Return, left Shift and 6U HHKB spacebar; retain the donor clips/wires and confirm exact cap stem spacing |
-| M08 | Keycaps | 60 | Topre-compatible HHKB set including 6U spacebar; generic MX caps require compatible sliders and a separate fit check |
+| M03 | Plate | 1 | Deskeys HHKB DXF; 304 stainless 1.20 mm, 29 M2 x 0.4 threads; normal 14.70x14.10, wide 32.15x14.10, side 13.60x13.90 mm; inspect after deburring |
+| M04 | EC slider/housing sets | 60 | K01 Deskeys 68-key kit: use 58 normal pairs and 2 wide assemblies; purchase one complete kit, not duplicate packs |
+| M05 | Rubber domes | 60 positions | K01 includes T1 / 42g, 18 strips x 4 = 72 positions; use 60, spare 12 |
+| M06 | Conical EC springs | 60 | K01 includes 120; use 60; sensing springs are not passive stabilizer helper springs |
+| M07 | Stabilizers and spacebar hardware | 1 matched set | Included in K01: Enter/left Shift wires, two passive spacebar side units and 6U wire; 95.25 mm side spacing; no additional MX stabilizers |
+| M08 | Keycaps | 60 | K02 NicePBT BoW current complete kit, one kit including 6.0c Centered spacebar; MX mounts; see selected mechanism guide |
 | M09 | Adapter standoffs | 29 | YETI60-STANDOFF-46, brass Ø3.5, shoulder 4.50±0.03; top M2×0.4 stud 1.0; bottom M1.6×0.35 female depth 3.2 |
 | M10 | Top insulating films | 29 | Polyimide, 0.10±0.02 mm, OD 4.5 / ID 1.8; isolate brass shoulder from PCB sensing copper |
 | M11 | PCB screws | 29 | M1.6×5 pan head; head envelope and actual threads require first-article confirmation |
@@ -172,7 +172,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | M19 | Insert adhesive | As needed | Resin-compatible structural epoxy; cold-bond only, cure per adhesive/resin supplier, keep thread bores clear |
 | M20 | Battery retention and insulation | 1 set | Nonconductive removable retention and edge protection; include tape thickness in the pocket budget; do not clamp the pouch |
 
-**The key mechanism is not frozen.** Sixty independently mountable housing/slider sets must suit this 1.2 mm plate. Do not assume an original HHKB's housings can be removed from its integrated plate. Domes, conical springs, stabilizers and caps must form a matched system; qualify normal, wide and 6U-spacebar local samples first.
+**Selected mechanism:** the [Deskeys shopping and installation guide](docs/build/key-mechanism.md) specifies K01-K03 without duplicate kit purchases; existing mechanical stock is unverified. Use the new Deskeys plate, the retained 6U layout and current PCB. First-article clips, 4.6 mm stack, wires and full travel still need inspection.
 
 ### Additional retention parts and consumables
 

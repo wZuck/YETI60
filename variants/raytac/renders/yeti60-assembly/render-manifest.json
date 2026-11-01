@@ -1,5 +1,5 @@
 {
-  "interconnect_report_sha256": "f29fa3aea55e4b48bcbf4f9e7e916fa55c3ea354bbb8a3ee2387b43afb1d6683",
+  "interconnect_report_sha256": "623a856691aed55e0118ef7082ec6323ca8b83ea9f034a4d1080162252392e80",
   "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
   "interconnect_geometry": "Seven continuous round wires, complete conservative mating envelopes, conformal guides and native C5 CAD; supplier lead-exit datums pending",
   "exploded_frame_checks": {
@@ -135,13 +135,13 @@
   "samples": 256,
   "recipe_sha256": "d05aa2d593d247f889d7f57986eda05c54357c7185e7b21b896a2935ab2875be",
   "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
-  "assembly_report_sha256": "69718f7ff604bebeb419c8d5bd0c10db52083150e08483e4c4dc84294b3fee09",
+  "assembly_report_sha256": "658fbf19a2347ebb1f1efef43ab51d068ab15e166fe936a1434bd9cad6a17cf3",
   "geometry_sources": {
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
-    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "mechanical/felk60_plate_hhkb.deskeys.dxf": "f206d131de827efa501877fd3d7311e2b6fe07a6f195e7e15255a806bcf31199",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed"
   },
   "case_scale": [
@@ -211,39 +211,39 @@
   },
   "outputs": {
     "assembled.png": {
-      "sha256": "6ae492f1c7f8cacae8159eb859f76abd7c1e3518c0d255160961f85d5b4b0e51",
-      "bytes": 3781566,
+      "sha256": "d5e45c926f7137e7747a3f87cf4f0a73582493937892786f151d1b344588d2ea",
+      "bytes": 3782647,
       "recipe_sha256": "d05aa2d593d247f889d7f57986eda05c54357c7185e7b21b896a2935ab2875be",
-      "assembly_report_sha256": "69718f7ff604bebeb419c8d5bd0c10db52083150e08483e4c4dc84294b3fee09",
+      "assembly_report_sha256": "658fbf19a2347ebb1f1efef43ab51d068ab15e166fe936a1434bd9cad6a17cf3",
       "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
-      "interconnect_report_sha256": "f29fa3aea55e4b48bcbf4f9e7e916fa55c3ea354bbb8a3ee2387b43afb1d6683",
+      "interconnect_report_sha256": "623a856691aed55e0118ef7082ec6323ca8b83ea9f034a4d1080162252392e80",
       "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58"
     },
     "rear.png": {
-      "sha256": "6c6380ab7cda83add5171a3ed765f94efafafbc5b6f1b77e89ba7326465a84e0",
-      "bytes": 3644185,
+      "sha256": "910ffe8f8101702b2c1f5fb8fe3509919a7e04eaaee81a4b9916dd4df412f9fe",
+      "bytes": 3644970,
       "recipe_sha256": "d05aa2d593d247f889d7f57986eda05c54357c7185e7b21b896a2935ab2875be",
-      "assembly_report_sha256": "69718f7ff604bebeb419c8d5bd0c10db52083150e08483e4c4dc84294b3fee09",
+      "assembly_report_sha256": "658fbf19a2347ebb1f1efef43ab51d068ab15e166fe936a1434bd9cad6a17cf3",
       "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
-      "interconnect_report_sha256": "f29fa3aea55e4b48bcbf4f9e7e916fa55c3ea354bbb8a3ee2387b43afb1d6683",
+      "interconnect_report_sha256": "623a856691aed55e0118ef7082ec6323ca8b83ea9f034a4d1080162252392e80",
       "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58"
     },
     "exploded.png": {
-      "sha256": "61c39b5a34eca2f94f5f1b658b25e221c8e7b4c35a73b596f77f975ccab06762",
-      "bytes": 7306308,
+      "sha256": "308040205f600c49d5b5c4c8ecee71aaf743423c15689390d3cca6fed20f3cee",
+      "bytes": 7304021,
       "recipe_sha256": "d05aa2d593d247f889d7f57986eda05c54357c7185e7b21b896a2935ab2875be",
-      "assembly_report_sha256": "69718f7ff604bebeb419c8d5bd0c10db52083150e08483e4c4dc84294b3fee09",
+      "assembly_report_sha256": "658fbf19a2347ebb1f1efef43ab51d068ab15e166fe936a1434bd9cad6a17cf3",
       "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
-      "interconnect_report_sha256": "f29fa3aea55e4b48bcbf4f9e7e916fa55c3ea354bbb8a3ee2387b43afb1d6683",
+      "interconnect_report_sha256": "623a856691aed55e0118ef7082ec6323ca8b83ea9f034a4d1080162252392e80",
       "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58"
     },
     "battery-space.png": {
-      "sha256": "61287e60108899285bdaa708d0a3129f071586c83ce4e0e97e7cce1d817ec2ac",
-      "bytes": 3824759,
+      "sha256": "bb82ab79c6ec6397cf26ef61672fd8916c8cf15a99f71ec48b168af1a28979e1",
+      "bytes": 3824345,
       "recipe_sha256": "d05aa2d593d247f889d7f57986eda05c54357c7185e7b21b896a2935ab2875be",
-      "assembly_report_sha256": "69718f7ff604bebeb419c8d5bd0c10db52083150e08483e4c4dc84294b3fee09",
+      "assembly_report_sha256": "658fbf19a2347ebb1f1efef43ab51d068ab15e166fe936a1434bd9cad6a17cf3",
       "mesh_export_recipe_sha256": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
-      "interconnect_report_sha256": "f29fa3aea55e4b48bcbf4f9e7e916fa55c3ea354bbb8a3ee2387b43afb1d6683",
+      "interconnect_report_sha256": "623a856691aed55e0118ef7082ec6323ca8b83ea9f034a4d1080162252392e80",
       "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58"
     }
   },

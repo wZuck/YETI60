@@ -1,0 +1,71 @@
+{
+  "revision": "YETI60-DES-1",
+  "selected_kit": "Deskeys EC parts kit 68 keys; T1 / 42g; Cement housings; Ivory MX sliders; #5 rings",
+  "product_url": "https://deskeys.io/products/des-ec-parts-kit-68-keys?variant=43323966554147",
+  "plate": "mechanical/felk60_plate_hhkb.deskeys.dxf",
+  "plate_material": "304 stainless steel",
+  "plate_thickness_mm": 1.2,
+  "cutouts_mm": {
+    "normal": {
+      "quantity": 58,
+      "size": [
+        14.7,
+        14.1
+      ],
+      "corner": "R0.5"
+    },
+    "wide": {
+      "quantity": 2,
+      "size": [
+        32.15,
+        14.1
+      ],
+      "corner": "FELK60 front 3 x sqrt(3) bevel orientation retained"
+    },
+    "spacebar-side": {
+      "quantity": 2,
+      "size": [
+        13.6,
+        13.9
+      ],
+      "corner": "C0.5"
+    }
+  },
+  "cutout_size_tolerance_mm": 0.025,
+  "key_center_position_tolerance_mm": 0.05,
+  "spacebar": {
+    "size_U": 6,
+    "side_stem_spacing_mm": 95.25,
+    "central_stem": "centered MX",
+    "wire": "Deskeys EC 6U"
+  },
+  "keycaps": {
+    "part": "CannonKeys NicePBT BoW current kit",
+    "url": "https://cannonkeys.com/products/nicepbt-bow",
+    "required_kit_label": "6.0c Centered"
+  },
+  "sources": [
+    {
+      "url": "https://deskeys.io/products/des-housings",
+      "fact": "Header cutouts 14.7x14.1 and 32.15x14.1; body also says 32.1 wide. Select header 32.15; sample fit remains required."
+    },
+    {
+      "url": "https://github.com/Cipulot/ec60x-plate-maker/blob/02cc973c43f980394434e39372471096d3df3459/EC_Plate_Specifications.pdf",
+      "fact": "Pages 3-4 specify 1.2 mm and General OEM Style for Deskeys."
+    },
+    {
+      "url": "https://github.com/Cipulot/ec60x-plate-maker/blob/02cc973c43f980394434e39372471096d3df3459/Plate_Indexed_Name/EC60X_Plate_Indexed_Name/EC60X_0_1_0_1_0_9.dxf",
+      "fact": "Reference side openings 13.6x13.9 C0.5; not used as a replacement plate because its mount pattern differs."
+    },
+    {
+      "url": "https://cannonkeys.com/cdn/shop/files/NicePBTBoW_Layout.jpg?v=1720545415",
+      "fact": "Official kitting image includes 6.0c Centered, 1.5U Backspace, 1.75U Shift, 2.25U Shift and Enter."
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0225/2908/1418/files/ScreenShot_2026-07-08_113054_400.png?v=1783481466",
+      "fact": "Official kit illustration includes pre-opened wide housings, extra-stem wide sliders and two complete spacebar side units; no housing drill in selected order."
+    }
+  ],
+  "physical_fit_verified": false,
+  "order_scope": "Engineering sample; first inspect a normal/wide/spacebar mechanism at the final plate thickness and nominal 4.6 mm PCB-to-plate gap. No physical assembly claim."
+}

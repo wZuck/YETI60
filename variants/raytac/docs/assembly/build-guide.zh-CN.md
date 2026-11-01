@@ -353,11 +353,11 @@
 
 [放大矢量图](images/18-step.zh-CN.svg)
 
-1. 为 1.2 mm 不锈钢定位板去毛刺，完成 29 个 M2 螺纹，清除金属碎屑后再靠近 PCB。
-2. 在 60 个实际按键位置试装成套、可独立安装的兼容 Topre 轴壳及滑块。
-3. 宽键和 HHKB 6U 空格采用匹配的稳定轴壳、钢丝及卡扣；装胶碗前先检查滑动是否顺畅。
+1. 使用 Deskeys 适配 DXF，不用原过小开孔。1.20 mm 钢板去毛刺，29 处攻 M2 螺纹并清理碎屑。
+2. K01 选择 Deskeys T1／42g：58 套普通机构及两个带辅助柱、预开孔宽键总成，装 #5 圈；不用钻孔或另加 MX 卫星轴。
+3. 装空格左右被动侧轴和 6U 钢丝，侧柱距 95.25 mm；试装 NicePBT BoW 居中 6U 空格，只有中央有效轴下放一个胶碗／感应锥簧。
 
-**检查后再继续：** 先验证普通键、宽键和 6U 空格样件；不假设原版 HHKB 一体板轴壳或通用 7U MX 卫星轴兼容。
+**检查后再继续：** 按 docs/build/key-mechanism.zh-CN.md 核对卡扣、完整行程、宽键两端回弹及首件真实 4.6 mm 结构。
 
 <a id="step-19"></a>
 
@@ -505,4 +505,4 @@
 
 编排参考 [DELTA OMEGA 安装指南](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md) 的逐工序图示形式；图像及位号按 YETI60 原生数据重新绘制，不沿用 MX 焊接步骤。
 
-焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Raytac MDBT50Q-1MV2 资料](https://www.raytac.com/product/ins.php?index_id=24) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。
+按键机构及适配定位板详见 [Deskeys 安装方案](../build/key-mechanism.zh-CN.md)。焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Raytac MDBT50Q-1MV2 资料](https://www.raytac.com/product/ins.php?index_id=24) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。

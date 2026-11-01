@@ -353,11 +353,11 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 [Vector enlargement](images/18-step.svg)
 
-1. Deburr the 1.2 mm stainless plate, finish its 29 M2 threads and clean all metal debris away from the PCB.
-2. Dry-fit matched independently mountable Topre-compatible housings/sliders at all 60 active positions.
-3. Fit the matched stabilized housings, wires and clips for wide keys and the 6U HHKB spacebar. Test free movement before adding domes.
+1. Use the Deskeys DXF, not the original smaller cutouts. Deburr the 1.20 mm stainless plate, finish its 29 M2 threads and remove debris.
+2. Use K01 Deskeys T1 / 42g kit: 58 normal pairs and two extra-stem wide assemblies with pre-opened housings. Fit #5 rings; no drilling or additional MX stabilizers.
+3. Fit the two passive spacebar side units and 6U wire at 95.25 mm spacing. Test the NicePBT BoW centered 6U cap; put only one dome/sensing spring under its active center.
 
-**Check before continuing:** Qualify a normal key, wide key and 6U spacebar first. Original HHKB integrated-plate housings and generic 7U MX stabilizers are not assumed compatible.
+**Check before continuing:** Follow docs/build/key-mechanism.md. Check clips, full travel, both ends of wide keys, and the actual 4.6 mm stack on the first article.
 
 <a id="step-19"></a>
 
@@ -505,4 +505,4 @@ Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_y
 
 The per-operation illustrated format follows the [DELTA OMEGA build guide](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md). Images and references are redrawn from YETI60 native data; its MX soldering operations do not apply here.
 
-Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Raytac MDBT50Q-1MV2 documentation](https://www.raytac.com/product/ins.php?index_id=24), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).
+For the selected mechanisms and adapted plate, see the [Deskeys assembly plan](../build/key-mechanism.md). Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Raytac MDBT50Q-1MV2 documentation](https://www.raytac.com/product/ins.php?index_id=24), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).

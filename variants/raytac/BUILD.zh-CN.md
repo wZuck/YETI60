@@ -4,12 +4,13 @@
 
 本手册只适用于 **MDBT50Q-1MV2** 模组和本目录的主板、固件。按下表从上向下阅读即可。所有数量按一把键盘计算；两把装机数量乘二，库存分配须重新计算，不能两把各抵扣同一只库存。板厂起订数量和散件包装数另计。
 
-**版本状态：49 个软件／CAD 检查阶段通过，尚未放行下单。** 主板 USB 修补、C5 保护核对、完整回归、四视角渲染及制板文件已同步。大键机构按新要求优先评估 Deskeys；具体安装匹配、定制电池及制造商审查仍有未关闭条件。不要把旧制板包与本轮 PCB 混用。
+**版本状态：52 个软件／CAD 检查阶段通过，尚未放行下单。** 主板 USB 修补、C5 保护核对、完整回归、四视角渲染及制板文件已同步。按键机构已选定 Deskeys，定位板按其尺寸适配；首件配合、定制电池及制造商审查仍有未关闭条件。不要把旧制板包与本轮 PCB 混用。
 
 | 我想做什么 | 打开这里 |
 |---|---|
 | 看需要打印哪些 PCB、界面参数怎么选 | [PCB 下单表](docs/build/ordering.zh-CN.md) |
 | 准备所有材料、知道哪些已有 | [完整清单](README.zh-CN.md#一把键盘需要准备的完整材料)、[主板净补购 CSV](hardware/bom/mainboard-purchase.zh-CN.csv)、[材料分类](docs/engineering/materials.zh-CN.md) |
+| 购买轴座、胶碗、稳定机构和键帽 | [Deskeys 购买清单、适配定位板与安装](docs/build/key-mechanism.zh-CN.md) |
 | 从零开始焊接 | [焊接执行顺序和停检点](docs/build/soldering.zh-CN.md)、[28 步配图指南](docs/assembly/build-guide.zh-CN.md) |
 | 自焊 C5 子板 | [七只元件及库存抵扣](hardware/bom/daughterboard.zh-CN.csv)、配图指南第 12–13 步 |
 | 准备连接线与插头 | [线序、长度及路径图](docs/engineering/interconnects.zh-CN.md) |
@@ -19,7 +20,7 @@
 | 验收和故障排查 | [实物测试步骤](docs/testing/README.zh-CN.md)、[当前本版审查结果](docs/audit/outcome.json) |
 | 电池要求及耗电计算 | [供方电池规格](docs/engineering/battery-pack-specification.zh-CN.md)、[计算方式与假设](docs/engineering/power-budget.zh-CN.md) |
 
-直接交付机械文件：[上壳 STEP](../../mechanical/generated/yeti60-top.step) · [底壳 STEP](../../mechanical/generated/yeti60-bottom.step) · [定制支柱 STEP](../../mechanical/generated/yeti60-standoff-46.step) · [定位板 DXF](../../mechanical/felk60_plate_hhkb.audited.dxf) · [五件走线支架](../../mechanical/generated/interconnect-guides/)。
+直接交付机械文件：[上壳 STEP](../../mechanical/generated/yeti60-top.step) · [底壳 STEP](../../mechanical/generated/yeti60-bottom.step) · [定制支柱 STEP](../../mechanical/generated/yeti60-standoff-46.step) · [定位板 DXF](../../mechanical/felk60_plate_hhkb.deskeys.dxf) · [五件走线支架](../../mechanical/generated/interconnect-guides/)。
 
 ## 一次准备哪些东西
 
@@ -28,7 +29,7 @@
 - 主板裸 PCB 1 块、背面钢网 1 张；75 只实装电子元件，其中现有库存可计划用 10 只、净补购 65 只；JP1 不装。主板 D1 已删除，不再买 PRTR5V0U2X。
 - C5 JSH 焊好成品 1 块。若自焊，改为裸板 1 块加 7 只元件，其中 2 只 5.1 kΩ 电阻可用库存，另外补购 5 只；不再同时买成品。**C5 上的 D1 和 U1 必须装，不能因主板删除 D1 而省略。**
 - 四芯 USB 内部线束 1 条、外部 USB 数据线 1 条；保护电池及三芯线 1 套。线序按文档逐针核对，不能按线色猜正负极。
-- 配套静电容轴座／滑块 60 套、胶碗 60 个位置、锥形弹簧 60 个、兼容键帽 60 个，以及回车、左 Shift、6U 空格的配套稳定机构 1 套。先买普通键、宽键和空格局部样件，不能假设 HHKB 一体式轴座可以拆出使用。
+- Deskeys 68 键配件包 1 套，选 **T1／42g**；NicePBT BoW 当前完整键帽 1 套，必须含 **6.0c Centered** 空格。使用 58 套普通机构、2 套宽键总成和两个空格被动侧轴。配件包已含 60 个胶碗／锥簧位置及 6U 钢丝，不再重复购买。详见[选定按键机构](docs/build/key-mechanism.zh-CN.md)。
 - 上下壳各 1 件、1.2 mm 不锈钢定位板 1 件、定制黄铜支柱 29 件、聚酰亚胺隔离环 29 件、PEEK 垫片 29 件、M1.6×5 螺钉 29 颗；M3 嵌件／合壳螺钉／薄垫片各 4 件，M2 嵌件／子板螺钉／绝缘垫片各 4 件；脚垫 4 个、走线支架 5 件、胶棉及绝缘固定材料 1 套。详细尺寸按完整清单，不能只按螺纹直径采购。
 - 共用工具：ESD 操作条件、显微镜、镊子、万用表、受控回流设备及兼容锡膏、烙铁、限流电源、电池模拟器、SWD 调试器及 J3 六针治具、卡尺、温度和电流记录工具；如需自制线束，另备对应端子压接工具。
 
@@ -50,6 +51,6 @@
 
 - 本轮原生 PCB、固件、图像、制板包及来源校验已通过；见[本轮审查](docs/audit/raytac-review.zh-CN.md)。这不代替实物验收。
 - 主板部分电容／LED／保险丝仍有型号与降额确认项，尤其 C45／C46 的有效容量；当前材料表会明确显示待选状态，不能以标称 20 µF 作为稳压器稳定性证明。
-- 轴座、胶碗与稳定机构优先采用 Deskeys 配套方案，但尚未完成安装匹配；当前定位板普通孔为 14.6×14.0 mm、两个宽孔为 32.0×14.0 mm，小于 Deskeys 公布的推荐开孔，不能当作直接兼容。空格另需中央轴以外的左右稳定侧轴与配套钢丝。树脂内腔公差和定制支柱也须实收验收。
+- 已选定 Deskeys 配套机构及 MX 键帽。新板开孔为普通 14.7×14.1、宽键 32.15×14.1、侧轴 13.6×13.9 mm，保留所有中心及外轮廓；不要下单过小的原定位板。4.6 mm 高度、真实卡扣、钢丝和键帽行程仍须首件确认，不能用尺寸检查代替。
 - 电池供方签图及额定条件更正；裸电芯尺寸不等于完整保护包尺寸。
 - 没有实物，未完成 USB 枚举／眼图、真实充电温升、逐键校准及关壳后的射频验收。首样就是为了得到这些证据，不代表已批准量产。

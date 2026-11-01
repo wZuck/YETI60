@@ -1,0 +1,17 @@
+{
+  "status": "native-plate-mechanism-guide-generated",
+  "supplier_shapes": "schematic, not qualified vendor MCAD",
+  "physical_fit_verified": false,
+  "outputs": {
+    "docs/engineering/images/deskeys-mechanism.png": "41233ef8e16b398757da37377010801be7bfa4b7320765d658939ffdf5b2d658",
+    "docs/engineering/images/deskeys-mechanism.svg": "f255f715b5c42a00cdf065cb6a401490b5ea82f8fe4ec6cd37b261f1587f1733",
+    "docs/engineering/images/deskeys-mechanism.zh-CN.png": "64bceb6ca4b9a21cb6a5377f2f1ac885368589cee7399f14c7a74b0b8c502874",
+    "docs/engineering/images/deskeys-mechanism.zh-CN.svg": "e3c8419ad6002b14c55146241f7ca9aab11afb5bf1fdc30e3d39f55fba476bfd"
+  },
+  "source_sha256": {
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "mechanical/felk60_plate_hhkb.deskeys.dxf": "f206d131de827efa501877fd3d7311e2b6fe07a6f195e7e15255a806bcf31199",
+    "mechanical/yeti60-deskeys.json": "a1d4eedf422c877f894211b8e22aea29981cdeaf94e1309aaaa0b3265c2326b1",
+    "scripts/draw_yeti60_deskeys.py": "2a60e723c6000ce3eaa60059bb1886b03a233b4af0ebb86843961cf84e8726dc"
+  }
+}

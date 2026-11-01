@@ -1,8 +1,8 @@
 {
   "review_scope": "Current Raytac native CAD, built firmware, host tests, assembly and deliverable provenance; E73 excluded",
-  "review_timestamp_UTC": "2026-11-01T16:46:35.078025+00:00",
+  "review_timestamp_UTC": "2026-11-01T17:19:04.404329+00:00",
   "status": "software-and-CAD-consistency-reviewed",
-  "audit_stages_passed": 49,
+  "audit_stages_passed": 52,
   "DRC_errors": 0,
   "opens": 0,
   "physical_signal_pairs": 267,
@@ -20,7 +20,8 @@
     "USB mainboard D1 and long branches removed after actual C5 protected-channel/ground verification; C5 D1/U1/F1 retained",
     "Shared analog/discharge net labels unified without changing exported pin connectivity",
     "75-part purchase, stock allocation, placement and illustrated guide contracts reconciled",
-    "Complete explosion includes 75 electronic bodies, battery, seven wires, 60 domes/springs and hardware; tray camera/desk bounds checked"
+    "Complete explosion includes 75 electronic bodies, battery, seven wires, 60 domes/springs and hardware; tray camera/desk bounds checked",
+    "Deskeys T1/42g kit and NicePBT BoW centered 6U caps selected; adapted plate preserves all 60 centers, 29 mounts and outer profile; actual mechanism Z/travel awaits a first article"
   ],
   "physical_verification": false,
   "manufacturing_order_released": false,
@@ -39,7 +40,7 @@
     {
       "id": "mechanical-stack",
       "status": "open",
-      "description": "Qualify dome/housing/fastener stack; 4.6 mm PCB-to-plate gap is provisional"
+      "description": "Deskeys EC 68-key T1/42g kit and NicePBT BoW centered 6U caps selected; adapted plate preserves 60 key centers/29 mounts. Nominal 4.6 mm stack, actual clips/housing height/dome compression/wire/cap travel await first article."
     },
     {
       "id": "battery",
@@ -78,8 +79,8 @@
     }
   ],
   "evidence_sha256": {
-    "outcome.json": "b0496c78e0689c473c004526a7adf4017686a00aa28b464e04c521c95674c62a",
-    "integration.json": "78a8c9cfa4b511df4d659ab39a3dd81fd602cf57aa2afd1b06cf469e653cd440",
+    "outcome.json": "d30926689b4975f3d28165eece5b415302072772e3816a3d174b411e4ffd5e97",
+    "integration.json": "037708354fabcc0a14db8b77fc929c0512e1c6570c1c11dbf408da02354505dc",
     "schematic-current.json": "9c39e7886f54bfbfd6cf872bde963c5e61851983f343ad509e341acfc31764de",
     "yeti60-target-check.json": "1d01e7aad89e52546412cc67cb9baf963c412a2a0be7dc0ec03500acbd0568da",
     "yeti60-firmware-simulation.json": "6a977b63c38bde8ac3de2a1d4bec37fc21790ba629aa550dde3f4e25981dfefa",
@@ -87,14 +88,16 @@
     "C5-protection.json": "e80b05f738a88745b0995999ba729b622ed934c52344cae43c7c4237caf153d6",
     "USB-signal-paths.json": "f0fbc5439a860fcf642ef2521291e598dfd0de8f15abee3eb3c0f37a2860d0d8",
     "interference-layout.json": "b16cc3d20293f745506331bc23a1efbb43f71ef6260c0e106d8dbe5fee6e85c6",
-    "complete-exploded.json": "d5cd6dd13ba634bbe543351b28242e1e2b7b3be6eb532a6bc0e4d8b7356fdc8c",
-    "yeti60-assembly.json": "69718f7ff604bebeb419c8d5bd0c10db52083150e08483e4c4dc84294b3fee09",
-    "yeti60-inventory.json": "6ad624a1269781c5f79f0a50c6759a3a9b3d194ba1bba3ba75634f46e0dbb2d1"
+    "complete-exploded.json": "3d9e6c3535877803e157650cb61d6a43b625b3513a2c648b30b960d7d0bc6ac4",
+    "yeti60-assembly.json": "658fbf19a2347ebb1f1efef43ab51d068ab15e166fe936a1434bd9cad6a17cf3",
+    "yeti60-inventory.json": "46bd473dfc289a22ecd75557ad28d93c19166bd13d7f8fd7f26e8d9c694a48fa",
+    "deskeys-plate.json": "b14c4f9eca2e2a4b662256590c98c6af7a4375d74ce7a6c9bc9953b039b4bfd4",
+    "deskeys-mechanism-drawing.json": "da65054ee4a47d99ca15826c8788db71e31961e7c1554694aa47424b118ce865"
   },
   "source_sha256": {
-    "scripts/report_raytac_review.py": "6f265722a4b9d1b50d10f117c78bb1954d85bcc154abdebf2dcf438f1da5b8d9",
+    "scripts/report_raytac_review.py": "32a4d5364cef2a6bc0fa9d7a1baab46ea8d3f60d19d9b69668d64bde7fd2d79e",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
-    "renders/yeti60-assembly/render-manifest.json": "eff62f5bcab8224142d12b9b65312c51aa2652e7458696cf40862bf473a3eed3"
+    "renders/yeti60-assembly/render-manifest.json": "001f1f4b9fe583d279b5c980bf2e5fc35cd67bb50ad10b00cb21922c9664f0b2"
   }
 }

@@ -61,6 +61,13 @@ def verify():
     assert not inventory['physical_remaining_count_confirmed'] and not inventory['production_approved']
     key_geometry=read(AUD/'yeti60-key-geometry.json');hashes(key_geometry['source_sha256'])
     assert key_geometry['status']=='plate-copper-firmware-mapping-passed' and len(key_geometry['matches'])==60
+    mechanism=read(AUD/'deskeys-plate.json');hashes(mechanism['source_sha256'])
+    assert mechanism['status']=='drawing-based-plate-contract-passed'
+    assert mechanism['key_centers_preserved']==60 and mechanism['mount_centers_preserved']==29
+    assert mechanism['spacebar_side_spacing_mm']==95.25 and mechanism['PCB_mount_holes_added']==0
+    mechanism_drawing=read(AUD/'deskeys-mechanism-drawing.json')
+    hashes(mechanism_drawing['source_sha256']);hashes(mechanism_drawing['outputs'])
+    assert len(mechanism_drawing['outputs'])==4
     guide=read(AUD/'yeti60-build-guide.json');hashes(guide['source_sha256']);hashes(guide['outputs'])
     guide_check=read(AUD/'yeti60-build-guide-check.json')
     assert guide_check['status']=='passed' and guide_check['guide_manifest_sha256']==sha(AUD/'yeti60-build-guide.json')
