@@ -2,7 +2,7 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60
 
-> **Two alternatives in this branch:** the main directories use Ebyte E73-2G4M08S1C; Raytac MDBT50Q-1MV2 is in [variants/raytac](variants/raytac/README.md). See [selection instructions](docs/engineering/module-options.md). Both alternatives pass their implemented CAD/build checks. See the [combined record](docs/audit/variants.json). Physical and supplier qualification remain open.
+> **Active prototype: Raytac MDBT50Q-1MV2.** Start at [START-HERE.md](START-HERE.md) or the [ordering and build handbook](variants/raytac/BUILD.md) for PCB settings, inventory-adjusted materials, soldering, firmware, complete explosion and current review. E73 remains in the main directories as a separate option; this checkpoint reviews Raytac. Physical and supplier acceptance remain open.
 
 A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
 

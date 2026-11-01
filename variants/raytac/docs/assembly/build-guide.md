@@ -154,15 +154,14 @@ References placed in this step: C10, C11, C12, C13, C30, C31, C32, C40, C41, C42
 
 1. Align the actual package pin-1 marks to the native pad-1 positions for U5 BQ24074, U6 TPS63031 and U7/U8 TPS22919.
 2. Fit L1 as the specified 1.5 uH part and F1 as the mainboard 1206/0.5 A fuse; the C5 fuse is different.
-3. Fit D1 PRTR5V0U2X in its exact SOT-143 orientation. Inspect the underside-pad paste before setting down U5/U6.
+3. Inspect underside-pad paste before placing U5/U6. Mainboard D1 is removed; USB data ESD protection is on the required C5 JSH daughterboard.
 
 **Check before continuing:** Do not omit U5/U6 exposed ground pads or replace the inductor with a ferrite bead. Package dots must be checked against the actual supplier drawing.
 
-References placed in this step: U5, U6, U7, U8, L1, D1, F1.
+References placed in this step: U5, U6, U7, U8, L1, F1.
 
 | References | Quantity | Design value | Package |
 |---|---:|---|---|
-| D1 | 1 | PRTR5V0U2X | SOT-143 |
 | F1 | 1 | 500mA | Fuse_1206_3216Metric |
 | L1 | 1 | 1.5uH_74438336015 | L_Wuerth_MAPI-3015 |
 | U5 | 1 | BQ24074RGT | VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm |
@@ -222,7 +221,7 @@ References placed in this step: U1.
 2. Fit SW1 reset and SW100 power controls. Find OFF electrically: with power absent, SW100 pin 2 connects to GND pin 3 in OFF, not VSYS pin 1.
 3. Fit D2 only with a qualified 0603 LED: cathode at pad 1 GND, anode at pad 2 LED_A. Confirm all these parts accept the common reflow process.
 
-**Check before continuing:** All 76 fitted parts are now placed. JP1 is absent and J3 is bare probe pads. If any chosen part cannot share the profile, revise the stencil/assembly plan before printing, rather than leaving unpopulated paste deposits.
+**Check before continuing:** All 75 fitted parts are now placed. JP1 is absent and J3 is bare probe pads. If any chosen part cannot share the profile, revise the stencil/assembly plan before printing, rather than leaving unpopulated paste deposits.
 
 References placed in this step: J1, J2, SW1, SW100, D2.
 
@@ -288,7 +287,7 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 2. Inspect USB-C fine signal contacts and shell anchors; verify both reversible D+/D- contact groups connect to their intended nets without adjacent shorts.
 3. Inspect the underside U1 USON joints and D1 polarity, then test SH numbered continuity, fuse continuity and separate CC pull-down paths.
 
-**Check before continuing:** A mechanically fitting USB plug does not prove its contacts are soldered. The seven C5 parts are not part of the mainboard's count of 76.
+**Check before continuing:** A mechanically fitting USB plug does not prove its contacts are soldered. The seven C5 parts are not part of the mainboard's count of 75.
 
 <a id="step-14"></a>
 
@@ -502,7 +501,7 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 ## Rebuild and sources
 
-Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_yeti60_build_guide.py` with the CAD environment from `requirements-audit.txt`. The generator checks that all 76 mainboard components are placed exactly once, and checks the 60 active electrodes, 29 mounts and current assembly/harness sources. See the [guide evidence](../audit/yeti60-build-guide.json) for source and image hashes.
+Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_yeti60_build_guide.py` with the CAD environment from `requirements-audit.txt`. The generator checks that all 75 mainboard components are placed exactly once, and checks the 60 active electrodes, 29 mounts and current assembly/harness sources. See the [guide evidence](../audit/yeti60-build-guide.json) for source and image hashes.
 
 The per-operation illustrated format follows the [DELTA OMEGA build guide](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md). Images and references are redrawn from YETI60 native data; its MX soldering operations do not apply here.
 

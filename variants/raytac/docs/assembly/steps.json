@@ -27,12 +27,12 @@
       "labels": [
         [
           "1 mainboard; optional 1 bare C5",
-          "76 mainboard parts; optional 7 C5 parts",
+          "75 mainboard parts; optional 7 C5 parts",
           "Battery disconnected throughout soldering"
         ],
         [
           "主板 1 块；可选自焊 C5 裸板 1 块",
-          "主板 76 只；可选 C5 元件 7 只",
+          "主板 75 只；可选 C5 元件 7 只",
           "全部焊接期间保持电池断开"
         ]
       ]
@@ -192,7 +192,6 @@
         "U7",
         "U8",
         "L1",
-        "D1",
         "F1"
       ],
       "title": [
@@ -203,12 +202,12 @@
         [
           "Align the actual package pin-1 marks to the native pad-1 positions for U5 BQ24074, U6 TPS63031 and U7/U8 TPS22919.",
           "Fit L1 as the specified 1.5 uH part and F1 as the mainboard 1206/0.5 A fuse; the C5 fuse is different.",
-          "Fit D1 PRTR5V0U2X in its exact SOT-143 orientation. Inspect the underside-pad paste before setting down U5/U6."
+          "Inspect underside-pad paste before placing U5/U6. Mainboard D1 is removed; USB data ESD protection is on the required C5 JSH daughterboard."
         ],
         [
           "将 U5 BQ24074、U6 TPS63031、U7／U8 TPS22919 的实际封装一脚标识与原生焊盘 1 对齐。",
           "L1 使用指定的 1.5 µH 电感，F1 使用主板要求的 1206／0.5 A 保险丝；它与 C5 的保险丝不同。",
-          "D1 PRTR5V0U2X 按 SOT-143 原生脚序放置；放下 U5／U6 前先检查底部焊盘锡膏。"
+          "放置 U5／U6 前检查底部焊盘锡膏；主板 D1 已删除，USB 数据保护由必装的 C5 JSH 子板承担。"
         ]
       ],
       "check": [
@@ -335,8 +334,8 @@
         ]
       ],
       "check": [
-        "All 76 fitted parts are now placed. JP1 is absent and J3 is bare probe pads. If any chosen part cannot share the profile, revise the stencil/assembly plan before printing, rather than leaving unpopulated paste deposits.",
-        "至此已放置全部 76 只实装件，JP1 不装，J3 保持探针焊盘。若某个实际物料不能采用共同曲线，须在印膏前调整钢网／焊接方案，不能将未放件的锡膏留着回流。"
+        "All 75 fitted parts are now placed. JP1 is absent and J3 is bare probe pads. If any chosen part cannot share the profile, revise the stencil/assembly plan before printing, rather than leaving unpopulated paste deposits.",
+        "至此已放置全部 75 只实装件，JP1 不装，J3 保持探针焊盘。若某个实际物料不能采用共同曲线，须在印膏前调整钢网／焊接方案，不能将未放件的锡膏留着回流。"
       ],
       "labels": [
         [
@@ -481,8 +480,8 @@
         ]
       ],
       "check": [
-        "A mechanically fitting USB plug does not prove its contacts are soldered. The seven C5 parts are not part of the mainboard's count of 76.",
-        "USB 插头能插入不代表触点已经焊好；C5 的七只元件不包含在主板的 76 只中。"
+        "A mechanically fitting USB plug does not prove its contacts are soldered. The seven C5 parts are not part of the mainboard's count of 75.",
+        "USB 插头能插入不代表触点已经焊好；C5 的七只元件不包含在主板的 75 只中。"
       ],
       "labels": [
         [

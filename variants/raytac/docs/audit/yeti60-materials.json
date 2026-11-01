@@ -1,21 +1,21 @@
 {
   "status": "readme-materials-match-bom",
-  "fitted_mainboard_parts": 76,
+  "fitted_mainboard_parts": 75,
   "inventory_annotations_checked": true,
   "mechanical_rows_per_language": 20,
   "optional_daughterboard_parts": 7,
   "production_approved": false,
   "source_sha256": {
-    "scripts/check_yeti60_materials.py": "cb6f935a557a44f9cdabde6947cc970bd3535c230c818f6b890c46dd81235493",
-    "README.md": "19c723b318744f0e26c60974b2d77ee1444ea9318bb45493daa3c89c7ac45728",
-    "hardware/bom/mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
-    "docs/engineering/materials.md": "4ee4d676c7c65108ed7a5a091ba7ac3f3e9e428a27a507f55eecc83c682f49ed",
-    "hardware/bom/mainboard-purchase.csv": "b237ddb068315046ffb427e1139d721670fd2d2334d8d9d6063619def409cdb3",
+    "scripts/check_yeti60_materials.py": "7054e36436db8a5e9afd07633cfe3a9931998a379e7258036657d7a1afad8028",
+    "README.md": "df85e38ca3a96a5b7b48fde89c4418a76e58c099db9bda37e6f69746b6a40abc",
+    "hardware/bom/mainboard.csv": "4f747bcbf57975f24ac64a5589f382e5b0f569dc774dcbe517807d51d27dadd5",
+    "docs/engineering/materials.md": "507ed82c67bbbb33c05fda07ca3ede217875edcbfae22c58f993b3316893b317",
+    "hardware/bom/mainboard-purchase.csv": "f64d6927d87d2aaf048c74762f8a08a655001ac939b0794c08a391ff89efa3d5",
     "hardware/bom/daughterboard.csv": "7fcfb59fa599748199cb312a68ff7a9306123ccbb60be7ca49324350c300d9ea",
-    "README.zh-CN.md": "5d267d281b13feeb5979cdb6b3d6b329ed1249e70586bba9797d2c21dee12fdb",
-    "hardware/bom/mainboard.zh-CN.csv": "6480581ab2117d3891a9b0e1c51c5991440e4ff3d2908679ac1cf1339d0ddb77",
-    "docs/engineering/materials.zh-CN.md": "6c2e2b958d6567fdc196aeaad69c0e524499dadeadc5043d1247e30cd50ad16b",
-    "hardware/bom/mainboard-purchase.zh-CN.csv": "70cad31b3c82dd24db6c3b5b7b812936ed17ff69616237bba30f07ed180a7cf7",
+    "README.zh-CN.md": "3861e27ad153fb51fdd66458a8e1738960a60de8e025ad5a9e1403bd55652ad7",
+    "hardware/bom/mainboard.zh-CN.csv": "c47257230fd52d8b952bbb9900359540f6953eca6b62d90874237b4b0e7697b1",
+    "docs/engineering/materials.zh-CN.md": "1ff34869249222e91b03770c35a95a749b954368c5e48f05acd08b25028e6e02",
+    "hardware/bom/mainboard-purchase.zh-CN.csv": "a2b280a1a71b76bda7246c0b1b6495cc6f7f18e5cad4465d532a9bf71a4b1233",
     "hardware/bom/daughterboard.zh-CN.csv": "dd2084077ca8d174d99510ee6acd55399072c7668871e061bf21303115d91ced"
   }
 }

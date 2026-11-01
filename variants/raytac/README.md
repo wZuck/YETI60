@@ -2,15 +2,17 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 Raytac
 
+> [Ordering and build handbook](BUILD.md): PCB settings, materials, soldering and firmware.
+
 > This directory contains the Raytac MDBT50Q-1MV2 option in the same branch. The E73 option is in the [repository root](../../README.md). Select matching PCB and firmware; the modules are not interchangeable. Case/plate resources and upstream sources are shared at the repository root. Run variant commands from this directory.
 
-A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
+A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The front sensing lands and mounting locations are retained. A controlled rounded RF wing supports the outboard antenna placement; a rear USB daughterboard connects to J1.
 
 **Wired operation:** after a computer accepts the USB configuration, the keyboard charges the battery and sends HID input over USB at the same time. USB automatically takes priority over a retained Bluetooth preference; unplugging lets ZMK fall back to the active Bluetooth profile. The E73 and Raytac options use the same policy. The 500 mA descriptor is an input budget, not a constant battery charging current.
 
 > **P2 design checkpoint:** C5 JSH is retained. The default is now a custom 1600 mAh single-cell pack with a canonical recessed bottom, revised charger settings and USB500 firmware. Engineering sheets, PCB animation and assembly renders record their source hashes. See [checkpoint details](docs/design-checkpoint.md).
 
-> **Acceptance / RF hold:** the new layout screen found antenna copper and nearby plate-metal risks. Read the [test results and first-article procedure](../../docs/testing/README.md) before fabrication or assembly. DRC/build passes do not close these findings.
+> **Current release status:** native RF-wing and USB-protection repairs are implemented locally; complete artifact refresh and supplier/physical acceptance remain open. Start with the [ordering and build handbook](BUILD.md). Existing test reports must match current sources before use.
 
 ## Current review
 
@@ -18,7 +20,7 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 
 | Scope | Evidence and result |
 |---|---|
-| PCB | Strict DRC 0 errors / 0 opens; 270 physical pin pairs pass. Inherited USB resistors corrected to 0 Ω; ordinary mechanically drilled through vias, no blind/buried/module vias-in-pad; JLC ordinary four-layer stack |
+| PCB | Strict DRC 0 errors / 0 opens; 267 physical pin pairs pass. Inherited USB resistors corrected to 0 Ω; ordinary mechanically drilled through vias, no blind/buried/module vias-in-pad; JLC ordinary four-layer stack |
 | Firmware | New schematic-bound control core passes host ASan/UBSan simulation; normal/calibrator target binaries now build; on-device USB/BLE and EC calibration remain pending |
 | Mechanical | Source PCB/plate/case nominal geometry has no overlap at the explicitly provisional Z stack; final dome/fastener/resin tolerances are unqualified |
 | Battery | Default custom 1600 mAh, complete 85×43×4.8 mm; supplier drawing/current clarification and independent thermal protection approval pending |
@@ -52,7 +54,7 @@ Quantities below are **net installed quantities for one complete keyboard, witho
 
 ### Use existing inventory first
 
-The supplied order-derived inventory covers **10** of the 76 mainboard parts by nominal value/package, leaving **66** to purchase for one keyboard. Count the actual unused stock and qualify capacitor effective capacitance before assembly. In-transit items are excluded. The original workbook is unchanged and is not published.
+The supplied order-derived inventory covers **10** of the 75 mainboard parts by nominal value/package, leaving **65** to purchase for one keyboard. Count the actual unused stock and qualify capacitor effective capacitance before assembly. In-transit items are excluded. The original workbook is unchanged and is not published.
 
 | Stock MPN | References | Planned use |
 |---|---|---:|
@@ -70,7 +72,7 @@ Quantities are net boards per keyboard; the fabricator's minimum order quantity 
 
 | PCB | Quantity | Dimensions and process | Source and fabrication files |
 |---|---:|---|---|
-| YETI60 Raytac mainboard | 1 | 285.0 x 94.6 mm outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [current Gerber/drill review ZIP](hardware/fabrication/yeti60-raytac-p2-dfm-review.zip), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
+| YETI60 Raytac mainboard | 1 | 289.39 x 94.6 mm rounded-wing outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [current Gerber/drill review ZIP](hardware/fabrication/yeti60-raytac-p2-dfm-review.zip), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
 | Unified Daughterboard C5 JSH | 1 only for self-assembly; 0 if purchased populated | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](hardware/bom/daughterboard.csv) |
 
 These are separate fabrication orders/files: the mainboard ZIP does not contain C5. Both archives contain four copper layers; do not select a two-layer process for C5. The mainboard archive is for manufacturing review, with final component/stencil and supplier acceptance still pending. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and five routing guides are mechanical parts, not additional PCBs. For self-reflow, use mainboard **B.Paste** and C5 **F.Paste** with a qualified stencil/profile.
@@ -79,8 +81,8 @@ These are separate fabrication orders/files: the mainboard ZIP does not contain 
 
 | Material | Quantity | Detailed specification and included items |
 |---|---:|---|
-| Mainboard PCB | 1 | Current YETI60 native PCB; ordinary four-layer FR-4, target nominal thickness 1.6 mm; preserve EC electrodes, outline and mounting centers; CAD envelope 1.6062 mm; review the current ordinary-process archive before ordering |
-| Mainboard fitted parts | 76 | Every reference, value, package and specified/candidate MPN is listed below; included if buying a populated mainboard |
+| Mainboard PCB | 1 | Current YETI60 native PCB; ordinary four-layer FR-4, target nominal thickness 1.6 mm; preserve EC electrodes and mounting centers; use the controlled rounded RF wing; CAD envelope 1.6062 mm; review the current ordinary-process archive before ordering |
+| Mainboard fitted parts | 75 | Every reference, value, package and specified/candidate MPN is listed below; included if buying a populated mainboard |
 | USB daughterboard | 1 populated | Unified Daughterboard C5 JSH, commit `2b6c52a`; seven fitted components including USB-C receptacle and SH header; retain C rather than S |
 | Internal USB harness | 1 four-wire | AWG28 stranded copper, insulation OD <=0.8 mm; two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts included; 1-to-1 VBUS, 2-to-2 D-, 3-to-3 D+, 4-to-4 GND. 150 mm is the route centerline; individual wire-exit lengths are about 147.64/149.21/150.79/152.36 mm; preform to the controlled route |
 | Battery assembly | 1 pack | Custom single-cell YETI60-BAT-1600-1S, target minimum 1600 mAh; complete pack <=85 x 43 x 4.8 mm including PCM, sensors, wrap, tabs and growth; independent thermal interruption, actual charging window within 15–43 C; supplier must accept >=500 mA continuous charging capability and the 4.16–4.23 V regulation range |
@@ -103,7 +105,6 @@ These are separate fabrication orders/files: the mainboard ZIP does not contain 
 | C44 | 1 | 100n/16V | C_0603_1608Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
 | C47 | 1 | 10n | C_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
 | C48 | 1 | 1u/10V | C_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
-| D1 | 1 | PRTR5V0U2X | SOT-143 | Nexperia PRTR5V0U2X | 0 | 1 | No matched usable stock; purchase required |
 | D2 | 1 | STATUS | LED_0603_1608Metric | 0603 status LED; vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
 | F1 | 1 | 500mA | Fuse_1206_3216Metric | 1206 resettable fuse, 0.5 A hold | 0 | 1 | No matched usable stock; purchase required |
 | J1 | 1 | REAR_USB_DAUGHTERBOARD | JST-SR-4 | JST SM04B-SRSS-TB(LF)(SN), candidate | 0 | 1 | No matched usable stock; purchase required |
@@ -129,7 +130,7 @@ These are separate fabrication orders/files: the mainboard ZIP does not contain 
 | U6 | 1 | TPS63031DSK | WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm | TI TPS63031DSKR | 0 | 1 | No matched usable stock; purchase required |
 | U7, U8 | 2 | TPS22919DCK | SOT-363_SC-70-6 | TI TPS22919DCKR | 0 | 2 | No matched usable stock; purchase required |
 
-JP1 quantity is **0**, DNP. J3 is six PCB SWD contact pads, with no fitted header. Mainboard totals: 43 resistors, 17 capacitors and 16 other components = 76.
+JP1 quantity is **0**, DNP. J3 is six PCB SWD contact pads, with no fitted header. Mainboard totals: 43 resistors, 17 capacitors and 15 other components = 75.
 
 ### Optional: solder a bare C5 JSH daughterboard
 

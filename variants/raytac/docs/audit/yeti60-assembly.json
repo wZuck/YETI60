@@ -1,8 +1,8 @@
 {
   "status": "conditional-fit-review",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
-    "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
+    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
@@ -13,7 +13,7 @@
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/export_yeti60_mechanical_metadata.py": "22ebeac89f8839f7fddb0a84dbcf6be2244dc7c55e3382cd6805f8e58d94525e"
   },
-  "mechanical_metadata_sha256": "da6b081f6e1437a2ddf16d78b1f73ce972747d6285368d49907533003f3ddb24",
+  "mechanical_metadata_sha256": "ae9108fa6ed8f381e80dff3de33856f1cf1fa3a7e6c9561ef0f4b68fa331e859",
   "pcb_frame_to_case": "X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z",
   "nominal_stack": {
     "bottom_gasket_ledge_z": 3.19,
@@ -807,8 +807,8 @@
     0.0
   ],
   "pcb_case_distances_mm": [
-    0.7999600063555573,
-    5.245161432385325
+    0.5937999999999997,
+    5.183799999999995
   ],
   "plate_case_overlap_mm3": [
     0.0,
@@ -1557,31 +1557,31 @@
       "value": "100n/16V",
       "back": true,
       "position_pcb_mm": [
-        337.5,
-        121.0
+        347.0,
+        122.85
       ],
-      "angle_deg": 0.0,
+      "angle_deg": 180.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        336.565,
-        120.515,
-        338.435,
-        121.485
+        346.065,
+        122.365,
+        347.935,
+        123.335
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        336.565,
-        -121.485,
+        346.065,
+        -123.335,
         -5.0,
-        338.435,
-        -120.515,
+        347.935,
+        -122.365,
         -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000152
+      "min_case_distance_mm": 0.9100000000000144
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1749,31 +1749,31 @@
       "value": "10u/10V",
       "back": true,
       "position_pcb_mm": [
-        334.0,
-        119.0
+        345.9,
+        125.0
       ],
-      "angle_deg": 0.0,
+      "angle_deg": 180.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        332.495,
-        118.245,
-        335.505,
-        119.755
+        344.395,
+        124.245,
+        347.405,
+        125.755
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        332.495,
-        -119.755,
+        344.395,
+        -125.755,
         -5.0,
-        335.505,
-        -118.245,
+        347.405,
+        -124.245,
         -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000161
+      "min_case_distance_mm": 0.9100000000000126
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1877,31 +1877,31 @@
       "value": "4.7u/10V",
       "back": true,
       "position_pcb_mm": [
-        334.5,
-        122.0
+        347.0,
+        118.0
       ],
-      "angle_deg": 0.0,
+      "angle_deg": 90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        332.995,
-        121.245,
-        336.005,
-        122.755
+        346.245,
+        116.495,
+        347.755,
+        119.505
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        332.995,
-        -122.755,
+        346.245,
+        -119.505,
         -5.0,
-        336.005,
-        -121.245,
+        347.755,
+        -116.495,
         -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000144
+      "min_case_distance_mm": 0.9100000000000161
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1973,31 +1973,31 @@
       "value": "MDBT50Q-1MV2",
       "back": true,
       "position_pcb_mm": [
-        347.0,
-        125.0
+        356.25,
+        125.25
       ],
       "angle_deg": 90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        338.725,
-        118.8,
-        355.275,
-        131.2
+        347.975,
+        119.05,
+        364.525,
+        131.45
       ],
       "height_envelope_mm": 2.05,
       "height_basis": "Raytac module specification",
       "bounds_case_mm": [
-        338.725,
-        -131.2,
+        347.975,
+        -131.45,
         -4.05,
-        355.275,
-        -118.8,
+        364.525,
+        -119.05,
         -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 1.86000000000001
+      "min_case_distance_mm": 0.47500000000002274
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -2030,38 +2030,6 @@
         0.0
       ],
       "min_case_distance_mm": 0.9100000000000055
-    },
-    {
-      "physical_body_bbox_pcb_mm": null,
-      "ref": "D1",
-      "value": "PRTR5V0U2X",
-      "back": true,
-      "position_pcb_mm": [
-        90.512704,
-        118.365736
-      ],
-      "angle_deg": 180.0,
-      "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        88.887704,
-        116.640736,
-        92.137704,
-        120.090736
-      ],
-      "height_envelope_mm": 3.0,
-      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
-      "bounds_case_mm": [
-        88.887704,
-        -120.090736,
-        -5.0,
-        92.137704,
-        -116.640736,
-        -1.9999999999999998
-      ],
-      "collision_volume_mm3": [
-        0.0,
-        0.0
-      ],
-      "min_case_distance_mm": 0.9100000000000152
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3291,7 +3259,7 @@
       "pcb_to_plate_gap_mm": 4.0,
       "pcb_bottom_z": -1.4000000000000001,
       "pcb_case_overlap_mm3": [
-        0.0,
+        0.38313124855899067,
         0.0
       ],
       "flat_floor_pack_thickness_budget_mm": 3.51
@@ -3375,7 +3343,7 @@
     "PCB_top_fixed": true,
     "minimum_component_case_gap_over_thickness_range_mm": 0.256199999999998,
     "minimum_gap_after_case_tolerance_mm": 0.10619999999999799,
-    "minimum_max_thickness_board_case_gap_mm": 0.7999600063555562,
+    "minimum_max_thickness_board_case_gap_mm": 0.5937999999999994,
     "PCB_outline_allowance_mm": 0.2,
     "minimum_pack_to_worst_depth_fastener_mm": 0.5462000000000007,
     "minimum_washer_component_gap_mm": 0.1775440000000117,

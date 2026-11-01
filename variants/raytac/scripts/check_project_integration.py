@@ -13,7 +13,7 @@ def verify():
     config=read(ROOT/'design-constraints.json')
     assert config['fabrication']['process']=='ordinary-four-layer-FR4' and not config['fabrication']['HDI_allowed']
     ordinary=read(AUD/'yeti60-ordinary-process.json');assert ordinary['blind_buried_vias']==0 and not ordinary['module_via_in_pad'];hashes(ordinary['source_sha256'])
-    fabrication=read(AUD/'yeti60-fabrication.json');assert fabrication['blind_drill_hits']==0 and fabrication['placement_parts']==76;hashes(fabrication['source_sha256']);hashes(fabrication['outputs'])
+    fabrication=read(AUD/'yeti60-fabrication.json');assert fabrication['blind_drill_hits']==0 and fabrication['placement_parts']==75;hashes(fabrication['source_sha256']);hashes(fabrication['outputs'])
     assert config['mcu_count']==1 and config['wireless_controller']=='nRF52840' and not config['stm32_allowed']
     assert config['external_usb_c']['connector_path']=='rear-daughterboard-to-J1'
     parts=read(HW/'components.json')
@@ -54,9 +54,9 @@ def verify():
                 for key in ['recipe_sha256','assembly_report_sha256','mesh_export_recipe_sha256','interconnect_report_sha256','daughterboard_report_sha256']:
                     assert item[key]==m[key],name+' was not rendered from current inputs'
     plot=read(ROOT/'renders/yeti60-firmware/plot-manifest.json'); assert plot['trace_sha256']==sim['trace_sha256']; assert plot['recipe_sha256']==sha(ROOT/'scripts/plot_yeti60_simulation.py'); hashes(plot['outputs'],ROOT/'renders/yeti60-firmware')
-    materials=read(AUD/'yeti60-materials.json');assert materials['fitted_mainboard_parts']==76;hashes(materials['source_sha256'])
+    materials=read(AUD/'yeti60-materials.json');assert materials['fitted_mainboard_parts']==75;hashes(materials['source_sha256'])
     inventory=read(AUD/'yeti60-inventory.json');hashes(inventory['source_sha256']);hashes(inventory['outputs'])
-    assert inventory['required_mainboard_parts']==inventory['planned_stock_parts']+inventory['net_purchase_parts']==76
+    assert inventory['required_mainboard_parts']==inventory['planned_stock_parts']+inventory['net_purchase_parts']==75
     assert inventory['in_transit_credited']==inventory['optional_c5_parts_credited']==0
     assert not inventory['physical_remaining_count_confirmed'] and not inventory['production_approved']
     key_geometry=read(AUD/'yeti60-key-geometry.json');hashes(key_geometry['source_sha256'])
@@ -70,6 +70,16 @@ def verify():
     for variant in target['variants'].values():hashes(variant['outputs'])
     target_check=read(AUD/'yeti60-target-check.json');assert target_check['status']=='passed' and target_check['build_manifest_sha256']==sha(AUD/'yeti60-target-build.json')
     assert all(v['USB_configuration_mA']==500 for v in target_check['variants'].values())
+    complete=read(AUD/'complete-exploded.json');hashes(complete['source_sha256']);hashes(complete['outputs'])
+    assert complete['mainboard_parts']==75 and complete['USB_wires']==4 and complete['battery_wires']==3
+    assert complete['mount_sets']==29 and complete['active_keys']==60
+    protection=read(AUD/'C5-protection.json');assert protection['status']=='protected-I/O-coverage-passed';hashes(protection['source_sha256'])
+    rendered=read(ROOT/'renders/yeti60-assembly/render-manifest.json')
+    assert len(rendered['fitted_mainboard_references'])==75 and rendered['fitted_BOM_sha256']==sha(AUD/'yeti60-bom.json')
+    assert all(rendered['exploded_visible_objects_by_group'].values())
+    assert rendered['exploded_visible_objects_by_group']['electronics']==75
+    assert set(rendered['exploded_frame_checks'])=={'feet','electronics','battery','interconnect'}
+    assert all(v['in_frame'] and v['above_desk'] for v in rendered['exploded_frame_checks'].values())
     assert read(AUD/'documentation-check.json')['status']=='passed'
     return {'status':'passed','controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':29,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements']}
 def main():

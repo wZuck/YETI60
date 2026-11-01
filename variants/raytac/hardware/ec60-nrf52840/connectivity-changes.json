@@ -1,12 +1,113 @@
 {
-  "reference_commit": "52b8d56be0b162c7f9585936349c08ddcb7c338f",
+  "reference_commit": "15cc85f359efb43439270dca8d353435b776ccad",
   "regressed_pairs": [],
+  "reviewed_removed_D1_pairs": [
+    {
+      "net": "D+",
+      "a": [
+        "D1",
+        "2"
+      ],
+      "b": [
+        "J1",
+        "3"
+      ]
+    },
+    {
+      "net": "D+",
+      "a": [
+        "D1",
+        "2"
+      ],
+      "b": [
+        "R31",
+        "1"
+      ]
+    },
+    {
+      "net": "D-",
+      "a": [
+        "D1",
+        "3"
+      ],
+      "b": [
+        "J1",
+        "2"
+      ]
+    },
+    {
+      "net": "D-",
+      "a": [
+        "D1",
+        "3"
+      ],
+      "b": [
+        "R30",
+        "1"
+      ]
+    },
+    {
+      "net": "USB_5V",
+      "a": [
+        "C32",
+        "1"
+      ],
+      "b": [
+        "D1",
+        "4"
+      ]
+    },
+    {
+      "net": "USB_5V",
+      "a": [
+        "C40",
+        "1"
+      ],
+      "b": [
+        "D1",
+        "4"
+      ]
+    },
+    {
+      "net": "USB_5V",
+      "a": [
+        "D1",
+        "4"
+      ],
+      "b": [
+        "F1",
+        "1"
+      ]
+    },
+    {
+      "net": "USB_5V",
+      "a": [
+        "D1",
+        "4"
+      ],
+      "b": [
+        "U1",
+        "USB_5V#0"
+      ]
+    },
+    {
+      "net": "USB_5V",
+      "a": [
+        "D1",
+        "4"
+      ],
+      "b": [
+        "U5",
+        "13"
+      ]
+    }
+  ],
   "improved_pairs": [],
   "new_component_pairs": [],
   "scope": "Union of baseline and current non-GND schematic pad pairs; missing new pads do not count as old regressions. Current native audit verifies every new pair and GND.",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
-    "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
-    "scripts/check_pcb_connectivity_regression.py": "16b0d14a571b39a0b5aa88ae87f4caa20e7e0c78db457451671f34475dfe96a5"
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
+    "hardware/ec60-nrf52840/netlist.xml": "815c4a1661a9b50b5465660631f37405bd72c5d82aa9ad7c5e1f0eb66af9c93a",
+    "scripts/check_pcb_connectivity_regression.py": "d1b401feed60254f300eb2743eb97be8a52653eb4b65ce125091b1c6872dc910"
   }
 }

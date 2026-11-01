@@ -86,23 +86,23 @@
     "firmware/yeti60/core.c": "353ef280b7c84966dd6851e22ed98ad974bd58bbc5ae78b03a0623493e98ad49",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "scripts/build_yeti60_firmware.py": "22aae2e01d540dcda239bd97a789565a2f3a1a02ce518d55edbfb1d909524c2a",
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873"
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3"
   },
   "variants": {
     "normal": {
       "outputs": {
-        "firmware/releases/normal/yeti60-raytac.bin": "f2f66b65fb5e6b1c74fddc08d8692fb79b8212b1a4a9e77e594b901ab5bb2313",
-        "firmware/releases/normal/yeti60-raytac.hex": "aec22be2ea176623e4006b9ce60553152b73060b9709f82071457d86c4292ac3",
-        "firmware/releases/normal/yeti60-raytac.elf": "a03d513c84396a304e1572e1d72626053489ce1fe3947733f6441619e70df0f6"
+        "firmware/releases/normal/yeti60-raytac.bin": "90ac1ea17e585641235b1b8ac03f71b1adfc345c9480d732fa7a224dcf911154",
+        "firmware/releases/normal/yeti60-raytac.hex": "854ba9c4349ea9f2b7183aa656968f99aff5856cc7d1daec19fa8b60319e416a",
+        "firmware/releases/normal/yeti60-raytac.elf": "db54c30314ec2ce287a04475a898ccf619f7fd0d1df67969904b90b92d9cacf0"
       },
       "configuration_sha256": "2269998342d3654e485a7d76565a9eab6fc34712ded8ac705accec4cb7797d74",
       "devicetree_sha256": "f005aa7ca87b3127a1fadfbb3fa15bc12a507a34aa8c6407d5b180ef54dafad9"
     },
     "calibrator": {
       "outputs": {
-        "firmware/releases/calibrator/yeti60-raytac.bin": "5fc9bbc87d11db5ea5ccf6ba027cc8f14e8ed6dd583e8d8b81b4836c2a02f992",
-        "firmware/releases/calibrator/yeti60-raytac.hex": "6cdb83cd84b18ddd0fc2e673c638b807e97d6484bd84c1f158a9fe90db1c7bf1",
-        "firmware/releases/calibrator/yeti60-raytac.elf": "896d2a35c98fa1ed429f4382bfdd1565515aa990f8385d25d08c113d4910c4ad"
+        "firmware/releases/calibrator/yeti60-raytac.bin": "9c8686da1746e7d0582e235916c263096497ae8c62b7b7899de3d6278d574fb1",
+        "firmware/releases/calibrator/yeti60-raytac.hex": "6e0ee39e587cdc446f4a69a2f41b17684621de247e67ca487cf5c01cb701daae",
+        "firmware/releases/calibrator/yeti60-raytac.elf": "64baf05cdf075a2cf351528e5706cffed08265d46463beb2e142c2e1186013d5"
       },
       "configuration_sha256": "0987bcf54ab617c0d8a2164003643741b1ef7cf812972f69d357d2470b5b7a41",
       "devicetree_sha256": "a9c55258f33f1cc0647151bda9466c60a38c123b57fee8b30c60357a4c804a05"

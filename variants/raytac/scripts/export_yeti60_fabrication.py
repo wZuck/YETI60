@@ -26,7 +26,7 @@ def main():
     bom = json.loads((ROOT / 'docs/audit/yeti60-bom.json').read_text())
     purchased = {r.strip() for row in bom['rows'] if row['quantity']
                  for r in row['references'].split(',')}
-    assert len(purchased) == 76
+    assert len(purchased) == 75
     OUT.mkdir(exist_ok=True)
     sources = [board, ROOT/'hardware/bom/mainboard.csv',
                ROOT/'hardware/bom/mainboard.zh-CN.csv',
@@ -91,7 +91,7 @@ def main():
     report = {**manifest, 'status':'review-package-generated-not-order-release',
               'outputs':{str(target.relative_to(ROOT)):sha(target)}}
     (ROOT/'docs/audit/yeti60-fabrication.json').write_text(json.dumps(report, indent=2)+'\n')
-    print('DFM review archive: four copper layers, zero blind holes, 76 placements; supplier approval pending')
+    print('DFM review archive: four copper layers, zero blind holes, 75 placements; supplier approval pending')
 
 
 if __name__ == '__main__':

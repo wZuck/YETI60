@@ -2,7 +2,7 @@ English | [Chinese](inventory-allocation.zh-CN.md)
 
 # YETI60 inventory allocation and remaining purchases
 
-Revision P2, 2026-10-29. For one keyboard with a loose-part mainboard build and a **populated C5 JSH** daughterboard, plan **10 mainboard parts from inventory and 66 to buy**. These are component counts, not distinct SKUs. No PCB, firmware, case or battery specification changes are needed for these stock selections.
+Revision P2, 2026-10-29. For one keyboard with a loose-part mainboard build and a **populated C5 JSH** daughterboard, plan **10 mainboard parts from inventory and 65 to buy**. These are component counts, not distinct SKUs. No PCB, firmware, case or battery specification changes are needed for these stock selections.
 
 The [mainboard purchase CSV](../../hardware/bom/mainboard-purchase.csv) gives every fitted reference, required quantity, planned stock use and net purchase. Use it with the [complete preparation list](../../README.md#complete-materials-for-one-keyboard) for the case, EC mechanisms, battery, cables, guides, consumables and tools. Those other items have no confirmed direct stock allocation and still need procurement or a physical compatibility check.
 
@@ -22,11 +22,11 @@ The capacitor family specifications and sizes match the nominal circuit requirem
 
 The workbook is an order-derived inventory, not a current physical count. Column E is received **units**, column H is in-transit units; column D is purchase packs and is not the available-unit input. The figures above are planning balances, not stock ledger deductions. No stock has been marked consumed and the source workbook remains unchanged.
 
-For each stock pool: `available = recorded received units`; allocate at most that quantity across all matching references. For each BOM group: `net purchase = required − planned stock allocation`. Summing the fitted references gives `76 − (4 + 2 + 2 + 1 + 1) = 66`. In-transit units contribute zero. JP1 remains DNP and J3 remains bare SWD pads.
+For each stock pool: `available = recorded received units`; allocate at most that quantity across all matching references. For each BOM group: `net purchase = required − planned stock allocation`. Summing the fitted references gives `75 − (4 + 2 + 2 + 1 + 1) = 65`. In-transit units contribute zero. JP1 remains DNP and J3 remains bare SWD pads.
 
 ## C5 JSH alternatives and uncertain stock
 
-The default is one populated daughterboard. Its seven parts are included, so do not buy them again. For a separate **bare C5 PCB build**, inventory row 55 supplies two Uniroyal 0402WGF5101TCE 5.1 kohm/1%/0402 resistors for C5 R1/R2, from 100 recorded received units. That alternative uses 12 stocked electronics in total across both boards and still needs the other five C5 parts. It does not reduce the 66-part mainboard shortfall. The [pinned upstream C5 BOM](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_bom.csv) is authoritative for those five parts.
+The default is one populated daughterboard. Its seven parts are included, so do not buy them again. For a separate **bare C5 PCB build**, inventory row 55 supplies two Uniroyal 0402WGF5101TCE 5.1 kohm/1%/0402 resistors for C5 R1/R2, from 100 recorded received units. That alternative uses 12 stocked electronics in total across both boards and still needs the other five C5 parts. It does not reduce the 65-part mainboard shortfall. The [pinned upstream C5 BOM](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_bom.csv) is authoritative for those five parts.
 
 | Inventory rows | Candidate use | Decision and missing evidence |
 |---|---|---|
@@ -50,7 +50,7 @@ Spacer alternatives above are dimensional screening calculations, not accepted C
 | 12 | MF-MSMF075-2, 1812, 0.75 A hold | Main F1 is 1206/0.5 A hold; C5 F1 is ASMD1206-150, 1206/1.5 A per upstream. The stock matches neither footprint/current requirement. |
 | 9 | USBLC6-2SC6, SOT-23-6 | Main D1 is PRTR5V0U2X SOT-143; C5 U1 is TPD4E05U06DQAR uSON-10. Different packages/pinouts; no direct substitution. |
 | 8, 39 | RP2040 and nice!nano nRF52840 board | U1 is the soldered Raytac MDBT50Q-1MV2 module. Neither stock item matches its footprint. Keep the single-controller design. |
-| 37 | 301230, 110 mAh cell | Does not establish the required protected 1600 mAh pack, independent thermal interruption or third-wire NTC. Programmed charging is about 403 mA typical, about 3.66C for 110 mAh, with no stock-cell rating supporting that use. Buy the specified pack; do not connect this cell to the current charger configuration. |
+| 37 | 301230, 110 mAh cell | Does not establish the required protected 1600 mAh pack, independent thermal interruption or third-wire NTC. Programmed charging is about 403 mA typical, about 3.65C for 110 mAh, with no stock-cell rating supporting that use. Buy the specified pack; do not connect this cell to the current charger configuration. |
 | 23 | M1.6 x 2 screws | Need 29 M1.6 x 5. Nominal reach is `2 − 0.8 − 1.6062 − 0.1 = −0.5062 mm`, so the stock screw cannot reach the adapter standoff. |
 | 24–25 | M2 female/female 6/18 mm standoffs | Need 4.50 mm shoulder, upper M2 stud, lower M1.6 female adapter. Wrong height and thread arrangement. |
 | 26–28, 30 | MSK miniature sliders; 6 x 6 mm PTS645 tactile | Do not match JS102011SAQN power-switch or EVQPUC02K reset-switch footprints/access envelopes. |

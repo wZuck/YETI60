@@ -1,1 +1,113 @@
-../../design-constraints.json
+{
+  "keyboard": "FELK60 case with EC60-derived EC PCB",
+  "wireless_controller": "nRF52840",
+  "case_material": "resin-provisional",
+  "external_usb_c": {
+    "required_face": "rear",
+    "rear_definition": "Esc and number-row side, away from the typist",
+    "front_definition": "spacebar side, near the typist",
+    "front_port_allowed": false,
+    "connector_path": "rear-daughterboard-to-J1",
+    "onboard_USB1_external_port_allowed": false,
+    "pcb_frame": "top view, X left-to-right, Y rear-to-front",
+    "baseline_rear_row_references": [
+      "SW2",
+      "SW3",
+      "SW15",
+      "SW16"
+    ],
+    "baseline_front_row_references": [
+      "SW64",
+      "SW75"
+    ],
+    "baseline_port_reference": "USB1",
+    "final_assembly_verified": false,
+    "daughterboard": "C5 JSH"
+  },
+  "production_approved": false,
+  "mcu_count": 1,
+  "scan_controller": "nRF52840",
+  "usb_controller": "nRF52840",
+  "stm32_allowed": false,
+  "pcb_modifications_allowed": true,
+  "signal_interference_analysis": {
+    "phase": "after PCB design completion",
+    "blocking_current_layout": false,
+    "status": "native-RF-and-C5-protection-screen-passed-physical-qualification-open",
+    "report": "docs/testing/README.md"
+  },
+  "open_requirements": [
+    {
+      "id": "power-layout",
+      "status": "open",
+      "description": "P2 local layout and current/timer/termination calculations completed; regulator transient, derating and thermal performance require hardware qualification"
+    },
+    {
+      "id": "target-firmware",
+      "status": "open",
+      "description": "Normal and calibrator ARM builds and linked USB500 descriptors verified; on-device enumeration, BLE and per-key calibration pending"
+    },
+    {
+      "id": "mechanical-stack",
+      "status": "open",
+      "description": "Qualify dome/housing/fastener stack; 4.6 mm PCB-to-plate gap is provisional"
+    },
+    {
+      "id": "battery",
+      "status": "open",
+      "description": "Default custom 1600 mAh full envelope selected and checked; supplier current-sheet correction, complete drawing, independent 15..43 C thermal protection and full charge acceptance pending"
+    },
+    {
+      "id": "usb-daughterboard",
+      "status": "open",
+      "description": "C5 JSH retained by user; native electrical and mounting geometry checked; mating plug/harness routing and serviceability require final acceptance"
+    },
+    {
+      "id": "switch-access",
+      "status": "open",
+      "description": "8 mm SW100 service port designed; physical access acceptance pending"
+    },
+    {
+      "id": "resin-inserts",
+      "status": "open",
+      "description": "Cold-bond insert seats and imposed tolerances designed; resin shrinkage, strength and insert pullout require first articles"
+    },
+    {
+      "id": "fabrication",
+      "status": "open",
+      "description": "Ordinary four-layer through-via conversion and output parity checked; confirm stock stackup/tolerances, open thermal-via soldering and final component ratings with the fabricator/assembler"
+    },
+    {
+      "id": "physical-tests",
+      "status": "open",
+      "description": "Measure EC thresholds, power, charging, runtime and wake behavior"
+    },
+    {
+      "id": "signal-interference",
+      "status": "open",
+      "description": "Raytac minimum antenna projection is clear on all four layers, plate projection is clear, and C5 protected data channels are verified with redundant mainboard D1 branches removed. Enclosed RF/EC measurements, complete USB pair/return/eye qualification and physical acceptance remain open."
+    }
+  ],
+  "fabrication": {
+    "supplier": "JLCPCB",
+    "process": "ordinary-four-layer-FR4",
+    "profile": "mechanical/pcb-fabrication-spec.json",
+    "HDI_allowed": false,
+    "blind_buried_vias_allowed": false,
+    "resin_fill_copper_cap_required": false
+  },
+  "PCB_geometry_control": "Original front signal/ground lands and 29 mounting centers retained; controlled rounded RF wing and internal case relief documented in mechanical/rf-remediation.json",
+  "active_module": "Raytac MDBT50Q-1MV2",
+  "USB_protection": {
+    "location": "mandatory populated C5 JSH",
+    "data_device": "TPD4E05U06DQAR",
+    "protected_IO_pins": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "mainboard_D1_removed": true,
+    "board_level_ESD_certified": false
+  }
+}

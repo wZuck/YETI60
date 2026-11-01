@@ -24,7 +24,7 @@ class InventoryAllocation(unittest.TestCase):
         self.stock['mainboard'][0]['in_transit_units'] = 10000
         result = planner.allocate(self.stock, self.bom)
         self.assertEqual(sum(r['from_stock'] for r in result), 7)
-        self.assertEqual(sum(r['buy'] for r in result), 69)
+        self.assertEqual(sum(r['buy'] for r in result), 68)
         self.assertEqual(next(r for r in result if r['references'] == 'C31')['buy'], 1)
 
     def test_wrong_footprint_is_rejected(self):

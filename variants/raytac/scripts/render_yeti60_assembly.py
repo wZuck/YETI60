@@ -71,7 +71,7 @@ cream=material('Connector plastic',(.63,.62,.52),.4)
 battery_mat=material('Selected custom pack envelope',(.04,.31,.17),.28,metal=.3)
 desk_mat=material('Warm studio backdrop',(.34,.32,.28),.65)
 groups={}
-for name in ['bottom','top','plate','pcb','caps','switches','battery','interconnect','daughterboard']:
+for name in ['bottom','top','plate','pcb','caps','switches','battery','interconnect','daughterboard','standoffs','insulation','pcb-fasteners','domes','springs','stabilizers','shell-hardware','feet','electronics']:
     o=bpy.data.objects.new(name,None); scene.collection.objects.link(o); groups[name]=o
 root=bpy.data.objects.new('Rigid 7 degree presentation transform',None); scene.collection.objects.link(root)
 for o in groups.values(): o.parent=root
@@ -98,11 +98,33 @@ extra_materials={'ivory':cream,'cream':cream,'gray':black,'pcb':pcb_mat,'metal':
 for color,rgb in {'red':(.45,.012,.008),'white':(.8,.8,.75),'green':(.01,.25,.04),'yellow':(.65,.4,.005)}.items():extra_materials[color]=material('Wire insulation '+color,rgb,.4)
 for part in meshdata['extra_parts']:
     d=meshdata['meshes'][part['mesh']]
-    object_mesh(part['name']+' / checked CAD',[point(v) for v in d['vertices_mm']],d['triangles'],extra_materials[part['color']],part['group'],smooth=part['category']=='wire')
+    object_mesh(part['name']+' / checked CAD',[point(v) for v in d['vertices_mm']],d['triangles'],extra_materials[part['color']],'electronics' if part['name']=='main-sh' else part['group'],smooth=part['category']=='wire')
+bom_rows=json.loads((ROOT/'docs/audit/yeti60-bom.json').read_text())['rows']
+fitted_refs={r.strip() for row in bom_rows if row['quantity'] for r in row['references'].split(',')}
+package_by_ref={r.strip():row['package'] for row in bom_rows for r in row['references'].split(',')}
+ceramic_body=material('Illustrative generic ceramic',(.40,.26,.13),.42)
+assert len(fitted_refs)==75
+assert fitted_refs<={p['ref'] for p in data['component_envelopes']}
 for p in data['component_envelopes']:
-    if p['ref']=='J1':continue
+    if p['ref'] not in fitted_refs or p['ref']=='J1':continue
     mat=cream if p['ref'].startswith('J') else black if p['ref'].startswith('U') else metalmat
-    box(p['ref']+' / height envelope',p['bounds_case_mm'],mat,'pcb',.12)
+    if p['ref'].startswith(('R','C')) and ('0402' in package_by_ref[p['ref']] or '0603' in package_by_ref[p['ref']]):
+        # Generic EIA bodies improve the illustration; these are not qualified
+        # final-MPN dimensions and do not replace conservative fit envelopes.
+        length,width=(1.0,.5) if '0402' in package_by_ref[p['ref']] else (1.6,.8)
+        height=.35 if p['ref'].startswith('R') else (.55 if length==1 else .9)
+        x,y=p['position_pcb_mm'];y=-y;top=data['nominal_stack']['pcb_bottom_z'];angle=math.radians(p['angle_deg'])
+        vertices=[];faces=[];material_ids=[]
+        for index,(lo,hi) in enumerate([(-.5,-.3),(-.3,.3),(.3,.5)]):
+            offset=len(vertices)
+            for z in [top-height,top]:
+                for xx,yy in [(lo*length,-width/2),(hi*length,-width/2),(hi*length,width/2),(lo*length,width/2)]:vertices.append(point((x+xx*math.cos(angle)-yy*math.sin(angle),y+xx*math.sin(angle)+yy*math.cos(angle),z)))
+            faces.extend(tuple(offset+i for i in face) for face in [(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)])
+            material_ids.extend([1 if index!=1 else 0]*6)
+        obj=object_mesh(p['ref']+' / illustrative EIA body',vertices,faces,black if p['ref'].startswith('R') else ceramic_body,'electronics',False);obj.data.materials.append(metalmat)
+        for face,index in zip(obj.data.polygons,material_ids):face.material_index=index
+    else:box(p['ref']+' / height envelope',p['bounds_case_mm'],mat,'electronics',.12)
+assert len(groups['electronics'].children)==75,'Missing fitted component body'
 
 def ring(name,x,y,z0,z1,outer,inner,mat,group):
     vertices=[];n=48
@@ -123,13 +145,13 @@ film=material('Polyimide insulation',(.43,.20,.025),.3)
 ptop=data['nominal_stack']['pcb_top_z'];pbot=data['nominal_stack']['pcb_bottom_z'];plate_z=data['nominal_stack']['plate_bottom_z']
 for i,hole in enumerate(data['mounting_hole_matches'],1):
     x,y=hole['pcb_center_case_mm']
-    ring('Standoff lower female envelope '+str(i),x,y,ptop+.1,ptop+.1+3.2,1.75,.8,brass,'plate')
-    ring('Standoff blind top '+str(i),x,y,ptop+.1+3.2,plate_z,1.75,0,brass,'plate')
-    ring('M2 upper stud '+str(i),x,y,plate_z,plate_z+1,1,0,brass,'plate')
-    ring('Top insulating film '+str(i),x,y,ptop,ptop+.1,2.25,.9,film,'pcb')
-    ring('PEEK washer '+str(i),x,y,pbot-.8,pbot,2,1.1,black,'pcb')
-    ring('M1.6 shank envelope '+str(i),x,y,pbot-.8,pbot-.8+5,.8,0,metalmat,'pcb')
-    ring('M1.6 head envelope '+str(i),x,y,pbot-1.9,pbot-.8,1.6,0,metalmat,'pcb')
+    ring('Standoff lower female envelope '+str(i),x,y,ptop+.1,ptop+.1+3.2,1.75,.8,brass,'standoffs')
+    ring('Standoff blind top '+str(i),x,y,ptop+.1+3.2,plate_z,1.75,0,brass,'standoffs')
+    ring('M2 upper stud '+str(i),x,y,plate_z,plate_z+1,1,0,brass,'standoffs')
+    ring('Top insulating film '+str(i),x,y,ptop,ptop+.1,2.25,.9,film,'insulation')
+    ring('PEEK washer '+str(i),x,y,pbot-.8,pbot,2,1.1,black,'insulation')
+    ring('M1.6 shank envelope '+str(i),x,y,pbot-.8,pbot-.8+5,.8,0,metalmat,'pcb-fasteners')
+    ring('M1.6 head envelope '+str(i),x,y,pbot-1.9,pbot-.8,1.6,0,metalmat,'pcb-fasteners')
 
 def rounded(w,h,r,n=8):
     out=[]
@@ -176,6 +198,42 @@ for row,(y,keys) in enumerate(sorted(rows.items(),reverse=True)):
             curve=bpy.data.curves.new('Pad printed legend','FONT'); curve.body=text; curve.align_x='CENTER'; curve.align_y='CENTER'; curve.size=.0026 if len(text)<4 else .002; curve.resolution_u=12; curve.extrude=.000001
             o=bpy.data.objects.new('Legend '+text,curve); scene.collection.objects.link(o); o.location=point((x,y,top-.54)); o.rotation_euler[0]=math.atan([-.10,-.05,0,.06,.11][row]); o.data.materials.append(light_ink if accent else ink); o.parent=groups['caps']
 if data['battery_candidates']: box('YETI60-BAT-1600-1S / full pack envelope',data['battery_candidates'][0]['bounds_case_mm'],battery_mat,'battery',.5)
+# Additional exploded-view hardware. Unselected elastomer/spring/stabilizer
+# profiles are explicitly illustrative and do not enter the fit audit.
+assembly_spec=json.loads((ROOT/'mechanical/assembly-spec.json').read_text())
+dome_mat=material('Illustrative silicone domes',(.50,.48,.46),.72)
+for number,k in enumerate(data['active_key_positions'],1):
+    x,y=k['x'],k['y'];verts=[];faces=[];n=40
+    profile=[(5.0,ptop+.05),(4.7,ptop+.3),(3.6,ptop+1.0),(2.1,ptop+3.7),(1.6,ptop+4.0)]
+    for radius,z in profile:
+        verts.extend(point((x+radius*math.cos(2*math.pi*i/n),y+radius*math.sin(2*math.pi*i/n),z)) for i in range(n))
+    for row in range(len(profile)-1):
+        for i in range(n):faces.append((row*n+i,row*n+(i+1)%n,(row+1)*n+(i+1)%n,(row+1)*n+i))
+    object_mesh('Illustrative dome '+str(number),verts,faces,dome_mat,'domes')
+    curve=bpy.data.curves.new('Illustrative conical spring','CURVE');curve.dimensions='3D';curve.bevel_depth=.000055;curve.bevel_resolution=2
+    spline=curve.splines.new('POLY');samples=100;spline.points.add(samples)
+    for i,v in enumerate(spline.points):
+        t=i/samples;radius=3.3*(1-t)+.65*t;a=t*math.pi*10
+        v.co=(*point((x+radius*math.cos(a),y+radius*math.sin(a),ptop+.1+2.8*t)),1)
+    obj=bpy.data.objects.new('Illustrative sensing spring '+str(number),curve);scene.collection.objects.link(obj);obj.parent=groups['springs'];obj.data.materials.append(metalmat)
+for tag,key in [('Enter',max(rows[sorted(rows,reverse=True)[2]],key=lambda k:k['x'])),('left Shift',min(rows[sorted(rows,reverse=True)[3]],key=lambda k:k['x'])),('6U spacebar',sorted(rows[sorted(rows,reverse=True)[4]],key=lambda k:k['x'])[2])]:
+    span=80 if tag=='6U spacebar' else 23;x,y=key['x'],key['y']
+    box('Illustrative stabilizer wire '+tag,[x-span/2,y-.5,7.0,x+span/2,y+.5,8.0],metalmat,'stabilizers',.35)
+    for sign in [-1,1]:box('Illustrative stabilizer mount '+tag,[x+sign*span/2-2,y-3,5,x+sign*span/2+2,y+3,10],black,'stabilizers',.3)
+for index,(x,y) in enumerate(assembly_spec['case']['top_screw_axes'],1):
+    ring('M3 brass insert '+str(index),x,y,4.79,7.79,2.3,1.5,brass,'shell-hardware')
+    ring('M3 closure screw shank '+str(index),x,y,2.29,7.29,1.5,0,metalmat,'shell-hardware')
+    ring('M3 closure screw head '+str(index),x,y,.7,2.29,2.8,0,metalmat,'shell-hardware')
+    ring('M3 shim '+str(index),x,y,2.29,2.59,2.8,1.55,metalmat,'shell-hardware')
+for index,(x,y) in enumerate(assembly_spec['case']['daughterboard_screw_axes'],1):
+    ring('M2 cold-bond insert '+str(index),x,y,-13.41,-10.91,1.6,1.0,brass,'shell-hardware')
+    ring('C5 insulating washer '+str(index),x,y,-9.3038,-9.0038,2.0,1.05,film,'shell-hardware')
+    ring('C5 M2 screw shank '+str(index),x,y,-13.0038,-9.0038,1,0,metalmat,'shell-hardware')
+    ring('C5 M2 screw head '+str(index),x,y,-9.0038,-7.8,1.8,0,metalmat,'shell-hardware')
+# Feet are shown as a counted parts tray, not guessed shell mounting positions.
+for index in range(4):
+    x=105+index*61;box('SKUF foot parts tray '+str(index+1),[x-20.9,-224,-10,x+20.9,-218.2,-8],black,'feet',.9)
+box('Illustrative cut-to-fit gasket stock tray',[80,-246,-10,160,-226,-8],black,'feet',.3)
 groups['battery'].hide_render=True
 bpy.context.view_layer.update()
 verts=[root.matrix_world @ (groups['bottom'].matrix_local @ Vector(point(v))) for v in meshdata['meshes']['bottom']['vertices_mm']]
@@ -190,25 +248,50 @@ light('Cool fill',(.36,-.04,.38),12,.38,.35,(.8,.88,1))
 light('Rear strip',(-.05,.35,.40),28,.55,.12,(1,.97,.9))
 d=bpy.data.cameras.new('Product camera'); camera=bpy.data.objects.new('Product camera',d); scene.collection.objects.link(camera); scene.camera=camera; d.lens=68; d.clip_start=.001; d.clip_end=100
 
+visibility_by_view={};exploded_frame_checks={}
 def capture(name,position,target,lens=68):
     # Empty objects do not propagate hide_render to their children.
     for group in groups.values():
         for child in group.children_recursive: child.hide_render=group.hide_render
+    visibility_by_view[name]={group:sum(not o.hide_render for o in parent.children_recursive) for group,parent in groups.items()}
+    if name=='exploded':assert all(visibility_by_view[name][group]>0 for group in groups),'Missing exploded assembly group'
     camera.location=position; aim(camera,target); d.lens=lens
-    scene.render.resolution_x=1200 if args.preview else 2600; scene.render.resolution_y=800 if args.preview else 1734
+    scene.render.resolution_x=1200 if args.preview else (3600 if name=='exploded' else 2600); scene.render.resolution_y=800 if args.preview else (2400 if name=='exploded' else 1734)
     scene.render.filepath=str(WORK/(name+'-preview.png') if args.preview else OUT/(name+'.png'))
+    if name=='exploded':
+        from bpy_extras.object_utils import world_to_camera_view
+        bpy.context.view_layer.update()
+        for group in ['feet','electronics','battery','interconnect']:
+            corners=[obj.matrix_world @ Vector(v) for obj in groups[group].children_recursive for v in obj.bound_box]
+            uv=[world_to_camera_view(scene,camera,v) for v in corners]
+            margin=min(min(v.x,1-v.x,v.y,1-v.y) for v in uv)
+            minimum_z=min(v.z for v in corners)
+            exploded_frame_checks[group]={'minimum_frame_margin':margin,'minimum_world_Z_m':minimum_z,'desk_Z_m':floor_z,'in_frame':margin>=0,'above_desk':minimum_z>=floor_z}
+            assert margin>=0 and minimum_z>=floor_z,('Exploded part clipped or under desk',group,exploded_frame_checks[group])
     bpy.ops.render.render(write_still=True)
 views=['assembled','rear','exploded','battery-space'] if not args.view else [args.view]
 for view in views:
     for g in groups.values(): g.location=(0,0,0); g.hide_render=False
     groups['battery'].hide_render=True
+    for name in ['domes','springs','stabilizers','shell-hardware','feet']:groups[name].hide_render=True
     if view=='assembled': capture(view,(.37,-.49,.36),(0,0,.012))
     elif view=='rear': capture(view,(-.44,.56,.32),(0,0,.009),68)
     elif view=='exploded':
-        for name,z in [('pcb',.020),('plate',.045),('switches',.045),('top',.068),('caps',.096)]: groups[name].location.z=z
-        capture(view,(.43,-.59,.42),(0,0,.055),65)
+        for name,z in [('pcb',.040),('pcb-fasteners',.012),('insulation',.055),('standoffs',.072),('springs',.075),('domes',.092),('plate',.115),('stabilizers',.115),('switches',.142),('top',.172),('caps',.215),('battery',.014),('interconnect',.024),('daughterboard',.014),('shell-hardware',.010),('feet',.035),('electronics',.016)]:groups[name].location.z=z
+        for name in ['battery','domes','springs','stabilizers','shell-hardware','feet','electronics']:groups[name].hide_render=False
+        groups['feet'].location.x=.320
+        groups['feet'].location.y=-.080
+        groups['electronics'].location.y=-.150
+        groups['pcb'].location.y=-.040
+        groups['interconnect'].location.y=.025
+        groups['battery'].location.x=.250
+        groups['interconnect'].location.x=.340
+        groups['daughterboard'].location.x=.340
+        groups['battery'].location.y=-.085
+        groups['daughterboard'].location.y=.035
+        capture(view,(.78,-1.03,.72),(.075,-.02,.100),55)
     else:
-        for name in ['top','plate','switches','caps','pcb']: groups[name].hide_render=True
+        for name in ['top','plate','switches','caps','pcb','standoffs','insulation','pcb-fasteners','electronics']: groups[name].hide_render=True
         groups['battery'].hide_render=False; capture(view,(.23,-.29,.47),(0,0,-.006),65)
 if not args.preview:
     previous_path=OUT/'render-manifest.json'
@@ -222,6 +305,6 @@ if not args.preview:
     for name,item in prior_outputs.items():
         if name not in rendered_outputs: rendered_outputs[name]=item
     for name,h in data['source_sha256'].items(): assert sha(ROOT/name)==h,name
-    manifest={'interconnect_report_sha256':meshdata['interconnect_report_sha256'],'daughterboard_report_sha256':meshdata['daughterboard_report_sha256'],'interconnect_geometry':'Seven continuous round wires, complete conservative mating envelopes, conformal guides and native C5 CAD; supplier lead-exit datums pending','project':'YETI60','renderer':'Blender '+bpy.app.version_string+' / Cycles','samples':scene.cycles.samples,'recipe_sha256':sha(Path(__file__)),'mesh_export_recipe_sha256':sha(ROOT/'scripts/export_yeti60_render_meshes.py'),'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'case_scale':[1,1,1],'units':'source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation','tessellation_linear_deflection_mm':meshdata['tessellation_linear_deflection_mm'],'source_case_bounds_mm':{name:{'brep':meshdata['meshes'][name]['brep_bounds_mm'],'mesh':meshdata['meshes'][name]['mesh_bounds_mm']} for name in ['top','bottom']},'case_geometry_modifiers':[],'illustrative':['sculpted keycaps, legends, switch housings and stems','resin/PBT finish and colours','backside component envelopes and fastener thread/head envelopes','custom 1600 mAh full-pack design envelope, supplier drawing pending'],'provisional_stack':data['nominal_stack'],'outputs':rendered_outputs,'production_approved':False}
+    manifest={'interconnect_report_sha256':meshdata['interconnect_report_sha256'],'daughterboard_report_sha256':meshdata['daughterboard_report_sha256'],'interconnect_geometry':'Seven continuous round wires, complete conservative mating envelopes, conformal guides and native C5 CAD; supplier lead-exit datums pending','exploded_frame_checks':exploded_frame_checks or previous.get('exploded_frame_checks',{}),'exploded_visible_objects_by_group':visibility_by_view.get('exploded',previous.get('exploded_visible_objects_by_group',{})),'fitted_mainboard_references':sorted(fitted_refs),'fitted_BOM_sha256':sha(ROOT/'docs/audit/yeti60-bom.json'),'project':'YETI60','renderer':'Blender '+bpy.app.version_string+' / Cycles','samples':scene.cycles.samples,'recipe_sha256':sha(Path(__file__)),'mesh_export_recipe_sha256':sha(ROOT/'scripts/export_yeti60_render_meshes.py'),'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'case_scale':[1,1,1],'units':'source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation','tessellation_linear_deflection_mm':meshdata['tessellation_linear_deflection_mm'],'source_case_bounds_mm':{name:{'brep':meshdata['meshes'][name]['brep_bounds_mm'],'mesh':meshdata['meshes'][name]['mesh_bounds_mm']} for name in ['top','bottom']},'case_geometry_modifiers':[],'illustrative':['sculpted keycaps, legends, switch housings and stems','resin/PBT finish and colours','backside component envelopes and fastener thread/head envelopes','custom 1600 mAh full-pack design envelope, supplier drawing pending','exploded-only dome/spring/stabilizer shapes and hardware thread envelopes; feet tray is not an installation datum'],'provisional_stack':data['nominal_stack'],'outputs':rendered_outputs,'production_approved':False}
     (OUT/'render-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print('YETI60 physical studio renders complete')

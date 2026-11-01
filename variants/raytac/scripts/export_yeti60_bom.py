@@ -17,7 +17,6 @@ def main():
  'U7':('TI TPS22919DCKR','SC70-6; confirm exact reel suffix','SC70-6；确认编带订货后缀'),
  'U8':('TI TPS22919DCKR','SC70-6; confirm exact reel suffix','SC70-6；确认编带订货后缀'),
  'L1':('Wurth 74438336015','1.5 uH MAPI-3015; validate saturation, DCR and regulator loop','1.5 µH、MAPI-3015；确认饱和电流、直流电阻及稳压环路'),
- 'D1':('Nexperia PRTR5V0U2X','SOT143; native pinout required','SOT143；须保持原生引脚顺序'),
  'D2':('0603 status LED; vendor MPN unselected','No backlight LEDs; polarity per schematic, Vf/current to confirm','不是背光灯；极性按原理图，正向电压和电流待确认'),
  'J1':('JST SM04B-SRSS-TB(LF)(SN), candidate','1 mm right angle; inherited 1.0T-4P pad/retention geometry must be checked before order','1 mm 卧贴；下单前须复核继承的 1.0T-4P 焊盘及固定脚'),
  'J2':('JST S3B-PH-SM4-TB(LF)(SN)','2 mm side entry, 3 pins; polarity is custom','2 mm 卧贴、三针；本项目线序为自定义'),
@@ -37,12 +36,12 @@ def main():
   k=(value,package,mpn,en,zh);g=groups.setdefault(k,{'refs':[],'quantity':0});g['refs'].append(ref);g['quantity']+=qty
  rows=[]
  for (v,p,m,en,zh),g in groups.items():rows.append({'references':', '.join(sorted(g['refs'],key=key)),'quantity':g['quantity'],'value':v,'package':p,'candidate_mpn':m,'notes_en':en,'notes_zh':zh})
- rows.sort(key=lambda x:key(x['references'].split(',')[0]));assert sum(x['quantity'] for x in rows)==76
+ rows.sort(key=lambda x:key(x['references'].split(',')[0]));assert sum(x['quantity'] for x in rows)==75
  for zh in [False,True]:
   path=OUT/('mainboard.zh-CN.csv' if zh else 'mainboard.csv')
   with path.open('w',newline='') as f:
    w=csv.writer(f,lineterminator="\n");w.writerow(['位号','数量','设计值','封装','指定或候选型号','要求'] if zh else ['References','Quantity','Design value','Package','Specified or candidate MPN','Requirements'])
    for r in rows:w.writerow([r['references'],r['quantity'],r['value'],r['package'],(r['candidate_mpn'].replace('Vendor MPN unselected','厂商型号待选').replace('0603 status LED; vendor MPN unselected','0603 指示灯，厂商型号待选').replace('1206 resettable fuse, 0.5 A hold','1206 自恢复保险丝，保持电流 0.5 A').replace(', candidate','，候选') if zh else r['candidate_mpn']),r['notes_zh' if zh else 'notes_en']])
- report={'outputs':{str(p.relative_to(ROOT)):sha(p) for p in [OUT/'mainboard.csv',OUT/'mainboard.zh-CN.csv']},'status':'purchase-requirements-exported-not-order-release','fitted_mainboard_parts':76,'unpopulated_sites':['JP1'],'excluded_geometry_and_fixture_references':sorted(omitted),'rows':rows,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [net,meta,ROOT/'mechanical/assembly-spec.json',Path(__file__).resolve()]},'limits':['No stock or price assumptions','Candidate MPNs and passive effective capacitance require supplier qualification','60 mechanical key assemblies are external to the PCB BOM']}
- (ROOT/'docs/audit/yeti60-bom.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n');print('76 fitted mainboard components; JP1 DNP; virtual electrodes and fixtures excluded')
+ report={'outputs':{str(p.relative_to(ROOT)):sha(p) for p in [OUT/'mainboard.csv',OUT/'mainboard.zh-CN.csv']},'status':'purchase-requirements-exported-not-order-release','fitted_mainboard_parts':75,'unpopulated_sites':['JP1'],'excluded_geometry_and_fixture_references':sorted(omitted),'rows':rows,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [net,meta,ROOT/'mechanical/assembly-spec.json',Path(__file__).resolve()]},'limits':['No stock or price assumptions','Candidate MPNs and passive effective capacitance require supplier qualification','60 mechanical key assemblies are external to the PCB BOM']}
+ (ROOT/'docs/audit/yeti60-bom.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n');print('75 fitted mainboard components; JP1 DNP; virtual electrodes and fixtures excluded')
 if __name__=='__main__':main()

@@ -4,7 +4,7 @@
 
 本手册只适用于 **MDBT50Q-1MV2** 模组和本目录的主板、固件。按下表从上向下阅读即可。所有数量按一把键盘计算；两把装机数量乘二，库存分配须重新计算，不能两把各抵扣同一只库存。板厂起订数量和散件包装数另计。
 
-**版本状态：工程修补进行中，尚未放行下单。** 主板重复 USB 保护及支线已删除，C5 保护通道已核对；完整回归、图像和生产文件同步正在进行。定制电池、静电容轴座及制造商审查也仍有未关闭条件。不要把旧制板包与新 PCB 混用；未完成前不以旧包下单。
+**版本状态：49 个软件／CAD 检查阶段通过，尚未放行下单。** 主板 USB 修补、C5 保护核对、完整回归、四视角渲染及制板文件已同步。大键机构按新要求优先评估 Deskeys；具体安装匹配、定制电池及制造商审查仍有未关闭条件。不要把旧制板包与本轮 PCB 混用。
 
 | 我想做什么 | 打开这里 |
 |---|---|
@@ -13,11 +13,13 @@
 | 从零开始焊接 | [焊接执行顺序和停检点](docs/build/soldering.zh-CN.md)、[28 步配图指南](docs/assembly/build-guide.zh-CN.md) |
 | 自焊 C5 子板 | [七只元件及库存抵扣](hardware/bom/daughterboard.zh-CN.csv)、配图指南第 12–13 步 |
 | 准备连接线与插头 | [线序、长度及路径图](docs/engineering/interconnects.zh-CN.md) |
-| 打印外壳、加工定位板和支柱 | [装配尺寸和图纸](docs/engineering/assembly.zh-CN.md)、[机械文件目录](mechanical/generated/) |
-| 看装好后的样子 | [装配渲染](renders/yeti60-assembly/README.zh-CN.md)、[PCB 动画](renders/ec60-nrf52840/README.zh-CN.md) |
-| 刷写与逐键校准 | [目标固件说明](firmware/target/README.zh-CN.md)、[60 键校准命令表](firmware/target/calibration-keys.csv) |
-| 验收和故障排查 | [实物测试步骤](../../docs/testing/README.zh-CN.md)、[当前本版审查结果](docs/audit/outcome.json) |
+| 打印外壳、加工定位板和支柱 | [装配尺寸和图纸](docs/engineering/assembly.zh-CN.md)、[机械文件目录](../../mechanical/generated/) |
+| 看装好后的样子 | [完整爆炸图及 75 元件对照](docs/engineering/exploded.zh-CN.md)、[装配渲染](renders/yeti60-assembly/README.zh-CN.md)、[PCB 动画](renders/ec60-nrf52840/README.zh-CN.md) |
+| 刷写与逐键校准 | [接线、刷写命令与串口校准](docs/build/flashing.zh-CN.md)、[目标固件说明](firmware/target/README.zh-CN.md)、[60 键校准命令表](firmware/target/calibration-keys.csv) |
+| 验收和故障排查 | [实物测试步骤](docs/testing/README.zh-CN.md)、[当前本版审查结果](docs/audit/outcome.json) |
 | 电池要求及耗电计算 | [供方电池规格](docs/engineering/battery-pack-specification.zh-CN.md)、[计算方式与假设](docs/engineering/power-budget.zh-CN.md) |
+
+直接交付机械文件：[上壳 STEP](../../mechanical/generated/yeti60-top.step) · [底壳 STEP](../../mechanical/generated/yeti60-bottom.step) · [定制支柱 STEP](../../mechanical/generated/yeti60-standoff-46.step) · [定位板 DXF](../../mechanical/felk60_plate_hhkb.audited.dxf) · [五件走线支架](../../mechanical/generated/interconnect-guides/)。
 
 ## 一次准备哪些东西
 
@@ -46,8 +48,8 @@
 
 ## 尚未关闭的事项
 
-- 原生 PCB 修补后的全链条回归、四视角装配渲染、制板包和所有来源哈希同步；入口及旧报告不能代替本次完整验证。
+- 本轮原生 PCB、固件、图像、制板包及来源校验已通过；见[本轮审查](docs/audit/raytac-review.zh-CN.md)。这不代替实物验收。
 - 主板部分电容／LED／保险丝仍有型号与降额确认项，尤其 C45／C46 的有效容量；当前材料表会明确显示待选状态，不能以标称 20 µF 作为稳压器稳定性证明。
-- 轴座、胶碗与稳定机构的实际供应商组合、局部机械样件；树脂内腔公差和定制支柱尺寸实收验收。
+- 轴座、胶碗与稳定机构优先采用 Deskeys 配套方案，但尚未完成安装匹配；当前定位板普通孔为 14.6×14.0 mm、两个宽孔为 32.0×14.0 mm，小于 Deskeys 公布的推荐开孔，不能当作直接兼容。空格另需中央轴以外的左右稳定侧轴与配套钢丝。树脂内腔公差和定制支柱也须实收验收。
 - 电池供方签图及额定条件更正；裸电芯尺寸不等于完整保护包尺寸。
 - 没有实物，未完成 USB 枚举／眼图、真实充电温升、逐键校准及关壳后的射频验收。首样就是为了得到这些证据，不代表已批准量产。

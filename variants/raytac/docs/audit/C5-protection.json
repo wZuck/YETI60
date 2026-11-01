@@ -1,0 +1,73 @@
+{
+  "status": "protected-I/O-coverage-passed",
+  "physical_verification": false,
+  "production_approved": false,
+  "datasheet": "https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf",
+  "protected_IO_pins": [
+    "1",
+    "2",
+    "4",
+    "5"
+  ],
+  "GND_pins": [
+    "3",
+    "8"
+  ],
+  "NC_routing_pins": [
+    "6",
+    "7",
+    "9",
+    "10"
+  ],
+  "paths": [
+    {
+      "net": "DP",
+      "connector_pad": "A6",
+      "J2_pad": "3",
+      "path_mm": 4.860567675943151,
+      "protected_pin_distances_mm": {
+        "1": 11.568565497546684,
+        "4": 0.0
+      }
+    },
+    {
+      "net": "DP",
+      "connector_pad": "B6",
+      "J2_pad": "3",
+      "path_mm": 14.548903941682187,
+      "protected_pin_distances_mm": {
+        "1": 0.0,
+        "4": 1.9152711395993691
+      }
+    },
+    {
+      "net": "DN",
+      "connector_pad": "A7",
+      "J2_pad": "2",
+      "path_mm": 4.88094971858082,
+      "protected_pin_distances_mm": {
+        "2": 0.0,
+        "5": 11.409746070840118
+      }
+    },
+    {
+      "net": "DN",
+      "connector_pad": "B7",
+      "J2_pad": "2",
+      "path_mm": 14.356699461433394,
+      "protected_pin_distances_mm": {
+        "2": 1.9339963279875434,
+        "5": 0
+      }
+    }
+  ],
+  "source_sha256": {
+    "hardware/usb-daughterboard/upstream/UDB.kicad_pcb": "1d9e2732d68fbb83dfeadb0c33d573a14483963fae61aaa02cd57d2bb7f98b35",
+    "scripts/check_yeti60_c5_protection.py": "7a78488b95f742981ec239c072de2a39ec3f48aa6eee6349eaef1337ed10e87f",
+    "scripts/check_yeti60_signal_paths.py": "6f12cd99642c03878f910ee4878b16706519cd969acc77c16e2b6fb6a15f2585"
+  },
+  "limits": [
+    "Geometric connectivity, not board ESD certification, USB eye or return inductance qualification",
+    "Upstream C5 native DRC defaults disclose courtyard/library/edge-clearance findings; obtain supplier DFM, preferably use populated C5 for first prototype"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "source": "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb",
-  "source_sha256": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+  "source_sha256": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
   "recipe_sha256": "f20d90f64dd3dab6732df83540b66039a110a11959b10e581047430e9edc0b29",
   "renderer": "10.0.7",
   "animation": {
@@ -289,13 +289,6 @@
       "sha256": "91507e5af4251cb4ef38e04889c9b98da29904432bd83786bba13ae9b605eacb"
     },
     {
-      "ref": "D1",
-      "kind": "standard-model",
-      "original": "${KICAD6_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-143.wrl",
-      "model": "Package_TO_SOT_SMD.3dshapes/SOT-143.step",
-      "sha256": "b35b433c0dc71ac416a9c731e744d2e0610f82ebe97275830f0e17cdcbe44512"
-    },
-    {
       "ref": "R54",
       "kind": "standard-model",
       "original": "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step",
@@ -572,24 +565,24 @@
   ],
   "outputs": {
     "pcb-turntable.mp4": {
-      "sha256": "7787929e3b2e8c9d7a7d313c7e7c0589edf294958d68e042edb59baa9f4f5d3f",
-      "bytes": 1099391
+      "sha256": "f3f91cb7172ea2be5777a93adedea37c28b51bda96be14e9e9f90bdcf85f506f",
+      "bytes": 1088482
     },
     "pcb-turntable.gif": {
-      "sha256": "17ccef81f82fcd6e34f07060295619d38c0ef84d20e6fbd13fa2ac874e27b638",
-      "bytes": 2371926
+      "sha256": "3521e4ec339a14ba4e1e62ff5509fa5515822b668f78fd3d229649faa19cfbee",
+      "bytes": 2385789
     },
     "pcb-back.png": {
-      "sha256": "81d9da3f07532cfcb7e6c2c847e91a841994e443057ed98987e4f00064b7e4c3",
-      "bytes": 1006250
+      "sha256": "129234c96278079061b3cdfe6dc9aaf8995fc2666186af29ebdc0a8a51344037",
+      "bytes": 1007088
     },
     "pcb-front.png": {
-      "sha256": "b616093070433ffcf0ebadb2f7eaf9c4114ff60145dc05ccb24c622d4f6c3348",
-      "bytes": 975818
+      "sha256": "f05f6094dbd04b6b03aa9f035850e250e74654f4591bb49a142593d278cafad3",
+      "bytes": 986164
     },
     "pcb-overview.png": {
-      "sha256": "5f45f07a6f0d380e72d801e985669577d4b79136dca8ce07d90c7061af6165ed",
-      "bytes": 918000
+      "sha256": "3e49326a56835c1a8fd16632a9c3b4f1a9494fd605d614ce46aaf10a1ae2a866",
+      "bytes": 928163
     }
   },
   "limits": [

@@ -6,15 +6,15 @@ The [review archive](../../hardware/fabrication/yeti60-raytac-p2-dfm-review.zip)
 
 ## Supplied outputs
 
-Four copper Gerbers, both masks/paste/silkscreens/fabrication layers, board outline, separate plated/nonplated through drill files, IPC-D-356 connectivity, a 76-part placement CSV, English/Chinese purchase requirements and ordinary-process notes. JP1 is DNP. Electrode/fixture geometry is excluded from purchasing/placement, but preserved in the PCB/Gerbers. These are mainboard outputs; purchase the complete C5 JSH daughterboard separately.
+Four copper Gerbers, both masks/paste/silkscreens/fabrication layers, board outline, separate plated/nonplated through drill files, IPC-D-356 connectivity, a 75-part placement CSV, English/Chinese purchase requirements and ordinary-process notes. JP1 is DNP. Electrode/fixture geometry is excluded from purchasing/placement, but preserved in the PCB/Gerbers. These are mainboard outputs; purchase the complete C5 JSH daughterboard separately.
 
-The exporter verifies absence of layer-pair blind-drill files, all 76 fitted placements and unchanged PCB source. Placement uses the absolute KiCad origin in mm, without negating bottom-side X; the assembler must confirm rotation/side conventions against the native PCB and a first article. The archive's manifest records file hashes. Its two language versions carry the same technical instructions.
+The exporter verifies absence of layer-pair blind-drill files, all 75 fitted placements and unchanged PCB source. Placement uses the absolute KiCad origin in mm, without negating bottom-side X; the assembler must confirm rotation/side conventions against the native PCB and a first article. The archive's manifest records file hashes. Its two language versions carry the same technical instructions.
 
 ## Written DFM response required
 
 | Item | Required supplier response |
 |---|---|
-| Stack | Select ordinary JLC04161H-7628, nominal 1.6 mm, finished range 1.44–1.76 mm; the 1.6062 mm CAD envelope includes modeled mask and is not a custom order thickness. See [ordinary notes](../../hardware/ec60-nrf52840/fabrication-notes.md) |
+| Stack | Select ordinary JLC04161H-7528, nominal 1.6 mm, finished range 1.44–1.75 mm; the 1.6062 mm CAD envelope includes modeled mask and is not a custom order thickness. See [ordinary notes](../../hardware/ec60-nrf52840/fabrication-notes.md) |
 | Through vias | All ordinary mechanical through holes, minimum land/drill 0.50/0.30 mm; no blind/buried or special filling process |
 | Module escape | Confirm no U1 vias-in-pad; two signals escape through off-pad vias without capping |
 | Surface and assembly | ENIG; review U1 module and U5 exposed-pad soldering, U5 thermal via/paste wicking, stencil apertures, cleaning and inspection |

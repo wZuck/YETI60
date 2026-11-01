@@ -9,7 +9,6 @@ C40,1,1u/10V,C_0603_1608Metric,Vendor MPN unselected,"220 pF: C0G; others: X7R/X
 C44,1,100n/16V,C_0603_1608Metric,Vendor MPN unselected,"220 pF: C0G; others: X7R/X5R, 10% or better, >= 10 V (16 V where specified); validate effective capacitance at DC bias"
 C47,1,10n,C_0402_1005Metric,Vendor MPN unselected,"220 pF: C0G; others: X7R/X5R, 10% or better, >= 10 V (16 V where specified); validate effective capacitance at DC bias"
 C48,1,1u/10V,C_0402_1005Metric,Vendor MPN unselected,"220 pF: C0G; others: X7R/X5R, 10% or better, >= 10 V (16 V where specified); validate effective capacitance at DC bias"
-D1,1,PRTR5V0U2X,SOT-143,Nexperia PRTR5V0U2X,SOT143; native pinout required
 D2,1,STATUS,LED_0603_1608Metric,0603 status LED; vendor MPN unselected,"No backlight LEDs; polarity per schematic, Vf/current to confirm"
 F1,1,500mA,Fuse_1206_3216Metric,"1206 resettable fuse, 0.5 A hold","Vendor MPN unselected; rated voltage >= 6 V, trip/derating to confirm"
 J1,1,REAR_USB_DAUGHTERBOARD,JST-SR-4,"JST SM04B-SRSS-TB(LF)(SN), candidate",1 mm right angle; inherited 1.0T-4P pad/retention geometry must be checked before order

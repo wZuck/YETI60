@@ -27,7 +27,7 @@ def main():
                   for line in readme.read_text().splitlines() if line.startswith('|')]
         rows = list(csv.reader(csv_path.open()))[1:]
         fitted = [r for r in rows if int(r[1])]
-        assert sum(int(r[1]) for r in fitted) == 76
+        assert sum(int(r[1]) for r in fitted) == 75
         for row in fitted:
             stock = purchases[row[0]]
             assert row[:5] + [stock[2], stock[3], stock[9]] in tables, 'README component stock row stale: '+row[0]+suffix
@@ -45,12 +45,12 @@ def main():
             cells = [c.strip() for c in line.strip('|').split('|')]
             matches = [r for r in tables if r[0] == cells[0]]
             assert len(matches) == 1 and matches[0][2] == cells[2], 'README mechanical quantity stale: '+cells[0]
-    report = {'status':'readme-materials-match-bom', 'fitted_mainboard_parts':76,
+    report = {'status':'readme-materials-match-bom', 'fitted_mainboard_parts':75,
               'inventory_annotations_checked':True,
               'mechanical_rows_per_language':20, 'optional_daughterboard_parts':7, 'production_approved':False,
               'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources}}
     (ROOT/'docs/audit/yeti60-materials.json').write_text(json.dumps(report,indent=2)+'\n')
-    print('Both READMEs contain all 76 fitted PCB parts and the 20 mechanical material rows')
+    print('Both READMEs contain all 75 fitted PCB parts and the 20 mechanical material rows')
 
 
 if __name__ == '__main__':

@@ -129,20 +129,6 @@
     "sheet": "EC60-nRF52840",
     "datasheet": ""
   },
-  "D1": {
-    "value": "PRTR5V0U2X",
-    "symbol": "Power_Protection:PRTR5V0U2X",
-    "footprint": "YAECKB:SOT-143__D1",
-    "pins": {
-      "1": "GND",
-      "2": "D+",
-      "3": "D-",
-      "4": "USB_5V"
-    },
-    "uuid": "0dda7975-f1d5-533c-9c45-1d4ab2d198a4",
-    "sheet": "EC60-nRF52840",
-    "datasheet": "https://assets.nexperia.com/documents/data-sheet/PRTR5V0U2X.pdf"
-  },
   "R30": {
     "value": "0",
     "symbol": "Device:R",

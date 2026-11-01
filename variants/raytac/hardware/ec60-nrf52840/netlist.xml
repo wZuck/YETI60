@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/Users/wzy/workspace/YAECKB/hardware/ec60-nrf52840/EC60-nRF52840.kicad_sch</source>
-    <date>2026-10-29T00:55:02</date>
+    <source>/Users/wzy/.codex/worktrees/yeti60-e73/YAECKB/variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_sch</source>
+    <date>2026-11-01T19:49:04</date>
     <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -188,33 +188,6 @@
           <pins>
             <pin num="1"/>
             <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="D1">
-      <value>PRTR5V0U2X</value>
-      <footprint>YAECKB:SOT-143__D1</footprint>
-      <datasheet>https://assets.nexperia.com/documents/data-sheet/PRTR5V0U2X.pdf</datasheet>
-      <fields>
-        <field name="Footprint">YAECKB:SOT-143__D1</field>
-        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/PRTR5V0U2X.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="YAECKB" part="PRTR5V0U2X" description="Ultra low capacitance double rail-to-rail ESD protection diode, SOT-143"/>
-      <property name="Sheetname" value="EC60-nRF52840"/>
-      <property name="Sheetfile" value="EC60-nRF52840.kicad_sch"/>
-      <property name="ki_keywords" value="ESD protection diode"/>
-      <property name="ki_fp_filters" value="SOT?143* YAECKB:SOT-143__*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>0dda7975-f1d5-533c-9c45-1d4ab2d198a4</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="2"/>
-            <pin num="4"/>
-            <pin num="1"/>
-            <pin num="3"/>
           </pins>
         </unit>
       </units>
@@ -4816,27 +4789,6 @@
         <pin num="61" name="P1.01" type="bidirectional"/>
       </pins>
     </libpart>
-    <libpart lib="YAECKB" part="PRTR5V0U2X">
-      <description>Ultra low capacitance double rail-to-rail ESD protection diode, SOT-143</description>
-      <docs>https://assets.nexperia.com/documents/data-sheet/PRTR5V0U2X.pdf</docs>
-      <footprints>
-        <fp>SOT?143*</fp>
-        <fp>YAECKB:SOT-143__*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">D</field>
-        <field name="Value">PRTR5V0U2X</field>
-        <field name="Footprint">Package_TO_SOT_SMD:SOT-143</field>
-        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/PRTR5V0U2X.pdf</field>
-        <field name="Description">Ultra low capacitance double rail-to-rail ESD protection diode, SOT-143</field>
-      </fields>
-      <pins>
-        <pin num="1" name="GND" type="passive"/>
-        <pin num="2" name="I/O1" type="passive"/>
-        <pin num="3" name="I/O2" type="passive"/>
-        <pin num="4" name="VCC" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="YAECKB" part="Polyfuse">
       <description>Resettable fuse, polymeric positive temperature coefficient</description>
       <footprints>
@@ -5396,12 +5348,10 @@
       <node ref="U4" pin="2" pinfunction="A6_2" pintype="passive"/>
     </net>
     <net code="39" name="D+" class="Default">
-      <node ref="D1" pin="2" pinfunction="I/O1_2" pintype="passive"/>
       <node ref="J1" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
       <node ref="R31" pin="1" pintype="passive"/>
     </net>
     <net code="40" name="D-" class="Default">
-      <node ref="D1" pin="3" pinfunction="I/O2_3" pintype="passive"/>
       <node ref="J1" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
       <node ref="R30" pin="1" pintype="passive"/>
     </net>
@@ -5423,7 +5373,6 @@
       <node ref="C47" pin="2" pintype="passive"/>
       <node ref="C48" pin="2" pintype="passive"/>
       <node ref="C9" pin="1" pintype="passive"/>
-      <node ref="D1" pin="1" pinfunction="GND_1" pintype="passive"/>
       <node ref="D2" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="J1" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
       <node ref="J2" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
@@ -5724,7 +5673,6 @@
     <net code="65" name="USB_5V" class="Default">
       <node ref="C32" pin="1" pintype="passive"/>
       <node ref="C40" pin="1" pintype="passive"/>
-      <node ref="D1" pin="4" pinfunction="VCC_4" pintype="passive"/>
       <node ref="F1" pin="1" pintype="passive"/>
       <node ref="U1" pin="32" pinfunction="VBUS_32" pintype="power_in"/>
       <node ref="U5" pin="13" pinfunction="IN_13" pintype="power_in"/>

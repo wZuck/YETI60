@@ -58,7 +58,7 @@ def allocate(snapshot, bom):
             'source_rows': sorted({s['source_row'] for s in matches}),
             'received_pool_units': sum(s['received_units'] for s in {s['source_row']: s for s in matches}.values()),
         })
-    assert sum(r['required'] for r in result) == 76
+    assert sum(r['required'] for r in result) == 75
     assert all(r['from_stock'] + r['buy'] == r['required'] for r in result)
     return result
 
@@ -171,7 +171,7 @@ def main():
         for count in [report['planned_stock_parts'], report['net_purchase_parts']]:
             assert f'**{count}**' in text, 'README stock totals need refresh'
     (ROOT / 'docs/audit/yeti60-inventory.json').write_text(json.dumps(report, indent=2) + '\n')
-    print(f"{report['planned_stock_parts']}/76 mainboard parts planned from received stock; "
+    print(f"{report['planned_stock_parts']}/75 mainboard parts planned from received stock; "
           f"{report['net_purchase_parts']} to buy; no in-transit or populated C5 double count")
 
 

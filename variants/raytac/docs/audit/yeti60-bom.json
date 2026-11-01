@@ -1,10 +1,10 @@
 {
   "outputs": {
-    "hardware/bom/mainboard.csv": "c253781ed98a788c59e54099c28edf79387eff895dcd30a51680a4401b8e63bb",
-    "hardware/bom/mainboard.zh-CN.csv": "6480581ab2117d3891a9b0e1c51c5991440e4ff3d2908679ac1cf1339d0ddb77"
+    "hardware/bom/mainboard.csv": "4f747bcbf57975f24ac64a5589f382e5b0f569dc774dcbe517807d51d27dadd5",
+    "hardware/bom/mainboard.zh-CN.csv": "c47257230fd52d8b952bbb9900359540f6953eca6b62d90874237b4b0e7697b1"
   },
   "status": "purchase-requirements-exported-not-order-release",
-  "fitted_mainboard_parts": 76,
+  "fitted_mainboard_parts": 75,
   "unpopulated_sites": [
     "JP1"
   ],
@@ -201,15 +201,6 @@
       "candidate_mpn": "Vendor MPN unselected",
       "notes_en": "220 pF: C0G; others: X7R/X5R, 10% or better, >= 10 V (16 V where specified); validate effective capacitance at DC bias",
       "notes_zh": "220 pF 用 C0G；其余用 X7R／X5R、10% 或更优、不低于 10 V（标注 16 V 处按 16 V）；须验证直流偏压下有效容量"
-    },
-    {
-      "references": "D1",
-      "quantity": 1,
-      "value": "PRTR5V0U2X",
-      "package": "SOT-143",
-      "candidate_mpn": "Nexperia PRTR5V0U2X",
-      "notes_en": "SOT143; native pinout required",
-      "notes_zh": "SOT143；须保持原生引脚顺序"
     },
     {
       "references": "D2",
@@ -438,10 +429,10 @@
     }
   ],
   "source_sha256": {
-    "hardware/ec60-nrf52840/netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
+    "hardware/ec60-nrf52840/netlist.xml": "815c4a1661a9b50b5465660631f37405bd72c5d82aa9ad7c5e1f0eb66af9c93a",
     "hardware/ec60-nrf52840/metadata-audit.json": "9a5a76d3a1d93b7c876ceb873875bb01f0ec38759e85d67b1e47a125952e7a66",
     "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
-    "scripts/export_yeti60_bom.py": "77d62c01e7b822f1b2ce8f9663d94da2608e4006a2f12c3a9b5afaa1661398b9"
+    "scripts/export_yeti60_bom.py": "9ea672ff7b34841fb3149c42022b82332cca22f86a87aaa1aae09c020312f50b"
   },
   "limits": [
     "No stock or price assumptions",

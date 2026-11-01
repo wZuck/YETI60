@@ -1,6 +1,6 @@
 {
   "source": "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb",
-  "source_sha256": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+  "source_sha256": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
   "pcb_thickness_mm": 1.6062,
   "parts": [
     {
@@ -446,15 +446,15 @@
       "value": "100n/16V",
       "back": true,
       "position_pcb_mm": [
-        337.5,
-        121.0
+        347.0,
+        122.85
       ],
-      "angle_deg": 0.0,
+      "angle_deg": 180.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        336.565,
-        120.515,
-        338.435,
-        121.485
+        346.065,
+        122.365,
+        347.935,
+        123.335
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
@@ -560,15 +560,15 @@
       "value": "10u/10V",
       "back": true,
       "position_pcb_mm": [
-        334.0,
-        119.0
+        345.9,
+        125.0
       ],
-      "angle_deg": 0.0,
+      "angle_deg": 180.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        332.495,
-        118.245,
-        335.505,
-        119.755
+        344.395,
+        124.245,
+        347.405,
+        125.755
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
@@ -636,15 +636,15 @@
       "value": "4.7u/10V",
       "back": true,
       "position_pcb_mm": [
-        334.5,
-        122.0
+        347.0,
+        118.0
       ],
-      "angle_deg": 0.0,
+      "angle_deg": 90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        332.995,
-        121.245,
-        336.005,
-        122.755
+        346.245,
+        116.495,
+        347.755,
+        119.505
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
@@ -693,15 +693,15 @@
       "value": "MDBT50Q-1MV2",
       "back": true,
       "position_pcb_mm": [
-        347.0,
-        125.0
+        356.25,
+        125.25
       ],
       "angle_deg": 90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        338.725,
-        118.8,
-        355.275,
-        131.2
+        347.975,
+        119.05,
+        364.525,
+        131.45
       ],
       "height_envelope_mm": 2.05,
       "height_basis": "Raytac module specification"
@@ -721,25 +721,6 @@
         139.005,
         129.955,
         139.995
-      ],
-      "height_envelope_mm": 3.0,
-      "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"
-    },
-    {
-      "physical_body_bbox_pcb_mm": null,
-      "ref": "D1",
-      "value": "PRTR5V0U2X",
-      "back": true,
-      "position_pcb_mm": [
-        90.512704,
-        118.365736
-      ],
-      "angle_deg": 180.0,
-      "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        88.887704,
-        116.640736,
-        92.137704,
-        120.090736
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified"

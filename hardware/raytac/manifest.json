@@ -1,0 +1,15 @@
+{
+  "status": "verified-Raytac-download-copies",
+  "manufacturing_order_released": false,
+  "canonical_entry": "variants/raytac/BUILD.md",
+  "files": {
+    "hardware/raytac/EC60-nRF52840.kicad_pcb": {
+      "canonical_source": "variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb",
+      "sha256": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3"
+    },
+    "hardware/raytac/yeti60-raytac-p2-dfm-review.zip": {
+      "canonical_source": "variants/raytac/hardware/fabrication/yeti60-raytac-p2-dfm-review.zip",
+      "sha256": "9e5886b82b18c871b9b6e8e1fc4aeb1a273a0e20e9d85452d6b4ccb30b97a41a"
+    }
+  }
+}

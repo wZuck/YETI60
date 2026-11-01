@@ -41,16 +41,22 @@ for document in [baseline_xml,current_xml]:
   if net.get('name')=='GND':continue
   nodes=[alias.get((v.get('ref'),v.get('pin')),(v.get('ref'),v.get('pin'))) for v in net.findall('node')]
   for a,b in combinations(sorted(nodes),2):pair_contract[(a,b)]=net.get('name')
-added=[]
+added=[];removed=[]
 for (a,b),name in pair_contract.items():
  now=a in after and b in after and after[a]==after[b]
  item={'net':name,'a':a,'b':b}
  if a not in before or b not in before:
   added.append({**item,'connected':now});continue
  was=before[a]==before[b]
- if was and not now:regress.append(item)
+ if was and not now:
+  if any(k[0]=='D1' for k in [a,b]) and 'D1' not in json.loads((hw/'components.json').read_text()):
+   from check_yeti60_c5_protection import verify,SOURCE
+   verify(p.LoadBoard(str(SOURCE)))
+   assert not any(f.GetReference()=='D1' for f in p.LoadBoard(str(hw/'EC60-nRF52840.kicad_pcb')).GetFootprints())
+   removed.append(item)
+  else:regress.append(item)
  if now and not was:improve.append(item)
-result={'reference_commit':revision,'regressed_pairs':regress,'improved_pairs':improve,'new_component_pairs':added,'scope':'Union of baseline and current non-GND schematic pad pairs; missing new pads do not count as old regressions. Current native audit verifies every new pair and GND.','source_sha256':{str(q.relative_to(base)):hashlib.sha256(q.read_bytes()).hexdigest() for q in [hw/'EC60-nRF52840.kicad_pcb',hw/'netlist.xml',Path(__file__).resolve()]}}
+result={'reference_commit':revision,'regressed_pairs':regress,'reviewed_removed_D1_pairs':removed,'improved_pairs':improve,'new_component_pairs':added,'scope':'Union of baseline and current non-GND schematic pad pairs; missing new pads do not count as old regressions. Current native audit verifies every new pair and GND.','source_sha256':{str(q.relative_to(base)):hashlib.sha256(q.read_bytes()).hexdigest() for q in [hw/'EC60-nRF52840.kicad_pcb',hw/'netlist.xml',Path(__file__).resolve()]}}
 (hw/'connectivity-changes.json').write_text(json.dumps(result,indent=2)+'\n')
 from collections import Counter
 print('Regressions',Counter(v['net'] for v in regress));print('Improvements',Counter(v['net'] for v in improve))

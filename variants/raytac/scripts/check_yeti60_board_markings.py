@@ -13,7 +13,12 @@ def main():
  for kind in ['gr_text','gr_text_box']:
   assert children(new,kind)==children(expected,kind),'Changed functional standalone guidance'
  def refs(tree):return {str(p[2]) for f in children(tree,'footprint') for p in children(f,'property') if p[1]=='Reference'}
- assert refs(expected)<=refs(new),'Removed a footprint reference'
- report={'status':'passed','baseline_commit':BASE,'source_sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'removed_nonfunctional_markings':['YETI60 / EC60 by Cipulot'],'retained':'All standalone guidance and existing footprint reference identifiers; electrode/outline/hole geometry checked separately by check_single_nrf_pcb.py','upstream_attribution':'Retained in project documentation','historical_decoration_only_commit':'03c2be3344a0150b3df0afc200a42cd271d601d7','electrical_geometry_unchanged':False,'intentional_power_revision':'P2 changes R40 and adds R55/R56 and local routes; not a decoration-only current PCB'}
+ removed=refs(expected)-refs(new)
+ assert removed=={'D1'},'Unexpected removed footprint reference'
+ proof=json.loads((ROOT/'docs/audit/C5-protection.json').read_text())
+ assert proof['status']=='protected-I/O-coverage-passed'
+ for name,h in proof['source_sha256'].items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==h
+ assert 'D1' not in json.loads((ROOT/'hardware/ec60-nrf52840/components.json').read_text())
+ report={'status':'passed','baseline_commit':BASE,'source_sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'removed_nonfunctional_markings':['YETI60 / EC60 by Cipulot'],'reviewed_removed_mainboard_references':['D1'],'retained':'All standalone guidance and other existing footprint reference identifiers; electrode/outline/hole geometry checked separately by check_single_nrf_pcb.py','upstream_attribution':'Retained in project documentation','historical_decoration_only_commit':'03c2be3344a0150b3df0afc200a42cd271d601d7','electrical_geometry_unchanged':False,'intentional_power_revision':'P2 changes R40 and adds R55/R56 and local routes; not a decoration-only current PCB'}
  (ROOT/'docs/audit/yeti60-board-markings.json').write_text(json.dumps(report,indent=2)+'\n');print('Historical decoration-only deletion verified; current standalone guidance and existing reference identifiers retained')
 if __name__=='__main__':main()

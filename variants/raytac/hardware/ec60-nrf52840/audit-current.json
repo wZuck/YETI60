@@ -3,16 +3,16 @@
   "production_approved": false,
   "mcu_count": 1,
   "source_sha256": {
-    "EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82",
-    "netlist.xml": "a80a0f36724b8835e8ac2ca5f67c9cb810662eccc8c6ac48b644d03a32485992",
-    "frozen-footprints.json": "97d1179dd2c7d7d1128fea0ca6ae9d2355d5bdb0bf0f7b1c1b61350f365e1f6b",
+    "netlist.xml": "815c4a1661a9b50b5465660631f37405bd72c5d82aa9ad7c5e1f0eb66af9c93a",
+    "frozen-footprints.json": "5f7c42a26ccaa167648fffd53206b7f3cc5d8f9abbdb6faab80ac51051246a9a",
     "YAECKB.kicad_sym": "e852545b743cb29ad045980306260d08724b9168366e0fb3e6f737242201a3cf",
     "power.kicad_sch": "1d35fb87ed82b68c829c1d409eacc09322cc079e40bdb6129543fc92412fe3cb",
     "matrix.kicad_sch": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
     "mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
-    "analog.kicad_sch": "50213cf793f4cadf9313ddc3fcc5c6755896291a56e8ca56dec564b0b9f07bf2",
-    "EC60-nRF52840.kicad_sch": "9a148ef1e3df59ae321f297162139e4de9aab2cc286106a87a8aae52b52e3973",
+    "analog.kicad_sch": "4c64d34e07c9324a684f27c4295e78544a0077b0b9730e34e3223c926e36116d",
+    "EC60-nRF52840.kicad_sch": "89cb618bf9a0f8ea4a1b2029482cef83543b8839ec17bd0af0cd3fdd84ae39ce",
     "YAECKB.pretty/ecs_pad_no_ring__SW70.kicad_mod": "7200d74e0efa27e93ddbbf2cf0f741e55b44e368fac0fe8446c0a205066e6e74",
     "YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW33.kicad_mod": "53afbf80d2514af57117fd375aa239054da60792f4551cff8a0c5d0a2470f3f9",
     "YAECKB.pretty/HOLE_M2__H26.kicad_mod": "6cd3e452085329b863a2120ba6aa2e483ecc4fa81aab24e4d9218f48f937554a",
@@ -23,7 +23,7 @@
     "YAECKB.pretty/HOLE_M2__H25.kicad_mod": "b06950cb1aee9a5d54dcd373d492eff2a97b79e4a6232e9200bae094f28966d9",
     "YAECKB.pretty/HOLE_M2__H9.kicad_mod": "31507c639d0ab3cd8b5c4094c3c0c483393e6ec2e046ded138b84c05d51022cf",
     "YAECKB.pretty/ecs_pad_no_ring__SW10.kicad_mod": "d6cf7e322b1348da972a8f7769fb422ccba14c71072565a7aa8d4cb603bee571",
-    "YAECKB.pretty/ecs_pad_no_ring__SW17.kicad_mod": "d87d5048ab39dadb8548665bdfde67576a2c06688a9d4d621a8af5d97ff20177",
+    "YAECKB.pretty/ecs_pad_no_ring__SW17.kicad_mod": "e10b1ec8c69ea2d653d21056ee0a2e01408ef0bca8d691730dad3d361c78cfd2",
     "YAECKB.pretty/ecs_pad_no_ring__SW11.kicad_mod": "6ac6091184ad8de7b856af8c38de782e5e9af17275061021ccc7665422c1be1d",
     "YAECKB.pretty/HOLE_M2__H19.kicad_mod": "e4947309e271712ee38a96d7d16156352d221e92c8e2ebe849c1d69a53436c20",
     "YAECKB.pretty/ecs_pad_no_ring__SW55.kicad_mod": "6e03d984407c11b670b6ceeba3f6c5b7e30e167d24b70f4fa16df6d0f6d3d08f",
@@ -55,7 +55,7 @@
     "YAECKB.pretty/ecs_pad_no_ring__SW29.kicad_mod": "d34077ce54f5677bc8334e83cf166235c0df266e298721148b0eec794ea0b4b9",
     "YAECKB.pretty/ecs_pad_no_ring__SW3.kicad_mod": "b470b0ca1b02bd328171066d82a00988081a2f0d7d76d221f6f65b49b30d2f9b",
     "YAECKB.pretty/HOLE_M2__H3.kicad_mod": "c9dff80925792d488b378b672d87883ce53facbf350c16732b040ede264bbc2e",
-    "YAECKB.pretty/EC60_BoardOutline__REF__.kicad_mod": "436c4befa79c5222f9dcd9eebe93b509384ba9cc3800ff58fd588b4761a87f11",
+    "YAECKB.pretty/EC60_BoardOutline__REF__.kicad_mod": "999219d671fb6fb68730275e402ddf4a3c6affea57d0c6ca029dbda0377b9234",
     "YAECKB.pretty/HOLE_M2__H11.kicad_mod": "f74e37fc0c62a4ae207db2fb26db7c008e65acf5c5e2c4027683335e31405f95",
     "YAECKB.pretty/HOLE_M2__H7.kicad_mod": "1a9020a76a7a5b92b2e92f63cd0a2396d0013ae0c5c1d122e64d28364c7fbf1d",
     "YAECKB.pretty/ecs_pad_no_ring__SW39.kicad_mod": "ca6ddf61a3889b8b30a4da7af891d64274c9d7044d9e2f2116fdf595716a14e2",
@@ -86,7 +86,7 @@
     "YAECKB.pretty/HOLE_M2__H23.kicad_mod": "68798b8dbfffa4d92b6ae3a906dff00baaac4047610df40f55b0200efc1c886c",
     "YAECKB.pretty/ecs_pad_no_ring__SW15.kicad_mod": "94f44f51ed988c2980bc96d6d316eaa7f8352d5b0d31fc9b6b16b58d68c95342",
     "YAECKB.pretty/ecs_pad_no_ring__SW52.kicad_mod": "bee24a802b7eec46b928605ea8c4670ba30c67f08f61fc800c559264e19305b8",
-    "YAECKB.pretty/ecs_pad_no_ring__SW16.kicad_mod": "fafcb23a6fb1f012cfd0188005d085d8cd1a5fdf1c9105ad389b2470f7341e6e",
+    "YAECKB.pretty/ecs_pad_no_ring__SW16.kicad_mod": "0061167124b9207631cb7435f3f3187aead259aaf25eea1f708823fef76fc534",
     "YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "e0a319dc63587cedd4e320be824dacc4853f69eaacddfa1191c2d04979c62b71",
     "YAECKB.pretty/ecs_pad_no_ring__SW61.kicad_mod": "d97b976847ada27cd437de4c13304d7fa295d1722e23cd7134307818ea91b7de",
     "YAECKB.pretty/ecs_pad_no_ring__SW36.kicad_mod": "001896a7a8b8b5d75e09369637ca19f186ee6d632dedc52cf6d18dd009add0f8",
@@ -101,7 +101,7 @@
     "YAECKB.pretty/ecs_pad_no_ring__SW22.kicad_mod": "b7a5eddc79efcf80dd5b1ae50aa82bd0ff9a99263360aae2aa3c2477895464c3",
     "YAECKB.pretty/ecs_pad_no_ring__SW14.kicad_mod": "bbbb64fd79a6710073dcb8de5a2883fa3dc776f8b67636ee70f3c5b1eabcb166",
     "YAECKB.pretty/ecs_pad_no_ring__SW4.kicad_mod": "5c129fed61c7ce1b641abbfcb4d6dfa1cfb5513c29565ff1b1e9498d105412bd",
-    "YAECKB.pretty/ecs_pad_no_ring__SW31.kicad_mod": "814c82bef16ba3f7609470427c010b2ddca42bb6693402ddda2d3e64609617c8",
+    "YAECKB.pretty/ecs_pad_no_ring__SW31.kicad_mod": "abe78557ed65ba61867dcac427c078794e626b08ee0057ff8f4c25e02cbebb47",
     "YAECKB.pretty/ecs_pad_no_ring__SW37.kicad_mod": "6848eeaa7be2f9be16cdf20246aeecf0c81015ece8cea56629a9e0817b78e55a",
     "YAECKB.pretty/ecs_pad_no_ring__SW40.kicad_mod": "809af14d6296ba391505b39c9af6f03a304da5b422c9b184ab9c73795113c048",
     "YAECKB.pretty/ecs_pad_no_ring__SW44.kicad_mod": "435d0ec4181db48c8801f0f725383d7f9b831175aecc13e34111444b37b08bd6",
@@ -152,7 +152,6 @@
     "YAECKB.pretty/C_0402_1005Metric__C47.kicad_mod": "afb088ac48412ea1374be57715d27dfad06378001bcbc917ac40143c4c0fa86a",
     "YAECKB.pretty/Raytac_MDBT50Q__U1.kicad_mod": "7ac749eb4b657b3d6a278c32608f7208a3d24188a2adc8c64ac291ffd704aa36",
     "YAECKB.pretty/R_0402_1005Metric__R46.kicad_mod": "fd63d8b74380180e958243bb9819289b76acbb447be03c71172a130e64b7e0ee",
-    "YAECKB.pretty/SOT-143__D1.kicad_mod": "8e59d02370b82590a9381a534bcc50e8251529719a286f7dec977426a9325bc5",
     "YAECKB.pretty/R_0402_1005Metric__R54.kicad_mod": "eb00fb5a419bd0dd57a7746ae9c579679eb2bc19dea3bbb3081594cdc95836be",
     "YAECKB.pretty/R_0402_1005Metric__R16.kicad_mod": "12d555a88bc45568c8ba18d7593f1745947a58a21647f4773f9f9291bd86cb57",
     "YAECKB.pretty/JST-SR-4__J1.kicad_mod": "1e791e4505712fa9296ed34f36e25e3a0a5b0167d4691488ce0ef5326efe7a4d",
@@ -310,8 +309,6 @@
   "unexpected_component_courtyard_warnings": [],
   "unconnected_items": 0,
   "warnings_by_type": {
-    "track_dangling": 1,
-    "track_not_centered_on_via": 5,
     "missing_courtyard": 102
   },
   "potentially_truncated_categories": [],
@@ -1230,25 +1227,13 @@
     },
     {
       "net": "D+",
-      "from": "D1.2",
-      "to": "J1.3",
-      "physically_connected": true
-    },
-    {
-      "net": "D+",
-      "from": "D1.2",
+      "from": "J1.3",
       "to": "R31.1",
       "physically_connected": true
     },
     {
       "net": "D-",
-      "from": "D1.3",
-      "to": "J1.2",
-      "physically_connected": true
-    },
-    {
-      "net": "D-",
-      "from": "D1.3",
+      "from": "J1.2",
       "to": "R30.1",
       "physically_connected": true
     },
@@ -1861,12 +1846,6 @@
     {
       "net": "USB_5V",
       "from": "C32.1",
-      "to": "D1.4",
-      "physically_connected": true
-    },
-    {
-      "net": "USB_5V",
-      "from": "C32.1",
       "to": "F1.1",
       "physically_connected": true
     },
@@ -2006,7 +1985,7 @@
       "connected": true
     }
   ],
-  "interference_simulation": "see_shared_acceptance_report_RF_blockers_open",
+  "interference_simulation": "see_shared_acceptance_report_RF_and_USB_qualification_open",
   "limits": [
     "Ordinary JLC through-via process checked separately; no module via-in-pad or special fill/capping",
     "DRC does not certify regulator stability, capacitor DC bias or thermal performance",

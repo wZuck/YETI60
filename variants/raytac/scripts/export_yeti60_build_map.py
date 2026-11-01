@@ -27,7 +27,7 @@ def main():
     with (ROOT / 'hardware/bom/mainboard.csv').open() as source:
         rows = list(csv.DictReader(source))
     fitted = {ref for row in rows if int(row['Quantity']) for ref in row['References'].split(', ')}
-    assert len(fitted) == 76
+    assert len(fitted) == 75
     parts, electrodes, holes = {}, {}, []
     for footprint in board.GetFootprints():
         ref = footprint.GetReference()
@@ -69,7 +69,7 @@ def main():
         assert footprint.IsFlipped(), 'Build view assumes all fitted parts are on B.Cu: ' + ref
         parts[ref] = {'value': footprint.GetValue(), 'at': xy(footprint.GetPosition()),
                       'pads': pads, 'fab': fab, 'paste': paste, 'fitted': ref in fitted}
-    assert (len(electrodes), len(holes), len(parts)) == (74, 29, 78), (len(electrodes), len(holes), len(parts))
+    assert (len(electrodes), len(holes), len(parts)) == (74, 29, 77), (len(electrodes), len(holes), len(parts))
     result = {'pcb_source': str(BOARD.relative_to(ROOT)), 'pcb_sha256': hashlib.sha256(BOARD.read_bytes()).hexdigest(),
               'export_recipe_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               'coordinate_frame': 'Native PCB: X left-to-right and Y rear-to-front from sensing face',
@@ -99,7 +99,7 @@ def main():
                               'source_sha256': hashlib.sha256(daughter_path.read_bytes()).hexdigest()}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(result, separators=(',', ':')) + '\n')
-    print('Read-only assembly map: 76 fitted sites, JP1 DNP, J3 probe pads, 74 electrodes, 29 holes')
+    print('Read-only assembly map: 75 fitted sites, JP1 DNP, J3 probe pads, 74 electrodes, 29 holes')
 
 
 if __name__ == '__main__':

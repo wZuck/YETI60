@@ -4,7 +4,7 @@ English | [Chinese](BUILD.zh-CN.md)
 
 Use only **MDBT50Q-1MV2**, this directory's mainboard and its firmware. Quantities are per keyboard, excluding spares and factory minimums. Recompute stock allocation for multiple units; do not spend the same received item twice.
 
-**Release state: engineering remediation in progress; not released for ordering.** Redundant mainboard USB protection and branches have been removed and real C5 protected channels checked. Complete regression, renders and fabrication synchronization are still pending. Custom battery, key mechanism and supplier acceptance remain open. Do not order an old archive against the modified PCB.
+**Release state: all 49 implemented software/CAD audit stages passed; not released for ordering.** USB repair, C5 channel checks, full regression, four rendered views and fabrication outputs are synchronized. The new mechanical direction prioritizes Deskeys assessment; fit qualification, custom pack and supplier acceptance remain open. Do not mix old archives with this revision.
 
 | Task | Open |
 |---|---|
@@ -13,11 +13,13 @@ Use only **MDBT50Q-1MV2**, this directory's mainboard and its firmware. Quantiti
 | Solder from a bare board | [Execution order and inspection stops](docs/build/soldering.md), [28 illustrated steps](docs/assembly/build-guide.md) |
 | Assemble a bare C5 | [Seven parts with stock allocation](hardware/bom/daughterboard.csv), illustrated steps 12–13 |
 | Internal cables | [Pinout, lengths and routing](docs/engineering/interconnects.md) |
-| Case, plate and standoffs | [Dimensions and assembly](docs/engineering/assembly.md), [mechanical outputs](mechanical/generated/) |
-| Assembly appearance | [Assembly renders](renders/yeti60-assembly/README.md), [PCB animation](renders/ec60-nrf52840/README.md) |
-| Flash and calibrate | [Firmware procedure](firmware/target/README.md), [60-key commands](firmware/target/calibration-keys.csv) |
-| Acceptance | [Physical test procedure](../../docs/testing/README.md), [variant audit](docs/audit/outcome.json) |
+| Case, plate and standoffs | [Dimensions and assembly](docs/engineering/assembly.md), [mechanical outputs](../../mechanical/generated/) |
+| Assembly appearance | [Complete explosion and 75-part index](docs/engineering/exploded.md), [assembly renders](renders/yeti60-assembly/README.md), [PCB animation](renders/ec60-nrf52840/README.md) |
+| Flash and calibrate | [Wiring, flash commands and serial capture](docs/build/flashing.md), [firmware details](firmware/target/README.md), [60-key commands](firmware/target/calibration-keys.csv) |
+| Acceptance | [Physical test procedure](docs/testing/README.md), [variant audit](docs/audit/outcome.json) |
 | Battery and consumption | [Pack specification](docs/engineering/battery-pack-specification.md), [calculations and assumptions](docs/engineering/power-budget.md) |
+
+Direct mechanical outputs: [top STEP](../../mechanical/generated/yeti60-top.step), [bottom STEP](../../mechanical/generated/yeti60-bottom.step), [standoff STEP](../../mechanical/generated/yeti60-standoff-46.step), [plate DXF](../../mechanical/felk60_plate_hhkb.audited.dxf), [five guides](../../mechanical/generated/interconnect-guides/).
 
 ## Prepare per unit
 
@@ -46,4 +48,6 @@ Count unused stock physically before purchasing. Use only matching values, footp
 
 ## Open work
 
-Full regression, renders, fabrication outputs and provenance must be synchronized after the native repair. Some capacitors, LED and fuse still require exact-part/derating approval, especially effective C45/C46 capacitance; nominal 20 uF does not prove regulator stability. Mechanism suppliers/local samples, resin cavity tolerances, standoffs and signed complete-pack limits remain open. No physical USB enumeration/eye, charging/thermal, key calibration or enclosed RF acceptance has occurred. Engineering prototypes provide this evidence; they are not production approval.
+[This review](docs/audit/raytac-review.md) confirms synchronized native PCB, firmware, images, fabrication outputs and provenance; physical acceptance remains open. Some capacitors, LED and fuse still require exact-part/derating approval, especially effective C45/C46 capacitance; nominal 20 uF does not prove regulator stability. Mechanism suppliers/local samples, resin cavity tolerances, standoffs and signed complete-pack limits remain open. No physical USB enumeration/eye, charging/thermal, key calibration or enclosed RF acceptance has occurred. Engineering prototypes provide this evidence; they are not production approval.
+
+Deskeys is now the preferred mechanism assessment. Existing plate openings are 14.6x14.0 mm and two 32.0x14.0 mm wide openings, smaller than published Deskeys recommended cutouts; direct fit is not approved. The spacebar has one central sensing key plus two additional stabilizer side units and a wire, not three sensing keys.

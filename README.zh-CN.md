@@ -2,7 +2,7 @@
 
 # YETI60
 
-> **同一分支，两套方案：**主目录默认使用 Ebyte E73-2G4M08S1C；Raytac MDBT50Q-1MV2 位于 [variants/raytac](variants/raytac/README.zh-CN.md)。见[完整选择说明](docs/engineering/module-options.zh-CN.md)。两套方案已实现的 CAD／构建检查均通过。见[合并检查记录](docs/audit/variants.json)。实物及供应商验收仍待完成。
+> **当前首样集中使用 Raytac MDBT50Q-1MV2。** 从 [START-HERE.zh-CN.md](START-HERE.zh-CN.md) 或[下单与制作总手册](variants/raytac/BUILD.zh-CN.md)进入，查找制板参数、库存抵扣材料、焊接、固件、完整爆炸图和本轮审查。主目录保留 E73 另一方案；本轮审查针对 Raytac。实物与供应商验收仍待完成。
 
 以 Cipulot EC60 为基础、使用 FELK60 外壳的单 nRF52840 静电容键盘 PCB。保留感应几何、板框和安装孔位置；后侧 USB 子板连接 J1。
 

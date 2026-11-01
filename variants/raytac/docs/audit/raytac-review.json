@@ -1,0 +1,100 @@
+{
+  "review_scope": "Current Raytac native CAD, built firmware, host tests, assembly and deliverable provenance; E73 excluded",
+  "review_timestamp_UTC": "2026-11-01T16:46:35.078025+00:00",
+  "status": "software-and-CAD-consistency-reviewed",
+  "audit_stages_passed": 49,
+  "DRC_errors": 0,
+  "opens": 0,
+  "physical_signal_pairs": 267,
+  "DRC_warnings": {
+    "missing_courtyard": 102
+  },
+  "ERC_counts": {
+    "warning": 183
+  },
+  "through_vias": 816,
+  "mainboard_parts": 75,
+  "planned_stock": 10,
+  "net_purchase": 65,
+  "fixed_findings": [
+    "USB mainboard D1 and long branches removed after actual C5 protected-channel/ground verification; C5 D1/U1/F1 retained",
+    "Shared analog/discharge net labels unified without changing exported pin connectivity",
+    "75-part purchase, stock allocation, placement and illustrated guide contracts reconciled",
+    "Complete explosion includes 75 electronic bodies, battery, seven wires, 60 domes/springs and hardware; tray camera/desk bounds checked"
+  ],
+  "physical_verification": false,
+  "manufacturing_order_released": false,
+  "production_approved": false,
+  "open_requirements": [
+    {
+      "id": "power-layout",
+      "status": "open",
+      "description": "P2 local layout and current/timer/termination calculations completed; regulator transient, derating and thermal performance require hardware qualification"
+    },
+    {
+      "id": "target-firmware",
+      "status": "open",
+      "description": "Normal and calibrator ARM builds and linked USB500 descriptors verified; on-device enumeration, BLE and per-key calibration pending"
+    },
+    {
+      "id": "mechanical-stack",
+      "status": "open",
+      "description": "Qualify dome/housing/fastener stack; 4.6 mm PCB-to-plate gap is provisional"
+    },
+    {
+      "id": "battery",
+      "status": "open",
+      "description": "Default custom 1600 mAh full envelope selected and checked; supplier current-sheet correction, complete drawing, independent 15..43 C thermal protection and full charge acceptance pending"
+    },
+    {
+      "id": "usb-daughterboard",
+      "status": "open",
+      "description": "C5 JSH retained by user; native electrical and mounting geometry checked; mating plug/harness routing and serviceability require final acceptance"
+    },
+    {
+      "id": "switch-access",
+      "status": "open",
+      "description": "8 mm SW100 service port designed; physical access acceptance pending"
+    },
+    {
+      "id": "resin-inserts",
+      "status": "open",
+      "description": "Cold-bond insert seats and imposed tolerances designed; resin shrinkage, strength and insert pullout require first articles"
+    },
+    {
+      "id": "fabrication",
+      "status": "open",
+      "description": "Ordinary four-layer through-via conversion and output parity checked; confirm stock stackup/tolerances, open thermal-via soldering and final component ratings with the fabricator/assembler"
+    },
+    {
+      "id": "physical-tests",
+      "status": "open",
+      "description": "Measure EC thresholds, power, charging, runtime and wake behavior"
+    },
+    {
+      "id": "signal-interference",
+      "status": "open",
+      "description": "Raytac minimum antenna projection is clear on all four layers, plate projection is clear, and C5 protected data channels are verified with redundant mainboard D1 branches removed. Enclosed RF/EC measurements, complete USB pair/return/eye qualification and physical acceptance remain open."
+    }
+  ],
+  "evidence_sha256": {
+    "outcome.json": "b0496c78e0689c473c004526a7adf4017686a00aa28b464e04c521c95674c62a",
+    "integration.json": "78a8c9cfa4b511df4d659ab39a3dd81fd602cf57aa2afd1b06cf469e653cd440",
+    "schematic-current.json": "9c39e7886f54bfbfd6cf872bde963c5e61851983f343ad509e341acfc31764de",
+    "yeti60-target-check.json": "1d01e7aad89e52546412cc67cb9baf963c412a2a0be7dc0ec03500acbd0568da",
+    "yeti60-firmware-simulation.json": "6a977b63c38bde8ac3de2a1d4bec37fc21790ba629aa550dde3f4e25981dfefa",
+    "yeti60-ordinary-process.json": "6792ac7aa9a7ec965cab64ceb2d4ead39a6b8781577d0950bb9f33156c87b5a7",
+    "C5-protection.json": "e80b05f738a88745b0995999ba729b622ed934c52344cae43c7c4237caf153d6",
+    "USB-signal-paths.json": "f0fbc5439a860fcf642ef2521291e598dfd0de8f15abee3eb3c0f37a2860d0d8",
+    "interference-layout.json": "b16cc3d20293f745506331bc23a1efbb43f71ef6260c0e106d8dbe5fee6e85c6",
+    "complete-exploded.json": "d5cd6dd13ba634bbe543351b28242e1e2b7b3be6eb532a6bc0e4d8b7356fdc8c",
+    "yeti60-assembly.json": "69718f7ff604bebeb419c8d5bd0c10db52083150e08483e4c4dc84294b3fee09",
+    "yeti60-inventory.json": "6ad624a1269781c5f79f0a50c6759a3a9b3d194ba1bba3ba75634f46e0dbb2d1"
+  },
+  "source_sha256": {
+    "scripts/report_raytac_review.py": "6f265722a4b9d1b50d10f117c78bb1954d85bcc154abdebf2dcf438f1da5b8d9",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
+    "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
+    "renders/yeti60-assembly/render-manifest.json": "eff62f5bcab8224142d12b9b65312c51aa2652e7458696cf40862bf473a3eed3"
+  }
+}

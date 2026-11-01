@@ -69,7 +69,7 @@ def main():
         assert not installed.intersection(refs), 'Part appears in two placement steps'
         step['references'] = refs
         installed.update(refs)
-    assert installed == all_refs and len(installed) == 76
+    assert installed == all_refs and len(installed) == 75
     assert [s['id'] for s in steps] == [f'{i:02}' for i in range(1, 29)]
     key_geometry = json.loads((ROOT / 'docs/audit/yeti60-key-geometry.json').read_text())
     for path, digest in key_geometry['source_sha256'].items():
@@ -407,7 +407,7 @@ def main():
                     if rr:lines += [f"| {', '.join(rr)} | {len(rr)} | {row['Design value']} | {row['Package']} |"]
                 lines += ['']
         lines += [('## 重建与依据' if zh else '## Rebuild and sources'),'',
-                  ('使用 KiCad Python 执行 `scripts/export_yeti60_build_map.py`，再用 `requirements-audit.txt` 的 CAD 环境执行 `scripts/draw_yeti60_build_guide.py`。生成器核对 76 只主板元件均在放置步骤中出现一次、60 个实际电极、29 个安装孔及当前装配／线束来源。文件和图像哈希见 [指南验证记录](../audit/yeti60-build-guide.json)。' if zh else 'Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_yeti60_build_guide.py` with the CAD environment from `requirements-audit.txt`. The generator checks that all 76 mainboard components are placed exactly once, and checks the 60 active electrodes, 29 mounts and current assembly/harness sources. See the [guide evidence](../audit/yeti60-build-guide.json) for source and image hashes.'),'',
+                  ('使用 KiCad Python 执行 `scripts/export_yeti60_build_map.py`，再用 `requirements-audit.txt` 的 CAD 环境执行 `scripts/draw_yeti60_build_guide.py`。生成器核对 75 只主板元件均在放置步骤中出现一次、60 个实际电极、29 个安装孔及当前装配／线束来源。文件和图像哈希见 [指南验证记录](../audit/yeti60-build-guide.json)。' if zh else 'Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_yeti60_build_guide.py` with the CAD environment from `requirements-audit.txt`. The generator checks that all 75 mainboard components are placed exactly once, and checks the 60 active electrodes, 29 mounts and current assembly/harness sources. See the [guide evidence](../audit/yeti60-build-guide.json) for source and image hashes.'),'',
                   ('编排参考 [DELTA OMEGA 安装指南](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md) 的逐工序图示形式；图像及位号按 YETI60 原生数据重新绘制，不沿用 MX 焊接步骤。' if zh else 'The per-operation illustrated format follows the [DELTA OMEGA build guide](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md). Images and references are redrawn from YETI60 native data; its MX soldering operations do not apply here.'),'',
                   ('焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Raytac MDBT50Q-1MV2 资料](https://www.raytac.com/product/ins.php?index_id=24) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。' if zh else 'Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Raytac MDBT50Q-1MV2 documentation](https://www.raytac.com/product/ins.php?index_id=24), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).'),'']
         doc=ROOT/('docs/assembly/build-guide'+suffix+'.md');doc.write_text('\n'.join(lines));outputs[str(doc.relative_to(ROOT))]=sha(doc)
@@ -431,7 +431,7 @@ def main():
                       'Dome/housing/cap shapes and exploded offsets illustrative; actual selected parts require local acceptance',
                       'No RF/SI, lifetime, charging or production certification']}
     (ROOT/'docs/audit/yeti60-build-guide.json').write_text(json.dumps(report,indent=2)+'\n')
-    print('28 illustrated steps per language; 112 PNG/SVG assets; all 76 mainboard placements covered once')
+    print('28 illustrated steps per language; 112 PNG/SVG assets; all 75 mainboard placements covered once')
 
 
 if __name__=='__main__':
