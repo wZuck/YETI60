@@ -2,7 +2,7 @@ English | [Chinese](battery-pack-specification.zh-CN.md)
 
 # YETI60-BAT-1600-1S supplier drawing and acceptance specification
 
-This is a review/RFQ specification for one custom protected single-cell pack per keyboard. No supplier has accepted it and no order is authorized. The [assembly specification](../../../../mechanical/assembly-spec.json), [interconnect specification](../../../../mechanical/interconnect-spec.json), [power calculation](power-budget.md) and [battery study](battery-study.md) are its controlled inputs.
+This is a review/RFQ specification for one custom protected single-cell pack per keyboard. No supplier has accepted it and no order is authorized. The [assembly specification](../../../../mechanical/assembly-spec.raytac.json), [interconnect specification](../../../../mechanical/interconnect-spec.json), [power calculation](power-budget.md) and [battery study](battery-study.md) are its controlled inputs.
 
 ## Cell and complete package
 
@@ -23,6 +23,7 @@ The nominal pack bounds in the case are `[228.5,-149,-9.4]` to `[313.5,-106,-4.6
 | Independent temperature protection | Factory pack must interrupt charging without the MCU or third-wire NTC circuitry. Including all sensor/IC errors and thermal lag, the actual allowed charging window must lie within **15–43 C**, with an **18–40 C** nominal target |
 | Separate NTC feedback | Third-wire **10k 103AT-2 electrically compatible** thermistor, thermally coupled to the cell; provide R/T table, R25/B tolerances and attachment drawing. A thin compatible sensor may be needed to fit; do not add a protruding bead outside the envelope |
 | Protection | Supply PCM/protection schematic, exact IC/MOSFET/sensor models, voltage/current/temperature thresholds, worst-case errors, delays, recovery conditions and leakage over voltage/temperature |
+| Discharge cutoff | The cell sheet specifies 3.0 V normal discharge cutoff. Provide a supplier-approved operating cutoff, recovery voltage, delay and full tolerance; the present target has no software low-voltage stop. A generic 2.4 V emergency PCM cutoff does not satisfy this normal operating requirement. Initial supervised bench discharge stops at loaded 3.2 V |
 | Evidence | Signed corrected limits, pack drawing, capacity/charging curves, temperature interruption/recovery records and production inspection criteria |
 
 The independent protector and BQ24074 feedback need **separate sensing arrangements**. Do not connect a protector divider to the BQ thermistor node without a validated electrical design: its biasing can change the measured temperature. Voltage/current-only PCM and two-wire packs do not meet the temperature requirement. The charger IC's die thermal regulation is not cell thermal protection. [TI BQ24074 SLUS810N, electrical characteristics and sections 9.3.5/9.3.7](https://www.ti.com/lit/ds/symlink/bq24074.pdf)

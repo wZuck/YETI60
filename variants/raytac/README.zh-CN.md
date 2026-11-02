@@ -2,6 +2,9 @@
 
 # YETI60 Raytac
 
+**首样下单暂停：**[含电池的无外壳流程](OPEN-BENCH.zh-CN.md) · [USB、螺钉与电池研究](docs/engineering/prototype-qualification.zh-CN.md)。当前制板包未放行下单。
+
+
 > [下单与制作总入口](BUILD.zh-CN.md)：制板参数、材料、逐步焊接和固件。
 
 > 本目录为同一分支中的 Raytac MDBT50Q-1MV2 方案；E73 方案在[仓库主目录](../../README.zh-CN.md)。两种 PCB 与固件须成套选择，不可互换模组。外壳、定位板与上游来源由仓库根目录共用；运行命令时以本目录为工作目录。

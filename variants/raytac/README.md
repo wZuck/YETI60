@@ -2,6 +2,9 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 Raytac
 
+**Prototype hold:** [Open-bench guide including battery](OPEN-BENCH.md) · [USB, fastener and battery findings](docs/engineering/prototype-qualification.md). The present archive is not released for ordering.
+
+
 > [Ordering and build handbook](BUILD.md): PCB settings, materials, soldering and firmware.
 
 > This directory contains the Raytac MDBT50Q-1MV2 option in the same branch. The E73 option is in the [repository root](../../README.md). Select matching PCB and firmware; the modules are not interchangeable. Case/plate resources and upstream sources are shared at the repository root. Run variant commands from this directory.

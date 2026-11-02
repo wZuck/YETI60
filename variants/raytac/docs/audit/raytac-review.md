@@ -2,7 +2,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 # Raytac review conclusions
 
-**All 52 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
+**All 55 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
 
 | Area | Result |
 |---|---|
@@ -13,6 +13,8 @@ English | [Chinese](raytac-review.zh-CN.md)
 | USB / BLE | Normal/calibrator ARM builds and USB500 descriptors checked; simultaneous charge/wired-priority policy host-tested |
 | RF | All four layers clear in vendor minimum antenna projection; physical RF open |
 | BOM | 75 parts; 10 planned from stock, 65 net purchases |
+
+**New prototype blockers: repair long USB pairing/reference routing and qualify battery protection. Actual nets confirm that C47 battery-filter settling passes nominally; C48 is AFE rail decoupling. Passing research stages establishes reproducible analysis, not repaired hardware.** See the [open-bench guide including a battery](../../OPEN-BENCH.md) and [detailed findings](../engineering/prototype-qualification.md).
 
 ## Repairs and image inspection
 

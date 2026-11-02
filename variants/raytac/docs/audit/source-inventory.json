@@ -8,32 +8,44 @@
     },
     {
       "path": "BUILD.md",
-      "bytes": 7012,
-      "sha256": "b64cb0f3ffae28fe1da80c5920d0feeeff020dffa0075ca4d3804114fa5a9d64",
+      "bytes": 7064,
+      "sha256": "6deca9798a4408d9f853c804b29316a1604a8faf4d9bfdec3c9f5a457b4ada5a",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "BUILD.zh-CN.md",
-      "bytes": 7402,
-      "sha256": "4b15ccaa0f3f8724cf2d6edc452c1b657b95b50cae4909decf3d8f4381900084",
+      "bytes": 7452,
+      "sha256": "e83b1938109d97ee7ea9e0ce7cdc542bfcb6ea9d9c3752d1a4218d2e294f1b79",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "OPEN-BENCH.md",
+      "bytes": 9332,
+      "sha256": "8cd5e06c6e7016ea62dbcd1fb7b0c1a45d63b0df1db98b56f62435aaf91a363a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "OPEN-BENCH.zh-CN.md",
+      "bytes": 8485,
+      "sha256": "29fc704a790b2c6aa14927c2cac233c63e43d1258333749d31e8183fe05c994d",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "README.md",
-      "bytes": 25590,
-      "sha256": "b8420e2618e613f10ab0a1a7cb908a33f55803057365b88cbf69b605669e35c4",
+      "bytes": 25800,
+      "sha256": "fce3db22695447ecc58f4e5bb89de461f7c11a2a4c089deb994a1ed731e4528c",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "README.zh-CN.md",
-      "bytes": 23835,
-      "sha256": "7353afe399d216fa9d4e4eb45913f0739028eb1a2dc13d01208538f3f6449a88",
+      "bytes": 24033,
+      "sha256": "934ac7f8472e12f6b771b800b8c8a4ca65a8e62c89abcfe57f0a6334c4f74a62",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "design-constraints.json",
-      "bytes": 4484,
-      "sha256": "8467eeb853513da5db57aa24a8151813680effec63bc35d336b1ab1c4a26962c",
+      "bytes": 4893,
+      "sha256": "03d725efd651520a1851c178da22116970860e5dd2c27787d44e78dca88e5b41",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -812,14 +824,14 @@
     },
     {
       "path": "docs/engineering/battery-pack-specification.md",
-      "bytes": 6426,
-      "sha256": "51c3e5f24a41ab45e866cb1a670072cf9375bef1f4dfc456863d45f40099b0a2",
+      "bytes": 6801,
+      "sha256": "50bb9473c72d107381b827d6a2685f37ea3892d598dc12b9a531ba69d033e601",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/engineering/battery-pack-specification.zh-CN.md",
-      "bytes": 5420,
-      "sha256": "13578fa3317692ff06ea0a024f080ca31a0e1182d9ae03c6960d5f5882f6ad0f",
+      "bytes": 5726,
+      "sha256": "351cd6c58deae4d2af0119b64f7f02d3e797152863522bdc1600cf1c3b73dfb7",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -927,7 +939,7 @@
     {
       "path": "docs/engineering/images/complete-exploded.svg",
       "bytes": 259702,
-      "sha256": "4c2d9eedd882a46b638f9535fa7b9079d170191ee80eb1992e1781a50a8d805c",
+      "sha256": "2dfe87ea2cfd41e36855d2d7510d73df16e9e9d323ceea7463e12f6c4dfcd9e1",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -939,7 +951,7 @@
     {
       "path": "docs/engineering/images/complete-exploded.zh-CN.svg",
       "bytes": 259800,
-      "sha256": "e749aef251ecd8536dcba3616e42dec4546e4c84297084aef0c9773f44c550e2",
+      "sha256": "41512d7a09ed5083fa5e9144d9e966aa4dcd67caa560cb429377a993ed7e4032",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -991,6 +1003,30 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "docs/engineering/images/usb-reference.png",
+      "bytes": 260544,
+      "sha256": "4b3d480605cc327505983dec1910dbc7fa31029110bfb8d425871459eb30451a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/images/usb-reference.svg",
+      "bytes": 981366,
+      "sha256": "33602ea14470ec447d201087e081ba94b2c01800f66c4da8d264f993642d53ef",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/images/usb-reference.zh-CN.png",
+      "bytes": 238280,
+      "sha256": "75723bee2236d6dc6bddd3bad4e5f8aa3cbc6e06905781051324b445abff3090",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/images/usb-reference.zh-CN.svg",
+      "bytes": 981610,
+      "sha256": "910197c58af96206c046c0cee956c38f7224eaff3765dd2ec2c2754cbb5773d4",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "docs/engineering/interconnects.md",
       "bytes": 6014,
       "sha256": "27015ad9a90d755a5f67d59d239e61e6029ee341030cc71ddd9dc5f5a2906f0a",
@@ -1036,6 +1072,24 @@
       "path": "docs/engineering/power-budget.zh-CN.md",
       "bytes": 9568,
       "sha256": "6f215e025471cb54592b7ec031a89a5913ea2b6bea0823e10a3201c0f0b87ba5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/prototype-qualification.md",
+      "bytes": 12791,
+      "sha256": "5ffba0f5beedc09ac342d4440f43bdd3c9e8559e14350e1d48cb3ccc57719708",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/prototype-qualification.zh-CN.md",
+      "bytes": 11810,
+      "sha256": "73a97ef90f9d3bb990560f7b29db0a7b6e710f920031d3e3beebc4d263f45e41",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/prototype-sources.json",
+      "bytes": 2174,
+      "sha256": "317368461d940cc1767b24e93e61cc335fb58eb7fd9c21dbd2f867c8041f33e2",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1291,6 +1345,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "hardware/bom/charging-thermal-scenarios.csv",
+      "bytes": 2149,
+      "sha256": "e45bdabb326415a532c904cfd2ad41eca853cc761b772154b02eb7b9678377ab",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "hardware/bom/daughterboard.csv",
       "bytes": 801,
       "sha256": "7fcfb59fa599748199cb312a68ff7a9306123ccbb60be7ca49324350c300d9ea",
@@ -1347,7 +1407,7 @@
     {
       "path": "hardware/ec60-nrf52840/DRC-strict.json",
       "bytes": 37632,
-      "sha256": "b404d925e5850aacb934972ac6018c487d2fce6f1533b9757a64dd2b3525f9d9",
+      "sha256": "9c451310856dec60393a9dc85381f653e6ac1065e168ee33dc07dfc413b008c9",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1371,7 +1431,7 @@
     {
       "path": "hardware/ec60-nrf52840/ERC.json",
       "bytes": 115945,
-      "sha256": "d272998a6f566bd584bede59670a8a6a5a6d790b8a46f7457a636b83d508454e",
+      "sha256": "337a7a47b2dd67b1aff5c8d0f34107c67130d472bf3a08869a85832058083a5f",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2774,8 +2834,8 @@
     },
     {
       "path": "scripts/check_project_integration.py",
-      "bytes": 10655,
-      "sha256": "08a72c2c9cae9017544798bac9c56b4104c8c023671796096929179d162d9b20",
+      "bytes": 11105,
+      "sha256": "55d9aa569ce13737b7c960ce9131ad7362def133bca62b41d9b7ec2a19f47c2c",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2947,6 +3007,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/export_yeti60_usb_reference.py",
+      "bytes": 2624,
+      "sha256": "c6b1fe7c9f89c91b00abe4cabac51886adb931e1f6d596fe9c9d249ec1aac7e3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/generate_yeti60_pin_contract.py",
       "bytes": 2656,
       "sha256": "a05a3abe8b296786680addcfe6d72773fd8db44c26fc6678d00da252ffd9e36c",
@@ -2990,14 +3056,14 @@
     },
     {
       "path": "scripts/report_raytac_review.py",
-      "bytes": 17633,
-      "sha256": "9b81a8778a1e9172bf088ec26f7fb8b3282f1ea4ea41b3c0e8f2df5e157f0994",
+      "bytes": 18706,
+      "sha256": "a078a3eec8f6153b410607b63984c33de5731f63c900c01f261f69792f2c8b18",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "scripts/run_audit.py",
-      "bytes": 9857,
-      "sha256": "812b896379b3188b954a8c3cc040e2670db798e1cd405cd15ef9f52fb5e89d18",
+      "bytes": 10211,
+      "sha256": "54d9c30879a34dc1d22961fdaab7a91ec20c5b21c123c2bd41cde0cc6a5146e1",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3022,6 +3088,12 @@
       "path": "scripts/study_yeti60_battery_pocket.py",
       "bytes": 5948,
       "sha256": "914e7c6150cb720c49347ff884575a02e0e0f22c71166420e0fcfcbfb6218444",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/study_yeti60_prototype.py",
+      "bytes": 18518,
+      "sha256": "4a3ee4cdf52ddc9ff6b770228478e339c91ffe6373e8d60bea3e80ec34c67db8",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3056,8 +3128,8 @@
     },
     {
       "path": "tests/audit/test_integration.py",
-      "bytes": 5568,
-      "sha256": "34d8bfc77f0b458905b29b9d7223320debda7d852b2df4b463d9a1c4bad79a13",
+      "bytes": 5769,
+      "sha256": "03dfae66396f0345cc74c0dae2a1f56b5cf93db11916e9c786195983545e9aa6",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3076,6 +3148,12 @@
       "path": "tests/audit/test_plate_mount.py",
       "bytes": 1371,
       "sha256": "e5893ac9b099136c3855d8f398e5e4edf0e6063926b10742d0eedfbd0c279182",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/audit/test_prototype_research.py",
+      "bytes": 3615,
+      "sha256": "801085d0d49ce818ff28ce0448ce3b112ed959ee0dc6b88b308cad555eb2e557",
       "coverage": "inventoried-not-automatically-approved"
     },
     {

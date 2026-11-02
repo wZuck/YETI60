@@ -8,7 +8,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def read(p):return json.loads(p.read_text())
 def main():
  parser=argparse.ArgumentParser();parser.add_argument('--sync-downloads',action='store_true');args=parser.parse_args()
- files=['outcome.json','integration.json','schematic-current.json','yeti60-target-check.json','yeti60-firmware-simulation.json','yeti60-ordinary-process.json','C5-protection.json','USB-signal-paths.json','interference-layout.json','complete-exploded.json','yeti60-assembly.json','yeti60-inventory.json','plate-mount.json','key-mechanism-drawing.json','yeti60-materials.json','calibration.json','yeti60-power-budget.json']
+ files=['outcome.json','integration.json','schematic-current.json','yeti60-target-check.json','yeti60-firmware-simulation.json','yeti60-ordinary-process.json','C5-protection.json','USB-signal-paths.json','interference-layout.json','complete-exploded.json','yeti60-assembly.json','yeti60-inventory.json','plate-mount.json','key-mechanism-drawing.json','yeti60-materials.json','calibration.json','yeti60-power-budget.json','prototype-research.json']
  evidence={n:read(AUD/n) for n in files}
  assert evidence['outcome.json']['checks_passed'] and all(s['state']=='passed' for s in evidence['outcome.json']['stages'])
  assert evidence['integration.json']['status']=='passed'
@@ -37,6 +37,8 @@ def main():
  report['functional_acceptance_passed']=False
  report['firmware_rebuilt_this_mechanical_review']=False
  report['tracked_shared_links']=evidence['integration.json']['shared_links']
+ report['bare_board_order_ready']=evidence['prototype-research.json']['bare_board_order_ready']
+ report['new_open_design_findings']=evidence['prototype-research.json']['blocking_design_findings']
  (AUD/'raytac-review.json').write_text(json.dumps(report,indent=2)+'\n')
  for zh in [False,True]:
   suffix='.zh-CN' if zh else '';peer='raytac-review.md' if zh else 'raytac-review.zh-CN.md'
@@ -45,6 +47,7 @@ def main():
   body=(f'**{count} 个软件／CAD 审查阶段全部通过；尚未放行生产或证明实物工作。** 本轮只覆盖 Raytac，不把旧双方案报告当作本版验收。' if zh else f'**All {count} implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.')
   rows=[['PCB',f"0 errors / 0 opens; {len(cad['physical_pin_pairs'])} signal pairs",f"0 错误／0 断线；{len(cad['physical_pin_pairs'])} 对信号连接"],['DRC',f"102 disclosed noncomponent courtyard warnings",'保留 102 条非实装图形 courtyard 告警'],['ERC',f"0 errors; {erc.get('warning',0)} inherited off-grid warnings",f"0 错误；{erc.get('warning',0)} 条继承离网格告警"],['JLC',f"{ordinary['through_vias']} ordinary through vias; >=0.50/0.30 mm land/drill",f"{ordinary['through_vias']} 个普通机械通孔，盘／孔不小于 0.50／0.30 mm"],['USB / BLE','Normal/calibrator ARM builds and USB500 descriptors checked; simultaneous charge/wired-priority policy host-tested','普通版／校准版 ARM 构建及 USB500 描述符通过；同时充电与 USB 优先策略已做主机回归'],['RF','All four layers clear in vendor minimum antenna projection; physical RF open','厂商最小天线投影内四层铜均清空；实际射频待测'],['BOM','75 parts; 10 planned from stock, 65 net purchases','主板 75 件；计划用库存 10 件，净补购 65 件']]
   lines=[head,'','# '+title,'',body,'','| 范围 | 结果 |' if zh else '| Area | Result |','|---|---|']+[f'| {tag} | {cn if zh else en} |' for tag,en,cn in rows]
+  lines+=['',('**新增首样阻塞项：长 USB 线路配对／回流须修补，保护电池包尚未获确认；逐网确认 C47 电池滤波的名义 RC 时序通过，C48 是模拟电源去耦。新增研究检查通过只证明分析可复现，不代表问题已修复。** 请先看[含电池的无外壳流程](../../OPEN-BENCH.zh-CN.md)和[详细研究](../engineering/prototype-qualification.zh-CN.md)。' if zh else '**New prototype blockers: repair long USB pairing/reference routing and qualify battery protection. Actual nets confirm that C47 battery-filter settling passes nominally; C48 is AFE rail decoupling. Passing research stages establishes reproducible analysis, not repaired hardware.** See the [open-bench guide including a battery](../../OPEN-BENCH.md) and [detailed findings](../engineering/prototype-qualification.md).')]
   lines+=['','## 修补与图像复核' if zh else '## Repairs and image inspection','']
   repaired=(['C5 的真实保护通道和接地核对后，删除主板重复 D1 与长 USB 支线，保留 C5 必装的 D1／U1／F1。','共享模拟／放电总线标签统一；新导出网表与保存的引脚合同一致。','材料、库存、焊接步骤、实装坐标与编号图同步为 75 件。','完整三维爆炸图展示电池、七根线、电子元件及机械层；脚垫／胶棉托盘加入桌面高度和画面边界校验。','已改用 NiZ 普通轴座滑块及独立 Cherry 钢板卫星轴；新板 1.6 mm、28 个安装点，H26 不装；保留 60 个感应中心和外形，实际钢丝、卡扣及全行程须首件确认。','再次审查修正库存／验收页的旧 29 套五金及渲染说明中的旧 1.2 mm 板厚；中英文均增加错误注入检查，防止回退。','现行射频状态明确区分：最小天线铜区检查通过，USB 信号完整性及关壳射频仍待验收；历史审查保留为已标注的快照。'] if zh else notes)
   if zh:repaired.append('修复 Raytac 的 third_party/zmk 失效软链接，使其指向仓库固定版本子模块；新增全部受控软链接检查和缺失来源负向测试。')

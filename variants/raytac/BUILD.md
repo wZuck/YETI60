@@ -4,7 +4,7 @@ English | [Chinese](BUILD.zh-CN.md)
 
 Use only **MDBT50Q-1MV2**, this directory's mainboard and its firmware. Quantities are per keyboard, excluding spares and factory minimums. Recompute stock allocation for multiple units; do not spend the same received item twice.
 
-**Release state: all 52 implemented software/CAD audit stages passed; not released for ordering.** USB repair, C5 channel checks, full regression, four rendered views and fabrication outputs are synchronized. The mechanism is NiZ with separate plate-mounted stabilizers and a new 1.6 mm plate; first-article fit, custom pack and supplier acceptance remain open. Do not mix old archives with this revision.
+**Prototype ordering is on hold.** The new USB/reference and battery research found design issues beyond passing DRC. See the [open-bench procedure, including a battery](OPEN-BENCH.md) and [unresolved qualification findings](docs/engineering/prototype-qualification.md). Current [software/CAD results](docs/audit/outcome.json) do not release the existing archive. NiZ/plate-stabilizer geometry is documented; actual parts and pack safety remain unqualified.
 
 | Task | Open |
 |---|---|

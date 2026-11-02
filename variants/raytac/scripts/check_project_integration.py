@@ -107,6 +107,10 @@ def verify():
     assert set(rendered['exploded_frame_checks'])=={'feet','electronics','battery','interconnect'}
     assert all(v['in_frame'] and v['above_desk'] for v in rendered['exploded_frame_checks'].values())
     assert read(AUD/'documentation-check.json')['status']=='passed'
+    research=read(AUD/'prototype-research.json');hashes(research['source_sha256']);hashes(research['outputs'])
+    assert research['native_recipe_sha256']==sha(ROOT/'scripts/export_yeti60_usb_reference.py')
+    assert not research['bare_board_order_ready'] and not research['production_approved'] and not research['physical_verification']
+    assert research['mechanical']['installed_mounts']==28 and research['mechanical']['unused_mounts']==['H26']
     return {'status':'passed','shared_links':shared_links,'controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements']}
 def main():
     try: report=verify()

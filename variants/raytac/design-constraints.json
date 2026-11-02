@@ -33,7 +33,7 @@
   "signal_interference_analysis": {
     "phase": "after PCB design completion",
     "blocking_current_layout": false,
-    "status": "native-RF-and-C5-protection-screen-passed-physical-qualification-open",
+    "status": "USB-pair-reference-design-repair-required-physical-qualification-open",
     "report": "docs/testing/README.md"
   },
   "open_requirements": [
@@ -55,7 +55,7 @@
     {
       "id": "battery",
       "status": "open",
-      "description": "Default custom 1600 mAh full envelope selected and checked; supplier current-sheet correction, complete drawing, independent 15..43 C thermal protection and full charge acceptance pending"
+      "description": "1600 mAh battery remains required. Supplier correction, complete pack drawing, independent actual 15..43 C charging interruption, voltage/current/cutoff/recovery acceptance and full-cycle tests are open. Cell sheet normal discharge cutoff is 3.0 V; generic 2.4 V PCM is not equivalent."
     },
     {
       "id": "usb-daughterboard",
@@ -85,7 +85,12 @@
     {
       "id": "signal-interference",
       "status": "open",
-      "description": "Raytac minimum antenna projection is clear on all four layers, plate projection is clear, and C5 protected data channels are verified with redundant mainboard D1 branches removed. Enclosed RF/EC measurements, complete USB pair/return/eye qualification and physical acceptance remain open."
+      "description": "Native vendor antenna minimum projection clear; new USB screen finds long unpaired sections and adjacent-ground gaps. Repair USB routing/harness and qualify the complete link before bare-board order release; physical RF/EC/USB acceptance remains open."
+    },
+    {
+      "id": "battery-readout-qualification",
+      "status": "open",
+      "description": "Actual BAT_ADC-to-GND capacitor is C47=10nF, giving nominal 5ms RC and adequate 50ms wait; C48 is AFE rail decoupling. Reporting remains disabled. ADC/divider accuracy, measured voltage and a conservative low-voltage policy remain to qualify."
     }
   ],
   "fabrication": {

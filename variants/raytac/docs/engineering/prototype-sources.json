@@ -1,0 +1,14 @@
+{
+  "retrieved": "2026-11-02",
+  "scope": "Primary-source research for pre-case bring-up; no supplier approval or stock reservation",
+  "sources": {
+    "Nordic_USB": {"url": "https://devzone.nordicsemi.com/f/nordic-q-a/82014/nrf52840-usb-d-d--impedance-matching/340456", "locator": "Manufacturer engineer: internal series termination; matched pair, 90 ohm differential for long tracks"},
+    "USB_layout": {"url": "https://www.silabs.com/documents/public/application-notes/an0046-efm32-usb-hardware-design-guidelines.pdf", "locator": "AN0046 rev1.0, PCB layout discussion; general reference, not an nRF52840 compliance result"},
+    "charger": {"url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf", "locator": "SLUS810N pp11-13, 27-28: RthetaJA44.5 C/W, input limits, TS currents/thresholds, proportional dynamic timer, junction thermal regulation"},
+    "regulator": {"url": "https://www.ti.com/lit/ds/symlink/tps63031.pdf", "locator": "SLVS696D 9.2.2.3: input >=4.7uF recommended, VINA 0.1uF and <=0.22uF, nominal output10uF; does not qualify unspecified MPN bias derating"},
+    "NTC": {"url": "https://www.semitec-global.com/uploads/2022/01/P12-13-AT-Thermistor.pdf", "locator": "AT series pp12-13: 103AT R25 10k +/-1%, B25/85 3435K +/-1%; nominal R/T column used directly, rather than extending a single beta approximation"},
+    "cell": {"url": "https://www.honcell.com/Public/Uploads/uploadfile/files/20240401/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf", "locator": "HCP404074 bare-cell 2024 sheet: 3.0 V discharge cutoff; conflicting 1600mAh and 270/1350mA rate rows require corrected manufacturer limits"},
+    "protection": {"url": "https://product.minebeamitsumi.com/en/product/category/ics/battery/protection/parts/MM3855Series.html", "locator": "One-cell protection with external-NTC abnormal-temperature detection; not evidence that any generic PCM or a particular finished pack supplies the requested hot/cold interruption"},
+    "PCM_vs_NTC": {"url": "https://www.eemb.com/information/16", "locator": "Manufacturer separately describes PCM voltage/current functions and NTC sensing; neither phrase alone proves independent temperature interruption"}
+  }
+}

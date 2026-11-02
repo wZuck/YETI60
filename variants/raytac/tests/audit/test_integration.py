@@ -111,6 +111,10 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('renders/yeti60-assembly/render-manifest.json',
                      lambda data: data['exploded_visible_objects_by_group'].update(stabilizers=9))
 
+    def test_research_cannot_release_an_unqualified_board(self):
+        self.rejects('docs/audit/prototype-research.json',
+                     lambda data: data.update(bare_board_order_ready=True))
+
     def test_changed_image_bytes(self):
         original = audit.sha
         path = ROOT / 'renders/yeti60-assembly/assembled.png'

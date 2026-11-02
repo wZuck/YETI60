@@ -1,0 +1,605 @@
+{
+  "status": "research-completed-design-repair-required",
+  "production_approved": false,
+  "physical_verification": false,
+  "bare_board_order_ready": false,
+  "blocking_design_findings": [
+    "USB long-route pairing/reference remediation",
+    "Supplier-qualified pack thermal/voltage/current limits and discharge cutoff"
+  ],
+  "USB": {
+    "positive": {
+      "layers": {
+        "B.Cu": {
+          "nearest_adjacent_layer": "In2.Cu",
+          "trace_mm": 28.31462136312708,
+          "uncovered_centerline_mm": 7.36565246138547,
+          "covered_fraction": 0.7398639958160471,
+          "outside_same_layer_partner_0_75mm_mm": 15.996828884746998
+        },
+        "In1.Cu": {
+          "nearest_adjacent_layer": "F.Cu",
+          "trace_mm": 225.22653284961967,
+          "uncovered_centerline_mm": 78.84925601255783,
+          "covered_fraction": 0.6499113358673231,
+          "outside_same_layer_partner_0_75mm_mm": 225.22653284961967
+        }
+      },
+      "trace_mm": 253.54115421274676,
+      "uncovered_nearest_adjacent_GND_centerline_mm": 86.2149084739433,
+      "nearest_adjacent_GND_coverage_fraction": 0.659956945681488,
+      "signal_vias": [
+        {
+          "signal_via_uuid": "597277ff-fdba-4088-b8ba-a0894adc90da",
+          "xy_pcb_mm": [
+            115.735337,
+            123.296979
+          ],
+          "nearest_ground_through_via_center_distance_mm": 8.23646258933105
+        },
+        {
+          "signal_via_uuid": "5f1ab98b-1fed-4588-9688-97ce81dc087a",
+          "xy_pcb_mm": [
+            336.1984,
+            126.7444
+          ],
+          "nearest_ground_through_via_center_distance_mm": 1.9636226521406934
+        },
+        {
+          "signal_via_uuid": "562b214b-48b3-4ab6-a404-8e6506c26cf4",
+          "xy_pcb_mm": [
+            338.5,
+            125.075
+          ],
+          "nearest_ground_through_via_center_distance_mm": 1.4020074892809726
+        },
+        {
+          "signal_via_uuid": "46055800-5d3d-492e-8f27-1a9a0c90a83f",
+          "xy_pcb_mm": [
+            342.175,
+            125.075
+          ],
+          "nearest_ground_through_via_center_distance_mm": 2.0763549792846003
+        }
+      ]
+    },
+    "negative": {
+      "layers": {
+        "B.Cu": {
+          "nearest_adjacent_layer": "In2.Cu",
+          "trace_mm": 212.17531133361126,
+          "uncovered_centerline_mm": 20.367576176711687,
+          "covered_fraction": 0.904005908846355,
+          "outside_same_layer_partner_0_75mm_mm": 199.4171565115484
+        },
+        "F.Cu": {
+          "nearest_adjacent_layer": "In1.Cu",
+          "trace_mm": 17.453048327205146,
+          "uncovered_centerline_mm": 17.453048327205146,
+          "covered_fraction": 0.0,
+          "outside_same_layer_partner_0_75mm_mm": 17.453048327205146
+        },
+        "In1.Cu": {
+          "nearest_adjacent_layer": "F.Cu",
+          "trace_mm": 9.893502884254445,
+          "uncovered_centerline_mm": 4.6346139846343135,
+          "covered_fraction": 0.5315497413954038,
+          "outside_same_layer_partner_0_75mm_mm": 9.893502884254445
+        },
+        "In2.Cu": {
+          "nearest_adjacent_layer": "B.Cu",
+          "trace_mm": 9.599998,
+          "uncovered_centerline_mm": 9.129498000000012,
+          "covered_fraction": 0.04901042687717094,
+          "outside_same_layer_partner_0_75mm_mm": 9.599998
+        }
+      },
+      "trace_mm": 249.12186054507086,
+      "uncovered_nearest_adjacent_GND_centerline_mm": 51.58473648855116,
+      "nearest_adjacent_GND_coverage_fraction": 0.7929337217710025,
+      "signal_vias": [
+        {
+          "signal_via_uuid": "f9f44e9e-d8da-4ef7-a8c0-e8f200b6a99d",
+          "xy_pcb_mm": [
+            155.6,
+            119.45
+          ],
+          "nearest_ground_through_via_center_distance_mm": 5.491530467481075
+        },
+        {
+          "signal_via_uuid": "5f7a74a6-93c7-4342-9549-24bc42ce3757",
+          "xy_pcb_mm": [
+            165.15,
+            120.45
+          ],
+          "nearest_ground_through_via_center_distance_mm": 2.043438442821313
+        },
+        {
+          "signal_via_uuid": "ba1fa144-3722-46cf-ac97-588f1a957559",
+          "xy_pcb_mm": [
+            318.5,
+            124.2
+          ],
+          "nearest_ground_through_via_center_distance_mm": 3.598468031376837
+        },
+        {
+          "signal_via_uuid": "d63640b8-16c9-4686-b04b-617b85568473",
+          "xy_pcb_mm": [
+            334.8135,
+            128.9689
+          ],
+          "nearest_ground_through_via_center_distance_mm": 4.5804202274464005
+        },
+        {
+          "signal_via_uuid": "eea2a3cd-3608-48e2-a2cf-c0caac64d7f9",
+          "xy_pcb_mm": [
+            349.3,
+            131.074999
+          ],
+          "nearest_ground_through_via_center_distance_mm": 1.151628390584799
+        },
+        {
+          "signal_via_uuid": "dac2d5fc-b2ec-4f59-8568-85a46118733f",
+          "xy_pcb_mm": [
+            350.1,
+            121.325
+          ],
+          "nearest_ground_through_via_center_distance_mm": 1.8027756377319946
+        }
+      ]
+    }
+  },
+  "mechanical": {
+    "installed_mounts": 28,
+    "unused_mounts": [
+      "H26"
+    ],
+    "worst_radial_screw_clearance_mm": 0.06163334374347418,
+    "nominal_plate_thread_turns": 2.5,
+    "proposed_incoming_tolerances_mm": {
+      "screw_underhead_length": [
+        4.8,
+        5.0
+      ],
+      "washer_thickness": [
+        0.75,
+        0.85
+      ],
+      "insulating_film": [
+        0.08,
+        0.12
+      ],
+      "female_depth_minimum": 3.1
+    },
+    "screw_engagement_interval_mm": [
+      2.0699999999999994,
+      2.73
+    ],
+    "female_thread_bottom_clearance_min_mm": 0.3700000000000001,
+    "limitations": [
+      "Incoming limits require supplier acceptance; blind-hole usable full thread differs from drill depth",
+      "2.5 nominal top-thread turns do not establish clamp strength, life or torque",
+      "Supplier NiZ/stabilizer geometry, full travel and local stiffness are unqualified"
+    ]
+  },
+  "battery": {
+    "capacity_mAh": 1600,
+    "chemistry": "1S 4.2 V CC/CV lithium-ion polymer; not 4.35 V HV or LiFePO4",
+    "BAT_ADC": {
+      "shunt_capacitors_from_netlist": [
+        {
+          "ref": "C47",
+          "value": "10n",
+          "nets": [
+            "BAT_ADC",
+            "GND"
+          ],
+          "capacitance_F": 1e-08
+        }
+      ],
+      "R51_R52_ohm": [
+        1000000.0,
+        1000000.0
+      ],
+      "C48_actual_nets": [
+        "AFE_3V3",
+        "GND"
+      ],
+      "nominal_time_constant_s": 0.005,
+      "existing_wait_s": 0.05,
+      "step_settling_error_fraction": 4.5399929762484854e-05,
+      "apparent_4200mV_after_fully_discharged_capacitor_mV": 4199.809320294998,
+      "wait_for_0_1_percent_settling_s": 0.03453877639491069,
+      "nominal_0_1percent_settling_passed": true,
+      "C_and_R_tolerance_10pct_1pct_ASSUMED_error_fraction": 0.00012329877413098152,
+      "target_battery_reporting_enabled": false,
+      "finding": "Actual BAT_ADC filter C47 is 10nF; C48 is AFE rail decoupling and must not be substituted into the divider model. Nominal settling passes. Target ADC gain/offset/noise and low-voltage policy remain unqualified."
+    },
+    "NTC": {
+      "published_103AT_table_kOhm": [
+        [
+          -10,
+          42.47
+        ],
+        [
+          0,
+          27.28
+        ],
+        [
+          10,
+          17.96
+        ],
+        [
+          20,
+          12.09
+        ],
+        [
+          25,
+          10.0
+        ],
+        [
+          30,
+          8.313
+        ],
+        [
+          40,
+          5.827
+        ],
+        [
+          50,
+          4.16
+        ],
+        [
+          60,
+          3.02
+        ]
+      ],
+      "nominal_hot_resistance_kOhm": 4.0,
+      "nominal_cold_resistance_kOhm": 28.000000000000004,
+      "nominal_hot_crossing_C_APPROX": 51.224658975200654,
+      "nominal_cold_crossing_C_APPROX": -0.5885242010900544,
+      "electrical_corner_hot_crossing_C_APPROX": [
+        47.12417987456416,
+        55.73917911707239
+      ],
+      "electrical_corner_cold_crossing_C_APPROX": [
+        -2.5617123202945242,
+        1.4822774307643138
+      ],
+      "includes_NTC_tolerance_thermal_lag_or_self_heating": false,
+      "finding": "BQ24074 plus a plain 103AT-compatible sensor cannot enforce the requested actual 15..43 C pack window; independent cell-coupled hardware interruption is mandatory."
+    },
+    "discharge": {
+      "cell_sheet_cutoff_V": 3.0,
+      "normal_target_software_low_voltage_cutoff_implemented": false,
+      "proposed_initial_bench_stop_V": 3.2,
+      "required_pack_response": "Specify loaded-cell cutoff/recovery/delay/tolerance and off-state leakage. A generic PCM with a 2.4 V threshold does not establish the 3.0 V cell-sheet operating cutoff."
+    },
+    "pack_procurement_approved": false,
+    "independent_thermal_protector_reference_family": "MinebeaMitsumi MM3855 is evidence that temperature-capable protection exists, not a selected/qualified suffix or a complete pack; cold cutoff needs separate proof."
+  },
+  "thermal_scenarios": [
+    {
+      "VIN_V_ASSUMED": 4.75,
+      "VBAT_V_ASSUMED": 3.2,
+      "system_input_A_ASSUMED": 0.02,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.7048558377896613,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 71.36608478163993,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 103.43702540106952,
+      "theta_limit_for_125C_at_40C_C_W": 120.59203519765012
+    },
+    {
+      "VIN_V_ASSUMED": 4.75,
+      "VBAT_V_ASSUMED": 3.2,
+      "system_input_A_ASSUMED": 0.04,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.7118558377896613,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 71.67758478163992,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 104.06702540106951,
+      "theta_limit_for_125C_at_40C_C_W": 119.40619924383586
+    },
+    {
+      "VIN_V_ASSUMED": 4.75,
+      "VBAT_V_ASSUMED": 3.7,
+      "system_input_A_ASSUMED": 0.02,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.4820394385026737,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 61.450755013368976,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 83.38354946524063,
+      "theta_limit_for_125C_at_40C_C_W": 176.33411959824224
+    },
+    {
+      "VIN_V_ASSUMED": 4.75,
+      "VBAT_V_ASSUMED": 3.7,
+      "system_input_A_ASSUMED": 0.04,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.48903943850267373,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 61.762255013368986,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 84.01354946524063,
+      "theta_limit_for_125C_at_40C_C_W": 173.810112861757
+    },
+    {
+      "VIN_V_ASSUMED": 4.75,
+      "VBAT_V_ASSUMED": 4.2,
+      "system_input_A_ASSUMED": 0.02,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.2592230392156862,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 51.53542524509803,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 63.330073529411756,
+      "theta_limit_for_125C_at_40C_C_W": 327.902952828494
+    },
+    {
+      "VIN_V_ASSUMED": 4.75,
+      "VBAT_V_ASSUMED": 4.2,
+      "system_input_A_ASSUMED": 0.04,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.2662230392156862,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 51.846925245098035,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 63.96007352941176,
+      "theta_limit_for_125C_at_40C_C_W": 319.28115707196724
+    },
+    {
+      "VIN_V_ASSUMED": 5.0,
+      "VBAT_V_ASSUMED": 3.2,
+      "system_input_A_ASSUMED": 0.02,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.8216390374331549,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 76.5629371657754,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 113.94751336898395,
+      "theta_limit_for_125C_at_40C_C_W": 103.45175451442111
+    },
+    {
+      "VIN_V_ASSUMED": 5.0,
+      "VBAT_V_ASSUMED": 3.2,
+      "system_input_A_ASSUMED": 0.04,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.8336390374331549,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 77.09693716577539,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 115.02751336898395,
+      "theta_limit_for_125C_at_40C_C_W": 101.96259553981803
+    },
+    {
+      "VIN_V_ASSUMED": 5.0,
+      "VBAT_V_ASSUMED": 3.7,
+      "system_input_A_ASSUMED": 0.02,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.5988226381461674,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 66.64760739750446,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 93.89403743315506,
+      "theta_limit_for_125C_at_40C_C_W": 141.94520144252166
+    },
+    {
+      "VIN_V_ASSUMED": 5.0,
+      "VBAT_V_ASSUMED": 3.7,
+      "system_input_A_ASSUMED": 0.04,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.6108226381461674,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 67.18160739750445,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 94.97403743315508,
+      "theta_limit_for_125C_at_40C_C_W": 139.15659749935438
+    },
+    {
+      "VIN_V_ASSUMED": 5.0,
+      "VBAT_V_ASSUMED": 4.2,
+      "system_input_A_ASSUMED": 0.02,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.37600623885917994,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 56.73227762923351,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 73.84056149732619,
+      "theta_limit_for_125C_at_40C_C_W": 226.06007883777107
+    },
+    {
+      "VIN_V_ASSUMED": 5.0,
+      "VBAT_V_ASSUMED": 4.2,
+      "system_input_A_ASSUMED": 0.04,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.3880062388591799,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 57.26627762923351,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 74.92056149732619,
+      "theta_limit_for_125C_at_40C_C_W": 219.0686424267762
+    },
+    {
+      "VIN_V_ASSUMED": 5.25,
+      "VBAT_V_ASSUMED": 3.2,
+      "system_input_A_ASSUMED": 0.02,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.9384222370766487,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 81.75978954991086,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 124.45800133689839,
+      "theta_limit_for_125C_at_40C_C_W": 90.57756374656043
+    },
+    {
+      "VIN_V_ASSUMED": 5.25,
+      "VBAT_V_ASSUMED": 3.2,
+      "system_input_A_ASSUMED": 0.04,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.9554222370766488,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 82.51628954991088,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 125.98800133689839,
+      "theta_limit_for_125C_at_40C_C_W": 88.96590083571697
+    },
+    {
+      "VIN_V_ASSUMED": 5.25,
+      "VBAT_V_ASSUMED": 3.7,
+      "system_input_A_ASSUMED": 0.02,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.7156058377896612,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 71.84445978163993,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 104.4045254010695,
+      "theta_limit_for_125C_at_40C_C_W": 118.78047314782266
+    },
+    {
+      "VIN_V_ASSUMED": 5.25,
+      "VBAT_V_ASSUMED": 3.7,
+      "system_input_A_ASSUMED": 0.04,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.7326058377896613,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 72.60095978163993,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 105.93452540106951,
+      "theta_limit_for_125C_at_40C_C_W": 116.02419147580473
+    },
+    {
+      "VIN_V_ASSUMED": 5.25,
+      "VBAT_V_ASSUMED": 4.2,
+      "system_input_A_ASSUMED": 0.02,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.49278943850267376,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 61.92913001336898,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 84.35104946524064,
+      "theta_limit_for_125C_at_40C_C_W": 172.48746291777275
+    },
+    {
+      "VIN_V_ASSUMED": 5.25,
+      "VBAT_V_ASSUMED": 4.2,
+      "system_input_A_ASSUMED": 0.04,
+      "charge_A_programmed_max": 0.44563279857397503,
+      "power_W_estimated": 0.5097894385026737,
+      "Tj_at_40C_theta44_5C_W_JEDEC_reference_C": 62.68563001336898,
+      "Tj_at_40C_theta90C_W_SENSITIVITY_ONLY_C": 85.88104946524064,
+      "theta_limit_for_125C_at_40C_C_W": 166.735506034918
+    }
+  ],
+  "copper_polygon_normalizations": [
+    {
+      "original_area_mm2": 49.015956191523955,
+      "area_delta_mm2": 2.842170943040401e-14
+    },
+    {
+      "original_area_mm2": 64.61091413678037,
+      "area_delta_mm2": 7.105427357601002e-14
+    },
+    {
+      "original_area_mm2": 13716.254216850013,
+      "area_delta_mm2": 2.3646862246096134e-11
+    },
+    {
+      "original_area_mm2": 9908.601399724117,
+      "area_delta_mm2": 3.092281986027956e-11
+    },
+    {
+      "original_area_mm2": 1296.4612082536833,
+      "area_delta_mm2": 4.547473508864641e-13
+    },
+    {
+      "original_area_mm2": 1737.2779885167997,
+      "area_delta_mm2": 1.5916157281026244e-12
+    },
+    {
+      "original_area_mm2": 70.7868219562039,
+      "area_delta_mm2": 0.0
+    },
+    {
+      "original_area_mm2": 2619.631089849552,
+      "area_delta_mm2": 7.275957614183426e-12
+    },
+    {
+      "original_area_mm2": 77.58899979649259,
+      "area_delta_mm2": 8.526512829121202e-14
+    },
+    {
+      "original_area_mm2": 30.353657114257576,
+      "area_delta_mm2": 1.0658141036401503e-14
+    },
+    {
+      "original_area_mm2": 755.6767175428973,
+      "area_delta_mm2": 7.958078640513122e-13
+    },
+    {
+      "original_area_mm2": 54.144581453979605,
+      "area_delta_mm2": 2.1316282072803006e-14
+    },
+    {
+      "original_area_mm2": 220.0714011971584,
+      "area_delta_mm2": 1.1084466677857563e-12
+    },
+    {
+      "original_area_mm2": 1278.063630145378,
+      "area_delta_mm2": 9.094947017729282e-13
+    },
+    {
+      "original_area_mm2": 1777.1296107424978,
+      "area_delta_mm2": 5.229594535194337e-12
+    },
+    {
+      "original_area_mm2": 13.370944712588544,
+      "area_delta_mm2": 3.552713678800501e-15
+    },
+    {
+      "original_area_mm2": 24197.761143008236,
+      "area_delta_mm2": 8.003553375601768e-11
+    },
+    {
+      "original_area_mm2": 9798.358005342821,
+      "area_delta_mm2": 1.4551915228366852e-10
+    },
+    {
+      "original_area_mm2": 36.37164279069089,
+      "area_delta_mm2": 2.842170943040401e-14
+    },
+    {
+      "original_area_mm2": 2958.9374719341613,
+      "area_delta_mm2": 1.4097167877480388e-11
+    },
+    {
+      "original_area_mm2": 497.7583132368602,
+      "area_delta_mm2": 2.8421709430404007e-13
+    },
+    {
+      "original_area_mm2": 15.439582992289006,
+      "area_delta_mm2": 3.552713678800501e-15
+    },
+    {
+      "original_area_mm2": 76.84299926266198,
+      "area_delta_mm2": 0.0
+    },
+    {
+      "original_area_mm2": 47.38655455886417,
+      "area_delta_mm2": 0.0
+    },
+    {
+      "original_area_mm2": 19.467967968954518,
+      "area_delta_mm2": 0.0
+    },
+    {
+      "original_area_mm2": 0.20604842482399974,
+      "area_delta_mm2": 0.003742982877540657
+    },
+    {
+      "original_area_mm2": 0.29142204489300033,
+      "area_delta_mm2": 3.3443617197814746e-07
+    }
+  ],
+  "USB_screen_limits": [
+    "2D centerline intersection with normalized native adjacent-layer ground polygons; holes preserved",
+    "Nearest adjacent layer chosen by stack distance, not an assertion that it is the actual RF return plane",
+    "0.75 mm partner proximity is a screening parameter, not a USB standard or impedance calculation",
+    "Ground-via distance is a center distance; no return-loop inductance or topology solution",
+    "C5, connectors, cable, module internals and fields are not included"
+  ],
+  "thermal_limits": [
+    "44.5 C/W is TI JEDEC reference-board RthetaJA, not measured YETI60 thermal resistance",
+    "90 C/W, 40 C ambient, 4.75/5/5.25 V and 20/40 mA system load are sensitivity assumptions",
+    "Current limiting, thermal foldback, CV taper and thermal coupling to the cell are not solved",
+    "Junction temperature is not cell temperature or a safety certification"
+  ],
+  "source_sha256": {
+    "scripts/study_yeti60_prototype.py": "4a3ee4cdf52ddc9ff6b770228478e339c91ffe6373e8d60bea3e80ec34c67db8",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
+    "docs/audit/USB-signal-paths.json": "f0fbc5439a860fcf642ef2521291e598dfd0de8f15abee3eb3c0f37a2860d0d8",
+    "docs/audit/yeti60-power-budget.json": "d92baf85836c2d2bac191bb55409c43179d4afdca4e5473f6ccdcb6bae7f3eaf",
+    "docs/audit/yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "hardware/ec60-nrf52840/netlist.xml": "815c4a1661a9b50b5465660631f37405bd72c5d82aa9ad7c5e1f0eb66af9c93a",
+    "firmware/yeti60/core.c": "353ef280b7c84966dd6851e22ed98ad974bd58bbc5ae78b03a0623493e98ad49",
+    "docs/engineering/prototype-sources.json": "317368461d940cc1767b24e93e61cc335fb58eb7fd9c21dbd2f867c8041f33e2"
+  },
+  "native_recipe_sha256": "c6b1fe7c9f89c91b00abe4cabac51886adb931e1f6d596fe9c9d249ec1aac7e3",
+  "outputs": {
+    "hardware/bom/charging-thermal-scenarios.csv": "e45bdabb326415a532c904cfd2ad41eca853cc761b772154b02eb7b9678377ab",
+    "docs/engineering/images/usb-reference.png": "4b3d480605cc327505983dec1910dbc7fa31029110bfb8d425871459eb30451a",
+    "docs/engineering/images/usb-reference.svg": "33602ea14470ec447d201087e081ba94b2c01800f66c4da8d264f993642d53ef",
+    "docs/engineering/images/usb-reference.zh-CN.png": "75723bee2236d6dc6bddd3bad4e5f8aa3cbc6e06905781051324b445abff3090",
+    "docs/engineering/images/usb-reference.zh-CN.svg": "910197c58af96206c046c0cee956c38f7224eaff3765dd2ec2c2754cbb5773d4"
+  }
+}
