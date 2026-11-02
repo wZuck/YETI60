@@ -2,6 +2,9 @@ English | [Chinese](OPEN-BENCH.zh-CN.md)
 
 # Raytac open-bench prototype, including a battery
 
+Battery supplier verification is user-owned: [send this parameter checklist](docs/build/battery-vendor-checklist.md). USB repair proceeds in parallel.
+
+
 **Battery operation is required. An enclosure is optional for the first prototype. Current P2 PCB procurement remains on hold:** the [new qualification study](docs/engineering/prototype-qualification.md) identifies long USB routing that needs remediation and an unqualified battery/protection specification. A successful DRC or generated research report is not permission to order the present archive.
 
 This guide separates first power-up without a cell from the required battery, charging and 60-key tests. It does not omit the battery from the finished keyboard. A battery may sit in an insulated external tray during open-bench testing; this does not qualify its eventual fit inside FELK60.

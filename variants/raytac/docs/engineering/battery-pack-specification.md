@@ -2,6 +2,9 @@ English | [Chinese](battery-pack-specification.zh-CN.md)
 
 # YETI60-BAT-1600-1S supplier drawing and acceptance specification
 
+[Supplier response checklist](../build/battery-vendor-checklist.md): the user will verify these parameters. No supplier is contacted by this workflow.
+
+
 This is a review/RFQ specification for one custom protected single-cell pack per keyboard. No supplier has accepted it and no order is authorized. The [assembly specification](../../../../mechanical/assembly-spec.raytac.json), [interconnect specification](../../../../mechanical/interconnect-spec.json), [power calculation](power-budget.md) and [battery study](battery-study.md) are its controlled inputs.
 
 ## Cell and complete package

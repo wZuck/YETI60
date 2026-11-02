@@ -2,6 +2,9 @@
 
 # YETI60 Raytac：下单、备料、焊接与安装总入口
 
+电池由用户向供方核实：[可直接转发的参数清单](docs/build/battery-vendor-checklist.zh-CN.md)。USB 修补同步推进。
+
+
 本手册只适用于 **MDBT50Q-1MV2** 模组和本目录的主板、固件。按下表从上向下阅读即可。所有数量按一把键盘计算；两把装机数量乘二，库存分配须重新计算，不能两把各抵扣同一只库存。板厂起订数量和散件包装数另计。
 
 **首样下单暂停放行。** 新增 USB／参考铜及电池研究发现了 DRC 之外的设计问题。请先看[含电池的无外壳首样流程](OPEN-BENCH.zh-CN.md)和[未关闭研究结论](docs/engineering/prototype-qualification.zh-CN.md)；当前[软件／CAD 结果](docs/audit/outcome.json)不能放行现有制板包。NiZ／钢板卫星轴几何已整理，实物配合和电池安全仍未验收。

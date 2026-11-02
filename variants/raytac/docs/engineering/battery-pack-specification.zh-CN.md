@@ -2,6 +2,9 @@
 
 # YETI60-BAT-1600-1S 电池包供方图纸与验收规格
 
+[供方回复清单](../build/battery-vendor-checklist.zh-CN.md)：由用户核实这些参数，此工作流不联系供应商。
+
+
 本文件用于定制单电芯保护包的审查与询价，每把键盘 1 包。尚无供方接受该规格，也未授权下单。受控输入为[装配规格](../../../../mechanical/assembly-spec.raytac.json)、[连接规格](../../../../mechanical/interconnect-spec.json)、[充电计算](power-budget.zh-CN.md)与[电池研究](battery-study.zh-CN.md)。
 
 ## 电芯及完整包络

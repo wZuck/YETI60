@@ -2,6 +2,9 @@ English | [Chinese](BUILD.zh-CN.md)
 
 # YETI60 Raytac: ordering and build handbook
 
+Battery supplier verification is user-owned: [send this parameter checklist](docs/build/battery-vendor-checklist.md). USB repair proceeds in parallel.
+
+
 Use only **MDBT50Q-1MV2**, this directory's mainboard and its firmware. Quantities are per keyboard, excluding spares and factory minimums. Recompute stock allocation for multiple units; do not spend the same received item twice.
 
 **Prototype ordering is on hold.** The new USB/reference and battery research found design issues beyond passing DRC. See the [open-bench procedure, including a battery](OPEN-BENCH.md) and [unresolved qualification findings](docs/engineering/prototype-qualification.md). Current [software/CAD results](docs/audit/outcome.json) do not release the existing archive. NiZ/plate-stabilizer geometry is documented; actual parts and pack safety remain unqualified.
