@@ -2653,6 +2653,18 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "hardware/usb-short-route/CLOSED-CASE.md",
+      "bytes": 7356,
+      "sha256": "f7652619d043c6a006d428987c5db3050ef8dc9271c3b62ad5bc21cc882ba4fa",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/CLOSED-CASE.zh-CN.md",
+      "bytes": 6767,
+      "sha256": "0e40f5a7632531704b0da8b2cdaed5ab1eade8eac67a4874c913744c46f1d8ac",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "hardware/usb-short-route/EC60-nRF52840.kicad_pcb",
       "bytes": 5535096,
       "sha256": "604904a25447e696d82d5dfe1289dd577e7d346339de6eefcca9e987fec686e3",
@@ -2672,14 +2684,14 @@
     },
     {
       "path": "hardware/usb-short-route/README.md",
-      "bytes": 9718,
-      "sha256": "ae6c6c2a1d309df5aa53c7de8eaf0af78d69896b0155a71024ffe951c73f62a0",
+      "bytes": 9908,
+      "sha256": "0e5d405c1291e2ac157e286c8cc2fca41872a3a12fbb9708ced35913980fea78",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/README.zh-CN.md",
-      "bytes": 8704,
-      "sha256": "c4653affaf175eed4a6009cb17f789539344f4ee29db7a72e74b6efb8283bd8f",
+      "bytes": 8862,
+      "sha256": "48133dde403dba8b25490ed866c4f9a8f382ae2a87dc75ff9f09dfc178427311",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3765,13 +3777,13 @@
     {
       "path": "hardware/usb-short-route/audit/DRC-strict.json",
       "bytes": 49704,
-      "sha256": "603f0d58066166e28ecefa6609b65205389d0dafca9751513d23e8d0bc267811",
+      "sha256": "2e469ccdecae37887f1674d9a5dd631b5b069a712ad37dd290cf52765bda2e45",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/audit/ERC.json",
       "bytes": 115945,
-      "sha256": "cb08f2b980553dc61186ce1360e423f07655efe6a52418efb6fcbcc90feeb794",
+      "sha256": "ccb7927c44dd78390da7c4c0763374bff4a692c1e7e10a2f7cda52c84c4e3893",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3805,15 +3817,27 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "hardware/usb-short-route/audit/closed-assembly.json",
+      "bytes": 422812,
+      "sha256": "60747d16c5599e79a2ff8705aea1845bf970c65ac8a0931c5bcd19b53dd983fe",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "hardware/usb-short-route/audit/geometry-check.json",
       "bytes": 22406,
-      "sha256": "51fde127484dd9fc1867a40fc7c51fe4d075fe1848714ad5591a6c12882df9ef",
+      "sha256": "4bb55d9c8dd00b0d917035283f932e4e2380d904604efec764e8f55289e7e598",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/audit/guides.json",
+      "bytes": 24905,
+      "sha256": "72ef384b4667bf69dd798417e885c4bdf6bf0f58353f0b130362d8a2c1c7f3c6",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/audit/native-check.json",
-      "bytes": 95503,
-      "sha256": "5dde488a86000adc2901525e1deedbd834de2a2250828f4fde6412e0fa7d62d6",
+      "bytes": 95432,
+      "sha256": "16a6c41083879aeec9cfc2e095ab841f75b07f3c3aeb22101c4cbb1aa3240873",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3849,7 +3873,7 @@
     {
       "path": "hardware/usb-short-route/firmware/manifest.json",
       "bytes": 5407,
-      "sha256": "c72cc11459ce7f468b37e8f12619a3f0030c707060e96769703109a25ac1a9e6",
+      "sha256": "43a8d5bc5529607e3de105f0ba418bff335500b47cfeb4c29c7aee83e7f93d59",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3907,6 +3931,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "hardware/usb-short-route/interconnect-spec.json",
+      "bytes": 4317,
+      "sha256": "b9ca32bde110f9f86765be1daf1ba8fae39a084ddc93ebf6832f04a7b6fb1bf8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "hardware/usb-short-route/mainboard-purchase.csv",
       "bytes": 4898,
       "sha256": "5239330e92073f42e818e1b025d555615b8611f5bed72fa17946397da1393e3d",
@@ -3922,6 +3952,210 @@
       "path": "hardware/usb-short-route/matrix.kicad_sch",
       "bytes": 126894,
       "sha256": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/BAT-R1.step",
+      "bytes": 36522,
+      "sha256": "6fa6185aff736a4c38085a9b1bb22a3b9b033ad8037ef1fbf3410a5b41fc7c5b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/BAT-R1.stl",
+      "bytes": 48684,
+      "sha256": "dd92695fa1f30502af391fc559b057b5e91dd66f15661084aca84e98aea7b52e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/BAT-R2.step",
+      "bytes": 36522,
+      "sha256": "c7edc9c1fe818a94fca832c7bca1a66fe7196bec14284639896d6a0195ea2a95",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/BAT-R2.stl",
+      "bytes": 48684,
+      "sha256": "dd92695fa1f30502af391fc559b057b5e91dd66f15661084aca84e98aea7b52e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-F-lower.step",
+      "bytes": 82322,
+      "sha256": "1c33e4a20862d4b430ebde7b5ac012e96f545d80b9dd8124af04ec06b9fa8372",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-F-lower.stl",
+      "bytes": 194284,
+      "sha256": "2f0095008a0ca8c7ef009e17b882efe75d09957291bc30541ec057afb1f76d51",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-F-upper.step",
+      "bytes": 52405,
+      "sha256": "8104ca9d4767bdab1cef5dbf0b9894673e41a03f673a8e1ee4f6286c577daf16",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-F-upper.stl",
+      "bytes": 191684,
+      "sha256": "e79a94f7b74fe90bb17abfabba1b06e70b3ebbdc9db8a219fad6a82d696841ca",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R1.step",
+      "bytes": 33179,
+      "sha256": "709472400779b3dc3421431fd69c1434237a64a678b2dc77616d72702a384eaa",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R1.stl",
+      "bytes": 32884,
+      "sha256": "6cd4f089e5dd91efb6e07cc232c689751e58e77e48845234c6277d58c977ee0a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R2.step",
+      "bytes": 33179,
+      "sha256": "c8244d30e86b78d9f3610427d4e08b6868067e49626e110cd013606e5b3edb7a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R2.stl",
+      "bytes": 32884,
+      "sha256": "6cd4f089e5dd91efb6e07cc232c689751e58e77e48845234c6277d58c977ee0a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R3.step",
+      "bytes": 33179,
+      "sha256": "987eaede524e3ebfab0fe9a536350618259b5b76a3a127dab5f3f02568cf5326",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R3.stl",
+      "bytes": 32884,
+      "sha256": "6cd4f089e5dd91efb6e07cc232c689751e58e77e48845234c6277d58c977ee0a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R4.step",
+      "bytes": 33179,
+      "sha256": "05511e10a1e8f615803476297c0e10374961a49705bf6ce74dee2516e445670c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R4.stl",
+      "bytes": 32884,
+      "sha256": "6cd4f089e5dd91efb6e07cc232c689751e58e77e48845234c6277d58c977ee0a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R5.step",
+      "bytes": 33179,
+      "sha256": "584537eef0f4d272b153aaa69914e0588703a5a93c687c212bf595ac23076d3c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R5.stl",
+      "bytes": 32884,
+      "sha256": "6cd4f089e5dd91efb6e07cc232c689751e58e77e48845234c6277d58c977ee0a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F1-base.step",
+      "bytes": 29775,
+      "sha256": "380bb26fccf39d7271cde6c778e96626358a57f23eb231116389c24cc5183bc0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F1-base.stl",
+      "bytes": 45884,
+      "sha256": "ebd4cce0439c6deef256bbd213d20b56a5ac663bb19663d05cbe1bc39b81a955",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F1-lid.step",
+      "bytes": 40545,
+      "sha256": "e311c413fa297194b64c06f816843219321302da8f78825540b30dd4bb6a3e91",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F1-lid.stl",
+      "bytes": 45284,
+      "sha256": "9ff235c2fc87ff02306ef55583418b280f94958aca499f306946591642f6f002",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F2-base.step",
+      "bytes": 30026,
+      "sha256": "4367e996bd3d8fc10810b93404cc6bf07edeae9ee32e14cdbc9dbbd30d191ea5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F2-base.stl",
+      "bytes": 45884,
+      "sha256": "54f4254bd7bf330eba969e293825176ace623eefbe265b3dc0e318f975887b6d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F2-lid.step",
+      "bytes": 40846,
+      "sha256": "e2aead682c74a284e2ce78c6d236746f0ecfe43fac3ac61027d6631375bf2724",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F2-lid.stl",
+      "bytes": 45284,
+      "sha256": "a38d7c77ef0d7171d28c02b99f93f6d368d32836cbcfd1fe277254cd39c3ade2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-R1.step",
+      "bytes": 40359,
+      "sha256": "f94eeddd78746ff79b1a1f235bfa6053076628703da2e2cc550709daac111d0b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-R1.stl",
+      "bytes": 46484,
+      "sha256": "9236866e72a48d527af978558f1d3b6f575ba91955b48342f470099d5a3d2361",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-R2.step",
+      "bytes": 40359,
+      "sha256": "1c1fd0518b474eeeb5d34e216296d78551a0768b7932a9d57b9db7fcfe68a2e6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-R2.stl",
+      "bytes": 46484,
+      "sha256": "9236866e72a48d527af978558f1d3b6f575ba91955b48342f470099d5a3d2361",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-R3.step",
+      "bytes": 40359,
+      "sha256": "bb78dd21387bd0512221a402abc931868e446f4024ec9b816b0cb579a8f249cb",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/guides/USB-R3.stl",
+      "bytes": 46484,
+      "sha256": "9236866e72a48d527af978558f1d3b6f575ba91955b48342f470099d5a3d2361",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step",
+      "bytes": 1292343,
+      "sha256": "dd5d9832e97b8bb78f6b99270debf8a48a60e8e3af4f387b8cf158f362ba91d8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.stl",
+      "bytes": 5872884,
+      "sha256": "474e43ca8ac5137153a71db543e4a092de3c7a438ed80759fb32e037028a1f04",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -4177,6 +4411,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/check_usb_short_closed_assembly.py",
+      "bytes": 12755,
+      "sha256": "222b1bc430dd5c4de495b3294e75c6e6990c51f35e1133af4eec50aae41bb43e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/check_usb_short_firmware.py",
       "bytes": 3035,
       "sha256": "fef5cc50e3330fc851b11cb5a91a5998d6c25c977badda351cdce88a7e7bbbed",
@@ -4184,8 +4424,8 @@
     },
     {
       "path": "scripts/check_usb_short_route.py",
-      "bytes": 12646,
-      "sha256": "5697beb56f298224e1e69fbe70da11103ecba1ada7c24192fc5163c2ec32365f",
+      "bytes": 13034,
+      "sha256": "b378c94935ab3c7569e96345421288ca327aaeb4020ba5d7c8ceb671e87903d1",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -4294,6 +4534,12 @@
       "path": "scripts/draw_yeti60_key_mechanism.py",
       "bytes": 5478,
       "sha256": "996d1fb8f3b3a27db498ced2cef8231eb4c3e01c8d16007310d06db7c8bf3b77",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/export_usb_short_guides.py",
+      "bytes": 6844,
+      "sha256": "f35cbbd5a6f0b7ecdf1118d7369289ca2df366a44079806bb85448d4d05e57e4",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -4441,6 +4687,18 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/usb_short_guides.py",
+      "bytes": 4559,
+      "sha256": "ffaba3355dccc14b7ed86453af7e5cfabc4ff16c2a3b331494d23f1c5b157e1d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/usb_short_harness.py",
+      "bytes": 11524,
+      "sha256": "8587da881ced0c0305691f13fdf6c54fe42be671bd2f7424d128387cff1400cb",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/yeti60_rf_geometry.py",
       "bytes": 3100,
       "sha256": "41a081774f0ac6a1a711fae41a200cd626fc3a4a48f3c0bd81453c1ae2c3deb2",
@@ -4450,6 +4708,12 @@
       "path": "tests/audit/test_c5_protection.py",
       "bytes": 992,
       "sha256": "5f98e301dd4a114bea1e086d38d1568440fbbfd4926d16c1d6c22e2a1463b14f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/audit/test_closed_harness.py",
+      "bytes": 2394,
+      "sha256": "6a4af884ff14aacdd00df7bfb9d3cb392790c7ceec8819f394f72a78b42583de",
       "coverage": "inventoried-not-automatically-approved"
     },
     {

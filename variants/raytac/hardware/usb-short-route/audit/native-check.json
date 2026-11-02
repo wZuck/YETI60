@@ -4954,6 +4954,7 @@
   ],
   "physical_pin_pairs_checked": 411,
   "sensing_and_mount_geometry_unchanged": true,
+  "all_retained_footprint_geometry_unchanged": true,
   "project_rules_unchanged": true,
   "removed_zero_ohm_links": [
     "R30",
@@ -4971,7 +4972,6 @@
   "physical_verification": false,
   "source_sha256": {
     "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "604904a25447e696d82d5dfe1289dd577e7d346339de6eefcca9e987fec686e3",
-    "hardware/usb-short-route/EC60-nRF52840.kicad_prl": "4931bfe8e5c480ac494788ddd7aeed10ea71d4d62b09a567e12069285b006024",
     "hardware/usb-short-route/EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82",
     "hardware/usb-short-route/EC60-nRF52840.kicad_sch": "aac35866d42eb6b1f96d998bbe717c4b76911b705daaff44fc09c230bced3ea6",
     "hardware/usb-short-route/YAECKB.kicad_sym": "b04e02f6e4e779b65b28d4b5ce1245106f000e4c59c5ea5d591599b9484e5384",
@@ -5166,7 +5166,7 @@
     "hardware/usb-short-route/power.kicad_sch": "1d35fb87ed82b68c829c1d409eacc09322cc079e40bdb6129543fc92412fe3cb",
     "hardware/usb-short-route/sym-lib-table": "d45513cd8e4e4ccd05e68f16dfa9399892b19383c65133140567bda6f4228cc8"
   },
-  "audit_script_sha256": "5697beb56f298224e1e69fbe70da11103ecba1ada7c24192fc5163c2ec32365f",
+  "audit_script_sha256": "b378c94935ab3c7569e96345421288ca327aaeb4020ba5d7c8ceb671e87903d1",
   "remaining": [
     "Final C5-to-J4 and J5-to-J1 cable geometry, enclosed collision checks and updated assembly illustrations",
     "Full cable impedance/return and physical USB/BLE/charge/thermal validation",

@@ -8,6 +8,8 @@ The previous USB path crossed almost the full mainboard. This candidate moves th
 
 The COL14 inner-layer escape and SWD clock route are also moved away from the USB reference area. Front sensing copper, holes and pin assignments remain unchanged; parasitic capacitance/noise from the changed inner escape still requires real-key calibration.
 
+[Closed-case harness and 16-guide checkpoint](CLOSED-CASE.md) adds routes, the relieved bottom, STEP/STL files and quantities; complete assembly illustrations are still being synchronized.
+
 ## Files and current evidence
 
 - [Native PCB](EC60-nRF52840.kicad_pcb), [project](EC60-nRF52840.kicad_pro), [schematic](EC60-nRF52840.kicad_sch), [fresh netlist](netlist.xml); frozen footprint/symbol libraries are included.

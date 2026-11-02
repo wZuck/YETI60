@@ -1,0 +1,798 @@
+{
+  "status": "sixteen-guides-and-retention-passed",
+  "physical_verification": false,
+  "parts": [
+    {
+      "name": "USB-R1",
+      "quantity": 1,
+      "mount": "case-roof",
+      "harness": "usb",
+      "datum_case_mm": [
+        240,
+        -101.0,
+        -3.9
+      ],
+      "bounds_case_mm": [
+        239.0,
+        -103.7,
+        -3.9,
+        241.0,
+        -98.3,
+        -2.0
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        -2.326828918379971e-16,
+        0.0,
+        2.0,
+        5.400000000000006,
+        1.900000000000001
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.0999999999969674
+    },
+    {
+      "name": "USB-R2",
+      "quantity": 1,
+      "mount": "case-roof",
+      "harness": "usb",
+      "datum_case_mm": [
+        290,
+        -101.0,
+        -3.9
+      ],
+      "bounds_case_mm": [
+        289.0,
+        -103.7,
+        -3.9,
+        291.0,
+        -98.3,
+        -2.0
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        -2.326828918379971e-16,
+        0.0,
+        2.0,
+        5.400000000000006,
+        1.900000000000001
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.0999999999969674
+    },
+    {
+      "name": "USB-R3",
+      "quantity": 1,
+      "mount": "case-roof",
+      "harness": "usb",
+      "datum_case_mm": [
+        330,
+        -101.0,
+        -3.9
+      ],
+      "bounds_case_mm": [
+        329.0,
+        -103.7,
+        -3.9,
+        331.0,
+        -98.3,
+        -2.0
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        -2.326828918379971e-16,
+        0.0,
+        2.0,
+        5.400000000000006,
+        1.900000000000001
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.0999999999969674
+    },
+    {
+      "name": "USB-F1-base",
+      "quantity": 1,
+      "mount": "case-floor",
+      "harness": "usb",
+      "datum_case_mm": [
+        193,
+        -140,
+        -4.45
+      ],
+      "bounds_case_mm": [
+        190.3,
+        -141.0,
+        -5.810000000000006,
+        195.7,
+        -139.0,
+        -4.45
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        5.399999999999977,
+        2.0,
+        1.3600000000000056
+      ],
+      "print_flip_about_X_deg": 0,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999763531
+    },
+    {
+      "name": "USB-F1-lid",
+      "quantity": 1,
+      "mount": "removable-cover",
+      "harness": "usb",
+      "datum_case_mm": [
+        193,
+        -140,
+        -4.45
+      ],
+      "bounds_case_mm": [
+        190.3,
+        -141.0,
+        -4.400000000001272,
+        195.7,
+        -139.0,
+        -2.9400000000000004
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        -1.7879843267551357e-16,
+        0.0,
+        5.399999999999977,
+        2.0,
+        1.460000000001272
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": "USB-F1-base",
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999999545
+    },
+    {
+      "name": "USB-F2-base",
+      "quantity": 1,
+      "mount": "case-floor",
+      "harness": "usb",
+      "datum_case_mm": [
+        214.312702,
+        -153,
+        -4.45
+      ],
+      "bounds_case_mm": [
+        211.612702,
+        -154.0,
+        -5.809999999999999,
+        217.012702,
+        -152.0,
+        -4.45
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        5.399999999999977,
+        2.0,
+        1.3599999999999985
+      ],
+      "print_flip_about_X_deg": 0,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999998592557
+    },
+    {
+      "name": "USB-F2-lid",
+      "quantity": 1,
+      "mount": "removable-cover",
+      "harness": "usb",
+      "datum_case_mm": [
+        214.312702,
+        -153,
+        -4.45
+      ],
+      "bounds_case_mm": [
+        211.612702,
+        -154.0,
+        -4.400000000000986,
+        217.012702,
+        -152.0,
+        -2.9400000000000004
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        -1.7879843267551357e-16,
+        0.0,
+        5.399999999999977,
+        2.0,
+        1.460000000000986
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": "USB-F2-base",
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.0999999999981396
+    },
+    {
+      "name": "BAT-R1",
+      "quantity": 1,
+      "mount": "case-floor",
+      "harness": "battery",
+      "datum_case_mm": [
+        170,
+        -106,
+        -4.9
+      ],
+      "bounds_case_mm": [
+        169.0,
+        -108.7,
+        -5.810000000000022,
+        171.0,
+        -103.3,
+        -4.9
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        5.400000000000006,
+        0.9100000000000215
+      ],
+      "print_flip_about_X_deg": 0,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999999101
+    },
+    {
+      "name": "BAT-R2",
+      "quantity": 1,
+      "mount": "case-floor",
+      "harness": "battery",
+      "datum_case_mm": [
+        190,
+        -106,
+        -4.9
+      ],
+      "bounds_case_mm": [
+        189.0,
+        -108.7,
+        -5.810000000000022,
+        191.0,
+        -103.3,
+        -4.9
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        5.400000000000006,
+        0.9100000000000215
+      ],
+      "print_flip_about_X_deg": 0,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.0999999999999982
+    },
+    {
+      "name": "PWR-R1",
+      "quantity": 1,
+      "mount": "PCB",
+      "harness": "power",
+      "datum_case_mm": [
+        160,
+        -109.5,
+        -3.2
+      ],
+      "bounds_case_mm": [
+        159.0,
+        -111.2,
+        -3.2,
+        161.0,
+        -107.8,
+        -2.1
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        -1.3471114790620887e-16,
+        0.0,
+        2.0,
+        3.4000000000000057,
+        1.1000000000000008
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999767795
+    },
+    {
+      "name": "PWR-R2",
+      "quantity": 1,
+      "mount": "PCB",
+      "harness": "power",
+      "datum_case_mm": [
+        180,
+        -109.5,
+        -3.2
+      ],
+      "bounds_case_mm": [
+        179.0,
+        -111.2,
+        -3.2,
+        181.0,
+        -107.8,
+        -2.1
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        -1.3471114790620887e-16,
+        0.0,
+        2.0,
+        3.4000000000000057,
+        1.1000000000000008
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999767795
+    },
+    {
+      "name": "PWR-R3",
+      "quantity": 1,
+      "mount": "PCB",
+      "harness": "power",
+      "datum_case_mm": [
+        230,
+        -109.5,
+        -3.2
+      ],
+      "bounds_case_mm": [
+        229.0,
+        -111.2,
+        -3.2,
+        231.0,
+        -107.8,
+        -2.1
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        -1.3471114790620887e-16,
+        0.0,
+        2.0,
+        3.4000000000000057,
+        1.1000000000000008
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999766374
+    },
+    {
+      "name": "PWR-R4",
+      "quantity": 1,
+      "mount": "PCB",
+      "harness": "power",
+      "datum_case_mm": [
+        290,
+        -109.5,
+        -3.2
+      ],
+      "bounds_case_mm": [
+        289.0,
+        -111.2,
+        -3.2,
+        291.0,
+        -107.8,
+        -2.1
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        -1.3471114790620887e-16,
+        0.0,
+        2.0,
+        3.4000000000000057,
+        1.1000000000000008
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999766374
+    },
+    {
+      "name": "PWR-R5",
+      "quantity": 1,
+      "mount": "PCB",
+      "harness": "power",
+      "datum_case_mm": [
+        324,
+        -109.5,
+        -3.2
+      ],
+      "bounds_case_mm": [
+        323.0,
+        -111.2,
+        -3.2,
+        325.0,
+        -107.8,
+        -2.1
+      ],
+      "print_STL_bounds_mm": [
+        0.0,
+        -1.3471114790620887e-16,
+        0.0,
+        2.0,
+        3.4000000000000057,
+        1.1000000000000008
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999766374
+    },
+    {
+      "name": "PWR-F-upper",
+      "quantity": 1,
+      "mount": "PCB",
+      "harness": "power",
+      "datum_case_mm": [
+        132,
+        -123.527723,
+        -3.2
+      ],
+      "bounds_case_mm": [
+        130.9999999,
+        -126.02772309999999,
+        -3.200000100000007,
+        133.0000001,
+        -121.0277229,
+        -2.0999999000000003
+      ],
+      "print_STL_bounds_mm": [
+        -6.158862215692809e-15,
+        -6.071528764552146e-15,
+        -1.6365788271696354e-16,
+        2.0000001999999952,
+        5.000000199999994,
+        1.1000002000000073
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": null,
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999998117351634
+    },
+    {
+      "name": "PWR-F-lower",
+      "quantity": 1,
+      "mount": "PCB-removable",
+      "harness": "power",
+      "datum_case_mm": [
+        132,
+        -123.527723,
+        -4.9
+      ],
+      "bounds_case_mm": [
+        130.9999999,
+        -126.02772309999999,
+        -4.900000100000001,
+        133.0000001,
+        -121.0277229,
+        -3.25
+      ],
+      "print_STL_bounds_mm": [
+        -5.9368176107677775e-15,
+        -6.071528764552146e-15,
+        0.0,
+        2.0000001999999952,
+        5.000000199999994,
+        1.6500001000000015
+      ],
+      "print_flip_about_X_deg": 180,
+      "STEP_preserves_case_coordinates": true,
+      "bond_pair": "PWR-F-upper",
+      "nearest_retained_part_gap_mm": 999,
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999997899449167
+    }
+  ],
+  "part_count": 16,
+  "film_strips": 12,
+  "outputs": {
+    "hardware/usb-short-route/mechanical/guides/USB-R1.step": "f94eeddd78746ff79b1a1f235bfa6053076628703da2e2cc550709daac111d0b",
+    "hardware/usb-short-route/mechanical/guides/USB-R1.stl": "9236866e72a48d527af978558f1d3b6f575ba91955b48342f470099d5a3d2361",
+    "hardware/usb-short-route/mechanical/guides/USB-R2.step": "1c1fd0518b474eeeb5d34e216296d78551a0768b7932a9d57b9db7fcfe68a2e6",
+    "hardware/usb-short-route/mechanical/guides/USB-R2.stl": "9236866e72a48d527af978558f1d3b6f575ba91955b48342f470099d5a3d2361",
+    "hardware/usb-short-route/mechanical/guides/USB-R3.step": "bb78dd21387bd0512221a402abc931868e446f4024ec9b816b0cb579a8f249cb",
+    "hardware/usb-short-route/mechanical/guides/USB-R3.stl": "9236866e72a48d527af978558f1d3b6f575ba91955b48342f470099d5a3d2361",
+    "hardware/usb-short-route/mechanical/guides/USB-F1-base.step": "380bb26fccf39d7271cde6c778e96626358a57f23eb231116389c24cc5183bc0",
+    "hardware/usb-short-route/mechanical/guides/USB-F1-base.stl": "ebd4cce0439c6deef256bbd213d20b56a5ac663bb19663d05cbe1bc39b81a955",
+    "hardware/usb-short-route/mechanical/guides/USB-F1-lid.step": "e311c413fa297194b64c06f816843219321302da8f78825540b30dd4bb6a3e91",
+    "hardware/usb-short-route/mechanical/guides/USB-F1-lid.stl": "9ff235c2fc87ff02306ef55583418b280f94958aca499f306946591642f6f002",
+    "hardware/usb-short-route/mechanical/guides/USB-F2-base.step": "4367e996bd3d8fc10810b93404cc6bf07edeae9ee32e14cdbc9dbbd30d191ea5",
+    "hardware/usb-short-route/mechanical/guides/USB-F2-base.stl": "54f4254bd7bf330eba969e293825176ace623eefbe265b3dc0e318f975887b6d",
+    "hardware/usb-short-route/mechanical/guides/USB-F2-lid.step": "e2aead682c74a284e2ce78c6d236746f0ecfe43fac3ac61027d6631375bf2724",
+    "hardware/usb-short-route/mechanical/guides/USB-F2-lid.stl": "a38d7c77ef0d7171d28c02b99f93f6d368d32836cbcfd1fe277254cd39c3ade2",
+    "hardware/usb-short-route/mechanical/guides/BAT-R1.step": "6fa6185aff736a4c38085a9b1bb22a3b9b033ad8037ef1fbf3410a5b41fc7c5b",
+    "hardware/usb-short-route/mechanical/guides/BAT-R1.stl": "dd92695fa1f30502af391fc559b057b5e91dd66f15661084aca84e98aea7b52e",
+    "hardware/usb-short-route/mechanical/guides/BAT-R2.step": "c7edc9c1fe818a94fca832c7bca1a66fe7196bec14284639896d6a0195ea2a95",
+    "hardware/usb-short-route/mechanical/guides/BAT-R2.stl": "dd92695fa1f30502af391fc559b057b5e91dd66f15661084aca84e98aea7b52e",
+    "hardware/usb-short-route/mechanical/guides/PWR-R1.step": "709472400779b3dc3421431fd69c1434237a64a678b2dc77616d72702a384eaa",
+    "hardware/usb-short-route/mechanical/guides/PWR-R1.stl": "6cd4f089e5dd91efb6e07cc232c689751e58e77e48845234c6277d58c977ee0a",
+    "hardware/usb-short-route/mechanical/guides/PWR-R2.step": "c8244d30e86b78d9f3610427d4e08b6868067e49626e110cd013606e5b3edb7a",
+    "hardware/usb-short-route/mechanical/guides/PWR-R2.stl": "6cd4f089e5dd91efb6e07cc232c689751e58e77e48845234c6277d58c977ee0a",
+    "hardware/usb-short-route/mechanical/guides/PWR-R3.step": "987eaede524e3ebfab0fe9a536350618259b5b76a3a127dab5f3f02568cf5326",
+    "hardware/usb-short-route/mechanical/guides/PWR-R3.stl": "6cd4f089e5dd91efb6e07cc232c689751e58e77e48845234c6277d58c977ee0a",
+    "hardware/usb-short-route/mechanical/guides/PWR-R4.step": "05511e10a1e8f615803476297c0e10374961a49705bf6ce74dee2516e445670c",
+    "hardware/usb-short-route/mechanical/guides/PWR-R4.stl": "6cd4f089e5dd91efb6e07cc232c689751e58e77e48845234c6277d58c977ee0a",
+    "hardware/usb-short-route/mechanical/guides/PWR-R5.step": "584537eef0f4d272b153aaa69914e0588703a5a93c687c212bf595ac23076d3c",
+    "hardware/usb-short-route/mechanical/guides/PWR-R5.stl": "6cd4f089e5dd91efb6e07cc232c689751e58e77e48845234c6277d58c977ee0a",
+    "hardware/usb-short-route/mechanical/guides/PWR-F-upper.step": "8104ca9d4767bdab1cef5dbf0b9894673e41a03f673a8e1ee4f6286c577daf16",
+    "hardware/usb-short-route/mechanical/guides/PWR-F-upper.stl": "e79a94f7b74fe90bb17abfabba1b06e70b3ebbdc9db8a219fad6a82d696841ca",
+    "hardware/usb-short-route/mechanical/guides/PWR-F-lower.step": "1c33e4a20862d4b430ebde7b5ac012e96f545d80b9dd8124af04ec06b9fa8372",
+    "hardware/usb-short-route/mechanical/guides/PWR-F-lower.stl": "2f0095008a0ca8c7ef009e17b882efe75d09957291bc30541ec057afb1f76d51"
+  },
+  "render_parts": [
+    {
+      "name": "USB-R1",
+      "path": "hardware/usb-short-route/mechanical/guides/USB-R1.step",
+      "sha256": "f94eeddd78746ff79b1a1f235bfa6053076628703da2e2cc550709daac111d0b",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "USB-R2",
+      "path": "hardware/usb-short-route/mechanical/guides/USB-R2.step",
+      "sha256": "1c1fd0518b474eeeb5d34e216296d78551a0768b7932a9d57b9db7fcfe68a2e6",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "USB-R3",
+      "path": "hardware/usb-short-route/mechanical/guides/USB-R3.step",
+      "sha256": "bb78dd21387bd0512221a402abc931868e446f4024ec9b816b0cb579a8f249cb",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "USB-F1-base",
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F1-base.step",
+      "sha256": "380bb26fccf39d7271cde6c778e96626358a57f23eb231116389c24cc5183bc0",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "USB-F1-lid",
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F1-lid.step",
+      "sha256": "e311c413fa297194b64c06f816843219321302da8f78825540b30dd4bb6a3e91",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "USB-F2-base",
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F2-base.step",
+      "sha256": "4367e996bd3d8fc10810b93404cc6bf07edeae9ee32e14cdbc9dbbd30d191ea5",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "USB-F2-lid",
+      "path": "hardware/usb-short-route/mechanical/guides/USB-F2-lid.step",
+      "sha256": "e2aead682c74a284e2ce78c6d236746f0ecfe43fac3ac61027d6631375bf2724",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "BAT-R1",
+      "path": "hardware/usb-short-route/mechanical/guides/BAT-R1.step",
+      "sha256": "6fa6185aff736a4c38085a9b1bb22a3b9b033ad8037ef1fbf3410a5b41fc7c5b",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "BAT-R2",
+      "path": "hardware/usb-short-route/mechanical/guides/BAT-R2.step",
+      "sha256": "c7edc9c1fe818a94fca832c7bca1a66fe7196bec14284639896d6a0195ea2a95",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "PWR-R1",
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R1.step",
+      "sha256": "709472400779b3dc3421431fd69c1434237a64a678b2dc77616d72702a384eaa",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "PWR-R2",
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R2.step",
+      "sha256": "c8244d30e86b78d9f3610427d4e08b6868067e49626e110cd013606e5b3edb7a",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "PWR-R3",
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R3.step",
+      "sha256": "987eaede524e3ebfab0fe9a536350618259b5b76a3a127dab5f3f02568cf5326",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "PWR-R4",
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R4.step",
+      "sha256": "05511e10a1e8f615803476297c0e10374961a49705bf6ce74dee2516e445670c",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "PWR-R5",
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-R5.step",
+      "sha256": "584537eef0f4d272b153aaa69914e0588703a5a93c687c212bf595ac23076d3c",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "PWR-F-upper",
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-F-upper.step",
+      "sha256": "8104ca9d4767bdab1cef5dbf0b9894673e41a03f673a8e1ee4f6286c577daf16",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "PWR-F-lower",
+      "path": "hardware/usb-short-route/mechanical/guides/PWR-F-lower.step",
+      "sha256": "1c33e4a20862d4b430ebde7b5ac012e96f545d80b9dd8124af04ec06b9fa8372",
+      "category": "guide",
+      "color": "gray",
+      "group": "interconnect"
+    },
+    {
+      "name": "USB-R1-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/USB-R1-film.step",
+      "sha256": "0bdad3686af57541b2534efca6d67476f190a400ba551651c0c9fd8419619f78"
+    },
+    {
+      "name": "USB-R2-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/USB-R2-film.step",
+      "sha256": "75410e424295e1d6d87a225fa7099cc371d87380884feed18d54e55c304d0b99"
+    },
+    {
+      "name": "USB-R3-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/USB-R3-film.step",
+      "sha256": "7312c2b8222f1cbe2d2eaa33430d866ab6a869121e167bc25527f47b4262496c"
+    },
+    {
+      "name": "BAT-R1-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/BAT-R1-film.step",
+      "sha256": "9c528c540613b8e6dc9cc0a753adeea414fb7b772c3188ccf2a395a2cdd3a17a"
+    },
+    {
+      "name": "BAT-R2-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/BAT-R2-film.step",
+      "sha256": "c28be6f87cc34816dfcf8dee7012789f2a112303aecfa0cb404a027c39411d81"
+    },
+    {
+      "name": "PWR-R1-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/PWR-R1-film.step",
+      "sha256": "e275bc6a8b9c57a6a63fb6cfe339d1869a68894353bb85f84f8eaced3bcab2a5"
+    },
+    {
+      "name": "PWR-R2-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/PWR-R2-film.step",
+      "sha256": "f241581cdc26c4eaefc5c853e0b6448da90b8bc3e3114f4ee39dc377dce95922"
+    },
+    {
+      "name": "PWR-R3-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/PWR-R3-film.step",
+      "sha256": "61170a625520f9736fb5fc191a39a0b7cd31d9b47ef0813d8fe923520f116dc5"
+    },
+    {
+      "name": "PWR-R4-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/PWR-R4-film.step",
+      "sha256": "ba6ab2ed6daead260cc834103977200c0f87def1c661a05f050e64b1deb6c4fb"
+    },
+    {
+      "name": "PWR-R5-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/PWR-R5-film.step",
+      "sha256": "c70a80b8cbb641a5d4edec22da65e7b9b35343e903b02c7cb4508063d0394cee"
+    },
+    {
+      "name": "PWR-F-upper-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/PWR-F-upper-film.step",
+      "sha256": "e88eaf85af766f66440e2b423de33e450536f70dff5e391a4426c27b4b3e0385"
+    },
+    {
+      "name": "PWR-F-lower-film",
+      "category": "retention-film",
+      "color": "amber",
+      "group": "interconnect",
+      "path": ".assembly-work/usb-short-closed/PWR-F-lower-film.step",
+      "sha256": "915edabc150624f03706a39ef6512d2af294fe059d94cf1515b528e880cdfcbb"
+    }
+  ],
+  "source_sha256": {
+    "hardware/usb-short-route/audit/closed-assembly.json": "60747d16c5599e79a2ff8705aea1845bf970c65ac8a0931c5bcd19b53dd983fe",
+    "hardware/usb-short-route/interconnect-spec.json": "b9ca32bde110f9f86765be1daf1ba8fae39a084ddc93ebf6832f04a7b6fb1bf8",
+    "scripts/export_usb_short_guides.py": "f35cbbd5a6f0b7ecdf1118d7369289ca2df366a44079806bb85448d4d05e57e4",
+    "scripts/usb_short_guides.py": "ffaba3355dccc14b7ed86453af7e5cfabc4ff16c2a3b331494d23f1c5b157e1d",
+    "scripts/usb_short_harness.py": "8587da881ced0c0305691f13fdf6c54fe42be671bd2f7424d128387cff1400cb"
+  },
+  "printing": {
+    "units": "mm",
+    "part_tolerance_mm": 0.05,
+    "minimum_floor_or_roof_web_mm": 0.3,
+    "material": "Dimensionally qualified, post-cured tough engineering resin; deburr all channels",
+    "supports": "Keep support scars outside channels and bond datums; measure coupons before assembly"
+  },
+  "limits": [
+    "Adhesive retention and wire springback are physical acceptance items",
+    "Guide-to-case and guide-to-PCB bond interfaces intentionally use the specified tape gaps; non-bonded foreign parts are checked independently"
+  ]
+}

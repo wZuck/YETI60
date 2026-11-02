@@ -20,8 +20,11 @@ def signature(xml):return ({n.get('ref'):(n.findtext('value'),n.findtext('footpr
 def geometry(board):
     out={}
     for f in board.GetFootprints():
-        if not ((f.GetReference().startswith('SW') and not f.IsFlipped()) or f.GetReference().startswith('H') or f.GetReference()=='REF**'):continue
-        out[f.GetReference()]={'position':(f.GetPosition().x,f.GetPosition().y),'angle':f.GetOrientationDegrees(),'pads':[(p.GetNumber(),p.GetNetname(),(p.GetDrillSize().x,p.GetDrillSize().y),polygons(p.GetEffectivePolygon(pcb.F_Cu))) for p in f.Pads()]}
+        ref=f.GetReference()
+        if ref in ['J4','J5','R30','R31']:continue
+        # Preserve every retained footprint, including rear power/analog components.
+        # J1's two intentionally unused nets change, but its pad geometry does not.
+        out[ref]={'position':(f.GetPosition().x,f.GetPosition().y),'angle':f.GetOrientationDegrees(),'back':f.IsFlipped(),'footprint':f.GetFPID().GetLibItemName(),'pads':[(p.GetNumber(),p.GetNetname() if ref!='J1' else '',(p.GetDrillSize().x,p.GetDrillSize().y),polygons(p.GetEffectivePolygon(pcb.B_Cu if f.IsFlipped() else pcb.F_Cu))) for p in f.Pads()]}
     p=pcb.SHAPE_POLY_SET();assert board.GetBoardPolygonOutlines(p,False);return out,polygons(p)
 def connected_groups(board):
     board.BuildConnectivity();conn=board.GetConnectivity();items={q.m_Uuid.AsString():q for q in [*board.GetTracks(),*[p for f in board.GetFootprints() for p in f.Pads()],*board.Zones()]};groups={};pads={(f.GetReference(),p.GetNumber()):p for f in board.GetFootprints() for p in f.Pads() if p.GetNumber()}
@@ -37,7 +40,7 @@ def connected_groups(board):
     return {k:groups[p.m_Uuid.AsString()] for k,p in pads.items()}
 def main():
     AUD.mkdir(exist_ok=True);WORK.mkdir(parents=True,exist_ok=True)
-    source_files=sorted(p for p in BASE.rglob('*') if p.is_file() and not any(x in p.relative_to(BASE).parts for x in ['audit','firmware']) and p.suffix not in ['.md','.png','.svg'])
+    source_files=sorted(p for p in BASE.rglob('*') if p.is_file() and (p.parent.name=='YAECKB.pretty' or (p.parent==BASE and (p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_pro','.kicad_sym','.xml','.csv'] or p.name in ['components.json','frozen-footprints.json','metadata-audit.json','fp-lib-table','sym-lib-table']))))
     before={str(p.relative_to(ROOT)):sha(p) for p in source_files};assert (BASE/(NAME+'.kicad_pro')).read_bytes()==gitfile('hardware/ec60-nrf52840/'+NAME+'.kicad_pro'),'Project rules changed'
     oldxml=ET.fromstring(gitfile('hardware/ec60-nrf52840/netlist.xml'));saved=ET.parse(BASE/'netlist.xml').getroot()
     with tempfile.TemporaryDirectory(prefix='yeti60-short-usb-') as folder:
@@ -107,7 +110,7 @@ def main():
             assert bomrefs==set(newparts)-virtual-{'JP1'}
             assert [sum(int(row[k]) for row in rows) for k in ks[1:4]]==[75,8,67]
         (WORK/'native-inputs.json').write_text(json.dumps(inputs,separators=(',',':'))+'\n')
-        report={'status':'native-candidate-checks-passed','manufacturing_released':False,'baseline_commit':REV,'strict_DRC_errors':0,'schematic_parity_items':0,'unconnected_items':0,'enabled_previously_ignored_checks':enabled,'ERC_counts':{str(k):v for k,v in ec.items()},'DRC_warnings':dict(Counter(v['type'] for v in drc['violations'])),'physical_pin_pairs':checks,'physical_pin_pairs_checked':len(checks),'sensing_and_mount_geometry_unchanged':True,'project_rules_unchanged':True,'removed_zero_ohm_links':['R30','R31'],'new_references':['J4','J5'],'new_ordinary_through_vias':3,'USB_positive_contact_path_mm':paths['positive']['geometric_centerline_path_mm'],'USB_negative_contact_path_mm':paths['negative']['geometric_centerline_path_mm'],'USB_geometric_skew_mm':paths['geometric_path_difference_mm'],'USB_data_vias_per_leg':0,'physical_verification':False,'source_sha256':before,'audit_script_sha256':sha(Path(__file__)),'remaining':['Final C5-to-J4 and J5-to-J1 cable geometry, enclosed collision checks and updated assembly illustrations','Full cable impedance/return and physical USB/BLE/charge/thermal validation','Supplier battery verification remains user-owned; use battery-vendor-checklist.md']}
+        report={'status':'native-candidate-checks-passed','manufacturing_released':False,'baseline_commit':REV,'strict_DRC_errors':0,'schematic_parity_items':0,'unconnected_items':0,'enabled_previously_ignored_checks':enabled,'ERC_counts':{str(k):v for k,v in ec.items()},'DRC_warnings':dict(Counter(v['type'] for v in drc['violations'])),'physical_pin_pairs':checks,'physical_pin_pairs_checked':len(checks),'sensing_and_mount_geometry_unchanged':True,'all_retained_footprint_geometry_unchanged':True,'project_rules_unchanged':True,'removed_zero_ohm_links':['R30','R31'],'new_references':['J4','J5'],'new_ordinary_through_vias':3,'USB_positive_contact_path_mm':paths['positive']['geometric_centerline_path_mm'],'USB_negative_contact_path_mm':paths['negative']['geometric_centerline_path_mm'],'USB_geometric_skew_mm':paths['geometric_path_difference_mm'],'USB_data_vias_per_leg':0,'physical_verification':False,'source_sha256':before,'audit_script_sha256':sha(Path(__file__)),'remaining':['Final C5-to-J4 and J5-to-J1 cable geometry, enclosed collision checks and updated assembly illustrations','Full cable impedance/return and physical USB/BLE/charge/thermal validation','Supplier battery verification remains user-owned; use battery-vendor-checklist.md']}
         (AUD/'native-check.json').write_text(json.dumps(report,indent=2)+'\n')
     assert all(sha(ROOT/p)==h for p,h in before.items()),'Audit modified source'
     print({k:report[k] for k in ['status','strict_DRC_errors','schematic_parity_items','unconnected_items','physical_pin_pairs_checked','USB_positive_contact_path_mm','USB_negative_contact_path_mm']})

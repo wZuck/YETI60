@@ -1,0 +1,179 @@
+{
+  "revision": "YETI60-RAYTAC-SHORT-USB-INTERCONNECT-2",
+  "units": "mm",
+  "sources": {
+    "SH": {
+      "url": "https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf",
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "header": "SM04B-SRSS-TB(LF)(SN)",
+      "housing": "SHR-04V-S",
+      "contact": "SSH-003T-P0.2-H",
+      "housing_width": 5,
+      "housing_depth": 5,
+      "housing_height": 2.8,
+      "mated_depth_reference": 6.25,
+      "header_back_local_y": -1.675,
+      "header_front_local_y": 2.575
+    },
+    "PH": {
+      "url": "https://www.jst.com/wp-content/uploads/2025/06/ePH.pdf",
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "header": "S3B-PH-SM4-TB(LF)(SN)",
+      "housing": "PHR-3",
+      "contact": "SPH-004T-P0.5S",
+      "housing_width": 7.8,
+      "housing_depth": 6.35,
+      "housing_height": 4.5,
+      "mated_depth_reference": 9.6,
+      "header_back_local_y": -1.6,
+      "header_front_local_y": 4.4
+    }
+  },
+  "wire": {
+    "gauge": "AWG28 stranded copper",
+    "insulation_od_max": 0.8,
+    "SH_allowed_od": [
+      0.4,
+      0.8
+    ],
+    "PH_contact_allowed_od": [
+      0.5,
+      0.9
+    ],
+    "minimum_static_bend_radius": 4,
+    "bend_rule_basis": "Chosen engineering requirement, not a vendor bend-radius guarantee; wire supplier must approve",
+    "case_and_route_position_allowance": 0.25,
+    "minimum_air_gap_after_allowance": 0.15,
+    "manufactured_free_length_tolerance": 0.5,
+    "length_definition": "Along each conductor insulation between the two housing wire-exit planes, or housing exit to pack strain-relief face; not a crimp cut-length",
+    "tolerance_basis": "0.25 mm is the inspected assembled-route acceptance envelope; not an assumed sum of unverified print, tape and wire errors."
+  },
+  "battery": {
+    "part": "YETI60-CABLE-BAT-P2",
+    "pin_map": {
+      "1": "PACK+",
+      "2": "PACK-",
+      "3": "NTC"
+    },
+    "colors": {
+      "1": "red",
+      "2": "black",
+      "3": "yellow"
+    },
+    "lateral_offsets": [
+      2,
+      0,
+      -2
+    ],
+    "main_exit_below_pcb": 2.75,
+    "radius": 7,
+    "rear_y": -106,
+    "side_x": 221,
+    "drop_y": -119,
+    "pack_exit_local": [
+      0,
+      14,
+      4.4
+    ],
+    "pack_exit_axis": "-X; local origin is pack minimum X/Y/Z, not cell origin",
+    "minimum_pack_lead_transition_zone_length": 5,
+    "rear_z": -4.9
+  },
+  "case_pocket": {
+    "bounds_case_mm": [
+      190,
+      -106.3,
+      -5.25,
+      354,
+      -98.0,
+      -1.9
+    ],
+    "minimum_remaining_wall_mm": 2.0,
+    "purpose": "Internal underside relief beneath rear ledge; external shell and upper bearing surfaces retained"
+  },
+  "usb": {
+    "initial_radius": 6,
+    "bend_radius": 5.5,
+    "rear_y": -101.0,
+    "drop_start_x": 342,
+    "low_z": -3.9,
+    "drop_x": 193,
+    "front_y": -170,
+    "end_straight": 1.5,
+    "colors": {
+      "1": "red",
+      "2": "white",
+      "3": "green",
+      "4": "black"
+    },
+    "twist_turns": 3,
+    "twist_envelope_diameter": 1.8,
+    "drop_y": -115,
+    "cross_z": -3.2,
+    "rise_x": 230,
+    "front_z": -4.45,
+    "last_z": -4.9,
+    "return_lower_y": -142,
+    "endpoint_pair_radius": 0.5,
+    "bulk_pair_radius": 0.4
+  },
+  "power": {
+    "initial_radius": 5,
+    "side_radius": 5.2,
+    "high_z": -3.2,
+    "rear_y": -109.5,
+    "low_start_x": 151,
+    "low_z": -4.9,
+    "left_x": 140,
+    "turn_radius": 5.2,
+    "fan_radius": 4,
+    "colors": {
+      "1": "red",
+      "2": "black"
+    },
+    "cross_start_x": 220,
+    "cross_end_x": 190.2,
+    "cross_side_shift": -0.6,
+    "cross_lower_start_x": 214
+  },
+  "guides": {
+    "USB_rear_x": [
+      240,
+      290,
+      330
+    ],
+    "USB_front_y": -153,
+    "battery_x": [
+      170,
+      190
+    ],
+    "power_x": [
+      160,
+      180,
+      230,
+      290,
+      324
+    ],
+    "power_fan_x": 132,
+    "depth": 2,
+    "bond_gap": 0.1,
+    "groove_radius": 0.5,
+    "pair_groove_radius": 1.01,
+    "retention_film_thickness": 0.1,
+    "minimum_floor_web": 0.3,
+    "local_wire_position_allowance": 0.1,
+    "lid_roof_nominal": 0.5,
+    "case_print_wall_tolerance": 0.15,
+    "guide_print_tolerance": 0.05,
+    "USB_down_y": -140
+  },
+  "qualification": "Design CAD checks only; supplier wire/crimp/strain, resin and physical USB/BLE/thermal acceptance remain open"
+}
