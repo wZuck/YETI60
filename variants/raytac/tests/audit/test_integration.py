@@ -79,6 +79,14 @@ class EvidenceFailures(unittest.TestCase):
             with self.assertRaises(AssertionError):
                 audit.verify()
 
+    def test_candidate_reference_gap_rejected(self):
+        self.rejects('hardware/usb-short-route/audit/geometry-check.json',
+                     lambda data: data['USB_reference_screen']['positive'].update(nearest_adjacent_GND_coverage_fraction=.8))
+
+    def test_candidate_stale_firmware_binding_rejected(self):
+        self.rejects('hardware/usb-short-route/firmware/manifest.json',
+                     lambda data: data.update(native_acceptance_sha256='0'*64))
+
     def test_reversed_usb_data_contract(self):
         self.rejects('hardware/ec60-nrf52840/components.json',
                      lambda data: data['J1']['pins'].update({'2': 'D+', '3': 'D-'}))

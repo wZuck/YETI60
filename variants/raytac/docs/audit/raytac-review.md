@@ -2,7 +2,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 # Raytac review conclusions
 
-**All 55 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
+**All 59 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
 
 | Area | Result |
 |---|---|
@@ -37,6 +37,10 @@ English | [Chinese](raytac-review.zh-CN.md)
 | Power | [Current/timer arithmetic](yeti60-power-budget.json), enable-net and adapter review agree with BQ24074 input modes. Off-state USB100 charging differs from firmware-controlled charging. Actual thermal/current behavior remains open. |
 | Firmware | [Existing normal/calibrator ARM artifacts](yeti60-target-check.json) rechecked against current source hashes, flash ranges and linked USB500 descriptors. No firmware source changed or rebuild was required in this mechanical review; this is not target execution. |
 | Assembly | [Native fit](yeti60-assembly.json), [plate](plate-mount.json), 28 mounts / H26 omission, 1.6 mm plate, seven conductors and image provenance checked. Actual NiZ skirts/clips, 6U bends, preload and local stiffness remain open. |
+
+## Isolated USB repair candidate
+
+The canonical PCB, inventory and seven-wire assembly images above still describe the previous routing. The separate [repair candidate](../../hardware/usb-short-route/README.md) passed strict native checks and 411 physical pin-pair checks. Both contact paths are 5.286396 mm, with zero data vias and 100% adjacent-ground centerline coverage. Local header/housing tolerance checks, both rebuilt targets, host simulation and calibration tests passed. The candidate fits 75 parts, credits 8 stock parts and requires 67 purchases, with nine conductors total. Complete enclosed cables, guides, assembly illustrations and physical acceptance remain open. This does not release the canonical fabrication archive. The long-route values below continue to document the canonical routing limitation.
 
 ## Specific USB routing limitation
 

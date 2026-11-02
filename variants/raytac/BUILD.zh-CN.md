@@ -2,6 +2,8 @@
 
 # YETI60 Raytac：下单、备料、焊接与安装总入口
 
+USB 修补候选板：[原生 PCB、更新材料表、接线及当前证据](hardware/usb-short-route/README.zh-CN.md)。候选板与暂停下单的原压缩包分开保存；关壳线束路径和完整装配图尚未完成。
+
 电池由用户向供方核实：[可直接转发的参数清单](docs/build/battery-vendor-checklist.zh-CN.md)。USB 修补同步推进。
 
 

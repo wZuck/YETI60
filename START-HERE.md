@@ -2,6 +2,8 @@ English | [Chinese](START-HERE.zh-CN.md)
 
 # YETI60: start here
 
+[Raytac USB repair candidate](variants/raytac/hardware/usb-short-route/README.md): revised native board and acceptance evidence; not yet an ordering release.
+
 The active first-prototype track is **Raytac MDBT50Q-1MV2**. Open the [Raytac ordering and build handbook](variants/raytac/BUILD.md) for PCB files, order settings, inventory-adjusted materials, soldering, firmware and acceptance. E73 remains a separate alternative; do not use its mainboard files or firmware for this build.
 
 **Raytac prototype ordering is on hold:** [new USB and battery findings](variants/raytac/docs/engineering/prototype-qualification.md) require repair/qualification beyond passing DRC. Start with the [open-bench procedure, including battery tests](variants/raytac/OPEN-BENCH.md); an enclosure is optional for those tests. The current `dfm-review` archive is not an ordering release.

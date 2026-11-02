@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "variants": {
+    "normal": {
+      "arm_elf": true,
+      "hex_checksums": "passed",
+      "programmed_bytes": 227964,
+      "settings_partition_preserved": true,
+      "USB_configuration_mA": 500
+    },
+    "calibrator": {
+      "arm_elf": true,
+      "hex_checksums": "passed",
+      "programmed_bytes": 303788,
+      "settings_partition_preserved": true,
+      "USB_configuration_mA": 500
+    }
+  },
+  "build_manifest_sha256": "e2b4399db7a242bc7cd5119eacb759672dd55c322de7f7ef1eb880339b88594f",
+  "physical_verification": false
+}

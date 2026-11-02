@@ -1,8 +1,8 @@
 {
-  "review_scope": "Current Raytac native CAD, built firmware, host tests, assembly and deliverable provenance; E73 excluded",
-  "review_timestamp_UTC": "2026-11-02T03:50:41.430667+00:00",
+  "review_scope": "Canonical Raytac plus isolated short-USB repair candidate; E73 excluded; canonical images/order archive do not describe candidate cables",
+  "review_timestamp_UTC": "2026-11-02T14:40:06.565810+00:00",
   "status": "software-and-CAD-consistency-reviewed",
-  "audit_stages_passed": 55,
+  "audit_stages_passed": 59,
   "DRC_errors": 0,
   "opens": 0,
   "physical_signal_pairs": 267,
@@ -87,16 +87,16 @@
     }
   ],
   "evidence_sha256": {
-    "outcome.json": "882737fc3ba4f12448365c1763720736116d45a1b7d6f094e3e610053c1126d6",
-    "integration.json": "4a931df506273bd076e0affa9f8858f314fa067e6f6fe6bf9ca8ee3b8cdf4d62",
+    "outcome.json": "7d4e2e4e95a940232cfc8eb6036352b22d6ad7c4fb5468bc1fd6700f6f408b05",
+    "integration.json": "fdc5592464d98d8ba266d99deca523218c90ea02b76a158e10b267c5a82329c6",
     "schematic-current.json": "9c39e7886f54bfbfd6cf872bde963c5e61851983f343ad509e341acfc31764de",
     "yeti60-target-check.json": "1d01e7aad89e52546412cc67cb9baf963c412a2a0be7dc0ec03500acbd0568da",
     "yeti60-firmware-simulation.json": "6a977b63c38bde8ac3de2a1d4bec37fc21790ba629aa550dde3f4e25981dfefa",
     "yeti60-ordinary-process.json": "6792ac7aa9a7ec965cab64ceb2d4ead39a6b8781577d0950bb9f33156c87b5a7",
-    "C5-protection.json": "e80b05f738a88745b0995999ba729b622ed934c52344cae43c7c4237caf153d6",
-    "USB-signal-paths.json": "f0fbc5439a860fcf642ef2521291e598dfd0de8f15abee3eb3c0f37a2860d0d8",
+    "C5-protection.json": "cf660b99cfecae7c277a72c67c468f7e455a798ef304d82e77d736bbfc019c99",
+    "USB-signal-paths.json": "bd40ed131f0870a8b855efd41cd528845a2579c4226a76559924ba4838d056f0",
     "interference-layout.json": "b16cc3d20293f745506331bc23a1efbb43f71ef6260c0e106d8dbe5fee6e85c6",
-    "complete-exploded.json": "bf3180f7713ecc11e8029ac05bbdfa3595b686dc963815330f01d16f94a0fc9a",
+    "complete-exploded.json": "70eaa32d62860bc0ae45dfa2f80d1d1691f32af19232d63e6d7ab5ee6d88c941",
     "yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
     "yeti60-inventory.json": "8713fcafef9955ebf14e691ed2a07748f133588007d5cb7dd792e46af87ce217",
     "plate-mount.json": "021e05e7c373f0033492c1669fe4cc820b808567fc7b28e290ef671eb234f978",
@@ -104,10 +104,10 @@
     "yeti60-materials.json": "30b314c332b62c1c25feba530596530f98081c8f141bda90d301e18b48ebf0f2",
     "calibration.json": "ef9256a4e90bcc360f0ff2094f2182fec3b15d13116db7126dc41d1f5b8907c3",
     "yeti60-power-budget.json": "d92baf85836c2d2bac191bb55409c43179d4afdca4e5473f6ccdcb6bae7f3eaf",
-    "prototype-research.json": "1fc637313cf43634d2af1ef1121b4844edecd6b138a1e7b25329a54e71f7266c"
+    "prototype-research.json": "9dad28634146167ffee17b3d95e758f9b60e5ee58c476ea71a0b0c54a7aca0c0"
   },
   "source_sha256": {
-    "scripts/report_raytac_review.py": "a078a3eec8f6153b410607b63984c33de5731f63c900c01f261f69792f2c8b18",
+    "scripts/report_raytac_review.py": "ead14af933d9ad3e03bbbde8f81403d734b50e3905e339f80fe215bf508f36ba",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
     "renders/yeti60-assembly/render-manifest.json": "513b58d6e40733a6c5af048cb65c84eef160028c7c72cca4fde779f1b958839f"
@@ -123,6 +123,29 @@
   },
   "functional_acceptance_passed": false,
   "firmware_rebuilt_this_mechanical_review": false,
+  "USB_repair_candidate": {
+    "native_checks": "native-candidate-checks-passed",
+    "physical_pin_pairs_checked": 411,
+    "USB_contact_path_mm_per_leg": 5.286396103067842,
+    "USB_data_vias_per_leg": 0,
+    "adjacent_GND_centerline_coverage": {
+      "positive": 1.0,
+      "negative": 1.0
+    },
+    "firmware_rebuilt": true,
+    "firmware_status": "candidate-normal-and-calibrator-built-and-host-checked",
+    "fitted_parts": 75,
+    "planned_stock": 8,
+    "net_purchase": 67,
+    "complete_cable_geometry_and_assembly_illustrations": "open",
+    "manufacturing_released": false,
+    "physical_verification": false,
+    "evidence_sha256": {
+      "hardware/usb-short-route/audit/native-check.json": "5dde488a86000adc2901525e1deedbd834de2a2250828f4fde6412e0fa7d62d6",
+      "hardware/usb-short-route/audit/geometry-check.json": "51fde127484dd9fc1867a40fc7c51fe4d075fe1848714ad5591a6c12882df9ef",
+      "hardware/usb-short-route/firmware/manifest.json": "c72cc11459ce7f468b37e8f12619a3f0030c707060e96769703109a25ac1a9e6"
+    }
+  },
   "tracked_shared_links": {
     "EC60": "../../EC60",
     "felk60": "../../felk60",

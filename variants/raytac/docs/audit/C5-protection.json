@@ -64,7 +64,7 @@
   "source_sha256": {
     "hardware/usb-daughterboard/upstream/UDB.kicad_pcb": "1d9e2732d68fbb83dfeadb0c33d573a14483963fae61aaa02cd57d2bb7f98b35",
     "scripts/check_yeti60_c5_protection.py": "7a78488b95f742981ec239c072de2a39ec3f48aa6eee6349eaef1337ed10e87f",
-    "scripts/check_yeti60_signal_paths.py": "6f12cd99642c03878f910ee4878b16706519cd969acc77c16e2b6fb6a15f2585"
+    "scripts/check_yeti60_signal_paths.py": "fb2e744f316cc4b050a52ca06408c68aa4a19b129ee1a9e0ebc3625501ab78e6"
   },
   "limits": [
     "Geometric connectivity, not board ESD certification, USB eye or return inductance qualification",

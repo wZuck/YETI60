@@ -71,5 +71,11 @@
       "status": "open",
       "description": "Actual BAT_ADC-to-GND capacitor is C47=10nF, giving nominal 5ms RC and adequate 50ms wait; C48 is AFE rail decoupling. Reporting remains disabled. ADC/divider accuracy, measured voltage and a conservative low-voltage policy remain to qualify."
     }
-  ]
+  ],
+  "USB_repair_candidate": {
+    "native_and_local_geometry": "passed",
+    "firmware": "rebuilt-and-host-checked",
+    "manufacturing_released": false,
+    "complete_harness_and_assembly_integration": "open"
+  }
 }

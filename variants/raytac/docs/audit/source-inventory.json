@@ -8,14 +8,14 @@
     },
     {
       "path": "BUILD.md",
-      "bytes": 7217,
-      "sha256": "51642136aa5bd7c1dd7855e9235c8f94f7e628ef8b7ca37dc0ca2ab8517737fb",
+      "bytes": 7475,
+      "sha256": "b79af6360c2ca2f8bba7ba48a8a8c71b89062bf0931877c6ce3021b74cb603da",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "BUILD.zh-CN.md",
-      "bytes": 7594,
-      "sha256": "0612cb12ad9a2006721c83421e18adcf24ca23dd4e64e421e849bdc4698ee12b",
+      "bytes": 7822,
+      "sha256": "e8cc1f1b00d7edb2cffb92fa281202ed9dd2240935bed971ccab8ad1c661f4aa",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -951,7 +951,7 @@
     {
       "path": "docs/engineering/images/complete-exploded.svg",
       "bytes": 259702,
-      "sha256": "2dfe87ea2cfd41e36855d2d7510d73df16e9e9d323ceea7463e12f6c4dfcd9e1",
+      "sha256": "a8d64973094f92cc984ec99747803c990fb6e1962aefbd5dc7efca0d132104d2",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -963,7 +963,7 @@
     {
       "path": "docs/engineering/images/complete-exploded.zh-CN.svg",
       "bytes": 259800,
-      "sha256": "41512d7a09ed5083fa5e9144d9e966aa4dcd67caa560cb429377a993ed7e4032",
+      "sha256": "f86e913e833d37111e1ddbf9eac9db76c5c5b32ef05f629e54deef08214ff3d6",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1419,7 +1419,7 @@
     {
       "path": "hardware/ec60-nrf52840/DRC-strict.json",
       "bytes": 37632,
-      "sha256": "9c451310856dec60393a9dc85381f653e6ac1065e168ee33dc07dfc413b008c9",
+      "sha256": "9ff31055a6899aa249d6f38a48ac34117fce8785b28f6282cee1f1e518b35df8",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1443,7 +1443,7 @@
     {
       "path": "hardware/ec60-nrf52840/ERC.json",
       "bytes": 115945,
-      "sha256": "337a7a47b2dd67b1aff5c8d0f34107c67130d472bf3a08869a85832058083a5f",
+      "sha256": "64c8ce2fd5b547e0bcdd25d045160da3454ce0da7cdbee904d22aa5a6259d356",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2653,6 +2653,1308 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "hardware/usb-short-route/EC60-nRF52840.kicad_pcb",
+      "bytes": 5535096,
+      "sha256": "604904a25447e696d82d5dfe1289dd577e7d346339de6eefcca9e987fec686e3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/EC60-nRF52840.kicad_pro",
+      "bytes": 15018,
+      "sha256": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/EC60-nRF52840.kicad_sch",
+      "bytes": 77939,
+      "sha256": "aac35866d42eb6b1f96d998bbe717c4b76911b705daaff44fc09c230bced3ea6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/README.md",
+      "bytes": 9718,
+      "sha256": "ae6c6c2a1d309df5aa53c7de8eaf0af78d69896b0155a71024ffe951c73f62a0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/README.zh-CN.md",
+      "bytes": 8704,
+      "sha256": "c4653affaf175eed4a6009cb17f789539344f4ee29db7a72e74b6efb8283bd8f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.kicad_sym",
+      "bytes": 67687,
+      "sha256": "b04e02f6e4e779b65b28d4b5ce1245106f000e4c59c5ea5d591599b9484e5384",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C10.kicad_mod",
+      "bytes": 3843,
+      "sha256": "012e14bf8e54dec36459ed956431c982fd9fd90dee697e550e276b77a5d028cf",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C11.kicad_mod",
+      "bytes": 3841,
+      "sha256": "8888a5f215dd9d73db7e1b41ce578b7b806543dc3f1764f82d1447a25d779522",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C12.kicad_mod",
+      "bytes": 3843,
+      "sha256": "94920c2e74f0544633af659a990366b699b384ca189002ce989b86b318560a1b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C13.kicad_mod",
+      "bytes": 3833,
+      "sha256": "51065f6fc884c1fe9ca4251991e0070787ef4b1b3edb8be64a0668c1b880470e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C31.kicad_mod",
+      "bytes": 2788,
+      "sha256": "dbba361843c09dbd7be55b3cd3a94ce868b7f95d91034f67c28cf7e420684028",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C47.kicad_mod",
+      "bytes": 2783,
+      "sha256": "afb088ac48412ea1374be57715d27dfad06378001bcbc917ac40143c4c0fa86a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C48.kicad_mod",
+      "bytes": 2786,
+      "sha256": "e7a56b6182518cf11721fd11b6f8588f189068d07bb68c97e2b6b7e74ea6b25d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C9.kicad_mod",
+      "bytes": 3845,
+      "sha256": "8bced8fed3d3091439870eb8819d4317f1c1269a29b2ac375d575a20a7a29e07",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C30.kicad_mod",
+      "bytes": 2779,
+      "sha256": "ac663531aa17fce4f4b677dd837b52327b0fc2f745161fe8352f9213e2bb0cff",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C32.kicad_mod",
+      "bytes": 2780,
+      "sha256": "2794ad849ec29df3dcdcd61337277701fb66b325e3b1cca1247aa34230035ced",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C40.kicad_mod",
+      "bytes": 2778,
+      "sha256": "b51b2e21f8dfd3cfb4723e6512d4c6c18b95e61864aaa3974166914003b868d2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C41.kicad_mod",
+      "bytes": 2779,
+      "sha256": "851a791d5f852a0da81a696b22c7d0dddb3dbf42e063f1eb0e7b5501d00bc3aa",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C42.kicad_mod",
+      "bytes": 2779,
+      "sha256": "d8c554321d2f7482589a73a96c59daf945826d5f65e205334441fc67353e144e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C43.kicad_mod",
+      "bytes": 2779,
+      "sha256": "bc3a0648b5e20b8fce106117aaf487609442df3bf6cbc8777cafacf2d31eed93",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C44.kicad_mod",
+      "bytes": 2780,
+      "sha256": "18ba4d859690a5334c87146f7881fc2907202c06ab7e7e1986db5fb16c4b1e7b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C45.kicad_mod",
+      "bytes": 2779,
+      "sha256": "e4227b18be9f37dfb45873693de8769947a07c7523bc3dd781ecc58ff4509484",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C46.kicad_mod",
+      "bytes": 2779,
+      "sha256": "a2f2ee6223ced04b71944a6fcc6bf11256444c9ecdc262228d09063468b7236d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/EC60_BoardOutline__REF__.kicad_mod",
+      "bytes": 12077,
+      "sha256": "999219d671fb6fb68730275e402ddf4a3c6affea57d0c6ca029dbda0377b9234",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/Fuse_1206_3216Metric__F1.kicad_mod",
+      "bytes": 3758,
+      "sha256": "eb875d7b273d34c11de58a0b16539ac4112a27ec09acd8c4dd2d5c068f4d1ad9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H1.kicad_mod",
+      "bytes": 3035,
+      "sha256": "69d5df34ca62ecf821a03532d2ce848f47b1bd58d4e0e2e37360a7295c557605",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H10.kicad_mod",
+      "bytes": 3037,
+      "sha256": "1ff61f59ccdf0c410039c12842e259b768dc4c681449a2a05f697907b53edd3d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H11.kicad_mod",
+      "bytes": 3037,
+      "sha256": "f74e37fc0c62a4ae207db2fb26db7c008e65acf5c5e2c4027683335e31405f95",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H12.kicad_mod",
+      "bytes": 3037,
+      "sha256": "8084277af979e523ea6601446246d3526016c538a11f9807a6dc6b28e3d189a6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H13.kicad_mod",
+      "bytes": 3037,
+      "sha256": "704a290e90435faad452f80305779cf3500c853cf1a7ed376579cc25a2eff0c9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H14.kicad_mod",
+      "bytes": 3037,
+      "sha256": "3e37e402e096cf26c7f91d8be503143eca5cbf4f3218fb5c400881ff350a5a9e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H15.kicad_mod",
+      "bytes": 3037,
+      "sha256": "db861198b6a57ae922b214570a438ddc9033248b65aaf56eb59c4ea6641e4511",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H16.kicad_mod",
+      "bytes": 3037,
+      "sha256": "048d73c3af4748d49117f834b7bddbbc34af5cd75a2d197c565be65dd7be3791",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H17.kicad_mod",
+      "bytes": 3037,
+      "sha256": "fef92550f22b94abc5af05d800e672cd609920c88a834cc5aebf654efda4523a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H18.kicad_mod",
+      "bytes": 3037,
+      "sha256": "f397dd76fa054d294f66375a25f64d86d1bbb59f1c6f71b546369f0054ae07fc",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H19.kicad_mod",
+      "bytes": 3037,
+      "sha256": "e4947309e271712ee38a96d7d16156352d221e92c8e2ebe849c1d69a53436c20",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H2.kicad_mod",
+      "bytes": 3035,
+      "sha256": "c9dbe2d3c38d4f8ef86678d180c013ca735501242aad870a17d1dde7daa2e523",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H20.kicad_mod",
+      "bytes": 3037,
+      "sha256": "a07e8b93b285186d9416e13128cef51ab8a41478f03ef131fae65539ef133198",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H21.kicad_mod",
+      "bytes": 3037,
+      "sha256": "28d1dc6e445a788d2448678ab8c951739b69877d0a3fcebb7ecd282fe3e25d92",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H22.kicad_mod",
+      "bytes": 3037,
+      "sha256": "faf4ee2a540e697a6093b219a2f6d4728005b46326191dd4c526bf15b1206822",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H23.kicad_mod",
+      "bytes": 3037,
+      "sha256": "68798b8dbfffa4d92b6ae3a906dff00baaac4047610df40f55b0200efc1c886c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H24.kicad_mod",
+      "bytes": 3037,
+      "sha256": "c1ece6aa6f2c5454990d16ad4eaeb4671e1d0696b4cb644b944750626d660804",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H25.kicad_mod",
+      "bytes": 3041,
+      "sha256": "b06950cb1aee9a5d54dcd373d492eff2a97b79e4a6232e9200bae094f28966d9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H26.kicad_mod",
+      "bytes": 3037,
+      "sha256": "6cd3e452085329b863a2120ba6aa2e483ecc4fa81aab24e4d9218f48f937554a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H3.kicad_mod",
+      "bytes": 3034,
+      "sha256": "c9dff80925792d488b378b672d87883ce53facbf350c16732b040ede264bbc2e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H4.kicad_mod",
+      "bytes": 3034,
+      "sha256": "228f3129f07715198beb70be257adb41750422962118c98c1905e0585bb6db95",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H5.kicad_mod",
+      "bytes": 3035,
+      "sha256": "9f90173930843729affe57e21f581ae96dee90bca5d1ee904fa3d4e3609d83f5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H6.kicad_mod",
+      "bytes": 3035,
+      "sha256": "d645211fbc5f30d0bdb0b50f6183bbce6e80b5d6034da7f16fa339a8d6f32f37",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H7.kicad_mod",
+      "bytes": 3035,
+      "sha256": "1a9020a76a7a5b92b2e92f63cd0a2396d0013ae0c5c1d122e64d28364c7fbf1d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H8.kicad_mod",
+      "bytes": 3039,
+      "sha256": "d77f60437d9db6e63e9301490f001b4eb65c4a2a86b1f4fa0ab6723f5147d513",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H9.kicad_mod",
+      "bytes": 3035,
+      "sha256": "31507c639d0ab3cd8b5c4094c3c0c483393e6ec2e046ded138b84c05d51022cf",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/JST-SR-4__J1.kicad_mod",
+      "bytes": 3733,
+      "sha256": "1e791e4505712fa9296ed34f36e25e3a0a5b0167d4691488ce0ef5326efe7a4d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/JST-SR-4__J4.kicad_mod",
+      "bytes": 4516,
+      "sha256": "5b24b0da754d2ed69162e4fc1b5f5e12675faead1c11b1764adea9e7e53c5a1b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal__J2.kicad_mod",
+      "bytes": 8481,
+      "sha256": "efa97452c93659b1ebc0573930cd343d2cb372b2932f80d1580f579ad1dc3b1f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/JST_SH_SM02B_SRSS_TB__J5.kicad_mod",
+      "bytes": 4305,
+      "sha256": "4cdb3531a0b3591b24bae95a8d91425e8edecbb8ce7cc311df3d117594af2122",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/LED_0603_1608Metric__D2.kicad_mod",
+      "bytes": 3521,
+      "sha256": "623eb53e820623b25ef94a382a9d82e16a8e99b85a51a7dac391762a0d582d9d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/L_Wuerth_MAPI-3015__L1.kicad_mod",
+      "bytes": 4460,
+      "sha256": "51028c87fd9fba8d60c3027c5cdddb0e0c8ce453b82c04fd5dbe681f4d1dd443",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/Panasonic_EVQPUL_EVQPUC__SW1.kicad_mod",
+      "bytes": 5100,
+      "sha256": "32fc9da525a04ce7f34c3623ebbc03a41d5d835de2d1a67ce5db880858f2fe79",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R10.kicad_mod",
+      "bytes": 3843,
+      "sha256": "0d29596a4a1d5f8d7525dd47166c5bb71906af3f38194bf6d7ccd01771c1ebc8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R11.kicad_mod",
+      "bytes": 3861,
+      "sha256": "812d336bf93d63b2e865073b665d5b7067d796bdc3bbf6c039f3f41a4a3bfdc9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R12.kicad_mod",
+      "bytes": 3860,
+      "sha256": "52f0641e724716f959d2891ab9733cc3612a7855df3035261da049cc3f4b5577",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R13.kicad_mod",
+      "bytes": 3861,
+      "sha256": "5fefec56ad92e3e5e4bca0d4f2fa9128ab1977b796c9bcd0cebcc87df6188808",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R14.kicad_mod",
+      "bytes": 3859,
+      "sha256": "8c6fc7d13d84c8376425db8f270f73c23bcf17e809228687318373920cc87ce7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R15.kicad_mod",
+      "bytes": 3864,
+      "sha256": "f7b504bd0b34ea3d80f8120076a4be4790c3f7b7a442c302308cd4d4bfe2a324",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R16.kicad_mod",
+      "bytes": 3862,
+      "sha256": "12d555a88bc45568c8ba18d7593f1745947a58a21647f4773f9f9291bd86cb57",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R17.kicad_mod",
+      "bytes": 3861,
+      "sha256": "f9a6b57a16641ba8cdb5369e49a02a3d6648354c6a95ea61321f620ceae39edc",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R18.kicad_mod",
+      "bytes": 3860,
+      "sha256": "cf1eccac07fe6eef76e2fd6c3fc8cd3dde70375e5387e9986881da935fffce66",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R19.kicad_mod",
+      "bytes": 3861,
+      "sha256": "e24ee38206d41564710eeb8246e4a7606209a0c334d95ac6e904dff73a69ce85",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R20.kicad_mod",
+      "bytes": 3853,
+      "sha256": "dadcb5ca5a18b48e7aeaad8c9706b3b124671e9fe1d0eb935fca57c801edb6a1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R21.kicad_mod",
+      "bytes": 3843,
+      "sha256": "e221e542f352d2389767784c250451335459dfb13458014261cacee6a8fbc8b3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R23.kicad_mod",
+      "bytes": 3861,
+      "sha256": "93f4cf99b0b58c24d012a4a2f0d6128644a60775510e05b8c2aaf3df2c86747b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R24.kicad_mod",
+      "bytes": 3868,
+      "sha256": "b83f8037c5cda24c91f893171004cf8228f3241dfe5f3e2dcd3bbfb734e47d1b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R25.kicad_mod",
+      "bytes": 3853,
+      "sha256": "9edacc03723d4406152151df16b8366e121c79dad4e1b23e047958eecd8441f5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R26.kicad_mod",
+      "bytes": 3846,
+      "sha256": "57b054deba024a8275f2987fb8bbcf292fb07c6129951374ef84075a41d3a149",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R3.kicad_mod",
+      "bytes": 3848,
+      "sha256": "36f962f1cf3809d83acd69a73b45d3926531b32e8105df7472b1ac9c3f27fad9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R32.kicad_mod",
+      "bytes": 2766,
+      "sha256": "6c41c4d3956d71092c14c8b70b26cd916b01191992f6b207d295f17185f6c41f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R4.kicad_mod",
+      "bytes": 3833,
+      "sha256": "056710ff72e8af4b3caf0122e33a611e0512c528f0772456e29a2be9ae4d2542",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R40.kicad_mod",
+      "bytes": 2460,
+      "sha256": "93eeb5aad5dd6e2f33d2f353b436bbc6111b41b8cbd2944591d8764e4a7f2114",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R41.kicad_mod",
+      "bytes": 2789,
+      "sha256": "93bd31233847d71243aa0a9c58c660c13ea2bb6e99fa3cae606cf384c07e86cb",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R42.kicad_mod",
+      "bytes": 2785,
+      "sha256": "e148770802eed515475f14045e91301335203c9bc2f87a46428f174aedcb27f6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R43.kicad_mod",
+      "bytes": 2785,
+      "sha256": "8a378c5eafba6d15f5e976a1012d57694b9e54d0569641eadade30571b7f6533",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R44.kicad_mod",
+      "bytes": 2785,
+      "sha256": "8f21612c8983c76a3f27e3e5453e55c07c7dc629460a0fd796467734c7ff720b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R45.kicad_mod",
+      "bytes": 2766,
+      "sha256": "9e38143adeca7dc2d079fd81a7a3a1812b50ce01682c11ee2b3999576319be15",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R46.kicad_mod",
+      "bytes": 2766,
+      "sha256": "fd63d8b74380180e958243bb9819289b76acbb447be03c71172a130e64b7e0ee",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R47.kicad_mod",
+      "bytes": 2765,
+      "sha256": "308339dbfaa67dfbb8ef6d4de146635d2734aa7f7a1ebb7e0a7af4dd092a9f41",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R48.kicad_mod",
+      "bytes": 2785,
+      "sha256": "8b9be0e0ce2d3ba88e231b52552bf46efaa1d36b83300a3869142fca4551aa1c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R49.kicad_mod",
+      "bytes": 2785,
+      "sha256": "efa584479aaff69ff18599e796b7cfa279cc1877b77a6c8057dfe994dc89685d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R5.kicad_mod",
+      "bytes": 3841,
+      "sha256": "e51c7c075c67236fa280e542de64e34f0029faa22977377ffa0eb03191e3887a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R50.kicad_mod",
+      "bytes": 2785,
+      "sha256": "8c5237f821e90889cbbf964498f14cfc902a3f6f0600b06db706185cdc05053e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R51.kicad_mod",
+      "bytes": 2767,
+      "sha256": "99c05039161cfa3c7548a536a72171072caad4c4dc78a8bdc813c311c3427135",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R52.kicad_mod",
+      "bytes": 2786,
+      "sha256": "df6f3f0cc6c92fcad6273f184b40d826363d29e7a64784c55fe70a8fd0ec391c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R53.kicad_mod",
+      "bytes": 2765,
+      "sha256": "43c7d123aacc8d52317ff1bb98083cd71a0848e348f3b67ed11611833f3f6dfe",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R54.kicad_mod",
+      "bytes": 2765,
+      "sha256": "eb00fb5a419bd0dd57a7746ae9c579679eb2bc19dea3bbb3081594cdc95836be",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R55.kicad_mod",
+      "bytes": 2436,
+      "sha256": "02b1317605ddea8b85213752672a8ebca1c15f1641d84b2e0287c66317f6a5ca",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R56.kicad_mod",
+      "bytes": 2436,
+      "sha256": "fb6e93da1221ccd76f4b6340cef8f4f777da7ac3dc4a92b42ce14effa8feda63",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R6.kicad_mod",
+      "bytes": 3825,
+      "sha256": "f4dd3a5b7547c9711f22d902e87ba1feff8c7d17de77e4d4a0468f5b3909de8e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R7.kicad_mod",
+      "bytes": 3833,
+      "sha256": "ff587a92a4199c6950170d52a85eb9ace9742105c07ae5e89f0d87644eb125f5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R8.kicad_mod",
+      "bytes": 3849,
+      "sha256": "de4cafcde183f30d2b288993db663d25c686d388f66bc3b72d3dc83e0597b3ae",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R9.kicad_mod",
+      "bytes": 3849,
+      "sha256": "7797423f922e40697b1ed415769a1003a64f9b3a6ad3e2c21df58f76408b410f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/R_0603_1608Metric_Pad0.98x0.95mm_HandSolder__JP1.kicad_mod",
+      "bytes": 3772,
+      "sha256": "7f18e53f08c226e975cf226b67a4d0f84bb6bec5c712af5b2441198f454743bb",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/Raytac_MDBT50Q__U1.kicad_mod",
+      "bytes": 15248,
+      "sha256": "7ac749eb4b657b3d6a278c32608f7208a3d24188a2adc8c64ac291ffd704aa36",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/SOIC-8_3.9x4.9mm_P1.27mm__U3.kicad_mod",
+      "bytes": 5311,
+      "sha256": "d7ea6989f46684738ac50f6c0ce86be9b6e8e31ab7858e7f17a862c88f7d6140",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/SOT-363_SC-70-6__U7.kicad_mod",
+      "bytes": 6282,
+      "sha256": "1b4cee293f21ba2299f7a69f4affaab852023cc79e5e38dfec917e1daba76ef4",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/SOT-363_SC-70-6__U8.kicad_mod",
+      "bytes": 6282,
+      "sha256": "acbef6002ed5721512c61c21cc28522f88182329352bd21ee912542ab5d3806e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/SWD_Pogo_2x03__J3.kicad_mod",
+      "bytes": 1747,
+      "sha256": "598c0503ba3a3c4c8a655862ab6c45a29093b8c84c8ad68edd3e858c5d4f99c9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/SW_SPDT_CK_JS102011SAQN__SW100.kicad_mod",
+      "bytes": 8494,
+      "sha256": "7beaa0485a8021208ff7c2d594e7ec8d6c2c196ff941a5511c0c743e8541fbe7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/TSSOP16__U2.kicad_mod",
+      "bytes": 7035,
+      "sha256": "97e17b20176a416353ef0dd3f0441bf426a19cefbe6e70ac02622fec16450c2c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/TSSOP16__U4.kicad_mod",
+      "bytes": 7036,
+      "sha256": "7d49411d53fc49f20af5635f8f610259922bd7d840cfc4d37ba03251143780a5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm__U5.kicad_mod",
+      "bytes": 10433,
+      "sha256": "8709cdd89fd0b389a805072af72080b38bf7bb360a97b4689808889faa48ee9e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm__U6.kicad_mod",
+      "bytes": 7008,
+      "sha256": "0ab885a1060e9444f58374b8f9acf4f103f30a3e38b277d2fd6d28e706db9e42",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_1u1.75u__SW60.kicad_mod",
+      "bytes": 29675,
+      "sha256": "04f517e08a08423681c66eda120da0f62055bf10adee0368c967914aaa1b14fd",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_1u1.75u__SW62.kicad_mod",
+      "bytes": 29675,
+      "sha256": "6f4113dd1cc2fc494ecc93fbbf4b4a164c927e5af13d32ab540aef07d34dd1a5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_1u_edge_cut__SW48.kicad_mod",
+      "bytes": 15609,
+      "sha256": "1c124c2c494285b84febe32572f7d3a0f84c9afde283aafdcb6073ac2f01efe4",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_1u_edge_cut__SW49.kicad_mod",
+      "bytes": 15603,
+      "sha256": "8de41abb01fa1235f6ad981f7f1d52d24c77b3c32c0079fb60e323a04de93357",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW10.kicad_mod",
+      "bytes": 16431,
+      "sha256": "d6cf7e322b1348da972a8f7769fb422ccba14c71072565a7aa8d4cb603bee571",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW11.kicad_mod",
+      "bytes": 16431,
+      "sha256": "6ac6091184ad8de7b856af8c38de782e5e9af17275061021ccc7665422c1be1d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW12.kicad_mod",
+      "bytes": 16431,
+      "sha256": "81854fb457fb6c066e53626116ed469db4082f58cbaf7ac0934be1718781a78e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW13.kicad_mod",
+      "bytes": 16431,
+      "sha256": "a8e0888e42e5e78c07e1b529b0035cc86dbdaf808612c3e71c6f44537677b686",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW14.kicad_mod",
+      "bytes": 16431,
+      "sha256": "bbbb64fd79a6710073dcb8de5a2883fa3dc776f8b67636ee70f3c5b1eabcb166",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW15.kicad_mod",
+      "bytes": 16425,
+      "sha256": "94f44f51ed988c2980bc96d6d316eaa7f8352d5b0d31fc9b6b16b58d68c95342",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW16.kicad_mod",
+      "bytes": 14677,
+      "sha256": "0061167124b9207631cb7435f3f3187aead259aaf25eea1f708823fef76fc534",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW17.kicad_mod",
+      "bytes": 14671,
+      "sha256": "e10b1ec8c69ea2d653d21056ee0a2e01408ef0bca8d691730dad3d361c78cfd2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW18.kicad_mod",
+      "bytes": 16425,
+      "sha256": "8feda587c95a70a7eb122af7b6f849e0760a8d61a33d39b618dc92a65c7eb017",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW19.kicad_mod",
+      "bytes": 16425,
+      "sha256": "3ed84842721ff473a4801529ee7afcc2dd6812d97c8feb78bac76e6e48ccee71",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW2.kicad_mod",
+      "bytes": 16423,
+      "sha256": "b53989381964cfb4ab433ffe74781758581b19c7153efc9e24e4c4bd13765e88",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW20.kicad_mod",
+      "bytes": 16425,
+      "sha256": "832c01f980a26411a12c2ffcbbed560e0e707f152fcc37a11c2cb61ed8ad2b70",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW21.kicad_mod",
+      "bytes": 16425,
+      "sha256": "b0e2ce086e043266f69ffb9d3ecff0e753ce7dd7162460197e337540e06b12b9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW22.kicad_mod",
+      "bytes": 16425,
+      "sha256": "b7a5eddc79efcf80dd5b1ae50aa82bd0ff9a99263360aae2aa3c2477895464c3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW23.kicad_mod",
+      "bytes": 16425,
+      "sha256": "cfb49ebf087809e8080cae9e9a3d8c019aaa7e07aecfcdcfb57710b6b505bbd7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW24.kicad_mod",
+      "bytes": 16425,
+      "sha256": "50679834d02506bd63cd42b001f25982c5fedc718d9fd7f0922b0dccc880b7f3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW25.kicad_mod",
+      "bytes": 16425,
+      "sha256": "19dc85cb44e44db238c70ba03a3e8365a5357bfb51b0a07be9de627cde8f4a26",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW26.kicad_mod",
+      "bytes": 16425,
+      "sha256": "ab04dfd1d278044c921498c9057e42d1f259501ad5e76739ed768c1a670e6c0d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW27.kicad_mod",
+      "bytes": 16425,
+      "sha256": "74fa1a25f6857bb1d49a6968b0cf44e2bad0414a52e7dc9f30cb246582a67ac3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW28.kicad_mod",
+      "bytes": 16425,
+      "sha256": "a6ceeea382933fac331c3400d5bc56da4cd6f576bc1ca00ff62311f65651225b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW29.kicad_mod",
+      "bytes": 16425,
+      "sha256": "d34077ce54f5677bc8334e83cf166235c0df266e298721148b0eec794ea0b4b9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW3.kicad_mod",
+      "bytes": 16429,
+      "sha256": "b470b0ca1b02bd328171066d82a00988081a2f0d7d76d221f6f65b49b30d2f9b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW30.kicad_mod",
+      "bytes": 16425,
+      "sha256": "80a06b04377ec2c78611b3ae81892da4c3c5c8e2cacc259a0c9b4974614b2127",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW31.kicad_mod",
+      "bytes": 14679,
+      "sha256": "abe78557ed65ba61867dcac427c078794e626b08ee0057ff8f4c25e02cbebb47",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW32.kicad_mod",
+      "bytes": 16435,
+      "sha256": "1541451c15497a18d85ae4fea0602a5e3c0f6638893f49e5c96bf0d5e85030ad",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW34.kicad_mod",
+      "bytes": 16425,
+      "sha256": "8f170baec1e971dc82914cd42923adbcffc85690063b3b194d041fab9255b586",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW35.kicad_mod",
+      "bytes": 16425,
+      "sha256": "e82a61a4fea22648a1041ecd318111381cbe5bb8a3aa42e935f6503400a0a50a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW36.kicad_mod",
+      "bytes": 16425,
+      "sha256": "001896a7a8b8b5d75e09369637ca19f186ee6d632dedc52cf6d18dd009add0f8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW37.kicad_mod",
+      "bytes": 16425,
+      "sha256": "6848eeaa7be2f9be16cdf20246aeecf0c81015ece8cea56629a9e0817b78e55a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW38.kicad_mod",
+      "bytes": 16425,
+      "sha256": "f7cb356df5107b24f427eda8271a2b3f92f3be27eaa9dabdb0e93c37d4b17e8f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW39.kicad_mod",
+      "bytes": 16425,
+      "sha256": "ca6ddf61a3889b8b30a4da7af891d64274c9d7044d9e2f2116fdf595716a14e2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW4.kicad_mod",
+      "bytes": 16429,
+      "sha256": "5c129fed61c7ce1b641abbfcb4d6dfa1cfb5513c29565ff1b1e9498d105412bd",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW40.kicad_mod",
+      "bytes": 16425,
+      "sha256": "809af14d6296ba391505b39c9af6f03a304da5b422c9b184ab9c73795113c048",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW41.kicad_mod",
+      "bytes": 16425,
+      "sha256": "7c829a03fc0abe85d52a0d6c7e5cf736a3d8207745230ecd9211401ffcb5d213",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW42.kicad_mod",
+      "bytes": 16425,
+      "sha256": "5f7e2c6ca6ae27dfa09adb11d7e7311360dce830dd5203246e3086447cbf534d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW43.kicad_mod",
+      "bytes": 16425,
+      "sha256": "cfa03766d26b0fcbc639c18ebceab836b45ea8c305f40b07e956a0bb877eb66e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW44.kicad_mod",
+      "bytes": 16425,
+      "sha256": "435d0ec4181db48c8801f0f725383d7f9b831175aecc13e34111444b37b08bd6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW45.kicad_mod",
+      "bytes": 16425,
+      "sha256": "c6721a5de4d985b233ed9a3bd0adf24e3636ff6594a67363cea33060e02f499b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW46.kicad_mod",
+      "bytes": 16430,
+      "sha256": "7e195d018c9ed635d8e2acea456f6cbf9aa3c3091217443365796c044f0160b6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW47.kicad_mod",
+      "bytes": 16425,
+      "sha256": "b4d61614659a330c1469c4f57e9abd071c44680da13ca8970b13ea4e2ed0ac2d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW5.kicad_mod",
+      "bytes": 16429,
+      "sha256": "64f94b342634399b8b23776f1f0f38306c9b857ec8f8694bffc387e249cc7dab",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW50.kicad_mod",
+      "bytes": 16431,
+      "sha256": "4c8a4db4b5c19978891e217ab1d9698c63d041a244b14e6326f58158d9a92dc8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW51.kicad_mod",
+      "bytes": 16431,
+      "sha256": "d9bfe767b92a17cf729b5f8c0691c90e41c01f81793115d91f8353991fa50b46",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW52.kicad_mod",
+      "bytes": 16431,
+      "sha256": "bee24a802b7eec46b928605ea8c4670ba30c67f08f61fc800c559264e19305b8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW53.kicad_mod",
+      "bytes": 16431,
+      "sha256": "5f68fd3d95a1f59435b3e3ca626a76442b6a4bcf400952ac991d6bf5e5ad1ce7",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW54.kicad_mod",
+      "bytes": 16431,
+      "sha256": "7ac4ecb29a9fc9b7e2e2bec73b41ec7f06188438aa188b20d2fca27a676e8c0e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW55.kicad_mod",
+      "bytes": 16431,
+      "sha256": "6e03d984407c11b670b6ceeba3f6c5b7e30e167d24b70f4fa16df6d0f6d3d08f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW56.kicad_mod",
+      "bytes": 16431,
+      "sha256": "03826f0ce7e16410a90affab00718288d54e31c7c0c2ade153aa317014c38efd",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW57.kicad_mod",
+      "bytes": 16431,
+      "sha256": "fe1f95fd8593b175b83f182c9917cb5cbea7a57d191d4bdd90091266386caf70",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW58.kicad_mod",
+      "bytes": 16431,
+      "sha256": "39687889491f665c14bb7da8059ca3187b1e03d430025cda6712d5dd8c686fe2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW59.kicad_mod",
+      "bytes": 16431,
+      "sha256": "d5d0149ef37c51d1c7b945bf4c9f899dd57de3d464b2df4b7104ed61ee5d07a9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW6.kicad_mod",
+      "bytes": 16429,
+      "sha256": "70e81a1fec2501dbfb93c09cc112483d784918c7a854c40a748387a8800bfcb9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW61.kicad_mod",
+      "bytes": 16425,
+      "sha256": "d97b976847ada27cd437de4c13304d7fa295d1722e23cd7134307818ea91b7de",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW63.kicad_mod",
+      "bytes": 16431,
+      "sha256": "9491dda15c4ec8deeb50a8d6f6ea9f236c1a00c418e9a45054118cf5487258fe",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW64.kicad_mod",
+      "bytes": 16431,
+      "sha256": "52f22b39122923e30b49acb8864c47b80dcd6a9673b8d653b77ec81a7ef6d59b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW65.kicad_mod",
+      "bytes": 16431,
+      "sha256": "ac15a10ab8f04084de01b502135311289ab536ae599293234d9d12f3d7fe8fd2",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW66.kicad_mod",
+      "bytes": 16431,
+      "sha256": "666e23d3733d899ad5d05109ffe26cd3f0c0b3935330a16c0d6d4348b12599b8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW67.kicad_mod",
+      "bytes": 16431,
+      "sha256": "fe457a179b89a99121d5041b28468d4bd19786d61883ec68acaf7314fdf9aee0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW7.kicad_mod",
+      "bytes": 16429,
+      "sha256": "446e7616845b0633cf75eb4c2c8917ace1e385fbbe742f3ac836e152c95b9121",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW70.kicad_mod",
+      "bytes": 16431,
+      "sha256": "7200d74e0efa27e93ddbbf2cf0f741e55b44e368fac0fe8446c0a205066e6e74",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW72.kicad_mod",
+      "bytes": 16431,
+      "sha256": "f1c4eb891dffe473346babc2945adae27a2245a3addf0a5fe0490f64a144bfba",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW73.kicad_mod",
+      "bytes": 16425,
+      "sha256": "1e627d94226453418cfb2d4e868abb70c402fdc929811a7ab4109d9e0232fd4f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW74.kicad_mod",
+      "bytes": 16431,
+      "sha256": "743c92ae6efe6be64b0b1059b5becd487f777cfaefb10bbe0efb4d8a0adbe2ff",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW75.kicad_mod",
+      "bytes": 16431,
+      "sha256": "2b27d85174b37095cd6c5e398080b045d45defe8e99019042a8e7eeceb48e6a3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW8.kicad_mod",
+      "bytes": 16429,
+      "sha256": "d547b38adc8744ea57c129882e36ebe33ccc973f3af53288a36e69e1ead98aad",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW9.kicad_mod",
+      "bytes": 16429,
+      "sha256": "f7ccd225e75d8c2bbfcc88e53be5512fe7c4443155d2e584ead64143e5f1aa55",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW33.kicad_mod",
+      "bytes": 28050,
+      "sha256": "53afbf80d2514af57117fd375aa239054da60792f4551cff8a0c5d0a2470f3f9",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW68.kicad_mod",
+      "bytes": 28050,
+      "sha256": "de4a114a98eb66e9b4d4a0f7b18776afee9967347c0897015f767f54f71f74f5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW69.kicad_mod",
+      "bytes": 28050,
+      "sha256": "391c4a558bf43ff429d852feb9f10ff2c3c5bc48110862ccb1cb63c19bca181a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod",
+      "bytes": 28050,
+      "sha256": "e0a319dc63587cedd4e320be824dacc4853f69eaacddfa1191c2d04979c62b71",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/analog.kicad_sch",
+      "bytes": 71748,
+      "sha256": "4c64d34e07c9324a684f27c4295e78544a0077b0b9730e34e3223c926e36116d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/audit/DRC-strict.json",
+      "bytes": 49704,
+      "sha256": "603f0d58066166e28ecefa6609b65205389d0dafca9751513d23e8d0bc267811",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/audit/ERC.json",
+      "bytes": 115945,
+      "sha256": "cb08f2b980553dc61186ce1360e423f07655efe6a52418efb6fcbcc90feeb794",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/audit/USB-local-layout.png",
+      "bytes": 46803,
+      "sha256": "4ce254c0cfa1efbc8d8c796965cd82fc8291c51c3bdbbe5307654075fb3fb8cb",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/audit/USB-local-layout.svg",
+      "bytes": 51879,
+      "sha256": "a34c0e4f91d62d36444b7cdee2659e5d89bd0908357dc94bc8644a54cb70d04a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/audit/USB-local-layout.zh-CN.png",
+      "bytes": 52790,
+      "sha256": "3e2a34b05c33d8a0978eb209bd333788f381f3db0f02232c7b72fc750b79e6da",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/audit/USB-local-layout.zh-CN.svg",
+      "bytes": 61885,
+      "sha256": "beff352758a41ab2c90e73fc38b65b39cb15b04f24516c8c59dca0199a684399",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/audit/USB-paths.json",
+      "bytes": 7030,
+      "sha256": "81e1f1408a673db2c09b558fce157a0190aa573d42bef6f9c57b3d35bfcc8d2c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/audit/geometry-check.json",
+      "bytes": 22406,
+      "sha256": "51fde127484dd9fc1867a40fc7c51fe4d075fe1848714ad5591a6c12882df9ef",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/audit/native-check.json",
+      "bytes": 95503,
+      "sha256": "5dde488a86000adc2901525e1deedbd834de2a2250828f4fde6412e0fa7d62d6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/components.json",
+      "bytes": 17213,
+      "sha256": "cc95a04972542c3b1f77db6e1c61597191f4ac42b5b59995cf1131dc47213ab8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/README.md",
+      "bytes": 2844,
+      "sha256": "9c04c870d48ae06a9a0e07e01ebce1db01b9d08291288a145bc3e429e8428382",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/README.zh-CN.md",
+      "bytes": 2513,
+      "sha256": "2e79c64cd5a33bc3c1213a5a0110b09ae6a89fc12dcd714ce2a513dfe156e9ac",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/build.json",
+      "bytes": 8459,
+      "sha256": "e2b4399db7a242bc7cd5119eacb759672dd55c322de7f7ef1eb880339b88594f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/calibration.json",
+      "bytes": 804,
+      "sha256": "ef9256a4e90bcc360f0ff2094f2182fec3b15d13116db7126dc41d1f5b8907c3",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/manifest.json",
+      "bytes": 5407,
+      "sha256": "c72cc11459ce7f468b37e8f12619a3f0030c707060e96769703109a25ac1a9e6",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.bin",
+      "bytes": 303804,
+      "sha256": "2964dd84ce682b4815e621eda6a896fb86ea0926b4b1649dfc06913de4802823",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex",
+      "bytes": 835660,
+      "sha256": "bc631981723e02ee55220ca7045f5a0c6d2c3f8d15d899ee8c80ad66f3ae03bc",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.bin",
+      "bytes": 227976,
+      "sha256": "b99036e158dc0c343b56feb2f4b61c854ef961c1ac7a6879d6f97da9340d2622",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex",
+      "bytes": 627092,
+      "sha256": "e8407d7f06081c0298ab1c07646075094533f9462c07bc9083befb880e158056",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/simulation.json",
+      "bytes": 3657,
+      "sha256": "01a905b04f844b7b19533bb11c97428b496c201528169eb5b56e0f05bc5fed37",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/target-check.json",
+      "bytes": 560,
+      "sha256": "2caf94839074fc91488ade9e202df01ec5c5ea4e02c6b57f303dff78b615494e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/firmware/trace.csv",
+      "bytes": 145339,
+      "sha256": "02d6f2843713dd84a682c0bea3977652c20772c3781f2f5806284ea16c84909f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/fp-lib-table",
+      "bytes": 159,
+      "sha256": "ae74cc20692db69057b379cac2a92081855a8341eb0c5dcf3e3528140b57368a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/frozen-footprints.json",
+      "bytes": 18301,
+      "sha256": "6c0dfb21c0652f678d4120e37f41aa011ab066abfc354917a55fe1a9210113f1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mainboard-purchase.csv",
+      "bytes": 4898,
+      "sha256": "5239330e92073f42e818e1b025d555615b8611f5bed72fa17946397da1393e3d",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mainboard-purchase.zh-CN.csv",
+      "bytes": 4473,
+      "sha256": "19ee8ab5e1888a585ba6d6ab02734b22ae7e3411a79f7776418a04d0f480e16c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/matrix.kicad_sch",
+      "bytes": 126894,
+      "sha256": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/metadata-audit.json",
+      "bytes": 1424,
+      "sha256": "9a5a76d3a1d93b7c876ceb873875bb01f0ec38759e85d67b1e47a125952e7a66",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/mounting.kicad_sch",
+      "bytes": 16779,
+      "sha256": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/netlist.xml",
+      "bytes": 245264,
+      "sha256": "93bba88373fc91a26a6ffc31c5d82f177f897b703894cfead48161fd46d46e5c",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/power.kicad_sch",
+      "bytes": 72843,
+      "sha256": "1d35fb87ed82b68c829c1d409eacc09322cc079e40bdb6129543fc92412fe3cb",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "hardware/usb-short-route/sym-lib-table",
+      "bytes": 136,
+      "sha256": "d45513cd8e4e4ccd05e68f16dfa9399892b19383c65133140567bda6f4228cc8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "renders/ec60-nrf52840/README.md",
       "bytes": 2121,
       "sha256": "ee31fb9c4981c6013b1fe642c79196cabf4e2b797b943d0f734155ad801283ca",
@@ -2803,6 +4105,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/build_usb_short_firmware.py",
+      "bytes": 4690,
+      "sha256": "7241278d3f7abef9387923d8aa30e068f54422f5139a6d6b047b7dc7f2e09cbe",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/build_yeti60_firmware.py",
       "bytes": 4298,
       "sha256": "22aae2e01d540dcda239bd97a789565a2f3a1a02ce518d55edbfb1d909524c2a",
@@ -2846,8 +4154,8 @@
     },
     {
       "path": "scripts/check_project_integration.py",
-      "bytes": 11105,
-      "sha256": "55d9aa569ce13737b7c960ce9131ad7362def133bca62b41d9b7ec2a19f47c2c",
+      "bytes": 12419,
+      "sha256": "8a0378b10c17aeea262c8941d4e1a0f33be8358765062a6a6b0925c31f1e2ef8",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2866,6 +4174,18 @@
       "path": "scripts/check_single_nrf_pcb.py",
       "bytes": 6226,
       "sha256": "6bbd22b78aa319fedbd5d16ffeb51dfbd3280914d59eb7daeef488766cd26d89",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_usb_short_firmware.py",
+      "bytes": 3035,
+      "sha256": "fef5cc50e3330fc851b11cb5a91a5998d6c25c977badda351cdce88a7e7bbbed",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_usb_short_route.py",
+      "bytes": 12646,
+      "sha256": "5697beb56f298224e1e69fbe70da11103ecba1ada7c24192fc5163c2ec32365f",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2936,8 +4256,8 @@
     },
     {
       "path": "scripts/check_yeti60_signal_paths.py",
-      "bytes": 10548,
-      "sha256": "6f12cd99642c03878f910ee4878b16706519cd969acc77c16e2b6fb6a15f2585",
+      "bytes": 10819,
+      "sha256": "fb2e744f316cc4b050a52ca06408c68aa4a19b129ee1a9e0ebc3625501ab78e6",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3068,14 +4388,14 @@
     },
     {
       "path": "scripts/report_raytac_review.py",
-      "bytes": 18706,
-      "sha256": "a078a3eec8f6153b410607b63984c33de5731f63c900c01f261f69792f2c8b18",
+      "bytes": 21418,
+      "sha256": "ead14af933d9ad3e03bbbde8f81403d734b50e3905e339f80fe215bf508f36ba",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "scripts/run_audit.py",
-      "bytes": 10211,
-      "sha256": "54d9c30879a34dc1d22961fdaab7a91ec20c5b21c123c2bd41cde0cc6a5146e1",
+      "bytes": 10663,
+      "sha256": "503f26323f1a66012a763e7d5eb6175b378d76d90fb4c87e9a57e4dd52f27bc9",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3094,6 +4414,12 @@
       "path": "scripts/simulate_yeti60_firmware.py",
       "bytes": 3273,
       "sha256": "7aee628f1ece266f0f38122dec997221bc4585073ac6adb4a819d5452c2247e0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/study_usb_short_route.py",
+      "bytes": 6926,
+      "sha256": "85d12d0f2ef5a8c3caf41ac88610510ae8bcad5c6eb18342fcbb78f3749a89bc",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3140,8 +4466,8 @@
     },
     {
       "path": "tests/audit/test_integration.py",
-      "bytes": 5769,
-      "sha256": "03dfae66396f0345cc74c0dae2a1f56b5cf93db11916e9c786195983545e9aa6",
+      "bytes": 6239,
+      "sha256": "9b208e0eee28b3e6d6341ed231501149458e8324e2481c5f24303b8be4ab6db0",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3178,6 +4504,12 @@
       "path": "tests/audit/test_target.py",
       "bytes": 1005,
       "sha256": "cfda9c7ab3de43595fbdb7a350d4c8420b18753b2ea4c414f1d28e8113cf745b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/audit/test_usb_short_route.py",
+      "bytes": 1786,
+      "sha256": "efaec13de2ad24b7c6116d74e2aeec9c3ee14f4c27948aea816e4c89aa4dcad3",
       "coverage": "inventoried-not-automatically-approved"
     },
     {

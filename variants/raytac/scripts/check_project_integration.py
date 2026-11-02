@@ -111,7 +111,17 @@ def verify():
     assert research['native_recipe_sha256']==sha(ROOT/'scripts/export_yeti60_usb_reference.py')
     assert not research['bare_board_order_ready'] and not research['production_approved'] and not research['physical_verification']
     assert research['mechanical']['installed_mounts']==28 and research['mechanical']['unused_mounts']==['H26']
-    return {'status':'passed','shared_links':shared_links,'controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements']}
+    candidate=ROOT/'hardware/usb-short-route'
+    short=read(candidate/'audit/native-check.json');assert short['status']=='native-candidate-checks-passed'
+    assert short['strict_DRC_errors']==short['unconnected_items']==short['schematic_parity_items']==0
+    hashes(short['source_sha256']);assert short['audit_script_sha256']==sha(ROOT/'scripts/check_usb_short_route.py')
+    local=read(candidate/'audit/geometry-check.json');assert local['status']=='local-header-fit-and-reference-passed';hashes(local['source_sha256'])
+    assert all(local['USB_reference_screen'][side]['nearest_adjacent_GND_coverage_fraction']>.999 for side in ['positive','negative'])
+    firmware=read(candidate/'firmware/manifest.json');hashes(firmware['source_sha256']);hashes(firmware['published_outputs']);hashes(firmware['evidence'])
+    assert firmware['native_acceptance_sha256']==sha(candidate/'audit/native-check.json')
+    assert firmware['local_geometry_acceptance_sha256']==sha(candidate/'audit/geometry-check.json')
+    assert not short['manufacturing_released'] and not local['manufacturing_released'] and not firmware['physical_verification']
+    return {'status':'passed','shared_links':shared_links,'controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements'],'USB_repair_candidate':{'native_and_local_geometry':'passed','firmware':'rebuilt-and-host-checked','manufacturing_released':False,'complete_harness_and_assembly_integration':'open'}}
 def main():
     try: report=verify()
     except (AssertionError,KeyError,FileNotFoundError,ValueError) as error:

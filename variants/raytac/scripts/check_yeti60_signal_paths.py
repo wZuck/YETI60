@@ -151,17 +151,23 @@ def build_graph(board,nets):
 
 def extract(path):
     board=pcb.LoadBoard(str(path));graph,ports,pads=build_graph(board,{'D+','D-','USB_DP','USB_DM'})
-    for ref in ['R30','R31']:
-        a,b=ports[ref,'1'],ports[ref,'2'];graph.add(a,b,math.dist(a[2:],b[2:]),'series-package',reference=ref)
+    direct=('J4','2') in ports
+    source='J4' if direct else 'J1'
+    if direct:
+        assert ('R30','1') not in ports and ('R31','1') not in ports
+        assert pads['J4','2'].GetNetname()=='USB_DM' and pads['J4','3'].GetNetname()=='USB_DP'
+    else:
+        for ref in ['R30','R31']:
+            a,b=ports[ref,'1'],ports[ref,'2'];graph.add(a,b,math.dist(a[2:],b[2:]),'series-package',reference=ref)
     output={}
     for name,pin,net,front in [('positive','3','USB_DP','D+'),('negative','2','USB_DM','D-')]:
         tvs=next((number for (ref,number),pad in pads.items() if ref=='D1' and number in ['2','3'] and pad.GetNetname()==front),None)
         endpoint=next(k for k,p in pads.items() if k[0]=='U1' and p.GetNetname()==net)
-        length,nodes,edge_ids=graph.path(ports['J1',pin],{ports[endpoint]})
+        length,nodes,edge_ids=graph.path(ports[source,pin],{ports[endpoint]})
         edges=[graph.edges[i] for i in edge_ids]
         stub,stub_ids=0,[]
         if tvs is not None:stub,_,stub_ids=graph.path(ports['D1',tvs],set(nodes))
-        output[name]={'from':'J1.'+pin,'to':'.'.join(endpoint),'geometric_centerline_path_mm':length,
+        output[name]={'from':source+'.'+pin,'to':'.'.join(endpoint),'geometric_centerline_path_mm':length,
                       'actual_trace_centerline_mm':sum(e['length_mm'] for e in edges if e['kind']=='trace'),
                       'ESD_branch_to_main_path_mm':stub,'protection_location':'C5 U1' if tvs is None else 'mainboard D1','ESD_branch_path':[graph.edges[i] for i in stub_ids],'layers':sorted({e['layer'] for e in edges if e['kind']=='trace'}),
                       'via_count':len({e['item'] for e in edges if e['kind']=='via'}),'ordered_path':edges}

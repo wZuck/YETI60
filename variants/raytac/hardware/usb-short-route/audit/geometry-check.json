@@ -1,0 +1,835 @@
+{
+  "status": "local-header-fit-and-reference-passed",
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "USB_reference_screen": {
+    "positive": {
+      "layers": {
+        "B.Cu": {
+          "nearest_adjacent_layer": "In2.Cu",
+          "trace_mm": 4.138908729652579,
+          "uncovered_centerline_mm": 0.0,
+          "covered_fraction": 1.0,
+          "outside_same_layer_partner_0_75mm_mm": 0.41460116231716776
+        }
+      },
+      "trace_mm": 4.138908729652579,
+      "uncovered_nearest_adjacent_GND_centerline_mm": 0.0,
+      "nearest_adjacent_GND_coverage_fraction": 1.0,
+      "signal_vias": []
+    },
+    "negative": {
+      "layers": {
+        "B.Cu": {
+          "nearest_adjacent_layer": "In2.Cu",
+          "trace_mm": 4.138908729652579,
+          "uncovered_centerline_mm": 0.0,
+          "covered_fraction": 1.0,
+          "outside_same_layer_partner_0_75mm_mm": 0.41460116231716776
+        }
+      },
+      "trace_mm": 4.138908729652579,
+      "uncovered_nearest_adjacent_GND_centerline_mm": 0.0,
+      "nearest_adjacent_GND_coverage_fraction": 1.0,
+      "signal_vias": []
+    }
+  },
+  "ground_polygon_normalizations": [
+    {
+      "original_area_mm2": 49.015956191523955,
+      "area_delta_mm2": 2.842170943040401e-14
+    },
+    {
+      "original_area_mm2": 13797.995661866078,
+      "area_delta_mm2": 6.912159733474255e-11
+    },
+    {
+      "original_area_mm2": 9908.608413539328,
+      "area_delta_mm2": 2.3646862246096134e-11
+    },
+    {
+      "original_area_mm2": 1296.4612082536833,
+      "area_delta_mm2": 4.547473508864641e-13
+    },
+    {
+      "original_area_mm2": 1737.2779885167997,
+      "area_delta_mm2": 1.5916157281026244e-12
+    },
+    {
+      "original_area_mm2": 70.7868219562039,
+      "area_delta_mm2": 0.0
+    },
+    {
+      "original_area_mm2": 2619.631089849552,
+      "area_delta_mm2": 7.275957614183426e-12
+    },
+    {
+      "original_area_mm2": 77.58899979649259,
+      "area_delta_mm2": 8.526512829121202e-14
+    },
+    {
+      "original_area_mm2": 30.353657114257576,
+      "area_delta_mm2": 1.0658141036401503e-14
+    },
+    {
+      "original_area_mm2": 921.0952380816501,
+      "area_delta_mm2": 6.821210263296962e-13
+    },
+    {
+      "original_area_mm2": 54.144581453979605,
+      "area_delta_mm2": 2.1316282072803006e-14
+    },
+    {
+      "original_area_mm2": 220.0714011971584,
+      "area_delta_mm2": 1.1084466677857563e-12
+    },
+    {
+      "original_area_mm2": 1278.063630145378,
+      "area_delta_mm2": 9.094947017729282e-13
+    },
+    {
+      "original_area_mm2": 1784.2280481770404,
+      "area_delta_mm2": 4.774847184307873e-12
+    },
+    {
+      "original_area_mm2": 141.66597343308902,
+      "area_delta_mm2": 5.684341886080802e-14
+    },
+    {
+      "original_area_mm2": 13.370944632770042,
+      "area_delta_mm2": 0.0
+    },
+    {
+      "original_area_mm2": 24040.648001558406,
+      "area_delta_mm2": 2.1827872842550278e-11
+    },
+    {
+      "original_area_mm2": 9969.66788121834,
+      "area_delta_mm2": 1.8735590856522322e-10
+    },
+    {
+      "original_area_mm2": 36.37164279069089,
+      "area_delta_mm2": 2.842170943040401e-14
+    },
+    {
+      "original_area_mm2": 2958.9374719341613,
+      "area_delta_mm2": 1.4097167877480388e-11
+    },
+    {
+      "original_area_mm2": 497.7583132368602,
+      "area_delta_mm2": 2.8421709430404007e-13
+    },
+    {
+      "original_area_mm2": 15.439582992289006,
+      "area_delta_mm2": 3.552713678800501e-15
+    },
+    {
+      "original_area_mm2": 76.84299926266198,
+      "area_delta_mm2": 0.0
+    },
+    {
+      "original_area_mm2": 50.662294048698215,
+      "area_delta_mm2": 2.842170943040401e-14
+    },
+    {
+      "original_area_mm2": 19.467967953511007,
+      "area_delta_mm2": 1.0658141036401503e-14
+    },
+    {
+      "original_area_mm2": 0.20604842482399974,
+      "area_delta_mm2": 0.003742982877540657
+    },
+    {
+      "original_area_mm2": 0.29142204489300033,
+      "area_delta_mm2": 3.3443617197814746e-07
+    }
+  ],
+  "local_connector_and_mating_housing_checks": [
+    {
+      "envelope": "J5",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        339.0,
+        -119.175,
+        -5.0,
+        343.0,
+        -114.925,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.6600000000000161,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 2.9950000000000045
+    },
+    {
+      "envelope": "J5-contact-1",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        340.2,
+        -120.275,
+        -2.5,
+        340.8,
+        -118.725,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.1600000000000152,
+      "nearest_retained_part_or_mount": "C30",
+      "minimum_retained_part_or_mount_gap_mm": 5.002741748281616
+    },
+    {
+      "envelope": "J5-contact-2",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        341.2,
+        -120.275,
+        -2.5,
+        341.8,
+        -118.725,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.1600000000000152,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 4.194999999999993
+    },
+    {
+      "envelope": "J5-contact-MP",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        338.6,
+        -116.525,
+        -2.5,
+        339.8,
+        -114.725,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.160000000000017,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 6.194999999999993
+    },
+    {
+      "envelope": "J5-contact-MP",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        342.2,
+        -116.525,
+        -2.5,
+        343.4,
+        -114.725,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.160000000000017,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 2.5950000000000273
+    },
+    {
+      "envelope": "J5-mating-plug",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        339.5,
+        -117.925,
+        -5.1,
+        342.5,
+        -112.925,
+        -2.0999999999999996
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.5600000000000165,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 3.4950000000000045
+    },
+    {
+      "envelope": "J4",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        347.5,
+        -115.175,
+        -5.0,
+        353.5,
+        -110.925,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.6600000000000179,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 1.0700000000000074
+    },
+    {
+      "envelope": "J4-contact-1",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        348.7,
+        -116.275,
+        -2.5,
+        349.3,
+        -114.725,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.160000000000018,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 0.6949999999999932
+    },
+    {
+      "envelope": "J4-contact-2",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        349.7,
+        -116.275,
+        -2.5,
+        350.3,
+        -114.725,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.160000000000018,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 1.6949999999999932
+    },
+    {
+      "envelope": "J4-contact-3",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        350.7,
+        -116.275,
+        -2.5,
+        351.3,
+        -114.725,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.160000000000018,
+      "nearest_retained_part_or_mount": "U1",
+      "minimum_retained_part_or_mount_gap_mm": 2.5249999999999915
+    },
+    {
+      "envelope": "J4-contact-4",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        351.7,
+        -116.275,
+        -2.5,
+        352.3,
+        -114.725,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.160000000000018,
+      "nearest_retained_part_or_mount": "U1",
+      "minimum_retained_part_or_mount_gap_mm": 2.5249999999999915
+    },
+    {
+      "envelope": "J4-contact-MP",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        347.1,
+        -112.525,
+        -2.5,
+        348.3,
+        -110.725,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.1600000000000197,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 3.719999999999999
+    },
+    {
+      "envelope": "J4-contact-MP",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        352.7,
+        -112.525,
+        -2.5,
+        353.9,
+        -110.725,
+        -1.9999999999999998
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.1600000000000197,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 5.990110599980599
+    },
+    {
+      "envelope": "J4-mating-plug",
+      "pcb_thickness_mm": 1.6062,
+      "bounds_case_mm": [
+        348.0,
+        -113.925,
+        -5.1,
+        353.0,
+        -108.925,
+        -2.0999999999999996
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.5600000000000191,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 2.3200000000000074
+    },
+    {
+      "envelope": "J5",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        339.0,
+        -119.175,
+        -4.8338,
+        343.0,
+        -114.925,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.826200000000016,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 2.9950000000000045
+    },
+    {
+      "envelope": "J5-contact-1",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        340.2,
+        -120.275,
+        -2.3338,
+        340.8,
+        -118.725,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.326200000000015,
+      "nearest_retained_part_or_mount": "C30",
+      "minimum_retained_part_or_mount_gap_mm": 5.002741748281616
+    },
+    {
+      "envelope": "J5-contact-2",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        341.2,
+        -120.275,
+        -2.3338,
+        341.8,
+        -118.725,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.326200000000015,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 4.194999999999993
+    },
+    {
+      "envelope": "J5-contact-MP",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        338.6,
+        -116.525,
+        -2.3338,
+        339.8,
+        -114.725,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.326200000000017,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 6.194999999999993
+    },
+    {
+      "envelope": "J5-contact-MP",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        342.2,
+        -116.525,
+        -2.3338,
+        343.4,
+        -114.725,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.326200000000017,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 2.5950000000000273
+    },
+    {
+      "envelope": "J5-mating-plug",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        339.5,
+        -117.925,
+        -4.9338,
+        342.5,
+        -112.925,
+        -1.9337999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.7262000000000164,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 3.4950000000000045
+    },
+    {
+      "envelope": "J4",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        347.5,
+        -115.175,
+        -4.8338,
+        353.5,
+        -110.925,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.8262000000000178,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 1.0700000000000074
+    },
+    {
+      "envelope": "J4-contact-1",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        348.7,
+        -116.275,
+        -2.3338,
+        349.3,
+        -114.725,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.326200000000018,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 0.6949999999999932
+    },
+    {
+      "envelope": "J4-contact-2",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        349.7,
+        -116.275,
+        -2.3338,
+        350.3,
+        -114.725,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.326200000000018,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 1.6949999999999932
+    },
+    {
+      "envelope": "J4-contact-3",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        350.7,
+        -116.275,
+        -2.3338,
+        351.3,
+        -114.725,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.326200000000018,
+      "nearest_retained_part_or_mount": "U1",
+      "minimum_retained_part_or_mount_gap_mm": 2.5249999999999915
+    },
+    {
+      "envelope": "J4-contact-4",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        351.7,
+        -116.275,
+        -2.3338,
+        352.3,
+        -114.725,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.326200000000018,
+      "nearest_retained_part_or_mount": "U1",
+      "minimum_retained_part_or_mount_gap_mm": 2.5249999999999915
+    },
+    {
+      "envelope": "J4-contact-MP",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        347.1,
+        -112.525,
+        -2.3338,
+        348.3,
+        -110.725,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.3262000000000196,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 3.719999999999999
+    },
+    {
+      "envelope": "J4-contact-MP",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        352.7,
+        -112.525,
+        -2.3338,
+        353.9,
+        -110.725,
+        -1.8337999999999997
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.3262000000000196,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 5.990110599980599
+    },
+    {
+      "envelope": "J4-mating-plug",
+      "pcb_thickness_mm": 1.44,
+      "bounds_case_mm": [
+        348.0,
+        -113.925,
+        -4.9338,
+        353.0,
+        -108.925,
+        -1.9337999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.726200000000019,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 2.3200000000000074
+    },
+    {
+      "envelope": "J5",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        339.0,
+        -119.175,
+        -5.1538,
+        343.0,
+        -114.925,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.5062000000000157,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 2.9950000000000045
+    },
+    {
+      "envelope": "J5-contact-1",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        340.2,
+        -120.275,
+        -2.6538,
+        340.8,
+        -118.725,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.0062000000000153,
+      "nearest_retained_part_or_mount": "C30",
+      "minimum_retained_part_or_mount_gap_mm": 5.002741748281616
+    },
+    {
+      "envelope": "J5-contact-2",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        341.2,
+        -120.275,
+        -2.6538,
+        341.8,
+        -118.725,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.0062000000000153,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 4.194999999999993
+    },
+    {
+      "envelope": "J5-contact-MP",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        338.6,
+        -116.525,
+        -2.6538,
+        339.8,
+        -114.725,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.006200000000017,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 6.194999999999993
+    },
+    {
+      "envelope": "J5-contact-MP",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        342.2,
+        -116.525,
+        -2.6538,
+        343.4,
+        -114.725,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.006200000000017,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 2.5950000000000273
+    },
+    {
+      "envelope": "J5-mating-plug",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        339.5,
+        -117.925,
+        -5.2538,
+        342.5,
+        -112.925,
+        -2.2537999999999996
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.4062000000000161,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 3.4950000000000045
+    },
+    {
+      "envelope": "J4",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        347.5,
+        -115.175,
+        -5.1538,
+        353.5,
+        -110.925,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.5062000000000175,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 1.0700000000000074
+    },
+    {
+      "envelope": "J4-contact-1",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        348.7,
+        -116.275,
+        -2.6538,
+        349.3,
+        -114.725,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.006200000000018,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 0.6949999999999932
+    },
+    {
+      "envelope": "J4-contact-2",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        349.7,
+        -116.275,
+        -2.6538,
+        350.3,
+        -114.725,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.006200000000018,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 1.6949999999999932
+    },
+    {
+      "envelope": "J4-contact-3",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        350.7,
+        -116.275,
+        -2.6538,
+        351.3,
+        -114.725,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.006200000000018,
+      "nearest_retained_part_or_mount": "U1",
+      "minimum_retained_part_or_mount_gap_mm": 2.5249999999999915
+    },
+    {
+      "envelope": "J4-contact-4",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        351.7,
+        -116.275,
+        -2.6538,
+        352.3,
+        -114.725,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.006200000000018,
+      "nearest_retained_part_or_mount": "U1",
+      "minimum_retained_part_or_mount_gap_mm": 2.5249999999999915
+    },
+    {
+      "envelope": "J4-contact-MP",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        347.1,
+        -112.525,
+        -2.6538,
+        348.3,
+        -110.725,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.0062000000000197,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 3.719999999999999
+    },
+    {
+      "envelope": "J4-contact-MP",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        352.7,
+        -112.525,
+        -2.6538,
+        353.9,
+        -110.725,
+        -2.1537999999999995
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 3.0062000000000197,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 5.990110599980599
+    },
+    {
+      "envelope": "J4-mating-plug",
+      "pcb_thickness_mm": 1.76,
+      "bounds_case_mm": [
+        348.0,
+        -113.925,
+        -5.2538,
+        353.0,
+        -108.925,
+        -2.2537999999999996
+      ],
+      "allowance_mm": 0.25,
+      "minimum_case_gap_mm": 0.40620000000001877,
+      "nearest_retained_part_or_mount": "C32",
+      "minimum_retained_part_or_mount_gap_mm": 2.3200000000000074
+    }
+  ],
+  "source_sha256": {
+    "hardware/usb-short-route/audit/native-check.json": "5dde488a86000adc2901525e1deedbd834de2a2250828f4fde6412e0fa7d62d6",
+    "hardware/usb-short-route/audit/USB-paths.json": "81e1f1408a673db2c09b558fce157a0190aa573d42bef6f9c57b3d35bfcc8d2c",
+    "scripts/study_usb_short_route.py": "85d12d0f2ef5a8c3caf41ac88610510ae8bcad5c6eb18342fcbb78f3749a89bc",
+    "docs/audit/yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
+    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b"
+  },
+  "not_verified": [
+    "Full C5-to-J4 and J5-to-J1 cable sweeps, bend radii, serviceability and enclosed routing",
+    "Connector MPN height and supplier mating-housing tolerances",
+    "Pair impedance, current distribution, propagation delay and eye diagram",
+    "Actual USB data with simultaneous battery charging"
+  ]
+}

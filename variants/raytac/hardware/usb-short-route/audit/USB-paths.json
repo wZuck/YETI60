@@ -1,0 +1,333 @@
+{
+  "positive": {
+    "from": "J4.3",
+    "to": "U1.35",
+    "geometric_centerline_path_mm": 5.286396103067842,
+    "actual_trace_centerline_mm": 4.138908729652579,
+    "ESD_branch_to_main_path_mm": 0,
+    "protection_location": "C5 U1",
+    "ESD_branch_path": [],
+    "layers": [
+      "B.Cu"
+    ],
+    "via_count": 0,
+    "ordered_path": [
+      {
+        "a": [
+          "ea158652-be21-4ebd-8248-50c1a4a400ea",
+          2,
+          351.0,
+          116.4
+        ],
+        "b": [
+          "d1252762-5b72-4c49-bf4c-960cc66c2ab8",
+          2,
+          351.0,
+          115.5
+        ],
+        "length_mm": 0.9000000000000057,
+        "kind": "pad-access"
+      },
+      {
+        "a": [
+          "ea158652-be21-4ebd-8248-50c1a4a400ea",
+          2,
+          351.0,
+          116.4
+        ],
+        "b": [
+          "ea158652-be21-4ebd-8248-50c1a4a400ea",
+          2,
+          350.725,
+          116.675
+        ],
+        "length_mm": 0.38890872965257905,
+        "kind": "trace",
+        "item": "ea158652-be21-4ebd-8248-50c1a4a400ea",
+        "net": "USB_DP",
+        "layer": "B.Cu",
+        "width_mm": 0.3,
+        "start": [
+          351.0,
+          116.4
+        ],
+        "end": [
+          350.725,
+          116.675
+        ]
+      },
+      {
+        "a": [
+          "0b0ae65e-fd9b-47c1-889b-408e7d90da21",
+          2,
+          350.725,
+          116.675
+        ],
+        "b": [
+          "ea158652-be21-4ebd-8248-50c1a4a400ea",
+          2,
+          350.725,
+          116.675
+        ],
+        "length_mm": 0.0,
+        "kind": "junction"
+      },
+      {
+        "a": [
+          "0b0ae65e-fd9b-47c1-889b-408e7d90da21",
+          2,
+          350.725,
+          116.675
+        ],
+        "b": [
+          "0b0ae65e-fd9b-47c1-889b-408e7d90da21",
+          2,
+          350.725,
+          119.8
+        ],
+        "length_mm": 3.125,
+        "kind": "trace",
+        "item": "0b0ae65e-fd9b-47c1-889b-408e7d90da21",
+        "net": "USB_DP",
+        "layer": "B.Cu",
+        "width_mm": 0.3,
+        "start": [
+          350.725,
+          116.675
+        ],
+        "end": [
+          350.725,
+          119.8
+        ]
+      },
+      {
+        "a": [
+          "0b0ae65e-fd9b-47c1-889b-408e7d90da21",
+          2,
+          350.725,
+          119.8
+        ],
+        "b": [
+          "0be5ea0b-fa96-4434-9fcb-90e36d40f6b6",
+          2,
+          350.9,
+          119.975
+        ],
+        "length_mm": 0.24748737341525748,
+        "kind": "junction"
+      },
+      {
+        "a": [
+          "0be5ea0b-fa96-4434-9fcb-90e36d40f6b6",
+          2,
+          350.9,
+          119.975
+        ],
+        "b": [
+          "0be5ea0b-fa96-4434-9fcb-90e36d40f6b6",
+          2,
+          350.9,
+          120.6
+        ],
+        "length_mm": 0.625,
+        "kind": "trace",
+        "item": "0be5ea0b-fa96-4434-9fcb-90e36d40f6b6",
+        "net": "USB_DP",
+        "layer": "B.Cu",
+        "width_mm": 0.3,
+        "start": [
+          350.9,
+          119.975
+        ],
+        "end": [
+          350.9,
+          120.6
+        ]
+      },
+      {
+        "a": [
+          "0be5ea0b-fa96-4434-9fcb-90e36d40f6b6",
+          2,
+          350.9,
+          120.6
+        ],
+        "b": [
+          "5f6d345a-6ff9-4d03-9744-e1d4c708a79d",
+          2,
+          350.9,
+          120.6
+        ],
+        "length_mm": 0.0,
+        "kind": "pad-access"
+      }
+    ]
+  },
+  "negative": {
+    "from": "J4.2",
+    "to": "U1.34",
+    "geometric_centerline_path_mm": 5.286396103067842,
+    "actual_trace_centerline_mm": 4.138908729652579,
+    "ESD_branch_to_main_path_mm": 0,
+    "protection_location": "C5 U1",
+    "ESD_branch_path": [],
+    "layers": [
+      "B.Cu"
+    ],
+    "via_count": 0,
+    "ordered_path": [
+      {
+        "a": [
+          "847b4c8b-55b5-4478-99c5-1fd7ca2349ef",
+          2,
+          350.0,
+          116.4
+        ],
+        "b": [
+          "ae46fc31-464f-4cca-8998-da3f91d77ac6",
+          2,
+          350.0,
+          115.5
+        ],
+        "length_mm": 0.9000000000000057,
+        "kind": "pad-access"
+      },
+      {
+        "a": [
+          "847b4c8b-55b5-4478-99c5-1fd7ca2349ef",
+          2,
+          350.0,
+          116.4
+        ],
+        "b": [
+          "847b4c8b-55b5-4478-99c5-1fd7ca2349ef",
+          2,
+          350.275,
+          116.675
+        ],
+        "length_mm": 0.38890872965257905,
+        "kind": "trace",
+        "item": "847b4c8b-55b5-4478-99c5-1fd7ca2349ef",
+        "net": "USB_DM",
+        "layer": "B.Cu",
+        "width_mm": 0.3,
+        "start": [
+          350.0,
+          116.4
+        ],
+        "end": [
+          350.275,
+          116.675
+        ]
+      },
+      {
+        "a": [
+          "847b4c8b-55b5-4478-99c5-1fd7ca2349ef",
+          2,
+          350.275,
+          116.675
+        ],
+        "b": [
+          "bb9a1901-3e47-4a5e-a0da-e4fde47f33cd",
+          2,
+          350.275,
+          116.675
+        ],
+        "length_mm": 0.0,
+        "kind": "junction"
+      },
+      {
+        "a": [
+          "bb9a1901-3e47-4a5e-a0da-e4fde47f33cd",
+          2,
+          350.275,
+          116.675
+        ],
+        "b": [
+          "bb9a1901-3e47-4a5e-a0da-e4fde47f33cd",
+          2,
+          350.275,
+          119.8
+        ],
+        "length_mm": 3.125,
+        "kind": "trace",
+        "item": "bb9a1901-3e47-4a5e-a0da-e4fde47f33cd",
+        "net": "USB_DM",
+        "layer": "B.Cu",
+        "width_mm": 0.3,
+        "start": [
+          350.275,
+          116.675
+        ],
+        "end": [
+          350.275,
+          119.8
+        ]
+      },
+      {
+        "a": [
+          "bb9a1901-3e47-4a5e-a0da-e4fde47f33cd",
+          2,
+          350.275,
+          119.8
+        ],
+        "b": [
+          "c9368447-4147-4033-9749-fcb2b798880b",
+          2,
+          350.1,
+          119.975
+        ],
+        "length_mm": 0.24748737341525748,
+        "kind": "junction"
+      },
+      {
+        "a": [
+          "c9368447-4147-4033-9749-fcb2b798880b",
+          2,
+          350.1,
+          119.975
+        ],
+        "b": [
+          "c9368447-4147-4033-9749-fcb2b798880b",
+          2,
+          350.1,
+          120.6
+        ],
+        "length_mm": 0.625,
+        "kind": "trace",
+        "item": "c9368447-4147-4033-9749-fcb2b798880b",
+        "net": "USB_DM",
+        "layer": "B.Cu",
+        "width_mm": 0.3,
+        "start": [
+          350.1,
+          119.975
+        ],
+        "end": [
+          350.1,
+          120.6
+        ]
+      },
+      {
+        "a": [
+          "c9368447-4147-4033-9749-fcb2b798880b",
+          2,
+          350.1,
+          120.6
+        ],
+        "b": [
+          "a291e0cb-0cc1-46e6-9faf-1e1db6f130ab",
+          2,
+          350.1,
+          120.6
+        ],
+        "length_mm": 0.0,
+        "kind": "pad-access"
+      }
+    ]
+  },
+  "geometric_path_difference_mm": 0.0,
+  "status": "extracted-SI-qualification-open",
+  "source_sha256": {
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "604904a25447e696d82d5dfe1289dd577e7d346339de6eefcca9e987fec686e3"
+  }
+}
