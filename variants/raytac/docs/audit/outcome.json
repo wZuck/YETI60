@@ -7,7 +7,7 @@
       "stage": "schematic-current",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.12
+      "seconds": 2.99
     },
     {
       "stage": "pin-contract",
@@ -19,25 +19,25 @@
       "stage": "pcb-geometry-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.16
+      "seconds": 2.12
     },
     {
       "stage": "ordinary-fabrication-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.57
+      "seconds": 2.66
     },
     {
       "stage": "ordinary-fabrication-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 6.75
+      "seconds": 6.72
     },
     {
       "stage": "pcb-native-drc",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 24.15
+      "seconds": 24.34
     },
     {
       "stage": "RF-host-copper",
@@ -55,31 +55,31 @@
       "stage": "connectivity-regression",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 18.8
+      "seconds": 19.05
     },
     {
       "stage": "C5-protected-IO",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.41
+      "seconds": 0.43
     },
     {
       "stage": "C5-protection-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.51
+      "seconds": 0.52
     },
     {
       "stage": "USB-path-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.67
+      "seconds": 1.7
     },
     {
       "stage": "electrical-review",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.1
+      "seconds": 1.11
     },
     {
       "stage": "firmware-pin-header",
@@ -103,109 +103,109 @@
       "stage": "firmware-calibration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.13
+      "seconds": 1.77
     },
     {
       "stage": "firmware-simulation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.4
+      "seconds": 1.45
     },
     {
       "stage": "firmware-plot",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.64
+      "seconds": 0.66
     },
     {
       "stage": "mechanical-metadata",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.78
+      "seconds": 0.79
     },
     {
       "stage": "daughterboard-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.34
+      "seconds": 3.46
     },
     {
       "stage": "mechanical-design",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.65
+      "seconds": 2.69
     },
     {
       "stage": "plate-source",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.23
+      "seconds": 0.24
     },
     {
-      "stage": "deskeys-plate",
+      "stage": "plate-mount",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.23
+      "seconds": 0.24
     },
     {
-      "stage": "deskeys-plate-fault-injection",
+      "stage": "plate-mount-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.28
+      "seconds": 0.34
     },
     {
-      "stage": "deskeys-mechanism-drawing",
+      "stage": "key-mechanism-drawing",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.93
+      "seconds": 0.94
     },
     {
       "stage": "assembly-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 45.14
+      "seconds": 38.98
     },
     {
       "stage": "interconnect-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.18
+      "seconds": 2.2
     },
     {
       "stage": "interconnect-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 22.91
+      "seconds": 22.62
     },
     {
       "stage": "render-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 20.22
+      "seconds": 15.62
     },
     {
       "stage": "interconnect-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.73
+      "seconds": 3.56
     },
     {
       "stage": "board-guidance",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.7
+      "seconds": 1.71
     },
     {
       "stage": "purchase-bom",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.05
+      "seconds": 0.04
     },
     {
       "stage": "inventory-purchase-plan",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.04
+      "seconds": 0.03
     },
     {
       "stage": "readme-materials",
@@ -217,13 +217,13 @@
       "stage": "illustration-native-map",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.31
+      "seconds": 1.29
     },
     {
       "stage": "complete-exploded-sheet",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.25
+      "seconds": 2.27
     },
     {
       "stage": "plate-copper-firmware-map",
@@ -247,13 +247,13 @@
       "stage": "inventory-allocation-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.05
+      "seconds": 0.06
     },
     {
       "stage": "fabrication-review-package",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.28
+      "seconds": 4.27
     },
     {
       "stage": "power-calculation",
@@ -265,7 +265,7 @@
       "stage": "battery-pocket",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.07
+      "seconds": 2.06
     },
     {
       "stage": "cell-screening",
@@ -277,7 +277,7 @@
       "stage": "assembly-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 8.5
+      "seconds": 8.39
     },
     {
       "stage": "engineering-evidence",
@@ -289,25 +289,25 @@
       "stage": "engineering-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.14
+      "seconds": 0.13
     },
     {
       "stage": "documentation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.25
+      "seconds": 0.23
     },
     {
       "stage": "cross-domain-integration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.21
+      "seconds": 0.2
     },
     {
       "stage": "integration-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.42
+      "seconds": 0.6
     },
     {
       "stage": "design-inputs-unchanged",
@@ -329,7 +329,7 @@
     {
       "id": "mechanical-stack",
       "status": "open",
-      "description": "Deskeys EC 68-key T1/42g kit and NicePBT BoW centered 6U caps selected; adapted plate preserves 60 key centers/29 mounts. Nominal 4.6 mm stack, actual clips/housing height/dome compression/wire/cap travel await first article."
+      "description": "NiZ ordinary housings/sliders, 45g dome sheet and separate Cherry plate-mounted stabilizers selected; 1.6 mm plate, 28 mounts, H26 unused; nominal 4.6 mm gap, actual skirt/clip/wire/cap travel and local stiffness await first article."
     },
     {
       "id": "battery",

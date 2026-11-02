@@ -6,4 +6,4 @@
 
 **Raytac 本轮 52 个软件／CAD 检查阶段通过，尚未放行下单。** 采购定制件前先看总手册中的未关闭事项。压缩包名保留 `dfm-review` 是因为它用于制造审查；软件检查通过不能证明实物工作。
 
-[已选定的按键机构、直接购买清单与定位板](variants/raytac/docs/build/key-mechanism.zh-CN.md)：Deskeys T1／42g 配件包＋NicePBT BoW 居中 6U 键帽，使用新适配定位板。
+[已选定的按键机构、直接购买清单与定位板](variants/raytac/docs/build/key-mechanism.zh-CN.md)：NiZ 轴座滑块＋独立钢板卫星轴＋居中 6U 键帽，使用新 1.6 mm 定位板。

@@ -44,10 +44,10 @@ def main():
     add('daughterboard-native-cad',native,'export_yeti60_daughterboard.py')
     add('mechanical-design',cad,'build_yeti60_mechanical.py')
     add('plate-source',cad,'check_plate.py')
-    add('deskeys-plate',cad,'check_yeti60_deskeys_plate.py',deps=['plate-source'])
-    stages.append(('deskeys-plate-fault-injection',cad+['tests/audit/test_deskeys_plate.py'],['deskeys-plate']))
-    add('deskeys-mechanism-drawing',cad,'draw_yeti60_deskeys.py',deps=['deskeys-plate'])
-    add('assembly-fit',cad,'check_yeti60_assembly.py',deps=['mechanical-metadata','deskeys-plate','mechanical-design'])
+    add('plate-mount',cad,'check_yeti60_plate_mount.py',deps=['plate-source'])
+    stages.append(('plate-mount-fault-injection',cad+['tests/audit/test_plate_mount.py'],['plate-mount']))
+    add('key-mechanism-drawing',cad,'draw_yeti60_key_mechanism.py',deps=['plate-mount'])
+    add('assembly-fit',cad,'check_yeti60_assembly.py',deps=['mechanical-metadata','plate-mount','mechanical-design'])
     add('interconnect-native-cad',py,'export_yeti60_interconnects.py',deps=['assembly-fit'])
     add('interconnect-fit',cad,'check_yeti60_interconnects.py',deps=['interconnect-native-cad','daughterboard-native-cad'])
     add('render-geometry',cad,'export_yeti60_render_meshes.py',deps=['assembly-fit','interconnect-fit'])
@@ -80,7 +80,7 @@ def main():
     dependencies=[name for name,_,_ in stages]
     add('cross-domain-integration',py,'check_project_integration.py',deps=dependencies)
     stages.append(('integration-fault-injection',py+['tests/audit/test_integration.py'],['cross-domain-integration']))
-    protected=[*HW.glob('*.kicad_sch'),*HW.glob('*.kicad_pcb'),*HW.glob('*.kicad_pro'),*HW.glob('*.kicad_sym'),*HW.glob('YAECKB.pretty/*.kicad_mod'),HW/'netlist.xml',HW/'components.json',HW/'pinmap.json',ROOT/'design-constraints.json',ROOT/'mechanical/felk60_plate_hhkb.deskeys.dxf',*sorted((ROOT/'felk60').glob('*.step')),*sorted((ROOT/'firmware/yeti60').glob('*.[ch]'))]
+    protected=[*HW.glob('*.kicad_sch'),*HW.glob('*.kicad_pcb'),*HW.glob('*.kicad_pro'),*HW.glob('*.kicad_sym'),*HW.glob('YAECKB.pretty/*.kicad_mod'),HW/'netlist.xml',HW/'components.json',HW/'pinmap.json',ROOT/'design-constraints.json',ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf',*sorted((ROOT/'felk60').glob('*.step')),*sorted((ROOT/'firmware/yeti60').glob('*.[ch]'))]
     before={str(p.relative_to(ROOT)):sha(p) for p in protected}
     records=[];states={}
     for name,command,deps in stages:

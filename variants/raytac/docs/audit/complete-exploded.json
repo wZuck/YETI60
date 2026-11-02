@@ -83,21 +83,21 @@
   "C5_parts": 7,
   "USB_wires": 4,
   "battery_wires": 3,
-  "mount_sets": 29,
+  "mount_sets": 28,
   "active_keys": 60,
   "outputs": {
-    "docs/engineering/images/complete-exploded.png": "0a659d0c9dc6aa6a0958f65cd0e59b7b4c411b062af3cc33f3f2f03ab48dd628",
-    "docs/engineering/images/complete-exploded.svg": "fc8a359a4735605cc6a4bccdeaf49e89ed3fcd53863284f47cfa7c8d0aab9ac8",
-    "docs/engineering/images/complete-exploded.zh-CN.png": "39ede25dc0f11f2594563a7914956a1f32a7a9ee18a0aba09151ebc6c35b8678",
-    "docs/engineering/images/complete-exploded.zh-CN.svg": "bfc3e94fa1bf32ae063c7427f2223bd24106754145a0b7bec3eeaa38660c51ae"
+    "docs/engineering/images/complete-exploded.png": "885052801f342266ba41bdc7faec52681e793d39fe99599431982c621e170956",
+    "docs/engineering/images/complete-exploded.svg": "41d323cd51e4750bd3f23af21ecad6341848371c923cd400491fcec28fbbb76b",
+    "docs/engineering/images/complete-exploded.zh-CN.png": "f6a8ac273202249235d5fa577a4a2aee003314c8a403abfc7665253b0f0d5693",
+    "docs/engineering/images/complete-exploded.zh-CN.svg": "68446b5efefd96074fa6716de3b5039f040648d5d47801395ff5e2ee11d4b4d7"
   },
   "source_sha256": {
     ".assembly-work/build-map.json": "c3e458b91ac6175525ae06d157920cfa8f18a5489443f385b33c1105346b2acd",
-    "docs/audit/yeti60-assembly.json": "658fbf19a2347ebb1f1efef43ab51d068ab15e166fe936a1434bd9cad6a17cf3",
-    "docs/audit/yeti60-interconnects.json": "623a856691aed55e0118ef7082ec6323ca8b83ea9f034a4d1080162252392e80",
+    "docs/audit/yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
+    "docs/audit/yeti60-interconnects.json": "e668bb6610fdda9b3e959c453b123a3fd243a7ef502a5de8f01c52772a6a1c09",
     "hardware/bom/mainboard.csv": "4f747bcbf57975f24ac64a5589f382e5b0f569dc774dcbe517807d51d27dadd5",
-    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
-    "scripts/draw_yeti60_complete_exploded.py": "3071a6382342a6c9b7550ecfe2c2feb4f9d11238bcbdd304948518c1355adafd"
+    "mechanical/assembly-spec.raytac.json": "e7c14e76bbd0f26bb5c43ab8526bc897191050dc1127abab7db5acc24d4010c5",
+    "scripts/draw_yeti60_complete_exploded.py": "889ab776048d7ae6bf454237a730c0665ce72ba00f338b7ba01f5b31c8fe16e6"
   },
   "limits": [
     "Layer separations and layered silhouettes schematic, not a dimensional assembly drawing",

@@ -31,9 +31,9 @@
 - [15 不接电池，首次 USB 上电](#step-15)
 - [16 通过 J3 写入并验证校准固件](#step-16)
 - [17 处理树脂壳并冷粘八个嵌件](#step-17)
-- [18 准备钢定位板并装配 60 套轴壳](#step-18)
+- [18 安装钢板卫星轴及 60 套 NiZ 轴座](#step-18)
 - [19 对齐胶碗与锥形感应弹簧](#step-19)
-- [20 安装 29 套绝缘 PCB 紧固件](#step-20)
+- [20 安装 28 套绝缘 PCB 紧固件](#step-20)
 - [21 安装下侧垫片、C5 和开口走线底座](#step-21)
 - [22 检查并固定经过确认的电池包](#step-22)
 - [23 铺设七根导线并封好可拆走线桥](#step-23)
@@ -347,17 +347,17 @@
 
 <a id="step-18"></a>
 
-## 18 — 准备钢定位板并装配 60 套轴壳
+## 18 — 安装钢板卫星轴及 60 套 NiZ 轴座
 
-![准备钢定位板并装配 60 套轴壳](images/18-step.zh-CN.png)
+![安装钢板卫星轴及 60 套 NiZ 轴座](images/18-step.zh-CN.png)
 
 [放大矢量图](images/18-step.zh-CN.svg)
 
-1. 使用 Deskeys 适配 DXF，不用原过小开孔。1.20 mm 钢板去毛刺，29 处攻 M2 螺纹并清理碎屑。
-2. K01 选择 Deskeys T1／42g：58 套普通机构及两个带辅助柱、预开孔宽键总成，装 #5 圈；不用钻孔或另加 MX 卫星轴。
-3. 装空格左右被动侧轴和 6U 钢丝，侧柱距 95.25 mm；试装 NicePBT BoW 居中 6U 空格，只有中央有效轴下放一个胶碗／感应锥簧。
+1. 使用 NiZ 钢板卫星轴 DXF，CAD 厚 1.60 mm、成品 1.55—1.60 mm；28 处攻 M2，H26 整套不装。
+2. 先装三组 GMK 钢板卫星轴：两根 2U 短丝和另购的 Cherry 兼容 6U 长丝；再试装普通 NiZ 中央轴座，按机构指南只修整发生干涉的非承力下裙边。
+3. 安装 60 个 NiZ 滑块及原配消音圈；逐端检查回车、左 Shift 和居中 6U 空格，先局部确认实际 95.25 mm 柱距及钢丝配合。
 
-**检查后再继续：** 按 docs/build/key-mechanism.zh-CN.md 核对卡扣、完整行程、宽键两端回弹及首件真实 4.6 mm 结构。
+**检查后再继续：** 详见 docs/build/key-mechanism.zh-CN.md；不新增 PCB 卫星轴孔，不装 Deskeys 宽轴座或静电容空格侧轴，实物须确认卡扣、行程及钢丝。
 
 <a id="step-19"></a>
 
@@ -375,15 +375,16 @@
 
 <a id="step-20"></a>
 
-## 20 — 安装 29 套绝缘 PCB 紧固件
+## 20 — 安装 28 套绝缘 PCB 紧固件
 
-![安装 29 套绝缘 PCB 紧固件](images/20-step.zh-CN.png)
+![安装 28 套绝缘 PCB 紧固件](images/20-step.zh-CN.png)
 
 [放大矢量图](images/20-step.zh-CN.svg)
 
-1. 在已攻牙定位板下安装转接柱：黄铜肩高 4.50 mm，上部 M2 外牙，下部 M1.6 内牙。
-2. 每个铜柱肩与 PCB 感应面之间放置 0.10 mm 聚酰亚胺环，落下 PCB 时不移位弹簧。
-3. 从元件面安装 0.8 mm 厚、外径不超过 4 mm 的 PEEK 垫圈及 29 只 M1.6×5 螺丝，按样件确认的扭矩逐步均匀紧固。
+1. H26 整套留空：支柱、膜、垫片、螺钉均不装。
+2. 在已攻牙定位板下安装转接柱：黄铜肩高 4.50 mm，上部 M2 外牙，下部 M1.6 内牙。
+3. 每个铜柱肩与 PCB 感应面之间放置 0.10 mm 聚酰亚胺环，落下 PCB 时不移位弹簧。
+4. 从元件面安装 0.8 mm 厚、外径不超过 4 mm 的 PEEK 垫圈及 28 只 M1.6×5 螺丝，按样件确认的扭矩逐步均匀紧固。
 
 **检查后再继续：** 标称板间距为 4.60 mm；不能用库存 M1.6×2 短螺丝，不能让金属垫圈压感应铜面，也不能强迫错位孔对齐。
 
@@ -479,7 +480,7 @@
 
 [放大矢量图](images/27-step.zh-CN.svg)
 
-1. 最终操作前拔掉 USB 并关闭电源；调整内部走线时再断开电池。上侧垫片只贴在原有台阶。
+1. 最终操作前拔掉 USB 并关闭电源；调整内部走线时再断开电池。上侧垫片只贴在原有台阶。上侧胶棉现为原厚 1.2 mm，下侧仍为 2.0 mm。
 2. 检查导线和固定膜均不伸入合壳面，不用蛮力压合，保持定位板对位及确认过的垫片压缩量。
 3. 安装四只 M3×5 螺丝及 0.30 mm 垫片，逐步均匀紧固；若合壳后手感或感应改变，先开壳修正结构，再重新校准。
 
@@ -501,8 +502,8 @@
 
 ## 重建与依据
 
-使用 KiCad Python 执行 `scripts/export_yeti60_build_map.py`，再用 `requirements-audit.txt` 的 CAD 环境执行 `scripts/draw_yeti60_build_guide.py`。生成器核对 75 只主板元件均在放置步骤中出现一次、60 个实际电极、29 个安装孔及当前装配／线束来源。文件和图像哈希见 [指南验证记录](../audit/yeti60-build-guide.json)。
+使用 KiCad Python 执行 `scripts/export_yeti60_build_map.py`，再用 `requirements-audit.txt` 的 CAD 环境执行 `scripts/draw_yeti60_build_guide.py`。生成器核对 75 只主板元件均在放置步骤中出现一次、60 个实际电极、29 个原 PCB 孔、28 套实装紧固件及当前装配／线束来源。文件和图像哈希见 [指南验证记录](../audit/yeti60-build-guide.json)。
 
 编排参考 [DELTA OMEGA 安装指南](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md) 的逐工序图示形式；图像及位号按 YETI60 原生数据重新绘制，不沿用 MX 焊接步骤。
 
-按键机构及适配定位板详见 [Deskeys 安装方案](../build/key-mechanism.zh-CN.md)。焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Raytac MDBT50Q-1MV2 资料](https://www.raytac.com/product/ins.php?index_id=24) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。
+按键机构及适配定位板详见 [钢板卫星轴安装方案](../build/key-mechanism.zh-CN.md)。焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Raytac MDBT50Q-1MV2 资料](https://www.raytac.com/product/ins.php?index_id=24) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。

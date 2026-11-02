@@ -54,7 +54,7 @@ def main():
     for part in harness['render_parts']:
         assert sha(ROOT/part['path'])==part['sha256']
         name='interconnect-'+part['name'];meshes[name]=tessellate(ROOT/part['path']);extras.append({**part,'mesh':name,'group':'interconnect'})
-    spec=json.loads((ROOT/'mechanical/assembly-spec.json').read_text())['daughterboard']
+    spec=json.loads((ROOT/'mechanical/assembly-spec.raytac.json').read_text())['daughterboard']
     shifts=[spec['source_to_case_x_offset'],spec['source_to_case_y_offset'],spec['pcb_bottom_z']]
     connector=json.loads((ROOT/'docs/audit/yeti60-interconnect-connectors.json').read_text())['headers']['J1']['step']
     components=[('main-sh',connector,[0,0,data['nominal_stack']['pcb_bottom_z']],'header','cream','pcb')]

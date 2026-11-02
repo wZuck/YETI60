@@ -2,6 +2,8 @@ English | [Chinese](yeti60-comprehensive-review.zh-CN.md)
 
 # YETI60 P2 electrical, firmware and assembly review
 
+Historical review snapshot: its 1.2 mm plate, 29 fastener sets and old component counts are superseded. Use the [current review](raytac-review.md) and [NiZ / plate-mount plan](../build/key-mechanism.md) for the active build.
+
 The current single-nRF52840 design has native CAD checks, buildable USB/BLE targets and conditional assembly evidence. No physical sample exists; passing these checks does not approve production. See [the checkpoint](../design-checkpoint.md) for the selected configuration and [stage outcomes](outcome.json) for the complete current run.
 
 ## Electrical and routing

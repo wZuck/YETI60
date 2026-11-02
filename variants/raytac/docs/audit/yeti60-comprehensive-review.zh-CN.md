@@ -2,6 +2,8 @@
 
 # YETI60 P2 电气、固件及装配复查
 
+历史审查快照：其中 1.2 mm 定位板、29 套紧固件及旧元件数量不再是当前装配规格。当前版本请看[本轮审查](raytac-review.zh-CN.md)及 [NiZ 钢板卫星轴方案](../build/key-mechanism.zh-CN.md)。
+
 当前单 nRF52840 方案具备原生 CAD 检查、可构建 USB／BLE 固件和条件装配证据。目前没有实物，检查通过不等于批准生产。[阶段记录](../design-checkpoint.zh-CN.md)说明默认配置，[阶段结果](outcome.json)记录当前完整流水线。
 
 ## 电气和布线

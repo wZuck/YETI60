@@ -1,77 +1,75 @@
 English | [Chinese](key-mechanism.zh-CN.md)
 
-# Selected key mechanism: Deskeys EC with MX caps
+# NiZ switches with steel-plate-mounted stabilizers
 
-Use **one Deskeys EC parts kit 68 keys, T1 / 42g**, default Cement housings, Ivory MX sliders and #5 silencing rings. Use **CannonKeys NicePBT BoW, current full kit including the labelled `6.0c Centered` spacebar**. Keep the FELK60 HHKB layout. This is the selected engineering build, rather than a list of interchangeable alternatives.
+The selected Raytac build uses **60 NiZ housing/slider sets**, NiZ 45g domes and conical sensing springs, and **three separate Cherry/GMK plate-mounted stabilizer pairs**. Enter and left Shift each use a 2U wire; the centered HHKB 6U spacebar uses a separate 6U wire. NicePBT BoW caps remain selected. There are no Deskeys wide assemblies or Deskeys spacebar side units in this revision.
 
-Use the [Deskeys plate DXF](../../../../mechanical/felk60_plate_hhkb.deskeys.dxf). The original `audited.dxf` remains an upstream comparison reference; it is not the plate to order for these parts. No PCB stabilizer mounting holes or additional sensing keys are required. The exterior case dimensions, 60 sensing centers and 29 mounting axes remain unchanged.
+Use the [YETI60-NIZ-PM1 plate](../../../../mechanical/felk60_plate_hhkb.plate-mount.dxf) and [Raytac assembly specification](../../../../mechanical/assembly-spec.raytac.json). The old 1.2 mm Deskeys plate is superseded. The PCB and firmware are unchanged: the PCB retains 29 native holes, but **H26 is unused and only 28 fastener sets are installed**. The new spacebar opening passes through that old mounting axis.
 
-The dimensions and CAD checks below establish a drawing-based build plan. No physical assembly exists yet: clip retention, actual housing height, full travel and cap-to-case clearance must be checked on the first plate/parts. A listing marked available is a dated observation, not a reservation.
+This is a drawing-based engineering prototype. No sample exists. Actual NiZ clip retention, housing height, dome compression, wire bends and full cap/stabilizer travel require local first-article fitting. The CAD checks do not certify vendor plastic shapes or capacitance.
 
-## Buy these items
+## Purchase exactly these items
 
-Availability checked 2026-11-02. Inventory does not record verified existing mechanism parts; the purchases below do not deduct the electronics inventory or claim the user owns these items.
+Stock observation: 2026-11-02. Listed variants were available; no checkout, shipping or quantity reservation has been performed. Existing mechanism inventory is not verified and is not credited. Do not buy the superseded Deskeys kit as well.
 
-| Order | Exact item / selection | Purchase | Contents used in one keyboard | Existing stock |
-|---|---|---:|---|---|
-| K01 | [Deskeys EC parts kit 68 keys](https://deskeys.io/products/des-ec-parts-kit-68-keys?variant=43323966554147), **T1 / 42g**, Cement / Ivory / #5 defaults | 1 kit | 58 normal housing/slider pairs, 2 wide assemblies, 60 domes, 60 sensing springs, one pair of spacebar side stabilizers and one 6U wire | Not verified; purchase 1 |
-| K02 | [NicePBT BoW](https://cannonkeys.com/products/nicepbt-bow), **current complete kit**, not a replacement 6.25U spacebar or an old incomplete kit | 1 kit | 60 caps; choose the `6.0c Centered` bar, 2.25U Enter/left Shift, 1.75U right Shift, 1.5U Backspace and the HHKB bottom-row modifiers | Not verified; purchase 1 |
-| K03 | [Deskeys-compatible plate](../../../../mechanical/felk60_plate_hhkb.deskeys.dxf), 304 stainless, **1.20 mm**, finished M2 x 0.4 at 29 existing axes | 1 plate | All 60 active openings plus 2 passive spacebar side openings | Custom fabrication |
+| ID | Item / exact option | Buy | Install / spare |
+|---|---|---:|---|
+| K01 | [NiZ housing, slider and original silencing ring only](https://shop.beekeeb.com/products/niz-ec-switch?variant=45023311757619), **5 pieces per pack** | 13 packs | 65 supplied; 60 installed, 5 spare. One ordinary central housing for every key, including all three big keys |
+| K02 | [NiZ conical spring only](https://shop.beekeeb.com/products/niz-ec-switch?variant=45023311790387), **5 pieces per pack** | 13 packs | 65 supplied; 60 installed, 5 spare. These sense capacitance; they are not stabilizer/helper springs |
+| K03 | [NiZ 45g dome sheet, SKU A-25-7](https://flashquark.com/product/niz-keyboard-electrocapacitive-silicone-dome-sheet-104-key-45g/) | 1 sheet | Use 60 dome positions, trimming for the HHKB stagger. Listing title says 108; URL/tags retain other numbers. Require a labelled **45g** sheet with at least 60 usable positions; the nominal force is not a measured actuation force |
+| K04 | [Genuine GMK stabilizer, **Plate mount / 2u**](https://kebo.store/products/gmk-stabilizer?variant=37169593581722) | 3 sets | Six housings and six passive stems. Use two supplied short wires; keep the third short wire as a spare and fit K05 to that pair |
+| K05 | [Cherry-compatible **6u** stabilizer wire](https://mech-stock.myshopify.com/products/stabiliser-wire?variant=40929412776129) | 1 wire | Install on the spacebar pair. The seller lists compatibility with PCB or plate-mounted Cherry MX stabilizers; it is not a Deskeys EC wire |
+| K06 | [NicePBT BoW current full kit](https://cannonkeys.com/products/nicepbt-bow), including **6.0c Centered** | 1 kit | 60 caps: centered 6U bar, 2.25U Enter/left Shift, 1.75U right Shift, 1.5U Backspace and matching HHKB bottom row |
+| K07 | [New NiZ / plate-mount DXF](../../../../mechanical/felk60_plate_hhkb.plate-mount.dxf), 304 stainless | 1 plate | 60 active openings, three Cherry-style stabilizer openings and 28 M2 tapped axes |
 
-K01 supplies M04–M07 in the main materials table. **Do not buy separate 1U packs, domes, conical springs, 2U assemblies, a spacebar stabilizer pack or a 6U wire in addition to K01.** The kit's 6.25U and 7U wires are spares, not installation alternatives for this plate. Normal MX plate/PCB stabilizers and complete MX switches are not used.
+K01 and K02 are separate product options, not whole switch sets. K03 is another purchase. Do not count springs/domes as included in K01. Do not buy complete MX switches, PCB screw-in stabilizers or PCB clip-in stabilizers. K04 must say **Plate mount** even though the same product page sells PCB variants.
 
-The public K01 variant API reported T1 / 42g available; K02's product page reported in stock. The current kit illustration shows relieved wide housings and extra-stem MX wide sliders; no housing drill is part of this order. Shipment to the destination, checkout stock and taxes have not been verified or paid.
+The NiZ official 100-piece 2021 switch listing was sold out at this check, so it is not the default purchase source. Kebo's complete plate-mount 6U option was also sold out; K04 plus the separately listed K05 avoids depending on that unavailable variant. The [machine-readable selection](../../../../mechanical/yeti60-key-mechanism.json) records exact variant IDs and the dated observations.
 
-## Contents and net quantities
+## Mechanical requirements
 
-| Part included in K01 | Kit quantity | Install | Spare / note |
-|---|---:|---:|---|
-| Normal housings | 72 | 58 | 14; this includes the central spacebar housing |
-| Normal MX sliders | 72 | 58 | 14 |
-| Wide housing + slider + wire assemblies | 4 | 2 | 2; Enter and left Shift each use one |
-| T1 42g domes | 18 strips x 4 = 72 positions | 60 | 12; separate strips only on the moulded cutting lines when required by the staggered layout |
-| Conical EC sensing springs | 120 | 60 | 60; one under each sensing dome |
-| #5 silencing rings | 120 | 60 sensing sliders | At least 60 remain; side-unit rings only if supplied/required by the matching assembly instructions |
-| Spacebar stabilizer set | 1 pair | 2 side units | Neither side is another sensing key |
-| Long wires | 1 each 6U / 6.25U / 7U | 1 x 6U | Retain 6.25U and 7U as unused spares |
+| Feature | This revision |
+|---|---|
+| Case exterior | FELK60 325.700 x 125.200 x 31.190 mm; no scaling |
+| Steel plate | CAD envelope **1.60 mm**; accept finished stock **1.55–1.60 mm**, with no burr/coating buildup at clips |
+| Ordinary NiZ opening | **14.00 x 14.00 mm**, maximum internal corner radius 0.30 mm; confirm actual housing revision on a local sample |
+| Short stabilizer stem spacing | **23.80 mm** for both 2.25U caps; use 2U wires |
+| Spacebar side stem spacing | Design datum **95.25 mm**, centered about the active 6U key |
+| Mounting | 28 installed sets; omit **H26** completely: no standoff, film, washer or screw there |
+| Plate bottom / top | z=4.2062 / **5.8062 mm** |
+| PCB top / bottom | z=-0.3938 / -2.0000 mm, unchanged |
+| Plate-to-PCB gap | Nominal **4.60 mm**, 4.50 mm shoulder plus 0.10 mm polyimide film; actual NiZ dome preload unqualified |
+| Lower gasket stock | **2.0 mm**; nominal installed gap 1.0162 mm |
+| Upper gasket stock | **1.2 mm**; nominal installed gap **0.5838 mm**. Do not reuse the old 2 mm upper gasket |
 
-The [official T1 specification](https://deskeys.io/products/des-domes-t1) identifies four domes per strip and Pink as 42g. The force label does not establish measured actuation force on this PCB. Housing helper springs, dome gaskets and housing gaskets are **not** part of the default stack; adding any changes force or compression and requires a new fit check. A helper spring, if later needed for spacebar return, is not another conical sensing spring.
+The [original Cherry frame drawing](https://deskthority.net/wiki/images/d/de/Keymodule_MX.pdf), page 3, gives a 1.5 +/-0.1 mm plate. The specified 1.55–1.60 mm finished range stays within that drawing while following the nominal 1.6 mm NiZ construction documented by [Tako](https://github.com/ssbb/tako) and this [first-person NiZ/EC60 build](https://github.com/mattyintegrals/ecneko60). It does not prove that every NiZ or GMK production revision clips identically.
 
-## What changes on the plate
+The DXF outer profile and all 60 sensing axes are preserved. Normal openings replace the old wide EC housings; three connected Cherry frame openings provide their separate stabilizer positions. The 6U opening crosses H26, so the old PCB hole remains electrically unchanged but receives no hardware. This is not a claim that omitting one support preserves local stiffness: inspect plate flex and spacebar sensing on the prototype.
 
-| Opening | Quantity | Original FELK60 | Selected Deskeys plate |
-|---|---:|---|---|
-| Normal active key, including spacebar center | 58 | 14.60 x 14.00 | **14.70 x 14.10 mm, R0.5 corners** |
-| Wide active key | 2 | 32.00 x 14.00 | **32.15 x 14.10 mm**, existing front bevel orientation retained |
-| Passive spacebar side unit | 2 | 13.462 x 13.741 | **13.60 x 13.90 mm, C0.5 corners** |
-| External plate profile / mounting axes | 1 / 29 | FELK60 original | Preserved exactly |
+The 6U label alone does not establish exact fit. Before final metalwork/bulk orders, verify the received K05 end spacing/bends and K06 outer sockets against the **95.25 mm design datum** and six received K04 stems. Some plate generators use 95.0 mm for 6U; this design has not silently changed to that value. Do not force the wire or cap sideways, reuse a 6.25U/7U wire, or assume an EC wire and a Cherry wire share bends.
 
-Specify dimensions **after deburring**, cutout size target +/-0.025 mm and center position +/-0.05 mm. Ask the metal fabricator whether its process can meet these values; ordinary laser-cut nominal dimensions alone do not establish the fit. Do not powder-coat the fit edges. The plate is metalwork, separate from the ordinary four-layer JLC PCB order. Do not substitute a 1.5 mm FR-4/MX plate.
+![NiZ and plate-mount assembly guide](../engineering/images/key-mechanism.png)
 
-The DXF mounting circles are inherited machining datums. Finish them as **M2 x 0.4 tapped holes**, not M2 clearance holes; agree the tap pilot with the fabricator. Retain the existing 29 insulated brass standoffs. The nominal plate-to-PCB gap remains **4.60 mm = 4.50 mm shoulder + 0.10 mm film**. This Z gap remains subject to actual housing/dome compression; do not force it closed to compensate for a mismatched housing.
+[Vector guide](../engineering/images/key-mechanism.svg)
 
-The [Deskeys housing page](https://deskeys.io/products/des-housings) specifies 14.7 x 14.1 and 32.15 x 14.1 in its header, but its text also says 32.1 for the wide opening. This design explicitly selects the header's **32.15**. [Cipulot's plate specification](https://github.com/Cipulot/ec60x-plate-maker/blob/02cc973c43f980394434e39372471096d3df3459/EC_Plate_Specifications.pdf), pages 3–4, identifies 1.2 mm and General OEM Style for Deskeys. Its [reference DXF](https://github.com/Cipulot/ec60x-plate-maker/blob/02cc973c43f980394434e39372471096d3df3459/Plate_Indexed_Name/EC60X_Plate_Indexed_Name/EC60X_0_1_0_1_0_9.dxf) provides the 13.6 x 13.9 side opening. Its whole plate is **not** compatible with YETI60 mounting axes. Functional dimensions were used to construct our derived FELK60 plate; no EC60X plate file is substituted.
+## Assemble in this order
 
-![Key mechanism assembly](../engineering/images/deskeys-mechanism.png)
+1. Inventory all seven purchase lines. Identify six plate-mount housings/stems, two short wires and the separate 6U wire. Fit the long wire and spacebar cap to their side stems locally; confirm centered cap geometry, straightness, free movement and matching end spacing before assembling the full keyboard.
+2. Inspect the new plate thickness, clip holes, edge finish and **28 M2 x 0.4 tapped axes**. The DXF circles are machining datums, not clearance-hole instructions. Tap/clean before any electronics is nearby. Mark the unused H26 axis on the PCB for assembly reference; do not drill or fill its existing hole.
+3. Assemble each stabilizer housing/stem/wire pair, following its keycap orientation. Clip all three pairs into the plate **before installing the central NiZ housings**. Use two short wires for Enter/left Shift; replace the third short wire with K05 for the spacebar. Check that clips seat flat and cannot lift out.
+4. Trial-fit the ordinary NiZ central housings. For the three stabilized keys, check lower flange and wire clearance. The [NiZ/EC60 builder's photos and procedure](https://github.com/mattyintegrals/ecneko60#housings) show that lower skirt material can obstruct plate-mount stabilizers. If needed, remove a spare housing from the plate, mark only the interfering lower skirt below the hook and trim incrementally with flush cutters. Do not cut clip hooks, slider guide rails or the dome seating surface. Refit and test the full stroke after every small cut. If clearance requires cutting a structural feature, reject that sample rather than forcing it together. Debris must be completely removed.
+5. Assemble 60 NiZ sliders using their **original supplied silencing rings**. Do not stack Deskeys #5 rings onto them. Fit and operate Enter, left Shift and the spacebar from the center and both ends. Every cap must return without the stabilizer bottoming first, twisting the central slider or hitting a housing.
+6. With the plate supported upside down, fit 60 dome positions and center one conical sensing spring inside each. Trim the sheet for the stagger without cutting a dome skirt/sealing seat. Only the central EC key receives a dome/sensing spring; all six stabilizer side stems are passive.
+7. Fit **28** brass standoffs and polyimide rings, leaving H26 empty. Fit the unchanged PCB, then 28 PEEK washers and 28 M1.6x5 screws. Tighten progressively while checking the nominal 4.6 mm stack, housing seating and released key return. Do not use screw force to correct a mismatched housing height. Verify wires neither press on domes nor contact PCB copper.
+8. Fit 2.0 mm lower gasket stock and **1.2 mm upper stock** at the original ledges. Do not add 0.4 mm to the outer case, move the PCB down, compress the battery or force the shell closed to fit the thicker plate.
+9. Calibrate every key with the completed mechanism installed. While operating each stabilized key, check neighboring unpressed keys as well: moving metal and a changed dome/stack require real EC qualification. Repeat all keys, full travel and edge return after closing the case. Any housing, dome, spring, ring or stack change requires recalibration even if the PCB/firmware fingerprint is unchanged.
 
-[Vector drawing](../engineering/images/deskeys-mechanism.svg)
+Use the [28-step guide](../assembly/build-guide.md) for soldering, power, SWD, harness and shell assembly. These mechanical changes add no PCB order or electronic BOM part. Mainboard USB/BLE/charging behavior remains the matched Raytac firmware policy.
 
-## Installation order
+## Verification boundary
 
-1. Inventory the entire kit before installing anything. Identify 58 normal pairs, two complete wide assemblies, the two spacebar side units and the **6U** wire. Check that both side housings and plungers are included in the supplied spacebar set. Photograph/count remaining parts as spares. Compare the cap kit against its [official kitting image](https://cannonkeys.com/cdn/shop/files/NicePBTBoW_Layout.jpg?v=1720545415): it must contain the labelled centered 6U bar. Its underside outer stems must match **95.25 mm** and its center stem must be centered; other 6U geometries are not substitutes.
-2. Deburr and inspect the plate, thickness and 29 tapped axes. Trial-fit one normal housing, each wide housing and both spacebar side housings **before** fitting 60 domes. Their shoulders must seat flat without splitting clips, bowing the plate or relying on the shell to hold them.
-3. Fit the supplied #5 rings to the matched sensing sliders and assemble the sliders/housings. Install the two wide assemblies in the plate's keyed orientation, with their wires properly engaged. Fit Enter and left Shift locally; each must move and return from both ends. Do not add normal MX stabilizers around these assemblies.
-4. Use the kit's **extra-stem 2U sliders and pre-opened wide housings**, shown together in the [manufacturer's contents illustration](https://cdn.shopify.com/s/files/1/0225/2908/1418/files/ScreenShot_2026-07-08_113054_400.png?v=1783481466). Align the cap's auxiliary sockets with those stems. Inspect free movement through the whole stroke. Do not substitute old flat sliders or unrelieved stock Topre housings. No PCB, plate or plastic drilling is required by this selected build; if the delivered parts differ from the illustrated current kit, resolve the wrong revision before assembly.
-5. Install the two passive spacebar side units and engage the supplied 6U wire with both. The center spacing is **95.25 mm**, with the active spacebar axis midway between them. The center receives one normal housing/slider, **one dome and one conical spring**. Put no sensing dome or conical spring under either passive side unit. Press the centered 6U cap on evenly, check it at the left end, middle and right end, and ensure the wire cannot scrape the plate or PCB.
-6. Turn the plate over onto a soft flat support. Fit 60 domes and 60 centered conical springs, retaining the strip alignment and cutting only on the designated lines. Fit the 29 standoffs, 0.10 mm polyimide rings, PCB, PEEK washers and M1.6 screws in the [main assembly sequence](../engineering/assembly.md). Tighten gradually, checking housing seating and free movement instead of compressing the domes by force.
-7. Before closing the shell, install all caps and check every key at its edges and through its entire stroke. Verify no cap skirt hits the shell, no auxiliary stem bottoms on plastic, no wire drops out, and no key stays down. Verify all 60 keys with the calibrator; a mechanical pass does not establish correct EC sensitivity. Repeat all three stabilized keys after closing the shell. Changing housings, domes, springs, rings or stack height requires new per-key calibration even if the PCB/firmware fingerprint is unchanged.
+[Plate checks](../audit/plate-mount.json) verify the outer profile, all 60 sensing centers, 28 retained mounting axes, H26 conflict, three stabilizer openings, neighboring cutouts and minimum retained web. Fault tests move a mount, alter a cutout, shift a stabilizer and reintroduce H26. The main assembly, electrode mapping and images use the new plate.
 
-Do the local normal/wide/spacebar fitting before ordering repeated plates or extra kits. If the actual Z fit differs, record the measured housing seat and relaxed/compressed dome dimensions and revise the stack and case/battery checks. Do not replace the specified 4.6 mm stack with an unverified spacer length from another project.
+The rendered NiZ/stabilizer bodies and wire paths are explanatory geometry, not supplier-qualified MCAD. No physical switch fit, key feel, local stiffness, USB/BLE operation, charge performance or interference test has been passed by an actual unit.
 
-## What has actually been checked
-
-The [machine report](../audit/deskeys-plate.json) checks all 60 centers, all 29 mounts, the complete outer profile, the two passive centers and 95.25 mm spacing against the unchanged FELK60 baseline. It also measures the minimum material web from each opening to the inherited mounting pilot. Tests deliberately move a mounting axis/side unit and restore an undersized stock cutout to ensure they are rejected. The main assembly and plate-to-electrode checks use the **new** Deskeys DXF.
-
-Actual vendor plastic profiles, Z dimensions, force/travel, wire underside clearance and fully assembled cap envelopes remain first-article checks. Published compatibility and CAD dimensions support this selection; they are not a claim that a nonexistent prototype has already been assembled.
-
-[Build entry](../../BUILD.md) · [complete materials](../engineering/materials.md) · [assembly](../engineering/assembly.md)
+[Build entry](../../BUILD.md) · [materials](../engineering/materials.md) · [assembly](../engineering/assembly.md)

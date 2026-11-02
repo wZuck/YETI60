@@ -15,11 +15,11 @@ These engineering sheets use the current, unscaled FELK60-derived shell meshes, 
 | Interface | Requirement |
 |---|---|
 | Exterior shell union | 325.700×125.200×31.190 mm in the source frame; no scale change |
-| Lower/upper gasket ledges | z=3.19 / 6.39 mm; nominal compressed lower/upper gaskets 1.0162/0.9838 mm |
-| Stainless plate | Bottom z=4.2062; top z=5.4062; thickness 1.20 mm |
+| Lower/upper gasket ledges | z=3.19 / 6.39 mm; installed lower/upper gaps 1.0162/0.5838 mm; stock 2.0/1.2 mm |
+| Stainless plate | Bottom z=4.2062; top z=5.8062; CAD thickness 1.60 mm; finished 1.55-1.60 mm |
 | PCB | Top z=−0.3938; bottom z=−2.00; finished thickness 1.6062 mm |
 | PCB-to-plate gap | 4.60 mm = 4.50 mm brass shoulder + 0.10 mm polyimide film |
-| Mounting centers | 29 matched plate/PCB holes; maximum source center mismatch 0.05337 mm |
+| Mounting centers | PCB retains 29 holes; H26 unused; 28 installed fastener sets; maximum native center mismatch 0.05337 mm |
 | Worst radial screw margin | Approximately 0.06163 mm using M1.6 shank, specified hole/position/concentricity tolerances; this is a tight imposed tolerance |
 | Daughterboard | PCB bottom z=−10.91, thickness 1.6062 mm; 14×12.5 mm mounting rectangle |
 | SW100 access | Ø8 bottom service port centered at X=112, Y=−121 mm; insulated tool only |
@@ -29,8 +29,8 @@ The standoff's insulating film lies **between PCB top and brass shoulder**, whil
 ## Sequence
 
 1. Manufacture one shell revision only. Use fully post-cured tough resin; inspect shrinkage before finishing insert bores. Cold-bond four M3 upper inserts and four M2 daughterboard inserts. Keep adhesive outside threads and allow full cure; thermoset resin is not a heat-insert material.
-2. Follow the [selected Deskeys parts and installation](../build/key-mechanism.md): use the new Deskeys DXF, 1.2 mm stainless and 29 M2 tapped axes. Trial-fit a normal key, both wide assemblies and the 6U wired spacebar mechanism before installing 60 domes/springs. Use the supplied pre-opened wide housings and extra-stem MX sliders; no drilling is specified. Put no sensing domes/springs under passive spacebar side units.
-3. Fit 29 brass adapter standoffs to the plate. Place 0.10 mm polyimide rings between each shoulder and PCB sensing face. Locate the PCB without shifting electrode centers, then fit 29 PEEK washers and M1.6×5 screws underneath. Tighten progressively using a first-article-qualified torque; no unverified torque value is prescribed.
+2. Follow the [NiZ / plate-mount guide](../build/key-mechanism.md): use the new 1.6 mm plate and 28 M2 axes. Fit three stabilizer pairs with two short wires /one 6U wire before the 60 ordinary NiZ housings; inspect lower skirt clearance. Only active center keys receive domes/springs; all six side stems are passive.
+3. Fit 28 brass adapter standoffs to the plate. Place 0.10 mm polyimide rings between each shoulder and PCB sensing face. Locate the PCB without shifting electrode centers, then fit 28 PEEK washers and M1.6×5 screws underneath. Tighten progressively using a first-article-qualified torque; no unverified torque value is prescribed. Leave H26 completely empty.
 4. Fit the rear daughterboard on its four bonded M2 insert seats using the proposed M2×4 screws/insulating washers. Confirm USB mouth alignment and actual cable plug access before proceeding. Connect the four-wire harness only after continuity and polarity checks. The 150 mm route centerline is controlled by individual conductor lengths and guides; physical strain relief remains unqualified.
 5. Install only a supplier-signed P2 1600 mAh protected pack within the full 85×43×4.8 mm envelope. Verify independent thermal interruption, third-wire NTC and custom polarity. Retention/insulation must fit the 0.2 mm floor budget without pouch pressure. Nominal pack-to-fastener clearance is 0.7 mm. Do not mix with the old small-pack charge configuration.
 6. With the case open and battery polarity verified, flash the USB calibrator through the **custom** J3 probe mapping. Follow the [firmware calibration procedure](../../firmware/target/README.md), preserve settings when loading the normal HEX, then check all 60 keys and USB/BLE operation on hardware.

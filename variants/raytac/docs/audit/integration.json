@@ -2,7 +2,7 @@
   "status": "passed",
   "controller_count": 1,
   "physical_pin_pairs": 267,
-  "matched_mount_holes": 29,
+  "matched_mount_holes": 28,
   "assembly_condition": "provisional stack only",
   "firmware_condition": "normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested",
   "production_approved": false,
@@ -20,7 +20,7 @@
     {
       "id": "mechanical-stack",
       "status": "open",
-      "description": "Deskeys EC 68-key T1/42g kit and NicePBT BoW centered 6U caps selected; adapted plate preserves 60 key centers/29 mounts. Nominal 4.6 mm stack, actual clips/housing height/dome compression/wire/cap travel await first article."
+      "description": "NiZ ordinary housings/sliders, 45g dome sheet and separate Cherry plate-mounted stabilizers selected; 1.6 mm plate, 28 mounts, H26 unused; nominal 4.6 mm gap, actual skirt/clip/wire/cap travel and local stiffness await first article."
     },
     {
       "id": "battery",

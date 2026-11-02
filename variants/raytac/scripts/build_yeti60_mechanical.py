@@ -31,7 +31,7 @@ def write(s,name):
     path.write_text('\n'.join(line.rstrip() for line in text.splitlines())+'\n')
 
 def main():
-    specpath=ROOT/'mechanical/assembly-spec.json';spec=json.loads(specpath.read_text());c=spec['case']
+    specpath=ROOT/'mechanical/assembly-spec.raytac.json';spec=json.loads(specpath.read_text());c=spec['case']
     sources=[specpath,ROOT/'felk60/felk60_top_hhkb.step',ROOT/'felk60/felk60_bottom.step',Path(__file__).resolve(),ROOT/'scripts/cad_geometry.py']
     top=load(sources[1]);bottom=load(sources[2]);old={'top':bounds(top),'bottom':bounds(bottom)}
     for x,y in c['top_screw_axes']:

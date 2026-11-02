@@ -153,26 +153,26 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 |---|---|---:|---|
 | M01 | Top shell | 1 | Derived FELK60 HHKB STEP, tough SLA resin, post-cured; no exterior scaling |
 | M02 | Bottom shell | 1 | Default P2 derived STEP with 1600 mAh recess; unchanged exterior |
-| M03 | Plate | 1 | Deskeys HHKB DXF; 304 stainless 1.20 mm, 29 M2 x 0.4 threads; normal 14.70x14.10, wide 32.15x14.10, side 13.60x13.90 mm; inspect after deburring |
-| M04 | EC slider/housing sets | 60 | K01 Deskeys 68-key kit: use 58 normal pairs and 2 wide assemblies; purchase one complete kit, not duplicate packs |
-| M05 | Rubber domes | 60 positions | K01 includes T1 / 42g, 18 strips x 4 = 72 positions; use 60, spare 12 |
-| M06 | Conical EC springs | 60 | K01 includes 120; use 60; sensing springs are not passive stabilizer helper springs |
-| M07 | Stabilizers and spacebar hardware | 1 matched set | Included in K01: Enter/left Shift wires, two passive spacebar side units and 6U wire; 95.25 mm side spacing; no additional MX stabilizers |
-| M08 | Keycaps | 60 | K02 NicePBT BoW current complete kit, one kit including 6.0c Centered spacebar; MX mounts; see selected mechanism guide |
-| M09 | Adapter standoffs | 29 | YETI60-STANDOFF-46, brass Ø3.5, shoulder 4.50±0.03; top M2×0.4 stud 1.0; bottom M1.6×0.35 female depth 3.2 |
-| M10 | Top insulating films | 29 | Polyimide, 0.10±0.02 mm, OD 4.5 / ID 1.8; isolate brass shoulder from PCB sensing copper |
-| M11 | PCB screws | 29 | M1.6×5 pan head; head envelope and actual threads require first-article confirmation |
-| M12 | PCB washers | 29 | PEEK, OD≤4.0, ID 2.2, thickness 0.8 mm; not conductive metal washers against PCB |
+| M03 | Plate | 1 | K07 NiZ plate-mount DXF, 304 stainless, CAD thickness 1.60 mm, finished 1.55-1.60 mm, 28 M2 x 0.4 axes; no H26 plate mounting hole |
+| M04 | NiZ housings / sliders / original rings | 60 | K01 five per pack, buy 13 packs / 65; install 60, spare 5; ordinary center housings for big keys, no Deskeys wide assembly |
+| M05 | Rubber domes | 60 positions | K03 NiZ 45g sheet, one sheet; use 60 complete positions trimmed for HHKB; not included in K01 |
+| M06 | Conical EC springs | 60 | K02 NiZ five per pack, buy 13 packs / 65; install 60, spare 5; not helper springs |
+| M07 | Plate-mounted stabilizers / wires | 1 matched set | K04 genuine GMK Plate mount / 2u, three sets / six side units; use two short wires and separate K05 6U wire, spare one short wire |
+| M08 | Keycaps | 60 | K06 NicePBT BoW current complete kit, one kit including 6.0c Centered spacebar; MX mounts |
+| M09 | Adapter standoffs | 28 | YETI60-STANDOFF-46, brass OD3.5, shoulder 4.50 +/-0.03; top M2 x0.4 stud 1.0; bottom M1.6 x0.35 female depth 3.2; H26 unused |
+| M10 | Top insulating films | 28 | Polyimide 0.10 +/-0.02 mm, OD4.5 / ID1.8; between standoff and PCB; H26 unused |
+| M11 | PCB screws | 28 | M1.6 x5 pan head; verify actual head/thread; H26 unused |
+| M12 | PCB washers | 28 | PEEK OD <=4.0, ID2.2, thickness0.8 mm; H26 unused; no conductive metal substitution |
 | M13 | Top-shell inserts | 4 | Cold-bonded knurled brass M3×0.5, OD 4.6, length 3.0; bores Ø4.85±0.05, depth 3.5 |
 | M14 | Daughterboard inserts | 4 | Cold-bonded brass M2×0.4, OD 3.2, length 2.5; bores Ø3.35±0.05, depth 2.9 |
 | M15 | Shell closure screws | 4 | M3×5 with 0.30 mm shim washer; proposed from CAD seat z=2.59 and insert entry z=4.79; nominal engagement 2.50 mm, verify head Ø≤5.6 in Ø5.8 recess |
 | M16 | Daughterboard screws | 4 | M2×4 with 0.30 mm insulating washer; nominal thread engagement 4−1.6062−0.30=2.0938 mm in 2.5 mm insert; head clearance to connector requires check |
-| M17 | Gasket stock | 1 set | 2 mm sheet cut to existing ledges; nominal 50% compression gives 1 mm each side of plate; do not fill USB/cable/service clearances |
+| M17 | Gasket stock | 1 set | Lower stock 2.0 mm, upper stock 1.2 mm; trim to original ledges; nominal installed gaps 1.0162 /0.5838 mm |
 | M18 | Case feet | 4 | [SKUF silicone feet](https://keeb.io/products/skuf-silicone-rubber-keyboard-feet), 41.8 x 5.8 x 2 mm, 45A, adhesive backed; four approximately 42.2 x 6.2 mm case pockets. One 8-pack leaves four spares |
 | M19 | Insert adhesive | As needed | Resin-compatible structural epoxy; cold-bond only, cure per adhesive/resin supplier, keep thread bores clear |
 | M20 | Battery retention and insulation | 1 set | Nonconductive removable retention and edge protection; include tape thickness in the pocket budget; do not clamp the pouch |
 
-**Selected mechanism:** the [Deskeys shopping and installation guide](docs/build/key-mechanism.md) specifies K01-K03 without duplicate kit purchases; existing mechanical stock is unverified. Use the new Deskeys plate, the retained 6U layout and current PCB. First-article clips, 4.6 mm stack, wires and full travel still need inspection.
+**Selected mechanism: NiZ plus plate-mounted stabilizers.** [Exact options, quantities and installation](docs/build/key-mechanism.md) list separate K01-K07 purchases, replacing the Deskeys kit. The unchanged PCB retains 29 holes; H26 is unused and 28 fastener sets are installed. Mechanical stock is unverified.
 
 ### Additional retention parts and consumables
 
@@ -183,8 +183,8 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | Rear harness guide bases | 2 | One each of `mechanical/generated/interconnect-guides/rear-1-base` and `rear-2-base` STEP/STL; current width 5.4 and route-direction length 2 mm |
 | Rear removable bridges | 2 | One each of `rear-1-bridge` and `rear-2-bridge`; three lower battery wires/four upper USB wires, groove radius 0.5 mm |
 | Front USB guide | 1 | `front-base` STEP/STL, width 6 and route-direction length 1.8 mm; install in case coordinates without scaling |
-| Polyimide insulation stock | 1 sheet | At least 100 x 100 x 0.10 mm; supplies the 29 insulating discs; do not double-count pre-cut parts. Upper harness retention uses the separately listed adhesive-backed film |
-| Gasket stock | 1 sheet | Suggested purchase >=330 x 260 x 2 mm, cut separately for both sides of the plate; stock quantity replaces M17's one-set allowance; material/hardness unselected |
+| Polyimide insulation stock | 1 sheet | At least 100 x 100 x 0.10 mm; supplies the 28 insulating discs; do not double-count pre-cut parts. Upper harness retention uses the separately listed adhesive-backed film |
+| Gasket stock | 2 sheets | One >=330 x130 x2.0 mm lower sheet and one >=330 x130 x1.2 mm upper sheet; replaces M17 one-set allowance; material/hardness still requires first article |
 | Resin-compatible structural adhesive | 1 small two-part kit | For inserts and guides; qualify and cure per adhesive/resin suppliers; quantity denotes a purchase package, not measured consumption |
 | Removable battery tape and edge insulation | 1 set | Nominal pack-to-pocket-floor space is only 0.20 mm; tape, insulation and assembly allowance must fit that total budget; do not compress the pouch |
 | Upper harness retention tape | 1 small roll, cut 3 pieces | Adhesive-backed insulating film/tape, total thickness <=0.10 mm including adhesive; wrap over the upper wires and down the guide sides |

@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'docs/engineering/images';OUT.
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def key(r):return (re.sub(r'\d','',r),int(re.search(r'\d+',r)[0]))
 def main():
- sources=[ROOT/'.assembly-work/build-map.json',ROOT/'docs/audit/yeti60-assembly.json',ROOT/'docs/audit/yeti60-interconnects.json',ROOT/'hardware/bom/mainboard.csv',ROOT/'mechanical/assembly-spec.json',Path(__file__)]
+ sources=[ROOT/'.assembly-work/build-map.json',ROOT/'docs/audit/yeti60-assembly.json',ROOT/'docs/audit/yeti60-interconnects.json',ROOT/'hardware/bom/mainboard.csv',ROOT/'mechanical/assembly-spec.raytac.json',Path(__file__)]
  m=json.loads(sources[0].read_text());a=json.loads(sources[1].read_text());h=json.loads(sources[2].read_text())
  assert m['pcb_sha256']==sha(ROOT/m['pcb_source'])
  refs=sorted(m['fitted_references'],key=key);assert len(refs)==75 and 'D1' not in refs
@@ -19,7 +19,7 @@ def main():
  for p in ['/System/Library/Fonts/PingFang.ttc','/System/Library/Fonts/Supplemental/Arial Unicode.ttf']:
   if Path(p).exists():font_manager.fontManager.addfont(p)
  plt.rcParams.update({'font.family':['Arial Unicode MS','PingFang SC','DejaVu Sans'],'svg.fonttype':'none','axes.unicode_minus':False})
- layers=[('A01','60 keycaps','60 个键帽'),('A02','Top shell / 1','上壳／1 件'),('A03','60 housings + sliders; stabilizer set','60 套轴座／滑块；稳定机构 1 套'),('A04','1.2 mm stainless plate / 1','1.2 mm 不锈钢定位板／1 件'),('A05','60 dome positions','胶碗／60 个位置'),('A06','60 conical sensing springs','锥形感应弹簧／60 个'),('A07','29 standoffs + 29 insulating rings','29 个支柱＋29 个隔离环'),('A08','Main PCB / 1; fitted components / 75','主板／1 块；实装元件／75 只'),('A09','29 PEEK washers + 29 M1.6 screws','29 个 PEEK 垫片＋29 颗 M1.6 螺钉'),('A10','C5 JSH / 1; protected battery / 1','C5 JSH／1 块；保护电池包／1 包'),('A11','USB 4 wires + battery 3 wires; 5 guides','USB 4 根线＋电池 3 根线；支架 5 件'),('A12','Bottom shell; 8 inserts + 8 screws/shims','底壳；8 个嵌件＋8 套螺钉／垫片'),('A13','Gasket + insulation/retention sets; 4 feet','胶棉／绝缘固定材料各 1 套；脚垫 4 个')]
+ layers=[('A01','60 keycaps','60 个键帽'),('A02','Top shell / 1','上壳／1 件'),('A03','60 housings + sliders; stabilizer set','60 套轴座／滑块；稳定机构 1 套'),('A04','1.6 mm stainless plate / 1','1.6 mm 不锈钢定位板／1 件'),('A05','60 dome positions','胶碗／60 个位置'),('A06','60 conical sensing springs','锥形感应弹簧／60 个'),('A07','28 standoffs + 28 insulating rings','28 个支柱＋28 个隔离环'),('A08','Main PCB / 1; fitted components / 75','主板／1 块；实装元件／75 只'),('A09','28 PEEK washers + 28 M1.6 screws','28 个 PEEK 垫片＋28 颗 M1.6 螺钉'),('A10','C5 JSH / 1; protected battery / 1','C5 JSH／1 块；保护电池包／1 包'),('A11','USB 4 wires + battery 3 wires; 5 guides','USB 4 根线＋电池 3 根线；支架 5 件'),('A12','Bottom shell; 8 inserts + 8 screws/shims','底壳；8 个嵌件＋8 套螺钉／垫片'),('A13','Gasket + insulation/retention sets; 4 feet','胶棉／绝缘固定材料各 1 套；脚垫 4 个')]
  outputs={}
  for zh in [False,True]:
   suffix='.zh-CN' if zh else '';fig=plt.figure(figsize=(22,15),facecolor='#f5f2ea');gs=fig.add_gridspec(3,2,width_ratios=[1,1.45],height_ratios=[1,.50,.73],left=.035,right=.98,top=.91,bottom=.055,wspace=.12,hspace=.16)
@@ -61,6 +61,6 @@ def main():
    if ext=='svg':p.write_text('\n'.join(line.rstrip() for line in p.read_text().splitlines())+'\n')
    outputs[str(p.relative_to(ROOT))]=sha(p)
   plt.close(fig)
- report={'status':'counted-native-part-map-generated','production_approved':False,'physical_verification':False,'fitted_mainboard_references':refs,'mainboard_parts':75,'C5_parts':7,'USB_wires':4,'battery_wires':3,'mount_sets':29,'active_keys':60,'outputs':outputs,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources},'limits':['Layer separations and layered silhouettes schematic, not a dimensional assembly drawing','Actual shell/board shapes are in the native CAD studio render','Key mechanism supplier shapes and pack remain unqualified']}
- (ROOT/'docs/audit/complete-exploded.json').write_text(json.dumps(report,indent=2)+'\n');print('Complete exploded sheets: 75 native references, 7 wires, 29 mounts, 60 keys, both languages')
+ report={'status':'counted-native-part-map-generated','production_approved':False,'physical_verification':False,'fitted_mainboard_references':refs,'mainboard_parts':75,'C5_parts':7,'USB_wires':4,'battery_wires':3,'mount_sets':28,'active_keys':60,'outputs':outputs,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources},'limits':['Layer separations and layered silhouettes schematic, not a dimensional assembly drawing','Actual shell/board shapes are in the native CAD studio render','Key mechanism supplier shapes and pack remain unqualified']}
+ (ROOT/'docs/audit/complete-exploded.json').write_text(json.dumps(report,indent=2)+'\n');print('Complete exploded sheets: 75 native references, 7 wires, 28 mounts, 60 keys, both languages')
 if __name__=='__main__':main()

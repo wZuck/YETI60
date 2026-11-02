@@ -40,23 +40,25 @@ def wire(points,ccw):
     builder.Close();return builder.Wire()
 def write_step(shape,path):
     w=STEPControl_Writer();w.Transfer(shape,STEPControl_AsIs);w.Write(str(path))
-def build_plate(z):
-    doc=ezdxf.readfile(ROOT/'mechanical/felk60_plate_hhkb.deskeys.dxf');profiles=[];centers=[]
+def build_plate(z,thickness=1.6):
+    from check_yeti60_plate_mount import keys,SOURCE
+    doc=ezdxf.readfile(ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf');profiles=[];centers=keys(ezdxf.readfile(SOURCE))
     for e in doc.modelspace().query('LWPOLYLINE'):
         points=[(-v.x,-v.y,z) for v in make_path(e).flattening(.002)]
         xs=[p[0] for p in points];ys=[p[1] for p in points];area=(max(xs)-min(xs))*(max(ys)-min(ys));profiles.append((area,points))
         sx,sy=max(xs)-min(xs),max(ys)-min(ys)
-        if abs(sy-14.1)<.01 and (abs(sx-14.7)<.01 or abs(sx-32.15)<.01):centers.append({'x':(min(xs)+max(xs))/2,'y':(min(ys)+max(ys))/2,'cutout_width':sx})
+        # Stabilizer cutouts are asymmetric about their sensing stem; never
+        # infer a sensing center from the combined opening bounding box.
     profiles.sort(key=lambda a:-a[0]);face=BRepBuilderAPI_MakeFace(wire(profiles[0][1],True))
     for _,pts in profiles[1:]:face.Add(wire(pts,False))
     # Screw circles are also tessellated to <=0.002 mm sagitta.
     for c in doc.modelspace().query('CIRCLE'):
         n=max(64,math.ceil(math.pi/math.acos(1-.002/c.dxf.radius)));pts=[(-c.dxf.center.x+c.dxf.radius*math.cos(2*math.pi*i/n),-c.dxf.center.y+c.dxf.radius*math.sin(2*math.pi*i/n),z) for i in range(n)];face.Add(wire(pts,False))
-    assert face.IsDone();shape=BRepPrimAPI_MakePrism(face.Face(),gp_Vec(0,0,1.2)).Shape();assert BRepCheck_Analyzer(shape).IsValid();assert len(centers)==60,len(centers)
+    assert face.IsDone();shape=BRepPrimAPI_MakePrism(face.Face(),gp_Vec(0,0,thickness)).Shape();assert BRepCheck_Analyzer(shape).IsValid();assert len(centers)==60,len(centers)
     return shape,sorted(centers,key=lambda c:(-c['y'],c['x']))
 def main():
     meta=json.loads((ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json').read_text());pcbpath=ROOT/meta['source'];assert sha(pcbpath)==meta['source_sha256']
-    spec=json.loads((ROOT/'mechanical/assembly-spec.json').read_text());bottom=load(ROOT/'mechanical/generated/yeti60-bottom.step');top=load(ROOT/'mechanical/generated/yeti60-top.step')
+    spec=json.loads((ROOT/'mechanical/assembly-spec.raytac.json').read_text());bottom=load(ROOT/'mechanical/generated/yeti60-bottom.step');top=load(ROOT/'mechanical/generated/yeti60-top.step')
     subprocess.run([CLI,'pcb','export','step','--board-only','--user-origin','0x0mm','-f','-o',str(WORK/'pcb-body.step'),str(pcbpath)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
     body=load(WORK/'pcb-body.step');native_bounds=bounds(body);native_thickness=native_bounds[5]-native_bounds[2]
     faces=TopExp_Explorer(body,TopAbs_FACE);base_face=None;largest=0
@@ -75,7 +77,7 @@ def main():
     assert BRepCheck_Analyzer(body).IsValid()
     # FELK60 ledges are 3.19 and 6.39. 2mm gaskets at the documented 50%
     # compression leave 1mm + 1.2mm plate + 1mm in the 3.2mm gap.
-    plate_bottom=spec['stack']['plate_bottom_z'];plate,keys=build_plate(plate_bottom);write_step(plate,WORK/'plate.step')
+    plate_bottom=spec['stack']['plate_bottom_z'];plate_thickness=spec['stack']['plate_thickness'];plate,keys=build_plate(plate_bottom,plate_thickness);write_step(plate,WORK/'plate.step')
     plate_collision=[intersection_volume(plate,s) for s in (bottom,top)]
     nominal_gap=spec['stack']['pcb_to_plate_gap']
     pcb_top=plate_bottom-nominal_gap;shift=pcb_top-meta['pcb_thickness_mm'];placed=move(body,z=shift);write_step(placed,WORK/'pcb-placed.step')
@@ -88,13 +90,14 @@ def main():
         if max(volumes)>1e-5:hits.append(entry)
     # Hole correspondence is not a manufacturing tolerance approval.
     hole_matches=[];used=set()
-    dxf=ezdxf.readfile(ROOT/'mechanical/felk60_plate_hhkb.deskeys.dxf')
+    dxf=ezdxf.readfile(ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf')
     for circle in dxf.modelspace().query('CIRCLE'):
         center=(-circle.dxf.center.x,circle.dxf.center.y)
-        choices=[(math.dist(center,h['center_pcb_mm']),i,h) for i,h in enumerate(meta['mount_holes']) if i not in used]
+        choices=[(math.dist(center,h['center_pcb_mm']),i,h) for i,h in enumerate(meta['mount_holes']) if i not in used and h['ref'] not in spec['pcb_fastener']['unused_pcb_mount_refs']]
         offset,i,h=min(choices,key=lambda v:v[0]);used.add(i)
         hole_matches.append({'pcb_ref':h['ref'],'center_offset_mm':offset,'plate_pilot_diameter_mm':2*circle.dxf.radius,'pcb_min_clearance_diameter_mm':min(h['drill_mm']),'nominal_M2_radial_margin_before_tolerances_mm':min(h['drill_mm'])/2-1-offset,'pcb_center_case_mm':[h['center_pcb_mm'][0],-h['center_pcb_mm'][1]],'plate_center_case_mm':[-circle.dxf.center.x,-circle.dxf.center.y],'M1_6_radial_margin_worst_case_mm':(min(h['drill_mm'])-spec['pcb_fastener']['pcb_hole_minus_tolerance']-spec['pcb_fastener']['screw_major_diameter_max'])/2-offset-spec['pcb_fastener']['pcb_hole_position_tolerance']-spec['pcb_fastener']['plate_hole_position_tolerance']-spec['pcb_fastener']['thread_concentricity']})
-    assert len(hole_matches)==len(meta['mount_holes'])==29
+    assert len(hole_matches)==spec['pcb_fastener']['installed_quantity']==28
+    assert len(meta['mount_holes'])==29 and spec['pcb_fastener']['unused_pcb_mount_refs']==['H26']
     assert max(h['center_offset_mm'] for h in hole_matches)<.1
     # Current board and component envelopes at several plausible stack gaps.
     sweep=[]
@@ -114,7 +117,7 @@ def main():
         head_clearances.append(distance(pack,head))
     assert min(head_clearances)>=.7-1e-6
     candidates=[{'bounds_case_mm':bb,'size_mm':[width,depth,height],'case_overlap_mm3':[intersection_volume(pack,s) for s in (bottom,top)],'component_and_fastener_3d_envelopes_clear':True,'minimum_component_clearance_mm':min(component_clearances),'minimum_fastener_clearance_mm':min(head_clearances),'envelope_must_include_swelling_and_protection':True,'bottom_case_distance_mm':distance(pack,bottom),'top_insulation_gap_mm':shift-pack_top,'status':'custom-pack-design-envelope-supplier-qualification-pending'}]
-    report={'status':'conditional-fit-review','source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [pcbpath,ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.json',ROOT/'mechanical/felk60_plate_hhkb.deskeys.dxf']},'verification_recipe_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),ROOT/'scripts/cad_geometry.py',ROOT/'scripts/export_yeti60_mechanical_metadata.py']},'mechanical_metadata_sha256':sha(ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json'),'pcb_frame_to_case':'X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z','nominal_stack':{'bottom_gasket_ledge_z':3.19,'top_gasket_ledge_z':6.39,'compressed_bottom_gasket_mm':plate_bottom-3.19,'compressed_top_gasket_mm':6.39-plate_bottom-1.2,'plate_bottom_z':plate_bottom,'plate_thickness_mm':1.2,'pcb_to_plate_gap_mm':nominal_gap,'pcb_top_z':pcb_top,'pcb_bottom_z':shift,'pcb_gap_basis':'4.5 mm machined shoulder plus 0.1 mm insulating film; physical dome/housing acceptance requires first article'},'mounting_hole_matches':hole_matches,'max_hole_center_offset_mm':max(h['center_offset_mm'] for h in hole_matches),'min_M2_radial_margin_before_tolerances_mm':min(h['nominal_M2_radial_margin_before_tolerances_mm'] for h in hole_matches),'power_switch_access':'8 mm underside service port; insulated-tool access to SW100','plate_profile_chord_error_mm':.002,'active_key_positions':keys,'native_step_substrate_body_thickness_mm':native_thickness,'finished_board_envelope_thickness_mm':meta['pcb_thickness_mm'],'finished_envelope_basis':'Native STEP bottom face extruded to declared finished copper/mask thickness; conservative full board envelope','pcb_case_overlap_mm3':pcb_collisions,'pcb_case_distances_mm':pcb_distances,'plate_case_overlap_mm3':plate_collision,'component_envelopes':envelopes,'colliding_envelopes':[e['ref'] for e in hits],'pcb_gap_sweep':sweep,'battery_candidates':candidates,'not_verified':['Final switch/dome/fastener PCB-to-plate gap and tolerances','Actual battery/protection/NTC, swelling/insulation, cable bend and daughterboard envelope','J2 mating plug and current component height assumptions except sourced Raytac and JST body heights','Resin insert conversion and print shrinkage; original M3 metal-thread pilots are retained','Generic keycap shapes in renders are illustrative, not qualified OEM CAD']}
+    report={'status':'conditional-fit-review','source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [pcbpath,ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.raytac.json',ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf']},'verification_recipe_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),ROOT/'scripts/cad_geometry.py',ROOT/'scripts/export_yeti60_mechanical_metadata.py']},'mechanical_metadata_sha256':sha(ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json'),'pcb_frame_to_case':'X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z','nominal_stack':{'bottom_gasket_ledge_z':3.19,'top_gasket_ledge_z':6.39,'compressed_bottom_gasket_mm':plate_bottom-3.19,'compressed_top_gasket_mm':6.39-plate_bottom-plate_thickness,'plate_bottom_z':plate_bottom,'plate_thickness_mm':plate_thickness,'pcb_to_plate_gap_mm':nominal_gap,'pcb_top_z':pcb_top,'pcb_bottom_z':shift,'pcb_gap_basis':'4.5 mm machined shoulder plus 0.1 mm insulating film; physical dome/housing acceptance requires first article'},'mounting_hole_matches':hole_matches,'max_hole_center_offset_mm':max(h['center_offset_mm'] for h in hole_matches),'min_M2_radial_margin_before_tolerances_mm':min(h['nominal_M2_radial_margin_before_tolerances_mm'] for h in hole_matches),'power_switch_access':'8 mm underside service port; insulated-tool access to SW100','plate_profile_chord_error_mm':.002,'active_key_positions':keys,'native_step_substrate_body_thickness_mm':native_thickness,'finished_board_envelope_thickness_mm':meta['pcb_thickness_mm'],'finished_envelope_basis':'Native STEP bottom face extruded to declared finished copper/mask thickness; conservative full board envelope','pcb_case_overlap_mm3':pcb_collisions,'pcb_case_distances_mm':pcb_distances,'plate_case_overlap_mm3':plate_collision,'component_envelopes':envelopes,'colliding_envelopes':[e['ref'] for e in hits],'pcb_gap_sweep':sweep,'battery_candidates':candidates,'not_verified':['Final switch/dome/fastener PCB-to-plate gap and tolerances','Actual battery/protection/NTC, swelling/insulation, cable bend and daughterboard envelope','J2 mating plug and current component height assumptions except sourced Raytac and JST body heights','Resin insert conversion and print shrinkage; original M3 metal-thread pilots are retained','Generic keycap shapes in renders are illustrative, not qualified OEM CAD']}
     # Ordinary JLC thickness range: PCB top remains fixed by the standoffs.
     profile_path=ROOT/'mechanical/pcb-fabrication-spec.json';profile=json.loads(profile_path.read_text())
     low_t,high_t=profile['ordinary_thickness_acceptance_range_mm'];deep_shift=meta['pcb_thickness_mm']-high_t;shallow_shift=meta['pcb_thickness_mm']-low_t
@@ -145,6 +148,8 @@ def main():
     report['case_files']={'bottom':'mechanical/generated/yeti60-bottom.step','top':'mechanical/generated/yeti60-top.step'}
     report['selected_battery']=spec['battery']
     report['selected_fasteners']=spec['pcb_fastener']
+    report['unused_pcb_mount_refs']=spec['pcb_fastener']['unused_pcb_mount_refs']
+    report['gasket_stock_mm']={'bottom':spec['stack']['bottom_gasket_stock_mm'],'top':spec['stack']['top_gasket_stock_mm']}
     report['minimum_fastener_radial_margin_worst_case_mm']=min(h['M1_6_radial_margin_worst_case_mm'] for h in hole_matches)
     assert report['minimum_fastener_radial_margin_worst_case_mm']>0
     report['not_verified']=['Physical first-article dome/housing fit, printed-resin properties and insert pullout','Supplier-signed custom battery drawing, thermal protection and production capacity acceptance','Actual enclosure USB enumeration, pairing, charging, runtime and wake measurements']

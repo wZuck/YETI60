@@ -10,9 +10,9 @@
     "firmware/target/config/yeti60.conf": "f13a5bb1f999855c09c0cd457f7e0cdccdacd5ef3efd950d8231a35b31df02d2",
     "firmware/target/boards/yeti/yeti60/yeti60.dts": "60e1e147673900553b3d60a1203cb28749e5399c8dd81bbf6d0b58d2807f03b5",
     "docs/engineering/sources.json": "d7d9dec5692284b1d8c7c31b39b35e30e7e650021202cdf5213c69746b442305",
-    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "mechanical/assembly-spec.raytac.json": "e7c14e76bbd0f26bb5c43ab8526bc897191050dc1127abab7db5acc24d4010c5",
     "hardware/ec60-nrf52840/netlist.xml": "815c4a1661a9b50b5465660631f37405bd72c5d82aa9ad7c5e1f0eb66af9c93a",
-    "scripts/calculate_yeti60_power.py": "765e1fc5942e9648327d9b597c52e75f53cd34690d961e817732af81fd8110a9"
+    "scripts/calculate_yeti60_power.py": "2f3a946ee88c98f7df419815c9d94bb6f686c15e69db17864a355f9e63e7a21b"
   },
   "equations": {
     "rail_mA": "I_OPA + I_MCU_average + 2*3.3/100k*1000 + 0.008 + 0.016 + 0.100",

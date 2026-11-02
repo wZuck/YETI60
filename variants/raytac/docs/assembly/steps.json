@@ -644,35 +644,35 @@
       "id": "18",
       "figure": "plate",
       "title": [
-        "Prepare the steel plate and 60 housings",
-        "准备钢定位板并装配 60 套轴壳"
+        "Fit steel-plate stabilizers and 60 NiZ housings",
+        "安装钢板卫星轴及 60 套 NiZ 轴座"
       ],
       "actions": [
         [
-          "Use the Deskeys DXF, not the original smaller cutouts. Deburr the 1.20 mm stainless plate, finish its 29 M2 threads and remove debris.",
-          "Use K01 Deskeys T1 / 42g kit: 58 normal pairs and two extra-stem wide assemblies with pre-opened housings. Fit #5 rings; no drilling or additional MX stabilizers.",
-          "Fit the two passive spacebar side units and 6U wire at 95.25 mm spacing. Test the NicePBT BoW centered 6U cap; put only one dome/sensing spring under its active center."
+          "Use the NiZ plate-mount DXF, CAD 1.60 mm and finished 1.55-1.60 mm. Finish 28 M2 threads; H26 has no installed hardware.",
+          "Fit three GMK Plate mount pairs first: two 2U wires and a separate Cherry-compatible 6U wire. Then trial-fit the central ordinary NiZ housings; trim only interfering nonstructural lower skirt material per the mechanism guide.",
+          "Assemble 60 NiZ sliders with their original rings. Test Enter, left Shift and the centered 6U bar from each end. Check actual 95.25 mm long-span cap/wire fit before full assembly."
         ],
         [
-          "使用 Deskeys 适配 DXF，不用原过小开孔。1.20 mm 钢板去毛刺，29 处攻 M2 螺纹并清理碎屑。",
-          "K01 选择 Deskeys T1／42g：58 套普通机构及两个带辅助柱、预开孔宽键总成，装 #5 圈；不用钻孔或另加 MX 卫星轴。",
-          "装空格左右被动侧轴和 6U 钢丝，侧柱距 95.25 mm；试装 NicePBT BoW 居中 6U 空格，只有中央有效轴下放一个胶碗／感应锥簧。"
+          "使用 NiZ 钢板卫星轴 DXF，CAD 厚 1.60 mm、成品 1.55—1.60 mm；28 处攻 M2，H26 整套不装。",
+          "先装三组 GMK 钢板卫星轴：两根 2U 短丝和另购的 Cherry 兼容 6U 长丝；再试装普通 NiZ 中央轴座，按机构指南只修整发生干涉的非承力下裙边。",
+          "安装 60 个 NiZ 滑块及原配消音圈；逐端检查回车、左 Shift 和居中 6U 空格，先局部确认实际 95.25 mm 柱距及钢丝配合。"
         ]
       ],
       "check": [
-        "Follow docs/build/key-mechanism.md. Check clips, full travel, both ends of wide keys, and the actual 4.6 mm stack on the first article.",
-        "按 docs/build/key-mechanism.zh-CN.md 核对卡扣、完整行程、宽键两端回弹及首件真实 4.6 mm 结构。"
+        "See docs/build/key-mechanism.md. No PCB stabilizer holes, Deskeys wide housings or EC spacebar side units are installed. Actual clips, stroke and wire fit require a sample.",
+        "详见 docs/build/key-mechanism.zh-CN.md；不新增 PCB 卫星轴孔，不装 Deskeys 宽轴座或静电容空格侧轴，实物须确认卡扣、行程及钢丝。"
       ],
       "labels": [
         [
-          "1.20 mm Deskeys plate",
-          "58 normal + 2 wide pairs",
-          "6U centered / 95.25 mm sides"
+          "1.60 mm NiZ plate / 28 M2 axes",
+          "60 normal housings + 3 stabilizer pairs",
+          "H26 unused / centered 6U wire"
         ],
         [
-          "1.20 mm Deskeys 适配板",
-          "58 套普通＋2 套宽键",
-          "居中 6U／两侧距 95.25 mm"
+          "1.60 mm NiZ 板／28 处 M2",
+          "60 套普通轴座＋3 对卫星轴",
+          "H26 不装／居中 6U 钢丝"
         ]
       ]
     },
@@ -716,19 +716,21 @@
       "id": "20",
       "figure": "fasteners",
       "title": [
-        "Install the 29 insulated PCB fastener sets",
-        "安装 29 套绝缘 PCB 紧固件"
+        "Install the 28 insulated PCB fastener sets",
+        "安装 28 套绝缘 PCB 紧固件"
       ],
       "actions": [
         [
+          "Leave H26 empty: omit its standoff, film, washer and screw.",
           "Install the adapter standoffs under the tapped plate: 4.50 mm brass shoulder, upper M2 stud and lower M1.6 female thread.",
           "Place a 0.10 mm polyimide ring between every shoulder and the PCB sensing face, then lower the PCB without shifting the springs.",
-          "From the component side, fit 0.8 mm PEEK washers, OD <=4 mm, and 29 M1.6 x 5 screws. Tighten progressively with sample-qualified torque."
+          "From the component side, fit 0.8 mm PEEK washers, OD <=4 mm, and 28 M1.6 x 5 screws. Tighten progressively with sample-qualified torque."
         ],
         [
+          "H26 整套留空：支柱、膜、垫片、螺钉均不装。",
           "在已攻牙定位板下安装转接柱：黄铜肩高 4.50 mm，上部 M2 外牙，下部 M1.6 内牙。",
           "每个铜柱肩与 PCB 感应面之间放置 0.10 mm 聚酰亚胺环，落下 PCB 时不移位弹簧。",
-          "从元件面安装 0.8 mm 厚、外径不超过 4 mm 的 PEEK 垫圈及 29 只 M1.6×5 螺丝，按样件确认的扭矩逐步均匀紧固。"
+          "从元件面安装 0.8 mm 厚、外径不超过 4 mm 的 PEEK 垫圈及 28 只 M1.6×5 螺丝，按样件确认的扭矩逐步均匀紧固。"
         ]
       ],
       "check": [
@@ -739,12 +741,12 @@
         [
           "4.50 shoulder + 0.10 film = 4.60 mm",
           "PEEK 0.8 mm, OD <=4 mm",
-          "29 x M1.6 x 5, from below"
+          "28 x M1.6 x 5, from below"
         ],
         [
           "4.50 铜柱肩＋0.10 膜＝4.60 mm",
           "PEEK 厚 0.8 mm，外径≤4 mm",
-          "下方安装 29 只 M1.6×5"
+          "下方安装 28 只 M1.6×5"
         ]
       ]
     },
@@ -973,12 +975,12 @@
       ],
       "actions": [
         [
-          "Remove USB and switch off before final handling; disconnect the pack if adjusting the internal wiring. Fit upper gaskets only on the original ledges.",
+          "Remove USB and switch off before final handling; disconnect the pack if adjusting the internal wiring. Fit upper gaskets only on the original ledges. Upper gasket stock is now 1.2 mm; the lower stock remains 2.0 mm.",
           "Check no wire or retention film protrudes into mating surfaces. Close the shell without force, preserving plate registration and the qualified gasket compression.",
           "Fit four M3 x 5 screws with 0.30 mm shims and tighten progressively. If key feel or sensing changes after closure, reopen and correct the stack before recalibrating."
         ],
         [
-          "最终操作前拔掉 USB 并关闭电源；调整内部走线时再断开电池。上侧垫片只贴在原有台阶。",
+          "最终操作前拔掉 USB 并关闭电源；调整内部走线时再断开电池。上侧垫片只贴在原有台阶。上侧胶棉现为原厚 1.2 mm，下侧仍为 2.0 mm。",
           "检查导线和固定膜均不伸入合壳面，不用蛮力压合，保持定位板对位及确认过的垫片压缩量。",
           "安装四只 M3×5 螺丝及 0.30 mm 垫片，逐步均匀紧固；若合壳后手感或感应改变，先开壳修正结构，再重新校准。"
         ]

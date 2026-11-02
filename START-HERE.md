@@ -6,4 +6,4 @@ The active first-prototype track is **Raytac MDBT50Q-1MV2**. Open the [Raytac or
 
 **Current release: all 52 Raytac software/CAD audit stages passed, not an order release.** Read the handbook's outstanding items before spending on custom parts. The existing archive name contains `dfm-review` intentionally; successful software checks do not prove physical operation.
 
-[Selected mechanism, exact purchases and plate](variants/raytac/docs/build/key-mechanism.md): Deskeys T1 / 42g kit with NicePBT BoW centered 6U caps and the new adapted plate.
+[Selected mechanism, exact purchases and plate](variants/raytac/docs/build/key-mechanism.md): NiZ housings/sliders, separate steel-plate-mounted stabilizers, centered 6U caps and a new 1.6 mm plate.

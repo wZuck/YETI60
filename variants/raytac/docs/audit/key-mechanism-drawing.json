@@ -1,0 +1,17 @@
+{
+  "status": "native-plate-mechanism-guide-generated",
+  "supplier_shapes": "schematic, not qualified vendor MCAD",
+  "physical_fit_verified": false,
+  "outputs": {
+    "docs/engineering/images/key-mechanism.png": "3ec06bf22efd4db85de8fb2ccfa2ae9956105c5bc71ae7ca60029f63ff6dbdec",
+    "docs/engineering/images/key-mechanism.svg": "412e3adc2fea4d9215a0fd90250d8361560f0ad8e4efdb8de583c6a09748cbb8",
+    "docs/engineering/images/key-mechanism.zh-CN.png": "049c722f1988e2d2441fd45142e42e430c89a34b5807d2fc846c17e57b8bcb50",
+    "docs/engineering/images/key-mechanism.zh-CN.svg": "6bb2d89671a44714702b893785bdf6ee59ea8916f9caa3ad3c3d332ee5b4f032"
+  },
+  "source_sha256": {
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
+    "mechanical/yeti60-key-mechanism.json": "b94377e522e7c2015d7979fb047207f4e6b11b0953cbd37a94cbb93e825937f0",
+    "scripts/draw_yeti60_key_mechanism.py": "996d1fb8f3b3a27db498ced2cef8231eb4c3e01c8d16007310d06db7c8bf3b77"
+  }
+}

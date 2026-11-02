@@ -51,7 +51,7 @@ def main():
     fitpath = ROOT / 'docs/audit/yeti60-assembly.json'
     fit = json.loads(fitpath.read_text())
     mesh = json.loads((ROOT / '.assembly-work/render-meshes.json').read_text())
-    spec = json.loads((ROOT / 'mechanical/assembly-spec.json').read_text())
+    spec = json.loads((ROOT / 'mechanical/assembly-spec.raytac.json').read_text())
     wires = json.loads((ROOT / 'docs/audit/yeti60-interconnects.json').read_text())
     assert native['pcb_sha256'] == sha(ROOT / native['pcb_source'])
     assert mesh['assembly_report_sha256'] == sha(fitpath)
@@ -220,7 +220,7 @@ def main():
         ax.set_xlim(-12, 20); ax.set_ylim(-7, 11)
         ptop = fit['nominal_stack']['pcb_top_z']; plate = fit['nominal_stack']['plate_bottom_z']
         ax.add_patch(Rectangle((-9,-2),18,1.6062,fc=GREEN,ec=INK))
-        ax.add_patch(Rectangle((-9,plate),18,1.2,fc='#becbd1',ec=INK))
+        ax.add_patch(Rectangle((-9,plate),18,1.6,fc='#becbd1',ec=INK))
         if fastener:
             for rect, color in [((-1.75,ptop+.1,3.5,4.5),GOLD),((-2.25,ptop,4.5,.1),'#df8544'),
                                 ((-2,-2.8,4,.8),'#577c8e'),((-.8,-2.8,1.6,5),'#a0b0b8'),
@@ -340,6 +340,11 @@ def main():
                 elif figure=='plate':
                     ax.cla();ax.axis('off');ax.set_aspect('equal');cad(ax,'plate')
                     for k in fit['active_key_positions']:box3(ax,[k['x']-6.8,k['y']-6.5,5.4,k['x']+6.8,k['y']+6.5,10.9],'#627e82')
+                    for idx,span in [(41,23.8),(42,23.8),(57,95.25)]:
+                        k=fit['active_key_positions'][idx];x,y=k['x'],k['y']
+                        for sign in [-1,1]:
+                            cx=x+sign*span/2;box3(ax,[cx-3.2,y-5.3,2,cx+3.2,y+6.5,10.8],'#b38c60')
+                        box3(ax,[x-span/2,y-4.6,2.0,x+span/2,y-3,3.6],'#a4adb0')
                     cad_limits(ax)
                 elif figure=='lower':
                     for name in ['C5-pcb','C5-usb','C5-sh','interconnect-rear-1-base','interconnect-rear-2-base','interconnect-front-base']:
@@ -407,13 +412,13 @@ def main():
                     if rr:lines += [f"| {', '.join(rr)} | {len(rr)} | {row['Design value']} | {row['Package']} |"]
                 lines += ['']
         lines += [('## 重建与依据' if zh else '## Rebuild and sources'),'',
-                  ('使用 KiCad Python 执行 `scripts/export_yeti60_build_map.py`，再用 `requirements-audit.txt` 的 CAD 环境执行 `scripts/draw_yeti60_build_guide.py`。生成器核对 75 只主板元件均在放置步骤中出现一次、60 个实际电极、29 个安装孔及当前装配／线束来源。文件和图像哈希见 [指南验证记录](../audit/yeti60-build-guide.json)。' if zh else 'Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_yeti60_build_guide.py` with the CAD environment from `requirements-audit.txt`. The generator checks that all 75 mainboard components are placed exactly once, and checks the 60 active electrodes, 29 mounts and current assembly/harness sources. See the [guide evidence](../audit/yeti60-build-guide.json) for source and image hashes.'),'',
+                  ('使用 KiCad Python 执行 `scripts/export_yeti60_build_map.py`，再用 `requirements-audit.txt` 的 CAD 环境执行 `scripts/draw_yeti60_build_guide.py`。生成器核对 75 只主板元件均在放置步骤中出现一次、60 个实际电极、29 个原 PCB 孔、28 套实装紧固件及当前装配／线束来源。文件和图像哈希见 [指南验证记录](../audit/yeti60-build-guide.json)。' if zh else 'Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_yeti60_build_guide.py` with the CAD environment from `requirements-audit.txt`. The generator checks that all 75 mainboard components are placed exactly once, and checks the 60 active electrodes, 29 native PCB holes, 28 installed mounting sets and current assembly/harness sources. See the [guide evidence](../audit/yeti60-build-guide.json) for source and image hashes.'),'',
                   ('编排参考 [DELTA OMEGA 安装指南](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md) 的逐工序图示形式；图像及位号按 YETI60 原生数据重新绘制，不沿用 MX 焊接步骤。' if zh else 'The per-operation illustrated format follows the [DELTA OMEGA build guide](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md). Images and references are redrawn from YETI60 native data; its MX soldering operations do not apply here.'),'',
-                  ('按键机构及适配定位板详见 [Deskeys 安装方案](../build/key-mechanism.zh-CN.md)。焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Raytac MDBT50Q-1MV2 资料](https://www.raytac.com/product/ins.php?index_id=24) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。' if zh else 'For the selected mechanisms and adapted plate, see the [Deskeys assembly plan](../build/key-mechanism.md). Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Raytac MDBT50Q-1MV2 documentation](https://www.raytac.com/product/ins.php?index_id=24), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).'),'']
+                  ('按键机构及适配定位板详见 [钢板卫星轴安装方案](../build/key-mechanism.zh-CN.md)。焊接依据：[TI QFN／SON 装配说明 SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf) 的钢网、回流和隐藏焊点检查章节；[Raytac MDBT50Q-1MV2 资料](https://www.raytac.com/product/ins.php?index_id=24) 的模组引脚、尺寸及独立焊接工艺包；[C&K JS 系列资料](https://www.ckswitches.com/media/1422/js.pdf) 的开关封装和焊接限制。电源、线束及固件步骤另按本仓库 [电源计算](../engineering/power-budget.zh-CN.md)、[线束规格](../engineering/interconnects.zh-CN.md)、[目标固件说明](../../firmware/target/README.zh-CN.md)。' if zh else 'For the selected mechanisms and adapted plate, see the [plate-mount stabilizer plan](../build/key-mechanism.md). Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Raytac MDBT50Q-1MV2 documentation](https://www.raytac.com/product/ins.php?index_id=24), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).'),'']
         doc=ROOT/('docs/assembly/build-guide'+suffix+'.md');doc.write_text('\n'.join(lines));outputs[str(doc.relative_to(ROOT))]=sha(doc)
     source_paths=[STEPS,ROOT/native['pcb_source'],ROOT/native['daughterboard']['source'],
                   ROOT/'hardware/bom/mainboard.csv',ROOT/'hardware/bom/daughterboard.csv',
-                  ROOT/'mechanical/assembly-spec.json',ROOT/'mechanical/interconnect-spec.json',
+                  ROOT/'mechanical/assembly-spec.raytac.json',ROOT/'mechanical/interconnect-spec.json',
                   ROOT/'docs/audit/yeti60-assembly.json',ROOT/'docs/audit/yeti60-interconnects.json',
                   ROOT/'docs/audit/yeti60-key-geometry.json',
                   ROOT/'firmware/target/README.md',ROOT/'firmware/target/config/yeti60.keymap',
@@ -421,7 +426,7 @@ def main():
                   ROOT/'scripts/export_yeti60_build_map.py',Path(__file__).resolve()]
     report={'status':'source-linked-illustrated-prototype-guide','production_approved':False,
             'steps_per_language':28,'fitted_mainboard_references_placed_once':sorted(installed),
-            'active_electrodes':active_electrodes,'mounting_holes':29,'underside_foot_pocket_centers_case_mm':feet,
+            'active_electrodes':active_electrodes,'mounting_holes':29,'installed_mount_sets':28,'unused_pcb_mount_refs':['H26'],'underside_foot_pocket_centers_case_mm':feet,
             'mainboard_view':'component side, native X mirrored; rear row at top',
             'daughterboard_view':'F.Cu component side, native X retained; not a mating-plug view',
             'native_map_sha256':sha(MAP),'geometry_sources':mesh['geometry_sources'],

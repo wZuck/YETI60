@@ -31,9 +31,9 @@ Step index
 - [15 First USB power-up, without a battery](#step-15)
 - [16 Program and verify the calibrator through J3](#step-16)
 - [17 Finish the resin shells and bond eight inserts](#step-17)
-- [18 Prepare the steel plate and 60 housings](#step-18)
+- [18 Fit steel-plate stabilizers and 60 NiZ housings](#step-18)
 - [19 Center the domes and conical sensing springs](#step-19)
-- [20 Install the 29 insulated PCB fastener sets](#step-20)
+- [20 Install the 28 insulated PCB fastener sets](#step-20)
 - [21 Fit lower gaskets, C5 and open guide bases](#step-21)
 - [22 Inspect and retain the qualified battery pack](#step-22)
 - [23 Lay the seven wires and close the removable guides](#step-23)
@@ -347,17 +347,17 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 <a id="step-18"></a>
 
-## 18 — Prepare the steel plate and 60 housings
+## 18 — Fit steel-plate stabilizers and 60 NiZ housings
 
-![Prepare the steel plate and 60 housings](images/18-step.png)
+![Fit steel-plate stabilizers and 60 NiZ housings](images/18-step.png)
 
 [Vector enlargement](images/18-step.svg)
 
-1. Use the Deskeys DXF, not the original smaller cutouts. Deburr the 1.20 mm stainless plate, finish its 29 M2 threads and remove debris.
-2. Use K01 Deskeys T1 / 42g kit: 58 normal pairs and two extra-stem wide assemblies with pre-opened housings. Fit #5 rings; no drilling or additional MX stabilizers.
-3. Fit the two passive spacebar side units and 6U wire at 95.25 mm spacing. Test the NicePBT BoW centered 6U cap; put only one dome/sensing spring under its active center.
+1. Use the NiZ plate-mount DXF, CAD 1.60 mm and finished 1.55-1.60 mm. Finish 28 M2 threads; H26 has no installed hardware.
+2. Fit three GMK Plate mount pairs first: two 2U wires and a separate Cherry-compatible 6U wire. Then trial-fit the central ordinary NiZ housings; trim only interfering nonstructural lower skirt material per the mechanism guide.
+3. Assemble 60 NiZ sliders with their original rings. Test Enter, left Shift and the centered 6U bar from each end. Check actual 95.25 mm long-span cap/wire fit before full assembly.
 
-**Check before continuing:** Follow docs/build/key-mechanism.md. Check clips, full travel, both ends of wide keys, and the actual 4.6 mm stack on the first article.
+**Check before continuing:** See docs/build/key-mechanism.md. No PCB stabilizer holes, Deskeys wide housings or EC spacebar side units are installed. Actual clips, stroke and wire fit require a sample.
 
 <a id="step-19"></a>
 
@@ -375,15 +375,16 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 <a id="step-20"></a>
 
-## 20 — Install the 29 insulated PCB fastener sets
+## 20 — Install the 28 insulated PCB fastener sets
 
-![Install the 29 insulated PCB fastener sets](images/20-step.png)
+![Install the 28 insulated PCB fastener sets](images/20-step.png)
 
 [Vector enlargement](images/20-step.svg)
 
-1. Install the adapter standoffs under the tapped plate: 4.50 mm brass shoulder, upper M2 stud and lower M1.6 female thread.
-2. Place a 0.10 mm polyimide ring between every shoulder and the PCB sensing face, then lower the PCB without shifting the springs.
-3. From the component side, fit 0.8 mm PEEK washers, OD <=4 mm, and 29 M1.6 x 5 screws. Tighten progressively with sample-qualified torque.
+1. Leave H26 empty: omit its standoff, film, washer and screw.
+2. Install the adapter standoffs under the tapped plate: 4.50 mm brass shoulder, upper M2 stud and lower M1.6 female thread.
+3. Place a 0.10 mm polyimide ring between every shoulder and the PCB sensing face, then lower the PCB without shifting the springs.
+4. From the component side, fit 0.8 mm PEEK washers, OD <=4 mm, and 28 M1.6 x 5 screws. Tighten progressively with sample-qualified torque.
 
 **Check before continuing:** Nominal plate-to-PCB gap is 4.60 mm. Do not use the stock M1.6 x 2 screws, metal washers against sensing copper, or force misaligned holes.
 
@@ -479,7 +480,7 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 [Vector enlargement](images/27-step.svg)
 
-1. Remove USB and switch off before final handling; disconnect the pack if adjusting the internal wiring. Fit upper gaskets only on the original ledges.
+1. Remove USB and switch off before final handling; disconnect the pack if adjusting the internal wiring. Fit upper gaskets only on the original ledges. Upper gasket stock is now 1.2 mm; the lower stock remains 2.0 mm.
 2. Check no wire or retention film protrudes into mating surfaces. Close the shell without force, preserving plate registration and the qualified gasket compression.
 3. Fit four M3 x 5 screws with 0.30 mm shims and tighten progressively. If key feel or sensing changes after closure, reopen and correct the stack before recalibrating.
 
@@ -501,8 +502,8 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 ## Rebuild and sources
 
-Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_yeti60_build_guide.py` with the CAD environment from `requirements-audit.txt`. The generator checks that all 75 mainboard components are placed exactly once, and checks the 60 active electrodes, 29 mounts and current assembly/harness sources. See the [guide evidence](../audit/yeti60-build-guide.json) for source and image hashes.
+Run `scripts/export_yeti60_build_map.py` with KiCad Python, then `scripts/draw_yeti60_build_guide.py` with the CAD environment from `requirements-audit.txt`. The generator checks that all 75 mainboard components are placed exactly once, and checks the 60 active electrodes, 29 native PCB holes, 28 installed mounting sets and current assembly/harness sources. See the [guide evidence](../audit/yeti60-build-guide.json) for source and image hashes.
 
 The per-operation illustrated format follows the [DELTA OMEGA build guide](https://github.com/wZuck/delta-omega/blob/main/docs/BUILD_GUIDES.md). Images and references are redrawn from YETI60 native data; its MX soldering operations do not apply here.
 
-For the selected mechanisms and adapted plate, see the [Deskeys assembly plan](../build/key-mechanism.md). Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Raytac MDBT50Q-1MV2 documentation](https://www.raytac.com/product/ins.php?index_id=24), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).
+For the selected mechanisms and adapted plate, see the [plate-mount stabilizer plan](../build/key-mechanism.md). Soldering references: [TI QFN/SON attachment SLUA271C](https://www.ti.com/lit/an/slua271c/slua271c.pdf), stencil, reflow and hidden-joint inspection sections; [Raytac MDBT50Q-1MV2 documentation](https://www.raytac.com/product/ins.php?index_id=24), module pin/dimension data and separate solder-process package; [C&K JS data](https://www.ckswitches.com/media/1422/js.pdf), switch package and soldering limits. Power, cable and firmware instructions also follow the repository [power calculations](../engineering/power-budget.md), [interconnect specification](../engineering/interconnects.md) and [target firmware procedure](../../firmware/target/README.md).

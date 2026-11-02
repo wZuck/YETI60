@@ -48,4 +48,4 @@ C5 是 **18.0×16.5 mm、4 层、1.6 mm**，安装孔矩形 14×12.5 mm。单独
 
 [工艺规定](../../hardware/ec60-nrf52840/fabrication-notes.zh-CN.md)与[制造审查清单](../engineering/fabrication-review.zh-CN.md)是配套交付文件。能力依据为 [JLC 官方能力表](https://jlcpcb.com/capabilities/pcb-capabilities/)及[普通叠层资料](https://jlcpcb.com/impedance)，不把界面截图或报价当作已经取得的制造批准。
 
-定位板另按[Deskeys 方案及加工要求](key-mechanism.zh-CN.md)下单新的 1.20 mm 不锈钢 DXF，不是原过小定位板，也不是另一张 PCB；原主板不增加卫星轴安装孔。
+定位板另按[NiZ 钢板卫星轴方案及加工要求](key-mechanism.zh-CN.md)下单新的 1.60 mm 不锈钢 DXF，不是原过小定位板，也不是另一张 PCB；原主板不增加卫星轴安装孔。

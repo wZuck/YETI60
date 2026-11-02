@@ -19,6 +19,7 @@ WORK = ROOT/'.assembly-work'
 REPORT = ROOT/'docs/audit/yeti60-assembly.json'
 MESH = WORK/'render-meshes.json'
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+MECHANISM=ROOT/'mechanical/yeti60-key-mechanism.json';mechanism_hash=sha(MECHANISM)
 data = json.loads(REPORT.read_text()); meshdata = json.loads(MESH.read_text())
 assert sha(REPORT) == meshdata['assembly_report_sha256']
 assert sha(ROOT/'scripts/export_yeti60_render_meshes.py') == meshdata['export_recipe_sha256']
@@ -189,8 +190,8 @@ for row,(y,keys) in enumerate(sorted(rows.items(),reverse=True)):
     keys.sort(key=lambda k:k['x']); assert len(keys)==len(widths[row])
     for col,k in enumerate(keys):
         x,y=k['x'],k['y']; top=22-row*.65
-        box('Illustrative Topre housing',(x-6.9,y-6.6,data['nominal_stack']['pcb_top_z']+1,x+6.9,y+6.6,10.9),black,'switches',.3)
-        box('Illustrative Topre stem',(x-1.5,y-1.5,10.9,x+1.5,y+1.5,13.4),cream,'switches',.2)
+        box('Illustrative NiZ housing',(x-6.9,y-6.6,data['nominal_stack']['pcb_top_z']+1,x+6.9,y+6.6,10.9),black,'switches',.3)
+        box('Illustrative NiZ slider',(x-1.5,y-1.5,10.9,x+1.5,y+1.5,13.4),cream,'switches',.2)
         accent=row==0 and col==0
         cap(x,y,widths[row][col],top,row,accent_mat if accent else cap_mat)
         text=legends[row][col]
@@ -200,7 +201,7 @@ for row,(y,keys) in enumerate(sorted(rows.items(),reverse=True)):
 if data['battery_candidates']: box('YETI60-BAT-1600-1S / full pack envelope',data['battery_candidates'][0]['bounds_case_mm'],battery_mat,'battery',.5)
 # Additional exploded-view hardware. Unselected elastomer/spring/stabilizer
 # profiles are explicitly illustrative and do not enter the fit audit.
-assembly_spec=json.loads((ROOT/'mechanical/assembly-spec.json').read_text())
+assembly_spec=json.loads((ROOT/'mechanical/assembly-spec.raytac.json').read_text())
 dome_mat=material('Illustrative silicone domes',(.50,.48,.46),.72)
 for number,k in enumerate(data['active_key_positions'],1):
     x,y=k['x'],k['y'];verts=[];faces=[];n=40
@@ -216,10 +217,17 @@ for number,k in enumerate(data['active_key_positions'],1):
         t=i/samples;radius=3.3*(1-t)+.65*t;a=t*math.pi*10
         v.co=(*point((x+radius*math.cos(a),y+radius*math.sin(a),ptop+.1+2.8*t)),1)
     obj=bpy.data.objects.new('Illustrative sensing spring '+str(number),curve);scene.collection.objects.link(obj);obj.parent=groups['springs'];obj.data.materials.append(metalmat)
-for tag,key in [('Enter',max(rows[sorted(rows,reverse=True)[2]],key=lambda k:k['x'])),('left Shift',min(rows[sorted(rows,reverse=True)[3]],key=lambda k:k['x'])),('6U spacebar',sorted(rows[sorted(rows,reverse=True)[4]],key=lambda k:k['x'])[2])]:
-    span=80 if tag=='6U spacebar' else 23;x,y=key['x'],key['y']
-    box('Illustrative stabilizer wire '+tag,[x-span/2,y-.5,7.0,x+span/2,y+.5,8.0],metalmat,'stabilizers',.35)
-    for sign in [-1,1]:box('Illustrative stabilizer mount '+tag,[x+sign*span/2-2,y-3,5,x+sign*span/2+2,y+3,10],black,'stabilizers',.3)
+mechanism=json.loads((ROOT/'mechanical/yeti60-key-mechanism.json').read_text())
+for entry in mechanism['stabilized_keys']:
+    key=data['active_key_positions'][entry['active_index']];x,y=key['x'],key['y'];span=entry['stem_spacing_mm'];tag=entry['name']
+    curve=bpy.data.curves.new('Illustrative Cherry plate wire '+tag,'CURVE');curve.dimensions='3D';curve.bevel_depth=.0008;curve.bevel_resolution=4
+    spline=curve.splines.new('POLY');path=[(x-span/2,y,plate_z-.7),(x-span/2,y-3.8,plate_z-1.8),(x+span/2,y-3.8,plate_z-1.8),(x+span/2,y,plate_z-.7)];spline.points.add(len(path)-1)
+    for v,p in zip(spline.points,path):v.co=(*point(p),1)
+    obj=bpy.data.objects.new('Illustrative '+tag+' wire',curve);scene.collection.objects.link(obj);obj.parent=groups['stabilizers'];obj.data.materials.append(metalmat)
+    for sign in [-1,1]:
+        cx=x+sign*span/2
+        box('Illustrative plate-mounted housing '+tag,[cx-3.2,y-5.3,plate_z-2.5,cx+3.2,y+6.5,10.8],black,'stabilizers',.2)
+        box('Illustrative passive stem '+tag,[cx-1.5,y-1.5,10.8,cx+1.5,y+1.5,13.4],cream,'stabilizers',.1)
 for index,(x,y) in enumerate(assembly_spec['case']['top_screw_axes'],1):
     ring('M3 brass insert '+str(index),x,y,4.79,7.79,2.3,1.5,brass,'shell-hardware')
     ring('M3 closure screw shank '+str(index),x,y,2.29,7.29,1.5,0,metalmat,'shell-hardware')
@@ -300,11 +308,12 @@ if not args.preview:
     rendered_outputs={}
     for view in views:
         path=OUT/(view+'.png')
-        rendered_outputs[path.name]={'sha256':sha(path),'bytes':path.stat().st_size,'recipe_sha256':sha(Path(__file__)),'assembly_report_sha256':sha(REPORT),'mesh_export_recipe_sha256':meshdata['export_recipe_sha256'],'interconnect_report_sha256':meshdata['interconnect_report_sha256'],'daughterboard_report_sha256':meshdata['daughterboard_report_sha256']}
+        rendered_outputs[path.name]={'mechanism_source_sha256':mechanism_hash,'sha256':sha(path),'bytes':path.stat().st_size,'recipe_sha256':sha(Path(__file__)),'assembly_report_sha256':sha(REPORT),'mesh_export_recipe_sha256':meshdata['export_recipe_sha256'],'interconnect_report_sha256':meshdata['interconnect_report_sha256'],'daughterboard_report_sha256':meshdata['daughterboard_report_sha256']}
     # Preserve evidence for untouched views; never stamp them as freshly rendered.
     for name,item in prior_outputs.items():
         if name not in rendered_outputs: rendered_outputs[name]=item
     for name,h in data['source_sha256'].items(): assert sha(ROOT/name)==h,name
-    manifest={'interconnect_report_sha256':meshdata['interconnect_report_sha256'],'daughterboard_report_sha256':meshdata['daughterboard_report_sha256'],'interconnect_geometry':'Seven continuous round wires, complete conservative mating envelopes, conformal guides and native C5 CAD; supplier lead-exit datums pending','exploded_frame_checks':exploded_frame_checks or previous.get('exploded_frame_checks',{}),'exploded_visible_objects_by_group':visibility_by_view.get('exploded',previous.get('exploded_visible_objects_by_group',{})),'fitted_mainboard_references':sorted(fitted_refs),'fitted_BOM_sha256':sha(ROOT/'docs/audit/yeti60-bom.json'),'project':'YETI60','renderer':'Blender '+bpy.app.version_string+' / Cycles','samples':scene.cycles.samples,'recipe_sha256':sha(Path(__file__)),'mesh_export_recipe_sha256':sha(ROOT/'scripts/export_yeti60_render_meshes.py'),'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'case_scale':[1,1,1],'units':'source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation','tessellation_linear_deflection_mm':meshdata['tessellation_linear_deflection_mm'],'source_case_bounds_mm':{name:{'brep':meshdata['meshes'][name]['brep_bounds_mm'],'mesh':meshdata['meshes'][name]['mesh_bounds_mm']} for name in ['top','bottom']},'case_geometry_modifiers':[],'illustrative':['sculpted keycaps, legends, switch housings and stems','resin/PBT finish and colours','backside component envelopes and fastener thread/head envelopes','custom 1600 mAh full-pack design envelope, supplier drawing pending','exploded-only dome/spring/stabilizer shapes and hardware thread envelopes; feet tray is not an installation datum'],'provisional_stack':data['nominal_stack'],'outputs':rendered_outputs,'production_approved':False}
+    assert sha(MECHANISM)==mechanism_hash,'Mechanism input changed during rendering'
+    manifest={'mechanism_source_sha256':mechanism_hash,'interconnect_report_sha256':meshdata['interconnect_report_sha256'],'daughterboard_report_sha256':meshdata['daughterboard_report_sha256'],'interconnect_geometry':'Seven continuous round wires, complete conservative mating envelopes, conformal guides and native C5 CAD; supplier lead-exit datums pending','exploded_frame_checks':exploded_frame_checks or previous.get('exploded_frame_checks',{}),'exploded_visible_objects_by_group':visibility_by_view.get('exploded',previous.get('exploded_visible_objects_by_group',{})),'fitted_mainboard_references':sorted(fitted_refs),'fitted_BOM_sha256':sha(ROOT/'docs/audit/yeti60-bom.json'),'project':'YETI60','renderer':'Blender '+bpy.app.version_string+' / Cycles','samples':scene.cycles.samples,'recipe_sha256':sha(Path(__file__)),'mesh_export_recipe_sha256':sha(ROOT/'scripts/export_yeti60_render_meshes.py'),'assembly_report_sha256':sha(REPORT),'geometry_sources':data['source_sha256'],'case_scale':[1,1,1],'units':'source mm converted uniformly to m by 0.001; rigid 7 degree presentation rotation','tessellation_linear_deflection_mm':meshdata['tessellation_linear_deflection_mm'],'source_case_bounds_mm':{name:{'brep':meshdata['meshes'][name]['brep_bounds_mm'],'mesh':meshdata['meshes'][name]['mesh_bounds_mm']} for name in ['top','bottom']},'case_geometry_modifiers':[],'illustrative':['sculpted keycaps, legends, switch housings and stems','resin/PBT finish and colours','backside component envelopes and fastener thread/head envelopes','custom 1600 mAh full-pack design envelope, supplier drawing pending','exploded-only dome/spring/stabilizer shapes and hardware thread envelopes; feet tray is not an installation datum'],'provisional_stack':data['nominal_stack'],'outputs':rendered_outputs,'production_approved':False}
     (OUT/'render-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print('YETI60 physical studio renders complete')

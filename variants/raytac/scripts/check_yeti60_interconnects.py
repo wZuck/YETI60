@@ -26,7 +26,7 @@ def check_hashes(mapping):
     for p,h in mapping.items():assert sha(ROOT/p)==h,'Stale interconnect input '+p
 
 def usb_path(spec,connector,assembly,front_y):
-    u=spec['usb'];a=read('mechanical/assembly-spec.json')['daughterboard'];sh=spec['sources']['SH'];r=u['radius'];start=tuple(connector['main_usb_wire_exit_case_mm']);q=(start[0]+1,start[1],start[2]);initial,end,_=s_bend(q,(1,0,0),u['high_z']-q[2],r)
+    u=spec['usb'];a=read('mechanical/assembly-spec.raytac.json')['daughterboard'];sh=spec['sources']['SH'];r=u['radius'];start=tuple(connector['main_usb_wire_exit_case_mm']);q=(start[0]+1,start[1],start[2]);initial,end,_=s_bend(q,(1,0,0),u['high_z']-q[2],r)
     # The source C5 signal pad row is 1.45mm forward of the standard footprint origin.
     last=(75.0045+a['source_to_case_x_offset'],-(68.793+1.45)+a['source_to_case_y_offset']+sh['header_back_local_y']*-1-sh['mated_depth_reference'],a['pcb_bottom_z']+a['pcb_thickness']+u['daughterboard_exit_above_pcb'])
     first=rounded_polyline([end,(u['first_corner_x'],start[1],u['high_z']),(u['first_corner_x'],u['rear_y'],u['high_z']),(u['drop_x'],u['rear_y'],u['high_z']),(u['drop_x'],u['drop_y'],u['high_z'])],r)
@@ -89,9 +89,9 @@ def main():
     paths,front_y=routes(spec,connectors,assembly);case=load(ROOT/'mechanical/generated/yeti60-bottom.step');top=load(ROOT/'mechanical/generated/yeti60-top.step');pcb=load(ROOT/'.assembly-work/pcb-placed.step');pack=box(assembly['battery_candidates'][0]['bounds_case_mm']);cases=[case,top];od=spec['wire']['insulation_od_max'];allow=spec['wire']['case_and_route_position_allowance'];gap=spec['wire']['minimum_air_gap_after_allowance'];bodies={};nominal={};report_wires={};outputs={};render=[];obstacles=[]
     for p in assembly['component_envelopes']:obstacles.append((p['ref'],box(p['bounds_case_mm']),p['bounds_case_mm']))
     for i,h in enumerate(assembly['mounting_hole_matches']):
-        x,y=h['pcb_center_case_mm'];head_radius=read('mechanical/assembly-spec.json')['pcb_fastener']['washer_od_max']/2+.15;bb=[x-head_radius,y-head_radius,-3.9,x+head_radius,y+head_radius,-2];obstacles.append(('PCB-fastener-'+str(i),box(bb),bb))
-    a=read('mechanical/assembly-spec.json')['daughterboard'];udb=move(load(ROOT/daughter['exported_step']),a['source_to_case_x_offset'],a['source_to_case_y_offset'],a['pcb_bottom_z']);obstacles.append(('C5-complete-board',udb,bounds(udb)))
-    for i,(x,y) in enumerate(read('mechanical/assembly-spec.json')['case']['daughterboard_screw_axes']):
+        x,y=h['pcb_center_case_mm'];head_radius=read('mechanical/assembly-spec.raytac.json')['pcb_fastener']['washer_od_max']/2+.15;bb=[x-head_radius,y-head_radius,-3.9,x+head_radius,y+head_radius,-2];obstacles.append(('PCB-fastener-'+str(i),box(bb),bb))
+    a=read('mechanical/assembly-spec.raytac.json')['daughterboard'];udb=move(load(ROOT/daughter['exported_step']),a['source_to_case_x_offset'],a['source_to_case_y_offset'],a['pcb_bottom_z']);obstacles.append(('C5-complete-board',udb,bounds(udb)))
+    for i,(x,y) in enumerate(read('mechanical/assembly-spec.raytac.json')['case']['daughterboard_screw_axes']):
         bb=[x-2.1,y-2.1,-9.3038,x+2.1,y+2.1,-6.9];obstacles.append(('C5-fastener-'+str(i),box(bb),bb))
     for name,path in paths.items():
         records=[]
@@ -160,7 +160,7 @@ def main():
             dz=0 if label=='C5-SH' else delta;shifted=[v+(dz if k in [2,5] else 0) for k,v in enumerate(bb)]
             assert min(distance(box(expand(shifted,spec['plug_envelope_allowance'])),c) for c in cases)>=gap-1e-6
         thickness_checks.append({'finished_pcb_thickness_mm':actual,'main_connector_z_shift_mm':delta,'minimum_expanded_wire_case_gap_mm':smallest,'maximum_required_free_length_change_mm':largest_length_change,'fixed_guide_positions':True})
-    sources=['mechanical/interconnect-spec.json','mechanical/assembly-spec.json','docs/audit/yeti60-assembly.json','docs/audit/yeti60-daughterboard.json','docs/audit/yeti60-interconnect-connectors.json','mechanical/generated/yeti60-bottom.step','mechanical/generated/yeti60-top.step','scripts/check_yeti60_interconnects.py','scripts/interconnect_geometry.py','scripts/cad_geometry.py','mechanical/pcb-fabrication-spec.json']
+    sources=['mechanical/interconnect-spec.json','mechanical/assembly-spec.raytac.json','docs/audit/yeti60-assembly.json','docs/audit/yeti60-daughterboard.json','docs/audit/yeti60-interconnect-connectors.json','mechanical/generated/yeti60-bottom.step','mechanical/generated/yeti60-top.step','scripts/check_yeti60_interconnects.py','scripts/interconnect_geometry.py','scripts/cad_geometry.py','mechanical/pcb-fabrication-spec.json']
     report={'status':'controlled-route-geometry-passed','production_approved':False,'source_sha256':{p:sha(ROOT/p) for p in sources},'generated_step_sha256':outputs,'published_guide_sha256':published,'wire_diameter_max_mm':od,'radial_case_and_route_allowance_mm':allow,'minimum_air_gap_after_allowance_mm':gap,'usb_front_y_mm':front_y,'wires':report_wires,'minimum_expanded_harness_to_harness_gap_mm':min(cross_gaps),'mated_housings':plug_data,'guide_stations':guide_data,'ordinary_board_thickness_checks':thickness_checks,'render_parts':render,'centerline_recipes':paths,'case_modification_required':False,'assumptions':['All wires are held flat in the named grooves and preformed route; free bundling is not qualified','Lead exit Z datums and actual harness tolerances require supplier confirmation','No strain, springback, fatigue, pull-out or SI/RF certification'],'not_verified':spec['not_verified']}
     (ROOT/'docs/audit/yeti60-interconnects.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:report[k] for k in ['status','minimum_expanded_harness_to_harness_gap_mm','case_modification_required']},indent=2))
 if __name__=='__main__':main()

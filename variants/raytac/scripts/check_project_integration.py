@@ -31,7 +31,12 @@ def verify():
     fit=read(AUD/'yeti60-assembly.json'); hashes(fit['source_sha256']); hashes(fit['verification_recipe_sha256'])
     assert sha(AUD/'yeti60-pcb-mechanical-metadata.json')==fit['mechanical_metadata_sha256']
     assert not fit['colliding_envelopes'] and max(fit['pcb_case_overlap_mm3']+fit['plate_case_overlap_mm3'])<1e-5
-    assert len(fit['mounting_hole_matches'])==len(meta['mount_holes'])==29
+    assert len(fit['mounting_hole_matches'])==28 and len(meta['mount_holes'])==29
+    assert fit['unused_pcb_mount_refs']==['H26'] and 'H26' not in {h['pcb_ref'] for h in fit['mounting_hole_matches']}
+    assert fit['selected_fasteners']['installed_quantity']==28
+    assert fit['nominal_stack']['plate_thickness_mm']==1.6
+    assert abs(fit['nominal_stack']['compressed_top_gasket_mm']-.5838)<1e-6
+    assert fit['gasket_stock_mm']=={'bottom':2.0,'top':1.2}
     assert abs(fit['finished_board_envelope_thickness_mm']-meta['pcb_thickness_mm'])<1e-6
     assert all(max(c['case_overlap_mm3'])<1e-5 for c in fit['battery_candidates'])
     harness=read(AUD/'yeti60-interconnects.json');assert harness['status']=='controlled-route-geometry-passed' and not harness['production_approved'];hashes(harness['source_sha256']);hashes(harness['published_guide_sha256'])
@@ -42,6 +47,7 @@ def verify():
         base=ROOT/'renders'/folder; m=read(base/'render-manifest.json'); assert sha(ROOT/'scripts'/recipe)==m['recipe_sha256'],folder+' recipe changed; regenerate renders'
         if folder=='ec60-nrf52840': assert sha(ROOT/m['source'])==m['source_sha256']
         else:
+            assert m['mechanism_source_sha256']==sha(ROOT/'mechanical/yeti60-key-mechanism.json')
             hashes(m['geometry_sources']); assert m['assembly_report_sha256']==sha(AUD/'yeti60-assembly.json')
             assert m['mesh_export_recipe_sha256']==sha(ROOT/'scripts/export_yeti60_render_meshes.py')
             assert m['case_scale']==[1,1,1] and not m['case_geometry_modifiers']
@@ -51,7 +57,7 @@ def verify():
         for name,item in m['outputs'].items():
             assert sha(base/name)==item['sha256'],'Changed render asset: '+name
             if folder=='yeti60-assembly':
-                for key in ['recipe_sha256','assembly_report_sha256','mesh_export_recipe_sha256','interconnect_report_sha256','daughterboard_report_sha256']:
+                for key in ['recipe_sha256','assembly_report_sha256','mesh_export_recipe_sha256','interconnect_report_sha256','daughterboard_report_sha256','mechanism_source_sha256']:
                     assert item[key]==m[key],name+' was not rendered from current inputs'
     plot=read(ROOT/'renders/yeti60-firmware/plot-manifest.json'); assert plot['trace_sha256']==sim['trace_sha256']; assert plot['recipe_sha256']==sha(ROOT/'scripts/plot_yeti60_simulation.py'); hashes(plot['outputs'],ROOT/'renders/yeti60-firmware')
     materials=read(AUD/'yeti60-materials.json');assert materials['fitted_mainboard_parts']==75;hashes(materials['source_sha256'])
@@ -61,11 +67,11 @@ def verify():
     assert not inventory['physical_remaining_count_confirmed'] and not inventory['production_approved']
     key_geometry=read(AUD/'yeti60-key-geometry.json');hashes(key_geometry['source_sha256'])
     assert key_geometry['status']=='plate-copper-firmware-mapping-passed' and len(key_geometry['matches'])==60
-    mechanism=read(AUD/'deskeys-plate.json');hashes(mechanism['source_sha256'])
-    assert mechanism['status']=='drawing-based-plate-contract-passed'
-    assert mechanism['key_centers_preserved']==60 and mechanism['mount_centers_preserved']==29
+    mechanism=read(AUD/'plate-mount.json');hashes(mechanism['source_sha256'])
+    assert mechanism['status']=='drawing-based-plate-mount-contract-passed'
+    assert mechanism['key_centers_preserved']==60 and mechanism['mount_centers_preserved']==28
     assert mechanism['spacebar_side_spacing_mm']==95.25 and mechanism['PCB_mount_holes_added']==0
-    mechanism_drawing=read(AUD/'deskeys-mechanism-drawing.json')
+    mechanism_drawing=read(AUD/'key-mechanism-drawing.json')
     hashes(mechanism_drawing['source_sha256']);hashes(mechanism_drawing['outputs'])
     assert len(mechanism_drawing['outputs'])==4
     guide=read(AUD/'yeti60-build-guide.json');hashes(guide['source_sha256']);hashes(guide['outputs'])
@@ -79,16 +85,17 @@ def verify():
     assert all(v['USB_configuration_mA']==500 for v in target_check['variants'].values())
     complete=read(AUD/'complete-exploded.json');hashes(complete['source_sha256']);hashes(complete['outputs'])
     assert complete['mainboard_parts']==75 and complete['USB_wires']==4 and complete['battery_wires']==3
-    assert complete['mount_sets']==29 and complete['active_keys']==60
+    assert complete['mount_sets']==28 and complete['active_keys']==60
     protection=read(AUD/'C5-protection.json');assert protection['status']=='protected-I/O-coverage-passed';hashes(protection['source_sha256'])
     rendered=read(ROOT/'renders/yeti60-assembly/render-manifest.json')
     assert len(rendered['fitted_mainboard_references'])==75 and rendered['fitted_BOM_sha256']==sha(AUD/'yeti60-bom.json')
     assert all(rendered['exploded_visible_objects_by_group'].values())
     assert rendered['exploded_visible_objects_by_group']['electronics']==75
+    assert rendered['exploded_visible_objects_by_group']['stabilizers']==15
     assert set(rendered['exploded_frame_checks'])=={'feet','electronics','battery','interconnect'}
     assert all(v['in_frame'] and v['above_desk'] for v in rendered['exploded_frame_checks'].values())
     assert read(AUD/'documentation-check.json')['status']=='passed'
-    return {'status':'passed','controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':29,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements']}
+    return {'status':'passed','controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements']}
 def main():
     try: report=verify()
     except (AssertionError,KeyError,FileNotFoundError,ValueError) as error:

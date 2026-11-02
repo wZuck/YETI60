@@ -14,7 +14,7 @@ def main():
  b=read('docs/audit/yeti60-bom.json');assert sum(x['quantity'] for x in b['rows'])==b['fitted_mainboard_parts']==75
  assert b['unpopulated_sites']==['JP1'] and not any('SW2,' in x['references'] for x in b['rows'])
  p=read('docs/audit/yeti60-power-budget.json');assert p['status']=='conditional-sensitivity-model-not-measurement'
- spec=read('mechanical/assembly-spec.json');assert p['default_capacity_mAh']==spec['battery']['nominal_capacity_mAh']==1600
+ spec=read('mechanical/assembly-spec.raytac.json');assert p['default_capacity_mAh']==spec['battery']['nominal_capacity_mAh']==1600
  for s in p['scenarios']:
   assert math.isclose(s['battery_mA']*s['runtime_default_pack_hours'],1600*.8)
  c=p['charging'];assert not p['current_firmware']['deep_sleep_enabled'] and not c['larger_pack_drop_in_approved']

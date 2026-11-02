@@ -53,6 +53,18 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('renders/yeti60-assembly/render-manifest.json',
                      lambda data: data['outputs']['rear.png'].update(recipe_sha256='0' * 64))
 
+    def test_spacebar_conflicting_support(self):
+        self.rejects('docs/audit/yeti60-assembly.json',
+                     lambda data: data['mounting_hole_matches'][0].update(pcb_ref='H26'))
+
+    def test_old_upper_gasket_stock(self):
+        self.rejects('docs/audit/yeti60-assembly.json',
+                     lambda data: data['gasket_stock_mm'].update(top=2.0))
+
+    def test_missing_stabilizer_stems(self):
+        self.rejects('renders/yeti60-assembly/render-manifest.json',
+                     lambda data: data['exploded_visible_objects_by_group'].update(stabilizers=9))
+
     def test_changed_image_bytes(self):
         original = audit.sha
         path = ROOT / 'renders/yeti60-assembly/assembled.png'

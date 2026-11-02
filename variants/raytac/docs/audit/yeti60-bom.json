@@ -431,8 +431,8 @@
   "source_sha256": {
     "hardware/ec60-nrf52840/netlist.xml": "815c4a1661a9b50b5465660631f37405bd72c5d82aa9ad7c5e1f0eb66af9c93a",
     "hardware/ec60-nrf52840/metadata-audit.json": "9a5a76d3a1d93b7c876ceb873875bb01f0ec38759e85d67b1e47a125952e7a66",
-    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
-    "scripts/export_yeti60_bom.py": "9ea672ff7b34841fb3149c42022b82332cca22f86a87aaa1aae09c020312f50b"
+    "mechanical/assembly-spec.raytac.json": "e7c14e76bbd0f26bb5c43ab8526bc897191050dc1127abab7db5acc24d4010c5",
+    "scripts/export_yeti60_bom.py": "b2ef15c25acb59a1a58d28bebf93f976d0660da0468a3402ca0a5d1e69484297"
   },
   "limits": [
     "No stock or price assumptions",
