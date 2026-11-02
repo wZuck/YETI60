@@ -2,6 +2,8 @@
 """Fault injection: current integration must reject contradictory/stale evidence."""
 import copy
 import importlib.util
+import json
+import tempfile
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -10,6 +12,50 @@ ROOT = Path(__file__).resolve().parents[2]
 spec = importlib.util.spec_from_file_location('integration', ROOT / 'scripts/check_project_integration.py')
 audit = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(audit)
+materials_spec = importlib.util.spec_from_file_location('materials', ROOT / 'scripts/check_yeti60_materials.py')
+materials = importlib.util.module_from_spec(materials_spec)
+materials_spec.loader.exec_module(materials)
+
+
+class SharedLinkFailures(unittest.TestCase):
+    def test_missing_shared_source_rejected(self):
+        with tempfile.TemporaryDirectory(prefix='yeti60-link-') as folder:
+            link = Path(folder)/'zmk'
+            link.symlink_to(Path(folder)/'missing-upstream', target_is_directory=True)
+            with self.assertRaisesRegex(AssertionError, 'Broken tracked shared link'):
+                audit.verify_shared_links([link])
+
+
+class MechanicalProseFailures(unittest.TestCase):
+    def setUp(self):
+        self.texts = {name: (ROOT/name).read_text() for name in materials.MECHANICAL_PROSE}
+        self.mechanism = json.loads((ROOT/'mechanical/yeti60-key-mechanism.json').read_text())
+        materials.verify_mechanical_prose(self.texts, self.mechanism)
+
+    def test_old_mount_count_in_either_inventory_language(self):
+        for name, old, wrong in [
+            ('docs/engineering/inventory-allocation.md', 'Need 28 M1.6', 'Need 29 M1.6'),
+            ('docs/engineering/inventory-allocation.zh-CN.md', '需要 28 只', '需要 29 只'),
+        ]:
+            with self.subTest(name=name):
+                texts = dict(self.texts)
+                texts[name] = texts[name].replace(old, wrong)
+                with self.assertRaisesRegex(AssertionError, 'Stale mechanism prose'):
+                    materials.verify_mechanical_prose(texts, self.mechanism)
+
+    def test_old_plate_thickness_in_either_render_language(self):
+        for name in ['renders/yeti60-assembly/README.md', 'renders/yeti60-assembly/README.zh-CN.md']:
+            with self.subTest(name=name):
+                texts = dict(self.texts)
+                texts[name] = texts[name].replace('1.6', '1.2')
+                with self.assertRaisesRegex(AssertionError, 'Stale mechanism prose'):
+                    materials.verify_mechanical_prose(texts, self.mechanism)
+
+    def test_old_count_in_acceptance(self):
+        texts = dict(self.texts)
+        texts['docs/testing/README.md'] = texts['docs/testing/README.md'].replace('28 installed mounts', '29 installed mounts')
+        with self.assertRaisesRegex(AssertionError, 'Stale mechanism prose'):
+            materials.verify_mechanical_prose(texts, self.mechanism)
 
 
 class EvidenceFailures(unittest.TestCase):

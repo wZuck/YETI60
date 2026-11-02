@@ -23,7 +23,7 @@ Exit 0 means every implemented current-design check passed. Failed stages return
 
 Integration ties schematic, connectors, PCB, firmware pins, trace, fit geometry and each render output to current sources and recipes. Design files must remain byte-identical during validation. The inventory records files, not semantic approval; upstream submodule contents and local editor state are excluded.
 
-Only the current single-nRF design is checked. Target firmware builds, C5 selection, battery/recess and charger calculations are implemented; supplier approval, complete harness/plug acceptance, part ratings, manufacturing and physical tests remain open. SI/RF screening has started; antenna layout blockers remain open.
+Only the current single-nRF design is checked. Target firmware builds, C5 selection, battery/recess and charger calculations are implemented; supplier approval, complete harness/plug acceptance, part ratings, manufacturing and physical tests remain open. SI/RF screening has started; minimum antenna-copper clearance screening passes; USB SI and enclosed RF qualification remain open.
 
 Fault-injection tests verify rejection of reversed USB data contracts, stale traces, component collisions, stale individual views and changed image bytes. They run only after the unmodified integration check passes.
 

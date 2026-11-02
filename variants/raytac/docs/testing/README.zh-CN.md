@@ -15,7 +15,7 @@
 | USB 保护与路径 | [C5 实际保护通道](../audit/C5-protection.json)、[接触点路径提取](../audit/USB-signal-paths.json)；C5 的 U1 1／2／4／5 为保护 I/O，6／7／9／10 的内部未连接脚不能代替保护通道；保留 C5 U1／D1／F1，删除主板重复 D1 长支线；尚无 USB 眼图或整板 ESD 认证 |
 | 天线铜区 | [本版四层原生铜检查](../audit/interference-layout.json)；Raytac 最小 10.5×3.8 mm 投影内 GND 和非 GND 铜面积均为零，并做逐层真实铜注入的负向测试；这不等于实测射频通过 |
 | 固件 | [普通版／校准版目标检查](../audit/yeti60-target-check.json)、[核心与 USB 策略主机回归](../audit/yeti60-firmware-simulation.json)；描述符接受后为 USB500 预算，启用充电并优先 USB 输入，实际充电电流另受设定和负载分流控制 |
-| 结构与线束 | [原生装配检查](../audit/yeti60-assembly.json)、[七根受控线束](../audit/yeti60-interconnects.json)、[60 键映射](../audit/yeti60-key-geometry.json)；无名义实体碰撞，29 个安装中心匹配；尺寸和树脂／零件实收公差仍须检验 |
+| 结构与线束 | [原生装配检查](../audit/yeti60-assembly.json)、[七根受控线束](../audit/yeti60-interconnects.json)、[60 键映射](../audit/yeti60-key-geometry.json)；无名义实体碰撞，PCB 原有 29 孔、实际安装 28 套紧固件，H26 留空；尺寸和树脂／零件实收公差仍须检验 |
 | 图纸、材料与完整性 | [75 件物料及库存](../audit/yeti60-inventory.json)、[28 步指南](../assembly/build-guide.zh-CN.md)、[完整爆炸图](../engineering/exploded.zh-CN.md)、[跨域来源校验](../audit/integration.json)；不得手工更新哈希掩盖过期图像 |
 
 原生 PCB 保留 102 条非实装电极、安装图形和探针相关 courtyard 告警；它们不代表 102 只缺件。ERC 仍有 183 条继承的离网格端点告警，新导出网表及引脚合同会独立核对真实连接。共享模拟／放电总线统一为 `APLEX_OUT_PIN_0`，没有把两个 MCU 输出短接。C5 上游默认 DRC 仍有封装／courtyard／边缘间距审查项，不能混同为主板严格 DRC 零错误；首样优先用成品 C5。

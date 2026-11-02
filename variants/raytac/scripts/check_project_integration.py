@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Reject stale or contradictory CAD, firmware, assembly and image evidence."""
-import hashlib,json,traceback
+import hashlib,json,subprocess,traceback
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]; HW=ROOT/'hardware/ec60-nrf52840'; AUD=ROOT/'docs/audit'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -9,7 +9,19 @@ def hashes(items,base=ROOT):
     for name,expected in items.items():
         assert sha(base/name)==expected,'Stale source: '+name
 
+def verify_shared_links(paths):
+    result={}
+    for path in paths:
+        assert path.is_symlink() and path.exists(), 'Broken tracked shared link: '+str(path)
+        result[str(path.relative_to(ROOT))]=str(path.readlink())
+    return result
+
+def tracked_shared_links():
+    entries=subprocess.check_output(['git','ls-files','--stage','-z'],cwd=ROOT).decode().split('\0')
+    return [ROOT/entry.split('\t',1)[1] for entry in entries if entry.startswith('120000 ')]
+
 def verify():
+    shared_links=verify_shared_links(tracked_shared_links())
     config=read(ROOT/'design-constraints.json')
     assert config['fabrication']['process']=='ordinary-four-layer-FR4' and not config['fabrication']['HDI_allowed']
     ordinary=read(AUD/'yeti60-ordinary-process.json');assert ordinary['blind_buried_vias']==0 and not ordinary['module_via_in_pad'];hashes(ordinary['source_sha256'])
@@ -95,7 +107,7 @@ def verify():
     assert set(rendered['exploded_frame_checks'])=={'feet','electronics','battery','interconnect'}
     assert all(v['in_frame'] and v['above_desk'] for v in rendered['exploded_frame_checks'].values())
     assert read(AUD/'documentation-check.json')['status']=='passed'
-    return {'status':'passed','controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements']}
+    return {'status':'passed','shared_links':shared_links,'controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements']}
 def main():
     try: report=verify()
     except (AssertionError,KeyError,FileNotFoundError,ValueError) as error:

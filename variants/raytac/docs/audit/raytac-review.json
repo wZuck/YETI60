@@ -1,6 +1,6 @@
 {
   "review_scope": "Current Raytac native CAD, built firmware, host tests, assembly and deliverable provenance; E73 excluded",
-  "review_timestamp_UTC": "2026-11-01T18:15:34.304591+00:00",
+  "review_timestamp_UTC": "2026-11-02T01:20:11.116565+00:00",
   "status": "software-and-CAD-consistency-reviewed",
   "audit_stages_passed": 52,
   "DRC_errors": 0,
@@ -21,7 +21,10 @@
     "Shared analog/discharge net labels unified without changing exported pin connectivity",
     "75-part purchase, stock allocation, placement and illustrated guide contracts reconciled",
     "Complete explosion includes 75 electronic bodies, battery, seven wires, 60 domes/springs and hardware; tray camera/desk bounds checked",
-    "NiZ ordinary housings/sliders and separate Cherry plate-mounted stabilizers selected; 1.6 mm plate, 28 mounts and H26 unused; 60 sensing centers and exterior preserved; actual wire/clip/stroke fit awaits a first article"
+    "NiZ ordinary housings/sliders and separate Cherry plate-mounted stabilizers selected; 1.6 mm plate, 28 mounts and H26 unused; 60 sensing centers and exterior preserved; actual wire/clip/stroke fit awaits a first article",
+    "Second review corrected stale 29-fastener inventory/acceptance prose and 1.2 mm render descriptions in both languages; negative tests now reject their return",
+    "Current RF status distinguishes passing minimum antenna-copper clearance from unqualified USB signal integrity and enclosed RF; historical reviews remain labeled snapshots",
+    "Broken tracked Raytac third_party/zmk link repaired to the pinned repository submodule; all tracked shared links now checked and missing-source fault injected"
   ],
   "physical_verification": false,
   "manufacturing_order_released": false,
@@ -79,8 +82,8 @@
     }
   ],
   "evidence_sha256": {
-    "outcome.json": "17d910c5c58df41ffed660a21926e5689a0701164c6984f2147d0679f5b2acae",
-    "integration.json": "27c6ea9b785c215a2e56e3f44b18ed7f1ec0763fe4f51cebd5f44b4ada175f48",
+    "outcome.json": "366553da73531c57be5a3959bb61d05035c6b5c019490af98d9be8c8db98a960",
+    "integration.json": "9ddf66cef6ffebe3a9940000496e71605ca38ee2673438bbf91c13794a9e6e27",
     "schematic-current.json": "9c39e7886f54bfbfd6cf872bde963c5e61851983f343ad509e341acfc31764de",
     "yeti60-target-check.json": "1d01e7aad89e52546412cc67cb9baf963c412a2a0be7dc0ec03500acbd0568da",
     "yeti60-firmware-simulation.json": "6a977b63c38bde8ac3de2a1d4bec37fc21790ba629aa550dde3f4e25981dfefa",
@@ -88,16 +91,39 @@
     "C5-protection.json": "e80b05f738a88745b0995999ba729b622ed934c52344cae43c7c4237caf153d6",
     "USB-signal-paths.json": "f0fbc5439a860fcf642ef2521291e598dfd0de8f15abee3eb3c0f37a2860d0d8",
     "interference-layout.json": "b16cc3d20293f745506331bc23a1efbb43f71ef6260c0e106d8dbe5fee6e85c6",
-    "complete-exploded.json": "c520f34f4c43f2f450bb0be2a82b9f7446a54c0ef738b16d80f3d4bff602581d",
+    "complete-exploded.json": "20c434896d13ddcbf185686ac2be8426266fd8d959061b12e202149ee50776ed",
     "yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
-    "yeti60-inventory.json": "5200ab3dd0985c845fad935596a6413788b6ca4deb1121c0fd2da7b432d97de3",
+    "yeti60-inventory.json": "b0f83457e6095aa3383f0e912d80492bd40c60f891b03914a85554a9e14dbd6c",
     "plate-mount.json": "021e05e7c373f0033492c1669fe4cc820b808567fc7b28e290ef671eb234f978",
-    "key-mechanism-drawing.json": "572d0791e6829581a8ae4968d34be8e82f03c5665705ad4a99ccc9bd833685a1"
+    "key-mechanism-drawing.json": "572d0791e6829581a8ae4968d34be8e82f03c5665705ad4a99ccc9bd833685a1",
+    "yeti60-materials.json": "5e6b39f457abdfbb3755dd5b63c284cf1773605a82b6d4124a5a359939f98f8f",
+    "calibration.json": "ef9256a4e90bcc360f0ff2094f2182fec3b15d13116db7126dc41d1f5b8907c3",
+    "yeti60-power-budget.json": "d92baf85836c2d2bac191bb55409c43179d4afdca4e5473f6ccdcb6bae7f3eaf"
   },
   "source_sha256": {
-    "scripts/report_raytac_review.py": "52f185614d84d6f7f26c0512933ab3138acf112b69604c6ff75b79adcb44533c",
+    "scripts/report_raytac_review.py": "9b81a8778a1e9172bf088ec26f7fb8b3282f1ea4ea41b3c0e8f2df5e157f0994",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
     "renders/yeti60-assembly/render-manifest.json": "513b58d6e40733a6c5af048cb65c84eef160028c7c72cca4fde779f1b958839f"
+  },
+  "USB_route_review": {
+    "positive_trace_mm": 253.54115421274673,
+    "negative_trace_mm": 249.1218605450709,
+    "positive_vias": 4,
+    "negative_vias": 6,
+    "geometric_contact_path_difference_mm": 2.165307062399222,
+    "scope": "Mainboard only; excludes C5, harness, connectors and module internals; not propagation delay, impedance or an eye result",
+    "acceptance": "open; qualify complete return/coupling and full-speed USB with the final harness before manufacturing release"
+  },
+  "functional_acceptance_passed": false,
+  "firmware_rebuilt_this_mechanical_review": false,
+  "tracked_shared_links": {
+    "EC60": "../../EC60",
+    "felk60": "../../felk60",
+    "firmware/target/third_party/zmk": "../../../../../zmk",
+    "hardware/usb-daughterboard/upstream": "../../../../hardware/usb-daughterboard/upstream",
+    "mechanical": "../../mechanical",
+    "requirements-audit.txt": "../../requirements-audit.txt",
+    "requirements-render.txt": "../../requirements-render.txt"
   }
 }

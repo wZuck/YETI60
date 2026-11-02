@@ -7,6 +7,24 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+MECHANICAL_PROSE = {
+    'docs/engineering/inventory-allocation.md': (r'Need (\d+) M1\.6 x 5', 'installed_mount_quantity'),
+    'docs/engineering/inventory-allocation.zh-CN.md': (r'需要 (\d+) 只 M1\.6×5', 'installed_mount_quantity'),
+    'docs/testing/README.md': (r'(\d+) installed mounts', 'installed_mount_quantity'),
+    'docs/testing/README.zh-CN.md': (r'实际安装 (\d+) 套紧固件', 'installed_mount_quantity'),
+    'renders/yeti60-assembly/README.md': (r'The ([\d.]+) mm NiZ / plate-stabilizer plate', 'plate_thickness_mm'),
+    'renders/yeti60-assembly/README.zh-CN.md': (r'([\d.]+) 毫米 NiZ 钢板卫星轴定位板', 'plate_thickness_mm'),
+}
+
+
+def verify_mechanical_prose(texts, mechanism):
+    """Check actual owner-facing prose, not only equal quantities in two tables."""
+    for name, (pattern, field) in MECHANICAL_PROSE.items():
+        match = re.search(pattern, texts[name])
+        assert match and float(match[1]) == mechanism[field], 'Stale mechanism prose: '+name
+        assert 'H26' in texts[name], 'Missing unused-mount warning: '+name
+    assert re.search(r'29 native PCB holes', texts['docs/testing/README.md'])
+    assert re.search(r'PCB 原有 29 孔', texts['docs/testing/README.zh-CN.md'])
 
 
 def sha(path):
@@ -15,6 +33,10 @@ def sha(path):
 
 def main():
     sources = [Path(__file__)]
+    mechanism_path = ROOT/'mechanical/yeti60-key-mechanism.json'
+    texts = {name: (ROOT/name).read_text() for name in MECHANICAL_PROSE}
+    verify_mechanical_prose(texts, json.loads(mechanism_path.read_text()))
+    sources.extend([mechanism_path, *(ROOT/name for name in texts)])
     for suffix in ['', '.zh-CN']:
         readme = ROOT/('README'+suffix+'.md')
         csv_path = ROOT/('hardware/bom/mainboard'+suffix+'.csv')
@@ -47,6 +69,7 @@ def main():
             assert len(matches) == 1 and matches[0][2] == cells[2], 'README mechanical quantity stale: '+cells[0]
     report = {'status':'readme-materials-match-bom', 'fitted_mainboard_parts':75,
               'inventory_annotations_checked':True,
+              'mechanical_prose_checked':list(MECHANICAL_PROSE),
               'mechanical_rows_per_language':20, 'optional_daughterboard_parts':7, 'production_approved':False,
               'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources}}
     (ROOT/'docs/audit/yeti60-materials.json').write_text(json.dumps(report,indent=2)+'\n')

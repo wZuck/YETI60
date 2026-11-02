@@ -42,7 +42,7 @@
 - [PCB 渲染及 360° 动画](renders/ec60-nrf52840/README.zh-CN.md)
 - [当前审查索引](docs/audit/README.zh-CN.md)
 
-外壳暂按树脂，信号／射频检查已开始，天线布局阻塞项及实物验收仍待解决。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
+外壳暂按树脂，信号／射频检查已开始，最小天线铜区检查已通过，USB 信号完整性、关壳射频及实物验收仍待完成。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
 
 基于 [Cipulot/EC60](https://github.com/Cipulot/EC60) 和 [fredlb/felk60](https://github.com/fredlb/felk60)，保留上游作者、许可证和原名称。`EC60-nRF52840.*` 文件名及 `YAECKB` 库标识为技术兼容保留，公开项目名统一为 **YETI60**。
 

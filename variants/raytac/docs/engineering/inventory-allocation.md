@@ -51,7 +51,7 @@ Spacer alternatives above are dimensional screening calculations, not accepted C
 | 9 | USBLC6-2SC6, SOT-23-6 | Main D1 is PRTR5V0U2X SOT-143; C5 U1 is TPD4E05U06DQAR uSON-10. Different packages/pinouts; no direct substitution. |
 | 8, 39 | RP2040 and nice!nano nRF52840 board | U1 is the soldered Raytac MDBT50Q-1MV2 module. Neither stock item matches its footprint. Keep the single-controller design. |
 | 37 | 301230, 110 mAh cell | Does not establish the required protected 1600 mAh pack, independent thermal interruption or third-wire NTC. Programmed charging is about 403 mA typical, about 3.65C for 110 mAh, with no stock-cell rating supporting that use. Buy the specified pack; do not connect this cell to the current charger configuration. |
-| 23 | M1.6 x 2 screws | Need 29 M1.6 x 5. Nominal reach is `2 − 0.8 − 1.6062 − 0.1 = −0.5062 mm`, so the stock screw cannot reach the adapter standoff. |
+| 23 | M1.6 x 2 screws | Need 28 M1.6 x 5; H26 is unused. Nominal reach is `2 − 0.8 − 1.6062 − 0.1 = −0.5062 mm`, so the stock screw cannot reach the adapter standoff. |
 | 24–25 | M2 female/female 6/18 mm standoffs | Need 4.50 mm shoulder, upper M2 stud, lower M1.6 female adapter. Wrong height and thread arrangement. |
 | 26–28, 30 | MSK miniature sliders; 6 x 6 mm PTS645 tactile | Do not match JS102011SAQN power-switch or EVQPUC02K reset-switch footprints/access envelopes. |
 | 17–18 | 7U MX stabilizers; MX O-rings | Do not supply the matched Topre-compatible housings, domes, conical sensing springs or HHKB 6U spacebar hardware. |

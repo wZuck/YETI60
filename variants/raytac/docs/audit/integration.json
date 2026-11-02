@@ -1,5 +1,14 @@
 {
   "status": "passed",
+  "shared_links": {
+    "EC60": "../../EC60",
+    "felk60": "../../felk60",
+    "firmware/target/third_party/zmk": "../../../../../zmk",
+    "hardware/usb-daughterboard/upstream": "../../../../hardware/usb-daughterboard/upstream",
+    "mechanical": "../../mechanical",
+    "requirements-audit.txt": "../../requirements-audit.txt",
+    "requirements-render.txt": "../../requirements-render.txt"
+  },
   "controller_count": 1,
   "physical_pin_pairs": 267,
   "matched_mount_holes": 28,
