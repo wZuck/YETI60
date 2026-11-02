@@ -2,7 +2,7 @@ English | [Chinese](BUILD.zh-CN.md)
 
 # YETI60 Raytac: ordering and build handbook
 
-USB repair candidate: [native PCB, revised BOM, wiring and current evidence](hardware/usb-short-route/README.md). This candidate is separate from the held ordering archive; replacement enclosure cable routes and complete assembly illustrations remain open.
+USB repair candidate: [native PCB, revised BOM and evidence](hardware/usb-short-route/README.md); [nine-wire enclosed assembly, 16 guides and complete explosion](hardware/usb-short-route/ASSEMBLY.md). The candidate is separate from the held previous ordering archive; service/mating access and physical acceptance remain open.
 
 Battery supplier verification is user-owned: [send this parameter checklist](docs/build/battery-vendor-checklist.md). USB repair proceeds in parallel.
 

@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+"""Reject stale or mixed nine-wire assembly drawings, renders and STEP files."""
+import hashlib
+import json
+from pathlib import Path
+from render_usb_short_assembly import build_source
+
+ROOT=Path(__file__).resolve().parents[1]
+BASE=ROOT/'hardware/usb-short-route'
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def read(path):
+    return json.loads(path.read_text())
+
+
+def hashes(table):
+    for path,h in table.items():
+        assert sha(ROOT/path)==h,('Stale candidate assembly input/output',path)
+
+
+def verify():
+    evidence={name:read(BASE/'audit'/name) for name in [
+        'closed-assembly.json','guides.json','assembly.json','assembly-meshes.json',
+        'assembly-surfaces.json','assembly-drawings.json','assembly-bom.json','feed-budget.json']}
+    for record in evidence.values():
+        hashes(record.get('source_sha256',{}));hashes(record.get('outputs',{}))
+    closed=evidence['closed-assembly.json'];guide=evidence['guides.json'];assembly=evidence['assembly.json'];mesh=evidence['assembly-meshes.json']
+    assert {family:len(wires) for family,wires in closed['nominal']['wires'].items()}=={'usb':4,'power':2,'battery':3}
+    assert guide['part_count']==16 and guide['film_strips']==12
+    assert len(guide['parts'])==16 and all(p['quantity']==1 for p in guide['parts'])
+    assert len(assembly['mated_housings'])==5 and len(assembly['mated_housing_cross_checks'])==15
+    assert all(c['minimum_expanded_gap_mm']>=.15-1e-6 for c in assembly['mated_housing_cross_checks'])
+    assert assembly['case_files']['bottom']=='hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step'
+    assert assembly['nominal_stack']==read(ROOT/'docs/audit/yeti60-assembly.json')['nominal_stack']
+    assert len(assembly['mounting_hole_matches'])==28 and assembly['unused_pcb_mount_refs']==['H26']
+    assert closed['case']['minimum_remaining_skin_after_tolerance_mm']>=2
+    feed=evidence['feed-budget.json']
+    assert feed['status']=='conditional-feed-budget-calculated-not-qualified' and feed['engaged_power_contact_count']==8
+    assert abs(feed['nominal_copper_length_m']-sum(w['free_length_mm'] for f,pin in feed['selected_wire_legs'] for w in closed['nominal']['wires'][f] if w['pin']==pin)/1000)<1e-9
+    hashes(closed['case']['outputs']);hashes(mesh['published_wire_STEP_sha256'])
+    assert len(mesh['published_wire_STEP_sha256'])==9
+    assert mesh['assembly_report_sha256']==sha(BASE/'audit/assembly.json')
+    assert mesh['guides_report_sha256']==sha(BASE/'audit/guides.json')
+    assert mesh['export_recipe_sha256']==sha(ROOT/'scripts/export_usb_short_assembly.py')
+    assert {p['ref'] for p in mesh['native_headers']}=={'J1','J4','J5'}
+    assert 'J2' in mesh['unavailable_native_models']
+    assert len(evidence['assembly-drawings.json']['outputs'])==28
+    assert set(evidence['assembly-surfaces.json']['outputs'])=={
+        'hardware/usb-short-route/assembly/pcb-surface-front.png','hardware/usb-short-route/assembly/pcb-surface-back.png'}
+    manifest=read(BASE/'assembly/render-manifest.json')
+    recipe_hash=hashlib.sha256(build_source().encode()).hexdigest()
+    assert manifest['recipe_sha256']==recipe_hash,'Studio recipe changed; regenerate candidate renders'
+    hashes(manifest['source_recipe_sha256']);hashes(manifest['geometry_sources'])
+    assert manifest['surface_report_sha256']==sha(BASE/'audit/assembly-surfaces.json')
+    assert manifest['guides_report_sha256']==sha(BASE/'audit/guides.json')
+    assert manifest['assembly_report_sha256']==sha(BASE/'audit/assembly.json')
+    assert manifest['fitted_BOM_sha256']==sha(BASE/'audit/assembly-bom.json')
+    refs={ref.strip() for row in evidence['assembly-bom.json']['rows'] for ref in row['references'].split(',')}
+    assert len(refs)==75 and refs==set(manifest['fitted_mainboard_references'])
+    assert not refs.intersection({'R30','R31','JP1'}) and {'J4','J5'}.issubset(refs)
+    assert manifest['exploded_visible_objects_by_group']['electronics']==75
+    assert manifest['exploded_visible_objects_by_group']['interconnect']==42
+    # Object counts distinguish physical quantities from their visual pieces:
+    # 28 standoffs use 3 body segments each; 28 screws use head + shank.
+    expected_objects={'bottom':1,'top':1,'plate':1,'pcb':1,'battery':1,'daughterboard':4,
+        'caps':119,'switches':120,'domes':60,'springs':60,'stabilizers':15,
+        'standoffs':84,'insulation':56,'pcb-fasteners':56,'shell-hardware':32,'feet':5}
+    for group,count in expected_objects.items():
+        assert manifest['exploded_visible_objects_by_group'][group]==count,('Incomplete explosion',group)
+    assert all(v['in_frame'] and v['above_desk'] for v in manifest['exploded_frame_checks'].values())
+    assert set(manifest['outputs'])=={'assembled.png','rear.png','exploded.png','battery-space.png'}
+    for name,item in manifest['outputs'].items():
+        assert sha(BASE/'assembly'/name)==item['sha256'],('Changed render',name)
+        assert item['recipe_sha256']==recipe_hash,('Old view recipe',name)
+        for field,actual in [('assembly_report_sha256',sha(BASE/'audit/assembly.json')),
+                             ('surface_report_sha256',sha(BASE/'audit/assembly-surfaces.json')),
+                             ('guides_report_sha256',sha(BASE/'audit/guides.json')),
+                             ('mesh_export_recipe_sha256',sha(ROOT/'scripts/export_usb_short_assembly.py'))]:
+            assert item[field]==actual,('Old view inputs',name,field)
+    return dict(status='candidate-assembly-package-consistent',physical_verification=False,manufacturing_released=False,
+        conductor_count=9,mating_housings=5,printable_guides=16,retention_films=12,fitted_mainboard_parts=75,
+        assembly_sheets_per_language=7,studio_views=4,physical_acceptance='open',
+        evidence_sha256={name:sha(BASE/'audit'/name) for name in evidence},
+        render_manifest_sha256=sha(BASE/'assembly/render-manifest.json'),
+        source_sha256={str(Path(__file__).resolve().relative_to(ROOT)):sha(Path(__file__))},
+        open_requirements=['Swept service/mating path and wire springback/retention',
+                           'Supplier-qualified pack and final exact component approvals',
+                           'Physical USB/BLE, simultaneous charging/input, 60-key calibration, temperature and enclosed RF'])
+
+
+def main():
+    result=verify()
+    (BASE/'audit/assembly-package.json').write_text(json.dumps(result,indent=2)+'\n')
+    print(json.dumps(result,indent=2))
+
+
+if __name__=='__main__':
+    main()

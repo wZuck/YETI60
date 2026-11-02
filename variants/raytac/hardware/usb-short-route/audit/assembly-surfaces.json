@@ -1,0 +1,24 @@
+{
+  "status": "native-surface-visual-maps-generated",
+  "outputs": {
+    "hardware/usb-short-route/assembly/pcb-surface-front.png": "99efc98a7ed4bb0c96e1bc0745da7b35c452fee7f791e5dc5516924031f5aace",
+    "hardware/usb-short-route/assembly/pcb-surface-back.png": "35cf60412b782c6fe3e6184d33dd4a4ac71f2d583e7217065d3a307cf56e57b2"
+  },
+  "pcb_bounds_XY_mm": [
+    71.812704,
+    103.90966,
+    361.2,
+    198.50966
+  ],
+  "raster_pixels_per_mm": 24,
+  "source_sha256": {
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "604904a25447e696d82d5dfe1289dd577e7d346339de6eefcca9e987fec686e3",
+    "scripts/export_usb_short_surfaces.py": "6743f0de63f4f8b5a5d2bdc1ac0b465bbb3dfbbffb453d61b87a230d9b96f0e4",
+    "scripts/export_yeti60_usb_reference.py": "c6b1fe7c9f89c91b00abe4cabac51886adb931e1f6d596fe9c9d249ec1aac7e3",
+    "scripts/paint_usb_short_surfaces.py": "9ed105ab2f5a3d4f6e7b05c9ab5894e69f27a59641d543d4eb444080de4d4f31"
+  },
+  "limits": [
+    "Native copper and pad effective-mask geometry for visual appearance only; finish, mask expansion, via tenting and silkscreen are not manufacturing outputs",
+    "The flat colour maps are not Gerbers or proof of a specific final surface finish"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "status": "candidate-assembly-package-consistent",
+  "physical_verification": false,
+  "manufacturing_released": false,
+  "conductor_count": 9,
+  "mating_housings": 5,
+  "printable_guides": 16,
+  "retention_films": 12,
+  "fitted_mainboard_parts": 75,
+  "assembly_sheets_per_language": 7,
+  "studio_views": 4,
+  "physical_acceptance": "open",
+  "evidence_sha256": {
+    "closed-assembly.json": "60747d16c5599e79a2ff8705aea1845bf970c65ac8a0931c5bcd19b53dd983fe",
+    "guides.json": "72ef384b4667bf69dd798417e885c4bdf6bf0f58353f0b130362d8a2c1c7f3c6",
+    "assembly.json": "91a83c6d81e308c6ea481bffa06f1d0d8171b9ab8be35ab718f70f15474a40c3",
+    "assembly-meshes.json": "ad6a1cd095f34da92f1de2b5ed9d484a1eff425b56c4fe33c8ba31ee9e53571c",
+    "assembly-surfaces.json": "27837349224af06d02d02c75691e07a5656846d82e28c6d7e4ddcb4f919a5ef5",
+    "assembly-drawings.json": "1c40379213fef53f18a109425f230981d8d0f722de347296cfd0f96e93d07783",
+    "assembly-bom.json": "37f4ae4679529a4c90537f5ea0f38b0bec4f3ebe5e5b61a0ab662b3d50cf3e73",
+    "feed-budget.json": "24b71767ade2a3bf7ccffd706ba803e5490669e5c06f0f573c5e195344ef6538"
+  },
+  "render_manifest_sha256": "6690f67cfce72fc32b82adafd047daeaf56e33dfe3b951ddd7d97f4d7928be4f",
+  "source_sha256": {
+    "scripts/check_usb_short_assembly_package.py": "76845a12f1cc4f712ad812533de6edaf6de2fe6976de296429399aeba6f9e111"
+  },
+  "open_requirements": [
+    "Swept service/mating path and wire springback/retention",
+    "Supplier-qualified pack and final exact component approvals",
+    "Physical USB/BLE, simultaneous charging/input, 60-key calibration, temperature and enclosed RF"
+  ]
+}

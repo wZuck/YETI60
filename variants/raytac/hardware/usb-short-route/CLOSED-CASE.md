@@ -2,7 +2,7 @@ English | [Chinese](CLOSED-CASE.zh-CN.md)
 
 # Closed-case harness and guides checkpoint
 
-This checkpoint contains continuous-solid checks for nine conductors, the internal bottom-shell relief and 16 removable guides. Step illustrations, complete assembled renders and the order package are still being synchronized. No physical assembly or electrical acceptance has been performed. This remains an engineering candidate; the previous seven-wire illustrations and fabrication archive do not describe it.
+This checkpoint contains continuous-solid checks for nine conductors, the internal bottom-shell relief and 16 removable guides. [Step illustrations and complete assembled renders](ASSEMBLY.md) now describe this design; the order package remains open. No physical assembly or electrical acceptance has been performed. This remains an engineering candidate; the previous seven-wire illustrations and fabrication archive do not describe it.
 
 ## Bottom shell
 

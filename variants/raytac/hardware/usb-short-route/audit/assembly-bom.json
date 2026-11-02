@@ -1,0 +1,182 @@
+{
+  "rows": [
+    {
+      "references": "C9, C11, C12",
+      "quantity": 3,
+      "package": "C_0402_1005Metric"
+    },
+    {
+      "references": "C10",
+      "quantity": 1,
+      "package": "C_0402_1005Metric"
+    },
+    {
+      "references": "C13",
+      "quantity": 1,
+      "package": "C_0402_1005Metric"
+    },
+    {
+      "references": "C30, C41, C42, C43, C45, C46",
+      "quantity": 6,
+      "package": "C_0603_1608Metric"
+    },
+    {
+      "references": "C31",
+      "quantity": 1,
+      "package": "C_0402_1005Metric"
+    },
+    {
+      "references": "C32",
+      "quantity": 1,
+      "package": "C_0603_1608Metric"
+    },
+    {
+      "references": "C40",
+      "quantity": 1,
+      "package": "C_0603_1608Metric"
+    },
+    {
+      "references": "C44",
+      "quantity": 1,
+      "package": "C_0603_1608Metric"
+    },
+    {
+      "references": "C47",
+      "quantity": 1,
+      "package": "C_0402_1005Metric"
+    },
+    {
+      "references": "C48",
+      "quantity": 1,
+      "package": "C_0402_1005Metric"
+    },
+    {
+      "references": "D2",
+      "quantity": 1,
+      "package": "LED_0603_1608Metric"
+    },
+    {
+      "references": "F1",
+      "quantity": 1,
+      "package": "Fuse_1206_3216Metric"
+    },
+    {
+      "references": "J1",
+      "quantity": 1,
+      "package": "JST-SR-4"
+    },
+    {
+      "references": "J2",
+      "quantity": 1,
+      "package": "JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal"
+    },
+    {
+      "references": "L1",
+      "quantity": 1,
+      "package": "L_Wuerth_MAPI-3015"
+    },
+    {
+      "references": "R3, R4, R5, R6, R7, R47, R53, R54",
+      "quantity": 8,
+      "package": "R_0402_1005Metric"
+    },
+    {
+      "references": "R8, R9, R10, R11, R12, R13, R14, R15, R16, R18, R19, R20, R21, R23, R24, R25, R42, R43, R44, R45, R46, R48, R49, R50",
+      "quantity": 24,
+      "package": "R_0402_1005Metric"
+    },
+    {
+      "references": "R17",
+      "quantity": 1,
+      "package": "R_0402_1005Metric"
+    },
+    {
+      "references": "R26",
+      "quantity": 1,
+      "package": "R_0402_1005Metric"
+    },
+    {
+      "references": "R32",
+      "quantity": 1,
+      "package": "R_0402_1005Metric"
+    },
+    {
+      "references": "R40",
+      "quantity": 1,
+      "package": "R_0402_1005Metric"
+    },
+    {
+      "references": "R41",
+      "quantity": 1,
+      "package": "R_0402_1005Metric"
+    },
+    {
+      "references": "R51, R52",
+      "quantity": 2,
+      "package": "R_0402_1005Metric"
+    },
+    {
+      "references": "R55",
+      "quantity": 1,
+      "package": "R_0402_1005Metric"
+    },
+    {
+      "references": "R56",
+      "quantity": 1,
+      "package": "R_0402_1005Metric"
+    },
+    {
+      "references": "SW1",
+      "quantity": 1,
+      "package": "Panasonic_EVQPUL_EVQPUC"
+    },
+    {
+      "references": "SW100",
+      "quantity": 1,
+      "package": "SW_SPDT_CK_JS102011SAQN"
+    },
+    {
+      "references": "U1",
+      "quantity": 1,
+      "package": "Raytac_MDBT50Q"
+    },
+    {
+      "references": "U2, U4",
+      "quantity": 2,
+      "package": "TSSOP16"
+    },
+    {
+      "references": "U3",
+      "quantity": 1,
+      "package": "SOIC-8_3.9x4.9mm_P1.27mm"
+    },
+    {
+      "references": "U5",
+      "quantity": 1,
+      "package": "VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm"
+    },
+    {
+      "references": "U6",
+      "quantity": 1,
+      "package": "WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm"
+    },
+    {
+      "references": "U7, U8",
+      "quantity": 2,
+      "package": "SOT-363_SC-70-6"
+    },
+    {
+      "references": "J4",
+      "quantity": 1,
+      "package": "JST SH 1.0 mm side-entry 4-pin"
+    },
+    {
+      "references": "J5",
+      "quantity": 1,
+      "package": "JST SH 1.0 mm side-entry 2-pin"
+    }
+  ],
+  "source_sha256": {
+    "hardware/usb-short-route/mainboard-purchase.csv": "5239330e92073f42e818e1b025d555615b8611f5bed72fa17946397da1393e3d"
+  }
+}

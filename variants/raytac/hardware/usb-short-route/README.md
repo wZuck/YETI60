@@ -2,13 +2,15 @@ English | [Chinese](README.zh-CN.md)
 
 # Raytac USB repair — prototype candidate
 
-**Engineering candidate, not an ordering package.** This is a repair of the Raytac mainboard, not a third controller option. The canonical [build entry](../../BUILD.md), fabrication ZIP, placement illustrations and assembled renders still describe the previous routing. Do not combine their USB harness with this board. No Gerber release is provided here while the replacement harnesses and assembly illustrations remain incomplete.
+**Engineering candidate, not an ordering package.** This is a repair of the Raytac mainboard, not a third controller option. The canonical [build entry](../../BUILD.md), fabrication ZIP, placement illustrations and assembled renders still describe the previous routing. Do not combine their USB harness with this board. Enclosed harnesses, 16 guides and assembly illustrations are now included; service/mating access, supplier qualification and first-article acceptance remain open, so no Gerber release is provided here yet.
 
 The previous USB path crossed almost the full mainboard. This candidate moves the input next to the MDBT50Q-1MV2. J4 connects to C5 JSH; J5 supplies the retained left-side power/charger input through a separate two-wire jumper. All scanning, charger and regulator pin assignments remain unchanged. R30/R31 are removed: the nRF52840 USB PHY includes its termination, as confirmed by [Nordic](https://devzone.nordicsemi.com/f/nordic-q-a/82014/nrf52840-usb-d-d--impedance-matching/340456).
 
 The COL14 inner-layer escape and SWD clock route are also moved away from the USB reference area. Front sensing copper, holes and pin assignments remain unchanged; parasitic capacitance/noise from the changed inner escape still requires real-key calibration.
 
-[Closed-case harness and 16-guide checkpoint](CLOSED-CASE.md) adds routes, the relieved bottom, STEP/STL files and quantities; complete assembly illustrations are still being synchronized.
+[Closed-case harness and 16 guides](CLOSED-CASE.md) provide routes, the relieved bottom, STEP/STL files and quantities. [Step-by-step assembly and the complete explosion](ASSEMBLY.md) now describe the nine-wire candidate; do not mix them with other previous assembly illustrations.
+
+[Feed voltage-drop calculation and fuse/wire qualification](POWER-FEED.md): wire gauge and a fuse current label alone do not guarantee the programmed charge rate.
 
 ## Files and current evidence
 
@@ -72,7 +74,7 @@ The battery is still required. Send the supplier the separate [battery parameter
 
 ## Remaining release work
 
-The native electrical repair is reviewable. The two complete cable routes, connector strain relief/service access, revised route guides and complete assembly illustrations still need integration. Local header/plug clearance is a narrower check. Do not substitute the old fabrication ZIP, old wire lengths or old full assembly render as evidence for this candidate. The canonical manufacturing hold remains in force.
+The native electrical repair, nine-wire enclosed routes, five mating plugs, 16 guides and complete assembly illustrations are jointly checked. Service/mating/lifting access, actual cable springback and retention, final component/pack supplier qualification and physical acceptance remain open. See the [step-by-step assembly guide](ASSEMBLY.md). The canonical manufacturing hold remains in force; the old archive, wire lengths and full assembly images are not evidence for this candidate.
 
 Reproduce the current checks from the repository root:
 

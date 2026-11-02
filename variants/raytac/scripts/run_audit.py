@@ -83,6 +83,18 @@ def main():
     stages.append(('USB-repair-candidate-faults',native+['tests/audit/test_usb_short_route.py'],['USB-repair-candidate-native']))
     add('USB-repair-candidate-local-geometry',cad,'study_usb_short_route.py',deps=['USB-repair-candidate-native','assembly-fit'])
     add('USB-repair-candidate-firmware',py,'check_usb_short_firmware.py',deps=['USB-repair-candidate-local-geometry'])
+    add('USB-repair-closed-routes',cad,'check_usb_short_closed_assembly.py',deps=['USB-repair-candidate-firmware','interconnect-fit'])
+    stages.append(('USB-repair-closed-route-faults',cad+['tests/audit/test_closed_harness.py'],['USB-repair-closed-routes']))
+    add('USB-repair-printable-guides',cad,'export_usb_short_guides.py',deps=['USB-repair-closed-routes'])
+    add('USB-repair-feed-budget',py,'calculate_usb_short_feed.py',deps=['USB-repair-closed-routes'])
+    add('USB-repair-complete-assembly',cad,'export_usb_short_assembly.py',deps=['USB-repair-printable-guides'])
+    add('USB-repair-native-surfaces',native,'export_usb_short_surfaces.py',deps=['USB-repair-candidate-native','USB-repair-complete-assembly'])
+    add('USB-repair-surface-maps',cad,'paint_usb_short_surfaces.py',deps=['USB-repair-native-surfaces'])
+    add('USB-repair-assembly-sheets',cad,'draw_usb_short_assembly.py',deps=['USB-repair-complete-assembly'])
+    if a.refresh_renders:
+        add('USB-repair-studio-renders',[uv,'run','--python','3.11','--with-requirements',str(ROOT/'requirements-render.txt'),'python'],'render_usb_short_assembly.py',deps=['USB-repair-surface-maps','USB-repair-assembly-sheets'])
+    add('USB-repair-assembly-package',py,'check_usb_short_assembly_package.py',deps=['USB-repair-surface-maps','USB-repair-assembly-sheets','USB-repair-closed-route-faults','USB-repair-feed-budget'])
+    stages.append(('USB-repair-package-faults',py+['tests/audit/test_closed_package.py'],['USB-repair-assembly-package']))
     add('documentation',py,'check_project_docs.py')
     dependencies=[name for name,_,_ in stages]
     add('cross-domain-integration',py,'check_project_integration.py',deps=dependencies)

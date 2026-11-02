@@ -7,7 +7,7 @@
       "stage": "schematic-current",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.35
+      "seconds": 3.0
     },
     {
       "stage": "pin-contract",
@@ -19,67 +19,67 @@
       "stage": "pcb-geometry-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.46
+      "seconds": 2.17
     },
     {
       "stage": "ordinary-fabrication-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.56
+      "seconds": 2.55
     },
     {
       "stage": "ordinary-fabrication-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 6.83
+      "seconds": 6.64
     },
     {
       "stage": "pcb-native-drc",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 24.29
+      "seconds": 24.02
     },
     {
       "stage": "RF-host-copper",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.24
+      "seconds": 1.18
     },
     {
       "stage": "RF-copper-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.2
+      "seconds": 4.23
     },
     {
       "stage": "connectivity-regression",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 23.77
+      "seconds": 18.81
     },
     {
       "stage": "C5-protected-IO",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.81
+      "seconds": 0.42
     },
     {
       "stage": "C5-protection-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.53
+      "seconds": 0.5
     },
     {
       "stage": "USB-path-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.73
+      "seconds": 1.67
     },
     {
       "stage": "USB-reference-native",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.49
+      "seconds": 1.46
     },
     {
       "stage": "electrical-review",
@@ -91,115 +91,115 @@
       "stage": "firmware-pin-header",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.09
+      "seconds": 0.05
     },
     {
       "stage": "firmware-target-artifacts",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.16
+      "seconds": 0.15
     },
     {
       "stage": "target-power-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.11
+      "seconds": 0.08
     },
     {
       "stage": "firmware-calibration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.84
+      "seconds": 1.86
     },
     {
       "stage": "firmware-simulation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.51
+      "seconds": 1.45
     },
     {
       "stage": "firmware-plot",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.88
+      "seconds": 0.77
     },
     {
       "stage": "mechanical-metadata",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.81
+      "seconds": 0.78
     },
     {
       "stage": "daughterboard-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.52
+      "seconds": 3.4
     },
     {
       "stage": "mechanical-design",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.86
+      "seconds": 3.34
     },
     {
       "stage": "plate-source",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.37
+      "seconds": 0.28
     },
     {
       "stage": "plate-mount",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.3
+      "seconds": 0.27
     },
     {
       "stage": "plate-mount-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.36
+      "seconds": 0.34
     },
     {
       "stage": "key-mechanism-drawing",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.02
+      "seconds": 0.93
     },
     {
       "stage": "assembly-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 39.25
+      "seconds": 38.76
     },
     {
       "stage": "interconnect-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.49
+      "seconds": 2.3
     },
     {
       "stage": "interconnect-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 24.11
+      "seconds": 22.79
     },
     {
       "stage": "render-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 16.2
+      "seconds": 15.69
     },
     {
       "stage": "interconnect-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.79
+      "seconds": 3.64
     },
     {
       "stage": "board-guidance",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.79
+      "seconds": 1.72
     },
     {
       "stage": "purchase-bom",
@@ -223,25 +223,25 @@
       "stage": "illustration-native-map",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.52
+      "seconds": 1.32
     },
     {
       "stage": "complete-exploded-sheet",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.36
+      "seconds": 2.26
     },
     {
       "stage": "plate-copper-firmware-map",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.18
+      "seconds": 0.17
     },
     {
       "stage": "plate-map-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.24
+      "seconds": 0.23
     },
     {
       "stage": "illustrated-build-guide",
@@ -259,31 +259,31 @@
       "stage": "fabrication-review-package",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.47
+      "seconds": 4.3
     },
     {
       "stage": "power-calculation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.05
+      "seconds": 0.04
     },
     {
       "stage": "battery-pocket",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.81
+      "seconds": 2.12
     },
     {
       "stage": "cell-screening",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.65
+      "seconds": 4.56
     },
     {
       "stage": "prototype-research",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.72
+      "seconds": 2.58
     },
     {
       "stage": "prototype-research-fault-injection",
@@ -295,43 +295,103 @@
       "stage": "assembly-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 8.53
+      "seconds": 8.47
     },
     {
       "stage": "engineering-evidence",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.07
+      "seconds": 0.06
     },
     {
       "stage": "engineering-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.15
+      "seconds": 0.14
     },
     {
       "stage": "USB-repair-candidate-native",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 30.6
+      "seconds": 28.37
     },
     {
       "stage": "USB-repair-candidate-faults",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 37.55
+      "seconds": 35.43
     },
     {
       "stage": "USB-repair-candidate-local-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 17.68
+      "seconds": 17.16
     },
     {
       "stage": "USB-repair-candidate-firmware",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.21
+      "seconds": 0.19
+    },
+    {
+      "stage": "USB-repair-closed-routes",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 15.12
+    },
+    {
+      "stage": "USB-repair-closed-route-faults",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 13.61
+    },
+    {
+      "stage": "USB-repair-printable-guides",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 43.38
+    },
+    {
+      "stage": "USB-repair-feed-budget",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.06
+    },
+    {
+      "stage": "USB-repair-complete-assembly",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 39.19
+    },
+    {
+      "stage": "USB-repair-native-surfaces",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 1.69
+    },
+    {
+      "stage": "USB-repair-surface-maps",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 1.66
+    },
+    {
+      "stage": "USB-repair-assembly-sheets",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 14.11
+    },
+    {
+      "stage": "USB-repair-assembly-package",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.11
+    },
+    {
+      "stage": "USB-repair-package-faults",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.41
     },
     {
       "stage": "documentation",
@@ -343,13 +403,13 @@
       "stage": "cross-domain-integration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.32
+      "seconds": 0.3
     },
     {
       "stage": "integration-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.25
+      "seconds": 1.19
     },
     {
       "stage": "design-inputs-unchanged",

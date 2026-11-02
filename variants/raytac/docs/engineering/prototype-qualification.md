@@ -2,6 +2,8 @@ English | [Chinese](prototype-qualification.zh-CN.md)
 
 # Pre-case Raytac qualification research
 
+Scope: the sections below retain the canonical long-USB-route research. The [repair candidate](../../hardware/usb-short-route/README.md) and [nine-wire assembly package](../../hardware/usb-short-route/ASSEMBLY.md) now have separate native-electrical, installed-geometry and publication-consistency checks. The long-route numbers here do not describe that candidate; service/mating access, cable signal quality, supplier confirmation and physical acceptance remain open.
+
 **Current conclusion: do not order the existing P2 PCB archive yet.** The [open-bench guide](../../OPEN-BENCH.md) includes a mandatory battery, but the USB routing and pack qualification still block readiness. This study records problems rather than declaring them repaired. No physical unit, USB eye, RF field solution, thermal simulation or cell test has been performed.
 
 Reproduce with KiCad Python `scripts/export_yeti60_usb_reference.py`, then the CAD runtime `scripts/study_yeti60_prototype.py`. [JSON](../audit/prototype-research.json), [thermal CSV](../../hardware/bom/charging-thermal-scenarios.csv), and [primary-source registry](prototype-sources.json) contain inputs, formulas, assumptions and hashes.

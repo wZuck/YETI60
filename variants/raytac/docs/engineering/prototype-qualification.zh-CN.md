@@ -2,6 +2,8 @@
 
 # 无外壳首样的 Raytac 验收研究
 
+范围说明：下文保留原目录长 USB 线路的研究结论。[修补候选板](../../hardware/usb-short-route/README.zh-CN.md)及其[九线装配资料](../../hardware/usb-short-route/ASSEMBLY.zh-CN.md)已经另行完成原生电气、最终安装几何及图纸一致性检查。本文中的长线数值不代表候选板；检修插接路径、线束信号质量、供方确认及实物验收仍未完成。
+
 **当前结论：暂不下单现有 P2 制板包。**[无外壳首样流程](../../OPEN-BENCH.zh-CN.md)保留必需的电池，但 USB 布线与电池资格仍阻塞放行。本次记录发现的问题，没有把它们标成已修复。目前没有实物、USB 眼图、射频场求解、热仿真或电芯测试。
 
 复现方法：先用 KiCad Python 执行 `scripts/export_yeti60_usb_reference.py`，再用 CAD 环境执行 `scripts/study_yeti60_prototype.py`。[机器数据](../audit/prototype-research.json)、[温升情景表](../../hardware/bom/charging-thermal-scenarios.csv)和[原厂来源登记](prototype-sources.json)记录输入、公式、假设与哈希。

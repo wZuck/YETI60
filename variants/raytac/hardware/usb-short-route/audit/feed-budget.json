@@ -1,0 +1,121 @@
+{
+  "status": "conditional-feed-budget-calculated-not-qualified",
+  "physical_verification": false,
+  "selected_wire_legs": [
+    [
+      "usb",
+      "1"
+    ],
+    [
+      "usb",
+      "4"
+    ],
+    [
+      "power",
+      "1"
+    ],
+    [
+      "power",
+      "2"
+    ]
+  ],
+  "nominal_copper_length_m": 1.0532992953733173,
+  "maximum_exit_to_exit_length_m": 1.0552992953733173,
+  "length_tolerance_per_wire_mm": 0.5,
+  "engaged_power_contact_count": 8,
+  "scenarios": [
+    {
+      "scenario": "initial-20C-target",
+      "current_A": 0.1,
+      "wire_R_limit_ohm_per_m": 0.25,
+      "contact_R_limit_ohm": 0.02,
+      "loop_R_ohm": 0.4238248238433293,
+      "drop_V": 0.04238248238433293,
+      "distributed_harness_loss_W": 0.004238248238433294
+    },
+    {
+      "scenario": "initial-20C-target",
+      "current_A": 0.5,
+      "wire_R_limit_ohm_per_m": 0.25,
+      "contact_R_limit_ohm": 0.02,
+      "loop_R_ohm": 0.4238248238433293,
+      "drop_V": 0.21191241192166466,
+      "distributed_harness_loss_W": 0.10595620596083233
+    },
+    {
+      "scenario": "aged-60C-target",
+      "current_A": 0.1,
+      "wire_R_limit_ohm_per_m": 0.3,
+      "contact_R_limit_ohm": 0.04,
+      "loop_R_ohm": 0.6365897886119952,
+      "drop_V": 0.06365897886119952,
+      "distributed_harness_loss_W": 0.006365897886119953
+    },
+    {
+      "scenario": "aged-60C-target",
+      "current_A": 0.5,
+      "wire_R_limit_ohm_per_m": 0.3,
+      "contact_R_limit_ohm": 0.04,
+      "loop_R_ohm": 0.6365897886119952,
+      "drop_V": 0.3182948943059976,
+      "distributed_harness_loss_W": 0.1591474471529988
+    }
+  ],
+  "budgets": [
+    {
+      "C5_SH_board_pad_voltage_V": 4.75,
+      "charger_input_target_V": 4.63,
+      "remaining_voltage_after_harness_V": -0.1982948943059979,
+      "remaining_mainboard_R_budget_ohm": -0.3965897886119958,
+      "interpretation": "No full-current margin even before mainboard losses"
+    },
+    {
+      "C5_SH_board_pad_voltage_V": 5.0,
+      "charger_input_target_V": 4.63,
+      "remaining_voltage_after_harness_V": 0.05170510569400211,
+      "remaining_mainboard_R_budget_ohm": 0.10341021138800421,
+      "interpretation": "Budget for mainboard fuse, copper and other series losses; not proven available"
+    },
+    {
+      "C5_SH_board_pad_voltage_V": 5.25,
+      "charger_input_target_V": 4.63,
+      "remaining_voltage_after_harness_V": 0.3017051056940021,
+      "remaining_mainboard_R_budget_ohm": 0.6034102113880042,
+      "interpretation": "Budget for mainboard fuse, copper and other series losses; not proven available"
+    }
+  ],
+  "return_topology": "The native PCB ground plane connects J1/J4/J5 ground in parallel with the black power jumper. The eight-contact series model intentionally ignores that parallel plane; it is a pessimistic harness-path screen, not the actual solved current distribution.",
+  "imposed_not_vendor_guaranteed": {
+    "wire_resistance_20C_ohm_per_m_max": 0.25,
+    "wire_resistance_60C_ohm_per_m_max": 0.3,
+    "meaning": "Procurement/test targets for an unselected actual wire. Include crimp extensions, splice/crimp resistance and length tolerance in the measured finished loop; the wire-exit model omits internal lead lengths."
+  },
+  "sources": {
+    "JST_SH_contact_resistance": {
+      "url": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+      "page": 1,
+      "initial_max_ohm": 0.02,
+      "after_environment_max_ohm": 0.04
+    },
+    "BQ24074_USB_input_DPM": {
+      "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+      "revision": "N",
+      "page": 12,
+      "threshold_min_typ_max_V": [
+        4.35,
+        4.5,
+        4.63
+      ]
+    }
+  },
+  "source_sha256": {
+    "hardware/usb-short-route/audit/closed-assembly.json": "60747d16c5599e79a2ff8705aea1845bf970c65ac8a0931c5bcd19b53dd983fe",
+    "scripts/calculate_usb_short_feed.py": "ee3fddd5722cf879c916f61865fc05928a9626abbbbce90625513fde68d78fee"
+  },
+  "not_included": [
+    "External USB cable, USB-C contact and C5 input fuse losses before the C5 SH PCB pad",
+    "Mainboard input fuse resistance/temperature derating, PCB copper and regulator losses",
+    "Unspecified crimp extensions/contact processing, actual wire resistance and USB signal quality"
+  ],
+  "conclusion": "Do not promise the programmed charge rate. Qualify the final fuse/wire and measure U5 IN/OUT and MCU VBUS under load; input DPM may reduce current while USB typing remains required."
+}

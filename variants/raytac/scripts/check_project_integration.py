@@ -121,7 +121,9 @@ def verify():
     assert firmware['native_acceptance_sha256']==sha(candidate/'audit/native-check.json')
     assert firmware['local_geometry_acceptance_sha256']==sha(candidate/'audit/geometry-check.json')
     assert not short['manufacturing_released'] and not local['manufacturing_released'] and not firmware['physical_verification']
-    return {'status':'passed','shared_links':shared_links,'controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements'],'USB_repair_candidate':{'native_and_local_geometry':'passed','firmware':'rebuilt-and-host-checked','manufacturing_released':False,'complete_harness_and_assembly_integration':'open'}}
+    from check_usb_short_assembly_package import verify as verify_assembly_package
+    package=verify_assembly_package()
+    return {'status':'passed','shared_links':shared_links,'controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements'],'USB_repair_candidate':{'native_and_local_geometry':'passed','firmware':'rebuilt-and-host-checked','manufacturing_released':False,'complete_harness_and_assembly_integration':'installed-geometry-and-publication-checked','assembly_package':package['status'],'service_mating_path_and_physical_acceptance':'open'}}
 def main():
     try: report=verify()
     except (AssertionError,KeyError,FileNotFoundError,ValueError) as error:

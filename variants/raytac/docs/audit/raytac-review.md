@@ -2,7 +2,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 # Raytac review conclusions
 
-**All 59 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
+**All 69 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
 
 | Area | Result |
 |---|---|
@@ -40,7 +40,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 ## Isolated USB repair candidate
 
-The canonical PCB, inventory and seven-wire assembly images above still describe the previous routing. The separate [repair candidate](../../hardware/usb-short-route/README.md) passed strict native checks and 411 physical pin-pair checks. Both contact paths are 5.286396 mm, with zero data vias and 100% adjacent-ground centerline coverage. Local header/housing tolerance checks, both rebuilt targets, host simulation and calibration tests passed. The candidate fits 75 parts, credits 8 stock parts and requires 67 purchases, with nine conductors total. Complete enclosed cables, guides, assembly illustrations and physical acceptance remain open. This does not release the canonical fabrication archive. The long-route values below continue to document the canonical routing limitation.
+The canonical PCB, inventory and seven-wire assembly images above still describe the previous routing. The separate [repair candidate](../../hardware/usb-short-route/README.md) passed strict native checks and 411 physical pin-pair checks. Both contact paths are 5.286396 mm, with zero data vias and 100% adjacent-ground centerline coverage. Local header/housing tolerance checks, both rebuilt targets, host simulation and calibration tests passed. The candidate fits 75 parts, credits 8 stock parts and requires 67 purchases, with nine conductors total. [Nine-wire enclosure routes, 16 guides and complete assembly illustrations](../../hardware/usb-short-route/ASSEMBLY.md) passed combined installed-geometry and provenance checks; service/mating access and physical acceptance remain open. This does not release the canonical fabrication archive. The long-route values below continue to document the canonical routing limitation.
 
 ## Specific USB routing limitation
 
