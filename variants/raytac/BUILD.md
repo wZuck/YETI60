@@ -2,6 +2,8 @@ English | [Chinese](BUILD.zh-CN.md)
 
 # YETI60 Raytac: ordering and build handbook
 
+For the USB repair candidate, use [generic passive purchasing specifications](hardware/usb-short-route/PASSIVES.md), including revised 0805 power capacitors and existing stock. The old mainboard archive remains held.
+
 USB repair candidate: [native PCB, revised BOM and evidence](hardware/usb-short-route/README.md); [nine-wire enclosed assembly, 16 guides and complete explosion](hardware/usb-short-route/ASSEMBLY.md). The candidate is separate from the held previous ordering archive; service/mating access and physical acceptance remain open.
 
 The candidate uses the [0466001.NRHF one-time fuse and revised lands](hardware/usb-short-route/F1-SELECTION.md); the previous ordering package’s F1 materials below do not apply to it.

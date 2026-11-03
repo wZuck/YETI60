@@ -1,8 +1,8 @@
 {
   "review_scope": "Canonical Raytac plus isolated short-USB repair candidate; E73 excluded; canonical images/order archive do not describe candidate cables",
-  "review_timestamp_UTC": "2026-11-03T15:21:06.024727+00:00",
+  "review_timestamp_UTC": "2026-11-03T19:32:50.339169+00:00",
   "status": "software-and-CAD-consistency-reviewed",
-  "audit_stages_passed": 72,
+  "audit_stages_passed": 73,
   "DRC_errors": 0,
   "opens": 0,
   "physical_signal_pairs": 267,
@@ -84,10 +84,16 @@
       "id": "battery-readout-qualification",
       "status": "open",
       "description": "Actual BAT_ADC-to-GND capacitor is C47=10nF, giving nominal 5ms RC and adequate 50ms wait; C48 is AFE rail decoupling. Reporting remains disabled. ADC/divider accuracy, measured voltage and a conservative low-voltage policy remain to qualify."
+    },
+    {
+      "id": "USB-REPAIR-POWER-LAYOUT",
+      "status": "open",
+      "requirement": "Relocate/reroute the regulator power stage clear of the sensing guard and verify local output/feedback plus effective-capacitance layout",
+      "evidence": "hardware/usb-short-route/audit/native-check.json"
     }
   ],
   "evidence_sha256": {
-    "outcome.json": "94542eac96d058a2455d6e2727358bb2f574e1cc22ebcd6d41ebb117efa2fb4b",
+    "outcome.json": "a7376c06b6aedb36c3c7ed89b21731b78e38ccf78986b10e7c3ab6885250a2d5",
     "integration.json": "9935e432379f834e6a1247029d6857cb2c89956345c65c6457b7995b6d4b6893",
     "schematic-current.json": "9c39e7886f54bfbfd6cf872bde963c5e61851983f343ad509e341acfc31764de",
     "yeti60-target-check.json": "1d01e7aad89e52546412cc67cb9baf963c412a2a0be7dc0ec03500acbd0568da",
@@ -96,7 +102,7 @@
     "C5-protection.json": "cf660b99cfecae7c277a72c67c468f7e455a798ef304d82e77d736bbfc019c99",
     "USB-signal-paths.json": "bd40ed131f0870a8b855efd41cd528845a2579c4226a76559924ba4838d056f0",
     "interference-layout.json": "b16cc3d20293f745506331bc23a1efbb43f71ef6260c0e106d8dbe5fee6e85c6",
-    "complete-exploded.json": "09e8587dd92a9f96d6d7120832232be722fdd505a1b4d49d6e92b022ced55c2d",
+    "complete-exploded.json": "51349cfca787b27062a9652c3127b7d3ec6e5c731096542ad90cf9d0ec4f579d",
     "yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
     "yeti60-inventory.json": "8713fcafef9955ebf14e691ed2a07748f133588007d5cb7dd792e46af87ce217",
     "plate-mount.json": "021e05e7c373f0033492c1669fe4cc820b808567fc7b28e290ef671eb234f978",
@@ -107,7 +113,7 @@
     "prototype-research.json": "9dad28634146167ffee17b3d95e758f9b60e5ee58c476ea71a0b0c54a7aca0c0"
   },
   "source_sha256": {
-    "scripts/report_raytac_review.py": "6b33771d26dd0d38e228a815e67911b0d65611a27890964f74a2b7f017509ce2",
+    "scripts/report_raytac_review.py": "44ed1159779b8e47ba7e2342cf04d61ae18c2fc86cb8b6f6703eec9195749d26",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
     "renders/yeti60-assembly/render-manifest.json": "513b58d6e40733a6c5af048cb65c84eef160028c7c72cca4fde779f1b958839f"
@@ -142,12 +148,96 @@
     "manufacturing_released": false,
     "physical_verification": false,
     "evidence_sha256": {
-      "hardware/usb-short-route/audit/native-check.json": "c05db1ad7b3dcb6e13ab25ee624484db035c1205817f840c1a1bacd664c1cd2e",
-      "hardware/usb-short-route/audit/geometry-check.json": "0cbd46036929fbd84019fb2d777e06d70a09e69d50acf9a920f0fd69d4b2ee3c",
-      "hardware/usb-short-route/firmware/manifest.json": "e486fbbbcb6a1a37eb7aef9b28f1338dba171d94f5ded3d40e40ba5dadb02112",
-      "hardware/usb-short-route/audit/assembly-package.json": "d17245e993b37128c61b3edd06f7087a9ef2ae0d825889854121053aab7d7d3c",
-      "hardware/usb-short-route/audit/vertical-motion.json": "912834516d5d73146300a5bcfec4e6bce06d70c2119f76c68bfb004051aa54ea"
+      "hardware/usb-short-route/audit/native-check.json": "6983e4bde84ff183aeec2506b1be7b832aab7d28f8838fbe300e5d3c02d2a549",
+      "hardware/usb-short-route/audit/geometry-check.json": "fb780bcf1fb4c25856b0b3bf3795d21646857414923cf0bd4a0f5fb78f705178",
+      "hardware/usb-short-route/firmware/manifest.json": "bf18e10f22c66c839dd46ad778c83a6f27c01d067e64f61c8d9adf3490431283",
+      "hardware/usb-short-route/audit/assembly-package.json": "d27d8bedbe42be4fbf2e28b8650e0748bc83b55c4731980d72a74b015bb3a0c7",
+      "hardware/usb-short-route/audit/vertical-motion.json": "dfb347e15173dce906e379b6cec08d427a88213dc7fbdb0a83ed7cd2b13f5f60"
     },
+    "passive_specifications": "hardware/usb-short-route/PASSIVES.md",
+    "power_layout_rework_open": true,
+    "conservative_local_power_paths": [
+      {
+        "from": "U6.4",
+        "to": "L1.1",
+        "net": "BUCK_L1",
+        "conservative_track_length_mm": 3.515,
+        "via_count": 0,
+        "min_trace_width_mm": 0.2
+      },
+      {
+        "from": "U6.2",
+        "to": "L1.2",
+        "net": "BUCK_L2",
+        "conservative_track_length_mm": 3.515,
+        "via_count": 0,
+        "min_trace_width_mm": 0.2
+      },
+      {
+        "from": "U6.5",
+        "to": "C43.1",
+        "net": "VSYS",
+        "conservative_track_length_mm": 3.572,
+        "via_count": 0,
+        "min_trace_width_mm": 0.2
+      },
+      {
+        "from": "U6.8",
+        "to": "C44.1",
+        "net": "REG_VINA",
+        "conservative_track_length_mm": 2.427,
+        "via_count": 0,
+        "min_trace_width_mm": 0.2
+      },
+      {
+        "from": "U6.1",
+        "to": "C45.1",
+        "net": "+3.3V",
+        "conservative_track_length_mm": 2.062,
+        "via_count": 0,
+        "min_trace_width_mm": 0.2
+      },
+      {
+        "from": "U6.1",
+        "to": "C46.1",
+        "net": "+3.3V",
+        "conservative_track_length_mm": 28.504,
+        "via_count": 0,
+        "min_trace_width_mm": 0.2
+      },
+      {
+        "from": "U6.1",
+        "to": "U6.10",
+        "net": "+3.3V",
+        "conservative_track_length_mm": 29.183,
+        "via_count": 0,
+        "min_trace_width_mm": 0.2
+      },
+      {
+        "from": "U5.13",
+        "to": "C40.1",
+        "net": "USB_5V",
+        "conservative_track_length_mm": 3.688,
+        "via_count": 1,
+        "min_trace_width_mm": 0.25
+      },
+      {
+        "from": "U5.2",
+        "to": "C41.1",
+        "net": "BAT_CELL",
+        "conservative_track_length_mm": 16.88,
+        "via_count": 2,
+        "min_trace_width_mm": 0.2
+      },
+      {
+        "from": "U5.10",
+        "to": "C42.1",
+        "net": "VSYS",
+        "conservative_track_length_mm": 2.408,
+        "via_count": 0,
+        "min_trace_width_mm": 0.2
+      }
+    ],
     "selected_F1": {
       "mpn": "0466001.NRHF",
       "manufacturer": "Littelfuse",

@@ -2,6 +2,8 @@
 
 # YETI60 Raytac：下单、备料、焊接与安装总入口
 
+USB 修补候选板按[通用阻容采购规格](hardware/usb-short-route/PASSIVES.zh-CN.md)准备材料，包含修订后的 0805 电源电容及库存备注。旧主板压缩包仍未放行。
+
 USB 修补候选方案：[主板、修订采购表与证据](hardware/usb-short-route/README.zh-CN.md)；[九线关壳装配、16 件理线件及完整爆炸图](hardware/usb-short-route/ASSEMBLY.zh-CN.md)。候选方案与仍暂停的旧制板包分开；检修插接路径及实物验收仍未完成。
 
 候选板的 F1 已改为 [0466001.NRHF 一次性快断及修订焊盘](hardware/usb-short-route/F1-SELECTION.zh-CN.md)，下面原制板包的 F1 物料不能直接套用。

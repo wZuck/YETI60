@@ -16,7 +16,6 @@
     "('warning', 'endpoint_off_grid')": 183
   },
   "DRC_warnings": {
-    "track_dangling": 1,
     "missing_courtyard": 102
   },
   "physical_pin_pairs": [
@@ -4956,7 +4955,285 @@
   "physical_pin_pairs_checked": 411,
   "sensing_and_mount_geometry_unchanged": true,
   "all_retained_footprint_geometry_unchanged": false,
-  "retained_footprints_except_F1_unchanged": true,
+  "retained_footprints_except_F1_and_seven_power_caps_unchanged": true,
+  "revised_power_passives": {
+    "schema": 1,
+    "scope": "USB repair candidate only; generic purchasing specifications, no mandatory passive vendor",
+    "capacitors": {
+      "C41": {
+        "value": "22u/10V",
+        "position": [
+          119.6,
+          151,
+          0
+        ],
+        "tolerance_pct": 20,
+        "rated_voltage_min_V": 10,
+        "effective_target_uF": 4.7,
+        "bias_V": 4.23,
+        "footprint": "YAECKB:C_0805_2012Metric__C41",
+        "body_max_LWH_mm": [
+          2.2,
+          1.45,
+          1.45
+        ],
+        "pad_size_mm": [
+          0.9,
+          1.2
+        ],
+        "pad_centres_local_mm": [
+          [
+            -0.95,
+            0
+          ],
+          [
+            0.95,
+            0
+          ]
+        ],
+        "dielectric": [
+          "X5R",
+          "X7R"
+        ],
+        "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+      },
+      "C42": {
+        "value": "22u/10V",
+        "position": [
+          122,
+          146.1,
+          0
+        ],
+        "tolerance_pct": 20,
+        "rated_voltage_min_V": 10,
+        "effective_target_uF": 4.7,
+        "bias_V": 4.5,
+        "footprint": "YAECKB:C_0805_2012Metric__C42",
+        "body_max_LWH_mm": [
+          2.2,
+          1.45,
+          1.45
+        ],
+        "pad_size_mm": [
+          0.9,
+          1.2
+        ],
+        "pad_centres_local_mm": [
+          [
+            -0.95,
+            0
+          ],
+          [
+            0.95,
+            0
+          ]
+        ],
+        "dielectric": [
+          "X5R",
+          "X7R"
+        ],
+        "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+      },
+      "C43": {
+        "value": "22u/10V",
+        "position": [
+          132,
+          140.7,
+          0
+        ],
+        "tolerance_pct": 20,
+        "rated_voltage_min_V": 10,
+        "effective_target_uF": 4.7,
+        "bias_V": 4.5,
+        "footprint": "YAECKB:C_0805_2012Metric__C43",
+        "body_max_LWH_mm": [
+          2.2,
+          1.45,
+          1.45
+        ],
+        "pad_size_mm": [
+          0.9,
+          1.2
+        ],
+        "pad_centres_local_mm": [
+          [
+            -0.95,
+            0
+          ],
+          [
+            0.95,
+            0
+          ]
+        ],
+        "dielectric": [
+          "X5R",
+          "X7R"
+        ],
+        "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+      },
+      "C45": {
+        "value": "22u/10V",
+        "position": [
+          132.5,
+          148.5,
+          0
+        ],
+        "tolerance_pct": 20,
+        "rated_voltage_min_V": 10,
+        "effective_target_uF": 5,
+        "bias_V": 3.6,
+        "footprint": "YAECKB:C_0805_2012Metric__C45",
+        "body_max_LWH_mm": [
+          2.2,
+          1.45,
+          1.45
+        ],
+        "pad_size_mm": [
+          0.9,
+          1.2
+        ],
+        "pad_centres_local_mm": [
+          [
+            -0.95,
+            0
+          ],
+          [
+            0.95,
+            0
+          ]
+        ],
+        "dielectric": [
+          "X5R",
+          "X7R"
+        ],
+        "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+      },
+      "C46": {
+        "value": "22u/10V",
+        "position": [
+          135.9,
+          148.5,
+          0
+        ],
+        "tolerance_pct": 20,
+        "rated_voltage_min_V": 10,
+        "effective_target_uF": 5,
+        "bias_V": 3.6,
+        "footprint": "YAECKB:C_0805_2012Metric__C46",
+        "body_max_LWH_mm": [
+          2.2,
+          1.45,
+          1.45
+        ],
+        "pad_size_mm": [
+          0.9,
+          1.2
+        ],
+        "pad_centres_local_mm": [
+          [
+            -0.95,
+            0
+          ],
+          [
+            0.95,
+            0
+          ]
+        ],
+        "dielectric": [
+          "X5R",
+          "X7R"
+        ],
+        "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+      },
+      "C32": {
+        "value": "4.7u/16V",
+        "position": [
+          346.4,
+          118,
+          90
+        ],
+        "tolerance_pct": 10,
+        "rated_voltage_min_V": 16,
+        "effective_target_uF": 2.2,
+        "bias_V": 5.25,
+        "footprint": "YAECKB:C_0805_2012Metric__C32",
+        "body_max_LWH_mm": [
+          2.2,
+          1.45,
+          1.45
+        ],
+        "pad_size_mm": [
+          0.9,
+          1.2
+        ],
+        "pad_centres_local_mm": [
+          [
+            -0.95,
+            0
+          ],
+          [
+            0.95,
+            0
+          ]
+        ],
+        "dielectric": [
+          "X5R",
+          "X7R"
+        ],
+        "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+      },
+      "C40": {
+        "value": "2.2u/25V",
+        "position": [
+          123.8,
+          148.6,
+          0
+        ],
+        "tolerance_pct": 10,
+        "rated_voltage_min_V": 25,
+        "effective_target_uF": 1,
+        "bias_V": 5.25,
+        "footprint": "YAECKB:C_0805_2012Metric__C40",
+        "body_max_LWH_mm": [
+          2.2,
+          1.45,
+          1.45
+        ],
+        "pad_size_mm": [
+          0.9,
+          1.2
+        ],
+        "pad_centres_local_mm": [
+          [
+            -0.95,
+            0
+          ],
+          [
+            0.95,
+            0
+          ]
+        ],
+        "dielectric": [
+          "X5R",
+          "X7R"
+        ],
+        "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+      }
+    },
+    "body_max_basis": "0805 body maxima including dimensional tolerance; assembly retains conservative 3 mm height",
+    "sources": [
+      "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+      "https://www.ti.com/lit/ds/symlink/tps63031.pdf"
+    ],
+    "physical_verification": false,
+    "layout_hold": {
+      "finding": "U6 output/feedback and C46 routed around the retained switch ground guard; component proximity is not electrical loop proximity",
+      "feedback_route_approx_mm": 29.183,
+      "C46_route_approx_mm": 28.504,
+      "next_action": "Relocate and reroute the complete regulator power stage clear of the sensing ground guard; do not bridge it with ordinary through vias inside front sensing electrodes",
+      "release_approved": false
+    }
+  },
   "F1_revised_fuse_and_lands": {
     "mpn": "0466001.NRHF",
     "manufacturer": "Littelfuse",
@@ -5064,15 +5341,103 @@
     "J5"
   ],
   "new_ordinary_through_vias": 3,
+  "new_vias_by_net": {
+    "GND": 1,
+    "USB_FEED": 2
+  },
+  "power_layout_rework_open": true,
+  "conservative_local_power_paths": [
+    {
+      "from": "U6.4",
+      "to": "L1.1",
+      "net": "BUCK_L1",
+      "conservative_track_length_mm": 3.515,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.2",
+      "to": "L1.2",
+      "net": "BUCK_L2",
+      "conservative_track_length_mm": 3.515,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.5",
+      "to": "C43.1",
+      "net": "VSYS",
+      "conservative_track_length_mm": 3.572,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.8",
+      "to": "C44.1",
+      "net": "REG_VINA",
+      "conservative_track_length_mm": 2.427,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.1",
+      "to": "C45.1",
+      "net": "+3.3V",
+      "conservative_track_length_mm": 2.062,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.1",
+      "to": "C46.1",
+      "net": "+3.3V",
+      "conservative_track_length_mm": 28.504,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U6.1",
+      "to": "U6.10",
+      "net": "+3.3V",
+      "conservative_track_length_mm": 29.183,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U5.13",
+      "to": "C40.1",
+      "net": "USB_5V",
+      "conservative_track_length_mm": 3.688,
+      "via_count": 1,
+      "min_trace_width_mm": 0.25
+    },
+    {
+      "from": "U5.2",
+      "to": "C41.1",
+      "net": "BAT_CELL",
+      "conservative_track_length_mm": 16.88,
+      "via_count": 2,
+      "min_trace_width_mm": 0.2
+    },
+    {
+      "from": "U5.10",
+      "to": "C42.1",
+      "net": "VSYS",
+      "conservative_track_length_mm": 2.408,
+      "via_count": 0,
+      "min_trace_width_mm": 0.2
+    }
+  ],
+  "power_path_measurement_limit": "Sum of contacted copper primitives; no ground-return inductance, small-signal stability or transient solution",
   "USB_positive_contact_path_mm": 5.286396103067842,
   "USB_negative_contact_path_mm": 5.286396103067842,
   "USB_geometric_skew_mm": 0.0,
   "USB_data_vias_per_leg": 0,
   "physical_verification": false,
   "source_sha256": {
-    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "3210bbae74d78d97ab749eaeccac5d5efbff31578a805bb871dfbcd710eb19d2",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "5f2977f2cfcdccb247879be7a15c4379eed92b8f78845e7c3f76ed4bebb21f5d",
     "hardware/usb-short-route/EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82",
-    "hardware/usb-short-route/EC60-nRF52840.kicad_sch": "14f8c23b08483bfa84bf42db6a8d379194edf707b371ec5494eb28abc7b616cb",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_sch": "2a43cc43fade3be555d8b5614e5be0a98025046a3f48d958baddfa79d2e81973",
     "hardware/usb-short-route/YAECKB.kicad_sym": "6793393060f40289d1f7b51921021c2c98cebf452ba9bf6e8e8d8f5006a6a338",
     "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C10.kicad_mod": "012e14bf8e54dec36459ed956431c982fd9fd90dee697e550e276b77a5d028cf",
     "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C11.kicad_mod": "8888a5f215dd9d73db7e1b41ce578b7b806543dc3f1764f82d1447a25d779522",
@@ -5083,14 +5448,14 @@
     "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C48.kicad_mod": "e7a56b6182518cf11721fd11b6f8588f189068d07bb68c97e2b6b7e74ea6b25d",
     "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C9.kicad_mod": "8bced8fed3d3091439870eb8819d4317f1c1269a29b2ac375d575a20a7a29e07",
     "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C30.kicad_mod": "ac663531aa17fce4f4b677dd837b52327b0fc2f745161fe8352f9213e2bb0cff",
-    "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C32.kicad_mod": "2794ad849ec29df3dcdcd61337277701fb66b325e3b1cca1247aa34230035ced",
-    "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C40.kicad_mod": "b51b2e21f8dfd3cfb4723e6512d4c6c18b95e61864aaa3974166914003b868d2",
-    "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C41.kicad_mod": "851a791d5f852a0da81a696b22c7d0dddb3dbf42e063f1eb0e7b5501d00bc3aa",
-    "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C42.kicad_mod": "d8c554321d2f7482589a73a96c59daf945826d5f65e205334441fc67353e144e",
-    "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C43.kicad_mod": "bc3a0648b5e20b8fce106117aaf487609442df3bf6cbc8777cafacf2d31eed93",
     "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C44.kicad_mod": "18ba4d859690a5334c87146f7881fc2907202c06ab7e7e1986db5fb16c4b1e7b",
-    "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C45.kicad_mod": "e4227b18be9f37dfb45873693de8769947a07c7523bc3dd781ecc58ff4509484",
-    "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C46.kicad_mod": "a2f2ee6223ced04b71944a6fcc6bf11256444c9ecdc262228d09063468b7236d",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C32.kicad_mod": "8ddf4efc1d29788dffeca01cc8777120de800f0d001d4b206bee96101925d765",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C40.kicad_mod": "49e2cacc0888c459553117095c805b1389501d9c128b7c3c072ad83f0500a65f",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C41.kicad_mod": "f40366f6d809925d2016d547df6d82173e2684ad472a9ea8514f650d2db90829",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C42.kicad_mod": "a5a4caa36455df866a2d3ef443f6f01708b10ccf0e662ace95195d3809e0550b",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C43.kicad_mod": "edb569a5863d6c893a500c1212fe7a2ec9cb4d1ec4f25603bcf75ed3b3567e4e",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C45.kicad_mod": "74185afa9b56e3ca8ebc8bbb55c27581a3e259bea49f052ae1edc6e7c03264f8",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C46.kicad_mod": "cf954df2ea224553f5da07da55db34475a2ca9cd707f10522d89b68f1a26d3f0",
     "hardware/usb-short-route/YAECKB.pretty/EC60_BoardOutline__REF__.kicad_mod": "999219d671fb6fb68730275e402ddf4a3c6affea57d0c6ca029dbda0377b9234",
     "hardware/usb-short-route/YAECKB.pretty/Fuse_Littelfuse_0466_1206__F1.kicad_mod": "d45a7026280287ac02154d1b75351cab485a96ce8bb28a1886f70b9143ff534b",
     "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H1.kicad_mod": "69d5df34ca62ecf821a03532d2ce848f47b1bd58d4e0e2e37360a7295c557605",
@@ -5253,22 +5618,25 @@
     "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW69.kicad_mod": "391c4a558bf43ff429d852feb9f10ff2c3c5bc48110862ccb1cb63c19bca181a",
     "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "e0a319dc63587cedd4e320be824dacc4853f69eaacddfa1191c2d04979c62b71",
     "hardware/usb-short-route/analog.kicad_sch": "4c64d34e07c9324a684f27c4295e78544a0077b0b9730e34e3223c926e36116d",
-    "hardware/usb-short-route/components.json": "0f627d69b8adfb1500138318cb2db1e67fd3108de1027747688b552dec6a8a86",
+    "hardware/usb-short-route/components.json": "80f1328add85178cf29a04182782d54b8017f74827ecfca7cb8d9688c8292863",
     "hardware/usb-short-route/fp-lib-table": "ae74cc20692db69057b379cac2a92081855a8341eb0c5dcf3e3528140b57368a",
-    "hardware/usb-short-route/frozen-footprints.json": "eccc96517c37de1ad4738da1a9abe3aa0b97e5c91f3bc5bfe4d1ea29a0080902",
-    "hardware/usb-short-route/mainboard-purchase.csv": "567120df326b959850cb9d9fc98446df403122ce58e6db20d83207a13de54dda",
-    "hardware/usb-short-route/mainboard-purchase.zh-CN.csv": "396ef914751783d9f8ab25f10cb10bd438162b994ed328cbde1e2b8ebe113515",
+    "hardware/usb-short-route/frozen-footprints.json": "ab7ea995264a17c728592307d1cd27282eca55164d0c47c775e076c59effd29e",
+    "hardware/usb-short-route/mainboard-purchase.csv": "79668cb979230b966b436aef0cc57692a351eb792980134b179dbbfd6016a805",
+    "hardware/usb-short-route/mainboard-purchase.zh-CN.csv": "a788d4fb7d0b8d2aa90be15896facfc168a2b5ab88791f0d07fa1f7d10e05af9",
     "hardware/usb-short-route/matrix.kicad_sch": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
     "hardware/usb-short-route/metadata-audit.json": "9a5a76d3a1d93b7c876ceb873875bb01f0ec38759e85d67b1e47a125952e7a66",
     "hardware/usb-short-route/mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
-    "hardware/usb-short-route/netlist.xml": "3465278860e5122c3d7484ab9eb99e46548ff5649ed95469316f09e7ca130ea7",
+    "hardware/usb-short-route/netlist.xml": "44f177a827df33c4f9c4c70823169a8c2c3d422588496cb945a33fcdfdcf3c79",
     "hardware/usb-short-route/parts-qualification.json": "7491a6ce341ec389766e48f15601aaca1c03ff8c78aa1b364c95c80edb6efcd4",
-    "hardware/usb-short-route/power.kicad_sch": "1d35fb87ed82b68c829c1d409eacc09322cc079e40bdb6129543fc92412fe3cb",
+    "hardware/usb-short-route/power-passives.json": "abdd13196188e537677edc1b81ac5d370fa58933fccd88326cafeadf972275a5",
+    "hardware/usb-short-route/power.kicad_sch": "d199b5142ba7066eec2d33a42e8040bbad27111a7b9aa85467b5b9067842f767",
     "hardware/usb-short-route/sym-lib-table": "d45513cd8e4e4ccd05e68f16dfa9399892b19383c65133140567bda6f4228cc8",
     "scripts/usb_short_fuse_contract.py": "1504857ec1203fb74110260d86ea5373dda17891de8c123213da3471faa72df9",
+    "scripts/usb_short_passive_contract.py": "085962b367093d2fb7a28b2d844e99729816fcbb7404d0599bac9f9ab58042fa",
+    "scripts/usb_short_power_routes.py": "b39218b9599b19f3a4eb8c49c86b105fb0ccc3a868afba9b7772ee9d853fef4e",
     "hardware/usb-short-route/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f"
   },
-  "audit_script_sha256": "a327cb895dc9a623cd791dbe32949fe9a5b542d7aba6d0c7d293d8942e30e672",
+  "audit_script_sha256": "a9a1bbb9c0d114b95b0e0c0d1b41b1d56abd4d8fa8f0c41f15882a49d84023e3",
   "remaining": [
     "Enclosed geometry and illustrations are checked separately; swept service/mating access, springback and retention remain open",
     "Full cable impedance/return and physical USB/BLE/charge/thermal validation",

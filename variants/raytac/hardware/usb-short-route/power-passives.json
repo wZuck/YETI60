@@ -1,0 +1,278 @@
+{
+  "schema": 1,
+  "scope": "USB repair candidate only; generic purchasing specifications, no mandatory passive vendor",
+  "capacitors": {
+    "C41": {
+      "value": "22u/10V",
+      "position": [
+        119.6,
+        151,
+        0
+      ],
+      "tolerance_pct": 20,
+      "rated_voltage_min_V": 10,
+      "effective_target_uF": 4.7,
+      "bias_V": 4.23,
+      "footprint": "YAECKB:C_0805_2012Metric__C41",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C42": {
+      "value": "22u/10V",
+      "position": [
+        122,
+        146.1,
+        0
+      ],
+      "tolerance_pct": 20,
+      "rated_voltage_min_V": 10,
+      "effective_target_uF": 4.7,
+      "bias_V": 4.5,
+      "footprint": "YAECKB:C_0805_2012Metric__C42",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C43": {
+      "value": "22u/10V",
+      "position": [
+        132,
+        140.7,
+        0
+      ],
+      "tolerance_pct": 20,
+      "rated_voltage_min_V": 10,
+      "effective_target_uF": 4.7,
+      "bias_V": 4.5,
+      "footprint": "YAECKB:C_0805_2012Metric__C43",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C45": {
+      "value": "22u/10V",
+      "position": [
+        132.5,
+        148.5,
+        0
+      ],
+      "tolerance_pct": 20,
+      "rated_voltage_min_V": 10,
+      "effective_target_uF": 5,
+      "bias_V": 3.6,
+      "footprint": "YAECKB:C_0805_2012Metric__C45",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C46": {
+      "value": "22u/10V",
+      "position": [
+        135.9,
+        148.5,
+        0
+      ],
+      "tolerance_pct": 20,
+      "rated_voltage_min_V": 10,
+      "effective_target_uF": 5,
+      "bias_V": 3.6,
+      "footprint": "YAECKB:C_0805_2012Metric__C46",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C32": {
+      "value": "4.7u/16V",
+      "position": [
+        346.4,
+        118,
+        90
+      ],
+      "tolerance_pct": 10,
+      "rated_voltage_min_V": 16,
+      "effective_target_uF": 2.2,
+      "bias_V": 5.25,
+      "footprint": "YAECKB:C_0805_2012Metric__C32",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C40": {
+      "value": "2.2u/25V",
+      "position": [
+        123.8,
+        148.6,
+        0
+      ],
+      "tolerance_pct": 10,
+      "rated_voltage_min_V": 25,
+      "effective_target_uF": 1,
+      "bias_V": 5.25,
+      "footprint": "YAECKB:C_0805_2012Metric__C40",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    }
+  },
+  "body_max_basis": "0805 body maxima including dimensional tolerance; assembly retains conservative 3 mm height",
+  "sources": [
+    "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+    "https://www.ti.com/lit/ds/symlink/tps63031.pdf"
+  ],
+  "physical_verification": false,
+  "layout_hold": {
+    "finding": "U6 output/feedback and C46 routed around the retained switch ground guard; component proximity is not electrical loop proximity",
+    "feedback_route_approx_mm": 29.183,
+    "C46_route_approx_mm": 28.504,
+    "next_action": "Relocate and reroute the complete regulator power stage clear of the sensing ground guard; do not bridge it with ordinary through vias inside front sensing electrodes",
+    "release_approved": false
+  }
+}

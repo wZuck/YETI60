@@ -7,6 +7,7 @@ import json
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from render_usb_short_assembly import build_source
+from usb_short_passive_contract import verify_passives
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'hardware/usb-short-route'
@@ -41,6 +42,7 @@ def hashes(table):
 
 
 def verify():
+    verify_passives()
     evidence={name:read(BASE/'audit'/name) for name in [
         'closed-assembly.json','guides.json','assembly.json','assembly-meshes.json',
         'assembly-surfaces.json','assembly-drawings.json','assembly-bom.json','feed-budget.json','vertical-motion.json']}
@@ -57,6 +59,12 @@ def verify():
     contract={p.get('ref'):p.findtext('value') for p in ET.parse(BASE/'netlist.xml').findall('./components/comp')}
     for p in assembly['component_envelopes']:
         assert p['value']==contract[p['ref']],('Stale candidate component value',p['ref'])
+    native_passives=read(ROOT/'.assembly-work/usb-short-audit/native-inputs.json')['revised_passives']
+    for c in native_passives:
+        part=next(p for p in assembly['component_envelopes'] if p['ref']==c['ref'])
+        x0,y0,x1,y1=c['bbox_pcb_mm'];z=assembly['nominal_stack']['pcb_bottom_z']
+        assert part['position_pcb_mm']==c['position'][:2] and part['angle_deg']==c['position'][2]
+        assert part['bounds_case_mm']==[x0,-y1,z-3,x1,-y0,z],('Old 0603 assembly bounds',c['ref'])
     assert len(assembly['mounting_hole_matches'])==28 and assembly['unused_pcb_mount_refs']==['H26']
     assert closed['case']['minimum_remaining_skin_after_tolerance_mm']>=2
     for zh in [False,True]:

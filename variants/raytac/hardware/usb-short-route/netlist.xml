@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/Users/wzy/.codex/worktrees/yeti60-e73/YAECKB/variants/raytac/hardware/usb-short-route/EC60-nRF52840.kicad_sch</source>
-    <date>2026-11-03T04:05:09</date>
+    <date>2026-11-04T00:18:09</date>
     <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -169,10 +169,10 @@
       </units>
     </comp>
     <comp ref="C32">
-      <value>4.7u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C32</footprint>
+      <value>4.7u/16V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C32</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C32</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C32</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -625,10 +625,10 @@
       </units>
     </comp>
     <comp ref="C40">
-      <value>1u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C40</footprint>
+      <value>2.2u/25V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C40</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C40</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C40</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -649,10 +649,10 @@
       </units>
     </comp>
     <comp ref="C41">
-      <value>10u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C41</footprint>
+      <value>22u/10V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C41</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C41</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C41</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -673,10 +673,10 @@
       </units>
     </comp>
     <comp ref="C42">
-      <value>10u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C42</footprint>
+      <value>22u/10V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C42</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C42</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C42</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -697,10 +697,10 @@
       </units>
     </comp>
     <comp ref="C43">
-      <value>10u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C43</footprint>
+      <value>22u/10V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C43</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C43</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C43</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -745,10 +745,10 @@
       </units>
     </comp>
     <comp ref="C45">
-      <value>10u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C45</footprint>
+      <value>22u/10V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C45</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C45</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C45</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -769,10 +769,10 @@
       </units>
     </comp>
     <comp ref="C46">
-      <value>10u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C46</footprint>
+      <value>22u/10V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C46</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C46</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C46</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>

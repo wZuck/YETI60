@@ -16,9 +16,14 @@
       "package": "C_0402_1005Metric"
     },
     {
-      "references": "C30, C41, C42, C43, C45, C46",
-      "quantity": 6,
+      "references": "C30",
+      "quantity": 1,
       "package": "C_0603_1608Metric"
+    },
+    {
+      "references": "C41, C42, C43, C45, C46",
+      "quantity": 5,
+      "package": "C_0805_2012Metric"
     },
     {
       "references": "C31",
@@ -28,12 +33,12 @@
     {
       "references": "C32",
       "quantity": 1,
-      "package": "C_0603_1608Metric"
+      "package": "C_0805_2012Metric"
     },
     {
       "references": "C40",
       "quantity": 1,
-      "package": "C_0603_1608Metric"
+      "package": "C_0805_2012Metric"
     },
     {
       "references": "C44",
@@ -177,6 +182,6 @@
     }
   ],
   "source_sha256": {
-    "hardware/usb-short-route/mainboard-purchase.csv": "567120df326b959850cb9d9fc98446df403122ce58e6db20d83207a13de54dda"
+    "hardware/usb-short-route/mainboard-purchase.csv": "79668cb979230b966b436aef0cc57692a351eb792980134b179dbbfd6016a805"
   }
 }

@@ -24,6 +24,7 @@ from check_yeti60_assembly import box,distance,move
 from check_yeti60_interconnects import write_step,surface_z,conformal_base,grooves,near
 from usb_short_harness import paths,paired_data,length,sweep_wire,envelope_wire
 from build_yeti60_mechanical import rounded_box
+from usb_short_passive_contract import apply_passive_envelopes
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';OUT=BASE/'mechanical';WORK=ROOT/'.assembly-work/usb-short-closed';AUD=BASE/'audit'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def read(p):return json.loads(p.read_text())
@@ -79,6 +80,7 @@ def input_data(spec):
     ex.update({'J1':connectors['main_usb_wire_exit_case_mm'],'J2':connectors['main_battery_wire_exit_case_mm'],'C5':old['centerline_recipes']['usb'][-1]['end'],'pack':old['centerline_recipes']['battery'][-1]['end']})
     # Explicit pin datums, including the two-to-four-position power fan-out.
     assert ex['J4'][:2]==[350.5,-108.925] and ex['J5'][:2]==[341,-112.925]
+    assembly=apply_passive_envelopes(assembly,source)
     return assembly,source,ex
 
 def obstacles(assembly,source,delta=0):
@@ -124,7 +126,7 @@ def main():
     variants=[];profile=read(ROOT/'mechanical/pcb-fabrication-spec.json')
     for thickness in profile['ordinary_thickness_acceptance_range_mm']:
         d=profile['CAD_finished_envelope_mm']-thickness;r,_,_,_,_=evaluate(spec,assembly,source,exits,case,d);change=max(abs(w['free_length_mm']-next(q['free_length_mm'] for q in result['wires'][f] if q['pin']==w['pin'])) for f,rs in r['wires'].items() for w in rs);assert change<=.5,('Harness length tolerance',thickness,change);variants.append({'pcb_thickness_mm':thickness,'maximum_free_length_change_mm':change,'minimum_expanded_gap_mm':min(w['minimum_expanded_gap_mm'] for rs in r['wires'].values() for w in rs),'crossings':r['crossings']});print('Thickness',thickness,'passed',flush=True)
-    sources=[BASE/'interconnect-spec.json',BASE/'EC60-nRF52840.kicad_pcb',BASE/'audit/native-check.json',ROOT/'docs/audit/yeti60-assembly.json',ROOT/'docs/audit/yeti60-daughterboard.json',ROOT/'docs/audit/yeti60-interconnect-connectors.json',ROOT/'docs/audit/yeti60-interconnects.json',ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.raytac.json',ROOT/'mechanical/pcb-fabrication-spec.json',Path(__file__),ROOT/'scripts/usb_short_harness.py',ROOT/'scripts/interconnect_geometry.py',ROOT/'scripts/check_yeti60_interconnects.py',ROOT/'scripts/build_yeti60_mechanical.py',ROOT/'scripts/cad_geometry.py']
+    sources=[BASE/'interconnect-spec.json',BASE/'EC60-nRF52840.kicad_pcb',BASE/'audit/native-check.json',ROOT/'docs/audit/yeti60-assembly.json',ROOT/'docs/audit/yeti60-daughterboard.json',ROOT/'docs/audit/yeti60-interconnect-connectors.json',ROOT/'docs/audit/yeti60-interconnects.json',ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.raytac.json',ROOT/'mechanical/pcb-fabrication-spec.json',Path(__file__),ROOT/'scripts/usb_short_harness.py',ROOT/'scripts/usb_short_passive_contract.py',ROOT/'scripts/interconnect_geometry.py',ROOT/'scripts/check_yeti60_interconnects.py',ROOT/'scripts/build_yeti60_mechanical.py',ROOT/'scripts/cad_geometry.py']
     report={'status':'nine-wire-closed-case-routes-passed','physical_verification':False,'manufacturing_released':False,'case':case_report,'connector_exits_case_mm':exits,'nominal':result,'ordinary_thickness_checks':variants,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources},'limits':['One internal rear relief is required; the original unmodified bottom is not this assembly','Spline twist sweeps are render/manufacturing geometry; collision proof uses conservative full pair tubes on twist sections','Internal conductor order is constrained by the guides; insulation contact within the twisted pair is intentional','No actual wire springback, crimp pull-out, resin shrinkage, RF/USB eye or battery supplier qualification']}
     (AUD/'closed-assembly.json').write_text(json.dumps(report,indent=2)+'\n');print('Closed case routing report written')
 if __name__=='__main__':main()

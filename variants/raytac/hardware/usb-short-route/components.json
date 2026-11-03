@@ -154,9 +154,9 @@
     "datasheet": ""
   },
   "C32": {
-    "value": "4.7u/10V",
+    "value": "4.7u/16V",
     "symbol": "Device:C",
-    "footprint": "YAECKB:C_0603_1608Metric__C32",
+    "footprint": "YAECKB:C_0805_2012Metric__C32",
     "pins": {
       "1": "USB_5V",
       "2": "GND"
@@ -456,9 +456,9 @@
     "datasheet": ""
   },
   "C40": {
-    "value": "1u/10V",
+    "value": "2.2u/25V",
     "symbol": "Device:C",
-    "footprint": "YAECKB:C_0603_1608Metric__C40",
+    "footprint": "YAECKB:C_0805_2012Metric__C40",
     "pins": {
       "1": "USB_5V",
       "2": "GND"
@@ -468,9 +468,9 @@
     "datasheet": ""
   },
   "C41": {
-    "value": "10u/10V",
+    "value": "22u/10V",
     "symbol": "Device:C",
-    "footprint": "YAECKB:C_0603_1608Metric__C41",
+    "footprint": "YAECKB:C_0805_2012Metric__C41",
     "pins": {
       "1": "BAT_CELL",
       "2": "GND"
@@ -480,9 +480,9 @@
     "datasheet": ""
   },
   "C42": {
-    "value": "10u/10V",
+    "value": "22u/10V",
     "symbol": "Device:C",
-    "footprint": "YAECKB:C_0603_1608Metric__C42",
+    "footprint": "YAECKB:C_0805_2012Metric__C42",
     "pins": {
       "1": "VSYS",
       "2": "GND"
@@ -492,9 +492,9 @@
     "datasheet": ""
   },
   "C43": {
-    "value": "10u/10V",
+    "value": "22u/10V",
     "symbol": "Device:C",
-    "footprint": "YAECKB:C_0603_1608Metric__C43",
+    "footprint": "YAECKB:C_0805_2012Metric__C43",
     "pins": {
       "1": "VSYS",
       "2": "GND"
@@ -516,9 +516,9 @@
     "datasheet": ""
   },
   "C45": {
-    "value": "10u/10V",
+    "value": "22u/10V",
     "symbol": "Device:C",
-    "footprint": "YAECKB:C_0603_1608Metric__C45",
+    "footprint": "YAECKB:C_0805_2012Metric__C45",
     "pins": {
       "1": "+3.3V",
       "2": "GND"
@@ -528,9 +528,9 @@
     "datasheet": ""
   },
   "C46": {
-    "value": "10u/10V",
+    "value": "22u/10V",
     "symbol": "Device:C",
-    "footprint": "YAECKB:C_0603_1608Metric__C46",
+    "footprint": "YAECKB:C_0805_2012Metric__C46",
     "pins": {
       "1": "+3.3V",
       "2": "GND"

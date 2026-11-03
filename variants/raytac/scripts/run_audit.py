@@ -80,6 +80,7 @@ def main():
         add('pcb-renders',cad,'render_single_nrf.py',['--frames','72','--fps','24','--jobs','2'],deps=['pcb-native-drc'])
         add('assembly-renders',[uv,'run','--python','3.11','--with-requirements',str(ROOT/'requirements-render.txt'),'python'],'render_yeti60_assembly.py',deps=['render-geometry'])
     add('USB-repair-candidate-native',native,'check_usb_short_route.py')
+    stages.append(('USB-repair-passive-faults',py+['tests/audit/test_usb_short_passives.py'],['USB-repair-candidate-native']))
     stages.append(('USB-repair-F1-faults',py+['tests/audit/test_usb_short_fuse.py'],['USB-repair-candidate-native']))
     stages.append(('USB-repair-candidate-faults',native+['tests/audit/test_usb_short_route.py'],['USB-repair-candidate-native']))
     add('USB-repair-candidate-local-geometry',cad,'study_usb_short_route.py',deps=['USB-repair-candidate-native','assembly-fit'])
@@ -119,6 +120,9 @@ def main():
     records.append({'stage':'design-inputs-unchanged','state':'failed' if changed else 'passed','changed':changed})
     okay=all(x['state']=='passed' for x in records)
     config=json.loads((ROOT/'design-constraints.json').read_text());pending=[x for x in config['open_requirements'] if x['status']!='closed']
+    short_native=json.loads((ROOT/'hardware/usb-short-route/audit/native-check.json').read_text())
+    if short_native.get('power_layout_rework_open'):
+        pending.append({'id':'USB-REPAIR-POWER-LAYOUT','status':'open','requirement':'Relocate/reroute the regulator power stage clear of the sensing guard and verify local output/feedback plus effective-capacitance layout','evidence':'hardware/usb-short-route/audit/native-check.json'})
     outcome={'status':'checks-passed-production-incomplete' if okay else 'checks-failed','checks_passed':okay,'production_approved':False,'stages':records,'open_requirements':pending,'scope':'Current single-nRF design, built ARM targets, host simulation, conditional mechanical/charging design and artifact provenance; no physical certification','inventory':'docs/audit/source-inventory.json'}
     inventory();(AUD/'outcome.json').write_text(json.dumps(outcome,indent=2)+'\n')
     print(outcome['status'],flush=True)

@@ -8,6 +8,8 @@ Use this guide with the [candidate PCB, purchase table and firmware](README.md).
 
 The installed geometry is checked, including the five mating plugs. The lifting/mating service path, cable springback, adhesive retention and actual supplier parts still require a first article. This is an assembly design and trial-fit procedure, not a completed physical acceptance record.
 
+Use the [revised passive specifications and seven 0805 power-capacitor positions](PASSIVES.md); old 0603 power-capacitor placement images are superseded for those positions.
+
 ## Prepare the changed materials
 
 | Item | Specification | Per keyboard |

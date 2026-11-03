@@ -13,6 +13,7 @@ from matplotlib.patches import Rectangle
 from cad_geometry import load,intersection_volume
 from check_yeti60_assembly import box,distance,move
 from study_yeti60_prototype import usb_study
+from usb_short_passive_contract import apply_passive_envelopes
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';AUD=BASE/'audit'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def read(p):return json.loads(p.read_text())
@@ -21,7 +22,7 @@ def main():
     assert proof['status']=='native-candidate-checks-passed'
     for p,h in native['source_sha256'].items():assert sha(ROOT/p)==h,('Stale candidate',p)
     screen,_,normalizations=usb_study(native,paths)
-    assembly=read(ROOT/'docs/audit/yeti60-assembly.json');spec=read(ROOT/'mechanical/pcb-fabrication-spec.json');nominal=assembly['nominal_stack']['pcb_bottom_z'];cases=[load(ROOT/'mechanical/generated'/('yeti60-'+s+'.step')) for s in ['bottom','top']]
+    assembly=apply_passive_envelopes(read(ROOT/'docs/audit/yeti60-assembly.json'),native);spec=read(ROOT/'mechanical/pcb-fabrication-spec.json');nominal=assembly['nominal_stack']['pcb_bottom_z'];cases=[load(ROOT/'mechanical/generated'/('yeti60-'+s+'.step')) for s in ['bottom','top']]
     obstacles=[]
     for p in assembly['component_envelopes']:
         if p['ref'] not in ['R30','R31']:obstacles.append((p['ref'],box(p['bounds_case_mm'])))

@@ -18,6 +18,10 @@ The COL14 inner-layer escape and SWD clock route are also moved away from the US
 
 [Exact wire qualification](WIRE-QUALIFICATION.md): the investigated Alpha Wire 2842/19 bend requirement does not fit the current enclosed route. AWG28 and OD alone do not approve a substitute.
 
+[Generic resistor/capacitor/LED specifications and revised power-capacitor lands](PASSIVES.md): values, imperial packages, voltage, tolerance, dielectric, effective-capacitance targets and stock quantities; choose your own brands.
+
+**Additional ordering hold:** the [power-passive review](PASSIVES.md) identifies a regulator output/feedback detour around the sensing guard. New capacitor lands and native connectivity pass, but complete power-stage layout rework remains required.
+
 ## Files and current evidence
 
 - [Native PCB](EC60-nRF52840.kicad_pcb), [project](EC60-nRF52840.kicad_pro), [schematic](EC60-nRF52840.kicad_sch), [fresh netlist](netlist.xml); frozen footprint/symbol libraries are included.
