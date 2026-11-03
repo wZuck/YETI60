@@ -1,9 +1,9 @@
 {
-  "assembly_report_sha256": "10ccf8f0ad29bfdac3894f1726079355c60487a2d62fa55ab5641dd10bc33ef5",
+  "assembly_report_sha256": "c4795e771c103a3643ddf9a18ed77017d11683b16f966809a347bd0fb7d37eb8",
   "export_recipe_sha256": "4704384f0f0a3b0641f811676a3ad3ec3d9f467ce858eed545ddc95357535f3a",
   "geometry_helper_sha256": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
   "geometry_sources": {
-    "hardware/usb-short-route/interconnect-spec.json": "b9ca32bde110f9f86765be1daf1ba8fae39a084ddc93ebf6832f04a7b6fb1bf8",
+    "hardware/usb-short-route/interconnect-spec.json": "f17b44770a579595d699bcf128744ac3af68ad77895621e4dfe7f156bdf8b6d7",
     "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "3210bbae74d78d97ab749eaeccac5d5efbff31578a805bb871dfbcd710eb19d2",
     "hardware/usb-short-route/audit/native-check.json": "c05db1ad7b3dcb6e13ab25ee624484db035c1205817f840c1a1bacd664c1cd2e",
     "docs/audit/yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
@@ -14,30 +14,31 @@
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "mechanical/assembly-spec.raytac.json": "e7c14e76bbd0f26bb5c43ab8526bc897191050dc1127abab7db5acc24d4010c5",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
-    "scripts/check_usb_short_closed_assembly.py": "222b1bc430dd5c4de495b3294e75c6e6990c51f35e1133af4eec50aae41bb43e",
+    "scripts/check_usb_short_closed_assembly.py": "98ca6cdd25152ebabcd23c3297e928e52bc98f2a58141042d0f7457b3dca52bc",
     "scripts/usb_short_harness.py": "8587da881ced0c0305691f13fdf6c54fe42be671bd2f7424d128387cff1400cb",
     "scripts/interconnect_geometry.py": "a3ea2cd5cbe15cfa5aebaf89d961e3387e9c183e147564f27fa4d5aa9477c5c2",
     "scripts/check_yeti60_interconnects.py": "4ff73c59b68b273ace7cf370d1a3991e816e97961d3004be0dbce6190123f529",
+    "scripts/build_yeti60_mechanical.py": "94d487be85af61d06c2c7f7468b8dbcdef1c24cef49c0c8abe3b73cd5547f425",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
-    "hardware/usb-short-route/audit/closed-assembly.json": "caccae8b83dab5c414c916f0e1a20b3c0fa83c2b909ed539320818cfb4f8fd72",
-    "hardware/usb-short-route/audit/guides.json": "19ea3514aeaf5f2a144f7b723ce2839cab7a99165727e24ac4cf4505b2f4abdd",
+    "hardware/usb-short-route/audit/closed-assembly.json": "f5f0eee24f565ea7b47790361eaad51981bab5436e1e9d96779e2574a7705e20",
+    "hardware/usb-short-route/audit/guides.json": "9f5bf131c5316b67a567a00b4717cd835c632a66dcabca74d861efbf1c44dc25",
     "hardware/usb-short-route/audit/geometry-check.json": "0cbd46036929fbd84019fb2d777e06d70a09e69d50acf9a920f0fd69d4b2ee3c",
     "scripts/export_yeti60_render_meshes.py": "73d262849323ce708c5e9c49ada82dc1c3b22af164a31331ad4e2a6aaf67adb7",
-    "scripts/usb_short_guides.py": "ffaba3355dccc14b7ed86453af7e5cfabc4ff16c2a3b331494d23f1c5b157e1d",
+    "scripts/usb_short_guides.py": "5b42dccfbd7ada9a5d76ba447ae50b94fbf80c47a588f13ce1f2e6a4d2fdf3b8",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "scripts/export_usb_short_assembly.py": "4704384f0f0a3b0641f811676a3ad3ec3d9f467ce858eed545ddc95357535f3a",
     "hardware/usb-short-route/audit/assembly-bom.json": "1f3de0a66bbfbd7074b9b21ae3414a3d37e49853e86fd971f6da3b7e38f87b7d",
     "hardware/usb-short-route/parts-qualification.json": "7491a6ce341ec389766e48f15601aaca1c03ff8c78aa1b364c95c80edb6efcd4",
     "hardware/usb-short-route/netlist.xml": "3465278860e5122c3d7484ab9eb99e46548ff5649ed95469316f09e7ca130ea7"
   },
-  "interconnect_report_sha256": "caccae8b83dab5c414c916f0e1a20b3c0fa83c2b909ed539320818cfb4f8fd72",
+  "interconnect_report_sha256": "f5f0eee24f565ea7b47790361eaad51981bab5436e1e9d96779e2574a7705e20",
   "daughterboard_report_sha256": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
-  "guides_report_sha256": "19ea3514aeaf5f2a144f7b723ce2839cab7a99165727e24ac4cf4505b2f4abdd",
+  "guides_report_sha256": "9f5bf131c5316b67a567a00b4717cd835c632a66dcabca74d861efbf1c44dc25",
   "extra_parts": [
     {
       "name": "usb-1",
       "path": ".assembly-work/usb-short-closed/usb-1.step",
-      "sha256": "53f8b2cca68006471340a5475609eedcb84a324b2af73f81a4aaf8e34ce9928c",
+      "sha256": "1015e46708d5b67574280c2cb71524aa995a453f3e87785325adfff171539bc9",
       "color": "red",
       "category": "wire",
       "group": "interconnect",
@@ -46,7 +47,7 @@
     {
       "name": "usb-2",
       "path": ".assembly-work/usb-short-closed/usb-2.step",
-      "sha256": "4f5820fbd86dae4a1431cc5f2cd07154ecdfce8b8ee17f0b882a3c9527373513",
+      "sha256": "e7e2c7db0b1d3c9b50ea0243b3fd3aec04beec4b05b0f6a0fad7fbf18f9db3ca",
       "color": "white",
       "category": "wire",
       "group": "interconnect",
@@ -55,7 +56,7 @@
     {
       "name": "usb-3",
       "path": ".assembly-work/usb-short-closed/usb-3.step",
-      "sha256": "5d5d1e9720b03db9ce4f2fcbb7b1f7cfa33e9e05725b30d527f02db308268ac8",
+      "sha256": "184f3ca930f60f257ceea426d8ce134d78ba9d6baecdf73eb4c4e98e902d4696",
       "color": "green",
       "category": "wire",
       "group": "interconnect",
@@ -64,7 +65,7 @@
     {
       "name": "usb-4",
       "path": ".assembly-work/usb-short-closed/usb-4.step",
-      "sha256": "e1c2991eea8e62d1ac5345767634d5c1f2c1c3731d989be823bae1d8a92066b5",
+      "sha256": "156dc9d924b016123adcdd6ffae00874b784a3981fc4ed2f39d3583e3a1e76ed",
       "color": "black",
       "category": "wire",
       "group": "interconnect",
@@ -118,7 +119,7 @@
     {
       "name": "USB-R1",
       "path": "hardware/usb-short-route/mechanical/guides/USB-R1.step",
-      "sha256": "f94eeddd78746ff79b1a1f235bfa6053076628703da2e2cc550709daac111d0b",
+      "sha256": "10b329083f7fa5ad29e62f13108064e9b7b3b2464ea13fbbceb3e5686d43de74",
       "category": "guide",
       "color": "gray",
       "group": "interconnect",
@@ -127,7 +128,7 @@
     {
       "name": "USB-R2",
       "path": "hardware/usb-short-route/mechanical/guides/USB-R2.step",
-      "sha256": "1c1fd0518b474eeeb5d34e216296d78551a0768b7932a9d57b9db7fcfe68a2e6",
+      "sha256": "210d47a075525ba24e908df174d8de2019b2e045f5d42da0f3b0f53fffc8ac0a",
       "category": "guide",
       "color": "gray",
       "group": "interconnect",
@@ -136,7 +137,7 @@
     {
       "name": "USB-R3",
       "path": "hardware/usb-short-route/mechanical/guides/USB-R3.step",
-      "sha256": "bb78dd21387bd0512221a402abc931868e446f4024ec9b816b0cb579a8f249cb",
+      "sha256": "213e870da10824975324a6c1431becb2a8eaaa93d67760ac1c506a2752027e79",
       "category": "guide",
       "color": "gray",
       "group": "interconnect",
@@ -265,7 +266,7 @@
       "color": "amber",
       "group": "interconnect",
       "path": ".assembly-work/usb-short-closed/USB-R1-film.step",
-      "sha256": "0bdad3686af57541b2534efca6d67476f190a400ba551651c0c9fd8419619f78",
+      "sha256": "c5a3c3e1d80e7b9c5c78ccf342b76f1301b0f8c3f3aab44a2198db007bcee4ac",
       "mesh": "guide-USB-R1-film"
     },
     {
@@ -274,7 +275,7 @@
       "color": "amber",
       "group": "interconnect",
       "path": ".assembly-work/usb-short-closed/USB-R2-film.step",
-      "sha256": "75410e424295e1d6d87a225fa7099cc371d87380884feed18d54e55c304d0b99",
+      "sha256": "c6feec252910d6962a9b2d41b5cda236ff2350ede60905eb03b6396365a0b734",
       "mesh": "guide-USB-R2-film"
     },
     {
@@ -283,7 +284,7 @@
       "color": "amber",
       "group": "interconnect",
       "path": ".assembly-work/usb-short-closed/USB-R3-film.step",
-      "sha256": "7312c2b8222f1cbe2d2eaa33430d866ab6a869121e167bc25527f47b4262496c",
+      "sha256": "67341389bd0f9fb33086a72ec053a9ca7f52e56f6cc4b4948c1c4fa5c76683de",
       "mesh": "guide-USB-R3-film"
     },
     {
@@ -483,10 +484,10 @@
     }
   ],
   "published_wire_STEP_sha256": {
-    "hardware/usb-short-route/mechanical/harness/usb-1.step": "53f8b2cca68006471340a5475609eedcb84a324b2af73f81a4aaf8e34ce9928c",
-    "hardware/usb-short-route/mechanical/harness/usb-2.step": "4f5820fbd86dae4a1431cc5f2cd07154ecdfce8b8ee17f0b882a3c9527373513",
-    "hardware/usb-short-route/mechanical/harness/usb-3.step": "5d5d1e9720b03db9ce4f2fcbb7b1f7cfa33e9e05725b30d527f02db308268ac8",
-    "hardware/usb-short-route/mechanical/harness/usb-4.step": "e1c2991eea8e62d1ac5345767634d5c1f2c1c3731d989be823bae1d8a92066b5",
+    "hardware/usb-short-route/mechanical/harness/usb-1.step": "1015e46708d5b67574280c2cb71524aa995a453f3e87785325adfff171539bc9",
+    "hardware/usb-short-route/mechanical/harness/usb-2.step": "e7e2c7db0b1d3c9b50ea0243b3fd3aec04beec4b05b0f6a0fad7fbf18f9db3ca",
+    "hardware/usb-short-route/mechanical/harness/usb-3.step": "184f3ca930f60f257ceea426d8ce134d78ba9d6baecdf73eb4c4e98e902d4696",
+    "hardware/usb-short-route/mechanical/harness/usb-4.step": "156dc9d924b016123adcdd6ffae00874b784a3981fc4ed2f39d3583e3a1e76ed",
     "hardware/usb-short-route/mechanical/harness/power-1.step": "4103395c6caf3952c6d0e0b2c8f61eb7bfb675e6d78b6136bbe078a3c999f7b6",
     "hardware/usb-short-route/mechanical/harness/power-2.step": "236965010242c083a7bc559340f5b126190f187b43d457d324d0f35c8c2ca0d7",
     "hardware/usb-short-route/mechanical/harness/battery-1.step": "c8bd57cd0f7e41914ea6e22d8e9fc2b7ad69862869ef6539873d98d04bbd8859",
@@ -496,5 +497,5 @@
   "unavailable_native_models": {
     "J2": "SMT S3B-PH-SM4-TB STEP absent from installed KiCad library; conservative body envelope rendered"
   },
-  "mesh_payload_sha256": "8f2790b12b6499cd8669e3c5842b21e8fcf1fc23a7215d746b5e11fe1020ece2"
+  "mesh_payload_sha256": "a63b4de5c468a4d0f593986768f2e7393c2df6f7c3ba5c3a32d0acc70ef9a61c"
 }

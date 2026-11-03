@@ -11,18 +11,23 @@
   "studio_views": 4,
   "physical_acceptance": "open",
   "evidence_sha256": {
-    "closed-assembly.json": "caccae8b83dab5c414c916f0e1a20b3c0fa83c2b909ed539320818cfb4f8fd72",
-    "guides.json": "19ea3514aeaf5f2a144f7b723ce2839cab7a99165727e24ac4cf4505b2f4abdd",
-    "assembly.json": "10ccf8f0ad29bfdac3894f1726079355c60487a2d62fa55ab5641dd10bc33ef5",
-    "assembly-meshes.json": "c76517644cd0791f76d9af3b6f1a302d79d7f3c316f3f75dcbc1e725749eb517",
+    "closed-assembly.json": "f5f0eee24f565ea7b47790361eaad51981bab5436e1e9d96779e2574a7705e20",
+    "guides.json": "9f5bf131c5316b67a567a00b4717cd835c632a66dcabca74d861efbf1c44dc25",
+    "assembly.json": "c4795e771c103a3643ddf9a18ed77017d11683b16f966809a347bd0fb7d37eb8",
+    "assembly-meshes.json": "5606b49cf6934a071239db5fb9e10de1b0801899e5647f69d577c0a7ee45af53",
     "assembly-surfaces.json": "cb699847d997bd982748be04bd045a5cac34b8558a592c652d7ea6c51448dd3f",
-    "assembly-drawings.json": "ce7d54dd4a47abd43515a5e5ff5653fdb5bcbce487b7a77a52205441626d074c",
+    "assembly-drawings.json": "171c08f8959944d32d9e4048891f763b9acec1dc8597480d9fa87847a33f4be8",
     "assembly-bom.json": "1f3de0a66bbfbd7074b9b21ae3414a3d37e49853e86fd971f6da3b7e38f87b7d",
-    "feed-budget.json": "200842fd584c22e064f515dc2ae8a2c72ced70e4f0deb56c647fd2a423f458f1"
+    "feed-budget.json": "7786599f5353286732864979e0902a9d7e239e8fde712a083266f22af8f2990a",
+    "vertical-motion.json": "912834516d5d73146300a5bcfec4e6bce06d70c2119f76c68bfb004051aa54ea"
   },
-  "render_manifest_sha256": "4a80b8c3fff322c3a1c02987768f00ce8adff6df14242b8b1fd92b17c73fb12a",
+  "render_manifest_sha256": "57eafeac6e8d3b8959189e5a2567fce10ccf81e4b3347e3495d9daded761b9c5",
   "source_sha256": {
-    "scripts/check_usb_short_assembly_package.py": "1feb41109d7d540af4d002a7b5e50064d45f7cb87016a9d5a2a0da08d3c9fe45"
+    "scripts/check_usb_short_assembly_package.py": "858b710bbec0c5b1b47d7d3fec1761fa23605d42a5c67ebe92e5d9af08d88737",
+    "hardware/usb-short-route/CLOSED-CASE.md": "7a918a8b4682891156bd5e162db2a473c57cc45183127c9f7ff753dd17d0b09f",
+    "hardware/usb-short-route/CLOSED-CASE.zh-CN.md": "383445fa2604fa311af86d44bacbe0f5149b85595e673ec47846e286fe7e49ee",
+    "hardware/usb-short-route/SERVICE-PATH.md": "81490e223489e0f153edeb75da403df7a82ccf1442abc2cbf0c2e427507cbc78",
+    "hardware/usb-short-route/SERVICE-PATH.zh-CN.md": "5f1e9d7c5afcd205522bbb5163bde6c1a7d2ca69c95d028d7c10280df14c8456"
   },
   "open_requirements": [
     "Swept service/mating path and wire springback/retention",

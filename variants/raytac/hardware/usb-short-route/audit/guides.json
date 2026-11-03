@@ -9,15 +9,15 @@
       "harness": "usb",
       "datum_case_mm": [
         240,
-        -101.0,
+        -100.8,
         -3.9
       ],
       "bounds_case_mm": [
         239.0,
-        -103.7,
+        -103.14999999999999,
         -3.9,
         241.0,
-        -98.3,
+        -98.1,
         -2.0
       ],
       "print_STL_bounds_mm": [
@@ -25,14 +25,14 @@
         -2.326828918379971e-16,
         0.0,
         2.0,
-        5.400000000000006,
-        1.900000000000001
+        5.049999999999997,
+        1.9000000000000008
       ],
       "print_flip_about_X_deg": 180,
       "STEP_preserves_case_coordinates": true,
       "bond_pair": null,
       "nearest_retained_part_gap_mm": 999,
-      "minimum_channel_to_nominal_insulation_gap_mm": 0.0999999999969674
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999791953
     },
     {
       "name": "USB-R2",
@@ -41,15 +41,15 @@
       "harness": "usb",
       "datum_case_mm": [
         290,
-        -101.0,
+        -100.8,
         -3.9
       ],
       "bounds_case_mm": [
         289.0,
-        -103.7,
+        -103.14999999999999,
         -3.9,
         291.0,
-        -98.3,
+        -98.1,
         -2.0
       ],
       "print_STL_bounds_mm": [
@@ -57,14 +57,14 @@
         -2.326828918379971e-16,
         0.0,
         2.0,
-        5.400000000000006,
-        1.900000000000001
+        5.049999999999997,
+        1.9000000000000008
       ],
       "print_flip_about_X_deg": 180,
       "STEP_preserves_case_coordinates": true,
       "bond_pair": null,
       "nearest_retained_part_gap_mm": 999,
-      "minimum_channel_to_nominal_insulation_gap_mm": 0.0999999999969674
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999791953
     },
     {
       "name": "USB-R3",
@@ -73,15 +73,15 @@
       "harness": "usb",
       "datum_case_mm": [
         330,
-        -101.0,
+        -100.8,
         -3.9
       ],
       "bounds_case_mm": [
         329.0,
-        -103.7,
+        -103.14999999999999,
         -3.9,
         331.0,
-        -98.3,
+        -98.1,
         -2.0
       ],
       "print_STL_bounds_mm": [
@@ -89,14 +89,14 @@
         -2.326828918379971e-16,
         0.0,
         2.0,
-        5.400000000000006,
-        1.900000000000001
+        5.049999999999997,
+        1.9000000000000008
       ],
       "print_flip_about_X_deg": 180,
       "STEP_preserves_case_coordinates": true,
       "bond_pair": null,
       "nearest_retained_part_gap_mm": 999,
-      "minimum_channel_to_nominal_insulation_gap_mm": 0.0999999999969674
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999791953
     },
     {
       "name": "USB-F1-base",
@@ -518,12 +518,12 @@
   "part_count": 16,
   "film_strips": 12,
   "outputs": {
-    "hardware/usb-short-route/mechanical/guides/USB-R1.step": "f94eeddd78746ff79b1a1f235bfa6053076628703da2e2cc550709daac111d0b",
-    "hardware/usb-short-route/mechanical/guides/USB-R1.stl": "9236866e72a48d527af978558f1d3b6f575ba91955b48342f470099d5a3d2361",
-    "hardware/usb-short-route/mechanical/guides/USB-R2.step": "1c1fd0518b474eeeb5d34e216296d78551a0768b7932a9d57b9db7fcfe68a2e6",
-    "hardware/usb-short-route/mechanical/guides/USB-R2.stl": "9236866e72a48d527af978558f1d3b6f575ba91955b48342f470099d5a3d2361",
-    "hardware/usb-short-route/mechanical/guides/USB-R3.step": "bb78dd21387bd0512221a402abc931868e446f4024ec9b816b0cb579a8f249cb",
-    "hardware/usb-short-route/mechanical/guides/USB-R3.stl": "9236866e72a48d527af978558f1d3b6f575ba91955b48342f470099d5a3d2361",
+    "hardware/usb-short-route/mechanical/guides/USB-R1.step": "10b329083f7fa5ad29e62f13108064e9b7b3b2464ea13fbbceb3e5686d43de74",
+    "hardware/usb-short-route/mechanical/guides/USB-R1.stl": "29ec9eef77cc66de9cb44a25e7725275b6074ea982bf0141ae2ef5cfabb4e513",
+    "hardware/usb-short-route/mechanical/guides/USB-R2.step": "210d47a075525ba24e908df174d8de2019b2e045f5d42da0f3b0f53fffc8ac0a",
+    "hardware/usb-short-route/mechanical/guides/USB-R2.stl": "29ec9eef77cc66de9cb44a25e7725275b6074ea982bf0141ae2ef5cfabb4e513",
+    "hardware/usb-short-route/mechanical/guides/USB-R3.step": "213e870da10824975324a6c1431becb2a8eaaa93d67760ac1c506a2752027e79",
+    "hardware/usb-short-route/mechanical/guides/USB-R3.stl": "29ec9eef77cc66de9cb44a25e7725275b6074ea982bf0141ae2ef5cfabb4e513",
     "hardware/usb-short-route/mechanical/guides/USB-F1-base.step": "380bb26fccf39d7271cde6c778e96626358a57f23eb231116389c24cc5183bc0",
     "hardware/usb-short-route/mechanical/guides/USB-F1-base.stl": "ebd4cce0439c6deef256bbd213d20b56a5ac663bb19663d05cbe1bc39b81a955",
     "hardware/usb-short-route/mechanical/guides/USB-F1-lid.step": "e311c413fa297194b64c06f816843219321302da8f78825540b30dd4bb6a3e91",
@@ -555,7 +555,7 @@
     {
       "name": "USB-R1",
       "path": "hardware/usb-short-route/mechanical/guides/USB-R1.step",
-      "sha256": "f94eeddd78746ff79b1a1f235bfa6053076628703da2e2cc550709daac111d0b",
+      "sha256": "10b329083f7fa5ad29e62f13108064e9b7b3b2464ea13fbbceb3e5686d43de74",
       "category": "guide",
       "color": "gray",
       "group": "interconnect"
@@ -563,7 +563,7 @@
     {
       "name": "USB-R2",
       "path": "hardware/usb-short-route/mechanical/guides/USB-R2.step",
-      "sha256": "1c1fd0518b474eeeb5d34e216296d78551a0768b7932a9d57b9db7fcfe68a2e6",
+      "sha256": "210d47a075525ba24e908df174d8de2019b2e045f5d42da0f3b0f53fffc8ac0a",
       "category": "guide",
       "color": "gray",
       "group": "interconnect"
@@ -571,7 +571,7 @@
     {
       "name": "USB-R3",
       "path": "hardware/usb-short-route/mechanical/guides/USB-R3.step",
-      "sha256": "bb78dd21387bd0512221a402abc931868e446f4024ec9b816b0cb579a8f249cb",
+      "sha256": "213e870da10824975324a6c1431becb2a8eaaa93d67760ac1c506a2752027e79",
       "category": "guide",
       "color": "gray",
       "group": "interconnect"
@@ -686,7 +686,7 @@
       "color": "amber",
       "group": "interconnect",
       "path": ".assembly-work/usb-short-closed/USB-R1-film.step",
-      "sha256": "0bdad3686af57541b2534efca6d67476f190a400ba551651c0c9fd8419619f78"
+      "sha256": "c5a3c3e1d80e7b9c5c78ccf342b76f1301b0f8c3f3aab44a2198db007bcee4ac"
     },
     {
       "name": "USB-R2-film",
@@ -694,7 +694,7 @@
       "color": "amber",
       "group": "interconnect",
       "path": ".assembly-work/usb-short-closed/USB-R2-film.step",
-      "sha256": "75410e424295e1d6d87a225fa7099cc371d87380884feed18d54e55c304d0b99"
+      "sha256": "c6feec252910d6962a9b2d41b5cda236ff2350ede60905eb03b6396365a0b734"
     },
     {
       "name": "USB-R3-film",
@@ -702,7 +702,7 @@
       "color": "amber",
       "group": "interconnect",
       "path": ".assembly-work/usb-short-closed/USB-R3-film.step",
-      "sha256": "7312c2b8222f1cbe2d2eaa33430d866ab6a869121e167bc25527f47b4262496c"
+      "sha256": "67341389bd0f9fb33086a72ec053a9ca7f52e56f6cc4b4948c1c4fa5c76683de"
     },
     {
       "name": "BAT-R1-film",
@@ -778,10 +778,10 @@
     }
   ],
   "source_sha256": {
-    "hardware/usb-short-route/audit/closed-assembly.json": "caccae8b83dab5c414c916f0e1a20b3c0fa83c2b909ed539320818cfb4f8fd72",
-    "hardware/usb-short-route/interconnect-spec.json": "b9ca32bde110f9f86765be1daf1ba8fae39a084ddc93ebf6832f04a7b6fb1bf8",
+    "hardware/usb-short-route/audit/closed-assembly.json": "f5f0eee24f565ea7b47790361eaad51981bab5436e1e9d96779e2574a7705e20",
+    "hardware/usb-short-route/interconnect-spec.json": "f17b44770a579595d699bcf128744ac3af68ad77895621e4dfe7f156bdf8b6d7",
     "scripts/export_usb_short_guides.py": "f35cbbd5a6f0b7ecdf1118d7369289ca2df366a44079806bb85448d4d05e57e4",
-    "scripts/usb_short_guides.py": "ffaba3355dccc14b7ed86453af7e5cfabc4ff16c2a3b331494d23f1c5b157e1d",
+    "scripts/usb_short_guides.py": "5b42dccfbd7ada9a5d76ba447ae50b94fbf80c47a588f13ce1f2e6a4d2fdf3b8",
     "scripts/usb_short_harness.py": "8587da881ced0c0305691f13fdf6c54fe42be671bd2f7424d128387cff1400cb"
   },
   "printing": {

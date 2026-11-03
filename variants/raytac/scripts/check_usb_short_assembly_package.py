@@ -2,6 +2,7 @@
 """Reject stale or mixed nine-wire assembly drawings, renders and STEP files."""
 import hashlib
 import csv
+import re
 import json
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -24,6 +25,16 @@ def purchase_rows(path):
         return list(csv.reader(stream))
 
 
+def check_wire_table(text, closed, zh=False):
+    labels={'usb':'USB','power':'电源' if zh else 'Power','battery':'电池' if zh else 'Battery'}
+    for family,wires in closed['nominal']['wires'].items():
+        for wire in wires:
+            row=re.search(r'(?m)^\| '+labels[family]+' '+wire['pin']+r' \| ([\d.]+) \| ([\d.]+) \|',text)
+            assert row,('Missing documented cable',family,wire['pin'])
+            assert row.group(1)==f"{wire['free_length_mm']:.2f}",('Stale documented wire length',family,wire['pin'])
+            assert row.group(2)==f"{wire['minimum_design_bend_radius_mm']:.2f}",('Stale documented bend radius',family,wire['pin'])
+
+
 def hashes(table):
     for path,h in table.items():
         assert sha(ROOT/path)==h,('Stale candidate assembly input/output',path)
@@ -32,7 +43,7 @@ def hashes(table):
 def verify():
     evidence={name:read(BASE/'audit'/name) for name in [
         'closed-assembly.json','guides.json','assembly.json','assembly-meshes.json',
-        'assembly-surfaces.json','assembly-drawings.json','assembly-bom.json','feed-budget.json']}
+        'assembly-surfaces.json','assembly-drawings.json','assembly-bom.json','feed-budget.json','vertical-motion.json']}
     for record in evidence.values():
         hashes(record.get('source_sha256',{}));hashes(record.get('outputs',{}))
     closed=evidence['closed-assembly.json'];guide=evidence['guides.json'];assembly=evidence['assembly.json'];mesh=evidence['assembly-meshes.json']
@@ -48,6 +59,21 @@ def verify():
         assert p['value']==contract[p['ref']],('Stale candidate component value',p['ref'])
     assert len(assembly['mounting_hole_matches'])==28 and assembly['unused_pcb_mount_refs']==['H26']
     assert closed['case']['minimum_remaining_skin_after_tolerance_mm']>=2
+    for zh in [False,True]:
+        check_wire_table((BASE/('CLOSED-CASE'+('.zh-CN' if zh else '')+'.md')).read_text(),closed,zh)
+    motion=evidence['vertical-motion.json']
+    assert motion['status']=='nominal-disconnected-rigid-extraction-passed'
+    assert motion['translation_mm']==[0,0,22]
+    assert motion['complete_service_path_qualified'] is False
+    expected_motion={p['ref'] for p in assembly['component_envelopes']}|{'PCB-exact-planar-footprint','plate-exact-planar-footprint','main-SH','J5-mating-plug'}
+    expected_motion|={'stack-hardware-'+str(i+1) for i in range(len(assembly['mounting_hole_matches']))}
+    expected_motion|={p['name'] for p in guide['render_parts'] if p['name'].startswith('PWR')}
+    expected_motion|={'power-'+pin+'/segment-'+str(i+1) for pin,path in closed['nominal']['routes']['power'].items() for i in range(len(path))}
+    assert {p['part'] for p in motion['moving_envelopes']}==expected_motion,'Incomplete rigid extraction coverage'
+    assert all(p['intersection_mm3']<1e-6 for p in motion['moving_envelopes'])
+    assert motion['baseline_regression']['unrelieved_PCB_sweep_intersection_mm3']>1
+    assert len(motion['rear_clip_tolerance_screen'])==6
+    assert min(row['remaining_gap_mm'] for row in motion['rear_clip_tolerance_screen'])>=.15-1e-6
     feed=evidence['feed-budget.json']
     assert feed['selected_F1']['mpn']=='0466001.NRHF'
     for filename in ['mainboard-purchase.csv','mainboard-purchase.zh-CN.csv']:
@@ -106,7 +132,7 @@ def verify():
         assembly_sheets_per_language=7,studio_views=4,physical_acceptance='open',
         evidence_sha256={name:sha(BASE/'audit'/name) for name in evidence},
         render_manifest_sha256=sha(BASE/'assembly/render-manifest.json'),
-        source_sha256={str(Path(__file__).resolve().relative_to(ROOT)):sha(Path(__file__))},
+        source_sha256={str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),BASE/'CLOSED-CASE.md',BASE/'CLOSED-CASE.zh-CN.md',BASE/'SERVICE-PATH.md',BASE/'SERVICE-PATH.zh-CN.md']},
         open_requirements=['Swept service/mating path and wire springback/retention',
                            'Supplier-qualified pack and final exact component approvals',
                            'Physical USB/BLE, simultaneous charging/input, 60-key calibration, temperature and enclosed RF'])

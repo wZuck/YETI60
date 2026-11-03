@@ -92,8 +92,8 @@ def main():
 
     steps = [
         ('Inspect the relieved bottom', '检查内槽底壳', [], (50,379,-210,-90),
-         'Use the candidate bottom.\nThe original exterior is retained.\n\nNew relief:\nX 190…354 / Y −106.3…−98\nZ −5.25…−1.9 mm\n\n2.16 mm nominal checked skin;\n2.01 mm after case tolerance.\n\nPrint 16 guides at 1:1 scale.\nQualify all channels to ±0.05 mm.',
-         '使用候选方案底壳。\n保留原版外轮廓。\n\n新增内槽：\nX 190…354 / Y −106.3…−98\nZ −5.25…−1.9 mm\n\n检查区域壁厚标称 2.16 mm；\n扣除外壳公差后 2.01 mm。\n\n16 件理线件按 1:1 打印。\n检查槽尺寸误差不超过 ±0.05 mm。'),
+         'Use the candidate bottom.\nThe original exterior is retained.\n\nNew relief:\nX 190…354 / Y −106.3…−98\nZ −5.25…−1.9 mm\n\n2.16 mm nominal checked skin;\n2.01 mm after case tolerance.\n\nRF service notch: X 357.25…365.25\nY −132.75…−113.75 / Z −4.45…12.3\nPrint 16 guides at 1:1; tolerance ±0.05 mm.',
+         '使用候选方案底壳。\n保留原版外轮廓。\n\n新增内槽：\nX 190…354 / Y −106.3…−98\nZ −5.25…−1.9 mm\n\n检查区域壁厚标称 2.16 mm；\n扣除外壳公差后 2.01 mm。\n\n射频检修槽：X 357.25…365.25\nY −132.75…−113.75／Z −4.45…12.3\n16 件按 1:1 打印，公差 ±0.05 mm。'),
         ('Build the PCB power jumper', '安装主板供电跳线', ['power'], (117,351,-132,-104),
          'Mainboard remains unpowered.\nFit J4 and J5; omit R30/R31.\n\nJ5.1 → J1.1: supply\nJ5.2 → J1.4: ground\nJ1.2 and J1.3: empty\n\nFit PWR-R1…R5 under the PCB.\nAt J1, red uses the upper guide;\nblack uses the removable lower guide.\nMeter pin numbers, not housing left/right.',
          '主板保持断电。\n焊接 J4、J5；不装 R30／R31。\n\nJ5.1 → J1.1：供电\nJ5.2 → J1.4：地\nJ1.2、J1.3：空置\n\n在 PCB 下安装 PWR-R1…R5。\nJ1 附近红线在上层；\n黑线在可拆下层。\n按针号测通断，不按胶壳左右猜测。'),
@@ -120,6 +120,8 @@ def main():
             if i == 1:
                 x0,y0,z0,x1,y1,z1 = spec['case_pocket']['bounds_case_mm']
                 ax.add_patch(Rectangle((x0,y0),x1-x0,y1-y0,fc='#bd7a25',alpha=.5))
+                x0,y0,z0,x1,y1,z1=spec['case_service_relief']['bounds_case_mm']
+                ax.add_patch(Rectangle((x0,y0),x1-x0,y1-y0,fc='#b53c50',alpha=.65))
             fig.suptitle(f'YETI60  /  {i:02d}  '+(cn if zh else en),x=.05,ha='left',fontsize=19,fontweight='bold')
             fig.text(.05,.035,'单位 mm；由检查过的原始尺寸几何生成。胶壳为保守包络，非供应商精细外观。' if zh else 'Dimensions in mm; drawn from checked source-sized geometry. Mating plugs are conservative envelopes, not detailed supplier surfaces.',fontsize=9)
             fig.subplots_adjust(left=.05,right=.98,bottom=.13,top=.9,wspace=.15)

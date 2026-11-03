@@ -1,0 +1,1070 @@
+{
+  "status": "nominal-disconnected-rigid-extraction-passed",
+  "physical_verification": false,
+  "manufacturing_released": false,
+  "complete_service_path_qualified": false,
+  "translation_mm": [
+    0,
+    0,
+    22.0
+  ],
+  "moving_envelopes": [
+    {
+      "part": "PCB-exact-planar-footprint",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.7423203535999932
+    },
+    {
+      "part": "plate-exact-planar-footprint",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.24999992881991365
+    },
+    {
+      "part": "R7",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000046
+    },
+    {
+      "part": "R23",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999842
+    },
+    {
+      "part": "C11",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000019
+    },
+    {
+      "part": "R8",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.909999999999985
+    },
+    {
+      "part": "R24",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.909999999999985
+    },
+    {
+      "part": "U5",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000019
+    },
+    {
+      "part": "U7",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000037
+    },
+    {
+      "part": "R15",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999842
+    },
+    {
+      "part": "C46",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.910000000000001
+    },
+    {
+      "part": "R11",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999842
+    },
+    {
+      "part": "C41",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000001
+    },
+    {
+      "part": "C43",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000046
+    },
+    {
+      "part": "R50",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000046
+    },
+    {
+      "part": "C48",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000019
+    },
+    {
+      "part": "U3",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999984
+    },
+    {
+      "part": "C12",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999877
+    },
+    {
+      "part": "R12",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.909999999999985
+    },
+    {
+      "part": "R19",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999868
+    },
+    {
+      "part": "R42",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000046
+    },
+    {
+      "part": "R26",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000144
+    },
+    {
+      "part": "R10",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999877
+    },
+    {
+      "part": "C31",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000144
+    },
+    {
+      "part": "R3",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999984
+    },
+    {
+      "part": "R53",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000028
+    },
+    {
+      "part": "R47",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000046
+    },
+    {
+      "part": "R56",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.910000000000001
+    },
+    {
+      "part": "SW1",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000126
+    },
+    {
+      "part": "C30",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000126
+    },
+    {
+      "part": "R18",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.909999999999985
+    },
+    {
+      "part": "U8",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000037
+    },
+    {
+      "part": "R45",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000046
+    },
+    {
+      "part": "C32",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000161
+    },
+    {
+      "part": "R48",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.910000000000017
+    },
+    {
+      "part": "C47",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000019
+    },
+    {
+      "part": "U1",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.6209871174187287
+    },
+    {
+      "part": "R46",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000055
+    },
+    {
+      "part": "R54",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000028
+    },
+    {
+      "part": "R16",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999975
+    },
+    {
+      "part": "J1",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 3.309536760659437
+    },
+    {
+      "part": "R13",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999833
+    },
+    {
+      "part": "R44",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000046
+    },
+    {
+      "part": "R41",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000046
+    },
+    {
+      "part": "C42",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000019
+    },
+    {
+      "part": "U4",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999842
+    },
+    {
+      "part": "R17",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999975
+    },
+    {
+      "part": "C40",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.910000000000001
+    },
+    {
+      "part": "U2",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999824
+    },
+    {
+      "part": "R21",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999842
+    },
+    {
+      "part": "JP1",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999966
+    },
+    {
+      "part": "R32",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000126
+    },
+    {
+      "part": "L1",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000019
+    },
+    {
+      "part": "R43",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000046
+    },
+    {
+      "part": "J2",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.9096881609882155
+    },
+    {
+      "part": "C44",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000037
+    },
+    {
+      "part": "R4",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999984
+    },
+    {
+      "part": "C45",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.910000000000001
+    },
+    {
+      "part": "D2",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000135
+    },
+    {
+      "part": "C9",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.909999999999985
+    },
+    {
+      "part": "R51",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000028
+    },
+    {
+      "part": "R9",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999859
+    },
+    {
+      "part": "R20",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999868
+    },
+    {
+      "part": "C13",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000037
+    },
+    {
+      "part": "R6",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000037
+    },
+    {
+      "part": "U6",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000028
+    },
+    {
+      "part": "R52",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000019
+    },
+    {
+      "part": "R25",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.909999999999985
+    },
+    {
+      "part": "R55",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.910000000000001
+    },
+    {
+      "part": "F1",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.910000000000017
+    },
+    {
+      "part": "R14",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.909999999999985
+    },
+    {
+      "part": "R49",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000046
+    },
+    {
+      "part": "C10",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999975
+    },
+    {
+      "part": "R5",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9099999999999984
+    },
+    {
+      "part": "SW100",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.40999999999999837
+    },
+    {
+      "part": "R40",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.910000000000001
+    },
+    {
+      "part": "J5",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000161
+    },
+    {
+      "part": "J4",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.9100000000000179
+    },
+    {
+      "part": "main-SH",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 4.16155951742202
+    },
+    {
+      "part": "J5-mating-plug",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.8100000000000174
+    },
+    {
+      "part": "stack-hardware-1",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999896
+    },
+    {
+      "part": "stack-hardware-2",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999993
+    },
+    {
+      "part": "stack-hardware-3",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999896
+    },
+    {
+      "part": "stack-hardware-4",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999896
+    },
+    {
+      "part": "stack-hardware-5",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999993
+    },
+    {
+      "part": "stack-hardware-6",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999993
+    },
+    {
+      "part": "stack-hardware-7",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999896
+    },
+    {
+      "part": "stack-hardware-8",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999993
+    },
+    {
+      "part": "stack-hardware-9",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999896
+    },
+    {
+      "part": "stack-hardware-10",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999993
+    },
+    {
+      "part": "stack-hardware-11",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.010000000000009
+    },
+    {
+      "part": "stack-hardware-12",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.699999999999999
+    },
+    {
+      "part": "stack-hardware-13",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.699999999999999
+    },
+    {
+      "part": "stack-hardware-14",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.699999999999999
+    },
+    {
+      "part": "stack-hardware-15",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999985
+    },
+    {
+      "part": "stack-hardware-16",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999993
+    },
+    {
+      "part": "stack-hardware-17",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0100000000000002
+    },
+    {
+      "part": "stack-hardware-18",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0100000000000002
+    },
+    {
+      "part": "stack-hardware-19",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0100000000000002
+    },
+    {
+      "part": "stack-hardware-20",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.010000000000009
+    },
+    {
+      "part": "stack-hardware-21",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.010000000000009
+    },
+    {
+      "part": "stack-hardware-22",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0100000000000002
+    },
+    {
+      "part": "stack-hardware-23",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0100000000000002
+    },
+    {
+      "part": "stack-hardware-24",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0100000000000002
+    },
+    {
+      "part": "stack-hardware-25",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999807
+    },
+    {
+      "part": "stack-hardware-26",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999807
+    },
+    {
+      "part": "stack-hardware-27",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.0099999999999807
+    },
+    {
+      "part": "stack-hardware-28",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.010000000000018
+    },
+    {
+      "part": "PWR-R1",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.7100000000000195
+    },
+    {
+      "part": "PWR-R2",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.7100000000000195
+    },
+    {
+      "part": "PWR-R3",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 3.0974344222275483
+    },
+    {
+      "part": "PWR-R4",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 3.896678072409881
+    },
+    {
+      "part": "PWR-R5",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.7100000000000195
+    },
+    {
+      "part": "PWR-F-upper",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 4.899649583958702
+    },
+    {
+      "part": "PWR-F-lower",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 4.205064373536591
+    },
+    {
+      "part": "PWR-R1-film",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.2100000000000195
+    },
+    {
+      "part": "PWR-R2-film",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.2100000000000195
+    },
+    {
+      "part": "PWR-R3-film",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.6709736052608393
+    },
+    {
+      "part": "PWR-R4-film",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 3.567085645173099
+    },
+    {
+      "part": "PWR-R5-film",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.2100000000000195
+    },
+    {
+      "part": "PWR-F-upper-film",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.358891407324174
+    },
+    {
+      "part": "PWR-F-lower-film",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 4.010000000000012
+    },
+    {
+      "part": "power-1/segment-1",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.9099999000000194
+    },
+    {
+      "part": "power-1/segment-2",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.9099999000000212
+    },
+    {
+      "part": "power-1/segment-3",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.9099999000000212
+    },
+    {
+      "part": "power-1/segment-4",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.9099999000000203
+    },
+    {
+      "part": "power-1/segment-5",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.1253845153846327
+    },
+    {
+      "part": "power-1/segment-6",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.310000000000001
+    },
+    {
+      "part": "power-1/segment-7",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 4.246051388964484
+    },
+    {
+      "part": "power-1/segment-8",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 6.06399921707644
+    },
+    {
+      "part": "power-1/segment-9",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 3.2959906503491427
+    },
+    {
+      "part": "power-1/segment-10",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.6100000000000003
+    },
+    {
+      "part": "power-1/segment-11",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.6099999000000205
+    },
+    {
+      "part": "power-1/segment-12",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.5253845153846344
+    },
+    {
+      "part": "power-1/segment-13",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.31000000000002
+    },
+    {
+      "part": "power-1/segment-14",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.31000000000002
+    },
+    {
+      "part": "power-1/segment-15",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.309999900000018
+    },
+    {
+      "part": "power-1/segment-16",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.31
+    },
+    {
+      "part": "power-1/segment-17",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 3.961291055925643
+    },
+    {
+      "part": "power-1/segment-18",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.809999900000014
+    },
+    {
+      "part": "power-1/segment-19",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.809999900000014
+    },
+    {
+      "part": "power-1/segment-20",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.6299999000000085
+    },
+    {
+      "part": "power-1/segment-21",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.409999900000016
+    },
+    {
+      "part": "power-1/segment-22",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.410000000000014
+    },
+    {
+      "part": "power-2/segment-1",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.9099999000000194
+    },
+    {
+      "part": "power-2/segment-2",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.909999900000022
+    },
+    {
+      "part": "power-2/segment-3",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.9099999000000212
+    },
+    {
+      "part": "power-2/segment-4",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.9099999000000203
+    },
+    {
+      "part": "power-2/segment-5",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.1253845153846336
+    },
+    {
+      "part": "power-2/segment-6",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.310000000000001
+    },
+    {
+      "part": "power-2/segment-7",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 4.246051131234316
+    },
+    {
+      "part": "power-2/segment-8",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.662133728001778
+    },
+    {
+      "part": "power-2/segment-9",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 6.090319958711509
+    },
+    {
+      "part": "power-2/segment-10",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 6.063999272176229
+    },
+    {
+      "part": "power-2/segment-11",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 3.2959907062960436
+    },
+    {
+      "part": "power-2/segment-12",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.6100000000000012
+    },
+    {
+      "part": "power-2/segment-13",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.6099999000000205
+    },
+    {
+      "part": "power-2/segment-14",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.5253845153846344
+    },
+    {
+      "part": "power-2/segment-15",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.30999990000002
+    },
+    {
+      "part": "power-2/segment-16",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.30999990000002
+    },
+    {
+      "part": "power-2/segment-17",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 2.310000000000021
+    },
+    {
+      "part": "power-2/segment-18",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 1.5253845153846308
+    },
+    {
+      "part": "power-2/segment-19",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.6099999000000151
+    },
+    {
+      "part": "power-2/segment-20",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.6100000000000199
+    },
+    {
+      "part": "power-2/segment-21",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.6099999000000169
+    },
+    {
+      "part": "power-2/segment-22",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.6099999999999994
+    },
+    {
+      "part": "power-2/segment-23",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 3.275336191867408
+    },
+    {
+      "part": "power-2/segment-24",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 4.109999900000013
+    },
+    {
+      "part": "power-2/segment-25",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 4.109999900000012
+    },
+    {
+      "part": "power-2/segment-26",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 4.109999900000012
+    },
+    {
+      "part": "power-2/segment-27",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 4.824999900000011
+    },
+    {
+      "part": "power-2/segment-28",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 5.0565739554450655
+    }
+  ],
+  "rear_clip_tolerance_screen": [
+    {
+      "part": "USB-R1",
+      "nominal_PCB_sweep_gap_mm": 0.7596599999999967,
+      "summed_allowance_mm": 0.5499999999999999,
+      "remaining_gap_mm": 0.20965999999999674
+    },
+    {
+      "part": "USB-R2",
+      "nominal_PCB_sweep_gap_mm": 0.7596599999999967,
+      "summed_allowance_mm": 0.5499999999999999,
+      "remaining_gap_mm": 0.20965999999999674
+    },
+    {
+      "part": "USB-R3",
+      "nominal_PCB_sweep_gap_mm": 0.7596599999999967,
+      "summed_allowance_mm": 0.5499999999999999,
+      "remaining_gap_mm": 0.20965999999999674
+    },
+    {
+      "part": "USB-R1-film",
+      "nominal_PCB_sweep_gap_mm": 2.9012210042669957,
+      "summed_allowance_mm": 0.5499999999999999,
+      "remaining_gap_mm": 2.351221004266996
+    },
+    {
+      "part": "USB-R2-film",
+      "nominal_PCB_sweep_gap_mm": 2.9012210042669957,
+      "summed_allowance_mm": 0.5499999999999999,
+      "remaining_gap_mm": 2.351221004266996
+    },
+    {
+      "part": "USB-R3-film",
+      "nominal_PCB_sweep_gap_mm": 2.9012210042669957,
+      "summed_allowance_mm": 0.5499999999999999,
+      "remaining_gap_mm": 2.351221004266996
+    }
+  ],
+  "baseline_regression": {
+    "unrelieved_PCB_sweep_intersection_mm3": 283.6407146587601,
+    "unrelieved_module_sweep_intersection_mm3": 390.5743714220337
+  },
+  "limiting_nominal_features": [
+    {
+      "part": "plate-exact-planar-footprint",
+      "nominal_gap_mm": 0.24999992881991365,
+      "nearest_point_pairs_case_mm": [
+        {
+          "case": [
+            307.28770284111,
+            -200.8096674895,
+            4.79
+          ],
+          "moving": [
+            307.537702841117,
+            -200.80966757484327,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            121.8877023292,
+            -200.8096925107,
+            4.79
+          ],
+          "moving": [
+            121.6377024003787,
+            -200.8096924395251,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            345.88770240039,
+            -200.8096606297,
+            4.79
+          ],
+          "moving": [
+            345.63770240038684,
+            -200.8096605585251,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            280.78770341953,
+            -101.6096708341,
+            4.79
+          ],
+          "moving": [
+            281.0377034195272,
+            -101.6096708482684,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            109.28770341952,
+            -101.609695243,
+            4.79
+          ],
+          "moving": [
+            109.53770341952583,
+            -101.6096952571684,
+            4.79
+          ]
+        }
+      ]
+    },
+    {
+      "part": "SW100",
+      "nominal_gap_mm": 0.40999999999999837,
+      "nearest_point_pairs_case_mm": [
+        {
+          "case": [
+            108.96270495529,
+            -123.6028520533,
+            -5.91
+          ],
+          "moving": [
+            108.96270495529,
+            -123.6028520533,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            108.96270421438,
+            -118.3971488112,
+            -5.91
+          ],
+          "moving": [
+            108.96270421438,
+            -118.3971488112,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            108.96270406672,
+            -117.3596949908,
+            -5.91
+          ],
+          "moving": [
+            108.96270406672,
+            -117.3596949908,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            106.975,
+            -125.525,
+            -5.910000000000013
+          ],
+          "moving": [
+            106.975,
+            -125.525,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            106.975,
+            -116.725,
+            -5.910000000000017
+          ],
+          "moving": [
+            106.975,
+            -116.725,
+            -5.5
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Continuous vertical translation of nominal PCB/plate, fitted mainboard envelopes, 28 stack hardware envelopes, PCB power jumper and its plugs/guides; case-top removed; USB/battery disconnected and parked outside motion envelope",
+  "not_qualified": [
+    "USB/battery plug unmating, flexible-wire deformation and loose-plug parking",
+    "Actual caps, housings, domes and stabilizer moving envelopes",
+    "Combined plate/component/case tolerance motion; reported nominal gaps are not tolerance approval",
+    "Tool access, adhesion, resin/supplier first article and physical operation"
+  ],
+  "source_sha256": {
+    "scripts/check_usb_short_vertical_motion.py": "9db733cd3cfaa38a66f5d20a83ee1f3b29438351c9c3f3d6304d8ffbe13a0b92",
+    "hardware/usb-short-route/interconnect-spec.json": "f17b44770a579595d699bcf128744ac3af68ad77895621e4dfe7f156bdf8b6d7",
+    "hardware/usb-short-route/audit/assembly.json": "c4795e771c103a3643ddf9a18ed77017d11683b16f966809a347bd0fb7d37eb8",
+    "hardware/usb-short-route/audit/guides.json": "9f5bf131c5316b67a567a00b4717cd835c632a66dcabca74d861efbf1c44dc25",
+    "hardware/usb-short-route/audit/closed-assembly.json": "f5f0eee24f565ea7b47790361eaad51981bab5436e1e9d96779e2574a7705e20",
+    "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step": "b317fe4d9c82573db9430fcc2f0105cdd17f98fcf5909b98ae91d2f070249744",
+    ".assembly-work/pcb-placed.step": "7d88307dcc060041facc0a141b2551e00a227d4e7bb92a925a266caaa393f0ae",
+    ".assembly-work/plate.step": "2ba89f9a512d0cd4b8a45c8f089605fc3e0d46c150b5ad2be3385d8cd6cba1cd",
+    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_yeti60_assembly.py": "049759707a29a2cb0370e2a11764a1c3856897d56be1f772cccfe5692c34bbce",
+    "scripts/usb_short_harness.py": "8587da881ced0c0305691f13fdf6c54fe42be671bd2f7424d128387cff1400cb"
+  }
+}

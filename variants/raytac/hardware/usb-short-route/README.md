@@ -2,7 +2,7 @@ English | [Chinese](README.zh-CN.md)
 
 # Raytac USB repair — prototype candidate
 
-**New assembly obstruction:** [the right PCB wing collides with an internal step during vertical lifting](SERVICE-PATH.md). The service path is not repaired. A clear installed pose or exploded image does not authorize vertical insertion/removal.
+**Service-path progress:** [the internal wing relief and rear clips are revised; continuous nominal rigid extraction passes with leads disconnected](SERVICE-PATH.md). Plug mating/unmating, wire deformation, loose-plug parking and combined tolerances remain unqualified; complete service is not approved.
 
 **Engineering candidate, not an ordering package.** This is a repair of the Raytac mainboard, not a third controller option. The canonical [build entry](../../BUILD.md), fabrication ZIP, placement illustrations and assembled renders still describe the previous routing. Do not combine their USB harness with this board. Enclosed harnesses, 16 guides and assembly illustrations are now included; service/mating access, supplier qualification and first-article acceptance remain open, so no Gerber release is provided here yet.
 

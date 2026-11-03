@@ -47,6 +47,22 @@ class PackageFailures(unittest.TestCase):
     def test_missing_physical_spring_rejected(self):
         self.rejects('assembly/render-manifest.json',lambda d:d['exploded_visible_objects_by_group'].update(springs=59))
 
+    def test_nominal_rigid_motion_cannot_certify_complete_service(self):
+        self.rejects('audit/vertical-motion.json',lambda d:d.update(complete_service_path_qualified=True))
+
+    def test_omitted_module_motion_rejected(self):
+        self.rejects('audit/vertical-motion.json',lambda d:d['moving_envelopes'].remove(next(p for p in d['moving_envelopes'] if p['part']=='U1')))
+
+    def test_old_USB_length_table_rejected_in_both_languages(self):
+        closed=package.read(package.BASE/'audit/closed-assembly.json')
+        current=f"{closed['nominal']['wires']['usb'][0]['free_length_mm']:.2f}"
+        for zh in [False,True]:
+            with self.subTest(zh=zh):
+                text=(package.BASE/('CLOSED-CASE'+('.zh-CN' if zh else '')+'.md')).read_text()
+                old=text.replace('| USB 1 | '+current+' |','| USB 1 | 286.15 |')
+                with self.assertRaisesRegex(AssertionError,'Stale documented wire length'):
+                    package.check_wire_table(old,closed,zh)
+
     def test_old_candidate_component_labels_rejected(self):
         for ref,value in [('J1','REAR_USB_DAUGHTERBOARD'),('J5','USB_POWER_LINK'),('F1','500mA')]:
             with self.subTest(ref=ref):

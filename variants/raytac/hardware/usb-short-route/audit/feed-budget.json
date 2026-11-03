@@ -19,8 +19,8 @@
       "2"
     ]
   ],
-  "nominal_copper_length_m": 1.0532992953733173,
-  "maximum_exit_to_exit_length_m": 1.0552992953733173,
+  "nominal_copper_length_m": 1.0540992953733173,
+  "maximum_exit_to_exit_length_m": 1.0560992953733173,
   "length_tolerance_per_wire_mm": 0.5,
   "engaged_power_contact_count": 8,
   "scenarios": [
@@ -29,58 +29,58 @@
       "current_A": 0.1,
       "wire_R_limit_ohm_per_m": 0.25,
       "contact_R_limit_ohm": 0.02,
-      "loop_R_ohm": 0.4238248238433293,
-      "drop_V": 0.04238248238433293,
-      "distributed_harness_loss_W": 0.004238248238433294
+      "loop_R_ohm": 0.4240248238433293,
+      "drop_V": 0.04240248238433293,
+      "distributed_harness_loss_W": 0.004240248238433293
     },
     {
       "scenario": "initial-20C-target",
       "current_A": 0.5,
       "wire_R_limit_ohm_per_m": 0.25,
       "contact_R_limit_ohm": 0.02,
-      "loop_R_ohm": 0.4238248238433293,
-      "drop_V": 0.21191241192166466,
-      "distributed_harness_loss_W": 0.10595620596083233
+      "loop_R_ohm": 0.4240248238433293,
+      "drop_V": 0.21201241192166465,
+      "distributed_harness_loss_W": 0.10600620596083232
     },
     {
       "scenario": "aged-60C-target",
       "current_A": 0.1,
       "wire_R_limit_ohm_per_m": 0.3,
       "contact_R_limit_ohm": 0.04,
-      "loop_R_ohm": 0.6365897886119952,
-      "drop_V": 0.06365897886119952,
-      "distributed_harness_loss_W": 0.006365897886119953
+      "loop_R_ohm": 0.6368297886119951,
+      "drop_V": 0.06368297886119952,
+      "distributed_harness_loss_W": 0.006368297886119953
     },
     {
       "scenario": "aged-60C-target",
       "current_A": 0.5,
       "wire_R_limit_ohm_per_m": 0.3,
       "contact_R_limit_ohm": 0.04,
-      "loop_R_ohm": 0.6365897886119952,
-      "drop_V": 0.3182948943059976,
-      "distributed_harness_loss_W": 0.1591474471529988
+      "loop_R_ohm": 0.6368297886119951,
+      "drop_V": 0.31841489430599756,
+      "distributed_harness_loss_W": 0.15920744715299878
     }
   ],
   "budgets": [
     {
       "C5_SH_board_pad_voltage_V": 4.75,
       "charger_input_target_V": 4.63,
-      "remaining_voltage_after_harness_V": -0.1982948943059979,
-      "remaining_mainboard_R_budget_ohm": -0.3965897886119958,
+      "remaining_voltage_after_harness_V": -0.1984148943059978,
+      "remaining_mainboard_R_budget_ohm": -0.3968297886119956,
       "interpretation": "No full-current margin even before mainboard losses"
     },
     {
       "C5_SH_board_pad_voltage_V": 5.0,
       "charger_input_target_V": 4.63,
-      "remaining_voltage_after_harness_V": 0.05170510569400211,
-      "remaining_mainboard_R_budget_ohm": 0.10341021138800421,
+      "remaining_voltage_after_harness_V": 0.05158510569400221,
+      "remaining_mainboard_R_budget_ohm": 0.10317021138800442,
       "interpretation": "Budget for mainboard fuse, copper and other series losses; not proven available"
     },
     {
       "C5_SH_board_pad_voltage_V": 5.25,
       "charger_input_target_V": 4.63,
-      "remaining_voltage_after_harness_V": 0.3017051056940021,
-      "remaining_mainboard_R_budget_ohm": 0.6034102113880042,
+      "remaining_voltage_after_harness_V": 0.3015851056940022,
+      "remaining_mainboard_R_budget_ohm": 0.6031702113880044,
       "interpretation": "Budget for mainboard fuse, copper and other series losses; not proven available"
     }
   ],
@@ -99,8 +99,8 @@
       "C5_SH_board_pad_voltage_V": 4.75,
       "F1_resistance_ohm": 0.075,
       "F1_basis": "manufacturer nominal cold",
-      "after_harness_and_F1_before_PCB_loss_V": 4.700117517615666,
-      "margin_to_4V63_DPM_screen_V": 0.07011751761566654
+      "after_harness_and_F1_before_PCB_loss_V": 4.700097517615667,
+      "margin_to_4V63_DPM_screen_V": 0.07009751761566729
     },
     {
       "scenario": "initial-20C-target",
@@ -108,8 +108,8 @@
       "C5_SH_board_pad_voltage_V": 5,
       "F1_resistance_ohm": 0.075,
       "F1_basis": "manufacturer nominal cold",
-      "after_harness_and_F1_before_PCB_loss_V": 4.950117517615666,
-      "margin_to_4V63_DPM_screen_V": 0.32011751761566654
+      "after_harness_and_F1_before_PCB_loss_V": 4.950097517615667,
+      "margin_to_4V63_DPM_screen_V": 0.3200975176156673
     },
     {
       "scenario": "initial-20C-target",
@@ -117,8 +117,8 @@
       "C5_SH_board_pad_voltage_V": 5.25,
       "F1_resistance_ohm": 0.075,
       "F1_basis": "manufacturer nominal cold",
-      "after_harness_and_F1_before_PCB_loss_V": 5.200117517615666,
-      "margin_to_4V63_DPM_screen_V": 0.5701175176156665
+      "after_harness_and_F1_before_PCB_loss_V": 5.200097517615667,
+      "margin_to_4V63_DPM_screen_V": 0.5700975176156673
     },
     {
       "scenario": "initial-20C-target",
@@ -126,8 +126,8 @@
       "C5_SH_board_pad_voltage_V": 4.75,
       "F1_resistance_ohm": 0.075,
       "F1_basis": "manufacturer nominal cold",
-      "after_harness_and_F1_before_PCB_loss_V": 4.500587588078336,
-      "margin_to_4V63_DPM_screen_V": -0.1294124119216642
+      "after_harness_and_F1_before_PCB_loss_V": 4.500487588078336,
+      "margin_to_4V63_DPM_screen_V": -0.12951241192166396
     },
     {
       "scenario": "initial-20C-target",
@@ -135,8 +135,8 @@
       "C5_SH_board_pad_voltage_V": 5,
       "F1_resistance_ohm": 0.075,
       "F1_basis": "manufacturer nominal cold",
-      "after_harness_and_F1_before_PCB_loss_V": 4.750587588078336,
-      "margin_to_4V63_DPM_screen_V": 0.1205875880783358
+      "after_harness_and_F1_before_PCB_loss_V": 4.750487588078336,
+      "margin_to_4V63_DPM_screen_V": 0.12048758807833604
     },
     {
       "scenario": "initial-20C-target",
@@ -144,8 +144,8 @@
       "C5_SH_board_pad_voltage_V": 5.25,
       "F1_resistance_ohm": 0.075,
       "F1_basis": "manufacturer nominal cold",
-      "after_harness_and_F1_before_PCB_loss_V": 5.000587588078336,
-      "margin_to_4V63_DPM_screen_V": 0.3705875880783358
+      "after_harness_and_F1_before_PCB_loss_V": 5.000487588078336,
+      "margin_to_4V63_DPM_screen_V": 0.37048758807833604
     },
     {
       "scenario": "aged-60C-target",
@@ -153,8 +153,8 @@
       "C5_SH_board_pad_voltage_V": 4.75,
       "F1_resistance_ohm": 0.15,
       "F1_basis": "imposed measured hot-resistance target",
-      "after_harness_and_F1_before_PCB_loss_V": 4.671341021138801,
-      "margin_to_4V63_DPM_screen_V": 0.041341021138801004
+      "after_harness_and_F1_before_PCB_loss_V": 4.671317021138801,
+      "margin_to_4V63_DPM_screen_V": 0.0413170211388012
     },
     {
       "scenario": "aged-60C-target",
@@ -162,8 +162,8 @@
       "C5_SH_board_pad_voltage_V": 5,
       "F1_resistance_ohm": 0.15,
       "F1_basis": "imposed measured hot-resistance target",
-      "after_harness_and_F1_before_PCB_loss_V": 4.921341021138801,
-      "margin_to_4V63_DPM_screen_V": 0.291341021138801
+      "after_harness_and_F1_before_PCB_loss_V": 4.921317021138801,
+      "margin_to_4V63_DPM_screen_V": 0.2913170211388012
     },
     {
       "scenario": "aged-60C-target",
@@ -171,8 +171,8 @@
       "C5_SH_board_pad_voltage_V": 5.25,
       "F1_resistance_ohm": 0.15,
       "F1_basis": "imposed measured hot-resistance target",
-      "after_harness_and_F1_before_PCB_loss_V": 5.171341021138801,
-      "margin_to_4V63_DPM_screen_V": 0.541341021138801
+      "after_harness_and_F1_before_PCB_loss_V": 5.171317021138801,
+      "margin_to_4V63_DPM_screen_V": 0.5413170211388012
     },
     {
       "scenario": "aged-60C-target",
@@ -180,8 +180,8 @@
       "C5_SH_board_pad_voltage_V": 4.75,
       "F1_resistance_ohm": 0.15,
       "F1_basis": "imposed measured hot-resistance target",
-      "after_harness_and_F1_before_PCB_loss_V": 4.356705105694002,
-      "margin_to_4V63_DPM_screen_V": -0.27329489430599807
+      "after_harness_and_F1_before_PCB_loss_V": 4.356585105694002,
+      "margin_to_4V63_DPM_screen_V": -0.27341489430599797
     },
     {
       "scenario": "aged-60C-target",
@@ -189,8 +189,8 @@
       "C5_SH_board_pad_voltage_V": 5,
       "F1_resistance_ohm": 0.15,
       "F1_basis": "imposed measured hot-resistance target",
-      "after_harness_and_F1_before_PCB_loss_V": 4.606705105694002,
-      "margin_to_4V63_DPM_screen_V": -0.02329489430599807
+      "after_harness_and_F1_before_PCB_loss_V": 4.606585105694002,
+      "margin_to_4V63_DPM_screen_V": -0.02341489430599797
     },
     {
       "scenario": "aged-60C-target",
@@ -198,8 +198,8 @@
       "C5_SH_board_pad_voltage_V": 5.25,
       "F1_resistance_ohm": 0.15,
       "F1_basis": "imposed measured hot-resistance target",
-      "after_harness_and_F1_before_PCB_loss_V": 4.856705105694002,
-      "margin_to_4V63_DPM_screen_V": 0.22670510569400193
+      "after_harness_and_F1_before_PCB_loss_V": 4.856585105694002,
+      "margin_to_4V63_DPM_screen_V": 0.22658510569400203
     }
   ],
   "return_topology": "The native PCB ground plane connects J1/J4/J5 ground in parallel with the black power jumper. The eight-contact series model intentionally ignores that parallel plane; it is a pessimistic harness-path screen, not the actual solved current distribution.",
@@ -227,7 +227,7 @@
     }
   },
   "source_sha256": {
-    "hardware/usb-short-route/audit/closed-assembly.json": "caccae8b83dab5c414c916f0e1a20b3c0fa83c2b909ed539320818cfb4f8fd72",
+    "hardware/usb-short-route/audit/closed-assembly.json": "f5f0eee24f565ea7b47790361eaad51981bab5436e1e9d96779e2574a7705e20",
     "hardware/usb-short-route/parts-qualification.json": "7491a6ce341ec389766e48f15601aaca1c03ff8c78aa1b364c95c80edb6efcd4",
     "scripts/calculate_usb_short_feed.py": "d6697af57db6e9f5ef9f0f552ab3d1f723dc52d7a49bf9d1d24764cb9ec9de52"
   },

@@ -8,7 +8,9 @@ This checkpoint contains continuous-solid checks for nine conductors, the intern
 
 [Candidate bottom STEP](mechanical/yeti60-bottom-short-usb.step) · [Candidate bottom STL](mechanical/yeti60-bottom-short-usb.stl)
 
-The FELK60 exterior, original holes/inserts and upper bearing surfaces are retained. An underside relief is added beneath the rear ledge: X = 190…354, Y = −106.3…−98, Z = −5.25…−1.9 mm in the original case frame. No envelope scaling is applied. Minimum nominal distance from the new cut to the checked exterior skin is 2.16 mm; subtracting the existing 0.15 mm case tolerance leaves 2.01 mm. This applies to the added relief, not every unchanged wall of the original shell.
+The FELK60 exterior and original holes/inserts are retained; the new wing relief avoids the guarded plate-bearing region. An underside relief is added beneath the rear ledge: X = 190…354, Y = −106.3…−98, Z = −5.25…−1.9 mm in the original case frame. No envelope scaling is applied. Minimum nominal distance from the new cut to the checked exterior skin is 2.16 mm; subtracting the existing 0.15 mm case tolerance leaves 2.01 mm. This applies to the added relief, not every unchanged wall of the original shell.
+
+The additional wing relief spans X 357.25–365.25, Y −132.75–−113.75, Z −4.45–12.30 mm, with 0.5 mm corner radius. [Continuous nominal extraction and its limits](SERVICE-PATH.md) are recorded separately; complete harness disconnection is unqualified. Rear USB is now Y −100.80 mm, with clip front/rear half-widths 2.35/2.70 mm. Use the updated STEP/STL files and lengths below.
 
 ## Complete wiring
 
@@ -22,10 +24,10 @@ Use AWG28 stranded copper with insulation OD ≤0.8 mm, also within the selected
 
 | Harness / pin | Free length mm | Minimum design bend radius mm |
 |---|---:|---:|
-| USB 1 | 286.15 | 4.00 |
-| USB 2 | 295.97 | 5.10 |
-| USB 3 | 296.29 | 5.10 |
-| USB 4 | 305.00 | 5.50 |
+| USB 1 | 286.55 | 4.00 |
+| USB 2 | 296.37 | 5.10 |
+| USB 3 | 296.69 | 5.10 |
+| USB 4 | 305.40 | 5.50 |
 | Power 1 | 229.95 | 4.00 |
 | Power 2 | 232.20 | 4.00 |
 | Battery 1 | 110.64 | 5.00 |

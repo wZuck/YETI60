@@ -2,7 +2,7 @@
 """Continuous-solid nine-wire, closed-case and removable-guide acceptance.
 
 Only candidate assets are written. Native shell outer faces, PCB, plate and
-mount datums are retained; one explicit internal relief are subtracted.
+mount datums are retained; explicit internal cable and RF service reliefs are subtracted.
 """
 import json,hashlib,math,re
 from pathlib import Path
@@ -23,6 +23,7 @@ from cad_geometry import load,bounds,intersection_volume
 from check_yeti60_assembly import box,distance,move
 from check_yeti60_interconnects import write_step,surface_z,conformal_base,grooves,near
 from usb_short_harness import paths,paired_data,length,sweep_wire,envelope_wire
+from build_yeti60_mechanical import rounded_box
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';OUT=BASE/'mechanical';WORK=ROOT/'.assembly-work/usb-short-closed';AUD=BASE/'audit'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def read(p):return json.loads(p.read_text())
@@ -46,6 +47,17 @@ def external_faces(shape):
 def build_case(spec,assembly):
     original=load(ROOT/'mechanical/generated/yeti60-bottom.step');case=original
     for key in ['case_pocket']:case=cut(case,box(spec[key]['bounds_case_mm']))
+    before_service=case
+    service=spec['case_service_relief']
+    case=cut(case,rounded_box(service['bounds_case_mm'],service['corner_radius_mm']))
+    service_removed=cut(before_service,case)
+    plate=bounds(load(ROOT/'.assembly-work/plate.step'));guard=service['plate_bearing_XY_guard_mm']
+    # Protect every ledge point inside the plate's XY envelope, including an
+    # extra guard around its perimeter. No assertion of untouched ledges
+    # outside the plate-bearing area is made for the through-height relief.
+    bearing_guard=box([plate[0]-guard,plate[1]-guard,-25,plate[3]+guard,plate[4]+guard,25])
+    assert intersection_volume(service_removed,bearing_guard)<1e-6,'Service relief erodes guarded plate bearing'
+    assert volume(service_removed)>0,'Service relief removed no material'
     assert max(abs(a-b) for a,b in zip(bounds(original),bounds(case)))<1e-6,'Changed shell outer envelope'
     removed=cut(original,case);assert volume(removed)>0
     outer=external_faces(original);remaining=min(distance(removed,f) for f in outer);assert remaining-assembly['case']['linear_tolerance']>=spec['case_pocket']['minimum_remaining_wall_mm'],('Outer skin too thin',remaining)
@@ -56,7 +68,7 @@ def build_case(spec,assembly):
             protected=BRepPrimAPI_MakeCylinder(gp_Ax2(gp_Pnt(x,y,z0),gp_Dir(0,0,1)),protected_radius,z1-z0).Shape();v=intersection_volume(removed,protected);assert v<1e-6,('Insert support eroded',kind,x,y,v);holes.append({'kind':kind,'axis':[x,y],'protected_radius_mm':protected_radius,'protected_z_range_mm':[z0,z1],'removed_overlap_mm3':v})
     target=OUT/'yeti60-bottom-short-usb.step';write_step(case,target)
     BRepMesh_IncrementalMesh(case,.015,False,.08,True).Perform();stl=StlAPI_Writer();stl.ASCIIMode=False;assert stl.Write(case,str(target.with_suffix('.stl')))
-    return case,{'original_bounds_case_mm':bounds(original),'new_bounds_case_mm':bounds(case),'removed_volume_mm3':volume(removed),'minimum_removed_to_selected_external_skin_mm':remaining,'case_linear_tolerance_mm':assembly['case']['linear_tolerance'],'minimum_remaining_skin_after_tolerance_mm':remaining-assembly['case']['linear_tolerance'],'external_skin_faces_checked':len(outer),'skin_selection':'Downward exterior faces below Z=-7; rear-facing faces reaching Y>-96; outer end faces; original trimmed BReps, conservative minimum distance','insert_supports':holes,'ledge_surfaces_unchanged_above_z_mm':-1.9,'outputs':{str(p.relative_to(ROOT)):sha(p) for p in [target,target.with_suffix('.stl')]}}
+    return case,{'original_bounds_case_mm':bounds(original),'new_bounds_case_mm':bounds(case),'removed_volume_mm3':volume(removed),'minimum_removed_to_selected_external_skin_mm':remaining,'case_linear_tolerance_mm':assembly['case']['linear_tolerance'],'minimum_remaining_skin_after_tolerance_mm':remaining-assembly['case']['linear_tolerance'],'external_skin_faces_checked':len(outer),'skin_selection':'Downward exterior faces below Z=-7; rear-facing faces reaching Y>-96; outer end faces; original trimmed BReps, conservative minimum distance','insert_supports':holes,'plate_bearing_guard_XY_mm':guard,'service_relief_removed_volume_mm3':volume(service_removed),'service_relief_to_guarded_plate_envelope_mm':distance(service_removed,bearing_guard),'through_height_service_relief_bounds_mm':service['bounds_case_mm'],'complete_service_path_qualified':False,'outputs':{str(p.relative_to(ROOT)):sha(p) for p in [target,target.with_suffix('.stl')]}}
 
 def input_data(spec):
     assembly=read(ROOT/'docs/audit/yeti60-assembly.json');native=read(BASE/'audit/native-check.json');hashes(native['source_sha256']);assert native['audit_script_sha256']==sha(ROOT/'scripts/check_usb_short_route.py')
@@ -112,7 +124,7 @@ def main():
     variants=[];profile=read(ROOT/'mechanical/pcb-fabrication-spec.json')
     for thickness in profile['ordinary_thickness_acceptance_range_mm']:
         d=profile['CAD_finished_envelope_mm']-thickness;r,_,_,_,_=evaluate(spec,assembly,source,exits,case,d);change=max(abs(w['free_length_mm']-next(q['free_length_mm'] for q in result['wires'][f] if q['pin']==w['pin'])) for f,rs in r['wires'].items() for w in rs);assert change<=.5,('Harness length tolerance',thickness,change);variants.append({'pcb_thickness_mm':thickness,'maximum_free_length_change_mm':change,'minimum_expanded_gap_mm':min(w['minimum_expanded_gap_mm'] for rs in r['wires'].values() for w in rs),'crossings':r['crossings']});print('Thickness',thickness,'passed',flush=True)
-    sources=[BASE/'interconnect-spec.json',BASE/'EC60-nRF52840.kicad_pcb',BASE/'audit/native-check.json',ROOT/'docs/audit/yeti60-assembly.json',ROOT/'docs/audit/yeti60-daughterboard.json',ROOT/'docs/audit/yeti60-interconnect-connectors.json',ROOT/'docs/audit/yeti60-interconnects.json',ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.raytac.json',ROOT/'mechanical/pcb-fabrication-spec.json',Path(__file__),ROOT/'scripts/usb_short_harness.py',ROOT/'scripts/interconnect_geometry.py',ROOT/'scripts/check_yeti60_interconnects.py',ROOT/'scripts/cad_geometry.py']
+    sources=[BASE/'interconnect-spec.json',BASE/'EC60-nRF52840.kicad_pcb',BASE/'audit/native-check.json',ROOT/'docs/audit/yeti60-assembly.json',ROOT/'docs/audit/yeti60-daughterboard.json',ROOT/'docs/audit/yeti60-interconnect-connectors.json',ROOT/'docs/audit/yeti60-interconnects.json',ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.raytac.json',ROOT/'mechanical/pcb-fabrication-spec.json',Path(__file__),ROOT/'scripts/usb_short_harness.py',ROOT/'scripts/interconnect_geometry.py',ROOT/'scripts/check_yeti60_interconnects.py',ROOT/'scripts/build_yeti60_mechanical.py',ROOT/'scripts/cad_geometry.py']
     report={'status':'nine-wire-closed-case-routes-passed','physical_verification':False,'manufacturing_released':False,'case':case_report,'connector_exits_case_mm':exits,'nominal':result,'ordinary_thickness_checks':variants,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources},'limits':['One internal rear relief is required; the original unmodified bottom is not this assembly','Spline twist sweeps are render/manufacturing geometry; collision proof uses conservative full pair tubes on twist sections','Internal conductor order is constrained by the guides; insulation contact within the twisted pair is intentional','No actual wire springback, crimp pull-out, resin shrinkage, RF/USB eye or battery supplier qualification']}
     (AUD/'closed-assembly.json').write_text(json.dumps(report,indent=2)+'\n');print('Closed case routing report written')
 if __name__=='__main__':main()

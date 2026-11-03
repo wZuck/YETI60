@@ -1,8 +1,10 @@
 """Regression cases for previously observed closed-case failures."""
-import copy,json,sys,unittest
+import copy,json,sys,unittest,tempfile
+from unittest.mock import patch
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'scripts'))
 from check_usb_short_closed_assembly import BASE,ROOT,input_data,build_case,evaluate
+import check_usb_short_closed_assembly as closed_geometry
 from cad_geometry import load
 from usb_short_harness import paths,paired_data,length
 class ClosedHarnessFailures(unittest.TestCase):
@@ -13,8 +15,10 @@ class ClosedHarnessFailures(unittest.TestCase):
         assert result['USB_geometric_pair_skew_mm']<1
     def test_deep_relief_rejected(self):
         bad=copy.deepcopy(self.spec);bad['case_pocket']['bounds_case_mm'][2]=-6.6
-        with self.assertRaisesRegex(AssertionError,'Outer skin too thin'):
-            build_case(bad,json.loads((ROOT/'mechanical/assembly-spec.raytac.json').read_text()))
+        with tempfile.TemporaryDirectory(prefix='yeti60-bad-case-') as directory:
+            with patch.object(closed_geometry,'OUT',Path(directory)):
+                with self.assertRaisesRegex(AssertionError,'Outer skin too thin'):
+                    build_case(bad,json.loads((ROOT/'mechanical/assembly-spec.raytac.json').read_text()))
     def test_early_power_drop_hits_battery_route(self):
         bad=copy.deepcopy(self.spec)
         # Leave room for the black-wire side shift so this mutant remains

@@ -102,7 +102,7 @@
   "usb": {
     "initial_radius": 6,
     "bend_radius": 5.5,
-    "rear_y": -101.0,
+    "rear_y": -100.8,
     "drop_start_x": 342,
     "low_z": -3.9,
     "drop_x": 193,
@@ -173,7 +173,25 @@
     "lid_roof_nominal": 0.5,
     "case_print_wall_tolerance": 0.15,
     "guide_print_tolerance": 0.05,
-    "USB_down_y": -140
+    "USB_down_y": -140,
+    "USB_rear_front_half_width": 2.35,
+    "PCB_service_XY_allowance": 0.25,
+    "service_mount_position_allowance": 0.1
   },
-  "qualification": "Design CAD checks only; supplier wire/crimp/strain, resin and physical USB/BLE/thermal acceptance remain open"
+  "qualification": "Design CAD checks only; supplier wire/crimp/strain, resin and physical USB/BLE/thermal acceptance remain open",
+  "case_service_relief": {
+    "bounds_case_mm": [
+      357.25,
+      -132.75,
+      -4.45,
+      365.25,
+      -113.75,
+      12.3
+    ],
+    "corner_radius_mm": 0.5,
+    "minimum_remaining_wall_mm": 2.0,
+    "purpose": "Internal through-height right RF wing/module clearance for vertical extraction; complete connected harness service remains unqualified",
+    "vertical_extraction_mm": 22.0,
+    "plate_bearing_XY_guard_mm": 0.4
+  }
 }

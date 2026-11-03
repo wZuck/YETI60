@@ -2,7 +2,7 @@ English | [Chinese](ASSEMBLY.zh-CN.md)
 
 # Raytac repair candidate: enclosed assembly
 
-**New assembly obstruction:** [the right PCB wing collides with an internal step during vertical lifting](SERVICE-PATH.md). The service path is not repaired. A clear installed pose or exploded image does not authorize vertical insertion/removal.
+**Service-path progress:** [the internal wing relief and rear clips are revised; continuous nominal rigid extraction passes with leads disconnected](SERVICE-PATH.md). Plug mating/unmating, wire deformation, loose-plug parking and combined tolerances remain unqualified; complete service is not approved.
 
 Use this guide with the [candidate PCB, purchase table and firmware](README.md). It replaces the previous seven-wire enclosure illustrations. The old board archive, old five-piece guides and old cable lengths must not be combined with this assembly. Start electrical work with the candidate's [soldering and open-bench sequence](README.md#solder-and-open-bench-sequence).
 

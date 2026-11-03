@@ -22,8 +22,10 @@ def build(spec,case,routes,exits,pcb_bottom=-2):
         return shape
     # Rear guides bond to the underside of the retained ledge, avoiding a thin floor web.
     z=spec['usb']['low_z'];y=spec['usb']['rear_y'];roof=spec['case_pocket']['bounds_case_mm'][5]
+    front=g['USB_rear_front_half_width']
+    assert front-1.5-r-g['guide_print_tolerance']>=g['minimum_floor_web']-1e-6,'Rear clip front wall too thin'
     for i,x in enumerate(g['USB_rear_x'],1):
-        bb=[x-depth/2,y-2.7,z,x+depth/2,y+2.7,roof-bond];s=usb_slots(box(bb),(1,0,0),(x-depth/2-.01,y,z),depth+.02,z);add('USB-R'+str(i),s,'case-roof','usb',[x,y,z]);film('USB-R'+str(i)+'-film',[x-depth/2,y-2.7,z-1.0,x+depth/2,y+2.7,z-.9])
+        bb=[x-depth/2,y-front,z,x+depth/2,y+2.7,roof-bond];s=usb_slots(box(bb),(1,0,0),(x-depth/2-.01,y,z),depth+.02,z);add('USB-R'+str(i),s,'case-roof','usb',[x,y,z]);film('USB-R'+str(i)+'-film',[x-depth/2,y-front,z-1.0,x+depth/2,y+2.7,z-.9])
     # Front loop bases/lids: no floor machining; separate halves accept already crimped cables.
     for i,(x,y) in enumerate([(spec['usb']['drop_x'],g['USB_down_y']),(exits['C5'][0],g['USB_front_y'])],1):
         z=spec['usb']['front_z'];floor=surface_z(case,x,y)+bond;bb=[x-2.7,y-depth/2,floor,x+2.7,y+depth/2,z];assert z-pair-floor-g['guide_print_tolerance']>=g['minimum_floor_web']-1e-6
