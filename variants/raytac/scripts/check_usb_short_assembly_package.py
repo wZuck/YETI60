@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Reject stale or mixed nine-wire assembly drawings, renders and STEP files."""
 import hashlib
+import csv
 import json
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from render_usb_short_assembly import build_source
 
@@ -15,6 +17,11 @@ def sha(path):
 
 def read(path):
     return json.loads(path.read_text())
+
+
+def purchase_rows(path):
+    with path.open(newline='') as stream:
+        return list(csv.reader(stream))
 
 
 def hashes(table):
@@ -36,9 +43,20 @@ def verify():
     assert all(c['minimum_expanded_gap_mm']>=.15-1e-6 for c in assembly['mated_housing_cross_checks'])
     assert assembly['case_files']['bottom']=='hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step'
     assert assembly['nominal_stack']==read(ROOT/'docs/audit/yeti60-assembly.json')['nominal_stack']
+    contract={p.get('ref'):p.findtext('value') for p in ET.parse(BASE/'netlist.xml').findall('./components/comp')}
+    for p in assembly['component_envelopes']:
+        assert p['value']==contract[p['ref']],('Stale candidate component value',p['ref'])
     assert len(assembly['mounting_hole_matches'])==28 and assembly['unused_pcb_mount_refs']==['H26']
     assert closed['case']['minimum_remaining_skin_after_tolerance_mm']>=2
     feed=evidence['feed-budget.json']
+    assert feed['selected_F1']['mpn']=='0466001.NRHF'
+    for filename in ['mainboard-purchase.csv','mainboard-purchase.zh-CN.csv']:
+        rows=purchase_rows(BASE/filename)
+        fuse=next(row for row in rows[1:] if row[0]=='F1')
+        assert fuse[1:4]==['1','0','1'],('Incorrect F1 quantity/stock allocation',filename)
+        assert fuse[4]=='1A_FAST_0466001_NRHF',('Old F1 purchase type',filename)
+        assert fuse[5]=='Fuse_Littelfuse_0466_1206__F1',('Old F1 purchase land pattern',filename)
+        assert fuse[7]=='Littelfuse 0466001.NRHF',('Old F1 purchase MPN',filename)
     assert feed['status']=='conditional-feed-budget-calculated-not-qualified' and feed['engaged_power_contact_count']==8
     assert abs(feed['nominal_copper_length_m']-sum(w['free_length_mm'] for f,pin in feed['selected_wire_legs'] for w in closed['nominal']['wires'][f] if w['pin']==pin)/1000)<1e-9
     hashes(closed['case']['outputs']);hashes(mesh['published_wire_STEP_sha256'])
@@ -57,6 +75,7 @@ def verify():
     hashes(manifest['source_recipe_sha256']);hashes(manifest['geometry_sources'])
     assert manifest['surface_report_sha256']==sha(BASE/'audit/assembly-surfaces.json')
     assert manifest['guides_report_sha256']==sha(BASE/'audit/guides.json')
+    assert manifest['mesh_receipt_sha256']==sha(BASE/'audit/assembly-meshes.json')
     assert manifest['assembly_report_sha256']==sha(BASE/'audit/assembly.json')
     assert manifest['fitted_BOM_sha256']==sha(BASE/'audit/assembly-bom.json')
     refs={ref.strip() for row in evidence['assembly-bom.json']['rows'] for ref in row['references'].split(',')}
@@ -77,6 +96,7 @@ def verify():
         assert sha(BASE/'assembly'/name)==item['sha256'],('Changed render',name)
         assert item['recipe_sha256']==recipe_hash,('Old view recipe',name)
         for field,actual in [('assembly_report_sha256',sha(BASE/'audit/assembly.json')),
+                             ('mesh_receipt_sha256',sha(BASE/'audit/assembly-meshes.json')),
                              ('surface_report_sha256',sha(BASE/'audit/assembly-surfaces.json')),
                              ('guides_report_sha256',sha(BASE/'audit/guides.json')),
                              ('mesh_export_recipe_sha256',sha(ROOT/'scripts/export_usb_short_assembly.py'))]:

@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # Raytac USB repair — prototype candidate
 
+**New assembly obstruction:** [the right PCB wing collides with an internal step during vertical lifting](SERVICE-PATH.md). The service path is not repaired. A clear installed pose or exploded image does not authorize vertical insertion/removal.
+
 **Engineering candidate, not an ordering package.** This is a repair of the Raytac mainboard, not a third controller option. The canonical [build entry](../../BUILD.md), fabrication ZIP, placement illustrations and assembled renders still describe the previous routing. Do not combine their USB harness with this board. Enclosed harnesses, 16 guides and assembly illustrations are now included; service/mating access, supplier qualification and first-article acceptance remain open, so no Gerber release is provided here yet.
 
 The previous USB path crossed almost the full mainboard. This candidate moves the input next to the MDBT50Q-1MV2. J4 connects to C5 JSH; J5 supplies the retained left-side power/charger input through a separate two-wire jumper. All scanning, charger and regulator pin assignments remain unchanged. R30/R31 are removed: the nRF52840 USB PHY includes its termination, as confirmed by [Nordic](https://devzone.nordicsemi.com/f/nordic-q-a/82014/nrf52840-usb-d-d--impedance-matching/340456).
@@ -11,6 +13,10 @@ The COL14 inner-layer escape and SWD clock route are also moved away from the US
 [Closed-case harness and 16 guides](CLOSED-CASE.md) provide routes, the relieved bottom, STEP/STL files and quantities. [Step-by-step assembly and the complete explosion](ASSEMBLY.md) now describe the nine-wire candidate; do not mix them with other previous assembly illustrations.
 
 [Feed voltage-drop calculation and fuse/wire qualification](POWER-FEED.md): wire gauge and a fuse current label alone do not guarantee the programmed charge rate.
+
+[F1 selection, revised lands and solder acceptance](F1-SELECTION.md): use Littelfuse 0466001.NRHF, a 1 A one-time fast-acting fuse, in place of the old unspecified 0.5 A PPTC. USB100/USB500 current policy still applies.
+
+[Exact wire qualification](WIRE-QUALIFICATION.md): the investigated Alpha Wire 2842/19 bend requirement does not fit the current enclosed route. AWG28 and OD alone do not approve a substitute.
 
 ## Files and current evidence
 
@@ -46,6 +52,7 @@ Specifications come from the [JST SH drawing](https://www.jst-mfg.com/product/pd
 
 | Item | Exact specification | Installed quantity |
 |---|---|---:|
+| F1 mainboard fuse | [Littelfuse 0466001.NRHF](F1-SELECTION.md), 1 A / 63 V one-time fast-acting; revised lands; no stock credit | 1 |
 | J4 header | JST SM04B-SRSS-TB(LF)(SN), SH 1.0 mm, 4 positions | 1 |
 | J5 header | JST SM02B-SRSS-TB(LF)(SN), SH 1.0 mm, 2 positions | 1 |
 | 4-position wire housing | JST SHR-04V-S: C5 end, J4 end, J1 power end | 3 |
@@ -63,7 +70,7 @@ The battery is still required. Send the supplier the separate [battery parameter
 
 ## Solder and open-bench sequence
 
-1. Use this candidate's schematic, purchase table and native coordinates. The existing [illustrated soldering guide](../../docs/assembly/build-guide.md) remains useful for unchanged components, but skip R30/R31 and replace its USB wiring with the table above. Do not use old component-position images to locate J4/J5.
+1. Use this candidate's schematic, purchase table and native coordinates. The existing [illustrated soldering guide](../../docs/assembly/build-guide.md) remains useful for unchanged components, but skip R30/R31, use this candidate’s selected F1 and revised lands, and replace its USB wiring with the table above. Do not use old component-position images to locate J4/J5.
 2. Inspect the bare PCB; keep front sensing copper clean. Keep JP1 open. Fit unchanged passives and power circuitry in the established staged sequence, checking rail-to-ground resistance before power. Continue to use the existing [B0–B7 open-bench procedure](../../OPEN-BENCH.md) for limits and power tests, with this document's USB wiring overriding its previous J1 data connection.
 3. Fit J4 at PCB coordinate (350.5, 113.5) mm, J5 at (341.0, 117.5) mm, both on B.Cu at 0°. Locate pad 1 from the native pad identifier/mark. Tack one retention foot, align all signal pins, solder contacts, then the remaining retention foot. Inspect for bridges and lifted contacts.
 4. With everything unpowered, continuity-test each cable end-to-end using the connection table; verify no adjacent shorts. Verify the assembled board's J4.2 → U1.34 and J4.3 → U1.35, and that J1.2/3 do not carry data. Check J5.1 → J4.1, then fit the J5-to-J1 power jumper.

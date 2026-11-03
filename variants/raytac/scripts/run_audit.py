@@ -80,6 +80,7 @@ def main():
         add('pcb-renders',cad,'render_single_nrf.py',['--frames','72','--fps','24','--jobs','2'],deps=['pcb-native-drc'])
         add('assembly-renders',[uv,'run','--python','3.11','--with-requirements',str(ROOT/'requirements-render.txt'),'python'],'render_yeti60_assembly.py',deps=['render-geometry'])
     add('USB-repair-candidate-native',native,'check_usb_short_route.py')
+    stages.append(('USB-repair-F1-faults',py+['tests/audit/test_usb_short_fuse.py'],['USB-repair-candidate-native']))
     stages.append(('USB-repair-candidate-faults',native+['tests/audit/test_usb_short_route.py'],['USB-repair-candidate-native']))
     add('USB-repair-candidate-local-geometry',cad,'study_usb_short_route.py',deps=['USB-repair-candidate-native','assembly-fit'])
     add('USB-repair-candidate-firmware',py,'check_usb_short_firmware.py',deps=['USB-repair-candidate-local-geometry'])

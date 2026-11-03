@@ -27,34 +27,34 @@
     "firmware/yeti60/core.c": "353ef280b7c84966dd6851e22ed98ad974bd58bbc5ae78b03a0623493e98ad49",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "scripts/build_yeti60_firmware.py": "22aae2e01d540dcda239bd97a789565a2f3a1a02ce518d55edbfb1d909524c2a",
-    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "604904a25447e696d82d5dfe1289dd577e7d346339de6eefcca9e987fec686e3",
-    "hardware/usb-short-route/netlist.xml": "93bba88373fc91a26a6ffc31c5d82f177f897b703894cfead48161fd46d46e5c",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "3210bbae74d78d97ab749eaeccac5d5efbff31578a805bb871dfbcd710eb19d2",
+    "hardware/usb-short-route/netlist.xml": "3465278860e5122c3d7484ab9eb99e46548ff5649ed95469316f09e7ca130ea7",
     "scripts/build_usb_short_firmware.py": "7241278d3f7abef9387923d8aa30e068f54422f5139a6d6b047b7dc7f2e09cbe"
   },
   "published_outputs": {
-    "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex": "e8407d7f06081c0298ab1c07646075094533f9462c07bc9083befb880e158056",
-    "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.bin": "b99036e158dc0c343b56feb2f4b61c854ef961c1ac7a6879d6f97da9340d2622",
-    "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex": "bc631981723e02ee55220ca7045f5a0c6d2c3f8d15d899ee8c80ad66f3ae03bc",
-    "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.bin": "2964dd84ce682b4815e621eda6a896fb86ea0926b4b1649dfc06913de4802823"
+    "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex": "7d18fb1f2dad4504dd188f3e8eb2030b5866951f98a91ff281826c7b14ac8b61",
+    "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.bin": "28cd8f56eb030329a10f8882d04053702ff537b970c7056b656118e8979f5086",
+    "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex": "641fbcad16dc88754ad3cb1be4854cf2584df4c403dfd4de10a7a359aad43807",
+    "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.bin": "b7a71f560884032317b44ffa80917091d5140fc26b6792dee7baf375f52a1aed"
   },
   "evidence": {
-    "hardware/usb-short-route/firmware/build.json": "e2b4399db7a242bc7cd5119eacb759672dd55c322de7f7ef1eb880339b88594f",
-    "hardware/usb-short-route/firmware/target-check.json": "2caf94839074fc91488ade9e202df01ec5c5ea4e02c6b57f303dff78b615494e",
-    "hardware/usb-short-route/firmware/simulation.json": "01a905b04f844b7b19533bb11c97428b496c201528169eb5b56e0f05bc5fed37",
+    "hardware/usb-short-route/firmware/build.json": "dac0bb03f11c7701b2634c39cd25f267a4a240f0c985178ecfb8ed5142358521",
+    "hardware/usb-short-route/firmware/target-check.json": "892827e0864811ee208193259f7ca134a12a2964ded774485b05a9e409daa9b8",
+    "hardware/usb-short-route/firmware/simulation.json": "82cd94ca7ddb247285712f3329406ea395a051f8ff0d0247ca0e3529abee480f",
     "hardware/usb-short-route/firmware/calibration.json": "ef9256a4e90bcc360f0ff2094f2182fec3b15d13116db7126dc41d1f5b8907c3",
     "hardware/usb-short-route/firmware/trace.csv": "02d6f2843713dd84a682c0bea3977652c20772c3781f2f5806284ea16c84909f"
   },
   "unpublished_build_outputs": {
     "firmware/releases/normal/yeti60-raytac.elf": {
-      "sha256": "f606f5c9a7a4758bda8d6caf60bcbb69b92bd07f49be2fe04ec3ea2b2eefd924",
+      "sha256": "63d30981f85cc561cc31d9e3e8ed1c9992baa2ef3b2d144773b1f013e21182b9",
       "reason": "Retained in ignored build workspace; checked by target checker; rebuild for debugging"
     },
     "firmware/releases/calibrator/yeti60-raytac.elf": {
-      "sha256": "617e9920c6ce93ad988c4bed4a097673024577c640edee175aa6a6dcefb14ef5",
+      "sha256": "5ea493b943ec96c72d6ac328e450a14a3d4763ee3dce89f256e02ce52de6a78c",
       "reason": "Retained in ignored build workspace; checked by target checker; rebuild for debugging"
     }
   },
   "original_report_path_basis": "All paths inside copied build/target/simulation/calibration reports are relative to the ignored .assembly-work/usb-short-build directory; this manifest maps published files to the canonical variant root",
-  "native_acceptance_sha256": "16a6c41083879aeec9cfc2e095ab841f75b07f3c3aeb22101c4cbb1aa3240873",
-  "local_geometry_acceptance_sha256": "4bb55d9c8dd00b0d917035283f932e4e2380d904604efec764e8f55289e7e598"
+  "native_acceptance_sha256": "c05db1ad7b3dcb6e13ab25ee624484db035c1205817f840c1a1bacd664c1cd2e",
+  "local_geometry_acceptance_sha256": "0cbd46036929fbd84019fb2d777e06d70a09e69d50acf9a920f0fd69d4b2ee3c"
 }

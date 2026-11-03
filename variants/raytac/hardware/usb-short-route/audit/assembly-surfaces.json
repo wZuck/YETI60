@@ -2,7 +2,7 @@
   "status": "native-surface-visual-maps-generated",
   "outputs": {
     "hardware/usb-short-route/assembly/pcb-surface-front.png": "99efc98a7ed4bb0c96e1bc0745da7b35c452fee7f791e5dc5516924031f5aace",
-    "hardware/usb-short-route/assembly/pcb-surface-back.png": "35cf60412b782c6fe3e6184d33dd4a4ac71f2d583e7217065d3a307cf56e57b2"
+    "hardware/usb-short-route/assembly/pcb-surface-back.png": "521c70d8019233fd2bffb7187bd8d47685dd95dada9684b2c4dd23c0ac5ac1c5"
   },
   "pcb_bounds_XY_mm": [
     71.812704,
@@ -12,7 +12,7 @@
   ],
   "raster_pixels_per_mm": 24,
   "source_sha256": {
-    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "604904a25447e696d82d5dfe1289dd577e7d346339de6eefcca9e987fec686e3",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "3210bbae74d78d97ab749eaeccac5d5efbff31578a805bb871dfbcd710eb19d2",
     "scripts/export_usb_short_surfaces.py": "6743f0de63f4f8b5a5d2bdc1ac0b465bbb3dfbbffb453d61b87a230d9b96f0e4",
     "scripts/export_yeti60_usb_reference.py": "c6b1fe7c9f89c91b00abe4cabac51886adb931e1f6d596fe9c9d249ec1aac7e3",
     "scripts/paint_usb_short_surfaces.py": "9ed105ab2f5a3d4f6e7b05c9ab5894e69f27a59641d543d4eb444080de4d4f31"

@@ -14,13 +14,21 @@ P_harness = I_input² × R_loop
 
 For procurement sensitivity, impose wire targets ≤0.25 Ω/m at 20°C and ≤0.30 Ω/m at 60°C. **These are proposed acceptance limits, not verified wire-vendor data.** At the hot target and post-environment contact limit, the model gives approximately 0.637 Ω and 0.318 V drop at 500 mA. Additional crimp length/resistance, external USB/C5 losses and the mainboard fuse/copper are excluded; a finished-loop measurement must include them. Do not interpret the calculated number as a guaranteed maximum for an unspecified purchased harness.
 
-[BQ24074 revision N, electrical table on page 12](https://www.ti.com/lit/ds/symlink/bq24074.pdf) gives USB input DPM threshold limits of 4.35/4.5/4.63 V minimum/typical/maximum. Use 4.63 V for a conservative **full-current headroom screen**, not as an absolute device operating cutoff. With 5.0 V measured at the C5 SH **board pads**, the hot/aged model leaves only about 52 mV for the mainboard fuse and copper before that screen is crossed. At 4.75 V it has no full-current margin even before those losses. Input DPM can reduce charging current; the configured charge current is therefore not a promised charging rate or charging-time guarantee.
+[F1 is now selected](F1-SELECTION.md): Littelfuse 0466001.NRHF, 1 A one-time fast-acting, with revised manufacturer lands. Its 0.075 Ω cold resistance is nominal at 25°C; the 0.15 Ω loaded hot value is an imposed test target, not a manufacturer maximum. Adding these to the wire/contact scenarios gives the following 500 mA screen. The cold column combines 20°C wire targets and the fuse's 25°C nominal value; it is a sensitivity calculation, not one measured operating point.
+
+| C5 SH board-pad voltage | After initial harness + nominal cold F1 | After hot/aged harness + target hot F1 |
+|---:|---:|---:|
+| 4.75 V | 4.501 V | 4.357 V |
+| 5.00 V | 4.751 V | 4.607 V |
+| 5.25 V | 5.001 V | 4.857 V |
+
+These values still exclude PCB copper and additional crimp losses. [BQ24074 revision N, electrical table on page 12](https://www.ti.com/lit/ds/symlink/bq24074.pdf) gives USB input DPM threshold limits of 4.35/4.5/4.63 V minimum/typical/maximum. Use 4.63 V for a conservative **full-current headroom screen**, not as an absolute device operating cutoff. At 5.00 V the hot/aged scenario is about 23 mV below this screen before PCB losses; at 4.75 V even the initial scenario is below it. Input DPM can reduce charging current; the configured charge current is therefore not a promised charging rate or charging-time guarantee. The 1 A fuse does not change the USB100/USB500 current policy.
 
 Before prototype acceptance:
 
-1. Select the mainboard F1 MPN and prove its hot hold/current derating and resistance. A generic “1206, 0.5 A hold” label is insufficient.
+1. Install the selected one-time F1 on its revised lands. Verify incoming identity, resistance, local temperature, inrush and fault coordination using the [F1 acceptance requirements](F1-SELECTION.md). Selection and nominal derating are documented; physical qualification remains open.
 2. Obtain wire resistance versus temperature and finished crimp/loop resistance from the harness supplier. Keep the specified OD and bend geometry.
 3. With a battery simulator and normal system load, measure C5 SH voltage, J1 input, U5 IN/OUT and MCU VBUS at USB100 and configured USB500. Include the external USB cable and C5 fuse in the complete test.
 4. Verify stable USB typing during charging and current reduction, suspend, unplug/reconnect and battery-only BLE. Do not bypass either fuse or raise the USB current policy to hide a drop.
 
-This calculation adds a qualification requirement; it does not approve the current unspecified fuse/wire or claim observed hardware operation. [Assembly guide](ASSEMBLY.md) · [Candidate entry](README.md)
+The fuse is selected, while final wire, assembled-loop and physical fuse qualification remain open. This calculation does not claim observed hardware operation. [Assembly guide](ASSEMBLY.md) · [Candidate entry](README.md)

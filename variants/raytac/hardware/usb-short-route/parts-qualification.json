@@ -1,0 +1,100 @@
+{
+  "scope": "Short-USB Raytac engineering candidate only; canonical long-route board and E73 are unchanged",
+  "F1": {
+    "mpn": "0466001.NRHF",
+    "manufacturer": "Littelfuse",
+    "value": "1A_FAST_0466001_NRHF",
+    "symbol": "Device:Fuse",
+    "local_symbol": "YAECKB:Fuse",
+    "footprint": "YAECKB:Fuse_Littelfuse_0466_1206__F1",
+    "type": "one-time fast-acting thin-film fuse; not PPTC",
+    "rated_current_A": 1.0,
+    "rated_voltage_V_AC_DC": 63,
+    "nominal_cold_resistance_ohm": 0.075,
+    "nominal_melting_I2t_A2s": 0.0423,
+    "body_nominal_LWH_mm": [
+      3.175,
+      1.524,
+      0.584
+    ],
+    "body_max_LWH_mm": [
+      3.302,
+      1.651,
+      0.66
+    ],
+    "reflow_pad_size_mm": [
+      1.143,
+      2.032
+    ],
+    "pad_centres_local_mm": [
+      [
+        -1.3335,
+        0
+      ],
+      [
+        1.3335,
+        0
+      ]
+    ],
+    "reflow_land_basis": "0.150 inch outside span, 0.060 inch gap, 0.080 inch width; derive 0.045 inch pad length without compounding rounded metric labels",
+    "position_PCB_XY_angle": [
+      88.609827,
+      114.198524,
+      90
+    ],
+    "pins": {
+      "1": "USB_5V",
+      "2": "VBUS"
+    },
+    "manufacturer_continuous_rerating_example": {
+      "ambient_C": 70,
+      "continuous_factor": 0.75,
+      "temperature_factor": 0.8,
+      "available_continuous_A": 0.6,
+      "USB500_max_A": 0.5,
+      "scope": "Manufacturer nominal example, not a guaranteed measured board result; require actual F1 ambient at or below 70 C"
+    },
+    "opening_time_25C": {
+      "at_200_percent_s_max": 5,
+      "at_300_percent_s_max": 0.2
+    },
+    "source": {
+      "url": "https://www.littelfuse.com/assetdocs/fuse-466-datasheet?assetguid=dbe9bcd7-6072-4adf-bf5b-d33e52a6b90f",
+      "revision": "2023-06-21",
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "visual_cross_check": "Historic OEM drawing mirrored by DigiKey, 466_Rev04.pdf, dimensions only; current official resistance and derating values govern"
+    },
+    "purchase": {
+      "quantity": 1,
+      "planned_stock": 0,
+      "net_purchase": 1,
+      "LCSC_code": "C151135",
+      "url": "https://www.lcsc.com/product-detail/Fuses_Littelfuse-0466001-NRHF_C151135.html"
+    },
+    "incoming_test_targets_not_datasheet_maxima": {
+      "resistance_25C_ohm_max": 0.1,
+      "resistance_loaded_hot_ohm_max": 0.15
+    },
+    "open": [
+      "Actual incoming/loaded resistance, local temperature and solder quality",
+      "Inrush and fault coordination with the source, C5 fuse and harness; 1 A is not a USB current entitlement",
+      "Diagnose the fault and replace an opened fuse; do not bridge it"
+    ],
+    "native_model": {
+      "path": "models/Littelfuse_0466001_NRHF_nominal.step",
+      "scope": "Nominal rectangular manufacturer body envelope only; not a detailed termination/finish model",
+      "bounds_local_mm": [
+        -1.5875,
+        -0.762,
+        0,
+        1.5875,
+        0.762,
+        0.584
+      ]
+    }
+  }
+}

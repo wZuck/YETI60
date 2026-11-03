@@ -10,7 +10,7 @@ C44,1,0,1,100n/16V,C_0603_1608Metric,,Vendor MPN unselected,,No matched usable s
 C47,1,0,1,10n,C_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
 C48,1,1,0,1u/10V,C_0402_1005Metric,Samsung CL05A105KA5NQNC,,57,"In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance"
 D2,1,0,1,STATUS,LED_0603_1608Metric,,0603 status LED; vendor MPN unselected,,No matched usable stock; purchase required
-F1,1,0,1,500mA,Fuse_1206_3216Metric,,"1206 resettable fuse, 0.5 A hold",,No matched usable stock; purchase required
+F1,1,0,1,1A_FAST_0466001_NRHF,Fuse_Littelfuse_0466_1206__F1,,Littelfuse 0466001.NRHF,,"Purchase required; 1 A / 63 V one-time fast-acting, not a 0.5 A PPTC substitute; use revised lands; diagnose faults before replacing"
 J1,1,0,1,REAR_USB_DAUGHTERBOARD,JST-SR-4,,"JST SM04B-SRSS-TB(LF)(SN), candidate",,No matched usable stock; purchase required
 J2,1,0,1,PROTECTED_1S_4V2_NTC10K,JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal,,JST S3B-PH-SM4-TB(LF)(SN),,No matched usable stock; purchase required
 L1,1,0,1,1.5uH_74438336015,L_Wuerth_MAPI-3015,,Wurth 74438336015,,No matched usable stock; purchase required

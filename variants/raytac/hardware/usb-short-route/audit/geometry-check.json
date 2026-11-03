@@ -92,7 +92,7 @@
       "area_delta_mm2": 4.774847184307873e-12
     },
     {
-      "original_area_mm2": 141.66597343308902,
+      "original_area_mm2": 141.66597342024502,
       "area_delta_mm2": 5.684341886080802e-14
     },
     {
@@ -100,12 +100,12 @@
       "area_delta_mm2": 0.0
     },
     {
-      "original_area_mm2": 24040.648001558406,
-      "area_delta_mm2": 2.1827872842550278e-11
+      "original_area_mm2": 24040.648001568905,
+      "area_delta_mm2": 2.546585164964199e-11
     },
     {
-      "original_area_mm2": 9969.66788121834,
-      "area_delta_mm2": 1.8735590856522322e-10
+      "original_area_mm2": 9968.871482153463,
+      "area_delta_mm2": 1.9463186617940664e-10
     },
     {
       "original_area_mm2": 36.37164279069089,
@@ -819,8 +819,8 @@
     }
   ],
   "source_sha256": {
-    "hardware/usb-short-route/audit/native-check.json": "16a6c41083879aeec9cfc2e095ab841f75b07f3c3aeb22101c4cbb1aa3240873",
-    "hardware/usb-short-route/audit/USB-paths.json": "81e1f1408a673db2c09b558fce157a0190aa573d42bef6f9c57b3d35bfcc8d2c",
+    "hardware/usb-short-route/audit/native-check.json": "c05db1ad7b3dcb6e13ab25ee624484db035c1205817f840c1a1bacd664c1cd2e",
+    "hardware/usb-short-route/audit/USB-paths.json": "89ae7651519a0d2bd1bd13ead2168c2e957190621370d76baa4d3ca84513c842",
     "scripts/study_usb_short_route.py": "85d12d0f2ef5a8c3caf41ac88610510ae8bcad5c6eb18342fcbb78f3749a89bc",
     "docs/audit/yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",

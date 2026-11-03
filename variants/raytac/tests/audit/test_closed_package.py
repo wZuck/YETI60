@@ -41,8 +41,28 @@ class PackageFailures(unittest.TestCase):
     def test_partial_view_from_old_guides_rejected(self):
         self.rejects('assembly/render-manifest.json',lambda d:d['outputs']['rear.png'].update(guides_report_sha256='0'*64))
 
+    def test_partial_view_from_old_native_models_rejected(self):
+        self.rejects('assembly/render-manifest.json',lambda d:d['outputs']['rear.png'].update(mesh_receipt_sha256='0'*64))
+
     def test_missing_physical_spring_rejected(self):
         self.rejects('assembly/render-manifest.json',lambda d:d['exploded_visible_objects_by_group'].update(springs=59))
+
+    def test_old_candidate_component_labels_rejected(self):
+        for ref,value in [('J1','REAR_USB_DAUGHTERBOARD'),('J5','USB_POWER_LINK'),('F1','500mA')]:
+            with self.subTest(ref=ref):
+                self.rejects('audit/assembly.json',lambda d:next(p for p in d['component_envelopes'] if p['ref']==ref).update(value=value))
+
+    def test_old_purchase_fuse_rejected_in_both_languages(self):
+        original=package.purchase_rows
+        for filename in ['mainboard-purchase.csv','mainboard-purchase.zh-CN.csv']:
+            with self.subTest(filename=filename):
+                def injected(path):
+                    rows=original(path)
+                    if path.name==filename:
+                        next(row for row in rows[1:] if row[0]=='F1')[7]='Unspecified 500mA PPTC'
+                    return rows
+                with patch.object(package,'purchase_rows',side_effect=injected):
+                    with self.assertRaises(AssertionError):package.verify()
 
 
 if __name__=='__main__':unittest.main()

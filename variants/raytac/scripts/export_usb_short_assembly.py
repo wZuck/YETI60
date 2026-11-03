@@ -11,6 +11,7 @@ import json
 import re
 import shutil
 import subprocess
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from cad_geometry import bounds, load
@@ -156,9 +157,29 @@ def main():
     data['status'] = 'candidate-closed-assembly-geometry-passed-not-physical'
     data['case_files']['bottom'] = str((BASE / 'mechanical/yeti60-bottom-short-usb.step').relative_to(ROOT))
     data['component_envelopes'] = [p for p in data['component_envelopes'] if p['ref'] not in ['R30', 'R31']]
+    native_values = {p.get('ref'):p.findtext('value') for p in ET.parse(BASE / 'netlist.xml').findall('./components/comp')}
+    qualification = read(BASE / 'parts-qualification.json')['F1']
+    nominal_model = load(BASE / qualification['native_model']['path'])
+    assert max(abs(a-b) for a,b in zip(bounds(nominal_model),qualification['native_model']['bounds_local_mm']))<1e-6
+    for component in data['component_envelopes']:
+        # The previous Raytac assembly map is a geometry baseline. In
+        # particular its J1 data-input name and old F1 value are not current.
+        component['value'] = native_values[component['ref']]
+        if component['ref'] == 'F1':
+            component['mpn'] = qualification['mpn']
+            component['clearance_basis'] = 'Retain the larger legacy clearance envelope; selected 466 body and solder allowance fit inside it'
+            x,y = component['position_pcb_mm']; length,width,height = qualification['body_nominal_LWH_mm']
+            assert component['angle_deg']==90 and component['back']
+            z = data['nominal_stack']['pcb_bottom_z']
+            component['render_body_bounds_case_mm'] = [x-width/2,-y-length/2,z-height,x+width/2,-y+length/2,z]
+            length,width,height = qualification['body_max_LWH_mm']
+            body = [x-width/2-.25,-y-length/2-.25,z-height-.1,x+width/2+.25,-y+length/2+.25,z]
+            outer = component['bounds_case_mm']
+            assert all(outer[i]<=body[i] for i in range(3)) and all(outer[i]>=body[i] for i in range(3,6))
+            component['qualified_max_body_with_allowance_case_mm'] = body
     for h in native['new_headers']:
         x0, y0, x1, y1 = h['physical_body_bbox_pcb_mm']
-        data['component_envelopes'].append(dict(ref=h['ref'], value='USB_C5_INPUT' if h['ref'] == 'J4' else 'USB_POWER_LINK',
+        data['component_envelopes'].append(dict(ref=h['ref'], value=native_values[h['ref']],
             back=True, position_pcb_mm=h['position'], angle_deg=0, height_envelope_mm=3,
             height_basis='Conservative JST SH fit envelope; native KiCad STEP used for rendering',
             bounds_case_mm=[x0, -y1, -5, x1, -y0, -2]))
@@ -170,7 +191,7 @@ def main():
                     ROOT / 'docs/audit/yeti60-assembly.json', ROOT / 'docs/audit/yeti60-daughterboard.json',
                     ROOT / 'docs/audit/yeti60-interconnects.json', ROOT / 'scripts/export_yeti60_render_meshes.py',
                     ROOT / 'scripts/usb_short_guides.py', ROOT / 'scripts/usb_short_harness.py',
-                    ROOT / 'scripts/cad_geometry.py', ROOT / 'scripts/kicad_sexpr.py', Path(__file__), AUD / 'assembly-bom.json']
+                    ROOT / 'scripts/cad_geometry.py', ROOT / 'scripts/kicad_sexpr.py', Path(__file__), AUD / 'assembly-bom.json', BASE / 'parts-qualification.json', BASE / 'netlist.xml']
     data['source_sha256'] = dict(closed['source_sha256']) | {str(p.relative_to(ROOT)): sha(p) for p in dependencies}
     data['mated_housings'] = housing
     data['mated_housing_cross_checks'] = checks
@@ -227,7 +248,9 @@ def main():
                     case_scale=[1, 1, 1], native_headers=header_parts, published_wire_STEP_sha256=published,
                     unavailable_native_models={'J2': 'SMT S3B-PH-SM4-TB STEP absent from installed KiCad library; conservative body envelope rendered'})
     (WORK / 'render-meshes.json').write_text(json.dumps(geometry, separators=(',', ':')))
-    (AUD / 'assembly-meshes.json').write_text(json.dumps({k: v for k, v in geometry.items() if k != 'meshes'}, indent=2) + '\n')
+    receipt = {k: v for k, v in geometry.items() if k != 'meshes'}
+    receipt['mesh_payload_sha256'] = sha(WORK / 'render-meshes.json')
+    (AUD / 'assembly-meshes.json').write_text(json.dumps(receipt, indent=2) + '\n')
     print('Candidate assembly meshes: nine wires, five mating plugs, 16 guides, 12 films, three native SH headers, J2 envelope and complete C5', flush=True)
 
 

@@ -118,16 +118,16 @@
     "datasheet": ""
   },
   "F1": {
-    "value": "500mA",
-    "symbol": "Device:Polyfuse",
-    "footprint": "YAECKB:Fuse_1206_3216Metric__F1",
+    "value": "1A_FAST_0466001_NRHF",
+    "symbol": "Device:Fuse",
+    "footprint": "YAECKB:Fuse_Littelfuse_0466_1206__F1",
     "pins": {
       "1": "USB_5V",
       "2": "VBUS"
     },
     "uuid": "ec30f4b4-d823-5e4f-a7b8-0a3a79fdc25c",
     "sheet": "EC60-nRF52840",
-    "datasheet": ""
+    "datasheet": "https://www.littelfuse.com/assetdocs/fuse-466-datasheet?assetguid=dbe9bcd7-6072-4adf-bf5b-d33e52a6b90f"
   },
   "C30": {
     "value": "10u/10V",

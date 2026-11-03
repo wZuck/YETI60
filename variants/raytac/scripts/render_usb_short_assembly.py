@@ -35,6 +35,8 @@ def build_source():
         ("ROOT/'docs/audit/yeti60-bom.json'", "ROOT/'hardware/usb-short-route/audit/assembly-bom.json'", 2),
         ("'electronics' if part['name']=='main-sh' else part['group']", "part['group']", 1),
         ("p['ref']=='J1'", "p['ref'] in ['J1','J4','J5']", 1),
+        ("else:box(p['ref']+' / height envelope',p['bounds_case_mm'],mat,'electronics',.12)",
+         "else:box(p['ref']+' / part body or clearance envelope',p.get('render_body_bounds_case_mm',p['bounds_case_mm']),mat,'electronics',.02 if p['ref']=='F1' else .12)", 1),
         ("'yellow':(.65,.4,.005)", "'yellow':(.65,.4,.005),'amber':(.53,.24,.025)", 1),
         ("Seven continuous round wires, complete conservative mating envelopes, conformal guides and native C5 CAD; supplier lead-exit datums pending",
          "Nine continuous round wires, five conservative mating envelopes, 16 removable guides, 12 retention films, three native SH headers, J2 body envelope and native C5 CAD; supplier lead-exit datums pending", 1),
@@ -43,17 +45,23 @@ def build_source():
     for before, after, count in replacements:
         text = adapt(text, before, after, count)
     surface = ("import sys\nsys.path.insert(0,str(ROOT/'scripts'))\n"
+               "mesh_receipt_path=ROOT/'hardware/usb-short-route/audit/assembly-meshes.json'\n"
+               "mesh_receipt=json.loads(mesh_receipt_path.read_text());mesh_receipt_hash=sha(mesh_receipt_path)\n"
+               "assert sha(MESH)==mesh_receipt['mesh_payload_sha256'],'Changed candidate mesh payload'\n"
                "from usb_short_render_surfaces import apply as apply_surfaces\n"
                "surface_hash=apply_surfaces(ROOT,bpy.data.objects['pcb / controlled source CAD'],CX,CY,data['nominal_stack'])\n\n")
     text = adapt(text, 'def box(name,bb,mat,group,bevel=0):', surface+'def box(name,bb,mat,group,bevel=0):')
     marker_outputs = '    # Preserve evidence for untouched views; never stamp them as freshly rendered.'
     text = adapt(text, marker_outputs,
+        "        rendered_outputs[path.name]['mesh_receipt_sha256'] = mesh_receipt_hash\n"
         "        rendered_outputs[path.name]['surface_report_sha256'] = surface_hash\n"
         "        rendered_outputs[path.name]['guides_report_sha256'] = meshdata['guides_report_sha256']\n" + marker_outputs)
     marker = "    (OUT/'render-manifest.json').write_text(json.dumps(manifest,indent=2)+'\\n')"
     # Generated-script hash is already the per-output recipe. Preserve the two
     # maintained sources too, so an unchanged old image cannot be restamped.
-    addition = ("    manifest['surface_report_sha256'] = surface_hash\n"
+    addition = ("    assert sha(mesh_receipt_path)==mesh_receipt_hash,'Mesh receipt changed during rendering'\n"
+        "    manifest['mesh_receipt_sha256'] = mesh_receipt_hash\n"
+        "    manifest['surface_report_sha256'] = surface_hash\n"
         "    manifest['unavailable_native_models'] = meshdata['unavailable_native_models']\n"
         "    manifest['source_recipe_sha256'] = " + repr({
         str(SOURCE.relative_to(ROOT)): sha(SOURCE),

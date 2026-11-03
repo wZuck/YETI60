@@ -2,8 +2,8 @@
   "status": "candidate-closed-assembly-geometry-passed-not-physical",
   "source_sha256": {
     "hardware/usb-short-route/interconnect-spec.json": "b9ca32bde110f9f86765be1daf1ba8fae39a084ddc93ebf6832f04a7b6fb1bf8",
-    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "604904a25447e696d82d5dfe1289dd577e7d346339de6eefcca9e987fec686e3",
-    "hardware/usb-short-route/audit/native-check.json": "16a6c41083879aeec9cfc2e095ab841f75b07f3c3aeb22101c4cbb1aa3240873",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "3210bbae74d78d97ab749eaeccac5d5efbff31578a805bb871dfbcd710eb19d2",
+    "hardware/usb-short-route/audit/native-check.json": "c05db1ad7b3dcb6e13ab25ee624484db035c1205817f840c1a1bacd664c1cd2e",
     "docs/audit/yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
     "docs/audit/yeti60-daughterboard.json": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
     "docs/audit/yeti60-interconnect-connectors.json": "e20d1eafb8c2ef36f83ab6c98f4d196ccfd136580503e63aff04a9ce9df0d928",
@@ -17,14 +17,16 @@
     "scripts/interconnect_geometry.py": "a3ea2cd5cbe15cfa5aebaf89d961e3387e9c183e147564f27fa4d5aa9477c5c2",
     "scripts/check_yeti60_interconnects.py": "4ff73c59b68b273ace7cf370d1a3991e816e97961d3004be0dbce6190123f529",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
-    "hardware/usb-short-route/audit/closed-assembly.json": "60747d16c5599e79a2ff8705aea1845bf970c65ac8a0931c5bcd19b53dd983fe",
-    "hardware/usb-short-route/audit/guides.json": "72ef384b4667bf69dd798417e885c4bdf6bf0f58353f0b130362d8a2c1c7f3c6",
-    "hardware/usb-short-route/audit/geometry-check.json": "4bb55d9c8dd00b0d917035283f932e4e2380d904604efec764e8f55289e7e598",
+    "hardware/usb-short-route/audit/closed-assembly.json": "caccae8b83dab5c414c916f0e1a20b3c0fa83c2b909ed539320818cfb4f8fd72",
+    "hardware/usb-short-route/audit/guides.json": "19ea3514aeaf5f2a144f7b723ce2839cab7a99165727e24ac4cf4505b2f4abdd",
+    "hardware/usb-short-route/audit/geometry-check.json": "0cbd46036929fbd84019fb2d777e06d70a09e69d50acf9a920f0fd69d4b2ee3c",
     "scripts/export_yeti60_render_meshes.py": "73d262849323ce708c5e9c49ada82dc1c3b22af164a31331ad4e2a6aaf67adb7",
     "scripts/usb_short_guides.py": "ffaba3355dccc14b7ed86453af7e5cfabc4ff16c2a3b331494d23f1c5b157e1d",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
-    "scripts/export_usb_short_assembly.py": "0e735b410fbdc5c255cf0cf9b7e1447ae32ff2592d7bd6fb224be92e013ba4b2",
-    "hardware/usb-short-route/audit/assembly-bom.json": "37f4ae4679529a4c90537f5ea0f38b0bec4f3ebe5e5b61a0ab662b3d50cf3e73"
+    "scripts/export_usb_short_assembly.py": "4704384f0f0a3b0641f811676a3ad3ec3d9f467ce858eed545ddc95357535f3a",
+    "hardware/usb-short-route/audit/assembly-bom.json": "1f3de0a66bbfbd7074b9b21ae3414a3d37e49853e86fd971f6da3b7e38f87b7d",
+    "hardware/usb-short-route/parts-qualification.json": "7491a6ce341ec389766e48f15601aaca1c03ff8c78aa1b364c95c80edb6efcd4",
+    "hardware/usb-short-route/netlist.xml": "3465278860e5122c3d7484ab9eb99e46548ff5649ed95469316f09e7ca130ea7"
   },
   "verification_recipe_sha256": {
     "scripts/check_yeti60_assembly.py": "049759707a29a2cb0370e2a11764a1c3856897d56be1f772cccfe5692c34bbce",
@@ -2096,7 +2098,7 @@
     {
       "physical_body_bbox_pcb_mm": null,
       "ref": "J1",
-      "value": "REAR_USB_DAUGHTERBOARD",
+      "value": "USB_POWER_IN",
       "back": true,
       "position_pcb_mm": [
         119.572837,
@@ -3029,7 +3031,7 @@
     {
       "physical_body_bbox_pcb_mm": null,
       "ref": "F1",
-      "value": "500mA",
+      "value": "1A_FAST_0466001_NRHF",
       "back": true,
       "position_pcb_mm": [
         88.609827,
@@ -3056,7 +3058,25 @@
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000017
+      "min_case_distance_mm": 0.910000000000017,
+      "mpn": "0466001.NRHF",
+      "clearance_basis": "Retain the larger legacy clearance envelope; selected 466 body and solder allowance fit inside it",
+      "render_body_bounds_case_mm": [
+        87.847827,
+        -115.78602400000001,
+        -2.5839999999999996,
+        89.371827,
+        -112.611024,
+        -1.9999999999999998
+      ],
+      "qualified_max_body_with_allowance_case_mm": [
+        87.53432699999999,
+        -116.099524,
+        -2.76,
+        89.685327,
+        -112.29752400000001,
+        -1.9999999999999998
+      ]
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3252,7 +3272,7 @@
     },
     {
       "ref": "J5",
-      "value": "USB_POWER_LINK",
+      "value": "USB_POWER_OUT",
       "back": true,
       "position_pcb_mm": [
         341.0,

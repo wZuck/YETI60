@@ -84,6 +84,124 @@
       "interpretation": "Budget for mainboard fuse, copper and other series losses; not proven available"
     }
   ],
+  "selected_F1": {
+    "mpn": "0466001.NRHF",
+    "type": "one-time fast-acting thin-film fuse; not PPTC",
+    "nominal_cold_R_ohm": 0.075,
+    "manufacturer_nominal_continuous_example_A": 0.6,
+    "nominal_example_ambient_C": 70,
+    "current_limit_source": "BQ24074 USB100/USB500 policy, not the fuse rating"
+  },
+  "with_selected_F1": [
+    {
+      "scenario": "initial-20C-target",
+      "current_A": 0.1,
+      "C5_SH_board_pad_voltage_V": 4.75,
+      "F1_resistance_ohm": 0.075,
+      "F1_basis": "manufacturer nominal cold",
+      "after_harness_and_F1_before_PCB_loss_V": 4.700117517615666,
+      "margin_to_4V63_DPM_screen_V": 0.07011751761566654
+    },
+    {
+      "scenario": "initial-20C-target",
+      "current_A": 0.1,
+      "C5_SH_board_pad_voltage_V": 5,
+      "F1_resistance_ohm": 0.075,
+      "F1_basis": "manufacturer nominal cold",
+      "after_harness_and_F1_before_PCB_loss_V": 4.950117517615666,
+      "margin_to_4V63_DPM_screen_V": 0.32011751761566654
+    },
+    {
+      "scenario": "initial-20C-target",
+      "current_A": 0.1,
+      "C5_SH_board_pad_voltage_V": 5.25,
+      "F1_resistance_ohm": 0.075,
+      "F1_basis": "manufacturer nominal cold",
+      "after_harness_and_F1_before_PCB_loss_V": 5.200117517615666,
+      "margin_to_4V63_DPM_screen_V": 0.5701175176156665
+    },
+    {
+      "scenario": "initial-20C-target",
+      "current_A": 0.5,
+      "C5_SH_board_pad_voltage_V": 4.75,
+      "F1_resistance_ohm": 0.075,
+      "F1_basis": "manufacturer nominal cold",
+      "after_harness_and_F1_before_PCB_loss_V": 4.500587588078336,
+      "margin_to_4V63_DPM_screen_V": -0.1294124119216642
+    },
+    {
+      "scenario": "initial-20C-target",
+      "current_A": 0.5,
+      "C5_SH_board_pad_voltage_V": 5,
+      "F1_resistance_ohm": 0.075,
+      "F1_basis": "manufacturer nominal cold",
+      "after_harness_and_F1_before_PCB_loss_V": 4.750587588078336,
+      "margin_to_4V63_DPM_screen_V": 0.1205875880783358
+    },
+    {
+      "scenario": "initial-20C-target",
+      "current_A": 0.5,
+      "C5_SH_board_pad_voltage_V": 5.25,
+      "F1_resistance_ohm": 0.075,
+      "F1_basis": "manufacturer nominal cold",
+      "after_harness_and_F1_before_PCB_loss_V": 5.000587588078336,
+      "margin_to_4V63_DPM_screen_V": 0.3705875880783358
+    },
+    {
+      "scenario": "aged-60C-target",
+      "current_A": 0.1,
+      "C5_SH_board_pad_voltage_V": 4.75,
+      "F1_resistance_ohm": 0.15,
+      "F1_basis": "imposed measured hot-resistance target",
+      "after_harness_and_F1_before_PCB_loss_V": 4.671341021138801,
+      "margin_to_4V63_DPM_screen_V": 0.041341021138801004
+    },
+    {
+      "scenario": "aged-60C-target",
+      "current_A": 0.1,
+      "C5_SH_board_pad_voltage_V": 5,
+      "F1_resistance_ohm": 0.15,
+      "F1_basis": "imposed measured hot-resistance target",
+      "after_harness_and_F1_before_PCB_loss_V": 4.921341021138801,
+      "margin_to_4V63_DPM_screen_V": 0.291341021138801
+    },
+    {
+      "scenario": "aged-60C-target",
+      "current_A": 0.1,
+      "C5_SH_board_pad_voltage_V": 5.25,
+      "F1_resistance_ohm": 0.15,
+      "F1_basis": "imposed measured hot-resistance target",
+      "after_harness_and_F1_before_PCB_loss_V": 5.171341021138801,
+      "margin_to_4V63_DPM_screen_V": 0.541341021138801
+    },
+    {
+      "scenario": "aged-60C-target",
+      "current_A": 0.5,
+      "C5_SH_board_pad_voltage_V": 4.75,
+      "F1_resistance_ohm": 0.15,
+      "F1_basis": "imposed measured hot-resistance target",
+      "after_harness_and_F1_before_PCB_loss_V": 4.356705105694002,
+      "margin_to_4V63_DPM_screen_V": -0.27329489430599807
+    },
+    {
+      "scenario": "aged-60C-target",
+      "current_A": 0.5,
+      "C5_SH_board_pad_voltage_V": 5,
+      "F1_resistance_ohm": 0.15,
+      "F1_basis": "imposed measured hot-resistance target",
+      "after_harness_and_F1_before_PCB_loss_V": 4.606705105694002,
+      "margin_to_4V63_DPM_screen_V": -0.02329489430599807
+    },
+    {
+      "scenario": "aged-60C-target",
+      "current_A": 0.5,
+      "C5_SH_board_pad_voltage_V": 5.25,
+      "F1_resistance_ohm": 0.15,
+      "F1_basis": "imposed measured hot-resistance target",
+      "after_harness_and_F1_before_PCB_loss_V": 4.856705105694002,
+      "margin_to_4V63_DPM_screen_V": 0.22670510569400193
+    }
+  ],
   "return_topology": "The native PCB ground plane connects J1/J4/J5 ground in parallel with the black power jumper. The eight-contact series model intentionally ignores that parallel plane; it is a pessimistic harness-path screen, not the actual solved current distribution.",
   "imposed_not_vendor_guaranteed": {
     "wire_resistance_20C_ohm_per_m_max": 0.25,
@@ -109,13 +227,14 @@
     }
   },
   "source_sha256": {
-    "hardware/usb-short-route/audit/closed-assembly.json": "60747d16c5599e79a2ff8705aea1845bf970c65ac8a0931c5bcd19b53dd983fe",
-    "scripts/calculate_usb_short_feed.py": "ee3fddd5722cf879c916f61865fc05928a9626abbbbce90625513fde68d78fee"
+    "hardware/usb-short-route/audit/closed-assembly.json": "caccae8b83dab5c414c916f0e1a20b3c0fa83c2b909ed539320818cfb4f8fd72",
+    "hardware/usb-short-route/parts-qualification.json": "7491a6ce341ec389766e48f15601aaca1c03ff8c78aa1b364c95c80edb6efcd4",
+    "scripts/calculate_usb_short_feed.py": "d6697af57db6e9f5ef9f0f552ab3d1f723dc52d7a49bf9d1d24764cb9ec9de52"
   },
   "not_included": [
     "External USB cable, USB-C contact and C5 input fuse losses before the C5 SH PCB pad",
-    "Mainboard input fuse resistance/temperature derating, PCB copper and regulator losses",
+    "Actual hot mainboard fuse resistance and thermal/inrush/fault coordination; PCB copper and regulator losses",
     "Unspecified crimp extensions/contact processing, actual wire resistance and USB signal quality"
   ],
-  "conclusion": "Do not promise the programmed charge rate. Qualify the final fuse/wire and measure U5 IN/OUT and MCU VBUS under load; input DPM may reduce current while USB typing remains required."
+  "conclusion": "F1 MPN, native lands and manufacturer nominal derating are selected. Actual hot fuse/wire resistance and coordination remain to measure. Input DPM can reduce charging current while USB typing remains required; no programmed-charge-rate guarantee."
 }

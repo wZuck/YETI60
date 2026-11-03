@@ -16,6 +16,7 @@
     "('warning', 'endpoint_off_grid')": 183
   },
   "DRC_warnings": {
+    "track_dangling": 1,
     "missing_courtyard": 102
   },
   "physical_pin_pairs": [
@@ -4954,7 +4955,105 @@
   ],
   "physical_pin_pairs_checked": 411,
   "sensing_and_mount_geometry_unchanged": true,
-  "all_retained_footprint_geometry_unchanged": true,
+  "all_retained_footprint_geometry_unchanged": false,
+  "retained_footprints_except_F1_unchanged": true,
+  "F1_revised_fuse_and_lands": {
+    "mpn": "0466001.NRHF",
+    "manufacturer": "Littelfuse",
+    "value": "1A_FAST_0466001_NRHF",
+    "symbol": "Device:Fuse",
+    "local_symbol": "YAECKB:Fuse",
+    "footprint": "YAECKB:Fuse_Littelfuse_0466_1206__F1",
+    "type": "one-time fast-acting thin-film fuse; not PPTC",
+    "rated_current_A": 1.0,
+    "rated_voltage_V_AC_DC": 63,
+    "nominal_cold_resistance_ohm": 0.075,
+    "nominal_melting_I2t_A2s": 0.0423,
+    "body_nominal_LWH_mm": [
+      3.175,
+      1.524,
+      0.584
+    ],
+    "body_max_LWH_mm": [
+      3.302,
+      1.651,
+      0.66
+    ],
+    "reflow_pad_size_mm": [
+      1.143,
+      2.032
+    ],
+    "pad_centres_local_mm": [
+      [
+        -1.3335,
+        0
+      ],
+      [
+        1.3335,
+        0
+      ]
+    ],
+    "reflow_land_basis": "0.150 inch outside span, 0.060 inch gap, 0.080 inch width; derive 0.045 inch pad length without compounding rounded metric labels",
+    "position_PCB_XY_angle": [
+      88.609827,
+      114.198524,
+      90
+    ],
+    "pins": {
+      "1": "USB_5V",
+      "2": "VBUS"
+    },
+    "manufacturer_continuous_rerating_example": {
+      "ambient_C": 70,
+      "continuous_factor": 0.75,
+      "temperature_factor": 0.8,
+      "available_continuous_A": 0.6,
+      "USB500_max_A": 0.5,
+      "scope": "Manufacturer nominal example, not a guaranteed measured board result; require actual F1 ambient at or below 70 C"
+    },
+    "opening_time_25C": {
+      "at_200_percent_s_max": 5,
+      "at_300_percent_s_max": 0.2
+    },
+    "source": {
+      "url": "https://www.littelfuse.com/assetdocs/fuse-466-datasheet?assetguid=dbe9bcd7-6072-4adf-bf5b-d33e52a6b90f",
+      "revision": "2023-06-21",
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "visual_cross_check": "Historic OEM drawing mirrored by DigiKey, 466_Rev04.pdf, dimensions only; current official resistance and derating values govern"
+    },
+    "purchase": {
+      "quantity": 1,
+      "planned_stock": 0,
+      "net_purchase": 1,
+      "LCSC_code": "C151135",
+      "url": "https://www.lcsc.com/product-detail/Fuses_Littelfuse-0466001-NRHF_C151135.html"
+    },
+    "incoming_test_targets_not_datasheet_maxima": {
+      "resistance_25C_ohm_max": 0.1,
+      "resistance_loaded_hot_ohm_max": 0.15
+    },
+    "open": [
+      "Actual incoming/loaded resistance, local temperature and solder quality",
+      "Inrush and fault coordination with the source, C5 fuse and harness; 1 A is not a USB current entitlement",
+      "Diagnose the fault and replace an opened fuse; do not bridge it"
+    ],
+    "native_model": {
+      "path": "models/Littelfuse_0466001_NRHF_nominal.step",
+      "scope": "Nominal rectangular manufacturer body envelope only; not a detailed termination/finish model",
+      "bounds_local_mm": [
+        -1.5875,
+        -0.762,
+        0,
+        1.5875,
+        0.762,
+        0.584
+      ]
+    }
+  },
   "project_rules_unchanged": true,
   "removed_zero_ohm_links": [
     "R30",
@@ -4971,10 +5070,10 @@
   "USB_data_vias_per_leg": 0,
   "physical_verification": false,
   "source_sha256": {
-    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "604904a25447e696d82d5dfe1289dd577e7d346339de6eefcca9e987fec686e3",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "3210bbae74d78d97ab749eaeccac5d5efbff31578a805bb871dfbcd710eb19d2",
     "hardware/usb-short-route/EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82",
-    "hardware/usb-short-route/EC60-nRF52840.kicad_sch": "aac35866d42eb6b1f96d998bbe717c4b76911b705daaff44fc09c230bced3ea6",
-    "hardware/usb-short-route/YAECKB.kicad_sym": "b04e02f6e4e779b65b28d4b5ce1245106f000e4c59c5ea5d591599b9484e5384",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_sch": "14f8c23b08483bfa84bf42db6a8d379194edf707b371ec5494eb28abc7b616cb",
+    "hardware/usb-short-route/YAECKB.kicad_sym": "6793393060f40289d1f7b51921021c2c98cebf452ba9bf6e8e8d8f5006a6a338",
     "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C10.kicad_mod": "012e14bf8e54dec36459ed956431c982fd9fd90dee697e550e276b77a5d028cf",
     "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C11.kicad_mod": "8888a5f215dd9d73db7e1b41ce578b7b806543dc3f1764f82d1447a25d779522",
     "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C12.kicad_mod": "94920c2e74f0544633af659a990366b699b384ca189002ce989b86b318560a1b",
@@ -4993,7 +5092,7 @@
     "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C45.kicad_mod": "e4227b18be9f37dfb45873693de8769947a07c7523bc3dd781ecc58ff4509484",
     "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C46.kicad_mod": "a2f2ee6223ced04b71944a6fcc6bf11256444c9ecdc262228d09063468b7236d",
     "hardware/usb-short-route/YAECKB.pretty/EC60_BoardOutline__REF__.kicad_mod": "999219d671fb6fb68730275e402ddf4a3c6affea57d0c6ca029dbda0377b9234",
-    "hardware/usb-short-route/YAECKB.pretty/Fuse_1206_3216Metric__F1.kicad_mod": "eb875d7b273d34c11de58a0b16539ac4112a27ec09acd8c4dd2d5c068f4d1ad9",
+    "hardware/usb-short-route/YAECKB.pretty/Fuse_Littelfuse_0466_1206__F1.kicad_mod": "d45a7026280287ac02154d1b75351cab485a96ce8bb28a1886f70b9143ff534b",
     "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H1.kicad_mod": "69d5df34ca62ecf821a03532d2ce848f47b1bd58d4e0e2e37360a7295c557605",
     "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H10.kicad_mod": "1ff61f59ccdf0c410039c12842e259b768dc4c681449a2a05f697907b53edd3d",
     "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H11.kicad_mod": "f74e37fc0c62a4ae207db2fb26db7c008e65acf5c5e2c4027683335e31405f95",
@@ -5154,21 +5253,24 @@
     "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW69.kicad_mod": "391c4a558bf43ff429d852feb9f10ff2c3c5bc48110862ccb1cb63c19bca181a",
     "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "e0a319dc63587cedd4e320be824dacc4853f69eaacddfa1191c2d04979c62b71",
     "hardware/usb-short-route/analog.kicad_sch": "4c64d34e07c9324a684f27c4295e78544a0077b0b9730e34e3223c926e36116d",
-    "hardware/usb-short-route/components.json": "cc95a04972542c3b1f77db6e1c61597191f4ac42b5b59995cf1131dc47213ab8",
+    "hardware/usb-short-route/components.json": "0f627d69b8adfb1500138318cb2db1e67fd3108de1027747688b552dec6a8a86",
     "hardware/usb-short-route/fp-lib-table": "ae74cc20692db69057b379cac2a92081855a8341eb0c5dcf3e3528140b57368a",
-    "hardware/usb-short-route/frozen-footprints.json": "6c0dfb21c0652f678d4120e37f41aa011ab066abfc354917a55fe1a9210113f1",
-    "hardware/usb-short-route/mainboard-purchase.csv": "5239330e92073f42e818e1b025d555615b8611f5bed72fa17946397da1393e3d",
-    "hardware/usb-short-route/mainboard-purchase.zh-CN.csv": "19ee8ab5e1888a585ba6d6ab02734b22ae7e3411a79f7776418a04d0f480e16c",
+    "hardware/usb-short-route/frozen-footprints.json": "eccc96517c37de1ad4738da1a9abe3aa0b97e5c91f3bc5bfe4d1ea29a0080902",
+    "hardware/usb-short-route/mainboard-purchase.csv": "567120df326b959850cb9d9fc98446df403122ce58e6db20d83207a13de54dda",
+    "hardware/usb-short-route/mainboard-purchase.zh-CN.csv": "396ef914751783d9f8ab25f10cb10bd438162b994ed328cbde1e2b8ebe113515",
     "hardware/usb-short-route/matrix.kicad_sch": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
     "hardware/usb-short-route/metadata-audit.json": "9a5a76d3a1d93b7c876ceb873875bb01f0ec38759e85d67b1e47a125952e7a66",
     "hardware/usb-short-route/mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
-    "hardware/usb-short-route/netlist.xml": "93bba88373fc91a26a6ffc31c5d82f177f897b703894cfead48161fd46d46e5c",
+    "hardware/usb-short-route/netlist.xml": "3465278860e5122c3d7484ab9eb99e46548ff5649ed95469316f09e7ca130ea7",
+    "hardware/usb-short-route/parts-qualification.json": "7491a6ce341ec389766e48f15601aaca1c03ff8c78aa1b364c95c80edb6efcd4",
     "hardware/usb-short-route/power.kicad_sch": "1d35fb87ed82b68c829c1d409eacc09322cc079e40bdb6129543fc92412fe3cb",
-    "hardware/usb-short-route/sym-lib-table": "d45513cd8e4e4ccd05e68f16dfa9399892b19383c65133140567bda6f4228cc8"
+    "hardware/usb-short-route/sym-lib-table": "d45513cd8e4e4ccd05e68f16dfa9399892b19383c65133140567bda6f4228cc8",
+    "scripts/usb_short_fuse_contract.py": "1504857ec1203fb74110260d86ea5373dda17891de8c123213da3471faa72df9",
+    "hardware/usb-short-route/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f"
   },
-  "audit_script_sha256": "b378c94935ab3c7569e96345421288ca327aaeb4020ba5d7c8ceb671e87903d1",
+  "audit_script_sha256": "a327cb895dc9a623cd791dbe32949fe9a5b542d7aba6d0c7d293d8942e30e672",
   "remaining": [
-    "Final C5-to-J4 and J5-to-J1 cable geometry, enclosed collision checks and updated assembly illustrations",
+    "Enclosed geometry and illustrations are checked separately; swept service/mating access, springback and retention remain open",
     "Full cable impedance/return and physical USB/BLE/charge/thermal validation",
     "Supplier battery verification remains user-owned; use battery-vendor-checklist.md"
   ]

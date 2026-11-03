@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/Users/wzy/.codex/worktrees/yeti60-e73/YAECKB/variants/raytac/hardware/usb-short-route/EC60-nRF52840.kicad_sch</source>
-    <date>2026-11-02T21:56:54</date>
+    <date>2026-11-03T04:05:09</date>
     <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -217,18 +217,19 @@
       </units>
     </comp>
     <comp ref="F1">
-      <value>500mA</value>
-      <footprint>YAECKB:Fuse_1206_3216Metric__F1</footprint>
+      <value>1A_FAST_0466001_NRHF</value>
+      <footprint>YAECKB:Fuse_Littelfuse_0466_1206__F1</footprint>
+      <datasheet>https://www.littelfuse.com/assetdocs/fuse-466-datasheet?assetguid=dbe9bcd7-6072-4adf-bf5b-d33e52a6b90f</datasheet>
       <fields>
-        <field name="Footprint">YAECKB:Fuse_1206_3216Metric__F1</field>
-        <field name="Datasheet"/>
+        <field name="Footprint">YAECKB:Fuse_Littelfuse_0466_1206__F1</field>
+        <field name="Datasheet">https://www.littelfuse.com/assetdocs/fuse-466-datasheet?assetguid=dbe9bcd7-6072-4adf-bf5b-d33e52a6b90f</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="YAECKB" part="Polyfuse" description="Resettable fuse, polymeric positive temperature coefficient"/>
+      <libsource lib="YAECKB" part="Fuse" description="Fuse"/>
       <property name="Sheetname" value="EC60-nRF52840"/>
       <property name="Sheetfile" value="EC60-nRF52840.kicad_sch"/>
-      <property name="ki_keywords" value="resettable fuse PTC PPTC polyfuse polyswitch"/>
-      <property name="ki_fp_filters" value="*PTC* *polyfuse* YAECKB:Fuse_1206_3216Metric__*"/>
+      <property name="ki_keywords" value="fuse"/>
+      <property name="ki_fp_filters" value="*Fuse*"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>ec30f4b4-d823-5e4f-a7b8-0a3a79fdc25c</tstamps>
       <units>
@@ -4690,6 +4691,23 @@
         <pin num="6" name="Pin_6" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="YAECKB" part="Fuse">
+      <description>Fuse</description>
+      <footprints>
+        <fp>*Fuse*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">Fuse</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Fuse</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="YAECKB" part="L">
       <description>Inductor</description>
       <footprints>
@@ -4808,25 +4826,6 @@
         <pin num="59" name="P1.05" type="bidirectional"/>
         <pin num="60" name="P1.03" type="bidirectional"/>
         <pin num="61" name="P1.01" type="bidirectional"/>
-      </pins>
-    </libpart>
-    <libpart lib="YAECKB" part="Polyfuse">
-      <description>Resettable fuse, polymeric positive temperature coefficient</description>
-      <footprints>
-        <fp>*PTC*</fp>
-        <fp>*polyfuse*</fp>
-        <fp>YAECKB:Fuse_1206_3216Metric__*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">F</field>
-        <field name="Value">Polyfuse</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description">Resettable fuse, polymeric positive temperature coefficient</field>
-      </fields>
-      <pins>
-        <pin num="1" name="" type="passive"/>
-        <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="YAECKB" part="R">

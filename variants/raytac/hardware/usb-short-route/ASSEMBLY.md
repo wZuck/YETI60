@@ -2,6 +2,8 @@ English | [Chinese](ASSEMBLY.zh-CN.md)
 
 # Raytac repair candidate: enclosed assembly
 
+**New assembly obstruction:** [the right PCB wing collides with an internal step during vertical lifting](SERVICE-PATH.md). The service path is not repaired. A clear installed pose or exploded image does not authorize vertical insertion/removal.
+
 Use this guide with the [candidate PCB, purchase table and firmware](README.md). It replaces the previous seven-wire enclosure illustrations. The old board archive, old five-piece guides and old cable lengths must not be combined with this assembly. Start electrical work with the candidate's [soldering and open-bench sequence](README.md#solder-and-open-bench-sequence).
 
 The installed geometry is checked, including the five mating plugs. The lifting/mating service path, cable springback, adhesive retention and actual supplier parts still require a first article. This is an assembly design and trial-fit procedure, not a completed physical acceptance record.
@@ -11,6 +13,7 @@ The installed geometry is checked, including the five mating plugs. The lifting/
 | Item | Specification | Per keyboard |
 |---|---|---:|
 | Mainboard | Candidate four-layer ordinary FR4, nominal 1.6 mm; use its native PCB and 75-part purchase table | 1 |
+| F1 mainboard fuse | [Littelfuse 0466001.NRHF](F1-SELECTION.md), 1 A / 63 V one-time fast-acting; revised lands; no stock credit | 1 |
 | J4 / J5 | JST SM04B-SRSS-TB(LF)(SN) / SM02B-SRSS-TB(LF)(SN), bottom side | 1 each |
 | SH wire housings | SHR-04V-S for C5, J4 and J1; SHR-02V-S for J5 | 3 + 1 |
 | SH contacts | SSH-003T-P0.2-H; J1 positions 2/3 stay empty | 12 fitted; buy 20 for spares |
