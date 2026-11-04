@@ -14,6 +14,7 @@ from cad_geometry import load,intersection_volume
 from check_yeti60_assembly import box,distance,move
 from study_yeti60_prototype import usb_study
 from usb_short_passive_contract import apply_passive_envelopes
+from usb_short_ground import connected_ground
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';AUD=BASE/'audit'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def read(p):return json.loads(p.read_text())
@@ -21,6 +22,7 @@ def main():
     native=read(ROOT/'.assembly-work/usb-short-audit/native-inputs.json');proof=read(AUD/'native-check.json');paths=read(AUD/'USB-paths.json')
     assert proof['status']=='native-candidate-checks-passed'
     for p,h in native['source_sha256'].items():assert sha(ROOT/p)==h,('Stale candidate',p)
+    ground_check=connected_ground(native)
     screen,_,normalizations=usb_study(native,paths)
     assembly=apply_passive_envelopes(read(ROOT/'docs/audit/yeti60-assembly.json'),native);spec=read(ROOT/'mechanical/pcb-fabrication-spec.json');nominal=assembly['nominal_stack']['pcb_bottom_z'];cases=[load(ROOT/'mechanical/generated'/('yeti60-'+s+'.step')) for s in ['bottom','top']]
     obstacles=[]
@@ -28,6 +30,20 @@ def main():
         if p['ref'] not in ['R30','R31']:obstacles.append((p['ref'],box(p['bounds_case_mm'])))
     for h in assembly['mounting_hole_matches']:
         x,y=h['pcb_center_case_mm'];obstacles.append(('mount-'+h['pcb_ref'] if 'pcb_ref' in h else 'mount',box([x-2.1,y-2.1,-3.9,x+2.1,y+2.1,-2])))
+    power_fit=[]
+    revised={p['ref'] for p in native['revised_power_components']}
+    mount_shapes=[(name,shape) for name,shape in obstacles if name.startswith('mount')]
+    pack=box(assembly['battery_candidates'][0]['bounds_case_mm'])
+    for thick in [spec['CAD_finished_envelope_mm'],*spec['ordinary_thickness_acceptance_range_mm']]:
+        delta=spec['CAD_finished_envelope_mm']-thick
+        for part in assembly['component_envelopes']:
+            if part['ref'] not in revised:continue
+            shape=move(box(part['bounds_case_mm']),z=delta)
+            case_gap=min(distance(shape,c) for c in cases)
+            mount_gap=min(distance(shape,move(q,z=delta)) for _,q in mount_shapes)
+            pack_gap=distance(shape,pack)
+            assert min(case_gap,mount_gap,pack_gap)>=.15-1e-6,('Relocated power part interference',part['ref'],thick,case_gap,mount_gap,pack_gap)
+            power_fit.append(dict(ref=part['ref'],pcb_thickness_mm=thick,minimum_case_gap_mm=case_gap,minimum_mount_gap_mm=mount_gap,minimum_pack_gap_mm=pack_gap))
     envelopes=[]
     for p in native['new_headers']:
         ref=p['ref'];x,y=p['position'];x0,y0,x1,y1=p['physical_body_bbox_pcb_mm'];envelopes.append((ref,[x0,-y1,nominal-3,x1,-y0,nominal],ref))
@@ -51,7 +67,7 @@ def main():
             results.append({'envelope':name,'pcb_thickness_mm':thick,'bounds_case_mm':actual,'allowance_mm':allow,'minimum_case_gap_mm':case_gap,'nearest_retained_part_or_mount':nearest[0],'minimum_retained_part_or_mount_gap_mm':nearest[1]})
     for side in ['positive','negative']:
         assert screen[side]['nearest_adjacent_GND_coverage_fraction']>.999,'New short USB path has a reference gap'
-    report={'status':'local-header-fit-and-reference-passed','manufacturing_released':False,'physical_verification':False,'USB_reference_screen':screen,'ground_polygon_normalizations':normalizations,'local_connector_and_mating_housing_checks':results,'source_sha256':{'hardware/usb-short-route/audit/native-check.json':sha(AUD/'native-check.json'),'hardware/usb-short-route/audit/USB-paths.json':sha(AUD/'USB-paths.json'),'scripts/study_usb_short_route.py':sha(Path(__file__)),'docs/audit/yeti60-assembly.json':sha(ROOT/'docs/audit/yeti60-assembly.json'),'mechanical/generated/yeti60-bottom.step':sha(ROOT/'mechanical/generated/yeti60-bottom.step'),'mechanical/generated/yeti60-top.step':sha(ROOT/'mechanical/generated/yeti60-top.step')},'not_verified':['Full C5-to-J4 and J5-to-J1 cable sweeps, bend radii, serviceability and enclosed routing','Connector MPN height and supplier mating-housing tolerances','Pair impedance, current distribution, propagation delay and eye diagram','Actual USB data with simultaneous battery charging']}
+    report={'status':'local-header-fit-and-reference-passed','manufacturing_released':False,'physical_verification':False,'USB_reference_screen':screen,'ground_polygon_normalizations':normalizations,'independent_ground_connectivity':ground_check,'relocated_power_component_fit':power_fit,'power_fit_limit':'Conservative native bounds at accepted PCB thicknesses; component/mount XY placement and resin process tolerances still require first-article inspection','local_connector_and_mating_housing_checks':results,'source_sha256':{'hardware/usb-short-route/audit/native-check.json':sha(AUD/'native-check.json'),'hardware/usb-short-route/audit/USB-paths.json':sha(AUD/'USB-paths.json'),'scripts/study_usb_short_route.py':sha(Path(__file__)),'scripts/usb_short_ground.py':sha(ROOT/'scripts/usb_short_ground.py'),'docs/audit/yeti60-assembly.json':sha(ROOT/'docs/audit/yeti60-assembly.json'),'mechanical/generated/yeti60-bottom.step':sha(ROOT/'mechanical/generated/yeti60-bottom.step'),'mechanical/generated/yeti60-top.step':sha(ROOT/'mechanical/generated/yeti60-top.step')},'not_verified':['Full C5-to-J4 and J5-to-J1 cable sweeps, bend radii, serviceability and enclosed routing','Connector MPN height and supplier mating-housing tolerances','Pair impedance, current distribution, propagation delay and eye diagram','Actual USB data with simultaneous battery charging']}
     (AUD/'geometry-check.json').write_text(json.dumps(report,indent=2)+'\n')
     for zh in [False,True]:
         plt.rcParams['svg.hashsalt']='yeti60-short-usb';plt.rcParams['font.family']=['Arial Unicode MS','DejaVu Sans']

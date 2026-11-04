@@ -6,7 +6,7 @@ Choose your own supplier and brand using the specifications below. Package names
 
 This revision changes seven power capacitors and their native lands; it applies only to this [candidate PCB](EC60-nRF52840.kicad_pcb). The previous fabrication archive and soldering position sheets do not include these changes. No passive brand is mandatory. Keep the selected ICs, module, fuse, inductor and connector pinouts from the complete table; a similar package alone does not make those interchangeable.
 
-**Power-layout hold:** native copper-item extraction still finds approximately 29.183 mm between U6 VOUT/FB and 28.504 mm to C46, despite their close body positions. The retained switch ground guard prevents a simple B.Cu bridge; trial through vias intersected front sensing electrodes and were removed. Capacitor enlargement alone does not close the regulator layout. Rework the complete power stage clear of the guard before ordering; short-loop stability and actual transients remain unverified. The native report records this hold.
+**Power detour repaired:** the regulator stage and charger capacitors are relocated; conservative feedback and C46 paths are now 3.555 mm and 4.681 mm, with all ten local paths on B.Cu. Native DRC and per-layer ground connectivity pass. See [power layout](POWER-LAYOUT.md) for positions, ordinary thermal vias and limits; first-board stability remains unverified.
 
 ## Capacitors
 
@@ -75,7 +75,7 @@ D2: one non-addressable **0603 green LED**, body ≤1.8 × 1.0 × 1.0 mm, with u
 
 ## Soldering and verification changes
 
-Place C32 at PCB (346.4, 118.0) mm / 90°; C40 (123.8, 148.6) / 0°; C41 (119.6, 151.0) / 0°; C42 (122.0, 146.1) / 0°; C43 (132.0, 140.7) / 0°; C45 (132.5, 148.5) / 0°; C46 (135.9, 148.5) / 0°. All are on B.Cu; these are native KiCad coordinates, not a mirrored solder-side drawing.
+C32 remains at native (346.4, 118.0) mm / 90°. C40/C41/C42/C43/C45/C46 move with the power stage; use the [complete power position table](POWER-LAYOUT.md#component-positions). All are on B.Cu; previous placement images are superseded.
 
 Follow the [candidate assembly sequence](ASSEMBLY.md). Populate the power-stage passives with U5/U6 before the module/AFE stages, inspect the enlarged lands and measure unpowered shorts, then verify current-limited startup, 3.3 V ripple and load steps on USB and battery. Recheck USB enumeration while charging and after disconnect/reconnect. Ordinary DRC/connectivity, host firmware tests and geometric checks cannot measure analog stability, charge temperature or real MLCC behavior.
 

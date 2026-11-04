@@ -2,7 +2,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 # Raytac review conclusions
 
-**All 73 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
+**All 75 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
 
 | Area | Result |
 |---|---|
@@ -37,7 +37,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 | Power | [Current/timer arithmetic](yeti60-power-budget.json), enable-net and adapter review agree with BQ24074 input modes. Off-state USB100 charging differs from firmware-controlled charging. Actual thermal/current behavior remains open. |
 | Firmware | [Existing normal/calibrator ARM artifacts](yeti60-target-check.json) rechecked against current source hashes, flash ranges and linked USB500 descriptors. No firmware source changed or rebuild was required in this mechanical review; this is not target execution. |
 | Assembly | [Native fit](yeti60-assembly.json), [plate](plate-mount.json), 28 mounts / H26 omission, 1.6 mm plate, seven conductors and image provenance checked. Actual NiZ skirts/clips, 6U bends, preload and local stiffness remain open. |
-Generic passives and the LED now use [purchasing specifications](../../hardware/usb-short-route/PASSIVES.md); seven power capacitors have matching 0805 lands and stock credits remain. Native copper measurements also identify output/feedback and C46 detours around the sensing guard. Complete power-stage layout rework remains open despite passing DRC; ordering is still held.
+Generic passives and the LED now use [purchasing specifications](../../hardware/usb-short-route/PASSIVES.md); seven power capacitors have matching 0805 lands and stock credits remain. The complete power stage is relocated; feedback/C46 conservative paths are 3.555/4.681 mm. [Positions and ordinary thermal vias](../../hardware/usb-short-route/POWER-LAYOUT.md) document the design checks and physical boundaries.
 
 ## Isolated USB repair candidate
 
@@ -52,7 +52,7 @@ Mainboard D+ / D− actual trace centerlines are approximately **253.541 / 249.1
 
 ## Supplier and physical work still open
 
-- Generic passives/LEDs are purchased by specification without mandatory individual brands. Effective capacitance under bias and actual fuse thermal derating still require compliance; complete power-stage layout rework remains open.
+- Generic passives/LEDs are purchased by specification without mandatory individual brands. Effective capacitance under bias and actual fuse thermal derating still require compliance; layout rework passes design checks; stability, ripple and transients still require first-board measurements.
 - Supplier-signed complete pack envelope, charge limits and independent thermal interruption.
 - Actual housings/domes/springs/stabilizers, resin tolerances and harness/mechanical samples.
 - Physical USB enumeration/eye, concurrent charge/input, BLE, per-key calibration, thermal/runtime and enclosed interference tests.

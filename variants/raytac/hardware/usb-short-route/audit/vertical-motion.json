@@ -62,7 +62,7 @@
     {
       "part": "C46",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.910000000000001
+      "minimum_nominal_gap_mm": 0.9100000000000037
     },
     {
       "part": "R11",
@@ -72,12 +72,12 @@
     {
       "part": "C41",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000001
+      "minimum_nominal_gap_mm": 0.9100000000000037
     },
     {
       "part": "C43",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000046
+      "minimum_nominal_gap_mm": 0.9100000000000072
     },
     {
       "part": "R50",
@@ -142,7 +142,7 @@
     {
       "part": "R47",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000046
+      "minimum_nominal_gap_mm": 0.9100000000000072
     },
     {
       "part": "R56",
@@ -172,7 +172,7 @@
     {
       "part": "R45",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000046
+      "minimum_nominal_gap_mm": 0.9100000000000072
     },
     {
       "part": "C32",
@@ -197,7 +197,7 @@
     {
       "part": "R46",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000055
+      "minimum_nominal_gap_mm": 0.9100000000000081
     },
     {
       "part": "R54",
@@ -232,7 +232,7 @@
     {
       "part": "C42",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000019
+      "minimum_nominal_gap_mm": 0.9100000000000037
     },
     {
       "part": "U4",
@@ -247,7 +247,7 @@
     {
       "part": "C40",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.910000000000001
+      "minimum_nominal_gap_mm": 0.9100000000000019
     },
     {
       "part": "U2",
@@ -272,7 +272,7 @@
     {
       "part": "L1",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000019
+      "minimum_nominal_gap_mm": 0.9100000000000037
     },
     {
       "part": "R43",
@@ -287,7 +287,7 @@
     {
       "part": "C44",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000037
+      "minimum_nominal_gap_mm": 0.9100000000000055
     },
     {
       "part": "R4",
@@ -297,7 +297,7 @@
     {
       "part": "C45",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.910000000000001
+      "minimum_nominal_gap_mm": 0.9100000000000037
     },
     {
       "part": "D2",
@@ -337,7 +337,7 @@
     {
       "part": "U6",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000028
+      "minimum_nominal_gap_mm": 0.9100000000000046
     },
     {
       "part": "R52",
@@ -1056,12 +1056,12 @@
   "source_sha256": {
     "scripts/check_usb_short_vertical_motion.py": "9db733cd3cfaa38a66f5d20a83ee1f3b29438351c9c3f3d6304d8ffbe13a0b92",
     "hardware/usb-short-route/interconnect-spec.json": "f17b44770a579595d699bcf128744ac3af68ad77895621e4dfe7f156bdf8b6d7",
-    "hardware/usb-short-route/audit/assembly.json": "6b2e116d23d82a606a5b0a9f226dca1b48a091e4d9c62b67c7fd4d6145de2472",
-    "hardware/usb-short-route/audit/guides.json": "08c4f76870a01045c3124dc400ac418e08a6e4e3c5051a5fb2381706e412c21d",
-    "hardware/usb-short-route/audit/closed-assembly.json": "26445237a114c92c8958067a83f4888978590b046b2fee8e70f944369cf0d810",
+    "hardware/usb-short-route/audit/assembly.json": "57c4b9c34f5627f86ca110d394cb8a694b295f793b9c70605d233a6d04200c5e",
+    "hardware/usb-short-route/audit/guides.json": "56c26aab7ff1e47141ce10026b24c93586c3d6d4de05b2405fd50cbe8c979d74",
+    "hardware/usb-short-route/audit/closed-assembly.json": "d6dc8d2b2fdcd3f13ff112d091934e9bbdf477382120f58c97111d6abd27cc3b",
     "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step": "b317fe4d9c82573db9430fcc2f0105cdd17f98fcf5909b98ae91d2f070249744",
-    ".assembly-work/pcb-placed.step": "e6ccb0271713e8d77c3dc7ba6d3129dd3f4dc7d63a2bcb3f0c157fe0a615a061",
-    ".assembly-work/plate.step": "f8f057ce7e8ce7f9df4ab1a61e94605fb3e5c8e484a696fb05aeb9fec276998e",
+    ".assembly-work/pcb-placed.step": "54bd8e16a9659ec051ce1f5454f35c05601f8e4e4f26de092c4113fa4bf5640e",
+    ".assembly-work/plate.step": "cc7fd0a1a0cc2b2a30b5b53c929179a7f527de4e8f23ee1afc7a5421debc7734",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/check_yeti60_assembly.py": "049759707a29a2cb0370e2a11764a1c3856897d56be1f772cccfe5692c34bbce",

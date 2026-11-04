@@ -15,8 +15,11 @@ from check_yeti60_signal_paths import extract
 from usb_short_fuse_contract import verify_fuse
 from usb_short_passive_contract import verify_passives, REVISED
 from usb_short_power_routes import measure_power_routes
+from usb_short_power_contract import verify_layout, verify_paths, MOVED
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';AUD=BASE/'audit';WORK=ROOT/'.assembly-work/usb-short-audit';NAME='EC60-nRF52840';CLI='/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli';REV='3dcbf2403df1226e11a04fcdcf641d00a97cfa99'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def copper_polygons(item,layer):
+    shape=pcb.SHAPE_POLY_SET();item.TransformShapeToPolygon(shape,layer,0,pcb.FromMM(.002),pcb.ERROR_INSIDE);return polygons(shape)
 def gitfile(rel):return subprocess.check_output(['git','show',REV+':variants/raytac/'+rel],cwd=ROOT)
 def nodes(xml):return {(n.get('ref'),n.get('pin')):net.get('name') for net in xml.findall('./nets/net') for n in net.findall('node')}
 def signature(xml):return ({n.get('ref'):(n.findtext('value'),n.findtext('footprint')) for n in xml.findall('./components/comp')},{n.get('name'):sorted((a.get('ref'),a.get('pin')) for a in n.findall('node')) for n in xml.findall('./nets/net')})
@@ -24,8 +27,9 @@ def geometry(board):
     out={}
     for f in board.GetFootprints():
         ref=f.GetReference()
-        if ref in {'J4','J5','R30','R31','F1'} | REVISED:continue
-        # Preserve every retained footprint except the separately checked F1 lands.
+        if ref in {'J4','J5','R30','R31','F1'} | REVISED | MOVED:continue
+        # Preserve other footprints; F1, capacitor lands and relocated power parts
+        # are checked against their separate frozen contracts.
         # J1's two intentionally unused nets change, but its pad geometry does not.
         out[ref]={'position':(f.GetPosition().x,f.GetPosition().y),'angle':f.GetOrientationDegrees(),'back':f.IsFlipped(),'footprint':f.GetFPID().GetLibItemName(),'pads':[(p.GetNumber(),p.GetNetname() if ref!='J1' else '',(p.GetDrillSize().x,p.GetDrillSize().y),polygons(p.GetEffectivePolygon(pcb.B_Cu if f.IsFlipped() else pcb.F_Cu))) for p in f.Pads()]}
     p=pcb.SHAPE_POLY_SET();assert board.GetBoardPolygonOutlines(p,False);return out,polygons(p)
@@ -43,9 +47,9 @@ def connected_groups(board):
     return {k:groups[p.m_Uuid.AsString()] for k,p in pads.items()}
 def main():
     AUD.mkdir(exist_ok=True);WORK.mkdir(parents=True,exist_ok=True)
-    fuse=verify_fuse();passives=verify_passives()
-    source_files=sorted(p for p in BASE.rglob('*') if p.is_file() and (p.parent.name=='YAECKB.pretty' or (p.parent==BASE and (p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_pro','.kicad_sym','.xml','.csv'] or p.name in ['components.json','frozen-footprints.json','metadata-audit.json','fp-lib-table','sym-lib-table','parts-qualification.json','power-passives.json']))))
-    source_files.extend([ROOT/'scripts/usb_short_fuse_contract.py',ROOT/'scripts/usb_short_passive_contract.py',ROOT/'scripts/usb_short_power_routes.py',BASE/'models/Littelfuse_0466001_NRHF_nominal.step'])
+    fuse=verify_fuse();passives=verify_passives();power=verify_layout()
+    source_files=sorted(p for p in BASE.rglob('*') if p.is_file() and (p.parent.name=='YAECKB.pretty' or (p.parent==BASE and (p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_pro','.kicad_sym','.xml','.csv'] or p.name in ['components.json','frozen-footprints.json','metadata-audit.json','fp-lib-table','sym-lib-table','parts-qualification.json','power-passives.json','power-layout.json']))))
+    source_files.extend([ROOT/'scripts/usb_short_fuse_contract.py',ROOT/'scripts/usb_short_passive_contract.py',ROOT/'scripts/usb_short_power_routes.py',ROOT/'scripts/usb_short_power_contract.py',BASE/'models/Littelfuse_0466001_NRHF_nominal.step'])
     before={str(p.relative_to(ROOT)):sha(p) for p in source_files};assert (BASE/(NAME+'.kicad_pro')).read_bytes()==gitfile('hardware/ec60-nrf52840/'+NAME+'.kicad_pro'),'Project rules changed'
     oldxml=ET.fromstring(gitfile('hardware/ec60-nrf52840/netlist.xml'));saved=ET.parse(BASE/'netlist.xml').getroot()
     with tempfile.TemporaryDirectory(prefix='yeti60-short-usb-') as folder:
@@ -97,13 +101,11 @@ def main():
                 if t.IsOnLayer(l) and t.GetNetname()=='GND':
                     q=pcb.SHAPE_POLY_SET();t.TransformShapeToPolygon(q,l,0,pcb.FromMM(.002),pcb.ERROR_INSIDE);shapes.extend(polygons(q))
             ground[board.GetLayerName(l)]=shapes
-        inputs={'ground_copper':ground,'ground_through_vias':[],'source_sha256':before,'new_headers':[],'revised_passives':[]}
-        oldtracks={q.m_Uuid.AsString() for q in oldboard.GetTracks()};newvias=[q for q in board.GetTracks() if isinstance(q,pcb.PCB_VIA) and q.m_Uuid.AsString() not in oldtracks];assert len(newvias)==3 and all(q.GetViaType()==pcb.VIATYPE_THROUGH and abs(pcb.ToMM(q.GetWidth(pcb.F_Cu))-.5)<1e-7 and abs(pcb.ToMM(q.GetDrillValue())-.3)<1e-7 for q in newvias)
+        inputs={'ground_copper':ground,'ground_through_vias':[],'source_sha256':before,'new_headers':[],'revised_passives':[],'revised_power_components':[],'ground_vertical_connectors':[]}
+        oldtracks={q.m_Uuid.AsString() for q in oldboard.GetTracks()};newvias=[q for q in board.GetTracks() if isinstance(q,pcb.PCB_VIA) and q.m_Uuid.AsString() not in oldtracks];assert len(newvias)==3+len(power['via_changes']['added']) and all(q.GetViaType()==pcb.VIATYPE_THROUGH and abs(pcb.ToMM(q.GetWidth(pcb.F_Cu))-.5)<1e-7 and abs(pcb.ToMM(q.GetDrillValue())-.3)<1e-7 for q in newvias)
         power_routes=measure_power_routes(board)
-        feedback=next(p for p in power_routes if p['from']=='U6.1' and p['to']=='U6.10')
-        output2=next(p for p in power_routes if p['from']=='U6.1' and p['to']=='C46.1')
-        power_layout_open=feedback['conservative_track_length_mm']>=5 or output2['conservative_track_length_mm']>=8.5
-        if power_layout_open:assert not passives['layout_hold']['release_approved'],'Power-layout hold must be reviewed before changing release status'
+        assert verify_paths(power_routes,power)
+        power_layout_open=False
         for f in board.GetFootprints():
             if f.GetReference() not in ['J4','J5']:continue
             q=f.GetBoundingBox(False,False);inputs['new_headers'].append({'ref':f.GetReference(),'position':[pcb.ToMM(f.GetPosition().x),pcb.ToMM(f.GetPosition().y)],'bbox':[pcb.ToMM(q.GetLeft()),pcb.ToMM(q.GetTop()),pcb.ToMM(q.GetRight()),pcb.ToMM(q.GetBottom())]})
@@ -111,6 +113,13 @@ def main():
             if f.GetReference() not in REVISED:continue
             c=passives['capacitors'][f.GetReference()];q=f.GetBoundingBox(False,False)
             inputs['revised_passives'].append(dict(ref=f.GetReference(),value=c['value'],position=c['position'],body_max_LWH_mm=c['body_max_LWH_mm'],bbox_pcb_mm=[pcb.ToMM(q.GetLeft()),pcb.ToMM(q.GetTop()),pcb.ToMM(q.GetRight()),pcb.ToMM(q.GetBottom())]))
+        for f in board.GetFootprints():
+            if f.GetReference() not in MOVED | REVISED:continue
+            q=f.GetBoundingBox(False,False)
+            inputs['revised_power_components'].append(dict(ref=f.GetReference(),position=[pcb.ToMM(f.GetPosition().x),pcb.ToMM(f.GetPosition().y),f.GetOrientationDegrees()],bbox_pcb_mm=[pcb.ToMM(q.GetLeft()),pcb.ToMM(q.GetTop()),pcb.ToMM(q.GetRight()),pcb.ToMM(q.GetBottom())]))
+        for item in [*[t for t in board.GetTracks() if isinstance(t,pcb.PCB_VIA)],*[p for f in board.GetFootprints() for p in f.Pads() if p.GetAttribute()==pcb.PAD_ATTRIB_PTH]]:
+            if item.GetNetname()=='GND':
+                inputs['ground_vertical_connectors'].append(dict(uuid=item.m_Uuid.AsString(),by_layer={board.GetLayerName(l):copper_polygons(item,l) for l in [pcb.F_Cu,pcb.In1_Cu,pcb.In2_Cu,pcb.B_Cu] if item.IsOnLayer(l)}))
         for h in inputs['new_headers']:
             f=next(f for f in board.GetFootprints() if f.GetReference()==h['ref']);pts=[]
             for item in f.GraphicalItems():
@@ -125,7 +134,7 @@ def main():
             assert bomrefs==set(newparts)-virtual-{'JP1'}
             assert [sum(int(row[k]) for row in rows) for k in ks[1:4]]==[75,8,67]
         (WORK/'native-inputs.json').write_text(json.dumps(inputs,separators=(',',':'))+'\n')
-        report={'status':'native-candidate-checks-passed','manufacturing_released':False,'baseline_commit':REV,'strict_DRC_errors':0,'schematic_parity_items':0,'unconnected_items':0,'enabled_previously_ignored_checks':enabled,'ERC_counts':{str(k):v for k,v in ec.items()},'DRC_warnings':dict(Counter(v['type'] for v in drc['violations'])),'physical_pin_pairs':checks,'physical_pin_pairs_checked':len(checks),'sensing_and_mount_geometry_unchanged':True,'all_retained_footprint_geometry_unchanged':False,'retained_footprints_except_F1_and_seven_power_caps_unchanged':True,'revised_power_passives':passives,'F1_revised_fuse_and_lands':fuse,'project_rules_unchanged':True,'removed_zero_ohm_links':['R30','R31'],'new_references':['J4','J5'],'new_ordinary_through_vias':3,'new_vias_by_net':dict(Counter(v.GetNetname() for v in newvias)),'power_layout_rework_open':power_layout_open,'conservative_local_power_paths':power_routes,'power_path_measurement_limit':'Sum of contacted copper primitives; no ground-return inductance, small-signal stability or transient solution','USB_positive_contact_path_mm':paths['positive']['geometric_centerline_path_mm'],'USB_negative_contact_path_mm':paths['negative']['geometric_centerline_path_mm'],'USB_geometric_skew_mm':paths['geometric_path_difference_mm'],'USB_data_vias_per_leg':0,'physical_verification':False,'source_sha256':before,'audit_script_sha256':sha(Path(__file__)),'remaining':['Enclosed geometry and illustrations are checked separately; swept service/mating access, springback and retention remain open','Full cable impedance/return and physical USB/BLE/charge/thermal validation','Supplier battery verification remains user-owned; use battery-vendor-checklist.md']}
+        report={'status':'native-candidate-checks-passed','manufacturing_released':False,'baseline_commit':REV,'strict_DRC_errors':0,'schematic_parity_items':0,'unconnected_items':0,'enabled_previously_ignored_checks':enabled,'ERC_counts':{str(k):v for k,v in ec.items()},'DRC_warnings':dict(Counter(v['type'] for v in drc['violations'])),'physical_pin_pairs':checks,'physical_pin_pairs_checked':len(checks),'sensing_and_mount_geometry_unchanged':True,'all_retained_footprint_geometry_unchanged':False,'retained_footprints_except_explicit_component_revisions_unchanged':True,'explicit_component_revision_refs':sorted(REVISED | MOVED | {'F1'}),'power_stage_contract':power,'revised_power_passives':passives,'F1_revised_fuse_and_lands':fuse,'project_rules_unchanged':True,'removed_zero_ohm_links':['R30','R31'],'new_references':['J4','J5'],'new_ordinary_through_vias':len(newvias),'new_vias_by_net':dict(Counter(v.GetNetname() for v in newvias)),'power_layout_rework_open':power_layout_open,'conservative_local_power_paths':power_routes,'power_path_measurement_limit':'Sum of contacted copper primitives; no ground-return inductance, small-signal stability or transient solution','USB_positive_contact_path_mm':paths['positive']['geometric_centerline_path_mm'],'USB_negative_contact_path_mm':paths['negative']['geometric_centerline_path_mm'],'USB_geometric_skew_mm':paths['geometric_path_difference_mm'],'USB_data_vias_per_leg':0,'physical_verification':False,'source_sha256':before,'audit_script_sha256':sha(Path(__file__)),'remaining':['Enclosed geometry and illustrations are checked separately; swept service/mating access, springback and retention remain open','Full cable impedance/return and physical USB/BLE/charge/thermal validation','Supplier battery verification remains user-owned; use battery-vendor-checklist.md']}
         (AUD/'native-check.json').write_text(json.dumps(report,indent=2)+'\n')
     assert all(sha(ROOT/p)==h for p,h in before.items()),'Audit modified source'
     print({k:report[k] for k in ['status','strict_DRC_errors','schematic_parity_items','unconnected_items','physical_pin_pairs_checked','USB_positive_contact_path_mm','USB_negative_contact_path_mm']})

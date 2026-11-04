@@ -30,6 +30,9 @@ Use the [revised passive specifications and seven 0805 power-capacitor positions
 
 All unchanged NiZ/plate-mounted stabilizer, plate, standoff, gasket, fastener, C5 and programming supplies are in the [main build handbook](../../BUILD.md). Keep its 28 mounting sets and leave H26 unused. This candidate changes the USB/power harnesses and bottom relief; it retains the previously checked plate/PCB stack. Do not buy a second battery lead set if the pack vendor supplies the specified complete harness.
 
+
+The regulator, inductor, control passives and six capacitors have moved. Solder U5/U6 and their power passives using the [current placement and ordinary thermal-via instructions](POWER-LAYOUT.md) before the module/AFE. U5/U6 thermal holes are open at the back; control paste and inspect wicking with ordinary processing. Previous power placement images are superseded.
+
 ## 01 — Inspect the case and prints
 
 Use the candidate bottom, not the unmodified original bottom. Check the rear relief and all original insert bores. The checked skin adjacent to the new relief is 2.16 mm nominal, or 2.01 mm after the existing case tolerance; this is not a claim about every original shell wall. Print each guide once. STLs are already oriented at the print origin in mm; STEPs retain assembly coordinates. Deburr the channels without enlarging them arbitrarily.

@@ -89,8 +89,24 @@ def apply_passive_envelopes(assembly, native):
         # Native courtyard covers XY body and soldering allowance; preserve
         # the larger legacy 3 mm height, independently of the render body.
         entry.update(value=p['value'], position_pcb_mm=[x, y], angle_deg=angle,
+                     xy_courtyard_and_graphics_bbox_pcb_mm=[x0, y0, x1, y1],
                      bounds_case_mm=[x0, -y1, z-3, x1, -y0, z], height_envelope_mm=3,
                      height_basis='Revised native 0805 courtyard and conservative 3 mm assembly height',
                      render_body_bounds_case_mm=[x-hx, -y-hy, z-height, x+hx, -y+hy, z],
                      clearance_basis='Generic 0805 maximum body 2.2 x 1.45 x 1.45 mm plus native courtyard')
+    # Positions of the IC, inductor and control passives must follow the
+    # same native map as the revised capacitors in every CAD consumer.
+    for p in native.get('revised_power_components', []):
+        if p['ref'] in REVISED:
+            continue
+        entry = byref[p['ref']]
+        x0, y0, x1, y1 = p['bbox_pcb_mm']
+        x, y, angle = p['position']
+        entry.update(position_pcb_mm=[x, y], angle_deg=angle,
+                     xy_courtyard_and_graphics_bbox_pcb_mm=[x0, y0, x1, y1],
+                     bounds_case_mm=[x0, -y1, z-3, x1, -y0, z], height_envelope_mm=3,
+                     height_basis='Relocated native power component bounds; conservative 3 mm height')
+        # Rendering uses a conservative body inside the native courtyard.
+        # The precise silicon/package model is not a solder-joint proof.
+        entry.pop('render_body_bounds_case_mm', None)
     return result

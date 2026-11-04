@@ -4,6 +4,8 @@ English | [Chinese](BUILD.zh-CN.md)
 
 For the USB repair candidate, use [generic passive purchasing specifications](hardware/usb-short-route/PASSIVES.md), including revised 0805 power capacitors and existing stock. The old mainboard archive remains held.
 
+Use the current inductor dimensions: L1 is Würth 74438336015, WE-MAPI 3020, maximum body 3.2 × 3.2 × 2.0 mm. `3015` in the previous list/native footprint is a legacy identifier, not the actual component dimensions; see [current power layout and specifications](hardware/usb-short-route/POWER-LAYOUT.md).
+
 USB repair candidate: [native PCB, revised BOM and evidence](hardware/usb-short-route/README.md); [nine-wire enclosed assembly, 16 guides and complete explosion](hardware/usb-short-route/ASSEMBLY.md). The candidate is separate from the held previous ordering archive; service/mating access and physical acceptance remain open.
 
 The candidate uses the [0466001.NRHF one-time fuse and revised lands](hardware/usb-short-route/F1-SELECTION.md); the previous ordering package’s F1 materials below do not apply to it.

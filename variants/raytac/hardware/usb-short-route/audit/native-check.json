@@ -4955,7 +4955,572 @@
   "physical_pin_pairs_checked": 411,
   "sensing_and_mount_geometry_unchanged": true,
   "all_retained_footprint_geometry_unchanged": false,
-  "retained_footprints_except_F1_and_seven_power_caps_unchanged": true,
+  "retained_footprints_except_explicit_component_revisions_unchanged": true,
+  "explicit_component_revision_refs": [
+    "C32",
+    "C40",
+    "C41",
+    "C42",
+    "C43",
+    "C44",
+    "C45",
+    "C46",
+    "F1",
+    "L1",
+    "R45",
+    "R46",
+    "R47",
+    "U6"
+  ],
+  "power_stage_contract": {
+    "schema": 1,
+    "baseline_commit": "9eaa30719849629d6ddb1a5950dfe071d389191a",
+    "scope": "Relocated Raytac USB-repair power stage; design-level checks, not measured stability",
+    "component_positions": {
+      "C40": [
+        122.0,
+        146.9,
+        -90.0
+      ],
+      "C41": [
+        113.0,
+        143.7,
+        180.0
+      ],
+      "C42": [
+        121.9,
+        142.7,
+        0
+      ],
+      "C43": [
+        132.0,
+        136.5,
+        0
+      ],
+      "C44": [
+        137.0,
+        139.8,
+        0
+      ],
+      "C45": [
+        132.5,
+        143.3,
+        0
+      ],
+      "C46": [
+        136.0,
+        144.0,
+        0
+      ],
+      "L1": [
+        128.5,
+        141.5,
+        -90.0
+      ],
+      "R45": [
+        124.5,
+        136.0,
+        0
+      ],
+      "R46": [
+        137.0,
+        135.0,
+        0
+      ],
+      "R47": [
+        136.6,
+        136.5,
+        0
+      ],
+      "U6": [
+        133.0,
+        140.8,
+        0
+      ]
+    },
+    "via_changes": {
+      "added": {
+        "bd7c6e02-592d-46f4-91c6-9f93a4948ee5": {
+          "net": "GND",
+          "position": [
+            133.0,
+            140.8
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "none"
+            ]
+          ],
+          "type": "through"
+        },
+        "6959f7af-1aed-40e2-8a4a-39885452049a": {
+          "net": "CHG_N",
+          "position": [
+            117.375,
+            141.75
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "yes"
+            ]
+          ],
+          "type": "through"
+        },
+        "2522104f-4c97-4c63-9ca2-fbbbe5061c9e": {
+          "net": "VSYS",
+          "position": [
+            119.675,
+            142.475
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "yes"
+            ]
+          ],
+          "type": "through"
+        },
+        "6301f21e-096c-4a58-a408-fe4e3276e7d2": {
+          "net": "VSYS",
+          "position": [
+            119.325,
+            133.5
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "yes"
+            ]
+          ],
+          "type": "through"
+        },
+        "e5cc9a2d-f053-48b6-9995-b6cc66f3f5c6": {
+          "net": "ILIM_SET",
+          "position": [
+            115.325,
+            141.75
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "yes"
+            ]
+          ],
+          "type": "through"
+        },
+        "24cc0123-a44a-4089-82a2-bf0225321478": {
+          "net": "+3.3V",
+          "position": [
+            135.175,
+            139.575
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "yes"
+            ]
+          ],
+          "type": "through"
+        },
+        "a54eb134-b6bc-4876-a9ad-945c37677023": {
+          "net": "+3.3V",
+          "position": [
+            135.175,
+            142.325
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "yes"
+            ]
+          ],
+          "type": "through"
+        },
+        "78688fb9-81eb-49df-9f58-048404654f77": {
+          "net": "REG_EN",
+          "position": [
+            125.225,
+            137.9
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "yes"
+            ]
+          ],
+          "type": "through"
+        },
+        "86b6a4a9-ffe9-42f6-9c35-d8a75bf77af8": {
+          "net": "REG_EN",
+          "position": [
+            122.45,
+            137.5
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "yes"
+            ]
+          ],
+          "type": "through"
+        }
+      },
+      "removed": {
+        "e234a934-4e45-4114-87a7-d4e68a74255b": {
+          "net": "BAT_CELL",
+          "position": [
+            121.4824,
+            150.3124
+          ],
+          "land_mm": 0.6,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": null,
+          "type": "through"
+        },
+        "beb7aca8-1f8d-437c-b7d9-6efa31ef2459": {
+          "net": "CHG_N",
+          "position": [
+            126.1455,
+            141.8318
+          ],
+          "land_mm": 0.6,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": null,
+          "type": "through"
+        },
+        "abb75838-5208-4bd0-8617-ce743c9c1d79": {
+          "net": "ILIM_SET",
+          "position": [
+            112.49,
+            142.8298
+          ],
+          "land_mm": 0.6,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": null,
+          "type": "through"
+        },
+        "6044f02b-35d3-4b0d-bfb3-9e6b175bc4fc": {
+          "net": "+3.3V",
+          "position": [
+            132.15,
+            149.95
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": null,
+          "type": "through"
+        }
+      },
+      "moved": {
+        "89d127dd-be9c-4cc0-a694-b472d4ebb192": {
+          "before": {
+            "net": "GND",
+            "position": [
+              133.3502,
+              142.9887
+            ],
+            "land_mm": 0.6,
+            "drill_mm": 0.3,
+            "layers": [
+              "F.Cu",
+              "B.Cu"
+            ],
+            "tenting": null,
+            "type": "through"
+          },
+          "after": {
+            "net": "GND",
+            "position": [
+              134.45,
+              142.8
+            ],
+            "land_mm": 0.6,
+            "drill_mm": 0.3,
+            "layers": [
+              "F.Cu",
+              "B.Cu"
+            ],
+            "tenting": null,
+            "type": "through"
+          }
+        },
+        "e7e060d7-6d6a-48cd-b941-befd44a76b49": {
+          "before": {
+            "net": "+3.3V",
+            "position": [
+              127.6,
+              141.7
+            ],
+            "land_mm": 0.5,
+            "drill_mm": 0.3,
+            "layers": [
+              "F.Cu",
+              "B.Cu"
+            ],
+            "tenting": null,
+            "type": "through"
+          },
+          "after": {
+            "net": "+3.3V",
+            "position": [
+              127.0,
+              138.5
+            ],
+            "land_mm": 0.5,
+            "drill_mm": 0.3,
+            "layers": [
+              "F.Cu",
+              "B.Cu"
+            ],
+            "tenting": null,
+            "type": "through"
+          }
+        },
+        "eb6cd492-3ac5-4b36-843f-6f7e5c2c65ee": {
+          "before": {
+            "net": "REG_EN",
+            "position": [
+              134.7656,
+              142.4152
+            ],
+            "land_mm": 0.6,
+            "drill_mm": 0.3,
+            "layers": [
+              "F.Cu",
+              "B.Cu"
+            ],
+            "tenting": null,
+            "type": "through"
+          },
+          "after": {
+            "net": "REG_EN",
+            "position": [
+              134.65,
+              138.3
+            ],
+            "land_mm": 0.6,
+            "drill_mm": 0.3,
+            "layers": [
+              "F.Cu",
+              "B.Cu"
+            ],
+            "tenting": null,
+            "type": "through"
+          }
+        }
+      }
+    },
+    "U6_thermal_via_uuid": "bd7c6e02-592d-46f4-91c6-9f93a4948ee5",
+    "L1_central_gap_keepout_polygon_mm": [
+      [
+        126.8,
+        141.1
+      ],
+      [
+        130.199999,
+        141.1
+      ],
+      [
+        130.199999,
+        141.9
+      ],
+      [
+        126.8,
+        141.9
+      ]
+    ],
+    "local_path_limits": [
+      {
+        "from": "U6.4",
+        "to": "L1.1",
+        "max_length_mm": 4,
+        "min_width_mm": 0.3
+      },
+      {
+        "from": "U6.2",
+        "to": "L1.2",
+        "max_length_mm": 4,
+        "min_width_mm": 0.3
+      },
+      {
+        "from": "U6.5",
+        "to": "C43.1",
+        "max_length_mm": 4,
+        "min_width_mm": 0.25
+      },
+      {
+        "from": "U6.8",
+        "to": "C44.1",
+        "max_length_mm": 3,
+        "min_width_mm": 0.2
+      },
+      {
+        "from": "U6.1",
+        "to": "C45.1",
+        "max_length_mm": 3,
+        "min_width_mm": 0.25
+      },
+      {
+        "from": "U6.1",
+        "to": "C46.1",
+        "max_length_mm": 8.5,
+        "min_width_mm": 0.2
+      },
+      {
+        "from": "U6.1",
+        "to": "U6.10",
+        "max_length_mm": 5,
+        "min_width_mm": 0.2
+      },
+      {
+        "from": "U5.13",
+        "to": "C40.1",
+        "max_length_mm": 4.5,
+        "min_width_mm": 0.3
+      },
+      {
+        "from": "U5.2",
+        "to": "C41.1",
+        "max_length_mm": 4,
+        "min_width_mm": 0.25
+      },
+      {
+        "from": "U5.10",
+        "to": "C42.1",
+        "max_length_mm": 4,
+        "min_width_mm": 0.3
+      }
+    ],
+    "changed_nonpower_routes": [
+      "F.Cu ROW_DRV3 local clearance around U6 thermal via",
+      "F.Cu CHG_EN1 local clearance around U6 thermal via",
+      "In1.Cu ROW1 local clearance around U6 thermal via",
+      "In1.Cu CHG_N connection and acute-corner cleanup"
+    ],
+    "physical_verification": false,
+    "ordinary_fabrication": "Four copper layers; mechanical through vias >=0.5 mm land / 0.3 mm drill. U5 and U6 EP vias front tented and back open; no resin filling, capping, blind/buried vias or HDI.",
+    "limitations": [
+      "Contacted-copper paths do not solve return inductance, loop stability, thermal resistance, EMC or physical operation",
+      "Sensing electrodes, mounting holes and exterior unchanged; changed routing requires first-article key calibration"
+    ]
+  },
   "revised_power_passives": {
     "schema": 1,
     "scope": "USB repair candidate only; generic purchasing specifications, no mandatory passive vendor",
@@ -4963,9 +5528,9 @@
       "C41": {
         "value": "22u/10V",
         "position": [
-          119.6,
-          151,
-          0
+          113.0,
+          143.7,
+          180.0
         ],
         "tolerance_pct": 20,
         "rated_voltage_min_V": 10,
@@ -5000,8 +5565,8 @@
       "C42": {
         "value": "22u/10V",
         "position": [
-          122,
-          146.1,
+          121.9,
+          142.7,
           0
         ],
         "tolerance_pct": 20,
@@ -5037,8 +5602,8 @@
       "C43": {
         "value": "22u/10V",
         "position": [
-          132,
-          140.7,
+          132.0,
+          136.5,
           0
         ],
         "tolerance_pct": 20,
@@ -5075,7 +5640,7 @@
         "value": "22u/10V",
         "position": [
           132.5,
-          148.5,
+          143.3,
           0
         ],
         "tolerance_pct": 20,
@@ -5111,8 +5676,8 @@
       "C46": {
         "value": "22u/10V",
         "position": [
-          135.9,
-          148.5,
+          136.0,
+          144.0,
           0
         ],
         "tolerance_pct": 20,
@@ -5149,8 +5714,8 @@
         "value": "4.7u/16V",
         "position": [
           346.4,
-          118,
-          90
+          118.0,
+          90.0
         ],
         "tolerance_pct": 10,
         "rated_voltage_min_V": 16,
@@ -5185,9 +5750,9 @@
       "C40": {
         "value": "2.2u/25V",
         "position": [
-          123.8,
-          148.6,
-          0
+          122.0,
+          146.9,
+          -90.0
         ],
         "tolerance_pct": 10,
         "rated_voltage_min_V": 25,
@@ -5227,11 +5792,12 @@
     ],
     "physical_verification": false,
     "layout_hold": {
-      "finding": "U6 output/feedback and C46 routed around the retained switch ground guard; component proximity is not electrical loop proximity",
-      "feedback_route_approx_mm": 29.183,
-      "C46_route_approx_mm": 28.504,
-      "next_action": "Relocate and reroute the complete regulator power stage clear of the sensing ground guard; do not bridge it with ordinary through vias inside front sensing electrodes",
-      "release_approved": false
+      "previous_feedback_route_mm": 29.183,
+      "previous_C46_route_mm": 28.504,
+      "status": "Relocated power-stage layout checked by power-layout.json path limits and native DRC; physical stability unverified",
+      "design_layout_rework_open": false,
+      "release_approved": false,
+      "release_note": "Layout closure alone does not release fabrication or physical acceptance"
     }
   },
   "F1_revised_fuse_and_lands": {
@@ -5340,92 +5906,147 @@
     "J4",
     "J5"
   ],
-  "new_ordinary_through_vias": 3,
+  "new_ordinary_through_vias": 12,
   "new_vias_by_net": {
-    "GND": 1,
-    "USB_FEED": 2
+    "GND": 2,
+    "CHG_N": 1,
+    "VSYS": 2,
+    "ILIM_SET": 1,
+    "+3.3V": 2,
+    "USB_FEED": 2,
+    "REG_EN": 2
   },
-  "power_layout_rework_open": true,
+  "power_layout_rework_open": false,
   "conservative_local_power_paths": [
     {
       "from": "U6.4",
       "to": "L1.1",
       "net": "BUCK_L1",
-      "conservative_track_length_mm": 3.515,
+      "conservative_track_length_mm": 2.829,
       "via_count": 0,
-      "min_trace_width_mm": 0.2
+      "via_count_basis": "Contacted via objects, not layer transitions",
+      "track_layers": [
+        "B.Cu"
+      ],
+      "surface_only": true,
+      "min_trace_width_mm": 0.3
     },
     {
       "from": "U6.2",
       "to": "L1.2",
       "net": "BUCK_L2",
-      "conservative_track_length_mm": 3.515,
+      "conservative_track_length_mm": 1.759,
       "via_count": 0,
-      "min_trace_width_mm": 0.2
+      "via_count_basis": "Contacted via objects, not layer transitions",
+      "track_layers": [
+        "B.Cu"
+      ],
+      "surface_only": true,
+      "min_trace_width_mm": 0.3
     },
     {
       "from": "U6.5",
       "to": "C43.1",
       "net": "VSYS",
-      "conservative_track_length_mm": 3.572,
+      "conservative_track_length_mm": 3.454,
       "via_count": 0,
-      "min_trace_width_mm": 0.2
+      "via_count_basis": "Contacted via objects, not layer transitions",
+      "track_layers": [
+        "B.Cu"
+      ],
+      "surface_only": true,
+      "min_trace_width_mm": 0.25
     },
     {
       "from": "U6.8",
       "to": "C44.1",
       "net": "REG_VINA",
-      "conservative_track_length_mm": 2.427,
+      "conservative_track_length_mm": 2.334,
       "via_count": 0,
+      "via_count_basis": "Contacted via objects, not layer transitions",
+      "track_layers": [
+        "B.Cu"
+      ],
+      "surface_only": true,
       "min_trace_width_mm": 0.2
     },
     {
       "from": "U6.1",
       "to": "C45.1",
       "net": "+3.3V",
-      "conservative_track_length_mm": 2.062,
+      "conservative_track_length_mm": 1.519,
       "via_count": 0,
-      "min_trace_width_mm": 0.2
+      "via_count_basis": "Contacted via objects, not layer transitions",
+      "track_layers": [
+        "B.Cu"
+      ],
+      "surface_only": true,
+      "min_trace_width_mm": 0.25
     },
     {
       "from": "U6.1",
       "to": "C46.1",
       "net": "+3.3V",
-      "conservative_track_length_mm": 28.504,
-      "via_count": 0,
+      "conservative_track_length_mm": 4.681,
+      "via_count": 1,
+      "via_count_basis": "Contacted via objects, not layer transitions",
+      "track_layers": [
+        "B.Cu"
+      ],
+      "surface_only": true,
       "min_trace_width_mm": 0.2
     },
     {
       "from": "U6.1",
       "to": "U6.10",
       "net": "+3.3V",
-      "conservative_track_length_mm": 29.183,
+      "conservative_track_length_mm": 3.555,
       "via_count": 0,
+      "via_count_basis": "Contacted via objects, not layer transitions",
+      "track_layers": [
+        "B.Cu"
+      ],
+      "surface_only": true,
       "min_trace_width_mm": 0.2
     },
     {
       "from": "U5.13",
       "to": "C40.1",
       "net": "USB_5V",
-      "conservative_track_length_mm": 3.688,
-      "via_count": 1,
-      "min_trace_width_mm": 0.25
+      "conservative_track_length_mm": 3.276,
+      "via_count": 0,
+      "via_count_basis": "Contacted via objects, not layer transitions",
+      "track_layers": [
+        "B.Cu"
+      ],
+      "surface_only": true,
+      "min_trace_width_mm": 0.3
     },
     {
       "from": "U5.2",
       "to": "C41.1",
       "net": "BAT_CELL",
-      "conservative_track_length_mm": 16.88,
-      "via_count": 2,
-      "min_trace_width_mm": 0.2
+      "conservative_track_length_mm": 3.384,
+      "via_count": 0,
+      "via_count_basis": "Contacted via objects, not layer transitions",
+      "track_layers": [
+        "B.Cu"
+      ],
+      "surface_only": true,
+      "min_trace_width_mm": 0.25
     },
     {
       "from": "U5.10",
       "to": "C42.1",
       "net": "VSYS",
-      "conservative_track_length_mm": 2.408,
+      "conservative_track_length_mm": 2.242,
       "via_count": 0,
-      "min_trace_width_mm": 0.2
+      "via_count_basis": "Contacted via objects, not layer transitions",
+      "track_layers": [
+        "B.Cu"
+      ],
+      "surface_only": true,
+      "min_trace_width_mm": 0.3
     }
   ],
   "power_path_measurement_limit": "Sum of contacted copper primitives; no ground-return inductance, small-signal stability or transient solution",
@@ -5435,7 +6056,7 @@
   "USB_data_vias_per_leg": 0,
   "physical_verification": false,
   "source_sha256": {
-    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "5f2977f2cfcdccb247879be7a15c4379eed92b8f78845e7c3f76ed4bebb21f5d",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "8ea837256c5e6277bf870844067260957a9b3cbc537fd8a7e3ff8d1c15c88cb0",
     "hardware/usb-short-route/EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82",
     "hardware/usb-short-route/EC60-nRF52840.kicad_sch": "2a43cc43fade3be555d8b5614e5be0a98025046a3f48d958baddfa79d2e81973",
     "hardware/usb-short-route/YAECKB.kicad_sym": "6793393060f40289d1f7b51921021c2c98cebf452ba9bf6e8e8d8f5006a6a338",
@@ -5621,22 +6242,24 @@
     "hardware/usb-short-route/components.json": "80f1328add85178cf29a04182782d54b8017f74827ecfca7cb8d9688c8292863",
     "hardware/usb-short-route/fp-lib-table": "ae74cc20692db69057b379cac2a92081855a8341eb0c5dcf3e3528140b57368a",
     "hardware/usb-short-route/frozen-footprints.json": "ab7ea995264a17c728592307d1cd27282eca55164d0c47c775e076c59effd29e",
-    "hardware/usb-short-route/mainboard-purchase.csv": "79668cb979230b966b436aef0cc57692a351eb792980134b179dbbfd6016a805",
-    "hardware/usb-short-route/mainboard-purchase.zh-CN.csv": "a788d4fb7d0b8d2aa90be15896facfc168a2b5ab88791f0d07fa1f7d10e05af9",
+    "hardware/usb-short-route/mainboard-purchase.csv": "753ec64110df03c84c5af0e09248165020cc5fd034c6d55ced51ba8614f5bb13",
+    "hardware/usb-short-route/mainboard-purchase.zh-CN.csv": "2cbfdd54ee2b32d3d808e091adfff6eedf1c15efc2d29735e71dc3d17a918615",
     "hardware/usb-short-route/matrix.kicad_sch": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
     "hardware/usb-short-route/metadata-audit.json": "9a5a76d3a1d93b7c876ceb873875bb01f0ec38759e85d67b1e47a125952e7a66",
     "hardware/usb-short-route/mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
     "hardware/usb-short-route/netlist.xml": "44f177a827df33c4f9c4c70823169a8c2c3d422588496cb945a33fcdfdcf3c79",
     "hardware/usb-short-route/parts-qualification.json": "7491a6ce341ec389766e48f15601aaca1c03ff8c78aa1b364c95c80edb6efcd4",
-    "hardware/usb-short-route/power-passives.json": "abdd13196188e537677edc1b81ac5d370fa58933fccd88326cafeadf972275a5",
+    "hardware/usb-short-route/power-layout.json": "a83602e1e3f0b7890c2d455b4deb8a83ff1731a4052ab0ae96bde86bda141e55",
+    "hardware/usb-short-route/power-passives.json": "23c14670410ccf6790a9c09f3fde44ed212f911639e76420330dba4f0f739dc8",
     "hardware/usb-short-route/power.kicad_sch": "d199b5142ba7066eec2d33a42e8040bbad27111a7b9aa85467b5b9067842f767",
     "hardware/usb-short-route/sym-lib-table": "d45513cd8e4e4ccd05e68f16dfa9399892b19383c65133140567bda6f4228cc8",
     "scripts/usb_short_fuse_contract.py": "1504857ec1203fb74110260d86ea5373dda17891de8c123213da3471faa72df9",
-    "scripts/usb_short_passive_contract.py": "085962b367093d2fb7a28b2d844e99729816fcbb7404d0599bac9f9ab58042fa",
-    "scripts/usb_short_power_routes.py": "b39218b9599b19f3a4eb8c49c86b105fb0ccc3a868afba9b7772ee9d853fef4e",
+    "scripts/usb_short_passive_contract.py": "61a06c5f6213a64e54d4dc2803bd788fd921415ec006ad9cdca49b8d2c53c4b2",
+    "scripts/usb_short_power_routes.py": "1c91d09e5139226a3a069e984bc374a7bd8679c3c78ecb9fcd15843339a2989f",
+    "scripts/usb_short_power_contract.py": "92e46e6ca141a772de142b36b43212170fc854af55dcac403ee8c4e75bb0bae4",
     "hardware/usb-short-route/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f"
   },
-  "audit_script_sha256": "a9a1bbb9c0d114b95b0e0c0d1b41b1d56abd4d8fa8f0c41f15882a49d84023e3",
+  "audit_script_sha256": "c4a7215184b941ef826f1e1490b10bb010368c2a51ecb26453e30c1d5983e8a3",
   "remaining": [
     "Enclosed geometry and illustrations are checked separately; swept service/mating access, springback and retention remain open",
     "Full cable impedance/return and physical USB/BLE/charge/thermal validation",

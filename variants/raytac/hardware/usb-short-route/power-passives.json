@@ -5,9 +5,9 @@
     "C41": {
       "value": "22u/10V",
       "position": [
-        119.6,
-        151,
-        0
+        113.0,
+        143.7,
+        180.0
       ],
       "tolerance_pct": 20,
       "rated_voltage_min_V": 10,
@@ -42,8 +42,8 @@
     "C42": {
       "value": "22u/10V",
       "position": [
-        122,
-        146.1,
+        121.9,
+        142.7,
         0
       ],
       "tolerance_pct": 20,
@@ -79,8 +79,8 @@
     "C43": {
       "value": "22u/10V",
       "position": [
-        132,
-        140.7,
+        132.0,
+        136.5,
         0
       ],
       "tolerance_pct": 20,
@@ -117,7 +117,7 @@
       "value": "22u/10V",
       "position": [
         132.5,
-        148.5,
+        143.3,
         0
       ],
       "tolerance_pct": 20,
@@ -153,8 +153,8 @@
     "C46": {
       "value": "22u/10V",
       "position": [
-        135.9,
-        148.5,
+        136.0,
+        144.0,
         0
       ],
       "tolerance_pct": 20,
@@ -191,8 +191,8 @@
       "value": "4.7u/16V",
       "position": [
         346.4,
-        118,
-        90
+        118.0,
+        90.0
       ],
       "tolerance_pct": 10,
       "rated_voltage_min_V": 16,
@@ -227,9 +227,9 @@
     "C40": {
       "value": "2.2u/25V",
       "position": [
-        123.8,
-        148.6,
-        0
+        122.0,
+        146.9,
+        -90.0
       ],
       "tolerance_pct": 10,
       "rated_voltage_min_V": 25,
@@ -269,10 +269,11 @@
   ],
   "physical_verification": false,
   "layout_hold": {
-    "finding": "U6 output/feedback and C46 routed around the retained switch ground guard; component proximity is not electrical loop proximity",
-    "feedback_route_approx_mm": 29.183,
-    "C46_route_approx_mm": 28.504,
-    "next_action": "Relocate and reroute the complete regulator power stage clear of the sensing ground guard; do not bridge it with ordinary through vias inside front sensing electrodes",
-    "release_approved": false
+    "previous_feedback_route_mm": 29.183,
+    "previous_C46_route_mm": 28.504,
+    "status": "Relocated power-stage layout checked by power-layout.json path limits and native DRC; physical stability unverified",
+    "design_layout_rework_open": false,
+    "release_approved": false,
+    "release_note": "Layout closure alone does not release fabrication or physical acceptance"
   }
 }

@@ -35,6 +35,9 @@ def measure_power_routes(b):
         n=g;path=[]
         while n!=s:path.append(items[n]);n=prev[n]
         tracks=[i for i in path if i.GetClass()=='PCB_TRACK'];vias=[i for i in path if i.GetClass()=='PCB_VIA']
-        return {'from':'.'.join(a),'to':'.'.join(c),'net':net,'conservative_track_length_mm':round(dist[g],3),'via_count':len(vias),'min_trace_width_mm':round(min((pcb.ToMM(i.GetWidth()) for i in tracks),default=0),3)}
+        track_layers=sorted({b.GetLayerName(i.GetLayer()) for i in tracks})
+        # A contacted via can be a same-layer junction. Counting the object
+        # does not imply that this route actually changes copper layers.
+        return {'from':'.'.join(a),'to':'.'.join(c),'net':net,'conservative_track_length_mm':round(dist[g],3),'via_count':len(vias),'via_count_basis':'Contacted via objects, not layer transitions','track_layers':track_layers,'surface_only':track_layers==['B.Cu'],'min_trace_width_mm':round(min((pcb.ToMM(i.GetWidth()) for i in tracks),default=0),3)}
     pairs=[(('U6','4'),('L1','1')),(('U6','2'),('L1','2')),(('U6','5'),('C43','1')),(('U6','8'),('C44','1')),(('U6','1'),('C45','1')),(('U6','1'),('C46','1')),(('U6','1'),('U6','10')),(('U5','13'),('C40','1')),(('U5','2'),('C41','1')),(('U5','10'),('C42','1'))]
     return [length(a, c) for a, c in pairs]

@@ -8,7 +8,7 @@ English | [Chinese](README.zh-CN.md)
 
 The previous USB path crossed almost the full mainboard. This candidate moves the input next to the MDBT50Q-1MV2. J4 connects to C5 JSH; J5 supplies the retained left-side power/charger input through a separate two-wire jumper. All scanning, charger and regulator pin assignments remain unchanged. R30/R31 are removed: the nRF52840 USB PHY includes its termination, as confirmed by [Nordic](https://devzone.nordicsemi.com/f/nordic-q-a/82014/nrf52840-usb-d-d--impedance-matching/340456).
 
-The COL14 inner-layer escape and SWD clock route are also moved away from the USB reference area. Front sensing copper, holes and pin assignments remain unchanged; parasitic capacitance/noise from the changed inner escape still requires real-key calibration.
+The COL14 inner-layer escape and SWD clock route are also moved away from the USB reference area. Sensing electrodes, holes and pin assignments remain unchanged. Local front/inner control and row traces also move for the power-stage repair; changed parasitics/noise require real-key calibration.
 
 [Closed-case harness and 16 guides](CLOSED-CASE.md) provide routes, the relieved bottom, STEP/STL files and quantities. [Step-by-step assembly and the complete explosion](ASSEMBLY.md) now describe the nine-wire candidate; do not mix them with other previous assembly illustrations.
 
@@ -20,7 +20,7 @@ The COL14 inner-layer escape and SWD clock route are also moved away from the US
 
 [Generic resistor/capacitor/LED specifications and revised power-capacitor lands](PASSIVES.md): values, imperial packages, voltage, tolerance, dielectric, effective-capacitance targets and stock quantities; choose your own brands.
 
-**Additional ordering hold:** the [power-passive review](PASSIVES.md) identifies a regulator output/feedback detour around the sensing guard. New capacitor lands and native connectivity pass, but complete power-stage layout rework remains required.
+**Power layout repaired:** [local paths, component positions and ordinary thermal vias](POWER-LAYOUT.md) pass native and geometry checks. Physical stability and complete enclosed service remain open.
 
 ## Files and current evidence
 

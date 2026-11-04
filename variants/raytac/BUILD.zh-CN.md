@@ -4,6 +4,8 @@
 
 USB 修补候选板按[通用阻容采购规格](hardware/usb-short-route/PASSIVES.zh-CN.md)准备材料，包含修订后的 0805 电源电容及库存备注。旧主板压缩包仍未放行。
 
+电感采购尺寸以当前规格为准：L1 为 Würth 74438336015、WE-MAPI 3020，最大外形 3.2 × 3.2 × 2.0 mm。旧清单／原生封装名中的 `3015` 为历史标识，不能当作实际器件尺寸；详见[当前电源布局及规格](hardware/usb-short-route/POWER-LAYOUT.zh-CN.md)。
+
 USB 修补候选方案：[主板、修订采购表与证据](hardware/usb-short-route/README.zh-CN.md)；[九线关壳装配、16 件理线件及完整爆炸图](hardware/usb-short-route/ASSEMBLY.zh-CN.md)。候选方案与仍暂停的旧制板包分开；检修插接路径及实物验收仍未完成。
 
 候选板的 F1 已改为 [0466001.NRHF 一次性快断及修订焊盘](hardware/usb-short-route/F1-SELECTION.zh-CN.md)，下面原制板包的 F1 物料不能直接套用。
