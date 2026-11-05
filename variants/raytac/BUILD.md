@@ -1,69 +1,48 @@
 English | [Chinese](BUILD.zh-CN.md)
 
-# YETI60 Raytac: ordering and build handbook
+# YETI60 Raytac: current ordering and build entry
 
-Current mechanical revision: [C04 plate, repaired bottom and eight gasket strips](hardware/usb-short-route/MECHANICAL-FIT.md). Use the candidate plate DXF instead of the original outer perimeter.
+Start with the [current first-article files and ordering parameters](hardware/usb-short-route/FIRST-ARTICLE.md). This is the Raytac MDBT50Q-1MV2 board with repaired USB/power routing, the C04 plate and the revised bottom shell. The earlier long-route fabrication archive, seven-wire assembly and reference firmware are retained engineering references; use the current files linked here for this build.
 
-**Current first-article files:** [repaired candidate package, selections and open-bench procedure](hardware/usb-short-route/FIRST-ARTICLE.md). Obtain supplier DFM before fabrication; physical acceptance follows manufacture. Enclosed service is qualified separately.
+The first board can be tested without an enclosure. Supplier DFM precedes fabrication; protected-pack confirmation precedes real-cell connection; real USB/BLE, charging, EC calibration and mechanical acceptance follow manufacture. Current software/CAD evidence does not establish physical operation or production approval.
 
-For the USB repair candidate, use [generic passive purchasing specifications](hardware/usb-short-route/PASSIVES.md), including revised 0805 power capacitors and existing stock. The old mainboard archive remains held.
+## Find the required file
 
-Use the current inductor dimensions: L1 is Würth 74438336015, WE-MAPI 3020, maximum body 3.2 × 3.2 × 2.0 mm. `3015` in the previous list/native footprint is a legacy identifier, not the actual component dimensions; see [current power layout and specifications](hardware/usb-short-route/POWER-LAYOUT.md).
-
-USB repair candidate: [native PCB, revised BOM and evidence](hardware/usb-short-route/README.md); [nine-wire enclosed assembly, 16 guides and complete explosion](hardware/usb-short-route/ASSEMBLY.md). The candidate is separate from the held previous ordering archive; service/mating access and physical acceptance remain open.
-
-The candidate uses the [0466001.NRHF one-time fuse and revised lands](hardware/usb-short-route/F1-SELECTION.md); the previous ordering package’s F1 materials below do not apply to it.
-
-Battery supplier verification is user-owned: [send this parameter checklist](docs/build/battery-vendor-checklist.md). USB repair proceeds in parallel.
-
-
-Use only **MDBT50Q-1MV2**, this directory's mainboard and its firmware. Quantities are per keyboard, excluding spares and factory minimums. Recompute stock allocation for multiple units; do not spend the same received item twice.
-
-**Ordering the previous routing archive remains on hold.** The canonical table below is previous-design reference. Obtain current candidate files, materials and wiring from the [first-article entry](hardware/usb-short-route/FIRST-ARTICLE.md). Supplier DFM and pack confirmation remain required; key, USB/BLE, thermal and charging measurements follow first-board fabrication. File checks are not production acceptance.
-
-| Task | Open |
+| Task | Current document/file |
 |---|---|
-| PCB files and order selections | [Ordering table](docs/build/ordering.md) |
-| All materials and existing inventory | [Complete checklist](README.md#complete-materials-for-one-keyboard), [net-purchase CSV](hardware/bom/mainboard-purchase.csv), [materials](docs/engineering/materials.md) |
-| Selected housings, domes, stabilizers and caps | [NiZ / plate-mount purchases and installation](docs/build/key-mechanism.md) |
-| Solder from a bare board | [Execution order and inspection stops](docs/build/soldering.md), [28 illustrated steps](docs/assembly/build-guide.md) |
-| Assemble a bare C5 | [Seven parts with stock allocation](hardware/bom/daughterboard.csv), illustrated steps 12–13 |
-| Internal cables | [Pinout, lengths and routing](docs/engineering/interconnects.md) |
-| Case, plate and standoffs | [Dimensions and assembly](docs/engineering/assembly.md), [mechanical outputs](../../mechanical/generated/) |
-| Assembly appearance | [Complete explosion and 75-part index](docs/engineering/exploded.md), [assembly renders](renders/yeti60-assembly/README.md), [PCB animation](renders/ec60-nrf52840/README.md) |
-| Flash and calibrate | [Wiring, flash commands and serial capture](docs/build/flashing.md), [firmware details](firmware/target/README.md), [60-key commands](firmware/target/calibration-keys.csv) |
-| Acceptance | [Physical test procedure](docs/testing/README.md), [variant audit](docs/audit/outcome.json) |
-| Battery and consumption | [Pack specification](docs/engineering/battery-pack-specification.md), [calculations and assumptions](docs/engineering/power-budget.md) |
+| Order mainboard PCB and stencil; choose JLC parameters | [First-article order table and downloads](hardware/usb-short-route/FIRST-ARTICLE.md) |
+| Buy mainboard parts and subtract inventory | [75-part purchase CSV](hardware/usb-short-route/mainboard-purchase.csv), [generic passive/LED specifications](hardware/usb-short-route/PASSIVES.md), [selected F1](hardware/usb-short-route/F1-SELECTION.md) |
+| Obtain or solder C5 JSH | [Seven-part C5 BOM and inventory](hardware/bom/daughterboard.csv), [pinned C5 fabrication ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip) |
+| Buy NiZ housings, domes, springs, plate stabilizers, wires and caps | [K01–K07 mechanism list](docs/build/key-mechanism.md); use the C04 plate below |
+| Machine plate; print shell and guides; fit gasket strips | [C04 geometry, tolerances and eight strips](hardware/usb-short-route/MECHANICAL-FIT.md), [closed-case harness and 16 guide pieces](hardware/usb-short-route/CLOSED-CASE.md) |
+| Solder from a bare PCB | [Soldering checks](docs/build/soldering.md), [28 illustrated reference steps](docs/assembly/build-guide.md); current [power placement](hardware/usb-short-route/POWER-LAYOUT.md), [F1](hardware/usb-short-route/F1-SELECTION.md) and [PCB surface/assembly maps](hardware/usb-short-route/ASSEMBLY.md) govern changed locations |
+| Wire C5 and power jumper | [J4/J5/J1 pin table and connector quantities](hardware/usb-short-route/README.md#required-connection-map), [power-loss targets](hardware/usb-short-route/POWER-FEED.md) |
+| Flash and calibrate | [Current matched firmware downloads](hardware/usb-short-route/firmware/README.md), [J3/SWD commands and 60-key procedure](docs/build/flashing.md) |
+| Test without a shell, including a battery | [B0–B7 open-bench checks](OPEN-BENCH.md) |
+| Understand USB charging, suspend and deconfiguration | [Actual USB event policy and test evidence](docs/testing/usb-event-policy.md) |
+| Clear a Bluetooth slot / understand calibration changes | [Guarded recovery and version compatibility](docs/testing/firmware-recovery.md) |
+| View current assembled/exploded keyboard and assembly steps | [Current candidate assembly guide](hardware/usb-short-route/ASSEMBLY.md) |
+| Check battery requirements and runtime calculations | [Supplier checklist](docs/build/battery-vendor-checklist.md), [pack specification](docs/engineering/battery-pack-specification.md), [power calculations and assumptions](docs/engineering/power-budget.md) |
+| Assess inspection evidence and remaining acceptance | [Current review](docs/audit/raytac-review.md), [machine outcome](docs/audit/outcome.json), [physical acceptance](docs/testing/README.md) |
 
-Direct mechanical outputs: [top STEP](../../mechanical/generated/yeti60-top.step), [bottom STEP](../../mechanical/generated/yeti60-bottom.step), [standoff STEP](../../mechanical/generated/yeti60-standoff-46.step), [plate DXF](../../mechanical/felk60_plate_hhkb.plate-mount.dxf), [five guides](../../mechanical/generated/interconnect-guides/).
+## Prepare per keyboard
 
-## Prepare per unit
+- One mainboard and optional bottom stencil: ordinary four-layer FR-4, 1.6 mm, 289.387 × 94.600 mm, JLC04161H-7628, ordinary through vias. Send the candidate ZIP from the first-article entry; obtain fabricator DFM. Do not crop the antenna wing.
+- **75 fitted mainboard parts: 8 planned from inventory, 67 net purchases**, excluding spares. Count actual stock before ordering. R30/R31 are removed; JP1 stays open. Buy generic passives by the current specification rather than brand. IC/module, inductor, fuse and connector identities remain controlled.
+- One populated C5 JSH; alternatively one C5 bare board plus seven components (two planned inventory resistors and five purchases). Retain C5 protection components and fuse. It is a separate PCB order.
+- One four-wire C5→J4 USB harness and one two-wire J5→J1 power jumper; J1.2/J1.3 are unused. Prepare three SHR-04V-S housings, one SHR-02V-S housing and 12 fitted SSH-003T-P0.2-H contacts; 20 contacts allows eight spares. Add a USB data cable. Open-bench free lengths are 250 mm per USB wire and 300 mm per jumper wire; final enclosed lengths/radii follow the closed-case guide.
+- One protected 1S 1600 mAh pack with three-wire PHR-3 interface, matched NTC and independent voltage/current/temperature protection. A supplier-qualified exact pack is still required. Six interconnect wires plus three pack leads make **nine wires** in the complete current assembly. Pack polarity is J2.1 PACK+, J2.2 PACK−, J2.3 NTC relative to PACK−.
+- One C04 304 stainless plate, nominal 1.6 mm with finished thickness 1.55–1.60 mm and **28 M2×0.4 tapped axes**; H26 is unused. Order cutting and tapping, not only laser-cut pilot holes. Add 60 matched NiZ housings/sliders/rings, 60 conical springs, a 45g dome sheet, three plate stabilizer pairs, two short stabilizer wires, a centered 6U wire and matching keycaps as specified in K01–K07.
+- 28 custom brass adapters, 28 polyimide rings, 28 PEEK washers and 28 M1.6×5 screws; exact dimensions follow the [mechanism/hardware specification](docs/build/key-mechanism.md). Complete the threads and deburring before approaching electronics.
+- For the later enclosed assembly: one current top and one revised bottom shell; 16 routing-guide pieces; eight 33×3 mm gasket strips (four nominal 2.0 mm lower and four nominal 1.2 mm upper); specified M3 shell and M2 C5 inserts/screws/washers, feet, insulation and retention materials. Use the [shared hardware checklist](README.md#complete-materials-for-one-keyboard) with the current C04/closed-case revisions above. Foam properties, installed retention, full connector service and combined tolerances remain qualification items.
+- Shared tools: ESD setup, magnifier/microscope, tweezers, soldering/reflow equipment and compatible consumables, meter, current-limited 5 V supply, source/sink battery simulator, USB data host and second keyboard, SWD probe/custom J3 fixture, calipers, current/temperature logging and oscilloscope. Self-crimping needs tools suitable for the chosen SH/PH contacts.
 
-Prepare two mainboards for the prototype campaign if practical; assemble and test the first before soldering the second.
+## Build sequence
 
-- One mainboard and bottom stencil; 75 fitted parts, with 10 planned from received inventory and 65 net purchases. JP1 stays empty. Mainboard D1 is removed; do not purchase PRTR5V0U2X for this revision.
-- One populated C5 JSH. Alternatively one bare C5 and seven parts: two inventory 5.1 kohm resistors and five purchases. Do not buy both options. **C5 D1 and U1 remain mandatory.**
-- One internal four-wire USB harness, one external USB data cable, and one protected pack with three-wire harness. Verify each pin; colors do not establish polarity.
-- K01-K07 from the [NiZ / steel-plate stabilizer shopping list](docs/build/key-mechanism.md): 60 ordinary NiZ housings/sliders and original rings, 60 NiZ springs, one 45g dome sheet, three GMK Plate mount pairs, one separate Cherry-compatible 6U wire, one NicePBT BoW centered-6U cap kit and the new plate. These are separate purchases.
-- Top and bottom shells, one 1.6 mm stainless plate, 28 custom brass standoffs, 28 polyimide rings, 28 PEEK washers and 28 M1.6x5 screws; four each of M3 inserts/case screws/shims and M2 inserts/daughterboard screws/insulating washers; four feet, five routing-guide pieces, gasket/insulation/retention supplies. Use the complete checklist for exact dimensions. Leave H26 empty; use 2.0 mm lower and 1.2 mm upper gasket stock.
-- Shared ESD setup, microscope, tweezers, meter, controlled reflow and compatible paste, soldering iron, current-limited supply, battery simulator, SWD probe and six-pad J3 fixture, calipers, current and temperature logging; correct crimp tools for self-made harnesses.
-
-Count unused stock physically before purchasing. Use only matching values, footprints and ratings. Charging resistors cannot be substituted by nearby values.
-
-## Execution sequence
-
-1. Match PCB/archive provenance, freeze exact parts and stencil/profile, and obtain manufacturing review.
-2. Fabricate the mainboard and obtain a C5; defer bulk custom packs and mechanism parts.
-3. Inspect dimensions, thickness, 29 holes, RF wing and sensing faces. Practise hidden-pad assembly before the mainboard.
-4. Start illustrated step 01 and follow the soldering procedure. Keep the battery disconnected; inspect unpowered before current-limited power.
-5. Flash the calibrator through J3 and verify rails/communications. Real released/pressed capture requires matched housings, domes and springs.
-6. Verify concurrent charging and USB typing after host configuration, suspend/resume, detach-to-BLE and repeated attachment. Resolve faults before closing the case.
-7. Fit standoffs, insulation, mechanisms and harnesses. Centre the PCB within the imposed +/-0.2 mm placement budget before tightening; screw clearance does not guarantee position. Inspect the RF recess and harnesses without forcing the shell shut.
-8. Repeat all 60 keys and RF/interference tests after closing the shell. Flash normal firmware preserving the last 64 KiB settings partition; PCB/firmware fingerprint changes require recalibration.
-9. Use a real pack only after supplier approval of the complete envelope, 4.16–4.23 V CV range, >=500 mA continuous charge rating, independent thermal interruption and three-wire pinout.
-
-## Open work
-
-[This review](docs/audit/raytac-review.md) confirms synchronized native PCB, firmware, images, fabrication outputs and provenance; physical acceptance remains open. Some capacitors, LED and fuse still require exact-part/derating approval, especially effective C45/C46 capacitance; nominal 20 uF does not prove regulator stability. Mechanism suppliers/local samples, resin cavity tolerances, standoffs and signed complete-pack limits remain open. No physical USB enumeration/eye, charging/thermal, key calibration or enclosed RF acceptance has occurred. Engineering prototypes provide this evidence; they are not production approval.
-
-NiZ ordinary housings and separate steel-plate-mounted stabilizers are selected. The plate is 1.6 mm with three Cherry frame openings and 28 mounting axes; H26 is unused to clear the 6U opening. All 60 sensing centers and the case exterior are preserved. Actual clips, nominal 4.6 mm stack, housing skirt relief, wire bends and cap travel require first-article fitting.
+1. Match the current PCB/CAM/BOM/firmware bundle. Obtain PCB DFM and confirm generic component specifications. Prepare one board first; defer quantity builds until the first board passes.
+2. Inspect bare PCB, then solder power parts/F1 and check unpowered before controlled first power. Follow current power positions and surface maps for changed parts; the 28-step guide supplies the retained soldering order.
+3. Install C5→J4 and J5→J1 wiring; verify every pin and polarity. Flash the current calibrator through J3. Do not parallel host VBUS with a separate 5 V supply or back-power through the probe.
+4. Complete B0–B3 with instruments/simulator. Connect a real protected pack only after supplier acceptance. Complete B4–B5; suspend changes the system supply to the battery.
+5. Assemble the real C04/NiZ/dome/spring/stabilizer mechanism on an insulating fixture. Complete B6 per-key capture, save and verify, then flash the matching current normal image while preserving the last 64 KiB settings partition. Changing calibration identifiers requires new capture.
+6. Complete B7 and actual simultaneous charging/USB typing, deconfiguration, suspend/resume, detach-to-BLE and repeated attachment. Record physical results; compilation and simulation are separate evidence.
+7. Prepare the enclosure only after open-bench acceptance. Use current shell/guide/plate files and bounded tolerances; measure actual parts and retention. Repeat all keys, charging, USB/BLE and interference checks in the enclosure. Do not force closure to overcome a failed fit.

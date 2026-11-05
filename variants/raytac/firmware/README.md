@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 firmware
 
+USB charging now uses the [status callback and deconfiguration policy](../docs/testing/usb-event-policy.md), independently of scan polling. Suspend disables charging/input; resume and 500 mA permission follow the actual configuration byte. Both variants share this logic; recalibrate when upgrading from an older bundle.
+
 Current repaired-board files: [candidate firmware and SWD entry](../hardware/usb-short-route/firmware/README.md). Read [selected-profile recovery and calibration v3 compatibility](../docs/testing/firmware-recovery.md); keep the normal/calibrator pair from the same bundle.
 
 The current [nRF52840 control core](yeti60/README.md) and [host simulation](../docs/audit/yeti60-firmware-simulation.json) use the schematic-derived GPIO, SAADC and mux contract. Run `python3 scripts/simulate_yeti60_firmware.py` from the repository root.

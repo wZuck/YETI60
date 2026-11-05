@@ -32,3 +32,5 @@
 材料、默认 1600 mAh 凹槽／目录筛选、独立装配图和功耗计算已纳入同一审计流水线。[工程证据](yeti60-engineering.json)核对来源、产物和算术；五个负向用例检查图片变更、薄壁、未批准替换、充电电流过大及终止电流过大，目标固件负向用例拒绝只申请 100 mA 的链接描述符。这些不能替代实物验收。
 
 [普通工艺检查](yeti60-ordinary-process.json) · [制板包](yeti60-fabrication.json) · [README 材料一致性](yeti60-materials.json) · [内部连接](yeti60-interconnects.json) · [评估回应](../engineering/assessment-response.zh-CN.md)
+
+扫描源码或按键映射来源变化后，用 `python3 scripts/run_audit.py --refresh-guide` 重新生成指南并检查，不能只覆盖哈希。新增 [USB 事件测试](usb-event-policy.json)编译固定 ZMK USB 回调，ARM 目标检查还解码初始化至包装函数及原栈的实际调用。若本次矩阵有失败后定向重检，[重检记录](usb-event-followup.json)保留初次结果及真实重跑命令；未重跑的失败不能改成通过。

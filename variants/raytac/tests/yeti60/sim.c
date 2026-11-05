@@ -49,6 +49,8 @@ static void gpio(void *ctx, uint8_t pin, enum yeti_mode mode) {
       assert((s->pins[yeti_en[0]] == Y_HIGH || s->pins[yeti_en[0]] == Y_HIZ) &&
              (s->pins[yeti_en[1]] == Y_HIGH || s->pins[yeti_en[1]] == Y_HIZ));
   s->pins[pin] = mode;
+  assert(!(s->pins[PIN_CHG_EN1] == Y_LOW &&
+           s->pins[PIN_CHG_EN2] == Y_HIGH));
   if (pin == PIN_AFE_EN && mode == Y_HIGH)
     s->afe_on = s->now;
   if (pin == PIN_BAT_MEAS_EN && mode == Y_HIGH)

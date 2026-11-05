@@ -2,6 +2,8 @@
 
 # YETI60 固件
 
+USB 充电控制已改为[状态回调及取消配置处理](../docs/testing/usb-event-policy.zh-CN.md)，不再等待扫描轮询。挂起禁充／输入高阻；恢复和 500 mA 授权按实际配置字节处理。两版共用此逻辑，从旧包升级需重新校准。
+
 当前修补板文件：[候选固件与 SWD 入口](../hardware/usb-short-route/firmware/README.zh-CN.md)。参阅[单槽位恢复和 v3 校准兼容性](../docs/testing/firmware-recovery.zh-CN.md)，普通版和校准版必须来自同一固件包。
 
 当前 [nRF52840 控制核心](yeti60/README.zh-CN.md)和[主机模拟](../docs/audit/yeti60-firmware-simulation.json)使用从原理图推导的 GPIO、SAADC 和复用器契约。在仓库根目录运行 `python3 scripts/simulate_yeti60_firmware.py`。

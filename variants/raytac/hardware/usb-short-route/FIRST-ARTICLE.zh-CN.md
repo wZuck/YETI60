@@ -2,6 +2,8 @@
 
 # Raytac 首板：文件、下单参数与无外壳装配
 
+USB 状态回调及取消配置修补见[事件策略](../../docs/testing/usb-event-policy.zh-CN.md)。挂起时系统改用电池；未连接合格保护包或适当电池模拟器的 USB 单独供电测试不能验收挂起／恢复。
+
 固件恢复：[Fn＋双击清除当前槽位及 v3 校准升级规则](../../docs/testing/firmware-recovery.zh-CN.md)。普通 Backspace 保留；旧校准必须使用配套候选固件重新采集。
 
 下一次工程首样使用本修补主板。下列文件已经包含短 USB 输入、修订保险丝、七颗 0805 电源电容和重布后的电源区域。原 `yeti60-raytac-p2-dfm-review.zip` 对应其他布线，不是这块板。

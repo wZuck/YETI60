@@ -2,6 +2,8 @@ English | [Chinese](flashing.zh-CN.md)
 
 # Flash, serial shell and per-key calibration
 
+Commands below use the current candidate firmware directory; normal/calibrator must be a matched pair. The earlier `firmware/releases` directory contains reference-board builds. Use the [candidate J4/J5/J1 wiring](../../hardware/usb-short-route/README.md#required-connection-map), rather than the earlier four-wire direct J1 connection.
+
 Return to the [handbook](../../BUILD.md). This is an unexecuted first-prototype procedure, not a hardware success record. Prepare an nRF52840-compatible CMSIS-DAP SWD probe, OpenOCD and the custom six-pad J3 fixture.
 
 With USB and battery disconnected, connect according to [step 16](../assembly/images/16-step.png) and actual pad numbers. This is not standard ARM connector order.
@@ -22,7 +24,7 @@ From the repository root:
 ```sh
 cd variants/raytac
 openocd -f interface/cmsis-dap.cfg -c "transport select swd" -f target/nrf52.cfg \
-  -c "adapter speed 1000; program firmware/releases/calibrator/yeti60-raytac.hex verify reset exit"
+  -c "adapter speed 1000; program hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex verify reset exit"
 ```
 
 1 MHz is an initial probe-speed proposal, not a measured limit. Require successful programming and verification. Investigate power, grounds, contacts and target identification on failure; do not automatically recover or mass erase, which removes stored settings. See [OpenOCD program documentation](https://openocd.org/doc/html/Flash-Programming.html).
@@ -54,7 +56,7 @@ Flash normal firmware:
 
 ```sh
 openocd -f interface/cmsis-dap.cfg -c "transport select swd" -f target/nrf52.cfg \
-  -c "adapter speed 1000; program firmware/releases/normal/yeti60-raytac.hex verify reset exit"
+  -c "adapter speed 1000; program hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex verify reset exit"
 ```
 
 Write only image-touched application sectors, preserving settings at `0xF0000–0xFFFFF`; add no mass erase. Artifact checks verify distributed address ranges/descriptors; real probe erase behavior still requires first-article confirmation. PCB/pin/devicetree/calibration-algorithm fingerprint changes require new calibration.

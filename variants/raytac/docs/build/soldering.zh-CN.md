@@ -2,6 +2,8 @@
 
 # 从裸板开始焊接
 
+当前候选板按[电源位置与普通散热孔](../../hardware/usb-short-route/POWER-LAYOUT.zh-CN.md)、[75 件补购及封装](../../hardware/usb-short-route/mainboard-purchase.zh-CN.csv)、[F1 修订焊盘](../../hardware/usb-short-route/F1-SELECTION.zh-CN.md)和[当前装配板面图](../../hardware/usb-short-route/ASSEMBLY.zh-CN.md)操作。28 步图保留旧版参考位置，不能用其旧 R30／R31、电源电容或 USB 线序覆盖本候选版。背面钢网使用[已排除 JP1 的当前文件](../../hardware/usb-short-route/fabrication/yeti60-raytac-candidate-bottom-stencil.zip)。
+
 返回[制作总入口](../../BUILD.zh-CN.md)。本页是执行顺序；每一步的实际元件位置、方向和清单见[28 步配图指南](../assembly/build-guide.zh-CN.md)。全过程不接电池，不在带电板上焊接。
 
 ## 先从哪里开始
@@ -12,8 +14,8 @@
 |---|---|---|
 | 01–02 | 核对 Raytac 板型、板厚和板框，检查 29 孔、电极和元件面，盘点每个料号 | 不混入 E73 模组、PCB 或固件；裸板无破损 |
 | 03 | 平整支撑电极面，对齐 B.Paste 钢网印锡膏；JP1 遮孔 | 无连膏、漏印、偏位；隐藏焊盘分窗与开放散热孔工艺已确认 |
-| 04 | 贴 43 只电阻；R30／R31 为零欧姆，R40=2.21k、R55=69.8k、R56=1.69k，均 1% | 逐位号核对；不得用相近阻值代替，JP1 留空 |
-| 05 | 贴 17 只陶瓷电容；C10 为 220 pF C0G，0402／0603 分开 | 规格、有效容量和库存位号匹配；非极性不代表容量可替代 |
+| 04 | 贴 41 只电阻；R30／R31 不装，R40=2.21k、R55=69.8k、R56=1.69k，均 1% | 逐位号核对；不得用相近阻值代替，JP1 留空 |
+| 05 | 贴 17 只陶瓷电容；C10 为 220 pF C0G，0402／0603／0805 分开；七处电源电容使用当前 0805 规格 | 规格、有效容量和库存位号匹配；非极性不代表容量可替代 |
 | 06 | 贴 U5 BQ24074、U6 TPS63031、U7／U8 TPS22919、L1 1.5 µH、F1 | 核对器件真实 pin 1 与原生焊盘；**不装主板 D1** |
 | 07 | 贴 U2／U4 74HC4051 和 U3 OPA350 | 方向正确；不能用 HCT 或双运放替代 |
 | 08 | 贴 U1 MDBT50Q-1MV2，按图核对方向 | 不以图片左右猜 pin 1；天线端方向与板框匹配；LED 极性按符号与焊盘核对 |
@@ -21,7 +23,7 @@
 | 10 | 按模组／最敏感元件及锡膏共同允许的曲线回流，完全冷却 | 记录实际板温，不只记录热风枪设定；避免重复回流和直接吹飞小件 |
 | 11 | 完成断电电气检查，并补充显微镜及隐藏焊点检查，清除允许清洗的助焊残留 | 无桥连、立碑、错件、虚焊；不刮伤或给电极加锡；不能以“通电亮灯”代替检查 |
 | 12–13（可选） | 自焊 C5：先小型 R1／R2、U1、F1、D1，再连接器，按 F.Paste 与配图操作 | 七件齐全；连接器锚脚和数据针无桥连；C5 的 D1、U1 必装 |
-| 14–16 | 核对四芯 USB 线逐针通断、供电轨对地无持续短路，再用限流电源首次上电，连接 SWD | 稳定 3.3 V、无异常输入电流／发热；不同时用探针和外部源向板反灌电 |
+| 14–16 | 核对四芯 C5→J4 USB 线及两芯 J5→J1 电源跳线逐针通断、供电轨对地无持续短路，再用限流电源首次上电，连接 SWD | 稳定 3.3 V、无异常输入电流／发热；不同时用探针和外部源向板反灌电 |
 | 17–24 | 打样结构验收、安装轴座／胶碗／弹簧、支柱、隔离垫、C5 和固定线束 | 不夹线、不顶底、不压电池；不能强行合壳或让螺钉擦感应面 |
 | 25 | 刷 Raytac 校准版，按 60 键表逐键采样并保存 | 每键先完全按住再发对应 press 命令；全部有效且保存成功，不跳过噪声失败 |
 | 26–28 | 验证 USB 充电与输入并行、蓝牙和挂起恢复；刷普通版保留设置，再合壳复测 | 全键、USB、BLE、电源和机械验收记录齐全；失败不视为完工 |
@@ -32,6 +34,6 @@
 
 ## 刷写顺序
 
-先 [Raytac 校准版 HEX](../../firmware/releases/calibrator/yeti60-raytac.hex)，再按[固件说明](../../firmware/target/README.zh-CN.md)完成 release、逐键 press、status 和 save。最后刷[普通版 HEX](../../firmware/releases/normal/yeti60-raytac.hex)，保留末尾 64 KiB 设置区；不要整片擦除后宣称校准还在。J3 焊盘线序按原生图和[逐图指南](../assembly/build-guide.zh-CN.md)核对，不假定是标准排针顺序。
+先 [Raytac 校准版 HEX](../../hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex)，再按[固件说明](../../firmware/target/README.zh-CN.md)完成 release、逐键 press、status 和 save。最后刷[普通版 HEX](../../hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex)，保留末尾 64 KiB 设置区；不要整片擦除后宣称校准还在。J3 焊盘线序按原生图和[逐图指南](../assembly/build-guide.zh-CN.md)核对，不假定是标准排针顺序。
 
 焊接资料：[TI QFN／SON 装配说明](https://www.ti.com/lit/an/slua271c/slua271c.pdf)、[Raytac 模组资料](https://www.raytac.com/product/ins.php?index_id=24)。本项目没有测得一条适用于所有替代元件和焊接设备的通用回流曲线。

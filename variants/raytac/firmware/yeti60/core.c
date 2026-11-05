@@ -93,8 +93,9 @@ int yeti_init(struct yeti_core *s, const struct yeti_hal *hal,
   io(s, PIN_BAT_MEAS_EN, Y_LOW);
   io(s, PIN_BAT_ADC, Y_HIZ);
   io(s, PIN_CHG_CE_N, Y_HIGH);
-  io(s, PIN_CHG_EN1, Y_LOW);
+  io(s, PIN_CHG_EN1, Y_HIGH);
   io(s, PIN_CHG_EN2, Y_LOW);
+  io(s, PIN_CHG_EN1, Y_LOW);
   s->busy = false;
   return 0;
 }
@@ -231,8 +232,9 @@ int yeti_connections(struct yeti_core *s, enum yeti_usb usb, unsigned host_ma,
        large = usb == Y_USB_CONFIGURED && host_ma >= 500;
   /* Disable charging while changing the USB current-limit mode. */
   io(s, PIN_CHG_CE_N, Y_HIGH);
-  io(s, PIN_CHG_EN1, (suspend || large) ? Y_HIGH : Y_LOW);
+  io(s, PIN_CHG_EN1, Y_HIGH);
   io(s, PIN_CHG_EN2, suspend ? Y_HIGH : Y_LOW);
+  io(s, PIN_CHG_EN1, (suspend || large) ? Y_HIGH : Y_LOW);
   if (usb == Y_USB_CONFIGURED)
     io(s, PIN_CHG_CE_N, Y_LOW);
   enum yeti_link next =

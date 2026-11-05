@@ -1,71 +1,48 @@
 [English](BUILD.md) | 简体中文
 
-# YETI60 Raytac：下单、备料、焊接与安装总入口
+# YETI60 Raytac 当前下单与制作总入口
 
-当前机械修订：[C04 定位板、修补底壳和八条垫片](hardware/usb-short-route/MECHANICAL-FIT.zh-CN.md)。使用候选定位板 DXF，替代原外周。
+先打开[当前首板文件与下单参数](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)。本版使用 Raytac MDBT50Q-1MV2、修补后的 USB／电源布线、C04 定位板及修订底壳。早期长 USB 制板包、七线装配和参考固件保留作工程参考；本次制作采用本页链接的当前文件。
 
-**当前首板文件：**[修补候选板的制造包、参数与无外壳流程](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)。生产前先完成板厂 DFM，实物验收在制板后进行；关壳文件与后续检修资格分开处理。
+首板可不制作外壳。生产前取得板厂 DFM 确认，连接真实电池前取得保护包确认，USB／蓝牙、充电、逐键校准及机械实测安排在制板之后。当前软件／CAD 证据不能证明实物工作正常或批准量产。
 
-USB 修补候选板按[通用阻容采购规格](hardware/usb-short-route/PASSIVES.zh-CN.md)准备材料，包含修订后的 0805 电源电容及库存备注。旧主板压缩包仍未放行。
+## 找到需要的文件
 
-电感采购尺寸以当前规格为准：L1 为 Würth 74438336015、WE-MAPI 3020，最大外形 3.2 × 3.2 × 2.0 mm。旧清单／原生封装名中的 `3015` 为历史标识，不能当作实际器件尺寸；详见[当前电源布局及规格](hardware/usb-short-route/POWER-LAYOUT.zh-CN.md)。
-
-USB 修补候选方案：[主板、修订采购表与证据](hardware/usb-short-route/README.zh-CN.md)；[九线关壳装配、16 件理线件及完整爆炸图](hardware/usb-short-route/ASSEMBLY.zh-CN.md)。候选方案与仍暂停的旧制板包分开；检修插接路径及实物验收仍未完成。
-
-候选板的 F1 已改为 [0466001.NRHF 一次性快断及修订焊盘](hardware/usb-short-route/F1-SELECTION.zh-CN.md)，下面原制板包的 F1 物料不能直接套用。
-
-电池由用户向供方核实：[可直接转发的参数清单](docs/build/battery-vendor-checklist.zh-CN.md)。USB 修补同步推进。
-
-
-本手册只适用于 **MDBT50Q-1MV2** 模组和本目录的主板、固件。按下表从上向下阅读即可。所有数量按一把键盘计算；两把装机数量乘二，库存分配须重新计算，不能两把各抵扣同一只库存。板厂起订数量和散件包装数另计。
-
-**旧布线压缩包仍暂停下单。** 下方原目录表格属于旧版本参考；当前修补候选板从[首板入口](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)取文件、备料与接线。板厂 DFM 和电池供方核实仍须完成，逐键、USB／BLE、温升和充电实测安排在首板制造后；本轮文件检查不代表生产验收。
-
-| 我想做什么 | 打开这里 |
+| 要做什么 | 当前文档／文件 |
 |---|---|
-| 看需要打印哪些 PCB、界面参数怎么选 | [PCB 下单表](docs/build/ordering.zh-CN.md) |
-| 准备所有材料、知道哪些已有 | [完整清单](README.zh-CN.md#一把键盘需要准备的完整材料)、[主板净补购 CSV](hardware/bom/mainboard-purchase.zh-CN.csv)、[材料分类](docs/engineering/materials.zh-CN.md) |
-| 购买轴座、胶碗、稳定机构和键帽 | [NiZ 钢板卫星轴购买清单与安装](docs/build/key-mechanism.zh-CN.md) |
-| 从零开始焊接 | [焊接执行顺序和停检点](docs/build/soldering.zh-CN.md)、[28 步配图指南](docs/assembly/build-guide.zh-CN.md) |
-| 自焊 C5 子板 | [七只元件及库存抵扣](hardware/bom/daughterboard.zh-CN.csv)、配图指南第 12–13 步 |
-| 准备连接线与插头 | [线序、长度及路径图](docs/engineering/interconnects.zh-CN.md) |
-| 打印外壳、加工定位板和支柱 | [装配尺寸和图纸](docs/engineering/assembly.zh-CN.md)、[机械文件目录](../../mechanical/generated/) |
-| 看装好后的样子 | [完整爆炸图及 75 元件对照](docs/engineering/exploded.zh-CN.md)、[装配渲染](renders/yeti60-assembly/README.zh-CN.md)、[PCB 动画](renders/ec60-nrf52840/README.zh-CN.md) |
-| 刷写与逐键校准 | [接线、刷写命令与串口校准](docs/build/flashing.zh-CN.md)、[目标固件说明](firmware/target/README.zh-CN.md)、[60 键校准命令表](firmware/target/calibration-keys.csv) |
-| 验收和故障排查 | [实物测试步骤](docs/testing/README.zh-CN.md)、[当前本版审查结果](docs/audit/outcome.json) |
-| 电池要求及耗电计算 | [供方电池规格](docs/engineering/battery-pack-specification.zh-CN.md)、[计算方式与假设](docs/engineering/power-budget.zh-CN.md) |
+| 下单主板及钢网，选择 JLC 参数 | [首板下单表与下载](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md) |
+| 买主板元件、抵扣库存 | [75 件补购 CSV](hardware/usb-short-route/mainboard-purchase.zh-CN.csv)、[通用阻容／灯规格](hardware/usb-short-route/PASSIVES.zh-CN.md)、[已选 F1](hardware/usb-short-route/F1-SELECTION.zh-CN.md) |
+| 购买或自行焊接 C5 JSH | [七件 C5 材料及库存](hardware/bom/daughterboard.zh-CN.csv)、[固定版本 C5 制板包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip) |
+| 买 NiZ 轴座、胶碗、弹簧、钢板卫星轴、钢丝及键帽 | [K01—K07 机构清单](docs/build/key-mechanism.zh-CN.md)；定位板采用下行的 C04 文件 |
+| 加工钢板、打印外壳与理线件、装垫片 | [C04 尺寸、公差和八条垫片](hardware/usb-short-route/MECHANICAL-FIT.zh-CN.md)、[关壳线束及 16 件理线件](hardware/usb-short-route/CLOSED-CASE.zh-CN.md) |
+| 从裸板开始焊接 | [焊接停检点](docs/build/soldering.zh-CN.md)、[28 步参考配图](docs/assembly/build-guide.zh-CN.md)；变化位置以当前[电源位置](hardware/usb-short-route/POWER-LAYOUT.zh-CN.md)、[F1](hardware/usb-short-route/F1-SELECTION.zh-CN.md)及[板面／装配图](hardware/usb-short-route/ASSEMBLY.zh-CN.md)为准 |
+| 连接 C5 与电源跳线 | [J4／J5／J1 线序与连接器数量](hardware/usb-short-route/README.zh-CN.md#必须采用的连接方式)、[供电压降目标](hardware/usb-short-route/POWER-FEED.zh-CN.md) |
+| 刷写及校准 | [当前配套固件下载](hardware/usb-short-route/firmware/README.zh-CN.md)、[J3／SWD 命令及 60 键步骤](docs/build/flashing.zh-CN.md) |
+| 不做外壳，包含电池验收 | [B0～B7 开台检查](OPEN-BENCH.zh-CN.md) |
+| 理解 USB 边充边用、挂起和取消配置 | [实际 USB 事件策略与测试证据](docs/testing/usb-event-policy.zh-CN.md) |
+| 清除蓝牙槽位、理解校准变化 | [保护手势及版本兼容](docs/testing/firmware-recovery.zh-CN.md) |
+| 看当前整机、爆炸图及分步安装 | [候选方案装配指南](hardware/usb-short-route/ASSEMBLY.zh-CN.md) |
+| 核实电池及耗电计算 | [供方参数清单](docs/build/battery-vendor-checklist.zh-CN.md)、[电池包规格](docs/engineering/battery-pack-specification.zh-CN.md)、[耗电计算及假设](docs/engineering/power-budget.zh-CN.md) |
+| 查看检查证据及未验收项目 | [当前审查](docs/audit/raytac-review.zh-CN.md)、[机器结果](docs/audit/outcome.json)、[实物验收](docs/testing/README.zh-CN.md) |
 
-直接交付机械文件：[上壳 STEP](../../mechanical/generated/yeti60-top.step) · [底壳 STEP](../../mechanical/generated/yeti60-bottom.step) · [定制支柱 STEP](../../mechanical/generated/yeti60-standoff-46.step) · [定位板 DXF](../../mechanical/felk60_plate_hhkb.plate-mount.dxf) · [五件走线支架](../../mechanical/generated/interconnect-guides/)。
+## 每把键盘准备什么
 
-## 一次准备哪些东西
+- 主板 1 块，背面钢网可选 1 张：普通四层 FR-4、1.6 mm、289.387 × 94.600 mm、JLC04161H-7628、普通贯通孔。使用首板入口的候选压缩包，取得板厂 DFM；不能裁掉天线翼板。
+- **主板实装 75 件，计划用库存 8 件，净补购 67 件**，不含备件。采购前清点实际库存。R30／R31 已移除，JP1 留空。普通阻容按当前规格买，不限定品牌；芯片、模组、电感、保险丝及连接器仍使用受控型号。
+- C5 JSH 成品 1 块；或者 C5 裸板 1 块加七只元件，其中两只电阻计划用库存、五只补购。C5 的保护器件和保险丝保留。它是单独的一块 PCB 订单。
+- C5→J4 四线 USB 线束 1 条、J5→J1 两线电源跳线 1 条；J1.2／J1.3 不接。准备 SHR-04V-S 胶壳 3 个、SHR-02V-S 胶壳 1 个、SSH-003T-P0.2-H 实装端子 12 个；买 20 个可留 8 个备件。另备外部 USB 数据线。开台时每根 USB 线自由长度 250 mm、每根跳线 300 mm；关壳长度／半径按关壳指南。
+- 1S／1600 mAh 保护包 1 包，三线 PHR-3 接口，匹配 NTC，以及独立电压／电流／温度保护。准确成品包仍须供方确认。六根连接线加三根电池引线，完整当前装配共 **九根线**。电池极性为 J2.1 正极、J2.2 负极、J2.3 相对负极的 NTC。
+- C04 定位板 1 张：304 不锈钢，名义 1.6 mm，成品厚 1.55～1.60 mm，**28 处 M2×0.4 攻丝轴线**，H26 不用。订单包含切割与攻丝，不能只激光切底孔。另按 K01—K07 准备 60 套 NiZ 轴座／滑块／原配圈、60 个锥簧、45g 胶碗整张、三组钢板卫星轴、两根短丝、居中 6U 钢丝及匹配键帽。
+- 定制黄铜支柱、聚酰亚胺隔离环、PEEK 垫片、M1.6×5 螺钉各 28 件；准确尺寸见[机构与五金规格](docs/build/key-mechanism.zh-CN.md)。攻丝、清洗和去毛刺完成后再靠近电子件。
+- 后续关壳再准备：当前上壳、修订底壳各 1 件，理线件 16 件，33×3 mm 垫片 8 条（下层 4 条名义 2.0 mm、上层 4 条名义 1.2 mm），指定 M3 合壳和 M2 子板嵌件／螺钉／垫片、脚垫、绝缘及固定材料。按[共用五金清单](README.zh-CN.md#一把键盘需要准备的完整材料)并采用上述 C04／关壳修订。泡棉性能、安装位置保持力、完整插接检修和组合公差仍需验收。
+- 共用工具：ESD 条件、放大镜／显微镜、镊子、焊接／回流设备及匹配耗材、万用表、限流 5 V 电源、可吸收并输出电流的电池模拟器、USB 数据主机及另一把键盘、SWD 探针／自定义 J3 治具、卡尺、电流／温度记录和示波器。自压线另备适合所选 SH／PH 端子的工具。
 
-建议首样先准备两块主板的装配条件，先焊一块通过电源与固件检查，再焊第二块；不要一次焊完全部板子才首次上电。以下为**每把净用量**：
+## 实际制作顺序
 
-- 主板裸 PCB 1 块、背面钢网 1 张；75 只实装电子元件，其中现有库存可计划用 10 只、净补购 65 只；JP1 不装。主板 D1 已删除，不再买 PRTR5V0U2X。
-- C5 JSH 焊好成品 1 块。若自焊，改为裸板 1 块加 7 只元件，其中 2 只 5.1 kΩ 电阻可用库存，另外补购 5 只；不再同时买成品。**C5 上的 D1 和 U1 必须装，不能因主板删除 D1 而省略。**
-- 四芯 USB 内部线束 1 条、外部 USB 数据线 1 条；保护电池及三芯线 1 套。线序按文档逐针核对，不能按线色猜正负极。
-- 按 [NiZ 钢板卫星轴清单](docs/build/key-mechanism.zh-CN.md)购买 K01—K07：60 套普通 NiZ 轴座滑块及原配圈、60 个锥簧、45g 胶碗整张、三组 GMK 钢板卫星轴、单独 Cherry 兼容 6U 长丝、NicePBT BoW 居中 6U 完整键帽及新定位板，分项购买。
-- 上下壳各 1 件、1.6 mm 不锈钢定位板 1 件、定制黄铜支柱 28 件、聚酰亚胺隔离环 28 件、PEEK 垫片 28 件、M1.6×5 螺钉 28 颗；M3 嵌件／合壳螺钉／薄垫片各 4 件，M2 嵌件／子板螺钉／绝缘垫片各 4 件；脚垫 4 个、走线支架 5 件、胶棉及绝缘固定材料 1 套。详细尺寸按完整清单，不能只按螺纹直径采购。H26 整套不装，下侧胶棉 2.0 mm、上侧 1.2 mm。
-- 共用工具：ESD 操作条件、显微镜、镊子、万用表、受控回流设备及兼容锡膏、烙铁、限流电源、电池模拟器、SWD 调试器及 J3 六针治具、卡尺、温度和电流记录工具；如需自制线束，另备对应端子压接工具。
-
-库存仅是订单记录，不是现场剩余数量确认；先盘点再下补购单。只使用严格匹配值、封装和额定参数的库存，不能用相近值代替充电设定电阻。
-
-## 完整执行顺序
-
-1. 核对本手册状态、原生 PCB 与制板包来源一致。冻结物料型号、钢网和回流方案，并取得制造审查回应。
-2. 按下单表制作主板，准备或购买焊好的 C5。先不购买批量定制电池或全部静电容结构件。
-3. 收板检查尺寸、板厚、29 个孔位、板边射频支撑区及电极表面。先练习回流小封装，再对主板操作。
-4. 从配图第 01 步开始，按焊接文档完成主板；焊接期间电池始终断开。先做断电检查，再做限流上电。
-5. 通过 J3 刷校准固件，验证供电和通讯。得到合适的局部轴座样件后再做真实松键／按键采样；没有胶碗和弹簧时不能完成按键验收。
-6. 验证电脑配置后同时充电和 USB 按键输入，挂起／恢复、拔线转蓝牙及重复插拔；异常先停机排查，不继续合壳。
-7. 按装配图安装支柱、隔离环、结构件与线束。PCB 装配位置控制在设定的 ±0.2 mm 预算内，居中后逐步锁紧；螺钉孔余量不等于自动定位。检查射频凹槽和线束，不能靠拧紧外壳压入。
-8. 合壳后重新检查全部 60 键、蓝牙连接与干扰；按固件说明刷普通版并保留末尾 64 KiB 设置分区。先前的 PCB／固件指纹变化后必须重新校准。
-9. 电池供应商确认完整包络、4.16–4.23 V 充电范围、至少 500 mA 连续充电额定值、独立温度断充及三线接口后，才开展真实电池充放电验收。
-
-## 尚未关闭的事项
-
-- 本轮原生 PCB、固件、图像、制板包及来源校验已通过；见[本轮审查](docs/audit/raytac-review.zh-CN.md)。这不代替实物验收。
-- 主板部分电容／LED／保险丝仍有型号与降额确认项，尤其 C45／C46 的有效容量；当前材料表会明确显示待选状态，不能以标称 20 µF 作为稳压器稳定性证明。
-- 已改用普通 NiZ 轴座及独立钢板卫星轴，新钢板 1.6 mm、三个 Cherry 式组合开孔及 28 个安装轴，H26 不装以避开 6U 开孔。60 个感应中心和外壳外形保留；实际卡扣、4.6 mm 高度、轴座修边、钢丝及键帽全行程仍须首件确认。
-- 电池供方签图及额定条件更正；裸电芯尺寸不等于完整保护包尺寸。
-- 没有实物，未完成 USB 枚举／眼图、真实充电温升、逐键校准及关壳后的射频验收。首样就是为了得到这些证据，不代表已批准量产。
+1. 核对当前 PCB／制造文件／材料／固件属于同一套。取得板厂 DFM，确认通用元件规格。先装一块，通过后再考虑数量制作。
+2. 检查裸板，先焊电源元件／F1；断电检查后才限流上电。变化元件采用当前电源位置和板面图，28 步指南提供保留的焊接顺序。
+3. 安装 C5→J4、J5→J1，逐针确认线序及极性。通过 J3 刷当前校准版；不能并联主机 VBUS 与独立 5 V 电源，也不能通过探针反灌。
+4. 先用仪器／模拟器完成 B0～B3；供方确认后再接真实保护包，完成 B4～B5。挂起时系统改由电池供电。
+5. 在绝缘治具上装完整 C04／NiZ／胶碗／弹簧／卫星轴结构。完成 B6 逐键采集、保存及核查，再刷同包普通版，保留末尾 64 KiB 设置分区。校准标识变化后须重新采集。
+6. 完成 B7 及真实边充边 USB 输入、取消配置、挂起／恢复、拔线转蓝牙和重复插拔。记录实物结果；编译与模拟属于另外的证据。
+7. 开台验收后再做外壳。使用当前壳体／理线件／定位板和公差限值，测量来料及固定效果。合壳后重新检查全部按键、充电、USB／蓝牙和干扰，不能强行关壳掩盖干涉。

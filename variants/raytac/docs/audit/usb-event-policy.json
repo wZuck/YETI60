@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "physical_verification": false,
+  "upstream_revision": "0862fc0f8c864834007986efcaf52f292ea6d37d",
+  "upstream_usb_sha256": "4b182d9a942c6a09d4c6849f2c9504fd251b7bf5d1cd741e5d05dc82534c138e",
+  "cases": [
+    {
+      "case": "normal",
+      "output": "USB events: synchronous charging, USB priority, deconfiguration, suspend/resume/reset/detach, safe intermediate modes, no repeated writes and retry passed"
+    },
+    {
+      "case": "not-ready",
+      "output": "USB charger: unavailable GPIO rejects initialization"
+    },
+    {
+      "case": "enable-fault",
+      "output": "USB charger: stack enable failure latches disabled/high-Z"
+    },
+    {
+      "case": "init-fault-0",
+      "output": "USB charger: GPIO initialization failure latches disabled/high-Z"
+    },
+    {
+      "case": "init-fault-1",
+      "output": "USB charger: GPIO initialization failure latches disabled/high-Z"
+    },
+    {
+      "case": "init-fault-2",
+      "output": "USB charger: GPIO initialization failure latches disabled/high-Z"
+    },
+    {
+      "case": "write-fault-0",
+      "output": "USB charger: GPIO write failure stays disabled until reboot"
+    },
+    {
+      "case": "write-fault-1",
+      "output": "USB charger: GPIO write failure stays disabled until reboot"
+    },
+    {
+      "case": "write-fault-2",
+      "output": "USB charger: GPIO write failure stays disabled until reboot"
+    },
+    {
+      "case": "write-fault-3",
+      "output": "USB charger: GPIO write failure stays disabled until reboot"
+    },
+    {
+      "case": "write-fault-4",
+      "output": "USB charger: GPIO write failure stays disabled until reboot"
+    }
+  ],
+  "execution": "Actual target charger adapter and complete unmodified pinned ZMK USB status source, host GPIO/workqueue doubles under ASan/UBSan",
+  "synchronous_disable_before_upstream_notification": true,
+  "configuration_zero_rejected": true,
+  "GPIO_fault_latched": true,
+  "unintended_external_ILIM_mode_rejected": true,
+  "not_verified": [
+    "Physical USB bus requests, driver scheduling/interrupt latency and suspend current",
+    "Physical GPIO or charger failures, input transients and charge temperatures",
+    "Real USB/BLE endpoints and full stack concurrency"
+  ],
+  "source_sha256": {
+    "firmware/target/CMakeLists.txt": "31322acfb4857277f172915686669f121227263c6710e7fa9f1a734035ea9a3a",
+    "firmware/target/src/scanner.c": "df47c3a5508ea362209d41bd58f691e241afeee61346a6c7c03be10ca4c5d2af",
+    "firmware/target/src/usb_policy.c": "80f26703d2eee50dae22e0a70ae3a416b548d6536f3939c18f5c62c9b9af2075",
+    "firmware/target/src/usb_policy.h": "ce652609668a30169a43624168824090d7e07f78c52410cb079a914222abd1d0",
+    "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
+    "scripts/test_yeti60_usb_events.py": "d2effe2ae588ff1255a5207692ab560c9df16188107243fca83cf1306f05dff9",
+    "tests/yeti60/stubs/zephyr/drivers/gpio.h": "010b9204b4ddf75db36a1bb38bf4eaea85892265b32702174ac203d84eb9a9a7",
+    "tests/yeti60/stubs/zephyr/kernel.h": "1f909e84dba2ded9bbe1a38e482c0ca7d46dadfdde14e5a064f9d8e14f337c33",
+    "tests/yeti60/stubs/zephyr/usb/usb_device.h": "c359b200b1c5560dd87d304ccaa1bbcf9b38743bc07466bf5717fae7055a1701",
+    "tests/yeti60/stubs/zmk/endpoints.h": "9a3a89cf8c83d4ba0da307bb5bacf355009738b503edb2f089e838922a206814",
+    "tests/yeti60/stubs/zmk/usb.h": "ec9ffe4787a4ebad6e2d06340997677eaa3729d56a9057ce7bcee8511b567e20",
+    "tests/yeti60/usb_policy.c": "e43e50bc14b8f724e8048b1d7118cfc3220f7ee53c4955f9876e7c31c849b016",
+    "tests/yeti60/usb_upstream_shim.h": "1839142d9a62ad76a8b0c007be5248c5c1c9b44f19bd16597ed236a1e0eac015"
+  }
+}

@@ -2,6 +2,8 @@ English | [Chinese](FIRST-ARTICLE.zh-CN.md)
 
 # Raytac first article: files, order settings and open-bench build
 
+The [USB event policy](../../docs/testing/usb-event-policy.md) covers callback-driven charging and deconfiguration. Suspend transfers system power to the battery; USB-only operation without a qualified protected pack or suitable battery simulator cannot qualify suspend/resume.
+
 Firmware recovery: [Fn + guarded double-tap for selected-profile clearing and calibration v3 update rules](../../docs/testing/firmware-recovery.md). Ordinary Backspace is preserved; older calibration must be recaptured using the matched candidate pair.
 
 Use this repaired mainboard for the next engineering prototype. Its short USB input, revised fuse, seven 0805 power capacitors and relocated power stage are included in the files below. The previous `yeti60-raytac-p2-dfm-review.zip` describes different routing and is not this board.

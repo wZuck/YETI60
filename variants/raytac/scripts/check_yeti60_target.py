@@ -5,6 +5,33 @@ from pathlib import Path
 from yeti60_calibration_contract import version
 ROOT=Path(__file__).resolve().parents[1]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def usb_callback_linkage(elf):
+    """Decode linked Thumb BL targets, rather than trusting source/flags alone."""
+    shoff=struct.unpack_from('<I',elf,32)[0];stride,count=struct.unpack_from('<HH',elf,46)
+    sections=[struct.unpack_from('<IIIIIIIIII',elf,shoff+i*stride) for i in range(count)]
+    symbols={}
+    for section in sections:
+        if section[1]!=2:continue
+        strings=sections[section[6]];names=elf[strings[4]:strings[4]+strings[5]]
+        for at in range(section[4],section[4]+section[5],section[9]):
+            name,value,size,info,other,index=struct.unpack_from('<IIIBBH',elf,at)
+            symbols[names[name:names.find(b'\0',name)].decode(errors='replace')]=(value,size,index)
+    def calls(name):
+        value,size,index=symbols[name];section=sections[index];start=value&~1
+        offset=section[4]+start-section[3];code=elf[offset:offset+size];targets=[]
+        for at in range(0,len(code)-3,2):
+            hi,lo=struct.unpack_from('<HH',code,at)
+            if hi&0xf800!=0xf000 or lo&0xd000!=0xd000:continue
+            sign=(hi>>10)&1;i1=1^((lo>>13)&1)^sign;i2=1^((lo>>11)&1)^sign
+            delta=(sign<<24)|(i1<<23)|(i2<<22)|((hi&0x3ff)<<12)|((lo&0x7ff)<<1)
+            if sign:delta-=1<<25
+            targets.append((start+at+4+delta)&~1)
+        return targets
+    assert (symbols['__wrap_usb_enable'][0]&~1) in calls('zmk_usb_init'),'ZMK USB init bypasses charger callback wrapper'
+    assert (symbols['usb_enable'][0]&~1) in calls('__wrap_usb_enable'),'USB wrapper bypasses original legacy stack'
+    assert 'usb_status' in symbols and symbols['usb_status'][1]>0,'Charger USB event callback not linked'
+    return {'ZMK_init_calls_wrapper':True,'wrapper_calls_original_stack':True,'charger_event_callback_linked':True,'method':'ARM ELF symbol table and decoded Thumb BL targets'}
+
 def usb_configuration_power(elf):
     # Read the linked legacy descriptor section, including both target variants.
     shoff=struct.unpack_from('<I',elf,32)[0]
@@ -62,7 +89,7 @@ def main():
             elif kind==1:ended=True
             else:assert kind in [3,5],'Unsupported HEX record'
         assert ended and seen
-        details[variant]={'arm_elf':True,'hex_checksums':'passed','programmed_bytes':len(seen),'settings_partition_preserved':True,'USB_configuration_mA':usb_configuration_power(elf)}
+        details[variant]={'arm_elf':True,'hex_checksums':'passed','programmed_bytes':len(seen),'settings_partition_preserved':True,'USB_configuration_mA':usb_configuration_power(elf),'USB_callback_linkage':usb_callback_linkage(elf)}
     assert len({v['calibration_version'] for v in build['variants'].values()})==1
     report={'status':'passed','variants':details,'build_manifest_sha256':sha(p),'physical_verification':False,'calibration_contract_version':build['variants']['normal']['calibration_version'],'recovery_binding':build['variants']['normal']['recovery_binding']}
     (ROOT/'docs/audit/yeti60-target-check.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

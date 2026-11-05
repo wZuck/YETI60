@@ -2,6 +2,8 @@
 
 # 刷写、串口与逐键校准
 
+本页命令已指向当前候选板固件目录，普通版和校准版必须配套；旧 `firmware/releases` 为参考板构建。USB 接线使用[候选 J4／J5／J1 表](../../hardware/usb-short-route/README.zh-CN.md#必须采用的连接方式)，不是旧四线直连 J1。
+
 返回[总入口](../../BUILD.zh-CN.md)。以下为首样待实测的操作程序，不是已经完成的实机刷写记录。准备支持 nRF52840 的 CMSIS-DAP SWD 调试器、OpenOCD，以及本版六针探针治具；不要购买另一个键盘控制板作为替代。
 
 ## 连接 J3
@@ -26,7 +28,7 @@
 ```sh
 cd variants/raytac
 openocd -f interface/cmsis-dap.cfg -c "transport select swd" -f target/nrf52.cfg \
-  -c "adapter speed 1000; program firmware/releases/calibrator/yeti60-raytac.hex verify reset exit"
+  -c "adapter speed 1000; program hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex verify reset exit"
 ```
 
 这里只是候选的 1 MHz 调试起始速度，不是已实测速度。必须看到编程和校验成功再继续；失败时先检查供电、地、针脚接触和目标识别，不能直接执行 recover 或整片擦除。已有设置会被 recover／mass erase 清除。参考 [OpenOCD 官方 program 文档](https://openocd.org/doc/html/Flash-Programming.html)。
@@ -60,7 +62,7 @@ yeti_calibrate save
 
 ```sh
 openocd -f interface/cmsis-dap.cfg -c "transport select swd" -f target/nrf52.cfg \
-  -c "adapter speed 1000; program firmware/releases/normal/yeti60-raytac.hex verify reset exit"
+  -c "adapter speed 1000; program hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex verify reset exit"
 ```
 
 只写入 HEX 涉及的应用区域，保留 `0xF0000–0xFFFFF` 的末尾 64 KiB 设置区；不加整片擦除命令。固件检查器会检查分发文件的地址范围和描述符，但实际调试器写擦行为仍须首件确认。PCB、引脚、设备树或校准算法指纹变化后必须重新校准，不能复用旧数据。

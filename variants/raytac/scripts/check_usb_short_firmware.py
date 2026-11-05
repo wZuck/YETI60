@@ -12,6 +12,9 @@ def main():
     assert sha(BASE/'audit/native-check.json')==m['native_acceptance_sha256'];assert sha(BASE/'audit/geometry-check.json')==m['local_geometry_acceptance_sha256']
     build=json.loads((PUB/'build.json').read_text());target=json.loads((PUB/'target-check.json').read_text());assert sha(PUB/'build.json')==target['build_manifest_sha256']
     assert set(build['variants'])=={'normal','calibrator'} and all(v['USB_configuration_mA']==500 for v in target['variants'].values())
+    for details in target['variants'].values():
+        linkage=details['USB_callback_linkage']
+        assert linkage['ZMK_init_calls_wrapper'] and linkage['wrapper_calls_original_stack'] and linkage['charger_event_callback_linked']
     for record in build['variants'].values():
         assert record['calibration_version']==version(ROOT,record['calibration_scan_configuration'],BASE/'EC60-nRF52840.kicad_pcb')
         recovery=record['recovery_binding']

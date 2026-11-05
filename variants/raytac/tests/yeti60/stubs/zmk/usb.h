@@ -1,9 +1,8 @@
-/* Host test doubles; the ARM build uses the pinned Zephyr/ZMK headers. */
+/* Host interfaces; target builds use the pinned ZMK headers. */
 #pragma once
 #include <stdbool.h>
-enum usb_dc_status_code {
-  USB_DC_UNKNOWN, USB_DC_DISCONNECTED, USB_DC_CONNECTED,
-  USB_DC_CONFIGURED, USB_DC_SUSPEND, USB_DC_RESUME, USB_DC_RESET
-};
+#include <zephyr/usb/usb_device.h>
+enum zmk_usb_conn_state { ZMK_USB_CONN_NONE, ZMK_USB_CONN_POWERED, ZMK_USB_CONN_HID };
 enum usb_dc_status_code zmk_usb_get_status(void);
+enum zmk_usb_conn_state zmk_usb_get_conn_state(void);
 bool zmk_usb_is_hid_ready(void);

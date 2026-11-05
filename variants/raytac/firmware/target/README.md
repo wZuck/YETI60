@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 target firmware
 
+USB charging now uses the [status callback and deconfiguration policy](../../docs/testing/usb-event-policy.md), independently of scan polling. Suspend disables charging/input; resume and 500 mA permission follow the actual configuration byte. Both variants share this logic; recalibrate when upgrading from an older bundle.
+
 For the current repaired PCB, use the [candidate build/flash entry](../../hardware/usb-short-route/firmware/README.md). [Recovery and calibration contract v3](../../docs/testing/firmware-recovery.md) adds Fn + double-tap Backspace (less than 400 ms between presses) to clear only the selected BLE profile. The first v3 update requires recapturing thresholds; preserve settings when flashing the matching normal build.
 
 This ZMK module binds the tested portable scan core to nRF52840 GPIO/SAADC and the current schematic pin header. ZMK provides USB HID, BLE HID, bonding, five host profiles and persistent settings. The HHKB transform follows the actual plate-to-electrode correspondence. The custom board uses its internal LF RC clock, no development-kit LEDs, and a direct SWD application at address zero.
@@ -29,7 +31,7 @@ Once a computer accepts the USB configuration, charging and USB HID operate conc
 | USB suspended | Disabled; input high impedance | ZMK suspend handling; USB reports resume with the host |
 | USB detached | No USB charging | Active BLE profile when connected |
 
-The 500 mA value is not a fixed cell charge current. Charger programming, PowerPath load sharing, temperature, cable loss and the battery's charge phase govern actual current. The host regression compiles this actual adapter and the portable core with simulated USB/ZMK interfaces under ASan/UBSan. It tests concurrent charging/USB preference, retained BLE override, suspend/resume/reset/detach, failed-update retry and absence of repeated settings/GPIO writes. It does not execute a real USB or BLE stack.
+The 500 mA value is not a fixed cell charge current. Charger programming, PowerPath load sharing, temperature, cable loss and the battery's charge phase govern actual current. The host regressions compile the actual adapter with GPIO/workqueue interfaces under ASan/UBSan; the USB event suite also compiles the complete pinned ZMK USB source. The portable core is tested separately. It tests concurrent charging/USB preference, retained BLE override, suspend/resume/reset/detach, failed-update retry and absence of repeated settings/GPIO writes. It does not execute a real USB or BLE stack.
 
 ## Idle power policy
 

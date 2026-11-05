@@ -1,39 +1,73 @@
 /* SPDX-License-Identifier: MIT */
 #include "usb_policy.h"
+#include "board_pins.h"
 #include <assert.h>
 #include <errno.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
+#include <zephyr/usb/usb_device.h>
 #include <zmk/endpoints.h>
 #include <zmk/usb.h>
 
-static enum usb_dc_status_code status;
-static bool ready;
+const struct device test_gpio0 = {0};
+static usb_dc_status_callback hardware_callback;
 static enum zmk_transport preferred = ZMK_TRANSPORT_BLE;
-static unsigned preference_writes, gpio_writes;
-static int preference_error;
-static int queue_error;
-static struct k_work *queued;
-static enum yeti_mode pins[64];
+static unsigned preference_writes, gpio_writes, forwarded_events;
+static int preference_error, queue_error, enable_error;
+static int gpio_fail_after = -1;
+static bool gpio_ready = true, expect_configured;
+static struct k_work *queue[16];
+static unsigned queued;
+static int pins[32];
+int __wrap_usb_enable(usb_dc_status_callback);
+int __real_usb_enable(usb_dc_status_callback callback) {
+  hardware_callback = callback;
+  return enable_error;
+}
 int k_work_submit(struct k_work *work) {
   if (queue_error)
     return queue_error;
-  assert(!queued || queued == work);
-  int added = !work->pending;
+  if (work->pending)
+    return 0;
+  assert(queued < 16);
+  queue[queued++] = work;
   work->pending = true;
-  queued = work;
-  return added;
+  return 1;
 }
 static void drain(void) {
-  if (!queued)
-    return;
-  struct k_work *work = queued;
-  queued = NULL;
-  work->pending = false;
-  work->handler(work);
+  while (queued) {
+    struct k_work *work = queue[0];
+    memmove(queue, queue + 1, --queued * sizeof(queue[0]));
+    work->pending = false;
+    work->handler(work);
+  }
 }
+#ifndef YETI_PINNED_USB
+static enum usb_dc_status_code status = USB_DC_UNKNOWN;
+static bool ready;
 enum usb_dc_status_code zmk_usb_get_status(void) { return status; }
 bool zmk_usb_is_hid_ready(void) { return ready; }
+static void upstream_status(enum usb_dc_status_code value, const uint8_t *params) {
+  (void)params;
+  status = value;
+  if (value == USB_DC_CONFIGURED)
+    ready = true;
+  if (value == USB_DC_RESET || value == USB_DC_DISCONNECTED || value == USB_DC_CONNECTED)
+    ready = false;
+}
+#else
+void usb_status_cb(enum usb_dc_status_code, const uint8_t *);
+#define upstream_status usb_status_cb
+#endif
+static void forward(enum usb_dc_status_code value, const uint8_t *params) {
+  /* Immediate pin action must precede ZMK notification, with no poll/drain. */
+  assert(pins[PIN_CHG_CE_N] == (expect_configured ? 0 : 1));
+  forwarded_events++;
+  upstream_status(value, params);
+}
 enum zmk_transport zmk_endpoint_get_preferred_transport(void) { return preferred; }
 int zmk_endpoint_set_preferred_transport(enum zmk_transport value) {
   preference_writes++;
@@ -42,94 +76,119 @@ int zmk_endpoint_set_preferred_transport(enum zmk_transport value) {
   preferred = value;
   return 0;
 }
-static void gpio(void *ctx, uint8_t pin, enum yeti_mode mode) {
-  (void)ctx;
-  assert(pin < 64);
-  pins[pin] = mode;
+bool device_is_ready(const struct device *dev) { assert(dev == &test_gpio0); return gpio_ready; }
+int gpio_pin_set(const struct device *dev, uint32_t pin, int value) {
+  assert(dev == &test_gpio0 && pin < 32);
+  if (gpio_fail_after == 0) {
+    gpio_fail_after = -1;
+    return -EIO;
+  }
+  if (gpio_fail_after > 0)
+    gpio_fail_after--;
+  pins[pin] = value;
   gpio_writes++;
+  /* Check every intermediate write, not just the final pin combination. */
+  assert(!(pins[PIN_CHG_EN1] == 0 && pins[PIN_CHG_EN2] == 1));
+  if (!pins[PIN_CHG_CE_N]) {
+    assert(expect_configured);
+    assert(pins[PIN_CHG_EN1] == 1 && pins[PIN_CHG_EN2] == 0);
+  }
+  return 0;
 }
-static void wait_us(void *ctx, uint32_t us) { (void)ctx; (void)us; }
-static int adc(void *ctx, uint8_t ain, uint32_t us) {
-  (void)ctx; (void)ain; (void)us;
-  return 1000;
+int gpio_pin_configure(const struct device *dev, uint32_t pin, int flags) {
+  return gpio_pin_set(dev, pin, flags == GPIO_OUTPUT_HIGH);
 }
-static bool report(void *ctx, enum yeti_link link, const uint8_t data[8]) {
-  (void)ctx; (void)link; (void)data;
-  return true;
+static void emit(enum usb_dc_status_code status, int configuration, bool charging) {
+  uint8_t value = (uint8_t)configuration;
+  expect_configured = charging;
+  unsigned before = forwarded_events;
+  hardware_callback(status, configuration < 0 ? NULL : &value);
+  assert(forwarded_events == before + 1);
+  assert(pins[PIN_CHG_CE_N] == (charging ? 0 : 1));
 }
-int main(void) {
-  struct yeti_core core;
-  struct yeti_usb_policy policy = {0};
-  struct yeti_hal hal = {NULL, gpio, wait_us, adc, report};
-  struct yeti_config cfg = {.debounce_frames = 2, .afe_settle_us = 5000,
-      .mux_settle_us = 3, .discharge_us = 10, .charge_us = 5, .acquisition_us = 40};
-  for (unsigned r = 0; r < YETI_ROWS; r++)
-    for (unsigned c = 0; c < YETI_COLS; c++) {
-      cfg.low[r][c] = 1500;
-      cfg.high[r][c] = 2000;
-    }
-  assert(yeti_init(&core, &hal, &cfg) == 0);
-  assert(yeti_target_usb_poll(NULL, &core) == -EINVAL);
-  status = USB_DC_CONNECTED;
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
-  assert(pins[PIN_CHG_CE_N] == Y_HIGH && preferred == ZMK_TRANSPORT_BLE);
-  assert(pins[PIN_CHG_EN1] == Y_LOW && pins[PIN_CHG_EN2] == Y_LOW);
-  status = USB_DC_CONFIGURED; ready = true;
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
-  assert(queued && preferred == ZMK_TRANSPORT_BLE);
+int main(int argc, char **argv) {
+  pins[PIN_CHG_CE_N] = 1;
+  if (argc > 1 && !strcmp(argv[1], "not-ready")) {
+    gpio_ready = false;
+    assert(yeti_target_usb_init() == -ENODEV);
+    puts("USB charger: unavailable GPIO rejects initialization");
+    return 0;
+  }
+  if (argc > 1 && !strncmp(argv[1], "init-fault-", 11)) {
+    gpio_fail_after = atoi(argv[1] + 11);
+    assert(yeti_target_usb_init() == -EIO);
+    assert(pins[PIN_CHG_CE_N] && pins[PIN_CHG_EN1] && pins[PIN_CHG_EN2]);
+    puts("USB charger: GPIO initialization failure latches disabled/high-Z");
+    return 0;
+  }
+  assert(yeti_target_usb_init() == 0);
+  if (argc > 1 && !strcmp(argv[1], "enable-fault")) {
+    enable_error = -EIO;
+    assert(__wrap_usb_enable(forward) == -EIO);
+    assert(pins[PIN_CHG_CE_N] && pins[PIN_CHG_EN1] && pins[PIN_CHG_EN2]);
+    puts("USB charger: stack enable failure latches disabled/high-Z");
+    return 0;
+  }
+  assert(__wrap_usb_enable(forward) == 0 && hardware_callback);
+  emit(USB_DC_CONNECTED, -1, false);
+  assert(!pins[PIN_CHG_EN1] && !pins[PIN_CHG_EN2]);
+  emit(USB_DC_CONFIGURED, 1, true);
+  assert(zmk_usb_is_hid_ready());
+  unsigned initialized_writes = gpio_writes;
+  assert(yeti_target_usb_init() == 0 && gpio_writes == initialized_writes);
+  assert(yeti_target_usb_poll() == 0);
   drain();
-  assert(core.link == Y_USB && preferred == ZMK_TRANSPORT_USB);
-  assert(pins[PIN_CHG_CE_N] == Y_LOW && pins[PIN_CHG_EN1] == Y_HIGH &&
-         pins[PIN_CHG_EN2] == Y_LOW);
-  unsigned before = gpio_writes;
-  for (unsigned i = 0; i < 1000; i++)
-    assert(yeti_target_usb_poll(&policy, &core) == 0);
-  assert(preference_writes == 1 && gpio_writes == before);
-  preferred = ZMK_TRANSPORT_BLE;
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
-  drain();
-  assert(preferred == ZMK_TRANSPORT_USB && preference_writes == 2);
-  assert(pins[PIN_CHG_CE_N] == Y_LOW);
-  status = USB_DC_SUSPEND; /* ZMK retains HID-ready across suspend. */
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
-  assert(pins[PIN_CHG_CE_N] == Y_HIGH && pins[PIN_CHG_EN1] == Y_HIGH &&
-         pins[PIN_CHG_EN2] == Y_HIGH);
-  status = USB_DC_RESUME;
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
-  assert(core.link == Y_USB && pins[PIN_CHG_CE_N] == Y_LOW);
-  status = USB_DC_RESET; ready = false;
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
-  assert(pins[PIN_CHG_CE_N] == Y_HIGH && pins[PIN_CHG_EN1] == Y_LOW);
-  status = USB_DC_RESUME; /* Resume without accepted configuration is powered only. */
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
-  assert(pins[PIN_CHG_CE_N] == Y_HIGH);
-  status = USB_DC_DISCONNECTED;
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
-  assert(core.link == Y_NONE && pins[PIN_CHG_CE_N] == Y_HIGH);
-  /* The adapter does not force BLE: ZMK owns fallback to a ready BLE profile. */
   assert(preferred == ZMK_TRANSPORT_USB);
-  status = USB_DC_CONFIGURED; ready = true;
-  preferred = ZMK_TRANSPORT_BLE; preference_error = -EIO;
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
+  unsigned before = gpio_writes;
+  for (unsigned i = 0; i < 1000; i++) {
+    emit(USB_DC_SOF, -1, true);
+    assert(yeti_target_usb_poll() == 0);
+  }
+  assert(preference_writes == 1 && gpio_writes == before);
+  emit(USB_DC_SUSPEND, -1, false);
+  assert(pins[PIN_CHG_EN1] && pins[PIN_CHG_EN2]);
+  emit(USB_DC_CLEAR_HALT, -1, false); /* No incidental event lifts suspend. */
+  emit(USB_DC_RESUME, -1, true);
+  emit(USB_DC_SUSPEND, -1, false);
+  emit(USB_DC_RESET, -1, false);
+  assert(!pins[PIN_CHG_EN1] && !pins[PIN_CHG_EN2]);
+  emit(USB_DC_RESUME, -1, false); /* Reset discarded configuration. */
+  emit(USB_DC_CONFIGURED, 1, true);
+  emit(USB_DC_CONFIGURED, 0, false);
+  assert(!zmk_usb_is_hid_ready() && zmk_usb_get_status() == USB_DC_RESET);
+  emit(USB_DC_RESUME, -1, false);
+  emit(USB_DC_CONFIGURED, -1, false);
+  emit(USB_DC_CONFIGURED, 2, false);
+  emit(USB_DC_CONFIGURED, 1, true);
+  if (argc > 1 && !strncmp(argv[1], "write-fault-", 12)) {
+    emit(USB_DC_SUSPEND, -1, false);
+    gpio_fail_after = atoi(argv[1] + 12);
+    emit(USB_DC_RESUME, -1, false);
+    emit(USB_DC_CONFIGURED, 1, false);
+    assert(pins[PIN_CHG_EN1] && pins[PIN_CHG_EN2]);
+    puts("USB charger: GPIO write failure stays disabled until reboot");
+    return 0;
+  }
+  preferred = ZMK_TRANSPORT_BLE;
+  assert(yeti_target_usb_poll() == 0);
+  emit(USB_DC_DISCONNECTED, -1, false);
   drain();
   assert(preferred == ZMK_TRANSPORT_BLE);
+  emit(USB_DC_CONFIGURED, 1, true);
+  preference_error = -EIO;
+  assert(yeti_target_usb_poll() == 0);
+  drain(); assert(preferred == ZMK_TRANSPORT_BLE);
   preference_error = 0;
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
-  drain();
-  assert(preferred == ZMK_TRANSPORT_USB && pins[PIN_CHG_CE_N] == Y_LOW);
-  preferred = ZMK_TRANSPORT_BLE; queue_error = -EBUSY;
-  assert(yeti_target_usb_poll(&policy, &core) == -EBUSY && !queued);
+  assert(yeti_target_usb_poll() == 0);
+  drain(); assert(preferred == ZMK_TRANSPORT_USB);
+  preferred = ZMK_TRANSPORT_BLE;
+  queue_error = -EBUSY;
+  assert(yeti_target_usb_poll() == -EBUSY);
+  emit(USB_DC_SUSPEND, -1, false); /* Queue failure cannot delay charger off. */
   queue_error = 0;
-  assert(yeti_target_usb_poll(&policy, &core) == 0 && queued);
-  status = USB_DC_DISCONNECTED; ready = false;
-  drain();
-  assert(preferred == ZMK_TRANSPORT_BLE); /* A stale queued attach cannot switch hosts. */
-  status = USB_DC_CONFIGURED; ready = true;
-  assert(yeti_target_usb_poll(&policy, &core) == 0);
-  drain();
-  assert(preferred == ZMK_TRANSPORT_USB);
-  policy.initialized = false; core.busy = true;
-  assert(yeti_target_usb_poll(&policy, &core) != 0 && !policy.initialized);
-  puts("USB policy: concurrent configured charging and USB preference; retained BLE override; suspend/resume/reset/detach; no repeated writes; retry failures passed");
+  emit(USB_DC_RESUME, -1, true);
+  assert(yeti_target_usb_poll() == 0);
+  drain(); assert(preferred == ZMK_TRANSPORT_USB);
+  puts("USB events: synchronous charging, USB priority, deconfiguration, suspend/resume/reset/detach, safe intermediate modes, no repeated writes and retry passed");
   return 0;
 }

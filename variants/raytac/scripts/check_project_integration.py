@@ -95,6 +95,11 @@ def verify():
     for variant in target['variants'].values():hashes(variant['outputs'])
     target_check=read(AUD/'yeti60-target-check.json');assert target_check['status']=='passed' and target_check['build_manifest_sha256']==sha(AUD/'yeti60-target-build.json')
     assert all(v['USB_configuration_mA']==500 for v in target_check['variants'].values())
+    usb_events=read(AUD/'usb-event-policy.json');hashes(usb_events['source_sha256'])
+    assert usb_events['status']=='passed' and not usb_events['physical_verification']
+    assert usb_events['upstream_revision']=='0862fc0f8c864834007986efcaf52f292ea6d37d'
+    assert len(usb_events['cases'])==11 and usb_events['synchronous_disable_before_upstream_notification']
+    assert usb_events['configuration_zero_rejected'] and usb_events['GPIO_fault_latched'] and usb_events['unintended_external_ILIM_mode_rejected']
     recovery=read(AUD/'firmware-recovery.json');hashes(recovery['source_sha256'])
     assert recovery['status']=='passed' and not recovery['physical_verification']
     assert recovery['upstream_revision']==target['dependencies']['zmk']
