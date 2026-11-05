@@ -4,6 +4,7 @@
 #include "calibration.h"
 #include "usb_policy.h"
 #include "gpio_modes.h"
+#include "scanner_control.h"
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,7 +23,6 @@ static kscan_callback_t callback;
 static atomic_t enabled;
 static bool io_fault;
 static bool calibrated;
-static atomic_t calibration_command;
 static atomic_t calibration_loaded;
 static uint16_t raw[5][15];
 static struct yeti_cal_stats released[5][15], pressed[5][15];
@@ -75,8 +75,16 @@ static int __unused command(const struct shell *shell, size_t argc,
     action = 5;
   else
     return -EINVAL;
-  if (!atomic_cas(&calibration_command, 0, action))
-    return -EBUSY;
+  int err = yeti_scan_submit(action);
+  if (err) {
+    if (err == -ENODEV)
+      shell_error(shell, "Scanner unavailable: initialization has not succeeded.");
+    else if (err == -EIO)
+      shell_error(shell, "Scanner fault latched: diagnose hardware and reset before capture/save.");
+    else if (err == -EBUSY)
+      shell_error(shell, "Scanner command pending: wait for its response.");
+    return err;
+  }
   if ((action & 255) == 1)
     shell_print(shell, "Queued: release ALL keys until capture completes.");
   else if ((action & 255) == 2)
@@ -157,6 +165,26 @@ static bool unused_report(void *ctx, enum yeti_link link,
   /* ZMK owns HID delivery; this core callback only acknowledges consumption. */
   return true;
 }
+static void fault_shutdown(int err, uint16_t previous[YETI_ROWS]) {
+  /* Run on the scan owner before another frame/capture can be published. */
+  bool first = yeti_scan_fault();
+  (void)yeti_power(&core, false);
+  for (unsigned row = 0; row < YETI_ROWS; row++) {
+    for (unsigned col = 0; col < YETI_COLS; col++)
+      if ((previous[row] & BIT(col)) && callback)
+        callback(scan_device, row, col, false);
+    previous[row] = 0;
+  }
+  afe_asleep = false;
+  idle_scan = false;
+  calibration_mode = 0;
+  calibration_started = false;
+  calibrated = false;
+  if (first)
+    printk("YETI60 scanner fault latched: err=%d gpio_fault=%u; "
+           "AFE off, keys released; diagnose hardware and reset.\n",
+           err, io_fault ? 1u : 0u);
+}
 static void run(void *a, void *b, void *c) {
   ARG_UNUSED(a);
   ARG_UNUSED(b);
@@ -164,18 +192,23 @@ static void run(void *a, void *b, void *c) {
   uint16_t previous[YETI_ROWS] = {0};
   idle_since = k_uptime_get();
   while (true) {
-    if (scan_device == NULL) {
+    if (yeti_scan_state() == Y_SCAN_OFFLINE) {
       k_sleep(K_MSEC(20));
       continue;
     }
-    if (atomic_cas(&calibration_loaded, 1, 0)) {
+    if (yeti_scan_state() == Y_SCAN_RUNNING &&
+        atomic_cas(&calibration_loaded, 1, 0)) {
       memcpy(core.cfg.low, saved.low, sizeof(saved.low));
       memcpy(core.cfg.high, saved.high, sizeof(saved.high));
       memset(core.matrix, 0, sizeof(core.matrix));
       memset(core.count, 0, sizeof(core.count));
       calibrated = true;
     }
-    int action = atomic_set(&calibration_command, 0);
+    int action = yeti_scan_take();
+    if (action < 0) {
+      printk("YETI60 queued calibration rejected: scanner fault latched.\n");
+      action = 0;
+    }
     if ((action & 255) == 1) {
       calibrated = false;
       calibration_started = true;
@@ -238,8 +271,9 @@ static void run(void *a, void *b, void *c) {
       else
         printk("YETI60 timing: no successful scan samples since boot\n");
     } else if ((action & 255) == 4) {
-      printk("YETI60 calibration contract=0x%08x valid=%u\n",
-             (unsigned)YETI_CALIBRATION_VERSION, calibrated ? 1u : 0u);
+      printk("YETI60 calibration contract=0x%08x valid=%u scanner_fault=%u\n",
+             (unsigned)YETI_CALIBRATION_VERSION, calibrated ? 1u : 0u,
+             yeti_scan_state() == Y_SCAN_FAULT ? 1u : 0u);
       printk("key,row,col,release_n,release_min,release_max,press_n,press_min,press_max,low,high,guard,valid\n");
       for (unsigned r = 0; r < 5; r++)
         for (unsigned c = 0; c < 15; c++) {
@@ -254,11 +288,20 @@ static void run(void *a, void *b, void *c) {
         }
     }
     (void)yeti_target_usb_poll();
+    if (yeti_scan_state() == Y_SCAN_FAULT) {
+      k_sleep(K_MSEC(100));
+      continue;
+    }
     if (atomic_get(&enabled)) {
       if (afe_asleep && yeti_afe(&core, true) == 0)
         afe_asleep = false;
       cursor = 0;
       int err = afe_asleep ? -1 : yeti_scan(&core);
+      if (err || io_fault) {
+        fault_shutdown(err, previous);
+        k_sleep(K_MSEC(100));
+        continue;
+      }
       if (!err && calibration_mode == 1) {
         for (unsigned r = 0; r < 5; r++)
           for (unsigned c = 0; c < 15; c++)
@@ -302,16 +345,12 @@ static void run(void *a, void *b, void *c) {
         if (yeti_afe(&core, false) == 0)
           afe_asleep = true;
       }
-      if (err || io_fault) {
-        yeti_power(&core, false);
-        afe_asleep = false;
-        idle_scan = false;
-        k_sleep(K_MSEC(100));
-      }
     } else if (!afe_asleep && IS_ENABLED(CONFIG_YETI60_AFE_IDLE_GATING)) {
       if (yeti_afe(&core, false) == 0)
         afe_asleep = true;
     }
+    if (io_fault)
+      fault_shutdown(-EIO, previous);
     k_sleep(K_MSEC(idle_scan ? CONFIG_YETI60_IDLE_SCAN_MS
                              : CONFIG_YETI60_ACTIVE_SCAN_MS));
   }
@@ -333,6 +372,8 @@ static int disable(const struct device *dev) {
   return 0;
 }
 static int init(const struct device *dev) {
+  if (yeti_scan_state() != Y_SCAN_OFFLINE)
+    return -EALREADY;
   if (!device_is_ready(saadc) || !device_is_ready(ports[0]) ||
       !device_is_ready(ports[1]))
     return -ENODEV;
@@ -355,6 +396,7 @@ static int init(const struct device *dev) {
     return -EIO;
   }
   scan_device = dev;
+  (void)yeti_scan_ready();
   return 0;
 }
 static const struct kscan_driver_api api = {.config = configure,

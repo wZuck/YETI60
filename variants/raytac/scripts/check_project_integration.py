@@ -110,6 +110,14 @@ def verify():
     assert gpio_modes['GPIO_constants_checked_against_pinned_headers'] and gpio_modes['nominal_scan_samples']==150
     assert len(gpio_modes['positive_cases'])==5 and len(gpio_modes['rejected_mutants'])==4
     assert all(x['exit_code']!=0 for x in gpio_modes['rejected_mutants'])
+    scan_control=read(AUD/'scan-control.json');hashes(scan_control['source_sha256'])
+    assert scan_control['status']=='passed' and not scan_control['physical_verification']
+    assert scan_control['upstream_revision']==target['dependencies']['zephyr']
+    assert scan_control['ZMK_revision']==target['dependencies']['zmk']
+    assert scan_control['active_keys_checked']==60 and scan_control['inactive_positions_rejected']==15
+    assert scan_control['event_queue_capacity']==128 and scan_control['undrained_burst_events_checked']==120
+    assert len(scan_control['positive_cases'])==11 and len(scan_control['rejected_mutants'])==8
+    assert all(x['exit_code']!=0 for x in scan_control['rejected_mutants'])
     usb_events=read(AUD/'usb-event-policy.json');hashes(usb_events['source_sha256'])
     assert usb_events['status']=='passed' and not usb_events['physical_verification']
     assert usb_events['upstream_revision']=='0862fc0f8c864834007986efcaf52f292ea6d37d'
@@ -118,7 +126,7 @@ def verify():
     recovery=read(AUD/'firmware-recovery.json');hashes(recovery['source_sha256'])
     assert recovery['status']=='passed' and not recovery['physical_verification']
     assert recovery['upstream_revision']==target['dependencies']['zmk']
-    assert len(recovery['CMake_mutation_cases'])==9
+    assert len(recovery['CMake_mutation_cases'])==10
     assert target_check['recovery_binding']['clears']=='selected BLE profile only'
     assert not target_check['recovery_binding']['calibration_settings_erase_binding']
     complete=read(AUD/'complete-exploded.json');hashes(complete['source_sha256']);hashes(complete['outputs'])

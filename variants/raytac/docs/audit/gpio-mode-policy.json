@@ -29,27 +29,29 @@
     {
       "case": "digital-input-buffer",
       "exit_code": -6,
-      "output": "Assertion failed: (!states[pin].output && !states[pin].input && !states[pin].pull), function disconnected, file gpio_modes.c, line 29."
+      "output": "Assertion failed: (!states[pin].output && !states[pin].input && !states[pin].pull), function disconnected, file gpio_modes.c, line 30."
     },
     {
       "case": "pull-up-on-float",
       "exit_code": -6,
-      "output": "Assertion failed: (!states[pin].output && !states[pin].input && !states[pin].pull), function disconnected, file gpio_modes.c, line 29."
+      "output": "Assertion failed: (!states[pin].output && !states[pin].input && !states[pin].pull), function disconnected, file gpio_modes.c, line 30."
     },
     {
       "case": "actively-drive-release",
       "exit_code": -6,
-      "output": "Assertion failed: (!states[pin].output && !states[pin].input && !states[pin].pull), function disconnected, file gpio_modes.c, line 29."
+      "output": "Assertion failed: (!states[pin].output && !states[pin].input && !states[pin].pull), function disconnected, file gpio_modes.c, line 30."
     },
     {
       "case": "skip-startup-shutdown",
       "exit_code": -6,
-      "output": "Assertion failed: (!scan_device && !core.powered), function main, file gpio_modes.c, line 82."
+      "output": "Assertion failed: (!scan_device && !core.powered), function main, file gpio_modes.c, line 83."
     }
   ],
   "upstream_revision": "10ba6d0cb38bc3d258775d27982f707599320085",
   "GPIO_constants_checked_against_pinned_headers": true,
   "upstream_sha256": {
+    "include/zephyr/sys/atomic_types.h": "b518207959f774d97a4afef6f7d7b5629488478b57489aea5e3f5e4aeef90e51",
+    "include/zephyr/sys/atomic_builtin.h": "f8c42f00cce9f87ad757623bf2533c74582553c6ce13d96154e9028cf7e28597",
     "include/zephyr/drivers/gpio.h": "db4bbad7fecbb236f3a517e8e49f31fb92fa9a9f96c6d2e379d71634639ca723",
     "include/zephyr/dt-bindings/gpio/gpio.h": "f39f3a570a8efacd73e0dec3ce6bf056b581bce6364ea27833e686d67b37e0e2",
     "drivers/gpio/gpio_nrfx.c": "8dabfaa7d28910d46479b176092e9e756405b851cef69830ea8db8e8beeda0f4"
@@ -60,10 +62,13 @@
     "Real RTOS/SAADC/USB/BLE and electrical initialization transients"
   ],
   "source_sha256": {
-    "scripts/test_yeti60_gpio_modes.py": "4af625d940aa25192b5a86da8eaa0f926448c5cd8b7d4e76926c200cfe41f25a",
-    "firmware/target/src/scanner.c": "adcb04855f156f8ada7730ca14029c70428aff56ab83395c88930d2eb656ed31",
+    "scripts/test_yeti60_gpio_modes.py": "6240f9baa05c4c2fba9dd5540641a4fe3672884e01b3ed5a711f792990c4456a",
+    "firmware/target/src/scanner.c": "b77e6be7dcb0861d703774406053b07757979568779655239d6a1d31c912ad77",
     "firmware/target/src/gpio_modes.h": "3fae72b5f56a0ecddcb21cd68c103612aa2ab219363373b4275381e203796a8b",
-    "tests/yeti60/gpio_modes.c": "f409b58409ba02f364318612982d02046c56d824d205de89b87f50fb9191210e",
+    "scripts/yeti60_host_atomics.py": "64b6aa5c927b47b64814901dbf5f39a048b36c1449015856f454abb7ca78e65f",
+    "firmware/target/src/scanner_control.c": "7214d930f8c4d6144a7d74657e79b14380a336356f508edf59f0fc1ddcf5006a",
+    "firmware/target/src/scanner_control.h": "8198cb579fde32f52247776bfc4d07f3fa91969b0c095b3e0633133539f057fd",
+    "tests/yeti60/gpio_modes.c": "a58a2e0b0bad3b79843d9672f99c1165e3c6879fb861266fb2409c0c8a7efe6e",
     "tests/yeti60/stubs/zephyr/drivers/gpio.h": "08ea3a4f13e8b41c86ebec5622e06deca1f89714700a3b66b63dac00a08c14bd",
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",

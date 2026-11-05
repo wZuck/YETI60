@@ -38,3 +38,5 @@ After scanner or key-map provenance changes, use `python3 scripts/run_audit.py -
 The added [EC waveform study](../testing/analog-waveform.md) stage requires ngspice and host Clang on PATH, plus NumPy/Matplotlib in the CAD environment. It traces the actual core and models passive RC sensitivity using actual netlist values; it does not measure key capacitance or model op-amp dynamics.
 
 The audit adds the [GPIO-mode/startup cleanup stage](../testing/gpio-mode-policy.md), checking actual callback/init sources and core against a host pin model. Physical leakage and rails remain first-board acceptance items.
+
+Commands reject unavailable startup; runtime scan faults power down the AFE, release tracked keys and reject further capture/save. Both images use a 128-entry key-event queue. See [scanner lifecycle/fault regression](../testing/scan-control.md), including the actual worker, 60-key capture and a 120-event burst. Real host delivery remains first-board acceptance work.

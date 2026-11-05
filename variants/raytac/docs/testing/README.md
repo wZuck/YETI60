@@ -36,3 +36,5 @@ Retain board IDs, PCB/firmware hashes, actual component/pack lots, instrument se
 For mechanical acceptance follow the [NiZ / plate-mount guide](../build/key-mechanism.md): 28 installed fastener sets, H26 empty, lower/upper gasket stock 2.0/1.2 mm. Check NiZ clips/skirts, three independent stabilizer pairs, the actual 6U wire/cap fit, released-key return and full stroke. Check neighboring EC keys while operating each big key.
 
 The [analog GPIO / startup cleanup checks](gpio-mode-policy.md) cover the actual callback/init bodies, pinned Zephyr flag values and final rail-off pin state. Real leakage and rail decay still require measurement.
+
+Commands reject unavailable startup; runtime scan faults power down the AFE, release tracked keys and reject further capture/save. Both images use a 128-entry key-event queue. See [scanner lifecycle/fault regression](scan-control.md), including the actual worker, 60-key capture and a 120-event burst. Real host delivery remains first-board acceptance work.

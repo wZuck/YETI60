@@ -60,8 +60,8 @@
     "Real USB/BLE endpoints and full stack concurrency"
   ],
   "source_sha256": {
-    "firmware/target/CMakeLists.txt": "31322acfb4857277f172915686669f121227263c6710e7fa9f1a734035ea9a3a",
-    "firmware/target/src/scanner.c": "adcb04855f156f8ada7730ca14029c70428aff56ab83395c88930d2eb656ed31",
+    "firmware/target/CMakeLists.txt": "23e465446ae0553eaee2405e841bfdd27ade79bc24c4ba441156d2a2c9d79aa9",
+    "firmware/target/src/scanner.c": "b77e6be7dcb0861d703774406053b07757979568779655239d6a1d31c912ad77",
     "firmware/target/src/usb_policy.c": "80f26703d2eee50dae22e0a70ae3a416b548d6536f3939c18f5c62c9b9af2075",
     "firmware/target/src/usb_policy.h": "ce652609668a30169a43624168824090d7e07f78c52410cb079a914222abd1d0",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",

@@ -14,6 +14,7 @@ def main():
     assert set(build['variants'])=={'normal','calibrator'} and all(v['USB_configuration_mA']==500 for v in target['variants'].values())
     for details in target['variants'].values():
         assert details['diagnostic_clock_hz']==32768
+        assert details['kscan_event_queue_size']==128 and details['builtin_atomics']
         linkage=details['USB_callback_linkage']
         assert linkage['ZMK_init_calls_wrapper'] and linkage['wrapper_calls_original_stack'] and linkage['charger_event_callback_linked']
     for record in build['variants'].values():
@@ -22,7 +23,7 @@ def main():
         assert recovery['window_ms']==400 and recovery['single_tap']==recovery['hold']=='none'
         assert recovery['clears']=='selected BLE profile only' and not recovery['calibration_settings_erase_binding']
     assert len({r['calibration_version'] for r in build['variants'].values()})==1
-    for name in ['build.json','simulation.json','calibration.json','gpio-mode-policy.json']:
+    for name in ['build.json','simulation.json','calibration.json','gpio-mode-policy.json','scan-control.json']:
         d=json.loads((PUB/name).read_text());assert d['status']==('built' if name=='build.json' else 'passed')
         for rel,h in d.get('source_sha256',{}).items():
             p=BASE/Path(rel).name if rel in ['hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb','hardware/ec60-nrf52840/netlist.xml'] else ROOT/rel
@@ -30,6 +31,11 @@ def main():
         if name=='gpio-mode-policy.json':
             assert not d['physical_verification'] and d['nominal_scan_samples']==150
             assert len(d['positive_cases'])==5 and len(d['rejected_mutants'])==4
+        if name=='scan-control.json':
+            assert not d['physical_verification'] and d['event_queue_capacity']==128
+            assert d['undrained_burst_events_checked']==120 and d['active_keys_checked']==60
+            assert len(d['positive_cases'])==11 and len(d['rejected_mutants'])==8
+            assert all(case['exit_code']!=0 for case in d['rejected_mutants'])
     for variant in ['normal','calibrator']:
         folder=PUB/'releases'/variant;encoded={};offset=0;ended=False
         for line in (folder/'yeti60-raytac.hex').read_text().splitlines():

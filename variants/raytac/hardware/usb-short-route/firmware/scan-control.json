@@ -1,0 +1,123 @@
+{
+  "status": "passed",
+  "physical_verification": false,
+  "execution": "Verbatim production shell, worker loop and shutdown; actual lifecycle module, core, calibration and pinned Zephyr builtin atomics; modeled ADC/GPIO/sleep/settings/kscan interfaces under ASan/UBSan",
+  "positive_cases": [
+    {
+      "case": "offline",
+      "output": "Scanner control: offline passed"
+    },
+    {
+      "case": "parser",
+      "output": "Scanner control: parser passed"
+    },
+    {
+      "case": "queue",
+      "output": "Scanner control: queue passed"
+    },
+    {
+      "case": "queue-burst",
+      "output": "Scanner control: queue-burst passed"
+    },
+    {
+      "case": "fault-race",
+      "output": "Scanner control: fault-race passed"
+    },
+    {
+      "case": "cleanup",
+      "output": "Scanner control: cleanup passed"
+    },
+    {
+      "case": "worker-ADC",
+      "output": "Scanner control: worker-ADC passed"
+    },
+    {
+      "case": "worker-GPIO",
+      "output": "Scanner control: worker-GPIO passed"
+    },
+    {
+      "case": "worker-GPIO-capture",
+      "output": "Scanner control: worker-GPIO-capture passed"
+    },
+    {
+      "case": "worker-disabled-GPIO",
+      "output": "Scanner control: worker-disabled-GPIO passed"
+    },
+    {
+      "case": "worker-calibration",
+      "output": "Scanner control: worker-calibration passed"
+    }
+  ],
+  "rejected_mutants": [
+    {
+      "case": "accept-offline",
+      "exit_code": -6,
+      "output": "Assertion failed: (request(\"release\")==-ENODEV && request(\"status\")==-ENODEV), function main, file scanner_control.c, line 167."
+    },
+    {
+      "case": "accept-fault-mutation",
+      "exit_code": -6,
+      "output": "Assertion failed: (request(\"release\")==-EIO && request(\"press 0 0\")==-EIO && request(\"save\")==-EIO), function main, file scanner_control.c, line 194."
+    },
+    {
+      "case": "omit-consumer-recheck",
+      "exit_code": -6,
+      "output": "Assertion failed: (request(\"save\")==0 && yeti_scan_fault() && yeti_scan_take()==-EIO), function main, file scanner_control.c, line 191."
+    },
+    {
+      "case": "overwrite-pending",
+      "exit_code": -6,
+      "output": "Assertion failed: (request(\"release\")==0 && request(\"save\")==-EBUSY), function main, file scanner_control.c, line 184."
+    },
+    {
+      "case": "omit-key-release",
+      "exit_code": -6,
+      "output": "Assertion failed: (!calibration_started && !idle_scan && !afe_asleep && releases==60), function main, file scanner_control.c, line 203."
+    },
+    {
+      "case": "omit-fault-poweroff",
+      "exit_code": -6,
+      "output": "Assertion failed: (!core.powered && !afe_enabled && !calibrated && !calibration_mode), function main, file scanner_control.c, line 202."
+    },
+    {
+      "case": "publish-fault-frame",
+      "exit_code": -6,
+      "output": "Assertion failed: (released[r][c].count==0), function main, file scanner_control.c, line 224."
+    },
+    {
+      "case": "short-event-queue",
+      "exit_code": -6,
+      "output": "Assertion failed: (physical_layouts_kscan_msgq.count==120), function main, file scanner_control.c, line 178."
+    }
+  ],
+  "active_keys_checked": 60,
+  "inactive_positions_rejected": 15,
+  "capture_frames_per_key": 128,
+  "upstream_revision": "10ba6d0cb38bc3d258775d27982f707599320085",
+  "upstream_sha256": {
+    "include/zephyr/sys/atomic_types.h": "b518207959f774d97a4afef6f7d7b5629488478b57489aea5e3f5e4aeef90e51",
+    "include/zephyr/sys/atomic_builtin.h": "f8c42f00cce9f87ad757623bf2533c74582553c6ce13d96154e9028cf7e28597"
+  },
+  "ZMK_revision": "0862fc0f8c864834007986efcaf52f292ea6d37d",
+  "ZMK_physical_layouts_sha256": "eccce3df9ca6cba0cb70e85dfafe70baa3535f0d66a418fdbe59fac4d9ae8ed2",
+  "event_queue_capacity": 128,
+  "undrained_burst_events_checked": 120,
+  "not_verified": [
+    "Actual RTOS scheduling/preemption or hardware memory ordering on Cortex-M4",
+    "Real ADC/GPIO failures, USB/BLE HID release delivery, flash writes or battery operation"
+  ],
+  "source_sha256": {
+    "scripts/test_yeti60_scan_control.py": "ccf305b9c1a38f6d2aab0b7f8c33fc100e9680e0af83ab4ed536f4a6012f86c4",
+    "scripts/yeti60_host_atomics.py": "64b6aa5c927b47b64814901dbf5f39a048b36c1449015856f454abb7ca78e65f",
+    "firmware/target/src/scanner.c": "b77e6be7dcb0861d703774406053b07757979568779655239d6a1d31c912ad77",
+    "firmware/target/src/scanner_control.c": "7214d930f8c4d6144a7d74657e79b14380a336356f508edf59f0fc1ddcf5006a",
+    "firmware/target/config/yeti60.conf": "a68d3d95ac716239a738e5de770d9214a0a4b1a605f7f7b1e535690c7b126495",
+    "firmware/target/src/scanner_control.h": "8198cb579fde32f52247776bfc4d07f3fa91969b0c095b3e0633133539f057fd",
+    "tests/yeti60/scanner_control.c": "465945749b733d2e29b7ff1aea8ce0cc01c1262421f3c4044eda223f6b41414f",
+    "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
+    "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
+    "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
+    "firmware/yeti60/calibration.c": "fec9a62f4681a80e7fd64fadbf51e9b1370e762483d464b85fc9b02484bc0492",
+    "firmware/yeti60/calibration.h": "83174f1b97ff47fd5d5a02ea33bdb571594ac58401d2a8718c22099fe081f8a5"
+  }
+}

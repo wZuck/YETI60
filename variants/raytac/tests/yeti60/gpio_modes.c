@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: MIT */
 #include "core.h"
 #include "gpio_modes.h"
+#include "scanner_control.h"
 #include <assert.h>
 #include <errno.h>
 #include <stdio.h>
@@ -80,6 +81,7 @@ int main(int argc, char **argv) {
   if (strcmp(test, "normal") && strcmp(test, "ADC-read-failure")) {
     assert(result == (!ready ? -ENODEV : -EIO));
     assert(!scan_device && !core.powered);
+    assert(yeti_scan_state() == Y_SCAN_OFFLINE);
     if (!ready) assert(gpio_calls == 0 && usb_init_calls == 0);
     else afe_disconnected();
     assert(!states[PIN_AFE_EN].high);
@@ -87,6 +89,9 @@ int main(int argc, char **argv) {
     return 0;
   }
   assert(result == 0 && scan_device == &scanner_device && core.powered);
+  assert(yeti_scan_state() == Y_SCAN_RUNNING);
+  unsigned before = gpio_calls;
+  assert(init(&scanner_device) == -EALREADY && gpio_calls == before);
   if (!strcmp(test, "ADC-read-failure")) {
     fail_adc = true;
     assert(yeti_scan(&core) == -2);

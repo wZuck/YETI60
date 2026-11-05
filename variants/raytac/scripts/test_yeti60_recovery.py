@@ -23,6 +23,7 @@ def main():
         cases=[]
         mutations=[('same',None,None),('scanner','firmware/target/src/scanner.c',('ADC_GAIN_1_6','ADC_GAIN_1_3')),
                    ('GPIO-mode','firmware/target/src/gpio_modes.h',('GPIO_DISCONNECTED','GPIO_INPUT')),
+                   ('scan-control','firmware/target/src/scanner_control.c',('return -ENODEV;','return -EIO;')),
                    ('waveform','firmware/yeti60/core.c',('s->cfg.charge_us','s->cfg.discharge_us')),
                    ('calibration','firmware/yeti60/calibration.c',('6 * (sr > sp','1 * (sr > sp')),
                    ('header','firmware/yeti60/calibration.h',('128u','64u')),

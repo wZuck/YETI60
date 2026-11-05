@@ -81,6 +81,18 @@ class EvidenceFailures(unittest.TestCase):
             with self.assertRaises(AssertionError):
                 audit.verify()
 
+    def test_short_scan_event_queue_rejected(self):
+        self.rejects('docs/audit/scan-control.json',
+                     lambda data: data.update(event_queue_capacity=4))
+
+    def test_missing_scan_fault_mutants_rejected(self):
+        self.rejects('docs/audit/scan-control.json',
+                     lambda data: data.update(rejected_mutants=[]))
+
+    def test_host_scanner_test_cannot_claim_physical_acceptance(self):
+        self.rejects('docs/audit/scan-control.json',
+                     lambda data: data.update(physical_verification=True))
+
     def test_candidate_reference_gap_rejected(self):
         self.rejects('hardware/usb-short-route/audit/geometry-check.json',
                      lambda data: data['USB_reference_screen']['positive'].update(nearest_adjacent_GND_coverage_fraction=.8))

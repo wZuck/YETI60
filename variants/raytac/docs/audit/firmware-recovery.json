@@ -4,39 +4,43 @@
   "CMake_mutation_cases": [
     {
       "case": "same",
-      "version": "0x4cee16a6"
+      "version": "0x244c43bb"
     },
     {
       "case": "scanner",
-      "version": "0x701b30b6"
+      "version": "0xa83321c1"
     },
     {
       "case": "GPIO-mode",
-      "version": "0xa57188dc"
+      "version": "0x296665b4"
+    },
+    {
+      "case": "scan-control",
+      "version": "0xd12abdd8"
     },
     {
       "case": "waveform",
-      "version": "0x12d4d4d9"
+      "version": "0xda875142"
     },
     {
       "case": "calibration",
-      "version": "0xd225367a"
+      "version": "0x59b8e8c6"
     },
     {
       "case": "header",
-      "version": "0x1b08ec6e"
+      "version": "0x6d4bf947"
     },
     {
       "case": "keymap-only",
-      "version": "0x4cee16a6"
+      "version": "0x244c43bb"
     },
     {
       "case": "effective-idle",
-      "version": "0x9da87565"
+      "version": "0x1d4b181e"
     },
     {
       "case": "effective-gating",
-      "version": "0x639f3c91"
+      "version": "0x92e3cd61"
     }
   ],
   "native_gesture_output": "Pinned ZMK tap dance: single, hold, slow taps and interrupted taps do not clear; double tap dispatches selected-profile clear once",
@@ -48,24 +52,26 @@
     "Radio/RTOS analog sampling timing and actual key calibration"
   ],
   "source_sha256": {
-    "firmware/target/CMakeLists.txt": "31322acfb4857277f172915686669f121227263c6710e7fa9f1a734035ea9a3a",
+    "firmware/target/CMakeLists.txt": "23e465446ae0553eaee2405e841bfdd27ade79bc24c4ba441156d2a2c9d79aa9",
     "firmware/target/Kconfig": "66d9b8b01ae813218f36297561d89b524fe824e30f06f18e49ac45feb1c3c912",
     "firmware/target/boards/yeti/yeti60/yeti60.dts": "60e1e147673900553b3d60a1203cb28749e5399c8dd81bbf6d0b58d2807f03b5",
     "firmware/target/boards/yeti/yeti60/yeti60_defconfig": "787829f6d95e4dc39fd9ae0c5f4572952f4fe23536405197039f28e8b64d2b53",
-    "firmware/target/calibration-contract.cmake": "6c2e338cd25c48cfbf256016e2d4fcadc72e2c64db9ef1ad5c024024be0c0206",
+    "firmware/target/calibration-contract.cmake": "11724a79b86d823c298f73d35815c7cbce89a8441564e265a3742d9ec2143cb2",
     "firmware/target/config/west.yml": "04dfc8292b18ac323cc82ebd76e37f12891eb4c4ff4e49593a65409a7023d912",
-    "firmware/target/config/yeti60.conf": "f13a5bb1f999855c09c0cd457f7e0cdccdacd5ef3efd950d8231a35b31df02d2",
+    "firmware/target/config/yeti60.conf": "a68d3d95ac716239a738e5de770d9214a0a4b1a605f7f7b1e535690c7b126495",
     "firmware/target/config/yeti60.keymap": "bb26bb848769ada293de3ee11fa968692a502139c186fabbda408edadb322979",
     "firmware/target/src/gpio_modes.h": "3fae72b5f56a0ecddcb21cd68c103612aa2ab219363373b4275381e203796a8b",
-    "firmware/target/src/scanner.c": "adcb04855f156f8ada7730ca14029c70428aff56ab83395c88930d2eb656ed31",
+    "firmware/target/src/scanner.c": "b77e6be7dcb0861d703774406053b07757979568779655239d6a1d31c912ad77",
+    "firmware/target/src/scanner_control.c": "7214d930f8c4d6144a7d74657e79b14380a336356f508edf59f0fc1ddcf5006a",
+    "firmware/target/src/scanner_control.h": "8198cb579fde32f52247776bfc4d07f3fa91969b0c095b3e0633133539f057fd",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
     "firmware/yeti60/calibration.c": "fec9a62f4681a80e7fd64fadbf51e9b1370e762483d464b85fc9b02484bc0492",
     "firmware/yeti60/calibration.h": "83174f1b97ff47fd5d5a02ea33bdb571594ac58401d2a8718c22099fe081f8a5",
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
-    "scripts/test_yeti60_recovery.py": "5c04217ec88aeb93bf4326d20cb220df5f6aae50985e108ca4cd632c6c2725bd",
-    "scripts/yeti60_calibration_contract.py": "0c7c25c37b4e49bfd99757cb6bd41a8e7722e251a0e4b975d738661f0f2250c2",
+    "scripts/test_yeti60_recovery.py": "4f682838382e02475ca20f33fb7df1dee8ced04f586640f845e936ab92bd4e7d",
+    "scripts/yeti60_calibration_contract.py": "3b04a419b50903429ac467ec87a2d01b56d7538743a15d45a0bf2cec5eb76f04",
     "scripts/yeti60_recovery_contract.py": "19d1e6672423c5bf5ec9c65e2ef85548847d44cbe656c31f40e9bee5b9f6eb84",
     "tests/yeti60/tapdance_cases.h": "3f1fab6944eac962931dd8e5e03b674a762708a258720ada4e0aebccf76b0d8e",
     "tests/yeti60/tapdance_shim.h": "eab8211f8bf487690282d7cecd03679f8b9d9296c25c97e510b214d397065a4f"

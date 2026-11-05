@@ -10,6 +10,8 @@ function(yeti60_calibration_contract root output)
     firmware/yeti60/calibration.h
     firmware/target/src/scanner.c
     firmware/target/src/gpio_modes.h
+    firmware/target/src/scanner_control.c
+    firmware/target/src/scanner_control.h
     firmware/target/boards/yeti/yeti60/yeti60.dts
     firmware/target/boards/yeti/yeti60/yeti60_defconfig
     firmware/target/config/yeti60.conf
