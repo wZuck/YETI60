@@ -2,6 +2,8 @@
 
 # YETI60 Raytac
 
+**当前修补主板首样：**[制造文件、普通 JLC 参数、补购与无外壳步骤](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)。原目录的旧主板清单、线束和压缩包不能代替当前候选版。
+
 **首样下单暂停：**[含电池的无外壳流程](OPEN-BENCH.zh-CN.md) · [USB、螺钉与电池研究](docs/engineering/prototype-qualification.zh-CN.md)。当前制板包未放行下单。
 
 

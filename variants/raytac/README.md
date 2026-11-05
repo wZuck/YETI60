@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 Raytac
 
+**Current repaired-board first article:** [fabrication files, ordinary JLC selections, purchasing and open-bench steps](hardware/usb-short-route/FIRST-ARTICLE.md). The previous canonical mainboard table, harness and archive do not replace the candidate files.
+
 **Prototype hold:** [Open-bench guide including battery](OPEN-BENCH.md) · [USB, fastener and battery findings](docs/engineering/prototype-qualification.md). The present archive is not released for ordering.
 
 

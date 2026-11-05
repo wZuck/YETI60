@@ -67,8 +67,8 @@
 | 方案 | 制板包 | 固件电源模式 | 1600 mAh 条件规划续航 |
 |---|---|---|---|
 | E73 | [E73 制板审查包](../../hardware/fabrication/yeti60-e73-p2-dfm-review.zip) | REG1 LDO | 90.77 小时 |
-| Raytac | [Raytac 制板审查包](../../variants/raytac/hardware/fabrication/yeti60-raytac-p2-dfm-review.zip) | REG1 DC/DC | 106.64 小时 |
+| Raytac | [Raytac 当前首板文件](../../variants/raytac/hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md) | REG1 DC/DC | 106.64 小时 |
 
-续航是各方案功耗文档列出的敏感性模型点，不是实测或保证值。两个压缩包均带模组标识、四层铜、零盲孔及 76 个贴装位置；C5 子板另按完整材料表处理。E73 与 Raytac 分别保留 114／108 项 DRC 警告，错误及未连接均为零，详见各自原生审查报告。
+表中续航是条件模型值，不是实测或保证。当前 Raytac 修补候选板装 75 件器件，使用 813 个普通过孔，原生检查为 0 错误、0 断线，仅保留 102 条非实装图形的封装外框警告。以上链接提供其当前 Gerber、钢网、接线及无外壳流程；C5 单独处理。E73 的具体文件与审查状态以它的制作入口为准，不能套用 Raytac 的数量或结论。
 
-[验收与干扰结果](../testing/README.zh-CN.md)：两版天线布局阻塞项尚未关闭；两套独立的 28 步焊接／装配图与首件流程已互相链接。
+[验收与干扰流程](../testing/README.zh-CN.md)：几何与文件检查不能替代实际射频、静电容扫描或 USB 验收。按各自方案制作入口选择对应的焊接、安装和首件测试资料。

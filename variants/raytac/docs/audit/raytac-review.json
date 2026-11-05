@@ -1,8 +1,8 @@
 {
   "review_scope": "Canonical Raytac plus isolated short-USB repair candidate; E73 excluded; canonical images/order archive do not describe candidate cables",
-  "review_timestamp_UTC": "2026-11-04T16:50:26.357478+00:00",
+  "review_timestamp_UTC": "2026-11-05T01:32:15.152377+00:00",
   "status": "software-and-CAD-consistency-reviewed",
-  "audit_stages_passed": 75,
+  "audit_stages_passed": 78,
   "DRC_errors": 0,
   "opens": 0,
   "physical_signal_pairs": 267,
@@ -78,7 +78,8 @@
     {
       "id": "signal-interference",
       "status": "open",
-      "description": "Native vendor antenna minimum projection clear; new USB screen finds long unpaired sections and adjacent-ground gaps. Repair USB routing/harness and qualify the complete link before bare-board order release; physical RF/EC/USB acceptance remains open."
+      "description": "The repaired candidate has short mainboard USB routes and checked adjacent-ground coverage. Full harness impedance/return, actual USB eye and enclosed RF/EC acceptance remain open; the previous long-route canonical archive is held.",
+      "canonical_diagnostic_description": "Native vendor antenna minimum projection clear; new USB screen finds long unpaired sections and adjacent-ground gaps. Repair USB routing/harness and qualify the complete link before bare-board order release; physical RF/EC/USB acceptance remains open."
     },
     {
       "id": "battery-readout-qualification",
@@ -87,7 +88,7 @@
     }
   ],
   "evidence_sha256": {
-    "outcome.json": "8b806f7abc6c802f535e6017b5d020067b877618e04584ea8dba018689a10825",
+    "outcome.json": "76697ac84568e33310ebcfa282116000fa176c082af4f7cb779802a22c04cdf1",
     "integration.json": "9935e432379f834e6a1247029d6857cb2c89956345c65c6457b7995b6d4b6893",
     "schematic-current.json": "9c39e7886f54bfbfd6cf872bde963c5e61851983f343ad509e341acfc31764de",
     "yeti60-target-check.json": "1d01e7aad89e52546412cc67cb9baf963c412a2a0be7dc0ec03500acbd0568da",
@@ -96,18 +97,18 @@
     "C5-protection.json": "cf660b99cfecae7c277a72c67c468f7e455a798ef304d82e77d736bbfc019c99",
     "USB-signal-paths.json": "bd40ed131f0870a8b855efd41cd528845a2579c4226a76559924ba4838d056f0",
     "interference-layout.json": "b16cc3d20293f745506331bc23a1efbb43f71ef6260c0e106d8dbe5fee6e85c6",
-    "complete-exploded.json": "c92a2dbccaed53f139525fc21ea077f9baacbaa616a8d18d3496866add4ae2d8",
+    "complete-exploded.json": "fca5fd6e742ac89523a92744e31d4feaa195858c81f62ac943b820152b47efb9",
     "yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
-    "yeti60-inventory.json": "8713fcafef9955ebf14e691ed2a07748f133588007d5cb7dd792e46af87ce217",
+    "yeti60-inventory.json": "93c8ba7334e445a174fa7764490040ecf1bcdab1050f22934cb2521b16949500",
     "plate-mount.json": "021e05e7c373f0033492c1669fe4cc820b808567fc7b28e290ef671eb234f978",
     "key-mechanism-drawing.json": "572d0791e6829581a8ae4968d34be8e82f03c5665705ad4a99ccc9bd833685a1",
-    "yeti60-materials.json": "30b314c332b62c1c25feba530596530f98081c8f141bda90d301e18b48ebf0f2",
+    "yeti60-materials.json": "97d976a51526b0e2d1bd8db15456ea26de866aed2fd508998e0a09b87d1507fc",
     "calibration.json": "ef9256a4e90bcc360f0ff2094f2182fec3b15d13116db7126dc41d1f5b8907c3",
     "yeti60-power-budget.json": "d92baf85836c2d2bac191bb55409c43179d4afdca4e5473f6ccdcb6bae7f3eaf",
     "prototype-research.json": "9dad28634146167ffee17b3d95e758f9b60e5ee58c476ea71a0b0c54a7aca0c0"
   },
   "source_sha256": {
-    "scripts/report_raytac_review.py": "e1ac7ada2deb83076b64050099c096680f661ad1ae9567244ae49ca2c3edf823",
+    "scripts/report_raytac_review.py": "d0950894e1e7d7ae70c23fca713162b8f7c377b501fbbb826ea6f512a6330199",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
     "renders/yeti60-assembly/render-manifest.json": "513b58d6e40733a6c5af048cb65c84eef160028c7c72cca4fde779f1b958839f"
@@ -145,8 +146,8 @@
       "hardware/usb-short-route/audit/native-check.json": "bc53c4a6a1c2105699c2c35c110bb76be33932b94e9dff8b53e38f3022791109",
       "hardware/usb-short-route/audit/geometry-check.json": "f92b54e84594c845f64cfab29de2d4e10a0d2a1f05997cc589700266f98dd4a8",
       "hardware/usb-short-route/firmware/manifest.json": "d36be93342cefbc4fccadcb40c329d9497222c8bd0d5d1e59da8b046d955e917",
-      "hardware/usb-short-route/audit/assembly-package.json": "ec730d38141561be85ba82f0631ee7dad44e84efb9ee49b338f5c26cb1bda768",
-      "hardware/usb-short-route/audit/vertical-motion.json": "fe7a4e2adc81622cb065d6d772a0b012948a5294df4a01cb25aa12357efc15d2"
+      "hardware/usb-short-route/audit/assembly-package.json": "c513cc068cea5ec5a9b3f0b2724930aa18ed8642c6618c52ef456a09b9e128b5",
+      "hardware/usb-short-route/audit/vertical-motion.json": "04f39e6ca92ac41affd35d04c244de84ae3725608657ba999c78951ee3389d52"
     },
     "passive_specifications": "hardware/usb-short-route/PASSIVES.md",
     "power_layout_rework_open": false,
@@ -282,6 +283,14 @@
         "min_trace_width_mm": 0.3
       }
     ],
+    "fabrication_files": {
+      "status": "candidate-CAM-native-roundtrip-passed",
+      "entry": "hardware/usb-short-route/FIRST-ARTICLE.md",
+      "all_IPC_records_checked": 1444,
+      "supplier_DFM_and_physical_acceptance": "open",
+      "manufacturing_released": false,
+      "evidence_sha256": "07ddab5d85a69886ffc99417434a0288479441d46ab583bfbc26ec61faf3ddc7"
+    },
     "selected_F1": {
       "mpn": "0466001.NRHF",
       "manufacturer": "Littelfuse",
@@ -385,6 +394,7 @@
       "report": "hardware/usb-short-route/audit/vertical-motion.json"
     }
   },
+  "bare_board_order_ready_scope": "Previous canonical long-USB research; candidate CAM file availability is reported separately",
   "tracked_shared_links": {
     "EC60": "../../EC60",
     "felk60": "../../felk60",

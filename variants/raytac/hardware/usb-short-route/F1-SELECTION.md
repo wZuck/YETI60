@@ -33,7 +33,7 @@ pad width = 0.080 × 25.4 = 2.032 mm
 pad centres = ±(0.150 + 0.060) / 4 × 25.4 = ±1.3335 mm
 ```
 
-The old 1.25 × 1.75 mm rounded pads are replaced by these rectangular lands. Copper zones are refilled and strict DRC/connectivity is rerun. The original hole/sensing locations and every other retained footprint geometry stay fixed. Maximum fuse body dimensions are 3.302 × 1.651 × 0.660 mm; with the documented position/solder allowances they fit inside the larger previous F1 clearance envelope. The supplied [nominal STEP envelope](models/Littelfuse_0466001_NRHF_nominal.step) has the correct nominal dimensions; termination detail and finish remain illustrative.
+The old 1.25 × 1.75 mm rounded pads are replaced by these rectangular lands. Copper zones are refilled and strict DRC/connectivity is rerun. Original hole/sensing positions are retained. The current candidate also includes [seven revised capacitor lands](PASSIVES.md) and [power-stage relocation](POWER-LAYOUT.md); the F1-only change described here is not the complete board revision. Maximum fuse body dimensions are 3.302 × 1.651 × 0.660 mm; with the documented position/solder allowances they fit inside the larger previous F1 clearance envelope. The supplied [nominal STEP envelope](models/Littelfuse_0466001_NRHF_nominal.step) has the correct nominal dimensions; termination detail and finish remain illustrative.
 
 ## Assemble and verify
 

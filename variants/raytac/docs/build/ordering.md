@@ -2,6 +2,8 @@ English | [Chinese](ordering.zh-CN.md)
 
 # PCB ordering worksheet
 
+**Use the [candidate first-article files and selections](../../hardware/usb-short-route/FIRST-ARTICLE.md) for the current repair.** The canonical mainboard archive linked below is previous-design reference and must not be ordered as the repair candidate. C5 remains a separate purchase/fabrication.
+
 Return to the [build handbook](../../BUILD.md). These are design-required selections, not a completed quote. **Ordering is not yet released**; close the handbook's outstanding work and use synchronized files.
 
 ## Which PCBs

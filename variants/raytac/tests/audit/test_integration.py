@@ -125,6 +125,14 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/prototype-research.json',
                      lambda data: data.update(bare_board_order_ready=True))
 
+    def test_incomplete_candidate_CAM_records_rejected(self):
+        self.rejects('hardware/usb-short-route/audit/fabrication-check.json',
+                     lambda data: data['IPC'].update(all_test_records_checked=1))
+
+    def test_CAM_parity_cannot_claim_physical_release(self):
+        self.rejects('hardware/usb-short-route/audit/fabrication-check.json',
+                     lambda data: data.update(manufacturing_released=True))
+
     def test_changed_image_bytes(self):
         original = audit.sha
         path = ROOT / 'renders/yeti60-assembly/assembled.png'

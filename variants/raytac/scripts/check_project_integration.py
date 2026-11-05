@@ -123,6 +123,15 @@ def verify():
     assert not short['manufacturing_released'] and not local['manufacturing_released'] and not firmware['physical_verification']
     from check_usb_short_assembly_package import verify as verify_assembly_package
     package=verify_assembly_package()
+    exported=read(candidate/'audit/fabrication-export.json');hashes(exported['source_sha256']);hashes(exported['outputs'])
+    cam=read(candidate/'audit/fabrication-check.json');hashes(cam['source_sha256'])
+    assert cam['status']=='candidate-CAM-native-roundtrip-passed'
+    assert not cam['manufacturing_released'] and not cam['physical_verification'] and not cam['production_approved']
+    assert cam['fitted_placements']==75 and cam['copper_lands']['fitted_lands_checked']==289
+    assert cam['drills']['total']==846 and cam['drills']['slots']==2
+    assert cam['IPC']['all_test_records_checked']==cam['IPC']['parsed_records']==1444
+    assert cam['IPC']['via_sites_checked']==813 and cam['IPC']['all_pad_sites_checked']==631
+    assert cam['stencil']['omitted_DNP']==['JP1'] and cam['stencil']['apertures']==297
     return {'status':'passed','shared_links':shared_links,'controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements'],'USB_repair_candidate':{'native_and_local_geometry':'passed','firmware':'rebuilt-and-host-checked','manufacturing_released':False,'complete_harness_and_assembly_integration':'installed-geometry-and-publication-checked','assembly_package':package['status'],'service_mating_path_and_physical_acceptance':'open'}}
 def main():
     try: report=verify()

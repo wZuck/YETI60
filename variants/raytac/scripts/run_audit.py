@@ -19,6 +19,7 @@ def main():
     kp=os.environ.get('KICAD_PYTHON','/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3')
     cad=[os.environ['YETI_CAD_PYTHON']] if 'YETI_CAD_PYTHON' in os.environ else [uv,'run','--with-requirements',str(ROOT/'requirements-audit.txt'),'python']
     py=[sys.executable]; native=[kp]
+    cam=[uv,'run','--python','3.11','--with-requirements',str(ROOT/'requirements-cam.txt'),'python']
     stages=[]
     def add(name,runtime,script,args=(),deps=()):stages.append((name,runtime+['scripts/'+script,*args],list(deps)))
     add('schematic-current',py,'check_schematic_current.py')
@@ -80,6 +81,9 @@ def main():
         add('pcb-renders',cad,'render_single_nrf.py',['--frames','72','--fps','24','--jobs','2'],deps=['pcb-native-drc'])
         add('assembly-renders',[uv,'run','--python','3.11','--with-requirements',str(ROOT/'requirements-render.txt'),'python'],'render_yeti60_assembly.py',deps=['render-geometry'])
     add('USB-repair-candidate-native',native,'check_usb_short_route.py')
+    add('USB-repair-CAM-export',native,'export_usb_short_fabrication.py',deps=['USB-repair-candidate-native'])
+    add('USB-repair-CAM-readback',cam,'check_usb_short_fabrication.py',deps=['USB-repair-CAM-export'])
+    stages.append(('USB-repair-CAM-faults',cam+['tests/audit/test_usb_short_fabrication.py'],['USB-repair-CAM-readback']))
     stages.append(('USB-repair-passive-faults',py+['tests/audit/test_usb_short_passives.py'],['USB-repair-candidate-native']))
     stages.append(('USB-repair-power-faults',py+['tests/audit/test_usb_short_power.py'],['USB-repair-candidate-native']))
     stages.append(('USB-repair-F1-faults',py+['tests/audit/test_usb_short_fuse.py'],['USB-repair-candidate-native']))
@@ -123,9 +127,19 @@ def main():
     okay=all(x['state']=='passed' for x in records)
     config=json.loads((ROOT/'design-constraints.json').read_text());pending=[x for x in config['open_requirements'] if x['status']!='closed']
     short_native=json.loads((ROOT/'hardware/usb-short-route/audit/native-check.json').read_text())
+    for requirement in pending:
+        if requirement['id']=='signal-interference':
+            requirement['canonical_diagnostic_description']=requirement['description']
+            requirement['description']='The repaired candidate has short mainboard USB routes and checked adjacent-ground coverage. Full harness impedance/return, actual USB eye and enclosed RF/EC acceptance remain open; the previous long-route canonical archive is held.'
     if short_native.get('power_layout_rework_open'):
         pending.append({'id':'USB-REPAIR-POWER-LAYOUT','status':'open','requirement':'Relocate/reroute the regulator power stage clear of the sensing guard and verify local output/feedback plus effective-capacitance layout','evidence':'hardware/usb-short-route/audit/native-check.json'})
     outcome={'status':'checks-passed-production-incomplete' if okay else 'checks-failed','checks_passed':okay,'production_approved':False,'stages':records,'open_requirements':pending,'scope':'Current single-nRF design, built ARM targets, host simulation, conditional mechanical/charging design and artifact provenance; no physical certification','inventory':'docs/audit/source-inventory.json'}
+    outcome['candidate_first_article']={'entry':'hardware/usb-short-route/FIRST-ARTICLE.md',
+        'CAM_package_verified':states.get('USB-repair-CAM-readback')=='passed',
+        'CAM_fault_tests_passed':states.get('USB-repair-CAM-faults')=='passed',
+        'manufacturing_order_released':False,'physical_acceptance':False,
+        'sequence':'Supplier DFM before fabrication; pack confirmation before real-battery connection; physical acceptance after first-board fabrication. Enclosed service is a separate remaining requirement.',
+        'previous_canonical_archive':'Held; not replaced or released by candidate file availability'}
     inventory();(AUD/'outcome.json').write_text(json.dumps(outcome,indent=2)+'\n')
     print(outcome['status'],flush=True)
     return 1 if not okay else (2 if a.require_production else 0)

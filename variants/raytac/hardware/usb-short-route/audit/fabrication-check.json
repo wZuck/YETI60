@@ -1,0 +1,98 @@
+{
+  "status": "candidate-CAM-native-roundtrip-passed",
+  "manufacturing_released": false,
+  "production_approved": false,
+  "physical_verification": false,
+  "drills": {
+    "total": 846,
+    "plated": 816,
+    "nonplated": 30,
+    "slots": 2,
+    "center_tolerance_mm": 0.0015,
+    "parser_warnings": [
+      "EC60-nRF52840-PTH.drl:16 \"G90\": G90 header statement found after end of header",
+      "EC60-nRF52840-NPTH.drl:16 \"G90\": G90 header statement found after end of header"
+    ]
+  },
+  "outline": {
+    "closed_outer_contours": 1,
+    "centerline_bounds_mm": [
+      [
+        71.812704,
+        -198.5096605
+      ],
+      [
+        361.2,
+        -103.90966
+      ]
+    ],
+    "width_mm": 289.387296,
+    "height_mm": 94.6000005,
+    "maximum_boundary_deviation_mm": 0.003082775423232301,
+    "boundary_comparison_tolerance_mm": 0.01,
+    "endpoint_join_tolerance_mm": 0.001,
+    "maximum_original_endpoint_gap_mm": 6.000000001904482e-05,
+    "outline_stroke_is_not_board_size": true
+  },
+  "copper_lands": {
+    "fitted_lands_checked": 289,
+    "xy_bbox_tolerance_mm": 0.003,
+    "method": "X2 reference/pin/net and aperture bounds, including all seven 0805 power capacitors"
+  },
+  "thermal_via_masks": [
+    {
+      "ref": "U5",
+      "center_mm": [
+        117.65,
+        -145
+      ],
+      "drill_mm": 0.3,
+      "mask_registration_screen_mm": 0.05,
+      "front_opening": false,
+      "back_opening": true
+    },
+    {
+      "ref": "U6",
+      "center_mm": [
+        133,
+        -140.8
+      ],
+      "drill_mm": 0.3,
+      "mask_registration_screen_mm": 0.05,
+      "front_opening": false,
+      "back_opening": true
+    }
+  ],
+  "stencil": {
+    "apertures": 297,
+    "omitted_DNP": [
+      "JP1"
+    ],
+    "omitted_apertures": 2
+  },
+  "fitted_placements": 75,
+  "IPC": {
+    "fitted_pin_sites_checked": 289,
+    "all_pad_sites_checked": 631,
+    "via_sites_checked": 813,
+    "all_test_records_checked": 1444,
+    "coordinate_tolerance_mm": 0.003,
+    "origin": "Absolute native XY, Y negated; temporary IPC auxiliary origin set to zero",
+    "parsed_records": 1444,
+    "long_net_aliases": 33
+  },
+  "parser_versions": {
+    "gerbonara": "1.5.0",
+    "shapely": "2.2.0"
+  },
+  "source_sha256": {
+    "scripts/check_usb_short_fabrication.py": "e058e00bb2fc08a3f125e03b4d7577d5b2830021f7d6cb47a0fac5cae9c7562a",
+    "requirements-cam.txt": "f068b1e72f09da2f3247d117ff72397b07fdd0b339c2b8ac83505199700bec47",
+    "hardware/usb-short-route/audit/fabrication-export.json": "0f4ca1047073dd990ffd6db05c1dfb43ca3b2b0e802757d88010172f2416dbef"
+  },
+  "limits": [
+    "Independent CAM/native parity is not supplier DFM approval, a passing USB eye or physical operation",
+    "Ordinary open U5/U6 thermal vias require stencil/reflow wicking and thermal qualification on the first article",
+    "C5 is a separate board; the mainboard archive does not include daughterboard fabrication"
+  ]
+}

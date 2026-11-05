@@ -67,8 +67,8 @@ Run `scripts/check_e73_reference.py` and `scripts/check_e73_variant.py` using Ki
 | Alternative | Fabrication package | Firmware power mode | Conditional 1600 mAh planning runtime |
 |---|---|---|---|
 | E73 | [E73 DFM review ZIP](../../hardware/fabrication/yeti60-e73-p2-dfm-review.zip) | REG1 LDO | 90.77 hours |
-| Raytac | [Raytac DFM review ZIP](../../variants/raytac/hardware/fabrication/yeti60-raytac-p2-dfm-review.zip) | REG1 DC/DC | 106.64 hours |
+| Raytac | [Current Raytac first-article files](../../variants/raytac/hardware/usb-short-route/FIRST-ARTICLE.md) | REG1 DC/DC | 106.64 hours |
 
-Runtime figures are sensitivity-model points documented by each option, not measurements or guarantees. Both archives identify their module and contain four copper layers, zero blind drills and 76 placements; C5 is handled separately as listed in the complete materials table. E73/Raytac retain 114/108 DRC warnings respectively, with zero errors and opens; see their native audit reports.
+Runtime figures are conditional model points, not measurements or guarantees. The current Raytac repair fits 75 components and uses 813 ordinary through vias; native checks report zero errors/opens and 102 noncomponent-courtyard warnings. Its link above provides current Gerbers, stencil, wiring and case-free steps; C5 is separate. Obtain E73 files and current review status from its own build entry rather than applying Raytac counts or conclusions.
 
-[Acceptance and interference results](../testing/README.md): antenna layout holds remain open for both alternatives; both independent 28-step soldering/assembly guides link to the first-article procedure.
+[Acceptance and interference procedures](../testing/README.md): geometry and file checks do not replace physical RF, EC scan or USB acceptance. Follow each variant build entry for matching soldering, assembly and first-article tests.

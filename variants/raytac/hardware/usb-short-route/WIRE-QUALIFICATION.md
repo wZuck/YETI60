@@ -2,6 +2,8 @@ English | [Chinese](WIRE-QUALIFICATION.zh-CN.md)
 
 # Wire qualification: exact part still open
 
+The 4 mm bend requirement on this page concerns enclosed harnesses. A case-free first article may use loose loops and the [first-article entry](FIRST-ARTICLE.md) specification of at least 10 mm design radius with supplier-supported wire limits. This does not qualify the enclosed wire or the complete USB link.
+
 The closed routes require AWG28 stranded copper, a common SH/PH insulation OD of 0.5–0.8 mm and a permitted static bend radius of 4 mm or less. These are design requirements, not a purchased wire's certified properties. See [route geometry](CLOSED-CASE.md) and the [feed calculation](POWER-FEED.md).
 
 ## Investigated part

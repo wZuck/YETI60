@@ -2,6 +2,8 @@
 
 # YETI60 Raytac：下单、备料、焊接与安装总入口
 
+**当前首板文件：**[修补候选板的制造包、参数与无外壳流程](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)。生产前先完成板厂 DFM，实物验收在制板后进行；关壳文件与后续检修资格分开处理。
+
 USB 修补候选板按[通用阻容采购规格](hardware/usb-short-route/PASSIVES.zh-CN.md)准备材料，包含修订后的 0805 电源电容及库存备注。旧主板压缩包仍未放行。
 
 电感采购尺寸以当前规格为准：L1 为 Würth 74438336015、WE-MAPI 3020，最大外形 3.2 × 3.2 × 2.0 mm。旧清单／原生封装名中的 `3015` 为历史标识，不能当作实际器件尺寸；详见[当前电源布局及规格](hardware/usb-short-route/POWER-LAYOUT.zh-CN.md)。
@@ -15,7 +17,7 @@ USB 修补候选方案：[主板、修订采购表与证据](hardware/usb-short-
 
 本手册只适用于 **MDBT50Q-1MV2** 模组和本目录的主板、固件。按下表从上向下阅读即可。所有数量按一把键盘计算；两把装机数量乘二，库存分配须重新计算，不能两把各抵扣同一只库存。板厂起订数量和散件包装数另计。
 
-**首样下单暂停放行。** 新增 USB／参考铜及电池研究发现了 DRC 之外的设计问题。请先看[含电池的无外壳首样流程](OPEN-BENCH.zh-CN.md)和[未关闭研究结论](docs/engineering/prototype-qualification.zh-CN.md)；当前[软件／CAD 结果](docs/audit/outcome.json)不能放行现有制板包。NiZ／钢板卫星轴几何已整理，实物配合和电池安全仍未验收。
+**旧布线压缩包仍暂停下单。** 下方原目录表格属于旧版本参考；当前修补候选板从[首板入口](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)取文件、备料与接线。板厂 DFM 和电池供方核实仍须完成，逐键、USB／BLE、温升和充电实测安排在首板制造后；本轮文件检查不代表生产验收。
 
 | 我想做什么 | 打开这里 |
 |---|---|

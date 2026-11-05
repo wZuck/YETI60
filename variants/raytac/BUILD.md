@@ -2,6 +2,8 @@ English | [Chinese](BUILD.zh-CN.md)
 
 # YETI60 Raytac: ordering and build handbook
 
+**Current first-article files:** [repaired candidate package, selections and open-bench procedure](hardware/usb-short-route/FIRST-ARTICLE.md). Obtain supplier DFM before fabrication; physical acceptance follows manufacture. Enclosed service is qualified separately.
+
 For the USB repair candidate, use [generic passive purchasing specifications](hardware/usb-short-route/PASSIVES.md), including revised 0805 power capacitors and existing stock. The old mainboard archive remains held.
 
 Use the current inductor dimensions: L1 is Würth 74438336015, WE-MAPI 3020, maximum body 3.2 × 3.2 × 2.0 mm. `3015` in the previous list/native footprint is a legacy identifier, not the actual component dimensions; see [current power layout and specifications](hardware/usb-short-route/POWER-LAYOUT.md).
@@ -15,7 +17,7 @@ Battery supplier verification is user-owned: [send this parameter checklist](doc
 
 Use only **MDBT50Q-1MV2**, this directory's mainboard and its firmware. Quantities are per keyboard, excluding spares and factory minimums. Recompute stock allocation for multiple units; do not spend the same received item twice.
 
-**Prototype ordering is on hold.** The new USB/reference and battery research found design issues beyond passing DRC. See the [open-bench procedure, including a battery](OPEN-BENCH.md) and [unresolved qualification findings](docs/engineering/prototype-qualification.md). Current [software/CAD results](docs/audit/outcome.json) do not release the existing archive. NiZ/plate-stabilizer geometry is documented; actual parts and pack safety remain unqualified.
+**Ordering the previous routing archive remains on hold.** The canonical table below is previous-design reference. Obtain current candidate files, materials and wiring from the [first-article entry](hardware/usb-short-route/FIRST-ARTICLE.md). Supplier DFM and pack confirmation remain required; key, USB/BLE, thermal and charging measurements follow first-board fabrication. File checks are not production acceptance.
 
 | Task | Open |
 |---|---|

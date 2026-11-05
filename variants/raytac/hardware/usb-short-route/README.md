@@ -4,7 +4,7 @@ English | [Chinese](README.zh-CN.md)
 
 **Service-path progress:** [the internal wing relief and rear clips are revised; continuous nominal rigid extraction passes with leads disconnected](SERVICE-PATH.md). Plug mating/unmating, wire deformation, loose-plug parking and combined tolerances remain unqualified; complete service is not approved.
 
-**Engineering candidate, not an ordering package.** This is a repair of the Raytac mainboard, not a third controller option. The canonical [build entry](../../BUILD.md), fabrication ZIP, placement illustrations and assembled renders still describe the previous routing. Do not combine their USB harness with this board. Enclosed harnesses, 16 guides and assembly illustrations are now included; service/mating access, supplier qualification and first-article acceptance remain open, so no Gerber release is provided here yet.
+**Current candidate fabrication-review files are available.** Use the [first-article ordering and open-bench entry](FIRST-ARTICLE.md) for matching Gerbers, drills, bottom stencil, placement and electrical-test files. Supplier DFM precedes production; physical acceptance follows the first board. This is the Raytac repair, not a third controller. Do not mix the previous archive or harness with it; complete enclosed service remains open.
 
 The previous USB path crossed almost the full mainboard. This candidate moves the input next to the MDBT50Q-1MV2. J4 connects to C5 JSH; J5 supplies the retained left-side power/charger input through a separate two-wire jumper. All scanning, charger and regulator pin assignments remain unchanged. R30/R31 are removed: the nRF52840 USB PHY includes its termination, as confirmed by [Nordic](https://devzone.nordicsemi.com/f/nordic-q-a/82014/nrf52840-usb-d-d--impedance-matching/340456).
 
@@ -21,6 +21,8 @@ The COL14 inner-layer escape and SWD clock route are also moved away from the US
 [Generic resistor/capacitor/LED specifications and revised power-capacitor lands](PASSIVES.md): values, imperial packages, voltage, tolerance, dielectric, effective-capacitance targets and stock quantities; choose your own brands.
 
 **Power layout repaired:** [local paths, component positions and ordinary thermal vias](POWER-LAYOUT.md) pass native and geometry checks. Physical stability and complete enclosed service remain open.
+
+[First-article files and ordinary JLC selections](FIRST-ARTICLE.md): manufacturing outputs are independently read back against native holes, lands/placements, masks, stencil and electrical-test records. A case is not a prerequisite for initial electrical tests.
 
 ## Files and current evidence
 

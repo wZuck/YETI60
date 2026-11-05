@@ -1,7 +1,7 @@
 English | [Chinese](README.zh-CN.md)
 
-# Raytac download files
+# Current Raytac candidate downloads
 
-These copies match the current validated native PCB and DFM review archive in the [canonical Raytac directory](../../variants/raytac/BUILD.md). Use the [hash manifest](manifest.json) to identify the revision. They are not a third design or an order authorization.
+This directory mirrors the current repair candidate PCB, mainboard Gerber/drill ZIP and bottom-stencil ZIP from the [first-article entry](../../variants/raytac/hardware/usb-short-route/FIRST-ARTICLE.md). Identify the files with the [hash manifest](manifest.json). The duplicate download for the previous routing is removed; historical reference files remain in the variant directory.
 
-Start from the [build entry](../../variants/raytac/BUILD.md) for ordering settings, materials, soldering, firmware, complete explosion and review.
+Use the [first-article entry](../../variants/raytac/hardware/usb-short-route/FIRST-ARTICLE.md) for JLC selections, materials, wiring and case-free validation. Use the complete variant project for editing, models and footprint libraries; the individual PCB copy here is not a complete project. Supplier DFM precedes production; physical acceptance and production approval remain open.
