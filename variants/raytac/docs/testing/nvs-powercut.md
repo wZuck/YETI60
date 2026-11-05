@@ -2,7 +2,7 @@ English | [Chinese](nvs-powercut.zh-CN.md)
 
 # NVS interruption and recovery model
 
-The Raytac checks now execute the pinned Zephyr NVS implementation and the actual calibration loader against a bounded NOR flash model. **14,795 modeled interruption/recovery trials pass**, including garbage collection and a second interruption during recovery. This adds evidence without changing production firmware, PCB, materials or calibration identifiers. No reflash or recapture is required solely for this test update.
+The Raytac checks now execute the pinned Zephyr NVS implementation and the actual calibration loader against a bounded NOR flash model. **14,795 modeled interruption/recovery trials pass**, including garbage collection and a second interruption during recovery. The NVS model itself adds verification without changing production firmware or hardware. Follow the [current firmware entry](../../hardware/usb-short-route/firmware/README.md) for bundle upgrades; the separate idle short-tap correction requires matched images and recalibration.
 
 This is software recovery evidence, not an electrical power-cut test. Actual NVMC, battery/charger brownout, flash timing, endurance and real Bluetooth settings remain first-board work.
 

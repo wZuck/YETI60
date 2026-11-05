@@ -19,12 +19,6 @@
 #define BIT(x) (1u << (x))
 #define IS_ENABLED(x) (x)
 #define K_MSEC(x) (x)
-#define CONFIG_YETI60_IDLE_AFTER_MS 30000
-#define CONFIG_YETI60_IDLE_SCAN_MS 30
-#define CONFIG_YETI60_ACTIVE_SCAN_MS 4
-#define CONFIG_YETI60_AFE_IDLE_GATING 1
-#define CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC 32768
-#define YETI_CALIBRATION_VERSION 0x12345678u
 struct device { unsigned id; };
 struct shell { unsigned id; };
 typedef void (*kscan_callback_t)(const struct device *, uint32_t, uint32_t, bool);
@@ -37,6 +31,11 @@ static unsigned output_at, shell_errors, shell_acks, saves, polls;
 static unsigned adc_calls, sleeps, stop_after, presses, releases, fault_at;
 static unsigned inject; /* 1 ADC error, 2 GPIO error at frame end, 3 gate error */
 static bool pressed_all, afe_enabled, fail_save, queue_during_fault;
+static bool unused_fullscale, exercise_idle;
+static unsigned press_from_sleep, release_from_sleep, idle_sleeps, active_sleeps;
+static bool short_tap;
+static uint64_t short_start_ms, short_end_ms, first_press_ms, last_release_ms;
+static unsigned spike_sleep, spike_samples;
 static uint64_t time_ms;
 static jmp_buf worker_exit;
 typedef ssize_t (*settings_read_cb)(void *, void *, size_t);
@@ -131,6 +130,15 @@ static uint64_t k_cyc_to_us_ceil64(uint64_t cycles) {
 }
 static int64_t k_uptime_get(void) { return time_ms; }
 static void k_sleep(unsigned ms) {
+  if (exercise_idle) {
+    if (idle_scan) {
+      assert(ms==CONFIG_YETI60_IDLE_SCAN_MS && afe_asleep && !afe_enabled);
+      idle_sleeps++;
+    } else {
+      assert(ms==CONFIG_YETI60_ACTIVE_SCAN_MS && !afe_asleep && afe_enabled);
+      active_sleeps++;
+    }
+  }
   time_ms += ms;
   if (++sleeps >= stop_after) longjmp(worker_exit, 1);
 }
@@ -143,6 +151,10 @@ static int yeti_target_usb_poll(void) { polls++; return 0; }
 static void events(const struct device *dev, uint32_t row, uint32_t col, bool down) {
   assert(dev == &test_device && row < 5 && col < 15 && (active[row] & BIT(col)));
   if (down) presses++; else releases++;
+  if (short_tap) {
+    if (down && presses==1) first_press_ms=time_ms;
+    if (!down) last_release_ms=time_ms;
+  }
   zmk_physical_layout_kscan_callback(dev,row,col,down);
 }
 static void gpio(void *ctx, uint8_t pin, enum yeti_mode mode) {
@@ -162,9 +174,13 @@ static int sample(void *ctx, uint8_t ain, uint32_t acquisition) {
     if (inject == 2) io_fault = true;
   }
   unsigned row = cursor % 5, col = cursor / 5;
-  int value = (active[row] & BIT(col)) &&
-              (pressed_all || (calibration_mode == 2 && row == pressed_row && col == pressed_col))
-                  ? 2500 : 1000;
+  bool down=pressed_all || (calibration_mode == 2 && row == pressed_row && col == pressed_col) ||
+            (exercise_idle && sleeps>=press_from_sleep && sleeps<release_from_sleep);
+  if (short_tap && row==0 && col==0) {
+    down|=time_ms>=short_start_ms && time_ms<short_end_ms;
+    if (sleeps==spike_sleep) { down=true; spike_samples++; }
+  }
+  int value=(active[row]&BIT(col)) ? (down?2500:1000) : (unused_fullscale?4095:1000);
   raw[row][col] = value; cursor++;
   return value;
 }
@@ -313,7 +329,28 @@ int main(int argc, char **argv) {
       atomic_clear(&enabled); inject=3; frames(1);
       assert(yeti_scan_state()==Y_SCAN_FAULT && !core.powered && !calibrated);
       assert(!adc_calls && !saves);
+    } else if (!strcmp(test,"worker-idle-shorttap")) {
+      fixture_record();
+      for (unsigned r=0;r<5;r++) for (unsigned c=0;c<15;c++) {
+        nvs_record.low[r][c]=(active[r]&BIT(c))?1500:4094;
+        nvs_record.high[r][c]=(active[r]&BIT(c))?2000:4095;
+      }
+      nvs_record.crc32=yeti_calibration_checksum(&nvs_record);
+      assert(load_record(sizeof(nvs_record))==0);
+      calibrated=false; unused_fullscale=true; short_tap=true; exercise_idle=true;
+      short_start_ms=time_ms+CONFIG_YETI60_IDLE_AFTER_MS+5; short_end_ms=short_start_ms+50;
+      spike_sleep=CONFIG_YETI60_IDLE_AFTER_MS/CONFIG_YETI60_ACTIVE_SCAN_MS+18;
+      frames(CONFIG_YETI60_IDLE_AFTER_MS/CONFIG_YETI60_ACTIVE_SCAN_MS+20);
+      printf("{\"short_tap_ms\":50,\"presses\":%u,\"releases\":%u,\"press_delay_ms\":%lld,\"release_delay_ms\":%lld,\"single_frame_spikes\":%u,\"idle_sleeps\":%u,\"active_sleeps\":%u,\"ADC_reads\":%u}\n",
+          presses,releases,(long long)(first_press_ms-short_start_ms),
+          (long long)(last_release_ms-short_end_ms),spike_samples,idle_sleeps,active_sleeps,adc_calls);
+      fflush(stdout);
+      assert(presses==1 && releases==1 && spike_samples==1);
+      assert(first_press_ms>=short_start_ms && first_press_ms<short_end_ms);
+      assert(last_release_ms>=short_end_ms && !idle_scan && !afe_asleep && afe_enabled);
+      for (unsigned r=0;r<5;r++) assert(!core.matrix[r]);
     } else if (!strcmp(test,"worker-calibration")) {
+      unused_fullscale=true;
       fixture_record(); saved=nvs_record;
       assert(request("save")==0); frames(1); assert(!saves);
       assert(request("release")==0); frames(128);
@@ -332,6 +369,24 @@ int main(int argc, char **argv) {
       assert(saves==2 && calibrated && saved.version==YETI_CALIBRATION_VERSION);
       assert(yeti_calibration_valid(&saved,YETI_CALIBRATION_VERSION));
       assert(!presses && !releases && yeti_scan_state()==Y_SCAN_RUNNING);
+      unsigned unused=0;
+      for (unsigned r=0;r<5;r++) for (unsigned c=0;c<15;c++) if (!(active[r]&BIT(c))) {
+        assert(saved.low[r][c]==4094 && saved.high[r][c]==4095);
+        assert(core.cfg.low[r][c]==4094 && core.cfg.high[r][c]==4095); unused++;
+      }
+      assert(unused==15 && CONFIG_YETI60_AFE_IDLE_GATING==1);
+      assert(CONFIG_YETI60_IDLE_AFTER_MS%CONFIG_YETI60_ACTIVE_SCAN_MS==0);
+      unsigned before_idle=CONFIG_YETI60_IDLE_AFTER_MS/CONFIG_YETI60_ACTIVE_SCAN_MS;
+      press_from_sleep=before_idle+3; release_from_sleep=before_idle+7;
+      exercise_idle=true;
+      unsigned reads=adc_calls; uint64_t started=time_ms;
+      frames(before_idle+11);
+      assert(presses==60 && releases==60 && idle_sleeps==3);
+      assert(active_sleeps==before_idle+8 && !idle_scan && !afe_asleep && afe_enabled);
+      assert(adc_calls-reads==(before_idle+11)*75 && yeti_scan_state()==Y_SCAN_RUNNING);
+      for (unsigned r=0;r<5;r++) assert(!core.matrix[r]);
+      printf("{\"unused_fullscale_positions\":%u,\"post_capture_frames\":%u,\"ADC_reads\":%u,\"idle_sleeps\":%u,\"active_sleeps\":%u,\"presses\":%u,\"releases\":%u,\"modeled_sleep_ms\":%llu}\n",
+          unused,before_idle+11,adc_calls-reads,idle_sleeps,active_sleeps,presses,releases,(unsigned long long)(time_ms-started));
     } else assert(!"unknown scenario");
   }
   assert(!physical_layouts_kscan_msgq.dropped);

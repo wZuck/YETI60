@@ -331,10 +331,16 @@ static void run(void *a, void *b, void *c) {
             callback(scan_device, row, col, (core.matrix[row] & BIT(col)) != 0);
         previous[row] = core.matrix[row];
       }
-      bool any_key = false;
-      for (unsigned row = 0; row < YETI_ROWS; row++)
+      bool any_key = false, pending = false;
+      for (unsigned row = 0; row < YETI_ROWS; row++) {
         any_key |= core.matrix[row] != 0;
-      if (any_key || changed || calibration_mode) {
+        for (unsigned col = 0; col < YETI_COLS; col++)
+          if (active[row] & BIT(col))
+            pending |= core.count[row][col] != 0;
+      }
+      /* Confirm an observed edge at the active rate, without bypassing the
+       * normal debounce. A second idle interval can miss a short key hold. */
+      if (any_key || changed || pending || calibration_mode) {
         idle_since = k_uptime_get();
         idle_scan = false;
       } else if (!idle_scan &&

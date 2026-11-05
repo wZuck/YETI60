@@ -21,7 +21,7 @@ The first board can be tested without an enclosure. Supplier DFM precedes fabric
 | Test without a shell, including a battery | [B0–B7 open-bench checks](OPEN-BENCH.md) |
 | Check saved calibration and upgrade | [308-byte CRC record, legacy recapture and test limits](docs/testing/calibration-storage.md) |
 | Check interrupted writes and garbage collection | [14,795 NVS recovery-model trials and limits](docs/testing/nvs-powercut.md) |
-| Check scanner faults and calibration commands | [Offline/fault handling, key releases and queue tests](docs/testing/scan-control.md) |
+| Check scanner faults, unused positions, idle and calibration | [Offline/fault handling, key releases and queue tests](docs/testing/scan-control.md) |
 | Review analog GPIO and initialization cleanup | [Disconnected digital buffers, AFE shutdown and tests](docs/testing/gpio-mode-policy.md) |
 | Review EC pulse and sampling timing | [Edge repair, RC model and first-board timing command](docs/testing/analog-waveform.md) |
 | Understand USB charging, suspend and deconfiguration | [Actual USB event policy and test evidence](docs/testing/usb-event-policy.md) |

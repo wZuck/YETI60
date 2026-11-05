@@ -517,11 +517,11 @@
     "docs/testing/analog-waveform-inputs.json": "9ff139d65bfb4cff5c05c7a2bb8ca6dbcdf5a8f647cc732b452424baaced841f",
     "hardware/usb-short-route/netlist.xml": "44f177a827df33c4f9c4c70823169a8c2c3d422588496cb945a33fcdfdcf3c79",
     "hardware/ec60-nrf52840/netlist.xml": "815c4a1661a9b50b5465660631f37405bd72c5d82aa9ad7c5e1f0eb66af9c93a",
-    "firmware/target/src/scanner.c": "26e4f6cc504b66e52ffbfdc1fea27902c12be33922da57a5f74776d7930ef0b8",
+    "firmware/target/src/scanner.c": "97ce44e37c169145e2fcfc54e3612fcef8e9dbe68f1c2390a29e6c8995842f40",
     "firmware/target/src/gpio_modes.h": "3fae72b5f56a0ecddcb21cd68c103612aa2ab219363373b4275381e203796a8b",
     "firmware/target/src/scanner_control.c": "7214d930f8c4d6144a7d74657e79b14380a336356f508edf59f0fc1ddcf5006a",
     "firmware/target/src/scanner_control.h": "8198cb579fde32f52247776bfc4d07f3fa91969b0c095b3e0633133539f057fd",
-    "docs/audit/yeti60-target-check.json": "c2d212c1f7bad39813ea66c6c5031724a4c037b526fb88eca3c89a9e72585386",
+    "docs/audit/yeti60-target-check.json": "778c3135326b25548043b6e3cd932455a66532b16f364620410064aed01e64ff",
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
@@ -530,9 +530,9 @@
   },
   "outputs": {
     "docs/testing/images/analog-waveform.png": "4baae8ee8742c02a36de00f2813655f307ccc1594181fafe1042065bc9ad32cc",
-    "docs/testing/images/analog-waveform.svg": "35d4315f8f5a1244b5cd324684126e3f7b004dc9a1946af613f89d7ef6aa4258",
+    "docs/testing/images/analog-waveform.svg": "d3d434172ed0500694d428671fbd57f36150e15ab914fba4e623595bc30e09a6",
     "docs/testing/images/analog-waveform.zh-CN.png": "ebd90f5a8670b69b67c228fea9e0996f84a7492e2adb48c71f7805dafa3fadbf",
-    "docs/testing/images/analog-waveform.zh-CN.svg": "bbe506a2ae5ae4acb9ebbb70de027d88e752923237da5d5180c1bbf2237fcef4",
+    "docs/testing/images/analog-waveform.zh-CN.svg": "8d6b88a215349f7826fa790b0b7fa44a7f044d7245aeafa844aa7d0f53d6e0f1",
     "docs/testing/analog-waveform-sensitivity.csv": "cf1e5748b101c2f11758783870857078f76fea52e8fdbcd568576e845675238e"
   },
   "diagnostic_counter": {

@@ -36,4 +36,6 @@ python3 variants/raytac/scripts/check_usb_short_firmware.py
 
 校准记录现为带独立 CRC-32 的 308 字节，旧 304 字节记录必须重新采集；全局 NVS 设置格式及蓝牙绑定不变。见[校准存储校验与升级](../../../docs/testing/calibration-storage.zh-CN.md)。损坏注入已覆盖，真实闪存断电仍待首板验收。
 
-新增[固定版本 NVS 中断恢复模型](../../../docs/testing/nvs-powercut.zh-CN.md)：实际 NVS／校准加载代码完成 14,795 次指定中断试验，覆盖垃圾回收和恢复期间再次中断；哨兵及恢复后再次保存均通过。它不是物理 NVMC／欠压／蓝牙验收。本轮不改固件及标识；已有候选产物可用 `--host-tests-only` 重新验证并发布测试，来源变动则必须完整构建。
+新增[固定版本 NVS 中断恢复模型](../../../docs/testing/nvs-powercut.zh-CN.md)：实际 NVS／校准加载代码完成 14,795 次指定中断试验，覆盖垃圾回收和恢复期间再次中断；哨兵及恢复后再次保存均通过。它不是物理 NVMC／欠压／蓝牙验收。NVS 模型本身只增加测试；已有候选产物可用 `--host-tests-only` 重新验证并发布测试，来源变动则必须完整构建。
+
+空闲后短按修补已包含在两个固件中：首个有效待确认边沿恢复 4 ms 扫描，保留两帧消抖。见[模型证据及边界](../../../docs/testing/scan-control.zh-CN.md)。扫描器指纹已变化，升级后重新采集 60 键，刷本目录配套普通版。

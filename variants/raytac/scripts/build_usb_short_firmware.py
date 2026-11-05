@@ -22,7 +22,7 @@ def main():
     for p in BASE.iterdir():
         if p.is_file() and p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_pro','.kicad_sym','.json','.xml']:shutil.copyfile(p,dest/p.name)
     shutil.copyfile(ROOT/'hardware/ec60-nrf52840/pinmap.json',dest/'pinmap.json')
-    scripts=['build_yeti60_firmware.py','generate_yeti60_pin_contract.py','check_yeti60_target.py','simulate_yeti60_firmware.py','test_yeti60_calibration.py','test_yeti60_gpio_modes.py','test_yeti60_scan_control.py','test_yeti60_nvs_powercut.py','yeti60_nvs_contract.py','yeti60_host_atomics.py','yeti60_calibration_contract.py','yeti60_recovery_contract.py'];(WORK/'scripts').mkdir(exist_ok=True);(WORK/'docs/audit').mkdir(parents=True,exist_ok=True)
+    scripts=['build_yeti60_firmware.py','generate_yeti60_pin_contract.py','check_yeti60_target.py','simulate_yeti60_firmware.py','test_yeti60_calibration.py','test_yeti60_gpio_modes.py','test_yeti60_scan_control.py','test_yeti60_nvs_powercut.py','yeti60_scan_control_contract.py','yeti60_nvs_contract.py','yeti60_host_atomics.py','yeti60_calibration_contract.py','yeti60_recovery_contract.py'];(WORK/'scripts').mkdir(exist_ok=True);(WORK/'docs/audit').mkdir(parents=True,exist_ok=True)
     for name in scripts:shutil.copyfile(ROOT/'scripts'/name,WORK/'scripts'/name)
     actions=[('generate_yeti60_pin_contract.py',['--check'])]
     if not args.host_tests_only:actions.append(('build_yeti60_firmware.py',[]))

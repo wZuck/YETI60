@@ -85,6 +85,26 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/scan-control.json',
                      lambda data: data.update(event_queue_capacity=4))
 
+    def test_missing_unused_fullscale_coverage_rejected(self):
+        self.rejects('docs/audit/scan-control.json',
+                     lambda data: data['inactive_idle'].update(unused_fullscale_positions=0))
+
+    def test_incorrect_idle_gate_count_rejected(self):
+        self.rejects('docs/audit/scan-control.json',
+                     lambda data: data['inactive_idle'].update(idle_sleeps=0))
+
+    def test_missed_idle_short_tap_rejected(self):
+        self.rejects('docs/audit/scan-control.json',
+                     lambda data: data['idle_short_tap'].update(presses=0))
+
+    def test_missing_single_frame_noise_trial_rejected(self):
+        self.rejects('docs/audit/scan-control.json',
+                     lambda data: data['idle_short_tap'].update(single_frame_spikes=0))
+
+    def test_duplicate_compiled_matrix_position_rejected(self):
+        self.rejects('docs/audit/scan-control.json',
+                     lambda data: data['compiled_matrix_positions'].__setitem__(0,data['compiled_matrix_positions'][1]))
+
     def test_unchecked_calibration_storage_rejected(self):
         self.rejects('docs/audit/calibration.json',
                      lambda data: data['storage_integrity'].update(independent_zlib_records=0))

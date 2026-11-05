@@ -3,6 +3,7 @@
 import hashlib,json
 from yeti60_calibration_contract import version
 from yeti60_nvs_contract import verify as verify_nvs
+from yeti60_scan_control_contract import verify as verify_scan_control
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';PUB=BASE/'firmware'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -35,9 +36,10 @@ def main():
         if name=='scan-control.json':
             assert not d['physical_verification'] and d['event_queue_capacity']==128
             assert d['undrained_burst_events_checked']==120 and d['active_keys_checked']==60
-            assert len(d['positive_cases'])==14 and len(d['rejected_mutants'])==13
+            assert len(d['positive_cases'])==15 and len(d['rejected_mutants'])==17
             assert d['calibration_record_bytes']==308 and d['legacy_record_bytes_rejected']==304
             assert all(case['exit_code']!=0 for case in d['rejected_mutants'])
+            verify_scan_control(d,build,sha(PUB/'build.json'))
         if name=='calibration.json':
             storage=d['storage_integrity']
             assert storage['record_bytes']==308 and storage['independent_zlib_records']==512

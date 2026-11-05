@@ -4,43 +4,43 @@
   "CMake_mutation_cases": [
     {
       "case": "same",
-      "version": "0xb0ee214e"
+      "version": "0xe6ef48e1"
     },
     {
       "case": "scanner",
-      "version": "0x84809adf"
+      "version": "0x53d3d421"
     },
     {
       "case": "GPIO-mode",
-      "version": "0x3568b990"
+      "version": "0x66d01eaa"
     },
     {
       "case": "scan-control",
-      "version": "0x2fbd2916"
+      "version": "0x77f1c0ff"
     },
     {
       "case": "waveform",
-      "version": "0xf8912bc3"
+      "version": "0xc0aa4107"
     },
     {
       "case": "calibration",
-      "version": "0x75550af7"
+      "version": "0xaa35b7a5"
     },
     {
       "case": "header",
-      "version": "0xedc075a8"
+      "version": "0xa49ab6be"
     },
     {
       "case": "keymap-only",
-      "version": "0xb0ee214e"
+      "version": "0xe6ef48e1"
     },
     {
       "case": "effective-idle",
-      "version": "0xe6ed2612"
+      "version": "0x24d05b6d"
     },
     {
       "case": "effective-gating",
-      "version": "0xfc0490fd"
+      "version": "0x718b29ce"
     }
   ],
   "native_gesture_output": "Pinned ZMK tap dance: single, hold, slow taps and interrupted taps do not clear; double tap dispatches selected-profile clear once",
@@ -61,7 +61,7 @@
     "firmware/target/config/yeti60.conf": "a68d3d95ac716239a738e5de770d9214a0a4b1a605f7f7b1e535690c7b126495",
     "firmware/target/config/yeti60.keymap": "bb26bb848769ada293de3ee11fa968692a502139c186fabbda408edadb322979",
     "firmware/target/src/gpio_modes.h": "3fae72b5f56a0ecddcb21cd68c103612aa2ab219363373b4275381e203796a8b",
-    "firmware/target/src/scanner.c": "26e4f6cc504b66e52ffbfdc1fea27902c12be33922da57a5f74776d7930ef0b8",
+    "firmware/target/src/scanner.c": "97ce44e37c169145e2fcfc54e3612fcef8e9dbe68f1c2390a29e6c8995842f40",
     "firmware/target/src/scanner_control.c": "7214d930f8c4d6144a7d74657e79b14380a336356f508edf59f0fc1ddcf5006a",
     "firmware/target/src/scanner_control.h": "8198cb579fde32f52247776bfc4d07f3fa91969b0c095b3e0633133539f057fd",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",

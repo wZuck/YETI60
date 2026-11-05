@@ -7,55 +7,55 @@
       "stage": "schematic-current",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.99
+      "seconds": 3.41
     },
     {
       "stage": "pin-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.06
+      "seconds": 0.05
     },
     {
       "stage": "pcb-geometry-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.16
+      "seconds": 2.37
     },
     {
       "stage": "ordinary-fabrication-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.55
+      "seconds": 2.57
     },
     {
       "stage": "ordinary-fabrication-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 6.88
+      "seconds": 6.69
     },
     {
       "stage": "pcb-native-drc",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 24.04
+      "seconds": 24.15
     },
     {
       "stage": "RF-host-copper",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.18
+      "seconds": 1.22
     },
     {
       "stage": "RF-copper-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.25
+      "seconds": 4.23
     },
     {
       "stage": "connectivity-regression",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 18.93
+      "seconds": 18.85
     },
     {
       "stage": "C5-protected-IO",
@@ -67,13 +67,13 @@
       "stage": "C5-protection-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.5
+      "seconds": 0.51
     },
     {
       "stage": "USB-path-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.87
+      "seconds": 1.76
     },
     {
       "stage": "USB-reference-native",
@@ -85,13 +85,13 @@
       "stage": "electrical-review",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.1
+      "seconds": 1.11
     },
     {
       "stage": "firmware-pin-header",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.09
+      "seconds": 0.08
     },
     {
       "stage": "firmware-target-artifacts",
@@ -103,25 +103,25 @@
       "stage": "firmware-recovery-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.42
+      "seconds": 3.6
     },
     {
       "stage": "firmware-USB-event-policy",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.18
+      "seconds": 1.15
     },
     {
       "stage": "firmware-GPIO-mode-policy",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.21
+      "seconds": 3.12
     },
     {
       "stage": "firmware-scanner-control",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 11.04
+      "seconds": 14.6
     },
     {
       "stage": "firmware-NVS-powercut-model",
@@ -133,13 +133,13 @@
       "stage": "target-power-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.11
+      "seconds": 0.12
     },
     {
       "stage": "firmware-calibration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.07
+      "seconds": 2.03
     },
     {
       "stage": "firmware-simulation",
@@ -151,7 +151,7 @@
       "stage": "analog-scan-waveform",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 8.53
+      "seconds": 8.83
     },
     {
       "stage": "firmware-plot",
@@ -169,25 +169,25 @@
       "stage": "daughterboard-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.61
+      "seconds": 3.59
     },
     {
       "stage": "mechanical-design",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.75
+      "seconds": 3.87
     },
     {
       "stage": "plate-source",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.26
+      "seconds": 0.36
     },
     {
       "stage": "plate-mount",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.23
+      "seconds": 0.3
     },
     {
       "stage": "plate-mount-fault-injection",
@@ -199,43 +199,43 @@
       "stage": "key-mechanism-drawing",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.92
+      "seconds": 0.97
     },
     {
       "stage": "assembly-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 38.43
+      "seconds": 38.38
     },
     {
       "stage": "interconnect-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.33
+      "seconds": 2.3
     },
     {
       "stage": "interconnect-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 22.95
+      "seconds": 22.84
     },
     {
       "stage": "render-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 15.74
+      "seconds": 15.65
     },
     {
       "stage": "interconnect-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.74
+      "seconds": 3.64
     },
     {
       "stage": "board-guidance",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.74
+      "seconds": 1.76
     },
     {
       "stage": "purchase-bom",
@@ -247,25 +247,25 @@
       "stage": "inventory-purchase-plan",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.04
+      "seconds": 0.03
     },
     {
       "stage": "readme-materials",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.04
+      "seconds": 0.03
     },
     {
       "stage": "illustration-native-map",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.52
+      "seconds": 1.42
     },
     {
       "stage": "complete-exploded-sheet",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.29
+      "seconds": 2.27
     },
     {
       "stage": "plate-copper-firmware-map",
@@ -280,23 +280,16 @@
       "seconds": 0.23
     },
     {
-      "stage": "illustrated-build-guide",
-      "command": [
-        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
-        "scripts/check_yeti60_build_guide.py"
-      ],
+      "stage": "illustration-regeneration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.41,
-      "output_tail": "28 steps x 2 languages; all 112 PNG/SVG files and all 75 mainboard placement references current\n",
-      "initial_attempt": {
-        "stage": "illustrated-build-guide",
-        "state": "failed",
-        "exit_code": 1,
-        "output_tail": "Traceback (most recent call last):\n  File \"/Users/wzy/.codex/worktrees/yeti60-e73/YAECKB/variants/raytac/scripts/check_yeti60_build_guide.py\", line 56, in <module>\n    main()\n  File \"/Users/wzy/.codex/worktrees/yeti60-e73/YAECKB/variants/raytac/scripts/check_yeti60_build_guide.py\", line 24, in main\n    assert sha(ROOT/name) == digest, 'Stale build-guide source/output: '+name\nAssertionError: Stale build-guide source/output: firmware/target/README.md\n",
-        "seconds": 0.04
-      },
-      "followup_record": "docs/audit/nvs-guide-followup.json"
+      "seconds": 42.77
+    },
+    {
+      "stage": "illustrated-build-guide",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.42
     },
     {
       "stage": "inventory-allocation-fault-injection",
@@ -308,19 +301,19 @@
       "stage": "fabrication-review-package",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.38
+      "seconds": 4.69
     },
     {
       "stage": "power-calculation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.04
+      "seconds": 0.05
     },
     {
       "stage": "battery-pocket",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.13
+      "seconds": 2.73
     },
     {
       "stage": "cell-screening",
@@ -332,7 +325,7 @@
       "stage": "prototype-research",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.58
+      "seconds": 2.68
     },
     {
       "stage": "prototype-research-fault-injection",
@@ -344,73 +337,73 @@
       "stage": "assembly-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 8.4
+      "seconds": 8.65
     },
     {
       "stage": "engineering-evidence",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.06
+      "seconds": 0.08
     },
     {
       "stage": "engineering-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.13
+      "seconds": 0.15
     },
     {
       "stage": "USB-repair-candidate-native",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 28.8
+      "seconds": 28.93
     },
     {
       "stage": "USB-repair-CAM-export",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 9.18
+      "seconds": 9.3
     },
     {
       "stage": "USB-repair-CAM-readback",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 5.73
+      "seconds": 5.35
     },
     {
       "stage": "USB-repair-CAM-faults",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 11.79
+      "seconds": 11.78
     },
     {
       "stage": "USB-repair-passive-faults",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 7.15
+      "seconds": 7.08
     },
     {
       "stage": "USB-repair-power-faults",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 9.64
+      "seconds": 9.63
     },
     {
       "stage": "USB-repair-F1-faults",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 7.05
+      "seconds": 7.07
     },
     {
       "stage": "USB-repair-candidate-faults",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 32.39
+      "seconds": 31.9
     },
     {
       "stage": "USB-repair-candidate-local-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 27.16
+      "seconds": 26.98
     },
     {
       "stage": "USB-repair-ground-faults",
@@ -428,43 +421,43 @@
       "stage": "USB-repair-inset-plate",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 11.23
+      "seconds": 11.24
     },
     {
       "stage": "USB-repair-closed-routes",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 28.32
+      "seconds": 28.33
     },
     {
       "stage": "USB-repair-closed-route-faults",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 25.09
+      "seconds": 25.14
     },
     {
       "stage": "USB-repair-printable-guides",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 43.75
+      "seconds": 43.89
     },
     {
       "stage": "USB-repair-feed-budget",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.06
+      "seconds": 0.07
     },
     {
       "stage": "USB-repair-complete-assembly",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 39.74
+      "seconds": 39.59
     },
     {
       "stage": "USB-repair-rigid-extraction",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 89.03
+      "seconds": 89.24
     },
     {
       "stage": "USB-repair-rigid-extraction-faults",
@@ -476,19 +469,19 @@
       "stage": "USB-repair-bounded-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 41.12
+      "seconds": 41.36
     },
     {
       "stage": "USB-repair-bounded-fit-faults",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 66.78
+      "seconds": 67.34
     },
     {
       "stage": "USB-repair-tolerance-diagnostic",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 7.78
+      "seconds": 7.83
     },
     {
       "stage": "USB-repair-tolerance-evidence-faults",
@@ -500,83 +493,49 @@
       "stage": "USB-repair-native-surfaces",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.91
+      "seconds": 1.93
     },
     {
       "stage": "USB-repair-surface-maps",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.77
+      "seconds": 1.69
     },
     {
       "stage": "USB-repair-assembly-sheets",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 14.38
+      "seconds": 14.17
     },
     {
       "stage": "USB-repair-assembly-package",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.89
+      "seconds": 0.88
     },
     {
       "stage": "USB-repair-package-faults",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 14.21
+      "seconds": 14.13
     },
     {
       "stage": "documentation",
-      "command": [
-        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
-        "scripts/check_project_docs.py"
-      ],
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.46,
-      "output_tail": "{\n  \"status\": \"passed\",\n  \"policy\": \"project-owned prose defaults to English with parallel zh-CN; upstream submodules/licenses and machine-readable data retain stable identifiers\",\n  \"markdown_files\": 110,\n  \"pairs\": 55,\n  \"errors\": []\n}\n",
-      "initial_attempt": {
-        "stage": "documentation",
-        "state": "passed",
-        "exit_code": 0,
-        "seconds": 0.46
-      },
-      "followup_record": "docs/audit/nvs-guide-followup.json"
+      "seconds": 0.47
     },
     {
       "stage": "cross-domain-integration",
-      "command": [
-        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
-        "scripts/check_project_integration.py"
-      ],
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.04,
-      "output_tail": "{\n  \"status\": \"passed\",\n  \"shared_links\": {\n    \"EC60\": \"../../EC60\",\n    \"felk60\": \"../../felk60\",\n    \"firmware/target/third_party/zmk\": \"../../../../../zmk\",\n    \"hardware/usb-daughterboard/upstream\": \"../../../../hardware/usb-daughterboard/upstream\",\n    \"mechanical\": \"../../mechanical\",\n    \"requirements-audit.txt\": \"../../requirements-audit.txt\",\n    \"requirements-render.txt\": \"../../requirements-render.txt\"\n  },\n  \"controller_count\": 1,\n  \"physical_pin_pairs\": 267,\n  \"matched_mount_holes\": 28,\n  \"assembly_condition\": \"C04 plate and switch bounded design fit passed; full keyboard/physical acceptance remains open\",\n  \"firmware_condition\": \"normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested\",\n  \"production_approved\": false,\n  \"open_requirements\": [\n    {\n      \"id\": \"power-layout\",\n      \"status\": \"open\",\n      \"description\": \"P2 local layout and current/timer/termination calculations completed; regulator transient, derating and thermal performance require hardware qualification\"\n    },\n    {\n      \"id\": \"target-firmware\",\n      \"status\": \"open\",\n      \"description\": \"Normal and calibrator ARM builds and linked USB500 descriptors verified; on-device enumeration, BLE and per-key calibration pending\"\n    },\n    {\n      \"id\": \"mechanical-stack\",\n      \"status\": \"open\",\n      \"description\": \"NiZ ordinary housings/sliders, 45g dome sheet and separate Cherry plate-mounted stabilizers selected; 1.6 mm plate, 28 mounts, H26 unused; nominal 4.6 mm gap, actual skirt/clip/wire/cap travel and local stiffness await first article.\"\n    },\n    {\n      \"id\": \"battery\",\n      \"status\": \"open\",\n      \"description\": \"1600 mAh battery remains required. Supplier correction, complete pack drawing, independent actual 15..43 C charging interruption, voltage/current/cutoff/recovery acceptance and full-cycle tests are open. Cell sheet normal discharge cutoff is 3.0 V; generic 2.4 V PCM is not equivalent.\"\n    },\n    {\n      \"id\": \"usb-daughterboard\",\n      \"status\": \"open\",\n      \"description\": \"C5 JSH retained by user; native electrical and mounting geometry checked; mating plug/harness routing and serviceability require final acceptance\"\n    },\n    {\n      \"id\": \"switch-access\",\n      \"status\": \"open\",\n      \"description\": \"8 mm SW100 service port designed; physical access acceptance pending\"\n    },\n    {\n      \"id\": \"resin-inserts\",\n      \"status\": \"open\",\n      \"description\": \"Cold-bond insert seats and imposed tolerances designed; resin shrinkage, strength and insert pullout require first articles\"\n    },\n    {\n      \"id\": \"fabrication\",\n      \"status\": \"open\",\n      \"description\": \"Ordinary four-layer through-via conversion and output parity checked; confirm stock stackup/tolerances, open thermal-via soldering and final component ratings with the fabricator/assembler\"\n    },\n    {\n      \"id\": \"physical-tests\",\n      \"status\": \"open\",\n      \"description\": \"Measure EC thresholds, power, charging, runtime and wake behavior\"\n    },\n    {\n      \"id\": \"signal-interference\",\n      \"status\": \"open\",\n      \"description\": \"Native vendor antenna minimum projection clear; new USB screen finds long unpaired sections and adjacent-ground gaps. Repair USB routing/harness and qualify the complete link before bare-board order release; physical RF/EC/USB acceptance remains open.\"\n    },\n    {\n      \"id\": \"battery-readout-qualification\",\n      \"status\": \"open\",\n      \"description\": \"Actual BAT_ADC-to-GND capacitor is C47=10nF, giving nominal 5ms RC and adequate 50ms wait; C48 is AFE rail decoupling. Reporting remains disabled. ADC/divider accuracy, measured voltage and a conservative low-voltage policy remain to qualify.\"\n    }\n  ],\n  \"USB_repair_candidate\": {\n    \"native_and_local_geometry\": \"passed\",\n    \"firmware\": \"rebuilt-and-host-checked\",\n    \"manufacturing_released\": false,\n    \"complete_harness_and_assembly_integration\": \"installed-geometry-and-publication-checked\",\n    \"assembly_package\": \"candidate-assembly-package-consistent\",\n    \"combined_tolerance_qualified\": false,\n    \"tolerance_diagnostic\": \"diagnostic-complete-tolerance-qualification-open\",\n    \"service_mating_path_and_physical_acceptance\": \"open\"\n  }\n}\n",
-      "initial_attempt": {
-        "stage": "cross-domain-integration",
-        "state": "skipped-dependency-failed",
-        "seconds": 0.0
-      },
-      "followup_record": "docs/audit/nvs-guide-followup.json"
+      "seconds": 1.04
     },
     {
       "stage": "integration-fault-injection",
-      "command": [
-        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
-        "tests/audit/test_integration.py"
-      ],
       "state": "passed",
       "exit_code": 0,
-      "seconds": 6.77,
-      "output_tail": "test_CAM_parity_cannot_claim_physical_release (__main__.EvidenceFailures) ... ok\ntest_NVS_model_cannot_claim_physical_acceptance (__main__.EvidenceFailures) ... ok\ntest_candidate_reference_gap_rejected (__main__.EvidenceFailures) ... ok\ntest_candidate_stale_firmware_binding_rejected (__main__.EvidenceFailures) ... ok\ntest_changed_image_bytes (__main__.EvidenceFailures) ... ok\ntest_component_case_collision (__main__.EvidenceFailures) ... ok\ntest_host_scanner_test_cannot_claim_physical_acceptance (__main__.EvidenceFailures) ... ok\ntest_host_storage_checks_cannot_claim_physical_power_cut (__main__.EvidenceFailures) ... ok\ntest_incomplete_candidate_CAM_records_rejected (__main__.EvidenceFailures) ... ok\ntest_inventory_cannot_credit_in_transit_parts (__main__.EvidenceFailures) ... ok\ntest_missing_NVS_recovery_trials_rejected (__main__.EvidenceFailures) ... ok\ntest_missing_scan_fault_mutants_rejected (__main__.EvidenceFailures) ... ok\ntest_missing_stabilizer_stems (__main__.EvidenceFailures) ... ok\ntest_nominal_assembly_cannot_claim_tolerance_release (__main__.EvidenceFailures) ... ok\ntest_old_upper_gasket_stock (__main__.EvidenceFailures) ... ok\ntest_partial_render_keeps_stale_view (__main__.EvidenceFailures) ... ok\ntest_research_cannot_release_an_unqualified_board (__main__.EvidenceFailures) ... ok\ntest_reversed_usb_data_contract (__main__.EvidenceFailures) ... ok\ntest_short_scan_event_queue_rejected (__main__.EvidenceFailures) ... ok\ntest_spacebar_conflicting_support (__main__.EvidenceFailures) ... ok\ntest_stale_simulation_trace (__main__.EvidenceFailures) ... ok\ntest_top_shell_tolerance_budget_cannot_be_omitted (__main__.EvidenceFailures) ... ok\ntest_unchecked_calibration_storage_rejected (__main__.EvidenceFailures) ... ok\ntest_old_count_in_acceptance (__main__.MechanicalProseFailures) ... ok\ntest_old_mount_count_in_either_inventory_language (__main__.MechanicalProseFailures) ... ok\ntest_old_plate_thickness_in_either_render_language (__main__.MechanicalProseFailures) ... ok\ntest_missing_shared_source_rejected (__main__.SharedLinkFailures) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 6.660s\n\nOK\n",
-      "initial_attempt": {
-        "stage": "integration-fault-injection",
-        "state": "skipped-dependency-failed",
-        "seconds": 0.0
-      },
-      "followup_record": "docs/audit/nvs-guide-followup.json"
+      "seconds": 7.33
     },
     {
       "stage": "design-inputs-unchanged",
@@ -661,9 +620,5 @@
     ],
     "current_plate_switch_bounded_fit_passed": true,
     "current_fit_entry": "hardware/usb-short-route/MECHANICAL-FIT.md"
-  },
-  "initial_checks_passed": false,
-  "initial_matrix_sha256": "fb95595132f33721a1579de358ab4a9b3dd7541ce3fa9b65976a9cc8a7e728c1",
-  "followup_record": "docs/audit/nvs-guide-followup.json",
-  "followup_scope": "Guide input README changed; generator, guide checker, documentation and integration were actually rerun. Other inventoried non-guide inputs remained unchanged."
+  }
 }

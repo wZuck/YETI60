@@ -45,7 +45,7 @@ The first command requires host Clang/Python; the second also reads the pinned Z
 | [Calibration report](../audit/calibration.json) | Independent Python zlib comparison for 512 encoded records, including correctly checksummed invalid thresholds; 2,464 single-bit flips; 308 whole-byte inversions; 2,433 sliding all-ones 32-bit bursts; all corruptions rejected |
 | Calibration mutants | Omitted CRC validation, omitted ADC maximum and wrong CRC polynomial all fail |
 | [Scanner report](../audit/scan-control.json) | Verbatim production load/save/worker bodies and pinned settings dispatcher; old 304-byte and other wrong lengths; read error/short read; CRC/version/range failures; valid threshold application; rejected load preserves pending valid record; failed save preserves previous runtime record |
-| Scanner mutants | Fourteen scenarios, thirteen rejected mutants overall, including skipped record-length/validation/read-size/save-CRC checks and incorrectly propagated handler errors |
+| Scanner mutants | Fifteen scenarios, seventeen rejected mutants overall, including skipped record-length/validation/read-size/save-CRC checks and incorrectly propagated handler errors |
 | [Candidate reports](../../hardware/usb-short-route/firmware/README.md) | Independent tests in the isolated candidate tree, matched ARM image identifiers, source/output hashes and settings-safe HEX address ranges |
 
 The CRC/scanner tests above are not physical flash or NVMC power-cut tests. A separate [pinned NVS interruption/recovery model](nvs-powercut.md) covers selected write/GC/recovery interruptions. It does not qualify actual brownout behavior, transport delivery or simultaneous runtime settings reload.

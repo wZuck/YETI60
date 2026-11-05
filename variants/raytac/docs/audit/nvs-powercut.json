@@ -77,7 +77,7 @@
     "NVS_bytes": 32768,
     "write_bytes": 4,
     "global_NVS_CRC": false,
-    "calibration_version": "0xb0ee214e"
+    "calibration_version": "0xe6ef48e1"
   },
   "cut_patterns": [
     "before next four-byte unit",
@@ -88,7 +88,7 @@
     "selected 0xaa bits",
     "after final commit before acknowledgement"
   ],
-  "target_build_manifest_sha256": "61b1ba71e9a0876584c52b79571fb5661a93d0478d3f50250a6fb21e357eabcd",
+  "target_build_manifest_sha256": "d462179166f2f4d536740ae349be525e44188af6aa6793db68f85893f650deab",
   "resolved_configuration_sha256": "ed3a812d624c1de5ae11a6546c40a733faf7ea0ca306591dbaa50afb87918e4a",
   "resolved_devicetree_sha256": "4f13b87dae592c70c364563ef4032408c0e2c1b8f4c3fb4fbacf3e83107e89ad",
   "upstream_revision": "10ba6d0cb38bc3d258775d27982f707599320085",
@@ -112,11 +112,11 @@
   "source_sha256": {
     "scripts/test_yeti60_nvs_powercut.py": "3875cfed52af0aeb607b6b15717a5537254c33c45aa612e8bf3ca22b18931c0b",
     "scripts/yeti60_host_atomics.py": "64b6aa5c927b47b64814901dbf5f39a048b36c1449015856f454abb7ca78e65f",
-    "scripts/test_yeti60_scan_control.py": "37bfc110e17ad47ce0837e81a7ede3d5ed5629f282bc2c535450f130e0f4ded2",
+    "scripts/test_yeti60_scan_control.py": "6e5ad08a0d3c2662fa0dba23c8cc18d4f65c934384ec1c7bc1be9d96d5053c5b",
     "scripts/yeti60_nvs_contract.py": "3a60fc1bf9f44cd3b34f99cff53133a3429cff1929c230a52830611d2935f9e2",
     "tests/yeti60/nvs_shim.h": "c4548497db5d467f17dbe84f95e7afc88796281198fbc59ad9b01e64f00c50ad",
     "tests/yeti60/nvs_powercut.c": "45b629c503d9066816a754c3401e4cb54b7b2c8525f84f73fbcd200086d45528",
-    "firmware/target/src/scanner.c": "26e4f6cc504b66e52ffbfdc1fea27902c12be33922da57a5f74776d7930ef0b8",
+    "firmware/target/src/scanner.c": "97ce44e37c169145e2fcfc54e3612fcef8e9dbe68f1c2390a29e6c8995842f40",
     "firmware/yeti60/calibration.c": "12eef7ea0b6af3cdcf01b8558f81bb767f137f02b8f523a7950861de9f98a3bf",
     "firmware/yeti60/calibration.h": "df57aaa55fc77794eca70fe1c6d092f4476394bc30d7798a84633e6f3fec6f0c",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",

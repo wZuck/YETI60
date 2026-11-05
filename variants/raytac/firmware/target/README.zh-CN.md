@@ -37,7 +37,7 @@ Fn 层提供功能键、方向键和五组蓝牙主机选择。USB／蓝牙 HID 
 
 ## 空闲功耗策略
 
-扫描线程在有按键或状态变化时保持 4 ms 间隔；连续 30 s 无按键后改为 30 ms，并在空闲帧之间通过 U8/AFE_EN 关断 AFE，下一次扫描前重新稳定。参数由 `YETI60_ACTIVE_SCAN_MS`、`YETI60_IDLE_SCAN_MS`、`YETI60_IDLE_AFTER_MS` 和 `YETI60_AFE_IDLE_GATING` 控制。设备树把 REG1 设为 DC/DC；REG0 仍为 LDO，因为板上没有外部 DCCH 电感。BLE 连接优先请求 15–30 ms 间隔并使用 0 dBm；未连接时的可连接广播使用 200–300 ms 间隔（ZMK fork 的 `ZMK_BLE_ADV_INT_MIN/MAX`），主机仍可覆盖连接参数。`CONFIG_ZMK_SLEEP` 仍关闭：EC 键不是 System OFF 的 GPIO 唤醒源，直接启用会导致无法用按键唤醒。
+扫描线程在有按键、状态变化或有效位置存在待确认消抖边沿时保持 4 ms 间隔；连续 30 s 无按键、变化或待确认边沿后改为 30 ms，并在空闲帧之间通过 U8/AFE_EN 关断 AFE，下一次扫描前重新稳定。参数由 `YETI60_ACTIVE_SCAN_MS`、`YETI60_IDLE_SCAN_MS`、`YETI60_IDLE_AFTER_MS` 和 `YETI60_AFE_IDLE_GATING` 控制。设备树把 REG1 设为 DC/DC；REG0 仍为 LDO，因为板上没有外部 DCCH 电感。BLE 连接优先请求 15–30 ms 间隔并使用 0 dBm；未连接时的可连接广播使用 200–300 ms 间隔（ZMK fork 的 `ZMK_BLE_ADV_INT_MIN/MAX`），主机仍可覆盖连接参数。`CONFIG_ZMK_SLEEP` 仍关闭：EC 键不是 System OFF 的 GPIO 唤醒源，直接启用会导致无法用按键唤醒。
 
 编译通过证明能够生成目标二进制。阈值、时序、USB 枚举、蓝牙配对、电流和唤醒仍需首件实测，启动及校准参数目前属于待测工程参数。此固件不声称已经通过实物验收。
 
@@ -53,4 +53,6 @@ Fn 层提供功能键、方向键和五组蓝牙主机选择。USB／蓝牙 HID 
 
 校准记录现为带独立 CRC-32 的 308 字节，旧 304 字节记录必须重新采集；全局 NVS 设置格式及蓝牙绑定不变。见[校准存储校验与升级](../../docs/testing/calibration-storage.zh-CN.md)。损坏注入已覆盖，真实闪存断电仍待首板验收。
 
-新增[固定版本 NVS 中断恢复模型](../../docs/testing/nvs-powercut.zh-CN.md)：实际 NVS／校准加载代码完成 14,795 次指定中断试验，覆盖垃圾回收和恢复期间再次中断；哨兵及恢复后再次保存均通过。它不是物理 NVMC／欠压／蓝牙验收。本轮不改固件及标识；已有候选产物可用 `--host-tests-only` 重新验证并发布测试，来源变动则必须完整构建。
+新增[固定版本 NVS 中断恢复模型](../../docs/testing/nvs-powercut.zh-CN.md)：实际 NVS／校准加载代码完成 14,795 次指定中断试验，覆盖垃圾回收和恢复期间再次中断；哨兵及恢复后再次保存均通过。它不是物理 NVMC／欠压／蓝牙验收。NVS 模型本身只增加测试；已有候选产物可用 `--host-tests-only` 重新验证并发布测试，来源变动则必须完整构建。
+
+空闲短按已修补：有效位置首次出现待确认消抖边沿即恢复活动扫描，并保留两帧确认，见[短按／未使用位置及门控测试](../../docs/testing/scan-control.zh-CN.md)。升级须采用配套固件并重新校准；实际首键延迟及单帧噪声引起的额外活动耗电仍需实测。

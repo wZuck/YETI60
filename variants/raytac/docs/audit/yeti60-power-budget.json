@@ -5,14 +5,14 @@
   },
   "status": "conditional-sensitivity-model-not-measurement",
   "source_sha256": {
-    "firmware/target/src/scanner.c": "26e4f6cc504b66e52ffbfdc1fea27902c12be33922da57a5f74776d7930ef0b8",
+    "firmware/target/src/scanner.c": "97ce44e37c169145e2fcfc54e3612fcef8e9dbe68f1c2390a29e6c8995842f40",
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/target/config/yeti60.conf": "a68d3d95ac716239a738e5de770d9214a0a4b1a605f7f7b1e535690c7b126495",
     "firmware/target/boards/yeti/yeti60/yeti60.dts": "60e1e147673900553b3d60a1203cb28749e5399c8dd81bbf6d0b58d2807f03b5",
     "docs/engineering/sources.json": "d7d9dec5692284b1d8c7c31b39b35e30e7e650021202cdf5213c69746b442305",
     "mechanical/assembly-spec.raytac.json": "e7c14e76bbd0f26bb5c43ab8526bc897191050dc1127abab7db5acc24d4010c5",
     "hardware/ec60-nrf52840/netlist.xml": "815c4a1661a9b50b5465660631f37405bd72c5d82aa9ad7c5e1f0eb66af9c93a",
-    "scripts/calculate_yeti60_power.py": "2f3a946ee88c98f7df419815c9d94bb6f686c15e69db17864a355f9e63e7a21b"
+    "scripts/calculate_yeti60_power.py": "a067c620f23f7ab5b01081f2f6f4f9bd322784569b066308054d219a0abbe63f"
   },
   "equations": {
     "rail_mA": "I_OPA + I_MCU_average + 2*3.3/100k*1000 + 0.008 + 0.016 + 0.100",
@@ -68,6 +68,7 @@
   "current_firmware": {
     "AFE_always_on": false,
     "AFE_idle_gating": true,
+    "pending_debounce_fast_scan": true,
     "active_scan_ms": 4,
     "idle_scan_ms": 30,
     "idle_after_ms": 30000,

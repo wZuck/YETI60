@@ -116,9 +116,11 @@ def verify():
     assert scan_control['ZMK_revision']==target['dependencies']['zmk']
     assert scan_control['active_keys_checked']==60 and scan_control['inactive_positions_rejected']==15
     assert scan_control['event_queue_capacity']==128 and scan_control['undrained_burst_events_checked']==120
-    assert len(scan_control['positive_cases'])==14 and len(scan_control['rejected_mutants'])==13
+    assert len(scan_control['positive_cases'])==15 and len(scan_control['rejected_mutants'])==17
     assert scan_control['calibration_record_bytes']==308 and scan_control['legacy_record_bytes_rejected']==304
     assert all(x['exit_code']!=0 for x in scan_control['rejected_mutants'])
+    from yeti60_scan_control_contract import verify as verify_scan_control
+    verify_scan_control(scan_control,target,sha(AUD/'yeti60-target-build.json'))
     calibration=read(AUD/'calibration.json');hashes(calibration['source_sha256'])
     assert calibration['status']=='passed' and not calibration['physical_verification']
     storage=calibration['storage_integrity']
