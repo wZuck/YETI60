@@ -85,6 +85,14 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/scan-control.json',
                      lambda data: data.update(event_queue_capacity=4))
 
+    def test_unchecked_calibration_storage_rejected(self):
+        self.rejects('docs/audit/calibration.json',
+                     lambda data: data['storage_integrity'].update(independent_zlib_records=0))
+
+    def test_host_storage_checks_cannot_claim_physical_power_cut(self):
+        self.rejects('docs/audit/calibration.json',
+                     lambda data: data['storage_integrity'].update(physical_power_cut_tested=True))
+
     def test_missing_scan_fault_mutants_rejected(self):
         self.rejects('docs/audit/scan-control.json',
                      lambda data: data.update(rejected_mutants=[]))

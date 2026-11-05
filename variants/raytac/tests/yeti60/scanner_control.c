@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
 #ifndef __unused
 #define __unused
 #endif
@@ -38,6 +39,54 @@ static unsigned inject; /* 1 ADC error, 2 GPIO error at frame end, 3 gate error 
 static bool pressed_all, afe_enabled, fail_save, queue_during_fault;
 static uint64_t time_ms;
 static jmp_buf worker_exit;
+typedef ssize_t (*settings_read_cb)(void *, void *, size_t);
+static struct yeti_calibration nvs_record;
+static unsigned read_calls;
+static ssize_t read_result;
+static ssize_t read_settings(void *arg, void *data, size_t len) {
+  assert(arg==&nvs_record && len==sizeof(nvs_record));
+  read_calls++; memcpy(data,&nvs_record,len); return read_result;
+}
+#include "scanner_load.inc"
+static void fixture_record(void) {
+  nvs_record.version=YETI_CALIBRATION_VERSION;
+  for (unsigned r=0;r<5;r++) for (unsigned c=0;c<15;c++) {
+    nvs_record.low[r][c]=1000; nvs_record.high[r][c]=1500;
+  }
+  nvs_record.crc32=yeti_calibration_checksum(&nvs_record);
+  read_result=sizeof(nvs_record);
+}
+static int load_record(size_t len) {
+  return load_calibration("thresholds",len,read_settings,&nvs_record);
+}
+struct settings_load_arg {
+  const char *subtree;
+  int (*cb)(const char *, size_t, settings_read_cb, void *, void *);
+  void *param;
+};
+struct settings_handler_static {
+  int (*h_set)(const char *, size_t, settings_read_cb, void *);
+};
+static unsigned unrelated_loaded;
+static int unrelated_setting(const char *key, size_t len, settings_read_cb read, void *arg) {
+  (void)len; (void)read; (void)arg; assert(!strcmp(key,"keys/0"));
+  unrelated_loaded++; return 0;
+}
+static struct settings_handler_static calibration_handler={load_calibration};
+static struct settings_handler_static unrelated_handler={unrelated_setting};
+static struct settings_handler_static *settings_parse_and_lookup(const char *name, const char **key) {
+  if (!strncmp(name,"yeti60/",7)) { *key=name+7; return &calibration_handler; }
+  if (!strncmp(name,"bt/",3)) { *key=name+3; return &unrelated_handler; }
+  return NULL;
+}
+static bool settings_name_steq(const char *name, const char *prefix, const char **key) {
+  size_t len=strlen(prefix);
+  if (strncmp(name,prefix,len) || (name[len] && name[len]!='/')) return false;
+  *key=name+len+(name[len]=='/'); return true;
+}
+#define LOG_ERR(...) ((void)0)
+#define LOG_DBG(...) ((void)0)
+#include "settings_dispatch.inc"
 #include "zmk_event_types.inc"
 static struct layout { const struct device *kscan; } test_layout = {&test_device};
 static const struct layout *active_layout = &test_layout;
@@ -216,6 +265,43 @@ int main(int argc, char **argv) {
       assert(request("status")==0); frames(1);
       assert(strstr(output,"scanner_fault=1") && !saves && adc_calls==reads);
       assert(request("timing")==0); frames(1); assert(adc_calls==reads);
+    } else if (!strcmp(test,"load-reject")) {
+      fixture_record();
+      assert(load_calibration("unknown",sizeof(nvs_record),read_settings,&nvs_record)==-ENOENT);
+      size_t lengths[]={0,1,303,304,307,309,4096};
+      for (unsigned i=0;i<sizeof(lengths)/sizeof(lengths[0]);i++) {
+        unsigned before=read_calls;
+        assert(load_record(lengths[i])==-EINVAL && read_calls==before);
+      }
+      read_result=-EIO; assert(load_record(sizeof(nvs_record))==-EINVAL);
+      read_result=sizeof(nvs_record)-1; assert(load_record(sizeof(nvs_record))==-EINVAL);
+      read_result=sizeof(nvs_record);
+      nvs_record.low[0][0]^=1; assert(load_record(sizeof(nvs_record))==-EINVAL);
+      fixture_record(); nvs_record.version^=1;
+      nvs_record.crc32=yeti_calibration_checksum(&nvs_record);
+      assert(load_record(sizeof(nvs_record))==-EINVAL);
+      fixture_record(); nvs_record.high[0][0]=4096;
+      nvs_record.crc32=yeti_calibration_checksum(&nvs_record);
+      assert(load_record(sizeof(nvs_record))==-EINVAL);
+      assert(!atomic_get(&calibration_loaded));
+    } else if (!strcmp(test,"settings-dispatch")) {
+      fixture_record(); nvs_record.low[0][0]^=1;
+      assert(settings_call_set_handler("yeti60/thresholds",sizeof(nvs_record),read_settings,&nvs_record,NULL)==0);
+      assert(!atomic_get(&calibration_loaded));
+      assert(settings_call_set_handler("bt/keys/0",0,NULL,NULL,NULL)==0);
+      assert(unrelated_loaded==1);
+    } else if (!strcmp(test,"worker-load")) {
+      fixture_record(); calibrated=false;
+      assert(load_record(sizeof(nvs_record))==0 && atomic_get(&calibration_loaded));
+      struct yeti_calibration before=saved;
+      nvs_record.low[0][0]^=1;
+      assert(load_record(sizeof(nvs_record))==-EINVAL);
+      assert(!memcmp(&saved,&before,sizeof(saved)) && atomic_get(&calibration_loaded));
+      frames(1);
+      assert(calibrated && !atomic_get(&calibration_loaded) && !saves);
+      for (unsigned r=0;r<5;r++) for (unsigned c=0;c<15;c++)
+        assert(core.cfg.low[r][c]==1000 && core.cfg.high[r][c]==1500);
+      assert(!presses && !releases);
     } else if (!strcmp(test,"worker-GPIO-capture")) {
       inject=2; fault_at=75; queue_during_fault=true;
       assert(request("release")==0); frames(1);
@@ -228,6 +314,7 @@ int main(int argc, char **argv) {
       assert(yeti_scan_state()==Y_SCAN_FAULT && !core.powered && !calibrated);
       assert(!adc_calls && !saves);
     } else if (!strcmp(test,"worker-calibration")) {
+      fixture_record(); saved=nvs_record;
       assert(request("save")==0); frames(1); assert(!saves);
       assert(request("release")==0); frames(128);
       assert(calibration_started && !calibration_mode && released[0][0].count==128);
@@ -240,8 +327,10 @@ int main(int argc, char **argv) {
       }
       assert(keys==60 && request("save")==0); fail_save=true; frames(1);
       assert(saves==1 && !calibrated);
+      assert(!memcmp(&saved,&nvs_record,sizeof(saved)));
       fail_save=false; assert(request("save")==0); frames(1);
       assert(saves==2 && calibrated && saved.version==YETI_CALIBRATION_VERSION);
+      assert(yeti_calibration_valid(&saved,YETI_CALIBRATION_VERSION));
       assert(!presses && !releases && yeti_scan_state()==Y_SCAN_RUNNING);
     } else assert(!"unknown scenario");
   }

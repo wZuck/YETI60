@@ -116,8 +116,16 @@ def verify():
     assert scan_control['ZMK_revision']==target['dependencies']['zmk']
     assert scan_control['active_keys_checked']==60 and scan_control['inactive_positions_rejected']==15
     assert scan_control['event_queue_capacity']==128 and scan_control['undrained_burst_events_checked']==120
-    assert len(scan_control['positive_cases'])==11 and len(scan_control['rejected_mutants'])==8
+    assert len(scan_control['positive_cases'])==14 and len(scan_control['rejected_mutants'])==13
+    assert scan_control['calibration_record_bytes']==308 and scan_control['legacy_record_bytes_rejected']==304
     assert all(x['exit_code']!=0 for x in scan_control['rejected_mutants'])
+    calibration=read(AUD/'calibration.json');hashes(calibration['source_sha256'])
+    assert calibration['status']=='passed' and not calibration['physical_verification']
+    storage=calibration['storage_integrity']
+    assert storage['record_bytes']==308 and storage['independent_zlib_records']==512
+    assert storage['single_bit_flips_rejected']==2464 and storage['byte_inversions_rejected']==308
+    assert storage['sliding_32_bit_bursts_rejected']==2433 and not storage['physical_power_cut_tested']
+    assert len(storage['rejected_mutants'])==3 and all(c['exit_code']!=0 for c in storage['rejected_mutants'])
     usb_events=read(AUD/'usb-event-policy.json');hashes(usb_events['source_sha256'])
     assert usb_events['status']=='passed' and not usb_events['physical_verification']
     assert usb_events['upstream_revision']=='0862fc0f8c864834007986efcaf52f292ea6d37d'

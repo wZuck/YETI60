@@ -1,10 +1,34 @@
 /* SPDX-License-Identifier: MIT */
 #include "calibration.h"
+#include <stddef.h>
 #include <string.h>
 
+_Static_assert(sizeof(struct yeti_calibration) == 308, "NVS record size changed");
+_Static_assert(offsetof(struct yeti_calibration, crc32) == 304,
+               "NVS CRC offset changed");
+static uint32_t crc_byte(uint32_t crc, uint8_t value) {
+  crc ^= value;
+  for (unsigned bit = 0; bit < 8; bit++)
+    crc = (crc >> 1) ^ ((crc & 1u) ? 0xedb88320u : 0u);
+  return crc;
+}
+uint32_t yeti_calibration_checksum(const struct yeti_calibration *value) {
+  uint32_t crc = 0xffffffffu;
+  for (unsigned byte = 0; byte < 4; byte++)
+    crc = crc_byte(crc, (uint8_t)(value->version >> (byte * 8)));
+  for (unsigned kind = 0; kind < 2; kind++)
+    for (unsigned r = 0; r < YETI_ROWS; r++)
+      for (unsigned c = 0; c < YETI_COLS; c++) {
+        uint16_t threshold = kind ? value->high[r][c] : value->low[r][c];
+        crc = crc_byte(crc, (uint8_t)threshold);
+        crc = crc_byte(crc, (uint8_t)(threshold >> 8));
+      }
+  return crc ^ 0xffffffffu;
+}
 bool yeti_calibration_valid(const struct yeti_calibration *value,
                             uint32_t expected) {
-  if (!value || value->version != expected)
+  if (!value || value->version != expected ||
+      value->crc32 != yeti_calibration_checksum(value))
     return false;
   for (unsigned r = 0; r < YETI_ROWS; r++)
     for (unsigned c = 0; c < YETI_COLS; c++)

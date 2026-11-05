@@ -64,3 +64,5 @@ openocd -f interface/cmsis-dap.cfg -c "transport select swd" -f target/nrf52.cfg
 Write only image-touched application sectors, preserving settings at `0xF0000–0xFFFFF`; add no mass erase. Artifact checks verify distributed address ranges/descriptors; real probe erase behavior still requires first-article confirmation. PCB/pin/devicetree/calibration-algorithm fingerprint changes require new calibration.
 
 Test all 60 keys, configured-host concurrent charging/USB input, suspend/resume and unplug-to-BLE, then repeat in the final case. See [target details](../../firmware/target/README.md) and [acceptance](../testing/README.md).
+
+Calibration now uses a 308-byte record with its own CRC-32; older 304-byte records require recapture. Global NVS settings formats and Bluetooth bonds are unchanged. See [calibration storage and upgrade](../testing/calibration-storage.md). Corruption is host-tested; physical flash power-loss acceptance remains open.

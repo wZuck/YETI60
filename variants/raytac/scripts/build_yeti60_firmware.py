@@ -59,8 +59,9 @@ def main():
         clock_hz=int(re.search(r'^CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC=(\d+)$',config_text,re.M).group(1))
         queue_size=int(re.search(r'^CONFIG_ZMK_KSCAN_EVENT_QUEUE_SIZE=(\d+)$',config_text,re.M).group(1))
         assert queue_size==128 and 'CONFIG_ATOMIC_OPERATIONS_BUILTIN=y' in config_text
+        assert '# CONFIG_NVS_DATA_CRC is not set' in config_text,'Global NVS CRC changes need a settings migration review'
         records[variant]={'outputs':{str(p.relative_to(ROOT)):sha(p) for p in destination.glob('yeti60-raytac.*')},'configuration_sha256':sha(built/'.config'),'devicetree_sha256':sha(built/'zephyr.dts'),
-                         'calibration_version':match.group(1),'calibration_scan_configuration':options,'diagnostic_clock_hz':clock_hz,'kscan_event_queue_size':queue_size,'builtin_atomics':True,
+                         'calibration_version':match.group(1),'calibration_scan_configuration':options,'diagnostic_clock_hz':clock_hz,'kscan_event_queue_size':queue_size,'builtin_atomics':True,'calibration_record_bytes':308,'global_NVS_data_CRC':False,
                          'recovery_binding':check_recovery_dts(dtlib.DT(str(built/'zephyr.dts')))}
     assert records['normal']['calibration_version']==records['calibrator']['calibration_version'],'Normal and calibrator thresholds would be incompatible'
     sources=[*sorted((ROOT/'firmware/target').rglob('*')),*sorted((ROOT/'firmware/yeti60').glob('*.[ch]')),Path(__file__).resolve(),ROOT/'hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb']

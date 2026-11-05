@@ -16,7 +16,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 **Use the [short-USB repair candidate package](../../hardware/usb-short-route/FIRST-ARTICLE.md) for the current first board.** The old long-route archive remains a held reference; its seven-wire illustrations do not describe the current nine-wire assembly. Pack confirmation, complete USB-link/analog stability and physical acceptance remain open. See the [battery-inclusive open-bench flow](../../OPEN-BENCH.md).
 
-See [scanner fault handling](../testing/scan-control.md): unavailable initialization rejects commands, faults shut down and release tracked keys; eleven scenarios and eight mutants, with a 128-entry queue checked against a 120-event burst. Physical host delivery remains open.
+See [scanner fault handling](../testing/scan-control.md): unavailable initialization rejects commands, faults shut down and release tracked keys; fourteen scenarios and thirteen mutants, with a 128-entry queue checked against a 120-event burst. Physical host delivery remains open.
 
 ## Repairs and image inspection
 

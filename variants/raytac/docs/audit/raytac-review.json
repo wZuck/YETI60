@@ -1,6 +1,6 @@
 {
   "review_scope": "Canonical Raytac plus isolated short-USB repair candidate; E73 excluded; canonical images/order archive do not describe candidate cables",
-  "review_timestamp_UTC": "2026-11-05T19:27:39.224578+00:00",
+  "review_timestamp_UTC": "2026-11-05T19:57:31.326416+00:00",
   "status": "software-and-CAD-consistency-reviewed",
   "audit_stages_passed": 89,
   "DRC_errors": 0,
@@ -88,32 +88,32 @@
     }
   ],
   "evidence_sha256": {
-    "outcome.json": "884dab3c6e59a55e056cb028cb456334e035501d8ed2fcea3f00e539a18324ef",
+    "outcome.json": "fa725b830e4de5c4245007938c5213834f54b191d585851d099b7397979e1ad2",
     "integration.json": "179dc2719506610bc233f15d321d8d675cb5eef5b1a3b0721027b1863e89588f",
     "schematic-current.json": "9c39e7886f54bfbfd6cf872bde963c5e61851983f343ad509e341acfc31764de",
-    "yeti60-target-check.json": "7deb0cd9be49834e95c1d33d67142d6bbe4c07bf5631239d2d8107ddf212ed45",
-    "yeti60-firmware-simulation.json": "2ca87be1341768d50a54b929da4208ef43b68a22aad12d8c790ab1296f8cc3ec",
+    "yeti60-target-check.json": "c2d212c1f7bad39813ea66c6c5031724a4c037b526fb88eca3c89a9e72585386",
+    "yeti60-firmware-simulation.json": "cd56129636dc5bf4edd28776ba871b577ec578414ec5ec08504b51cd912d874a",
     "yeti60-ordinary-process.json": "6792ac7aa9a7ec965cab64ceb2d4ead39a6b8781577d0950bb9f33156c87b5a7",
     "C5-protection.json": "cf660b99cfecae7c277a72c67c468f7e455a798ef304d82e77d736bbfc019c99",
     "USB-signal-paths.json": "bd40ed131f0870a8b855efd41cd528845a2579c4226a76559924ba4838d056f0",
     "interference-layout.json": "b16cc3d20293f745506331bc23a1efbb43f71ef6260c0e106d8dbe5fee6e85c6",
-    "complete-exploded.json": "c1f3d4e37fb5d006dbdfc30d5e105a88c014860e174027dcd35d4e5c044aef07",
+    "complete-exploded.json": "729787b92323c2d5b7b73b65d29e75ac71c926c2e2eb1506979363dc379378db",
     "yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
     "yeti60-inventory.json": "85a2487f7e40c6265207eee51dc9b6f5f6926d914dccdd3030445bed33d48625",
     "plate-mount.json": "021e05e7c373f0033492c1669fe4cc820b808567fc7b28e290ef671eb234f978",
     "key-mechanism-drawing.json": "572d0791e6829581a8ae4968d34be8e82f03c5665705ad4a99ccc9bd833685a1",
-    "yeti60-materials.json": "40a938c5f831d765810694a52601ef7c317cd615fc2e8df7594fc08c92954c85",
-    "calibration.json": "89dfa29549979c9cc4a01c2e4e0eda156b74db0dc12e95d2c58677004a613156",
-    "yeti60-power-budget.json": "7924bec2241c49f47c0cf7a3ca653aed0123b70b246980eb03fd5ffa26a043a3",
-    "prototype-research.json": "ecd25028d4cab9fd11b88aa35192eb3982441397fd6ff68deb41e410c57abae1",
-    "firmware-recovery.json": "64574672329502a7334982f33dcd603856da84fef83ec9d382579c8d835b7d04",
-    "usb-event-policy.json": "a510f099b28b98cca1d2e1d8c9e7b9387d92c807f6657393353603e5092827a9",
-    "analog-waveform.json": "afda8994dc1d12506b1637798760c420bc3366d162cee40addbb2425ec935e8e",
-    "gpio-mode-policy.json": "6ae3b2e5b5c6bb23162904796562880d922a133c2b8f85f173f891d72f1d14fc",
-    "scan-control.json": "28b6e8587358d4f3506803181ea8daa06191ade9b68b4eab405b860c7fdafb50"
+    "yeti60-materials.json": "901f4880bdee230f3a12624e92896334c7b780a15cd78b6662f8480e35dae9e4",
+    "calibration.json": "3498ca2f77a9367b4242361bf48698cad0eaeb1a5a01743de1a21566a0ec3b4e",
+    "yeti60-power-budget.json": "cc5ee2a25f8c193d655d324f48b0430c790ffd53b92f2e5d61484022178bc2c8",
+    "prototype-research.json": "4bd6219532963b4d52a2fb0eef487189ab58aeccba60c65fe531daa3605dc069",
+    "firmware-recovery.json": "402640140959382fac92357ce14c0fcec752c19dd2f5778f7602d324f410f37c",
+    "usb-event-policy.json": "6243a6c2c3287700c779f7890bb936a933c2bf49e1bd115ea95e2a03bc0dcb48",
+    "analog-waveform.json": "a7101c4f410931c524aa9514066dea726aa0a6f5105bfaba48215792049e6aa6",
+    "gpio-mode-policy.json": "f6b66eaf299c2e7f45639252ed6fbb3216865e43624c7e8d25788daecb470bb9",
+    "scan-control.json": "128d19e72f9a1fe4f544c49f6cb1f60fe544fbaa7d23b8f5e40719c55453d78e"
   },
   "source_sha256": {
-    "scripts/report_raytac_review.py": "7d54f00b73a8df45ebc11827f1a7d51d09ef3b78624e59ab4ab22ae5978ea69a",
+    "scripts/report_raytac_review.py": "c6a2a84c041e03143d1b21a02e2be18829ae4b7cff5a22356ee30944d2ca8675",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
     "renders/yeti60-assembly/render-manifest.json": "513b58d6e40733a6c5af048cb65c84eef160028c7c72cca4fde779f1b958839f",
@@ -156,16 +156,16 @@
     "evidence_sha256": {
       "hardware/usb-short-route/audit/native-check.json": "bc53c4a6a1c2105699c2c35c110bb76be33932b94e9dff8b53e38f3022791109",
       "hardware/usb-short-route/audit/geometry-check.json": "f92b54e84594c845f64cfab29de2d4e10a0d2a1f05997cc589700266f98dd4a8",
-      "hardware/usb-short-route/firmware/manifest.json": "57f5c2e7ce1091c2b0d0029c38839e075b170c270e71a80f3e193f99c65daae7",
-      "hardware/usb-short-route/audit/assembly-package.json": "40a6d2a602ee5e16db855c73ecb4a0b18d86eb41f60aa683be8faa64b2ed8dc1",
+      "hardware/usb-short-route/firmware/manifest.json": "da16ef074bcf150f732d804088eabbcdf64cd26ca470c0512c95ed30116de3d9",
+      "hardware/usb-short-route/audit/assembly-package.json": "131eea6e5ae983e0acbfaee26d34ce2ca92eddd3c12a57ab0abe26730d5bd061",
       "hardware/usb-short-route/audit/tolerance-fit.json": "87534c8be156b0de264bd054c559f1002caa90ab29ec13562214e4a97211ee4a",
-      "hardware/usb-short-route/audit/tolerance-diagnostic.json": "8e1afca21eaf545348b95ed762a63e1347cb9f9f5e45a04da7e8b798251c0687",
-      "hardware/usb-short-route/audit/vertical-motion.json": "49e21a2733cfa077218022c7f0bdafbc84c238bc2f2d3a30a92559bcc7f16430"
+      "hardware/usb-short-route/audit/tolerance-diagnostic.json": "84f9b656a99fd85d29a7ea514e6275c7ff93ba7c6be86ee0ebd93c46bdd31deb",
+      "hardware/usb-short-route/audit/vertical-motion.json": "59ab9e0866cad701a43ddb38c2acb7ba3cc476fc7733b4922c08b3cf26001eaf"
     },
     "firmware_recovery": {
       "entry": "docs/testing/firmware-recovery.md",
       "status": "passed",
-      "calibration_version": "0x616b91a0",
+      "calibration_version": "0x3305618c",
       "gesture": "Fn + double-tap Backspace within 400 ms; selected BLE profile only",
       "physical_verification": false
     },
@@ -197,12 +197,41 @@
       "physical_verification": false
     },
     "passive_specifications": "hardware/usb-short-route/PASSIVES.md",
+    "calibration_storage": {
+      "entry": "docs/testing/calibration-storage.md",
+      "record_bytes": 308,
+      "legacy_record_bytes": 304,
+      "CRC": "CRC-32/ISO-HDLC; version/low/high little-endian fields; excludes CRC field",
+      "golden_record_crc32": "0x5dcadfc6",
+      "independent_zlib_records": 512,
+      "single_bit_flips_rejected": 2464,
+      "byte_inversions_rejected": 308,
+      "sliding_32_bit_bursts_rejected": 2433,
+      "rejected_mutants": [
+        {
+          "case": "omit-CRC-check",
+          "exit_code": -6,
+          "output": "Assertion failed: (!yeti_calibration_valid(&record, 0x12345678)), function main, file calibration.c, line 49."
+        },
+        {
+          "case": "omit-ADC-range",
+          "exit_code": -6,
+          "output": "Assertion failed: (!yeti_calibration_valid(&record, record.version)), function main, file calibration.c, line 38."
+        },
+        {
+          "case": "wrong-CRC-polynomial",
+          "exit_code": -6,
+          "output": "Assertion failed: (record.crc32 == EXPECTED_RECORD_CRC), function main, file calibration.c, line 30."
+        }
+      ],
+      "physical_power_cut_tested": false
+    },
     "scanner_control": {
       "entry": "docs/testing/scan-control.md",
       "candidate_evidence": "hardware/usb-short-route/firmware/scan-control.json",
       "status": "passed",
-      "positive_cases": 11,
-      "rejected_mutants": 8,
+      "positive_cases": 14,
+      "rejected_mutants": 13,
       "event_queue_capacity": 128,
       "undrained_burst_events_checked": 120,
       "physical_verification": false

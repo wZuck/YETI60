@@ -34,8 +34,15 @@ def main():
         if name=='scan-control.json':
             assert not d['physical_verification'] and d['event_queue_capacity']==128
             assert d['undrained_burst_events_checked']==120 and d['active_keys_checked']==60
-            assert len(d['positive_cases'])==11 and len(d['rejected_mutants'])==8
+            assert len(d['positive_cases'])==14 and len(d['rejected_mutants'])==13
+            assert d['calibration_record_bytes']==308 and d['legacy_record_bytes_rejected']==304
             assert all(case['exit_code']!=0 for case in d['rejected_mutants'])
+        if name=='calibration.json':
+            storage=d['storage_integrity']
+            assert storage['record_bytes']==308 and storage['independent_zlib_records']==512
+            assert storage['single_bit_flips_rejected']==2464 and storage['byte_inversions_rejected']==308
+            assert storage['sliding_32_bit_bursts_rejected']==2433 and len(storage['rejected_mutants'])==3
+            assert not storage['physical_power_cut_tested'] and all(c['exit_code']!=0 for c in storage['rejected_mutants'])
     for variant in ['normal','calibrator']:
         folder=PUB/'releases'/variant;encoded={};offset=0;ended=False
         for line in (folder/'yeti60-raytac.hex').read_text().splitlines():

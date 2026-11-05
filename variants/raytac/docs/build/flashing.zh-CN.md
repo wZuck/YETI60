@@ -70,3 +70,5 @@ openocd -f interface/cmsis-dap.cfg -c "transport select swd" -f target/nrf52.cfg
 只写入 HEX 涉及的应用区域，保留 `0xF0000–0xFFFFF` 的末尾 64 KiB 设置区；不加整片擦除命令。固件检查器会检查分发文件的地址范围和描述符，但实际调试器写擦行为仍须首件确认。PCB、引脚、设备树或校准算法指纹变化后必须重新校准，不能复用旧数据。
 
 最后验证 60 键、USB 配置后边充边输入、USB 挂起恢复和拔线后蓝牙回退，并在最终外壳内重复测试。更详细的功能边界见[目标固件说明](../../firmware/target/README.zh-CN.md)与[验收流程](../testing/README.zh-CN.md)。
+
+校准记录现为带独立 CRC-32 的 308 字节，旧 304 字节记录必须重新采集；全局 NVS 设置格式及蓝牙绑定不变。见[校准存储校验与升级](../testing/calibration-storage.zh-CN.md)。损坏注入已覆盖，真实闪存断电仍待首板验收。

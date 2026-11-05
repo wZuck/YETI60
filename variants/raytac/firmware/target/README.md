@@ -48,3 +48,5 @@ This option publishes `yeti60-raytac.hex/.bin/.elf` under `firmware/releases/nor
 Analog high impedance and clamp release now use `GPIO_DISCONNECTED`, with digital input/output and pulls disabled; initialization failure attempts AFE shutdown. See the [GPIO mode review](../../docs/testing/gpio-mode-policy.md) for actual-source tests and physical limits. The mode helper is part of the calibration fingerprint; recalibrate after upgrading.
 
 Commands reject unavailable startup; runtime scan faults power down the AFE, release tracked keys and reject further capture/save. Both images use a 128-entry key-event queue. See [scanner lifecycle/fault regression](../../docs/testing/scan-control.md), including the actual worker, 60-key capture and a 120-event burst. Real host delivery remains first-board acceptance work.
+
+Calibration now uses a 308-byte record with its own CRC-32; older 304-byte records require recapture. Global NVS settings formats and Bluetooth bonds are unchanged. See [calibration storage and upgrade](../../docs/testing/calibration-storage.md). Corruption is host-tested; physical flash power-loss acceptance remains open.

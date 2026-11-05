@@ -44,6 +44,18 @@
       "output": "Scanner control: worker-disabled-GPIO passed"
     },
     {
+      "case": "load-reject",
+      "output": "Scanner control: load-reject passed"
+    },
+    {
+      "case": "settings-dispatch",
+      "output": "Scanner control: settings-dispatch passed"
+    },
+    {
+      "case": "worker-load",
+      "output": "Scanner control: worker-load passed"
+    },
+    {
       "case": "worker-calibration",
       "output": "Scanner control: worker-calibration passed"
     }
@@ -52,42 +64,67 @@
     {
       "case": "accept-offline",
       "exit_code": -6,
-      "output": "Assertion failed: (request(\"release\")==-ENODEV && request(\"status\")==-ENODEV), function main, file scanner_control.c, line 167."
+      "output": "Assertion failed: (request(\"release\")==-ENODEV && request(\"status\")==-ENODEV), function main, file scanner_control.c, line 216."
     },
     {
       "case": "accept-fault-mutation",
       "exit_code": -6,
-      "output": "Assertion failed: (request(\"release\")==-EIO && request(\"press 0 0\")==-EIO && request(\"save\")==-EIO), function main, file scanner_control.c, line 194."
+      "output": "Assertion failed: (request(\"release\")==-EIO && request(\"press 0 0\")==-EIO && request(\"save\")==-EIO), function main, file scanner_control.c, line 243."
     },
     {
       "case": "omit-consumer-recheck",
       "exit_code": -6,
-      "output": "Assertion failed: (request(\"save\")==0 && yeti_scan_fault() && yeti_scan_take()==-EIO), function main, file scanner_control.c, line 191."
+      "output": "Assertion failed: (request(\"save\")==0 && yeti_scan_fault() && yeti_scan_take()==-EIO), function main, file scanner_control.c, line 240."
     },
     {
       "case": "overwrite-pending",
       "exit_code": -6,
-      "output": "Assertion failed: (request(\"release\")==0 && request(\"save\")==-EBUSY), function main, file scanner_control.c, line 184."
+      "output": "Assertion failed: (request(\"release\")==0 && request(\"save\")==-EBUSY), function main, file scanner_control.c, line 233."
     },
     {
       "case": "omit-key-release",
       "exit_code": -6,
-      "output": "Assertion failed: (!calibration_started && !idle_scan && !afe_asleep && releases==60), function main, file scanner_control.c, line 203."
+      "output": "Assertion failed: (!calibration_started && !idle_scan && !afe_asleep && releases==60), function main, file scanner_control.c, line 252."
     },
     {
       "case": "omit-fault-poweroff",
       "exit_code": -6,
-      "output": "Assertion failed: (!core.powered && !afe_enabled && !calibrated && !calibration_mode), function main, file scanner_control.c, line 202."
+      "output": "Assertion failed: (!core.powered && !afe_enabled && !calibrated && !calibration_mode), function main, file scanner_control.c, line 251."
     },
     {
       "case": "publish-fault-frame",
       "exit_code": -6,
-      "output": "Assertion failed: (released[r][c].count==0), function main, file scanner_control.c, line 224."
+      "output": "Assertion failed: (released[r][c].count==0), function main, file scanner_control.c, line 310."
     },
     {
       "case": "short-event-queue",
       "exit_code": -6,
-      "output": "Assertion failed: (physical_layouts_kscan_msgq.count==120), function main, file scanner_control.c, line 178."
+      "output": "Assertion failed: (physical_layouts_kscan_msgq.count==120), function main, file scanner_control.c, line 227."
+    },
+    {
+      "case": "omit-record-length",
+      "exit_code": -6,
+      "output": "Assertion failed: (load_record(lengths[i])==-EINVAL && read_calls==before), function main, file scanner_control.c, line 274."
+    },
+    {
+      "case": "omit-record-validation",
+      "exit_code": -6,
+      "output": "Assertion failed: (load_record(sizeof(nvs_record))==-EINVAL), function main, file scanner_control.c, line 279."
+    },
+    {
+      "case": "accept-short-read",
+      "exit_code": -6,
+      "output": "Assertion failed: (load_record(sizeof(nvs_record))==-EINVAL), function main, file scanner_control.c, line 277."
+    },
+    {
+      "case": "omit-save-checksum",
+      "exit_code": -6,
+      "output": "Assertion failed: (yeti_calibration_valid(data, YETI_CALIBRATION_VERSION)), function settings_save_one, file scanner_control.c, line 139."
+    },
+    {
+      "case": "propagate-calibration-load-error",
+      "exit_code": -6,
+      "output": "Assertion failed: (settings_call_set_handler(\"yeti60/thresholds\",sizeof(nvs_record),read_settings,&nvs_record,NULL)==0), function main, file scanner_control.c, line 289."
     }
   ],
   "active_keys_checked": 60,
@@ -102,22 +139,25 @@
   "ZMK_physical_layouts_sha256": "eccce3df9ca6cba0cb70e85dfafe70baa3535f0d66a418fdbe59fac4d9ae8ed2",
   "event_queue_capacity": 128,
   "undrained_burst_events_checked": 120,
+  "calibration_record_bytes": 308,
+  "legacy_record_bytes_rejected": 304,
+  "settings_dispatch_sha256": "2bde2743c5389157a15c00e0047f7d353ce412525159e249719e9c317cf6728f",
   "not_verified": [
     "Actual RTOS scheduling/preemption or hardware memory ordering on Cortex-M4",
     "Real ADC/GPIO failures, USB/BLE HID release delivery, flash writes or battery operation"
   ],
   "source_sha256": {
-    "scripts/test_yeti60_scan_control.py": "ccf305b9c1a38f6d2aab0b7f8c33fc100e9680e0af83ab4ed536f4a6012f86c4",
+    "scripts/test_yeti60_scan_control.py": "37bfc110e17ad47ce0837e81a7ede3d5ed5629f282bc2c535450f130e0f4ded2",
     "scripts/yeti60_host_atomics.py": "64b6aa5c927b47b64814901dbf5f39a048b36c1449015856f454abb7ca78e65f",
-    "firmware/target/src/scanner.c": "b77e6be7dcb0861d703774406053b07757979568779655239d6a1d31c912ad77",
+    "firmware/target/src/scanner.c": "26e4f6cc504b66e52ffbfdc1fea27902c12be33922da57a5f74776d7930ef0b8",
     "firmware/target/src/scanner_control.c": "7214d930f8c4d6144a7d74657e79b14380a336356f508edf59f0fc1ddcf5006a",
     "firmware/target/config/yeti60.conf": "a68d3d95ac716239a738e5de770d9214a0a4b1a605f7f7b1e535690c7b126495",
     "firmware/target/src/scanner_control.h": "8198cb579fde32f52247776bfc4d07f3fa91969b0c095b3e0633133539f057fd",
-    "tests/yeti60/scanner_control.c": "465945749b733d2e29b7ff1aea8ce0cc01c1262421f3c4044eda223f6b41414f",
+    "tests/yeti60/scanner_control.c": "9594b1faa00c725243cd2aa76796672828f780e1a07266f71d02d5012b3bb952",
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
-    "firmware/yeti60/calibration.c": "fec9a62f4681a80e7fd64fadbf51e9b1370e762483d464b85fc9b02484bc0492",
-    "firmware/yeti60/calibration.h": "83174f1b97ff47fd5d5a02ea33bdb571594ac58401d2a8718c22099fe081f8a5"
+    "firmware/yeti60/calibration.c": "12eef7ea0b6af3cdcf01b8558f81bb767f137f02b8f523a7950861de9f98a3bf",
+    "firmware/yeti60/calibration.h": "df57aaa55fc77794eca70fe1c6d092f4476394bc30d7798a84633e6f3fec6f0c"
   }
 }

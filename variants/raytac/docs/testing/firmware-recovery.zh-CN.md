@@ -22,7 +22,7 @@
 
 第一次升级至 v3 会拒绝之前的校准。刷入配套校准版，完成 60 键采集并保存，再保留末尾 64 KiB 设置分区刷入配套普通版；两个镜像的应用起始地址均为零。整片擦除会删除校准和蓝牙配对，普通的单槽位清除不需要整片擦除。
 
-`yeti_calibrate status` 在逐键表格之前输出 `calibration contract=0x... valid=...`，可与[候选固件检查中的 `calibration_contract_version`](../../hardware/usb-short-route/firmware/target-check.json)核对。版本不符、阈值越界或顺序错误，都会在启用按键上报前拒绝；304 字节 NVS 记录格式沿用。仅修改键位表不改变信号指纹。普通刷写会保留持久化设置，见 [ZMK 官方说明](https://zmk.dev/docs/config/settings)。
+`yeti_calibrate status` 在逐键表格之前输出 `calibration contract=0x... valid=...`，可与[候选固件检查中的 `calibration_contract_version`](../../hardware/usb-short-route/firmware/target-check.json)核对。版本不符、阈值越界或顺序错误，都会在启用按键上报前拒绝；校准记录已增加 CRC，当前为 308 字节；旧 304 字节记录必须重新采集，其他设置格式不变，见[存储校验](calibration-storage.zh-CN.md)。仅修改键位表不改变信号指纹。普通刷写会保留持久化设置，见 [ZMK 官方说明](https://zmk.dev/docs/config/settings)。
 
 ## USB 和按住按键时的行为
 

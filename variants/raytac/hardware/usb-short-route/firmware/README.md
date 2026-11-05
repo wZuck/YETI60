@@ -33,3 +33,5 @@ The wrapper copies current firmware sources, candidate PCB/netlist and pin map i
 See the [analog GPIO/startup cleanup review](../../../docs/testing/gpio-mode-policy.md) and [this bundle's independent host evidence](gpio-mode-policy.json). Both builds use high impedance with digital buffers disabled; recalibrate after upgrading.
 
 Commands reject unavailable startup; runtime scan faults power down the AFE, release tracked keys and reject further capture/save. Both images use a 128-entry key-event queue. See [scanner lifecycle/fault regression](../../../docs/testing/scan-control.md), including the actual worker, 60-key capture and a 120-event burst. Real host delivery remains first-board acceptance work.
+
+Calibration now uses a 308-byte record with its own CRC-32; older 304-byte records require recapture. Global NVS settings formats and Bluetooth bonds are unchanged. See [calibration storage and upgrade](../../../docs/testing/calibration-storage.md). Corruption is host-tested; physical flash power-loss acceptance remains open.

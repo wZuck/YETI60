@@ -251,6 +251,7 @@ static void run(void *a, void *b, void *c) {
           }
         }
       bool saved_ok = false;
+      candidate.crc32 = yeti_calibration_checksum(&candidate);
       if (valid && !settings_save_one("yeti60/thresholds", &candidate, sizeof(candidate))) {
         saved_ok = true;
         saved = candidate;

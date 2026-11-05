@@ -33,3 +33,5 @@ python3 variants/raytac/scripts/check_usb_short_firmware.py
 模拟 GPIO 和初始化失败清理见[说明](../../../docs/testing/gpio-mode-policy.zh-CN.md)及[本包独立主机证据](gpio-mode-policy.json)。两版均使用关闭数字缓冲的高阻模式；升级后重新校准。
 
 扫描初始化失败时命令立即返回不可用；运行故障关闭模拟前端、释放已记录按键并拒绝继续采集／保存。两个固件均采用 128 项按键事件队列。见[扫描状态与故障回归](../../../docs/testing/scan-control.zh-CN.md)，包含实际工作循环、60 键采集和 120 事件突发测试；真实主机送达仍待首板验收。
+
+校准记录现为带独立 CRC-32 的 308 字节，旧 304 字节记录必须重新采集；全局 NVS 设置格式及蓝牙绑定不变。见[校准存储校验与升级](../../../docs/testing/calibration-storage.zh-CN.md)。损坏注入已覆盖，真实闪存断电仍待首板验收。

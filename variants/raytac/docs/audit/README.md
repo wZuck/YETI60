@@ -40,3 +40,5 @@ The added [EC waveform study](../testing/analog-waveform.md) stage requires ngsp
 The audit adds the [GPIO-mode/startup cleanup stage](../testing/gpio-mode-policy.md), checking actual callback/init sources and core against a host pin model. Physical leakage and rails remain first-board acceptance items.
 
 Commands reject unavailable startup; runtime scan faults power down the AFE, release tracked keys and reject further capture/save. Both images use a 128-entry key-event queue. See [scanner lifecycle/fault regression](../testing/scan-control.md), including the actual worker, 60-key capture and a 120-event burst. Real host delivery remains first-board acceptance work.
+
+Calibration now uses a 308-byte record with its own CRC-32; older 304-byte records require recapture. Global NVS settings formats and Bluetooth bonds are unchanged. See [calibration storage and upgrade](../testing/calibration-storage.md). Corruption is host-tested; physical flash power-loss acceptance remains open.
