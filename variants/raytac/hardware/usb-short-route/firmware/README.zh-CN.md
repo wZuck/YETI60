@@ -2,6 +2,8 @@
 
 # USB 修补候选板固件
 
+静电容扫描已修正为先释放再升行、先钳位再降行；见[模拟时序研究](../../../docs/testing/analog-waveform.zh-CN.md)。校准版新增 `yeti_calibrate timing`，报告行 GPIO 调用至 ADC 返回的 RTC 粗略耗时及计时频率，含一格量化余量；实际为 32768 Hz，不能据此确定精确采样时刻。升级后用同包两版重新校准。
+
 USB 充电控制已改为[状态回调及取消配置处理](../../../docs/testing/usb-event-policy.zh-CN.md)，不再等待扫描轮询。挂起禁充／输入高阻；恢复和 500 mA 授权按实际配置字节处理。两版共用此逻辑，从旧包升级需重新校准。
 
 [恢复和校准兼容性](../../../docs/testing/firmware-recovery.zh-CN.md)：Fn＋双击 Backspace 仅清除当前蓝牙槽位。新的 v3 信号指纹会拒绝旧校准；需使用本固件包重新采集，并使用配套普通版。

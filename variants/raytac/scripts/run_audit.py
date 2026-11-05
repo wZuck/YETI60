@@ -43,6 +43,7 @@ def main():
     stages.append(('target-power-fault-injection',py+['tests/audit/test_target.py'],['firmware-target-artifacts']))
     add('firmware-calibration',py,'test_yeti60_calibration.py',deps=['firmware-pin-header'])
     add('firmware-simulation',py,'simulate_yeti60_firmware.py',deps=['firmware-pin-header'])
+    add('analog-scan-waveform',cad,'study_yeti60_analog_waveform.py',deps=['firmware-simulation','firmware-target-artifacts'])
     add('firmware-plot',cad,'plot_yeti60_simulation.py',deps=['firmware-simulation'])
     add('mechanical-metadata',native,'export_yeti60_mechanical_metadata.py',deps=['pcb-geometry-contract'])
     add('daughterboard-native-cad',native,'export_yeti60_daughterboard.py')

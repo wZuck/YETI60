@@ -29,6 +29,8 @@ static const uint16_t active[5] = {0x7fff, 0x3fff, 0x2fff, 0x6ffd, 0x0646};
 static unsigned pressed_row, pressed_col;
 static bool calibration_started;
 static unsigned cursor;
+static uint32_t pulse_started, timing_count, timing_min = UINT32_MAX, timing_max;
+static bool pulse_active;
 static int calibration_mode;
 static bool idle_scan;
 static bool afe_asleep;
@@ -68,17 +70,24 @@ static int __unused command(const struct shell *shell, size_t argc,
     action = 3;
   else if (argc == 2 && !strcmp(argv[1], "status"))
     action = 4;
+  else if (argc == 2 && !strcmp(argv[1], "timing"))
+    action = 5;
   else
     return -EINVAL;
   if (!atomic_cas(&calibration_command, 0, action))
     return -EBUSY;
-  shell_print(shell, "Queued: hold the selected key BEFORE press row col; "
-                     "keep it held until capture completes. Use status for bounds.");
+  if ((action & 255) == 1)
+    shell_print(shell, "Queued: release ALL keys until capture completes.");
+  else if ((action & 255) == 2)
+    shell_print(shell, "Queued: hold the selected key BEFORE press row col; "
+                       "keep it held until capture completes. Use status for bounds.");
+  else
+    shell_print(shell, "Queued: wait for the scanner response.");
   return 0;
 }
 #if defined(CONFIG_SHELL)
 SHELL_CMD_ARG_REGISTER(yeti_calibrate, NULL,
-                       "release | press row col | status | save", command, 2, 2);
+                       "release | press row col | status | timing | save", command, 2, 2);
 #endif
 
 static const struct device *const ports[] = {
@@ -86,6 +95,18 @@ static const struct device *const ports[] = {
 static const struct device *const saadc = DEVICE_DT_GET(DT_NODELABEL(adc));
 static void gpio(void *ctx, uint8_t pin, enum yeti_mode mode) {
   ARG_UNUSED(ctx);
+  for (unsigned r = 0; r < YETI_ROWS; r++)
+    if (pin == yeti_rows[r]) {
+      if (mode == Y_HIGH) {
+        /* The system cycle counter is RTC based in this build. Keep its
+         * resolution explicit; this is not a hardware sample timestamp. */
+        pulse_started = k_cycle_get_32();
+        pulse_active = true;
+      } else if (mode == Y_LOW || mode == Y_HIZ) {
+        pulse_active = false;
+      }
+      break;
+    }
   gpio_flags_t flags = mode == Y_HIZ || mode == Y_OD_RELEASE ? GPIO_INPUT
                        : mode == Y_HIGH                      ? GPIO_OUTPUT_HIGH
                                                              : GPIO_OUTPUT_LOW;
@@ -116,6 +137,13 @@ static int sample(void *ctx, uint8_t ain, uint32_t acquisition) {
   if (err)
     return err;
   err = adc_read(saadc, &seq);
+  if (!err && ain == YETI_ADC_AIN && pulse_active) {
+    uint32_t elapsed = k_cycle_get_32() - pulse_started;
+    timing_min = MIN(timing_min, elapsed);
+    timing_max = MAX(timing_max, elapsed);
+    if (timing_count < UINT32_MAX)
+      timing_count++;
+  }
   if (!err && ain == YETI_ADC_AIN && cursor < 75) {
     raw[cursor % 5][cursor / 5] = value;
     cursor++;
@@ -201,6 +229,15 @@ static void run(void *a, void *b, void *c) {
         calibrated = true;
       }
       printk("YETI60 calibration %s\n", saved_ok ? "saved" : "rejected; inspect status and recapture");
+    } else if ((action & 255) == 5) {
+      if (timing_count)
+        printk("YETI60 timing: n=%u min_us=%u max_us=%u clock_hz=%u "
+               "(RTC-quantized estimates with one tick guard; not sample timestamps)\n",
+               timing_count, (unsigned)k_cyc_to_us_ceil64((uint64_t)timing_min + 1),
+               (unsigned)k_cyc_to_us_ceil64((uint64_t)timing_max + 1),
+               (unsigned)CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC);
+      else
+        printk("YETI60 timing: no successful scan samples since boot\n");
     } else if ((action & 255) == 4) {
       printk("YETI60 calibration contract=0x%08x valid=%u\n",
              (unsigned)YETI_CALIBRATION_VERSION, calibrated ? 1u : 0u);

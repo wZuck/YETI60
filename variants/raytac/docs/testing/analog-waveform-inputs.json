@@ -1,0 +1,36 @@
+{
+  "scope": "Selected-column passive RC sensitivity study; not a physical NiZ model or vendor op-amp macromodel",
+  "gpio_call_us_assumption": 0.5,
+  "gpio_clamp_on_ohm_assumption": 40,
+  "gpio_clamp_off_ohm_assumption": 1000000000000,
+  "gpio_rise_fall_ns_assumption": 10,
+  "row_extra_driver_ohm_assumption": 40,
+  "mux_on_ohm_assumption": 200,
+  "bus_parasitic_pF_assumption": 80,
+  "column_parasitic_pF_assumption": 20,
+  "other_four_key_capacitance_pF_each_assumption": 1,
+  "released_key_pF_assumption": 1,
+  "pressed_key_pF_assumption": 5,
+  "row_drive_V_assumption": 3.3,
+  "amplifier_high_rail_headroom_V_assumption": 0.05,
+  "ADC_full_scale_V": 3.6,
+  "ADC_bits": 12,
+  "ADC_API_latency_us_sensitivity": [
+    0,
+    5,
+    20,
+    50,
+    100,
+    200
+  ],
+  "key_pF_sensitivity": [
+    0.5,
+    1,
+    2,
+    5,
+    10,
+    20
+  ],
+  "assumptions_not_measured": true,
+  "bus_parasitic_basis": "Engineering assumption for both common mux pins, amplifier/GPIO input and layout; Nexperia lists 25 pF typical common-switch capacitance per mux, not a maximum or extracted board value"
+}

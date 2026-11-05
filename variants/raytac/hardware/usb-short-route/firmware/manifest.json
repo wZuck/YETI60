@@ -18,16 +18,16 @@
     "firmware/target/config/yeti60.conf": "f13a5bb1f999855c09c0cd457f7e0cdccdacd5ef3efd950d8231a35b31df02d2",
     "firmware/target/config/yeti60.keymap": "bb26bb848769ada293de3ee11fa968692a502139c186fabbda408edadb322979",
     "firmware/target/dts/bindings/kscan/yeti,ec60.yaml": "f9519f67d55c79e5049e197ffca79c90a6130b86624e57a511f976b725f25fcb",
-    "firmware/target/src/scanner.c": "df47c3a5508ea362209d41bd58f691e241afeee61346a6c7c03be10ca4c5d2af",
+    "firmware/target/src/scanner.c": "a151217c0ceb2dc2119283e8c6144af914bd6eb2f91f9b3fe5f93cc96ad9458e",
     "firmware/target/src/usb_policy.c": "80f26703d2eee50dae22e0a70ae3a416b548d6536f3939c18f5c62c9b9af2075",
     "firmware/target/src/usb_policy.h": "ce652609668a30169a43624168824090d7e07f78c52410cb079a914222abd1d0",
     "firmware/target/zephyr/module.yml": "a01205a117d62428445681e30fdbad1195a7ce097c5e72394e6a49fb16492d6a",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
     "firmware/yeti60/calibration.c": "fec9a62f4681a80e7fd64fadbf51e9b1370e762483d464b85fc9b02484bc0492",
     "firmware/yeti60/calibration.h": "83174f1b97ff47fd5d5a02ea33bdb571594ac58401d2a8718c22099fe081f8a5",
-    "firmware/yeti60/core.c": "27da1325647624921b2b38bcc29592e6d8c65b737c5021973166db0ed9869785",
+    "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
-    "scripts/build_yeti60_firmware.py": "eccb98005e913d693edbe776df90f0cd4967082fda01bf1c5ced42ab6622a3df",
+    "scripts/build_yeti60_firmware.py": "57eed9da99b0c748c51edab4dd1cd8642b4acf467d2296e7cb293aa332948a47",
     "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "8ea837256c5e6277bf870844067260957a9b3cbc537fd8a7e3ff8d1c15c88cb0",
     "scripts/yeti60_calibration_contract.py": "0ab4b43f6a6f4f0f0548034ea92d51ea6b07cebbbae44ca2a31dbcf3cda58383",
     "scripts/yeti60_recovery_contract.py": "19d1e6672423c5bf5ec9c65e2ef85548847d44cbe656c31f40e9bee5b9f6eb84",
@@ -35,25 +35,25 @@
     "scripts/build_usb_short_firmware.py": "2a183125b795962e77c1a4779e201280aee35f3e25b0f2ed83f1131c56249865"
   },
   "published_outputs": {
-    "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex": "90f7546edbef782593bb1e2a2387fcc1669f46263ff070f77b7e570209cc946d",
-    "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.bin": "01a2c3649760526194025a70bff72f49e0c25cfaf272f5088a0735271e12a70b",
-    "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex": "7b0dac6973246cc0c99b098e4b344dfa2e37644346863987b2762a57d0e207e9",
-    "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.bin": "ed4039263003efeb6cc1997547b3c7661af983f92d4ee05487c6ee88fef334e3"
+    "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex": "90a4c3f822dcffe993231d6b7a22a70484ffecaa3bcdc116e14e6f6f60a19825",
+    "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.bin": "5b2863c49dfdd9846cb4d4a95bd580919821e0742854326f2c7d36b113b6cd6f",
+    "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex": "28b3b8f332a5bdf0e8964cc7b8989672ee97e916e0f5f7b39eb8658258225f46",
+    "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.bin": "cf051977314d5b832b17c6c683fe00d76665d6f55f85b98ca9bd158343ac0b76"
   },
   "evidence": {
-    "hardware/usb-short-route/firmware/build.json": "eefa1fdcba20951ccb19a666ed5c49035973375b4c6b313d4b306869cf7c6f6e",
-    "hardware/usb-short-route/firmware/target-check.json": "e03d9cdbbe45938c17a0295b327278afc0eac39a94b4049612de3422d818bc91",
-    "hardware/usb-short-route/firmware/simulation.json": "2ec32d217b12f9cedf56cedbeab6f0bdb769db1883524422ad2d71e98c53fe80",
+    "hardware/usb-short-route/firmware/build.json": "4d6d3afff93ff9e2446e8e4c1b314d0359bf11e9c3af6b815db4d80e34ee7d54",
+    "hardware/usb-short-route/firmware/target-check.json": "fb98d1cef4656153599d6a4ab66aaa34c5ca2f18f8bf9ca425deb02968d48190",
+    "hardware/usb-short-route/firmware/simulation.json": "bbe3e672534ed73bc7ed06a167c714e1c05ee9f50b151b0e672e4ab1d4af4459",
     "hardware/usb-short-route/firmware/calibration.json": "89dfa29549979c9cc4a01c2e4e0eda156b74db0dc12e95d2c58677004a613156",
     "hardware/usb-short-route/firmware/trace.csv": "02d6f2843713dd84a682c0bea3977652c20772c3781f2f5806284ea16c84909f"
   },
   "unpublished_build_outputs": {
     "firmware/releases/normal/yeti60-raytac.elf": {
-      "sha256": "d22aaf3c32dfc4d4a52d90e9ac3fce8b0146a750b100061511ee8b4d6dec2c3a",
+      "sha256": "d912c2a8c77648041ff72e551ffd8b8dfc4eaf41aafd303f191a81e44a811fd8",
       "reason": "Retained in ignored build workspace; checked by target checker; rebuild for debugging"
     },
     "firmware/releases/calibrator/yeti60-raytac.elf": {
-      "sha256": "e044a3988dd81f1d3d4888448c27ffd97e0753aab0eff9664e24024b7c04b65f",
+      "sha256": "5675e64420d534658ef4c05244d75e8c14724d1df8eacff92b0ce73cd51c2963",
       "reason": "Retained in ignored build workspace; checked by target checker; rebuild for debugging"
     }
   },

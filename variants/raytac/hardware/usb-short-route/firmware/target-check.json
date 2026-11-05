@@ -4,7 +4,7 @@
     "normal": {
       "arm_elf": true,
       "hex_checksums": "passed",
-      "programmed_bytes": 229981,
+      "programmed_bytes": 230253,
       "settings_partition_preserved": true,
       "USB_configuration_mA": 500,
       "USB_callback_linkage": {
@@ -12,12 +12,13 @@
         "wrapper_calls_original_stack": true,
         "charger_event_callback_linked": true,
         "method": "ARM ELF symbol table and decoded Thumb BL targets"
-      }
+      },
+      "diagnostic_clock_hz": 32768
     },
     "calibrator": {
       "arm_elf": true,
       "hex_checksums": "passed",
-      "programmed_bytes": 306849,
+      "programmed_bytes": 307353,
       "settings_partition_preserved": true,
       "USB_configuration_mA": 500,
       "USB_callback_linkage": {
@@ -25,12 +26,13 @@
         "wrapper_calls_original_stack": true,
         "charger_event_callback_linked": true,
         "method": "ARM ELF symbol table and decoded Thumb BL targets"
-      }
+      },
+      "diagnostic_clock_hz": 32768
     }
   },
-  "build_manifest_sha256": "eefa1fdcba20951ccb19a666ed5c49035973375b4c6b313d4b306869cf7c6f6e",
+  "build_manifest_sha256": "4d6d3afff93ff9e2446e8e4c1b314d0359bf11e9c3af6b815db4d80e34ee7d54",
   "physical_verification": false,
-  "calibration_contract_version": "0x4ad42de1",
+  "calibration_contract_version": "0x01d896fb",
   "recovery_binding": {
     "gesture": "Fn + double-tap Backspace",
     "window_ms": 400,

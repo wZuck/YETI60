@@ -64,6 +64,7 @@ def main():
     for name,h in build['source_sha256'].items():assert sha(ROOT/name)==h,'Stale firmware source: '+name
     details={}
     for variant,record in build['variants'].items():
+        assert record['diagnostic_clock_hz']==32768,'Requalify the documented diagnostic clock resolution'
         assert record['calibration_version']==version(ROOT,record['calibration_scan_configuration'])
         recovery=record['recovery_binding']
         assert recovery['window_ms']==400 and recovery['single_tap']==recovery['hold']=='none'
@@ -89,7 +90,7 @@ def main():
             elif kind==1:ended=True
             else:assert kind in [3,5],'Unsupported HEX record'
         assert ended and seen
-        details[variant]={'arm_elf':True,'hex_checksums':'passed','programmed_bytes':len(seen),'settings_partition_preserved':True,'USB_configuration_mA':usb_configuration_power(elf),'USB_callback_linkage':usb_callback_linkage(elf)}
+        details[variant]={'arm_elf':True,'hex_checksums':'passed','programmed_bytes':len(seen),'settings_partition_preserved':True,'USB_configuration_mA':usb_configuration_power(elf),'USB_callback_linkage':usb_callback_linkage(elf),'diagnostic_clock_hz':record['diagnostic_clock_hz']}
     assert len({v['calibration_version'] for v in build['variants'].values()})==1
     report={'status':'passed','variants':details,'build_manifest_sha256':sha(p),'physical_verification':False,'calibration_contract_version':build['variants']['normal']['calibration_version'],'recovery_binding':build['variants']['normal']['recovery_binding']}
     (ROOT/'docs/audit/yeti60-target-check.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

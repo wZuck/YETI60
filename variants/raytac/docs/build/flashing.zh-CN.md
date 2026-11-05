@@ -2,6 +2,8 @@
 
 # 刷写、串口与逐键校准
 
+静电容扫描已修正为先释放再升行、先钳位再降行；见[模拟时序研究](../testing/analog-waveform.zh-CN.md)。校准版新增 `yeti_calibrate timing`，报告行 GPIO 调用至 ADC 返回的 RTC 粗略耗时及计时频率，含一格量化余量；实际为 32768 Hz，不能据此确定精确采样时刻。升级后用同包两版重新校准。
+
 本页命令已指向当前候选板固件目录，普通版和校准版必须配套；旧 `firmware/releases` 为参考板构建。USB 接线使用[候选 J4／J5／J1 表](../../hardware/usb-short-route/README.zh-CN.md#必须采用的连接方式)，不是旧四线直连 J1。
 
 返回[总入口](../../BUILD.zh-CN.md)。以下为首样待实测的操作程序，不是已经完成的实机刷写记录。准备支持 nRF52840 的 CMSIS-DAP SWD 调试器、OpenOCD，以及本版六针探针治具；不要购买另一个键盘控制板作为替代。

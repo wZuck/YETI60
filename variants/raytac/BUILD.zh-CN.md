@@ -19,6 +19,7 @@
 | 连接 C5 与电源跳线 | [J4／J5／J1 线序与连接器数量](hardware/usb-short-route/README.zh-CN.md#必须采用的连接方式)、[供电压降目标](hardware/usb-short-route/POWER-FEED.zh-CN.md) |
 | 刷写及校准 | [当前配套固件下载](hardware/usb-short-route/firmware/README.zh-CN.md)、[J3／SWD 命令及 60 键步骤](docs/build/flashing.zh-CN.md) |
 | 不做外壳，包含电池验收 | [B0～B7 开台检查](OPEN-BENCH.zh-CN.md) |
+| 检查静电容脉冲和采样时序 | [边沿修补、RC 模型及首板 timing 命令](docs/testing/analog-waveform.zh-CN.md) |
 | 理解 USB 边充边用、挂起和取消配置 | [实际 USB 事件策略与测试证据](docs/testing/usb-event-policy.zh-CN.md) |
 | 清除蓝牙槽位、理解校准变化 | [保护手势及版本兼容](docs/testing/firmware-recovery.zh-CN.md) |
 | 看当前整机、爆炸图及分步安装 | [候选方案装配指南](hardware/usb-short-route/ASSEMBLY.zh-CN.md) |

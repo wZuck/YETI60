@@ -33,4 +33,6 @@
 
 [普通工艺检查](yeti60-ordinary-process.json) · [制板包](yeti60-fabrication.json) · [README 材料一致性](yeti60-materials.json) · [内部连接](yeti60-interconnects.json) · [评估回应](../engineering/assessment-response.zh-CN.md)
 
-扫描源码或按键映射来源变化后，用 `python3 scripts/run_audit.py --refresh-guide` 重新生成指南并检查，不能只覆盖哈希。新增 [USB 事件测试](usb-event-policy.json)编译固定 ZMK USB 回调，ARM 目标检查还解码初始化至包装函数及原栈的实际调用。若本次矩阵有失败后定向重检，[重检记录](usb-event-followup.json)保留初次结果及真实重跑命令；未重跑的失败不能改成通过。
+扫描源码或按键映射来源变化后，用 `python3 scripts/run_audit.py --refresh-guide` 重新生成指南并检查，不能只覆盖哈希。新增 [USB 事件测试](usb-event-policy.json)编译固定 ZMK USB 回调，ARM 目标检查还解码初始化至包装函数及原栈的实际调用。上一轮 USB 事件审查的[重检记录](usb-event-followup.json)保留初次结果及真实重跑命令，属于历史快照，不能替代当前结果；未重跑的失败不能改成通过。
+
+新增[静电容波形研究](../testing/analog-waveform.zh-CN.md)阶段需要 PATH 中的 ngspice 和本机 Clang，并使用 CAD 依赖中的 NumPy／Matplotlib。它从实际核心产生控制序列，以真实网表参数做无源 RC 敏感性模型；不是实测按键电容或运放动态模型。

@@ -77,16 +77,16 @@
     "firmware/target/config/yeti60.conf": "f13a5bb1f999855c09c0cd457f7e0cdccdacd5ef3efd950d8231a35b31df02d2",
     "firmware/target/config/yeti60.keymap": "bb26bb848769ada293de3ee11fa968692a502139c186fabbda408edadb322979",
     "firmware/target/dts/bindings/kscan/yeti,ec60.yaml": "f9519f67d55c79e5049e197ffca79c90a6130b86624e57a511f976b725f25fcb",
-    "firmware/target/src/scanner.c": "df47c3a5508ea362209d41bd58f691e241afeee61346a6c7c03be10ca4c5d2af",
+    "firmware/target/src/scanner.c": "a151217c0ceb2dc2119283e8c6144af914bd6eb2f91f9b3fe5f93cc96ad9458e",
     "firmware/target/src/usb_policy.c": "80f26703d2eee50dae22e0a70ae3a416b548d6536f3939c18f5c62c9b9af2075",
     "firmware/target/src/usb_policy.h": "ce652609668a30169a43624168824090d7e07f78c52410cb079a914222abd1d0",
     "firmware/target/zephyr/module.yml": "a01205a117d62428445681e30fdbad1195a7ce097c5e72394e6a49fb16492d6a",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
     "firmware/yeti60/calibration.c": "fec9a62f4681a80e7fd64fadbf51e9b1370e762483d464b85fc9b02484bc0492",
     "firmware/yeti60/calibration.h": "83174f1b97ff47fd5d5a02ea33bdb571594ac58401d2a8718c22099fe081f8a5",
-    "firmware/yeti60/core.c": "27da1325647624921b2b38bcc29592e6d8c65b737c5021973166db0ed9869785",
+    "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
-    "scripts/build_yeti60_firmware.py": "eccb98005e913d693edbe776df90f0cd4967082fda01bf1c5ced42ab6622a3df",
+    "scripts/build_yeti60_firmware.py": "57eed9da99b0c748c51edab4dd1cd8642b4acf467d2296e7cb293aa332948a47",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "8ea837256c5e6277bf870844067260957a9b3cbc537fd8a7e3ff8d1c15c88cb0",
     "scripts/yeti60_calibration_contract.py": "0ab4b43f6a6f4f0f0548034ea92d51ea6b07cebbbae44ca2a31dbcf3cda58383",
     "scripts/yeti60_recovery_contract.py": "19d1e6672423c5bf5ec9c65e2ef85548847d44cbe656c31f40e9bee5b9f6eb84"
@@ -94,19 +94,20 @@
   "variants": {
     "normal": {
       "outputs": {
-        "firmware/releases/normal/yeti60-raytac.bin": "01a2c3649760526194025a70bff72f49e0c25cfaf272f5088a0735271e12a70b",
-        "firmware/releases/normal/yeti60-raytac.hex": "90f7546edbef782593bb1e2a2387fcc1669f46263ff070f77b7e570209cc946d",
-        "firmware/releases/normal/yeti60-raytac.elf": "d22aaf3c32dfc4d4a52d90e9ac3fce8b0146a750b100061511ee8b4d6dec2c3a"
+        "firmware/releases/normal/yeti60-raytac.bin": "5b2863c49dfdd9846cb4d4a95bd580919821e0742854326f2c7d36b113b6cd6f",
+        "firmware/releases/normal/yeti60-raytac.hex": "90a4c3f822dcffe993231d6b7a22a70484ffecaa3bcdc116e14e6f6f60a19825",
+        "firmware/releases/normal/yeti60-raytac.elf": "d912c2a8c77648041ff72e551ffd8b8dfc4eaf41aafd303f191a81e44a811fd8"
       },
       "configuration_sha256": "eb3ecefe7e56664ba12652350ae1dd5a21e16bc18660d25c225c61a2fcabdd6f",
       "devicetree_sha256": "4f13b87dae592c70c364563ef4032408c0e2c1b8f4c3fb4fbacf3e83107e89ad",
-      "calibration_version": "0x4ad42de1",
+      "calibration_version": "0x01d896fb",
       "calibration_scan_configuration": {
         "CONFIG_YETI60_ACTIVE_SCAN_MS": "4",
         "CONFIG_YETI60_IDLE_SCAN_MS": "30",
         "CONFIG_YETI60_IDLE_AFTER_MS": "30000",
         "CONFIG_YETI60_AFE_IDLE_GATING": "y"
       },
+      "diagnostic_clock_hz": 32768,
       "recovery_binding": {
         "gesture": "Fn + double-tap Backspace",
         "window_ms": 400,
@@ -120,19 +121,20 @@
     },
     "calibrator": {
       "outputs": {
-        "firmware/releases/calibrator/yeti60-raytac.bin": "ed4039263003efeb6cc1997547b3c7661af983f92d4ee05487c6ee88fef334e3",
-        "firmware/releases/calibrator/yeti60-raytac.hex": "7b0dac6973246cc0c99b098e4b344dfa2e37644346863987b2762a57d0e207e9",
-        "firmware/releases/calibrator/yeti60-raytac.elf": "e044a3988dd81f1d3d4888448c27ffd97e0753aab0eff9664e24024b7c04b65f"
+        "firmware/releases/calibrator/yeti60-raytac.bin": "cf051977314d5b832b17c6c683fe00d76665d6f55f85b98ca9bd158343ac0b76",
+        "firmware/releases/calibrator/yeti60-raytac.hex": "28b3b8f332a5bdf0e8964cc7b8989672ee97e916e0f5f7b39eb8658258225f46",
+        "firmware/releases/calibrator/yeti60-raytac.elf": "5675e64420d534658ef4c05244d75e8c14724d1df8eacff92b0ce73cd51c2963"
       },
       "configuration_sha256": "11e75cc42d3e57bd7790b9e2d602a86ac00f40fc43ff4a5413e07384ee487a0b",
       "devicetree_sha256": "09eec43083e719a7b4d4607a291d3d8006e909ffa18b7eac866d758478d4451d",
-      "calibration_version": "0x4ad42de1",
+      "calibration_version": "0x01d896fb",
       "calibration_scan_configuration": {
         "CONFIG_YETI60_ACTIVE_SCAN_MS": "4",
         "CONFIG_YETI60_IDLE_SCAN_MS": "30",
         "CONFIG_YETI60_IDLE_AFTER_MS": "30000",
         "CONFIG_YETI60_AFE_IDLE_GATING": "y"
       },
+      "diagnostic_clock_hz": 32768,
       "recovery_binding": {
         "gesture": "Fn + double-tap Backspace",
         "window_ms": 400,

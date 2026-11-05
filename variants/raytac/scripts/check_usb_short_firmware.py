@@ -13,6 +13,7 @@ def main():
     build=json.loads((PUB/'build.json').read_text());target=json.loads((PUB/'target-check.json').read_text());assert sha(PUB/'build.json')==target['build_manifest_sha256']
     assert set(build['variants'])=={'normal','calibrator'} and all(v['USB_configuration_mA']==500 for v in target['variants'].values())
     for details in target['variants'].values():
+        assert details['diagnostic_clock_hz']==32768
         linkage=details['USB_callback_linkage']
         assert linkage['ZMK_init_calls_wrapper'] and linkage['wrapper_calls_original_stack'] and linkage['charger_event_callback_linked']
     for record in build['variants'].values():

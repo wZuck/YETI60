@@ -19,6 +19,7 @@ The first board can be tested without an enclosure. Supplier DFM precedes fabric
 | Wire C5 and power jumper | [J4/J5/J1 pin table and connector quantities](hardware/usb-short-route/README.md#required-connection-map), [power-loss targets](hardware/usb-short-route/POWER-FEED.md) |
 | Flash and calibrate | [Current matched firmware downloads](hardware/usb-short-route/firmware/README.md), [J3/SWD commands and 60-key procedure](docs/build/flashing.md) |
 | Test without a shell, including a battery | [B0–B7 open-bench checks](OPEN-BENCH.md) |
+| Review EC pulse and sampling timing | [Edge repair, RC model and first-board timing command](docs/testing/analog-waveform.md) |
 | Understand USB charging, suspend and deconfiguration | [Actual USB event policy and test evidence](docs/testing/usb-event-policy.md) |
 | Clear a Bluetooth slot / understand calibration changes | [Guarded recovery and version compatibility](docs/testing/firmware-recovery.md) |
 | View current assembled/exploded keyboard and assembly steps | [Current candidate assembly guide](hardware/usb-short-route/ASSEMBLY.md) |

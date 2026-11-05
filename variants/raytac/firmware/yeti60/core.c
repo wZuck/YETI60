@@ -167,12 +167,12 @@ int yeti_scan(struct yeti_core *s) {
       rows_low(s);
       io(s, PIN_APLEX_OUT_PIN_0, Y_OD_LOW);
       wait(s, s->cfg.discharge_us);
-      io(s, yeti_rows[r], Y_HIGH);
       io(s, PIN_APLEX_OUT_PIN_0, Y_OD_RELEASE);
+      io(s, yeti_rows[r], Y_HIGH);
       wait(s, s->cfg.charge_us);
       int v = s->hal.adc(s->hal.ctx, YETI_ADC_AIN, s->cfg.acquisition_us);
-      io(s, yeti_rows[r], Y_LOW);
       io(s, PIN_APLEX_OUT_PIN_0, Y_OD_LOW);
+      io(s, yeti_rows[r], Y_LOW);
       if (v < 0 || v > 4095) {
         rows_low(s);
         inhibit(s);

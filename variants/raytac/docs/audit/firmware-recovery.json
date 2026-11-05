@@ -4,35 +4,35 @@
   "CMake_mutation_cases": [
     {
       "case": "same",
-      "version": "0x449ca9bd"
+      "version": "0x8d0eb97f"
     },
     {
       "case": "scanner",
-      "version": "0xf0d43ba5"
+      "version": "0x2d5d6735"
     },
     {
       "case": "waveform",
-      "version": "0x47d37566"
+      "version": "0xca142f59"
     },
     {
       "case": "calibration",
-      "version": "0xed37d876"
+      "version": "0xd0bd226d"
     },
     {
       "case": "header",
-      "version": "0x6f790af2"
+      "version": "0x53753fd3"
     },
     {
       "case": "keymap-only",
-      "version": "0x449ca9bd"
+      "version": "0x8d0eb97f"
     },
     {
       "case": "effective-idle",
-      "version": "0xbe5277a5"
+      "version": "0x55c9735f"
     },
     {
       "case": "effective-gating",
-      "version": "0x4c262d9a"
+      "version": "0xa82630f7"
     }
   ],
   "native_gesture_output": "Pinned ZMK tap dance: single, hold, slow taps and interrupted taps do not clear; double tap dispatches selected-profile clear once",
@@ -52,11 +52,11 @@
     "firmware/target/config/west.yml": "04dfc8292b18ac323cc82ebd76e37f12891eb4c4ff4e49593a65409a7023d912",
     "firmware/target/config/yeti60.conf": "f13a5bb1f999855c09c0cd457f7e0cdccdacd5ef3efd950d8231a35b31df02d2",
     "firmware/target/config/yeti60.keymap": "bb26bb848769ada293de3ee11fa968692a502139c186fabbda408edadb322979",
-    "firmware/target/src/scanner.c": "df47c3a5508ea362209d41bd58f691e241afeee61346a6c7c03be10ca4c5d2af",
+    "firmware/target/src/scanner.c": "a151217c0ceb2dc2119283e8c6144af914bd6eb2f91f9b3fe5f93cc96ad9458e",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
     "firmware/yeti60/calibration.c": "fec9a62f4681a80e7fd64fadbf51e9b1370e762483d464b85fc9b02484bc0492",
     "firmware/yeti60/calibration.h": "83174f1b97ff47fd5d5a02ea33bdb571594ac58401d2a8718c22099fe081f8a5",
-    "firmware/yeti60/core.c": "27da1325647624921b2b38bcc29592e6d8c65b737c5021973166db0ed9869785",
+    "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "scripts/test_yeti60_recovery.py": "be01c6c442de34e01f87c2dad2bbb790f601b147e924ee88b1dfa9613689ac60",

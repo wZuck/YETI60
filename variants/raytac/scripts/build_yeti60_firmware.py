@@ -56,8 +56,9 @@ def main():
         assert match and match.group(1)==version(ROOT,options),'Linked scan calibration contract differs'
         config_text=(built/'.config').read_text()
         assert 'CONFIG_ZMK_BLE_CLEAR_BONDS_ON_START=y' not in config_text
+        clock_hz=int(re.search(r'^CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC=(\d+)$',config_text,re.M).group(1))
         records[variant]={'outputs':{str(p.relative_to(ROOT)):sha(p) for p in destination.glob('yeti60-raytac.*')},'configuration_sha256':sha(built/'.config'),'devicetree_sha256':sha(built/'zephyr.dts'),
-                         'calibration_version':match.group(1),'calibration_scan_configuration':options,
+                         'calibration_version':match.group(1),'calibration_scan_configuration':options,'diagnostic_clock_hz':clock_hz,
                          'recovery_binding':check_recovery_dts(dtlib.DT(str(built/'zephyr.dts')))}
     assert records['normal']['calibration_version']==records['calibrator']['calibration_version'],'Normal and calibrator thresholds would be incompatible'
     sources=[*sorted((ROOT/'firmware/target').rglob('*')),*sorted((ROOT/'firmware/yeti60').glob('*.[ch]')),Path(__file__).resolve(),ROOT/'hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb']

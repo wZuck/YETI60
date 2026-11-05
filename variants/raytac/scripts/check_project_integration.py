@@ -38,6 +38,15 @@ def verify():
     regression=read(HW/'connectivity-changes.json'); assert not regression['regressed_pairs']; hashes(regression['source_sha256'])
     electrical=read(AUD/'yeti60-electrical.json'); assert sha(HW/'EC60-nRF52840.kicad_pcb')==electrical['source_sha256']
     sim=read(AUD/'yeti60-firmware-simulation.json'); assert sim['status']=='passed'; hashes(sim['source_sha256']); assert sha(ROOT/sim['trace_file'])==sim['trace_sha256']
+    analog=read(AUD/'analog-waveform.json');hashes(analog['source_sha256']);hashes(analog['outputs'])
+    assert analog['status']=='model-regression-passed-physical-open' and not analog['physical_verification']
+    assert {x['case'] for x in analog['order_mutants_rejected']}=={'rise-before-release','fall-before-clamp'}
+    assert all(x['exit_code']!=0 for x in analog['order_mutants_rejected']) and len(analog['sensitivities'])==36
+    assert analog['illustrative_correct_delta_ADC_codes']>32 and analog['illustrative_wrong_rise_delta_ADC_codes']==0
+    assert not analog['ADC_API_latency_qualified'] and not analog['key_capacitance_measured'] and not analog['opamp_dynamic_model']
+    assert not analog['AFE_saturation_qualified']
+    assert analog['diagnostic_counter']['clock_hz']==32768 and analog['diagnostic_counter']['one_tick_quantization_guard']
+    assert not analog['diagnostic_counter']['hardware_sample_timestamp'] and not analog['diagnostic_counter']['absolute_time_accuracy_qualified']
     plate=read(AUD/'plate.json'); assert plate['status']=='passed'; hashes(plate['source_sha256'])
     meta=read(AUD/'yeti60-pcb-mechanical-metadata.json'); assert sha(ROOT/meta['source'])==meta['source_sha256']
     fit=read(AUD/'yeti60-assembly.json'); hashes(fit['source_sha256']); hashes(fit['verification_recipe_sha256'])

@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 target firmware
 
+EC scanning now releases before raising a row and reclamps before lowering it; see the [analog timing study](../../docs/testing/analog-waveform.md). The calibrator adds `yeti_calibrate timing` for coarse RTC elapsed estimates from the row GPIO call to ADC return, with the 32768 Hz clock reported and one tick of quantization guard; these are not physical sample timestamps. Recalibrate with the matching bundle after upgrading.
+
 USB charging now uses the [status callback and deconfiguration policy](../../docs/testing/usb-event-policy.md), independently of scan polling. Suspend disables charging/input; resume and 500 mA permission follow the actual configuration byte. Both variants share this logic; recalibrate when upgrading from an older bundle.
 
 For the current repaired PCB, use the [candidate build/flash entry](../../hardware/usb-short-route/firmware/README.md). [Recovery and calibration contract v3](../../docs/testing/firmware-recovery.md) adds Fn + double-tap Backspace (less than 400 ms between presses) to clear only the selected BLE profile. The first v3 update requires recapturing thresholds; preserve settings when flashing the matching normal build.

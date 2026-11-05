@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # Raytac review and first-article acceptance
 
+EC scanning now releases before raising a row and reclamps before lowering it; see the [analog timing study](analog-waveform.md). The calibrator adds `yeti_calibrate timing` for coarse RTC elapsed estimates from the row GPIO call to ADC return, with the 32768 Hz clock reported and one tick of quantization guard; these are not physical sample timestamps. Recalibrate with the matching bundle after upgrading.
+
 Return to the [handbook](../../BUILD.md). This page covers the current Raytac RF wing, USB protection repair and 75-part BOM. The old repository-root dual-option acceptance report is not this revision's result.
 
 **The current [audit outcome](../audit/outcome.json) `checks_passed` field governs software/CAD consistency. It never automatically releases production or physical acceptance.** No unit exists; all physical steps below are unexecuted.
