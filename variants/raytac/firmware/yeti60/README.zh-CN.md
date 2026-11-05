@@ -26,3 +26,5 @@ python3 scripts/simulate_yeti60_firmware.py
 核心由单一执行上下文持有，其他线程或中断请求应排队。忙标记拒绝同步回调重入，并非原子线程锁。GPIO、等待和 HID 回调必须正常返回；初始化要求核心静止。测试覆盖初始化、供电、连接和扫描回调期间的重入拒绝，包括故障报告。
 
 [目标模块](../target/README.zh-CN.md)现通过 nRF GPIO／SAADC 驱动使用本核心，输出由 ZMK 处理。主机测试、目标构建与实物证据分别记录。
+
+抽象高阻模式至实际 Zephyr 标志的映射另由[目标 GPIO 测试](../../docs/testing/gpio-mode-policy.zh-CN.md)验证，不能仅凭核心枚举断定真实数字输入缓冲已关闭。

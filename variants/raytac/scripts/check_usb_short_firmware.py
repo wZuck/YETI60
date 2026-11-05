@@ -22,11 +22,14 @@ def main():
         assert recovery['window_ms']==400 and recovery['single_tap']==recovery['hold']=='none'
         assert recovery['clears']=='selected BLE profile only' and not recovery['calibration_settings_erase_binding']
     assert len({r['calibration_version'] for r in build['variants'].values()})==1
-    for name in ['build.json','simulation.json','calibration.json']:
+    for name in ['build.json','simulation.json','calibration.json','gpio-mode-policy.json']:
         d=json.loads((PUB/name).read_text());assert d['status']==('built' if name=='build.json' else 'passed')
         for rel,h in d.get('source_sha256',{}).items():
             p=BASE/Path(rel).name if rel in ['hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb','hardware/ec60-nrf52840/netlist.xml'] else ROOT/rel
             assert sha(p)==h,('Stale source in build/test report',name,rel)
+        if name=='gpio-mode-policy.json':
+            assert not d['physical_verification'] and d['nominal_scan_samples']==150
+            assert len(d['positive_cases'])==5 and len(d['rejected_mutants'])==4
     for variant in ['normal','calibrator']:
         folder=PUB/'releases'/variant;encoded={};offset=0;ended=False
         for line in (folder/'yeti60-raytac.hex').read_text().splitlines():

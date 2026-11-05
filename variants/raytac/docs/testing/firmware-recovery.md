@@ -16,7 +16,7 @@ The gesture requires working, calibrated key input. For an uncalibrated first bo
 
 ## When calibration must be repeated
 
-Calibration contract **v3** hashes the actual scanner, portable waveform core, calibration implementation and headers, pin header, board/device-tree/default configuration, dependency lock, and the calibration CMake contract. Effective active/idle scan intervals and AFE gating are included. Both variants must have the same identifier; the builder reads the actual scanner compiler invocation and resolved device tree to verify this.
+Calibration contract **v3** hashes the actual scanner, target GPIO-mode helper, portable waveform core, calibration implementation and headers, pin header, board/device-tree/default configuration, dependency lock, and the calibration CMake contract. Effective active/idle scan intervals and AFE gating are included. Normal and calibrator within the same board bundle must have the same identifier; the builder reads the actual scanner compiler invocation and resolved device tree to verify this.
 
 Changing SAADC gain, pulse/discharge implementation, calibration rules or effective scan options now changes the identifier. Previously the fingerprint covered the PCB, pins, board DTS and calibration algorithm but omitted the scanner/core implementations. Old thresholds could therefore have survived incompatible changes.
 

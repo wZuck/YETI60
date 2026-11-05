@@ -104,6 +104,12 @@ def verify():
     for variant in target['variants'].values():hashes(variant['outputs'])
     target_check=read(AUD/'yeti60-target-check.json');assert target_check['status']=='passed' and target_check['build_manifest_sha256']==sha(AUD/'yeti60-target-build.json')
     assert all(v['USB_configuration_mA']==500 for v in target_check['variants'].values())
+    gpio_modes=read(AUD/'gpio-mode-policy.json');hashes(gpio_modes['source_sha256'])
+    assert gpio_modes['status']=='passed' and not gpio_modes['physical_verification']
+    assert gpio_modes['upstream_revision']==target['dependencies']['zephyr']
+    assert gpio_modes['GPIO_constants_checked_against_pinned_headers'] and gpio_modes['nominal_scan_samples']==150
+    assert len(gpio_modes['positive_cases'])==5 and len(gpio_modes['rejected_mutants'])==4
+    assert all(x['exit_code']!=0 for x in gpio_modes['rejected_mutants'])
     usb_events=read(AUD/'usb-event-policy.json');hashes(usb_events['source_sha256'])
     assert usb_events['status']=='passed' and not usb_events['physical_verification']
     assert usb_events['upstream_revision']=='0862fc0f8c864834007986efcaf52f292ea6d37d'
@@ -112,7 +118,7 @@ def verify():
     recovery=read(AUD/'firmware-recovery.json');hashes(recovery['source_sha256'])
     assert recovery['status']=='passed' and not recovery['physical_verification']
     assert recovery['upstream_revision']==target['dependencies']['zmk']
-    assert len(recovery['CMake_mutation_cases'])==8
+    assert len(recovery['CMake_mutation_cases'])==9
     assert target_check['recovery_binding']['clears']=='selected BLE profile only'
     assert not target_check['recovery_binding']['calibration_settings_erase_binding']
     complete=read(AUD/'complete-exploded.json');hashes(complete['source_sha256']);hashes(complete['outputs'])

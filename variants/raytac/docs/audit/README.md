@@ -36,3 +36,5 @@ Procurement, default 1600 mAh recess/catalog screening, separate assembly sheets
 After scanner or key-map provenance changes, use `python3 scripts/run_audit.py --refresh-guide` to regenerate and verify the guide; do not overwrite hashes alone. The [USB event tests](usb-event-policy.json) compile the pinned ZMK USB callback; ARM checks decode actual init-to-wrapper and wrapper-to-stack calls. The earlier USB-event review's [follow-up record](usb-event-followup.json) retains its initial result and executed commands as a historical snapshot; it does not replace the current outcome. A failed check cannot become passed without execution.
 
 The added [EC waveform study](../testing/analog-waveform.md) stage requires ngspice and host Clang on PATH, plus NumPy/Matplotlib in the CAD environment. It traces the actual core and models passive RC sensitivity using actual netlist values; it does not measure key capacitance or model op-amp dynamics.
+
+The audit adds the [GPIO-mode/startup cleanup stage](../testing/gpio-mode-policy.md), checking actual callback/init sources and core against a host pin model. Physical leakage and rails remain first-board acceptance items.

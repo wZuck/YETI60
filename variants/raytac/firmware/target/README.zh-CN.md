@@ -46,3 +46,5 @@ Fn 层提供功能键、方向键和五组蓝牙主机选择。USB／蓝牙 HID 
 本方案固件文件名为 `yeti60-raytac.hex/.bin/.elf`，位于 `firmware/releases/normal/` 与 `firmware/releases/calibrator/`。以本方案目录作为构建工作目录，不可刷写 E73 文件。
 
 [逐键校准操作与拒绝条件](../../../../docs/testing/calibration.zh-CN.md)；[60 键行列命令表](calibration-keys.csv)。
+
+模拟高阻和钳位释放现在使用 `GPIO_DISCONNECTED`，不接数字输入缓冲、输出或上下拉；初始化失败后统一尝试关闭 AFE。源码、主机电气约束与实物边界见[GPIO 模式说明](../../docs/testing/gpio-mode-policy.zh-CN.md)。模式辅助函数已纳入校准指纹，升级需重新校准。

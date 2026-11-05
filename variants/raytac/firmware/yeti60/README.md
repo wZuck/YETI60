@@ -26,3 +26,5 @@ Results and source hashes: [yeti60-firmware-simulation.json](../../docs/audit/ye
 Use one owner for the core and queue other threads or interrupt requests. The busy flag rejects synchronous callback reentry; it is not an atomic thread lock. GPIO, wait and HID callbacks must return normally; initialize only a quiescent core. Tests cover reentry rejection during initialization, power, connection and scan callbacks, including fault reporting.
 
 The [target module](../target/README.md) now uses this core through an nRF GPIO/SAADC driver; transport output is handled by ZMK. Host tests remain separate from target-build and physical evidence.
+
+The [target GPIO tests](../../docs/testing/gpio-mode-policy.md) separately verify the abstract-mode-to-Zephyr-flag mapping; the core enum alone does not prove the digital input buffer is disabled.

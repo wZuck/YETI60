@@ -3,6 +3,7 @@
 #include "core.h"
 #include "calibration.h"
 #include "usb_policy.h"
+#include "gpio_modes.h"
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
@@ -107,9 +108,7 @@ static void gpio(void *ctx, uint8_t pin, enum yeti_mode mode) {
       }
       break;
     }
-  gpio_flags_t flags = mode == Y_HIZ || mode == Y_OD_RELEASE ? GPIO_INPUT
-                       : mode == Y_HIGH                      ? GPIO_OUTPUT_HIGH
-                                                             : GPIO_OUTPUT_LOW;
+  gpio_flags_t flags = yeti_target_gpio_flags(mode);
   if (gpio_pin_configure(ports[pin / 32], pin % 32, flags))
     io_fault = true;
 }
@@ -350,8 +349,11 @@ static int init(const struct device *dev) {
       cfg.high[r][c] = 2000;
     }
   if (yeti_init(&core, &hal, &cfg) || yeti_target_usb_init() ||
-      yeti_power(&core, true) || io_fault)
+      yeti_power(&core, true) || io_fault) {
+    if (core.initialized)
+      (void)yeti_power(&core, false);
     return -EIO;
+  }
   scan_device = dev;
   return 0;
 }

@@ -513,12 +513,13 @@
     "Op-amp stability/saturation recovery, mux charge injection, analog margins and physical interference"
   ],
   "source_sha256": {
-    "scripts/study_yeti60_analog_waveform.py": "a2a33d5dbd51557499f61d3ac3c92ccb7da8e186f646f241d3cbf48144657375",
+    "scripts/study_yeti60_analog_waveform.py": "cfc60f96b27ae462d8510ad9fff103baf6dc174dd19674e8af45f6cb6ca19733",
     "docs/testing/analog-waveform-inputs.json": "9ff139d65bfb4cff5c05c7a2bb8ca6dbcdf5a8f647cc732b452424baaced841f",
     "hardware/usb-short-route/netlist.xml": "44f177a827df33c4f9c4c70823169a8c2c3d422588496cb945a33fcdfdcf3c79",
     "hardware/ec60-nrf52840/netlist.xml": "815c4a1661a9b50b5465660631f37405bd72c5d82aa9ad7c5e1f0eb66af9c93a",
-    "firmware/target/src/scanner.c": "a151217c0ceb2dc2119283e8c6144af914bd6eb2f91f9b3fe5f93cc96ad9458e",
-    "docs/audit/yeti60-target-check.json": "3d2c6a9068d80fad33d62507c01d59fa25bcb81c5f1fd0a763a000f43012c0ab",
+    "firmware/target/src/scanner.c": "adcb04855f156f8ada7730ca14029c70428aff56ab83395c88930d2eb656ed31",
+    "firmware/target/src/gpio_modes.h": "3fae72b5f56a0ecddcb21cd68c103612aa2ab219363373b4275381e203796a8b",
+    "docs/audit/yeti60-target-check.json": "93921b82ea3e6c7182b3197e4f9e987380664a7745370b7f9d93d5cf7841beda",
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "firmware/yeti60/board_pins.h": "21fc62267d40794708516f05cfbe6764278d6e947c6e93fa102a310f7763801f",
@@ -527,9 +528,9 @@
   },
   "outputs": {
     "docs/testing/images/analog-waveform.png": "4baae8ee8742c02a36de00f2813655f307ccc1594181fafe1042065bc9ad32cc",
-    "docs/testing/images/analog-waveform.svg": "c450eeda40bc38613357fc7ce48d5e832ea8a4b9d0d318552ba70c091b19f340",
+    "docs/testing/images/analog-waveform.svg": "b1c1ee04cec21e260ff461976ef470d2fc9fc313d136a735f9783274761ee1ba",
     "docs/testing/images/analog-waveform.zh-CN.png": "ebd90f5a8670b69b67c228fea9e0996f84a7492e2adb48c71f7805dafa3fadbf",
-    "docs/testing/images/analog-waveform.zh-CN.svg": "24cdcf97e0dfefbec1e1ae7169ef46c83df88f1940df07e7c7e81f612f3c34ed",
+    "docs/testing/images/analog-waveform.zh-CN.svg": "97e39f9ef0538786d5ae0356014b26cc878feac42dee60c3ad58be2cb7e41e44",
     "docs/testing/analog-waveform-sensitivity.csv": "cf1e5748b101c2f11758783870857078f76fea52e8fdbcd568576e845675238e"
   },
   "diagnostic_counter": {

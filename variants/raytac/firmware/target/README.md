@@ -44,3 +44,5 @@ Successful compilation proves a target binary can be produced. First-article mea
 This option publishes `yeti60-raytac.hex/.bin/.elf` under `firmware/releases/normal/` and `firmware/releases/calibrator/`. Build from this variant directory and do not flash E73 files.
 
 [Per-key capture and rejection rules](../../../../docs/testing/calibration.md); [60-key command map](calibration-keys.csv).
+
+Analog high impedance and clamp release now use `GPIO_DISCONNECTED`, with digital input/output and pulls disabled; initialization failure attempts AFE shutdown. See the [GPIO mode review](../../docs/testing/gpio-mode-policy.md) for actual-source tests and physical limits. The mode helper is part of the calibration fingerprint; recalibrate after upgrading.

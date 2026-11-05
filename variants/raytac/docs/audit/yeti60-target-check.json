@@ -4,7 +4,7 @@
     "normal": {
       "arm_elf": true,
       "hex_checksums": "passed",
-      "programmed_bytes": 230253,
+      "programmed_bytes": 230261,
       "settings_partition_preserved": true,
       "USB_configuration_mA": 500,
       "USB_callback_linkage": {
@@ -18,7 +18,7 @@
     "calibrator": {
       "arm_elf": true,
       "hex_checksums": "passed",
-      "programmed_bytes": 307353,
+      "programmed_bytes": 307361,
       "settings_partition_preserved": true,
       "USB_configuration_mA": 500,
       "USB_callback_linkage": {
@@ -30,9 +30,9 @@
       "diagnostic_clock_hz": 32768
     }
   },
-  "build_manifest_sha256": "3687f4fedcd5bd77b98cf025d54df3cf335ad8fffbdc0c7c51ce8f89174ee386",
+  "build_manifest_sha256": "3c79671fa58a9fde9b6309bbd7d6b2d3e23b8ce2c2549488227a813b8e9884ba",
   "physical_verification": false,
-  "calibration_contract_version": "0x8d0eb97f",
+  "calibration_contract_version": "0x4cee16a6",
   "recovery_binding": {
     "gesture": "Fn + double-tap Backspace",
     "window_ms": 400,

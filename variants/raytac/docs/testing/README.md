@@ -34,3 +34,5 @@ PCB DRC retains 102 courtyard warnings for non-purchased electrodes/mount graphi
 Retain board IDs, PCB/firmware hashes, actual component/pack lots, instrument settings, logs/waveforms/temperatures/photos and individual pass/fail records. First-article results precede scaling; CAD consistency is not production approval.
 
 For mechanical acceptance follow the [NiZ / plate-mount guide](../build/key-mechanism.md): 28 installed fastener sets, H26 empty, lower/upper gasket stock 2.0/1.2 mm. Check NiZ clips/skirts, three independent stabilizer pairs, the actual 6U wire/cap fit, released-key return and full stroke. Check neighboring EC keys while operating each big key.
+
+The [analog GPIO / startup cleanup checks](gpio-mode-policy.md) cover the actual callback/init bodies, pinned Zephyr flag values and final rail-off pin state. Real leakage and rail decay still require measurement.

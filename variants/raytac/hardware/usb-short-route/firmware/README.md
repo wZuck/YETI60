@@ -29,3 +29,5 @@ python3 variants/raytac/scripts/check_usb_short_firmware.py
 ```
 
 The wrapper copies current firmware sources, candidate PCB/netlist and pin map into an isolated build directory, rebuilds both targets in the pinned container, runs target/host/calibration checks and publishes only this candidate's HEX/BIN and evidence. Canonical firmware releases are left untouched. Docker and the existing locked west workspace are required, as described in the target instructions. USB/BLE radio, actual key signals, simultaneous charging/input, analog settling and battery safety still require the physical acceptance procedure.
+
+See the [analog GPIO/startup cleanup review](../../../docs/testing/gpio-mode-policy.md) and [this bundle's independent host evidence](gpio-mode-policy.json). Both builds use high impedance with digital buffers disabled; recalibrate after upgrading.

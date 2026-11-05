@@ -5,6 +5,7 @@ INPUTS = (
     'firmware/yeti60/board_pins.h', 'firmware/yeti60/core.c',
     'firmware/yeti60/core.h', 'firmware/yeti60/calibration.c',
     'firmware/yeti60/calibration.h', 'firmware/target/src/scanner.c',
+    'firmware/target/src/gpio_modes.h',
     'firmware/target/boards/yeti/yeti60/yeti60.dts',
     'firmware/target/boards/yeti/yeti60/yeti60_defconfig',
     'firmware/target/config/yeti60.conf', 'firmware/target/config/west.yml',

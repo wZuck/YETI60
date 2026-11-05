@@ -8,14 +8,14 @@
     },
     {
       "path": "BUILD.md",
-      "bytes": 8405,
-      "sha256": "bfee7527fa5e6753af73ae57090933565474e6d25beb840723371db0fd754dfd",
+      "bytes": 8546,
+      "sha256": "6ce6cf002e890ec38afcded7c6eac9bf1e9aecf583874e7dbc013f2d08c26581",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "BUILD.zh-CN.md",
-      "bytes": 7570,
-      "sha256": "de0c4003b2f7f3400e152468a6b73bdb082658e54f4ebc65ba0f6f8d81983f37",
+      "bytes": 7708,
+      "sha256": "870e950232ba0f9ae0ad0c00cafa83872e1b4dcabb571e1f978f99b868ddb1e4",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -951,7 +951,7 @@
     {
       "path": "docs/engineering/images/complete-exploded.svg",
       "bytes": 259702,
-      "sha256": "516d69c65bd3992eb05ebd16e13c99ab3e16086a54390f39d80e77c762049738",
+      "sha256": "7503810885c289700c5e0af0245039cb69186fd2c9130ba44d75a314301e57e0",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -963,7 +963,7 @@
     {
       "path": "docs/engineering/images/complete-exploded.zh-CN.svg",
       "bytes": 259800,
-      "sha256": "a132fefed6fa2c8862a511421e0c89134c0170a9d0af2ce7f6ba4d9ad9f3ec0e",
+      "sha256": "24f7fd97c8d07914c0d800ba188abd8841d646087c9753660170e2e2f84acbd7",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1112,14 +1112,14 @@
     },
     {
       "path": "docs/testing/README.md",
-      "bytes": 5925,
-      "sha256": "27f434979b7b687b60c974348b9195b3097ac733a41cdd5c45ba743996f5c5e5",
+      "bytes": 6140,
+      "sha256": "82b6b7874f3c7a9624948287884fee0f10ce9c0181c7e027b9abec5303f99312",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/testing/README.zh-CN.md",
-      "bytes": 6155,
-      "sha256": "47218f6e6f1f0f49295b1e57a02088d4aea844492047c9028c242bab812edb11",
+      "bytes": 6355,
+      "sha256": "b0742eb8246f345245d55d6f01bc507182391fb22f5d53a1b967c119567183ae",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1148,14 +1148,26 @@
     },
     {
       "path": "docs/testing/firmware-recovery.md",
-      "bytes": 6105,
-      "sha256": "824280a445af19c7184fbb5e5b46b7aee7529a3f77f116eb40f491869159ddbd",
+      "bytes": 6167,
+      "sha256": "46c480ad6aea5bc9ebf5d884226729d5c32569d9e6a36965d8074b9f1b7a2492",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/testing/firmware-recovery.zh-CN.md",
-      "bytes": 5411,
-      "sha256": "164f9a5da6d1d80585ea0a2ac30b3471b4bff8c06a580790a9aadaba8c6e8edf",
+      "bytes": 5474,
+      "sha256": "5a0870eae421ef11fee36fca6035043f2609482f3fdbfebd4e0b3f86c8dcfde8",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/testing/gpio-mode-policy.md",
+      "bytes": 6275,
+      "sha256": "fc737b501135273ae482caf99656b2c76ef1f57624e7e9a49cbba1a5564c36d1",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/testing/gpio-mode-policy.zh-CN.md",
+      "bytes": 5429,
+      "sha256": "69c8fc1d36c547b5739a3791d6589c819d6604398c670bbc0f3760992b5f2a06",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1167,7 +1179,7 @@
     {
       "path": "docs/testing/images/analog-waveform.svg",
       "bytes": 77608,
-      "sha256": "c450eeda40bc38613357fc7ce48d5e832ea8a4b9d0d318552ba70c091b19f340",
+      "sha256": "b1c1ee04cec21e260ff461976ef470d2fc9fc313d136a735f9783274761ee1ba",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1179,7 +1191,7 @@
     {
       "path": "docs/testing/images/analog-waveform.zh-CN.svg",
       "bytes": 32981,
-      "sha256": "24cdcf97e0dfefbec1e1ae7169ef46c83df88f1940df07e7c7e81f612f3c34ed",
+      "sha256": "97e39f9ef0538786d5ae0356014b26cc878feac42dee60c3ad58be2cb7e41e44",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1227,37 +1239,37 @@
     {
       "path": "firmware/releases/calibrator/yeti60-raytac.bin",
       "bytes": 307376,
-      "sha256": "4560272f38be979da1be13dc4042148864aa0a3458dc56b58ecf629373d14462",
+      "sha256": "9e46798ab199530f3dea51ce27de408e9bf9b3765f70ba3eb7bf8e60b3f7520d",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/calibrator/yeti60-raytac.elf",
       "bytes": 7565708,
-      "sha256": "5d590d023758a0d8367af0c321001dc50dffcb9c7b8b06b941ac3e04ba1a2238",
+      "sha256": "28276b1cecde2563529897f7750f1eb15b4c9181de5eced80078f4c158b9c479",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/calibrator/yeti60-raytac.hex",
-      "bytes": 845478,
-      "sha256": "9698cd27f53bcb910ef9b77a3f8c3a02b31efe85cc6bfa13aaf028d0a2cb2496",
+      "bytes": 845494,
+      "sha256": "bceaae06082fbd555e6dd952d229bb2305bd5d6048d60a6f2ee71add99a33734",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/normal/yeti60-raytac.bin",
-      "bytes": 230260,
-      "sha256": "cabdd6746f14e5f65d57b13fdf6e2a68b4b2f4192343f5897c9a8cd6b5e298f3",
+      "bytes": 230276,
+      "sha256": "e7e6ab93aa5eb88875a828849b0436afec4dc6c2aa495d1948e206364cf87caf",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/normal/yeti60-raytac.elf",
-      "bytes": 4040704,
-      "sha256": "b603dece37ee3db744b9bca9990fe728ae1396158a312a029943fab1fe9e8384",
+      "bytes": 4040720,
+      "sha256": "85c1f80bd588b0fc406b990cd5f1321f0dd1ada8fb2055332f7fe5d78b11dbd6",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/releases/normal/yeti60-raytac.hex",
-      "bytes": 633398,
-      "sha256": "7e6568f8f2c3bc0204e20ed8e85695ab1443772e7a40199dd73a1ed20ae5c8b8",
+      "bytes": 633426,
+      "sha256": "87bd42a57302c8308fda331a5b54d87cfb40b2fd2b647e93ba52acef4cfb52b9",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1274,14 +1286,14 @@
     },
     {
       "path": "firmware/target/README.md",
-      "bytes": 7655,
-      "sha256": "cd510242a4f254896be9e395d1a8304c2ba3bebfe8c9678bab90adde4208b981",
+      "bytes": 8014,
+      "sha256": "f2f4ee7bd8b2ac8d28706e80753da6aa6f0adb5ab699bbedffd156cb6f2cc5df",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/target/README.zh-CN.md",
-      "bytes": 6826,
-      "sha256": "f1e55a887db5953528d4413aefb1a32c6bd506c8202420b2c83bf1a745093cf0",
+      "bytes": 7160,
+      "sha256": "773ae1a7f312a9354d960626948b9b4a00421067e59c00c1a9cca308614b2328",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1316,8 +1328,8 @@
     },
     {
       "path": "firmware/target/calibration-contract.cmake",
-      "bytes": 1547,
-      "sha256": "2732653c6287a7d93b47d3ef85f30176702902c2dd53bf3f7d4f3590e072b134",
+      "bytes": 1584,
+      "sha256": "6c2e338cd25c48cfbf256016e2d4fcadc72e2c64db9ef1ad5c024024be0c0206",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1363,9 +1375,15 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "firmware/target/src/gpio_modes.h",
+      "bytes": 595,
+      "sha256": "3fae72b5f56a0ecddcb21cd68c103612aa2ab219363373b4275381e203796a8b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "firmware/target/src/scanner.c",
-      "bytes": 14126,
-      "sha256": "a151217c0ceb2dc2119283e8c6144af914bd6eb2f91f9b3fe5f93cc96ad9458e",
+      "bytes": 14039,
+      "sha256": "adcb04855f156f8ada7730ca14029c70428aff56ab83395c88930d2eb656ed31",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1388,14 +1406,14 @@
     },
     {
       "path": "firmware/yeti60/README.md",
-      "bytes": 3214,
-      "sha256": "3e05e080896ff1eb2d589e7c862746dbcafefb177cc83a32736b8f29f4cdca35",
+      "bytes": 3412,
+      "sha256": "8dcc02d9caf384748583a8703f5e0466d40ac73d70bfefae0f732d1b8daaac49",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "firmware/yeti60/README.zh-CN.md",
-      "bytes": 2740,
-      "sha256": "f378be68717a7ccf4b58ba7cf464ab28924f55ed652e01f84bfee1a17fac2a21",
+      "bytes": 2939,
+      "sha256": "c2d7bb0a46354781dd7d68e8f498049e5fd8ba16ccfb46cbb21bd0c708180834",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1497,7 +1515,7 @@
     {
       "path": "hardware/ec60-nrf52840/DRC-strict.json",
       "bytes": 37632,
-      "sha256": "4fe1c1608135c18b1955a882f0d1c433089291a0b47d6346e0148aff94a41aac",
+      "sha256": "71269b608e3fc5139a14ed017991c7b02389f96b91717d9230982d110ff67b48",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1521,7 +1539,7 @@
     {
       "path": "hardware/ec60-nrf52840/ERC.json",
       "bytes": 115945,
-      "sha256": "3b9100709fd9b3d2c6f71d90105b88b1a90da5715b59d6a6e54f68d9b1d5ff29",
+      "sha256": "7505fe8e13b28cea1b9a6e2cd24c80db8102147472e4bfc48208ddd89ecec3a6",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -4185,13 +4203,13 @@
     {
       "path": "hardware/usb-short-route/audit/DRC-strict.json",
       "bytes": 49704,
-      "sha256": "76dd2794526f2282e9dad3664ae983263f647d2071bc5202aca38a6101ae5dd9",
+      "sha256": "3a2feec903a344e26150b06d094cae40833cfbb8e54b041d1fdf1b8f2701ff6d",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/audit/ERC.json",
       "bytes": 115945,
-      "sha256": "4fb5fd84269507446b762457424cbf886e93e84705a67f12400b6b862a098f18",
+      "sha256": "6cf67bb5113de77219c8e0f5485c478eb3b8f33be69648e85d2569a3e65ed466",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -4245,7 +4263,7 @@
     {
       "path": "hardware/usb-short-route/audit/assembly-package.json",
       "bytes": 3069,
-      "sha256": "65a3ee5fadf70e382c97e2b14295c6cd9a797d8b52efb503c0af1ed6da3a4eba",
+      "sha256": "27fe83b325594938abb62c78710f144e7fd0260767199d59c5beb37bb95d113f",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -4311,7 +4329,7 @@
     {
       "path": "hardware/usb-short-route/audit/tolerance-diagnostic.json",
       "bytes": 10661,
-      "sha256": "fb2c8e083450060bfd580b0224e4cb3d9366862f538326ff5fd29e7083dedcfb",
+      "sha256": "20896c151bbd8e8d812c99e033657fa9482223cacfa222b46842b483ef805950",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -4323,7 +4341,7 @@
     {
       "path": "hardware/usb-short-route/audit/vertical-motion.json",
       "bytes": 27386,
-      "sha256": "f98a3df0e5b8f9d411c28ad00b5b681a74a228716f14f63d7544dc99b2c2a67b",
+      "sha256": "c4cc5c5c6e020ac2c9e1cb960b8ebd472de5adea7798a13b83ea9b9ecd348891",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -4376,20 +4394,20 @@
     },
     {
       "path": "hardware/usb-short-route/firmware/README.md",
-      "bytes": 3879,
-      "sha256": "eb8f8b9e8b67aaefaa81341670c2856bbb6e906b0e94b99f97e9f042c993880a",
+      "bytes": 4129,
+      "sha256": "c18b405f6373bfd40a9989910a8eb0bca1ec76df2707b966fc6e0528b3b0d802",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/firmware/README.zh-CN.md",
-      "bytes": 3416,
-      "sha256": "6587db9286444661973565ba8e64b36ff10e6d4518d787663f3ea629d9bded4e",
+      "bytes": 3644,
+      "sha256": "b5d1a114419f5ea5faa2b7a722f3da3dc78c868466e2a56e8467b10fcfe42146",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/firmware/build.json",
-      "bytes": 10094,
-      "sha256": "4d6d3afff93ff9e2446e8e4c1b314d0359bf11e9c3af6b815db4d80e34ee7d54",
+      "bytes": 10202,
+      "sha256": "60faf2f03838b53221059287573a931d68e344b1805ec4f1397ddc744bde6d02",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -4399,45 +4417,51 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "hardware/usb-short-route/firmware/gpio-mode-policy.json",
+      "bytes": 3498,
+      "sha256": "2ee1baad4bef8c91ab9af2897182c737636cb7f11df35108dd456ffb5161e484",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "hardware/usb-short-route/firmware/manifest.json",
-      "bytes": 5750,
-      "sha256": "93907812109ecdab8c1b975e567f87c9ddea11f88543ddf646b81ee2c16e2a68",
+      "bytes": 5989,
+      "sha256": "996ef0719b4d288f055e41a641588c74c13c67dfce652079d7b0af912a667ac9",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.bin",
       "bytes": 307376,
-      "sha256": "cf051977314d5b832b17c6c683fe00d76665d6f55f85b98ca9bd158343ac0b76",
+      "sha256": "d808142525ab1b17ba1b6ddbc4ffec2eca0c8f510414ac920d16eeb7de84ec4b",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex",
-      "bytes": 845478,
-      "sha256": "28b3b8f332a5bdf0e8964cc7b8989672ee97e916e0f5f7b39eb8658258225f46",
+      "bytes": 845494,
+      "sha256": "16eb1f3c077c12416304b136ac9bbf14be33028a91df64b22f87675ad038243d",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.bin",
-      "bytes": 230260,
-      "sha256": "5b2863c49dfdd9846cb4d4a95bd580919821e0742854326f2c7d36b113b6cd6f",
+      "bytes": 230276,
+      "sha256": "f4f66931f484b98176121af99f641d36416e836dbf1c53f598a24c841756db77",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex",
-      "bytes": 633398,
-      "sha256": "90a4c3f822dcffe993231d6b7a22a70484ffecaa3bcdc116e14e6f6f60a19825",
+      "bytes": 633426,
+      "sha256": "4a917db1395a1d1601c9a800b0bbc825ec5594bf5146eccc0fec879cb1a0bde3",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/firmware/simulation.json",
       "bytes": 3889,
-      "sha256": "bbe3e672534ed73bc7ed06a167c714e1c05ee9f50b151b0e672e4ab1d4af4459",
+      "sha256": "0ba4e5a69fa5f493f0217276c098dd63d07944952242b665b82f6ed175b8f328",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "hardware/usb-short-route/firmware/target-check.json",
       "bytes": 1462,
-      "sha256": "fb98d1cef4656153599d6a4ab66aaa34c5ca2f18f8bf9ca425deb02968d48190",
+      "sha256": "99a5e1bc5f6adbd89981148914d22a457ba90eeb0db469c872fb230bf32f12ce",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -4970,8 +4994,8 @@
     },
     {
       "path": "scripts/build_usb_short_firmware.py",
-      "bytes": 4753,
-      "sha256": "2a183125b795962e77c1a4779e201280aee35f3e25b0f2ed83f1131c56249865",
+      "bytes": 4864,
+      "sha256": "41b0950736a59a1cd8b26202c6b011b620784b611add488d3ef91f607f7b4c4d",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5030,8 +5054,8 @@
     },
     {
       "path": "scripts/check_project_integration.py",
-      "bytes": 15938,
-      "sha256": "90e00253ee23d66f963150ffc8f71e85517a7ea401e306c1d4be07300570733e",
+      "bytes": 16466,
+      "sha256": "c2ce17c3bf1531d2e6b22f0160850929495d20954dd5ae3e22b256066aaa4fab",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5072,8 +5096,8 @@
     },
     {
       "path": "scripts/check_usb_short_firmware.py",
-      "bytes": 3887,
-      "sha256": "a65fc45e1776452a7089a6781824aab6e3fc35d8afbf7cb08c20bb65d101d6ce",
+      "bytes": 4119,
+      "sha256": "0750b36d00e4200c528b591a2049a7ecbe8e86987b29d16d791db0779e3bff04",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5336,14 +5360,14 @@
     },
     {
       "path": "scripts/report_raytac_review.py",
-      "bytes": 33910,
-      "sha256": "bc809a580cc56f52ae635c0ffaab67b801c54409817133a61574538958b1fa28",
+      "bytes": 35047,
+      "sha256": "cb56c81f367af917dc69892370ce1de9b3beb70972742839b70f8284f0feb84c",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "scripts/run_audit.py",
-      "bytes": 16878,
-      "sha256": "d0b51216cd937a3884c8cd32449d7fc952e159f9e231a3c92ff88421c66ffad0",
+      "bytes": 16981,
+      "sha256": "2f67b705332085fec7b53b766524448f40b910b5e92efc408b7fd84e80ea84fd",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5378,8 +5402,8 @@
     },
     {
       "path": "scripts/study_yeti60_analog_waveform.py",
-      "bytes": 14336,
-      "sha256": "a2a33d5dbd51557499f61d3ac3c92ccb7da8e186f646f241d3cbf48144657375",
+      "bytes": 14376,
+      "sha256": "cfc60f96b27ae462d8510ad9fff103baf6dc174dd19674e8af45f6cb6ca19733",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5401,9 +5425,15 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/test_yeti60_gpio_modes.py",
+      "bytes": 5175,
+      "sha256": "4af625d940aa25192b5a86da8eaa0f926448c5cd8b7d4e76926c200cfe41f25a",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/test_yeti60_recovery.py",
-      "bytes": 5456,
-      "sha256": "be01c6c442de34e01f87c2dad2bbb790f601b147e924ee88b1dfa9613689ac60",
+      "bytes": 5560,
+      "sha256": "5c04217ec88aeb93bf4326d20cb220df5f6aae50985e108ca4cd632c6c2725bd",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5462,8 +5492,8 @@
     },
     {
       "path": "scripts/yeti60_calibration_contract.py",
-      "bytes": 1482,
-      "sha256": "0ab4b43f6a6f4f0f0548034ea92d51ea6b07cebbbae44ca2a31dbcf3cda58383",
+      "bytes": 1522,
+      "sha256": "0c7c25c37b4e49bfd99757cb6bd41a8e7722e251a0e4b975d738661f0f2250c2",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5611,6 +5641,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "tests/yeti60/gpio_modes.c",
+      "bytes": 4834,
+      "sha256": "f409b58409ba02f364318612982d02046c56d824d205de89b87f50fb9191210e",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "tests/yeti60/sim.c",
       "bytes": 14514,
       "sha256": "7a5872cb293de4d634945d011b6a2f3104066c0f85f0ec4003b3439a2727e375",
@@ -5618,8 +5654,8 @@
     },
     {
       "path": "tests/yeti60/stubs/zephyr/drivers/gpio.h",
-      "bytes": 480,
-      "sha256": "010b9204b4ddf75db36a1bb38bf4eaea85892265b32702174ac203d84eb9a9a7",
+      "bytes": 814,
+      "sha256": "08ea3a4f13e8b41c86ebec5622e06deca1f89714700a3b66b63dac00a08c14bd",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
