@@ -48,7 +48,7 @@ The first command requires host Clang/Python; the second also reads the pinned Z
 | Scanner mutants | Fourteen scenarios, thirteen rejected mutants overall, including skipped record-length/validation/read-size/save-CRC checks and incorrectly propagated handler errors |
 | [Candidate reports](../../hardware/usb-short-route/firmware/README.md) | Independent tests in the isolated candidate tree, matched ARM image identifiers, source/output hashes and settings-safe HEX address ranges |
 
-This is not physical flash testing or a Zephyr/NVMC/NVS power-cut emulator. The modeled settings interfaces do not prove sector erase atomicity, garbage-collection recovery, brownout behavior, transport delivery or simultaneous runtime settings reload. Do not interpret corruption tests as power-loss acceptance.
+The CRC/scanner tests above are not physical flash or NVMC power-cut tests. A separate [pinned NVS interruption/recovery model](nvs-powercut.md) covers selected write/GC/recovery interruptions. It does not qualify actual brownout behavior, transport delivery or simultaneous runtime settings reload.
 
 ## Upgrade and first-board acceptance
 

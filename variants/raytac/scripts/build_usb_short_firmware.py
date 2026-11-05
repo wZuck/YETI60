@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Rebuild candidate firmware in isolation; preserve canonical releases untouched."""
-import hashlib,json,shutil,subprocess,sys
+import argparse,hashlib,json,shutil,subprocess,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';WORK=ROOT/'.assembly-work/usb-short-build'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--host-tests-only',action='store_true',help='Recheck existing ARM sources/artifacts, rerun host tests and republish evidence without compilation');args=parser.parse_args()
     native=json.loads((BASE/'audit/native-check.json').read_text());geometry=json.loads((BASE/'audit/geometry-check.json').read_text())
     assert native['status']=='native-candidate-checks-passed' and geometry['status']=='local-header-fit-and-reference-passed'
     for p,h in native['source_sha256'].items():assert sha(ROOT/p)==h,'Stale native evidence: '+p
@@ -21,9 +22,14 @@ def main():
     for p in BASE.iterdir():
         if p.is_file() and p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_pro','.kicad_sym','.json','.xml']:shutil.copyfile(p,dest/p.name)
     shutil.copyfile(ROOT/'hardware/ec60-nrf52840/pinmap.json',dest/'pinmap.json')
-    scripts=['build_yeti60_firmware.py','generate_yeti60_pin_contract.py','check_yeti60_target.py','simulate_yeti60_firmware.py','test_yeti60_calibration.py','test_yeti60_gpio_modes.py','test_yeti60_scan_control.py','yeti60_host_atomics.py','yeti60_calibration_contract.py','yeti60_recovery_contract.py'];(WORK/'scripts').mkdir(exist_ok=True);(WORK/'docs/audit').mkdir(parents=True,exist_ok=True)
+    scripts=['build_yeti60_firmware.py','generate_yeti60_pin_contract.py','check_yeti60_target.py','simulate_yeti60_firmware.py','test_yeti60_calibration.py','test_yeti60_gpio_modes.py','test_yeti60_scan_control.py','test_yeti60_nvs_powercut.py','yeti60_nvs_contract.py','yeti60_host_atomics.py','yeti60_calibration_contract.py','yeti60_recovery_contract.py'];(WORK/'scripts').mkdir(exist_ok=True);(WORK/'docs/audit').mkdir(parents=True,exist_ok=True)
     for name in scripts:shutil.copyfile(ROOT/'scripts'/name,WORK/'scripts'/name)
-    for name,args in [('generate_yeti60_pin_contract.py',['--check']),('build_yeti60_firmware.py',[]),('check_yeti60_target.py',[]),('simulate_yeti60_firmware.py',[]),('test_yeti60_calibration.py',[]),('test_yeti60_gpio_modes.py',[]),('test_yeti60_scan_control.py',[])]:subprocess.run([sys.executable,str(WORK/'scripts'/name),*args],check=True)
+    actions=[('generate_yeti60_pin_contract.py',['--check'])]
+    if not args.host_tests_only:actions.append(('build_yeti60_firmware.py',[]))
+    # The checker rejects changed firmware/board inputs or altered existing images
+    # before host-only publication. This mode cannot bless a stale ARM build.
+    actions.extend((name,[]) for name in ['check_yeti60_target.py','simulate_yeti60_firmware.py','test_yeti60_calibration.py','test_yeti60_gpio_modes.py','test_yeti60_scan_control.py','test_yeti60_nvs_powercut.py'])
+    for name,options in actions:subprocess.run([sys.executable,str(WORK/'scripts'/name),*options],check=True)
     pub=BASE/'firmware';pub.mkdir(exist_ok=True);build=json.loads((WORK/'docs/audit/yeti60-target-build.json').read_text());outputs={};not_published={}
     for variant in ['normal','calibrator']:
         for ext in ['hex','bin','elf']:
@@ -31,7 +37,7 @@ def main():
             if ext=='elf':not_published[str(rel)]={'sha256':sha(source),'reason':'Retained in ignored build workspace; checked by target checker; rebuild for debugging'};continue
             target=pub/'releases'/variant/source.name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target);outputs[str(target.relative_to(ROOT))]=sha(target)
     evidence={}
-    for source,name in [('yeti60-target-build.json','build.json'),('yeti60-target-check.json','target-check.json'),('yeti60-firmware-simulation.json','simulation.json'),('calibration.json','calibration.json'),('gpio-mode-policy.json','gpio-mode-policy.json'),('scan-control.json','scan-control.json'),('yeti60-firmware-trace.csv','trace.csv')]:
+    for source,name in [('yeti60-target-build.json','build.json'),('yeti60-target-check.json','target-check.json'),('yeti60-firmware-simulation.json','simulation.json'),('calibration.json','calibration.json'),('gpio-mode-policy.json','gpio-mode-policy.json'),('scan-control.json','scan-control.json'),('nvs-powercut.json','nvs-powercut.json'),('yeti60-firmware-trace.csv','trace.csv')]:
         target=pub/name;shutil.copyfile(WORK/'docs/audit'/source,target);evidence[str(target.relative_to(ROOT))]=sha(target)
     sources={}
     for rel,h in build['source_sha256'].items():

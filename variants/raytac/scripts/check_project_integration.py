@@ -126,6 +126,9 @@ def verify():
     assert storage['single_bit_flips_rejected']==2464 and storage['byte_inversions_rejected']==308
     assert storage['sliding_32_bit_bursts_rejected']==2433 and not storage['physical_power_cut_tested']
     assert len(storage['rejected_mutants'])==3 and all(c['exit_code']!=0 for c in storage['rejected_mutants'])
+    from yeti60_nvs_contract import verify as verify_nvs
+    nvs=read(AUD/'nvs-powercut.json');hashes(nvs['source_sha256'])
+    verify_nvs(nvs,target,sha(AUD/'yeti60-target-build.json'))
     usb_events=read(AUD/'usb-event-policy.json');hashes(usb_events['source_sha256'])
     assert usb_events['status']=='passed' and not usb_events['physical_verification']
     assert usb_events['upstream_revision']=='0862fc0f8c864834007986efcaf52f292ea6d37d'

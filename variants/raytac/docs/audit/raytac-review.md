@@ -18,6 +18,8 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 See [scanner fault handling](../testing/scan-control.md): unavailable initialization rejects commands, faults shut down and release tracked keys; fourteen scenarios and thirteen mutants, with a 128-entry queue checked against a 120-event burst. Physical host delivery remains open.
 
+The [NVS recovery model](../testing/nvs-powercut.md) passes 14,795 selected write/GC/recovery interruptions and rejects two ordering/live-copy mutants. Actual NVMC, Bluetooth-bond and brownout acceptance remain first-board work. This test update does not change firmware identifiers.
+
 ## Repairs and image inspection
 
 - USB mainboard D1 and long branches removed after actual C5 protected-channel/ground verification; C5 D1/U1/F1 retained

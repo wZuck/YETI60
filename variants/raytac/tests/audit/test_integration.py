@@ -89,6 +89,14 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/calibration.json',
                      lambda data: data['storage_integrity'].update(independent_zlib_records=0))
 
+    def test_missing_NVS_recovery_trials_rejected(self):
+        self.rejects('docs/audit/nvs-powercut.json',
+                     lambda data: data.update(total_cut_trials=0))
+
+    def test_NVS_model_cannot_claim_physical_acceptance(self):
+        self.rejects('docs/audit/nvs-powercut.json',
+                     lambda data: data.update(physical_verification=True))
+
     def test_host_storage_checks_cannot_claim_physical_power_cut(self):
         self.rejects('docs/audit/calibration.json',
                      lambda data: data['storage_integrity'].update(physical_power_cut_tested=True))

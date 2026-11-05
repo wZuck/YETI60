@@ -33,7 +33,7 @@
 
 [普通工艺检查](yeti60-ordinary-process.json) · [制板包](yeti60-fabrication.json) · [README 材料一致性](yeti60-materials.json) · [内部连接](yeti60-interconnects.json) · [评估回应](../engineering/assessment-response.zh-CN.md)
 
-扫描源码或按键映射来源变化后，用 `python3 scripts/run_audit.py --refresh-guide` 重新生成指南并检查，不能只覆盖哈希。新增 [USB 事件测试](usb-event-policy.json)编译固定 ZMK USB 回调，ARM 目标检查还解码初始化至包装函数及原栈的实际调用。上一轮 USB 事件审查的[重检记录](usb-event-followup.json)保留初次结果及真实重跑命令，属于历史快照，不能替代当前结果；未重跑的失败不能改成通过。
+扫描源码、按键映射或目标固件 README 等指南来源变化后，用 `python3 scripts/run_audit.py --refresh-guide` 重新生成指南并检查，不能只覆盖哈希。新增 [USB 事件测试](usb-event-policy.json)编译固定 ZMK USB 回调，ARM 目标检查还解码初始化至包装函数及原栈的实际调用。上一轮 USB 事件审查的[重检记录](usb-event-followup.json)保留初次结果及真实重跑命令，属于历史快照，不能替代当前结果；未重跑的失败不能改成通过。
 
 新增[静电容波形研究](../testing/analog-waveform.zh-CN.md)阶段需要 PATH 中的 ngspice 和本机 Clang，并使用 CAD 依赖中的 NumPy／Matplotlib。它从实际核心产生控制序列，以真实网表参数做无源 RC 敏感性模型；不是实测按键电容或运放动态模型。
 
@@ -42,3 +42,7 @@
 扫描初始化失败时命令立即返回不可用；运行故障关闭模拟前端、释放已记录按键并拒绝继续采集／保存。两个固件均采用 128 项按键事件队列。见[扫描状态与故障回归](../testing/scan-control.zh-CN.md)，包含实际工作循环、60 键采集和 120 事件突发测试；真实主机送达仍待首板验收。
 
 校准记录现为带独立 CRC-32 的 308 字节，旧 304 字节记录必须重新采集；全局 NVS 设置格式及蓝牙绑定不变。见[校准存储校验与升级](../testing/calibration-storage.zh-CN.md)。损坏注入已覆盖，真实闪存断电仍待首板验收。
+
+新增[固定版本 NVS 中断恢复模型](../testing/nvs-powercut.zh-CN.md)：实际 NVS／校准加载代码完成 14,795 次指定中断试验，覆盖垃圾回收和恢复期间再次中断；哨兵及恢复后再次保存均通过。它不是物理 NVMC／欠压／蓝牙验收。本轮不改固件及标识；已有候选产物可用 `--host-tests-only` 重新验证并发布测试，来源变动则必须完整构建。
+
+NVS 模型这一轮的[指南关联重检记录](nvs-guide-followup.json)保存初次指南哈希失败、跳过项及真实重跑结果。它是该次运行的历史快照；当前状态以总结果为准，未执行的检查不能变成通过。

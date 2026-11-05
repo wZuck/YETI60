@@ -20,6 +20,7 @@
 | 刷写及校准 | [当前配套固件下载](hardware/usb-short-route/firmware/README.zh-CN.md)、[J3／SWD 命令及 60 键步骤](docs/build/flashing.zh-CN.md) |
 | 不做外壳，包含电池验收 | [B0～B7 开台检查](OPEN-BENCH.zh-CN.md) |
 | 检查校准保存、损坏拒绝及升级 | [308 字节 CRC 记录、旧格式重采集和实测边界](docs/testing/calibration-storage.zh-CN.md) |
+| 检查写入中断及垃圾回收恢复 | [14,795 次 NVS 模型试验与验收边界](docs/testing/nvs-powercut.zh-CN.md) |
 | 检查扫描故障和校准命令 | [不可用／故障处理、按键释放与事件队列测试](docs/testing/scan-control.zh-CN.md) |
 | 检查模拟 GPIO 和初始化故障清理 | [数字输入缓冲断开、AFE 关闭及测试](docs/testing/gpio-mode-policy.zh-CN.md) |
 | 检查静电容脉冲和采样时序 | [边沿修补、RC 模型及首板 timing 命令](docs/testing/analog-waveform.zh-CN.md) |
