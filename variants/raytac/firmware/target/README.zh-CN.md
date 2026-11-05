@@ -2,6 +2,8 @@
 
 # YETI60 目标固件
 
+当前修补 PCB 使用[候选构建／刷写入口](../../hardware/usb-short-route/firmware/README.zh-CN.md)。[恢复与 v3 校准契约](../../docs/testing/firmware-recovery.zh-CN.md)新增 Fn＋双击 Backspace（两次按下间隔小于 400 ms），仅清除当前蓝牙槽位。首次升级 v3 需重新采集阈值；刷入配套普通版时保留设置。
+
 此 ZMK 模块将已测试的可移植扫描核心接入 nRF52840 GPIO／SAADC，并使用当前原理图生成的引脚头文件。ZMK 提供 USB HID、蓝牙 HID、绑定、五组主机配置和持久设置。HHKB 映射依据实际定位板与感应焊盘对应关系，自定义板使用内部低频 RC 时钟，不占用开发板 LED 引脚，应用从地址零通过 SWD 刷写。
 
 ## 可复现构建

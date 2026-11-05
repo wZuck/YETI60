@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 target firmware
 
+For the current repaired PCB, use the [candidate build/flash entry](../../hardware/usb-short-route/firmware/README.md). [Recovery and calibration contract v3](../../docs/testing/firmware-recovery.md) adds Fn + double-tap Backspace (less than 400 ms between presses) to clear only the selected BLE profile. The first v3 update requires recapturing thresholds; preserve settings when flashing the matching normal build.
+
 This ZMK module binds the tested portable scan core to nRF52840 GPIO/SAADC and the current schematic pin header. ZMK provides USB HID, BLE HID, bonding, five host profiles and persistent settings. The HHKB transform follows the actual plate-to-electrode correspondence. The custom board uses its internal LF RC clock, no development-kit LEDs, and a direct SWD application at address zero.
 
 ## Reproducible build

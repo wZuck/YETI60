@@ -95,6 +95,12 @@ def verify():
     for variant in target['variants'].values():hashes(variant['outputs'])
     target_check=read(AUD/'yeti60-target-check.json');assert target_check['status']=='passed' and target_check['build_manifest_sha256']==sha(AUD/'yeti60-target-build.json')
     assert all(v['USB_configuration_mA']==500 for v in target_check['variants'].values())
+    recovery=read(AUD/'firmware-recovery.json');hashes(recovery['source_sha256'])
+    assert recovery['status']=='passed' and not recovery['physical_verification']
+    assert recovery['upstream_revision']==target['dependencies']['zmk']
+    assert len(recovery['CMake_mutation_cases'])==8
+    assert target_check['recovery_binding']['clears']=='selected BLE profile only'
+    assert not target_check['recovery_binding']['calibration_settings_erase_binding']
     complete=read(AUD/'complete-exploded.json');hashes(complete['source_sha256']);hashes(complete['outputs'])
     assert complete['mainboard_parts']==75 and complete['USB_wires']==4 and complete['battery_wires']==3
     assert complete['mount_sets']==28 and complete['active_keys']==60

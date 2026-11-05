@@ -2,7 +2,9 @@
 
 # YETI60 逐步焊接与安装指南
 
-本指南按 P2 当前主板、C5 JSH、1600 mAh 单电芯及原尺寸 FELK60 派生外壳生成。每一步均配独立示意图。尚无实物，图示是工程装配说明，不是已完成的操作照片。实际物料、胶碗／轴壳、钢网、充电及首件验收条件仍然适用。
+[当前候选方案入口](../../hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)
+
+本保留指南对应短 USB 修补前的参考主板、C5 JSH、1600 mAh 电池及原定位板外周。当前 Raytac 修补板应使用首板入口和候选装配／电源／C04 说明。每一步均配独立示意图。尚无实物，图示是工程装配说明，不是已完成的操作照片。实际物料、胶碗／轴壳、钢网、充电及首件验收条件仍然适用。
 
 [需要制作的 PCB 与完整材料](../../README.zh-CN.md#需要下单制作哪些-pcb) · [主板补购表](../../hardware/bom/mainboard-purchase.zh-CN.csv) · [子板自焊材料](../../hardware/bom/daughterboard.zh-CN.csv) · [结构尺寸](../engineering/assembly.zh-CN.md)
 

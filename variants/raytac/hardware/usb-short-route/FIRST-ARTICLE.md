@@ -2,6 +2,8 @@ English | [Chinese](FIRST-ARTICLE.zh-CN.md)
 
 # Raytac first article: files, order settings and open-bench build
 
+Firmware recovery: [Fn + guarded double-tap for selected-profile clearing and calibration v3 update rules](../../docs/testing/firmware-recovery.md). Ordinary Backspace is preserved; older calibration must be recaptured using the matched candidate pair.
+
 Use this repaired mainboard for the next engineering prototype. Its short USB input, revised fuse, seven 0805 power capacitors and relocated power stage are included in the files below. The previous `yeti60-raytac-p2-dfm-review.zip` describes different routing and is not this board.
 
 **The case is not required for initial electrical validation.** Supplier DFM confirmation precedes PCB production; battery supplier confirmation precedes connecting a real pack. Actual USB/BLE, charging, key calibration and thermal acceptance follow manufacture. These are separate steps: a passing physical keyboard is not a prerequisite for making the first board, and CAM parity is not proof of physical operation or production approval.

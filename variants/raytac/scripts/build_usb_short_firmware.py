@@ -21,7 +21,7 @@ def main():
     for p in BASE.iterdir():
         if p.is_file() and p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_pro','.kicad_sym','.json','.xml']:shutil.copyfile(p,dest/p.name)
     shutil.copyfile(ROOT/'hardware/ec60-nrf52840/pinmap.json',dest/'pinmap.json')
-    scripts=['build_yeti60_firmware.py','generate_yeti60_pin_contract.py','check_yeti60_target.py','simulate_yeti60_firmware.py','test_yeti60_calibration.py'];(WORK/'scripts').mkdir(exist_ok=True);(WORK/'docs/audit').mkdir(parents=True,exist_ok=True)
+    scripts=['build_yeti60_firmware.py','generate_yeti60_pin_contract.py','check_yeti60_target.py','simulate_yeti60_firmware.py','test_yeti60_calibration.py','yeti60_calibration_contract.py','yeti60_recovery_contract.py'];(WORK/'scripts').mkdir(exist_ok=True);(WORK/'docs/audit').mkdir(parents=True,exist_ok=True)
     for name in scripts:shutil.copyfile(ROOT/'scripts'/name,WORK/'scripts'/name)
     for name,args in [('generate_yeti60_pin_contract.py',['--check']),('build_yeti60_firmware.py',[]),('check_yeti60_target.py',[]),('simulate_yeti60_firmware.py',[]),('test_yeti60_calibration.py',[])]:subprocess.run([sys.executable,str(WORK/'scripts'/name),*args],check=True)
     pub=BASE/'firmware';pub.mkdir(exist_ok=True);build=json.loads((WORK/'docs/audit/yeti60-target-build.json').read_text());outputs={};not_published={}

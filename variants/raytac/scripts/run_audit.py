@@ -38,6 +38,7 @@ def main():
     add('electrical-review',native,'check_yeti60_electrical.py',deps=['pin-contract'])
     add('firmware-pin-header',py,'generate_yeti60_pin_contract.py',['--check'],['pin-contract'])
     add('firmware-target-artifacts',py,'check_yeti60_target.py',deps=['firmware-pin-header'])
+    add('firmware-recovery-contract',py,'test_yeti60_recovery.py',deps=['firmware-target-artifacts'])
     stages.append(('target-power-fault-injection',py+['tests/audit/test_target.py'],['firmware-target-artifacts']))
     add('firmware-calibration',py,'test_yeti60_calibration.py',deps=['firmware-pin-header'])
     add('firmware-simulation',py,'simulate_yeti60_firmware.py',deps=['firmware-pin-header'])

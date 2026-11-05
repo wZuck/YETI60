@@ -2,6 +2,7 @@
 """Verify target source provenance, ARM linkage and complete Intel HEX records."""
 import hashlib,json,struct
 from pathlib import Path
+from yeti60_calibration_contract import version
 ROOT=Path(__file__).resolve().parents[1]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def usb_configuration_power(elf):
@@ -36,6 +37,11 @@ def main():
     for name,h in build['source_sha256'].items():assert sha(ROOT/name)==h,'Stale firmware source: '+name
     details={}
     for variant,record in build['variants'].items():
+        assert record['calibration_version']==version(ROOT,record['calibration_scan_configuration'])
+        recovery=record['recovery_binding']
+        assert recovery['window_ms']==400 and recovery['single_tap']==recovery['hold']=='none'
+        assert recovery['clears']=='selected BLE profile only' and recovery['base_Backspace_preserved']
+        assert not recovery['calibration_settings_erase_binding']
         for name,h in record['outputs'].items():assert sha(ROOT/name)==h,'Changed firmware output: '+name
         folder=ROOT/'firmware/releases'/variant;elf=(folder/'yeti60-raytac.elf').read_bytes()
         assert elf[:6]==b'\x7fELF\x01\x01' and struct.unpack_from('<H',elf,18)[0]==40,'Not a 32-bit ARM ELF'
@@ -57,6 +63,7 @@ def main():
             else:assert kind in [3,5],'Unsupported HEX record'
         assert ended and seen
         details[variant]={'arm_elf':True,'hex_checksums':'passed','programmed_bytes':len(seen),'settings_partition_preserved':True,'USB_configuration_mA':usb_configuration_power(elf)}
-    report={'status':'passed','variants':details,'build_manifest_sha256':sha(p),'physical_verification':False}
+    assert len({v['calibration_version'] for v in build['variants'].values()})==1
+    report={'status':'passed','variants':details,'build_manifest_sha256':sha(p),'physical_verification':False,'calibration_contract_version':build['variants']['normal']['calibration_version'],'recovery_binding':build['variants']['normal']['recovery_binding']}
     (ROOT/'docs/audit/yeti60-target-check.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 if __name__=='__main__':main()

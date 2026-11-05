@@ -33,24 +33,17 @@ static int calibration_mode;
 static bool idle_scan;
 static bool afe_asleep;
 static int64_t idle_since;
-struct calibration {
-  uint32_t version;
-  uint16_t low[5][15], high[5][15];
-};
-static struct calibration saved;
+static struct yeti_calibration saved;
 static int load_calibration(const char *name, size_t len, settings_read_cb read,
                             void *arg) {
   if (strcmp(name, "thresholds"))
     return -ENOENT;
   if (len != sizeof(saved))
     return -EINVAL;
-  struct calibration value;
-  if (read(arg, &value, sizeof(value)) != sizeof(value) || value.version != YETI_CALIBRATION_VERSION)
+  struct yeti_calibration value;
+  if (read(arg, &value, sizeof(value)) != sizeof(value) ||
+      !yeti_calibration_valid(&value, YETI_CALIBRATION_VERSION))
     return -EINVAL;
-  for (unsigned r = 0; r < 5; r++)
-    for (unsigned c = 0; c < 15; c++)
-      if (value.low[r][c] >= value.high[r][c] || value.high[r][c] > 4095)
-        return -EINVAL;
   saved = value;
   atomic_set(&calibration_loaded, 1);
   return 0;
@@ -183,7 +176,7 @@ static void run(void *a, void *b, void *c) {
       } else
         printk("YETI60: wait for release/current key capture to complete.\n");
     } else if ((action & 255) == 3) {
-      struct calibration candidate = {.version = YETI_CALIBRATION_VERSION};
+      struct yeti_calibration candidate = {.version = YETI_CALIBRATION_VERSION};
       bool valid = calibration_started && calibration_mode == 0;
       for (unsigned r = 0; r < 5; r++)
         for (unsigned c = 0; c < 15; c++) {
@@ -210,6 +203,8 @@ static void run(void *a, void *b, void *c) {
       }
       printk("YETI60 calibration %s\n", saved_ok ? "saved" : "rejected; inspect status and recapture");
     } else if ((action & 255) == 4) {
+      printk("YETI60 calibration contract=0x%08x valid=%u\n",
+             (unsigned)YETI_CALIBRATION_VERSION, calibrated ? 1u : 0u);
       printk("key,row,col,release_n,release_min,release_max,press_n,press_min,press_max,low,high,guard,valid\n");
       for (unsigned r = 0; r < 5; r++)
         for (unsigned c = 0; c < 15; c++) {

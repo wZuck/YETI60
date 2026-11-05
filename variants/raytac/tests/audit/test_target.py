@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """A linked USB100 descriptor must not pass the P2 500 mA power contract."""
-import importlib.util,unittest
+import importlib.util,unittest,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'scripts'))
 spec=importlib.util.spec_from_file_location('target',ROOT/'scripts/check_yeti60_target.py');target=importlib.util.module_from_spec(spec);spec.loader.exec_module(target)
 class LinkedUsbPower(unittest.TestCase):
  def test_reject_descriptor_requesting_only_100mA(self):

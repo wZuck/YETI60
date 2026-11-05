@@ -13,6 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def main():
     sources=[ROOT/'firmware/yeti60/calibration.c',ROOT/'firmware/yeti60/calibration.h',
              ROOT/'tests/yeti60/calibration.c',Path(__file__)]
+    sources.append(ROOT/'firmware/yeti60/board_pins.h')
     with tempfile.TemporaryDirectory(prefix='yeti60-calibration-') as directory:
         executable=Path(directory)/'calibration'
         subprocess.run([shutil.which('clang'),'-std=c11','-Wall','-Wextra','-Werror','-O1','-g',

@@ -4,18 +4,29 @@
     "normal": {
       "arm_elf": true,
       "hex_checksums": "passed",
-      "programmed_bytes": 227964,
+      "programmed_bytes": 228973,
       "settings_partition_preserved": true,
       "USB_configuration_mA": 500
     },
     "calibrator": {
       "arm_elf": true,
       "hex_checksums": "passed",
-      "programmed_bytes": 303788,
+      "programmed_bytes": 305841,
       "settings_partition_preserved": true,
       "USB_configuration_mA": 500
     }
   },
-  "build_manifest_sha256": "bffb574d05399e76d2ba7bfae9a28cb720d66451cb1a08af739cd736e9798c44",
-  "physical_verification": false
+  "build_manifest_sha256": "96e8fff9725808e00831aaa5f1351bdbb32d16d15e3e4f28a3c5ec2f757958f0",
+  "physical_verification": false,
+  "calibration_contract_version": "0x650dde68",
+  "recovery_binding": {
+    "gesture": "Fn + double-tap Backspace",
+    "window_ms": 400,
+    "single_tap": "none",
+    "hold": "none",
+    "clears": "selected BLE profile only",
+    "base_Backspace_preserved": true,
+    "profile_slots": 5,
+    "calibration_settings_erase_binding": false
+  }
 }

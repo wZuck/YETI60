@@ -2,7 +2,9 @@ English | [Chinese](build-guide.zh-CN.md)
 
 # YETI60 illustrated soldering and assembly guide
 
-This guide follows the current P2 mainboard, C5 JSH, 1600 mAh single-cell pack and source-sized FELK60-derived case. Every step has a separate illustration. No physical unit exists yet: these are engineering illustrations, not photographs of a completed build. Actual part, dome/housing, stencil, charging and first-article acceptance requirements still apply.
+[Current candidate entry](../../hardware/usb-short-route/FIRST-ARTICLE.md)
+
+This retained guide describes the pre-short-USB reference mainboard, C5 JSH, 1600 mAh pack and original plate perimeter. For the current repaired Raytac PCB, follow the first-article entry and candidate assembly/power/C04 instructions. Every step has a separate illustration. No physical unit exists yet: these are engineering illustrations, not photographs of a completed build. Actual part, dome/housing, stencil, charging and first-article acceptance requirements still apply.
 
 [PCBs to fabricate and complete materials](../../README.md#which-pcbs-to-fabricate) · [Mainboard purchase plan](../../hardware/bom/mainboard-purchase.csv) · [C5 self-build parts](../../hardware/bom/daughterboard.csv) · [Assembly dimensions](../engineering/assembly.md)
 

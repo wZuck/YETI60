@@ -2,6 +2,17 @@
 #include "calibration.h"
 #include <string.h>
 
+bool yeti_calibration_valid(const struct yeti_calibration *value,
+                            uint32_t expected) {
+  if (!value || value->version != expected)
+    return false;
+  for (unsigned r = 0; r < YETI_ROWS; r++)
+    for (unsigned c = 0; c < YETI_COLS; c++)
+      if (value->low[r][c] >= value->high[r][c] || value->high[r][c] > 4095)
+        return false;
+  return true;
+}
+
 void yeti_cal_reset(struct yeti_cal_stats *s) {
   memset(s, 0, sizeof(*s));
   s->minimum = 4095;

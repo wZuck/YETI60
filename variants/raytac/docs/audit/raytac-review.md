@@ -2,7 +2,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 # Raytac review conclusions
 
-**All 83 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
+**All 85 implemented software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
 
 | Area | Result |
 |---|---|
@@ -45,6 +45,7 @@ The canonical PCB, inventory and seven-wire assembly images above still describe
 The candidate [first-article fabrication package and case-free procedure](../../hardware/usb-short-route/FIRST-ARTICLE.md) are available. Independent readback covers 846 drill/slot features, 289 fitted copper lands, 75 placements, 297 stencil apertures and all 1,444 IPC records. JP1 paste is omitted and the test-netlist origin is normalized. Supplier DFM precedes fabrication; physical acceptance follows the first board. The previous routing archive remains held.
 Candidate F1 is now the [Littelfuse 0466001.NRHF one-time fuse with revised lands](../../hardware/usb-short-route/F1-SELECTION.md). A new [continuous vertical sweep](../../hardware/usb-short-route/SERVICE-PATH.md) confirms that an internal relief removes the nominal rigid-body wing obstruction and revised rear clips provide a screened PCB corridor. USB/battery unmating, wire deformation and combined tolerances remain unqualified; enclosed service is not approved.
 The previous locating-ear and switch-floor issues are repaired by the [C04 plate, lower-shell pocket and eight gasket strips](../../hardware/usb-short-route/MECHANICAL-FIT.md). Static/continuous plate and switch-floor envelopes pass under the stated finished-part and installation limits; the plate retains approximately 0.188 mm air reserve. The previous diagnostic remains a pre-repair baseline. Full-keyboard tolerances, foam behavior, connected service and physical acceptance remain open.
+Firmware review adds [selected-profile recovery and calibration v3 invalidation](../testing/firmware-recovery.md). Resolved device trees in both ARM builds verify Fn + double-tap Backspace clears only the selected slot. Actual CMake fingerprint mutations and pinned ZMK gesture code are host-tested. Real pairing, analog timing and charging transitions still require the first board.
 
 ## Specific USB routing limitation
 

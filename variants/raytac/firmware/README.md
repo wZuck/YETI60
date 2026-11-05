@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60 firmware
 
+Current repaired-board files: [candidate firmware and SWD entry](../hardware/usb-short-route/firmware/README.md). Read [selected-profile recovery and calibration v3 compatibility](../docs/testing/firmware-recovery.md); keep the normal/calibrator pair from the same bundle.
+
 The current [nRF52840 control core](yeti60/README.md) and [host simulation](../docs/audit/yeti60-firmware-simulation.json) use the schematic-derived GPIO, SAADC and mux contract. Run `python3 scripts/simulate_yeti60_firmware.py` from the repository root.
 
 Only the current core and its tests are maintained here. Original EC60 QMK sources remain in the attributed `EC60` submodule; duplicate legacy firmware and tests have been removed. The GPL license is retained.

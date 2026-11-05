@@ -10,6 +10,25 @@ static void fill(struct yeti_cal_stats *s, uint16_t baseline, unsigned count) {
 }
 
 int main(void) {
+  _Static_assert(sizeof(struct yeti_calibration) == 304, "NVS layout changed");
+  struct yeti_calibration record = {.version = 0x12345678};
+  for (unsigned row = 0; row < YETI_ROWS; row++)
+    for (unsigned col = 0; col < YETI_COLS; col++) {
+      record.low[row][col] = 1000;
+      record.high[row][col] = 1500;
+    }
+  assert(yeti_calibration_valid(&record, 0x12345678));
+  assert(!yeti_calibration_valid(&record, 0x12345679));
+  assert(!yeti_calibration_valid(NULL, 0x12345678));
+  for (unsigned row = 0; row < YETI_ROWS; row++)
+    for (unsigned col = 0; col < YETI_COLS; col++) {
+      record.high[row][col] = 4096;
+      assert(!yeti_calibration_valid(&record, record.version));
+      record.high[row][col] = record.low[row][col];
+      assert(!yeti_calibration_valid(&record, record.version));
+      record.high[row][col] = 1500;
+    }
+  assert(yeti_calibration_valid(&record, record.version));
   struct yeti_cal_stats r, p;
   uint16_t low = 0, high = 0, guard = 0;
   fill(&r, 1000, 128);

@@ -2,6 +2,8 @@
 
 # YETI60 固件
 
+当前修补板文件：[候选固件与 SWD 入口](../hardware/usb-short-route/firmware/README.zh-CN.md)。参阅[单槽位恢复和 v3 校准兼容性](../docs/testing/firmware-recovery.zh-CN.md)，普通版和校准版必须来自同一固件包。
+
 当前 [nRF52840 控制核心](yeti60/README.zh-CN.md)和[主机模拟](../docs/audit/yeti60-firmware-simulation.json)使用从原理图推导的 GPIO、SAADC 和复用器契约。在仓库根目录运行 `python3 scripts/simulate_yeti60_firmware.py`。
 
 此处只维护当前核心及其测试。原始 EC60 QMK 源码仍保留在具有上游署名的 `EC60` 子模块中，重复历史固件与测试已移除，GPL 许可证保留。

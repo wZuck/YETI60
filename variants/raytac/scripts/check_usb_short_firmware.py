@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Verify published candidate HEX/BIN, source mapping and build/test evidence."""
 import hashlib,json
+from yeti60_calibration_contract import version
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';PUB=BASE/'firmware'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -11,6 +12,12 @@ def main():
     assert sha(BASE/'audit/native-check.json')==m['native_acceptance_sha256'];assert sha(BASE/'audit/geometry-check.json')==m['local_geometry_acceptance_sha256']
     build=json.loads((PUB/'build.json').read_text());target=json.loads((PUB/'target-check.json').read_text());assert sha(PUB/'build.json')==target['build_manifest_sha256']
     assert set(build['variants'])=={'normal','calibrator'} and all(v['USB_configuration_mA']==500 for v in target['variants'].values())
+    for record in build['variants'].values():
+        assert record['calibration_version']==version(ROOT,record['calibration_scan_configuration'],BASE/'EC60-nRF52840.kicad_pcb')
+        recovery=record['recovery_binding']
+        assert recovery['window_ms']==400 and recovery['single_tap']==recovery['hold']=='none'
+        assert recovery['clears']=='selected BLE profile only' and not recovery['calibration_settings_erase_binding']
+    assert len({r['calibration_version'] for r in build['variants'].values()})==1
     for name in ['build.json','simulation.json','calibration.json']:
         d=json.loads((PUB/name).read_text());assert d['status']==('built' if name=='build.json' else 'passed')
         for rel,h in d.get('source_sha256',{}).items():
