@@ -53,6 +53,8 @@
 
 ## 一把键盘需要准备的完整材料
 
+**当前候选方案下单：**使用[首板入口](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)、[当前 75 件采购表](hardware/usb-short-route/mainboard-purchase.zh-CN.csv)、[阻容规格](hardware/usb-short-route/PASSIVES.zh-CN.md)及 [C04 定位板／外壳／八条垫片](hardware/usb-short-route/MECHANICAL-FIT.zh-CN.md)。下方电子件和旧线束行属于保留的修补前参考；通用工具／紧固件仍可使用，但应服从这些当前修订。
+
 以下为 **1 把完整键盘的装机净用量，不含备件**。主板与子板可购买焊装成品；若自行焊接，分别准备下面的散件，不能再重复购买同一总成的元件。尚未选定的供应商或型号明确标注，数量确定不代表已获采购放行。
 
 **制板限制：只使用 JLC 普通四层工艺。已将旧盲孔／填孔封盖设计改为普通机械通孔；旧 HDI 文件不可用于下单。** 完成后以最新制板审查清单为准。没有第二颗主控，不需要每键二极管或 MX 热插拔座。

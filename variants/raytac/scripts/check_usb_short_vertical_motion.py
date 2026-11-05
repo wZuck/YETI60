@@ -91,7 +91,7 @@ def main():
     hashes(assembly['source_sha256']);hashes(guides['source_sha256']);hashes(guides['outputs'])
     case=load(BASE/'mechanical/yeti60-bottom-short-usb.step')
     pcb=planar_sweep(load(ROOT/'.assembly-work/pcb-placed.step'),travel)
-    moving=[('PCB-exact-planar-footprint',pcb),('plate-exact-planar-footprint',planar_sweep(load(ROOT/'.assembly-work/plate.step'),travel))]
+    moving=[('PCB-exact-planar-footprint',pcb),('plate-exact-planar-footprint',planar_sweep(load(ROOT/assembly['plate_geometry']),travel))]
     moving += [(p['ref'],swept_box(p['bounds_case_mm'],travel)) for p in assembly['component_envelopes']]
     moving += [(p['name'],swept_box(p['bounds_case_mm'],travel)) for p in assembly['mated_housings'] if p['owner'] in ['J1','J5']]
     for i,p in enumerate(assembly['mounting_hole_matches']):
@@ -122,7 +122,7 @@ def main():
         'unrelieved_module_sweep_intersection_mm3':intersection_volume(old,next(s for n,s in moving if n=='U1'))}
     assert regression['unrelieved_PCB_sweep_intersection_mm3']>1
     assert regression['unrelieved_module_sweep_intersection_mm3']>1
-    sources=[Path(__file__),BASE/'interconnect-spec.json',BASE/'audit/assembly.json',BASE/'audit/guides.json',BASE/'audit/closed-assembly.json',BASE/'mechanical/yeti60-bottom-short-usb.step',ROOT/'.assembly-work/pcb-placed.step',ROOT/'.assembly-work/plate.step',ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'scripts/cad_geometry.py',ROOT/'scripts/check_yeti60_assembly.py',ROOT/'scripts/usb_short_harness.py']
+    sources=[Path(__file__),BASE/'interconnect-spec.json',BASE/'audit/assembly.json',BASE/'audit/guides.json',BASE/'audit/closed-assembly.json',BASE/'mechanical/yeti60-bottom-short-usb.step',ROOT/'.assembly-work/pcb-placed.step',ROOT/assembly['plate_geometry'],ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'scripts/cad_geometry.py',ROOT/'scripts/check_yeti60_assembly.py',ROOT/'scripts/usb_short_harness.py']
     report={'status':'nominal-disconnected-rigid-extraction-passed','physical_verification':False,'manufacturing_released':False,'complete_service_path_qualified':False,
         'translation_mm':[0,0,travel],'moving_envelopes':rows,'rear_clip_tolerance_screen':clip_rows,'baseline_regression':regression,'limiting_nominal_features':limiting_points(case,moving),
         'scope':'Continuous vertical translation of nominal PCB/plate, fitted mainboard envelopes, 28 stack hardware envelopes, PCB power jumper and its plugs/guides; case-top removed; USB/battery disconnected and parked outside motion envelope',

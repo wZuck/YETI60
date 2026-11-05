@@ -45,7 +45,8 @@ def external_faces(shape):
         faces.Next()
     assert result;return result
 
-def build_case(spec,assembly):
+def build_case(spec,assembly,fit=None):
+    fit=read(BASE/'mechanical-fit-spec.json') if fit is None else fit
     original=load(ROOT/'mechanical/generated/yeti60-bottom.step');case=original
     for key in ['case_pocket']:case=cut(case,box(spec[key]['bounds_case_mm']))
     before_service=case
@@ -59,6 +60,10 @@ def build_case(spec,assembly):
     bearing_guard=box([plate[0]-guard,plate[1]-guard,-25,plate[3]+guard,plate[4]+guard,25])
     assert intersection_volume(service_removed,bearing_guard)<1e-6,'Service relief erodes guarded plate bearing'
     assert volume(service_removed)>0,'Service relief removed no material'
+    before_floor=case;floor=fit['switch_floor_relief']
+    case=cut(case,rounded_box(floor['bounds_case_mm'],floor['corner_radius_mm']))
+    floor_removed=cut(before_floor,case)
+    assert volume(floor_removed)>0,'Switch relief removed no material'
     assert max(abs(a-b) for a,b in zip(bounds(original),bounds(case)))<1e-6,'Changed shell outer envelope'
     removed=cut(original,case);assert volume(removed)>0
     outer=external_faces(original);remaining=min(distance(removed,f) for f in outer);assert remaining-assembly['case']['linear_tolerance']>=spec['case_pocket']['minimum_remaining_wall_mm'],('Outer skin too thin',remaining)
@@ -69,7 +74,7 @@ def build_case(spec,assembly):
             protected=BRepPrimAPI_MakeCylinder(gp_Ax2(gp_Pnt(x,y,z0),gp_Dir(0,0,1)),protected_radius,z1-z0).Shape();v=intersection_volume(removed,protected);assert v<1e-6,('Insert support eroded',kind,x,y,v);holes.append({'kind':kind,'axis':[x,y],'protected_radius_mm':protected_radius,'protected_z_range_mm':[z0,z1],'removed_overlap_mm3':v})
     target=OUT/'yeti60-bottom-short-usb.step';write_step(case,target)
     BRepMesh_IncrementalMesh(case,.015,False,.08,True).Perform();stl=StlAPI_Writer();stl.ASCIIMode=False;assert stl.Write(case,str(target.with_suffix('.stl')))
-    return case,{'original_bounds_case_mm':bounds(original),'new_bounds_case_mm':bounds(case),'removed_volume_mm3':volume(removed),'minimum_removed_to_selected_external_skin_mm':remaining,'case_linear_tolerance_mm':assembly['case']['linear_tolerance'],'minimum_remaining_skin_after_tolerance_mm':remaining-assembly['case']['linear_tolerance'],'external_skin_faces_checked':len(outer),'skin_selection':'Downward exterior faces below Z=-7; rear-facing faces reaching Y>-96; outer end faces; original trimmed BReps, conservative minimum distance','insert_supports':holes,'plate_bearing_guard_XY_mm':guard,'service_relief_removed_volume_mm3':volume(service_removed),'service_relief_to_guarded_plate_envelope_mm':distance(service_removed,bearing_guard),'through_height_service_relief_bounds_mm':service['bounds_case_mm'],'complete_service_path_qualified':False,'outputs':{str(p.relative_to(ROOT)):sha(p) for p in [target,target.with_suffix('.stl')]}}
+    return case,{'original_bounds_case_mm':bounds(original),'new_bounds_case_mm':bounds(case),'removed_volume_mm3':volume(removed),'minimum_removed_to_selected_external_skin_mm':remaining,'case_linear_tolerance_mm':assembly['case']['linear_tolerance'],'minimum_remaining_skin_after_tolerance_mm':remaining-assembly['case']['linear_tolerance'],'external_skin_faces_checked':len(outer),'skin_selection':'Downward exterior faces below Z=-7; rear-facing faces reaching Y>-96; outer end faces; original trimmed BReps, conservative minimum distance','insert_supports':holes,'plate_bearing_guard_XY_mm':guard,'service_relief_removed_volume_mm3':volume(service_removed),'service_relief_to_guarded_plate_envelope_mm':distance(service_removed,bearing_guard),'through_height_service_relief_bounds_mm':service['bounds_case_mm'],'switch_floor_relief':{'bounds_case_mm':floor['bounds_case_mm'],'removed_volume_mm3':volume(floor_removed),'minimum_remaining_skin_after_tolerance_mm':min(distance(floor_removed,f) for f in outer)-assembly['case']['linear_tolerance']},'complete_service_path_qualified':False,'outputs':{str(p.relative_to(ROOT)):sha(p) for p in [target,target.with_suffix('.stl')]}}
 
 def input_data(spec):
     assembly=read(ROOT/'docs/audit/yeti60-assembly.json');native=read(BASE/'audit/native-check.json');hashes(native['source_sha256']);assert native['audit_script_sha256']==sha(ROOT/'scripts/check_usb_short_route.py')
@@ -127,6 +132,7 @@ def main():
     for thickness in profile['ordinary_thickness_acceptance_range_mm']:
         d=profile['CAD_finished_envelope_mm']-thickness;r,_,_,_,_=evaluate(spec,assembly,source,exits,case,d);change=max(abs(w['free_length_mm']-next(q['free_length_mm'] for q in result['wires'][f] if q['pin']==w['pin'])) for f,rs in r['wires'].items() for w in rs);assert change<=.5,('Harness length tolerance',thickness,change);variants.append({'pcb_thickness_mm':thickness,'maximum_free_length_change_mm':change,'minimum_expanded_gap_mm':min(w['minimum_expanded_gap_mm'] for rs in r['wires'].values() for w in rs),'crossings':r['crossings']});print('Thickness',thickness,'passed',flush=True)
     sources=[BASE/'interconnect-spec.json',BASE/'EC60-nRF52840.kicad_pcb',BASE/'audit/native-check.json',ROOT/'docs/audit/yeti60-assembly.json',ROOT/'docs/audit/yeti60-daughterboard.json',ROOT/'docs/audit/yeti60-interconnect-connectors.json',ROOT/'docs/audit/yeti60-interconnects.json',ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.raytac.json',ROOT/'mechanical/pcb-fabrication-spec.json',Path(__file__),ROOT/'scripts/usb_short_harness.py',ROOT/'scripts/usb_short_passive_contract.py',ROOT/'scripts/interconnect_geometry.py',ROOT/'scripts/check_yeti60_interconnects.py',ROOT/'scripts/build_yeti60_mechanical.py',ROOT/'scripts/cad_geometry.py']
+    sources.append(BASE/'mechanical-fit-spec.json')
     report={'status':'nine-wire-closed-case-routes-passed','physical_verification':False,'manufacturing_released':False,'case':case_report,'connector_exits_case_mm':exits,'nominal':result,'ordinary_thickness_checks':variants,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources},'limits':['One internal rear relief is required; the original unmodified bottom is not this assembly','Spline twist sweeps are render/manufacturing geometry; collision proof uses conservative full pair tubes on twist sections','Internal conductor order is constrained by the guides; insulation contact within the twisted pair is intentional','No actual wire springback, crimp pull-out, resin shrinkage, RF/USB eye or battery supplier qualification']}
     (AUD/'closed-assembly.json').write_text(json.dumps(report,indent=2)+'\n');print('Closed case routing report written')
 if __name__=='__main__':main()

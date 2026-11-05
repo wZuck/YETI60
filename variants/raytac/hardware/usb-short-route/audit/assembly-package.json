@@ -11,30 +11,34 @@
   "studio_views": 4,
   "physical_acceptance": "open",
   "evidence_sha256": {
-    "closed-assembly.json": "d6dc8d2b2fdcd3f13ff112d091934e9bbdf477382120f58c97111d6abd27cc3b",
-    "guides.json": "56c26aab7ff1e47141ce10026b24c93586c3d6d4de05b2405fd50cbe8c979d74",
-    "assembly.json": "57c4b9c34f5627f86ca110d394cb8a694b295f793b9c70605d233a6d04200c5e",
-    "assembly-meshes.json": "7665bbab6144bcb9c743ae43c9a41ed8606b1033002bbfc9d947ecda1048c8d3",
+    "closed-assembly.json": "d70449bc03f9721b7ed20cd5a40feb3649c5568b12d20fb450e269a2b8bad724",
+    "guides.json": "af5083b46bcac0465f82661a08f20df7e0b2e9721f08a6dd8ffed381fd61c302",
+    "assembly.json": "8c28ae26d9f6cd32864922d478e3dd4c3f33a80d1d5fc55837cde221d6d60c36",
+    "assembly-meshes.json": "86e9eaafc275e543df62f46f3024a472d3017c401d70392bf8ca1950761f7da5",
     "assembly-surfaces.json": "78d2ff53462a17c0b62f21f30add5710645909659c597816b13207493c14a9e4",
-    "assembly-drawings.json": "b23b2fa9536905e268470e9319ec43c60a05e5a257ee573fa50164a77a3fb3d5",
+    "assembly-drawings.json": "38ab01e81418b3d7bd27b6ecf1ee8894bc3ab05522e29197114a77f17d5e9a1d",
     "assembly-bom.json": "f60d9d999fd611efc58f1767213c98bc837b6f3d1ddc9c7b11f6a7365032d843",
-    "feed-budget.json": "a5edad88ca5eed50febbd0f94ac108c1b14ec1f2a549283048ab3d0d521780c2",
-    "vertical-motion.json": "a5c7ebf0712935025b5652b61dc6617fdf093b16c52b7ec5e7fb445f5abe1a9d",
-    "tolerance-diagnostic.json": "a9ec391635ffee900012b18817532c26b2bc55b009d6d43b616427801a55cc5a"
+    "feed-budget.json": "aabfd726c9e1a03a04738f147cf91c0e43b49c351fa4d992a02fc0c9eaad76b2",
+    "vertical-motion.json": "da597fa8de547edf47bc6c6b2c515971669441ce726c21134bed48aa0e72abc8",
+    "tolerance-diagnostic.json": "c06d66a8a6169e896da6e7f41bbe95810491e0c26daf1880a14c4086e163a8f3",
+    "plate-build.json": "63e2a2527570ac9f21c8bad0498d4cc9a5764fe4e26a91c254e4164e00b09d84",
+    "tolerance-fit.json": "87534c8be156b0de264bd054c559f1002caa90ab29ec13562214e4a97211ee4a"
   },
-  "render_manifest_sha256": "4027541fc73e11035a26b2b7d9eb570776b4b311d3751c7f7ff4e9d143631a4f",
+  "render_manifest_sha256": "b7917d29cbac72e635ecf77b215a4ac84522a0d84b60a0f406e30773a756801f",
   "source_sha256": {
-    "scripts/check_usb_short_assembly_package.py": "c5b61adb6b9095ce94ca3925ab4a1738d4f2cdbe86da3269868555f04938c9fd",
+    "scripts/check_usb_short_assembly_package.py": "42dc4ab5fef06d13740a424695babcf21fa26c8fea13dd2895c0444371f9de7a",
     "hardware/usb-short-route/CLOSED-CASE.md": "7a918a8b4682891156bd5e162db2a473c57cc45183127c9f7ff753dd17d0b09f",
     "hardware/usb-short-route/CLOSED-CASE.zh-CN.md": "383445fa2604fa311af86d44bacbe0f5149b85595e673ec47846e286fe7e49ee",
-    "hardware/usb-short-route/SERVICE-PATH.md": "7b4f707a0433d001a22ec356b934d366b287f98908e32951759c3bef8051e03d",
-    "hardware/usb-short-route/SERVICE-PATH.zh-CN.md": "02ac169851a39ed0c909597220454d1c243a20c0fdf33cf6a68df312d78e161f",
-    "hardware/usb-short-route/TOLERANCES.md": "87cc1a1d21c2711ab251bfc183964697ad2a40ba07ffa0ff92f6be5d3c233ee6",
-    "hardware/usb-short-route/TOLERANCES.zh-CN.md": "ab2adb863f1f0933880a56495d6158ca9e8c78ea7f69278953c4d99ce67e90d5"
+    "hardware/usb-short-route/SERVICE-PATH.md": "1c646f7fed4fcafee3365090c589e8cfd123313ffb8a389a8da576f8958894f0",
+    "hardware/usb-short-route/SERVICE-PATH.zh-CN.md": "b728696a0079428784032bf38c8d023662662f6d66c0d0aae9060bd46773066a",
+    "hardware/usb-short-route/TOLERANCES.md": "a3b2c075ab2345c2316a7899f4c2775af7962d39f5f7bf4f0a2aa08437bdb6e3",
+    "hardware/usb-short-route/TOLERANCES.zh-CN.md": "b68c5cf1d808070ac641d395ced86eb169e1a48b27cacf9fe305ff7c7325253c",
+    "hardware/usb-short-route/MECHANICAL-FIT.md": "ed5bd95b464d935b1a5de61cbdca4b192e9353af5902a8dd15b93ac075697c1b",
+    "hardware/usb-short-route/MECHANICAL-FIT.zh-CN.md": "25531ab51f2e98f9468bf1fb57cb7be2b6b2eccc648dd424c4b2e36b4b5fe8b1"
   },
   "open_requirements": [
     "Swept service/mating path and wire springback/retention",
-    "Plate-ear tolerance in both shells and SW100 floor reserve; see TOLERANCES.md",
+    "C04 measured dimensional limits, foam behavior and other full-keyboard tolerances; see MECHANICAL-FIT.md",
     "Supplier-qualified pack and final exact component approvals",
     "Physical USB/BLE, simultaneous charging/input, 60-key calibration, temperature and enclosed RF"
   ]

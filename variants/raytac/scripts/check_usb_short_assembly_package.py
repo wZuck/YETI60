@@ -46,7 +46,7 @@ def verify():
     verify_passives()
     evidence={name:read(BASE/'audit'/name) for name in [
         'closed-assembly.json','guides.json','assembly.json','assembly-meshes.json',
-        'assembly-surfaces.json','assembly-drawings.json','assembly-bom.json','feed-budget.json','vertical-motion.json','tolerance-diagnostic.json']}
+        'assembly-surfaces.json','assembly-drawings.json','assembly-bom.json','feed-budget.json','vertical-motion.json','tolerance-diagnostic.json','plate-build.json','tolerance-fit.json']}
     for record in evidence.values():
         hashes(record.get('source_sha256',{}));hashes(record.get('outputs',{}))
     closed=evidence['closed-assembly.json'];guide=evidence['guides.json'];assembly=evidence['assembly.json'];mesh=evidence['assembly-meshes.json']
@@ -84,6 +84,21 @@ def verify():
     assert len(motion['rear_clip_tolerance_screen'])==6
     assert min(row['remaining_gap_mm'] for row in motion['rear_clip_tolerance_screen'])>=.15-1e-6
     verify_tolerance_evidence(evidence['tolerance-diagnostic.json'],read(ROOT/'mechanical/assembly-spec.raytac.json'),read(ROOT/'mechanical/pcb-fabrication-spec.json'))
+    fitted=evidence['tolerance-fit.json'];fit=read(BASE/'mechanical-fit-spec.json')
+    assert fitted['status']=='bounded-plate-switch-design-fit-passed' and fitted['plate_and_switch_bounded_envelopes_passed']
+    assert not fitted['physical_verification'] and not fitted['manufacturing_released'] and not fitted['complete_keyboard_tolerance_qualified']
+    assert {r['interface'] for r in fitted['interfaces']}=={'plate-top-static','plate-bottom-static','plate-bottom-continuous-extraction','SW100-bottom'}
+    assert all(r['remaining_air_gap_mm']>=fit['minimum_residual_air_gap_mm'] for r in fitted['interfaces'])
+    assert len(fitted['gasket_bearing_checks'])==len(assembly['gaskets'])==8
+    assert all(r['plate_supported_after_XY_allowances'] and abs(r['case_supported_area_mm2']-r['case_expanded_area_mm2'])<1e-5 for r in fitted['gasket_bearing_checks'])
+    sx,sy=fit['gaskets']['finished_size_XY_mm'];stack=assembly['nominal_stack']
+    for layer,z0,z1 in [('lower',3.19,stack['plate_bottom_z']),('upper',stack['plate_bottom_z']+stack['plate_thickness_mm'],6.39)]:
+        for i,(x,y) in enumerate(fit['gaskets']['centers_case_XY_mm'],1):
+            pad=next(p for p in assembly['gaskets'] if p['name']=='gasket-'+layer+'-'+str(i))
+            assert pad['bounds_case_mm']==[x-sx/2,y-sy/2,z0,x+sx/2,y+sy/2,z1],('Wrong installed gasket geometry',layer,i)
+            assert pad['stock_thickness_mm']==fit['gaskets'][layer+'_stock_thickness_mm']
+    assert assembly['plate_geometry']==fit['plate']['step'] and assembly['plate_DXF']==fit['plate']['output']
+    assert evidence['plate-build.json']['key_and_stabilizer_openings_unchanged'] and evidence['plate-build.json']['mounting_holes_unchanged']
     feed=evidence['feed-budget.json']
     assert feed['selected_F1']['mpn']=='0466001.NRHF'
     for filename in ['mainboard-purchase.csv','mainboard-purchase.zh-CN.csv']:
@@ -123,7 +138,7 @@ def verify():
     # 28 standoffs use 3 body segments each; 28 screws use head + shank.
     expected_objects={'bottom':1,'top':1,'plate':1,'pcb':1,'battery':1,'daughterboard':4,
         'caps':119,'switches':120,'domes':60,'springs':60,'stabilizers':15,
-        'standoffs':84,'insulation':56,'pcb-fasteners':56,'shell-hardware':32,'feet':5}
+        'standoffs':84,'insulation':56,'pcb-fasteners':56,'shell-hardware':32,'feet':4,'gasket-lower':4,'gasket-upper':4}
     for group,count in expected_objects.items():
         assert manifest['exploded_visible_objects_by_group'][group]==count,('Incomplete explosion',group)
     assert all(v['in_frame'] and v['above_desk'] for v in manifest['exploded_frame_checks'].values())
@@ -142,9 +157,9 @@ def verify():
         assembly_sheets_per_language=7,studio_views=4,physical_acceptance='open',
         evidence_sha256={name:sha(BASE/'audit'/name) for name in evidence},
         render_manifest_sha256=sha(BASE/'assembly/render-manifest.json'),
-        source_sha256={str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),BASE/'CLOSED-CASE.md',BASE/'CLOSED-CASE.zh-CN.md',BASE/'SERVICE-PATH.md',BASE/'SERVICE-PATH.zh-CN.md',BASE/'TOLERANCES.md',BASE/'TOLERANCES.zh-CN.md']},
+        source_sha256={str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),BASE/'CLOSED-CASE.md',BASE/'CLOSED-CASE.zh-CN.md',BASE/'SERVICE-PATH.md',BASE/'SERVICE-PATH.zh-CN.md',BASE/'TOLERANCES.md',BASE/'TOLERANCES.zh-CN.md',BASE/'MECHANICAL-FIT.md',BASE/'MECHANICAL-FIT.zh-CN.md']},
         open_requirements=['Swept service/mating path and wire springback/retention',
-                           'Plate-ear tolerance in both shells and SW100 floor reserve; see TOLERANCES.md',
+                           'C04 measured dimensional limits, foam behavior and other full-keyboard tolerances; see MECHANICAL-FIT.md',
                            'Supplier-qualified pack and final exact component approvals',
                            'Physical USB/BLE, simultaneous charging/input, 60-key calibration, temperature and enclosed RF'])
 

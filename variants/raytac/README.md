@@ -53,6 +53,8 @@ Based on [Cipulot/EC60](https://github.com/Cipulot/EC60) and [fredlb/felk60](htt
 
 ## Complete materials for one keyboard
 
+**Current candidate ordering:** use the [first-article entry](hardware/usb-short-route/FIRST-ARTICLE.md), [current 75-part purchase table](hardware/usb-short-route/mainboard-purchase.csv), [passive specifications](hardware/usb-short-route/PASSIVES.md), and [C04 plate / shell / eight gasket strips](hardware/usb-short-route/MECHANICAL-FIT.md). Electronic and old-route rows below are retained pre-repair references; common tools/fasteners remain useful subject to those current revisions.
+
 Quantities below are **net installed quantities for one complete keyboard, without spares**. Buy populated mainboard/daughterboard assemblies or their loose parts; do not count the same components twice. Unselected suppliers/MPNs are identified explicitly. A known quantity does not constitute procurement release.
 
 **Fabrication constraint: JLC ordinary four-layer FR-4 only. The previous blind-via/filled-and-capped design has been converted to mechanically drilled through vias; do not order the old HDI files.** Use the latest fabrication review after conversion. No second controller, per-key diodes or MX hot-swap sockets are required.

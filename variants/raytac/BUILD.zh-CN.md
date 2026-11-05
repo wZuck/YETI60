@@ -2,6 +2,8 @@
 
 # YETI60 Raytac：下单、备料、焊接与安装总入口
 
+当前机械修订：[C04 定位板、修补底壳和八条垫片](hardware/usb-short-route/MECHANICAL-FIT.zh-CN.md)。使用候选定位板 DXF，替代原外周。
+
 **当前首板文件：**[修补候选板的制造包、参数与无外壳流程](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)。生产前先完成板厂 DFM，实物验收在制板后进行；关壳文件与后续检修资格分开处理。
 
 USB 修补候选板按[通用阻容采购规格](hardware/usb-short-route/PASSIVES.zh-CN.md)准备材料，包含修订后的 0805 电源电容及库存备注。旧主板压缩包仍未放行。

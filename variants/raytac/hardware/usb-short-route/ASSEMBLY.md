@@ -2,6 +2,8 @@ English | [Chinese](ASSEMBLY.zh-CN.md)
 
 # Raytac repair candidate: enclosed assembly
 
+Current mechanical parts: use the [C04 plate, switch-floor relief and eight gasket strips](MECHANICAL-FIT.md). The older plate perimeter and gasket-stock tray are superseded.
+
 **Service-path progress:** [the internal wing relief and rear clips are revised; continuous nominal rigid extraction passes with leads disconnected](SERVICE-PATH.md). Plug mating/unmating, wire deformation, loose-plug parking and combined tolerances remain unqualified; complete service is not approved.
 
 Use this guide with the [candidate PCB, purchase table and firmware](README.md). It replaces the previous seven-wire enclosure illustrations. The old board archive, old five-piece guides and old cable lengths must not be combined with this assembly. Start electrical work with the candidate's [soldering and open-bench sequence](README.md#solder-and-open-bench-sequence).

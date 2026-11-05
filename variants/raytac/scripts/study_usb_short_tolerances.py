@@ -115,6 +115,7 @@ def verify_evidence(report, spec, fabrication):
 def main():
     from cad_geometry import load, bounds
     from check_usb_short_closed_assembly import hashes
+    from check_yeti60_assembly import box
     assembly = read(BASE/'audit/assembly.json')
     motion = read(BASE/'audit/vertical-motion.json')
     closed = read(BASE/'audit/closed-assembly.json')
@@ -128,7 +129,7 @@ def main():
     side = perimeter(plate_path, assembly['nominal_stack'])
     interfaces = {}
     for name, path in [('plate-top', ROOT/'mechanical/generated/yeti60-top.step'),
-                       ('plate-bottom', BASE/'mechanical/yeti60-bottom-short-usb.step')]:
+                       ('plate-bottom', ROOT/'mechanical/generated/yeti60-bottom.step')]:
         interfaces[name] = clearance(load(path), side)
         print(name, interfaces[name]['nominal_gap_mm'], flush=True)
     for label in ('plate-top', 'plate-bottom'):
@@ -137,14 +138,8 @@ def main():
             d = [b-a for a, b in zip(pair['case'], pair['moving'])]
             assert abs(d[2]) < .00001 and min(abs(d[0]), abs(d[1])) < .00001
             assert max(abs(d[0]), abs(d[1])) > .1
-    for name, label in [('plate-exact-planar-footprint', 'plate-bottom'), ('SW100', 'SW100-bottom')]:
-        measured = next(r for r in motion['limiting_nominal_features'] if r['part'] == name)
-        if label in interfaces:
-            assert abs(measured['nominal_gap_mm']-interfaces[label]['nominal_gap_mm']) < .003
-        else:
-            interfaces[label] = dict(nominal_gap_mm=measured['nominal_gap_mm'],
-                                     nearest_point_pairs_case_mm=measured['nearest_point_pairs_case_mm'])
     switch = next(r for r in assembly['component_envelopes'] if r['ref'] == 'SW100')
+    interfaces['SW100-bottom']=clearance(load(ROOT/'mechanical/generated/yeti60-bottom.step'),box(switch['bounds_case_mm']))
     for pair in interfaces['SW100-bottom']['nearest_point_pairs_case_mm']:
         d = [b-a for a, b in zip(pair['case'], pair['moving'])]
         assert abs(d[0])+abs(d[1]) < .00001 and d[2] > .1
@@ -153,14 +148,15 @@ def main():
                ROOT/'scripts/check_usb_short_closed_assembly.py', BASE/'audit/assembly.json',
                BASE/'audit/vertical-motion.json', BASE/'audit/closed-assembly.json', plate_path,
                ROOT/'mechanical/assembly-spec.raytac.json', ROOT/'mechanical/pcb-fabrication-spec.json',
-               ROOT/'mechanical/generated/yeti60-top.step', BASE/'mechanical/yeti60-bottom-short-usb.step']
+               ROOT/'mechanical/generated/yeti60-top.step', ROOT/'mechanical/generated/yeti60-bottom.step']
     result = dict(status='diagnostic-complete-tolerance-qualification-open',
                   manufacturing_released=False, physical_verification=False, combined_tolerance_qualified=False,
                   project_gap_target_basis='0.15 mm local design reserve; not an IPC/JLC/vendor certification',
                   measured_interfaces=interfaces, measured_plate_perimeter_bounds_mm=bounds(side),
                   directional_budgets=budget(interfaces, spec, fabrication),
                   switch_height_basis=switch['height_basis'],
-                  scope='Three limiting interfaces only; installed outer plate perimeter and SW100 floor. No full key mechanism, fastener, flexing harness or service-access qualification.',
+                  design_scope='Pre-C04 baseline only: original outer plate and original SW100 floor; current repair is evaluated in tolerance-fit.json',
+                  scope='Three baseline interfaces only; no current C04 acceptance, full key mechanism, fastener, flexing harness or service-access qualification.',
                   interpretation='Known directional allowances are a subtotal, not a completed worst-case tolerance stack. A deficit is loss of specified reserve; it is not proof of physical collision. Both shells need the plate-ear repair.',
                   source_sha256={str(p.relative_to(ROOT)):sha(p) for p in sources})
     verify_evidence(result, spec, fabrication)

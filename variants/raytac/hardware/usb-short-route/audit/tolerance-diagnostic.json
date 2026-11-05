@@ -269,6 +269,30 @@
             -116.725,
             -5.5
           ]
+        },
+        {
+          "case": [
+            108.96270522885364,
+            -125.525,
+            -5.909999999999998
+          ],
+          "moving": [
+            108.96270522885364,
+            -125.525,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            109.05407888501013,
+            -116.725,
+            -5.91
+          ],
+          "moving": [
+            109.05407888501013,
+            -116.725,
+            -5.5
+          ]
         }
       ]
     }
@@ -340,20 +364,21 @@
     }
   ],
   "switch_height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
-  "scope": "Three limiting interfaces only; installed outer plate perimeter and SW100 floor. No full key mechanism, fastener, flexing harness or service-access qualification.",
+  "design_scope": "Pre-C04 baseline only: original outer plate and original SW100 floor; current repair is evaluated in tolerance-fit.json",
+  "scope": "Three baseline interfaces only; no current C04 acceptance, full key mechanism, fastener, flexing harness or service-access qualification.",
   "interpretation": "Known directional allowances are a subtotal, not a completed worst-case tolerance stack. A deficit is loss of specified reserve; it is not proof of physical collision. Both shells need the plate-ear repair.",
   "source_sha256": {
-    "scripts/study_usb_short_tolerances.py": "54d73f0342ccd23b5ee0f717e1ddd491769487f696870b1e4811a0e3d492f410",
+    "scripts/study_usb_short_tolerances.py": "c22e2501dcec0422b32407f72e73f628eaff0544b5fe921eef02a4d29e573d61",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/check_yeti60_assembly.py": "049759707a29a2cb0370e2a11764a1c3856897d56be1f772cccfe5692c34bbce",
-    "scripts/check_usb_short_closed_assembly.py": "ad0945730099ac02201369a633fcdedbb8814832e2424b0fa3fcc6debd03dd17",
-    "hardware/usb-short-route/audit/assembly.json": "57c4b9c34f5627f86ca110d394cb8a694b295f793b9c70605d233a6d04200c5e",
-    "hardware/usb-short-route/audit/vertical-motion.json": "a5c7ebf0712935025b5652b61dc6617fdf093b16c52b7ec5e7fb445f5abe1a9d",
-    "hardware/usb-short-route/audit/closed-assembly.json": "d6dc8d2b2fdcd3f13ff112d091934e9bbdf477382120f58c97111d6abd27cc3b",
+    "scripts/check_usb_short_closed_assembly.py": "718d0b5748372434949942f5ecf28caa103a9f8c50350aa9a2d8c1500d0e25ee",
+    "hardware/usb-short-route/audit/assembly.json": "8c28ae26d9f6cd32864922d478e3dd4c3f33a80d1d5fc55837cde221d6d60c36",
+    "hardware/usb-short-route/audit/vertical-motion.json": "da597fa8de547edf47bc6c6b2c515971669441ce726c21134bed48aa0e72abc8",
+    "hardware/usb-short-route/audit/closed-assembly.json": "d70449bc03f9721b7ed20cd5a40feb3649c5568b12d20fb450e269a2b8bad724",
     "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
     "mechanical/assembly-spec.raytac.json": "e7c14e76bbd0f26bb5c43ab8526bc897191050dc1127abab7db5acc24d4010c5",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step": "b317fe4d9c82573db9430fcc2f0105cdd17f98fcf5909b98ae91d2f070249744"
+    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691"
   }
 }

@@ -2,7 +2,7 @@ English | [Chinese](TOLERANCES.zh-CN.md)
 
 # Shell tolerance findings and repair requirements
 
-**The current enclosed assembly is not tolerance-qualified.** This does not prevent the [open-bench first-board sequence](FIRST-ARTICLE.md). Do not order a finished enclosure on the strength of the nominal assembly renders.
+**Pre-C04 baseline diagnostic.** The table below records why the previous plate and switch-floor geometry needed repair. The [current C04 plate, floor pocket and bounded fit results](MECHANICAL-FIT.md) supersede these three baseline deficits. Full keyboard/physical qualification remains open; the [open-bench first-board sequence](FIRST-ARTICLE.md) is available.
 
 [Measured evidence](audit/tolerance-diagnostic.json) · [Reproduce the CAD diagnostic](../../scripts/study_usb_short_tolerances.py) · [Service path](SERVICE-PATH.md)
 
@@ -43,7 +43,7 @@ Unquantified SW100 terms include installed plate Z/gasket variation, board warpa
 
 1. Agree measurable plate outer-profile and installed XY/Z limits with the plate/case suppliers. Include rotation at the furthest locating ear, board warpage, solder standoff and gasket compression; inspect these after assembly.
 2. Revise **both shells** at the locating-ear side walls, or revise the plate registration features while preserving key and fastener centers. Required extra side clearance is at least `0.052 mm + plate/profile/installed-position terms`. Preserve the gasket bearing surfaces, insert support and original FELK60 exterior. A 0.052 mm cut alone is not a complete repair.
-3. Relieve the SW100 floor or alter the stack using a fully recalculated design. A smaller switch envelope is an alternative only when guaranteed maximum part dimensions and bounded installed solder/actuator geometry justify it; recalculate the whole budget. Required extra floor clearance with the current envelope is at least `0.0938 mm + downward plate-position/installed-height/warpage terms`. Verify local exterior skin, the existing access port and screw supports. No new floor-pocket STEP is released by this diagnostic.
+3. Relieve the SW100 floor or alter the stack using a fully recalculated design. A smaller switch envelope is an alternative only when guaranteed maximum part dimensions and bounded installed solder/actuator geometry justify it; recalculate the whole budget. Required extra floor clearance with the current envelope is at least `0.0938 mm + downward plate-position/installed-height/warpage terms`. Verify local exterior skin, the existing access port and screw supports. This retained baseline diagnostic does not contain the repaired floor STEP; use the current MECHANICAL-FIT entry.
 4. Rebuild case/plate outputs, continuous extraction, all component/hardware/harness checks, and drawings/renders from the repaired geometry. Repeat full tolerance analysis at the approved limits, including the purchased NiZ/stabilizer/keycap parts and connected plug service paths.
 5. Measure a first article. CAD clearance does not demonstrate resin strength, adhesive retention, wire springback or full key travel.
 

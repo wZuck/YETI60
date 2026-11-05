@@ -8,7 +8,7 @@ Use this repaired mainboard for the next engineering prototype. Its short USB in
 
 ## Files to send
 
-**Enclosure ordering remains held:** the [current tolerance diagnostic](TOLERANCES.md) finds insufficient known clearance reserve at the plate ears in both shells and below SW100. The open-bench sequence below remains available; enclosure repair and full tolerance acceptance are separate outstanding work.
+Use the [C04 steel plate, revised lower shell and eight gasket strips](MECHANICAL-FIT.md) for the candidate assembly. The previous plate-ear and switch-floor deficits are repaired under the documented dimensional limits. Full keyboard fit, foam/adhesive behavior and connected service remain unqualified; the open-bench sequence below is available.
 
 | Purpose | File | Quantity per keyboard |
 |---|---|---:|

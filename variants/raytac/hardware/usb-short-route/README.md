@@ -2,6 +2,8 @@ English | [Chinese](README.zh-CN.md)
 
 # Raytac USB repair — prototype candidate
 
+Current mechanical revision: [C04 plate, switch-floor pocket and eight gasket strips](MECHANICAL-FIT.md), with bounded plate/switch tolerance evidence. The original plate perimeter is superseded for this candidate.
+
 **Service-path progress:** [the internal wing relief and rear clips are revised; continuous nominal rigid extraction passes with leads disconnected](SERVICE-PATH.md). Plug mating/unmating, wire deformation, loose-plug parking and combined tolerances remain unqualified; complete service is not approved.
 
 **Current candidate fabrication-review files are available.** Use the [first-article ordering and open-bench entry](FIRST-ARTICLE.md) for matching Gerbers, drills, bottom stencil, placement and electrical-test files. Supplier DFM precedes production; physical acceptance follows the first board. This is the Raytac repair, not a third controller. Do not mix the previous archive or harness with it; complete enclosed service remains open.

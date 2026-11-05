@@ -53,6 +53,15 @@ class PackageFailures(unittest.TestCase):
     def test_omitted_module_motion_rejected(self):
         self.rejects('audit/vertical-motion.json',lambda d:d['moving_envelopes'].remove(next(p for p in d['moving_envelopes'] if p['part']=='U1')))
 
+    def test_missing_installed_gasket_rejected(self):
+        self.rejects('assembly/render-manifest.json',lambda d:d['exploded_visible_objects_by_group'].update({'gasket-upper':3}))
+
+    def test_local_fit_cannot_claim_complete_keyboard_acceptance(self):
+        self.rejects('audit/tolerance-fit.json',lambda d:d.update(complete_keyboard_tolerance_qualified=True))
+
+    def test_omitted_continuous_plate_envelope_rejected(self):
+        self.rejects('audit/tolerance-fit.json',lambda d:d['interfaces'].pop(2))
+
     def test_old_USB_length_table_rejected_in_both_languages(self):
         closed=package.read(package.BASE/'audit/closed-assembly.json')
         current=f"{closed['nominal']['wires']['usb'][0]['free_length_mm']:.2f}"

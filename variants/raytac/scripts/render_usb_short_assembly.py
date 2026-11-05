@@ -26,6 +26,11 @@ def adapt(text, before, after, count=1):
 def build_source():
     text = SOURCE.read_text()
     replacements = [
+        ("'feet','electronics']:","'feet','electronics','gasket-lower','gasket-upper']:",2),
+        ("('electronics',.016)]","('electronics',.016),('gasket-lower',.105),('gasket-upper',.125)]",1),
+        ("'electronics']: groups[name].hide_render=True","'electronics','gasket-lower','gasket-upper']: groups[name].hide_render=True",1),
+        ("for group in ['feet','electronics','battery','interconnect']:","for group in ['feet','electronics','battery','interconnect','gasket-lower','gasket-upper']:",1),
+        ("box('Illustrative cut-to-fit gasket stock tray',[80,-246,-10,160,-226,-8],black,'feet',.3)","# Eight installed gasket strips replace the illustrative stock tray.",1),
         ("OUT = ROOT/'renders/yeti60-assembly'; OUT.mkdir(exist_ok=True)",
          "OUT = ROOT/'hardware/usb-short-route/assembly'; OUT.mkdir(exist_ok=True)", 1),
         ("WORK = ROOT/'.assembly-work'", "WORK = ROOT/'.assembly-work/usb-short-assembly'", 1),
@@ -39,7 +44,7 @@ def build_source():
          "else:box(p['ref']+' / part body or clearance envelope',p.get('render_body_bounds_case_mm',p['bounds_case_mm']),mat,'electronics',.02 if p['ref']=='F1' else .12)", 1),
         ("'yellow':(.65,.4,.005)", "'yellow':(.65,.4,.005),'amber':(.53,.24,.025)", 1),
         ("Seven continuous round wires, complete conservative mating envelopes, conformal guides and native C5 CAD; supplier lead-exit datums pending",
-         "Nine continuous round wires, five conservative mating envelopes, 16 removable guides, 12 retention films, three native SH headers, J2 body envelope and native C5 CAD; supplier lead-exit datums pending", 1),
+         "Nine wires, five mating envelopes, 16 guides, 12 films, three native SH headers, J2 envelope, C5 CAD, inset C04 plate and eight dimensioned gasket strips; supplier lead-exit datums pending", 1),
         ("name+' / unmodified source CAD'", "name+' / controlled source CAD'", 1),
     ]
     for before, after, count in replacements:

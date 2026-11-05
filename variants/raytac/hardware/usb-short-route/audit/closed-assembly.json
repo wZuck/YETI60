@@ -19,7 +19,7 @@
       -91.1096578864537,
       11.790000000000015
     ],
-    "removed_volume_mm3": 3331.9985526733058,
+    "removed_volume_mm3": 3373.9255724615064,
     "minimum_removed_to_selected_external_skin_mm": 2.1599999999999797,
     "case_linear_tolerance_mm": 0.15,
     "minimum_remaining_skin_after_tolerance_mm": 2.00999999999998,
@@ -142,10 +142,22 @@
       -113.75,
       12.3
     ],
+    "switch_floor_relief": {
+      "bounds_case_mm": [
+        104.975,
+        -127.525,
+        -6.71,
+        119.025,
+        -114.725,
+        -5.4
+      ],
+      "removed_volume_mm3": 41.9270197832465,
+      "minimum_remaining_skin_after_tolerance_mm": 10.672247855756135
+    },
     "complete_service_path_qualified": false,
     "outputs": {
-      "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step": "b317fe4d9c82573db9430fcc2f0105cdd17f98fcf5909b98ae91d2f070249744",
-      "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.stl": "eda8a31670b2715692280e331a26857d7ea598e68bd096327390b94592638baf"
+      "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step": "40a0f23a7e93a365e9b7fe95efce1c276631771eec777c4701f9fcfd86bfecaa",
+      "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.stl": "d58a59d9c9fc791a624357159d20c172564045055e65a829077434b270d20ce4"
     }
   },
   "connector_exits_case_mm": {
@@ -15792,13 +15804,14 @@
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "mechanical/assembly-spec.raytac.json": "e7c14e76bbd0f26bb5c43ab8526bc897191050dc1127abab7db5acc24d4010c5",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
-    "scripts/check_usb_short_closed_assembly.py": "ad0945730099ac02201369a633fcdedbb8814832e2424b0fa3fcc6debd03dd17",
+    "scripts/check_usb_short_closed_assembly.py": "718d0b5748372434949942f5ecf28caa103a9f8c50350aa9a2d8c1500d0e25ee",
     "scripts/usb_short_harness.py": "8587da881ced0c0305691f13fdf6c54fe42be671bd2f7424d128387cff1400cb",
     "scripts/usb_short_passive_contract.py": "61a06c5f6213a64e54d4dc2803bd788fd921415ec006ad9cdca49b8d2c53c4b2",
     "scripts/interconnect_geometry.py": "a3ea2cd5cbe15cfa5aebaf89d961e3387e9c183e147564f27fa4d5aa9477c5c2",
     "scripts/check_yeti60_interconnects.py": "4ff73c59b68b273ace7cf370d1a3991e816e97961d3004be0dbce6190123f529",
     "scripts/build_yeti60_mechanical.py": "94d487be85af61d06c2c7f7468b8dbcdef1c24cef49c0c8abe3b73cd5547f425",
-    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b"
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "hardware/usb-short-route/mechanical-fit-spec.json": "c001d9d3482061dd4316f647b1a6ddfeecccda4273ab3f0dc088ff38b9c7815b"
   },
   "limits": [
     "One internal rear relief is required; the original unmodified bottom is not this assembly",

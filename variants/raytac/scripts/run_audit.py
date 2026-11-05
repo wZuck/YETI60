@@ -91,14 +91,17 @@ def main():
     add('USB-repair-candidate-local-geometry',cad,'study_usb_short_route.py',deps=['USB-repair-candidate-native','assembly-fit'])
     stages.append(('USB-repair-ground-faults',cad+['tests/audit/test_usb_short_ground.py'],['USB-repair-candidate-local-geometry']))
     add('USB-repair-candidate-firmware',py,'check_usb_short_firmware.py',deps=['USB-repair-candidate-local-geometry'])
-    add('USB-repair-closed-routes',cad,'check_usb_short_closed_assembly.py',deps=['USB-repair-candidate-firmware','interconnect-fit'])
+    add('USB-repair-inset-plate',cad,'build_usb_short_plate.py',deps=['USB-repair-candidate-firmware','assembly-fit'])
+    add('USB-repair-closed-routes',cad,'check_usb_short_closed_assembly.py',deps=['USB-repair-candidate-firmware','interconnect-fit','USB-repair-inset-plate'])
     stages.append(('USB-repair-closed-route-faults',cad+['tests/audit/test_closed_harness.py'],['USB-repair-closed-routes']))
     add('USB-repair-printable-guides',cad,'export_usb_short_guides.py',deps=['USB-repair-closed-routes'])
     add('USB-repair-feed-budget',py,'calculate_usb_short_feed.py',deps=['USB-repair-closed-routes'])
     add('USB-repair-complete-assembly',cad,'export_usb_short_assembly.py',deps=['USB-repair-printable-guides'])
     add('USB-repair-rigid-extraction',cad,'check_usb_short_vertical_motion.py',deps=['USB-repair-complete-assembly'])
     stages.append(('USB-repair-rigid-extraction-faults',cad+['tests/audit/test_vertical_motion.py'],['USB-repair-rigid-extraction']))
-    add('USB-repair-tolerance-diagnostic',cad,'study_usb_short_tolerances.py',deps=['USB-repair-rigid-extraction'])
+    add('USB-repair-bounded-fit',cad,'check_usb_short_fit.py',deps=['USB-repair-rigid-extraction'])
+    stages.append(('USB-repair-bounded-fit-faults',cad+['tests/audit/test_usb_short_fit.py'],['USB-repair-bounded-fit']))
+    add('USB-repair-tolerance-diagnostic',cad,'study_usb_short_tolerances.py',deps=['USB-repair-bounded-fit-faults'])
     stages.append(('USB-repair-tolerance-evidence-faults',py+['tests/audit/test_usb_short_tolerances.py'],['USB-repair-tolerance-diagnostic']))
     add('USB-repair-native-surfaces',native,'export_usb_short_surfaces.py',deps=['USB-repair-candidate-native','USB-repair-complete-assembly'])
     add('USB-repair-surface-maps',cad,'paint_usb_short_surfaces.py',deps=['USB-repair-native-surfaces'])
@@ -146,7 +149,10 @@ def main():
         tolerance=json.loads((ROOT/'hardware/usb-short-route/audit/tolerance-diagnostic.json').read_text())
         outcome['candidate_first_article']['combined_shell_tolerance_qualified']=tolerance['combined_tolerance_qualified']
         outcome['candidate_first_article']['tolerance_diagnostic']='hardware/usb-short-route/TOLERANCES.md'
-        outcome['candidate_first_article']['tolerance_interfaces_with_insufficient_known_reserve']=[r['interface'] for r in tolerance['directional_budgets'] if r['conditional_screen']=='insufficient']
+        outcome['candidate_first_article']['baseline_interfaces_with_insufficient_known_reserve']=[r['interface'] for r in tolerance['directional_budgets'] if r['conditional_screen']=='insufficient']
+        fitted=json.loads((ROOT/'hardware/usb-short-route/audit/tolerance-fit.json').read_text())
+        outcome['candidate_first_article']['current_plate_switch_bounded_fit_passed']=fitted['plate_and_switch_bounded_envelopes_passed']
+        outcome['candidate_first_article']['current_fit_entry']='hardware/usb-short-route/MECHANICAL-FIT.md'
     inventory();(AUD/'outcome.json').write_text(json.dumps(outcome,indent=2)+'\n')
     print(outcome['status'],flush=True)
     return 1 if not okay else (2 if a.require_production else 0)

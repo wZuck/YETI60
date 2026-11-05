@@ -149,6 +149,7 @@ def main():
     closed, guides = read(AUD / 'closed-assembly.json'), read(AUD / 'guides.json')
     hashes(closed['source_sha256']); hashes(guides['source_sha256']); hashes(guides['outputs'])
     hashes(closed['case']['outputs']); hashes(closed['nominal']['generated_step_sha256'])
+    plate_build=read(AUD/'plate-build.json');hashes(plate_build['source_sha256']);hashes(plate_build['outputs'])
     spec = read(BASE / 'interconnect-spec.json')
     assembly, native, exits = input_data(spec)
     housing, checks = check_plugs(spec, assembly, native, exits, closed, guides)
@@ -156,6 +157,8 @@ def main():
     data = copy.deepcopy(assembly)
     data['status'] = 'candidate-closed-assembly-geometry-passed-not-physical'
     data['case_files']['bottom'] = str((BASE / 'mechanical/yeti60-bottom-short-usb.step').relative_to(ROOT))
+    data['plate_geometry']=plate_build['candidate_STEP']
+    data['plate_DXF']=plate_build['candidate_plate']
     data['component_envelopes'] = [p for p in data['component_envelopes'] if p['ref'] not in ['R30', 'R31']]
     native_values = {p.get('ref'):p.findtext('value') for p in ET.parse(BASE / 'netlist.xml').findall('./components/comp')}
     qualification = read(BASE / 'parts-qualification.json')['F1']
@@ -192,6 +195,7 @@ def main():
                     ROOT / 'docs/audit/yeti60-interconnects.json', ROOT / 'scripts/export_yeti60_render_meshes.py',
                     ROOT / 'scripts/usb_short_guides.py', ROOT / 'scripts/usb_short_harness.py',
                     ROOT / 'scripts/cad_geometry.py', ROOT / 'scripts/kicad_sexpr.py', Path(__file__), AUD / 'assembly-bom.json', BASE / 'parts-qualification.json', BASE / 'netlist.xml']
+    dependencies += [AUD/'plate-build.json',BASE/'mechanical-fit-spec.json',ROOT/plate_build['candidate_STEP'],ROOT/plate_build['candidate_plate']]
     data['source_sha256'] = dict(closed['source_sha256']) | {str(p.relative_to(ROOT)): sha(p) for p in dependencies}
     data['mated_housings'] = housing
     data['mated_housing_cross_checks'] = checks
@@ -202,9 +206,18 @@ def main():
     report = AUD / 'assembly.json'
     report.write_text(json.dumps(data, indent=2) + '\n')
     meshes = {name: tessellate(path) for name, path in [('bottom', ROOT / data['case_files']['bottom']),
-              ('top', ROOT / data['case_files']['top']), ('plate', ROOT / '.assembly-work/plate.step'),
+              ('top', ROOT / data['case_files']['top']), ('plate', ROOT / data['plate_geometry']),
               ('pcb', ROOT / '.assembly-work/pcb-placed.step')]}
     extras = []
+    fit=read(BASE/'mechanical-fit-spec.json');g=fit['gaskets'];sx,sy=g['finished_size_XY_mm']
+    data['gaskets']=[]
+    for layer,z0,z1 in [('lower',3.19,data['nominal_stack']['plate_bottom_z']),('upper',data['nominal_stack']['plate_bottom_z']+data['nominal_stack']['plate_thickness_mm'],6.39)]:
+        for i,(x,y) in enumerate(g['centers_case_XY_mm'],1):
+            name='gasket-'+layer+'-'+str(i);bb=[x-sx/2,y-sy/2,z0,x+sx/2,y+sy/2,z1]
+            target=WORK/(name+'.step');write_step(box(bb),target);meshes[name]=tessellate(target)
+            extras.append(dict(name=name,mesh=name,category='gasket',color='black',group='gasket-'+layer))
+            data['gaskets'].append(dict(name=name,bounds_case_mm=bb,stock_thickness_mm=g[layer+'_stock_thickness_mm']))
+    report.write_text(json.dumps(data,indent=2)+'\n')
     public_wires = BASE / 'mechanical/harness'
     public_wires.mkdir(exist_ok=True)
     published = {}

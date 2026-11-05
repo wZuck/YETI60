@@ -2,6 +2,8 @@ English | [Chinese](BUILD.zh-CN.md)
 
 # YETI60 Raytac: ordering and build handbook
 
+Current mechanical revision: [C04 plate, repaired bottom and eight gasket strips](hardware/usb-short-route/MECHANICAL-FIT.md). Use the candidate plate DXF instead of the original outer perimeter.
+
 **Current first-article files:** [repaired candidate package, selections and open-bench procedure](hardware/usb-short-route/FIRST-ARTICLE.md). Obtain supplier DFM before fabrication; physical acceptance follows manufacture. Enclosed service is qualified separately.
 
 For the USB repair candidate, use [generic passive purchasing specifications](hardware/usb-short-route/PASSIVES.md), including revised 0805 power capacitors and existing stock. The old mainboard archive remains held.
