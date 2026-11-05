@@ -123,6 +123,9 @@ def verify():
     assert not short['manufacturing_released'] and not local['manufacturing_released'] and not firmware['physical_verification']
     from check_usb_short_assembly_package import verify as verify_assembly_package
     package=verify_assembly_package()
+    from study_usb_short_tolerances import verify_evidence as verify_tolerance_evidence
+    tolerance=read(candidate/'audit/tolerance-diagnostic.json');hashes(tolerance['source_sha256'])
+    verify_tolerance_evidence(tolerance,read(ROOT/'mechanical/assembly-spec.raytac.json'),read(ROOT/'mechanical/pcb-fabrication-spec.json'))
     exported=read(candidate/'audit/fabrication-export.json');hashes(exported['source_sha256']);hashes(exported['outputs'])
     cam=read(candidate/'audit/fabrication-check.json');hashes(cam['source_sha256'])
     assert cam['status']=='candidate-CAM-native-roundtrip-passed'
@@ -132,7 +135,7 @@ def verify():
     assert cam['IPC']['all_test_records_checked']==cam['IPC']['parsed_records']==1444
     assert cam['IPC']['via_sites_checked']==813 and cam['IPC']['all_pad_sites_checked']==631
     assert cam['stencil']['omitted_DNP']==['JP1'] and cam['stencil']['apertures']==297
-    return {'status':'passed','shared_links':shared_links,'controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements'],'USB_repair_candidate':{'native_and_local_geometry':'passed','firmware':'rebuilt-and-host-checked','manufacturing_released':False,'complete_harness_and_assembly_integration':'installed-geometry-and-publication-checked','assembly_package':package['status'],'service_mating_path_and_physical_acceptance':'open'}}
+    return {'status':'passed','shared_links':shared_links,'controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'provisional stack only; both-shell locating-ear and switch-floor tolerance reserve insufficient','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements'],'USB_repair_candidate':{'native_and_local_geometry':'passed','firmware':'rebuilt-and-host-checked','manufacturing_released':False,'complete_harness_and_assembly_integration':'installed-geometry-and-publication-checked','assembly_package':package['status'],'combined_tolerance_qualified':False,'tolerance_diagnostic':tolerance['status'],'service_mating_path_and_physical_acceptance':'open'}}
 def main():
     try: report=verify()
     except (AssertionError,KeyError,FileNotFoundError,ValueError) as error:

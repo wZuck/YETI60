@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from render_usb_short_assembly import build_source
 from usb_short_passive_contract import verify_passives
+from study_usb_short_tolerances import verify_evidence as verify_tolerance_evidence
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'hardware/usb-short-route'
@@ -45,7 +46,7 @@ def verify():
     verify_passives()
     evidence={name:read(BASE/'audit'/name) for name in [
         'closed-assembly.json','guides.json','assembly.json','assembly-meshes.json',
-        'assembly-surfaces.json','assembly-drawings.json','assembly-bom.json','feed-budget.json','vertical-motion.json']}
+        'assembly-surfaces.json','assembly-drawings.json','assembly-bom.json','feed-budget.json','vertical-motion.json','tolerance-diagnostic.json']}
     for record in evidence.values():
         hashes(record.get('source_sha256',{}));hashes(record.get('outputs',{}))
     closed=evidence['closed-assembly.json'];guide=evidence['guides.json'];assembly=evidence['assembly.json'];mesh=evidence['assembly-meshes.json']
@@ -82,6 +83,7 @@ def verify():
     assert motion['baseline_regression']['unrelieved_PCB_sweep_intersection_mm3']>1
     assert len(motion['rear_clip_tolerance_screen'])==6
     assert min(row['remaining_gap_mm'] for row in motion['rear_clip_tolerance_screen'])>=.15-1e-6
+    verify_tolerance_evidence(evidence['tolerance-diagnostic.json'],read(ROOT/'mechanical/assembly-spec.raytac.json'),read(ROOT/'mechanical/pcb-fabrication-spec.json'))
     feed=evidence['feed-budget.json']
     assert feed['selected_F1']['mpn']=='0466001.NRHF'
     for filename in ['mainboard-purchase.csv','mainboard-purchase.zh-CN.csv']:
@@ -140,8 +142,9 @@ def verify():
         assembly_sheets_per_language=7,studio_views=4,physical_acceptance='open',
         evidence_sha256={name:sha(BASE/'audit'/name) for name in evidence},
         render_manifest_sha256=sha(BASE/'assembly/render-manifest.json'),
-        source_sha256={str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),BASE/'CLOSED-CASE.md',BASE/'CLOSED-CASE.zh-CN.md',BASE/'SERVICE-PATH.md',BASE/'SERVICE-PATH.zh-CN.md']},
+        source_sha256={str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),BASE/'CLOSED-CASE.md',BASE/'CLOSED-CASE.zh-CN.md',BASE/'SERVICE-PATH.md',BASE/'SERVICE-PATH.zh-CN.md',BASE/'TOLERANCES.md',BASE/'TOLERANCES.zh-CN.md']},
         open_requirements=['Swept service/mating path and wire springback/retention',
+                           'Plate-ear tolerance in both shells and SW100 floor reserve; see TOLERANCES.md',
                            'Supplier-qualified pack and final exact component approvals',
                            'Physical USB/BLE, simultaneous charging/input, 60-key calibration, temperature and enclosed RF'])
 

@@ -8,6 +8,8 @@ Use this repaired mainboard for the next engineering prototype. Its short USB in
 
 ## Files to send
 
+**Enclosure ordering remains held:** the [current tolerance diagnostic](TOLERANCES.md) finds insufficient known clearance reserve at the plate ears in both shells and below SW100. The open-bench sequence below remains available; enclosure repair and full tolerance acceptance are separate outstanding work.
+
 | Purpose | File | Quantity per keyboard |
 |---|---|---:|
 | Mainboard PCB; upload to the PCB fabricator | [Candidate Gerbers and separate PTH/NPTH drills](fabrication/yeti60-raytac-candidate-gerbers.zip) | 1 |

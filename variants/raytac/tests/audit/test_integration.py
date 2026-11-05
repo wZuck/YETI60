@@ -133,6 +133,14 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('hardware/usb-short-route/audit/fabrication-check.json',
                      lambda data: data.update(manufacturing_released=True))
 
+    def test_nominal_assembly_cannot_claim_tolerance_release(self):
+        self.rejects('hardware/usb-short-route/audit/tolerance-diagnostic.json',
+                     lambda data: data.update(combined_tolerance_qualified=True))
+
+    def test_top_shell_tolerance_budget_cannot_be_omitted(self):
+        self.rejects('hardware/usb-short-route/audit/tolerance-diagnostic.json',
+                     lambda data: data['directional_budgets'].pop(0))
+
     def test_changed_image_bytes(self):
         original = audit.sha
         path = ROOT / 'renders/yeti60-assembly/assembled.png'

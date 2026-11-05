@@ -1,8 +1,8 @@
 {
   "review_scope": "Canonical Raytac plus isolated short-USB repair candidate; E73 excluded; canonical images/order archive do not describe candidate cables",
-  "review_timestamp_UTC": "2026-11-05T01:32:15.152377+00:00",
+  "review_timestamp_UTC": "2026-11-05T02:03:53.559736+00:00",
   "status": "software-and-CAD-consistency-reviewed",
-  "audit_stages_passed": 78,
+  "audit_stages_passed": 80,
   "DRC_errors": 0,
   "opens": 0,
   "physical_signal_pairs": 267,
@@ -88,8 +88,8 @@
     }
   ],
   "evidence_sha256": {
-    "outcome.json": "76697ac84568e33310ebcfa282116000fa176c082af4f7cb779802a22c04cdf1",
-    "integration.json": "9935e432379f834e6a1247029d6857cb2c89956345c65c6457b7995b6d4b6893",
+    "outcome.json": "e16819b1c171f119d86667ea32d42a7710dea89d135b7d60856f146a7e0be8f7",
+    "integration.json": "9af980fa543e6e4d4c8ec56a455596812f02be8914781721c7dc116078cf5a87",
     "schematic-current.json": "9c39e7886f54bfbfd6cf872bde963c5e61851983f343ad509e341acfc31764de",
     "yeti60-target-check.json": "1d01e7aad89e52546412cc67cb9baf963c412a2a0be7dc0ec03500acbd0568da",
     "yeti60-firmware-simulation.json": "6a977b63c38bde8ac3de2a1d4bec37fc21790ba629aa550dde3f4e25981dfefa",
@@ -97,7 +97,7 @@
     "C5-protection.json": "cf660b99cfecae7c277a72c67c468f7e455a798ef304d82e77d736bbfc019c99",
     "USB-signal-paths.json": "bd40ed131f0870a8b855efd41cd528845a2579c4226a76559924ba4838d056f0",
     "interference-layout.json": "b16cc3d20293f745506331bc23a1efbb43f71ef6260c0e106d8dbe5fee6e85c6",
-    "complete-exploded.json": "fca5fd6e742ac89523a92744e31d4feaa195858c81f62ac943b820152b47efb9",
+    "complete-exploded.json": "a22f86d96375f23da82146831ff91f18b680f61908c2b139be145aa028df5dcd",
     "yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
     "yeti60-inventory.json": "93c8ba7334e445a174fa7764490040ecf1bcdab1050f22934cb2521b16949500",
     "plate-mount.json": "021e05e7c373f0033492c1669fe4cc820b808567fc7b28e290ef671eb234f978",
@@ -108,7 +108,7 @@
     "prototype-research.json": "9dad28634146167ffee17b3d95e758f9b60e5ee58c476ea71a0b0c54a7aca0c0"
   },
   "source_sha256": {
-    "scripts/report_raytac_review.py": "d0950894e1e7d7ae70c23fca713162b8f7c377b501fbbb826ea6f512a6330199",
+    "scripts/report_raytac_review.py": "2ea2ac86719dbc1ebee417c13f4a85204cd3fb8a815fe8be825fdcf416c4a93f",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
     "renders/yeti60-assembly/render-manifest.json": "513b58d6e40733a6c5af048cb65c84eef160028c7c72cca4fde779f1b958839f"
@@ -146,8 +146,9 @@
       "hardware/usb-short-route/audit/native-check.json": "bc53c4a6a1c2105699c2c35c110bb76be33932b94e9dff8b53e38f3022791109",
       "hardware/usb-short-route/audit/geometry-check.json": "f92b54e84594c845f64cfab29de2d4e10a0d2a1f05997cc589700266f98dd4a8",
       "hardware/usb-short-route/firmware/manifest.json": "d36be93342cefbc4fccadcb40c329d9497222c8bd0d5d1e59da8b046d955e917",
-      "hardware/usb-short-route/audit/assembly-package.json": "c513cc068cea5ec5a9b3f0b2724930aa18ed8642c6618c52ef456a09b9e128b5",
-      "hardware/usb-short-route/audit/vertical-motion.json": "04f39e6ca92ac41affd35d04c244de84ae3725608657ba999c78951ee3389d52"
+      "hardware/usb-short-route/audit/assembly-package.json": "b3a7e99ad2544c4d23f582a333a79c2467f1b6ab4d71a6db90de4c9ebe112b36",
+      "hardware/usb-short-route/audit/tolerance-diagnostic.json": "a9ec391635ffee900012b18817532c26b2bc55b009d6d43b616427801a55cc5a",
+      "hardware/usb-short-route/audit/vertical-motion.json": "a5c7ebf0712935025b5652b61dc6617fdf093b16c52b7ec5e7fb445f5abe1a9d"
     },
     "passive_specifications": "hardware/usb-short-route/PASSIVES.md",
     "power_layout_rework_open": false,
@@ -392,6 +393,69 @@
       "status": "nominal-disconnected-rigid-extraction-passed",
       "service_path_qualified": false,
       "report": "hardware/usb-short-route/audit/vertical-motion.json"
+    },
+    "tolerance_diagnostic": {
+      "entry": "hardware/usb-short-route/TOLERANCES.md",
+      "status": "diagnostic-complete-tolerance-qualification-open",
+      "combined_tolerance_qualified": false,
+      "directional_budgets": [
+        {
+          "interface": "plate-top",
+          "nominal_gap_mm": 0.24999999990328345,
+          "known_directional_allowances_mm": {
+            "case_local_wall_inward": 0.15,
+            "plate_CAD_chord_error": 0.002
+          },
+          "known_allowance_sum_mm": 0.152,
+          "optimistic_remaining_gap_mm": 0.09799999990328345,
+          "project_minimum_air_gap_mm": 0.15,
+          "unquantified_terms": [
+            "Plate outer-cut dimension and position tolerances",
+            "Installed plate XY translation, rotation and gasket compliance"
+          ],
+          "additional_clearance_needed_before_unknown_terms_mm": 0.05200000009671654,
+          "conditional_screen": "insufficient",
+          "combined_tolerance_qualified": false
+        },
+        {
+          "interface": "plate-bottom",
+          "nominal_gap_mm": 0.2499999288167162,
+          "known_directional_allowances_mm": {
+            "case_local_wall_inward": 0.15,
+            "plate_CAD_chord_error": 0.002
+          },
+          "known_allowance_sum_mm": 0.152,
+          "optimistic_remaining_gap_mm": 0.09799992881671621,
+          "project_minimum_air_gap_mm": 0.15,
+          "unquantified_terms": [
+            "Plate outer-cut dimension and position tolerances",
+            "Installed plate XY translation, rotation and gasket compliance"
+          ],
+          "additional_clearance_needed_before_unknown_terms_mm": 0.052000071183283786,
+          "conditional_screen": "insufficient",
+          "combined_tolerance_qualified": false
+        },
+        {
+          "interface": "SW100-bottom",
+          "nominal_gap_mm": 0.40999999999999837,
+          "known_directional_allowances_mm": {
+            "finished_PCB_downward_growth": 0.15379999999999994,
+            "shoulder_length": 0.03,
+            "insulating_film": 0.02,
+            "case_floor_inward": 0.15
+          },
+          "known_allowance_sum_mm": 0.3537999999999999,
+          "optimistic_remaining_gap_mm": 0.05619999999999847,
+          "project_minimum_air_gap_mm": 0.15,
+          "unquantified_terms": [
+            "Installed plate Z position and gasket compression variation",
+            "Switch maximum installed height, solder standoff and PCB warpage"
+          ],
+          "additional_clearance_needed_before_unknown_terms_mm": 0.09380000000000152,
+          "conditional_screen": "insufficient",
+          "combined_tolerance_qualified": false
+        }
+      ]
     }
   },
   "bare_board_order_ready_scope": "Previous canonical long-USB research; candidate CAM file availability is reported separately",

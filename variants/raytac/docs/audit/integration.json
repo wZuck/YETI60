@@ -12,7 +12,7 @@
   "controller_count": 1,
   "physical_pin_pairs": 267,
   "matched_mount_holes": 28,
-  "assembly_condition": "provisional stack only",
+  "assembly_condition": "provisional stack only; both-shell locating-ear and switch-floor tolerance reserve insufficient",
   "firmware_condition": "normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested",
   "production_approved": false,
   "open_requirements": [
@@ -78,6 +78,8 @@
     "manufacturing_released": false,
     "complete_harness_and_assembly_integration": "installed-geometry-and-publication-checked",
     "assembly_package": "candidate-assembly-package-consistent",
+    "combined_tolerance_qualified": false,
+    "tolerance_diagnostic": "diagnostic-complete-tolerance-qualification-open",
     "service_mating_path_and_physical_acceptance": "open"
   }
 }

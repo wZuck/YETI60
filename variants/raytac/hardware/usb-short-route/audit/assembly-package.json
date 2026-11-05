@@ -19,18 +19,22 @@
     "assembly-drawings.json": "b23b2fa9536905e268470e9319ec43c60a05e5a257ee573fa50164a77a3fb3d5",
     "assembly-bom.json": "f60d9d999fd611efc58f1767213c98bc837b6f3d1ddc9c7b11f6a7365032d843",
     "feed-budget.json": "a5edad88ca5eed50febbd0f94ac108c1b14ec1f2a549283048ab3d0d521780c2",
-    "vertical-motion.json": "04f39e6ca92ac41affd35d04c244de84ae3725608657ba999c78951ee3389d52"
+    "vertical-motion.json": "a5c7ebf0712935025b5652b61dc6617fdf093b16c52b7ec5e7fb445f5abe1a9d",
+    "tolerance-diagnostic.json": "a9ec391635ffee900012b18817532c26b2bc55b009d6d43b616427801a55cc5a"
   },
   "render_manifest_sha256": "4027541fc73e11035a26b2b7d9eb570776b4b311d3751c7f7ff4e9d143631a4f",
   "source_sha256": {
-    "scripts/check_usb_short_assembly_package.py": "750633ae6cbf1107fa9b378c9e9862465d715a59148339b6262aaf00f2b94af3",
+    "scripts/check_usb_short_assembly_package.py": "c5b61adb6b9095ce94ca3925ab4a1738d4f2cdbe86da3269868555f04938c9fd",
     "hardware/usb-short-route/CLOSED-CASE.md": "7a918a8b4682891156bd5e162db2a473c57cc45183127c9f7ff753dd17d0b09f",
     "hardware/usb-short-route/CLOSED-CASE.zh-CN.md": "383445fa2604fa311af86d44bacbe0f5149b85595e673ec47846e286fe7e49ee",
-    "hardware/usb-short-route/SERVICE-PATH.md": "81490e223489e0f153edeb75da403df7a82ccf1442abc2cbf0c2e427507cbc78",
-    "hardware/usb-short-route/SERVICE-PATH.zh-CN.md": "5f1e9d7c5afcd205522bbb5163bde6c1a7d2ca69c95d028d7c10280df14c8456"
+    "hardware/usb-short-route/SERVICE-PATH.md": "7b4f707a0433d001a22ec356b934d366b287f98908e32951759c3bef8051e03d",
+    "hardware/usb-short-route/SERVICE-PATH.zh-CN.md": "02ac169851a39ed0c909597220454d1c243a20c0fdf33cf6a68df312d78e161f",
+    "hardware/usb-short-route/TOLERANCES.md": "87cc1a1d21c2711ab251bfc183964697ad2a40ba07ffa0ff92f6be5d3c233ee6",
+    "hardware/usb-short-route/TOLERANCES.zh-CN.md": "ab2adb863f1f0933880a56495d6158ca9e8c78ea7f69278953c4d99ce67e90d5"
   },
   "open_requirements": [
     "Swept service/mating path and wire springback/retention",
+    "Plate-ear tolerance in both shells and SW100 floor reserve; see TOLERANCES.md",
     "Supplier-qualified pack and final exact component approvals",
     "Physical USB/BLE, simultaneous charging/input, 60-key calibration, temperature and enclosed RF"
   ]

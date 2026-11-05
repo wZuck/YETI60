@@ -98,12 +98,14 @@ def main():
     add('USB-repair-complete-assembly',cad,'export_usb_short_assembly.py',deps=['USB-repair-printable-guides'])
     add('USB-repair-rigid-extraction',cad,'check_usb_short_vertical_motion.py',deps=['USB-repair-complete-assembly'])
     stages.append(('USB-repair-rigid-extraction-faults',cad+['tests/audit/test_vertical_motion.py'],['USB-repair-rigid-extraction']))
+    add('USB-repair-tolerance-diagnostic',cad,'study_usb_short_tolerances.py',deps=['USB-repair-rigid-extraction'])
+    stages.append(('USB-repair-tolerance-evidence-faults',py+['tests/audit/test_usb_short_tolerances.py'],['USB-repair-tolerance-diagnostic']))
     add('USB-repair-native-surfaces',native,'export_usb_short_surfaces.py',deps=['USB-repair-candidate-native','USB-repair-complete-assembly'])
     add('USB-repair-surface-maps',cad,'paint_usb_short_surfaces.py',deps=['USB-repair-native-surfaces'])
     add('USB-repair-assembly-sheets',cad,'draw_usb_short_assembly.py',deps=['USB-repair-complete-assembly'])
     if a.refresh_renders:
         add('USB-repair-studio-renders',[uv,'run','--python','3.11','--with-requirements',str(ROOT/'requirements-render.txt'),'python'],'render_usb_short_assembly.py',deps=['USB-repair-surface-maps','USB-repair-assembly-sheets'])
-    add('USB-repair-assembly-package',py,'check_usb_short_assembly_package.py',deps=['USB-repair-surface-maps','USB-repair-assembly-sheets','USB-repair-closed-route-faults','USB-repair-feed-budget','USB-repair-rigid-extraction-faults'])
+    add('USB-repair-assembly-package',py,'check_usb_short_assembly_package.py',deps=['USB-repair-surface-maps','USB-repair-assembly-sheets','USB-repair-closed-route-faults','USB-repair-feed-budget','USB-repair-rigid-extraction-faults','USB-repair-tolerance-evidence-faults'])
     stages.append(('USB-repair-package-faults',py+['tests/audit/test_closed_package.py'],['USB-repair-assembly-package']))
     add('documentation',py,'check_project_docs.py')
     dependencies=[name for name,_,_ in stages]
@@ -140,6 +142,11 @@ def main():
         'manufacturing_order_released':False,'physical_acceptance':False,
         'sequence':'Supplier DFM before fabrication; pack confirmation before real-battery connection; physical acceptance after first-board fabrication. Enclosed service is a separate remaining requirement.',
         'previous_canonical_archive':'Held; not replaced or released by candidate file availability'}
+    if states.get('USB-repair-tolerance-diagnostic')=='passed':
+        tolerance=json.loads((ROOT/'hardware/usb-short-route/audit/tolerance-diagnostic.json').read_text())
+        outcome['candidate_first_article']['combined_shell_tolerance_qualified']=tolerance['combined_tolerance_qualified']
+        outcome['candidate_first_article']['tolerance_diagnostic']='hardware/usb-short-route/TOLERANCES.md'
+        outcome['candidate_first_article']['tolerance_interfaces_with_insufficient_known_reserve']=[r['interface'] for r in tolerance['directional_budgets'] if r['conditional_screen']=='insufficient']
     inventory();(AUD/'outcome.json').write_text(json.dumps(outcome,indent=2)+'\n')
     print(outcome['status'],flush=True)
     return 1 if not okay else (2 if a.require_production else 0)
