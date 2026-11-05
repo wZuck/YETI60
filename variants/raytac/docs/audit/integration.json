@@ -10,7 +10,12 @@
     "requirements-render.txt": "../../requirements-render.txt"
   },
   "controller_count": 1,
-  "physical_pin_pairs": 267,
+  "summary_board": "Current short-USB Raytac candidate",
+  "physical_pin_pairs": 411,
+  "retained_reference": {
+    "physical_pin_pairs": 267,
+    "scope": "Canonical long-route reference, not the current first-board package"
+  },
   "matched_mount_holes": 28,
   "assembly_condition": "C04 plate and switch bounded design fit passed; full keyboard/physical acceptance remains open",
   "firmware_condition": "normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested",

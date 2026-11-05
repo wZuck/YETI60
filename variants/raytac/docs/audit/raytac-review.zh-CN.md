@@ -2,17 +2,19 @@
 
 # Raytac 本轮审查结论
 
-**90 个软件／CAD 审查阶段全部通过；尚未放行生产或证明实物工作。** 本轮只覆盖 Raytac，不把旧双方案报告当作本版验收。
+**已记录的 90 个软件／CAD 审查阶段全部通过；尚未放行生产或证明实物工作。** 本轮只覆盖 Raytac，不把旧双方案报告当作本版验收。
+
+下表数值均对应当前短 USB 候选板；旧参考板数据单独标注。
 
 | 范围 | 结果 |
 |---|---|
-| PCB | 0 错误／0 断线；267 对信号连接 |
+| PCB | 0 错误／0 断线；411 对信号连接 |
 | DRC | 保留 102 条非实装图形 courtyard 告警 |
 | ERC | 0 错误；183 条继承离网格告警 |
-| JLC | 816 个普通机械通孔，盘／孔不小于 0.50／0.30 mm |
-| USB / BLE | 普通版／校准版 ARM 构建及 USB500 描述符通过；同时充电与 USB 优先策略已做主机回归 |
-| RF | 厂商最小天线投影内四层铜均清空；实际射频待测 |
-| BOM | 当前候选板 {'status': 'bounded-plate-switch-design-fit-passed', 'physical_verification': False, 'manufacturing_released': False, 'complete_keyboard_tolerance_qualified': False, 'acceptance_limits_are_measured_requirements': True, 'plate_and_switch_bounded_envelopes_passed': True, 'interfaces': [{'interface': 'plate-bottom-static', 'continuous_envelope_gap_mm': 0.44989992881670965, 'case_coordinate_error_L2_bound_mm': 0.25980762113533157, 'computation_guard_mm': 0.002, 'remaining_air_gap_mm': 0.18809230768137808}, {'interface': 'plate-top-static', 'continuous_envelope_gap_mm': 0.4498999999032992, 'case_coordinate_error_L2_bound_mm': 0.25980762113533157, 'computation_guard_mm': 0.002, 'remaining_air_gap_mm': 0.18809237876796764}, {'interface': 'plate-bottom-continuous-extraction', 'continuous_envelope_gap_mm': 0.44989992881670965, 'case_coordinate_error_L2_bound_mm': 0.25980762113533157, 'computation_guard_mm': 0.002, 'remaining_air_gap_mm': 0.18809230768137808}, {'interface': 'SW100-bottom', 'continuous_envelope_gap_mm': 0.6562000000000001, 'case_coordinate_error_L2_bound_mm': 0.25980762113533157, 'computation_guard_mm': 0.002, 'remaining_air_gap_mm': 0.39439237886466855}], 'switch_budget': {'downward_terms_mm': {'board_growth': 0.15379999999999994, 'shoulder': 0.03, 'film': 0.02, 'installed_plate_Z': 0.1, 'mounted_board_bow': 0.15, 'installed_height': 0.10000000000000009}, 'downward_sum_mm': 0.5538000000000001, 'XY_allowance_each_axis_mm': 0.35, 'bounds_case_mm': [106.625, -125.875, -6.0538, 117.375, -116.375, -1.9999999999999998]}, 'gasket_bearing_checks': [{'layer': 'lower', 'index': 1, 'nominal_area_mm2': 99.0, 'case_expanded_area_mm2': 120.96000000000075, 'case_supported_area_mm2': 120.96000000000075, 'plate_supported_after_XY_allowances': True}, {'layer': 'lower', 'index': 2, 'nominal_area_mm2': 99.0, 'case_expanded_area_mm2': 120.96000000000085, 'case_supported_area_mm2': 120.96000000000085, 'plate_supported_after_XY_allowances': True}, {'layer': 'lower', 'index': 3, 'nominal_area_mm2': 99.0, 'case_expanded_area_mm2': 120.95999999999984, 'case_supported_area_mm2': 120.95999999999984, 'plate_supported_after_XY_allowances': True}, {'layer': 'lower', 'index': 4, 'nominal_area_mm2': 99.0, 'case_expanded_area_mm2': 120.9599999999999, 'case_supported_area_mm2': 120.9599999999999, 'plate_supported_after_XY_allowances': True}, {'layer': 'upper', 'index': 1, 'nominal_area_mm2': 99.0, 'case_expanded_area_mm2': 120.96000000000075, 'case_supported_area_mm2': 120.96000000000075, 'plate_supported_after_XY_allowances': True}, {'layer': 'upper', 'index': 2, 'nominal_area_mm2': 99.0, 'case_expanded_area_mm2': 120.96000000000085, 'case_supported_area_mm2': 120.96000000000085, 'plate_supported_after_XY_allowances': True}, {'layer': 'upper', 'index': 3, 'nominal_area_mm2': 99.0, 'case_expanded_area_mm2': 120.95999999999984, 'case_supported_area_mm2': 120.95999999999984, 'plate_supported_after_XY_allowances': True}, {'layer': 'upper', 'index': 4, 'nominal_area_mm2': 99.0, 'case_expanded_area_mm2': 120.9599999999999, 'case_supported_area_mm2': 120.9599999999999, 'plate_supported_after_XY_allowances': True}], 'gasket_force_creep_and_adhesive_qualified': False, 'remaining': ['Incoming and installed dimensional measurement', 'Other components, caps, NiZ mechanisms, stabilizers and full flexible service motion', 'Foam compression force/creep and adhesive qualification', 'Physical electrical/thermal/RF acceptance'], 'source_sha256': {'scripts/check_usb_short_fit.py': '71968bdc410c1a081413839e34dca6606d1b3366c10dd9e7770ee300eb3075e1', 'scripts/build_usb_short_plate.py': 'ff509c0bca2fb7b8ca5a5005231ecc342f86a17c8b321b21978a0ed4ea80b684', 'hardware/usb-short-route/mechanical-fit-spec.json': 'c001d9d3482061dd4316f647b1a6ddfeecccda4273ab3f0dc088ff38b9c7815b', 'hardware/usb-short-route/audit/plate-build.json': '63e2a2527570ac9f21c8bad0498d4cc9a5764fe4e26a91c254e4164e00b09d84', 'hardware/usb-short-route/audit/assembly.json': '8c28ae26d9f6cd32864922d478e3dd4c3f33a80d1d5fc55837cde221d6d60c36', 'hardware/usb-short-route/audit/closed-assembly.json': 'd70449bc03f9721b7ed20cd5a40feb3649c5568b12d20fb450e269a2b8bad724', 'mechanical/assembly-spec.raytac.json': 'e7c14e76bbd0f26bb5c43ab8526bc897191050dc1127abab7db5acc24d4010c5', 'mechanical/pcb-fabrication-spec.json': '3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed', 'mechanical/generated/yeti60-top.step': 'cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b', 'hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step': '40a0f23a7e93a365e9b7fe95efce1c276631771eec777c4701f9fcfd86bfecaa', 'scripts/cad_geometry.py': '4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b', 'scripts/check_yeti60_assembly.py': '049759707a29a2cb0370e2a11764a1c3856897d56be1f772cccfe5692c34bbce', 'scripts/check_usb_short_closed_assembly.py': '718d0b5748372434949942f5ecf28caa103a9f8c50350aa9a2d8c1500d0e25ee', 'hardware/usb-short-route/interconnect-spec.json': 'f17b44770a579595d699bcf128744ac3af68ad77895621e4dfe7f156bdf8b6d7'}} 件；计划用库存 8 件，净补购 67 件 |
+| CAM | 846 处孔槽；813 处过孔；297 个钢网开口 |
+| USB / BLE | 普通版／校准版 ARM 产物与当前来源及 USB500 描述符一致；同时充电与 USB 优先策略已做主机回归 |
+| BOM | 当前候选板 75 件；计划用库存 8 件，净补购 67 件 |
+| 线束 | 当前候选方案共 9 根导线 |
 
 **当前首板采用[短 USB 修补候选包](../../hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)。** 旧长布线压缩包保留为暂停的参考；不能把旧七线图用于当前九线装配。电池保护包仍待供方确认；完整 USB 链路、模拟稳定性及实物验收仍待首板。见[含电池的开台流程](../../OPEN-BENCH.zh-CN.md)。
 
@@ -42,7 +44,8 @@
 | USB 优先 | [实际适配层主机回归](yeti60-firmware-simulation.json)覆盖配置后充电并优先 USB、历史 BLE 偏好、挂起／恢复／复位／拔线和失败重试；USB／BLE 接口为模拟。 |
 | 供电 | [电流和定时计算](yeti60-power-budget.json)、控制网络与适配层符合 BQ24074 输入模式；关机自主 USB100 慢充与固件运行时策略不同。实际温度／电流仍待验收。 |
 | 固件 | [已有普通版／校准版 ARM 产物](yeti60-target-check.json)再次核对当前来源哈希、刷写范围和已链接 USB500 描述符；固件修改后重建普通版与校准版；这些检查不代表执行过目标固件。 |
-| 装配 | [原生装配](yeti60-assembly.json)、[新钢板](plate-mount.json)、28 套五金／H26 留空、1.6 mm 板厚、七根线及图像来源已核对；NiZ 下裙边／卡扣、6U 弯形、预压和局部刚度待实物验收. |
+| 装配 | [当前候选装配](../../hardware/usb-short-route/ASSEMBLY.zh-CN.md)覆盖九根线、C04 定位板、28 套五金／H26 留空、1.6 mm 板厚及图像来源；NiZ 下裙边／卡扣、6U 弯形、预压和局部刚度待实物验收。 |
+
 通用阻容与状态灯已改为[按规格采购](../../hardware/usb-short-route/PASSIVES.zh-CN.md)，七处电源电容同步改成 0805 焊盘，并保留库存备注。完整电源区域已重布，反馈／C46 保守路径缩短为 3.555／4.681 mm；[位置与普通散热通孔说明](../../hardware/usb-short-route/POWER-LAYOUT.zh-CN.md)记录设计检查与实测边界。
 
 ## 独立的 USB 修补候选板
@@ -56,9 +59,9 @@
 固件审查补齐[当前蓝牙槽位恢复与 v3 校准失效规则](../testing/firmware-recovery.zh-CN.md)。两版 ARM 构建的解析设备树已核对 Fn＋双击 Backspace，仅清除当前槽位；实际 CMake 指纹变动和固定版本 ZMK 手势实现经过主机测试。真实配对、模拟时序和充电切换仍需首板验证。
 USB 审查修补[回调式禁充与主机取消配置](../testing/usb-event-policy.zh-CN.md)：固定版本 ZMK 原始 USB 回调经过 11 个主机场景测试，两版 ARM 的实际调用目标已核对。实测回调延迟、挂起电流和电池支撑仍未验收。
 
-## USB 布线的具体限制
+## 旧参考板 USB 布线的具体限制
 
-主板 D+／D− 实际线段中心线分别约 **253.541／249.122 mm**，经过 **4／6 个过孔**。含焊盘接入等桥接的几何接触路径差为 **2.165 mm**；它不是传播延迟差。这里未包含 C5、线束、连接器内部和模组内部。保护导通及 DRC 通过不能证明差分阻抗、回流连续性、共模或 USB 眼图通过；发布制造前需审查完整链路，并在最终线束下实测。
+旧参考板 D+／D− 实际线段中心线分别约 **253.541／249.122 mm**，经过 **4／6 个过孔**。含焊盘接入等桥接的几何接触路径差为 **2.165 mm**；它不是传播延迟差。这里未包含 C5、线束、连接器内部和模组内部。保护导通及 DRC 通过不能证明差分阻抗、回流连续性、共模或 USB 眼图通过；发布制造前需审查完整链路，并在最终线束下实测。
 
 [充电器原厂资料](https://www.ti.com/lit/ds/symlink/bq24074.pdf) · [稳压器原厂资料](https://www.ti.com/lit/ds/symlink/tps63031.pdf)。数据手册复核不能代替本板波形和温升实测。
 

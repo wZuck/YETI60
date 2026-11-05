@@ -161,6 +161,8 @@ def verify():
     candidate=ROOT/'hardware/usb-short-route'
     short=read(candidate/'audit/native-check.json');assert short['status']=='native-candidate-checks-passed'
     assert short['strict_DRC_errors']==short['unconnected_items']==short['schematic_parity_items']==0
+    assert short['physical_pin_pairs_checked']==len(short['physical_pin_pairs'])==411
+    assert all(pair['connected'] for pair in short['physical_pin_pairs'])
     hashes(short['source_sha256']);assert short['audit_script_sha256']==sha(ROOT/'scripts/check_usb_short_route.py')
     local=read(candidate/'audit/geometry-check.json');assert local['status']=='local-header-fit-and-reference-passed';hashes(local['source_sha256'])
     assert all(local['USB_reference_screen'][side]['nearest_adjacent_GND_coverage_fraction']>.999 for side in ['positive','negative'])
@@ -182,7 +184,12 @@ def verify():
     assert cam['IPC']['all_test_records_checked']==cam['IPC']['parsed_records']==1444
     assert cam['IPC']['via_sites_checked']==813 and cam['IPC']['all_pad_sites_checked']==631
     assert cam['stencil']['omitted_DNP']==['JP1'] and cam['stencil']['apertures']==297
-    return {'status':'passed','shared_links':shared_links,'controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':28,'assembly_condition':'C04 plate and switch bounded design fit passed; full keyboard/physical acceptance remains open','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements'],'USB_repair_candidate':{'native_and_local_geometry':'passed','firmware':'rebuilt-and-host-checked','manufacturing_released':False,'complete_harness_and_assembly_integration':'installed-geometry-and-publication-checked','assembly_package':package['status'],'combined_tolerance_qualified':False,'tolerance_diagnostic':tolerance['status'],'service_mating_path_and_physical_acceptance':'open'}}
+    return {'status':'passed','shared_links':shared_links,'controller_count':1,
+            'summary_board':'Current short-USB Raytac candidate',
+            'physical_pin_pairs':short['physical_pin_pairs_checked'],
+            'retained_reference':{'physical_pin_pairs':len(cad['physical_pin_pairs']),
+                                  'scope':'Canonical long-route reference, not the current first-board package'},
+            'matched_mount_holes':28,'assembly_condition':'C04 plate and switch bounded design fit passed; full keyboard/physical acceptance remains open','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements'],'USB_repair_candidate':{'native_and_local_geometry':'passed','firmware':'rebuilt-and-host-checked','manufacturing_released':False,'complete_harness_and_assembly_integration':'installed-geometry-and-publication-checked','assembly_package':package['status'],'combined_tolerance_qualified':False,'tolerance_diagnostic':tolerance['status'],'service_mating_path_and_physical_acceptance':'open'}}
 def main():
     try: report=verify()
     except (AssertionError,KeyError,FileNotFoundError,ValueError) as error:

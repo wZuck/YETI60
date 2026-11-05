@@ -116,6 +116,7 @@ def main():
         add('USB-repair-studio-renders',[uv,'run','--python','3.11','--with-requirements',str(ROOT/'requirements-render.txt'),'python'],'render_usb_short_assembly.py',deps=['USB-repair-surface-maps','USB-repair-assembly-sheets'])
     add('USB-repair-assembly-package',py,'check_usb_short_assembly_package.py',deps=['USB-repair-surface-maps','USB-repair-assembly-sheets','USB-repair-closed-route-faults','USB-repair-feed-budget','USB-repair-rigid-extraction-faults','USB-repair-tolerance-evidence-faults'])
     stages.append(('USB-repair-package-faults',py+['tests/audit/test_closed_package.py'],['USB-repair-assembly-package']))
+    stages.append(('review-publication-fault-injection',py+['tests/audit/test_review_report.py'],['USB-repair-assembly-package','USB-repair-CAM-readback']))
     add('documentation',py,'check_project_docs.py')
     dependencies=[name for name,_,_ in stages]
     add('cross-domain-integration',py,'check_project_integration.py',deps=dependencies)

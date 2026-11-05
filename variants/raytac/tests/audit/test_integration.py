@@ -85,6 +85,14 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/scan-control.json',
                      lambda data: data.update(event_queue_capacity=4))
 
+    def test_missing_candidate_connection_check_rejected(self):
+        self.rejects('hardware/usb-short-route/audit/native-check.json',
+                     lambda data: data['physical_pin_pairs'].pop())
+
+    def test_failed_candidate_connection_check_rejected(self):
+        self.rejects('hardware/usb-short-route/audit/native-check.json',
+                     lambda data: data['physical_pin_pairs'][0].update(connected=False))
+
     def test_missing_unused_fullscale_coverage_rejected(self):
         self.rejects('docs/audit/scan-control.json',
                      lambda data: data['inactive_idle'].update(unused_fullscale_positions=0))

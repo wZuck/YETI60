@@ -5114,8 +5114,8 @@
     },
     {
       "path": "scripts/check_project_integration.py",
-      "bytes": 18245,
-      "sha256": "3016d0e1e5bad72993b71b0dc4d74313d71a4f5bfe4bb943f26e0a9a876d3320",
+      "bytes": 18703,
+      "sha256": "e59b66638caa85b7c2a7eac41387da7d319bb4f9f19ac47c24729f06ee0a78cc",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5420,14 +5420,14 @@
     },
     {
       "path": "scripts/report_raytac_review.py",
-      "bytes": 38455,
-      "sha256": "7a63c0e789f6bc71eb68b56e3a2733fed3feaf14c5d1d26418987b4510ae7372",
+      "bytes": 43030,
+      "sha256": "b732632d40674a3533c95bbbc0ff8ce65709148d069ff03199ed4ea855412338",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "scripts/run_audit.py",
-      "bytes": 17192,
-      "sha256": "cf28203a47f08cd4a304c9c3c2a795f7d69946d4ddbc0730d2b361078f533bda",
+      "bytes": 17349,
+      "sha256": "b7ee2ce175b17b17cffe97154c3686b6a1b498fa0a2993c5abde1d625742cfd1",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5630,8 +5630,8 @@
     },
     {
       "path": "tests/audit/test_integration.py",
-      "bytes": 9561,
-      "sha256": "033894942d1f0cd254440d42989084cef989be0264d84ee0db85a8debf40a2c2",
+      "bytes": 9993,
+      "sha256": "835bfabf4a676aedbc1f852e887a36f13ee7511a54908e8ed7da4121bc4c7571",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5656,6 +5656,12 @@
       "path": "tests/audit/test_prototype_research.py",
       "bytes": 3615,
       "sha256": "801085d0d49ce818ff28ce0448ce3b112ed959ee0dc6b88b308cad555eb2e557",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/audit/test_review_report.py",
+      "bytes": 5148,
+      "sha256": "d9b758cf97cff3a97d147649e22a9a6cd5b83e1fa68438e33ea4250385f05ae1",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
