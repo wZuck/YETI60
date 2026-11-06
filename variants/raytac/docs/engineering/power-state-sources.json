@@ -1,0 +1,37 @@
+{
+  "scope": "Datasheet line items for no-USB, regulator-disabled reference calculations; not a complete board-current bound",
+  "sources": {
+    "BQ24074": {
+      "url": "https://www.ti.com/lit/gpn/bq24074",
+      "document": "SLUS810N, electrical characteristics p12; power-down and power-on sections 9.3.1/9.3.2",
+      "parameter": "IBAT(PDWN)",
+      "typical_uA": 4.3,
+      "maximum_uA": 6.5,
+      "conditions": "Input power not detected; CE low or high; no load on OUT; TJ=85 C"
+    },
+    "TPS63031": {
+      "url": "https://www.ti.com/lit/ds/symlink/tps63031.pdf",
+      "document": "SLVS696D, electrical characteristics p5; shutdown section 8.3.1",
+      "parameter": "IS",
+      "typical_uA": 0.1,
+      "maximum_uA": 0.9,
+      "conditions": "EN=0 V; VIN=VINA=3.6 V"
+    },
+    "TPS22919_U7": {
+      "url": "https://www.ti.com/lit/ds/symlink/tps22919.pdf",
+      "document": "SLVSEN5B, electrical characteristics p5",
+      "parameter": "ISD,VIN",
+      "typical_uA": 0.002,
+      "maximum_uA": 0.8,
+      "conditions": "ON low; VOUT grounded; typical at 25 C; listed maximum over -40..125 C"
+    }
+  },
+  "not_included": [
+    "Pack protection and independent thermal-protection consumption",
+    "Cell self-discharge, leakage through capacitors, board surfaces and external tools",
+    "Full battery voltage/temperature characterization or off-rail backfeed",
+    "BQ quiescent-current change with downstream shutdown loads"
+  ],
+  "whole_board_upper_bound": false,
+  "physical_verification": false
+}

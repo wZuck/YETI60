@@ -46,3 +46,5 @@ The [pinned NVS recovery model](nvs-powercut.md) executes actual NVS/calibration
 [Matrix, Fn and HID pipeline checks](key-pipeline.md) execute pinned ZMK lookup, layer-selection and HID code. Current reports hold six ordinary keys plus separate modifier bits; sixty-key scanning is not full-key rollover. Six scenarios and four rejected mutants pass; actual host/transport acceptance remains open.
 
 [Linked ELF HID-format checks](key-pipeline.md#linked-usb-and-ble-report-formats) match 9/13-byte USB reports to the 16-byte endpoint and 8/12-byte BLE bodies; both maps and Report References agree. Runtime descriptor patching, enumeration and host delivery remain untested.
+
+[Power-state review](../engineering/power-states.md) distinguishes MCU reset, USB bus reset and off state. First-board work now explicitly captures default charging during startup, loss of battery support during suspend and real off-current; pack qualification remains separate.

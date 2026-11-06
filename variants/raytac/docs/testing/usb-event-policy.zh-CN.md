@@ -20,12 +20,12 @@
 
 | 事件／状态 | CE | EN1 | EN2 | 结果 |
 |---|---:|---:|---:|---|
-| 启动／已连接，尚未配置 | 1 | 0 | 0 | 禁止充电；USB100 系统输入 |
+| GPIO 初始化后／已连接，尚未配置 | 1 | 0 | 0 | 禁止充电；USB100 系统输入 |
 | 接受配置字节 1 | 0 | 1 | 0 | 允许充电；USB500 预算与系统共用；优先 USB 按键链路 |
 | 挂起 | 1 | 1 | 1 | 禁充；输入高阻；系统改由电池供电 |
 | 已有效配置后的恢复 | 0 | 1 | 0 | 恢复 USB500／充电 |
-| 复位、拔线、配置零／缺失／无效 | 1 | 0 | 0 | 撤销配置；禁充；有输入时为 USB100 |
-| 复位／取消配置后仅发生恢复 | 1 | 0 | 0 | 恢复事件本身不能重新授权充电 |
+| USB 总线复位、拔线、配置零／缺失／无效 | 1 | 0 | 0 | 撤销配置；禁充；有输入时为 USB100 |
+| USB 总线复位／取消配置后仅发生恢复 | 1 | 0 | 0 | 恢复事件本身不能重新授权充电 |
 | USB 控制器错误 | 1 | 1 | 1 | 禁充；撤销配置 |
 | GPIO 写入或 USB 启用失败 | 1 | 1 | 1 | 尽力禁充／输入高阻；锁定至重启 |
 
@@ -51,3 +51,5 @@
 - [固定版本 Zephyr 配置处理](https://github.com/zmkfirmware/zephyr/blob/10ba6d0cb38bc3d258775d27982f707599320085/subsys/usb/device/usb_device.c)：配置零及配置字节转发；[nRF USB 驱动](https://github.com/zmkfirmware/zephyr/blob/10ba6d0cb38bc3d258775d27982f707599320085/drivers/usb/device/usb_dc_nrfx.c)：USB 工作队列分发。
 - [TI BQ24074 原厂数据表](https://www.ti.com/lit/ds/symlink/bq24074.pdf)：EN1／EN2 模式、CE 及电源路径；输入高阻时保留电池至系统的路径。
 - [USB-IF USB 2.0 规范](https://www.usb.org/document-library/usb-20-specification)：配置、挂起要求的依据；实际合规尚未验收。
+
+**主控复位与 USB 总线复位不同。** GPIO 尚未初始化或主控复位时，R42／R43／R44 下拉允许硬件 USB100 充电；上表不声称此时禁充。挂起期间电池欠压切断或掉电可能丢失易失的 USB 配置／挂起状态并回到默认，尚未验收；见[电源状态及实测要求](../engineering/power-states.zh-CN.md)。

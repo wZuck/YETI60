@@ -20,12 +20,12 @@ Pins are physical active levels: CE is active low. All three are on GPIO0: EN1=P
 
 | Event/state | CE | EN1 | EN2 | Result |
 |---|---:|---:|---:|---|
-| Boot/connected, not configured | 1 | 0 | 0 | No charging; USB100 system input |
+| After GPIO initialization / connected, not configured | 1 | 0 | 0 | No charging; USB100 system input |
 | Configuration byte 1 accepted | 0 | 1 | 0 | Charging allowed; USB500 budget shared with system; USB HID preferred |
 | Suspend | 1 | 1 | 1 | No charging; input high impedance; system uses the battery |
 | Resume after valid configuration | 0 | 1 | 0 | USB500/charging restored |
-| Reset, detach, configuration zero/missing/invalid | 1 | 0 | 0 | Configuration revoked; no charging; USB100 if input exists |
-| Resume following reset/deconfiguration | 1 | 0 | 0 | Resume alone cannot reauthorize charging |
+| USB bus reset, detach, configuration zero/missing/invalid | 1 | 0 | 0 | Configuration revoked; no charging; USB100 if input exists |
+| Resume following USB bus reset/deconfiguration | 1 | 0 | 0 | Resume alone cannot reauthorize charging |
 | USB controller error | 1 | 1 | 1 | No charging; configuration revoked |
 | GPIO write or USB-enable failure | 1 | 1 | 1 | Best-effort disable/high impedance; latched until restart |
 
@@ -51,3 +51,5 @@ Reproduce with `python3 scripts/test_yeti60_usb_events.py`, then build/check bot
 - [Pinned Zephyr configuration handling](https://github.com/zmkfirmware/zephyr/blob/10ba6d0cb38bc3d258775d27982f707599320085/subsys/usb/device/usb_device.c): configuration zero and configuration-byte forwarding; [nRF USB driver](https://github.com/zmkfirmware/zephyr/blob/10ba6d0cb38bc3d258775d27982f707599320085/drivers/usb/device/usb_dc_nrfx.c): USB workqueue dispatch.
 - [TI BQ24074 datasheet](https://www.ti.com/lit/ds/symlink/bq24074.pdf): EN1/EN2 modes, CE and PowerPath; input high impedance retains the battery-to-system path.
 - [USB-IF USB 2.0 specification](https://www.usb.org/document-library/usb-20-specification): governing configuration and suspend requirements; actual conformance remains unqualified.
+
+**MCU reset differs from USB bus reset.** Before GPIO initialization or during MCU reset, R42/R43/R44 permit hardware USB100 charging; the table does not claim inhibition in that state. Loss/cutoff of battery support during suspend can lose volatile USB/configuration state and restore defaults; this remains unqualified. See [power states and required captures](../engineering/power-states.md).

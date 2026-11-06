@@ -28,7 +28,11 @@ New [matrix/Fn/HID pipeline checks](../testing/key-pipeline.md) execute pinned Z
 
 Actual ELF [HID format checks](../testing/key-pipeline.md#linked-usb-and-ble-report-formats) reconcile both maps, report objects and BLE References. USB 9/13-byte reports fit the 16-byte endpoint; BLE bodies are 8/12 bytes. Runtime descriptor patching, enumeration and host delivery remain untested.
 
-A separate [targeted HID followup](hid-format-followup.json) records twelve target-artifact tests plus integration/documentation checks and matches current inputs/outputs. The full audit matrix above is retained from the preceding run; all CAD stages were not rerun for this update.
+The [targeted HID followup](hid-format-followup.json) is a historical snapshot; current linked layout evidence comes from the target checks.
+
+New [off/reset power review](../engineering/power-states.md): SW100 controls regulator enable; undriven charger pins can permit hardware USB100 charging, unlike the initialized firmware inhibit. Datasheet shutdown subtotals are not board bounds; loss of battery support during suspend remains unqualified.
+
+This power-state update uses targeted checks; the full audit matrix above is retained from the preceding run, without rerunning all CAD stages.
 
 ## Repairs and image inspection
 

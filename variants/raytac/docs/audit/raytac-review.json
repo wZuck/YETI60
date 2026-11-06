@@ -1,6 +1,6 @@
 {
   "review_scope": "Current short-USB Raytac candidate; retained canonical long-route evidence explicitly labeled; E73 excluded",
-  "review_timestamp_UTC": "2026-11-06T11:59:21.814660+00:00",
+  "review_timestamp_UTC": "2026-11-06T12:31:56.654027+00:00",
   "status": "software-and-CAD-consistency-reviewed",
   "audit_stages_passed": 92,
   "DRC_errors": 0,
@@ -102,10 +102,11 @@
     "yeti60-inventory.json": "85a2487f7e40c6265207eee51dc9b6f5f6926d914dccdd3030445bed33d48625",
     "plate-mount.json": "021e05e7c373f0033492c1669fe4cc820b808567fc7b28e290ef671eb234f978",
     "key-mechanism-drawing.json": "572d0791e6829581a8ae4968d34be8e82f03c5665705ad4a99ccc9bd833685a1",
-    "yeti60-materials.json": "bfc2c7c8b1be41b296a5fea5c30cd8dc38126f643d278559a34d82143d148d74",
+    "yeti60-materials.json": "d9a95389de94a8a9106ed74e64b22fbaf8ae3eab226def69a41fee4a91f2f34a",
     "calibration.json": "3498ca2f77a9367b4242361bf48698cad0eaeb1a5a01743de1a21566a0ec3b4e",
     "yeti60-power-budget.json": "a562c8a83b6116dfdc0c210c0e39b6e13271bceb0f6bcbe723c0481824c94f4b",
     "prototype-research.json": "5b280a15a492f9f5c36e47798b93f61010c5afb7c2188353dc04c5a6a626723c",
+    "power-states.json": "5e8e4fc088a40977f3e69a19ed5869a22b8b41fb5aa30c941c3422dbe34577ab",
     "key-pipeline.json": "52e30f0e6f032ad18b157c849507ae0d9cf6a1f68f0b3e733e0a186f7bb204d0",
     "firmware-recovery.json": "82c3c5720d29e72ba38d67583c936ed61c8d96d8e79c58bfa3188d832b58e501",
     "usb-event-policy.json": "6ab4e1bc2b4a95d68140ff465abd60ad8a8b2c3682b979d050703bdf01e8d596",
@@ -116,7 +117,7 @@
     "hid-format-followup.json": "9679df9ed7001046d627ae519ee29fc19a868dbea2d6eea165f3cc1caaec42db"
   },
   "source_sha256": {
-    "scripts/report_raytac_review.py": "47ba072436f888aaada81a3292885e3d3ab0f368b8c205c4872137adaafd791d",
+    "scripts/report_raytac_review.py": "89e75296f113faf2e07869248d6c752423267b14da2d686629b7139755179473",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
     "renders/yeti60-assembly/render-manifest.json": "513b58d6e40733a6c5af048cb65c84eef160028c7c72cca4fde779f1b958839f",
@@ -662,6 +663,14 @@
       "complete_keyboard_tolerance_qualified": false
     }
   },
+  "power_state_review": {
+    "entry": "docs/engineering/power-states.md",
+    "evidence": "docs/audit/power-states.json",
+    "status": "power-state-contract-passed-physical-open",
+    "physical_verification": false,
+    "whole_board_upper_bound": false,
+    "recorded_full_matrix_contains_power_state_stage": false
+  },
   "bare_board_order_ready_scope": "Previous canonical long-USB research; candidate CAM file availability is reported separately",
   "tracked_shared_links": {
     "EC60": "../../EC60",
@@ -720,9 +729,9 @@
   "HID_format_followup": {
     "entry": "docs/audit/hid-format-followup.json",
     "status": "targeted-HID-followup-passed",
-    "matches_current_snapshot": true,
+    "matches_current_snapshot": false,
     "full_audit_rerun": false,
-    "scope": "Targeted followup of the recorded full audit",
+    "scope": "Historical targeted followup; current linked format checked independently in target evidence",
     "sha256": "9679df9ed7001046d627ae519ee29fc19a868dbea2d6eea165f3cc1caaec42db"
   }
 }

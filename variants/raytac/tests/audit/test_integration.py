@@ -89,6 +89,14 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/key-pipeline.json',
                      lambda data: data.update(physical_verification=True))
 
+    def test_reset_charge_default_cannot_be_silently_disabled(self):
+        self.rejects('docs/audit/power-states.json',
+                     lambda data: data['reset_default'].update(charge_permission=False))
+
+    def test_off_current_subtotal_cannot_be_whole_board_limit(self):
+        self.rejects('docs/audit/power-states.json',
+                     lambda data: data.update(whole_board_upper_bound=True))
+
     def test_linked_HID_wrong_report_length_rejected(self):
         self.rejects('docs/audit/yeti60-target-check.json',
                      lambda data: data['variants']['normal']['HID_linked_layout']['reports']['keyboard'].update(USB_report_bytes=8))

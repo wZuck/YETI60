@@ -25,6 +25,7 @@
 | 检查扫描故障、未使用位置、空闲及校准 | [不可用／故障处理、按键释放与事件队列测试](docs/testing/scan-control.zh-CN.md) |
 | 检查模拟 GPIO 和初始化故障清理 | [数字输入缓冲断开、AFE 关闭及测试](docs/testing/gpio-mode-policy.zh-CN.md) |
 | 检查静电容脉冲和采样时序 | [边沿修补、RC 模型及首板 timing 命令](docs/testing/analog-waveform.zh-CN.md) |
+| 检查关机、主控复位与电池漏电 | [默认充电状态、关机电流计算及故障捕获](docs/engineering/power-states.zh-CN.md) |
 | 理解 USB 边充边用、挂起和取消配置 | [实际 USB 事件策略与测试证据](docs/testing/usb-event-policy.zh-CN.md) |
 | 清除蓝牙槽位、理解校准变化 | [保护手势及版本兼容](docs/testing/firmware-recovery.zh-CN.md) |
 | 看当前整机、爆炸图及分步安装 | [候选方案装配指南](hardware/usb-short-route/ASSEMBLY.zh-CN.md) |

@@ -8,26 +8,26 @@
     },
     {
       "path": "BUILD.md",
-      "bytes": 9114,
-      "sha256": "ddcae758ff6aca86daae6830de9771838632910f158e653762259f01fae62180",
+      "bytes": 9263,
+      "sha256": "108ed9627f1550ba4adfa9936cc78a8f73b750f3bf702591fd22963624f8420a",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "BUILD.zh-CN.md",
-      "bytes": 8303,
-      "sha256": "a0ebc6d3c8dc270d2033b0fefe26e02f42c6bcc7f3797bcda0f4431243eabf90",
+      "bytes": 8449,
+      "sha256": "5fd9d1138bc2d491323e3f8af873527cfff768739872e0c8038d5a26d3fab39d",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "OPEN-BENCH.md",
-      "bytes": 10220,
-      "sha256": "dd0fae93b61e95b2cb8cd411d8650ff8a784e96e47f52c50b2597bef535107f0",
+      "bytes": 10689,
+      "sha256": "91f6a6f39300038ffa68f9e9c67901a32aa770ceae4a4253bea055529e6327b6",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "OPEN-BENCH.zh-CN.md",
-      "bytes": 9324,
-      "sha256": "c1d32eddd23bbc03190ce3746f219ee46a9e1f0cdb48fdb0b9d12092a26dc9e6",
+      "bytes": 9738,
+      "sha256": "7e6e05079a9bb8c972a346cb75918a2c7dbd6290e783faeff7785f79a7ad8a9c",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1076,14 +1076,32 @@
     },
     {
       "path": "docs/engineering/power-budget.md",
-      "bytes": 11370,
-      "sha256": "8b9623e0352062402559d0abd8674e6c53f671a925b37e059329f85f5462d453",
+      "bytes": 11764,
+      "sha256": "bee86a74892019950ee0a32af5829e12b0a62d408489b960f0952bd85c57b170",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/engineering/power-budget.zh-CN.md",
-      "bytes": 9969,
-      "sha256": "4bd284946a1eb85c0b9e2c03215a73c04d3852e1f6fb50e736fb7d11351e745d",
+      "bytes": 10321,
+      "sha256": "ce2e492d56c3585a248792f07683df01263a824d0b4f6cb17e1468ef78a96e47",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/power-state-sources.json",
+      "bytes": 1519,
+      "sha256": "a79f823d7c0605177d12531ec0bf515221b1fdb2a2f592f05e4a16f06b5567a0",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/power-states.md",
+      "bytes": 6935,
+      "sha256": "be822771a93ad3180347cfff1c4af28f7bc0c27076004cfb19a010c116249944",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/power-states.zh-CN.md",
+      "bytes": 6318,
+      "sha256": "9169ece53db999bf7874d541023e07f53001bc8ce6eb94d02275c4ee9462c3da",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1112,14 +1130,14 @@
     },
     {
       "path": "docs/testing/README.md",
-      "bytes": 7931,
-      "sha256": "4d4c15ee09c84891c8222ea447389c6ae64fd7ea2fa94d8ab916a9a3bb3dd446",
+      "bytes": 8211,
+      "sha256": "c1845fadc58c21d7e71e2651131a59d56b77ce051e1d4c927f1e95388f453707",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/testing/README.zh-CN.md",
-      "bytes": 7990,
-      "sha256": "a314050ab5abde515b7bc17f29ddc2b985cc300187fd9bad09b1f6f6309c8b76",
+      "bytes": 8219,
+      "sha256": "34aa9af7cad5d343f646db377f5472236ffe6c8eccb6d970c9cab54dd0a1ef53",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1256,14 +1274,14 @@
     },
     {
       "path": "docs/testing/usb-event-policy.md",
-      "bytes": 7134,
-      "sha256": "5a20e5b7a148e1457061058f68961d79648c03182d92b861f5a35f3423e07b6b",
+      "bytes": 7570,
+      "sha256": "05be7b6dbf60a6125296b7f6b65db0afeb0ad359036ec41e4ab06c7dbd44ac31",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/testing/usb-event-policy.zh-CN.md",
-      "bytes": 6436,
-      "sha256": "d6ef66d2f3f5561a9ea0af26becce5053c5ff2517d402abb696e87c40c8e4911",
+      "bytes": 6829,
+      "sha256": "45c464e180b5794fc83d2bf6fc3872f051bc80b3a869f57bd1c4d194d3dfc080",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5132,8 +5150,8 @@
     },
     {
       "path": "scripts/check_project_integration.py",
-      "bytes": 19596,
-      "sha256": "7730b856067beaf9a8b2403663f4e36187efb55e66ac572c87e3ae08ce434469",
+      "bytes": 19798,
+      "sha256": "4eb0e7bbef1ac296667080eae0a4fd7ce8f73a2b2e47ccf8916e8c1711c24d28",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5260,6 +5278,12 @@
       "path": "scripts/check_yeti60_plate_mount.py",
       "bytes": 6390,
       "sha256": "0fae485df39f3ad353045faf3ca5f68ee56246e0acedd44d4924f4623d938e01",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "scripts/check_yeti60_power_states.py",
+      "bytes": 5616,
+      "sha256": "ad69d63805f73f0aef17963d1a1bfdfc6f4c271cf021fc9f8cb0fab3b3418534",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5438,14 +5462,14 @@
     },
     {
       "path": "scripts/report_raytac_review.py",
-      "bytes": 47015,
-      "sha256": "47ba072436f888aaada81a3292885e3d3ab0f368b8c205c4872137adaafd791d",
+      "bytes": 48435,
+      "sha256": "89e75296f113faf2e07869248d6c752423267b14da2d686629b7139755179473",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "scripts/run_audit.py",
-      "bytes": 17456,
-      "sha256": "5e23f6e4b1e42924c9afb74bcb7112fde3c6a52f801cddfc13ab6d8f768dc7fd",
+      "bytes": 17703,
+      "sha256": "449242753119194b5c70c413ba0b039a88ec0866408885721dec1805d17955fe",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5666,8 +5690,8 @@
     },
     {
       "path": "tests/audit/test_integration.py",
-      "bytes": 11436,
-      "sha256": "20d45f5798afcface6ccfbc6910064e8a1dfc56177f1f0360e4f41d54de9236b",
+      "bytes": 11848,
+      "sha256": "9d7f065de80790e1c4eafee576b06df6257404852c3df1cd35aba7a259a4c404",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -5686,6 +5710,12 @@
       "path": "tests/audit/test_plate_mount.py",
       "bytes": 1371,
       "sha256": "e5893ac9b099136c3855d8f398e5e4edf0e6063926b10742d0eedfbd0c279182",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "tests/audit/test_power_states.py",
+      "bytes": 1626,
+      "sha256": "5f63e02bd8dd4c0f71dbf86de398e11bcdaa61282e43f839a973eaff986dc96e",
       "coverage": "inventoried-not-automatically-approved"
     },
     {

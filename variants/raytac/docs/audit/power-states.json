@@ -1,0 +1,57 @@
+{
+  "status": "power-state-contract-passed-physical-open",
+  "physical_verification": false,
+  "whole_board_upper_bound": false,
+  "reset_default": {
+    "CE_N": 0,
+    "EN1": 0,
+    "EN2": 0,
+    "USB_input_limit_mA": 100,
+    "charge_permission": true
+  },
+  "firmware_unconfigured": {
+    "CE_N": 1,
+    "EN1": 0,
+    "EN2": 0,
+    "USB_input_limit_mA": 100,
+    "charge_permission": false
+  },
+  "MCU_reset_equals_USB_bus_reset": false,
+  "suspend_battery_loss_qualified": false,
+  "datasheet_line_item_subtotal_uA": {
+    "typical": 4.402,
+    "sum_of_listed_maxima": 8.2,
+    "scope": "Arithmetic sum of different datasheet test conditions, not total or worst-case board current"
+  },
+  "current_sensitivity": [
+    {
+      "assumed_cell_current_uA": 20,
+      "mAh_per_day": 0.48,
+      "mAh_per_30_days": 14.4
+    },
+    {
+      "assumed_cell_current_uA": 50,
+      "mAh_per_day": 1.2,
+      "mAh_per_30_days": 36.0
+    },
+    {
+      "assumed_cell_current_uA": 100,
+      "mAh_per_day": 2.4,
+      "mAh_per_30_days": 72.0
+    }
+  ],
+  "not_verified": [
+    "GPIO/reset/rail-decay timing and actual current",
+    "MCU reboot or pack cutoff while USB host remains suspended",
+    "PCM/internal pack consumption and cell self-discharge",
+    "Full electrical fault behavior, temperature and USB conformity"
+  ],
+  "source_sha256": {
+    "hardware/usb-short-route/netlist.xml": "44f177a827df33c4f9c4c70823169a8c2c3d422588496cb945a33fcdfdcf3c79",
+    "hardware/usb-short-route/components.json": "80f1328add85178cf29a04182782d54b8017f74827ecfca7cb8d9688c8292863",
+    "docs/engineering/power-state-sources.json": "a79f823d7c0605177d12531ec0bf515221b1fdb2a2f592f05e4a16f06b5567a0",
+    "docs/audit/usb-event-policy.json": "6ab4e1bc2b4a95d68140ff465abd60ad8a8b2c3682b979d050703bdf01e8d596",
+    "scripts/check_yeti60_power_states.py": "ad69d63805f73f0aef17963d1a1bfdfc6f4c271cf021fc9f8cb0fab3b3418534",
+    "firmware/target/src/usb_policy.c": "80f26703d2eee50dae22e0a70ae3a416b548d6536f3939c18f5c62c9b9af2075"
+  }
+}

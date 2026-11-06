@@ -127,6 +127,9 @@ def verify():
     from yeti60_key_pipeline_contract import verify as verify_key_pipeline
     pipeline=read(AUD/'key-pipeline.json');hashes(pipeline['source_sha256'])
     verify_key_pipeline(pipeline,target,sha(AUD/'yeti60-target-build.json'))
+    from check_yeti60_power_states import verify_report as verify_power_states
+    power_states=read(AUD/'power-states.json');hashes(power_states['source_sha256'])
+    verify_power_states(power_states)
     calibration=read(AUD/'calibration.json');hashes(calibration['source_sha256'])
     assert calibration['status']=='passed' and not calibration['physical_verification']
     storage=calibration['storage_integrity']

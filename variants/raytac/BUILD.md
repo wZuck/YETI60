@@ -25,6 +25,7 @@ The first board can be tested without an enclosure. Supplier DFM precedes fabric
 | Check scanner faults, unused positions, idle and calibration | [Offline/fault handling, key releases and queue tests](docs/testing/scan-control.md) |
 | Review analog GPIO and initialization cleanup | [Disconnected digital buffers, AFE shutdown and tests](docs/testing/gpio-mode-policy.md) |
 | Review EC pulse and sampling timing | [Edge repair, RC model and first-board timing command](docs/testing/analog-waveform.md) |
+| Check off/reset power states and battery drain | [Default charging, off-current arithmetic and fault captures](docs/engineering/power-states.md) |
 | Understand USB charging, suspend and deconfiguration | [Actual USB event policy and test evidence](docs/testing/usb-event-policy.md) |
 | Clear a Bluetooth slot / understand calibration changes | [Guarded recovery and version compatibility](docs/testing/firmware-recovery.md) |
 | View current assembled/exploded keyboard and assembly steps | [Current candidate assembly guide](hardware/usb-short-route/ASSEMBLY.md) |

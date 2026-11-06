@@ -88,6 +88,8 @@ def main():
         add('pcb-renders',cad,'render_single_nrf.py',['--frames','72','--fps','24','--jobs','2'],deps=['pcb-native-drc'])
         add('assembly-renders',[uv,'run','--python','3.11','--with-requirements',str(ROOT/'requirements-render.txt'),'python'],'render_yeti60_assembly.py',deps=['render-geometry'])
     add('USB-repair-candidate-native',native,'check_usb_short_route.py')
+    add('power-state-contract',py,'check_yeti60_power_states.py',deps=['USB-repair-candidate-native','firmware-USB-event-policy'])
+    stages.append(('power-state-fault-injection',py+['tests/audit/test_power_states.py'],['power-state-contract']))
     add('USB-repair-CAM-export',native,'export_usb_short_fabrication.py',deps=['USB-repair-candidate-native'])
     add('USB-repair-CAM-readback',cam,'check_usb_short_fabrication.py',deps=['USB-repair-CAM-export'])
     stages.append(('USB-repair-CAM-faults',cam+['tests/audit/test_usb_short_fabrication.py'],['USB-repair-CAM-readback']))
