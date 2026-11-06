@@ -4,6 +4,7 @@ import hashlib,json
 from yeti60_calibration_contract import version
 from yeti60_nvs_contract import verify as verify_nvs
 from yeti60_scan_control_contract import verify as verify_scan_control
+from yeti60_key_pipeline_contract import verify as verify_key_pipeline
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';PUB=BASE/'firmware'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -25,7 +26,7 @@ def main():
         assert recovery['window_ms']==400 and recovery['single_tap']==recovery['hold']=='none'
         assert recovery['clears']=='selected BLE profile only' and not recovery['calibration_settings_erase_binding']
     assert len({r['calibration_version'] for r in build['variants'].values()})==1
-    for name in ['build.json','simulation.json','calibration.json','gpio-mode-policy.json','scan-control.json','nvs-powercut.json']:
+    for name in ['build.json','simulation.json','calibration.json','gpio-mode-policy.json','scan-control.json','key-pipeline.json','nvs-powercut.json']:
         d=json.loads((PUB/name).read_text());assert d['status']==('built' if name=='build.json' else 'passed')
         for rel,h in d.get('source_sha256',{}).items():
             p=BASE/Path(rel).name if rel in ['hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb','hardware/ec60-nrf52840/netlist.xml'] else ROOT/rel
@@ -47,6 +48,7 @@ def main():
             assert storage['sliding_32_bit_bursts_rejected']==2433 and len(storage['rejected_mutants'])==3
             assert not storage['physical_power_cut_tested'] and all(c['exit_code']!=0 for c in storage['rejected_mutants'])
         if name=='nvs-powercut.json':verify_nvs(d,build,sha(PUB/'build.json'))
+        if name=='key-pipeline.json':verify_key_pipeline(d,build,sha(PUB/'build.json'))
     for variant in ['normal','calibrator']:
         folder=PUB/'releases'/variant;encoded={};offset=0;ended=False
         for line in (folder/'yeti60-raytac.hex').read_text().splitlines():

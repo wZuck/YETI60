@@ -19,6 +19,7 @@ The first board can be tested without an enclosure. Supplier DFM precedes fabric
 | Wire C5 and power jumper | [J4/J5/J1 pin table and connector quantities](hardware/usb-short-route/README.md#required-connection-map), [power-loss targets](hardware/usb-short-route/POWER-FEED.md) |
 | Flash and calibrate | [Current matched firmware downloads](hardware/usb-short-route/firmware/README.md), [J3/SWD commands and 60-key procedure](docs/build/flashing.md) |
 | Test without a shell, including a battery | [B0–B7 open-bench checks](OPEN-BENCH.md) |
+| Check base/Fn bindings, release order and rollover | [Matrix-to-HID pipeline, six-key limit and physical boundaries](docs/testing/key-pipeline.md) |
 | Check saved calibration and upgrade | [308-byte CRC record, legacy recapture and test limits](docs/testing/calibration-storage.md) |
 | Check interrupted writes and garbage collection | [14,795 NVS recovery-model trials and limits](docs/testing/nvs-powercut.md) |
 | Check scanner faults, unused positions, idle and calibration | [Offline/fault handling, key releases and queue tests](docs/testing/scan-control.md) |

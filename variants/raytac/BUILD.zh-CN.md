@@ -19,6 +19,7 @@
 | 连接 C5 与电源跳线 | [J4／J5／J1 线序与连接器数量](hardware/usb-short-route/README.zh-CN.md#必须采用的连接方式)、[供电压降目标](hardware/usb-short-route/POWER-FEED.zh-CN.md) |
 | 刷写及校准 | [当前配套固件下载](hardware/usb-short-route/firmware/README.zh-CN.md)、[J3／SWD 命令及 60 键步骤](docs/build/flashing.zh-CN.md) |
 | 不做外壳，包含电池验收 | [B0～B7 开台检查](OPEN-BENCH.zh-CN.md) |
+| 检查基础／Fn 键位、松键顺序及同时按键上限 | [矩阵至 HID 链路、六键限制及实测边界](docs/testing/key-pipeline.zh-CN.md) |
 | 检查校准保存、损坏拒绝及升级 | [308 字节 CRC 记录、旧格式重采集和实测边界](docs/testing/calibration-storage.zh-CN.md) |
 | 检查写入中断及垃圾回收恢复 | [14,795 次 NVS 模型试验与验收边界](docs/testing/nvs-powercut.zh-CN.md) |
 | 检查扫描故障、未使用位置、空闲及校准 | [不可用／故障处理、按键释放与事件队列测试](docs/testing/scan-control.zh-CN.md) |

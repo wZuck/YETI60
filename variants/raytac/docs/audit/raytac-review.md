@@ -2,7 +2,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 # Raytac review conclusions
 
-**All 90 recorded software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
+**All 92 recorded software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
 
 The table describes the current short-USB candidate; retained reference-board figures are labeled separately.
 
@@ -23,6 +23,8 @@ See [scanner fault handling](../testing/scan-control.md): unavailable initializa
 The [NVS recovery model](../testing/nvs-powercut.md) passes 14,795 selected write/GC/recovery interruptions and rejects two ordering/live-copy mutants. Actual NVMC, Bluetooth-bond and brownout acceptance remain first-board work. The NVS model itself does not change firmware identifiers.
 
 Idle short-tap correction: the first pending active edge restores fast scanning while retaining two-frame debounce. A modeled 50 ms hold now produces one press/release and a later single-frame spike produces no extra event; see [evidence](../testing/scan-control.md). Upgrade with matched images and recalibrate; actual first-key latency and noise-related power remain unmeasured.
+
+New [matrix/Fn/HID pipeline checks](../testing/key-pipeline.md) execute pinned ZMK functions in six scenarios and reject four mutants. Current reports hold six ordinary keys plus separate modifier bits; a seventh can be omitted. Sixty-key scanning is not full-key rollover. Physical host delivery and transport remain open. These tests leave images and calibration identifiers unchanged.
 
 ## Repairs and image inspection
 

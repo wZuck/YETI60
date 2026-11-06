@@ -42,6 +42,7 @@ def main():
     add('firmware-USB-event-policy',py,'test_yeti60_usb_events.py',deps=['firmware-target-artifacts'])
     add('firmware-GPIO-mode-policy',py,'test_yeti60_gpio_modes.py',deps=['firmware-target-artifacts'])
     add('firmware-scanner-control',py,'test_yeti60_scan_control.py',deps=['firmware-target-artifacts'])
+    add('firmware-key-pipeline',py,'test_yeti60_key_pipeline.py',deps=['firmware-target-artifacts'])
     add('firmware-NVS-powercut-model',py,'test_yeti60_nvs_powercut.py',deps=['firmware-target-artifacts'])
     stages.append(('target-power-fault-injection',py+['tests/audit/test_target.py'],['firmware-target-artifacts']))
     add('firmware-calibration',py,'test_yeti60_calibration.py',deps=['firmware-pin-header'])

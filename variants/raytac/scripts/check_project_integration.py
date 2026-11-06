@@ -121,6 +121,9 @@ def verify():
     assert all(x['exit_code']!=0 for x in scan_control['rejected_mutants'])
     from yeti60_scan_control_contract import verify as verify_scan_control
     verify_scan_control(scan_control,target,sha(AUD/'yeti60-target-build.json'))
+    from yeti60_key_pipeline_contract import verify as verify_key_pipeline
+    pipeline=read(AUD/'key-pipeline.json');hashes(pipeline['source_sha256'])
+    verify_key_pipeline(pipeline,target,sha(AUD/'yeti60-target-build.json'))
     calibration=read(AUD/'calibration.json');hashes(calibration['source_sha256'])
     assert calibration['status']=='passed' and not calibration['physical_verification']
     storage=calibration['storage_integrity']
@@ -167,6 +170,8 @@ def verify():
     local=read(candidate/'audit/geometry-check.json');assert local['status']=='local-header-fit-and-reference-passed';hashes(local['source_sha256'])
     assert all(local['USB_reference_screen'][side]['nearest_adjacent_GND_coverage_fraction']>.999 for side in ['positive','negative'])
     firmware=read(candidate/'firmware/manifest.json');hashes(firmware['source_sha256']);hashes(firmware['published_outputs']);hashes(firmware['evidence'])
+    candidate_pipeline=read(candidate/'firmware/key-pipeline.json');hashes(candidate_pipeline['source_sha256'])
+    verify_key_pipeline(candidate_pipeline,read(candidate/'firmware/build.json'),sha(candidate/'firmware/build.json'))
     assert firmware['native_acceptance_sha256']==sha(candidate/'audit/native-check.json')
     assert firmware['local_geometry_acceptance_sha256']==sha(candidate/'audit/geometry-check.json')
     assert not short['manufacturing_released'] and not local['manufacturing_released'] and not firmware['physical_verification']

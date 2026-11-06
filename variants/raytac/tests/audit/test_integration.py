@@ -85,6 +85,18 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/scan-control.json',
                      lambda data: data.update(event_queue_capacity=4))
 
+    def test_key_pipeline_cannot_claim_physical_acceptance(self):
+        self.rejects('docs/audit/key-pipeline.json',
+                     lambda data: data.update(physical_verification=True))
+
+    def test_key_pipeline_missing_Fn_coverage_rejected(self):
+        self.rejects('docs/audit/key-pipeline.json',
+                     lambda data: data['positive_cases'][1].update(checked=0))
+
+    def test_key_pipeline_wrong_candidate_rollover_rejected(self):
+        self.rejects('hardware/usb-short-route/firmware/key-pipeline.json',
+                     lambda data: data['resolved_HID_configuration'].update(CONFIG_ZMK_HID_KEYBOARD_REPORT_SIZE='60'))
+
     def test_missing_candidate_connection_check_rejected(self):
         self.rejects('hardware/usb-short-route/audit/native-check.json',
                      lambda data: data['physical_pin_pairs'].pop())

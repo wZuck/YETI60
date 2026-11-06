@@ -12,12 +12,12 @@
 
 | 范围 | 证据和边界 |
 |---|---|
-| 原理图与导通 | [原理图新导出一致性](../audit/schematic-current.json)、[原生严格 DRC 与连接](../../hardware/ec60-nrf52840/audit-current.json)、[基线回归](../../hardware/ec60-nrf52840/connectivity-changes.json)；267 对信号连接，无新断线；主板 D1 删除有单独审查，不是忽略缺失器件 |
-| 普通工艺 | [本轮普通工艺检查](../audit/yeti60-ordinary-process.json)；816 个机械通孔，孔／盘不小于 0.30／0.50 mm，无盲埋孔、模组盘中孔或填孔封盖要求 |
+| 原理图与导通 | [当前候选板严格检查](../../hardware/usb-short-route/audit/native-check.json)核对 411 对信号连接，严格 DRC 零错误、零断线；旧参考板的 267 对结果单独保留，不替代当前板。 |
+| 普通工艺 | [当前首板参数](../../hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)、[制造回读](../../hardware/usb-short-route/audit/fabrication-check.json)：普通四层、1.6 mm，813 处过孔、846 处孔槽；旧参考板的 816 个过孔不是当前板数量。 |
 | USB 保护与路径 | [C5 实际保护通道](../audit/C5-protection.json)、[接触点路径提取](../audit/USB-signal-paths.json)；C5 的 U1 1／2／4／5 为保护 I/O，6／7／9／10 的内部未连接脚不能代替保护通道；保留 C5 U1／D1／F1，删除主板重复 D1 长支线；尚无 USB 眼图或整板 ESD 认证 |
 | 天线铜区 | [本版四层原生铜检查](../audit/interference-layout.json)；Raytac 最小 10.5×3.8 mm 投影内 GND 和非 GND 铜面积均为零，并做逐层真实铜注入的负向测试；这不等于实测射频通过 |
 | 固件 | [普通版／校准版目标检查](../audit/yeti60-target-check.json)、[核心与 USB 策略主机回归](../audit/yeti60-firmware-simulation.json)；描述符接受后为 USB500 预算，启用充电并优先 USB 输入，实际充电电流另受设定和负载分流控制 |
-| 结构与线束 | [原生装配检查](../audit/yeti60-assembly.json)、[七根受控线束](../audit/yeti60-interconnects.json)、[60 键映射](../audit/yeti60-key-geometry.json)；无名义实体碰撞，PCB 原有 29 孔、实际安装 28 套紧固件，H26 留空；尺寸和树脂／零件实收公差仍须检验 |
+| 结构与线束 | [当前 C04 装配](../../hardware/usb-short-route/ASSEMBLY.zh-CN.md)、[九根线及理线件](../../hardware/usb-short-route/CLOSED-CASE.zh-CN.md)、[60 键映射](../audit/yeti60-key-geometry.json)；PCB 原有 29 孔、实际安装 28 套紧固件，H26 留空；完整公差与插接检修仍须验收。 |
 | 图纸、材料与完整性 | [75 件物料及库存](../audit/yeti60-inventory.json)、[28 步指南](../assembly/build-guide.zh-CN.md)、[完整爆炸图](../engineering/exploded.zh-CN.md)、[跨域来源校验](../audit/integration.json)；不得手工更新哈希掩盖过期图像 |
 
 原生 PCB 保留 102 条非实装电极、安装图形和探针相关 courtyard 告警；它们不代表 102 只缺件。ERC 仍有 183 条继承的离网格端点告警，新导出网表及引脚合同会独立核对真实连接。共享模拟／放电总线统一为 `APLEX_OUT_PIN_0`，没有把两个 MCU 输出短接。C5 上游默认 DRC 仍有封装／courtyard／边缘间距审查项，不能混同为主板严格 DRC 零错误；首样优先用成品 C5。
@@ -44,3 +44,5 @@
 校准记录现为带独立 CRC-32 的 308 字节，旧 304 字节记录必须重新采集；全局 NVS 设置格式及蓝牙绑定不变。见[校准存储校验与升级](calibration-storage.zh-CN.md)。损坏注入已覆盖，真实闪存断电仍待首板验收。
 
 新增[固定版本 NVS 中断恢复模型](nvs-powercut.zh-CN.md)：实际 NVS／校准加载代码完成 14,795 次指定中断试验，覆盖垃圾回收和恢复期间再次中断；哨兵及恢复后再次保存均通过。它不是物理 NVMC／欠压／蓝牙验收。NVS 模型本身只增加测试；已有候选产物可用 `--host-tests-only` 重新验证并发布测试，来源变动则必须完整构建。
+
+[矩阵、Fn 与 HID 链路](key-pipeline.zh-CN.md)执行固定版本 ZMK 的实际转换、层选择和 HID 代码。当前为六个普通键的 HID 槽位，修饰键另算；60 键扫描不等于全键无冲。六组场景及四个错误变体验证通过，真实主机和传输仍待验收。

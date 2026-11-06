@@ -1,8 +1,8 @@
 {
   "review_scope": "Current short-USB Raytac candidate; retained canonical long-route evidence explicitly labeled; E73 excluded",
-  "review_timestamp_UTC": "2026-11-05T21:58:53.262401+00:00",
+  "review_timestamp_UTC": "2026-11-06T07:30:58.200468+00:00",
   "status": "software-and-CAD-consistency-reviewed",
-  "audit_stages_passed": 90,
+  "audit_stages_passed": 92,
   "DRC_errors": 0,
   "opens": 0,
   "physical_signal_pairs": 411,
@@ -88,7 +88,7 @@
     }
   ],
   "evidence_sha256": {
-    "outcome.json": "4feb6a5e3502b538438e91387625b50680092052e4349fcaee9fe91b30922161",
+    "outcome.json": "0eb56fc915741b4b7bb0ec27bf695f758a49dc42719990064936c8f631d772a6",
     "integration.json": "56dcc56eff0efd97b44f2347e008451f10b22a96b1824529770ad18921e3c82b",
     "schematic-current.json": "9c39e7886f54bfbfd6cf872bde963c5e61851983f343ad509e341acfc31764de",
     "yeti60-target-check.json": "778c3135326b25548043b6e3cd932455a66532b16f364620410064aed01e64ff",
@@ -97,31 +97,32 @@
     "C5-protection.json": "cf660b99cfecae7c277a72c67c468f7e455a798ef304d82e77d736bbfc019c99",
     "USB-signal-paths.json": "bd40ed131f0870a8b855efd41cd528845a2579c4226a76559924ba4838d056f0",
     "interference-layout.json": "b16cc3d20293f745506331bc23a1efbb43f71ef6260c0e106d8dbe5fee6e85c6",
-    "complete-exploded.json": "364e999ff3330e54b398488c0a6a2429b65f55cc9549edfa92bd02ad9fb35170",
+    "complete-exploded.json": "b868f0a0d7a32703abd49d5de93b3af9134961bdb8e77ef36dc2baabc9a85d3c",
     "yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
     "yeti60-inventory.json": "85a2487f7e40c6265207eee51dc9b6f5f6926d914dccdd3030445bed33d48625",
     "plate-mount.json": "021e05e7c373f0033492c1669fe4cc820b808567fc7b28e290ef671eb234f978",
     "key-mechanism-drawing.json": "572d0791e6829581a8ae4968d34be8e82f03c5665705ad4a99ccc9bd833685a1",
-    "yeti60-materials.json": "b573807c6229b23d06b8c0f4ad43361aec3b66f423d2219c5d213ae3922b21ea",
+    "yeti60-materials.json": "dee0f6f96f339189d1253fd98bd5b51b3efcf2ea4a15f3c22d0d0b86182673fa",
     "calibration.json": "3498ca2f77a9367b4242361bf48698cad0eaeb1a5a01743de1a21566a0ec3b4e",
     "yeti60-power-budget.json": "a562c8a83b6116dfdc0c210c0e39b6e13271bceb0f6bcbe723c0481824c94f4b",
     "prototype-research.json": "5b280a15a492f9f5c36e47798b93f61010c5afb7c2188353dc04c5a6a626723c",
+    "key-pipeline.json": "52e30f0e6f032ad18b157c849507ae0d9cf6a1f68f0b3e733e0a186f7bb204d0",
     "firmware-recovery.json": "82c3c5720d29e72ba38d67583c936ed61c8d96d8e79c58bfa3188d832b58e501",
     "usb-event-policy.json": "6ab4e1bc2b4a95d68140ff465abd60ad8a8b2c3682b979d050703bdf01e8d596",
-    "analog-waveform.json": "a62f25993f2df2287cd533529d9921eecafb5dbb13a689ebd901dae2f74d58a7",
+    "analog-waveform.json": "c9c6393eef447b6aea075f56b6650b31a803d2f1f1ce8bc8c007c5c8997ab0eb",
     "gpio-mode-policy.json": "00a103fee2d49bc001a4748bb2cbba5e374f9f5bc600d48ddc8af645e998e648",
     "scan-control.json": "33e781d20d3b50ba9c8cb2e5744de0488e72b52885f8ee48971611bd117da138",
     "nvs-powercut.json": "01d47c7cc5437f999a60387ea1eafd2848032e121bc10b5d3ca1cae57f4838da"
   },
   "source_sha256": {
-    "scripts/report_raytac_review.py": "b732632d40674a3533c95bbbc0ff8ce65709148d069ff03199ed4ea855412338",
+    "scripts/report_raytac_review.py": "3e82ef2cbb38d9a4f417c74081f81f29aa0ace9e709f0cd23756618a47d2b07e",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
     "renders/yeti60-assembly/render-manifest.json": "513b58d6e40733a6c5af048cb65c84eef160028c7c72cca4fde779f1b958839f",
     "hardware/usb-short-route/mainboard-purchase.csv": "753ec64110df03c84c5af0e09248165020cc5fd034c6d55ced51ba8614f5bb13",
     "hardware/usb-short-route/audit/native-check.json": "bc53c4a6a1c2105699c2c35c110bb76be33932b94e9dff8b53e38f3022791109",
     "hardware/usb-short-route/audit/fabrication-check.json": "07ddab5d85a69886ffc99417434a0288479441d46ab583bfbc26ec61faf3ddc7",
-    "hardware/usb-short-route/audit/assembly-package.json": "57abc20ecb600cc83f4b0c6e7b2d56c409057f3f0824d6e071c4bdea562cbb12"
+    "hardware/usb-short-route/audit/assembly-package.json": "82e882d3103cfeb649ea3d8abb8ae8645a11dd0e77d56639b340f38752fc2956"
   },
   "functional_acceptance_passed": false,
   "firmware_artifacts_verified": true,
@@ -151,11 +152,11 @@
     "evidence_sha256": {
       "hardware/usb-short-route/audit/native-check.json": "bc53c4a6a1c2105699c2c35c110bb76be33932b94e9dff8b53e38f3022791109",
       "hardware/usb-short-route/audit/geometry-check.json": "f92b54e84594c845f64cfab29de2d4e10a0d2a1f05997cc589700266f98dd4a8",
-      "hardware/usb-short-route/firmware/manifest.json": "18f9567137bb8ec539296fa0b0cd0a6c41d1130f6b7393a45f910a634aa25d8c",
-      "hardware/usb-short-route/audit/assembly-package.json": "57abc20ecb600cc83f4b0c6e7b2d56c409057f3f0824d6e071c4bdea562cbb12",
+      "hardware/usb-short-route/firmware/manifest.json": "e6f9375812ed28879696726ec56150daff64b5b961926ff13d7c56bf06d73a39",
+      "hardware/usb-short-route/audit/assembly-package.json": "82e882d3103cfeb649ea3d8abb8ae8645a11dd0e77d56639b340f38752fc2956",
       "hardware/usb-short-route/audit/tolerance-fit.json": "87534c8be156b0de264bd054c559f1002caa90ab29ec13562214e4a97211ee4a",
-      "hardware/usb-short-route/audit/tolerance-diagnostic.json": "95d5fd59462522e5da2b92124360e7b366a8481ea93f9b20f7e4a7b5ae76aeb1",
-      "hardware/usb-short-route/audit/vertical-motion.json": "48fd849d90af325feb052b59647e9fd19be015cfe39ced72bd0673860d2b01a5"
+      "hardware/usb-short-route/audit/tolerance-diagnostic.json": "335a2efb88c91541e9e3d04118452d40b5cc17d7889f216f364e8f195e2284c2",
+      "hardware/usb-short-route/audit/vertical-motion.json": "1d60342224f5208de3f2813709f102a134f9fc29a33b79e6eb7eee136fc4253f"
     },
     "firmware_recovery": {
       "entry": "docs/testing/firmware-recovery.md",
@@ -189,6 +190,14 @@
       "status": "passed",
       "positive_cases": 5,
       "rejected_mutants": 4,
+      "physical_verification": false
+    },
+    "key_pipeline": {
+      "entry": "docs/testing/key-pipeline.md",
+      "candidate_evidence": "hardware/usb-short-route/firmware/key-pipeline.json",
+      "positive_cases": 6,
+      "rejected_mutants": 4,
+      "ordinary_HID_key_slots": 6,
       "physical_verification": false
     },
     "passive_specifications": "hardware/usb-short-route/PASSIVES.md",
