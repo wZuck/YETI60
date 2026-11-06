@@ -2,7 +2,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 # Raytac review conclusions
 
-**All 92 recorded software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
+**All 96 recorded software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
 
 The table describes the current short-USB candidate; retained reference-board figures are labeled separately.
 
@@ -15,6 +15,8 @@ The table describes the current short-USB candidate; retained reference-board fi
 | USB / BLE | Current normal/calibrator ARM artifacts and USB500 descriptors checked; simultaneous charge/wired-priority policy host-tested |
 | BOM | Current candidate: 75 parts; 8 planned from stock, 67 net purchases |
 | Harness | Current candidate: 9 conductors |
+
+The current [fresh-source build record](published-source-build.json) matches the published files: both targets were rebuilt and host-checked from project sources without local build directories and a separate locked dependency workspace; HEX/BIN bytes and calibration identifiers are unchanged. Internet-only first downloading was blocked by local container connectivity and is not counted as passed. Native KiCad 3D model closure remains open. See [environment and full boundaries](../build/firmware-environment.md).
 
 **Use the [short-USB repair candidate package](../../hardware/usb-short-route/FIRST-ARTICLE.md) for the current first board.** The old long-route archive remains a held reference; its seven-wire illustrations do not describe the current nine-wire assembly. Pack confirmation, complete USB-link/analog stability and physical acceptance remain open. See the [battery-inclusive open-bench flow](../../OPEN-BENCH.md).
 
@@ -31,8 +33,6 @@ Actual ELF [HID format checks](../testing/key-pipeline.md#linked-usb-and-ble-rep
 The [targeted HID followup](hid-format-followup.json) is a historical snapshot; current linked layout evidence comes from the target checks.
 
 New [off/reset power review](../engineering/power-states.md): SW100 controls regulator enable; undriven charger pins can permit hardware USB100 charging, unlike the initialized firmware inhibit. Datasheet shutdown subtotals are not board bounds; loss of battery support during suspend remains unqualified.
-
-This power-state update uses targeted checks; the full audit matrix above is retained from the preceding run, without rerunning all CAD stages.
 
 ## Repairs and image inspection
 

@@ -108,7 +108,7 @@
       "builtin_atomics": true
     }
   },
-  "build_manifest_sha256": "d462179166f2f4d536740ae349be525e44188af6aa6793db68f85893f650deab",
+  "build_manifest_sha256": "1f545c73c0c303ce70b8ab5c593dcb35e1ff50539364b6f05d4e3ed7271558b3",
   "physical_verification": false,
   "calibration_contract_version": "0xe6ef48e1",
   "recovery_binding": {
@@ -122,7 +122,7 @@
     "calibration_settings_erase_binding": false
   },
   "verification_recipe_sha256": {
-    "scripts/check_yeti60_target.py": "25d7979aa3ca2ff34eecb178ac6ac092d0f079e886406f57a765bfbf72600f9d",
+    "scripts/check_yeti60_target.py": "8323da5be243a8809596fd502740b73423d191cd9b72d313601afe5668f2da60",
     "scripts/yeti60_hid_contract.py": "37b89bb716e05845cbc664376c60667e998a7c07cb8a0144ebd33fbd2297088b"
   },
   "pinned_ATT_header_sha256": "82f614cace23c38e6e8bfa20f37aafbe7ab6de9ed92b91d09fe2479d16fa322f"

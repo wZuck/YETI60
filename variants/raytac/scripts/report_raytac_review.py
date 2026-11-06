@@ -64,6 +64,7 @@ def main():
  files=['outcome.json','integration.json','schematic-current.json','yeti60-target-check.json','yeti60-firmware-simulation.json','yeti60-ordinary-process.json','C5-protection.json','USB-signal-paths.json','interference-layout.json','complete-exploded.json','yeti60-assembly.json','yeti60-inventory.json','plate-mount.json','key-mechanism-drawing.json','yeti60-materials.json','calibration.json','yeti60-power-budget.json','prototype-research.json']
  files.extend(['power-states.json','key-pipeline.json','firmware-recovery.json','usb-event-policy.json','analog-waveform.json','gpio-mode-policy.json','scan-control.json','nvs-powercut.json'])
  if (AUD/'hid-format-followup.json').exists():files.append('hid-format-followup.json')
+ if (AUD/'published-source-build.json').exists():files.append('published-source-build.json')
  evidence={n:read(AUD/n) for n in files}
  assert evidence['outcome.json']['checks_passed'] and all(s['state']=='passed' for s in evidence['outcome.json']['stages'])
  assert evidence['integration.json']['status']=='passed'
@@ -164,6 +165,11 @@ def main():
       'matches_current_snapshot':followup_current,'full_audit_rerun':False,
       'scope':'Targeted followup of the recorded full audit' if followup_current else 'Historical targeted followup; current linked format checked independently in target evidence',
       'sha256':sha(AUD/'hid-format-followup.json')}
+ if 'published-source-build.json' in evidence:
+  fresh=evidence['published-source-build.json']
+  assert fresh['status']=='fresh-project-source-build-passed-with-locked-cache' and not fresh['physical_verification']
+  current=all(sha(ROOT/path)==digest for group in ['source_sha256','output_sha256'] for path,digest in fresh[group].items())
+  report['published_source_build']={'entry':'docs/build/firmware-environment.md','evidence':'docs/audit/published-source-build.json','matches_current_snapshot':current,'cold_network_download_verified':False,'native_3D_closure':'open','physical_verification':False}
  documents={}
  for zh in [False,True]:
   suffix='.zh-CN' if zh else '';peer='raytac-review.md' if zh else 'raytac-review.zh-CN.md'
@@ -172,6 +178,9 @@ def main():
   body=(f'**已记录的 {count} 个软件／CAD 审查阶段全部通过；尚未放行生产或证明实物工作。** 本轮只覆盖 Raytac，不把旧双方案报告当作本版验收。' if zh else f'**All {count} recorded software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.')
   rows=summary_rows(summary)
   lines=[head,'','# '+title,'',body,'',('下表数值均对应当前短 USB 候选板；旧参考板数据单独标注。' if zh else 'The table describes the current short-USB candidate; retained reference-board figures are labeled separately.'),'','| 范围 | 结果 |' if zh else '| Area | Result |','|---|---|']+[f"| {'线束' if zh and tag=='Harness' else tag} | {cn if zh else en} |" for tag,en,cn in rows]
+  if 'published_source_build' in report:
+   current=report['published_source_build']['matches_current_snapshot']
+   lines+=['',(('当前[新源码构建记录](published-source-build.json)与发布文件一致：正常版／校准版均从无本机项目构建目录的源码副本及独立锁定依赖工作区构建并通过主机检查；HEX／BIN 及校准标识不变。纯网络首次下载受本机容器网络故障阻碍，未计为通过；原生 KiCad 三维模型闭合仍待修补。见[环境与完整边界](../build/firmware-environment.zh-CN.md)。' if zh else 'The current [fresh-source build record](published-source-build.json) matches the published files: both targets were rebuilt and host-checked from project sources without local build directories and a separate locked dependency workspace; HEX/BIN bytes and calibration identifiers are unchanged. Internet-only first downloading was blocked by local container connectivity and is not counted as passed. Native KiCad 3D model closure remains open. See [environment and full boundaries](../build/firmware-environment.md).') if current else ('[新源码构建记录](published-source-build.json)保留为历史快照；与当前来源的关系见机器报告。' if zh else 'The [fresh-source build record](published-source-build.json) is retained as a historical snapshot; see the machine report for current-source correspondence.'))]
   lines+=['',('**当前首板采用[短 USB 修补候选包](../../hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)。** 旧长布线压缩包保留为暂停的参考；不能把旧七线图用于当前九线装配。电池保护包仍待供方确认；完整 USB 链路、模拟稳定性及实物验收仍待首板。见[含电池的开台流程](../../OPEN-BENCH.zh-CN.md)。' if zh else '**Use the [short-USB repair candidate package](../../hardware/usb-short-route/FIRST-ARTICLE.md) for the current first board.** The old long-route archive remains a held reference; its seven-wire illustrations do not describe the current nine-wire assembly. Pack confirmation, complete USB-link/analog stability and physical acceptance remain open. See the [battery-inclusive open-bench flow](../../OPEN-BENCH.md).')]
   lines+=['',('扫描故障处理见[专项说明](../testing/scan-control.zh-CN.md)：初始化不可用明确拒绝命令，故障关闭并释放按键；15 个场景和 17 个错误版本验证，128 项事件队列覆盖 120 事件突发。实际主机送达仍待验收。' if zh else 'See [scanner fault handling](../testing/scan-control.md): unavailable initialization rejects commands, faults shut down and release tracked keys; fifteen scenarios and seventeen mutants, with a 128-entry queue checked against a 120-event burst. Physical host delivery remains open.')]
   lines+=['',('新增 [NVS 中断恢复模型](../testing/nvs-powercut.zh-CN.md)：14,795 次指定写入／垃圾回收／再次恢复中断通过，两个错误顺序／漏搬版本被拒绝；实际 NVMC、蓝牙绑定和欠压验收仍待首板。NVS 模型本身不改变固件标识。' if zh else 'The [NVS recovery model](../testing/nvs-powercut.md) passes 14,795 selected write/GC/recovery interruptions and rejects two ordering/live-copy mutants. Actual NVMC, Bluetooth-bond and brownout acceptance remain first-board work. The NVS model itself does not change firmware identifiers.')]

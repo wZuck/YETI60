@@ -17,6 +17,7 @@ The first board can be tested without an enclosure. Supplier DFM precedes fabric
 | Machine plate; print shell and guides; fit gasket strips | [C04 geometry, tolerances and eight strips](hardware/usb-short-route/MECHANICAL-FIT.md), [closed-case harness and 16 guide pieces](hardware/usb-short-route/CLOSED-CASE.md) |
 | Solder from a bare PCB | [Soldering checks](docs/build/soldering.md), [28 illustrated reference steps](docs/assembly/build-guide.md); current [power placement](hardware/usb-short-route/POWER-LAYOUT.md), [F1](hardware/usb-short-route/F1-SELECTION.md) and [PCB surface/assembly maps](hardware/usb-short-route/ASSEMBLY.md) govern changed locations |
 | Wire C5 and power jumper | [J4/J5/J1 pin table and connector quantities](hardware/usb-short-route/README.md#required-connection-map), [power-loss targets](hardware/usb-short-route/POWER-FEED.md) |
+| Rebuild firmware from source | [Host tools, workspace initialization and troubleshooting](docs/build/firmware-environment.md) |
 | Flash and calibrate | [Current matched firmware downloads](hardware/usb-short-route/firmware/README.md), [J3/SWD commands and 60-key procedure](docs/build/flashing.md) |
 | Test without a shell, including a battery | [B0–B7 open-bench checks](OPEN-BENCH.md) |
 | Check base/Fn bindings, release order and rollover | [Matrix-to-HID pipeline, six-key limit and physical boundaries](docs/testing/key-pipeline.md) |

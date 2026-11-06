@@ -2,11 +2,12 @@
 """Exercise pinned NVS recovery on a bounded NOR model; no NVMC execution."""
 import hashlib,json,re,shutil,subprocess,sys,tempfile
 from pathlib import Path
+from yeti60_build_environment import workspace_path
 from yeti60_host_atomics import prepare
 from test_yeti60_scan_control import function
 from yeti60_nvs_contract import verify
 ROOT=Path(__file__).resolve().parents[1]
-WORKSPACE=Path.home()/'.cache/yeti60-zmk-workspace'
+WORKSPACE=workspace_path()
 REV='10ba6d0cb38bc3d258775d27982f707599320085'
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():

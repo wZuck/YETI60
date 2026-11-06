@@ -89,10 +89,11 @@
     "firmware/yeti60/calibration.h": "df57aaa55fc77794eca70fe1c6d092f4476394bc30d7798a84633e6f3fec6f0c",
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
-    "scripts/build_yeti60_firmware.py": "0de8f4549ff466e6e9dcae2129740a46a98bf884601d79ce414e9ff82eaaaf61",
+    "scripts/build_yeti60_firmware.py": "73ed057d24cee7d6f41e5c2110f1feaa47ac2085e33d2800f10a833dc75dd105",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "scripts/yeti60_calibration_contract.py": "3b04a419b50903429ac467ec87a2d01b56d7538743a15d45a0bf2cec5eb76f04",
-    "scripts/yeti60_recovery_contract.py": "19d1e6672423c5bf5ec9c65e2ef85548847d44cbe656c31f40e9bee5b9f6eb84"
+    "scripts/yeti60_recovery_contract.py": "19d1e6672423c5bf5ec9c65e2ef85548847d44cbe656c31f40e9bee5b9f6eb84",
+    "scripts/yeti60_build_environment.py": "970c70dbf2253450b059d75dae0c044224d788969247936039e7f6160fac9253"
   },
   "variants": {
     "normal": {

@@ -88,7 +88,7 @@
     "selected 0xaa bits",
     "after final commit before acknowledgement"
   ],
-  "target_build_manifest_sha256": "d462179166f2f4d536740ae349be525e44188af6aa6793db68f85893f650deab",
+  "target_build_manifest_sha256": "1f545c73c0c303ce70b8ab5c593dcb35e1ff50539364b6f05d4e3ed7271558b3",
   "resolved_configuration_sha256": "ed3a812d624c1de5ae11a6546c40a733faf7ea0ca306591dbaa50afb87918e4a",
   "resolved_devicetree_sha256": "4f13b87dae592c70c364563ef4032408c0e2c1b8f4c3fb4fbacf3e83107e89ad",
   "upstream_revision": "10ba6d0cb38bc3d258775d27982f707599320085",
@@ -110,9 +110,9 @@
     "Physical battery/charger brownout, radio-synchronized flash scheduling or on-device recovery"
   ],
   "source_sha256": {
-    "scripts/test_yeti60_nvs_powercut.py": "3875cfed52af0aeb607b6b15717a5537254c33c45aa612e8bf3ca22b18931c0b",
+    "scripts/test_yeti60_nvs_powercut.py": "4d57470d72f866b06ae42f25c62996f37162271666908c129e784d1f7c3a5ceb",
     "scripts/yeti60_host_atomics.py": "64b6aa5c927b47b64814901dbf5f39a048b36c1449015856f454abb7ca78e65f",
-    "scripts/test_yeti60_scan_control.py": "6e5ad08a0d3c2662fa0dba23c8cc18d4f65c934384ec1c7bc1be9d96d5053c5b",
+    "scripts/test_yeti60_scan_control.py": "0d4015cfbcfaee77da0bd1c4570fdab6717c8e39abe19ad91142dc4750e5d7ca",
     "scripts/yeti60_nvs_contract.py": "3a60fc1bf9f44cd3b34f99cff53133a3429cff1929c230a52830611d2935f9e2",
     "tests/yeti60/nvs_shim.h": "c4548497db5d467f17dbe84f95e7afc88796281198fbc59ad9b01e64f00c50ad",
     "tests/yeti60/nvs_powercut.c": "45b629c503d9066816a754c3401e4cb54b7b2c8525f84f73fbcd200086d45528",

@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Rebuild candidate firmware in isolation; preserve canonical releases untouched."""
-import argparse,hashlib,json,shutil,subprocess,sys
+import argparse,hashlib,json,os,shutil,subprocess,sys
 from pathlib import Path
+from yeti60_build_environment import workspace_path
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';WORK=ROOT/'.assembly-work/usb-short-build'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--host-tests-only',action='store_true',help='Recheck existing ARM sources/artifacts, rerun host tests and republish evidence without compilation');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--workspace',type=Path,default=workspace_path());parser.add_argument('--host-tests-only',action='store_true',help='Recheck existing ARM sources/artifacts, rerun host tests and republish evidence without compilation');args=parser.parse_args()
+    env=dict(os.environ, YETI60_ZMK_WORKSPACE=str(args.workspace.expanduser().resolve()))
     native=json.loads((BASE/'audit/native-check.json').read_text());geometry=json.loads((BASE/'audit/geometry-check.json').read_text())
     assert native['status']=='native-candidate-checks-passed' and geometry['status']=='local-header-fit-and-reference-passed'
     for p,h in native['source_sha256'].items():assert sha(ROOT/p)==h,'Stale native evidence: '+p
@@ -22,14 +24,14 @@ def main():
     for p in BASE.iterdir():
         if p.is_file() and p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_pro','.kicad_sym','.json','.xml']:shutil.copyfile(p,dest/p.name)
     shutil.copyfile(ROOT/'hardware/ec60-nrf52840/pinmap.json',dest/'pinmap.json')
-    scripts=['build_yeti60_firmware.py','generate_yeti60_pin_contract.py','check_yeti60_target.py','simulate_yeti60_firmware.py','test_yeti60_calibration.py','test_yeti60_gpio_modes.py','test_yeti60_scan_control.py','test_yeti60_key_pipeline.py','test_yeti60_nvs_powercut.py','yeti60_hid_contract.py','yeti60_key_pipeline_contract.py','yeti60_scan_control_contract.py','yeti60_nvs_contract.py','yeti60_host_atomics.py','yeti60_calibration_contract.py','yeti60_recovery_contract.py'];(WORK/'scripts').mkdir(exist_ok=True);(WORK/'docs/audit').mkdir(parents=True,exist_ok=True)
+    scripts=['yeti60_build_environment.py','build_yeti60_firmware.py','generate_yeti60_pin_contract.py','check_yeti60_target.py','simulate_yeti60_firmware.py','test_yeti60_calibration.py','test_yeti60_gpio_modes.py','test_yeti60_scan_control.py','test_yeti60_key_pipeline.py','test_yeti60_nvs_powercut.py','yeti60_hid_contract.py','yeti60_key_pipeline_contract.py','yeti60_scan_control_contract.py','yeti60_nvs_contract.py','yeti60_host_atomics.py','yeti60_calibration_contract.py','yeti60_recovery_contract.py'];(WORK/'scripts').mkdir(exist_ok=True);(WORK/'docs/audit').mkdir(parents=True,exist_ok=True)
     for name in scripts:shutil.copyfile(ROOT/'scripts'/name,WORK/'scripts'/name)
     actions=[('generate_yeti60_pin_contract.py',['--check'])]
     if not args.host_tests_only:actions.append(('build_yeti60_firmware.py',[]))
     # The checker rejects changed firmware/board inputs or altered existing images
     # before host-only publication. This mode cannot bless a stale ARM build.
     actions.extend((name,[]) for name in ['check_yeti60_target.py','simulate_yeti60_firmware.py','test_yeti60_calibration.py','test_yeti60_gpio_modes.py','test_yeti60_scan_control.py','test_yeti60_key_pipeline.py','test_yeti60_nvs_powercut.py'])
-    for name,options in actions:subprocess.run([sys.executable,str(WORK/'scripts'/name),*options],check=True)
+    for name,options in actions:subprocess.run([sys.executable,str(WORK/'scripts'/name),*options],check=True,env=env)
     pub=BASE/'firmware';pub.mkdir(exist_ok=True);build=json.loads((WORK/'docs/audit/yeti60-target-build.json').read_text());outputs={};not_published={}
     for variant in ['normal','calibrator']:
         for ext in ['hex','bin','elf']:

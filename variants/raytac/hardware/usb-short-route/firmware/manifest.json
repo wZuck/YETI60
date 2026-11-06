@@ -30,12 +30,13 @@
     "firmware/yeti60/calibration.h": "df57aaa55fc77794eca70fe1c6d092f4476394bc30d7798a84633e6f3fec6f0c",
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
-    "scripts/build_yeti60_firmware.py": "0de8f4549ff466e6e9dcae2129740a46a98bf884601d79ce414e9ff82eaaaf61",
+    "scripts/build_yeti60_firmware.py": "73ed057d24cee7d6f41e5c2110f1feaa47ac2085e33d2800f10a833dc75dd105",
     "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "8ea837256c5e6277bf870844067260957a9b3cbc537fd8a7e3ff8d1c15c88cb0",
     "scripts/yeti60_calibration_contract.py": "3b04a419b50903429ac467ec87a2d01b56d7538743a15d45a0bf2cec5eb76f04",
     "scripts/yeti60_recovery_contract.py": "19d1e6672423c5bf5ec9c65e2ef85548847d44cbe656c31f40e9bee5b9f6eb84",
+    "scripts/yeti60_build_environment.py": "970c70dbf2253450b059d75dae0c044224d788969247936039e7f6160fac9253",
     "hardware/usb-short-route/netlist.xml": "44f177a827df33c4f9c4c70823169a8c2c3d422588496cb945a33fcdfdcf3c79",
-    "scripts/build_usb_short_firmware.py": "14aadde66549143f3be72b53468676700eb50c08328768b381730146dd365198"
+    "scripts/build_usb_short_firmware.py": "9877829721a4da8c2c7058f58756e7136cc06d09f55b06d14d53869081990262"
   },
   "published_outputs": {
     "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex": "a822d485ed277beaba2617fc9dd8eeb4d2ac8dc9c59e33874e7de31fcd66af44",
@@ -44,14 +45,14 @@
     "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.bin": "38c8732b24a1590d2f4ff313bbd2a8db0ab58edcd4f072e0f039b8028c728470"
   },
   "evidence": {
-    "hardware/usb-short-route/firmware/build.json": "77075048edc7047fc975fb1e458b96c66ec207615e3a8a109ddf027542dd1576",
-    "hardware/usb-short-route/firmware/target-check.json": "f36748279c31fadf82e5781f1fb9e03cfed4248a6343c524b5230c050d38d482",
+    "hardware/usb-short-route/firmware/build.json": "e405152fca4a2927e447d633f55a1f1fbd1e8e93d000f41dd3b76bd0124d7dd2",
+    "hardware/usb-short-route/firmware/target-check.json": "6f9d31d3df21ed9f12d5fc038162f49a1ed547005b43cdae364fe19623e17873",
     "hardware/usb-short-route/firmware/simulation.json": "258edccaa583ca569724fa068201ebac329d536f0a79e8ea5883bbcaf601935e",
     "hardware/usb-short-route/firmware/calibration.json": "3498ca2f77a9367b4242361bf48698cad0eaeb1a5a01743de1a21566a0ec3b4e",
-    "hardware/usb-short-route/firmware/gpio-mode-policy.json": "00a103fee2d49bc001a4748bb2cbba5e374f9f5bc600d48ddc8af645e998e648",
-    "hardware/usb-short-route/firmware/scan-control.json": "7f8c41e83dd01c357bce90bca09afb9304350491c1f26c6101a6d814e44bf7c5",
-    "hardware/usb-short-route/firmware/key-pipeline.json": "2bcabf6668495430b8b4de48af70706cb245017cdee201fc4fa70834df5468e4",
-    "hardware/usb-short-route/firmware/nvs-powercut.json": "673fa3084147f83bb380a8d9ca1714a79fc13596ac05b3d8d51e1c9067fba48b",
+    "hardware/usb-short-route/firmware/gpio-mode-policy.json": "e4dade1682236daa200bd72acff207b8eb56d9588611f77c19cb86452748e94f",
+    "hardware/usb-short-route/firmware/scan-control.json": "b7e6fb2dd9f2c14374742f5135e64fec9647619b263c662f89a4792a8c9aeb47",
+    "hardware/usb-short-route/firmware/key-pipeline.json": "101ef431f8a1dc06539bde39bb1dc433d2210357e39077e722c24a6ef7913dc3",
+    "hardware/usb-short-route/firmware/nvs-powercut.json": "c591dbc10546eb0e634d860855ae0f178e7167bbd2b58c8b5dee4783ff18e089",
     "hardware/usb-short-route/firmware/trace.csv": "02d6f2843713dd84a682c0bea3977652c20772c3781f2f5806284ea16c84909f"
   },
   "unpublished_build_outputs": {

@@ -188,7 +188,7 @@
   "calibration_record_bytes": 308,
   "legacy_record_bytes_rejected": 304,
   "settings_dispatch_sha256": "2bde2743c5389157a15c00e0047f7d353ce412525159e249719e9c317cf6728f",
-  "target_build_manifest_sha256": "d462179166f2f4d536740ae349be525e44188af6aa6793db68f85893f650deab",
+  "target_build_manifest_sha256": "1f545c73c0c303ce70b8ab5c593dcb35e1ff50539364b6f05d4e3ed7271558b3",
   "resolved_devicetree_sha256": "4f13b87dae592c70c364563ef4032408c0e2c1b8f4c3fb4fbacf3e83107e89ad",
   "resolved_configuration_sha256": "ed3a812d624c1de5ae11a6546c40a733faf7ea0ca306591dbaa50afb87918e4a",
   "compiled_matrix_active_masks": [
@@ -967,7 +967,7 @@
     "Real ADC/GPIO failures, USB/BLE HID release delivery, flash writes or battery operation"
   ],
   "source_sha256": {
-    "scripts/test_yeti60_scan_control.py": "6e5ad08a0d3c2662fa0dba23c8cc18d4f65c934384ec1c7bc1be9d96d5053c5b",
+    "scripts/test_yeti60_scan_control.py": "0d4015cfbcfaee77da0bd1c4570fdab6717c8e39abe19ad91142dc4750e5d7ca",
     "scripts/yeti60_host_atomics.py": "64b6aa5c927b47b64814901dbf5f39a048b36c1449015856f454abb7ca78e65f",
     "scripts/yeti60_scan_control_contract.py": "43718ecf4b7dd6ef43c20837388204be8c570b748ecd780c0eb897b6c7d3e123",
     "firmware/target/src/scanner.c": "97ce44e37c169145e2fcfc54e3612fcef8e9dbe68f1c2390a29e6c8995842f40",

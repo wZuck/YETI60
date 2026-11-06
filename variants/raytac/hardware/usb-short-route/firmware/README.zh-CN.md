@@ -24,11 +24,12 @@ USB 充电控制已改为[状态回调及取消配置处理](../../../docs/testi
 在仓库根目录执行，前提是本候选板的原生及 CAD 检查已通过：
 
 ```sh
+python3 variants/raytac/scripts/prepare_yeti60_workspace.py
 python3 variants/raytac/scripts/build_usb_short_firmware.py
 python3 variants/raytac/scripts/check_usb_short_firmware.py
 ```
 
-封装脚本将当前固件源码、候选 PCB／网表和引脚表复制到独立构建目录，在锁定的容器中构建两版固件，执行目标、主机及校准检查，最后只发布本候选板的 HEX／BIN 和证据，不覆盖正式目录中的固件。所需 Docker 和已锁定的 west 工作区见目标固件说明。USB／BLE 射频、真实按键、边充边输入、模拟信号建立时间及电池安全仍须按实物验收流程检查。
+封装脚本将当前固件源码、候选 PCB／网表和引脚表复制到独立构建目录，在锁定的容器中构建两版固件，执行目标、主机及校准检查，最后只发布本候选板的 HEX／BIN 和证据，不覆盖正式目录中的固件。所需主机工具、准确初始化命令及自定义工作区见[新检出仓库的构建环境说明](../../../docs/build/firmware-environment.zh-CN.md)。USB／BLE 射频、真实按键、边充边输入、模拟信号建立时间及电池安全仍须按实物验收流程检查。
 
 模拟 GPIO 和初始化失败清理见[说明](../../../docs/testing/gpio-mode-policy.zh-CN.md)及[本包独立主机证据](gpio-mode-policy.json)。两版均使用关闭数字缓冲的高阻模式；升级后重新校准。
 

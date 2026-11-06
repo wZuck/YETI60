@@ -2,8 +2,9 @@
 """Exercise actual charger adapter with the unmodified pinned ZMK USB callback."""
 import hashlib,json,re,shutil,subprocess,tempfile
 from pathlib import Path
+from yeti60_build_environment import workspace_path
 ROOT=Path(__file__).resolve().parents[1]
-WORKSPACE=Path.home()/'.cache/yeti60-zmk-workspace'
+WORKSPACE=workspace_path()
 REV='0862fc0f8c864834007986efcaf52f292ea6d37d'
 CASES=['normal','not-ready','enable-fault']+['init-fault-'+str(i) for i in range(3)]+['write-fault-'+str(i) for i in range(5)]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()

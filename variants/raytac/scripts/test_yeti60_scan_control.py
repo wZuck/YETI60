@@ -2,9 +2,10 @@
 """Run actual scanner shell, owner loop, fault cleanup and lifecycle atomics."""
 import hashlib,json,re,shutil,subprocess,sys,tempfile
 from pathlib import Path
+from yeti60_build_environment import workspace_path
 from yeti60_host_atomics import prepare, REV
 ROOT=Path(__file__).resolve().parents[1]
-WORKSPACE=Path.home()/'.cache/yeti60-zmk-workspace'
+WORKSPACE=workspace_path()
 ZMK_REV='0862fc0f8c864834007986efcaf52f292ea6d37d'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def function(source,name):

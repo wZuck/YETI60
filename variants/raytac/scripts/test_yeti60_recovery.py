@@ -2,10 +2,11 @@
 """Exercise the actual CMake fingerprint and pinned ZMK gesture implementation."""
 import hashlib,json,re,shutil,subprocess,sys,tempfile
 from pathlib import Path
+from yeti60_build_environment import workspace_path
 from yeti60_calibration_contract import INPUTS,OPTIONS,version
 
 ROOT=Path(__file__).resolve().parents[1]
-WORKSPACE=Path.home()/'.cache/yeti60-zmk-workspace'
+WORKSPACE=workspace_path()
 REV='0862fc0f8c864834007986efcaf52f292ea6d37d'
 IMAGE='zmkfirmware/zmk-build-arm@sha256:edb1c953438c6f720ddb79c3762f3972013b7fbbaf4fff3592fc869983e7afc5'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()

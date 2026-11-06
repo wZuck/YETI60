@@ -2,6 +2,7 @@
 """Verify target source provenance, ARM linkage and complete Intel HEX records."""
 import hashlib,json,struct,re,subprocess
 from pathlib import Path
+from yeti60_build_environment import workspace_path
 from yeti60_calibration_contract import version
 from yeti60_hid_contract import linked_hid_layout,verify_summary
 ROOT=Path(__file__).resolve().parents[1]
@@ -62,7 +63,7 @@ def main():
     p=ROOT/'docs/audit/yeti60-target-build.json';build=json.loads(p.read_text())
     assert build['status']=='built' and build['board']=='yeti60'
     assert set(build['variants'])=={'normal','calibrator'}
-    workspace=Path.home()/'.cache/yeti60-zmk-workspace'
+    workspace=workspace_path()
     att_header=subprocess.check_output(['git','-C',str(workspace/'zephyr'),'show',build['dependencies']['zephyr']+':subsys/bluetooth/host/att_internal.h'],text=True)
     minimum_mtu=int(re.search(r'^#define BT_ATT_DEFAULT_LE_MTU\s+(\d+)$',att_header,re.M).group(1))
     assert minimum_mtu==23

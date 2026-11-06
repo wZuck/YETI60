@@ -17,6 +17,7 @@
 | 加工钢板、打印外壳与理线件、装垫片 | [C04 尺寸、公差和八条垫片](hardware/usb-short-route/MECHANICAL-FIT.zh-CN.md)、[关壳线束及 16 件理线件](hardware/usb-short-route/CLOSED-CASE.zh-CN.md) |
 | 从裸板开始焊接 | [焊接停检点](docs/build/soldering.zh-CN.md)、[28 步参考配图](docs/assembly/build-guide.zh-CN.md)；变化位置以当前[电源位置](hardware/usb-short-route/POWER-LAYOUT.zh-CN.md)、[F1](hardware/usb-short-route/F1-SELECTION.zh-CN.md)及[板面／装配图](hardware/usb-short-route/ASSEMBLY.zh-CN.md)为准 |
 | 连接 C5 与电源跳线 | [J4／J5／J1 线序与连接器数量](hardware/usb-short-route/README.zh-CN.md#必须采用的连接方式)、[供电压降目标](hardware/usb-short-route/POWER-FEED.zh-CN.md) |
+| 从源码构建固件 | [主机工具、工作区初始化及故障处理](docs/build/firmware-environment.zh-CN.md) |
 | 刷写及校准 | [当前配套固件下载](hardware/usb-short-route/firmware/README.zh-CN.md)、[J3／SWD 命令及 60 键步骤](docs/build/flashing.zh-CN.md) |
 | 不做外壳，包含电池验收 | [B0～B7 开台检查](OPEN-BENCH.zh-CN.md) |
 | 检查基础／Fn 键位、松键顺序及同时按键上限 | [矩阵至 HID 链路、六键限制及实测边界](docs/testing/key-pipeline.zh-CN.md) |

@@ -1,0 +1,296 @@
+{
+  "status": "fresh-project-source-build-passed-with-locked-cache",
+  "physical_verification": false,
+  "production_approved": false,
+  "source_fixture": {
+    "base_commit": "d3e974a470b81449a084df78730c5bba54f046b0",
+    "method": "Committed git archive with pinned submodule archives plus current Raytac source-script/README overlay; overlay hashes below match the published build manifest",
+    "project_git_metadata_copied": false,
+    "project_ignored_build_directories_copied_before_build": false
+  },
+  "dependency_workspace": {
+    "initialization": "Separate new destination; 56 checkouts cloned from read-only verified locked workspace with west --path-cache, followed by successful resumed update after scoped container ownership fix",
+    "active_dependencies": 56,
+    "revisions": {
+      "zmk": "0862fc0f8c864834007986efcaf52f292ea6d37d",
+      "zephyr": "10ba6d0cb38bc3d258775d27982f707599320085",
+      "modules/hal/stm32": "4fcc3a3f32abe1c4cb76d9d1cef967728dd03908",
+      "modules/lib/gui/lvgl": "f1db87ee98f1810328a8419572fa42a3b5f352ae",
+      "modules/msgs/zmk-studio-messages": "6cb4c283e76209d59c45fbcb218800cd19e9339d",
+      "modules/lib/canopennode": "dec12fa3f0d790cafa8414a4c2930ea71ab72ffd",
+      "modules/lib/chre": "3b32c76efee705af146124fb4190f71be5a4e36e",
+      "modules/lib/lz4": "11b8a1e22fa651b524494e55d22b69d3d9cebcfd",
+      "modules/lib/nanopb": "7307ce399b81ddcb3c3a5dc862c52d4754328d38",
+      "modules/tee/tf-m/psa-arch-tests": "2cadb02a72eacda7042505dcbdd492371e8ce024",
+      "modules/audio/sof": "bc08c9c606324cfba0c104f4ffaf5dd456cb11d6",
+      "modules/tee/tf-m/tf-m-tests": "502ea90105ee18f20c78f710e2ba2ded0fc0756e",
+      "optional/modules/lib/tflite-micro": "8d404de73acf7687831e16d88e86e4f73cfddf8e",
+      "optional/modules/lib/thrift": "10023645a0e6cb7ce23fcd7fd3dbac9f18df6234",
+      "modules/lang/rust": "37dc7fac3fb0372bc0e78e022bef87fcce68c48d",
+      "modules/lib/zscilib": "ee1b287d9dd07208d2cc52284240ac25bb66eae3",
+      "modules/lib/acpica": "8d24867bc9c9d81c81eeac59391cda59333affd4",
+      "modules/hal/cmsis": "d1b8b20b6278615b00e136374540eb1c00dcabe7",
+      "modules/lib/cmsis-dsp": "d80a49b2bb186317dc1db4ac88da49c0ab77e6e7",
+      "modules/lib/cmsis-nn": "e9328d612ea3ea7d0d210d3ac16ea8667c01abdd",
+      "modules/lib/cmsis_6": "783317a3072554acbac86cca2ff24928cbf98d30",
+      "modules/fs/fatfs": "16245c7c41d2b79e74984f49b5202551786b8a9b",
+      "modules/hal/adi": "633fcecf3717aaa22079cf6121627a879f24df51",
+      "modules/hal/ambiq": "87a188b91aca22ce3ce7deb4a1cbf7780d784673",
+      "modules/hal/atmel": "da767444cce3c1d9ccd6b8a35fd7c67dc82d489c",
+      "modules/hal/espressif": "202c59552dc98e5cd02386313e1977ecb17a131f",
+      "modules/hal/ethos_u": "50ddffca1cc700112f25ad9bc077915a0355ee5d",
+      "modules/hal/gigadevice": "2994b7dde8b0b0fa9b9c0ccb13474b6a486cddc3",
+      "modules/hal/intel": "0355bb816263c54eed23c7781034447af5d8200c",
+      "modules/hal/nordic": "37ca068d7b013fb65a2acc9306bffa48a3e72839",
+      "modules/hal/nuvoton": "466c3eed9c98453fb23953bf0e0427fea01924be",
+      "modules/hal/quicklogic": "bad894440fe72c814864798c8e3a76d13edffb6c",
+      "modules/hal/renesas": "3204903bdc5eda6869a40363560a69369c8d0e22",
+      "modules/hal/rpi_pico": "7b57b24588797e6e7bf18b6bda168e6b96374264",
+      "modules/hal/silabs": "8a173e9e566a396a19d18da4661cb54ce098f268",
+      "modules/hal/tdk": "6727477af1e46fa43878102489b9672a9d24e39f",
+      "modules/hal/telink": "4226c7fc17d5a34e557d026d428fc766191a0800",
+      "modules/hal/wch": "1de9d3e406726702ce7cfc504509a02ecc463554",
+      "modules/hal/wurthelektronik": "e3e2797b224fc48fdef1bc3e5a12a7c73108bba2",
+      "modules/lib/hostap": "697fd2cf5cbbd0c5375fc34761b6a9d7489a67d2",
+      "modules/lib/liblc3": "48bbd3eacd36e99a57317a0a4867002e0b09e183",
+      "modules/lib/libmctp": "b97860e78998551af99931ece149eeffc538bdb1",
+      "modules/hal/libmetal": "3e8781aae9d7285203118c05bc01d4eb0ca565a7",
+      "modules/fs/littlefs": "ed0531d59ee37f5fb2762bcf2fc8ba4efaf82656",
+      "modules/crypto/mbedtls": "4952e1328529ee549d412b498ea71c54f30aa3b1",
+      "modules/debug/mipi-sys-t": "33e5c23cbedda5ba12dbe50c4baefb362a791001",
+      "modules/bsim_hw_models/nrf_hw_models": "73a5d5827a94820be65b7d276d28173ec10bab9f",
+      "modules/lib/nrf_wifi": "e35f707a782b7c4c0eb83a3b06ca4e6eb693f29f",
+      "modules/lib/open-amp": "52bb1783521c62c019451cee9b05b8eda9d7425f",
+      "modules/debug/percepio": "49e6dc202aa38c2a3edbafcc2dab85dec6aee973",
+      "modules/lib/picolibc": "82d62ed1ac55b4e34a12d0390aced2dc9af13fc9",
+      "modules/debug/segger": "cf56b1d9c80f81a26e2ac5727c9cf177116a4692",
+      "modules/crypto/tinycrypt": "1012a3ebee18c15ede5efc8332ee2fc37817670f",
+      "modules/tee/tf-a/trusted-firmware-a": "713ffbf96c5bcbdeab757423f10f73eb304eff07",
+      "modules/lib/uoscore-uedhoc": "54abc109c9c0adfd53c70077744c14e454f04f4a",
+      "modules/lib/zcbor": "9b07780aca6fb21f82a241ba386ad9b379809337"
+    },
+    "container": "zmkfirmware/zmk-build-arm@sha256:edb1c953438c6f720ddb79c3762f3972013b7fbbaf4fff3592fc869983e7afc5",
+    "cold_network_download_verified": false,
+    "external_cache_object_stores_may_remain_required": true
+  },
+  "commands": [
+    {
+      "command": "python3 variants/raytac/scripts/prepare_yeti60_workspace.py --workspace <new-workspace> --cache-workspace <locked-cache>",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 variants/raytac/scripts/build_usb_short_firmware.py --workspace <new-workspace>",
+      "context": "Archive-only project source fixture with no preexisting project build output",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 variants/raytac/scripts/check_usb_short_firmware.py",
+      "context": "Current project after verified candidate publication synchronization",
+      "exit_code": 0
+    }
+  ],
+  "builds": {
+    "normal": {
+      "calibration_version": "0x98511b34",
+      "configuration_sha256": "ed3a812d624c1de5ae11a6546c40a733faf7ea0ca306591dbaa50afb87918e4a",
+      "devicetree_sha256": "4f13b87dae592c70c364563ef4032408c0e2c1b8f4c3fb4fbacf3e83107e89ad"
+    },
+    "calibrator": {
+      "calibration_version": "0x98511b34",
+      "configuration_sha256": "a96ac39daa16e0a5337d06487bbfb050560efc31c89649ddb0df109d6706702f",
+      "devicetree_sha256": "09eec43083e719a7b4d4607a291d3d8006e909ffa18b7eac866d758478d4451d"
+    }
+  },
+  "published_firmware_image_bytes_unchanged": true,
+  "firmware_image_changes": {},
+  "host_tests": {
+    "GPIO_positive_cases": 5,
+    "GPIO_rejected_mutants": 4,
+    "scanner_positive_cases": 15,
+    "scanner_rejected_mutants": 17,
+    "key_pipeline_positive_cases": 6,
+    "key_pipeline_rejected_mutants": 4,
+    "NVS_interruption_trials": 14795,
+    "NVS_rejected_mutants": 2
+  },
+  "failed_attempts_preserved": [
+    {
+      "type": "Docker path sharing",
+      "result": "Host temporary directory was invisible in Colima; repeated from a shared home-directory path"
+    },
+    {
+      "type": "Internet-only dependency initialization",
+      "result": "GitHub HTTPS fetch returned TLS termination and connect timeouts inside current Colima VM; attempt stopped, not counted as passed"
+    },
+    {
+      "type": "Read-only-cache initialization",
+      "result": "Initial copy completed but five Git ownership checks failed; scoped per-manifest-directory container exceptions added, unchanged pinned repositories passed resumed initialization"
+    },
+    {
+      "type": "Concurrent reference build",
+      "result": "Unbounded compiler/file activity hit VM shared-filesystem open-file limits; build parallelism bounded to two and final reference/candidate builds passed"
+    }
+  ],
+  "native_3D_visualization": {
+    "status": "open",
+    "review_scope": "Native KiCad model references; not the independent published assembly renderer",
+    "PCB_sha256": "8ea837256c5e6277bf870844067260957a9b3cbc537fd8a7e3ff8d1c15c88cb0",
+    "legacy_KiCad6_model_references": {
+      "${KICAD6_3DMODEL_DIR}/cipulot_parts.3dshapes/Topre_Housing.step": [
+        "SW70",
+        "SW60",
+        "SW28",
+        "SW43",
+        "SW10",
+        "SW17",
+        "SW11",
+        "SW55",
+        "SW24",
+        "SW27",
+        "SW65",
+        "SW72",
+        "SW45",
+        "SW47",
+        "SW21",
+        "SW50",
+        "SW53",
+        "SW59",
+        "SW56",
+        "SW66",
+        "SW62",
+        "SW23",
+        "SW20",
+        "SW46",
+        "SW29",
+        "SW3",
+        "SW39",
+        "SW2",
+        "SW57",
+        "SW19",
+        "SW51",
+        "SW48",
+        "SW7",
+        "SW5",
+        "SW8",
+        "SW64",
+        "SW74",
+        "SW26",
+        "SW58",
+        "SW41",
+        "SW38",
+        "SW30",
+        "SW9",
+        "SW35",
+        "SW25",
+        "SW54",
+        "SW15",
+        "SW52",
+        "SW16",
+        "SW61",
+        "SW36",
+        "SW75",
+        "SW42",
+        "SW49",
+        "SW63",
+        "SW67",
+        "SW12",
+        "SW22",
+        "SW14",
+        "SW4",
+        "SW31",
+        "SW37",
+        "SW40",
+        "SW44",
+        "SW34",
+        "SW32",
+        "SW18",
+        "SW73",
+        "SW6",
+        "SW13"
+      ],
+      "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.wrl": [
+        "R7",
+        "R23",
+        "R8",
+        "R24",
+        "R15",
+        "R11",
+        "R12",
+        "R19",
+        "R26",
+        "R10",
+        "R3",
+        "R18",
+        "R16",
+        "R13",
+        "R17",
+        "R21",
+        "R4",
+        "R9",
+        "R20",
+        "R6",
+        "R25",
+        "R14",
+        "R5"
+      ],
+      "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.wrl": [
+        "C11",
+        "C12",
+        "C9",
+        "C13",
+        "C10"
+      ],
+      "${KICAD6_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.wrl": [
+        "U3"
+      ],
+      "${KICAD6_3DMODEL_DIR}/cipulot_parts.3dshapes/JST_SM04B-SRSS-TB(LF)(SN).step": [
+        "J1"
+      ],
+      "${KICAD6_3DMODEL_DIR}/Package_SO.3dshapes/SSOP-16_4.4x5.2mm_P0.65mm.step": [
+        "U4",
+        "U2"
+      ],
+      "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl": [
+        "JP1"
+      ]
+    },
+    "multiple_enabled_model_footprints": [
+      "U4",
+      "U2"
+    ],
+    "unresolved_relative_model_references": {
+      "Housing_SSOP/TSSOP-16.wrl": [
+        "U4",
+        "U2"
+      ]
+    },
+    "J2_SMD_model_present_in_tested_KiCad10_installation": false,
+    "remaining_work": "Replace private/legacy and duplicate native models and supply a correctly sourced J2 SMD model; rerun native-model geometry and matched board/firmware/CAM/assembly provenance after any PCB metadata edit"
+  },
+  "source_sha256": {
+    "scripts/yeti60_build_environment.py": "970c70dbf2253450b059d75dae0c044224d788969247936039e7f6160fac9253",
+    "scripts/prepare_yeti60_workspace.py": "9188627cfd13872b018da49e78dc76618253d2c247cd3179a1df9bae0153fc82",
+    "scripts/build_yeti60_firmware.py": "73ed057d24cee7d6f41e5c2110f1feaa47ac2085e33d2800f10a833dc75dd105",
+    "scripts/build_usb_short_firmware.py": "9877829721a4da8c2c7058f58756e7136cc06d09f55b06d14d53869081990262",
+    "scripts/check_yeti60_target.py": "8323da5be243a8809596fd502740b73423d191cd9b72d313601afe5668f2da60",
+    "scripts/test_yeti60_gpio_modes.py": "8532ae4e5aed4edb366f71190e3b3200ad0ad4d1ffb669d3bfd007a8897415f2",
+    "scripts/test_yeti60_key_pipeline.py": "392a6a30c8288d82c4e6aaebd263bf747286914d26975b399592cf3398b8a2f6",
+    "scripts/test_yeti60_nvs_powercut.py": "4d57470d72f866b06ae42f25c62996f37162271666908c129e784d1f7c3a5ceb",
+    "scripts/test_yeti60_recovery.py": "eb38271d3fb8e47493a67353d779972d750a323be99ce9dfee637b677331e3ed",
+    "scripts/test_yeti60_scan_control.py": "0d4015cfbcfaee77da0bd1c4570fdab6717c8e39abe19ad91142dc4750e5d7ca",
+    "scripts/test_yeti60_usb_events.py": "8a0c02b8f84e70f825f9b51e31e153efba339fc3d3fbed0d44a82b3ff1d6d3ae"
+  },
+  "output_sha256": {
+    "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex": "a822d485ed277beaba2617fc9dd8eeb4d2ac8dc9c59e33874e7de31fcd66af44",
+    "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.bin": "ea0abed9d53baba5b5ea02e4e14ebd7f65175b0fadc9683ad4f8281a5f6222ae",
+    "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex": "a253b36b9061e3ed969599b5e73a8848b62e9ce5368e865d5723974655ea86d8",
+    "hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.bin": "38c8732b24a1590d2f4ff313bbd2a8db0ab58edcd4f072e0f039b8028c728470",
+    "hardware/usb-short-route/firmware/manifest.json": "310772b30e27be7793d587c7aace471895f0f1ec1ae76ae0881f729bcdef69c4",
+    "hardware/usb-short-route/firmware/build.json": "e405152fca4a2927e447d633f55a1f1fbd1e8e93d000f41dd3b76bd0124d7dd2"
+  },
+  "limits": [
+    "Successful cached fresh-source builds do not prove internet-only preparation on the current VM",
+    "No physical USB, BLE, EC, charging, battery-safety or mechanical acceptance",
+    "Native KiCad 3D model closure is not accepted by this build test"
+  ]
+}

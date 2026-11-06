@@ -12,7 +12,15 @@ This ZMK module binds the tested portable scan core to nRF52840 GPIO/SAADC and t
 
 ## Reproducible build
 
-Docker must be running. Initialize a west workspace at `~/.cache/yeti60-zmk-workspace` with `firmware/target/config/west.yml`, then run `west update` and `west zephyr-export` in the pinned build container. The manifest freezes every active ZMK, Zephyr and HAL dependency to a commit. ZMK is the project fork `https://github.com/wZuck/zmk` at `0862fc0f8c864834007986efcaf52f292ea6d37d`; its only divergence from upstream is the configurable connectable advertising interval (`ZMK_BLE_ADV_INT_MIN/MAX`). The builder rejects any workspace revision that differs from this lock. Run `python3 scripts/build_yeti60_firmware.py --workspace <workspace>` from this repository. The script rejects modified dependency sources, builds normal and calibrator variants, and records commits, source/configuration/device-tree hashes and output hashes in `docs/audit/yeti60-target-build.json`.
+Use the [fresh-checkout environment procedure](../../docs/build/firmware-environment.md) for exact initialization, custom workspace selection and troubleshooting. From the repository root:
+
+```sh
+python3 variants/raytac/scripts/prepare_yeti60_workspace.py
+python3 variants/raytac/scripts/prepare_yeti60_workspace.py --check
+python3 variants/raytac/scripts/build_usb_short_firmware.py
+```
+
+The wrapper above builds the current candidate. The separate `python3 variants/raytac/scripts/build_yeti60_firmware.py` command builds the retained reference board. Both use the frozen manifest and pinned container, reject changed dependency sources/revisions, and record source/configuration/device-tree/output hashes. ZMK is the project fork `https://github.com/wZuck/zmk` at `0862fc0f8c864834007986efcaf52f292ea6d37d`; its only divergence from upstream is the configurable connectable advertising interval (`ZMK_BLE_ADV_INT_MIN/MAX`).
 
 The build container is pinned by digest in the script. Generated build directories are ignored. Distributable HEX, BIN and ELF files are under `firmware/releases/`. J3 uses the project's custom SWD pinout: check the hardware contract before connecting a probe. Preserve the final 64 KiB settings partition when updating normal firmware after calibration. A full-chip erase removes calibration and Bluetooth bonds.
 

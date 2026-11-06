@@ -37,6 +37,8 @@ def main():
     add('USB-reference-native',native,'export_yeti60_usb_reference.py',deps=['USB-path-geometry'])
     add('electrical-review',native,'check_yeti60_electrical.py',deps=['pin-contract'])
     add('firmware-pin-header',py,'generate_yeti60_pin_contract.py',['--check'],['pin-contract'])
+    add('firmware-build-environment',py,'prepare_yeti60_workspace.py',['--check'])
+    stages.append(('firmware-build-environment-faults',py+['tests/audit/test_build_environment.py'],['firmware-build-environment']))
     add('firmware-target-artifacts',py,'check_yeti60_target.py',deps=['firmware-pin-header'])
     add('firmware-recovery-contract',py,'test_yeti60_recovery.py',deps=['firmware-target-artifacts'])
     add('firmware-USB-event-policy',py,'test_yeti60_usb_events.py',deps=['firmware-target-artifacts'])

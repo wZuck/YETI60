@@ -24,11 +24,12 @@ Paths inside copied build/test reports are relative to the isolated `.assembly-w
 From the repository root, after the candidate native and CAD checks pass:
 
 ```sh
+python3 variants/raytac/scripts/prepare_yeti60_workspace.py
 python3 variants/raytac/scripts/build_usb_short_firmware.py
 python3 variants/raytac/scripts/check_usb_short_firmware.py
 ```
 
-The wrapper copies current firmware sources, candidate PCB/netlist and pin map into an isolated build directory, rebuilds both targets in the pinned container, runs target/host/calibration checks and publishes only this candidate's HEX/BIN and evidence. Canonical firmware releases are left untouched. Docker and the existing locked west workspace are required, as described in the target instructions. USB/BLE radio, actual key signals, simultaneous charging/input, analog settling and battery safety still require the physical acceptance procedure.
+The wrapper copies current firmware sources, candidate PCB/netlist and pin map into an isolated build directory, rebuilds both targets in the pinned container, runs target/host/calibration checks and publishes only this candidate's HEX/BIN and evidence. Canonical firmware releases are left untouched. See the [fresh-checkout environment procedure](../../../docs/build/firmware-environment.md) for host tools, exact initialization and custom workspace selection. USB/BLE radio, actual key signals, simultaneous charging/input, analog settling and battery safety still require the physical acceptance procedure.
 
 See the [analog GPIO/startup cleanup review](../../../docs/testing/gpio-mode-policy.md) and [this bundle's independent host evidence](gpio-mode-policy.json). Both builds use high impedance with digital buffers disabled; recalibrate after upgrading.
 

@@ -62,7 +62,7 @@
     "Real RTOS/SAADC/USB/BLE and electrical initialization transients"
   ],
   "source_sha256": {
-    "scripts/test_yeti60_gpio_modes.py": "6240f9baa05c4c2fba9dd5540641a4fe3672884e01b3ed5a711f792990c4456a",
+    "scripts/test_yeti60_gpio_modes.py": "8532ae4e5aed4edb366f71190e3b3200ad0ad4d1ffb669d3bfd007a8897415f2",
     "firmware/target/src/scanner.c": "97ce44e37c169145e2fcfc54e3612fcef8e9dbe68f1c2390a29e6c8995842f40",
     "firmware/target/src/gpio_modes.h": "3fae72b5f56a0ecddcb21cd68c103612aa2ab219363373b4275381e203796a8b",
     "scripts/yeti60_host_atomics.py": "64b6aa5c927b47b64814901dbf5f39a048b36c1449015856f454abb7ca78e65f",

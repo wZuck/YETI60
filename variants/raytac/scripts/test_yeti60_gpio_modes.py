@@ -2,9 +2,10 @@
 """Compile actual target GPIO/init bodies and test electrical pin invariants."""
 import hashlib,json,re,shutil,subprocess,tempfile
 from pathlib import Path
+from yeti60_build_environment import workspace_path
 from yeti60_host_atomics import prepare
 ROOT=Path(__file__).resolve().parents[1]
-WORKSPACE=Path.home()/'.cache/yeti60-zmk-workspace'
+WORKSPACE=workspace_path()
 ZEPHYR_REV='10ba6d0cb38bc3d258775d27982f707599320085'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def function(source,name):

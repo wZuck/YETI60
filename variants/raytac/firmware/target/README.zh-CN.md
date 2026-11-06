@@ -12,7 +12,15 @@ USB 充电控制已改为[状态回调及取消配置处理](../../docs/testing/
 
 ## 可复现构建
 
-需要运行中的 Docker。使用 `firmware/target/config/west.yml` 在 `~/.cache/yeti60-zmk-workspace` 初始化 west 工作区，在固定构建容器中执行 `west update`、`west zephyr-export`。清单固定 ZMK 版本，导入的清单指定 Zephyr 与硬件库。当前 ZMK 使用项目 fork `https://github.com/wZuck/zmk` 的 `0862fc0f8c864834007986efcaf52f292ea6d37d`；相对上游只增加了可配置的可连接广播间隔（`ZMK_BLE_ADV_INT_MIN/MAX`）。随后在本仓库运行 `python3 scripts/build_yeti60_firmware.py --workspace <工作区>`。脚本拒绝修改过的依赖源码，构建普通版与校准版，并将提交号、源码／配置／设备树及产物哈希写入 `docs/audit/yeti60-target-build.json`。
+准确初始化步骤、自定义工作区及排障见[从新检出仓库构建的环境说明](../../docs/build/firmware-environment.zh-CN.md)。从仓库根目录执行：
+
+```sh
+python3 variants/raytac/scripts/prepare_yeti60_workspace.py
+python3 variants/raytac/scripts/prepare_yeti60_workspace.py --check
+python3 variants/raytac/scripts/build_usb_short_firmware.py
+```
+
+上述封装脚本构建当前候选板。独立的 `python3 variants/raytac/scripts/build_yeti60_firmware.py` 构建保留的参考板。两者使用冻结清单及固定容器，拒绝被改动的依赖源码／版本，并记录源码／配置／设备树／产物哈希。ZMK 使用项目 fork `https://github.com/wZuck/zmk` 的 `0862fc0f8c864834007986efcaf52f292ea6d37d`；相对上游只增加了可配置的可连接广播间隔（`ZMK_BLE_ADV_INT_MIN/MAX`）。
 
 构建容器按摘要固定，临时构建目录已忽略。可分发 HEX、BIN、ELF 位于 `firmware/releases/`。J3 使用本项目自定义 SWD 引脚，连接探针前核对硬件契约。校准后更新普通固件时，保留末尾 64 KiB 设置分区；整片擦除会丢失校准与蓝牙绑定。
 

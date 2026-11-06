@@ -26,7 +26,7 @@
     "Real Zephyr workqueue timing, USB or BLE packet delivery, host interpretation and transport switching",
     "Tap-dance timing and actual BT profile/bond operations are covered separately; BLE operations are mocks and the dance router only records invocations"
   ],
-  "target_build_manifest_sha256": "d462179166f2f4d536740ae349be525e44188af6aa6793db68f85893f650deab",
+  "target_build_manifest_sha256": "1f545c73c0c303ce70b8ab5c593dcb35e1ff50539364b6f05d4e3ed7271558b3",
   "compiled_maps": {
     "normal": [
       0,
@@ -1156,7 +1156,7 @@
     }
   ],
   "source_sha256": {
-    "scripts/test_yeti60_key_pipeline.py": "279144b6045975b577836fd74ffe349c5794210189dd04cf90a2d45ebf9f8faa",
+    "scripts/test_yeti60_key_pipeline.py": "392a6a30c8288d82c4e6aaebd263bf747286914d26975b399592cf3398b8a2f6",
     "scripts/yeti60_key_pipeline_contract.py": "1f747314cfd50572acd3ff1b28ac914b7280c23a1865b1c917caa87497c262f4",
     "tests/yeti60/key_pipeline.c": "205fe2d168efec88f8078cc67c054e257c8d9848702fee702a72938c9fc322d0",
     "firmware/target/config/yeti60.keymap": "bb26bb848769ada293de3ee11fa968692a502139c186fabbda408edadb322979",
