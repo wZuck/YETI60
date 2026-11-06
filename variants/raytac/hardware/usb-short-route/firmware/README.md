@@ -41,3 +41,5 @@ The [pinned NVS recovery model](../../../docs/testing/nvs-powercut.md) executes 
 Both images include the idle short-tap correction: the first active pending edge restores 4 ms scanning while retaining two-frame debounce. See [model evidence and limits](../../../docs/testing/scan-control.md). The scanner fingerprint changes, so recapture all sixty keys and use the matching normal image in this directory.
 
 [This bundle's independent keymap/HID evidence](key-pipeline.json) and [coverage/limits](../../../docs/testing/key-pipeline.md) cover base/Fn/release order and the six-key limit. This test-only update leaves images and calibration identifiers unchanged; it alone does not require recapture.
+
+[This bundle's target check](target-check.json) now verifies linked HID maps, object sizes/IDs, USB endpoint capacity and BLE Report References; see [format and runtime boundaries](../../../docs/testing/key-pipeline.md#linked-usb-and-ble-report-formats). Only checks/evidence changed; images and calibration identifiers are unchanged.

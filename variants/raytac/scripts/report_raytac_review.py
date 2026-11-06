@@ -63,6 +63,7 @@ def main():
  parser=argparse.ArgumentParser();parser.add_argument('--sync-downloads',action='store_true');args=parser.parse_args()
  files=['outcome.json','integration.json','schematic-current.json','yeti60-target-check.json','yeti60-firmware-simulation.json','yeti60-ordinary-process.json','C5-protection.json','USB-signal-paths.json','interference-layout.json','complete-exploded.json','yeti60-assembly.json','yeti60-inventory.json','plate-mount.json','key-mechanism-drawing.json','yeti60-materials.json','calibration.json','yeti60-power-budget.json','prototype-research.json']
  files.extend(['key-pipeline.json','firmware-recovery.json','usb-event-policy.json','analog-waveform.json','gpio-mode-policy.json','scan-control.json','nvs-powercut.json'])
+ if (AUD/'hid-format-followup.json').exists():files.append('hid-format-followup.json')
  evidence={n:read(AUD/n) for n in files}
  assert evidence['outcome.json']['checks_passed'] and all(s['state']=='passed' for s in evidence['outcome.json']['stages'])
  assert evidence['integration.json']['status']=='passed'
@@ -105,6 +106,7 @@ def main():
  report['USB_repair_candidate']['USB_event_policy']={'entry':'docs/testing/usb-event-policy.md','status':evidence['usb-event-policy.json']['status'],'native_scenarios':len(evidence['usb-event-policy.json']['cases']),'callback_linkage':read(candidate/'firmware/target-check.json')['variants']['normal']['USB_callback_linkage'],'physical_verification':False}
  report['USB_repair_candidate']['analog_scan_review']={'entry':'docs/testing/analog-waveform.md','status':evidence['analog-waveform.json']['status'],'physical_verification':False,'ADC_API_latency_qualified':False,'capacitance_delay_cases':len(evidence['analog-waveform.json']['sensitivities'])}
  report['USB_repair_candidate']['GPIO_mode_policy']={'entry':'docs/testing/gpio-mode-policy.md','candidate_evidence':'hardware/usb-short-route/firmware/gpio-mode-policy.json','status':evidence['gpio-mode-policy.json']['status'],'positive_cases':len(evidence['gpio-mode-policy.json']['positive_cases']),'rejected_mutants':len(evidence['gpio-mode-policy.json']['rejected_mutants']),'physical_verification':False}
+ report['USB_repair_candidate']['HID_linked_layout']=read(candidate/'firmware/target-check.json')['variants']['normal']['HID_linked_layout']
  report['USB_repair_candidate']['key_pipeline']={'entry':'docs/testing/key-pipeline.md','candidate_evidence':'hardware/usb-short-route/firmware/key-pipeline.json','positive_cases':len(evidence['key-pipeline.json']['positive_cases']),'rejected_mutants':len(evidence['key-pipeline.json']['rejected_mutants']),'ordinary_HID_key_slots':int(evidence['key-pipeline.json']['resolved_HID_configuration']['CONFIG_ZMK_HID_KEYBOARD_REPORT_SIZE']),'physical_verification':False}
  report['USB_repair_candidate']['passive_specifications']='hardware/usb-short-route/PASSIVES.md'
  report['USB_repair_candidate']['inactive_position_and_idle']={'entry':'docs/testing/scan-control.md',**evidence['scan-control.json']['inactive_idle'],'compiled_active_masks':evidence['scan-control.json']['compiled_matrix_active_masks'],'physical_verification':False}
@@ -150,6 +152,17 @@ def main():
  report['review_scope']='Current short-USB Raytac candidate; retained canonical long-route evidence explicitly labeled; E73 excluded'
  for item in [candidate/'audit/native-check.json',candidate/'audit/fabrication-check.json',candidate/'audit/assembly-package.json']:
   report['source_sha256'][str(item.relative_to(ROOT))]=sha(item)
+ followup=evidence.get('hid-format-followup.json')
+ if followup:
+  assert followup['status']=='targeted-HID-followup-passed' and not followup['full_audit_rerun']
+  assert not followup['physical_verification'] and not followup['production_approved']
+  assert all(record['exit_code']==0 for record in followup['commands'])
+  followup_current=(sha(AUD/'outcome.json')==followup['baseline_full_audit_sha256'] and
+                    all(sha(ROOT/path)==digest for group in ['source_sha256','output_sha256'] for path,digest in followup[group].items()))
+  report['HID_format_followup']={'entry':'docs/audit/hid-format-followup.json','status':followup['status'],
+      'matches_current_snapshot':followup_current,'full_audit_rerun':False,
+      'scope':'Targeted followup of the recorded full audit' if followup_current else 'Historical targeted followup; current linked format checked independently in target evidence',
+      'sha256':sha(AUD/'hid-format-followup.json')}
  documents={}
  for zh in [False,True]:
   suffix='.zh-CN' if zh else '';peer='raytac-review.md' if zh else 'raytac-review.zh-CN.md'
@@ -163,6 +176,9 @@ def main():
   lines+=['',('新增 [NVS 中断恢复模型](../testing/nvs-powercut.zh-CN.md)：14,795 次指定写入／垃圾回收／再次恢复中断通过，两个错误顺序／漏搬版本被拒绝；实际 NVMC、蓝牙绑定和欠压验收仍待首板。NVS 模型本身不改变固件标识。' if zh else 'The [NVS recovery model](../testing/nvs-powercut.md) passes 14,795 selected write/GC/recovery interruptions and rejects two ordering/live-copy mutants. Actual NVMC, Bluetooth-bond and brownout acceptance remain first-board work. The NVS model itself does not change firmware identifiers.')]
   lines+=['',('空闲短按已修补：有效位置的首次待确认边沿恢复快速扫描，保留两帧消抖；模型中的 50 ms 持按从漏报变为一次按下／松开，后续单帧尖峰不误报，见[专项证据](../testing/scan-control.zh-CN.md)。升级采用配套固件并重新校准；真实首键延迟及噪声功耗仍待实测。' if zh else 'Idle short-tap correction: the first pending active edge restores fast scanning while retaining two-frame debounce. A modeled 50 ms hold now produces one press/release and a later single-frame spike produces no extra event; see [evidence](../testing/scan-control.md). Upgrade with matched images and recalibrate; actual first-key latency and noise-related power remain unmeasured.')]
   lines+=['',('新增[矩阵／Fn／HID 链路](../testing/key-pipeline.zh-CN.md)：六个场景执行固定版本 ZMK 的实际函数，四个错误变体被拒绝。当前为六个普通键的报告槽位，修饰键另算；第七键可能被忽略，六十键扫描不等于全键无冲。真实主机送达和传输仍待验收。本项只增加测试，不改变镜像或校准标识。' if zh else 'New [matrix/Fn/HID pipeline checks](../testing/key-pipeline.md) execute pinned ZMK functions in six scenarios and reject four mutants. Current reports hold six ordinary keys plus separate modifier bits; a seventh can be omitted. Sixty-key scanning is not full-key rollover. Physical host delivery and transport remain open. These tests leave images and calibration identifiers unchanged.')]
+  lines+=['',('实际 ELF 的 [HID 格式检查](../testing/key-pipeline.zh-CN.md#已链接的-usb蓝牙报告格式)核对两份相同映射、报告对象及蓝牙 Reference。USB 9／13 字节报告匹配 16 字节端点，蓝牙报告体为 8／12 字节；运行时描述符填充、枚举和主机送达仍待实测。' if zh else 'Actual ELF [HID format checks](../testing/key-pipeline.md#linked-usb-and-ble-report-formats) reconcile both maps, report objects and BLE References. USB 9/13-byte reports fit the 16-byte endpoint; BLE bodies are 8/12 bytes. Runtime descriptor patching, enumeration and host delivery remain untested.')]
+  if followup:
+   lines+=['',(('本轮另有[HID 定向复核](hid-format-followup.json)，包含 12 项目标产物测试及集成／文档核对；与当前来源和输出匹配。上面的完整审查矩阵沿用上次结果，本轮未重新运行全部 CAD 阶段。' if zh else 'A separate [targeted HID followup](hid-format-followup.json) records twelve target-artifact tests plus integration/documentation checks and matches current inputs/outputs. The full audit matrix above is retained from the preceding run; all CAD stages were not rerun for this update.') if followup_current else ('[HID 定向复核](hid-format-followup.json)保留为历史快照；当前报告以本轮目标检查为准。' if zh else 'The [targeted HID followup](hid-format-followup.json) is a historical snapshot; current linked layout evidence comes from the target checks.'))]
   lines+=['','## 修补与图像复核' if zh else '## Repairs and image inspection','']
   repaired=(['C5 的真实保护通道和接地核对后，删除主板重复 D1 与长 USB 支线，保留 C5 必装的 D1／U1／F1。','共享模拟／放电总线标签统一；新导出网表与保存的引脚合同一致。','材料、库存、焊接步骤、实装坐标与编号图同步为 75 件。','保留的参考爆炸图展示七线；当前候选方案展示九线和 C04 垫片。制作时采用候选装配入口。','已改用 NiZ 普通轴座滑块及独立 Cherry 钢板卫星轴；新板 1.6 mm、28 个安装点，H26 不装；保留 60 个感应中心和外形，实际钢丝、卡扣及全行程须首件确认。','再次审查修正库存／验收页的旧 29 套五金及渲染说明中的旧 1.2 mm 板厚；中英文均增加错误注入检查，防止回退。','现行射频状态明确区分：最小天线铜区检查通过，USB 信号完整性及关壳射频仍待验收；历史审查保留为已标注的快照。'] if zh else notes)
   if zh:repaired.append('修复 Raytac 的 third_party/zmk 失效软链接，使其指向仓库固定版本子模块；新增全部受控软链接检查和缺失来源负向测试。')

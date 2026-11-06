@@ -49,3 +49,20 @@ python3 variants/raytac/scripts/check_usb_short_firmware.py
 [参考构建证据](../audit/key-pipeline.json) · [当前候选板证据](../../hardware/usb-short-route/firmware/key-pipeline.json) · [实际运行器](../../scripts/test_yeti60_key_pipeline.py) · [主机测试夹具](../../tests/yeti60/key_pipeline.c) · [首板验收](README.zh-CN.md)
 
 首板应在 USB 和蓝牙下分别核对每个基础／Fn 位置、两种 Fn 松键顺序、修饰键组合、六个普通键加修饰键、第七键限制及最终完整松开；在挂起／恢复、断开／重连和更换主机后重复。记录所用主机及系统的实际报告，模拟报告提交不能证明主机收到了数据包。
+
+## 已链接的 USB／蓝牙报告格式
+
+本次从普通版和校准版的实际 ARM ELF 读取符号及字节，不只检查源代码。参考板及当前候选板各自独立核对，两种固件中各保留两份完全相同的 77 字节报告映射，分别供 USB 和蓝牙使用。解析器逐项计算输入字段，并与已链接的报告对象大小、编号及蓝牙 Report Reference 比较。
+
+| 报告 | 编号 | 报告体 | USB 含编号总长 | 蓝牙 Report Reference |
+|---|---:|---:|---:|---|
+| 键盘 | 1 | 8 字节 | 9 字节 | `[1, 1]`，输入报告 |
+| 消费者控制 | 2 | 12 字节 | 13 字节 | `[2, 1]`，输入报告 |
+
+已链接 USB HID 接口的中断输入端点为 16 字节、1 ms 间隔，两种报告均能容纳。蓝牙端通过报告特征及其 Reference 指定编号，报告体不再带 USB 的编号字节。固定 Zephyr 头文件 `BT_ATT_DEFAULT_LE_MTU` 为 23；按该最低值扣除 3 字节 ATT 通知头后，20 字节容量能够容纳 8／12 字节报告体。这不是实测或已协商的 MTU。77 字节映射通过描述符／属性读取传输，不是一次按键通知的长度。
+
+ELF 中的 USB 配置总长、接口／端点编号及 HID 描述符长度仍是启动时待填入的字段；检查不把静态零值当作运行时已枚举数据，也没有执行这些运行时填充。两版配置未启用 USB 启动键盘协议，当前接口子类／协议初值均为零；BIOS／UEFI 使用尚未验收。实际描述符请求、GATT 属性读取、加密／订阅、通知送达、主机兼容及速率仍须实物测试。
+
+12 项目标产物测试覆盖原有电流声明／回调链接及新增 HID 检查。在两种镜像上拒绝映射不一致、报告槽位／类型／编号错误、修饰键范围错误、端点过小、蓝牙 Reference 错误、对象编号错误及截断／不配平条目。检查器自己的来源哈希也记录在目标检查报告中。
+
+[参考目标检查](../audit/yeti60-target-check.json) · [当前候选目标检查](../../hardware/usb-short-route/firmware/target-check.json) · [实际二进制解析器](../../scripts/yeti60_hid_contract.py) · [目标产物测试](../../tests/audit/test_target.py)

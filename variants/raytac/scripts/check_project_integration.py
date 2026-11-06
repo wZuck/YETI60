@@ -103,6 +103,9 @@ def verify():
     target=read(AUD/'yeti60-target-build.json');assert target['status']=='built';hashes(target['source_sha256'])
     for variant in target['variants'].values():hashes(variant['outputs'])
     target_check=read(AUD/'yeti60-target-check.json');assert target_check['status']=='passed' and target_check['build_manifest_sha256']==sha(AUD/'yeti60-target-build.json')
+    hashes(target_check['verification_recipe_sha256'])
+    from yeti60_hid_contract import verify_summary as verify_hid
+    for details in target_check['variants'].values():verify_hid(details['HID_linked_layout'])
     assert all(v['USB_configuration_mA']==500 for v in target_check['variants'].values())
     gpio_modes=read(AUD/'gpio-mode-policy.json');hashes(gpio_modes['source_sha256'])
     assert gpio_modes['status']=='passed' and not gpio_modes['physical_verification']
@@ -170,6 +173,8 @@ def verify():
     local=read(candidate/'audit/geometry-check.json');assert local['status']=='local-header-fit-and-reference-passed';hashes(local['source_sha256'])
     assert all(local['USB_reference_screen'][side]['nearest_adjacent_GND_coverage_fraction']>.999 for side in ['positive','negative'])
     firmware=read(candidate/'firmware/manifest.json');hashes(firmware['source_sha256']);hashes(firmware['published_outputs']);hashes(firmware['evidence'])
+    candidate_target=read(candidate/'firmware/target-check.json');hashes(candidate_target['verification_recipe_sha256'])
+    for details in candidate_target['variants'].values():verify_hid(details['HID_linked_layout'])
     candidate_pipeline=read(candidate/'firmware/key-pipeline.json');hashes(candidate_pipeline['source_sha256'])
     verify_key_pipeline(candidate_pipeline,read(candidate/'firmware/build.json'),sha(candidate/'firmware/build.json'))
     assert firmware['native_acceptance_sha256']==sha(candidate/'audit/native-check.json')

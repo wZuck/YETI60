@@ -44,3 +44,5 @@ Calibration now uses a 308-byte record with its own CRC-32; older 304-byte recor
 The [pinned NVS recovery model](nvs-powercut.md) executes actual NVS/calibration-load code across 14,795 selected interruption trials, including GC and a second cut during recovery, with sentinel preservation and successful later saves. It is not physical NVMC/brownout/Bluetooth acceptance. The NVS model itself is test-only; `--host-tests-only` can recheck existing candidate artifacts and republish tests, while changed firmware inputs require a full build.
 
 [Matrix, Fn and HID pipeline checks](key-pipeline.md) execute pinned ZMK lookup, layer-selection and HID code. Current reports hold six ordinary keys plus separate modifier bits; sixty-key scanning is not full-key rollover. Six scenarios and four rejected mutants pass; actual host/transport acceptance remains open.
+
+[Linked ELF HID-format checks](key-pipeline.md#linked-usb-and-ble-report-formats) match 9/13-byte USB reports to the 16-byte endpoint and 8/12-byte BLE bodies; both maps and Report References agree. Runtime descriptor patching, enumeration and host delivery remain untested.

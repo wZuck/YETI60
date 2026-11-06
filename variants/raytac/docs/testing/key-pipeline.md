@@ -49,3 +49,20 @@ The first command needs the existing locked west workspace and resolved local AR
 [Reference evidence](../audit/key-pipeline.json) · [Current candidate evidence](../../hardware/usb-short-route/firmware/key-pipeline.json) · [Actual runner](../../scripts/test_yeti60_key_pipeline.py) · [Host fixture](../../tests/yeti60/key_pipeline.c) · [First-board acceptance](README.md)
 
 On the first board, test every base/Fn position, both Fn release orders, modifier chords, six ordinary keys plus modifiers, the seventh-key limit and a clean final release on USB and BLE. Repeat after suspend/resume, disconnect/reconnect and host changes. Record actual reports with the selected host/OS; simulated report submissions are not evidence that a host received a packet.
+
+## Linked USB and BLE report formats
+
+The checker reads symbols and bytes from the actual normal/calibrator ARM ELFs, rather than only inspecting source. Reference and candidate builds are checked independently. Each image retains two identical 77-byte report maps, for USB and BLE. A short-item parser totals input fields and compares them with linked report-object sizes/IDs and Bluetooth Report References.
+
+| Report | ID | Body | USB total including ID | BLE Report Reference |
+|---|---:|---:|---:|---|
+| Keyboard | 1 | 8 bytes | 9 bytes | `[1, 1]`, input |
+| Consumer control | 2 | 12 bytes | 13 bytes | `[2, 1]`, input |
+
+The linked USB HID interrupt-IN endpoint is 16 bytes at a 1 ms interval, sufficient for both reports. BLE uses the report characteristic and its Reference to identify a report; its body omits the USB report-ID byte. The pinned Zephyr `BT_ATT_DEFAULT_LE_MTU` is 23; subtracting the three-byte ATT notification header leaves 20 bytes, sufficient for the 8/12-byte bodies. This is neither a measured nor negotiated MTU. The 77-byte map is transferred by descriptor/attribute reads, not as one key notification.
+
+USB configuration length, interface/endpoint numbers and HID descriptor length are startup placeholders in the ELF. Static zeros are not treated as enumerated runtime descriptors, and this check does not execute their runtime patching. USB boot-keyboard protocol is disabled in both configurations; the linked interface subclass/protocol start at zero. BIOS/UEFI use remains unqualified. Actual descriptor requests, GATT reads, encryption/subscription, notification delivery, host compatibility and rate still require physical tests.
+
+Twelve target-artifact tests cover the existing power declaration/callback linkage and the new HID checks. Both images reject mismatched maps, wrong report slots/types/IDs, incorrect modifier ranges, undersized endpoints, wrong BLE References/object IDs, and truncated/unbalanced items. Target-check reports also record hashes of the verifier sources.
+
+[Reference target check](../audit/yeti60-target-check.json) · [Current candidate target check](../../hardware/usb-short-route/firmware/target-check.json) · [Actual binary parser](../../scripts/yeti60_hid_contract.py) · [Target-artifact tests](../../tests/audit/test_target.py)

@@ -41,3 +41,5 @@ python3 variants/raytac/scripts/check_usb_short_firmware.py
 空闲后短按修补已包含在两个固件中：首个有效待确认边沿恢复 4 ms 扫描，保留两帧消抖。见[模型证据及边界](../../../docs/testing/scan-control.zh-CN.md)。扫描器指纹已变化，升级后重新采集 60 键，刷本目录配套普通版。
 
 [本包独立键位／HID 证据](key-pipeline.json)与[完整说明](../../../docs/testing/key-pipeline.zh-CN.md)覆盖基础／Fn／松键顺序及六键上限。本轮仅增加测试，镜像与校准标识未改变；不因这项测试而重新采集。
+
+[本包目标检查](target-check.json)新增实际 ELF 的 HID 报告映射、对象大小／编号、USB 端点和蓝牙 Report Reference 核对，详见[格式和运行时边界](../../../docs/testing/key-pipeline.zh-CN.md#已链接的-usb蓝牙报告格式)。仅更新检查与证据，固件镜像和校准标识未改变。

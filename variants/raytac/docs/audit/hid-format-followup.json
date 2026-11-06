@@ -1,0 +1,119 @@
+{
+  "status": "targeted-HID-followup-passed",
+  "timestamp_UTC": "2026-11-06T11:57:04.835561+00:00",
+  "full_audit_rerun": false,
+  "baseline_commit": "c3ef9f7228199a3a40a8eed8366e4be0f93b36c6",
+  "baseline_full_audit_sha256": "0eb56fc915741b4b7bb0ec27bf695f758a49dc42719990064936c8f631d772a6",
+  "baseline_full_audit_stages": 92,
+  "scope": "Targeted linked-HID checker/test/documentation update; preceding full CAD/software audit retained, not rerun. Existing ARM artifacts verified; no firmware compilation or hardware execution.",
+  "commands": [
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "scripts/check_yeti60_target.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.219,
+      "output_sha256": "f704412233ed2098c1e7020ddcfff29495de773e1472f3b69b478f91b3608a6f"
+    },
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "tests/audit/test_target.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.37,
+      "output_sha256": "a044acfe96d8c7b8ae14f7ad7d90f3afc25e59c0e2c0490201ed91ff9183133e",
+      "unittest_cases_run": 12
+    },
+    {
+      "command": [
+        "/Users/wzy/.cache/yeti60-cad-env/bin/python",
+        "scripts/study_yeti60_analog_waveform.py"
+      ],
+      "exit_code": 0,
+      "seconds": 10.112,
+      "output_sha256": "18402ac5d77b2ea1c0f06b5a019fc2d9861a823819555768bae171e32d6b2429"
+    },
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "scripts/check_yeti60_materials.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.062,
+      "output_sha256": "fc3d1bd06135c7e78d5b5e8ab46d41cb0a6e73a7c5b989dfd7775bad20a9d559"
+    },
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "scripts/check_usb_short_firmware.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.195,
+      "output_sha256": "bc79259772b4543df4e9c250345aa5e5457f906e5697c28c2e045fe4f30cc3b0"
+    },
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "scripts/check_project_docs.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.508,
+      "output_sha256": "5106621791513b5e6fb9c16e5d7c086eb7531fe8b6319c45fba2f58ea037379c"
+    },
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "scripts/check_project_integration.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.133,
+      "output_sha256": "56dcc56eff0efd97b44f2347e008451f10b22a96b1824529770ad18921e3c82b"
+    },
+    {
+      "command": [
+        "/Applications/Xcode-beta.app/Contents/Developer/usr/bin/python3",
+        "tests/audit/test_integration.py"
+      ],
+      "exit_code": 0,
+      "seconds": 8.352,
+      "output_sha256": "17b977be4bfb1725826e1cf79df72d82fce26dc0ec2d0af07a0e10ad764a4b3d",
+      "unittest_cases_run": 40
+    }
+  ],
+  "initial_integration_rejection": {
+    "status": "failed",
+    "error": "Stale source: docs/audit/yeti60-target-check.json",
+    "check_location": "check_project_integration.py:10",
+    "production_approved": false
+  },
+  "recovery": "Recomputed the dependent analog study; no manual restamping of its source hashes",
+  "source_sha256": {
+    "scripts/check_yeti60_target.py": "25d7979aa3ca2ff34eecb178ac6ac092d0f079e886406f57a765bfbf72600f9d",
+    "scripts/report_raytac_review.py": "47ba072436f888aaada81a3292885e3d3ab0f368b8c205c4872137adaafd791d",
+    "scripts/yeti60_hid_contract.py": "37b89bb716e05845cbc664376c60667e998a7c07cb8a0144ebd33fbd2297088b",
+    "scripts/check_project_integration.py": "7730b856067beaf9a8b2403663f4e36187efb55e66ac572c87e3ae08ce434469",
+    "scripts/check_usb_short_firmware.py": "4b4d8bdd690e96ade18cfb0351d46d33e31a7860cd8dc54870688617ffed7ee7",
+    "scripts/build_usb_short_firmware.py": "14aadde66549143f3be72b53468676700eb50c08328768b381730146dd365198",
+    "scripts/run_audit.py": "5e23f6e4b1e42924c9afb74bcb7112fde3c6a52f801cddfc13ab6d8f768dc7fd",
+    "tests/audit/test_target.py": "bf9eb235da2624d1bf7871b6cb8a7f2beb56c78141e1031bd57747a0f4a17bb1",
+    "tests/audit/test_integration.py": "20d45f5798afcface6ccfbc6910064e8a1dfc56177f1f0360e4f41d54de9236b",
+    "docs/testing/key-pipeline.md": "b8fc6985e869ff45cb0510735c9bd8394828fba4dfec340b69d994ab25565210",
+    "docs/testing/key-pipeline.zh-CN.md": "eb07bcd9ed803bbd2e79745f0249b116451a84a94c1a41499f191734785efdfc",
+    "docs/testing/README.md": "4d4c15ee09c84891c8222ea447389c6ae64fd7ea2fa94d8ab916a9a3bb3dd446",
+    "docs/testing/README.zh-CN.md": "a314050ab5abde515b7bc17f29ddc2b985cc300187fd9bad09b1f6f6309c8b76",
+    "hardware/usb-short-route/firmware/README.md": "e00dd86847722d283fdeb3944c74056970d38f9826a817b0999584c96dc24f02",
+    "hardware/usb-short-route/firmware/README.zh-CN.md": "1ce8dc6a92ae8ba361115481132cc7d14e9881a29e0944ace09549654fbbec98"
+  },
+  "output_sha256": {
+    "docs/audit/yeti60-target-check.json": "f704412233ed2098c1e7020ddcfff29495de773e1472f3b69b478f91b3608a6f",
+    "docs/audit/yeti60-materials.json": "bfc2c7c8b1be41b296a5fea5c30cd8dc38126f643d278559a34d82143d148d74",
+    "docs/audit/documentation-check.json": "5106621791513b5e6fb9c16e5d7c086eb7531fe8b6319c45fba2f58ea037379c",
+    "docs/audit/integration.json": "56dcc56eff0efd97b44f2347e008451f10b22a96b1824529770ad18921e3c82b",
+    "hardware/usb-short-route/firmware/target-check.json": "f36748279c31fadf82e5781f1fb9e03cfed4248a6343c524b5230c050d38d482",
+    "hardware/usb-short-route/firmware/manifest.json": "c09844c315778c1691571146a5245b299d965ebe900904b54ceee86ea5c39413"
+  },
+  "physical_verification": false,
+  "production_approved": false
+}

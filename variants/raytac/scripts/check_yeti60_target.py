@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Verify target source provenance, ARM linkage and complete Intel HEX records."""
-import hashlib,json,struct
+import hashlib,json,struct,re,subprocess
 from pathlib import Path
 from yeti60_calibration_contract import version
+from yeti60_hid_contract import linked_hid_layout,verify_summary
 ROOT=Path(__file__).resolve().parents[1]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def usb_callback_linkage(elf):
@@ -61,6 +62,10 @@ def main():
     p=ROOT/'docs/audit/yeti60-target-build.json';build=json.loads(p.read_text())
     assert build['status']=='built' and build['board']=='yeti60'
     assert set(build['variants'])=={'normal','calibrator'}
+    workspace=Path.home()/'.cache/yeti60-zmk-workspace'
+    att_header=subprocess.check_output(['git','-C',str(workspace/'zephyr'),'show',build['dependencies']['zephyr']+':subsys/bluetooth/host/att_internal.h'],text=True)
+    minimum_mtu=int(re.search(r'^#define BT_ATT_DEFAULT_LE_MTU\s+(\d+)$',att_header,re.M).group(1))
+    assert minimum_mtu==23
     for name,h in build['source_sha256'].items():assert sha(ROOT/name)==h,'Stale firmware source: '+name
     details={}
     for variant,record in build['variants'].items():
@@ -92,8 +97,11 @@ def main():
             elif kind==1:ended=True
             else:assert kind in [3,5],'Unsupported HEX record'
         assert ended and seen
-        details[variant]={'arm_elf':True,'hex_checksums':'passed','programmed_bytes':len(seen),'settings_partition_preserved':True,'USB_configuration_mA':usb_configuration_power(elf),'USB_callback_linkage':usb_callback_linkage(elf),'diagnostic_clock_hz':record['diagnostic_clock_hz'],'kscan_event_queue_size':record['kscan_event_queue_size'],'builtin_atomics':record['builtin_atomics']}
+        hid=linked_hid_layout(elf,minimum_mtu);verify_summary(hid)
+        details[variant]={'arm_elf':True,'hex_checksums':'passed','programmed_bytes':len(seen),'settings_partition_preserved':True,'USB_configuration_mA':usb_configuration_power(elf),'USB_callback_linkage':usb_callback_linkage(elf),'HID_linked_layout':hid,'diagnostic_clock_hz':record['diagnostic_clock_hz'],'kscan_event_queue_size':record['kscan_event_queue_size'],'builtin_atomics':record['builtin_atomics']}
     assert len({v['calibration_version'] for v in build['variants'].values()})==1
     report={'status':'passed','variants':details,'build_manifest_sha256':sha(p),'physical_verification':False,'calibration_contract_version':build['variants']['normal']['calibration_version'],'recovery_binding':build['variants']['normal']['recovery_binding']}
+    report['verification_recipe_sha256']={str(path.relative_to(ROOT)):sha(path) for path in [Path(__file__).resolve(),ROOT/'scripts/yeti60_hid_contract.py']}
+    report['pinned_ATT_header_sha256']=hashlib.sha256(att_header.encode()).hexdigest()
     (ROOT/'docs/audit/yeti60-target-check.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 if __name__=='__main__':main()

@@ -89,6 +89,18 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/key-pipeline.json',
                      lambda data: data.update(physical_verification=True))
 
+    def test_linked_HID_wrong_report_length_rejected(self):
+        self.rejects('docs/audit/yeti60-target-check.json',
+                     lambda data: data['variants']['normal']['HID_linked_layout']['reports']['keyboard'].update(USB_report_bytes=8))
+
+    def test_linked_HID_cannot_claim_runtime_descriptor_patch(self):
+        self.rejects('docs/audit/yeti60-target-check.json',
+                     lambda data: data['variants']['calibrator']['HID_linked_layout'].update(runtime_descriptor_patch_verified=True))
+
+    def test_candidate_linked_HID_wrong_BLE_reference_rejected(self):
+        self.rejects('hardware/usb-short-route/firmware/target-check.json',
+                     lambda data: data['variants']['normal']['HID_linked_layout']['BLE_report_refs'].update(keyboard=[2,1]))
+
     def test_key_pipeline_missing_Fn_coverage_rejected(self):
         self.rejects('docs/audit/key-pipeline.json',
                      lambda data: data['positive_cases'][1].update(checked=0))

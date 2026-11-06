@@ -13,6 +13,43 @@
         "charger_event_callback_linked": true,
         "method": "ARM ELF symbol table and decoded Thumb BL targets"
       },
+      "HID_linked_layout": {
+        "status": "linked-HID-layout-passed",
+        "report_map_copies": 2,
+        "report_map_bytes": 77,
+        "report_map_sha256": "8aacfa4245ec39ae2f58ab4ec9a7d13b0347dd2836ee7b9d8a601a92ff6f508f",
+        "reports": {
+          "keyboard": {
+            "report_id": 1,
+            "body_bytes": 8,
+            "USB_report_bytes": 9
+          },
+          "consumer": {
+            "report_id": 2,
+            "body_bytes": 12,
+            "USB_report_bytes": 13
+          }
+        },
+        "USB_interrupt_IN": {
+          "max_packet_bytes": 16,
+          "interval_ms": 1
+        },
+        "USB_boot_subclass_protocol": false,
+        "BLE_report_refs": {
+          "keyboard": [
+            1,
+            1
+          ],
+          "consumer": [
+            2,
+            1
+          ]
+        },
+        "minimum_ATT_MTU_bytes": 23,
+        "minimum_ATT_notification_payload_bytes": 20,
+        "runtime_descriptor_patch_verified": false,
+        "physical_verification": false
+      },
       "diagnostic_clock_hz": 32768,
       "kscan_event_queue_size": 128,
       "builtin_atomics": true
@@ -28,6 +65,43 @@
         "wrapper_calls_original_stack": true,
         "charger_event_callback_linked": true,
         "method": "ARM ELF symbol table and decoded Thumb BL targets"
+      },
+      "HID_linked_layout": {
+        "status": "linked-HID-layout-passed",
+        "report_map_copies": 2,
+        "report_map_bytes": 77,
+        "report_map_sha256": "8aacfa4245ec39ae2f58ab4ec9a7d13b0347dd2836ee7b9d8a601a92ff6f508f",
+        "reports": {
+          "keyboard": {
+            "report_id": 1,
+            "body_bytes": 8,
+            "USB_report_bytes": 9
+          },
+          "consumer": {
+            "report_id": 2,
+            "body_bytes": 12,
+            "USB_report_bytes": 13
+          }
+        },
+        "USB_interrupt_IN": {
+          "max_packet_bytes": 16,
+          "interval_ms": 1
+        },
+        "USB_boot_subclass_protocol": false,
+        "BLE_report_refs": {
+          "keyboard": [
+            1,
+            1
+          ],
+          "consumer": [
+            2,
+            1
+          ]
+        },
+        "minimum_ATT_MTU_bytes": 23,
+        "minimum_ATT_notification_payload_bytes": 20,
+        "runtime_descriptor_patch_verified": false,
+        "physical_verification": false
       },
       "diagnostic_clock_hz": 32768,
       "kscan_event_queue_size": 128,
@@ -46,5 +120,10 @@
     "base_Backspace_preserved": true,
     "profile_slots": 5,
     "calibration_settings_erase_binding": false
-  }
+  },
+  "verification_recipe_sha256": {
+    "scripts/check_yeti60_target.py": "25d7979aa3ca2ff34eecb178ac6ac092d0f079e886406f57a765bfbf72600f9d",
+    "scripts/yeti60_hid_contract.py": "37b89bb716e05845cbc664376c60667e998a7c07cb8a0144ebd33fbd2297088b"
+  },
+  "pinned_ATT_header_sha256": "82f614cace23c38e6e8bfa20f37aafbe7ab6de9ed92b91d09fe2479d16fa322f"
 }

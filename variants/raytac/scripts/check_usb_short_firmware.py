@@ -5,6 +5,7 @@ from yeti60_calibration_contract import version
 from yeti60_nvs_contract import verify as verify_nvs
 from yeti60_scan_control_contract import verify as verify_scan_control
 from yeti60_key_pipeline_contract import verify as verify_key_pipeline
+from yeti60_hid_contract import verify_summary as verify_hid
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';PUB=BASE/'firmware'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -14,8 +15,10 @@ def main():
         for rel,h in m[group].items():assert sha(ROOT/rel)==h,('Candidate firmware provenance mismatch',rel)
     assert sha(BASE/'audit/native-check.json')==m['native_acceptance_sha256'];assert sha(BASE/'audit/geometry-check.json')==m['local_geometry_acceptance_sha256']
     build=json.loads((PUB/'build.json').read_text());target=json.loads((PUB/'target-check.json').read_text());assert sha(PUB/'build.json')==target['build_manifest_sha256']
+    for rel,h in target['verification_recipe_sha256'].items():assert sha(ROOT/rel)==h,('Stale target/HID checker',rel)
     assert set(build['variants'])=={'normal','calibrator'} and all(v['USB_configuration_mA']==500 for v in target['variants'].values())
     for details in target['variants'].values():
+        verify_hid(details['HID_linked_layout'])
         assert details['diagnostic_clock_hz']==32768
         assert details['kscan_event_queue_size']==128 and details['builtin_atomics']
         linkage=details['USB_callback_linkage']

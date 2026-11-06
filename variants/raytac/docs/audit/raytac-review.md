@@ -26,6 +26,10 @@ Idle short-tap correction: the first pending active edge restores fast scanning 
 
 New [matrix/Fn/HID pipeline checks](../testing/key-pipeline.md) execute pinned ZMK functions in six scenarios and reject four mutants. Current reports hold six ordinary keys plus separate modifier bits; a seventh can be omitted. Sixty-key scanning is not full-key rollover. Physical host delivery and transport remain open. These tests leave images and calibration identifiers unchanged.
 
+Actual ELF [HID format checks](../testing/key-pipeline.md#linked-usb-and-ble-report-formats) reconcile both maps, report objects and BLE References. USB 9/13-byte reports fit the 16-byte endpoint; BLE bodies are 8/12 bytes. Runtime descriptor patching, enumeration and host delivery remain untested.
+
+A separate [targeted HID followup](hid-format-followup.json) records twelve target-artifact tests plus integration/documentation checks and matches current inputs/outputs. The full audit matrix above is retained from the preceding run; all CAD stages were not rerun for this update.
+
 ## Repairs and image inspection
 
 - USB mainboard D1 and long branches removed after actual C5 protected-channel/ground verification; C5 D1/U1/F1 retained

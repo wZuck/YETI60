@@ -35,7 +35,7 @@
     "scripts/yeti60_calibration_contract.py": "3b04a419b50903429ac467ec87a2d01b56d7538743a15d45a0bf2cec5eb76f04",
     "scripts/yeti60_recovery_contract.py": "19d1e6672423c5bf5ec9c65e2ef85548847d44cbe656c31f40e9bee5b9f6eb84",
     "hardware/usb-short-route/netlist.xml": "44f177a827df33c4f9c4c70823169a8c2c3d422588496cb945a33fcdfdcf3c79",
-    "scripts/build_usb_short_firmware.py": "9383925ed8a16000e9ab1794730c9032db5a6be84a202a218b65bad4b1f3e40b"
+    "scripts/build_usb_short_firmware.py": "14aadde66549143f3be72b53468676700eb50c08328768b381730146dd365198"
   },
   "published_outputs": {
     "hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex": "a822d485ed277beaba2617fc9dd8eeb4d2ac8dc9c59e33874e7de31fcd66af44",
@@ -45,7 +45,7 @@
   },
   "evidence": {
     "hardware/usb-short-route/firmware/build.json": "77075048edc7047fc975fb1e458b96c66ec207615e3a8a109ddf027542dd1576",
-    "hardware/usb-short-route/firmware/target-check.json": "3cf6f4349600e3f517e5b9e66123619c86481524d79a299f56483b0e53c481cd",
+    "hardware/usb-short-route/firmware/target-check.json": "f36748279c31fadf82e5781f1fb9e03cfed4248a6343c524b5230c050d38d482",
     "hardware/usb-short-route/firmware/simulation.json": "258edccaa583ca569724fa068201ebac329d536f0a79e8ea5883bbcaf601935e",
     "hardware/usb-short-route/firmware/calibration.json": "3498ca2f77a9367b4242361bf48698cad0eaeb1a5a01743de1a21566a0ec3b4e",
     "hardware/usb-short-route/firmware/gpio-mode-policy.json": "00a103fee2d49bc001a4748bb2cbba5e374f9f5bc600d48ddc8af645e998e648",
