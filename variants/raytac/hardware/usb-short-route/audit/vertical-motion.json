@@ -192,7 +192,7 @@
     {
       "part": "U1",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.6209871174187287
+      "minimum_nominal_gap_mm": 0.5173490117899351
     },
     {
       "part": "R46",
@@ -212,7 +212,7 @@
     {
       "part": "J1",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 3.309536760659437
+      "minimum_nominal_gap_mm": 3.272637861138344
     },
     {
       "part": "R13",
@@ -260,11 +260,6 @@
       "minimum_nominal_gap_mm": 0.9099999999999842
     },
     {
-      "part": "JP1",
-      "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9099999999999966
-    },
-    {
       "part": "R32",
       "intersection_mm3": 0.0,
       "minimum_nominal_gap_mm": 0.9100000000000126
@@ -282,7 +277,7 @@
     {
       "part": "J2",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 1.9096881609882155
+      "minimum_nominal_gap_mm": 0.8096881467556127
     },
     {
       "part": "C44",
@@ -382,7 +377,7 @@
     {
       "part": "SW100",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 1.21
+      "minimum_nominal_gap_mm": 1.125
     },
     {
       "part": "R40",
@@ -390,14 +385,14 @@
       "minimum_nominal_gap_mm": 0.910000000000001
     },
     {
-      "part": "J5",
-      "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000161
-    },
-    {
       "part": "J4",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.9100000000000179
+      "minimum_nominal_gap_mm": 0.7650000000000174
+    },
+    {
+      "part": "J5",
+      "intersection_mm3": 0.0,
+      "minimum_nominal_gap_mm": 0.7650000000000148
     },
     {
       "part": "main-SH",
@@ -981,7 +976,7 @@
     },
     {
       "part": "SW100",
-      "nominal_gap_mm": 1.21,
+      "nominal_gap_mm": 1.125,
       "nearest_point_pairs_case_mm": [
         {
           "case": [
@@ -992,7 +987,7 @@
           "moving": [
             108.96270495529,
             -123.6028520533,
-            -5.5
+            -5.585
           ]
         },
         {
@@ -1004,7 +999,7 @@
           "moving": [
             108.96270406672,
             -117.3596949908,
-            -5.5
+            -5.585
           ]
         },
         {
@@ -1016,7 +1011,7 @@
           "moving": [
             108.96270421438,
             -118.3971488112,
-            -5.5
+            -5.585
           ]
         },
         {
@@ -1028,7 +1023,7 @@
           "moving": [
             106.975,
             -125.525,
-            -5.5
+            -5.585
           ]
         },
         {
@@ -1040,7 +1035,7 @@
           "moving": [
             106.975,
             -116.725,
-            -5.5
+            -5.585
           ]
         }
       ]
@@ -1056,11 +1051,11 @@
   "source_sha256": {
     "scripts/check_usb_short_vertical_motion.py": "7ae6c67c896a58579054e98f249b9bcb0382dd4386317ebe91d66f78f226a72d",
     "hardware/usb-short-route/interconnect-spec.json": "f17b44770a579595d699bcf128744ac3af68ad77895621e4dfe7f156bdf8b6d7",
-    "hardware/usb-short-route/audit/assembly.json": "8c28ae26d9f6cd32864922d478e3dd4c3f33a80d1d5fc55837cde221d6d60c36",
-    "hardware/usb-short-route/audit/guides.json": "af5083b46bcac0465f82661a08f20df7e0b2e9721f08a6dd8ffed381fd61c302",
-    "hardware/usb-short-route/audit/closed-assembly.json": "d70449bc03f9721b7ed20cd5a40feb3649c5568b12d20fb450e269a2b8bad724",
+    "hardware/usb-short-route/audit/assembly.json": "fe5b67f26bdd4ba352f42f0910715d3931a43121f018e89d71847d7b0cb7acb6",
+    "hardware/usb-short-route/audit/guides.json": "3631320d515c29f6c6df568cfc2027fc2bc16dab46031fe00eb42f7b063c74ee",
+    "hardware/usb-short-route/audit/closed-assembly.json": "7b91c9834bf7d61e69e1c69e0498cc185d2790e18e0eeead4a3bb6a7671d53ef",
     "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step": "40a0f23a7e93a365e9b7fe95efce1c276631771eec777c4701f9fcfd86bfecaa",
-    ".assembly-work/pcb-placed.step": "1327794912ccf52be47f3f469a78b76cc536736b6777949d304ff5b4c801a28c",
+    ".assembly-work/pcb-placed.step": "9d3c34c4f42fca9b0712ab2fad6ccf64823e53af69dc6867c3879995cdeb7da5",
     "hardware/usb-short-route/mechanical/yeti60-niz-pm1-c04.step": "0f0183702c2ca54428f39c8dd0c23e74af0db627fec648f50e50958c4da873ef",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",

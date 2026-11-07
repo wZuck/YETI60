@@ -37,3 +37,5 @@
 先 [Raytac 校准版 HEX](../../hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex)，再按[固件说明](../../firmware/target/README.zh-CN.md)完成 release、逐键 press、status 和 save。最后刷[普通版 HEX](../../hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex)，保留末尾 64 KiB 设置区；不要整片擦除后宣称校准还在。J3 焊盘线序按原生图和[逐图指南](../assembly/build-guide.zh-CN.md)核对，不假定是标准排针顺序。
 
 焊接资料：[TI QFN／SON 装配说明](https://www.ti.com/lit/an/slua271c/slua271c.pdf)、[Raytac 模组资料](https://www.raytac.com/product/ins.php?index_id=24)。本项目没有测得一条适用于所有替代元件和焊接设备的通用回流曲线。
+
+印刷前按[封装／阻焊修订](../../hardware/usb-short-route/PACKAGE-MODELS.zh-CN.md)检查 U5／U6 阻焊岛和匹配钢网，禁止刮去岛形阻焊或使用旧开放孔钢网。

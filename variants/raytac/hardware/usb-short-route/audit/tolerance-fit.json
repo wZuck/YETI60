@@ -42,9 +42,9 @@
       "film": 0.02,
       "installed_plate_Z": 0.1,
       "mounted_board_bow": 0.15,
-      "installed_height": 0.10000000000000009
+      "installed_height": 0.015000000000000124
     },
-    "downward_sum_mm": 0.5538000000000001,
+    "downward_sum_mm": 0.4688000000000001,
     "XY_allowance_each_axis_mm": 0.35,
     "bounds_case_mm": [
       106.625,
@@ -133,15 +133,15 @@
     "scripts/build_usb_short_plate.py": "ff509c0bca2fb7b8ca5a5005231ecc342f86a17c8b321b21978a0ed4ea80b684",
     "hardware/usb-short-route/mechanical-fit-spec.json": "c001d9d3482061dd4316f647b1a6ddfeecccda4273ab3f0dc088ff38b9c7815b",
     "hardware/usb-short-route/audit/plate-build.json": "63e2a2527570ac9f21c8bad0498d4cc9a5764fe4e26a91c254e4164e00b09d84",
-    "hardware/usb-short-route/audit/assembly.json": "8c28ae26d9f6cd32864922d478e3dd4c3f33a80d1d5fc55837cde221d6d60c36",
-    "hardware/usb-short-route/audit/closed-assembly.json": "d70449bc03f9721b7ed20cd5a40feb3649c5568b12d20fb450e269a2b8bad724",
+    "hardware/usb-short-route/audit/assembly.json": "fe5b67f26bdd4ba352f42f0910715d3931a43121f018e89d71847d7b0cb7acb6",
+    "hardware/usb-short-route/audit/closed-assembly.json": "7b91c9834bf7d61e69e1c69e0498cc185d2790e18e0eeead4a3bb6a7671d53ef",
     "mechanical/assembly-spec.raytac.json": "e7c14e76bbd0f26bb5c43ab8526bc897191050dc1127abab7db5acc24d4010c5",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step": "40a0f23a7e93a365e9b7fe95efce1c276631771eec777c4701f9fcfd86bfecaa",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/check_yeti60_assembly.py": "049759707a29a2cb0370e2a11764a1c3856897d56be1f772cccfe5692c34bbce",
-    "scripts/check_usb_short_closed_assembly.py": "718d0b5748372434949942f5ecf28caa103a9f8c50350aa9a2d8c1500d0e25ee",
+    "scripts/check_usb_short_closed_assembly.py": "2932d089fd4f7f3f8d15e2aa6bbdf3d2ed6fbf8c700fa4f2fe05ecbbe99a898b",
     "hardware/usb-short-route/interconnect-spec.json": "f17b44770a579595d699bcf128744ac3af68ad77895621e4dfe7f156bdf8b6d7"
   }
 }

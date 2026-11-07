@@ -13,6 +13,7 @@ from matplotlib.patches import Rectangle
 from cad_geometry import load,intersection_volume
 from check_yeti60_assembly import box,distance,move
 from study_yeti60_prototype import usb_study
+from usb_short_model_contract import apply_model_envelopes
 from usb_short_passive_contract import apply_passive_envelopes
 from usb_short_ground import connected_ground
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';AUD=BASE/'audit'
@@ -24,7 +25,7 @@ def main():
     for p,h in native['source_sha256'].items():assert sha(ROOT/p)==h,('Stale candidate',p)
     ground_check=connected_ground(native)
     screen,_,normalizations=usb_study(native,paths)
-    assembly=apply_passive_envelopes(read(ROOT/'docs/audit/yeti60-assembly.json'),native);spec=read(ROOT/'mechanical/pcb-fabrication-spec.json');nominal=assembly['nominal_stack']['pcb_bottom_z'];cases=[load(ROOT/'mechanical/generated'/('yeti60-'+s+'.step')) for s in ['bottom','top']]
+    assembly=apply_model_envelopes(apply_passive_envelopes(read(ROOT/'docs/audit/yeti60-assembly.json'),native));spec=read(ROOT/'mechanical/pcb-fabrication-spec.json');nominal=assembly['nominal_stack']['pcb_bottom_z'];cases=[load(ROOT/'mechanical/generated'/('yeti60-'+s+'.step')) for s in ['bottom','top']]
     obstacles=[]
     for p in assembly['component_envelopes']:
         if p['ref'] not in ['R30','R31']:obstacles.append((p['ref'],box(p['bounds_case_mm'])))
@@ -59,7 +60,8 @@ def main():
             actual=[v+(delta if i in [2,5] else 0) for i,v in enumerate(bb)];expanded=[v+(-allow if i<3 else allow) for i,v in enumerate(actual)];shape=box(expanded);case_gap=min(distance(shape,c) for c in cases);assert case_gap>=gap,(name,'case',thick,case_gap)
             collisions=[intersection_volume(shape,c) for c in cases];assert max(collisions)<1e-6
             others=[]
-            for ref,other in obstacles:others.append((ref,distance(shape,move(other,z=delta))))
+            for ref,other in obstacles:
+                if ref!=owner:others.append((ref,distance(shape,move(other,z=delta))))
             nearest=min(others,key=lambda v:v[1]);assert nearest[1]>=gap,(name,'component/mount',nearest)
             for other,obb,oowner in envelopes:
                 if oowner==owner:continue

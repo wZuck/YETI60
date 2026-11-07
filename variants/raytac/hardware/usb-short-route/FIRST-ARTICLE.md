@@ -2,6 +2,8 @@ English | [Chinese](FIRST-ARTICLE.zh-CN.md)
 
 # Raytac first article: files, order settings and open-bench build
 
+The [package and ordinary-process revision](PACKAGE-MODELS.md) governs current U5 lands/stencil and U5/U6 mask islands. Both via faces request tenting; previous back-open instructions are superseded.
+
 The [USB event policy](../../docs/testing/usb-event-policy.md) covers callback-driven charging and deconfiguration. Suspend transfers system power to the battery; USB-only operation without a qualified protected pack or suitable battery simulator cannot qualify suspend/resume.
 
 Firmware recovery: [Fn + guarded double-tap for selected-profile clearing and calibration v3 update rules](../../docs/testing/firmware-recovery.md). Ordinary Backspace is preserved; older calibration must be recaptured using the matched candidate pair.
@@ -42,11 +44,11 @@ Also use one **C5 JSH**: buy it populated, or separately fabricate the [pinned u
 | Vias | Ordinary mechanical through vias; minimum hole/land **0.30/0.50 mm** |
 | Slots | Two existing **5.0 × 2.2 mm plated through slots**, included in PTH drilling |
 | Special processes | No blind/buried/laser vias, backdrilling, resin filling or copper capping |
-| Via covering | Follow the supplied Gerber masks. U5/U6 thermal holes are front-tented, back-open; no filled-via substitution |
+| Via covering | Conventional tenting; preserve U5/U6 0.50 mm component-side mask islands; DFM must retain custom openings |
 | Factory mark | Place outside sensing copper, antenna clearance, holes and component contact areas; request production-file confirmation |
 | Electrical test | Test against the supplied IPC/native nets; confirm coordinate alignment |
 | SMT assembly | Disable for self-soldering. Placement CSV is review data, not an automatically qualified JLC CPL/BOM |
-| Stencil | Bottom side; 0.10 mm stainless is the process-review starting point; review U5/U6 open-via wicking |
+| Stencil | Current filtered bottom stencil; 0.10 mm process-review starting point; retain windows avoiding mask islands |
 | Quantity | One net board per keyboard; account for the platform minimum and desired spares |
 
 The stack and ordinary fabrication choices were checked against [JLC's stack information](https://jlcpcb.com/impedance) and [capabilities](https://jlcpcb.com/capabilities/pcb-capabilities). These are design selections, not a quote or supplier DFM acceptance. Require the actual production preview to preserve the full outline, holes, masks and layer order. If the portal's via-covering option conflicts with the supplied mask pattern, have the supplier confirm the two thermal-via exceptions before production; [JLC distinguishes covering and filling processes](https://jlcpcb.com/help/article/pcb-via-covering).
@@ -58,8 +60,6 @@ The drill files contain **846 drill/slot features: 816 plated and 30 nonplated**
 Gerbers, drills and placement data use the same absolute origin; bottom X is not negated. Gerber/drill/placement lengths are millimetres. IPC-D-356 retains its declared inch encoding, but its auxiliary origin is normalized to zero in a temporary export copy and the reader converts units before comparison. The source PCB is unchanged.
 
 Independent readback compares 289 fitted copper lands and nets, all 75 placements and packages, all drill/slot locations, the outer contour, the two thermal-via mask openings and all 1,444 IPC records. The contour joins require unique endpoint neighbours within 0.001 mm; the maximum observed original gap is approximately 0.000060 mm. This numerical joining is disclosed, not a claim that every Gerber endpoint is identical. See [machine evidence](audit/fabrication-check.json).
-
-U5 thermal via: PCB (117.65, 145.00) mm. U6 thermal via: (133.00, 140.80) mm. Both are ordinary 0.30 mm holes, with front mask coverage and back openings inside their thermal pads. Review paste loss and wetting during the first reflow; do not pay for filling/capping to replace this design. Use the supplied bottom stencil, not the unfiltered default paste export that includes JP1.
 
 ## Materials needed before a case exists
 

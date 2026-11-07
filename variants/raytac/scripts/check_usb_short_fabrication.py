@@ -180,9 +180,11 @@ def check_masks(front,back):
     for ref,x,y in [('U5',117.65,-145),('U6',133,-140.8)]:
         hole_and_registration=Point(x,y).buffer(.2,quad_segs=64)
         assert front_shape.intersection(hole_and_registration).area<1e-8,('Front thermal via not tented in Gerber',ref)
-        assert back_shape.buffer(.000001).contains(hole_and_registration),('Back thermal hole not fully open in Gerber',ref)
+        assert back_shape.intersection(hole_and_registration).area<1e-8,('Back thermal via not tented in Gerber',ref)
         rows.append(dict(ref=ref,center_mm=[x,y],drill_mm=.3,mask_registration_screen_mm=.05,
-                         front_opening=False,back_opening=True))
+                         front_opening=False,back_opening=False))
+    for x,y in [(118.5,-145),(117.25,-145),(117.65,-145.5),(133.45,-140.8),(133,-141.6)]:
+        assert back_shape.buffer(1e-6).contains(Point(x,y).buffer(.02)), 'Thermal mask windows closed or altered'
     return rows
 
 
@@ -268,7 +270,7 @@ def verify():
                 parser_versions={p:importlib.metadata.version(p) for p in ['gerbonara','shapely']},
                 source_sha256={str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__),ROOT/'requirements-cam.txt',BASE/'audit/fabrication-export.json']},
                 limits=['Independent CAM/native parity is not supplier DFM approval, a passing USB eye or physical operation',
-                        'Ordinary open U5/U6 thermal vias require stencil/reflow wicking and thermal qualification on the first article',
+                        'Ordinary mask-tented U5/U6 thermal vias require receiving inspection of mask islands and first-article reflow/thermal qualification; tenting is not resin filling or copper capping',
                         'C5 is a separate board; the mainboard archive does not include daughterboard fabrication'])
 
 

@@ -27,7 +27,7 @@ def geometry(board):
     out={}
     for f in board.GetFootprints():
         ref=f.GetReference()
-        if ref in {'J4','J5','R30','R31','F1'} | REVISED | MOVED:continue
+        if ref in {'J4','J5','R30','R31','F1','U5'} | REVISED | MOVED:continue
         # Preserve other footprints; F1, capacitor lands and relocated power parts
         # are checked against their separate frozen contracts.
         # J1's two intentionally unused nets change, but its pad geometry does not.
@@ -49,7 +49,7 @@ def main():
     AUD.mkdir(exist_ok=True);WORK.mkdir(parents=True,exist_ok=True)
     fuse=verify_fuse();passives=verify_passives();power=verify_layout()
     source_files=sorted(p for p in BASE.rglob('*') if p.is_file() and (p.parent.name=='YAECKB.pretty' or (p.parent==BASE and (p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_pro','.kicad_sym','.xml','.csv'] or p.name in ['components.json','frozen-footprints.json','metadata-audit.json','fp-lib-table','sym-lib-table','parts-qualification.json','power-passives.json','power-layout.json']))))
-    source_files.extend([ROOT/'scripts/usb_short_fuse_contract.py',ROOT/'scripts/usb_short_passive_contract.py',ROOT/'scripts/usb_short_power_routes.py',ROOT/'scripts/usb_short_power_contract.py',BASE/'models/Littelfuse_0466001_NRHF_nominal.step'])
+    source_files.extend([ROOT/'scripts/usb_short_fuse_contract.py',ROOT/'scripts/usb_short_passive_contract.py',ROOT/'scripts/usb_short_power_routes.py',ROOT/'scripts/usb_short_power_contract.py',BASE/'models/Littelfuse_0466001_NRHF_nominal.step',ROOT/'scripts/repair_usb_short_charger_package.py',ROOT/'scripts/usb_short_charger_contract.py'])
     before={str(p.relative_to(ROOT)):sha(p) for p in source_files};assert (BASE/(NAME+'.kicad_pro')).read_bytes()==gitfile('hardware/ec60-nrf52840/'+NAME+'.kicad_pro'),'Project rules changed'
     oldxml=ET.fromstring(gitfile('hardware/ec60-nrf52840/netlist.xml'));saved=ET.parse(BASE/'netlist.xml').getroot()
     with tempfile.TemporaryDirectory(prefix='yeti60-short-usb-') as folder:

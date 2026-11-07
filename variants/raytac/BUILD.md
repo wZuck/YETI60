@@ -10,6 +10,7 @@ The first board can be tested without an enclosure. Supplier DFM precedes fabric
 
 | Task | Current document/file |
 |---|---|
+| Native models and ordinary thermal-pad construction | [Models, lands, stencil and mask islands](hardware/usb-short-route/PACKAGE-MODELS.md) |
 | Order mainboard PCB and stencil; choose JLC parameters | [First-article order table and downloads](hardware/usb-short-route/FIRST-ARTICLE.md) |
 | Buy mainboard parts and subtract inventory | [75-part purchase CSV](hardware/usb-short-route/mainboard-purchase.csv), [generic passive/LED specifications](hardware/usb-short-route/PASSIVES.md), [selected F1](hardware/usb-short-route/F1-SELECTION.md) |
 | Obtain or solder C5 JSH | [Seven-part C5 BOM and inventory](hardware/bom/daughterboard.csv), [pinned C5 fabrication ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip) |

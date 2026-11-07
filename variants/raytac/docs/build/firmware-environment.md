@@ -77,8 +77,8 @@ The west initialization/update sequence follows [Zephyr's built-in-command docum
 
 ## Recorded validation and boundaries
 
-The [fresh-source build evidence](../audit/published-source-build.json) records successful normal/calibrator builds and target/host checks from a source fixture without copied local project build directories, using a separate 56-dependency workspace created from a read-only locked cache. Rebuilt HEX/BIN bytes and calibration identifiers are unchanged. Ten environment regression checks accompany this update.
+The [fresh-source build evidence](../audit/published-source-build.json) records successful normal/calibrator builds and target/host checks from a source fixture without copied local project build directories, using a separate 56-dependency workspace created from a read-only locked cache. Rebuilt HEX/BIN bytes and calibration identifiers are unchanged. That record describes checkpoint cc6c1e4 and ten environment checks. The subsequent package/mask repair changes the PCB fingerprint; use the current matched candidate downloads.
 
 GitHub HTTPS timeout/TLS failures in the current Colima VM prevented completion of internet-only first-time downloading; that route is not counted as passed. Independent dependency-workspace creation and compilation are verified separately from network connectivity.
 
-Native KiCad 3D models still need a separate repair: legacy KiCad 6/private references, duplicate U2/U4 models and a J2 SMT connector model absent from the tested library. Those items are outside this firmware-build pass. The independent assembly renderer and native KiCad 3D view use different model sources; neither establishes the other's acceptance.
+Checkpoint cc6c1e4 identified native-model reference problems. Current model, land and mask corrections are documented in the [package repair](../../hardware/usb-short-route/PACKAGE-MODELS.md). Physical and full tolerance acceptance remain open.

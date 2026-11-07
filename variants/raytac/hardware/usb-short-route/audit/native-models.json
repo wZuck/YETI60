@@ -1,0 +1,2942 @@
+{
+  "status": "native-model-closure-and-landing-passed",
+  "physical_verification": false,
+  "manufacturer_tolerances_qualified": false,
+  "fitted_models": 75,
+  "only_documented_thermal_package_and_model_changes": true,
+  "external_KiCad_version": "10.0.7",
+  "envelope_modeling_allowance_mm": 0.1,
+  "parts": {
+    "C10": {
+      "path": ".assembly-work/usb-short-models/parts/C10.step",
+      "sha256": "29e507fc3d7fd48093c577342544931ebd0123e45b86210d744974f5ce8776cb",
+      "bounds_native_mm": [
+        101.43124,
+        -155.72925,
+        -0.5850000000000001,
+        102.43124,
+        -155.22925,
+        -0.08499999999999998
+      ],
+      "value": "220p",
+      "position_pcb_mm": [
+        101.93124,
+        155.47925
+      ],
+      "angle_deg": 180.0
+    },
+    "C11": {
+      "path": ".assembly-work/usb-short-models/parts/C11.step",
+      "sha256": "438721750c6e982adc5952061c9948b53a9dbc7625410b0f0b54f690c4c37c5f",
+      "bounds_native_mm": [
+        103.66124,
+        -146.948339,
+        -0.5850000000000001,
+        104.66124,
+        -146.448339,
+        -0.08499999999999998
+      ],
+      "value": "100n",
+      "position_pcb_mm": [
+        104.16124,
+        146.698339
+      ],
+      "angle_deg": 180.0
+    },
+    "C12": {
+      "path": ".assembly-work/usb-short-models/parts/C12.step",
+      "sha256": "52e8cadfa6b7a53b69e01b3ad3b3387c58d77b0efb4494957e8f2ecbe4754559",
+      "bounds_native_mm": [
+        303.705454,
+        -176.802094,
+        -0.5850000000000001,
+        304.705454,
+        -176.302094,
+        -0.08499999999999998
+      ],
+      "value": "100n",
+      "position_pcb_mm": [
+        304.205454,
+        176.552094
+      ],
+      "angle_deg": 180.0
+    },
+    "C13": {
+      "path": ".assembly-work/usb-short-models/parts/C13.step",
+      "sha256": "465b23f3faded88e20493d2c2165a05a3b358c50c7e0cd8535e385a2af9e6dba",
+      "bounds_native_mm": [
+        103.66124,
+        -144.567075,
+        -0.5850000000000001,
+        104.66124,
+        -144.067075,
+        -0.08499999999999998
+      ],
+      "value": "1u",
+      "position_pcb_mm": [
+        104.16124,
+        144.317075
+      ],
+      "angle_deg": 0.0
+    },
+    "C30": {
+      "path": ".assembly-work/usb-short-models/parts/C30.step",
+      "sha256": "7541462b5f743dac1eb343e4706de9037c735b53ce0cbba4d6e916ce127bd0b0",
+      "bounds_native_mm": [
+        345.09999999999997,
+        -125.4,
+        -0.885,
+        346.7,
+        -124.6,
+        -0.08499999999999996
+      ],
+      "value": "10u/10V",
+      "position_pcb_mm": [
+        345.9,
+        125.0
+      ],
+      "angle_deg": 180.0
+    },
+    "C31": {
+      "path": ".assembly-work/usb-short-models/parts/C31.step",
+      "sha256": "42510866754fef4dda1787a485cb7a786bcfd401a4f86663ba2c09e6f144ac51",
+      "bounds_native_mm": [
+        346.5,
+        -123.1,
+        -0.5850000000000001,
+        347.5,
+        -122.6,
+        -0.08499999999999998
+      ],
+      "value": "100n/16V",
+      "position_pcb_mm": [
+        347.0,
+        122.85
+      ],
+      "angle_deg": 180.0
+    },
+    "C32": {
+      "path": ".assembly-work/usb-short-models/parts/C32.step",
+      "sha256": "eb8b0384b706dbac1e3276ccecb6068f794871c0f0fad5a02962f502126faa09",
+      "bounds_native_mm": [
+        345.775,
+        -119.0,
+        -1.335,
+        347.025,
+        -117.0,
+        -0.08499999999999994
+      ],
+      "value": "4.7u/16V",
+      "position_pcb_mm": [
+        346.4,
+        118.0
+      ],
+      "angle_deg": 90.0
+    },
+    "C40": {
+      "path": ".assembly-work/usb-short-models/parts/C40.step",
+      "sha256": "b406996e0c48ead2e5747b41590e14613d1c94187b51a179a33f9e81dd73967b",
+      "bounds_native_mm": [
+        121.375,
+        -147.9,
+        -1.335,
+        122.625,
+        -145.9,
+        -0.08499999999999994
+      ],
+      "value": "2.2u/25V",
+      "position_pcb_mm": [
+        122.0,
+        146.9
+      ],
+      "angle_deg": -90.0
+    },
+    "C41": {
+      "path": ".assembly-work/usb-short-models/parts/C41.step",
+      "sha256": "a68a0a43a5f7aebf7677d35f55e1a11a4a2b5884ccd16a2abecb450330496554",
+      "bounds_native_mm": [
+        112.0,
+        -144.325,
+        -1.335,
+        114.0,
+        -143.075,
+        -0.08499999999999994
+      ],
+      "value": "22u/10V",
+      "position_pcb_mm": [
+        113.0,
+        143.7
+      ],
+      "angle_deg": 180.0
+    },
+    "C42": {
+      "path": ".assembly-work/usb-short-models/parts/C42.step",
+      "sha256": "5249d2d96103d1bea9ec5b300ccb3c1b3bb320f0bc3d9c9590310f2b3c912b00",
+      "bounds_native_mm": [
+        120.9,
+        -143.325,
+        -1.335,
+        122.9,
+        -142.075,
+        -0.08499999999999994
+      ],
+      "value": "22u/10V",
+      "position_pcb_mm": [
+        121.9,
+        142.7
+      ],
+      "angle_deg": 0.0
+    },
+    "C43": {
+      "path": ".assembly-work/usb-short-models/parts/C43.step",
+      "sha256": "c0f04fd01e6d9b964f0c70d8a517178f6133437bc49c7496f75da2d382da1cef",
+      "bounds_native_mm": [
+        131.0,
+        -137.125,
+        -1.335,
+        133.0,
+        -135.875,
+        -0.08499999999999994
+      ],
+      "value": "22u/10V",
+      "position_pcb_mm": [
+        132.0,
+        136.5
+      ],
+      "angle_deg": 0.0
+    },
+    "C44": {
+      "path": ".assembly-work/usb-short-models/parts/C44.step",
+      "sha256": "13da6f62f874d65540f281d2222f5231aae2c772cd68aa36931e62d429057337",
+      "bounds_native_mm": [
+        136.2,
+        -140.20000000000002,
+        -0.885,
+        137.8,
+        -139.4,
+        -0.08499999999999996
+      ],
+      "value": "100n/16V",
+      "position_pcb_mm": [
+        137.0,
+        139.8
+      ],
+      "angle_deg": 0.0
+    },
+    "C45": {
+      "path": ".assembly-work/usb-short-models/parts/C45.step",
+      "sha256": "105e145560d8acb3c087c505f9bbfaec191230f97bfbd8d1a6335cc422a6033c",
+      "bounds_native_mm": [
+        131.5,
+        -143.925,
+        -1.335,
+        133.5,
+        -142.675,
+        -0.08499999999999994
+      ],
+      "value": "22u/10V",
+      "position_pcb_mm": [
+        132.5,
+        143.3
+      ],
+      "angle_deg": 0.0
+    },
+    "C46": {
+      "path": ".assembly-work/usb-short-models/parts/C46.step",
+      "sha256": "5f7f7c349a42f8e471882641f1f64f3bfbcb9f397d7cd91c7694282998017958",
+      "bounds_native_mm": [
+        135.0,
+        -144.625,
+        -1.335,
+        137.0,
+        -143.375,
+        -0.08499999999999994
+      ],
+      "value": "22u/10V",
+      "position_pcb_mm": [
+        136.0,
+        144.0
+      ],
+      "angle_deg": 0.0
+    },
+    "C47": {
+      "path": ".assembly-work/usb-short-models/parts/C47.step",
+      "sha256": "825b95d0619490725abdda943059e50386dc2c2a1ca415fb21838a648be7a00a",
+      "bounds_native_mm": [
+        143.5,
+        -148.25,
+        -0.5850000000000001,
+        144.5,
+        -147.75,
+        -0.08499999999999998
+      ],
+      "value": "10n",
+      "position_pcb_mm": [
+        144.0,
+        148.0
+      ],
+      "angle_deg": 0.0
+    },
+    "C48": {
+      "path": ".assembly-work/usb-short-models/parts/C48.step",
+      "sha256": "adec3aeeffc115735cb15e0671370d2629c0394e68256efe949fad2ad4644495",
+      "bounds_native_mm": [
+        106.5,
+        -147.25,
+        -0.5850000000000001,
+        107.5,
+        -146.75,
+        -0.08499999999999998
+      ],
+      "value": "1u/10V",
+      "position_pcb_mm": [
+        107.0,
+        147.0
+      ],
+      "angle_deg": 0.0
+    },
+    "C9": {
+      "path": ".assembly-work/usb-short-models/parts/C9.step",
+      "sha256": "b2d08029e6d99d4aa6ac9543a1e9b21b9b35f45f9215ae6e514cec4e4e591f89",
+      "bounds_native_mm": [
+        142.262276,
+        -180.738098,
+        -0.5850000000000001,
+        143.262276,
+        -180.238098,
+        -0.08499999999999998
+      ],
+      "value": "100n",
+      "position_pcb_mm": [
+        142.762276,
+        180.488098
+      ],
+      "angle_deg": 180.0
+    },
+    "D2": {
+      "path": ".assembly-work/usb-short-models/parts/D2.step",
+      "sha256": "550ad19600a3df96bdcd4f15dd63f15ec1689b1e90c669805c7a572193dafc25",
+      "bounds_native_mm": [
+        315.2,
+        -123.4,
+        -1.185,
+        316.8,
+        -122.6,
+        -0.08499999999999995
+      ],
+      "value": "STATUS",
+      "position_pcb_mm": [
+        316.0,
+        123.0
+      ],
+      "angle_deg": 0.0
+    },
+    "F1": {
+      "path": ".assembly-work/usb-short-models/parts/F1.step",
+      "sha256": "ce28d25dbab6518cf5acb578d380dce1a95d6a97805507da1a3c7f75423971ca",
+      "bounds_native_mm": [
+        87.847827,
+        -115.78602400000001,
+        -0.669,
+        89.371827,
+        -112.611024,
+        -0.08499999999999991
+      ],
+      "value": "1A_FAST_0466001_NRHF",
+      "position_pcb_mm": [
+        88.609827,
+        114.198524
+      ],
+      "angle_deg": 90.0
+    },
+    "J1": {
+      "path": ".assembly-work/usb-short-models/parts/J1.step",
+      "sha256": "96887265d0279422c99748111a2cd711c738c03042546333e8cd7b72514e1275",
+      "bounds_native_mm": [
+        117.160337,
+        -126.527723,
+        -3.045000000000001,
+        122.110337,
+        -120.527723,
+        -0.08499999999999969
+      ],
+      "value": "USB_POWER_IN",
+      "position_pcb_mm": [
+        119.572837,
+        123.527723
+      ],
+      "angle_deg": -90.0,
+      "landing": {
+        "seating_plane_native_Z_mm": -0.08499999999999969,
+        "matched_lands": 6,
+        "planar_feet": [
+          {
+            "pin": "",
+            "bounds_native_mm": [
+              120.610337,
+              -126.227723,
+              -0.0950000000000003,
+              122.110337,
+              -126.027723,
+              -0.09500000000000013
+            ],
+            "modeled_seating_plane_difference_mm": 0.010000000000000439,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.0
+          },
+          {
+            "pin": "",
+            "bounds_native_mm": [
+              120.610337,
+              -121.027723,
+              -0.0950000000000003,
+              122.110337,
+              -120.82772299999999,
+              -0.09500000000000013
+            ],
+            "modeled_seating_plane_difference_mm": 0.010000000000000439,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.0
+          },
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              117.16033700000001,
+              -122.127723,
+              -0.0849999999999998,
+              117.96033700000001,
+              -121.927723,
+              -0.0849999999999997
+            ],
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.20000000000000284
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              117.16033700000001,
+              -123.127723,
+              -0.0849999999999998,
+              117.96033700000001,
+              -122.927723,
+              -0.0849999999999997
+            ],
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.20000000000000284
+          },
+          {
+            "pin": "3",
+            "bounds_native_mm": [
+              117.16033700000001,
+              -124.127723,
+              -0.0849999999999998,
+              117.96033700000001,
+              -123.927723,
+              -0.0849999999999997
+            ],
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.20000000000000284
+          },
+          {
+            "pin": "4",
+            "bounds_native_mm": [
+              117.16033700000001,
+              -125.127723,
+              -0.0849999999999998,
+              117.96033700000001,
+              -124.927723,
+              -0.0849999999999997
+            ],
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.20000000000000284
+          }
+        ],
+        "nonmetal_core_seating_faces": [],
+        "modeled_seating_band_mm": 0.15,
+        "minimum_required_overlap_ratio": 1,
+        "method": "Exact planar STEP-face bounds within 0.15 mm of PCBward seating, compared with native copper polygons approximated 0.002 mm inward. SH/PH/TSSOP feet require full containment; L1 follows the manufacturer lands with intended inward heel overhang and requires >=80% nominal flat-face overlap. SH modeled seating heights are not physical coplanarity acceptance. Only L1 may ignore a nonmetal core face"
+      }
+    },
+    "J2": {
+      "path": ".assembly-work/usb-short-models/parts/J2.step",
+      "sha256": "865ad9d27c32437aee27714b1d5e1d52dfad6ee7dcd14b169d8471b7839a28d5",
+      "bounds_native_mm": [
+        147.04999999999995,
+        -129.2,
+        -5.6850000000000005,
+        156.95000000000002,
+        -120.58999999999999,
+        -0.08499999999999742
+      ],
+      "value": "PROTECTED_1S_4V2_NTC10K",
+      "position_pcb_mm": [
+        152.0,
+        125.0
+      ],
+      "angle_deg": 0.0,
+      "landing": {
+        "seating_plane_native_Z_mm": -0.08499999999999742,
+        "matched_lands": 5,
+        "planar_feet": [
+          {
+            "pin": "3",
+            "bounds_native_mm": [
+              153.74999999999997,
+              -129.2,
+              -0.08499999999999851,
+              154.25,
+              -127.19999999999999,
+              -0.08499999999999783
+            ],
+            "modeled_seating_plane_difference_mm": 4.0245584642661925e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.24999999999997158
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              151.74999999999997,
+              -129.2,
+              -0.0849999999999981,
+              152.25,
+              -127.19999999999999,
+              -0.08499999999999742
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.24999999999997158
+          },
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              149.74999999999997,
+              -129.2,
+              -0.08499999999999944,
+              150.25,
+              -127.19999999999999,
+              -0.0849999999999976
+            ],
+            "modeled_seating_plane_difference_mm": 1.8041124150158794e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.24999999999997158
+          },
+          {
+            "pin": "MP",
+            "bounds_native_mm": [
+              147.54999999999998,
+              -123.5,
+              -0.08500000000003198,
+              147.95000000000002,
+              -120.58999999999999,
+              -0.08500000000000157
+            ],
+            "modeled_seating_plane_difference_mm": 4.1494585545365226e-15,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.18999939999909005
+          },
+          {
+            "pin": "MP",
+            "bounds_native_mm": [
+              156.04999999999998,
+              -123.50000000000003,
+              -0.08500000000000157,
+              156.45000000000002,
+              -120.58999999999999,
+              -0.08500000000000002
+            ],
+            "modeled_seating_plane_difference_mm": 2.5951463200613034e-15,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.18999919999849052
+          }
+        ],
+        "nonmetal_core_seating_faces": [],
+        "modeled_seating_band_mm": 0.15,
+        "minimum_required_overlap_ratio": 1,
+        "method": "Exact planar STEP-face bounds within 0.15 mm of PCBward seating, compared with native copper polygons approximated 0.002 mm inward. SH/PH/TSSOP feet require full containment; L1 follows the manufacturer lands with intended inward heel overhang and requires >=80% nominal flat-face overlap. SH modeled seating heights are not physical coplanarity acceptance. Only L1 may ignore a nonmetal core face"
+      }
+    },
+    "J4": {
+      "path": ".assembly-work/usb-short-models/parts/J4.step",
+      "sha256": "6def6ab89d7f67465de66f0e58089bd2203ff7d3d49ed528cfd35aa04bbacc2c",
+      "bounds_native_mm": [
+        347.5,
+        -115.97500000000001,
+        -3.045000000000001,
+        353.5,
+        -111.025,
+        -0.08499999999999969
+      ],
+      "value": "USB_C5_INPUT",
+      "position_pcb_mm": [
+        350.5,
+        113.5
+      ],
+      "angle_deg": 0.0,
+      "landing": {
+        "seating_plane_native_Z_mm": -0.08499999999999969,
+        "matched_lands": 6,
+        "planar_feet": [
+          {
+            "pin": "MP",
+            "bounds_native_mm": [
+              353.0,
+              -112.525,
+              -0.0950000000000003,
+              353.2,
+              -111.025,
+              -0.09500000000000013
+            ],
+            "modeled_seating_plane_difference_mm": 0.010000000000000439,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.0
+          },
+          {
+            "pin": "MP",
+            "bounds_native_mm": [
+              347.8,
+              -112.525,
+              -0.0950000000000003,
+              348.0,
+              -111.025,
+              -0.09500000000000013
+            ],
+            "modeled_seating_plane_difference_mm": 0.010000000000000439,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.0
+          },
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              348.9,
+              -115.975,
+              -0.0849999999999998,
+              349.1,
+              -115.175,
+              -0.0849999999999997
+            ],
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.19999999999998863
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              349.9,
+              -115.975,
+              -0.0849999999999998,
+              350.1,
+              -115.175,
+              -0.0849999999999997
+            ],
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.19999999999998863
+          },
+          {
+            "pin": "3",
+            "bounds_native_mm": [
+              350.9,
+              -115.975,
+              -0.0849999999999998,
+              351.1,
+              -115.175,
+              -0.0849999999999997
+            ],
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.19999999999998863
+          },
+          {
+            "pin": "4",
+            "bounds_native_mm": [
+              351.9,
+              -115.975,
+              -0.0849999999999998,
+              352.1,
+              -115.175,
+              -0.0849999999999997
+            ],
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.19999999999998863
+          }
+        ],
+        "nonmetal_core_seating_faces": [],
+        "modeled_seating_band_mm": 0.15,
+        "minimum_required_overlap_ratio": 1,
+        "method": "Exact planar STEP-face bounds within 0.15 mm of PCBward seating, compared with native copper polygons approximated 0.002 mm inward. SH/PH/TSSOP feet require full containment; L1 follows the manufacturer lands with intended inward heel overhang and requires >=80% nominal flat-face overlap. SH modeled seating heights are not physical coplanarity acceptance. Only L1 may ignore a nonmetal core face"
+      }
+    },
+    "J5": {
+      "path": ".assembly-work/usb-short-models/parts/J5.step",
+      "sha256": "b0b3231475d7daf578efe81f79ed703a7a63ca5abb2fcaf48ab20645a72740e9",
+      "bounds_native_mm": [
+        339.0,
+        -119.97500000000001,
+        -3.045000000000001,
+        343.0,
+        -115.025,
+        -0.08499999999999969
+      ],
+      "value": "USB_POWER_OUT",
+      "position_pcb_mm": [
+        341.0,
+        117.5
+      ],
+      "angle_deg": 0.0,
+      "landing": {
+        "seating_plane_native_Z_mm": -0.08499999999999969,
+        "matched_lands": 4,
+        "planar_feet": [
+          {
+            "pin": "MP",
+            "bounds_native_mm": [
+              342.5,
+              -116.525,
+              -0.0950000000000003,
+              342.7,
+              -115.025,
+              -0.09500000000000013
+            ],
+            "modeled_seating_plane_difference_mm": 0.010000000000000439,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.0
+          },
+          {
+            "pin": "MP",
+            "bounds_native_mm": [
+              339.3,
+              -116.525,
+              -0.0950000000000003,
+              339.5,
+              -115.025,
+              -0.09500000000000013
+            ],
+            "modeled_seating_plane_difference_mm": 0.010000000000000439,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.0
+          },
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              340.4,
+              -119.975,
+              -0.0849999999999998,
+              340.6,
+              -119.175,
+              -0.0849999999999997
+            ],
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.19999999999998863
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              341.4,
+              -119.975,
+              -0.0849999999999998,
+              341.6,
+              -119.175,
+              -0.0849999999999997
+            ],
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.19999999999998863
+          }
+        ],
+        "nonmetal_core_seating_faces": [],
+        "modeled_seating_band_mm": 0.15,
+        "minimum_required_overlap_ratio": 1,
+        "method": "Exact planar STEP-face bounds within 0.15 mm of PCBward seating, compared with native copper polygons approximated 0.002 mm inward. SH/PH/TSSOP feet require full containment; L1 follows the manufacturer lands with intended inward heel overhang and requires >=80% nominal flat-face overlap. SH modeled seating heights are not physical coplanarity acceptance. Only L1 may ignore a nonmetal core face"
+      }
+    },
+    "L1": {
+      "path": ".assembly-work/usb-short-models/parts/L1.step",
+      "sha256": "08d08ff73ff6ce111e5b5d7331e2610c52acdb297f0cf9e6f44379490c6d8206",
+      "bounds_native_mm": [
+        127.0,
+        -143.0,
+        -2.0850000000000004,
+        130.0,
+        -140.0,
+        -0.08499999999999983
+      ],
+      "value": "1.5uH_74438336015",
+      "position_pcb_mm": [
+        128.5,
+        141.5
+      ],
+      "angle_deg": -90.0,
+      "landing": {
+        "seating_plane_native_Z_mm": -0.08499999999999983,
+        "matched_lands": 2,
+        "planar_feet": [
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              127.0,
+              -141.2,
+              -0.08500000000000019,
+              130.0,
+              -140.0,
+              -0.08499999999999983
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 0.9166050326735996,
+            "minimum_copper_edge_margin_mm": 0.0
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              127.0,
+              -143.0,
+              -0.08500000000000019,
+              130.0,
+              -141.8,
+              -0.08499999999999983
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 0.9166050326735996,
+            "minimum_copper_edge_margin_mm": 0.0
+          }
+        ],
+        "nonmetal_core_seating_faces": [
+          [
+            127.0,
+            -141.8,
+            -0.08500000000000019,
+            130.0,
+            -141.2,
+            -0.08499999999999983
+          ]
+        ],
+        "modeled_seating_band_mm": 0.15,
+        "minimum_required_overlap_ratio": 0.8,
+        "method": "Exact planar STEP-face bounds within 0.15 mm of PCBward seating, compared with native copper polygons approximated 0.002 mm inward. SH/PH/TSSOP feet require full containment; L1 follows the manufacturer lands with intended inward heel overhang and requires >=80% nominal flat-face overlap. SH modeled seating heights are not physical coplanarity acceptance. Only L1 may ignore a nonmetal core face"
+      }
+    },
+    "R10": {
+      "path": ".assembly-work/usb-short-models/parts/R10.step",
+      "sha256": "c1cd38d5e68b38385b67f3837cd4740b1e0594b637a56f958a65b6b5164b3d3b",
+      "bounds_native_mm": [
+        147.735337,
+        -177.036979,
+        -0.43500000000000005,
+        148.735337,
+        -176.536979,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        148.235337,
+        176.786979
+      ],
+      "angle_deg": 0.0
+    },
+    "R11": {
+      "path": ".assembly-work/usb-short-models/parts/R11.step",
+      "sha256": "a7c7554a73d7d5412150f100eee00747e223c87c6c85eb64b5a7660f7673cf10",
+      "bounds_native_mm": [
+        119.285337,
+        -182.886979,
+        -0.43500000000000005,
+        119.785337,
+        -181.886979,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        119.535337,
+        182.386979
+      ],
+      "angle_deg": -90.0
+    },
+    "R12": {
+      "path": ".assembly-work/usb-short-models/parts/R12.step",
+      "sha256": "74c3005971f4392d3f3cc81ca544505ffa744e5b31b15e6b0d2afaeb3c1f2396",
+      "bounds_native_mm": [
+        218.685337,
+        -180.996979,
+        -0.43500000000000005,
+        219.185337,
+        -179.996979,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        218.935337,
+        180.496979
+      ],
+      "angle_deg": -90.0
+    },
+    "R13": {
+      "path": ".assembly-work/usb-short-models/parts/R13.step",
+      "sha256": "2a617e632661d5484263afbc8ac05887ca1284f8aa21c729674cb0c0c59974c8",
+      "bounds_native_mm": [
+        151.285337,
+        -185.296979,
+        -0.43500000000000005,
+        151.785337,
+        -184.296979,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        151.535337,
+        184.796979
+      ],
+      "angle_deg": -90.0
+    },
+    "R14": {
+      "path": ".assembly-work/usb-short-models/parts/R14.step",
+      "sha256": "ed1083bd808b569497fec9e510a8aa93a878c0f27c6caca4f0df22d6ded081dc",
+      "bounds_native_mm": [
+        185.285337,
+        -181.796979,
+        -0.43500000000000005,
+        185.785337,
+        -180.796979,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        185.535337,
+        181.296979
+      ],
+      "angle_deg": -90.0
+    },
+    "R15": {
+      "path": ".assembly-work/usb-short-models/parts/R15.step",
+      "sha256": "8c15807131c4fa7e4261abe34e680e9b7d5aed02d74d1f15467374b525ca97f4",
+      "bounds_native_mm": [
+        165.885337,
+        -182.61966,
+        -0.43500000000000005,
+        166.385337,
+        -181.61966,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        166.135337,
+        182.11966
+      ],
+      "angle_deg": -90.0
+    },
+    "R16": {
+      "path": ".assembly-work/usb-short-models/parts/R16.step",
+      "sha256": "2f40a06548d58eecf704879e36daa969f8805f673a650de012080806fdae58de",
+      "bounds_native_mm": [
+        105.571491,
+        -156.065551,
+        -0.43500000000000005,
+        106.571491,
+        -155.565551,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        106.071491,
+        155.815551
+      ],
+      "angle_deg": 180.0
+    },
+    "R17": {
+      "path": ".assembly-work/usb-short-models/parts/R17.step",
+      "sha256": "c199cd89ccb6a239d8d68aa88684534afb1464a7a72eb3e23c508afc15259bc1",
+      "bounds_native_mm": [
+        103.43124,
+        -156.825551,
+        -0.43500000000000005,
+        103.93124,
+        -155.825551,
+        -0.08499999999999995
+      ],
+      "value": "1k",
+      "position_pcb_mm": [
+        103.68124,
+        156.325551
+      ],
+      "angle_deg": -90.0
+    },
+    "R18": {
+      "path": ".assembly-work/usb-short-models/parts/R18.step",
+      "sha256": "c963feb1d06734a0231d3685cf1865d68de35578c00ced4966e6cabd2b9e941c",
+      "bounds_native_mm": [
+        251.085337,
+        -180.986979,
+        -0.43500000000000005,
+        251.585337,
+        -179.986979,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        251.335337,
+        180.486979
+      ],
+      "angle_deg": -90.0
+    },
+    "R19": {
+      "path": ".assembly-work/usb-short-models/parts/R19.step",
+      "sha256": "2a124b75b936d1827c010d2989262677b792cb1dafa32069f96f5a3c841d4904",
+      "bounds_native_mm": [
+        282.907833,
+        -177.223189,
+        -0.43500000000000005,
+        283.407833,
+        -176.223189,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        283.157833,
+        176.723189
+      ],
+      "angle_deg": -90.0
+    },
+    "R20": {
+      "path": ".assembly-work/usb-short-models/parts/R20.step",
+      "sha256": "d367d251c53b131dcc29cd54ffab8b348d438276cc3af9492037e327398e500d",
+      "bounds_native_mm": [
+        299.325337,
+        -177.356979,
+        -0.43500000000000005,
+        300.325337,
+        -176.856979,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        299.825337,
+        177.106979
+      ],
+      "angle_deg": 180.0
+    },
+    "R21": {
+      "path": ".assembly-work/usb-short-models/parts/R21.step",
+      "sha256": "8d5314daf378c738f5a9f268cee986b9ed11f4ff6110fbcb23b611027f16990b",
+      "bounds_native_mm": [
+        280.015337,
+        -182.396979,
+        -0.43500000000000005,
+        281.015337,
+        -181.896979,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        280.515337,
+        182.146979
+      ],
+      "angle_deg": 0.0
+    },
+    "R23": {
+      "path": ".assembly-work/usb-short-models/parts/R23.step",
+      "sha256": "127b6495fa66bdaac2c30bd4055d7839a20461d6542343f7131be98847b7a252",
+      "bounds_native_mm": [
+        312.737146,
+        -182.26966,
+        -0.43500000000000005,
+        313.237146,
+        -181.26966,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        312.987146,
+        181.76966
+      ],
+      "angle_deg": -90.0
+    },
+    "R24": {
+      "path": ".assembly-work/usb-short-models/parts/R24.step",
+      "sha256": "2b4947ea43300a8742b565802d27d460374d35eb6ea174c874d593683315ad3a",
+      "bounds_native_mm": [
+        334.615009,
+        -181.985717,
+        -0.43500000000000005,
+        335.115009,
+        -180.985717,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        334.865009,
+        181.485717
+      ],
+      "angle_deg": -90.0
+    },
+    "R25": {
+      "path": ".assembly-work/usb-short-models/parts/R25.step",
+      "sha256": "3f89fed7aacf739dc5e1f71811829b61c57127ec8c85e947dcc41634bc2d22a6",
+      "bounds_native_mm": [
+        330.644284,
+        -181.672204,
+        -0.43500000000000005,
+        331.644284,
+        -181.172204,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        331.144284,
+        181.422204
+      ],
+      "angle_deg": 180.0
+    },
+    "R26": {
+      "path": ".assembly-work/usb-short-models/parts/R26.step",
+      "sha256": "c52ef7c187d68da6920daaad6dee02e799e1c3bd81e7afa96c9a5df6fcde44ff",
+      "bounds_native_mm": [
+        331.5,
+        -123.25,
+        -0.43500000000000005,
+        332.5,
+        -122.75,
+        -0.08499999999999995
+      ],
+      "value": "10k",
+      "position_pcb_mm": [
+        332.0,
+        123.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R3": {
+      "path": ".assembly-work/usb-short-models/parts/R3.step",
+      "sha256": "68cdf168b90876bca81ea8e0a1d45ee5c7ed0377b87e863d2107e658e7dd5899",
+      "bounds_native_mm": [
+        96.991473,
+        -154.286865,
+        -0.43500000000000005,
+        97.491473,
+        -153.286865,
+        -0.08499999999999995
+      ],
+      "value": "100",
+      "position_pcb_mm": [
+        97.241473,
+        153.786865
+      ],
+      "angle_deg": -90.0
+    },
+    "R32": {
+      "path": ".assembly-work/usb-short-models/parts/R32.step",
+      "sha256": "e5d67f4d24e257f1b78cbc9b280d4bbc99c8ede184a329c2bcd32c41a4d6d5d6",
+      "bounds_native_mm": [
+        315.5,
+        -125.25,
+        -0.43500000000000005,
+        316.5,
+        -124.75,
+        -0.08499999999999995
+      ],
+      "value": "2.2k",
+      "position_pcb_mm": [
+        316.0,
+        125.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R4": {
+      "path": ".assembly-work/usb-short-models/parts/R4.step",
+      "sha256": "8cf310d40c7005784adda588a168cc0328f76b6ee9a2d8530dd0af61c61a8674",
+      "bounds_native_mm": [
+        95.800987,
+        -154.286512,
+        -0.43500000000000005,
+        96.300987,
+        -153.286512,
+        -0.08499999999999995
+      ],
+      "value": "100",
+      "position_pcb_mm": [
+        96.050987,
+        153.786512
+      ],
+      "angle_deg": 90.0
+    },
+    "R40": {
+      "path": ".assembly-work/usb-short-models/parts/R40.step",
+      "sha256": "ca9c033055d468b6de6042cedb3bc3ada196b0a737b946e14a7b03ca398b9813",
+      "bounds_native_mm": [
+        116.45,
+        -148.6,
+        -0.43500000000000005,
+        116.95,
+        -147.6,
+        -0.08499999999999995
+      ],
+      "value": "2.21k/1%",
+      "position_pcb_mm": [
+        116.7,
+        148.1
+      ],
+      "angle_deg": -90.0
+    },
+    "R41": {
+      "path": ".assembly-work/usb-short-models/parts/R41.step",
+      "sha256": "703cb4f645920069e8b1fb229cedccd6932719de86d975bb6eb8923606d25f21",
+      "bounds_native_mm": [
+        112.5,
+        -142.25,
+        -0.43500000000000005,
+        113.5,
+        -141.75,
+        -0.08499999999999995
+      ],
+      "value": "7.50k/1%",
+      "position_pcb_mm": [
+        113.0,
+        142.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R42": {
+      "path": ".assembly-work/usb-short-models/parts/R42.step",
+      "sha256": "2b55f4d72c4a01587f37b8f52cf84a3dc70d6425d5ffa57371578f6d789132ff",
+      "bounds_native_mm": [
+        120.5,
+        -141.25,
+        -0.43500000000000005,
+        121.5,
+        -140.75,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        121.0,
+        141.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R43": {
+      "path": ".assembly-work/usb-short-models/parts/R43.step",
+      "sha256": "7f731c1c99ec6cfa57b1e2589c1b160c6bcd64a2524012d5f908db2b5fbbf96d",
+      "bounds_native_mm": [
+        122.5,
+        -141.25,
+        -0.43500000000000005,
+        123.5,
+        -140.75,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        123.0,
+        141.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R44": {
+      "path": ".assembly-work/usb-short-models/parts/R44.step",
+      "sha256": "76215a1112209ba6d42e789b1eddfd4279fa0c4874407a89b4d9f940c544f70b",
+      "bounds_native_mm": [
+        124.5,
+        -141.25,
+        -0.43500000000000005,
+        125.5,
+        -140.75,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        125.0,
+        141.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R45": {
+      "path": ".assembly-work/usb-short-models/parts/R45.step",
+      "sha256": "ec62c4a1ed393c928c2950279945a9c3c7a8a15fccfe6f0abb8876d2df4835d1",
+      "bounds_native_mm": [
+        124.0,
+        -136.25,
+        -0.43500000000000005,
+        125.0,
+        -135.75,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        124.5,
+        136.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R46": {
+      "path": ".assembly-work/usb-short-models/parts/R46.step",
+      "sha256": "1c9344e3f03c8948fc6c79c5178fd9bf8ffd62b069395032cfee8cf2159cb56a",
+      "bounds_native_mm": [
+        136.5,
+        -135.25,
+        -0.43500000000000005,
+        137.5,
+        -134.75,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        137.0,
+        135.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R47": {
+      "path": ".assembly-work/usb-short-models/parts/R47.step",
+      "sha256": "7a32c6764164c5c3dead1c8621ff4ab28d861db45c6284e07963161f9853ba6b",
+      "bounds_native_mm": [
+        136.1,
+        -136.75,
+        -0.43500000000000005,
+        137.1,
+        -136.25,
+        -0.08499999999999995
+      ],
+      "value": "100",
+      "position_pcb_mm": [
+        136.6,
+        136.5
+      ],
+      "angle_deg": 0.0
+    },
+    "R48": {
+      "path": ".assembly-work/usb-short-models/parts/R48.step",
+      "sha256": "82546e4f88ce5e3f84899bcca8f9f2914f3d35a5fa9bf64555cbd356cc15e9ad",
+      "bounds_native_mm": [
+        105.5,
+        -116.25,
+        -0.43500000000000005,
+        106.5,
+        -115.75,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        106.0,
+        116.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R49": {
+      "path": ".assembly-work/usb-short-models/parts/R49.step",
+      "sha256": "0f50085a821e341fcf0a74ae3b41eb883e4af510ee97526d91713ac8af0d3f80",
+      "bounds_native_mm": [
+        141.5,
+        -141.25,
+        -0.43500000000000005,
+        142.5,
+        -140.75,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        142.0,
+        141.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R5": {
+      "path": ".assembly-work/usb-short-models/parts/R5.step",
+      "sha256": "24a48f23707093654bfa98c75ae1c3595004632d59a8aaed73f04df9a06bad7d",
+      "bounds_native_mm": [
+        98.182243,
+        -154.286512,
+        -0.43500000000000005,
+        98.682243,
+        -153.286512,
+        -0.08499999999999995
+      ],
+      "value": "100",
+      "position_pcb_mm": [
+        98.432243,
+        153.786512
+      ],
+      "angle_deg": -90.0
+    },
+    "R50": {
+      "path": ".assembly-work/usb-short-models/parts/R50.step",
+      "sha256": "fc3cfa8517e4326b1e177d04622abb8cd7168f0b26442afeca2f2f5826f554f0",
+      "bounds_native_mm": [
+        104.5,
+        -141.25,
+        -0.43500000000000005,
+        105.5,
+        -140.75,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        105.0,
+        141.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R51": {
+      "path": ".assembly-work/usb-short-models/parts/R51.step",
+      "sha256": "912eab92c12d7ea2513ac1341843ed6c56d9aacad89514c5bda82ba73738d71f",
+      "bounds_native_mm": [
+        145.5,
+        -146.25,
+        -0.43500000000000005,
+        146.5,
+        -145.75,
+        -0.08499999999999995
+      ],
+      "value": "1M/1%",
+      "position_pcb_mm": [
+        146.0,
+        146.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R52": {
+      "path": ".assembly-work/usb-short-models/parts/R52.step",
+      "sha256": "e71b7691a8153f2a20dd397a6bd23280209e3b0d1a86173bab5f794c7b821a32",
+      "bounds_native_mm": [
+        145.5,
+        -148.25,
+        -0.43500000000000005,
+        146.5,
+        -147.75,
+        -0.08499999999999995
+      ],
+      "value": "1M/1%",
+      "position_pcb_mm": [
+        146.0,
+        148.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R53": {
+      "path": ".assembly-work/usb-short-models/parts/R53.step",
+      "sha256": "7dcb405eb96727db11b70bcb1f23d87979aa08e2deccb9aac0b16e578f69e896",
+      "bounds_native_mm": [
+        140.5,
+        -145.25,
+        -0.43500000000000005,
+        141.5,
+        -144.75,
+        -0.08499999999999995
+      ],
+      "value": "100",
+      "position_pcb_mm": [
+        141.0,
+        145.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R54": {
+      "path": ".assembly-work/usb-short-models/parts/R54.step",
+      "sha256": "b61dd24b5e035e09050c405940590f08e957f0a699b135095210856ad904a010",
+      "bounds_native_mm": [
+        108.5,
+        -145.25,
+        -0.43500000000000005,
+        109.5,
+        -144.75,
+        -0.08499999999999995
+      ],
+      "value": "100",
+      "position_pcb_mm": [
+        109.0,
+        145.0
+      ],
+      "angle_deg": 0.0
+    },
+    "R55": {
+      "path": ".assembly-work/usb-short-models/parts/R55.step",
+      "sha256": "889fcdd74d4396fb0b69df101d89def11e9386f4bcb5a740221e37dad9992fb2",
+      "bounds_native_mm": [
+        118.45,
+        -148.75,
+        -0.43500000000000005,
+        118.95,
+        -147.75,
+        -0.08499999999999995
+      ],
+      "value": "69.8k/1%",
+      "position_pcb_mm": [
+        118.7,
+        148.25
+      ],
+      "angle_deg": -90.0
+    },
+    "R56": {
+      "path": ".assembly-work/usb-short-models/parts/R56.step",
+      "sha256": "d4be08fc713d374cd0c56cc3f61a004e39a26537150d73dc92e2c1f0d05c6652",
+      "bounds_native_mm": [
+        117.47,
+        -148.6,
+        -0.43500000000000005,
+        117.97,
+        -147.6,
+        -0.08499999999999995
+      ],
+      "value": "1.69k/1%",
+      "position_pcb_mm": [
+        117.72,
+        148.1
+      ],
+      "angle_deg": -90.0
+    },
+    "R6": {
+      "path": ".assembly-work/usb-short-models/parts/R6.step",
+      "sha256": "8efb8a0c642322d63398b73e84cc326e12c53f3215c04ac3ec0d820d2e4af619",
+      "bounds_native_mm": [
+        77.691567,
+        -143.618517,
+        -0.43500000000000005,
+        78.691567,
+        -143.118517,
+        -0.08499999999999995
+      ],
+      "value": "100",
+      "position_pcb_mm": [
+        78.191567,
+        143.368517
+      ],
+      "angle_deg": 0.0
+    },
+    "R7": {
+      "path": ".assembly-work/usb-short-models/parts/R7.step",
+      "sha256": "6bc7eb4cecfb97a6189ceebdd4bbdff9792ffe392c641badf1966798db7684a1",
+      "bounds_native_mm": [
+        88.359562,
+        -141.189604,
+        -0.43500000000000005,
+        88.859562,
+        -140.189604,
+        -0.08499999999999995
+      ],
+      "value": "100",
+      "position_pcb_mm": [
+        88.609562,
+        140.689604
+      ],
+      "angle_deg": 90.0
+    },
+    "R8": {
+      "path": ".assembly-work/usb-short-models/parts/R8.step",
+      "sha256": "7af05c4ffcfb259ec2882e1d0ea5ef993ef9421ad2830a59d987b707af81326a",
+      "bounds_native_mm": [
+        98.585337,
+        -180.586979,
+        -0.43500000000000005,
+        99.085337,
+        -179.586979,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        98.835337,
+        180.086979
+      ],
+      "angle_deg": 90.0
+    },
+    "R9": {
+      "path": ".assembly-work/usb-short-models/parts/R9.step",
+      "sha256": "4a0159a2387afb8577f784dd344cf767e5344800c977298f870ab19bfa7f3d48",
+      "bounds_native_mm": [
+        134.985337,
+        -179.686979,
+        -0.43500000000000005,
+        135.485337,
+        -178.686979,
+        -0.08499999999999995
+      ],
+      "value": "100k",
+      "position_pcb_mm": [
+        135.235337,
+        179.186979
+      ],
+      "angle_deg": 90.0
+    },
+    "SW1": {
+      "path": ".assembly-work/usb-short-models/parts/SW1.step",
+      "sha256": "36f1da9dc711973d80b932d7e0a5eeffb2825b1024503e9d8e1a213f8266cd90",
+      "bounds_native_mm": [
+        322.79999999999995,
+        -125.75,
+        -1.735,
+        329.20000000000005,
+        -121.25,
+        0.4150000000000002
+      ],
+      "value": "EVQPUC02K_RESET",
+      "position_pcb_mm": [
+        326.0,
+        123.0
+      ],
+      "angle_deg": 0.0,
+      "intentional_mount_penetration": {
+        "type": "Panasonic locating pegs in two 0.75 mm NPTH holes",
+        "tolerance_qualified": false
+      }
+    },
+    "SW100": {
+      "path": ".assembly-work/usb-short-models/parts/SW100.step",
+      "sha256": "d139cef7c3ae6e73ac11daddf7f950d7ff22aa875d2eaa9ec2b5ba1622e29c9c",
+      "bounds_native_mm": [
+        107.75,
+        -124.5,
+        -3.5850000000000004,
+        116.25,
+        -117.25,
+        1.415
+      ],
+      "value": "JS102011SAQN_POWER",
+      "position_pcb_mm": [
+        112.0,
+        121.0
+      ],
+      "angle_deg": 0.0,
+      "intentional_mount_penetration": {
+        "type": "Two 0.8 mm nominal pegs in 0.9 mm NPTH, 6.8 mm pitch",
+        "nominal_diametral_gap_mm": 0.1,
+        "tolerance_qualified": false
+      }
+    },
+    "U1": {
+      "path": ".assembly-work/usb-short-models/parts/U1.step",
+      "sha256": "ab55900aae1450078cfce63d2928e5373308cdb400d0a994caf8abef41530275",
+      "bounds_native_mm": [
+        348.5,
+        -130.5,
+        -2.144999999999999,
+        364.0,
+        -120.0,
+        -0.08499999999999905
+      ],
+      "value": "MDBT50Q-1MV2",
+      "position_pcb_mm": [
+        356.25,
+        125.25
+      ],
+      "angle_deg": 90.0
+    },
+    "U2": {
+      "path": ".assembly-work/usb-short-models/parts/U2.step",
+      "sha256": "8c359482cb56371afd33b807c03180382417d6320db57760fd8ab62f9230ae57",
+      "bounds_native_mm": [
+        142.05661600000002,
+        -186.45202609999998,
+        -1.1850001000000003,
+        148.456616,
+        -181.4520259,
+        -0.08499999999999944
+      ],
+      "value": "74HC4051",
+      "position_pcb_mm": [
+        145.256616,
+        183.952026
+      ],
+      "angle_deg": -90.0,
+      "landing": {
+        "seating_plane_native_Z_mm": -0.08499999999999944,
+        "matched_lands": 16,
+        "planar_feet": [
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              148.037473221624,
+              -181.80702599999998,
+              -0.23500000000000038,
+              148.456616,
+              -181.547026,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07784999999998377
+          },
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              148.037473221624,
+              -181.80702599999998,
+              -0.08500000000000024,
+              148.456616,
+              -181.547026,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07784999999998377
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              148.037473221624,
+              -182.45702599999998,
+              -0.23500000000000038,
+              148.456616,
+              -182.197026,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07760999999999285
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              148.037473221624,
+              -182.45702599999998,
+              -0.08500000000000024,
+              148.456616,
+              -182.197026,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07760999999999285
+          },
+          {
+            "pin": "3",
+            "bounds_native_mm": [
+              148.037473221624,
+              -183.107026,
+              -0.23500000000000038,
+              148.456616,
+              -182.847026,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000000194
+          },
+          {
+            "pin": "3",
+            "bounds_native_mm": [
+              148.037473221624,
+              -183.107026,
+              -0.08500000000000024,
+              148.456616,
+              -182.847026,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000000194
+          },
+          {
+            "pin": "4",
+            "bounds_native_mm": [
+              148.037473221624,
+              -183.757026,
+              -0.23500000000000038,
+              148.456616,
+              -183.49702599999998,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "4",
+            "bounds_native_mm": [
+              148.037473221624,
+              -183.757026,
+              -0.08500000000000024,
+              148.456616,
+              -183.49702599999998,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "5",
+            "bounds_native_mm": [
+              148.037473221624,
+              -184.407026,
+              -0.23500000000000038,
+              148.456616,
+              -184.14702599999998,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07713000000001102
+          },
+          {
+            "pin": "5",
+            "bounds_native_mm": [
+              148.037473221624,
+              -184.407026,
+              -0.08500000000000024,
+              148.456616,
+              -184.14702599999998,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07713000000001102
+          },
+          {
+            "pin": "6",
+            "bounds_native_mm": [
+              148.037473221624,
+              -185.05702599999998,
+              -0.23500000000000038,
+              148.456616,
+              -184.797026,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000003036
+          },
+          {
+            "pin": "6",
+            "bounds_native_mm": [
+              148.037473221624,
+              -185.05702599999998,
+              -0.08500000000000024,
+              148.456616,
+              -184.797026,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000003036
+          },
+          {
+            "pin": "7",
+            "bounds_native_mm": [
+              148.037473221624,
+              -185.70702599999998,
+              -0.23500000000000038,
+              148.456616,
+              -185.447026,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07761000000002127
+          },
+          {
+            "pin": "7",
+            "bounds_native_mm": [
+              148.037473221624,
+              -185.70702599999998,
+              -0.08500000000000024,
+              148.456616,
+              -185.447026,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07761000000002127
+          },
+          {
+            "pin": "8",
+            "bounds_native_mm": [
+              148.037473221624,
+              -186.357026,
+              -0.23500000000000038,
+              148.456616,
+              -186.097026,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07785000000001219
+          },
+          {
+            "pin": "8",
+            "bounds_native_mm": [
+              148.037473221624,
+              -186.357026,
+              -0.08500000000000024,
+              148.456616,
+              -186.097026,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07785000000001219
+          },
+          {
+            "pin": "9",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -186.357026,
+              -0.23499999999999965,
+              142.47575877837602,
+              -186.097026,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07785000000001219
+          },
+          {
+            "pin": "9",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -186.357026,
+              -0.08499999999999949,
+              142.47575877837602,
+              -186.097026,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07785000000001219
+          },
+          {
+            "pin": "10",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -185.70702599999998,
+              -0.23499999999999965,
+              142.47575877837602,
+              -185.447026,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07761000000002129
+          },
+          {
+            "pin": "10",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -185.70702599999998,
+              -0.08499999999999949,
+              142.47575877837602,
+              -185.447026,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07761000000002129
+          },
+          {
+            "pin": "11",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -185.05702599999998,
+              -0.23499999999999965,
+              142.47575877837602,
+              -184.797026,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000003036
+          },
+          {
+            "pin": "11",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -185.05702599999998,
+              -0.08499999999999949,
+              142.47575877837602,
+              -184.797026,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000003036
+          },
+          {
+            "pin": "12",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -184.407026,
+              -0.23499999999999965,
+              142.47575877837602,
+              -184.14702599999998,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07713000000001102
+          },
+          {
+            "pin": "12",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -184.407026,
+              -0.08499999999999949,
+              142.47575877837602,
+              -184.14702599999998,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07713000000001102
+          },
+          {
+            "pin": "13",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -183.757026,
+              -0.23499999999999965,
+              142.47575877837602,
+              -183.49702599999998,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "13",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -183.757026,
+              -0.08499999999999949,
+              142.47575877837602,
+              -183.49702599999998,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "14",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -183.107026,
+              -0.23499999999999965,
+              142.47575877837602,
+              -182.847026,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000000194
+          },
+          {
+            "pin": "14",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -183.107026,
+              -0.08499999999999949,
+              142.47575877837602,
+              -182.847026,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000000194
+          },
+          {
+            "pin": "15",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -182.45702599999998,
+              -0.23499999999999965,
+              142.47575877837602,
+              -182.197026,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07760999999999284
+          },
+          {
+            "pin": "15",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -182.45702599999998,
+              -0.08499999999999949,
+              142.47575877837602,
+              -182.197026,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07760999999999284
+          },
+          {
+            "pin": "16",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -181.80702599999998,
+              -0.23499999999999965,
+              142.47575877837602,
+              -181.547026,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07784999999998375
+          },
+          {
+            "pin": "16",
+            "bounds_native_mm": [
+              142.05661600000002,
+              -181.80702599999998,
+              -0.08499999999999949,
+              142.47575877837602,
+              -181.547026,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07784999999998375
+          }
+        ],
+        "nonmetal_core_seating_faces": [],
+        "modeled_seating_band_mm": 0.15,
+        "minimum_required_overlap_ratio": 1,
+        "method": "Exact planar STEP-face bounds within 0.15 mm of PCBward seating, compared with native copper polygons approximated 0.002 mm inward. SH/PH/TSSOP feet require full containment; L1 follows the manufacturer lands with intended inward heel overhang and requires >=80% nominal flat-face overlap. SH modeled seating heights are not physical coplanarity acceptance. Only L1 may ignore a nonmetal core face"
+      },
+      "pin1_marker": {
+        "marker_native_XY_mm": [
+          146.631677033199,
+          -182.276964966801
+        ],
+        "pin1_native_XY_mm": [
+          148.230956,
+          -181.678726
+        ],
+        "quadrant_matches": true
+      }
+    },
+    "U3": {
+      "path": ".assembly-work/usb-short-models/parts/U3.step",
+      "sha256": "ba398d3a09330a7d4458a84f80fff47ed922e161314bbeebc024b36a18a9b704",
+      "bounds_native_mm": [
+        100.5962399,
+        -154.108116,
+        -1.8350001000000002,
+        105.4962401,
+        -148.108116,
+        -0.08499999999999958
+      ],
+      "value": "OPA350",
+      "position_pcb_mm": [
+        103.04624,
+        151.108116
+      ],
+      "angle_deg": 90.0
+    },
+    "U4": {
+      "path": ".assembly-work/usb-short-models/parts/U4.step",
+      "sha256": "0cf7d37256b3b20c8d2162a171a000bc02843bc68e46488775007c70bb99e07b",
+      "bounds_native_mm": [
+        303.499794,
+        -182.8136791,
+        -1.1850001000000003,
+        309.899794,
+        -177.8136789,
+        -0.08499999999999944
+      ],
+      "value": "74HC4051",
+      "position_pcb_mm": [
+        306.699794,
+        180.313679
+      ],
+      "angle_deg": -90.0,
+      "landing": {
+        "seating_plane_native_Z_mm": -0.08499999999999944,
+        "matched_lands": 16,
+        "planar_feet": [
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              309.480651221624,
+              -178.168679,
+              -0.23500000000000038,
+              309.899794,
+              -177.908679,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07785000000001219
+          },
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              309.480651221624,
+              -178.168679,
+              -0.08500000000000024,
+              309.899794,
+              -177.908679,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07785000000001219
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              309.480651221624,
+              -178.818679,
+              -0.23500000000000038,
+              309.899794,
+              -178.558679,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07761000000002127
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              309.480651221624,
+              -178.818679,
+              -0.08500000000000024,
+              309.899794,
+              -178.558679,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07761000000002127
+          },
+          {
+            "pin": "3",
+            "bounds_native_mm": [
+              309.480651221624,
+              -179.468679,
+              -0.23500000000000038,
+              309.899794,
+              -179.20867900000002,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000003036
+          },
+          {
+            "pin": "3",
+            "bounds_native_mm": [
+              309.480651221624,
+              -179.468679,
+              -0.08500000000000024,
+              309.899794,
+              -179.20867900000002,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000003036
+          },
+          {
+            "pin": "4",
+            "bounds_native_mm": [
+              309.480651221624,
+              -180.11867900000001,
+              -0.23500000000000038,
+              309.899794,
+              -179.858679,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "4",
+            "bounds_native_mm": [
+              309.480651221624,
+              -180.11867900000001,
+              -0.08500000000000024,
+              309.899794,
+              -179.858679,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "5",
+            "bounds_native_mm": [
+              309.480651221624,
+              -180.76867900000002,
+              -0.23500000000000038,
+              309.899794,
+              -180.508679,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "5",
+            "bounds_native_mm": [
+              309.480651221624,
+              -180.76867900000002,
+              -0.08500000000000024,
+              309.899794,
+              -180.508679,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "6",
+            "bounds_native_mm": [
+              309.480651221624,
+              -181.418679,
+              -0.23500000000000038,
+              309.899794,
+              -181.158679,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000000194
+          },
+          {
+            "pin": "6",
+            "bounds_native_mm": [
+              309.480651221624,
+              -181.418679,
+              -0.08500000000000024,
+              309.899794,
+              -181.158679,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000000194
+          },
+          {
+            "pin": "7",
+            "bounds_native_mm": [
+              309.480651221624,
+              -182.068679,
+              -0.23500000000000038,
+              309.899794,
+              -181.808679,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07760999999999284
+          },
+          {
+            "pin": "7",
+            "bounds_native_mm": [
+              309.480651221624,
+              -182.068679,
+              -0.08500000000000024,
+              309.899794,
+              -181.808679,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07760999999999284
+          },
+          {
+            "pin": "8",
+            "bounds_native_mm": [
+              309.480651221624,
+              -182.718679,
+              -0.23500000000000038,
+              309.899794,
+              -182.45867900000002,
+              -0.23500000000000032
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000088,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07784999999998377
+          },
+          {
+            "pin": "8",
+            "bounds_native_mm": [
+              309.480651221624,
+              -182.718679,
+              -0.08500000000000024,
+              309.899794,
+              -182.45867900000002,
+              -0.08500000000000019
+            ],
+            "modeled_seating_plane_difference_mm": 7.494005416219807e-16,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07784999999998377
+          },
+          {
+            "pin": "9",
+            "bounds_native_mm": [
+              303.499794,
+              -182.718679,
+              -0.23499999999999965,
+              303.918936778376,
+              -182.45867900000002,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07784999999998375
+          },
+          {
+            "pin": "9",
+            "bounds_native_mm": [
+              303.499794,
+              -182.718679,
+              -0.08499999999999949,
+              303.918936778376,
+              -182.45867900000002,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07784999999998375
+          },
+          {
+            "pin": "10",
+            "bounds_native_mm": [
+              303.499794,
+              -182.068679,
+              -0.23499999999999965,
+              303.918936778376,
+              -181.808679,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07760999999999284
+          },
+          {
+            "pin": "10",
+            "bounds_native_mm": [
+              303.499794,
+              -182.068679,
+              -0.08499999999999949,
+              303.918936778376,
+              -181.808679,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07760999999999284
+          },
+          {
+            "pin": "11",
+            "bounds_native_mm": [
+              303.499794,
+              -181.418679,
+              -0.23499999999999965,
+              303.918936778376,
+              -181.158679,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000000194
+          },
+          {
+            "pin": "11",
+            "bounds_native_mm": [
+              303.499794,
+              -181.418679,
+              -0.08499999999999949,
+              303.918936778376,
+              -181.158679,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000000194
+          },
+          {
+            "pin": "12",
+            "bounds_native_mm": [
+              303.499794,
+              -180.76867900000002,
+              -0.23499999999999965,
+              303.918936778376,
+              -180.508679,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "12",
+            "bounds_native_mm": [
+              303.499794,
+              -180.76867900000002,
+              -0.08499999999999949,
+              303.918936778376,
+              -180.508679,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "13",
+            "bounds_native_mm": [
+              303.499794,
+              -180.11867900000001,
+              -0.23499999999999965,
+              303.918936778376,
+              -179.858679,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "13",
+            "bounds_native_mm": [
+              303.499794,
+              -180.11867900000001,
+              -0.08499999999999949,
+              303.918936778376,
+              -179.858679,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07712999999998259
+          },
+          {
+            "pin": "14",
+            "bounds_native_mm": [
+              303.499794,
+              -179.468679,
+              -0.23499999999999965,
+              303.918936778376,
+              -179.20867900000002,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000003036
+          },
+          {
+            "pin": "14",
+            "bounds_native_mm": [
+              303.499794,
+              -179.468679,
+              -0.08499999999999949,
+              303.918936778376,
+              -179.20867900000002,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07737000000003036
+          },
+          {
+            "pin": "15",
+            "bounds_native_mm": [
+              303.499794,
+              -178.818679,
+              -0.23499999999999965,
+              303.918936778376,
+              -178.558679,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07761000000002129
+          },
+          {
+            "pin": "15",
+            "bounds_native_mm": [
+              303.499794,
+              -178.818679,
+              -0.08499999999999949,
+              303.918936778376,
+              -178.558679,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07761000000002129
+          },
+          {
+            "pin": "16",
+            "bounds_native_mm": [
+              303.499794,
+              -178.168679,
+              -0.23499999999999965,
+              303.918936778376,
+              -177.908679,
+              -0.2349999999999996
+            ],
+            "modeled_seating_plane_difference_mm": 0.15000000000000016,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07785000000001219
+          },
+          {
+            "pin": "16",
+            "bounds_native_mm": [
+              303.499794,
+              -178.168679,
+              -0.08499999999999949,
+              303.918936778376,
+              -177.908679,
+              -0.08499999999999944
+            ],
+            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_flat_face_copper_overlap_ratio": 1.0,
+            "minimum_copper_edge_margin_mm": 0.07785000000001219
+          }
+        ],
+        "nonmetal_core_seating_faces": [],
+        "modeled_seating_band_mm": 0.15,
+        "minimum_required_overlap_ratio": 1,
+        "method": "Exact planar STEP-face bounds within 0.15 mm of PCBward seating, compared with native copper polygons approximated 0.002 mm inward. SH/PH/TSSOP feet require full containment; L1 follows the manufacturer lands with intended inward heel overhang and requires >=80% nominal flat-face overlap. SH modeled seating heights are not physical coplanarity acceptance. Only L1 may ignore a nonmetal core face"
+      },
+      "pin1_marker": {
+        "marker_native_XY_mm": [
+          308.074855033199,
+          -178.638617966801
+        ],
+        "pin1_native_XY_mm": [
+          309.674134,
+          -178.040379
+        ],
+        "quadrant_matches": true
+      }
+    },
+    "U5": {
+      "path": ".assembly-work/usb-short-models/parts/U5.step",
+      "sha256": "e42490b41b39b3541d6128868fbd5d6e72c95a4762e5075b501b76dd38da40e0",
+      "bounds_native_mm": [
+        116.5,
+        -146.5,
+        -1.0850000000000002,
+        119.5,
+        -143.5,
+        -0.08499999999999981
+      ],
+      "value": "BQ24074RGT",
+      "position_pcb_mm": [
+        118.0,
+        145.0
+      ],
+      "angle_deg": 0.0
+    },
+    "U6": {
+      "path": ".assembly-work/usb-short-models/parts/U6.step",
+      "sha256": "044adbac6e2ebb505b40427050e72be14d16e0151d01dacffb392df8137aa2e3",
+      "bounds_native_mm": [
+        131.75,
+        -142.03750000000002,
+        -0.8449999999999999,
+        134.25,
+        -139.5625,
+        -0.08499999999999987
+      ],
+      "value": "TPS63031DSK",
+      "position_pcb_mm": [
+        133.0,
+        140.8
+      ],
+      "angle_deg": 0.0
+    },
+    "U7": {
+      "path": ".assembly-work/usb-short-models/parts/U7.step",
+      "sha256": "54733b63a45e945782c2eb13777b89ad9a4944fe4726837669fdd49d3969fc29",
+      "bounds_native_mm": [
+        142.95,
+        -144.0000001,
+        -1.1850001000000003,
+        145.05,
+        -141.9999999,
+        -0.08499999999999991
+      ],
+      "value": "TPS22919DCK",
+      "position_pcb_mm": [
+        144.0,
+        143.0
+      ],
+      "angle_deg": 0.0
+    },
+    "U8": {
+      "path": ".assembly-work/usb-short-models/parts/U8.step",
+      "sha256": "989f7388102f4d02ee5fa1a7ddf753cb239b2a1c276f06c97e2eaf11d29c4058",
+      "bounds_native_mm": [
+        105.94999999999999,
+        -144.0000001,
+        -1.1850001000000003,
+        108.05000000000001,
+        -141.9999999,
+        -0.08499999999999991
+      ],
+      "value": "TPS22919DCK",
+      "position_pcb_mm": [
+        107.0,
+        143.0
+      ],
+      "angle_deg": 0.0
+    }
+  },
+  "thermal_package_windows": [
+    {
+      "ref": "U5",
+      "thermal_copper_size_mm": [
+        1.68,
+        1.68
+      ],
+      "mask_island_size_mm": [
+        0.5,
+        0.5
+      ],
+      "paste_area_mm2": 1.6398159265358632,
+      "thermal_copper_area_mm2": 2.8223999999999996,
+      "paste_coverage_ratio": 0.5810005408644641,
+      "minimum_stencil_web_mm": 0.16000000000000003
+    },
+    {
+      "ref": "U6",
+      "thermal_copper_size_mm": [
+        1.2,
+        2.0
+      ],
+      "mask_island_size_mm": [
+        0.5,
+        0.5
+      ],
+      "paste_area_mm2": 1.2189097335529273,
+      "thermal_copper_area_mm2": 2.4,
+      "paste_coverage_ratio": 0.507879055647053,
+      "minimum_stencil_web_mm": 0.16000000000000003
+    }
+  ],
+  "source_sha256": {
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "fcc959db0cde7d467860e7bf60695f68d27152eebcaa172dc19bb8617264a26a",
+    "hardware/usb-short-route/models/model-sources.json": "dba3b976fd38b2720c6665e896e925e7dbac66889d24c6d0c752c63735e9f406",
+    "hardware/usb-short-route/models/non-model-baseline.json": "15c818cbb54b928f95ad8daddbc8b55bab3a20f48f54ce5f5b515e5592090d31",
+    "hardware/usb-short-route/frozen-footprints.json": "ab7ea995264a17c728592307d1cd27282eca55164d0c47c775e076c59effd29e",
+    "hardware/usb-short-route/mainboard-purchase.csv": "753ec64110df03c84c5af0e09248165020cc5fd034c6d55ced51ba8614f5bb13",
+    "hardware/usb-short-route/models/CELESTIAL-LICENSE.txt": "b1df6ce3b33ad54b8a0414c566168fb2ae7d04d6d4c227726a07b231a08e5625",
+    "scripts/usb_short_model_contract.py": "49b6139053bd7a91826d78fc8a312a150df7c74b678926e4f9ab3279ee2dec27",
+    "scripts/repair_usb_short_models.py": "3fee9f9ef3216db1ce779c88e3830794f25627b44b7251d3930acf21caffe87f",
+    "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/export_usb_short_model_inputs.py": "199941eb7950eea13c69553a45303531c9c2a287177ac14e388cfdbb39a8258c",
+    "scripts/check_usb_short_models.py": "a03f0acef762c54a0d04d7654fac6634cb5e1f20a41889d0350c1f4dc0e13de0",
+    "scripts/build_usb_short_package_models.py": "d03cfb52d2d47cc8efdc93a0ef439a5bb15c893d4c0ad1d5fcb9f79f440d8a44",
+    "scripts/repair_usb_short_charger_package.py": "8e74f1b7e070df3d2ec4b6f54cb14f9e94c6ea78bbc0f4f1409d50c6744d2c0f",
+    "scripts/usb_short_charger_contract.py": "647d0a142f54c821bc9b1bb51804a27d73090394f6d5d267ff0786c5ab256b33",
+    "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C10.kicad_mod": "603f60e6d827170b6ced834886390c72173085b166870ffc389d5f543c7e7ac2",
+    "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C11.kicad_mod": "bd45790f0d6b39a017d9fbd4b105364b6ea12a62481f9d56f5d8dc2a30114d4b",
+    "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C12.kicad_mod": "421213b7f0f0b21591c14584b19977b73875481ba54c1239ba1899decead30f9",
+    "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C13.kicad_mod": "539c9288244fbf1f67ea8968aff054a2d2c8b24ce3762ca02327ff7826e8afb3",
+    "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C31.kicad_mod": "3fc485185582842901e44737fa79fefd35676f43d09ba10dbb140d320b07df00",
+    "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C47.kicad_mod": "2fc14fabe8d53316d6a0c8cf59ef1ea4c24f58862c1a085e3349689797245785",
+    "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C48.kicad_mod": "205559a2142c06ebb7dd70bdd1254cb77f91a5331e96221c4e9186a2b80e9fe1",
+    "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C9.kicad_mod": "a23ab03d14e9d42cb7805285385665758f929ada17a820d38cf8c42e0e0ed9c9",
+    "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C30.kicad_mod": "d82ecad0e1cf337d676822b3be06f7dee028d24bd157ffed34e99fd4419c311f",
+    "hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C44.kicad_mod": "ccd60b47964092532c64cc3b5f9ac6862fac3dc7ec643a8421881b957e3326b0",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C32.kicad_mod": "8ddf4efc1d29788dffeca01cc8777120de800f0d001d4b206bee96101925d765",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C40.kicad_mod": "49e2cacc0888c459553117095c805b1389501d9c128b7c3c072ad83f0500a65f",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C41.kicad_mod": "f40366f6d809925d2016d547df6d82173e2684ad472a9ea8514f650d2db90829",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C42.kicad_mod": "a5a4caa36455df866a2d3ef443f6f01708b10ccf0e662ace95195d3809e0550b",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C43.kicad_mod": "edb569a5863d6c893a500c1212fe7a2ec9cb4d1ec4f25603bcf75ed3b3567e4e",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C45.kicad_mod": "74185afa9b56e3ca8ebc8bbb55c27581a3e259bea49f052ae1edc6e7c03264f8",
+    "hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C46.kicad_mod": "cf954df2ea224553f5da07da55db34475a2ca9cd707f10522d89b68f1a26d3f0",
+    "hardware/usb-short-route/YAECKB.pretty/EC60_BoardOutline__REF__.kicad_mod": "999219d671fb6fb68730275e402ddf4a3c6affea57d0c6ca029dbda0377b9234",
+    "hardware/usb-short-route/YAECKB.pretty/Fuse_Littelfuse_0466_1206__F1.kicad_mod": "d45a7026280287ac02154d1b75351cab485a96ce8bb28a1886f70b9143ff534b",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H1.kicad_mod": "c2d91a25bfa10b15a5a9f316f4f40cd9b6a9c084e1c38cd28b7d375aae19c166",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H10.kicad_mod": "487ef6dcb2bafc3146c15bb378d163359700ff2180c51f179ffe77801b632142",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H11.kicad_mod": "6357ce7df6b4b0729cc30d7df75eb1827239e5ed0f731356c472d5a26fdb0bbb",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H12.kicad_mod": "c77ec53475b11f5917aaa038ccbe1dd2069b0b8d33cbff4ead075ee836b5be0f",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H13.kicad_mod": "edbd4b9bb68074a5832d0aa8fd2ab1a1d35c08689394249aed142753d44462ae",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H14.kicad_mod": "f3cf9537f116a23fc329957988468357192dc98db4e57141227b178c2b19579e",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H15.kicad_mod": "0351d7fc274e43336ca2a6504ef88e037cee494959058cad05d88317c63f42af",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H16.kicad_mod": "494fd4240ec778a0d25e37aef6c29b68b50157e1c3917dc26674ccd35e67426b",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H17.kicad_mod": "37433e27e17b08c290e12dbd116f016ece32bd30ea6033b4ef38d2558854b8d6",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H18.kicad_mod": "7507fad9fd3f609cdc3d99e5342a4b0f640f961115a88ad5ea1ad6f665d6c0aa",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H19.kicad_mod": "76dc8dd3b78f67e2893db38a883a98202f676ac59355a079822a8bdd249a8a64",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H2.kicad_mod": "6901d645fa4cf671abbbb8fd9e4edadbd7c74ac97fa7441e6177e0b341da2f37",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H20.kicad_mod": "4b1a272a43d2c7137dd99a5eee67958944b04c185befc6c248a8f2b551ff4b9f",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H21.kicad_mod": "290a72b6b03b9a04f8807e5665d4b5c078b446b99a267e0786124c4ba0381930",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H22.kicad_mod": "90b545924f5f1b19ea6fbb00f65fe5bdc95a5ada9c74f72d8a9ff8c115bfb768",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H23.kicad_mod": "d15cce5d5135f3d86e25d52cd6c8a8365b71a14777d35a52213343315b244a30",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H24.kicad_mod": "e510e2cc9cba704a93e39a00e676614d365260ef902357bbab7666cdeee5ee2d",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H25.kicad_mod": "f75a1fe6ea2c4e2bbf9b53c9f8642ce1da93889f25830063a65e72a3a174b247",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H26.kicad_mod": "3d529dded9e75e9da9dedaff35b74ba908232b3b75eb94f8eaf53af513dd08e0",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H3.kicad_mod": "24e8966ba6c0b7d3e7e6dedd54d8e40955bc2b7f613535343a024a948156e6f5",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H4.kicad_mod": "16079183ee247cc96214500f9b77d4ba0be0f77061d50f21bf353e77ade96ae1",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H5.kicad_mod": "3f8eee8dfbc4ea4de46446826ba77a8598ec752661d3da1cb6dc90e96b0586ca",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H6.kicad_mod": "d5af0030b791e8abd2a8c5d3e291a7da0cea6efb1f924537300ba8dbc18913a6",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H7.kicad_mod": "c178d8f2f8b8dbfaace6c7269c3c25565757f66936953b43163ef10dfe29b679",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H8.kicad_mod": "b627fc92be56c8a38d77a1f5abbab84b2ab90e4288359f894fbcb24b269665ed",
+    "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H9.kicad_mod": "932807d67425fa948154426dcc50fbf1ba36dec9a64a912064c9bc598f02145b",
+    "hardware/usb-short-route/YAECKB.pretty/JST-SR-4__J1.kicad_mod": "820ebf4da55fc08ccef2d5a05f4f6d316853358d182796becd2988f1f838717c",
+    "hardware/usb-short-route/YAECKB.pretty/JST-SR-4__J4.kicad_mod": "2571c1356f46d1d644428d6210673c2f0432839e73649e37d8b27daa89211d0e",
+    "hardware/usb-short-route/YAECKB.pretty/JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal__J2.kicad_mod": "1f626ffd9ac90b0a2bf395b0f58fb5e87ec5214c75138ce87a9608d0f1173946",
+    "hardware/usb-short-route/YAECKB.pretty/JST_SH_SM02B_SRSS_TB__J5.kicad_mod": "f9b1bb0f93b66fa33fdc3fec2652290ee873fdf00e29e7458c44ecd78f135200",
+    "hardware/usb-short-route/YAECKB.pretty/LED_0603_1608Metric__D2.kicad_mod": "a86ff11f3abccfc147a5805337fb03cfd097caa4de0feadde5f5d243bdd0dd97",
+    "hardware/usb-short-route/YAECKB.pretty/L_Wuerth_MAPI-3015__L1.kicad_mod": "d9cdcfc66230941a32cd06e7ade267ec16f71e8ea468252971548bc4ee022647",
+    "hardware/usb-short-route/YAECKB.pretty/Panasonic_EVQPUL_EVQPUC__SW1.kicad_mod": "fdb5722a6579465a04c31fd8ba64a244f72424479422bda9f831197971db647a",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R10.kicad_mod": "0df838b7dc07b173e26d5e93ac0da37e84a8b8eeb313b06120d8fb8099415220",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R11.kicad_mod": "fbbdb1a8ac41d3cad57b41b0e02959000a1a852c430b1b308adcea53a13ba4de",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R12.kicad_mod": "dd1e773d6f220f172aa741ad45eb27793361e59a4f98d4e9ef24e9d19ed34c69",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R13.kicad_mod": "0cb0b5398b089b9833e089d218d330595e4b965bc50e1d563fa327ddbb27e117",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R14.kicad_mod": "ea9d3b84b66bc3a6dfd7aef96376376fa83fcf6ad5384b0fe7f17bb4d3e945ba",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R15.kicad_mod": "a2d897455f36e152fd674ef3ab817bec9ffd4c85a4008da3d195d6f9824a541c",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R16.kicad_mod": "7972cdb1fd77b507006c4b24ab1d64a6fce1143d9d6f68f772160be3b8dd14f3",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R17.kicad_mod": "fb6a6e1347c0c553de40232fd2f461f4bb61c1c58578719df75e0ac27cff259c",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R18.kicad_mod": "fc9847d3e2ef6cc67c49b00e2ee68b602b37360a70fec5426f78445eb44585a0",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R19.kicad_mod": "40fb3a1205bbfdf444cd801d105e10ae5f78d42234c818ed9a25f895db2f59d3",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R20.kicad_mod": "d6a3d2cdeb086db6b81a696ae71c19c93cb925dfc0c109e02c8d521ae4c11a55",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R21.kicad_mod": "d89f054e1ad28f9c9b7b693504865841de71021d29d03e4bef38e50dcd2e6532",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R23.kicad_mod": "ad5c17fc1b9a8227eb1616f28dbe809d7b477a3df4b6463c57dc6c41d7a8e040",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R24.kicad_mod": "84b383ebd6f64c613b8c734f6f70febe839e2b4f36cf0ebce3ec1f051055daaf",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R25.kicad_mod": "0d049fb39126075daab67a4d686fc72933d3c5ab23eb9726e8db46ad53f8c084",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R26.kicad_mod": "e4b8ee3415db968c65bc7158bfdee84a508dad6ba64cb49e8c5b1df1f865bf9a",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R3.kicad_mod": "892594696d6c0ee9a50eaef0d2488a3a15adc415e79870cf3ab152876d7e2bf3",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R32.kicad_mod": "fac63e714a9022c9ac0e7f714abe9c4046cade0607e641576f64258ab4487228",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R4.kicad_mod": "40ec0cc843c8445dd8cbdb408239f145c15213c47e3a8b5b7f53c56bfd3c1f37",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R40.kicad_mod": "93eeb5aad5dd6e2f33d2f353b436bbc6111b41b8cbd2944591d8764e4a7f2114",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R41.kicad_mod": "88680a52f636fd5348bf10c9e073b0b96a1807aa174b62dc43f4866ce2216325",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R42.kicad_mod": "41554e7a66c162eee803b38208418bb56df9a0c1415865e91e8997a120817a04",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R43.kicad_mod": "7c8088d61dd7dce78743347c3d4817333ea0c2f831e1a56ce7c418e06a64f383",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R44.kicad_mod": "180fa8f310a41599116ba1b16872b1928286a657024466cc3d5a20ab0b001ebb",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R45.kicad_mod": "dd5c758837b95edef86e319ef98f052b49e7f75eb1597b37f2816b4ede7b9bc4",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R46.kicad_mod": "18d4651f5143c58c0bc56892540ac3f8c4daaadb01fae302f0f99b8bfee055b2",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R47.kicad_mod": "8e7f1c5a2ade38f0704c72cdc54767759ad1ea51d2ddd1ae1be2933e096241f9",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R48.kicad_mod": "7a3cb610cc8e65707a006fb160a48e4447c682035e0f4b5a4f9549cba7819d50",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R49.kicad_mod": "30c605fcb97f5c117f90da153c3ebec300488e2609f55446b2255e5b2600a39a",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R5.kicad_mod": "370f7884588a74651d8cea0fa90c789fad6b025141780d75b1ec3c76331bc2c9",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R50.kicad_mod": "bba403e8806f12e60d4662c3d6c51795ca9966afe091b8c5e8199c5a30a957f8",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R51.kicad_mod": "a9325b63198ce6b0c262c2ccf1766cfd811cfb7282ce131359a10dd9e8378a9d",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R52.kicad_mod": "ebd4346d79b56d1a21830274dbb0ec084cf8f63628e5e4aad461acef50ef8914",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R53.kicad_mod": "5a9858cec46034ce941831e1a643938b49802b5e216d2f40e3b9163b46f69f79",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R54.kicad_mod": "e2fffece942a0ed5db6f717b679f855860bf40e0a86ec78c59de6582a32d5334",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R55.kicad_mod": "02b1317605ddea8b85213752672a8ebca1c15f1641d84b2e0287c66317f6a5ca",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R56.kicad_mod": "fb6e93da1221ccd76f4b6340cef8f4f777da7ac3dc4a92b42ce14effa8feda63",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R6.kicad_mod": "992697f3fce4af6c32f72cf43a28e558596754abd8933ea69ecc156c7028b324",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R7.kicad_mod": "123619473b0f3650505a14753ff7cb45914cb3da8ad91d702ee7094ab2e06854",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R8.kicad_mod": "5ed5c64335af1a35bede80cb8b3eeaac968cf162afd9147d2c337f166f63a584",
+    "hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R9.kicad_mod": "3522cfbbd3935b6c7cb06a69aef22d042f1248020ac33b6fc986cc842c9ab0d1",
+    "hardware/usb-short-route/YAECKB.pretty/R_0603_1608Metric_Pad0.98x0.95mm_HandSolder__JP1.kicad_mod": "9c9eaa595100002baddf918c686c3172d9116a06d7082646ad748decd743d57f",
+    "hardware/usb-short-route/YAECKB.pretty/Raytac_MDBT50Q__U1.kicad_mod": "c1dc5e1a51127a099c9cef622af2de0e9aa8ceee62fd80195f2211ac51ae44bb",
+    "hardware/usb-short-route/YAECKB.pretty/SOIC-8_3.9x4.9mm_P1.27mm__U3.kicad_mod": "d00609a682d0e31ccb107d7a5d286d6077b53eb52a701f0602f0c3fa7d2b2362",
+    "hardware/usb-short-route/YAECKB.pretty/SOT-363_SC-70-6__U7.kicad_mod": "6f30c061f9d3671c0a48d56edacb1f694432290792f79c6b5bfb6df70f326bd7",
+    "hardware/usb-short-route/YAECKB.pretty/SOT-363_SC-70-6__U8.kicad_mod": "ae217e31cf67d39cad2e624b5ffe555cc277402d75ab9339a75f3fed5e76970c",
+    "hardware/usb-short-route/YAECKB.pretty/SWD_Pogo_2x03__J3.kicad_mod": "0e1a19a17fa04b10ba11f020f5fbf2b521e2b45580f2a7a6cd669b495c26ad65",
+    "hardware/usb-short-route/YAECKB.pretty/SW_SPDT_CK_JS102011SAQN__SW100.kicad_mod": "c5a4a699ee99bc8dbd7f40c3578581c78875039ae48149a145bab6fde4f81227",
+    "hardware/usb-short-route/YAECKB.pretty/TSSOP16__U2.kicad_mod": "8c4b3d89c3061f6a196aed9ec6b06f711cf5670c696847bcc92ea3da207124d6",
+    "hardware/usb-short-route/YAECKB.pretty/TSSOP16__U4.kicad_mod": "1e5ca26d08b38929b181139fc29a6de67dcd694e91d1190355a4a17ea491da12",
+    "hardware/usb-short-route/YAECKB.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm__U5.kicad_mod": "345db1fa7508f15e13f91075a2eb3a9b6e3ee4119e5367cb8a508e63ce9733da",
+    "hardware/usb-short-route/YAECKB.pretty/WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm__U6.kicad_mod": "58ae92678b49381cb4c2cf805ae909a7ed38c6f7940cf120cd5e9705e0ce4e9b",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_1u1.75u__SW60.kicad_mod": "3edad85328f50a23a5c66653539b4ba735fcb5e3f7557e0298d18bc96a86a746",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_1u1.75u__SW62.kicad_mod": "031068436b58727a1140606e2db75125863aece4b5a164281e1d63153a17e70d",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_1u_edge_cut__SW48.kicad_mod": "4f7cf149b54f2fee3a334cf2befd2b767675207e8a5294a939cbf31b3b3b5e9e",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_1u_edge_cut__SW49.kicad_mod": "88998051e1989d2a4ae444c0147a33c6505a2073b372b5e2e71380defc044431",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW10.kicad_mod": "29f5e948e078eae7660bb6e72eeae4ea08a30c19608b272d92e4638d6f8adc80",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW11.kicad_mod": "d9f52f7fdd599dbd63bcbd56f7b5ccdbf3ae738940227753610ea84efbabd015",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW12.kicad_mod": "afd730f80064f7ef1ed8b7d30fa5168427a9273a84ab19dd7f0f3b51fb50e87c",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW13.kicad_mod": "07b554a82f8f1a2450f8f12ded7bae82cf107c4efa81e995da2ff1dd9a0810d1",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW14.kicad_mod": "200b8c4fb71624211826b5ce3157fa1de1a96a182a6eb6b3c7a6c7527fc445c1",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW15.kicad_mod": "e795890d7c47fa099d646ded782ddd8b9df26f606767f03452d445ceb8903d9e",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW16.kicad_mod": "a5e333cdb823cdd30170d58552163b1a3fe4f1f1511cd30cfa74580ed86843be",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW17.kicad_mod": "677ef4a4e30e75f2aebf0d4e1a7c4d4b135f14c4d6ab17bfc2777b94af882499",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW18.kicad_mod": "2e3dd03f57fd4ce74a546a8fa050a120a0bf9b5bf513bf49ab6137fa67b122cf",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW19.kicad_mod": "07afa48d2cfce9c4fbd88ad549a2d5c577609f84a2fdab25b4523f228983ff78",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW2.kicad_mod": "9433001f45d1af34b493faba3ec9799e6b5f259587e233eaa1d884c4e7049612",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW20.kicad_mod": "2f26f539525f8ebb5e2bdbd2ecb534c4f74c0386290854439d3359e4fc0188a4",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW21.kicad_mod": "69c459dbe0ba1fbbd6e18e40395aad939fbf3cf87f74c5e4b4900667d094cf7c",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW22.kicad_mod": "27d9c75574ae6109273f51d296d94dfcb1f033e9b45b5a13004a9cede0c751d8",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW23.kicad_mod": "1cbcd6d436dfcfb40e2ebd139afddab6ca2f11e227c3dcab4a5840eda1775b63",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW24.kicad_mod": "f01b47d90628020d8a0cf7fd512fdb038958c80ae708bb8699e4cb7b8450c557",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW25.kicad_mod": "1057e4ca0dd3d21dd11afdc85ddf40fa9f19c492158a82520e6fd089ab74ba55",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW26.kicad_mod": "1c5a7e47428416e983ccf65dc03a2f132961cada2d725fbd8628d577ac75b6a1",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW27.kicad_mod": "7c1ae66eee3aeb9341b9504eec681790841d274f82ca424ed4a115999cef1a7b",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW28.kicad_mod": "315bd8e346445567705a73bd0cc24b4035c279b480d0158ad7868381b6d6beda",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW29.kicad_mod": "375021844aa00577b827fc2f5c93da8ce70287cbe8288c602c1e1538048e1ae7",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW3.kicad_mod": "e93607420d4542038650e1fd55e1393da7ba9e8d47a4f26fa2cab8f781ee0ce4",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW30.kicad_mod": "d4c8e0ead8117061124a7feccf5f31f5929e7ed8b1b1d73d366fe9ed3ba8746f",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW31.kicad_mod": "855e7eed290bbf758138067455decb3fdf9ec6daf433b87dfd34e43136cd5d18",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW32.kicad_mod": "7489cc36140b24b00b3bb7ba6227fb74ed5921e4143e395939e3a2f6b6becb04",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW34.kicad_mod": "85e621408e14a91f0e2538c7bbf36e129e3c6cb9a1016fceb57534d9d0cd5d20",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW35.kicad_mod": "32dc82e7753401d25af5f20dad40c5c619208f3b315aea7367f812a76b4463b3",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW36.kicad_mod": "59ca06163dfc1a719b9e8d2983e213fdd8eec47ce93b83880cca5c99c817da22",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW37.kicad_mod": "661cc7221b5355785d87238629dc0bd2c1363b751808997b76919ad319984ab2",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW38.kicad_mod": "d739f601969455b31fa8eb41c6301ee5ea504fc8fe8eb7bed580ece8db26cc9f",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW39.kicad_mod": "4a724b23cb429d90401ddfd997680bdd84b124d93dcb4f32c28771aaebbcb14e",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW4.kicad_mod": "6c16548cf327d888793eaaf1897b2ec874a3fcff1fbcbd14933357e48f73f5a3",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW40.kicad_mod": "1d4bd6cdcc92718be49da4a586258b9eef11e469df72481a8a08a611d1329f35",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW41.kicad_mod": "62779ff99517666d279da665670419758254177fbd4714d9a85043f6beff09fc",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW42.kicad_mod": "28206caa480ffaf4b36f7f32c576cc625e45250afe0ee3da7b3375f7e88193f3",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW43.kicad_mod": "5cb688fc026e21412d6cae93afe3cf602ececb32d59e40e0932da79d4d724aae",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW44.kicad_mod": "6ab112ddc79c23522d9711b6344f4e2f4f339a8992f666ac12fd4937fc5ba123",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW45.kicad_mod": "79c875c3fa362c20bc5c6997bf153cf0e100f60ea418a8b786c286e03f3fa4fe",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW46.kicad_mod": "965fd96cf01cbbc61bfb021b37e3956ad42739659b64db40561a1805f01ef0fb",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW47.kicad_mod": "99a860114c2a364baf0d24090a4a57699383f1fb025696d9c7cb9ec6bbb28b98",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW5.kicad_mod": "c859de37c471d08ba48f34ffebff3d7a808f9e022091dbef5d742c1f48978fca",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW50.kicad_mod": "f0c6c0093173e80180318191a078cbfe6ba773bc636afb3d58c6d870a3a1823a",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW51.kicad_mod": "88425849ffe712fb14ba603dc5bc43a682a38897869952ba2455dcef4a670e4b",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW52.kicad_mod": "8d1ed985147c76f732aa45f7871fd02fc818c36788de787ed99e85456c21d49f",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW53.kicad_mod": "f483715907a38846a24b3e6d55963680007f4ba0ce647c0e5ad99df5de42c96b",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW54.kicad_mod": "f8e89bbc397ece6659ded9a26cbfb497be7ad82a5e9c229a4f7f7296ea5f3840",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW55.kicad_mod": "077a4d2a5f4258ce18885b3d46875891870e62d742655664040dda26ef98dbaf",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW56.kicad_mod": "d59753963d504a2a42b4c1025058ffdba649d551ce63a91b6386fb1859ff47ee",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW57.kicad_mod": "811e9811f92452431cb925b52ac4a29a7d89990c23f81ca917941491396a9618",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW58.kicad_mod": "69ec1c5cd26a0bf18161c1c46c152b5b502b2dc7c7e98b0f44329aa48410432b",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW59.kicad_mod": "e63f319bb22e8fb67ddec91c2fe8650af38fbdc43edf0e47fb7a02a450fda5e4",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW6.kicad_mod": "83532ea21b9afc91926bc2a57a1b52e46ed8ea68c9db504e50ce50abd60c0eeb",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW61.kicad_mod": "bbb7149c704694211a86dd870ec09b6b31e1fbdba603c6fde729183453500ff9",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW63.kicad_mod": "d7484053d1b6bc9d624f1295fd803146232b338a4e5e04da77f71b421095cd5d",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW64.kicad_mod": "3ee48dda99e33a5f7efc957d30a00de2a9881b871cc00da63a612547fab1b367",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW65.kicad_mod": "54d16e7891c88b002897fa854b9f4e1e1c29af9738551f1b99502a3d630bc9ab",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW66.kicad_mod": "782666f3c31c35fbe72b7ab6746c44a17621d4fb885789d223cf2e1c4012a85f",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW67.kicad_mod": "6dac133e9ffaa865d230909d74b6d8f7ef851b1a49edf50cb227ac8eb5dc801e",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW7.kicad_mod": "dcdc0334357270d59e2b234247357b28a8e97be49638d8ee42f00633869b70cd",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW70.kicad_mod": "7bfbf52b7f3dd0f0184ee66da46882a2259304ee145bb71b57ce22f43e50e17d",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW72.kicad_mod": "3e82082490334b7fa502d20227f4d5b49d4e4238c97df0f614f3e915aff14336",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW73.kicad_mod": "0d2a50d73e52d77f82e33cc390a476ad4a95a4f8070dbc8871481ee7a94e5112",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW74.kicad_mod": "2f3733c33131b397061ba84ef1dac4e5bc4b77069e5c1392e8507afdda2017f7",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW75.kicad_mod": "a86411b8cc278ee4e134b50080fec5d604045fb5e99d64cc4a1f90963ec13f59",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW8.kicad_mod": "723b39e017fe9f557e186c2451054ef9df58848be00f1671020118b407144ece",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring__SW9.kicad_mod": "115c74a7f75f919bfd52622addf5bfdd12de8d0ea84bed7eca203526aec7d388",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW33.kicad_mod": "b7b0ded3fc7a5bff691ab56b42f13d5ea78de24246110d9a0f834ad9d609ef99",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW68.kicad_mod": "5f41d95f4dd88e7ad0dc2f18b6ead658f42e833b0234b2ee339b9ea7b9bad9c5",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW69.kicad_mod": "45780ce8c1e861f09e755766d2c99358c41ee47338dd66c044010aeaab5d3880",
+    "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "5dcd7d5efc027b1b65957f49eb562fd026dce01828bb07649eb6a3125ea37cdd",
+    "hardware/usb-short-route/models/TI_RGT16_3x3_EP1p68_dimensioned.step": "6c72a249f019f0c4979772547e69a8c2a9c024001e82cd6d3079b74c651ddecd",
+    "hardware/usb-short-route/models/JST_S3B-PH-SM4-TB_Celestial.step": "12219a17a30ec7a0a07e1a2394bcc4a46b5358a9918b1eba5c2129c116c2ec26",
+    "hardware/usb-short-route/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f",
+    "hardware/usb-short-route/models/CK_JS102011SAQN_dimensioned.step": "203ba400009353b7074891b3dddf34433ac3f142fee1dd5a991838fbc9683885"
+  },
+  "external_model_sha256": {
+    "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0402_1005Metric.step": "91507e5af4251cb4ef38e04889c9b98da29904432bd83786bba13ae9b605eacb",
+    "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step": "03e44c4b2b727b8d4b6b1fd598cbd12dd5e614f1dfeefa96a92a07e3a3b312a2",
+    "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step": "045cc95e18ee7a13d1623c3ce6604fc833049bdb4f952f68c26e3c5767d122e4",
+    "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step": "9a669c1a2f1ea25b88b401acef6efeaa80a067bd7da9db6993de719a7fbe155c",
+    "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.step": "07f46cff378d30e6c27dfd5a03092c795323f86d91c71fc7e743f4f418dc553a",
+    "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal.step": "c7580ba6320b5978fc3e659ad51a0c3ae8aba7e2d06dfd92fed391446fa3c525",
+    "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step": "4b0f89a75d3758add0041ca9e5ded3a780c23ef4e3e99bcc398b41177dff5d0f",
+    "${KICAD10_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/Panasonic_EVQPUL_EVQPUC.step": "c30e15d8da5c3856f0a5b19ab62f22eef9b06d69161963e77cdf6c0b09a7ac8c",
+    "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.step": "4857b3dc717675bf1fb22edda622ac3b3ae03cf44d81eefaf3fa3ba3a86d84c1",
+    "${KICAD10_3DMODEL_DIR}/RF_Module.3dshapes/Raytac_MDBT50Q.step": "24aec576333a0c2c487689ecdb5d9b3be3861ef684995ffd3a47f484e1828157",
+    "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/TSSOP-16_4.4x5mm_P0.65mm.step": "6ad5e98224d02a427d9a6b929a28dbc158b9925fba5adec12db05079f1016948",
+    "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Wuerth_MAPI-3020.step": "2eafc132738d54831fe21d0ae43613d935a836ae3a23910aefd4ec50f7bcc951",
+    "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step": "98343205ec260ec165026ba2d44329a23096779ac36c553ea84aa7b370242e6d",
+    "${KICAD10_3DMODEL_DIR}/Package_SON.3dshapes/WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm.step": "26b11479728c38545462bbe7bb9e39e93c46ecc441c206ecdfeae513ed7b7b44"
+  },
+  "limits": [
+    "Native models are nominal visual/landing geometry, not supplier maximum tolerance envelopes",
+    "J2 is the attributed Celestial nominal model; supplier molded-part tolerance acceptance remains open",
+    "Pin landing does not prove solder quality or electrical operation",
+    "The retained long-USB reference PCB is outside this current-candidate native-model repair"
+  ]
+}

@@ -49,7 +49,7 @@
       "drill_mm": 0.3,
       "mask_registration_screen_mm": 0.05,
       "front_opening": false,
-      "back_opening": true
+      "back_opening": false
     },
     {
       "ref": "U6",
@@ -60,7 +60,7 @@
       "drill_mm": 0.3,
       "mask_registration_screen_mm": 0.05,
       "front_opening": false,
-      "back_opening": true
+      "back_opening": false
     }
   ],
   "stencil": {
@@ -86,13 +86,13 @@
     "shapely": "2.2.0"
   },
   "source_sha256": {
-    "scripts/check_usb_short_fabrication.py": "e058e00bb2fc08a3f125e03b4d7577d5b2830021f7d6cb47a0fac5cae9c7562a",
+    "scripts/check_usb_short_fabrication.py": "596b3b86a2cdfb1125c1826333794a760803ff6d2929cb156342a7eeafc3d8d1",
     "requirements-cam.txt": "f068b1e72f09da2f3247d117ff72397b07fdd0b339c2b8ac83505199700bec47",
-    "hardware/usb-short-route/audit/fabrication-export.json": "0f4ca1047073dd990ffd6db05c1dfb43ca3b2b0e802757d88010172f2416dbef"
+    "hardware/usb-short-route/audit/fabrication-export.json": "148fae2c8a175ce113fa8466e8bb672f0f0afe63dd0821e10ba974e1f98bdcd1"
   },
   "limits": [
     "Independent CAM/native parity is not supplier DFM approval, a passing USB eye or physical operation",
-    "Ordinary open U5/U6 thermal vias require stencil/reflow wicking and thermal qualification on the first article",
+    "Ordinary mask-tented U5/U6 thermal vias require receiving inspection of mask islands and first-article reflow/thermal qualification; tenting is not resin filling or copper capping",
     "C5 is a separate board; the mainboard archive does not include daughterboard fabrication"
   ]
 }

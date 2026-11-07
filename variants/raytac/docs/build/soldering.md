@@ -31,3 +31,5 @@ Before power check VBUS/GND, SYS/GND, 3V3/GND and connector pins. Brief meter be
 Flash the [calibrator HEX](../../hardware/usb-short-route/firmware/releases/calibrator/yeti60-raytac.hex), follow [firmware release/press/status/save instructions](../../firmware/target/README.md), then flash [normal HEX](../../hardware/usb-short-route/firmware/releases/normal/yeti60-raytac.hex) preserving the last 64 KiB. Do not mass erase and expect calibration to survive. J3 is a custom six-pad pattern; use the native diagram/illustrated guide, not an assumed standard header pinout.
 
 References: [TI QFN/SON attachment](https://www.ti.com/lit/an/slua271c/slua271c.pdf), [Raytac documentation](https://www.raytac.com/product/ins.php?index_id=24). No universal measured reflow profile exists for arbitrary substitutions or equipment.
+
+Before printing, inspect U5/U6 islands and the matched stencil using the [package/mask revision](../../hardware/usb-short-route/PACKAGE-MODELS.md). Retain the islands; previous open-hole stencil instructions are superseded.

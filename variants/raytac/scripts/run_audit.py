@@ -14,7 +14,7 @@ def inventory():
     (AUD/'source-inventory.json').write_text(json.dumps({'files':files,'excluded':'Git internals, ignored local state, upstream submodule contents, and audit outputs to avoid self-hashing','semantic_review_complete':False},indent=2)+'\n')
 def main():
     if not __debug__:raise SystemExit('Audit requires assertions enabled')
-    p=argparse.ArgumentParser();p.add_argument('--baseline',default='HEAD');p.add_argument('--refresh-renders',action='store_true');p.add_argument('--refresh-guide',action='store_true');p.add_argument('--require-production',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--baseline',default='HEAD');p.add_argument('--refresh-renders',action='store_true');p.add_argument('--refresh-guide',action='store_true');p.add_argument('--refresh-candidate-renders',action='store_true');p.add_argument('--require-production',action='store_true');a=p.parse_args()
     uv=shutil.which('uv') or str(Path.home()/'.local/bin/uv')
     kp=os.environ.get('KICAD_PYTHON','/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3')
     cad=[os.environ['YETI_CAD_PYTHON']] if 'YETI_CAD_PYTHON' in os.environ else [uv,'run','--with-requirements',str(ROOT/'requirements-audit.txt'),'python']
@@ -99,7 +99,9 @@ def main():
     stages.append(('USB-repair-power-faults',py+['tests/audit/test_usb_short_power.py'],['USB-repair-candidate-native']))
     stages.append(('USB-repair-F1-faults',py+['tests/audit/test_usb_short_fuse.py'],['USB-repair-candidate-native']))
     stages.append(('USB-repair-candidate-faults',native+['tests/audit/test_usb_short_route.py'],['USB-repair-candidate-native']))
-    add('USB-repair-candidate-local-geometry',cad,'study_usb_short_route.py',deps=['USB-repair-candidate-native','assembly-fit'])
+    add('USB-native-model-closure',cad,'check_usb_short_models.py',deps=['USB-repair-candidate-native'])
+    stages.append(('USB-native-model-faults',cad+['tests/audit/test_native_models.py'],['USB-native-model-closure']))
+    add('USB-repair-candidate-local-geometry',cad,'study_usb_short_route.py',deps=['USB-repair-candidate-native','assembly-fit','USB-native-model-closure'])
     stages.append(('USB-repair-ground-faults',cad+['tests/audit/test_usb_short_ground.py'],['USB-repair-candidate-local-geometry']))
     add('USB-repair-candidate-firmware',py,'check_usb_short_firmware.py',deps=['USB-repair-candidate-local-geometry'])
     add('USB-repair-inset-plate',cad,'build_usb_short_plate.py',deps=['USB-repair-candidate-firmware','assembly-fit'])
@@ -117,7 +119,7 @@ def main():
     add('USB-repair-native-surfaces',native,'export_usb_short_surfaces.py',deps=['USB-repair-candidate-native','USB-repair-complete-assembly'])
     add('USB-repair-surface-maps',cad,'paint_usb_short_surfaces.py',deps=['USB-repair-native-surfaces'])
     add('USB-repair-assembly-sheets',cad,'draw_usb_short_assembly.py',deps=['USB-repair-complete-assembly'])
-    if a.refresh_renders:
+    if a.refresh_renders or a.refresh_candidate_renders:
         add('USB-repair-studio-renders',[uv,'run','--python','3.11','--with-requirements',str(ROOT/'requirements-render.txt'),'python'],'render_usb_short_assembly.py',deps=['USB-repair-surface-maps','USB-repair-assembly-sheets'])
     add('USB-repair-assembly-package',py,'check_usb_short_assembly_package.py',deps=['USB-repair-surface-maps','USB-repair-assembly-sheets','USB-repair-closed-route-faults','USB-repair-feed-budget','USB-repair-rigid-extraction-faults','USB-repair-tolerance-evidence-faults'])
     stages.append(('USB-repair-package-faults',py+['tests/audit/test_closed_package.py'],['USB-repair-assembly-package']))

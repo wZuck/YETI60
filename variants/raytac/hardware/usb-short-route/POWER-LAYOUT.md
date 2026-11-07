@@ -2,6 +2,8 @@ English | [Chinese](POWER-LAYOUT.zh-CN.md)
 
 # Power-stage relocation and verification
 
+The [package and ordinary-process revision](PACKAGE-MODELS.md) governs current U5 lands/stencil and U5/U6 mask islands. Both via faces request tenting; previous back-open instructions are superseded.
+
 This page applies to the USB repair candidate in this directory. The former U6 output/feedback and C46 routes detoured around a sensing-ground guard, with conservative contacted-track lengths of 29.183 mm and 28.504 mm. This revision relocates the regulator stage and charger capacitors. Feedback is now 3.555 mm and C46 is 4.681 mm; all ten local paths below remain on the component-side B.Cu layer.
 
 **Design layout checks pass; physical stability is unverified.** Strict native checks report 0 errors, 0 opens and 0 schematic mismatches, with 411 pad-pair checks. The 102 missing-courtyard warnings belong to non-purchased sensing/mechanical geometry; there are no copper-sliver, fitted-courtyard-overlap or dangling-track warnings. The [geometry report](audit/geometry-check.json) separately records per-layer ground connectivity and relocated component clearances. These results do not establish loop stability, ripple, a USB eye, thermal performance or measured battery behavior.
@@ -47,8 +49,6 @@ Thirty-nine relocated-component checks cover nominal and accepted PCB thicknesse
 ## Ordinary vias and soldering
 
 Continue using ordinary JLC four-layer FR4, 1.6 mm finished thickness. Relative to the preceding capacitor revision, nine ordinary through vias are added, four unused vias removed and three vias moved; the board now has 813 vias. Exact positions, diameters and nets are in the [machine contract](power-layout.json). Added vias use 0.50 mm lands / 0.30 mm drills; no blind/buried vias, resin filling, plated filling or capping is required.
-
-One ordinary open thermal via is added at the U6 exposed-ground-pad centre, (133.0, 140.8) mm. It follows the existing U5 via at (117.65, 145.0) mm: front mask tented, back hole open inside the thermal pad. Quote ordinary through-via processing; do not select filled/capped processing. An open via can wick solder. Solder U5/U6 first, use the native windowed paste pattern with controlled volume, then inspect collapse, bridges and exposed-pad wetting after reflow. First-article inspection determines any rework; appearance alone does not verify thermal performance.
 
 C43 ground, U6 PGND and GND connect to local exposed ground; C45 uses the adjacent ground via. A U5.8-to-exposed-ground connection repairs the previously separate ground copper. Independent checking unions actual filled copper separately per layer and joins layers only through ground vias/PTH pads; a shared zone identity alone does not count as connectivity.
 

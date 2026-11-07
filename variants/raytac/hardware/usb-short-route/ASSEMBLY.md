@@ -2,6 +2,8 @@ English | [Chinese](ASSEMBLY.zh-CN.md)
 
 # Raytac repair candidate: enclosed assembly
 
+The [package and ordinary-process revision](PACKAGE-MODELS.md) governs current U5 lands/stencil and U5/U6 mask islands. Both via faces request tenting; previous back-open instructions are superseded.
+
 Current mechanical parts: use the [C04 plate, switch-floor relief and eight gasket strips](MECHANICAL-FIT.md). The older plate perimeter and gasket-stock tray are superseded.
 
 **Service-path progress:** [the internal wing relief and rear clips are revised; continuous nominal rigid extraction passes with leads disconnected](SERVICE-PATH.md). Plug mating/unmating, wire deformation, loose-plug parking and combined tolerances remain unqualified; complete service is not approved.
@@ -32,8 +34,6 @@ Use the [revised passive specifications and seven 0805 power-capacitor positions
 
 All unchanged NiZ/plate-mounted stabilizer, plate, standoff, gasket, fastener, C5 and programming supplies are in the [main build handbook](../../BUILD.md). Keep its 28 mounting sets and leave H26 unused. This candidate changes the USB/power harnesses and bottom relief; it retains the previously checked plate/PCB stack. Do not buy a second battery lead set if the pack vendor supplies the specified complete harness.
 
-
-The regulator, inductor, control passives and six capacitors have moved. Solder U5/U6 and their power passives using the [current placement and ordinary thermal-via instructions](POWER-LAYOUT.md) before the module/AFE. U5/U6 thermal holes are open at the back; control paste and inspect wicking with ordinary processing. Previous power placement images are superseded.
 
 ## 01 — Inspect the case and prints
 

@@ -86,7 +86,7 @@
           ],
           [
             "back",
-            "none"
+            "yes"
           ]
         ],
         "type": "through"
@@ -450,6 +450,58 @@
           "tenting": null,
           "type": "through"
         }
+      },
+      "1df4dc1f-1f79-484a-8421-f92423a6f7d0": {
+        "before": {
+          "net": "GND",
+          "position": [
+            117.65,
+            145.0
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "none"
+            ]
+          ],
+          "type": "through"
+        },
+        "after": {
+          "net": "GND",
+          "position": [
+            117.65,
+            145.0
+          ],
+          "land_mm": 0.5,
+          "drill_mm": 0.3,
+          "layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "tenting": [
+            "tenting",
+            [
+              "front",
+              "yes"
+            ],
+            [
+              "back",
+              "yes"
+            ]
+          ],
+          "type": "through"
+        }
       }
     }
   },
@@ -545,5 +597,10 @@
   "limitations": [
     "Contacted-copper paths do not solve return inductance, loop stability, thermal resistance, EMC or physical operation",
     "Sensing electrodes, mounting holes and exterior unchanged; changed routing requires first-article key calibration"
-  ]
+  ],
+  "U6_thermal_via_position_mm": [
+    133,
+    140.8
+  ],
+  "U6_thermal_via_location": "Retained at the EP center; both faces conventionally mask-tented; 0.5 mm mask island on the component side with stencil keepout"
 }

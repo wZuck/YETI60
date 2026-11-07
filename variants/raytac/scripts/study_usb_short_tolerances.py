@@ -138,14 +138,18 @@ def main():
             d = [b-a for a, b in zip(pair['case'], pair['moving'])]
             assert abs(d[2]) < .00001 and min(abs(d[0]), abs(d[1])) < .00001
             assert max(abs(d[0]), abs(d[1])) > .1
-    switch = next(r for r in assembly['component_envelopes'] if r['ref'] == 'SW100')
+    # This diagnostic intentionally compares the held pre-C04 board/body datum
+    # with the original shell. Current expanded native-model bounds are checked
+    # separately against the repaired shell in tolerance-fit.json.
+    baseline_assembly=read(ROOT/'docs/audit/yeti60-assembly.json')
+    switch = next(r for r in baseline_assembly['component_envelopes'] if r['ref'] == 'SW100')
     interfaces['SW100-bottom']=clearance(load(ROOT/'mechanical/generated/yeti60-bottom.step'),box(switch['bounds_case_mm']))
     for pair in interfaces['SW100-bottom']['nearest_point_pairs_case_mm']:
         d = [b-a for a, b in zip(pair['case'], pair['moving'])]
         assert abs(d[0])+abs(d[1]) < .00001 and d[2] > .1
     assert math.isclose(switch['height_envelope_mm'], 3.5)
     sources = [Path(__file__), ROOT/'scripts/cad_geometry.py', ROOT/'scripts/check_yeti60_assembly.py',
-               ROOT/'scripts/check_usb_short_closed_assembly.py', BASE/'audit/assembly.json',
+               ROOT/'scripts/check_usb_short_closed_assembly.py',ROOT/'docs/audit/yeti60-assembly.json', BASE/'audit/assembly.json',
                BASE/'audit/vertical-motion.json', BASE/'audit/closed-assembly.json', plate_path,
                ROOT/'mechanical/assembly-spec.raytac.json', ROOT/'mechanical/pcb-fabrication-spec.json',
                ROOT/'mechanical/generated/yeti60-top.step', ROOT/'mechanical/generated/yeti60-bottom.step']

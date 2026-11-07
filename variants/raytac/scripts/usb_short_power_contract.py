@@ -48,12 +48,16 @@ def verify_layout():
     board = loads((BASE / 'EC60-nRF52840.kicad_pcb').read_text())
     oldparts = {props(f)['Reference']: f for f in children(old, 'footprint')}
     parts = {props(f)['Reference']: f for f in children(board, 'footprint')}
+    from repair_usb_short_charger_package import lands
     for ref, position in spec['component_positions'].items():
-        f, previous = parts[ref], oldparts[ref]
+        f, previous = parts[ref], copy.deepcopy(oldparts[ref])
+        if ref=='U6': lands(previous, ref)
         assert pose(f) == position, ('Unexpected power component position', ref)
         assert f[1] == previous[1] and props(f)['Value'] == props(previous)['Value']
         assert child(f, 'layer') == child(previous, 'layer') == ['layer', 'B.Cu']
         assert local_pads(f) == local_pads(previous), ('Changed power land/paste geometry', ref)
+    expected_charger=copy.deepcopy(oldparts['U5']);lands(expected_charger,'U5')
+    assert local_pads(parts['U5'])==local_pads(expected_charger),'Changed RGT land/stencil contract'
     before, after = via_map(old), via_map(board)
     actual = dict(added={k:v for k,v in after.items() if k not in before},
                   removed={k:v for k,v in before.items() if k not in after},
@@ -64,7 +68,7 @@ def verify_layout():
         assert v['land_mm'] == .5 and v['drill_mm'] == .3
     thermal = after[spec['U6_thermal_via_uuid']]
     assert thermal['net'] == 'GND' and thermal['position'] == pose(parts['U6'])[:2]
-    assert thermal['tenting'] == ['tenting', ['front', 'yes'], ['back', 'none']]
+    assert thermal['tenting'] == ['tenting', ['front', 'yes'], ['back', 'yes']]
     areas = [z for z in children(board, 'zone') if child(z, 'name') == ['name', 'L1_INTERLAND_NO_COPPER']]
     assert len(areas) == 1, 'Missing or duplicate inductor copper keepout'
     area = areas[0]

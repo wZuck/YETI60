@@ -115,8 +115,8 @@ def verify():
     assert mesh['assembly_report_sha256']==sha(BASE/'audit/assembly.json')
     assert mesh['guides_report_sha256']==sha(BASE/'audit/guides.json')
     assert mesh['export_recipe_sha256']==sha(ROOT/'scripts/export_usb_short_assembly.py')
-    assert {p['ref'] for p in mesh['native_headers']}=={'J1','J4','J5'}
-    assert 'J2' in mesh['unavailable_native_models']
+    assert {p['ref'] for p in mesh['native_headers']}=={'J1','J2','J4','J5'}
+    assert not mesh['unavailable_native_models']
     assert len(evidence['assembly-drawings.json']['outputs'])==28
     assert set(evidence['assembly-surfaces.json']['outputs'])=={
         'hardware/usb-short-route/assembly/pcb-surface-front.png','hardware/usb-short-route/assembly/pcb-surface-back.png'}

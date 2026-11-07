@@ -2,7 +2,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 # Raytac review conclusions
 
-**All 96 recorded software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
+**All 98 recorded software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
 
 The table describes the current short-USB candidate; retained reference-board figures are labeled separately.
 
@@ -16,7 +16,9 @@ The table describes the current short-USB candidate; retained reference-board fi
 | BOM | Current candidate: 75 parts; 8 planned from stock, 67 net purchases |
 | Harness | Current candidate: 9 conductors |
 
-The current [fresh-source build record](published-source-build.json) matches the published files: both targets were rebuilt and host-checked from project sources without local build directories and a separate locked dependency workspace; HEX/BIN bytes and calibration identifiers are unchanged. Internet-only first downloading was blocked by local container connectivity and is not counted as passed. Native KiCad 3D model closure remains open. See [environment and full boundaries](../build/firmware-environment.md).
+The current [package/mask repair](../../hardware/usb-short-route/PACKAGE-MODELS.md) checks all 75 native models and updates U5 lands plus U5/U6 mask/stencil construction. Physical process, tolerance and safety acceptance remain first-board work.
+
+The [fresh-source build record](published-source-build.json) is retained as a historical snapshot; see the machine report for current-source correspondence.
 
 **Use the [short-USB repair candidate package](../../hardware/usb-short-route/FIRST-ARTICLE.md) for the current first board.** The old long-route archive remains a held reference; its seven-wire illustrations do not describe the current nine-wire assembly. Pack confirmation, complete USB-link/analog stability and physical acceptance remain open. See the [battery-inclusive open-bench flow](../../OPEN-BENCH.md).
 

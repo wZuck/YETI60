@@ -77,10 +77,10 @@ class CAMFailures(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError,'Front thermal via not tented'):
             cam.check_masks(front,self.gerber('B_Mask'))
 
-    def test_covered_back_thermal_hole_rejected(self):
+    def test_back_thermal_hole_opening_rejected(self):
         back=self.gerber('B_Mask')
-        back.objects=[o for o in back.objects if not (o.bounding_box(cam.MM)[0][0]<=133<=o.bounding_box(cam.MM)[1][0] and o.bounding_box(cam.MM)[0][1]<=-140.8<=o.bounding_box(cam.MM)[1][1])]
-        with self.assertRaisesRegex(AssertionError,'Back thermal hole not fully open'):
+        back.objects.append(Flash(133,-140.8,CircleAperture(.4,unit=cam.MM),unit=cam.MM,attrs={}))
+        with self.assertRaisesRegex(AssertionError,'Back thermal via not tented'):
             cam.check_masks(self.gerber('F_Mask'),back)
 
     def test_IPC_aux_origin_offset_rejected(self):

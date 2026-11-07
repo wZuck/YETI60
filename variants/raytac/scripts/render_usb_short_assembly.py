@@ -39,12 +39,12 @@ def build_source():
         ("ROOT/'docs/audit/yeti60-interconnects.json'", "ROOT/'hardware/usb-short-route/audit/closed-assembly.json'", 1),
         ("ROOT/'docs/audit/yeti60-bom.json'", "ROOT/'hardware/usb-short-route/audit/assembly-bom.json'", 2),
         ("'electronics' if part['name']=='main-sh' else part['group']", "part['group']", 1),
-        ("p['ref']=='J1'", "p['ref'] in ['J1','J4','J5']", 1),
+        ("p['ref']=='J1'", "p['ref'] in ['J1','J2','J4','J5']", 1),
         ("else:box(p['ref']+' / height envelope',p['bounds_case_mm'],mat,'electronics',.12)",
          "else:box(p['ref']+' / part body or clearance envelope',p.get('render_body_bounds_case_mm',p['bounds_case_mm']),mat,'electronics',.02 if p['ref']=='F1' else .12)", 1),
         ("'yellow':(.65,.4,.005)", "'yellow':(.65,.4,.005),'amber':(.53,.24,.025)", 1),
         ("Seven continuous round wires, complete conservative mating envelopes, conformal guides and native C5 CAD; supplier lead-exit datums pending",
-         "Nine wires, five mating envelopes, 16 guides, 12 films, three native SH headers, J2 envelope, C5 CAD, inset C04 plate and eight dimensioned gasket strips; supplier lead-exit datums pending", 1),
+         "Nine wires, five mating envelopes, 16 guides, 12 films, four native headers including nominal J2, C5 CAD, inset C04 plate and eight dimensioned gasket strips; supplier lead-exit datums pending", 1),
         ("name+' / unmodified source CAD'", "name+' / controlled source CAD'", 1),
     ]
     for before, after, count in replacements:

@@ -5,15 +5,15 @@
   "files": {
     "hardware/raytac/EC60-nRF52840.kicad_pcb": {
       "canonical_source": "variants/raytac/hardware/usb-short-route/EC60-nRF52840.kicad_pcb",
-      "sha256": "8ea837256c5e6277bf870844067260957a9b3cbc537fd8a7e3ff8d1c15c88cb0"
+      "sha256": "fcc959db0cde7d467860e7bf60695f68d27152eebcaa172dc19bb8617264a26a"
     },
     "hardware/raytac/yeti60-raytac-candidate-gerbers.zip": {
       "canonical_source": "variants/raytac/hardware/usb-short-route/fabrication/yeti60-raytac-candidate-gerbers.zip",
-      "sha256": "eed7223fe092bee8a31a9a679eff4243eb5ad515083439a24eaf27f2b369b045"
+      "sha256": "fc147d5dd6ea32a2c34112e625875cdf5c8ee25f13fc72e7670718b16fb4ad27"
     },
     "hardware/raytac/yeti60-raytac-candidate-bottom-stencil.zip": {
       "canonical_source": "variants/raytac/hardware/usb-short-route/fabrication/yeti60-raytac-candidate-bottom-stencil.zip",
-      "sha256": "704812800d0e3cf95b4366c215da68430bbaacc7496c1cb148c5069fd3fc1bc8"
+      "sha256": "3345d7f2835c84755d5593a909723debfb6f9a828fecab4c194138cb9ffa6486"
     }
   },
   "removed_superseded_download": "yeti60-raytac-p2-dfm-review.zip; previous canonical reference retained under variants/raytac/hardware/fabrication"

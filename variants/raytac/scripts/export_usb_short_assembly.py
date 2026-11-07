@@ -117,19 +117,11 @@ def headers():
     byref = {str(next(p[2] for p in children(f, 'property') if p[1] == 'Reference')): f
              for f in children(tree, 'footprint')}
     result = []
-    # The installed KiCad library has no S3B-PH-SM4-TB STEP. Do not silently
-    # substitute the through-hole S3B-PH-K model for this SMT battery header.
-    # J2 keeps its conservative, dimensioned body envelope in the renderer.
-    for ref in ['J1', 'J4', 'J5']:
-        model = child(byref[ref], 'model')
-        assert model is not None
-        name = ('JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step'
-                if ref == 'J1' else Path(str(model[1])).name)
-        source = KICAD / 'SharedSupport/3dmodels/Connector_JST.3dshapes' / name
-        assert source.is_file(), source
-        model[1] = str(source)
-        if ref == 'J1':
-            child(child(model, 'offset'), 'xyz')[1:] = [0, -.0625, 0]
+    from usb_short_model_contract import resolve
+    for ref in ['J1', 'J2', 'J4', 'J5']:
+        model=child(byref[ref], 'model')
+        source=resolve(model[1]);assert source.is_file(),source
+        model[1]=str(source)
         result.append(dict(ref=ref, model_source=source.name, model_source_sha256=sha(source)))
     temporary = WORK / 'headers.kicad_pcb'
     temporary.write_text(dumps(tree) + '\n')
@@ -180,12 +172,6 @@ def main():
             outer = component['bounds_case_mm']
             assert all(outer[i]<=body[i] for i in range(3)) and all(outer[i]>=body[i] for i in range(3,6))
             component['qualified_max_body_with_allowance_case_mm'] = body
-    for h in native['new_headers']:
-        x0, y0, x1, y1 = h['physical_body_bbox_pcb_mm']
-        data['component_envelopes'].append(dict(ref=h['ref'], value=native_values[h['ref']],
-            back=True, position_pcb_mm=h['position'], angle_deg=0, height_envelope_mm=3,
-            height_basis='Conservative JST SH fit envelope; native KiCad STEP used for rendering',
-            bounds_case_mm=[x0, -y1, -5, x1, -y0, -2]))
     with (BASE / 'mainboard-purchase.csv').open() as stream:
         rows = [dict(references=r['References'], quantity=int(r['Required']), package=r['Package']) for r in csv.DictReader(stream)]
     assert sum(r['quantity'] for r in rows) == 75
@@ -259,12 +245,12 @@ def main():
                     guides_report_sha256=sha(AUD / 'guides.json'), extra_parts=extras, meshes=meshes,
                     tessellation_linear_deflection_mm=.015, tessellation_angular_deflection_rad=.08,
                     case_scale=[1, 1, 1], native_headers=header_parts, published_wire_STEP_sha256=published,
-                    unavailable_native_models={'J2': 'SMT S3B-PH-SM4-TB STEP absent from installed KiCad library; conservative body envelope rendered'})
+                    unavailable_native_models={})
     (WORK / 'render-meshes.json').write_text(json.dumps(geometry, separators=(',', ':')))
     receipt = {k: v for k, v in geometry.items() if k != 'meshes'}
     receipt['mesh_payload_sha256'] = sha(WORK / 'render-meshes.json')
     (AUD / 'assembly-meshes.json').write_text(json.dumps(receipt, indent=2) + '\n')
-    print('Candidate assembly meshes: nine wires, five mating plugs, 16 guides, 12 films, three native SH headers, J2 envelope and complete C5', flush=True)
+    print('Candidate assembly meshes: nine wires, five mating plugs, 16 guides, 12 films, four native headers including attributed nominal J2 and complete C5', flush=True)
 
 
 if __name__ == '__main__':

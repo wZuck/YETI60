@@ -10,6 +10,7 @@
 
 | 要做什么 | 当前文档／文件 |
 |---|---|
+| 封装模型、散热焊盘与普通阻焊工艺 | [模型、铜盘、钢网及阻焊岛](hardware/usb-short-route/PACKAGE-MODELS.zh-CN.md) |
 | 下单主板及钢网，选择 JLC 参数 | [首板下单表与下载](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md) |
 | 买主板元件、抵扣库存 | [75 件补购 CSV](hardware/usb-short-route/mainboard-purchase.zh-CN.csv)、[通用阻容／灯规格](hardware/usb-short-route/PASSIVES.zh-CN.md)、[已选 F1](hardware/usb-short-route/F1-SELECTION.zh-CN.md) |
 | 购买或自行焊接 C5 JSH | [七件 C5 材料及库存](hardware/bom/daughterboard.zh-CN.csv)、[固定版本 C5 制板包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip) |

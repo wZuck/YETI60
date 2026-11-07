@@ -35,8 +35,17 @@ class PowerFailures(unittest.TestCase):
     def test_unexpected_blind_via_rejected(self):
         self.board_fault(lambda b: self.thermal(b).insert(1,'blind'))
 
-    def test_closed_back_thermal_mask_rejected(self):
-        self.board_fault(lambda b: child(child(self.thermal(b),'tenting'),'back').__setitem__(1,'yes'))
+    def test_current_thermal_layout_accepted(self):
+        contract.verify_layout()
+
+    def test_open_thermal_mask_rejected(self):
+        for position in ([117.65,145], [133,140.8]):
+            for side in ('front','back'):
+                with self.subTest(position=position, side=side):
+                    def expose(board):
+                        via=next(v for v in children(board,'via') if list(map(float,child(v,'at')[1:]))==position)
+                        child(child(via,'tenting'),side)[1]='no'
+                    self.board_fault(expose)
 
     def test_removed_inductor_keepout_rejected(self):
         self.board_fault(lambda b: b.remove(next(z for z in children(b,'zone') if child(z,'name')==['name','L1_INTERLAND_NO_COPPER'])))

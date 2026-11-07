@@ -173,6 +173,8 @@ def verify():
     assert short['physical_pin_pairs_checked']==len(short['physical_pin_pairs'])==411
     assert all(pair['connected'] for pair in short['physical_pin_pairs'])
     hashes(short['source_sha256']);assert short['audit_script_sha256']==sha(ROOT/'scripts/check_usb_short_route.py')
+    from usb_short_model_contract import verify_report as verify_native_models
+    verify_native_models(read(candidate/'audit/native-models.json'))
     local=read(candidate/'audit/geometry-check.json');assert local['status']=='local-header-fit-and-reference-passed';hashes(local['source_sha256'])
     assert all(local['USB_reference_screen'][side]['nearest_adjacent_GND_coverage_fraction']>.999 for side in ['positive','negative'])
     firmware=read(candidate/'firmware/manifest.json');hashes(firmware['source_sha256']);hashes(firmware['published_outputs']);hashes(firmware['evidence'])
