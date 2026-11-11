@@ -77,6 +77,8 @@ def verify():
     for variant in target['variants'].values():hashes(variant['outputs'])
     target_check=read(AUD/'yeti60-target-check.json');assert target_check['status']=='passed' and target_check['build_manifest_sha256']==sha(AUD/'yeti60-target-build.json')
     assert all(v['USB_configuration_mA']==500 for v in target_check['variants'].values())
+    from check_yeti60_firmware_suite import verify as verify_firmware_suite
+    verify_firmware_suite()
     assert read(AUD/'documentation-check.json')['status']=='passed'
     return {'status':'passed','controller_count':1,'physical_pin_pairs':len(cad['physical_pin_pairs']),'matched_mount_holes':29,'assembly_condition':'provisional stack only','firmware_condition':'normal/calibrator ARM targets built, USB500 descriptor verified; hardware enumeration/BLE/calibration untested','production_approved':False,'open_requirements':config['open_requirements']}
 def main():

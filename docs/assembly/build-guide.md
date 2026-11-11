@@ -10,7 +10,7 @@ Mainboard parts are on the back; mainboard views are mirrored horizontally for l
 
 Steps 12–13 apply only to a bare C5 build; skip them with a populated daughterboard. The other checks still apply.
 
-**Before assembly:** both antenna layouts have unresolved risks. These instructions support an engineering prototype; Bluetooth acceptance is open. Read [acceptance and interference testing](../testing/README.md) and record the selected board, firmware hashes and measured results.
+**Build release on hold:** E73 USB protection branches, PH plug withdrawal obstruction and NiZ plate integration remain unresolved. These illustrations are reference only. Read the [current E73 review](../audit/e73-review.md) and [firmware migration and recalibration](../testing/e73-firmware-validation.md). The completed C5 daughterboard needs no PCB change; do not order the current E73 mainboard as an accepted design.
 
 Step index
 

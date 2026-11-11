@@ -325,7 +325,7 @@ def main():
                 ax.set_xlim(0,100);ax.set_ylim(0,60)
                 if figure=='calibration':
                     ax.add_patch(FancyBboxPatch((1,15),97,39,boxstyle='round,pad=1',fc='#1f3b44',ec='#5d7881'))
-                    for i,line in enumerate(['yeti_calibrate release','yeti_calibrate press','yeti_calibrate save']):
+                    for i,line in enumerate(['yeti_calibrate release','yeti_calibrate press ROW COL','yeti_calibrate save']):
                         ax.text(6,45-i*10,line,color='#d8e5c4',fontfamily='monospace',fontsize=16)
                     ax.text(50,4,'Normal HEX: preserve 0xF0000-0xFFFFF' if not zh else '普通固件：保留 0xF0000–0xFFFFF',ha='center',fontsize=12)
                 else:
@@ -389,7 +389,7 @@ def main():
                ('[需要制作的 PCB 与完整材料](../../README.zh-CN.md#需要下单制作哪些-pcb) · [主板补购表](../../hardware/bom/mainboard-purchase.zh-CN.csv) · [子板自焊材料](../../hardware/bom/daughterboard.zh-CN.csv) · [结构尺寸](../engineering/assembly.zh-CN.md)' if zh else '[PCBs to fabricate and complete materials](../../README.md#which-pcbs-to-fabricate) · [Mainboard purchase plan](../../hardware/bom/mainboard-purchase.csv) · [C5 self-build parts](../../hardware/bom/daughterboard.csv) · [Assembly dimensions](../engineering/assembly.md)'),'',
                ('主板元件位于背面，主板图已按背面观察进行水平镜像；C5 图从 F.Cu 元件面观察。数字行侧为后方。金黄色圆圈标出原生焊盘 1，仍须与实际器件封装标识核对。PCB 线路省略，机械分解高度及未定型胶碗／轴壳／键帽外形为示意。' if zh else 'Mainboard parts are on the back; mainboard views are mirrored horizontally for looking at that face. C5 views look at its F.Cu component face. Rear means the number-row side. Gold rings identify native pad 1; compare them with the actual package mark. PCB tracks are omitted. Mechanical exploded offsets and unqualified dome/housing/cap shapes are illustrative.'),'',
                ('步骤 12–13 仅用于自焊 C5，购买成品时跳过；其余步骤仍需执行。' if zh else 'Steps 12–13 apply only to a bare C5 build; skip them with a populated daughterboard. The other checks still apply.'),'']
-        lines += [('**装配前验收：** 两版天线均有未解决的布局风险；当前只能按工程样机装配，不能据此认定蓝牙已经验收。先阅读[验收与干扰测试](../testing/README.zh-CN.md)，记录板型、固件哈希及每项实测结果。' if zh else '**Before assembly:** both antenna layouts have unresolved risks. These instructions support an engineering prototype; Bluetooth acceptance is open. Read [acceptance and interference testing](../testing/README.md) and record the selected board, firmware hashes and measured results.'), '']
+        lines += [('**暂停制作放行：** E73 的 USB 保护支路、PH 插头拔出干涉及 NiZ 定位板移植尚未完成，当前图解只能作为参考。先阅读[当前 E73 审查](../audit/e73-review.zh-CN.md)及[固件升级与重新校准说明](../testing/e73-firmware-validation.zh-CN.md)。已完成的 C5 子板无需改板；不要据此把当前 E73 主板作为已验收方案下单。' if zh else '**Build release on hold:** E73 USB protection branches, PH plug withdrawal obstruction and NiZ plate integration remain unresolved. These illustrations are reference only. Read the [current E73 review](../audit/e73-review.md) and [firmware migration and recalibration](../testing/e73-firmware-validation.md). The completed C5 daughterboard needs no PCB change; do not order the current E73 mainboard as an accepted design.'), '']
         lines += [('步骤目录' if zh else 'Step index'), '']
         lines += [f"- [{step['id']} {step['title'][lang]}](#step-{step['id']})" for step in steps]
         lines += ['']

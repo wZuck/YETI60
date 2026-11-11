@@ -60,6 +60,8 @@ def parity():
     assert required==stock+buy==cam['fitted_placements']==75
     inventory=read('docs/audit/yeti60-inventory.json')
     assert inventory['required_mainboard_parts']==inventory['planned_stock_parts']+inventory['net_purchase_parts']==76
+    from check_yeti60_firmware_suite import verify as verify_e73_firmware
+    verify_e73_firmware()
     readiness=read('docs/audit/e73-readiness.json')
     assert not readiness['manufacturing_released'] and not readiness['physical_verification']
     return {'controllers_per_keyboard':1,'keys':60,'built_ARM_targets':4,
@@ -67,7 +69,7 @@ def parity():
             'feature_parity':False,
             'differences':['E73 retains the old 1.2 mm / 29-mount plate and seven-wire PH harness',
                            'Raytac current candidate uses C04/NiZ 1.6 mm / 28-mount plate and nine-wire SH3 harness',
-                           'E73 scanner/storage fault and waveform improvements are not yet at Raytac parity'],
+                           'E73 scanner/storage/GPIO/key-pipeline regressions now pass against its own ARM builds; analog and physical margins remain unqualified'],
             'variants':{'e73':{'placements':76,'mounts':29,'stock_parts':inventory['planned_stock_parts'],'purchase_parts':inventory['net_purchase_parts'],'manufacturing_package':archive,'design_status':readiness['status']},
                         'raytac':{'placements':required,'mounts':28,'stock_parts':stock,'purchase_parts':buy,'manufacturing_package':'variants/raytac/hardware/usb-short-route/fabrication/yeti60-raytac-candidate-gerbers.zip','design_status':'candidate-physical-and-supplier-qualification-open'}}}
 

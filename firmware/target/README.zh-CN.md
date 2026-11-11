@@ -40,3 +40,5 @@ Fn 层提供功能键、方向键和五组蓝牙主机选择。USB／蓝牙 HID 
 E73 发布文件位于 `firmware/releases/{normal,calibrator}/yeti60-e73.*`。HEX 额外将 0x1000120C 的 UICR.NFCPINS 写为 0xFFFFFFFE，释放 P0.09／P0.10 为 GPIO；首次刷写使用 HEX，单独的 BIN 不包含这条显式 UICR 记录。GPIO／ADC 分配专用于 E73，包括扫描 AIN4、电池 AIN3，不能刷写 Raytac 二进制。
 
 [逐键校准操作与拒绝条件](../../docs/testing/calibration.zh-CN.md)；[60 键行列命令表](calibration-keys.csv)。
+
+[当前 E73 固件验证及旧校准记录升级说明](../../docs/testing/e73-firmware-validation.zh-CN.md)。

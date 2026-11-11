@@ -1,0 +1,544 @@
+{
+  "status": "model-regression-passed-physical-open",
+  "physical_verification": false,
+  "ngspice_version": "** ngspice-47 : Circuit level simulation program",
+  "tool_versions": {
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.2",
+    "clang": "Apple clang version 21.0.0 (clang-2100.3.23.3)"
+  },
+  "netlist_electrical_values": {
+    "hold_F": 2.2e-10,
+    "row_ohm": 100.0,
+    "column_ohm": 100000.0,
+    "feedback_ohm": 100000.0,
+    "gain_ground_ohm": 1000.0
+  },
+  "nominal_closed_loop_gain": 101.0,
+  "scanner_timing": {
+    "debounce_frames": 2,
+    "afe_settle_us": 5000,
+    "mux_settle_us": 3,
+    "discharge_us": 10,
+    "charge_us": 5,
+    "acquisition_us": 40
+  },
+  "order_mutants_rejected": [
+    {
+      "case": "rise-before-release",
+      "exit_code": -6,
+      "output": "Assertion failed: (s->pins[PIN_APLEX_OUT_PIN_0] == Y_OD_RELEASE), function gpio, file sim.c, line 47."
+    },
+    {
+      "case": "fall-before-clamp",
+      "exit_code": -6,
+      "output": "Assertion failed: (s->pins[PIN_APLEX_OUT_PIN_0] == Y_OD_LOW), function gpio, file sim.c, line 49."
+    }
+  ],
+  "illustrative_cases": [
+    {
+      "order": "correct",
+      "key_pF_assumed": 1,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 45.5,
+      "sense_at_sample_V": 0.00250635865,
+      "ideal_gain_proxy_at_sample_V": 0.253142224,
+      "ADC_code_proxy": 288,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -4.987395071217272e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 5,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 45.5,
+      "sense_at_sample_V": 0.0125918095,
+      "ideal_gain_proxy_at_sample_V": 1.27177276,
+      "ADC_code_proxy": 1447,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -4.570791087613037e-08
+    },
+    {
+      "order": "rise-before-release",
+      "key_pF_assumed": 1,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 46.0,
+      "sense_at_sample_V": 9.13259488e-13,
+      "ideal_gain_proxy_at_sample_V": 9.22392083e-11,
+      "ADC_code_proxy": 0,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -5.205408955178831e-09
+    },
+    {
+      "order": "rise-before-release",
+      "key_pF_assumed": 5,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 46.0,
+      "sense_at_sample_V": 1.82099544e-16,
+      "ideal_gain_proxy_at_sample_V": 1.83920539e-14,
+      "ADC_code_proxy": 0,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -4.5666847444370586e-08
+    },
+    {
+      "order": "fall-before-clamp",
+      "key_pF_assumed": 1,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 45.5,
+      "sense_at_sample_V": 0.00250635865,
+      "ideal_gain_proxy_at_sample_V": 0.253142224,
+      "ADC_code_proxy": 288,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -0.007586495949531801
+    },
+    {
+      "order": "fall-before-clamp",
+      "key_pF_assumed": 5,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 45.5,
+      "sense_at_sample_V": 0.0125918095,
+      "ideal_gain_proxy_at_sample_V": 1.27177276,
+      "ADC_code_proxy": 1447,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -0.03726668655129801
+    }
+  ],
+  "sensitivities": [
+    {
+      "order": "correct",
+      "key_pF_assumed": 0.5,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 45.5,
+      "sense_at_sample_V": 0.00125240753,
+      "ideal_gain_proxy_at_sample_V": 0.12649316,
+      "ADC_code_proxy": 144,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -2.444660623752646e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 0.5,
+      "ADC_API_delay_us_assumed": 5,
+      "sample_after_row_us": 50.5,
+      "sense_at_sample_V": 0.0010738469400000004,
+      "ideal_gain_proxy_at_sample_V": 0.10845854100000005,
+      "ADC_code_proxy": 123,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -2.448850450524449e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 0.5,
+      "ADC_API_delay_us_assumed": 20,
+      "sample_after_row_us": 65.5,
+      "sense_at_sample_V": 0.0006769125020000004,
+      "ideal_gain_proxy_at_sample_V": 0.06836816270000003,
+      "ADC_code_proxy": 78,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -2.441998181725483e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 0.5,
+      "ADC_API_delay_us_assumed": 50,
+      "sample_after_row_us": 95.5,
+      "sense_at_sample_V": 0.00026897556900000013,
+      "ideal_gain_proxy_at_sample_V": 0.02716653250000001,
+      "ADC_code_proxy": 31,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -2.4029756801498315e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 0.5,
+      "ADC_API_delay_us_assumed": 100,
+      "sample_after_row_us": 145.5,
+      "sense_at_sample_V": 5.77670249e-05,
+      "ideal_gain_proxy_at_sample_V": 0.00583446952,
+      "ADC_code_proxy": 7,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -2.452702429614649e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 0.5,
+      "ADC_API_delay_us_assumed": 200,
+      "sample_after_row_us": 245.5,
+      "sense_at_sample_V": 2.66449146e-06,
+      "ideal_gain_proxy_at_sample_V": 0.000269113638,
+      "ADC_code_proxy": 0,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -2.452702433738265e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 1,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 45.5,
+      "sense_at_sample_V": 0.00250635865,
+      "ideal_gain_proxy_at_sample_V": 0.253142224,
+      "ADC_code_proxy": 288,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -4.987395071217272e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 1,
+      "ADC_API_delay_us_assumed": 5,
+      "sample_after_row_us": 50.5,
+      "sense_at_sample_V": 0.002149524300000001,
+      "ideal_gain_proxy_at_sample_V": 0.2171019540000001,
+      "ADC_code_proxy": 247,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -5.018072582380496e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 1,
+      "ADC_API_delay_us_assumed": 20,
+      "sample_after_row_us": 65.5,
+      "sense_at_sample_V": 0.0013559378500000007,
+      "ideal_gain_proxy_at_sample_V": 0.13694972300000005,
+      "ADC_code_proxy": 156,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -5.0564411615293475e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 1,
+      "ADC_API_delay_us_assumed": 50,
+      "sample_after_row_us": 95.5,
+      "sense_at_sample_V": 0.0005395536500000002,
+      "ideal_gain_proxy_at_sample_V": 0.05449491870000002,
+      "ADC_code_proxy": 62,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -5.3093764491217755e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 1,
+      "ADC_API_delay_us_assumed": 100,
+      "sample_after_row_us": 145.5,
+      "sense_at_sample_V": 0.000116151829,
+      "ideal_gain_proxy_at_sample_V": 0.0117313347,
+      "ADC_code_proxy": 13,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -5.205541213658992e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 1,
+      "ADC_API_delay_us_assumed": 200,
+      "sample_after_row_us": 245.5,
+      "sense_at_sample_V": 5.38280801e-06,
+      "ideal_gain_proxy_at_sample_V": 0.000543663609,
+      "ADC_code_proxy": 1,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -5.205541213676916e-09
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 2,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 45.5,
+      "sense_at_sample_V": 0.00501883364,
+      "ideal_gain_proxy_at_sample_V": 0.506902197,
+      "ADC_code_proxy": 577,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.141071743296743e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 2,
+      "ADC_API_delay_us_assumed": 5,
+      "sample_after_row_us": 50.5,
+      "sense_at_sample_V": 0.004306315610000002,
+      "ideal_gain_proxy_at_sample_V": 0.43493787600000017,
+      "ADC_code_proxy": 495,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.1391914129199554e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 2,
+      "ADC_API_delay_us_assumed": 20,
+      "sample_after_row_us": 65.5,
+      "sense_at_sample_V": 0.0027202888600000013,
+      "ideal_gain_proxy_at_sample_V": 0.2747491750000001,
+      "ADC_code_proxy": 313,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.1910160494459477e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 2,
+      "ADC_API_delay_us_assumed": 50,
+      "sample_after_row_us": 95.5,
+      "sense_at_sample_V": 0.0010855088200000004,
+      "ideal_gain_proxy_at_sample_V": 0.10963639100000004,
+      "ADC_code_proxy": 125,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.2162534136071025e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 2,
+      "ADC_API_delay_us_assumed": 100,
+      "sample_after_row_us": 145.5,
+      "sense_at_sample_V": 0.000234781523,
+      "ideal_gain_proxy_at_sample_V": 0.0237129338,
+      "ADC_code_proxy": 27,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.1865046400367125e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 2,
+      "ADC_API_delay_us_assumed": 200,
+      "sample_after_row_us": 245.5,
+      "sense_at_sample_V": 1.09831023e-05,
+      "ideal_gain_proxy_at_sample_V": 0.00110929334,
+      "ADC_code_proxy": 1,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.1871487863658157e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 5,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 45.5,
+      "sense_at_sample_V": 0.0125918095,
+      "ideal_gain_proxy_at_sample_V": 1.27177276,
+      "ADC_code_proxy": 1447,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -4.570791087613037e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 5,
+      "ADC_API_delay_us_assumed": 5,
+      "sample_after_row_us": 50.5,
+      "sense_at_sample_V": 0.010819210000000004,
+      "ideal_gain_proxy_at_sample_V": 1.0927402100000005,
+      "ADC_code_proxy": 1243,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -4.567977330445015e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 5,
+      "ADC_API_delay_us_assumed": 20,
+      "sample_after_row_us": 65.5,
+      "sense_at_sample_V": 0.006863059660000003,
+      "ideal_gain_proxy_at_sample_V": 0.6931690260000003,
+      "ADC_code_proxy": 789,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -4.5838039101451226e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 5,
+      "ADC_API_delay_us_assumed": 50,
+      "sample_after_row_us": 95.5,
+      "sense_at_sample_V": 0.0027616091800000014,
+      "ideal_gain_proxy_at_sample_V": 0.2789225270000001,
+      "ADC_code_proxy": 317,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -4.55683774001724e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 5,
+      "ADC_API_delay_us_assumed": 100,
+      "sample_after_row_us": 145.5,
+      "sense_at_sample_V": 0.000605670318,
+      "ideal_gain_proxy_at_sample_V": 0.0611727021,
+      "ADC_code_proxy": 70,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -4.527295225571757e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 5,
+      "ADC_API_delay_us_assumed": 200,
+      "sample_after_row_us": 245.5,
+      "sense_at_sample_V": 2.91329482e-05,
+      "ideal_gain_proxy_at_sample_V": 0.00294242777,
+      "ADC_code_proxy": 3,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -4.566745940443967e-08
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 10,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 45.5,
+      "sense_at_sample_V": 0.0253252383,
+      "ideal_gain_proxy_at_sample_V": 2.55784906,
+      "ADC_code_proxy": 2910,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.838391756937015e-07
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 10,
+      "ADC_API_delay_us_assumed": 5,
+      "sample_after_row_us": 50.5,
+      "sense_at_sample_V": 0.02180942540000001,
+      "ideal_gain_proxy_at_sample_V": 2.202751960000001,
+      "ADC_code_proxy": 2506,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.7953796502733403e-07
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 10,
+      "ADC_API_delay_us_assumed": 20,
+      "sample_after_row_us": 65.5,
+      "sense_at_sample_V": 0.013928882400000005,
+      "ideal_gain_proxy_at_sample_V": 1.4068171200000006,
+      "ADC_code_proxy": 1601,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.833700841170026e-07
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 10,
+      "ADC_API_delay_us_assumed": 50,
+      "sample_after_row_us": 95.5,
+      "sense_at_sample_V": 0.005681465460000003,
+      "ideal_gain_proxy_at_sample_V": 0.5738280110000002,
+      "ADC_code_proxy": 653,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.8293529272011847e-07
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 10,
+      "ADC_API_delay_us_assumed": 100,
+      "sample_after_row_us": 145.5,
+      "sense_at_sample_V": 0.0012745803,
+      "ideal_gain_proxy_at_sample_V": 0.12873261,
+      "ADC_code_proxy": 146,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.8256795588425297e-07
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 10,
+      "ADC_API_delay_us_assumed": 200,
+      "sample_after_row_us": 245.5,
+      "sense_at_sample_V": 6.41476665e-05,
+      "ideal_gain_proxy_at_sample_V": 0.00647891432,
+      "ADC_code_proxy": 7,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.8099533647130744e-07
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 20,
+      "ADC_API_delay_us_assumed": 0,
+      "sample_after_row_us": 45.5,
+      "sense_at_sample_V": 0.0511636064,
+      "ideal_gain_proxy_at_sample_V": 3.25,
+      "ADC_code_proxy": 3698,
+      "ideal_proxy_clipped_at_sample": true,
+      "sense_0_2us_after_row_fall_V": -1.777699358957e-06
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 20,
+      "ADC_API_delay_us_assumed": 5,
+      "sample_after_row_us": 50.5,
+      "sense_at_sample_V": 0.04425202350000002,
+      "ideal_gain_proxy_at_sample_V": 3.25,
+      "ADC_code_proxy": 3698,
+      "ideal_proxy_clipped_at_sample": true,
+      "sense_0_2us_after_row_fall_V": -1.852524344687545e-06
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 20,
+      "ADC_API_delay_us_assumed": 20,
+      "sample_after_row_us": 65.5,
+      "sense_at_sample_V": 0.02863182900000001,
+      "ideal_gain_proxy_at_sample_V": 2.8918147200000015,
+      "ADC_code_proxy": 3290,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.777699358957e-06
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 20,
+      "ADC_API_delay_us_assumed": 50,
+      "sample_after_row_us": 95.5,
+      "sense_at_sample_V": 0.011986185800000005,
+      "ideal_gain_proxy_at_sample_V": 1.2106047600000005,
+      "ADC_code_proxy": 1377,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.7776909950671299e-06
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 20,
+      "ADC_API_delay_us_assumed": 100,
+      "sample_after_row_us": 145.5,
+      "sense_at_sample_V": 0.00280802428,
+      "ideal_gain_proxy_at_sample_V": 0.283610452,
+      "ADC_code_proxy": 323,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.7776909950682634e-06
+    },
+    {
+      "order": "correct",
+      "key_pF_assumed": 20,
+      "ADC_API_delay_us_assumed": 200,
+      "sample_after_row_us": 245.5,
+      "sense_at_sample_V": 0.000154113459,
+      "ideal_gain_proxy_at_sample_V": 0.0155654594,
+      "ADC_code_proxy": 18,
+      "ideal_proxy_clipped_at_sample": false,
+      "sense_0_2us_after_row_fall_V": -1.7953679148228134e-06
+    }
+  ],
+  "illustrative_correct_delta_ADC_codes": 1159,
+  "illustrative_wrong_rise_delta_ADC_codes": 0,
+  "ADC_API_latency_qualified": false,
+  "key_capacitance_measured": false,
+  "opamp_dynamic_model": false,
+  "AFE_saturation_qualified": false,
+  "not_verified": [
+    "Actual NiZ capacitance, parasitic extraction, GPIO edge/driver timing",
+    "Real SAADC acquisition instant, software/USB/BLE preemption, offsets and noise",
+    "Op-amp stability/saturation recovery, mux charge injection, analog margins and physical interference"
+  ],
+  "source_sha256": {
+    "scripts/study_yeti60_analog_waveform.py": "90299c523e3f86998098ca22300351097b55c5b7ee35c3a0bde5d1dc7789ede9",
+    "docs/testing/analog-waveform-inputs.json": "9ff139d65bfb4cff5c05c7a2bb8ca6dbcdf5a8f647cc732b452424baaced841f",
+    "hardware/ec60-nrf52840/netlist.xml": "846b2d13a1782c6a841ee0831c1cce9fa0bfcf14bc1ce6c84d44d1846a9dc798",
+    "firmware/target/src/scanner.c": "97ce44e37c169145e2fcfc54e3612fcef8e9dbe68f1c2390a29e6c8995842f40",
+    "firmware/target/src/gpio_modes.h": "3fae72b5f56a0ecddcb21cd68c103612aa2ab219363373b4275381e203796a8b",
+    "firmware/target/src/scanner_control.c": "7214d930f8c4d6144a7d74657e79b14380a336356f508edf59f0fc1ddcf5006a",
+    "firmware/target/src/scanner_control.h": "8198cb579fde32f52247776bfc4d07f3fa91969b0c095b3e0633133539f057fd",
+    "docs/audit/yeti60-target-check.json": "f0d80f943ebec809479b2c643eae5a7a9163789f93f0422a593028ef7142010e",
+    "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
+    "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
+    "firmware/yeti60/board_pins.h": "600c09916700dd1087d4394d867c3843ed853852be2b890045508fd2d6668773",
+    "tests/yeti60/sim.c": "aee6d17fb42a749944fb051a7b3153f2e146def01b755fe7f5e4f0d690f3206f",
+    "tests/yeti60/waveform.c": "d8be88855a221e3df1fa1a0d70dff592e5e5816cd991245c8135c1e94848faf7"
+  },
+  "outputs": {
+    "docs/testing/images/analog-waveform.png": "4baae8ee8742c02a36de00f2813655f307ccc1594181fafe1042065bc9ad32cc",
+    "docs/testing/images/analog-waveform.svg": "d60d5664575cfa8705beba149076093103dea32b95206446e7f9dc0788e3abb1",
+    "docs/testing/images/analog-waveform.zh-CN.png": "ebd90f5a8670b69b67c228fea9e0996f84a7492e2adb48c71f7805dafa3fadbf",
+    "docs/testing/images/analog-waveform.zh-CN.svg": "3d52e23c969984fa6821ef448836731d2cf1d0c0c8aa40714ada68d442704317",
+    "docs/testing/analog-waveform-sensitivity.csv": "cf1e5748b101c2f11758783870857078f76fea52e8fdbcd568576e845675238e"
+  },
+  "diagnostic_counter": {
+    "clock_hz": 32768,
+    "nominal_tick_us": 30.517578125,
+    "one_tick_quantization_guard": true,
+    "hardware_sample_timestamp": false,
+    "absolute_time_accuracy_qualified": false
+  }
+}

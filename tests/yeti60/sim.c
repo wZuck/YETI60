@@ -40,6 +40,14 @@ static void gpio(void *ctx, uint8_t pin, enum yeti_mode mode) {
     controlled |= pin == yeti_sel[i];
   for (unsigned i = 0; i < 2; i++)
     controlled |= pin == yeti_en[i];
+  for (unsigned i = 0; i < YETI_ROWS; i++) {
+    if (pin != yeti_rows[i])
+      continue;
+    if (mode == Y_HIGH)
+      assert(s->pins[PIN_APLEX_OUT_PIN_0] == Y_OD_RELEASE);
+    if (mode == Y_LOW && s->pins[pin] == Y_HIGH)
+      assert(s->pins[PIN_APLEX_OUT_PIN_0] == Y_OD_LOW);
+  }
   if (controlled && mode != Y_HIZ) {
     assert(high(s->pins[PIN_AFE_EN]));
     assert(s->now - s->afe_on >= 5000);
@@ -49,6 +57,8 @@ static void gpio(void *ctx, uint8_t pin, enum yeti_mode mode) {
       assert((s->pins[yeti_en[0]] == Y_HIGH || s->pins[yeti_en[0]] == Y_HIZ) &&
              (s->pins[yeti_en[1]] == Y_HIGH || s->pins[yeti_en[1]] == Y_HIZ));
   s->pins[pin] = mode;
+  assert(!(s->pins[PIN_CHG_EN1] == Y_LOW &&
+           s->pins[PIN_CHG_EN2] == Y_HIGH));
   if (pin == PIN_AFE_EN && mode == Y_HIGH)
     s->afe_on = s->now;
   if (pin == PIN_BAT_MEAS_EN && mode == Y_HIGH)
@@ -78,7 +88,7 @@ static int adc(void *ctx, uint8_t ain, uint32_t acquisition) {
     assert(s->now - s->bat_on >= 50000);
     return 2389;
   }
-    assert(ain == 4 && ain == YETI_ADC_AIN);
+  assert(ain == 4 && ain == YETI_ADC_AIN);
   assert(high(s->pins[PIN_AFE_EN]));
   unsigned c = s->frame_reads / 5, r = s->frame_reads % 5;
   assert(c < 15);

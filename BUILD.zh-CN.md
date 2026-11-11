@@ -26,3 +26,5 @@
 E73 的 USB／充电控制使用 GPIO0 的 EN1／EN2，以及 **GPIO1.13 的 CE_N**。正常版与校准版构建必须保留内部 RC 低频时钟、REG1 LDO，以及明确释放 NFC 引脚为 GPIO 的 UICR 设置。该模组有五个实际连接的底部焊盘，只焊边缘引脚不能完成电气连接，需按合适的锡膏／回流及检查流程装配。
 
 完整复查可重复运行：`YETI_CAD_PYTHON=/path/to/cad/python python3 scripts/run_e73_review.py --require-design`。默认重新执行原生／固件／装配资料检查，再检查射频几何、USB 路径、模拟前端 SPICE、连续拔出和故障门禁。已有同一输入的成功资料审查时，可加 `--reuse-artifact-audit`；该选项仍会重新验证当前链接与集成来源。存在设计问题时返回 2，执行失败返回 1。
+
+[当前 E73 固件构建、回归证据和校准升级说明](docs/testing/e73-firmware-validation.zh-CN.md)。

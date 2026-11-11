@@ -21,7 +21,7 @@
     "differences": [
       "E73 retains the old 1.2 mm / 29-mount plate and seven-wire PH harness",
       "Raytac current candidate uses C04/NiZ 1.6 mm / 28-mount plate and nine-wire SH3 harness",
-      "E73 scanner/storage fault and waveform improvements are not yet at Raytac parity"
+      "E73 scanner/storage/GPIO/key-pipeline regressions now pass against its own ARM builds; analog and physical margins remain unqualified"
     ],
     "variants": {
       "e73": {
@@ -50,11 +50,11 @@
   },
   "error": null,
   "source_sha256": {
-    "scripts/run_all_variants.py": "fce2c07c88d9cadc7a59b068d0e7989a0312f1df56bfca8b3cfc83cef658af83",
+    "scripts/run_all_variants.py": "dcb33de5790c9daa7dc4b0039aa52e2e18d8255034b8a7dfbd29955459fb4496",
     "tests/audit/test_variant_packages.py": "11c5f4a5c4426f98060e31ec880858e5c06941712f78bbf9f2eea524483f31ff"
   },
   "outcome_sha256": {
-    "docs/audit/outcome.json": "301191cc7c40f5596475add37f7a977b01231614d3e3739cfab8acd0c64a4f51",
+    "docs/audit/outcome.json": "8f55d7c81cf1b4420da54c87be9220e3de1414bdb55a7e6dc581ca648d0f4912",
     "variants/raytac/docs/audit/outcome.json": "bbeae487bc90e257d90d64a1a3c82f48dc49a4f24567774e06e7ccd25f9ec484"
   },
   "scope": "Independent current E73 and Raytac candidate checks; recorded maturity differences are not feature parity or physical/RF/SI acceptance"

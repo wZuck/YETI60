@@ -36,3 +36,5 @@ The scan thread keeps a 4 ms interval while a key is held or state changes. Afte
 Successful compilation proves a target binary can be produced. First-article measurements are still required for thresholds, timing, USB enumeration, pairing, current consumption and wake behavior. The startup and calibration values are engineering parameters pending those measurements. This firmware does not make a physical acceptance claim.
 
 [Per-key capture and rejection rules](../../docs/testing/calibration.md); [60-key command map](calibration-keys.csv).
+
+[Current E73 firmware validation and legacy-record migration](../../docs/testing/e73-firmware-validation.md).

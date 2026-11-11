@@ -5,12 +5,14 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 AUD=ROOT/'docs/audit'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-def gates(cad,target,events,layout,paths,assembly,service,outcome):
+def gates(cad,target,events,layout,paths,assembly,service,outcome,firmware):
     result=[]
     def add(name,state,details):result.append(dict(id=name,state=state,details=details))
     add('native-PCB','passed' if cad['status']=='cad-checks-passed' and not cad['failed_ground_pairs'] and not cad['failed_pin_pairs'] and not cad['unconnected_items'] and len(cad['physical_pin_pairs'])==270 and len(cad['ground_pin_pairs'])==142 else 'failed',
         dict(signal_pairs=len(cad['physical_pin_pairs']),ground_pairs=len(cad['ground_pin_pairs']),opens=cad['unconnected_items']))
     add('matched-firmware','passed' if target['status']=='passed' else 'failed',target['variants'])
+    complete=firmware['status']=='passed' and not firmware['physical_verification'] and firmware['E73_GPIO_ADC_RC_LDO_NFC_preserved'] and (firmware['active_keys'],firmware['event_queue'],firmware['CRC_record_bytes'],firmware['NVS_cut_trials'])==(60,128,308,14795)
+    add('scanner-calibration-storage-models','passed' if complete else 'failed',firmware)
     add('USB-event-charging-policy','passed' if events['status']=='passed' and len(events['cases'])==11 and events['configuration_zero_rejected'] else 'failed',
         dict(cases=len(events['cases']),GPIO1_CE_N=True,physical_verification=False))
     clean=all(x['GND_union_mm2']+x['non_GND_union_mm2']<=.001 for x in layout['layers'])
@@ -28,7 +30,7 @@ def gates(cad,target,events,layout,paths,assembly,service,outcome):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--require-design',action='store_true');a=p.parse_args()
-    names=['integration.json','outcome.json','yeti60-target-check.json','yeti60-target-build.json','usb-event-policy.json','interference-layout.json','USB-signal-paths.json','yeti60-assembly.json','e73-service-motion.json']
+    names=['integration.json','outcome.json','yeti60-target-check.json','yeti60-target-build.json','usb-event-policy.json','interference-layout.json','USB-signal-paths.json','yeti60-assembly.json','e73-service-motion.json','firmware-suite.json']
     data={n:json.loads((AUD/n).read_text()) for n in names}
     # Fail on obsolete evidence, even when the resulting disposition is HOLD.
     for name in ['usb-event-policy.json','interference-layout.json','USB-signal-paths.json','yeti60-assembly.json','e73-service-motion.json','yeti60-target-build.json']:
@@ -41,7 +43,9 @@ def main():
     assert data['yeti60-target-check.json']['build_manifest_sha256']==sha(AUD/'yeti60-target-build.json'),'Stale target check'
     for variant in build['variants'].values():
         for name,value in variant['outputs'].items():assert sha(ROOT/name)==value,('Stale firmware output',name)
-    rows=gates(cad,data['yeti60-target-check.json'],data['usb-event-policy.json'],data['interference-layout.json']['variants']['e73'],data['USB-signal-paths.json']['variants']['e73'],data['yeti60-assembly.json'],data['e73-service-motion.json'],data['outcome.json'])
+    from check_yeti60_firmware_suite import verify as verify_firmware_suite
+    assert data['firmware-suite.json']==verify_firmware_suite(),'Stale firmware suite summary'
+    rows=gates(cad,data['yeti60-target-check.json'],data['usb-event-policy.json'],data['interference-layout.json']['variants']['e73'],data['USB-signal-paths.json']['variants']['e73'],data['yeti60-assembly.json'],data['e73-service-motion.json'],data['outcome.json'],data['firmware-suite.json'])
     blocked=[x['id'] for x in rows if x['state']!='passed']
     report=dict(module='E73-2G4M08S1C',status='hold' if blocked else 'design-checks-passed',gates=rows,open_gate_ids=blocked,
                 production_approved=False,manufacturing_released=False,physical_verification=False,

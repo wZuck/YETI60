@@ -4,7 +4,7 @@ English | [Chinese](e73-review.zh-CN.md)
 
 **Disposition: design hold.** Passing DRC and ARM builds do not resolve the measured USB protection branches, PH connector service obstruction or the unported NiZ/plate-stabilizer stack. Use the [build/review entry](../../BUILD.md) and [machine-readable gates](e73-readiness.json). The existing UDB-C-JSH C5 remains unchanged.
 
-Executed results: the base artifact audit passed **47/47 stages**; the subsequent complete review executed **13/13 steps successfully**, including 28 analog-front-end SPICE sensitivity cases, RF/USB/withdrawal extraction and fault tests. See the [review execution record](e73-review-run.json). With `--require-design`, the command returned **2** because measured design defects and open gates remain. Successful execution is not design release.
+Executed results: the base artifact audit passed **55/55 stages**; the subsequent complete review executed **13/13 steps successfully**, including 28 analog-front-end SPICE sensitivity cases, RF/USB/withdrawal extraction and fault tests. See the [review execution record](e73-review-run.json). With `--require-design`, the command returned **2** because measured design defects and open gates remain. Successful execution is not design release.
 
 ## Checked successfully
 
@@ -15,6 +15,8 @@ Executed results: the base artifact audit passed **47/47 stages**; the subsequen
 - Current-source antenna copper and metal-plate projections are clear in the declared engineering band. Ebyte supplies no numerical host keepout in the retained source, so the last-3-mm screen remains provisional and cannot qualify range or immunity.
 - The reference seven-wire installed route, nominal PCB/case stack, mounting centers, bounded pack envelope and mechanical wall screens pass their existing checks. These checks do not prove the requested revised mechanism or a complete service path.
 
+- E73 scanner, GPIO, calibration CRC, NVS recovery and key-pipeline regressions now pass against the rebuilt normal/calibrator targets. The [current firmware evidence](../testing/e73-firmware-validation.md) documents the 308-byte record migration, guarded BLE recovery and model limits. Physical analog/timing margins remain open.
+
 ## Design failures and repair order
 
 | Priority | Finding | Required repair / acceptance |
@@ -23,7 +25,6 @@ Executed results: the base artifact audit passed **47/47 stages**; the subsequen
 | P1 | The existing PH battery housing's continuous nominal withdrawal overlaps **H8 by 6.0978 mm³** and the **bottom shell by 23.0639 mm³**. Its seated position alone is clear. | Resolve connector height, position and mating path on the E73 board; recompute battery lead exits, bend radii and guides. Raytac SH3 geometry cannot be transplanted without E73-specific routing and checks. |
 | P1 | E73 still references a **1.2 mm plate and 29 installed mounting sets**. | Port the accepted **NiZ, 1.6 mm plate, plate-mounted stabilizers, 28 mounting sets and H26 unused** geometry. Recheck sensing centers, skirt/wire travel, screws, gasket compression and the complete case. Do not buy the old plate/standoffs as the requested new assembly. |
 | P1 | Raytac's improved local power routing, component landing/mask/stencil checks and nine-wire service evidence have not all been ported. | Review U5/U6 power loops, complete package dimensions, capacitor derating, ordinary thermal-via paste/mask and battery connector clearances against E73. Existing net continuity does not qualify these. |
-| P2 | E73 scanner/calibration/storage implementation predates several Raytac fault, waveform and persistence improvements. | Port and run the corresponding scanner, analog timing, GPIO input-mode, CRC/storage, queue and key-pipeline tests before claiming equal functionality. The new USB callback tests qualify only their stated scope. |
 
 Measured source data: [USB path extraction](USB-signal-paths.json), [continuous PH withdrawal](e73-service-motion.json), [nominal assembly](yeti60-assembly.json), [USB event tests](usb-event-policy.json), [full artifact audit](outcome.json). The source hashes and individual gates are in [e73-readiness.json](e73-readiness.json).
 

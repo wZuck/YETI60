@@ -26,3 +26,5 @@ G = max(6×松开标准差估算, 6×按下标准差估算, 1码)
 对已接受的观察值保证“松开最大值＋保护值＜低阈值＜高阈值＜按下最小值－保护值”。这是项目筛选条件，不是高斯误码率保证，方差、极值和相关性仍受工作环境影响。须重复[实物干扰矩阵](interference.zh-CN.md#实物干扰矩阵)，充电、射频活动或完整外壳下分布重叠即不通过。
 
 [可移植实现](../../firmware/yeti60/calibration.c) · [内存／未定义行为检测测试](../../tests/yeti60/calibration.c) · [执行证据](../audit/calibration.json) · [E73 命令表](../../firmware/target/calibration-keys.csv) · [Raytac 命令表](../../variants/raytac/firmware/target/calibration-keys.csv)。
+
+当前记录采用带 CRC32 的 308 字节格式，拒绝旧的 304 字节格式；本次升级必须重新采集。校准指纹同时覆盖扫描／核心／GPIO／控制源码和实际扫描配置。参见 [E73 升级及测试证据](e73-firmware-validation.zh-CN.md)。

@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "physical_verification": false,
+  "execution": "Unmodified pinned Zephyr NVS/public-private headers, CRC/atomic code, actual target calibration loader under ASan/UBSan; modeled sequential NOR word writes/partial page erases, mutexes and reboot; no NVMC, RTOS, BLE or electrical power execution",
+  "cases": [
+    {
+      "scenario": "first-save",
+      "program_or_erase_units": 79,
+      "erase_calls": 0,
+      "dirty_erases": 0,
+      "trials": 475,
+      "old": 0,
+      "new": 1,
+      "uncalibrated": 474
+    },
+    {
+      "scenario": "rewrite",
+      "program_or_erase_units": 79,
+      "erase_calls": 0,
+      "dirty_erases": 0,
+      "trials": 475,
+      "old": 474,
+      "new": 1,
+      "uncalibrated": 0
+    },
+    {
+      "scenario": "legacy-replacement",
+      "program_or_erase_units": 79,
+      "erase_calls": 0,
+      "dirty_erases": 0,
+      "trials": 475,
+      "old": 0,
+      "new": 1,
+      "uncalibrated": 474
+    },
+    {
+      "scenario": "garbage-collection",
+      "program_or_erase_units": 1204,
+      "erase_calls": 1,
+      "dirty_erases": 1,
+      "trials": 7225,
+      "old": 7224,
+      "new": 1,
+      "uncalibrated": 0
+    },
+    {
+      "scenario": "recovery-cut",
+      "program_or_erase_units": 1024,
+      "erase_calls": 1,
+      "dirty_erases": 1,
+      "trials": 6145,
+      "old": 6145,
+      "new": 0,
+      "uncalibrated": 0
+    }
+  ],
+  "total_cut_trials": 14795,
+  "rejected_mutants": [
+    {
+      "case": "commit-before-payload",
+      "exit_code": -6,
+      "output": "Assertion failed: (!strcmp(scenario,\"first-save\") || !strcmp(scenario,\"legacy-replacement\")), function verify, file nvs_powercut.c, line 151."
+    },
+    {
+      "case": "omit-live-GC-sentinel",
+      "exit_code": -6,
+      "output": "Assertion failed: (nvs_read(&fs,SENTINEL_ID,value,sizeof(value))==sizeof(value)), function verify, file nvs_powercut.c, line 161."
+    }
+  ],
+  "post_recovery_resave_verified": true,
+  "opaque_unrelated_sentinel_preserved": true,
+  "profile": {
+    "partition_offset": 983040,
+    "partition_bytes": 65536,
+    "sector_bytes": 4096,
+    "sectors": 8,
+    "NVS_bytes": 32768,
+    "write_bytes": 4,
+    "global_NVS_CRC": false,
+    "calibration_version": "0xd3803185"
+  },
+  "cut_patterns": [
+    "before next four-byte unit",
+    "first byte of unit",
+    "first two bytes",
+    "first three bytes",
+    "selected 0x55 bits",
+    "selected 0xaa bits",
+    "after final commit before acknowledgement"
+  ],
+  "target_build_manifest_sha256": "11d8953c398fc868a3030ed751226575d20befb8a36b32fdb7209532e9546f6d",
+  "resolved_configuration_sha256": "f77e2739958b227b96066459ed298b6ab305c6dc7579df19309381a06711b877",
+  "resolved_devicetree_sha256": "2db90ba623a4039eb42c5e50106b0c0a42fd76051aafbffde75f18b5645c53c8",
+  "upstream_revision": "10ba6d0cb38bc3d258775d27982f707599320085",
+  "upstream_sha256": {
+    "include/zephyr/sys/atomic_types.h": "b518207959f774d97a4afef6f7d7b5629488478b57489aea5e3f5e4aeef90e51",
+    "include/zephyr/sys/atomic_builtin.h": "f8c42f00cce9f87ad757623bf2533c74582553c6ce13d96154e9028cf7e28597",
+    "subsys/fs/nvs/nvs.c": "ff7943a9c481511a615bbc8ce442ab009fb0723d8074b3709b5396c7e2e2e63d",
+    "subsys/fs/nvs/nvs_priv.h": "6e467c5a27391aec5bc6444067589917d153fe800f37bd491d283c3b8f0422c1",
+    "include/zephyr/fs/nvs.h": "119fd15bfda36623467fc38a35e25631c074db0ca14a2b4b757705dd1b389376",
+    "lib/crc/crc8_sw.c": "f867819fbbaa27ea4c81efb516b0d8c5194c022c88d5e7d633c443c67890d07a",
+    "lib/crc/crc32_sw.c": "b5c5858eefedccf1d8c4381721fce0c43ead718e2cbe8156fa8c834b6b022e39",
+    "subsys/settings/src/settings_nvs.c": "d18f3c3555c5484d553f12362560e1fbaedc5a90761e84b11c92c57de44edc67",
+    "drivers/flash/soc_flash_nrf.c": "c96d03b33d1afb02bbdd59f9431c3b744f0751a9bad3fa372ec2a0fd1a64c259"
+  },
+  "recovery_cut_seed": "0x55 selected-bit cut midway through one dirty-page erase; second cut swept through every modeled recovery unit",
+  "not_verified": [
+    "Arbitrary erase/program bit ordering, unbounded successive cuts, real NVMC timing/voltage or flash endurance",
+    "Complete settings name allocation/backend operations or actual Bluetooth bonds/HID",
+    "Physical battery/charger brownout, radio-synchronized flash scheduling or on-device recovery"
+  ],
+  "source_sha256": {
+    "scripts/test_yeti60_nvs_powercut.py": "4d57470d72f866b06ae42f25c62996f37162271666908c129e784d1f7c3a5ceb",
+    "scripts/yeti60_host_atomics.py": "64b6aa5c927b47b64814901dbf5f39a048b36c1449015856f454abb7ca78e65f",
+    "scripts/test_yeti60_scan_control.py": "0d4015cfbcfaee77da0bd1c4570fdab6717c8e39abe19ad91142dc4750e5d7ca",
+    "scripts/yeti60_nvs_contract.py": "3a60fc1bf9f44cd3b34f99cff53133a3429cff1929c230a52830611d2935f9e2",
+    "tests/yeti60/nvs_shim.h": "c4548497db5d467f17dbe84f95e7afc88796281198fbc59ad9b01e64f00c50ad",
+    "tests/yeti60/nvs_powercut.c": "45b629c503d9066816a754c3401e4cb54b7b2c8525f84f73fbcd200086d45528",
+    "firmware/target/src/scanner.c": "97ce44e37c169145e2fcfc54e3612fcef8e9dbe68f1c2390a29e6c8995842f40",
+    "firmware/yeti60/calibration.c": "12eef7ea0b6af3cdcf01b8558f81bb767f137f02b8f523a7950861de9f98a3bf",
+    "firmware/yeti60/calibration.h": "df57aaa55fc77794eca70fe1c6d092f4476394bc30d7798a84633e6f3fec6f0c",
+    "firmware/yeti60/board_pins.h": "600c09916700dd1087d4394d867c3843ed853852be2b890045508fd2d6668773",
+    "firmware/target/config/west.yml": "04dfc8292b18ac323cc82ebd76e37f12891eb4c4ff4e49593a65409a7023d912"
+  }
+}

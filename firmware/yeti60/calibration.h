@@ -2,6 +2,17 @@
 #pragma once
 #include <stdbool.h>
 #include <stdint.h>
+#include "board_pins.h"
+
+struct yeti_calibration {
+  uint32_t version;
+  uint16_t low[YETI_ROWS][YETI_COLS], high[YETI_ROWS][YETI_COLS];
+  uint32_t crc32;
+};
+/* CRC-32/ISO-HDLC over version, all low, then all high fields, little endian.
+ * Older 304-byte records have no CRC and must be recaptured. */
+uint32_t yeti_calibration_checksum(const struct yeti_calibration *);
+bool yeti_calibration_valid(const struct yeti_calibration *, uint32_t expected);
 
 #define YETI_CAL_MIN_SAMPLES 64u
 #define YETI_CAL_CAPTURE_SAMPLES 128u

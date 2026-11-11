@@ -26,3 +26,5 @@ The existing mainboard is ordinary four-layer FR-4, nominal 1.6 mm with mechanic
 E73's USB/charging adapter uses GPIO0 for EN1/EN2 and **GPIO1.13 for CE_N**. Normal/calibrator builds must retain internal RC LFCLK, REG1 LDO and the explicit NFC-pin GPIO UICR setting. The module has five connected bottom lands; edge-only hand soldering is insufficient to connect them. Follow a qualified paste/reflow and inspection process.
 
 Reproduce the complete review with `YETI_CAD_PYTHON=/path/to/cad/python python3 scripts/run_e73_review.py --require-design`. It runs the native/firmware/assembly artifact audit, then RF geometry, USB paths, analog-front-end SPICE, continuous withdrawal and fault gates. After a successful artifact audit for the same inputs, `--reuse-artifact-audit` rechecks current links and integration before reusing it. Design holds return 2; execution failures return 1.
+
+[Current E73 firmware builds, regression evidence and calibration migration](docs/testing/e73-firmware-validation.md).

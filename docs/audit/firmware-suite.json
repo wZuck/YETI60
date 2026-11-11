@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "physical_verification": false,
+  "normal_and_calibrator": true,
+  "E73_GPIO_ADC_RC_LDO_NFC_preserved": true,
+  "active_keys": 60,
+  "event_queue": 128,
+  "CRC_record_bytes": 308,
+  "NVS_cut_trials": 14795,
+  "analog_model": "passive RC sensitivity only; measured NiZ/opamp/timing margins remain open",
+  "evidence_sha256": {
+    "docs/audit/gpio-mode-policy.json": "a15a0ddbfe815244fb44336a4af8fc070b61a8bd1694eadcb45bc992f369c71b",
+    "docs/audit/scan-control.json": "7b510dc386d689bc3303bf860dded03644b13d611cd940ea2dd429433a674b4d",
+    "docs/audit/key-pipeline.json": "b0ce46bf3d4f9c476d1a13babca19176c613517a26d6b8a7bc05822095a5135b",
+    "docs/audit/nvs-powercut.json": "76ff8685a9740289b83eec5ac41de5463087606ed1c2e68969cadbd75ff56270",
+    "docs/audit/firmware-recovery.json": "e52459e60d44e5d15f9be2237e79af6f5fe8749da76dc6e40c760d273aa86b15",
+    "docs/audit/analog-waveform.json": "b8679bc329612d724a5c234f041d917bd7e51af1dca9d9275c557c773f2fe1b8",
+    "docs/audit/calibration.json": "b3cd82a93b3595d6b3d9da9c23f687fde4dba23eff9fd759ea8f2b927c781495",
+    "docs/audit/usb-event-policy.json": "9b3c48bc6174d5694a3c8a54bcfd8ad4783aff159a680b332a0f9ca808a7ad3c",
+    "docs/audit/yeti60-target-build.json": "11d8953c398fc868a3030ed751226575d20befb8a36b32fdb7209532e9546f6d",
+    "docs/audit/yeti60-target-check.json": "f0d80f943ebec809479b2c643eae5a7a9163789f93f0422a593028ef7142010e"
+  },
+  "source_sha256": {
+    "scripts/check_yeti60_firmware_suite.py": "a91b8f905570ca6254d8b16d9947543f4dfedbb50da67f672d3a7893d0a2a47b"
+  }
+}

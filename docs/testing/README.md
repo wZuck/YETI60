@@ -58,3 +58,5 @@ Use a separate copy of the [measurement template](first-article-template.csv) fo
 | 9 / 28 | Normal firmware, debugger disconnected, battery analyzer; type/idle/advertise/reconnect/off and a complete usable discharge | Record measured currents and delivered capacity; reconcile runtime against the model. Do not use predicted hours as the measured acceptance value |
 
 Close the antenna layout findings and repeat all affected tests before release. A qualified test house must perform any required radiated/conducted emissions, immunity and ESD certification; this repository supplies no certification claim.
+
+[E73 firmware migration and expanded regression evidence](e73-firmware-validation.md).
