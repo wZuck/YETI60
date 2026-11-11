@@ -2,18 +2,14 @@ English | [Chinese](module-options.zh-CN.md)
 
 # Controller module alternatives
 
-## Select a design
+Both alternatives remain in this branch and each uses a single nRF52840. Choose a matching board, module and firmware. Their current mechanical, harness and power revisions differ; acceptance cannot be transferred between them.
 
-Both alternatives are stored in this branch. Each keyboard uses one nRF52840 module. E73 is the default in the main directories; Raytac has a separate directory and shares the source-sized case, plate, battery and upstream references. Footprints and pin assignments differ: choose matching PCB, module and firmware.
+| Alternative | Controlled entry | Current status |
+|---|---|---|
+| Ebyte E73-2G4M08S1C | [E73 build/review entry](../../BUILD.md), [current gates](../audit/e73-readiness.json) | Native 270 signal/power and 142 ground pairs pass; normal/calibrator firmware builds. Design hold: USB branch lengths, old plate and PH plug withdrawal. |
+| Raytac MDBT50Q-1MV2 | [Raytac handbook](../../variants/raytac/BUILD.md), [USB repair candidate](../../variants/raytac/hardware/usb-short-route/README.md) | Separate candidate PCB, nine-wire harness and SH3 battery connector; supplier/DFM and physical acceptance remain open. |
 
-| Alternative | PCB and complete materials | Firmware | Process and status |
-|---|---|---|---|
-| Ebyte E73-2G4M08S1C | [Main preparation list](../../README.md), [native PCB](../../hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [Normal](../../firmware/releases/normal/yeti60-e73.hex), [calibrator](../../firmware/releases/calibrator/yeti60-e73.hex) | Ordinary four-layer; 0 DRC errors / 0 opens; CAD/build audit passes |
-| Raytac MDBT50Q-1MV2 | [Raytac preparation list](../../variants/raytac/README.md), [native PCB](../../variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [Normal](../../variants/raytac/firmware/releases/normal/yeti60-raytac.hex), [calibrator](../../variants/raytac/firmware/releases/calibrator/yeti60-raytac.hex) | Ordinary four-layer; 0 DRC errors / 0 opens; CAD/build audit passes |
-
-Fabricate one selected mainboard per keyboard, with a populated or self-built C5 JSH as chosen. Do not count both mainboards in one keyboard. Each alternative allocates the same 10 stocked mainboard passives and requires 66 more components; these are mutually exclusive plans, not two inventory deductions. Neither module is present in the supplied inventory snapshot.
-
-Run `python3 scripts/run_all_variants.py` to audit both alternatives sequentially, adding `--refresh-renders` to rebuild images. The combined record is written to `docs/audit/variants.json`. The [combined verification record](../audit/variants.json) confirms both designs and their matching manufacturing packages. Physical acceptance and RF/SI remain unverified.
+Retain the already-made UDB-C-JSH C5 daughterboard. Fabricate only the selected mainboard after its release conditions are met. Use each current entry's BOM and inventory allocation; older component counts and the historical combined audit do not describe the current candidate packages. Ordinary JLC four-layer processing remains the constraint.
 
 ## E73 source and pin checkpoint
 

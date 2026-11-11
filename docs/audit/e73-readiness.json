@@ -1,0 +1,148 @@
+{
+  "module": "E73-2G4M08S1C",
+  "status": "hold",
+  "gates": [
+    {
+      "id": "native-PCB",
+      "state": "passed",
+      "details": {
+        "signal_pairs": 270,
+        "ground_pairs": 142,
+        "opens": 0
+      }
+    },
+    {
+      "id": "matched-firmware",
+      "state": "passed",
+      "details": {
+        "normal": {
+          "arm_elf": true,
+          "hex_checksums": "passed",
+          "programmed_bytes": 229038,
+          "settings_partition_preserved": true,
+          "USB_configuration_mA": 500,
+          "NFC_GPIO_UICR": true,
+          "REG1_mode": "LDO"
+        },
+        "calibrator": {
+          "arm_elf": true,
+          "hex_checksums": "passed",
+          "programmed_bytes": 304858,
+          "settings_partition_preserved": true,
+          "USB_configuration_mA": 500,
+          "NFC_GPIO_UICR": true,
+          "REG1_mode": "LDO"
+        }
+      }
+    },
+    {
+      "id": "USB-event-charging-policy",
+      "state": "passed",
+      "details": {
+        "cases": 11,
+        "GPIO1_CE_N": true,
+        "physical_verification": false
+      }
+    },
+    {
+      "id": "antenna-projection",
+      "state": "passed",
+      "details": "Provisional E73 antenna-end band only; vendor numeric keepout and real RF remain open"
+    },
+    {
+      "id": "USB-protection-branches",
+      "state": "failed",
+      "details": {
+        "actual_mm": {
+          "positive": 29.748199852235203,
+          "negative": 37.56110644300452
+        },
+        "project_maximum_mm": 5
+      }
+    },
+    {
+      "id": "NiZ-plate-mounted-stabilizers",
+      "state": "failed",
+      "details": {
+        "dimensions_match_target": false,
+        "geometry_port_qualified": false,
+        "current_plate_mm": 1.2,
+        "current_mounts": 29,
+        "required_plate_mm": 1.6,
+        "required_mounts": 28,
+        "unused_axis": "H26",
+        "note": "Accepted NiZ/stabilizer geometry is not yet integrated into E73"
+      }
+    },
+    {
+      "id": "battery-plug-service",
+      "state": "failed",
+      "details": [
+        {
+          "obstacle": "bottom",
+          "sweep_overlap_mm3": 23.063861309759563,
+          "gap_mm": 0.0,
+          "seated_overlap_mm3": 0.0,
+          "detached_overlap_mm3": 23.06386130975954
+        },
+        {
+          "obstacle": "H8",
+          "sweep_overlap_mm3": 6.097751739216049,
+          "gap_mm": 0.0,
+          "seated_overlap_mm3": 0.0,
+          "detached_overlap_mm3": 6.097751739216049
+        }
+      ]
+    },
+    {
+      "id": "full-artifact-audit",
+      "state": "passed",
+      "details": {
+        "passed": 47,
+        "total": 47
+      }
+    },
+    {
+      "id": "closed-harness-and-power-layout",
+      "state": "open",
+      "details": "E73 retains its original seven-wire route and long USB PCB paths; Raytac nine-wire/SH3/power-layout acceptance cannot be inherited"
+    },
+    {
+      "id": "battery-supplier-and-DFM",
+      "state": "open",
+      "details": "Protected 1S 1600 mAh pack envelope 85 x 43 x 4.8 mm; supplier corrected limits, independent thermal protection and ordinary-process DFM are not accepted"
+    },
+    {
+      "id": "physical-functional-RF-thermal-mechanical",
+      "state": "not-run",
+      "details": "USB/BLE, 60 keys, charging, analog margins, RF, actual NiZ fit and battery safety require hardware"
+    }
+  ],
+  "open_gate_ids": [
+    "USB-protection-branches",
+    "NiZ-plate-mounted-stabilizers",
+    "battery-plug-service",
+    "closed-harness-and-power-layout",
+    "battery-supplier-and-DFM",
+    "physical-functional-RF-thermal-mechanical"
+  ],
+  "production_approved": false,
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "existing_daughterboard": "Keep existing UDB-C-JSH C5; no daughterboard PCB change",
+  "evidence_sha256": {
+    "hardware/ec60-nrf52840/audit-current.json": "6a34e94b645c8d4c8662d25e86ad648c58f0302164ec5c5bd62a084f667bae88",
+    "docs/audit/integration.json": "63bf375a9695a608f6c0be105288c7f4fe4d81937bd7bab978f7a54581c3b877",
+    "docs/audit/outcome.json": "301191cc7c40f5596475add37f7a977b01231614d3e3739cfab8acd0c64a4f51",
+    "docs/audit/yeti60-target-check.json": "8f21fef37c97ce771850444476b1ccc4aa6a9bff88b69a797c4588a1868f30a5",
+    "docs/audit/yeti60-target-build.json": "490828d5fe28d28c044e4d487c1e9e9ff791e085df54ab364a8ffcd8f89bb31b",
+    "docs/audit/usb-event-policy.json": "e833a7086d0dc2919e624cd25178c14bac433e882752528fb4c6e730a03372dc",
+    "docs/audit/interference-layout.json": "0abd8fbd695fb2cf4c42e87e15282dc6ec7c5933e3eed7c9e136c34007944795",
+    "docs/audit/USB-signal-paths.json": "c810b198ee4793bf1d23f578fda10daad50b10079ea27abe3be1425967c5e066",
+    "docs/audit/yeti60-assembly.json": "8bc20d93d2929e9440cfea25a58b7282d317844cca917e2ec3664a14d8d454fc",
+    "docs/audit/e73-service-motion.json": "87d46619c191ee9fa020b850308b38b11698cbd7abf5779b56ddccecaf9b3a66"
+  },
+  "source_sha256": {
+    "scripts/review_e73_readiness.py": "a638643a5d5ceea872fb71b64b884b3d1d3ce17a5556ad4487199dccf333fefa"
+  }
+}

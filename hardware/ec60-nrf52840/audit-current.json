@@ -3,7 +3,7 @@
   "production_approved": false,
   "mcu_count": 1,
   "source_sha256": {
-    "EC60-nRF52840.kicad_pcb": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
+    "EC60-nRF52840.kicad_pcb": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
     "EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
     "netlist.xml": "846b2d13a1782c6a841ee0831c1cce9fa0bfcf14bc1ce6c84d44d1846a9dc798",
     "frozen-footprints.json": "6c08b9386a88474b003973f0e15ea88924b287f3f3472b10f106c2b5a2096073",
@@ -55,7 +55,7 @@
     "YAECKB.pretty/ecs_pad_no_ring__SW29.kicad_mod": "d34077ce54f5677bc8334e83cf166235c0df266e298721148b0eec794ea0b4b9",
     "YAECKB.pretty/ecs_pad_no_ring__SW3.kicad_mod": "b470b0ca1b02bd328171066d82a00988081a2f0d7d76d221f6f65b49b30d2f9b",
     "YAECKB.pretty/HOLE_M2__H3.kicad_mod": "c9dff80925792d488b378b672d87883ce53facbf350c16732b040ede264bbc2e",
-    "YAECKB.pretty/EC60_BoardOutline__REF__.kicad_mod": "436c4befa79c5222f9dcd9eebe93b509384ba9cc3800ff58fd588b4761a87f11",
+    "YAECKB.pretty/EC60_BoardOutline__REF__.kicad_mod": "999219d671fb6fb68730275e402ddf4a3c6affea57d0c6ca029dbda0377b9234",
     "YAECKB.pretty/HOLE_M2__H11.kicad_mod": "f74e37fc0c62a4ae207db2fb26db7c008e65acf5c5e2c4027683335e31405f95",
     "YAECKB.pretty/HOLE_M2__H7.kicad_mod": "1a9020a76a7a5b92b2e92f63cd0a2396d0013ae0c5c1d122e64d28364c7fbf1d",
     "YAECKB.pretty/ecs_pad_no_ring__SW39.kicad_mod": "ca6ddf61a3889b8b30a4da7af891d64274c9d7044d9e2f2116fdf595716a14e2",
@@ -86,7 +86,7 @@
     "YAECKB.pretty/HOLE_M2__H23.kicad_mod": "68798b8dbfffa4d92b6ae3a906dff00baaac4047610df40f55b0200efc1c886c",
     "YAECKB.pretty/ecs_pad_no_ring__SW15.kicad_mod": "94f44f51ed988c2980bc96d6d316eaa7f8352d5b0d31fc9b6b16b58d68c95342",
     "YAECKB.pretty/ecs_pad_no_ring__SW52.kicad_mod": "bee24a802b7eec46b928605ea8c4670ba30c67f08f61fc800c559264e19305b8",
-    "YAECKB.pretty/ecs_pad_no_ring__SW16.kicad_mod": "fafcb23a6fb1f012cfd0188005d085d8cd1a5fdf1c9105ad389b2470f7341e6e",
+    "YAECKB.pretty/ecs_pad_no_ring__SW16.kicad_mod": "0061167124b9207631cb7435f3f3187aead259aaf25eea1f708823fef76fc534",
     "YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "e0a319dc63587cedd4e320be824dacc4853f69eaacddfa1191c2d04979c62b71",
     "YAECKB.pretty/ecs_pad_no_ring__SW61.kicad_mod": "d97b976847ada27cd437de4c13304d7fa295d1722e23cd7134307818ea91b7de",
     "YAECKB.pretty/ecs_pad_no_ring__SW36.kicad_mod": "001896a7a8b8b5d75e09369637ca19f186ee6d632dedc52cf6d18dd009add0f8",
@@ -310,11 +310,864 @@
   "unexpected_component_courtyard_warnings": [],
   "unconnected_items": 0,
   "warnings_by_type": {
-    "track_dangling": 7,
-    "track_not_centered_on_via": 5,
     "missing_courtyard": 102
   },
   "potentially_truncated_categories": [],
+  "ground_pin_pairs": [
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C11.1",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C12.1",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C13.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C30.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C31.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C32.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C40.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C41.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C42.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C43.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C44.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C45.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C46.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C47.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C48.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "C9.1",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "D1.1",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "D2.1",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "J1.4",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "J2.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "J3.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "J3.6",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R10.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R11.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R12.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R13.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R14.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R15.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R17.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R18.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R19.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R20.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R21.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R23.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R24.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R25.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R40.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R41.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R42.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R43.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R44.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R48.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R49.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R50.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R52.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R55.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R56.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R8.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "R9.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW1.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW10.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW100.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW11.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW12.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW13.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW14.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW15.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW16.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW17.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW18.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW19.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW2.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW20.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW21.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW22.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW23.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW24.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW25.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW26.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW27.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW28.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW29.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW3.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW30.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW31.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW32.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW33.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW34.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW35.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW36.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW37.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW38.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW39.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW4.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW40.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW41.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW42.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW43.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW44.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW45.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW46.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW47.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW48.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW49.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW5.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW50.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW51.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW52.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW53.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW54.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW55.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW56.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW57.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW58.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW59.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW6.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW60.4",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW61.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW62.4",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW63.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW64.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW65.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW66.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW67.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW68.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW69.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW7.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW70.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW71.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW72.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW73.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW74.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW75.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW8.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "SW9.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U1.21",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U1.24",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U1.5",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U2.7",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U2.8",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U3.4",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U4.1",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U4.7",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U4.8",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U5.17",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U5.8",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U6.11",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U6.3",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U6.7",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U6.9",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U7.2",
+      "physically_connected": true
+    },
+    {
+      "net": "GND",
+      "from": "C10.2",
+      "to": "U8.2",
+      "physically_connected": true
+    }
+  ],
+  "failed_ground_pairs": 0,
   "physical_pin_pairs": [
     {
       "net": "+3.3V",
@@ -2016,7 +2869,7 @@
       "connected": true
     }
   ],
-  "interference_simulation": "see_shared_acceptance_report_RF_blockers_open",
+  "interference_simulation": "see_shared_acceptance_report_RF_and_USB_qualification_open",
   "limits": [
     "Ordinary JLC through-via process checked separately; no module via-in-pad or special fill/capping",
     "DRC does not certify regulator stability, capacitor DC bias or thermal performance",

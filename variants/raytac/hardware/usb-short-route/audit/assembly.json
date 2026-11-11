@@ -1,9 +1,9 @@
 {
   "status": "candidate-closed-assembly-geometry-passed-not-physical",
   "source_sha256": {
-    "hardware/usb-short-route/interconnect-spec.json": "f17b44770a579595d699bcf128744ac3af68ad77895621e4dfe7f156bdf8b6d7",
-    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "fcc959db0cde7d467860e7bf60695f68d27152eebcaa172dc19bb8617264a26a",
-    "hardware/usb-short-route/audit/native-check.json": "a842f1dc8a459f874073a3ee2b179fe514b3af72d3ea23327085fc742386a1e1",
+    "hardware/usb-short-route/interconnect-spec.json": "cb63fe24b3e7fec59de81a34a74c0b10d05497965a670bf42b8a3194eb2096ec",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "007f25371634e19b095bd953a43967bb9ee3107bfd3267c2194c2b3223fcb17f",
+    "hardware/usb-short-route/audit/native-check.json": "31c01385c030ceef77bb0060d03cf0d9fa4eb8f00f123ce822dcbf0ae7e1edbc",
     "docs/audit/yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
     "docs/audit/yeti60-daughterboard.json": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
     "docs/audit/yeti60-interconnect-connectors.json": "e20d1eafb8c2ef36f83ab6c98f4d196ccfd136580503e63aff04a9ce9df0d928",
@@ -12,26 +12,27 @@
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "mechanical/assembly-spec.raytac.json": "e7c14e76bbd0f26bb5c43ab8526bc897191050dc1127abab7db5acc24d4010c5",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
-    "scripts/check_usb_short_closed_assembly.py": "2932d089fd4f7f3f8d15e2aa6bbdf3d2ed6fbf8c700fa4f2fe05ecbbe99a898b",
-    "scripts/usb_short_harness.py": "8587da881ced0c0305691f13fdf6c54fe42be671bd2f7424d128387cff1400cb",
+    "scripts/check_usb_short_closed_assembly.py": "4200672030cafeeeef068662dcd1c848fc0f1e022f4bd03ab2b14e9d6ce5f173",
+    "scripts/usb_short_harness.py": "b70cd37b0a47fe73b40ce38f62f2d01453090733b67669b3fb4847087e01827c",
     "scripts/usb_short_passive_contract.py": "61a06c5f6213a64e54d4dc2803bd788fd921415ec006ad9cdca49b8d2c53c4b2",
-    "scripts/usb_short_model_contract.py": "49b6139053bd7a91826d78fc8a312a150df7c74b678926e4f9ab3279ee2dec27",
-    "hardware/usb-short-route/audit/native-models.json": "8cf49a4ac3a3ddc09e2b14265ae06a5ab7f9a1901c353c2ed843bfc1768c0d72",
+    "scripts/usb_short_model_contract.py": "0eddb0eb61cd39a99511b88f776dbfff32947ef868c626847316a7127e90075e",
+    "scripts/usb_short_battery_service.py": "62564ccaab6fda46ae238da6f4bd05c5bc937699b08ef5fdc839d233d8c04e41",
+    "hardware/usb-short-route/audit/native-models.json": "af5b56b39d7e9c71f2448fd8e07b2c21e455055aa7707a3157e03fa9d0ce580f",
     "scripts/interconnect_geometry.py": "a3ea2cd5cbe15cfa5aebaf89d961e3387e9c183e147564f27fa4d5aa9477c5c2",
     "scripts/check_yeti60_interconnects.py": "4ff73c59b68b273ace7cf370d1a3991e816e97961d3004be0dbce6190123f529",
     "scripts/build_yeti60_mechanical.py": "94d487be85af61d06c2c7f7468b8dbcdef1c24cef49c0c8abe3b73cd5547f425",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "hardware/usb-short-route/mechanical-fit-spec.json": "c001d9d3482061dd4316f647b1a6ddfeecccda4273ab3f0dc088ff38b9c7815b",
-    "hardware/usb-short-route/audit/closed-assembly.json": "7b91c9834bf7d61e69e1c69e0498cc185d2790e18e0eeead4a3bb6a7671d53ef",
-    "hardware/usb-short-route/audit/guides.json": "3631320d515c29f6c6df568cfc2027fc2bc16dab46031fe00eb42f7b063c74ee",
-    "hardware/usb-short-route/audit/geometry-check.json": "c2668c446d1ba7fda19f08d8ff82793eb1d054cd431cb3f07242898655d4ac49",
+    "hardware/usb-short-route/audit/closed-assembly.json": "776358a916480b4c8d3e44dc154ba642960b181759eea0b21d0ce99a1c679355",
+    "hardware/usb-short-route/audit/guides.json": "0eae2e5ea1b2b1ce152d2b8bc3b2cc31670de1704c3809fd4af317454f67f46a",
+    "hardware/usb-short-route/audit/geometry-check.json": "a30662d074599b7f000bc04311c7a99c43d836e8f0b2165dc0620edbae3defd6",
     "scripts/export_yeti60_render_meshes.py": "73d262849323ce708c5e9c49ada82dc1c3b22af164a31331ad4e2a6aaf67adb7",
     "scripts/usb_short_guides.py": "5b42dccfbd7ada9a5d76ba447ae50b94fbf80c47a588f13ce1f2e6a4d2fdf3b8",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
-    "scripts/export_usb_short_assembly.py": "98c310332789c9b80bda09869cbab9c4599e94ce6a98047843f1b0b627114ddb",
-    "hardware/usb-short-route/audit/assembly-bom.json": "f60d9d999fd611efc58f1767213c98bc837b6f3d1ddc9c7b11f6a7365032d843",
+    "scripts/export_usb_short_assembly.py": "50262f54063ab165dd339cdd11157b65bc68b653f416c1489b11a7e1a621d425",
+    "hardware/usb-short-route/audit/assembly-bom.json": "96c213ed2611d6cae4f89048e004aec3f11fd82d232921dac77ff9b97b88b075",
     "hardware/usb-short-route/parts-qualification.json": "7491a6ce341ec389766e48f15601aaca1c03ff8c78aa1b364c95c80edb6efcd4",
-    "hardware/usb-short-route/netlist.xml": "44f177a827df33c4f9c4c70823169a8c2c3d422588496cb945a33fcdfdcf3c79",
+    "hardware/usb-short-route/netlist.xml": "365c532ae07651d31a4401e30799731210bd04e4b6d1a4d041eeac2e1fb4ee40",
     "hardware/usb-short-route/audit/plate-build.json": "63e2a2527570ac9f21c8bad0498d4cc9a5764fe4e26a91c254e4164e00b09d84",
     "hardware/usb-short-route/mechanical/yeti60-niz-pm1-c04.step": "0f0183702c2ca54428f39c8dd0c23e74af0db627fec648f50e50958c4da873ef",
     "hardware/usb-short-route/mechanical/yeti60-niz-pm1-c04.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452"
@@ -913,11 +914,11 @@
         -139.734604,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046,
+      "held_reference_min_case_distance_mm": 0.9100000000000046,
       "previous_envelope_bounds_case_mm": [
         88.114562,
         -141.644604,
@@ -962,11 +963,11 @@
         -180.81466,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999842,
+      "held_reference_min_case_distance_mm": 0.9099999999999842,
       "previous_envelope_bounds_case_mm": [
         312.492146,
         -182.72466,
@@ -1011,11 +1012,11 @@
         -146.213339,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000019,
+      "held_reference_min_case_distance_mm": 0.9100000000000019,
       "previous_envelope_bounds_case_mm": [
         103.22624,
         -147.183339,
@@ -1060,11 +1061,11 @@
         -179.131979,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985,
+      "held_reference_min_case_distance_mm": 0.909999999999985,
       "previous_envelope_bounds_case_mm": [
         98.340337,
         -181.041979,
@@ -1109,11 +1110,11 @@
         -180.530717,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985,
+      "held_reference_min_case_distance_mm": 0.909999999999985,
       "previous_envelope_bounds_case_mm": [
         334.370009,
         -182.440717,
@@ -1158,11 +1159,11 @@
         -142.845,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000019,
+      "held_reference_min_case_distance_mm": 0.9100000000000019,
       "previous_envelope_bounds_case_mm": [
         115.845,
         -147.155,
@@ -1207,11 +1208,11 @@
         -141.83,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000037,
+      "held_reference_min_case_distance_mm": 0.9100000000000037,
       "previous_envelope_bounds_case_mm": [
         142.525,
         -144.34,
@@ -1256,11 +1257,11 @@
         -181.16466,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999842,
+      "held_reference_min_case_distance_mm": 0.9099999999999842,
       "previous_envelope_bounds_case_mm": [
         165.640337,
         -183.07466,
@@ -1305,11 +1306,6 @@
         -142.975,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
-        0.0,
-        0.0
-      ],
-      "min_case_distance_mm": 0.910000000000001,
       "render_body_bounds_case_mm": [
         134.9,
         -144.725,
@@ -1319,6 +1315,11 @@
         -1.9999999999999998
       ],
       "clearance_basis": "Generic 0805 maximum body 2.2 x 1.45 x 1.45 mm plus native courtyard",
+      "held_reference_collision_volume_mm3": [
+        0.0,
+        0.0
+      ],
+      "held_reference_min_case_distance_mm": 0.910000000000001,
       "previous_envelope_bounds_case_mm": [
         134.325,
         -145.025,
@@ -1363,11 +1364,11 @@
         -181.431979,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999842,
+      "held_reference_min_case_distance_mm": 0.9099999999999842,
       "previous_envelope_bounds_case_mm": [
         119.040337,
         -183.341979,
@@ -1412,11 +1413,6 @@
         -142.675,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
-        0.0,
-        0.0
-      ],
-      "min_case_distance_mm": 0.9100000000000001,
       "render_body_bounds_case_mm": [
         111.9,
         -144.42499999999998,
@@ -1426,6 +1422,11 @@
         -1.9999999999999998
       ],
       "clearance_basis": "Generic 0805 maximum body 2.2 x 1.45 x 1.45 mm plus native courtyard",
+      "held_reference_collision_volume_mm3": [
+        0.0,
+        0.0
+      ],
+      "held_reference_min_case_distance_mm": 0.9100000000000001,
       "previous_envelope_bounds_case_mm": [
         111.325,
         -144.725,
@@ -1470,11 +1471,6 @@
         -135.475,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
-        0.0,
-        0.0
-      ],
-      "min_case_distance_mm": 0.9100000000000046,
       "render_body_bounds_case_mm": [
         130.9,
         -137.225,
@@ -1484,6 +1480,11 @@
         -1.9999999999999998
       ],
       "clearance_basis": "Generic 0805 maximum body 2.2 x 1.45 x 1.45 mm plus native courtyard",
+      "held_reference_collision_volume_mm3": [
+        0.0,
+        0.0
+      ],
+      "held_reference_min_case_distance_mm": 0.9100000000000046,
       "previous_envelope_bounds_case_mm": [
         130.325,
         -137.525,
@@ -1528,11 +1529,11 @@
         -140.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046,
+      "held_reference_min_case_distance_mm": 0.9100000000000046,
       "previous_envelope_bounds_case_mm": [
         104.045,
         -141.495,
@@ -1577,11 +1578,11 @@
         -146.515,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000019,
+      "held_reference_min_case_distance_mm": 0.9100000000000019,
       "previous_envelope_bounds_case_mm": [
         106.065,
         -147.485,
@@ -1626,11 +1627,11 @@
         -147.383116,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999984,
+      "held_reference_min_case_distance_mm": 0.9099999999999984,
       "previous_envelope_bounds_case_mm": [
         100.32124,
         -154.833116,
@@ -1675,11 +1676,11 @@
         -176.067094,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999877,
+      "held_reference_min_case_distance_mm": 0.9099999999999877,
       "previous_envelope_bounds_case_mm": [
         303.270454,
         -177.037094,
@@ -1724,11 +1725,11 @@
         -179.541979,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985,
+      "held_reference_min_case_distance_mm": 0.909999999999985,
       "previous_envelope_bounds_case_mm": [
         218.440337,
         -181.451979,
@@ -1773,11 +1774,11 @@
         -175.768189,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999868,
+      "held_reference_min_case_distance_mm": 0.9099999999999868,
       "previous_envelope_bounds_case_mm": [
         282.662833,
         -177.678189,
@@ -1822,11 +1823,11 @@
         -140.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046,
+      "held_reference_min_case_distance_mm": 0.9100000000000046,
       "previous_envelope_bounds_case_mm": [
         120.045,
         -141.495,
@@ -1871,11 +1872,11 @@
         -122.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000144,
+      "held_reference_min_case_distance_mm": 0.9100000000000144,
       "previous_envelope_bounds_case_mm": [
         331.045,
         -123.495,
@@ -1920,11 +1921,11 @@
         -176.291979,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999877,
+      "held_reference_min_case_distance_mm": 0.9099999999999877,
       "previous_envelope_bounds_case_mm": [
         147.280337,
         -177.281979,
@@ -1969,11 +1970,11 @@
         -122.365,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000144,
+      "held_reference_min_case_distance_mm": 0.9100000000000144,
       "previous_envelope_bounds_case_mm": [
         346.065,
         -123.335,
@@ -2018,11 +2019,11 @@
         -152.831865,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999984,
+      "held_reference_min_case_distance_mm": 0.9099999999999984,
       "previous_envelope_bounds_case_mm": [
         96.746473,
         -154.741865,
@@ -2067,11 +2068,11 @@
         -144.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028,
+      "held_reference_min_case_distance_mm": 0.9100000000000028,
       "previous_envelope_bounds_case_mm": [
         140.045,
         -145.495,
@@ -2116,11 +2117,11 @@
         -136.005,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046,
+      "held_reference_min_case_distance_mm": 0.9100000000000046,
       "previous_envelope_bounds_case_mm": [
         135.645,
         -136.995,
@@ -2165,11 +2166,11 @@
         -147.145,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000001,
+      "held_reference_min_case_distance_mm": 0.910000000000001,
       "previous_envelope_bounds_case_mm": [
         117.225,
         -149.055,
@@ -2214,11 +2215,11 @@
         -120.725,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000126,
+      "held_reference_min_case_distance_mm": 0.9100000000000126,
       "previous_envelope_bounds_case_mm": [
         322.075,
         -126.275,
@@ -2263,11 +2264,11 @@
         -124.245,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000126,
+      "held_reference_min_case_distance_mm": 0.9100000000000126,
       "previous_envelope_bounds_case_mm": [
         344.395,
         -125.755,
@@ -2312,11 +2313,11 @@
         -179.531979,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985,
+      "held_reference_min_case_distance_mm": 0.909999999999985,
       "previous_envelope_bounds_case_mm": [
         250.840337,
         -181.441979,
@@ -2361,11 +2362,11 @@
         -141.83,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000037,
+      "held_reference_min_case_distance_mm": 0.9100000000000037,
       "previous_envelope_bounds_case_mm": [
         105.525,
         -144.34,
@@ -2410,11 +2411,11 @@
         -135.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046,
+      "held_reference_min_case_distance_mm": 0.9100000000000046,
       "previous_envelope_bounds_case_mm": [
         123.545,
         -136.495,
@@ -2459,11 +2460,6 @@
         -116.325,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
-        0.0,
-        0.0
-      ],
-      "min_case_distance_mm": 0.9100000000000161,
       "render_body_bounds_case_mm": [
         345.67499999999995,
         -119.1,
@@ -2473,6 +2469,11 @@
         -1.9999999999999998
       ],
       "clearance_basis": "Generic 0805 maximum body 2.2 x 1.45 x 1.45 mm plus native courtyard",
+      "held_reference_collision_volume_mm3": [
+        0.0,
+        0.0
+      ],
+      "held_reference_min_case_distance_mm": 0.9100000000000161,
       "previous_envelope_bounds_case_mm": [
         345.375,
         -119.675,
@@ -2517,11 +2518,11 @@
         -115.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000017,
+      "held_reference_min_case_distance_mm": 0.910000000000017,
       "previous_envelope_bounds_case_mm": [
         105.045,
         -116.495,
@@ -2566,11 +2567,11 @@
         -147.515,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000019,
+      "held_reference_min_case_distance_mm": 0.9100000000000019,
       "previous_envelope_bounds_case_mm": [
         143.065,
         -148.485,
@@ -2615,11 +2616,11 @@
         -119.05,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.47500000000002274,
+      "held_reference_min_case_distance_mm": 0.47500000000002274,
       "previous_envelope_bounds_case_mm": [
         347.975,
         -131.45,
@@ -2664,11 +2665,11 @@
         -134.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000055,
+      "held_reference_min_case_distance_mm": 0.9100000000000055,
       "previous_envelope_bounds_case_mm": [
         136.045,
         -135.495,
@@ -2713,11 +2714,11 @@
         -144.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028,
+      "held_reference_min_case_distance_mm": 0.9100000000000028,
       "previous_envelope_bounds_case_mm": [
         108.045,
         -145.495,
@@ -2762,11 +2763,11 @@
         -155.320551,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999975,
+      "held_reference_min_case_distance_mm": 0.9099999999999975,
       "previous_envelope_bounds_case_mm": [
         105.116491,
         -156.310551,
@@ -2811,11 +2812,11 @@
         -120.127723,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 3.309536760659437,
+      "held_reference_min_case_distance_mm": 3.309536760659437,
       "previous_envelope_bounds_case_mm": [
         116.860337,
         -126.927723,
@@ -2860,11 +2861,11 @@
         -183.841979,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999833,
+      "held_reference_min_case_distance_mm": 0.9099999999999833,
       "previous_envelope_bounds_case_mm": [
         151.040337,
         -185.751979,
@@ -2909,11 +2910,11 @@
         -140.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046,
+      "held_reference_min_case_distance_mm": 0.9100000000000046,
       "previous_envelope_bounds_case_mm": [
         124.045,
         -141.495,
@@ -2958,11 +2959,11 @@
         -141.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046,
+      "held_reference_min_case_distance_mm": 0.9100000000000046,
       "previous_envelope_bounds_case_mm": [
         112.045,
         -142.495,
@@ -3007,11 +3008,6 @@
         -141.675,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
-        0.0,
-        0.0
-      ],
-      "min_case_distance_mm": 0.9100000000000019,
       "render_body_bounds_case_mm": [
         120.80000000000001,
         -143.42499999999998,
@@ -3021,6 +3017,11 @@
         -1.9999999999999998
       ],
       "clearance_basis": "Generic 0805 maximum body 2.2 x 1.45 x 1.45 mm plus native courtyard",
+      "held_reference_collision_volume_mm3": [
+        0.0,
+        0.0
+      ],
+      "held_reference_min_case_distance_mm": 0.9100000000000019,
       "previous_envelope_bounds_case_mm": [
         120.225,
         -143.725,
@@ -3065,11 +3066,11 @@
         -177.282369,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999842,
+      "held_reference_min_case_distance_mm": 0.9099999999999842,
       "previous_envelope_bounds_case_mm": [
         302.561454,
         -183.343769,
@@ -3114,11 +3115,11 @@
         -155.370551,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999975,
+      "held_reference_min_case_distance_mm": 0.9099999999999975,
       "previous_envelope_bounds_case_mm": [
         103.18624,
         -157.280551,
@@ -3163,11 +3164,6 @@
         -145.225,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
-        0.0,
-        0.0
-      ],
-      "min_case_distance_mm": 0.910000000000001,
       "render_body_bounds_case_mm": [
         121.275,
         -148.0,
@@ -3177,6 +3173,11 @@
         -1.9999999999999998
       ],
       "clearance_basis": "Generic 0805 maximum body 2.2 x 1.45 x 1.45 mm plus native courtyard",
+      "held_reference_collision_volume_mm3": [
+        0.0,
+        0.0
+      ],
+      "held_reference_min_case_distance_mm": 0.910000000000001,
       "previous_envelope_bounds_case_mm": [
         120.975,
         -148.575,
@@ -3221,11 +3222,11 @@
         -180.920716,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999824,
+      "held_reference_min_case_distance_mm": 0.9099999999999824,
       "previous_envelope_bounds_case_mm": [
         141.118276,
         -186.982116,
@@ -3270,11 +3271,11 @@
         -181.651979,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999842,
+      "held_reference_min_case_distance_mm": 0.9099999999999842,
       "previous_envelope_bounds_case_mm": [
         279.560337,
         -182.641979,
@@ -3319,11 +3320,11 @@
         -124.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000126,
+      "held_reference_min_case_distance_mm": 0.9100000000000126,
       "previous_envelope_bounds_case_mm": [
         315.045,
         -125.495,
@@ -3368,11 +3369,11 @@
         -139.525,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000019,
+      "held_reference_min_case_distance_mm": 0.9100000000000019,
       "previous_envelope_bounds_case_mm": [
         126.48,
         -143.475,
@@ -3417,11 +3418,11 @@
         -140.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046,
+      "held_reference_min_case_distance_mm": 0.9100000000000046,
       "previous_envelope_bounds_case_mm": [
         122.045,
         -141.495,
@@ -3442,55 +3443,55 @@
     },
     {
       "physical_body_bbox_pcb_mm": [
-        147.05,
-        120.6,
-        156.95,
-        128.2
+        152.1,
+        125.72,
+        158.9,
+        132.28
       ],
       "ref": "J2",
       "value": "PROTECTED_1S_4V2_NTC10K",
       "back": true,
       "position_pcb_mm": [
-        152.0,
-        125.0
+        155.5,
+        129.0
       ],
       "angle_deg": 0.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        146.375,
-        119.875,
-        157.625,
-        130.125
+        152.1,
+        125.72,
+        158.9,
+        132.28
       ],
-      "height_envelope_mm": 5.785,
-      "height_basis": "JST PH SMT side-entry drawing; verify final part and mating wire envelope",
+      "height_envelope_mm": 3.2,
+      "height_basis": "SH3 project installed maximum 3.2 mm including solder; measure incoming assembly; not a supplier guarantee",
       "bounds_case_mm": [
-        146.94999999999996,
-        -129.29999999999998,
-        -7.785,
-        157.05,
-        -120.49,
+        152.1,
+        -132.28,
+        -5.2,
+        158.9,
+        -125.72,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 1.9096881609882155,
+      "held_reference_min_case_distance_mm": 1.9096881609882155,
       "previous_envelope_bounds_case_mm": [
-        147.05,
-        -128.2,
-        -7.5,
-        156.95,
-        -120.6,
-        -1.9999999999999998
+        152.1,
+        -132.28,
+        -5.2,
+        158.9,
+        -125.72,
+        -2
       ],
       "native_model_bounds_case_mm": [
-        147.04999999999995,
-        -129.2,
-        -7.6850000000000005,
-        156.95000000000002,
-        -120.58999999999999,
-        -2.0849999999999973
+        153.0,
+        -131.475,
+        -5.045000000000001,
+        158.0,
+        -126.525,
+        -2.0849999999999995
       ],
       "native_modeling_allowance_mm": 0.1
     },
@@ -3520,11 +3521,11 @@
         -139.045,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000037,
+      "held_reference_min_case_distance_mm": 0.9100000000000037,
       "previous_envelope_bounds_case_mm": [
         135.495,
         -140.555,
@@ -3569,11 +3570,11 @@
         -152.831512,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999984,
+      "held_reference_min_case_distance_mm": 0.9099999999999984,
       "previous_envelope_bounds_case_mm": [
         95.555987,
         -154.741512,
@@ -3618,11 +3619,6 @@
         -142.275,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
-        0.0,
-        0.0
-      ],
-      "min_case_distance_mm": 0.910000000000001,
       "render_body_bounds_case_mm": [
         131.4,
         -144.025,
@@ -3632,6 +3628,11 @@
         -1.9999999999999998
       ],
       "clearance_basis": "Generic 0805 maximum body 2.2 x 1.45 x 1.45 mm plus native courtyard",
+      "held_reference_collision_volume_mm3": [
+        0.0,
+        0.0
+      ],
+      "held_reference_min_case_distance_mm": 0.910000000000001,
       "previous_envelope_bounds_case_mm": [
         130.825,
         -144.325,
@@ -3676,11 +3677,11 @@
         -122.205,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000135,
+      "held_reference_min_case_distance_mm": 0.9100000000000135,
       "previous_envelope_bounds_case_mm": [
         314.455,
         -123.795,
@@ -3725,11 +3726,11 @@
         -180.003098,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985,
+      "held_reference_min_case_distance_mm": 0.909999999999985,
       "previous_envelope_bounds_case_mm": [
         141.827276,
         -180.973098,
@@ -3774,11 +3775,11 @@
         -145.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028,
+      "held_reference_min_case_distance_mm": 0.9100000000000028,
       "previous_envelope_bounds_case_mm": [
         145.045,
         -146.495,
@@ -3823,11 +3824,11 @@
         -178.231979,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999859,
+      "held_reference_min_case_distance_mm": 0.9099999999999859,
       "previous_envelope_bounds_case_mm": [
         134.740337,
         -180.141979,
@@ -3872,11 +3873,11 @@
         -176.611979,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999868,
+      "held_reference_min_case_distance_mm": 0.9099999999999868,
       "previous_envelope_bounds_case_mm": [
         298.870337,
         -177.601979,
@@ -3921,11 +3922,11 @@
         -143.832075,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000037,
+      "held_reference_min_case_distance_mm": 0.9100000000000037,
       "previous_envelope_bounds_case_mm": [
         103.22624,
         -144.802075,
@@ -3970,11 +3971,11 @@
         -142.873517,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000037,
+      "held_reference_min_case_distance_mm": 0.9100000000000037,
       "previous_envelope_bounds_case_mm": [
         77.236567,
         -143.863517,
@@ -4019,11 +4020,11 @@
         -139.275,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000028,
+      "held_reference_min_case_distance_mm": 0.9100000000000028,
       "previous_envelope_bounds_case_mm": [
         130.72,
         -142.325,
@@ -4068,11 +4069,11 @@
         -147.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000019,
+      "held_reference_min_case_distance_mm": 0.9100000000000019,
       "previous_envelope_bounds_case_mm": [
         145.045,
         -148.495,
@@ -4117,11 +4118,11 @@
         -180.927204,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985,
+      "held_reference_min_case_distance_mm": 0.909999999999985,
       "previous_envelope_bounds_case_mm": [
         330.189284,
         -181.917204,
@@ -4166,11 +4167,11 @@
         -147.295,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000001,
+      "held_reference_min_case_distance_mm": 0.910000000000001,
       "previous_envelope_bounds_case_mm": [
         118.205,
         -149.205,
@@ -4215,11 +4216,11 @@
         -111.893524,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000017,
+      "held_reference_min_case_distance_mm": 0.910000000000017,
       "previous_envelope_bounds_case_mm": [
         87.464827,
         -116.503524,
@@ -4282,11 +4283,11 @@
         -180.341979,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.909999999999985,
+      "held_reference_min_case_distance_mm": 0.909999999999985,
       "previous_envelope_bounds_case_mm": [
         185.040337,
         -182.251979,
@@ -4331,11 +4332,11 @@
         -140.505,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000046,
+      "held_reference_min_case_distance_mm": 0.9100000000000046,
       "previous_envelope_bounds_case_mm": [
         141.045,
         -141.495,
@@ -4380,11 +4381,11 @@
         -154.99425,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999975,
+      "held_reference_min_case_distance_mm": 0.9099999999999975,
       "previous_envelope_bounds_case_mm": [
         100.99624,
         -155.96425,
@@ -4429,11 +4430,11 @@
         -152.831512,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9099999999999984,
+      "held_reference_min_case_distance_mm": 0.9099999999999984,
       "previous_envelope_bounds_case_mm": [
         97.937243,
         -154.741512,
@@ -4478,11 +4479,11 @@
         -116.725,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.40999999999999837,
+      "held_reference_min_case_distance_mm": 0.40999999999999837,
       "previous_envelope_bounds_case_mm": [
         106.975,
         -125.525,
@@ -4527,11 +4528,11 @@
         -147.145,
         -1.9999999999999998
       ],
-      "collision_volume_mm3": [
+      "held_reference_collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.910000000000001,
+      "held_reference_min_case_distance_mm": 0.910000000000001,
       "previous_envelope_bounds_case_mm": [
         116.205,
         -149.055,
@@ -4811,7 +4812,7 @@
     "top": 1.2
   },
   "minimum_fastener_radial_margin_worst_case_mm": 0.06163334374347418,
-  "native_model_report_sha256": "8cf49a4ac3a3ddc09e2b14265ae06a5ab7f9a1901c353c2ed843bfc1768c0d72",
+  "native_model_report_sha256": "af5b56b39d7e9c71f2448fd8e07b2c21e455055aa7707a3157e03fa9d0ce580f",
   "plate_geometry": "hardware/usb-short-route/mechanical/yeti60-niz-pm1-c04.step",
   "plate_DXF": "hardware/usb-short-route/mechanical/yeti60-niz-pm1-c04.dxf",
   "mated_housings": [
@@ -4829,14 +4830,14 @@
       "owner": "J1"
     },
     {
-      "name": "main-PH",
+      "name": "J2-SH3-mating-plug",
       "bounds_case_mm": [
-        148.1,
-        -123.35,
-        -7.5,
-        155.9,
-        -117.0,
-        -2
+        153.5,
+        -129.425,
+        -5.1,
+        157.5,
+        -124.425,
+        -2.1
       ],
       "family": "battery",
       "owner": "J2"
@@ -4892,28 +4893,28 @@
         "top": 19.495047166227362,
         "pack": 104.03966299999999,
         "usb-wires": 66.38966299999998,
-        "battery-wires": 25.174719766430314,
-        "main-PH": 23.389662999999985,
+        "battery-wires": 28.390433933413874,
+        "J2-SH3-mating-plug": 28.78966299999999,
         "C5-SH": 87.10445776786183,
         "J5-mating-plug": 214.8054317252436,
         "J4-mating-plug": 223.38726363351222
       }
     },
     {
-      "name": "main-PH",
+      "name": "J2-SH3-mating-plug",
       "pcb_thickness_mm": 1.6062,
-      "minimum_expanded_gap_mm": 1.6403105438609795,
+      "minimum_expanded_gap_mm": 0.7089102187974563,
       "nearest": "bottom",
       "foreign_gaps_mm": {
-        "bottom": 1.6403105438609795,
-        "top": 15.127117296531727,
-        "pack": 72.35,
-        "usb-wires": 34.69999999999999,
-        "power-wires": 6.099999999999994,
-        "main-SH": 23.389662999999985,
-        "C5-SH": 55.412701999999996,
-        "J5-mating-plug": 183.1,
-        "J4-mating-plug": 191.6173025198925
+        "bottom": 0.7089102187974563,
+        "top": 22.08703105192149,
+        "pack": 70.75,
+        "usb-wires": 33.099999999999994,
+        "power-wires": 13.004409014866065,
+        "main-SH": 28.78966299999999,
+        "C5-SH": 53.864802469430856,
+        "J5-mating-plug": 181.59914647376513,
+        "J4-mating-plug": 190.26297590440447
       }
     },
     {
@@ -4928,7 +4929,7 @@
         "power-wires": 5.9981377774310305,
         "battery-wires": 1.5093651800480732,
         "main-SH": 87.10445776786183,
-        "main-PH": 55.412701999999996,
+        "J2-SH3-mating-plug": 53.864802469430856,
         "J5-mating-plug": 122.18878985807497,
         "J4-mating-plug": 130.70737242814883
       }
@@ -4945,7 +4946,7 @@
         "usb-wires": 6.739621651101808,
         "battery-wires": 111.65345102145298,
         "main-SH": 214.8054317252436,
-        "main-PH": 183.1,
+        "J2-SH3-mating-plug": 181.59914647376513,
         "C5-SH": 122.18878985807497,
         "J4-mating-plug": 5.0
       }
@@ -4962,7 +4963,7 @@
         "power-wires": 5.600000000000023,
         "battery-wires": 120.62708288357139,
         "main-SH": 223.38726363351222,
-        "main-PH": 191.6173025198925,
+        "J2-SH3-mating-plug": 190.26297590440447,
         "C5-SH": 130.70737242814883,
         "J5-mating-plug": 5.0
       }
@@ -4977,28 +4978,28 @@
         "top": 19.425383148175726,
         "pack": 104.03966299999999,
         "usb-wires": 66.38966299999998,
-        "battery-wires": 25.174719766430314,
-        "main-PH": 23.389662999999985,
+        "battery-wires": 28.390433933413874,
+        "J2-SH3-mating-plug": 28.78966299999999,
         "C5-SH": 87.10576840022263,
         "J5-mating-plug": 214.8054317252436,
         "J4-mating-plug": 223.38726363351222
       }
     },
     {
-      "name": "main-PH",
+      "name": "J2-SH3-mating-plug",
       "pcb_thickness_mm": 1.44,
-      "minimum_expanded_gap_mm": 1.6403105438609795,
+      "minimum_expanded_gap_mm": 0.8463569804257878,
       "nearest": "bottom",
       "foreign_gaps_mm": {
-        "bottom": 1.6403105438609795,
-        "top": 15.056008904853549,
-        "pack": 72.35,
-        "usb-wires": 34.69999999999999,
-        "power-wires": 6.099999999999994,
-        "main-SH": 23.389662999999985,
-        "C5-SH": 55.412701999999996,
-        "J5-mating-plug": 183.1,
-        "J4-mating-plug": 191.6173025198925
+        "bottom": 0.8463569804257878,
+        "top": 22.0376366048754,
+        "pack": 70.75,
+        "usb-wires": 33.099999999999994,
+        "power-wires": 13.004409014866065,
+        "main-SH": 28.78966299999999,
+        "C5-SH": 53.86692185962369,
+        "J5-mating-plug": 181.59914647376513,
+        "J4-mating-plug": 190.26297590440447
       }
     },
     {
@@ -5011,9 +5012,9 @@
         "top": 17.07792095467535,
         "pack": 11.437297999999998,
         "power-wires": 6.040831155867122,
-        "battery-wires": 1.509365180048073,
+        "battery-wires": 1.5093651800480732,
         "main-SH": 87.10576840022263,
-        "main-PH": 55.412701999999996,
+        "J2-SH3-mating-plug": 53.86692185962369,
         "J5-mating-plug": 122.1897241691821,
         "J4-mating-plug": 130.7082458478837
       }
@@ -5030,7 +5031,7 @@
         "usb-wires": 6.739621651101808,
         "battery-wires": 111.65345102145298,
         "main-SH": 214.8054317252436,
-        "main-PH": 183.1,
+        "J2-SH3-mating-plug": 181.59914647376513,
         "C5-SH": 122.1897241691821,
         "J4-mating-plug": 5.0
       }
@@ -5047,7 +5048,7 @@
         "power-wires": 5.600000000000023,
         "battery-wires": 120.62708288357139,
         "main-SH": 223.38726363351222,
-        "main-PH": 191.6173025198925,
+        "J2-SH3-mating-plug": 190.26297590440447,
         "C5-SH": 130.7082458478837,
         "J5-mating-plug": 5.0
       }
@@ -5062,28 +5063,28 @@
         "top": 19.560550668460987,
         "pack": 104.03966299999999,
         "usb-wires": 66.38966299999998,
-        "battery-wires": 25.174719766430314,
-        "main-PH": 23.389662999999985,
+        "battery-wires": 28.390433933413874,
+        "J2-SH3-mating-plug": 28.78966299999999,
         "C5-SH": 87.10352741762658,
         "J5-mating-plug": 214.8054317252436,
         "J4-mating-plug": 223.38726363351222
       }
     },
     {
-      "name": "main-PH",
+      "name": "J2-SH3-mating-plug",
       "pcb_thickness_mm": 1.76,
-      "minimum_expanded_gap_mm": 1.506200000000014,
+      "minimum_expanded_gap_mm": 0.5949387685429962,
       "nearest": "bottom",
       "foreign_gaps_mm": {
-        "bottom": 1.506200000000014,
-        "top": 15.194243519933112,
-        "pack": 72.35,
-        "usb-wires": 34.69999999999999,
-        "power-wires": 6.099999999999994,
-        "main-SH": 23.389662999999985,
-        "C5-SH": 55.412701999999996,
-        "J5-mating-plug": 183.1,
-        "J4-mating-plug": 191.6173025198925
+        "bottom": 0.5949387685429962,
+        "top": 22.13375384178075,
+        "pack": 70.75,
+        "usb-wires": 33.099999999999994,
+        "power-wires": 13.004409014866065,
+        "main-SH": 28.78966299999999,
+        "C5-SH": 53.8632979925181,
+        "J5-mating-plug": 181.59914647376513,
+        "J4-mating-plug": 190.26297590440447
       }
     },
     {
@@ -5098,7 +5099,7 @@
         "power-wires": 5.9615207939022214,
         "battery-wires": 1.5093651800480732,
         "main-SH": 87.10352741762658,
-        "main-PH": 55.412701999999996,
+        "J2-SH3-mating-plug": 53.8632979925181,
         "J5-mating-plug": 122.18812664306137,
         "J4-mating-plug": 130.70675243701376
       }
@@ -5115,7 +5116,7 @@
         "usb-wires": 6.739621651101808,
         "battery-wires": 111.65345102145298,
         "main-SH": 214.8054317252436,
-        "main-PH": 183.1,
+        "J2-SH3-mating-plug": 181.59914647376513,
         "C5-SH": 122.18812664306137,
         "J4-mating-plug": 5.0
       }
@@ -5132,7 +5133,7 @@
         "power-wires": 5.600000000000023,
         "battery-wires": 120.62708288357139,
         "main-SH": 223.38726363351222,
-        "main-PH": 191.6173025198925,
+        "J2-SH3-mating-plug": 190.26297590440447,
         "C5-SH": 130.70675243701376,
         "J5-mating-plug": 5.0
       }

@@ -2,10 +2,12 @@ English | [Chinese](battery-pack-specification.zh-CN.md)
 
 # YETI60-BAT-1600-1S supplier drawing and acceptance specification
 
+Use the specified **SHR-03V-S without protrusions, 4.0 mm wide**. The catalogued **SHR-03V-S-B with protrusions is 6.0 mm wide** and is not covered by the present housing envelope; do not substitute it without a separate fit check. [JST housing table](https://www.jst-mfg.com/product/pdf/eng/eSH.pdf)
+
 [Supplier response checklist](../build/battery-vendor-checklist.md): the user will verify these parameters. No supplier is contacted by this workflow.
 
 
-This is a review/RFQ specification for one custom protected single-cell pack per keyboard. No supplier has accepted it and no order is authorized. The [assembly specification](../../../../mechanical/assembly-spec.raytac.json), [interconnect specification](../../../../mechanical/interconnect-spec.json), [power calculation](power-budget.md) and [battery study](battery-study.md) are its controlled inputs.
+This is a review/RFQ specification for one custom protected single-cell pack per keyboard. No supplier has accepted it and no order is authorized. The [assembly specification](../../../../mechanical/assembly-spec.raytac.json), [interconnect specification](../../hardware/usb-short-route/interconnect-spec.json), [power calculation](power-budget.md) and [battery study](battery-study.md) are its controlled inputs.
 
 ## Cell and complete package
 
@@ -33,9 +35,9 @@ The independent protector and BQ24074 feedback need **separate sensing arrangeme
 
 ## Leads and assembly interface
 
-Use one PHR-3 housing with three SPH-004T-P0.5S contacts, AWG28 stranded copper, insulation OD <=0.8 mm. Pin 1 is red PACK+, pin 2 black PACK-, pin 3 yellow NTC to PACK-. Supply a drawing showing **pin numbers and the latch/viewing direction**; wire colors alone are insufficient. The pack leads/housing/contacts are included in the pack quantity, not additional loose purchases. [JST PH drawing](https://www.jst.com/wp-content/uploads/2025/06/ePH.pdf)
+Use one SHR-03V-S housing with three SSH-003T-P0.2-H contacts, AWG28 stranded copper, insulation OD <=0.8 mm. Pin 1 is red PACK+, pin 2 black PACK-, pin 3 yellow NTC to PACK-. Supply a drawing showing **pin numbers and the latch/viewing direction**; wire colors alone are insufficient. The pack leads/housing/contacts are included in the pack quantity, not additional loose purchases. [JST SH drawing](https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf)
 
-Pack local origin is its minimum X/Y/Z corner. Required strain-relief lead-exit datum is **[0,14,4.4] mm**, outward along -X, with pin endpoints offset by +2/0/-2 mm in Y. This is an engineering interface request requiring supplier confirmation. The conductor/insulation exit must remain within the 4.8 mm complete envelope. Use the per-wire free lengths and case-frame paths in [the interconnect report](../audit/yeti60-interconnects.json); they are insulation lengths between exit planes, not crimp cut lengths. Nominal free-length tolerance is +/-0.5 mm; the harness must additionally be preformed and retained within the controlled route. Length alone does not guarantee fit. Supplier must approve the chosen >=4 mm static bend radius and a >=5 mm pack lead transition zone without bending cell tabs or stressing welds.
+Pack local origin is its minimum X/Y/Z corner. Required strain-relief lead-exit datum is **[0,14,4.4] mm**, outward along -X, with pin endpoints offset by +2/0/-2 mm in Y. This is an engineering interface request requiring supplier confirmation. The conductor/insulation exit must remain within the 4.8 mm complete envelope. Use the per-wire free lengths and case-frame paths in [the interconnect report](../../hardware/usb-short-route/CLOSED-CASE.md); they are insulation lengths between exit planes, not crimp cut lengths. Nominal free-length tolerance is +/-0.5 mm; the harness must additionally be preformed and retained within the controlled route. Length alone does not guarantee fit. Supplier must approve the chosen >=4 mm static bend radius and a >=5 mm pack lead transition zone without bending cell tabs or stressing welds.
 
 ## Qualification sequence
 

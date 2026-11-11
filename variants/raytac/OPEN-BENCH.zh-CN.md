@@ -21,7 +21,7 @@
 | NiZ 定位板与按键机构 | 钢板 1 张、有效按键 60 套 | 按 [K01—K07](docs/build/key-mechanism.zh-CN.md)及[C04 钢板](hardware/usb-short-route/MECHANICAL-FIT.zh-CN.md)，含三组钢板卫星轴、两根短钢丝、居中 6U 钢丝及键帽 |
 | 定位板／PCB 紧固件 | 28 套 | [机械材料表](docs/engineering/materials.zh-CN.md)；H26 不装。无外壳阶段不需要树脂壳、壳体嵌件、合壳螺钉或胶棉 |
 | 保护电池包 | **1 包，电池验收必需** | 默认 1600 mAh、单节 4.2 V CC/CV、连续允许充电至少 500 mA；含独立贴近电芯的充电器 NTC 和独立温度断充。[供方完整规格](docs/engineering/battery-pack-specification.zh-CN.md)；目前没有已获确认的准确成品包 |
-| 电源／数据线束 | 完整 1 套 | C5→J4 四线、J5→J1 两线跳线及 PHR-3 三根电池引线；按[当前逐针连接](hardware/usb-short-route/README.zh-CN.md#必须采用的连接方式)核对，共九线，J1.2／3 留空 |
+| 电源／数据线束 | 完整 1 套 | C5→J4 四线、J5→J1 两线跳线及 SHR-03V-S 三根电池引线；按[当前逐针连接](hardware/usb-short-route/README.zh-CN.md#必须采用的连接方式)核对，共九线，J1.2／3 留空 |
 | 电脑／终端及另一把可用键盘 | 1 套 | 作为 USB 数据主机及串口终端；YETI60 尚未校准时，用笔记本键盘或另一把键盘输入校准命令 |
 | SWD 调试器 | 1 个 | 兼容 nRF52840、3.3 V 参考电平，配自定义六焊盘 J3 夹具 |
 | 绝缘 PCB 固定夹具 | 1 套 | 稳定、不导电，元件离桌；初始至少留 12 mm 下方空间，实际接头／螺钉更高则增加。只支撑经过核对的机械位置，不夹电极、元件或天线 |

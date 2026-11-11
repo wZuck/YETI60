@@ -4,22 +4,22 @@
   "production_approved": false,
   "variants": {
     "e73": {
-      "metal_plate_projection_mm2": 13.199388000000114,
+      "metal_plate_projection_mm2": 0.0,
       "screen_area_mm2": 39.0,
       "nearest_module_mounting_plane_to_plate_mm": 6.2062,
-      "status": "nearby-metal-requires-antenna-qualification",
+      "status": "projection-clear-nearby-metal-still-unqualified",
       "limits": "Projected plate metal, not a physical collision or computed RF loss. Antenna conductor Z is not supplied by vendor."
     },
     "raytac": {
-      "metal_plate_projection_mm2": 38.86003088156008,
+      "metal_plate_projection_mm2": 0.0,
       "screen_area_mm2": 39.9,
       "nearest_module_mounting_plane_to_plate_mm": 6.2062,
-      "status": "nearby-metal-requires-antenna-qualification",
+      "status": "projection-clear-nearby-metal-still-unqualified",
       "limits": "Projected plate metal, not a physical collision or computed RF loss. Antenna conductor Z is not supplied by vendor."
     }
   },
   "source_sha256": {
-    "docs/audit/interference-layout.json": "d676b7c07efd790cc5697f62dc716b7a0bfce8596a00f87ca7298fe8be1cf339",
+    "docs/audit/interference-layout.json": "0abd8fbd695fb2cf4c42e87e15282dc6ec7c5933e3eed7c9e136c34007944795",
     "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
     "scripts/check_yeti60_assembly.py": "12221f66129b35332273adaf3ed309dc20cd7994880842ceb98230b2fb97eeba",

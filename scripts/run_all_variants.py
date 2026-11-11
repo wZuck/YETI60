@@ -5,6 +5,7 @@ import csv
 import hashlib
 import importlib.util
 import json
+import os,shutil
 from pathlib import Path
 import subprocess
 import sys
@@ -28,37 +29,47 @@ def verify_archive(path, module):
 
 
 def parity():
-    records={};packages={}
-    for name in ['firmware/target/src/usb_policy.c','firmware/target/src/usb_policy.h','firmware/target/src/scanner.c']:
-        assert (ROOT/name).read_bytes()==(ROOT/'variants/raytac'/name).read_bytes(), 'USB charging/transport policy differs between options: '+name
-    for name,folder in OPTIONS.items():
-        read=lambda p:json.loads((folder/p).read_text())
-        with (folder/'hardware/bom/mainboard.csv').open() as source:
-            parts=list(csv.DictReader(source))
-        records[name]={'parts':parts,'keys':read('docs/audit/yeti60-key-geometry.json'),
-                       'fit':read('docs/audit/yeti60-assembly.json'),
-                       'inventory':read('docs/audit/yeti60-inventory.json'),
-                       'board':read('hardware/ec60-nrf52840/audit-current.json')}
-        assert records[name]['board']['mcu_count']==1 and not records[name]['board']['unconnected_items']
-        assert records[name]['board']['status']=='cad-checks-passed'
-        module=next(r['Design value'] for r in parts if r['References']=='U1')
-        packages[name]=verify_archive(folder/'hardware/fabrication'/('yeti60-'+name+'-p2-dfm-review.zip'),module)
-        target=read('docs/audit/yeti60-target-check.json')
-        assert target['status']=='passed' and set(target['variants'])=={'normal','calibrator'}
-        assert all(v['arm_elf'] and v['settings_partition_preserved'] and v['USB_configuration_mA']==500 for v in target['variants'].values())
-        host=read('docs/audit/yeti60-firmware-simulation.json')
-        assert host['status']=='passed' and any('USB policy: concurrent configured charging and USB preference' in line for line in host['output'])
-    a,b=records['e73'],records['raytac']
-    assert [r for r in a['parts'] if r['References']!='U1']==[r for r in b['parts'] if r['References']!='U1'], 'Non-module BOM diverged'
-    assert a['fit']['mounting_hole_matches']==b['fit']['mounting_hole_matches'], 'Mounting geometry diverged'
-    assert a['fit']['active_key_positions']==b['fit']['active_key_positions'], 'Plate/key layout diverged'
-    assert a['fit']['selected_battery']==b['fit']['selected_battery'], 'Shared battery specification diverged'
-    for option in [a,b]:
-        assert option['inventory']['planned_stock_parts']==10 and option['inventory']['net_purchase_parts']==66
-        assert len(option['keys']['matches'])==60
-    return {'controllers_per_keyboard':1,'keys':60,'mounts':29,'non_module_BOM_identical':True,
-            'shared_case_and_battery':True,'stock_use_per_selected_keyboard':10,'mainboard_to_buy':66,
-            'variant_manufacturing_packages':packages,'built_ARM_targets':4,'shared_USB_charge_and_wired_priority_policy':True}
+    """Check each current design; shared behavior does not require identical code."""
+    read=lambda p:json.loads((ROOT/p).read_text())
+    ray=ROOT/'variants/raytac'
+    native=read('hardware/ec60-nrf52840/audit-current.json')
+    assert native['status']=='cad-checks-passed' and native['mcu_count']==1
+    assert not native['unconnected_items'] and not native['failed_ground_pairs']
+    archive=verify_archive(ROOT/'hardware/fabrication/yeti60-e73-p2-dfm-review.zip','E73-2G4M08S1C')
+    candidate=read('variants/raytac/hardware/usb-short-route/audit/native-check.json')
+    assert candidate['status']=='native-candidate-checks-passed'
+    assert candidate['strict_DRC_errors']==candidate['unconnected_items']==candidate['schematic_parity_items']==0
+    cam=read('variants/raytac/hardware/usb-short-route/audit/fabrication-check.json')
+    assert cam['status']=='candidate-CAM-native-roundtrip-passed' and not cam['manufacturing_released']
+    # The candidate's split PTH/NPTH/CAM/stencil package has its own native
+    # round-trip checker; a historical 76-part ZIP cannot qualify this board.
+    uv=shutil.which('uv') or str(Path.home()/'.local/bin/uv')
+    cam_runtime=[os.environ['YETI_CAM_PYTHON']] if 'YETI_CAM_PYTHON' in os.environ else [uv,'run','--python','3.11','--with-requirements',str(ray/'requirements-cam.txt'),'python']
+    subprocess.run(cam_runtime+['scripts/check_usb_short_fabrication.py'],cwd=ray,check=True)
+    for folder in [ROOT,ray]:
+        policy=json.loads((folder/'docs/audit/usb-event-policy.json').read_text())
+        assert policy['status']=='passed' and len(policy['cases'])==11
+        assert policy['configuration_zero_rejected'] and policy['synchronous_disable_before_upstream_notification']
+        for name,digest in policy['source_sha256'].items():assert sha(folder/name)==digest,'Stale USB policy: '+name
+    subprocess.run([sys.executable,'scripts/check_usb_short_firmware.py'],cwd=ray,check=True)
+    with (ray/'hardware/usb-short-route/mainboard-purchase.csv').open() as stream:
+        purchases=list(csv.DictReader(stream))
+    required=sum(int(r['Required']) for r in purchases)
+    stock=sum(int(r['Planned stock use']) for r in purchases)
+    buy=sum(int(r['Net purchase']) for r in purchases)
+    assert required==stock+buy==cam['fitted_placements']==75
+    inventory=read('docs/audit/yeti60-inventory.json')
+    assert inventory['required_mainboard_parts']==inventory['planned_stock_parts']+inventory['net_purchase_parts']==76
+    readiness=read('docs/audit/e73-readiness.json')
+    assert not readiness['manufacturing_released'] and not readiness['physical_verification']
+    return {'controllers_per_keyboard':1,'keys':60,'built_ARM_targets':4,
+            'shared_USB_charge_and_wired_priority_policy':True,
+            'feature_parity':False,
+            'differences':['E73 retains the old 1.2 mm / 29-mount plate and seven-wire PH harness',
+                           'Raytac current candidate uses C04/NiZ 1.6 mm / 28-mount plate and nine-wire SH3 harness',
+                           'E73 scanner/storage fault and waveform improvements are not yet at Raytac parity'],
+            'variants':{'e73':{'placements':76,'mounts':29,'stock_parts':inventory['planned_stock_parts'],'purchase_parts':inventory['net_purchase_parts'],'manufacturing_package':archive,'design_status':readiness['status']},
+                        'raytac':{'placements':required,'mounts':28,'stock_parts':stock,'purchase_parts':buy,'manufacturing_package':'variants/raytac/hardware/usb-short-route/fabrication/yeti60-raytac-candidate-gerbers.zip','design_status':'candidate-physical-and-supplier-qualification-open'}}}
 
 
 def main():
@@ -66,7 +77,7 @@ def main():
     parser.add_argument('--refresh-renders',action='store_true')
     parser.add_argument('--refresh-guide',action='store_true')
     parser.add_argument('--check-existing',action='store_true',help='Verify current reports and integration without rerunning both full audits')
-    parser.add_argument('--baseline',default='52b8d56be0b162c7f9585936349c08ddcb7c338f')
+    parser.add_argument('--baseline',default='HEAD')
     args=parser.parse_args();results={}
     # CAD outputs are shared and deterministic; run variants sequentially.
     for name,folder in OPTIONS.items():
@@ -99,7 +110,7 @@ def main():
             'production_approved':False,'variants':results,'feature_parity':agreement,'error':error,
             'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__),ROOT/'tests/audit/test_variant_packages.py']},
             'outcome_sha256':{r['audit']:sha(ROOT/r['audit']) for r in results.values()},
-            'scope':'Both complete designs in this branch; no physical acceptance or RF/SI certification'}
+            'scope':'Independent current E73 and Raytac candidate checks; recorded maturity differences are not feature parity or physical/RF/SI acceptance'}
     (ROOT/'docs/audit/variants.json').write_text(json.dumps(report,indent=2)+'\n')
     print(report['status'],flush=True)
     return 0 if okay else 1

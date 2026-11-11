@@ -4,8 +4,8 @@
   "production_approved": false,
   "physical_verification": false,
   "drills": {
-    "total": 846,
-    "plated": 816,
+    "total": 848,
+    "plated": 818,
     "nonplated": 30,
     "slots": 2,
     "center_tolerance_mm": 0.0015,
@@ -74,11 +74,11 @@
   "IPC": {
     "fitted_pin_sites_checked": 289,
     "all_pad_sites_checked": 631,
-    "via_sites_checked": 813,
-    "all_test_records_checked": 1444,
+    "via_sites_checked": 815,
+    "all_test_records_checked": 1446,
     "coordinate_tolerance_mm": 0.003,
     "origin": "Absolute native XY, Y negated; temporary IPC auxiliary origin set to zero",
-    "parsed_records": 1444,
+    "parsed_records": 1446,
     "long_net_aliases": 33
   },
   "parser_versions": {
@@ -88,7 +88,7 @@
   "source_sha256": {
     "scripts/check_usb_short_fabrication.py": "596b3b86a2cdfb1125c1826333794a760803ff6d2929cb156342a7eeafc3d8d1",
     "requirements-cam.txt": "f068b1e72f09da2f3247d117ff72397b07fdd0b339c2b8ac83505199700bec47",
-    "hardware/usb-short-route/audit/fabrication-export.json": "148fae2c8a175ce113fa8466e8bb672f0f0afe63dd0821e10ba974e1f98bdcd1"
+    "hardware/usb-short-route/audit/fabrication-export.json": "c21df7a60346dad904b57e51ffc2e646e55db70d4127305d000ad915490d6d2c"
   },
   "limits": [
     "Independent CAM/native parity is not supplier DFM approval, a passing USB eye or physical operation",

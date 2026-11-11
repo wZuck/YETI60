@@ -2,7 +2,7 @@
   "purpose": "DFM and assembly review only; not manufacturing release",
   "controller_module": "E73-2G4M08S1C",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
     "hardware/bom/mainboard.csv": "5aac9c838ba556e40a72bfe6aa6c13b9109aeea2406ffd50a38ed8fd4f2a550b",
     "hardware/bom/mainboard.zh-CN.csv": "8bc03a93169a17a7c026bbd44e652307f039f4a0e3a5ea10ce555c22d9a2fdc5",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
@@ -13,23 +13,23 @@
     "scripts/export_yeti60_fabrication.py": "57ee6368f05b210ad055d2856c3a3aacce4428f9d8b93eac29f63f2e0b4e68c2"
   },
   "files_sha256": {
-    "EC60-nRF52840-B_Cu.gbl": "fb20c4192c2f0f93b9826fa6a7037ab6ccaf3100f466d38f37bfb0f02c9acef1",
-    "EC60-nRF52840-B_Fab.gbr": "84a471c2bccda46da4dfa311e109d53a787a425c4c6f0ac6f5492759d90aca92",
-    "EC60-nRF52840-B_Mask.gbs": "d78862915ad33003d904f3a97c152376f5e1ebe4c59e22e29b750b95161ffaf7",
-    "EC60-nRF52840-B_Paste.gbp": "4b97386b3448234505132630ed6cfbf88a6767f05ca3f53ea3902e358660cce5",
-    "EC60-nRF52840-B_Silkscreen.gbo": "bffc4da56e409fa6bb8f37c3cd318a843467f171379b15276f6aee50d19b0b04",
-    "EC60-nRF52840-Edge_Cuts.gm1": "21d523e15b3ae8d4abe43cd2f8a08b80f70c9d748e2a52e5fbf6b41ad9392163",
-    "EC60-nRF52840-F_Cu.gtl": "171f6545e141f79c1e5e3cd81941553b53126e2712bd784ebdbbbf9806216145",
+    "EC60-nRF52840-B_Cu.gbl": "8fda04e7d2c85dd005e36073744d857f76a344e1562411e9ed964e45f1f31965",
+    "EC60-nRF52840-B_Fab.gbr": "4f5bbcf31432f32ce238064a20e7faa29a1d40fb9fd3c084af75e84df949fd02",
+    "EC60-nRF52840-B_Mask.gbs": "b3cb5fe3f49276f12d62b4d90ad14e83ec06704fc8b97ed8a4b0380dfafc9256",
+    "EC60-nRF52840-B_Paste.gbp": "bae1f4bf219516b208ff22a95fe8b8fece56a3e04e4c187cd7cd00cb4f06a766",
+    "EC60-nRF52840-B_Silkscreen.gbo": "7670723459eb687c69b6f34532111d92d08a224c3b4e84c292fbea263289694a",
+    "EC60-nRF52840-Edge_Cuts.gm1": "e63a94ed914145cde3279d3e63e73b4deb7d274184ba5bd2a0c285b7a7a0dc6b",
+    "EC60-nRF52840-F_Cu.gtl": "5d6b3a9034795e803f984c9554fa946f73c7a793e91145c3319fee4c8c7aedc7",
     "EC60-nRF52840-F_Fab.gbr": "35e6f4dba0a709bfaf9867b6cd2a82c333200e3f59129f58263fa5f38f58abcd",
     "EC60-nRF52840-F_Mask.gts": "c91e614f5dbe773ec61f6ea05019c6c8adff2b20de087af48aada183afe72d9d",
     "EC60-nRF52840-F_Paste.gtp": "385373eda09d2280890ecefa746822c9af8242de2aba6ad4c013a72d7aaa5c93",
     "EC60-nRF52840-F_Silkscreen.gto": "a78b0de98438de2d5baf45a807cec3a073ca0352b2729006ec4d68e884a88bec",
-    "EC60-nRF52840-In1_Cu.g1": "88c2ebcbb5957eb4ff747d0916f37dfba8ebcb4ba46f98b88a8ed1e9e60069a2",
-    "EC60-nRF52840-In2_Cu.g2": "669cca20d6616690717510f2b1937c1431d73f65bc0254a0129289b4f76c53ef",
+    "EC60-nRF52840-In1_Cu.g1": "5937a3421b4e20ec71bb43665bf177cb0e99bd1db52ac307292aba57963f03a3",
+    "EC60-nRF52840-In2_Cu.g2": "7a07494b04f87c0095dfa3e42088a1608d1e06d48b39e2e510e050e63f5cfe08",
     "EC60-nRF52840-NPTH.drl": "40e4fff7f05318a1b3fad9125cfd64180664e8ef8e74751555e3fc77d40381d8",
-    "EC60-nRF52840-PTH.drl": "c1a83a770a103d86ba8bb3067a47dc98a6b76db86e88d5f537b2e008bf48d7c2",
-    "EC60-nRF52840-job.gbrjob": "4826dea939449673e0515c9e6d1487f27b143db23587abbc30b7cffe74249929",
-    "drill-report.txt": "6344f1b42a4d07d9a20ff7d39c82e0fafa60d9f10d376c1740673c74cfdc9439",
+    "EC60-nRF52840-PTH.drl": "19f0395760611f8c115028ec363612fea5edff45d123d0b3bb577e195d421713",
+    "EC60-nRF52840-job.gbrjob": "7dd2991ddf92b090c366f550af0ffdb1ab2aa5e84c2ab67dc2e239e0697b1834",
+    "drill-report.txt": "621e2a6c444c5b63af06e39f674fcb218b40058d3648e6437d6c8ac97952c038",
     "fabrication-notes.md": "41d5f0ba8b971f164eeafa8d5157909068d8a6f4df305adceb2730b9dd925c58",
     "fabrication-notes.zh-CN.md": "f0641b5d0bfc0098bc97534155f722f203232f8fe33cf19cc9f8eed4c2827fc5",
     "fabrication-review.md": "525709d0d69e23d7c5877aa95e66074e124b574d67604952a1b4d0e2cb54bdc6",
@@ -37,8 +37,8 @@
     "mainboard.csv": "5aac9c838ba556e40a72bfe6aa6c13b9109aeea2406ffd50a38ed8fd4f2a550b",
     "mainboard.zh-CN.csv": "8bc03a93169a17a7c026bbd44e652307f039f4a0e3a5ea10ce555c22d9a2fdc5",
     "pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
-    "positions.csv": "1c1665903a655a98f34d99bdf6d657cd6f76ae7a2db58496a01cb182a234d889",
-    "yeti60.ipc": "543c404df9296131f1c0f354f9bc77a1909e041ce0ff1f54938049bb05371b34"
+    "positions.csv": "ff4387b7907e66c2f41a322ea8861504ca92d71e4569db474a21e0af0fa1c881",
+    "yeti60.ipc": "f0381276528af975d3611c9aad53f91174844013e4c63649e31c710fef124df0"
   },
   "copper_layers": [
     "F.Cu",
@@ -57,6 +57,6 @@
   "production_approved": false,
   "status": "review-package-generated-not-order-release",
   "outputs": {
-    "hardware/fabrication/yeti60-e73-p2-dfm-review.zip": "9af8cf423c3b7df9d767f608184eb25df8c922e6efcf65422873dce5e8e3aa9d"
+    "hardware/fabrication/yeti60-e73-p2-dfm-review.zip": "5cead4a71faafee63dbc67b75393b1a4e19855865ed5675a9a926c4aa594d306"
   }
 }

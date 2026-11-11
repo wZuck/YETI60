@@ -2,6 +2,8 @@ English | [Chinese](SERVICE-PATH.zh-CN.md)
 
 # Service path: wing repaired; connected harness still open
 
+The [SH3 battery revision](BATTERY-SERVICE.md) replaces the PH interface and adds a continuous rigid-body withdrawal screen for J2/J4. Tool access, released-wire motion, loose-plug parking and connected stack lifting remain separate unqualified requirements.
+
 **Enclosed service is not yet approved.** The previous right-wing trap is repaired in the current candidate bottom. Continuous nominal rigid extraction now passes, conditional on USB and battery leads already being disconnected and their loose plugs parked outside the moving envelope. This does not prove that disconnection is possible in the assembled case.
 
 [Verification script](../../scripts/check_usb_short_vertical_motion.py) · [Motion evidence](audit/vertical-motion.json) · [Case/skin and insert protection](audit/closed-assembly.json)
@@ -22,7 +24,7 @@ The old unrelieved bottom still intersects the PCB and module sweeps. Regression
 
 ## Remaining work
 
-1. Establish full USB J4 and battery J2 unmating/mating trajectories, holding plastic housings and keeping all conductors within a supported bend radius. Side-entry withdrawal changes the distance and direction to the first fixed guide; installed routes do not prove removability. Qualify loose-plug parking and actual tool access before prescribing service. No new access ports are released in this case.
+1. Qualify complete USB J4 and battery J2 tool and flexible-wire trajectories after the rigid-housing sweep, holding plastic housings and keeping all conductors within a supported bend radius. Side-entry withdrawal changes the distance and direction to the first fixed guide; installed routes do not prove removability. Qualify loose-plug parking and actual tool access before prescribing service. No new access ports are released in this case.
 2. The [C04 plate inset and switch-floor pocket](MECHANICAL-FIT.md) now pass bounded geometric checks for these interfaces, including continuous plate extraction. The [old directional diagnostic](TOLERANCES.md) is retained as the pre-repair baseline. Other component tolerances, key mechanisms, foam and full connected service remain open.
 3. Include qualified NiZ housings, caps, domes, stabilizers, cable springback and adhesive retention in final motion/first-article checks. The PCB/plate/electronics sweep does not certify these supplier-dependent moving bodies.
 

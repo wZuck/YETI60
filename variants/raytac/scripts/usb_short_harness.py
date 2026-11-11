@@ -55,12 +55,25 @@ def paths(spec,exits,delta=0):
         assert at[0]>goal[0],('Insufficient power fan-out length',pin,at,goal)
         out['power'][pin]=chain(joined,fan,last,[line(at,goal)])
     # Battery route retains its verified pack/header datums and conductor order.
-    b=spec['battery'];start=tuple(v+(delta if i==2 else 0) for i,v in enumerate(exits['J2']));target=tuple(exits['pack']);r=b['radius'];z=b['rear_z']
-    lead,last,_=s_bend(start,(0,1,0),z-start[2],r)
+    b=spec['battery'];target=tuple(exits['pack']);r=b['radius'];z=b['rear_z']
+    start=tuple(v+(delta if i==2 else 0) for i,v in enumerate(exits['J2']))
+    fan_radius=b['header_fanout_radius_mm'];fan_shift=max(abs(a-bb) for a,bb in zip(b['lateral_offsets'],b['header_lateral_offsets']))
+    fan_run=math.sqrt(4*fan_radius*fan_shift-fan_shift**2)
+    centre_after=(start[0],start[1]+fan_run,start[2])
+    lead,last,_=s_bend(centre_after,(0,1,0),z-start[2],r)
     main=rounded_polyline([last,(start[0],b['rear_y'],z),(b['side_x'],b['rear_y'],z),(b['side_x'],b['drop_y'],z)],r)
     drop,last,_=s_bend(main[-1]['end'],(0,-1,0),target[2]-z,r)
     final=rounded_polyline([last,(b['side_x'],target[1],target[2]),target],r)
-    battery=chain(lead,main,drop,final);out['battery']={str(i):offset_path(battery,o) for i,o in enumerate([2,0,-2],1)}
+    battery=chain(lead,main,drop,final)
+    out['battery']={}
+    for index,(offset,header_offset) in enumerate(zip(b['lateral_offsets'],b['header_lateral_offsets']),1):
+        pin=str(index)
+        wire_start=(start[0]-header_offset,start[1],start[2])
+        if offset!=header_offset:
+            fan,_,_=s_bend(wire_start,(0,1,0),header_offset-offset,fan_radius,(1,0,0))
+        else:
+            fan=[line(wire_start,(wire_start[0],wire_start[1]+fan_run,wire_start[2]))]
+        out['battery'][pin]=chain(fan,offset_path(battery,offset))
     return out,usb
 
 def point_at(p,t):

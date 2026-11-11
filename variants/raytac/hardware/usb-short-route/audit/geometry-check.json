@@ -40,12 +40,12 @@
       "area_delta_mm2": 1.4210854715202004e-14
     },
     {
-      "original_area_mm2": 13793.577479337147,
-      "area_delta_mm2": 4.3655745685100555e-11
+      "original_area_mm2": 13791.890911107737,
+      "area_delta_mm2": 3.456079866737127e-11
     },
     {
-      "original_area_mm2": 9908.608413417778,
-      "area_delta_mm2": 2.3646862246096134e-11
+      "original_area_mm2": 9908.608413438573,
+      "area_delta_mm2": 2.1827872842550278e-11
     },
     {
       "original_area_mm2": 1296.4612082536833,
@@ -68,20 +68,20 @@
       "area_delta_mm2": 2.4868995751603507e-14
     },
     {
-      "original_area_mm2": 920.2910404274661,
-      "area_delta_mm2": 6.821210263296962e-13
+      "original_area_mm2": 920.2910404340126,
+      "area_delta_mm2": 7.958078640513122e-13
     },
     {
-      "original_area_mm2": 220.07140118368378,
-      "area_delta_mm2": 1.2221335055073723e-12
+      "original_area_mm2": 220.07140119331532,
+      "area_delta_mm2": 1.1652900866465643e-12
     },
     {
       "original_area_mm2": 1278.063630037942,
       "area_delta_mm2": 1.1368683772161603e-12
     },
     {
-      "original_area_mm2": 1784.2280481770404,
-      "area_delta_mm2": 4.774847184307873e-12
+      "original_area_mm2": 1783.408855689776,
+      "area_delta_mm2": 5.229594535194337e-12
     },
     {
       "original_area_mm2": 141.66597341909505,
@@ -92,12 +92,12 @@
       "area_delta_mm2": 0.0
     },
     {
-      "original_area_mm2": 24037.796176361753,
-      "area_delta_mm2": 5.093170329928398e-11
+      "original_area_mm2": 24023.904283538326,
+      "area_delta_mm2": 6.912159733474255e-11
     },
     {
-      "original_area_mm2": 10128.25613705975,
-      "area_delta_mm2": 2.0190782379359007e-10
+      "original_area_mm2": 10125.034521120631,
+      "area_delta_mm2": 2.2737367544323206e-10
     },
     {
       "original_area_mm2": 36.37164279069089,
@@ -116,8 +116,8 @@
       "area_delta_mm2": 3.552713678800501e-15
     },
     {
-      "original_area_mm2": 50.662294054886225,
-      "area_delta_mm2": 2.1316282072803006e-14
+      "original_area_mm2": 50.66229405900772,
+      "area_delta_mm2": 1.4210854715202004e-14
     },
     {
       "original_area_mm2": 19.467967953511007,
@@ -134,7 +134,7 @@
   ],
   "independent_ground_connectivity": {
     "connected_components": 1,
-    "layer_regions": 57,
+    "layer_regions": 58,
     "vertical_connectors_checked": 468,
     "coordinate_join_allowance_mm": 1e-06,
     "method": "Union filled ground, pads and tracks separately by layer; join layers only through GND vias/PTH pads",
@@ -210,6 +210,13 @@
       "minimum_case_gap_mm": 0.9100000000000037,
       "minimum_mount_gap_mm": 5.661907091891944,
       "minimum_pack_gap_mm": 97.97999999999999
+    },
+    {
+      "ref": "J2",
+      "pcb_thickness_mm": 1.6062,
+      "minimum_case_gap_mm": 0.71,
+      "minimum_mount_gap_mm": 10.772543307279665,
+      "minimum_pack_gap_mm": 69.6
     },
     {
       "ref": "C44",
@@ -303,6 +310,13 @@
       "minimum_pack_gap_mm": 97.97999999999999
     },
     {
+      "ref": "J2",
+      "pcb_thickness_mm": 1.44,
+      "minimum_case_gap_mm": 0.8761999999999999,
+      "minimum_mount_gap_mm": 10.772543307279665,
+      "minimum_pack_gap_mm": 69.6
+    },
+    {
       "ref": "C44",
       "pcb_thickness_mm": 1.44,
       "minimum_case_gap_mm": 1.0762000000000054,
@@ -392,6 +406,13 @@
       "minimum_case_gap_mm": 0.7562000000000033,
       "minimum_mount_gap_mm": 5.661907091891944,
       "minimum_pack_gap_mm": 97.97999999999999
+    },
+    {
+      "ref": "J2",
+      "pcb_thickness_mm": 1.76,
+      "minimum_case_gap_mm": 0.5562000000000005,
+      "minimum_mount_gap_mm": 10.772543307279665,
+      "minimum_pack_gap_mm": 69.6
     },
     {
       "ref": "C44",
@@ -1091,9 +1112,9 @@
     }
   ],
   "source_sha256": {
-    "hardware/usb-short-route/audit/native-check.json": "a842f1dc8a459f874073a3ee2b179fe514b3af72d3ea23327085fc742386a1e1",
-    "hardware/usb-short-route/audit/USB-paths.json": "c1ddeb54abe9514e5a32fd95aa03022c43e78b15ae80a2c645688700411480b0",
-    "scripts/study_usb_short_route.py": "b2df8827a34069e232c4dfe45fc28e2c246fa4ad4d0405b3dad8733b5b2c147b",
+    "hardware/usb-short-route/audit/native-check.json": "31c01385c030ceef77bb0060d03cf0d9fa4eb8f00f123ce822dcbf0ae7e1edbc",
+    "hardware/usb-short-route/audit/USB-paths.json": "0808375dfffc5ece7c08a6d4851fb380c4a55bd9ea17df82462a3b415cc9ce02",
+    "scripts/study_usb_short_route.py": "9ae754ca695e57087120c1b1272fe8f0131431e95d0d6104c9edf792147b6b94",
     "scripts/usb_short_ground.py": "e22196ab7fc3c03383cb2e889bd38e084a634a2ac5d636e8bec78f68b054b607",
     "docs/audit/yeti60-assembly.json": "945c5ba135e46af97bc231ca1514099111e7339a23ce9dcfdbef0568f5698f46",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",

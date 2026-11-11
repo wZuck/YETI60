@@ -41,7 +41,7 @@ class ReviewPublication(unittest.TestCase):
         self.verify()
         # Distinguish this board from the retained reference's 267 pairs/816 vias.
         self.assertEqual(self.summary['physical_signal_pairs'], 411)
-        self.assertEqual(self.summary['through_vias'], 813)
+        self.assertEqual(self.summary['through_vias'], 815)
         self.assertEqual(self.summary['mainboard_parts'], 75)
         self.assertEqual(self.summary['assembly_conductors'], 9)
 

@@ -44,19 +44,21 @@ for pad in pads.values():
     for key in group:cache[key]=next_group
     next_group+=1
 xml=ET.parse(BASE/'netlist.xml').getroot()
-critical=[];split_nets=[]
+critical=[];split_nets=[];ground_checks=[];ground_split_nets=[]
 for net in xml.findall('./nets/net'):
     nodes=[(n.get('ref'),n.get('pin')) for n in net.findall('node')]
-    if len(nodes)<2 or net.get('name')=='GND':continue
+    if len(nodes)<2:continue
+    checks = ground_checks if net.get('name')=='GND' else critical
+    splits = ground_split_nets if net.get('name')=='GND' else split_nets
     reference=nodes[0]
     groups={}
     for node in nodes:
         pad=pads.get(node)
         groups.setdefault(cache.get(uid(pad)) if pad is not None else 'missing',[]).append('.'.join(node))
-    if len(groups)>1:split_nets.append({'net':net.get('name'),'physical_components':list(groups.values())})
+    if len(groups)>1:splits.append({'net':net.get('name'),'physical_components':list(groups.values())})
     for node in nodes[1:]:
         a,b=pads.get(reference),pads.get(node)
-        critical.append({'net':net.get('name'),'from':'.'.join(reference),'to':'.'.join(node),
+        checks.append({'net':net.get('name'),'from':'.'.join(reference),'to':'.'.join(node),
                          'physically_connected':a is not None and b is not None and cache[uid(a)]==cache[uid(b)]})
 counts=Counter(v['type'] for v in report['violations'] if v['severity']=='error')
 all_counts=Counter(v['type'] for v in report['violations'])
@@ -66,7 +68,7 @@ fp_refs={fp.m_Uuid.AsString():fp.GetReference() for fp in board.GetFootprints()}
 missing_courtyards=[fp_refs.get(i['uuid'],'unknown') for v in report['violations'] if v['type']=='missing_courtyard' for i in v['items']]
 manifest=json.loads((BASE/'frozen-footprints.json').read_text())
 source_files=[BASE/(NAME+'.kicad_pcb'),project,BASE/'netlist.xml',BASE/'frozen-footprints.json',BASE/'YAECKB.kicad_sym']+list(BASE.glob('*.kicad_sch'))+[BASE/'YAECKB.pretty'/(v['id'].split(':')[-1]+'.kicad_mod') for v in manifest.values()]
-summary={'status':('cad-checks-passed' if not counts and not parity_errors and not report['unconnected_items'] and all(x['physically_connected'] for x in critical) and not any(ref not in geometry_only for ref in missing_courtyards) and not any(v>=199 for v in all_counts.values()) else 'requires-routing-and-review'),'production_approved':False,'mcu_count':1,
+summary={'status':('cad-checks-passed' if not counts and not parity_errors and not report['unconnected_items'] and all(x['physically_connected'] for x in critical+ground_checks) and not any(ref not in geometry_only for ref in missing_courtyards) and not any(v>=199 for v in all_counts.values()) else 'requires-routing-and-review'),'production_approved':False,'mcu_count':1,
     'source_sha256':{str(path.relative_to(BASE)):hashlib.sha256(path.read_bytes()).hexdigest() for path in source_files},
     'enabled_previously_ignored_checks':enabled,'drc_errors_by_type':dict(counts),'schematic_parity_errors':len(parity_errors),
     'schematic_parity_by_type':dict(Counter(v['type'] for v in report.get('schematic_parity',[]))),
@@ -74,6 +76,7 @@ summary={'status':('cad-checks-passed' if not counts and not parity_errors and n
     'unexpected_component_courtyard_warnings':[ref for ref in missing_courtyards if ref not in geometry_only],
     'unconnected_items':len(report['unconnected_items']),'warnings_by_type':dict(Counter(v['type'] for v in report['violations'] if v['severity']=='warning')),
     'potentially_truncated_categories':[k for k,v in all_counts.items() if v>=199],
+    'ground_pin_pairs':ground_checks,'failed_ground_pairs':sum(not x['physically_connected'] for x in ground_checks),
     'physical_pin_pairs':critical,'failed_pin_pairs':sum(not x['physically_connected'] for x in critical),
     'split_nets':split_nets,
     'critical_paths':[{ 'from':'.'.join(a),'to':'.'.join(b),'connected':cache[uid(pads[a])]==cache[uid(pads[b])]} for a,b in [
@@ -82,10 +85,10 @@ summary={'status':('cad-checks-passed' if not counts and not parity_errors and n
         (('U6','4'),('L1','1')),(('U6','2'),('L1','2')),(('U1','4'),('U3','6')),
         (('J1','2'),('R30','1')),(('R30','2'),('U1','29')),(('J1','3'),('R31','1')),(('R31','2'),('U1','31')),
         (('U1','37'),('J3','2')),(('U1','39'),('J3','4'))]],
-    'interference_simulation':'see_shared_acceptance_report_RF_blockers_open',
+    'interference_simulation':'see_shared_acceptance_report_RF_and_USB_qualification_open',
     'limits':['Ordinary JLC through-via process checked separately; no module via-in-pad or special fill/capping','DRC does not certify regulator stability, capacitor DC bias or thermal performance','C5 native electrical/mounting checks do not verify mating plug/harness serviceability or physical assembly','Normal/calibrator target builds verified separately; on-device USB/BLE and physical EC calibration untested']}
 summary['failed_critical_paths']=sum(not x['connected'] for x in summary['critical_paths'])
 if summary['failed_critical_paths']:summary['status']='requires-routing-and-review'
 (BASE/'audit-current.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({k:v for k,v in summary.items() if k not in ('physical_pin_pairs','source_sha256')},ensure_ascii=False,indent=2))
-raise SystemExit(1 if summary['failed_critical_paths'] or counts or parity_errors or summary['unconnected_items'] or summary['failed_pin_pairs'] or summary['unexpected_component_courtyard_warnings'] or summary['potentially_truncated_categories'] else 0)
+raise SystemExit(1 if summary['failed_critical_paths'] or counts or parity_errors or summary['unconnected_items'] or summary['failed_pin_pairs'] or summary['failed_ground_pairs'] or summary['unexpected_component_courtyard_warnings'] or summary['potentially_truncated_categories'] else 0)

@@ -185,6 +185,9 @@ def verify():
     assert firmware['native_acceptance_sha256']==sha(candidate/'audit/native-check.json')
     assert firmware['local_geometry_acceptance_sha256']==sha(candidate/'audit/geometry-check.json')
     assert not short['manufacturing_released'] and not local['manufacturing_released'] and not firmware['physical_verification']
+    motion=read(candidate/'audit/plug-motion.json');hashes(motion['source_sha256'])
+    assert motion['status']=='continuous-rigid-plug-withdrawal-screen-passed' and len(motion['checks'])==6
+    assert not motion['physical_verification'] and not motion['complete_service_path_qualified']
     from check_usb_short_assembly_package import verify as verify_assembly_package
     package=verify_assembly_package()
     from study_usb_short_tolerances import verify_evidence as verify_tolerance_evidence
@@ -195,9 +198,9 @@ def verify():
     assert cam['status']=='candidate-CAM-native-roundtrip-passed'
     assert not cam['manufacturing_released'] and not cam['physical_verification'] and not cam['production_approved']
     assert cam['fitted_placements']==75 and cam['copper_lands']['fitted_lands_checked']==289
-    assert cam['drills']['total']==846 and cam['drills']['slots']==2
-    assert cam['IPC']['all_test_records_checked']==cam['IPC']['parsed_records']==1444
-    assert cam['IPC']['via_sites_checked']==813 and cam['IPC']['all_pad_sites_checked']==631
+    assert cam['drills']['total']==848 and cam['drills']['slots']==2
+    assert cam['IPC']['all_test_records_checked']==cam['IPC']['parsed_records']==1446
+    assert cam['IPC']['via_sites_checked']==815 and cam['IPC']['all_pad_sites_checked']==631
     assert cam['stencil']['omitted_DNP']==['JP1'] and cam['stencil']['apertures']==297
     return {'status':'passed','shared_links':shared_links,'controller_count':1,
             'summary_board':'Current short-USB Raytac candidate',

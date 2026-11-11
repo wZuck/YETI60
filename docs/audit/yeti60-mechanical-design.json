@@ -4,13 +4,14 @@
     "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
     "felk60/felk60_top_hhkb.step": "6cf431d629f4f7bb3feda8ecee5af6c73e4e94257777ad6ce0ddbf12174e244c",
     "felk60/felk60_bottom.step": "f4987879940643cb5b0d66145b944efb435994abe4d18808da4e45d16bb8c44b",
-    "scripts/build_yeti60_mechanical.py": "e82ac56116be00aa657ac8411eb21ca1c5673d13ad29063e0d0da930d35f8943",
+    "scripts/build_yeti60_mechanical.py": "a2324209dedb8431916dd203fdd4610787a86b2c43a945d0309607d6564b5557",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
-    "mechanical/battery-pocket-study.json": "6983679949ebb0b6bde4a7fd28b44a813305e1663c5d995cf95cf5eff22be23f"
+    "mechanical/battery-pocket-study.json": "6983679949ebb0b6bde4a7fd28b44a813305e1663c5d995cf95cf5eff22be23f",
+    "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d"
   },
   "outputs": {
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
+    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "mechanical/generated/yeti60-standoff-46.step": "11dac3a13e57d1f4fe1c3f0feda963e20c7d05939908a4b4b5ebcb9db23cbbb7"
   },
   "original_case_bounds": {
@@ -58,7 +59,8 @@
     "Four bonded M3 insert seats",
     "Four bonded M2 daughterboard insert seats",
     "8 mm underside power-switch service port",
-    "Default 1600 mAh single-cell battery recess"
+    "Default 1600 mAh single-cell battery recess",
+    "Controlled internal RF module/rounded-wing relief"
   ],
   "threads": "CAD uses thread envelopes; manufacturing drawing specifies actual threads",
   "physical_acceptance": false

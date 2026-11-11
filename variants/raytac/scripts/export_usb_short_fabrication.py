@@ -41,7 +41,7 @@ def native_map(path, purchased):
     board = pcb.LoadBoard(str(path))
     assert board.GetCopperLayerCount() == 4
     vias = [v for v in board.GetTracks() if isinstance(v, pcb.PCB_VIA)]
-    assert len(vias) == 813
+    assert len(vias) == 815
     holes = []; pads = []; positions = {}; paste = []; excluded_paste = []; ipc_pads = []
     for via in vias:
         assert via.GetViaType() == pcb.VIATYPE_THROUGH

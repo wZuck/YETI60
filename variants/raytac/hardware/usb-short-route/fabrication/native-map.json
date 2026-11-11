@@ -1,6 +1,6 @@
 {
   "copper_layers": 4,
-  "through_vias": 813,
+  "through_vias": 815,
   "holes": [
     {
       "owner": "0b05dffe-1dbe-4a19-95d9-d223471d5020",
@@ -11385,6 +11385,34 @@
       "net": "VBUS"
     },
     {
+      "owner": "848a470c-38a7-5938-9d8c-d86e6885cbe6",
+      "plated": true,
+      "center_mm": [
+        154.5,
+        -120.3
+      ],
+      "size_mm": [
+        0.3,
+        0.3
+      ],
+      "kind": "circle",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "owner": "11fa9047-4fca-51df-ac7e-d33ae9e1c4c8",
+      "plated": true,
+      "center_mm": [
+        156.485817,
+        -136.8
+      ],
+      "size_mm": [
+        0.3,
+        0.3
+      ],
+      "kind": "circle",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
       "owner": "H26.",
       "uuid": "d7902445-c369-4a1e-affe-83f545275f6b",
       "plated": false,
@@ -16515,17 +16543,17 @@
       "pin": "1",
       "net": "BAT_CELL",
       "center_mm": [
-        150.0,
-        -127.85
+        154.5,
+        -131.0
       ],
       "bbox_mm": [
         [
-          149.5,
-          -129.6
+          154.2,
+          -131.775
         ],
         [
-          150.5,
-          -126.1
+          154.8,
+          -130.225
         ]
       ],
       "layer": "B.Cu"
@@ -16535,17 +16563,17 @@
       "pin": "2",
       "net": "GND",
       "center_mm": [
-        152.0,
-        -127.85
+        155.5,
+        -131.0
       ],
       "bbox_mm": [
         [
-          151.5,
-          -129.6
+          155.2,
+          -131.775
         ],
         [
-          152.5,
-          -126.1
+          155.8,
+          -130.225
         ]
       ],
       "layer": "B.Cu"
@@ -16555,17 +16583,17 @@
       "pin": "3",
       "net": "BAT_NTC",
       "center_mm": [
-        154.0,
-        -127.85
+        156.5,
+        -131.0
       ],
       "bbox_mm": [
         [
-          153.5,
-          -129.6
+          156.2,
+          -131.775
         ],
         [
-          154.5,
-          -126.1
+          156.8,
+          -130.225
         ]
       ],
       "layer": "B.Cu"
@@ -16575,17 +16603,17 @@
       "pin": "MP",
       "net": "",
       "center_mm": [
-        147.65,
-        -122.1
+        153.2,
+        -127.125
       ],
       "bbox_mm": [
         [
-          146.9,
-          -123.8
+          152.6,
+          -128.025
         ],
         [
-          148.4,
-          -120.4
+          153.8,
+          -126.225
         ]
       ],
       "layer": "B.Cu"
@@ -16595,17 +16623,17 @@
       "pin": "MP",
       "net": "",
       "center_mm": [
-        156.35,
-        -122.1
+        157.8,
+        -127.125
       ],
       "bbox_mm": [
         [
-          155.6,
-          -123.8
+          157.2,
+          -128.025
         ],
         [
-          157.1,
-          -120.4
+          158.4,
+          -126.225
         ]
       ],
       "layer": "B.Cu"
@@ -18077,12 +18105,12 @@
       "package": "R_0402_1005Metric__R43"
     },
     "J2": {
-      "x_mm": 152.0,
-      "y_mm": -125.0,
+      "x_mm": 155.5,
+      "y_mm": -129.0,
       "angle_deg": 0.0,
       "side": "bottom",
       "value": "PROTECTED_1S_4V2_NTC10K",
-      "package": "JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal__J2"
+      "package": "JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal__J2"
     },
     "C44": {
       "x_mm": 137.0,
@@ -22524,17 +22552,17 @@
       "ref": "J2",
       "pin": "1",
       "center_mm": [
-        150.0,
-        -127.85
+        154.5,
+        -131.0
       ],
       "bbox_mm": [
         [
-          149.5,
-          -129.6
+          154.2,
+          -131.775
         ],
         [
-          150.5,
-          -126.1
+          154.8,
+          -130.225
         ]
       ]
     },
@@ -22542,17 +22570,17 @@
       "ref": "J2",
       "pin": "2",
       "center_mm": [
-        152.0,
-        -127.85
+        155.5,
+        -131.0
       ],
       "bbox_mm": [
         [
-          151.5,
-          -129.6
+          155.2,
+          -131.775
         ],
         [
-          152.5,
-          -126.1
+          155.8,
+          -130.225
         ]
       ]
     },
@@ -22560,17 +22588,17 @@
       "ref": "J2",
       "pin": "3",
       "center_mm": [
-        154.0,
-        -127.85
+        156.5,
+        -131.0
       ],
       "bbox_mm": [
         [
-          153.5,
-          -129.6
+          156.2,
+          -131.775
         ],
         [
-          154.5,
-          -126.1
+          156.8,
+          -130.225
         ]
       ]
     },
@@ -22578,17 +22606,17 @@
       "ref": "J2",
       "pin": "MP",
       "center_mm": [
-        147.65,
-        -122.1
+        153.2,
+        -127.125
       ],
       "bbox_mm": [
         [
-          146.9,
-          -123.8
+          152.6,
+          -128.025
         ],
         [
-          148.4,
-          -120.4
+          153.8,
+          -126.225
         ]
       ]
     },
@@ -22596,17 +22624,17 @@
       "ref": "J2",
       "pin": "MP",
       "center_mm": [
-        156.35,
-        -122.1
+        157.8,
+        -127.125
       ],
       "bbox_mm": [
         [
-          155.6,
-          -123.8
+          157.2,
+          -128.025
         ],
         [
-          157.1,
-          -120.4
+          158.4,
+          -126.225
         ]
       ]
     },
@@ -29365,8 +29393,8 @@
       "pin": "1",
       "net": "BAT_CELL",
       "center_mm": [
-        150.0,
-        -127.85
+        154.5,
+        -131.0
       ],
       "access_layer": 4
     },
@@ -29375,8 +29403,8 @@
       "pin": "2",
       "net": "GND",
       "center_mm": [
-        152.0,
-        -127.85
+        155.5,
+        -131.0
       ],
       "access_layer": 4
     },
@@ -29385,8 +29413,8 @@
       "pin": "3",
       "net": "BAT_NTC",
       "center_mm": [
-        154.0,
-        -127.85
+        156.5,
+        -131.0
       ],
       "access_layer": 4
     },
@@ -29395,8 +29423,8 @@
       "pin": "MP",
       "net": "",
       "center_mm": [
-        147.65,
-        -122.1
+        153.2,
+        -127.125
       ],
       "access_layer": 4
     },
@@ -29405,8 +29433,8 @@
       "pin": "MP",
       "net": "",
       "center_mm": [
-        156.35,
-        -122.1
+        157.8,
+        -127.125
       ],
       "access_layer": 4
     },
@@ -31237,10 +31265,10 @@
   ],
   "coordinate_frame": "KiCad absolute origin, millimetres; Gerber/Excellon Y is negative native PCB Y; bottom X is not mirrored",
   "source_sha256": {
-    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "fcc959db0cde7d467860e7bf60695f68d27152eebcaa172dc19bb8617264a26a",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "007f25371634e19b095bd953a43967bb9ee3107bfd3267c2194c2b3223fcb17f",
     "hardware/usb-short-route/EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82",
     "hardware/usb-short-route/EC60-nRF52840.kicad_sch": "2a43cc43fade3be555d8b5614e5be0a98025046a3f48d958baddfa79d2e81973",
-    "hardware/usb-short-route/YAECKB.kicad_sym": "6793393060f40289d1f7b51921021c2c98cebf452ba9bf6e8e8d8f5006a6a338",
+    "hardware/usb-short-route/YAECKB.kicad_sym": "2ecd60633fba9a790332f0ece155e77e4921b8e12d5f42e0d43b5088609cf227",
     "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C10.kicad_mod": "603f60e6d827170b6ced834886390c72173085b166870ffc389d5f543c7e7ac2",
     "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C11.kicad_mod": "bd45790f0d6b39a017d9fbd4b105364b6ea12a62481f9d56f5d8dc2a30114d4b",
     "hardware/usb-short-route/YAECKB.pretty/C_0402_1005Metric__C12.kicad_mod": "421213b7f0f0b21591c14584b19977b73875481ba54c1239ba1899decead30f9",
@@ -31288,8 +31316,8 @@
     "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H9.kicad_mod": "932807d67425fa948154426dcc50fbf1ba36dec9a64a912064c9bc598f02145b",
     "hardware/usb-short-route/YAECKB.pretty/JST-SR-4__J1.kicad_mod": "820ebf4da55fc08ccef2d5a05f4f6d316853358d182796becd2988f1f838717c",
     "hardware/usb-short-route/YAECKB.pretty/JST-SR-4__J4.kicad_mod": "2571c1356f46d1d644428d6210673c2f0432839e73649e37d8b27daa89211d0e",
-    "hardware/usb-short-route/YAECKB.pretty/JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal__J2.kicad_mod": "1f626ffd9ac90b0a2bf395b0f58fb5e87ec5214c75138ce87a9608d0f1173946",
     "hardware/usb-short-route/YAECKB.pretty/JST_SH_SM02B_SRSS_TB__J5.kicad_mod": "f9b1bb0f93b66fa33fdc3fec2652290ee873fdf00e29e7458c44ecd78f135200",
+    "hardware/usb-short-route/YAECKB.pretty/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal__J2.kicad_mod": "97dc7998c537f3d0f43518fe2964a42d9be7cb0263f0ee3749f374ff83ce2b5a",
     "hardware/usb-short-route/YAECKB.pretty/LED_0603_1608Metric__D2.kicad_mod": "a86ff11f3abccfc147a5805337fb03cfd097caa4de0feadde5f5d243bdd0dd97",
     "hardware/usb-short-route/YAECKB.pretty/L_Wuerth_MAPI-3015__L1.kicad_mod": "d9cdcfc66230941a32cd06e7ade267ec16f71e8ea468252971548bc4ee022647",
     "hardware/usb-short-route/YAECKB.pretty/Panasonic_EVQPUL_EVQPUC__SW1.kicad_mod": "fdb5722a6579465a04c31fd8ba64a244f72424479422bda9f831197971db647a",
@@ -31420,29 +31448,31 @@
     "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW69.kicad_mod": "45780ce8c1e861f09e755766d2c99358c41ee47338dd66c044010aeaab5d3880",
     "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "5dcd7d5efc027b1b65957f49eb562fd026dce01828bb07649eb6a3125ea37cdd",
     "hardware/usb-short-route/analog.kicad_sch": "4c64d34e07c9324a684f27c4295e78544a0077b0b9730e34e3223c926e36116d",
-    "hardware/usb-short-route/components.json": "80f1328add85178cf29a04182782d54b8017f74827ecfca7cb8d9688c8292863",
+    "hardware/usb-short-route/battery-service-j2.json": "7fc3a72fed014f5bb3a0f6bda84f39d5912ec25acf30e0acd7c5af33c34a1878",
+    "hardware/usb-short-route/components.json": "68b6b49ebeb4aeed0a0796580706825b8b9ed6a788b4eedc6bbb02640f02f36a",
     "hardware/usb-short-route/fp-lib-table": "ae74cc20692db69057b379cac2a92081855a8341eb0c5dcf3e3528140b57368a",
-    "hardware/usb-short-route/frozen-footprints.json": "ab7ea995264a17c728592307d1cd27282eca55164d0c47c775e076c59effd29e",
-    "hardware/usb-short-route/mainboard-purchase.csv": "753ec64110df03c84c5af0e09248165020cc5fd034c6d55ced51ba8614f5bb13",
-    "hardware/usb-short-route/mainboard-purchase.zh-CN.csv": "2cbfdd54ee2b32d3d808e091adfff6eedf1c15efc2d29735e71dc3d17a918615",
+    "hardware/usb-short-route/frozen-footprints.json": "2bb4fe621b86aefef730380d32f2b72a24b7a89767b3d1b399f910f50f74ef39",
+    "hardware/usb-short-route/mainboard-purchase.csv": "052dc3e3d7da2c6fb6e5818b65e364f84bc17d4afe444d36f4720fc5e3e8de07",
+    "hardware/usb-short-route/mainboard-purchase.zh-CN.csv": "9d9b32063b9e475deadf243cbe6d241e7c6ee4e7ccd0be94a4955890b996f776",
     "hardware/usb-short-route/matrix.kicad_sch": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
     "hardware/usb-short-route/metadata-audit.json": "9a5a76d3a1d93b7c876ceb873875bb01f0ec38759e85d67b1e47a125952e7a66",
     "hardware/usb-short-route/mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
-    "hardware/usb-short-route/netlist.xml": "44f177a827df33c4f9c4c70823169a8c2c3d422588496cb945a33fcdfdcf3c79",
+    "hardware/usb-short-route/netlist.xml": "365c532ae07651d31a4401e30799731210bd04e4b6d1a4d041eeac2e1fb4ee40",
     "hardware/usb-short-route/parts-qualification.json": "7491a6ce341ec389766e48f15601aaca1c03ff8c78aa1b364c95c80edb6efcd4",
     "hardware/usb-short-route/power-layout.json": "8152ff8088599113bec6c2a4744bff9a87785cf9a65f4fe1beec1b44f1bcc37a",
     "hardware/usb-short-route/power-passives.json": "23c14670410ccf6790a9c09f3fde44ed212f911639e76420330dba4f0f739dc8",
-    "hardware/usb-short-route/power.kicad_sch": "d199b5142ba7066eec2d33a42e8040bbad27111a7b9aa85467b5b9067842f767",
+    "hardware/usb-short-route/power.kicad_sch": "6cd91b292a7f05bf1a5f0089fccd3584a4222580a61b1a5efa41d4d25a335263",
     "hardware/usb-short-route/sym-lib-table": "d45513cd8e4e4ccd05e68f16dfa9399892b19383c65133140567bda6f4228cc8",
     "scripts/usb_short_fuse_contract.py": "1504857ec1203fb74110260d86ea5373dda17891de8c123213da3471faa72df9",
     "scripts/usb_short_passive_contract.py": "61a06c5f6213a64e54d4dc2803bd788fd921415ec006ad9cdca49b8d2c53c4b2",
     "scripts/usb_short_power_routes.py": "1c91d09e5139226a3a069e984bc374a7bd8679c3c78ecb9fcd15843339a2989f",
-    "scripts/usb_short_power_contract.py": "f23d5b03d116ee6388069a26d259c54b2929f80d3640316dec7c1b6dfe3ce9c8",
+    "scripts/usb_short_power_contract.py": "3f44d5aabe20b080a76ffceb4c4669f69f90c3dd059b085113fed7ae00f85993",
     "hardware/usb-short-route/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f",
     "scripts/repair_usb_short_charger_package.py": "8e74f1b7e070df3d2ec4b6f54cb14f9e94c6ea78bbc0f4f1409d50c6744d2c0f",
     "scripts/usb_short_charger_contract.py": "647d0a142f54c821bc9b1bb51804a27d73090394f6d5d267ff0786c5ab256b33",
-    "scripts/export_usb_short_fabrication.py": "875547dece26d5f1bf77be3f3e128f37f345bf83f67c2cf52d171254f359ba9a",
-    "hardware/usb-short-route/audit/native-check.json": "a842f1dc8a459f874073a3ee2b179fe514b3af72d3ea23327085fc742386a1e1",
+    "scripts/usb_short_battery_service.py": "62564ccaab6fda46ae238da6f4bd05c5bc937699b08ef5fdc839d233d8c04e41",
+    "scripts/export_usb_short_fabrication.py": "cbad1f76eee3ead09331d0584747676c33c622a2978e3e2cde7b441bff588ec5",
+    "hardware/usb-short-route/audit/native-check.json": "31c01385c030ceef77bb0060d03cf0d9fa4eb8f00f123ce822dcbf0ae7e1edbc",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "scripts/export_yeti60_usb_reference.py": "c6b1fe7c9f89c91b00abe4cabac51886adb931e1f6d596fe9c9d249ec1aac7e3"

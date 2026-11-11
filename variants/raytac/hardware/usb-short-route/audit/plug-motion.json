@@ -1,0 +1,300 @@
+{
+  "status": "continuous-rigid-plug-withdrawal-screen-passed",
+  "physical_verification": false,
+  "complete_service_path_qualified": false,
+  "manufacturing_released": false,
+  "checks": [
+    {
+      "ref": "J4",
+      "pcb_thickness_mm": 1.6062,
+      "withdrawal_axis_case": [
+        0,
+        1,
+        0
+      ],
+      "travel_mm": 3.499999999999986,
+      "nominal_sweep_bounds_case_mm": [
+        348.0,
+        -113.925,
+        -5.1,
+        353.0,
+        -105.42500000000001,
+        -2.0999999999999996
+      ],
+      "nominal_detached_bounds_case_mm": [
+        348.0,
+        -110.42500000000001,
+        -5.1,
+        353.0,
+        -105.42500000000001,
+        -2.0999999999999996
+      ],
+      "moving_housing_allowance_mm": 0.25,
+      "minimum_foreign_gap_mm": 0.5600000000000191,
+      "obstacles": [
+        {
+          "obstacle": "bottom",
+          "intersection_mm3": 0.0,
+          "gap_mm": 0.5600000000000191
+        },
+        {
+          "obstacle": "C32",
+          "intersection_mm3": 0.0,
+          "gap_mm": 2.1744252114064575
+        }
+      ]
+    },
+    {
+      "ref": "J2",
+      "pcb_thickness_mm": 1.6062,
+      "withdrawal_axis_case": [
+        0,
+        1,
+        0
+      ],
+      "travel_mm": 4.2050000000000125,
+      "nominal_sweep_bounds_case_mm": [
+        153.5,
+        -129.425,
+        -5.1,
+        157.5,
+        -120.21999999999998,
+        -2.1
+      ],
+      "nominal_detached_bounds_case_mm": [
+        153.5,
+        -125.22,
+        -5.1,
+        157.5,
+        -120.21999999999998,
+        -2.1
+      ],
+      "moving_housing_allowance_mm": 0.25,
+      "minimum_foreign_gap_mm": 0.7089102187974563,
+      "obstacles": [
+        {
+          "obstacle": "bottom",
+          "intersection_mm3": 0.0,
+          "gap_mm": 0.7089102187974563
+        },
+        {
+          "obstacle": "power-wire-0",
+          "intersection_mm3": 0.0,
+          "gap_mm": 9.319999999999979
+        },
+        {
+          "obstacle": "power-wire-1",
+          "intersection_mm3": 0.0,
+          "gap_mm": 10.319999999999979
+        }
+      ]
+    },
+    {
+      "ref": "J4",
+      "pcb_thickness_mm": 1.44,
+      "withdrawal_axis_case": [
+        0,
+        1,
+        0
+      ],
+      "travel_mm": 3.499999999999986,
+      "nominal_sweep_bounds_case_mm": [
+        348.0,
+        -113.925,
+        -4.9338,
+        353.0,
+        -105.42500000000001,
+        -1.9337999999999995
+      ],
+      "nominal_detached_bounds_case_mm": [
+        348.0,
+        -110.42500000000001,
+        -5.1,
+        353.0,
+        -105.42500000000001,
+        -2.0999999999999996
+      ],
+      "moving_housing_allowance_mm": 0.25,
+      "minimum_foreign_gap_mm": 0.726200000000019,
+      "obstacles": [
+        {
+          "obstacle": "bottom",
+          "intersection_mm3": 0.0,
+          "gap_mm": 0.726200000000019
+        },
+        {
+          "obstacle": "C32",
+          "intersection_mm3": 0.0,
+          "gap_mm": 2.1744252114064575
+        }
+      ]
+    },
+    {
+      "ref": "J2",
+      "pcb_thickness_mm": 1.44,
+      "withdrawal_axis_case": [
+        0,
+        1,
+        0
+      ],
+      "travel_mm": 4.2050000000000125,
+      "nominal_sweep_bounds_case_mm": [
+        153.5,
+        -129.425,
+        -4.9338,
+        157.5,
+        -120.21999999999998,
+        -1.9338
+      ],
+      "nominal_detached_bounds_case_mm": [
+        153.5,
+        -125.22,
+        -5.1,
+        157.5,
+        -120.21999999999998,
+        -2.1
+      ],
+      "moving_housing_allowance_mm": 0.25,
+      "minimum_foreign_gap_mm": 0.8463569804257878,
+      "obstacles": [
+        {
+          "obstacle": "bottom",
+          "intersection_mm3": 0.0,
+          "gap_mm": 0.8463569804257878
+        },
+        {
+          "obstacle": "power-wire-0",
+          "intersection_mm3": 0.0,
+          "gap_mm": 9.319999999999979
+        },
+        {
+          "obstacle": "power-wire-1",
+          "intersection_mm3": 0.0,
+          "gap_mm": 10.319999999999979
+        }
+      ]
+    },
+    {
+      "ref": "J4",
+      "pcb_thickness_mm": 1.76,
+      "withdrawal_axis_case": [
+        0,
+        1,
+        0
+      ],
+      "travel_mm": 3.499999999999986,
+      "nominal_sweep_bounds_case_mm": [
+        348.0,
+        -113.925,
+        -5.2538,
+        353.0,
+        -105.42500000000001,
+        -2.2537999999999996
+      ],
+      "nominal_detached_bounds_case_mm": [
+        348.0,
+        -110.42500000000001,
+        -5.1,
+        353.0,
+        -105.42500000000001,
+        -2.0999999999999996
+      ],
+      "moving_housing_allowance_mm": 0.25,
+      "minimum_foreign_gap_mm": 0.40620000000001877,
+      "obstacles": [
+        {
+          "obstacle": "bottom",
+          "intersection_mm3": 0.0,
+          "gap_mm": 0.40620000000001877
+        },
+        {
+          "obstacle": "C32",
+          "intersection_mm3": 0.0,
+          "gap_mm": 2.1744252114064575
+        }
+      ]
+    },
+    {
+      "ref": "J2",
+      "pcb_thickness_mm": 1.76,
+      "withdrawal_axis_case": [
+        0,
+        1,
+        0
+      ],
+      "travel_mm": 4.2050000000000125,
+      "nominal_sweep_bounds_case_mm": [
+        153.5,
+        -129.425,
+        -5.2538,
+        157.5,
+        -120.21999999999998,
+        -2.2538
+      ],
+      "nominal_detached_bounds_case_mm": [
+        153.5,
+        -125.22,
+        -5.1,
+        157.5,
+        -120.21999999999998,
+        -2.1
+      ],
+      "moving_housing_allowance_mm": 0.25,
+      "minimum_foreign_gap_mm": 0.5949387685429962,
+      "obstacles": [
+        {
+          "obstacle": "bottom",
+          "intersection_mm3": 0.0,
+          "gap_mm": 0.5949387685429962
+        },
+        {
+          "obstacle": "power-wire-0",
+          "intersection_mm3": 0.0,
+          "gap_mm": 9.319999999999979
+        },
+        {
+          "obstacle": "power-wire-1",
+          "intersection_mm3": 0.0,
+          "gap_mm": 10.319999999999979
+        }
+      ]
+    }
+  ],
+  "J2_shift_PCB_mm": [
+    3.5,
+    4.0
+  ],
+  "SH_housing_depth_screen_mm": 5.0,
+  "pre_repair_baseline_commit": "3db2f94f72f6125d426afa5a24fd7e4a45c8d019",
+  "pre_repair_regression": {
+    "H8_overlap_mm3": 6.440031875216049,
+    "bottom_overlap_mm3": 24.42808130975955
+  },
+  "scope": "Case top removed; straight axial rigid housings at seated PCB datum; full continuous box sweeps, reversible for insertion",
+  "not_qualified": [
+    "Actual housing tolerance/latches and insertion/withdrawal forces",
+    "Tool/finger approach, own-wire deformation, strain relief and loose-plug parking",
+    "Connected stack lifting, full flexible service and physical assembly"
+  ],
+  "primary_sources": [
+    "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+    "https://www.jst-mfg.com/product/pdf/eng/handling_e.pdf"
+  ],
+  "source_sha256": {
+    "scripts/check_usb_short_plug_motion.py": "849a687072f4e358ebf9bfe912c60bd05f99defcddc5b8a2ca514c05909bfe84",
+    "scripts/usb_short_battery_service.py": "62564ccaab6fda46ae238da6f4bd05c5bc937699b08ef5fdc839d233d8c04e41",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_yeti60_assembly.py": "049759707a29a2cb0370e2a11764a1c3856897d56be1f772cccfe5692c34bbce",
+    "scripts/check_usb_short_closed_assembly.py": "4200672030cafeeeef068662dcd1c848fc0f1e022f4bd03ab2b14e9d6ce5f173",
+    "scripts/usb_short_harness.py": "b70cd37b0a47fe73b40ce38f62f2d01453090733b67669b3fb4847087e01827c",
+    "scripts/interconnect_geometry.py": "a3ea2cd5cbe15cfa5aebaf89d961e3387e9c183e147564f27fa4d5aa9477c5c2",
+    "hardware/usb-short-route/interconnect-spec.json": "cb63fe24b3e7fec59de81a34a74c0b10d05497965a670bf42b8a3194eb2096ec",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "007f25371634e19b095bd953a43967bb9ee3107bfd3267c2194c2b3223fcb17f",
+    "hardware/usb-short-route/audit/assembly.json": "2aad5c0e437dbf1870f7269702db197b8d5e259d04d2fb9b391134bca76efb1f",
+    "hardware/usb-short-route/audit/closed-assembly.json": "776358a916480b4c8d3e44dc154ba642960b181759eea0b21d0ce99a1c679355",
+    "hardware/usb-short-route/audit/guides.json": "0eae2e5ea1b2b1ce152d2b8bc3b2cc31670de1704c3809fd4af317454f67f46a",
+    "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step": "40a0f23a7e93a365e9b7fe95efce1c276631771eec777c4701f9fcfd86bfecaa",
+    ".assembly-work/pcb-placed.step": "1d67cbd221ef059acb226f9e83df29e895e2563d94c2d76efb3858bd66d51266"
+  }
+}

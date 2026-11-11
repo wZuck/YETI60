@@ -1,8 +1,8 @@
 {
   "status": "conditional-fit-review",
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
-    "mechanical/generated/yeti60-bottom.step": "147e16c3b3b14c6a9a67c59d6f65fa4cc5bc9e97f213d9b15f4b76b07b3bb565",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
+    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
@@ -13,7 +13,7 @@
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/export_yeti60_mechanical_metadata.py": "eeea9300b7c98fbd973567caf6971ba692144ae2717dd9e74a8e949861afd750"
   },
-  "mechanical_metadata_sha256": "eb0b698325cae9f6fa8ba2a2e3d7a3389ba3f01d2d2b187a48b825cc871d599a",
+  "mechanical_metadata_sha256": "ea2705f0249d8c22a3442a32b917f2d394e126de5a56cb40a1702417d07eab7e",
   "pcb_frame_to_case": "X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z",
   "nominal_stack": {
     "bottom_gasket_ledge_z": 3.19,
@@ -807,8 +807,8 @@
     0.0
   ],
   "pcb_case_distances_mm": [
-    0.7999600063555573,
-    5.245161432385325
+    0.5937999999999997,
+    5.183799999999995
   ],
   "plate_case_overlap_mm3": [
     0.0,
@@ -1557,24 +1557,24 @@
       "value": "100n/16V",
       "back": true,
       "position_pcb_mm": [
-        337.5,
-        121.0
+        343.6,
+        120.325
       ],
-      "angle_deg": 0.0,
+      "angle_deg": 180.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        336.565,
-        120.515,
-        338.435,
-        121.485
+        342.665,
+        119.84,
+        344.535,
+        120.81
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        336.565,
-        -121.485,
+        342.665,
+        -120.81,
         -5.0,
-        338.435,
-        -120.515,
+        344.535,
+        -119.84,
         -1.9999999999999998
       ],
       "collision_volume_mm3": [
@@ -1749,31 +1749,31 @@
       "value": "10u/10V",
       "back": true,
       "position_pcb_mm": [
-        334.0,
-        119.0
+        343.0,
+        123.0
       ],
-      "angle_deg": 0.0,
+      "angle_deg": 180.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        332.495,
-        118.245,
-        335.505,
-        119.755
+        341.495,
+        122.245,
+        344.505,
+        123.755
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        332.495,
-        -119.755,
+        341.495,
+        -123.755,
         -5.0,
-        335.505,
-        -118.245,
+        344.505,
+        -122.245,
         -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000161
+      "min_case_distance_mm": 0.9100000000000135
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1877,31 +1877,31 @@
       "value": "4.7u/10V",
       "back": true,
       "position_pcb_mm": [
-        334.5,
-        122.0
+        350.0,
+        114.0
       ],
-      "angle_deg": 0.0,
+      "angle_deg": 90.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        332.995,
-        121.245,
-        336.005,
-        122.755
+        349.245,
+        112.495,
+        350.755,
+        115.505
       ],
       "height_envelope_mm": 3.0,
       "height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
       "bounds_case_mm": [
-        332.995,
-        -122.755,
+        349.245,
+        -115.505,
         -5.0,
-        336.005,
-        -121.245,
+        350.755,
+        -112.495,
         -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.9100000000000144
+      "min_case_distance_mm": 0.9100000000000179
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -1969,40 +1969,40 @@
     },
     {
       "physical_body_bbox_pcb_mm": [
-        341.5,
-        116.4,
-        354.70000000000005,
-        134.6
+        345.9,
+        116.9,
+        364.1,
+        130.1
       ],
       "ref": "U1",
       "value": "E73-2G4M08S1C",
       "back": true,
       "position_pcb_mm": [
-        354.6,
-        116.5
+        346.0,
+        117.0
       ],
-      "angle_deg": -90.0,
+      "angle_deg": 0.0,
       "xy_courtyard_and_graphics_bbox_pcb_mm": [
-        340.275,
-        115.175,
-        355.925,
-        134.775
+        344.675,
+        115.675,
+        364.275,
+        131.325
       ],
       "height_envelope_mm": 3.1,
       "height_basis": "Ebyte module specification: 3.0 mm nominal plus 0.1 mm tolerance",
       "bounds_case_mm": [
-        341.5,
-        -134.6,
+        345.9,
+        -130.1,
         -5.1,
-        354.70000000000005,
-        -116.4,
+        364.1,
+        -116.9,
         -1.9999999999999998
       ],
       "collision_volume_mm3": [
         0.0,
         0.0
       ],
-      "min_case_distance_mm": 0.8100000000000085
+      "min_case_distance_mm": 0.5
     },
     {
       "physical_body_bbox_pcb_mm": null,
@@ -3296,7 +3296,7 @@
       "pcb_to_plate_gap_mm": 4.0,
       "pcb_bottom_z": -1.4000000000000001,
       "pcb_case_overlap_mm3": [
-        0.0,
+        0.38313124855899067,
         0.0
       ],
       "flat_floor_pack_thickness_budget_mm": 3.51
@@ -3380,7 +3380,7 @@
     "PCB_top_fixed": true,
     "minimum_component_case_gap_over_thickness_range_mm": 0.256199999999998,
     "minimum_gap_after_case_tolerance_mm": 0.10619999999999799,
-    "minimum_max_thickness_board_case_gap_mm": 0.7999600063555562,
+    "minimum_max_thickness_board_case_gap_mm": 0.5937999999999994,
     "PCB_outline_allowance_mm": 0.2,
     "minimum_pack_to_worst_depth_fastener_mm": 0.5462000000000007,
     "minimum_washer_component_gap_mm": 0.1775440000000117,

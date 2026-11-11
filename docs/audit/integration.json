@@ -55,7 +55,7 @@
     {
       "id": "signal-interference",
       "status": "open",
-      "description": "Both variants screened: Raytac vendor antenna keepout has GND copper; E73 provisional antenna-end band has copper and nearby plate metal. TI AFE simulation completed; RF, USB SI and physical immunity qualification remain open"
+      "description": "Both native antenna projections now clear host copper and original plate metal; E73 region remains provisional. USB protection branch layout, complete USB SI, RF and physical immunity qualification remain open"
     }
   ]
 }

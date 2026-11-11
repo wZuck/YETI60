@@ -35,13 +35,18 @@ def main():
     p=ROOT/'docs/audit/yeti60-target-build.json';build=json.loads(p.read_text())
     assert build['status']=='built' and build['board']=='yeti60'
     assert set(build['variants'])=={'normal','calibrator'}
+    policy=(ROOT/'firmware/target/src/usb_policy.c').read_text()
+    assert 'ports[pin / 32], pin % 32' in policy, 'E73 CE_N uses GPIO1'
+    assert 'zephyr_ld_options(-Wl,--wrap=usb_enable)' in (ROOT/'firmware/target/CMakeLists.txt').read_text()
+    scanner=(ROOT/'firmware/target/src/scanner.c').read_text()
+    assert 'yeti_target_usb_init()' in scanner and 'yeti_target_usb_poll()' in scanner
     for name,h in build['source_sha256'].items():assert sha(ROOT/name)==h,'Stale firmware source: '+name
     details={}
     for variant,record in build['variants'].items():
         for name,h in record['outputs'].items():assert sha(ROOT/name)==h,'Changed firmware output: '+name
         folder=ROOT/'firmware/releases'/variant;elf=(folder/'yeti60-e73.elf').read_bytes()
         assert elf[:6]==b'\x7fELF\x01\x01' and struct.unpack_from('<H',elf,18)[0]==40,'Not a 32-bit ARM ELF'
-        for symbol in [b'yeti_target_usb_poll\0',b'yeti_cal_thresholds\0',b'yeti_scan\0',b'bt_enable\0',b'zmk_hog_send_keyboard_report\0',b'zmk_usb_get_status\0']:
+        for symbol in [b'yeti_target_usb_poll\0',b'yeti_target_usb_init\0',b'__wrap_usb_enable\0',b'yeti_cal_thresholds\0',b'yeti_scan\0',b'bt_enable\0',b'zmk_hog_send_keyboard_report\0',b'zmk_usb_get_status\0']:
             assert symbol in elf,'Missing target implementation: '+str(symbol)
         assert len((folder/'yeti60-e73.bin').read_bytes())<0xf0000
         offset=0;seen=set();ended=False;image={}

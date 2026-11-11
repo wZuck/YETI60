@@ -64,9 +64,15 @@ def validate_native(tree, spec):
     original=loads(subprocess.check_output(['git','show',baseline['baseline_commit']+':variants/raytac/hardware/usb-short-route/EC60-nRF52840.kicad_pcb'],cwd=ROOT).decode())
     assert geometry_sha(original)==baseline['non_model_sha256']['hardware/usb-short-route/EC60-nRF52840.kicad_pcb']
     apply_tree(original)
-    assert geometry_sha(no_fills(tree))==geometry_sha(no_fills(original)),'Unlisted non-model board change beyond the documented thermal-package repair'
+    from usb_short_battery_service import apply_tree as apply_battery_service
+    apply_battery_service(original)
+    assert geometry_sha(no_fills(tree))==geometry_sha(no_fills(original)),'Unlisted non-model board change beyond the documented thermal-package and battery-service repairs'
     for path,digest in baseline['non_model_sha256'].items():
         if path.endswith('.kicad_pcb'):continue
+        if path.endswith('JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal__J2.kicad_mod'):
+            record=json.loads((BASE/'battery-service-j2.json').read_text())
+            assert geometry_sha(loads((BASE/record['frozen_FCu_library']).read_text()))==record['frozen_library_non_model_sha256']
+            continue
         current=loads((ROOT/path).read_text())
         ref=next((ref for ref in ['U5','U6'] if path.endswith('__'+ref+'.kicad_mod')),None)
         if ref:
@@ -115,6 +121,11 @@ def apply_model_envelopes(assembly):
                              bounds_case_mm=enlarged, height_envelope_mm=z-enlarged[2],
                              height_basis='Native nominal model plus engineering modeling allowance; not supplier-qualified')
         component = byref[ref]
+        # These values came from the held, smaller reference envelopes. Current
+        # case fit is measured by the candidate geometry/extraction checks.
+        for key in ['collision_volume_mm3','min_case_distance_mm']:
+            if key in component:
+                component['held_reference_'+key]=component.pop(key)
         previous = component['bounds_case_mm']
         component.setdefault('previous_envelope_bounds_case_mm', previous)
         component['bounds_case_mm'] = [min(previous[i], enlarged[i]) if i < 3 else max(previous[i], enlarged[i]) for i in range(6)]

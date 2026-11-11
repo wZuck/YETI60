@@ -4,7 +4,7 @@ English | [Chinese](README.zh-CN.md)
 
 [Remediation plan and closing evidence](remediation-plan.md) · [Guarded per-key calibration](calibration.md) · [USB path review](USB-paths.md)
 
-**Design acceptance is on hold.** Both alternatives build and pass the implemented electrical/CAD checks, but the new interference screen found antenna layout risks. Raytac has GND copper inside its manufacturer's minimum antenna projection; E73 has copper in a provisional antenna-end screen and lacks a vendor-approved numeric keepout. Nearby metal plate projections affect both. See [interference results, calculations and sources](interference.md). No physical board exists; no physical row below is a pass.
+**Design acceptance remains on hold.** Antenna engineering projections are now clear of host copper and plate metal, but RF range/immunity and USB eyes remain unmeasured. See the [current E73 review](../audit/e73-review.md) for USB branches, PH withdrawal and the unported plate. Raytac uses its [separate candidate entry](../../variants/raytac/BUILD.md). No physical item is recorded as passed.
 
 Choose one complete alternative throughout assembly, programming and testing:
 
@@ -15,19 +15,19 @@ Both alternatives use the same wired policy: a configured computer connection ch
 | E73-2G4M08S1C, default | [28 steps, including bare-PCB soldering](../assembly/build-guide.md) | [HEX files and flash/calibration procedure](../../firmware/target/README.md) |
 | Raytac MDBT50Q-1MV2 | [28 steps, including bare-PCB soldering](../../variants/raytac/docs/assembly/build-guide.md) | [Independent HEX files and procedure](../../variants/raytac/firmware/target/README.md) |
 
-E73 needs reflow for its five connected bottom lands; exposed edge pads do not make the complete board iron-only. Both alternatives also contain hidden-pad power packages. Inspect the selected stencil, paste and process before assembly. Do not mix mainboard Gerbers, module, pin contract or firmware between alternatives. The C5 JSH and case are shared; select the optional C5 bare-board steps only when building it yourself.
+E73 needs reflow for its five connected bottom lands; exposed edge pads do not make the complete board iron-only. Both alternatives also contain hidden-pad power packages. Inspect the selected stencil, paste and process before assembly. Do not mix mainboard Gerbers, module, pin contract or firmware between alternatives. Retain the existing C5 JSH. Current case reliefs, plate and harness details differ between options; use the selected entry. Skip optional C5 bare-board steps when reusing the already-made board.
 
 ## Executed design checks
 
-The current [acceptance record](../audit/acceptance.json) separates successful test execution from product acceptance. It records input/output hashes, both full audit results, four ARM artifacts, host simulation, RF/USB screening, TI OPA350 SPICE results and conditional case/plate fit. The [combined audit](../audit/variants.json) checks both options in this same branch.
+Current E73 evidence is the [complete review run](../audit/e73-review-run.json) and [readiness gates](../audit/e73-readiness.json). The [older combined acceptance record](../audit/acceptance.json) is a historical baseline, not release evidence for the current Raytac candidate or E73 revision. The [two-option check](../audit/variants.json) verifies the current designs separately and records maturity differences.
 
 | Gate | Current evidence | Meaning |
 |---|---|---|
-| Connectivity / ordinary JLC process | Native strict DRC: 0 errors, 0 opens, 270 physical signal pairs per board | CAD pass; 114 E73 / 108 Raytac warnings remain disclosed |
+| Connectivity / ordinary JLC process | Native strict DRC: 0 errors, 0 opens, 270 physical signal pairs per board | CAD pass; E73 has 102 expected virtual-courtyard warnings; use each native report for its scope |
 | Firmware | Normal and calibrator ARM ELF/BIN/HEX for each option; host ASan/UBSan tests | Build and portable-core checks; GPIO/ADC/USB/BLE are mocked in host tests |
 | Noise behavior | 2000 hysteresis-band frames plus 2000 correlated-ripple / isolated-burst frames per option | Expected debounce behavior passes; two sustained over-threshold frames still cause synthetic false keys |
 | Analog front end | Pinned official TI OPA350 model; 28 sensitivity cases | AC/transient model checks pass; physical noise margin is unknown |
-| RF / USB SI | Actual four-layer copper intersections, plate BRep projection and contact-aware USB main/stub paths | RF blockers and long TVS branches open; no RF field solution, antenna match, impedance extraction or USB eye acceptance |
+| RF / USB SI | Actual four-layer copper intersections, plate BRep projection and contact-aware USB main/stub paths | Antenna projections clear; E73 long TVS branches remain open; no RF field solution, antenna match, impedance extraction or USB eye acceptance |
 | Assembly | 60 keys, 29 mounts, original case scale; current component/pack/harness envelopes | Conditional CAD fit only; real dome compression, supplier pack, resin and fasteners remain unqualified |
 
 ## Reproduce the checks
@@ -35,11 +35,11 @@ The current [acceptance record](../audit/acceptance.json) separates successful t
 Run at the repository root. The CAD environment must satisfy [requirements-audit.txt](../../requirements-audit.txt); KiCad Python and `ngspice` are also required. `KICAD_PYTHON` and `YETI_CAD_PYTHON` may point at installed runtimes. TI's model is downloaded into ignored local storage and verified against a pinned SHA-256; it is not redistributed.
 
 ```sh
-python3 scripts/run_acceptance.py --refresh-guide
-python3 scripts/check_yeti60_acceptance.py
+python3 scripts/run_e73_review.py --require-design
+python3 scripts/run_all_variants.py --check-existing
 ```
 
-The first command reruns both full audits, regenerates their guides when requested, runs native layout screening, SPICE, plate screening and negative tests, then writes acceptance evidence. Exit 0 means the checks executed and their evidence is consistent, including recorded failures/open gates. It does **not** mean the keyboard passed acceptance. `python3 scripts/check_yeti60_acceptance.py --require-design` exits 2 while a design gate is open or failed; `--require-accepted` exits 2 while any required gate remains open. Gate states are derived from fresh evidence; design closure cannot close physical or supplier gates. Missing dependencies, stale evidence or failed test execution exit nonzero. Existing 3D renders are hash-checked; PCB/case changes require their normal regeneration workflow.
+The first command reruns the complete E73 checks and returns 2 while design gates remain open. The second rechecks existing evidence and integration for both options, recording structural, harness, purchase and firmware maturity differences. It does not require identical source or BOMs, and successful execution is not product acceptance. Recheck the Raytac repair package through its handbook. The older `run_acceptance.py` covers the historical formal-board baseline and must not release the candidate.
 
 ## First-article sequence
 

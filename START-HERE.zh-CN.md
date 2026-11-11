@@ -9,3 +9,5 @@
 **Raytac 首样下单暂停放行：**[新增 USB 及电池研究](variants/raytac/docs/engineering/prototype-qualification.zh-CN.md)要求继续修补／验收，DRC 通过不能代替这些项目。先看[含电池的无外壳首样流程](variants/raytac/OPEN-BENCH.zh-CN.md)，初测不需要外壳。当前 `dfm-review` 压缩包仍未放行下单。
 
 [已选定的按键机构、直接购买清单与定位板](variants/raytac/docs/build/key-mechanism.zh-CN.md)：NiZ 轴座滑块＋独立钢板卫星轴＋居中 6U 键帽，使用新 1.6 mm 定位板。
+
+**E73 另一方案：**从 [E73 审查与制作入口](BUILD.zh-CN.md)查看完整检查、匹配固件及材料。当前已确认 USB 保护支路、定位板和电池插头拔出干涉问题，尚不能作为已验收方案下单；已做好的 C5 子板保留。

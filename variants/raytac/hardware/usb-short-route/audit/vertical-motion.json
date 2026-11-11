@@ -277,7 +277,7 @@
     {
       "part": "J2",
       "intersection_mm3": 0.0,
-      "minimum_nominal_gap_mm": 0.8096881467556127
+      "minimum_nominal_gap_mm": 0.71
     },
     {
       "part": "C44",
@@ -1050,16 +1050,16 @@
   ],
   "source_sha256": {
     "scripts/check_usb_short_vertical_motion.py": "7ae6c67c896a58579054e98f249b9bcb0382dd4386317ebe91d66f78f226a72d",
-    "hardware/usb-short-route/interconnect-spec.json": "f17b44770a579595d699bcf128744ac3af68ad77895621e4dfe7f156bdf8b6d7",
-    "hardware/usb-short-route/audit/assembly.json": "fe5b67f26bdd4ba352f42f0910715d3931a43121f018e89d71847d7b0cb7acb6",
-    "hardware/usb-short-route/audit/guides.json": "3631320d515c29f6c6df568cfc2027fc2bc16dab46031fe00eb42f7b063c74ee",
-    "hardware/usb-short-route/audit/closed-assembly.json": "7b91c9834bf7d61e69e1c69e0498cc185d2790e18e0eeead4a3bb6a7671d53ef",
+    "hardware/usb-short-route/interconnect-spec.json": "cb63fe24b3e7fec59de81a34a74c0b10d05497965a670bf42b8a3194eb2096ec",
+    "hardware/usb-short-route/audit/assembly.json": "2aad5c0e437dbf1870f7269702db197b8d5e259d04d2fb9b391134bca76efb1f",
+    "hardware/usb-short-route/audit/guides.json": "0eae2e5ea1b2b1ce152d2b8bc3b2cc31670de1704c3809fd4af317454f67f46a",
+    "hardware/usb-short-route/audit/closed-assembly.json": "776358a916480b4c8d3e44dc154ba642960b181759eea0b21d0ce99a1c679355",
     "hardware/usb-short-route/mechanical/yeti60-bottom-short-usb.step": "40a0f23a7e93a365e9b7fe95efce1c276631771eec777c4701f9fcfd86bfecaa",
-    ".assembly-work/pcb-placed.step": "9d3c34c4f42fca9b0712ab2fad6ccf64823e53af69dc6867c3879995cdeb7da5",
+    ".assembly-work/pcb-placed.step": "1d67cbd221ef059acb226f9e83df29e895e2563d94c2d76efb3858bd66d51266",
     "hardware/usb-short-route/mechanical/yeti60-niz-pm1-c04.step": "0f0183702c2ca54428f39c8dd0c23e74af0db627fec648f50e50958c4da873ef",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/check_yeti60_assembly.py": "049759707a29a2cb0370e2a11764a1c3856897d56be1f772cccfe5692c34bbce",
-    "scripts/usb_short_harness.py": "8587da881ced0c0305691f13fdf6c54fe42be671bd2f7424d128387cff1400cb"
+    "scripts/usb_short_harness.py": "b70cd37b0a47fe73b40ce38f62f2d01453090733b67669b3fb4847087e01827c"
   }
 }

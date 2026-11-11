@@ -5,6 +5,9 @@ Use KiCad's Python. Pass a PCB path, or check the canonical routed review board.
 This does not replace ERC, DRC, assembly fit or interference simulation.
 """
 import json
+import subprocess
+import tempfile
+from yeti60_rf_geometry import matches_controlled_outline
 from pathlib import Path
 import sys
 import xml.etree.ElementTree as ET
@@ -68,14 +71,30 @@ def main():
     require(source.GetCopperLayerCount()==target.GetCopperLayerCount()==4,'Layer stack mismatch')
     profile=json.loads((ROOT/'mechanical/pcb-fabrication-spec.json').read_text())
     require(abs(pcb.ToMM(target.GetDesignSettings().GetBoardThickness())-profile['CAD_finished_envelope_mm'])<1e-6,'Ordinary-stack board thickness mismatch')
-    require(outline(source)==outline(target),'Changed board outline')
+    rf=json.loads((ROOT/'mechanical/rf-remediation.json').read_text())
+    if rf.get('native_implemented',False):
+        require(matches_controlled_outline(outline(source),outline(target),rf,pcb),'Outline differs outside the controlled rounded RF wing')
+        repo=Path(subprocess.check_output(['git','rev-parse','--show-toplevel'],cwd=ROOT,text=True).strip())
+        relative=str((BASE/'EC60-nRF52840.kicad_pcb').relative_to(repo))
+        payload=subprocess.check_output(['git','show',rf['front_geometry_baseline_commit']+':'+relative],cwd=ROOT)
+        with tempfile.TemporaryDirectory(prefix='yeti60-front-baseline-') as folder:
+            saved=Path(folder)/'baseline.kicad_pcb';saved.write_bytes(payload)
+            baseline=pcb.LoadBoard(str(saved));before={f.GetReference():f for f in baseline.GetFootprints()}
+            for fp in source.GetFootprints():
+                if not str(fp.GetFPID().GetLibItemName()).startswith('ecs_pad_'):continue
+                ref=fp.GetReference()
+                a=sorted(pad_geometry(p) for p in before[ref].Pads() if p.IsOnLayer(pcb.F_Cu))
+                b=sorted(pad_geometry(p) for p in actual[ref].Pads() if p.IsOnLayer(pcb.F_Cu))
+                require(a==b,'Changed published front signal or ground land '+ref)
+    else:
+        require(outline(source)==outline(target),'Changed board outline')
     for ref in ('REF**',):
         a=next(f for f in source.GetFootprints() if f.GetReference()==ref)
         ap=sorted((p.GetPosition().x,p.GetPosition().y,p.GetDrillSize().x,p.GetDrillSize().y) for p in a.Pads())
         bp=sorted((p.GetPosition().x,p.GetPosition().y,p.GetDrillSize().x,p.GetDrillSize().y) for p in actual[ref].Pads())
         require(ap==bp,'Changed mounting holes')
     display_path=str(path.relative_to(ROOT)) if ROOT in path.parents else str(path)
-    result={'pcb':display_path,'netlist_parity':'pass','electrode_footprints_preserved':electrodes,'mounting_holes':'pass','copper_layers':4,'interference_simulation':'see_shared_acceptance_report_RF_blockers_open'}
+    result={'pcb':display_path,'netlist_parity':'pass','electrode_footprints_preserved':electrodes,'mounting_holes':'pass','controlled_RF_wing':rf.get('native_implemented',False),'front_geometry_baseline':rf['front_geometry_baseline_commit'],'copper_layers':4,'interference_simulation':'see_shared_acceptance_report_RF_and_USB_qualification_open'}
     (BASE/'pcb-contract-check.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result))
 

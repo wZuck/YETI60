@@ -29,10 +29,14 @@ def main():
         sources.append(path.with_suffix('.kicad_pro'))
         before=sha(path);board=pcb.LoadBoard(str(path))
         outline=pcb.SHAPE_POLY_SET();assert board.GetBoardPolygonOutlines(outline,False)
-        outline.BooleanAdd(rectangle(spec['proposed_PCB_wing_XY']))
+        if not spec.get('native_implemented',False):outline.BooleanAdd(rectangle(spec['proposed_PCB_wing_XY']))
         module=next(f for f in board.GetFootprints() if f.GetReference()=='U1')
-        pose=spec['placements'][name];module.SetOrientationDegrees(pose['rotation_deg'])
-        module.SetPosition(pcb.VECTOR2I(*[pcb.FromMM(v) for v in pose['origin_PCB_XY']]))
+        pose=spec['placements'][name]
+        position=pcb.VECTOR2I(*[pcb.FromMM(v) for v in pose['origin_PCB_XY']])
+        if spec.get('native_implemented',False):
+            assert module.GetPosition()==position and abs(module.GetOrientationDegrees()-pose['rotation_deg'])<1e-6
+        else:
+            module.SetOrientationDegrees(pose['rotation_deg']);module.SetPosition(position)
         margins=[];pads=[]
         for pad in module.Pads():
             outside=pcb.SHAPE_POLY_SET();outside.BooleanSubtract(pad.GetEffectivePolygon(pcb.B_Cu),outline)
@@ -48,9 +52,9 @@ def main():
                        'fabrication_allowance_mm':spec['additional_fabrication_outline_allowance'],
                        'combined_conservative_edge_allowance_passed':True,
                        'minimum_right_edge_margin_mm':min(margins),'pads':pads,'source_mutated':False}
-    report={'status':'candidate-land-support-passed-native-routing-pending','candidate_only':True,
+    report={'status':'native-RF-land-support-passed' if spec.get('native_implemented',False) else 'candidate-land-support-passed-native-routing-pending','candidate_only':not spec.get('native_implemented',False),
             'production_approved':False,'physical_verification':False,'variants':records,
-            'limits':['Original outline plus proposed rectangular wing only; corner fillets must preserve these margins',
+            'limits':['Final native rounded outline is used after implementation; candidate mode uses a rectangular wing',
                       'No routing, DRC, intercomponent collision or solder-joint strength acceptance'],
             'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources}}
     (ROOT/'docs/audit/rf-remediation-lands.json').write_text(json.dumps(report,indent=2)+'\n')

@@ -256,7 +256,7 @@
       "STEP_preserves_case_coordinates": true,
       "bond_pair": null,
       "nearest_retained_part_gap_mm": 999,
-      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999999101
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.1000000000000044
     },
     {
       "name": "BAT-R2",
@@ -288,7 +288,7 @@
       "STEP_preserves_case_coordinates": true,
       "bond_pair": null,
       "nearest_retained_part_gap_mm": 999,
-      "minimum_channel_to_nominal_insulation_gap_mm": 0.0999999999999982
+      "minimum_channel_to_nominal_insulation_gap_mm": 0.09999999999998901
     },
     {
       "name": "PWR-R1",
@@ -778,11 +778,11 @@
     }
   ],
   "source_sha256": {
-    "hardware/usb-short-route/audit/closed-assembly.json": "7b91c9834bf7d61e69e1c69e0498cc185d2790e18e0eeead4a3bb6a7671d53ef",
-    "hardware/usb-short-route/interconnect-spec.json": "f17b44770a579595d699bcf128744ac3af68ad77895621e4dfe7f156bdf8b6d7",
+    "hardware/usb-short-route/audit/closed-assembly.json": "776358a916480b4c8d3e44dc154ba642960b181759eea0b21d0ce99a1c679355",
+    "hardware/usb-short-route/interconnect-spec.json": "cb63fe24b3e7fec59de81a34a74c0b10d05497965a670bf42b8a3194eb2096ec",
     "scripts/export_usb_short_guides.py": "f35cbbd5a6f0b7ecdf1118d7369289ca2df366a44079806bb85448d4d05e57e4",
     "scripts/usb_short_guides.py": "5b42dccfbd7ada9a5d76ba447ae50b94fbf80c47a588f13ce1f2e6a4d2fdf3b8",
-    "scripts/usb_short_harness.py": "8587da881ced0c0305691f13fdf6c54fe42be671bd2f7424d128387cff1400cb"
+    "scripts/usb_short_harness.py": "b70cd37b0a47fe73b40ce38f62f2d01453090733b67669b3fb4847087e01827c"
   },
   "printing": {
     "units": "mm",

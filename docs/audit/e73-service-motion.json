@@ -1,0 +1,51 @@
+{
+  "status": "design-obstruction-found",
+  "physical_verification": false,
+  "complete_service_path_qualified": false,
+  "manufacturing_released": false,
+  "plug_depth_mm": 6.85,
+  "withdrawal_mm": 3.75,
+  "plug_case_bounds_mm": [
+    148.1,
+    -123.85,
+    -7.5,
+    155.9,
+    -117.0,
+    -2
+  ],
+  "sweep_case_bounds_mm": [
+    148.1,
+    -123.85,
+    -7.5,
+    155.9,
+    -113.25,
+    -2
+  ],
+  "checks": [
+    {
+      "obstacle": "bottom",
+      "sweep_overlap_mm3": 23.063861309759563,
+      "gap_mm": 0.0,
+      "seated_overlap_mm3": 0.0,
+      "detached_overlap_mm3": 23.06386130975954
+    },
+    {
+      "obstacle": "H8",
+      "sweep_overlap_mm3": 6.097751739216049,
+      "gap_mm": 0.0,
+      "seated_overlap_mm3": 0.0,
+      "detached_overlap_mm3": 6.097751739216049
+    }
+  ],
+  "scope": "Nominal axial rigid PH body; case top removed; full sweep includes intermediate positions. No allowance inflation, wires, tools or extraction-force qualification.",
+  "primary_source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+  "source_sha256": {
+    "scripts/study_e73_service.py": "db80dd875752f7edb5a257573078c76a60d7bdbbeb242de39a50f9c459d672e9",
+    "docs/audit/yeti60-assembly.json": "8bc20d93d2929e9440cfea25a58b7282d317844cca917e2ec3664a14d8d454fc",
+    "docs/audit/yeti60-interconnects.json": "e5632b5f4632b237511931786a99cc4441c2ae163170348a1f2693d013755cb3",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_yeti60_assembly.py": "12221f66129b35332273adaf3ed309dc20cd7994880842ceb98230b2fb97eeba",
+    "mechanical/interconnect-spec.json": "b94140e220f435a720bbfdde1c2ccdc59e207d1615581a2abc3016e0da226a3d",
+    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691"
+  }
+}

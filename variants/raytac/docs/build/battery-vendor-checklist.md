@@ -2,6 +2,8 @@ English | [Chinese](battery-vendor-checklist.zh-CN.md)
 
 # Battery parameters to send to your supplier
 
+Use the specified **SHR-03V-S without protrusions, 4.0 mm wide**. The catalogued **SHR-03V-S-B with protrusions is 6.0 mm wide** and is not covered by the present housing envelope; do not substitute it without a separate fit check. [JST housing table](https://www.jst-mfg.com/product/pdf/eng/eSH.pdf)
+
 The user will verify the battery with the supplier. No finished pack is approved merely by matching its model code. Request **one sample pack** and a written response to every line below. The default remains one 1600 mAh pack per keyboard.
 
 | Parameter | Requirement to confirm |
@@ -18,8 +20,8 @@ The user will verify the battery with the supplier. No finished pack is approved
 | Third-wire temperature feedback | Cell-coupled NTC electrically compatible with **SEMITEC 103AT-2: 10 kOhm at25°C, B25/85=3435 K**, R25/B tolerances **<=1%**, or provide a full equivalent R/T table for review. This feedback must not be electrically loaded by the independent protector |
 | Sensor packaging | Show the sensor on the section drawing. A 2.4 mm bead stacked on a 4.3 mm cell does not fit a 4.8 mm pack; use a qualified thin sensor or end-bay coupling arrangement |
 | Other protection | State exact PCM IC/MOSFET models and overvoltage, undervoltage, charge/discharge overcurrent, short-circuit and temperature thresholds, delays, recovery and leakage. “Protected” or “three-wire” alone is not an answer |
-| Connector / polarity | **JST PHR-3, 2.0 mm pitch, three pins**; pin1 PACK+ red, pin2 PACK− black, pin3 NTC yellow referenced to PACK−. Supply a numbered mating-face/latch drawing. Do not rely on generic battery polarity or colors |
-| Leads | AWG28 stranded copper, insulation OD<=0.8 mm; free lengths between the controlled pack-exit and plug-exit planes: pin1 **110.64 mm**, pin2 **107.50 mm**, pin3 **104.36 mm**, tolerance +/-0.5 mm, preformed as drawn. These are not crimp cut lengths. Confirm strain relief and >=4 mm static bend radius |
+| Connector / polarity | **JST SHR-03V-S, 1.0 mm pitch, three pins**; pin1 PACK+ red, pin2 PACK− black, pin3 NTC yellow referenced to PACK−. Supply a numbered mating-face/latch drawing. Do not rely on generic battery polarity or colors |
+| Leads | AWG28 stranded copper, insulation OD<=0.8 mm; free lengths between the controlled pack-exit and plug-exit planes: pin1 **114.92 mm**, pin2 **111.61 mm**, pin3 **108.63 mm**, tolerance +/-0.5 mm, preformed as drawn. These are not crimp cut lengths. Confirm strain relief and >=4 mm static bend radius |
 | Documents | Corrected cell datasheet, exact finished-pack model, dimensioned complete drawing, protector schematic/specification, capacity and full-charge curves, protection test record, and applicable sample/batch inspection records |
 
 Ask the supplier to return its **actual model, values, tolerances and drawings**, identifying every mismatch. Do not approve an alternative voltage, polarity, PCM or temperature window based only on a seller's “compatible” description. The [full pack specification](../engineering/battery-pack-specification.md) controls the geometry and lead-exit datums.

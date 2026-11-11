@@ -1809,13 +1809,13 @@
       "value": "PROTECTED_1S_4V2_NTC10K",
       "model": [
         "model",
-        "${KIPRJMOD}/models/JST_S3B-PH-SM4-TB_Celestial.step",
+        "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal.step",
         [
           "offset",
           [
             "xyz",
             "0",
-            "-1.4",
+            "0",
             "0"
           ]
         ],
@@ -2620,15 +2620,6 @@
       "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Inductor_SMD.3dshapes/L_Wuerth_MAPI-3020.step",
       "nominal_geometry_only": true
     },
-    "${KIPRJMOD}/models/JST_S3B-PH-SM4-TB_Celestial.step": {
-      "sha256": "12219a17a30ec7a0a07e1a2394bcc4a46b5358a9918b1eba5c2129c116c2ec26",
-      "source": "https://github.com/issus/altium-library/blob/6da74f3d66e88ec51937c407001d09f9829a3c9b/STEP/Connector/JST%20S3B-PH-SM4-TB.step",
-      "nominal_geometry_only": true,
-      "attribution": "Celestial Altium Library, Mark Harris",
-      "license": "CELESTIAL-LICENSE.txt; README at 8b4124061296e84a8680b0974abc0290555b1383",
-      "modifications": "Trailing whitespace removed; no geometry edits",
-      "source_raw_sha256": "98a1508bc92b0ba8f9c9f891083eddcd52d6efc486ca9cf0ca37ec6dafbad95c"
-    },
     "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step": {
       "sha256": "98343205ec260ec165026ba2d44329a23096779ac36c553ea84aa7b370242e6d",
       "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/LED_SMD.3dshapes/LED_0603_1608Metric.step",
@@ -2648,6 +2639,11 @@
       "sha256": "203ba400009353b7074891b3dddf34433ac3f142fee1dd5a991838fbc9683885",
       "source": "Project-local nominal model",
       "nominal_geometry_only": true
+    },
+    "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal.step": {
+      "sha256": "2d236e5b20c8cc3dd36f10f0ea2096fe09667d6a6a22ecd1d9b6c3fe2392ca93",
+      "source": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Connector_JST.3dshapes/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal.step",
+      "nominal_geometry_only": true
     }
   },
   "package_corrections": {
@@ -2661,24 +2657,7 @@
       "package": "3020; 3.0 +/-0.2 mm X/Y; 2.0 mm maximum height",
       "drawing": "https://www.we-online.com/components/products/datasheet/74438336015.pdf"
     },
-    "J2": {
-      "purchase": "JST S3B-PH-SM4-TB(LF)(SN)",
-      "model": "Attributed third-party nominal SMT model, not S3B-PH-K through-hole",
-      "raw_bounds_mm": [
-        -4.95,
-        -3.01,
-        0,
-        4.95,
-        5.6,
-        5.6
-      ],
-      "offset_mm": [
-        0,
-        -1.4,
-        0
-      ],
-      "manufacturer_tolerances_qualified": false
-    },
+    "J2": "SH3 SM03B-SRSS-TB low-profile header; standard library model matches the native replacement lands; original PH model belongs to held Git history",
     "U5": {
       "purchase": "TI BQ24074RGTR",
       "model": "Project dimensioned RGT0016C illustration, nominal 3 x 3 mm; 1.0 mm maximum height, 1.68 mm nominal EP",

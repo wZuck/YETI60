@@ -4,6 +4,8 @@
 
 **当前修补主板首样：**[制造文件、普通 JLC 参数、补购与无外壳步骤](hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md)。原目录的旧主板清单、线束和压缩包不能代替当前候选版。
 
+当前 J2 为 [SH 三针、1.0 mm 间距](hardware/usb-short-route/BATTERY-SERVICE.zh-CN.md)。插座按当前候选采购表购买，电池包采用 SHR-03V-S／SSH 端子；下方保留参考表中的 PH 器件行属于历史版本。
+
 **首样下单暂停：**[含电池的无外壳流程](OPEN-BENCH.zh-CN.md) · [USB、螺钉与电池研究](docs/engineering/prototype-qualification.zh-CN.md)。当前制板包未放行下单。
 
 

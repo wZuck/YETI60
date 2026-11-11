@@ -2,13 +2,15 @@ English | [Chinese](interference.zh-CN.md)
 
 # Interference screening and open findings
 
-The screen was executed against **both native PCB designs in this branch**. It found layout blockers; it did not demonstrate RF immunity or wireless range. The [acceptance procedure](README.md) and [machine-readable evidence](../audit/acceptance.json) control the current status. Earlier dated reviews and the legacy interconnect specification's deferral annotation describe the previous planning boundary; interference work is now active.
+**Current status — November 12, 2026:** both native boards now use the RF support wing. GND and non-GND copper intersections are 0 mm² on all four layers in the provisional E73 3 mm antenna-end band and the Raytac vendor minimum projection; corresponding plate-metal projections are 0 mm². See the [copper screen](../audit/interference-layout.json), [metal projection](../audit/interference-plate.json) and [current E73 review](../audit/e73-review.md). This does not qualify wireless range, immunity or physical USB signal integrity. Raytac USB repair evidence is controlled by its [separate candidate entry](../../variants/raytac/hardware/usb-short-route/README.md). The old-coordinate table below is retained as an initial defect record, not current layout values.
 
 ## Antenna copper and plate
 
 [Raytac's official Version L specification](https://www.raytac.com/download/index.php?index_id=43), section 2.3, PDF page 11, shows a 10.5 × 3.8 mm minimum antenna projection with no ground copper on every host layer, recommends a wider region and edge placement. The screen transforms that minimum rectangle into the board's top-view coordinates. This minimum does not exhaust the manufacturer's wider-clearance advice.
 
 [Ebyte's official E73-2G4M08S1C manual](https://www.ebyte.com/downpdf/444.html), PDF page 9 (printed page 8), discusses routing under the module, interference sources and antenna proximity to metal. It supplies **no numeric host antenna keepout**. We therefore screen the antenna-end **last 3 mm** of the vendor body as an explicitly provisional engineering region, not a manufacturer requirement or a complete RF model. Ebyte must confirm the host keepout and actual antenna reference before release. Vendor source hashes and page references are in [vendor-sources.json](vendor-sources.json); PDFs remain in ignored local storage.
+
+**Historical initial-layout measurements; superseded by the current results above.**
 
 | Quantity | E73 | Raytac |
 |---|---:|---:|

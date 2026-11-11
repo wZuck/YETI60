@@ -2,7 +2,7 @@ English | [Chinese](raytac-review.zh-CN.md)
 
 # Raytac review conclusions
 
-**All 98 recorded software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
+**All 101 recorded software/CAD audit stages passed. Manufacturing and physical operation are not approved.** This review covers Raytac only, not the old dual-option report.
 
 The table describes the current short-USB candidate; retained reference-board figures are labeled separately.
 
@@ -11,12 +11,14 @@ The table describes the current short-USB candidate; retained reference-board fi
 | PCB | 0 errors / 0 opens; 411 signal pairs |
 | DRC | 102 disclosed noncomponent courtyard warnings |
 | ERC | 0 errors; 183 inherited off-grid warnings |
-| CAM | 846 drill/slot features; 813 via sites; 297 stencil apertures |
+| CAM | 848 drill/slot features; 815 via sites; 297 stencil apertures |
 | USB / BLE | Current normal/calibrator ARM artifacts and USB500 descriptors checked; simultaneous charge/wired-priority policy host-tested |
 | BOM | Current candidate: 75 parts; 8 planned from stock, 67 net purchases |
 | Harness | Current candidate: 9 conductors |
 
 The current [package/mask repair](../../hardware/usb-short-route/PACKAGE-MODELS.md) checks all 75 native models and updates U5 lands plus U5/U6 mask/stencil construction. Physical process, tolerance and safety acceptance remain first-board work.
+
+The current [J2 withdrawal repair](../../hardware/usb-short-route/BATTERY-SERVICE.md) relocates the battery header, adds two ordinary through vias and adopts the lower SH3 battery interface. Both plugs pass continuous rigid-body sweeps at three board thicknesses; tool access, own-wire motion and complete connected service remain open.
 
 The [fresh-source build record](published-source-build.json) is retained as a historical snapshot; see the machine report for current-source correspondence.
 
@@ -63,7 +65,7 @@ Generic passives and the LED now use [purchasing specifications](../../hardware/
 ## Isolated USB repair candidate
 
 The canonical PCB, inventory and seven-wire assembly images above still describe the previous routing. The separate [repair candidate](../../hardware/usb-short-route/README.md) passed strict native checks and 411 physical pin-pair checks. Both contact paths are 5.286396 mm, with zero data vias and 100% adjacent-ground centerline coverage. Local header/housing tolerance checks, both rebuilt targets, host simulation and calibration tests passed. The candidate fits 75 parts, credits 8 stock parts and requires 67 purchases, with nine conductors total. [Nine-wire enclosure routes, 16 guides and complete assembly illustrations](../../hardware/usb-short-route/ASSEMBLY.md) passed combined installed-geometry and provenance checks; service/mating access and physical acceptance remain open. This does not release the canonical fabrication archive. The long-route values below continue to document the canonical routing limitation.
-The candidate [first-article fabrication package and case-free procedure](../../hardware/usb-short-route/FIRST-ARTICLE.md) are available. Independent readback covers 846 drill/slot features, 289 fitted copper lands, 75 placements, 297 stencil apertures and all 1,444 IPC records. JP1 paste is omitted and the test-netlist origin is normalized. Supplier DFM precedes fabrication; physical acceptance follows the first board. The previous routing archive remains held.
+The candidate [first-article fabrication package and case-free procedure](../../hardware/usb-short-route/FIRST-ARTICLE.md) are available. Independent readback covers 848 drill/slot features, 289 fitted copper lands, 75 placements, 297 stencil apertures and all 1,446 IPC records. JP1 paste is omitted and the test-netlist origin is normalized. Supplier DFM precedes fabrication; physical acceptance follows the first board. The previous routing archive remains held.
 Candidate F1 is now the [Littelfuse 0466001.NRHF one-time fuse with revised lands](../../hardware/usb-short-route/F1-SELECTION.md). A new [continuous vertical sweep](../../hardware/usb-short-route/SERVICE-PATH.md) confirms that an internal relief removes the nominal rigid-body wing obstruction and revised rear clips provide a screened PCB corridor. USB/battery unmating, wire deformation and combined tolerances remain unqualified; enclosed service is not approved.
 The previous locating-ear and switch-floor issues are repaired by the [C04 plate, lower-shell pocket and eight gasket strips](../../hardware/usb-short-route/MECHANICAL-FIT.md). Static/continuous plate and switch-floor envelopes pass under the stated finished-part and installation limits; the plate retains approximately 0.188 mm air reserve. The previous diagnostic remains a pre-repair baseline. Full-keyboard tolerances, foam behavior, connected service and physical acceptance remain open.
 Analog pins now use [high impedance with digital buffers disconnected, plus startup-error cleanup](../testing/gpio-mode-policy.md). Five positive cases execute actual callback/init sources and reject four mutants; the candidate bundle repeats the tests independently. Actual registers, leakage, transients and physical power faults require the first board.

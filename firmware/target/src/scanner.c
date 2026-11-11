@@ -142,7 +142,6 @@ static void run(void *a, void *b, void *c) {
   ARG_UNUSED(b);
   ARG_UNUSED(c);
   uint16_t previous[YETI_ROWS] = {0};
-  struct yeti_usb_policy usb_policy = {0};
   idle_since = k_uptime_get();
   while (true) {
     if (scan_device == NULL) {
@@ -223,7 +222,7 @@ static void run(void *a, void *b, void *c) {
                  low, high, guard, valid ? 1u : 0u);
         }
     }
-    (void)yeti_target_usb_poll(&usb_policy, &core);
+    (void)yeti_target_usb_poll();
     if (atomic_get(&enabled)) {
       if (afe_asleep && yeti_afe(&core, true) == 0)
         afe_asleep = false;
@@ -318,7 +317,8 @@ static int init(const struct device *dev) {
       cfg.low[r][c] = 1500;
       cfg.high[r][c] = 2000;
     }
-  if (yeti_init(&core, &hal, &cfg) || yeti_power(&core, true) || io_fault)
+  if (yeti_init(&core, &hal, &cfg) || yeti_target_usb_init() ||
+      yeti_power(&core, true) || io_fault)
     return -EIO;
   scan_device = dev;
   return 0;

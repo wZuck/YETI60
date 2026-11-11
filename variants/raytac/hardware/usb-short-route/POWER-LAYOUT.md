@@ -2,6 +2,8 @@ English | [Chinese](POWER-LAYOUT.zh-CN.md)
 
 # Power-stage relocation and verification
 
+J2 is now the SH3 header at PCB [155.5, 129.0] mm, 0°, B.Cu. Its [native repair and cable fanout](BATTERY-SERVICE.md) supersede the old PH position/interface.
+
 The [package and ordinary-process revision](PACKAGE-MODELS.md) governs current U5 lands/stencil and U5/U6 mask islands. Both via faces request tenting; previous back-open instructions are superseded.
 
 This page applies to the USB repair candidate in this directory. The former U6 output/feedback and C46 routes detoured around a sensing-ground guard, with conservative contacted-track lengths of 29.183 mm and 28.504 mm. This revision relocates the regulator stage and charger capacitors. Feedback is now 3.555 mm and C46 is 4.681 mm; all ten local paths below remain on the component-side B.Cu layer.
@@ -48,7 +50,7 @@ Thirty-nine relocated-component checks cover nominal and accepted PCB thicknesse
 
 ## Ordinary vias and soldering
 
-Continue using ordinary JLC four-layer FR4, 1.6 mm finished thickness. Relative to the preceding capacitor revision, nine ordinary through vias are added, four unused vias removed and three vias moved; the board now has 813 vias. Exact positions, diameters and nets are in the [machine contract](power-layout.json). Added vias use 0.50 mm lands / 0.30 mm drills; no blind/buried vias, resin filling, plated filling or capping is required.
+Continue using ordinary JLC four-layer FR4, 1.6 mm finished thickness. Relative to the preceding capacitor revision, nine ordinary through vias are added, four unused vias removed and three vias moved; the power checkpoint has 813 vias; the current [SH3 battery revision](BATTERY-SERVICE.md) adds two more, giving 815. Exact positions, diameters and nets are in the [machine contract](power-layout.json). Added vias use 0.50 mm lands / 0.30 mm drills; no blind/buried vias, resin filling, plated filling or capping is required.
 
 C43 ground, U6 PGND and GND connect to local exposed ground; C45 uses the adjacent ground via. A U5.8-to-exposed-ground connection repairs the previously separate ground copper. Independent checking unions actual filled copper separately per layer and joins layers only through ground vias/PTH pads; a shared zone identity alone does not count as connectivity.
 

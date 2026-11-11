@@ -4,6 +4,8 @@ English | [Chinese](README.zh-CN.md)
 
 **Current repaired-board first article:** [fabrication files, ordinary JLC selections, purchasing and open-bench steps](hardware/usb-short-route/FIRST-ARTICLE.md). The previous canonical mainboard table, harness and archive do not replace the candidate files.
 
+Current J2 is [SH3, 1.0 mm pitch](hardware/usb-short-route/BATTERY-SERVICE.md). Buy its header from the current candidate CSV and the pack with SHR-03V-S / SSH contacts; the PH component row in the retained canonical table below is historical.
+
 **Prototype hold:** [Open-bench guide including battery](OPEN-BENCH.md) · [USB, fastener and battery findings](docs/engineering/prototype-qualification.md). The present archive is not released for ordering.
 
 
@@ -93,7 +95,7 @@ These are separate fabrication orders/files: the mainboard ZIP does not contain 
 | USB daughterboard | 1 populated | Unified Daughterboard C5 JSH, commit `2b6c52a`; seven fitted components including USB-C receptacle and SH header; retain C rather than S |
 | Internal USB harness | 1 four-wire | AWG28 stranded copper, insulation OD <=0.8 mm; two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts included; 1-to-1 VBUS, 2-to-2 D-, 3-to-3 D+, 4-to-4 GND. 150 mm is the route centerline; individual wire-exit lengths are about 147.64/149.21/150.79/152.36 mm; preform to the controlled route |
 | Battery assembly | 1 pack | Custom single-cell YETI60-BAT-1600-1S, target minimum 1600 mAh; complete pack <=85 x 43 x 4.8 mm including PCM, sensors, wrap, tabs and growth; independent thermal interruption, actual charging window within 15–43 C; supplier must accept >=500 mA continuous charging capability and the 4.16–4.23 V regulation range |
-| Battery leads and plug | 1 three-wire set, included in pack | AWG28, OD <=0.8 mm; one PHR-3 housing and three SPH-004T-P0.5S contacts; pin 1 red positive, 2 black negative, 3 yellow separate 10k NTC. Independent thermal protection and third-wire NTC feedback are separate requirements; supplier-signed envelope/lead-exit drawing required |
+| Battery leads and plug | 1 three-wire set, included in pack | AWG28, OD <=0.8 mm; one SHR-03V-S housing and three SSH-003T-P0.2-H contacts; pin 1 red positive, 2 black negative, 3 yellow separate 10k NTC. Independent thermal protection and third-wire NTC feedback are separate requirements; supplier-signed envelope/lead-exit drawing required |
 | External USB data cable | 1 | USB-C at keyboard; USB-A or USB-C at host as appropriate; data capable, not charge-only |
 
 ### Every fitted mainboard component

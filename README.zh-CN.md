@@ -2,27 +2,27 @@
 
 # YETI60
 
-> **当前首样集中使用 Raytac MDBT50Q-1MV2。** 从 [START-HERE.zh-CN.md](START-HERE.zh-CN.md) 或[下单与制作总手册](variants/raytac/BUILD.zh-CN.md)进入，查找制板参数、库存抵扣材料、焊接、固件、完整爆炸图和本轮审查。主目录保留 E73 另一方案；本轮审查针对 Raytac。实物与供应商验收仍待完成。
+> **当前首样集中使用 Raytac MDBT50Q-1MV2。** 从 [START-HERE.zh-CN.md](START-HERE.zh-CN.md) 或[下单与制作总手册](variants/raytac/BUILD.zh-CN.md)进入，查找制板参数、库存抵扣材料、焊接、固件、完整爆炸图和本轮审查。主目录保留 E73 另一方案；使用前请先查看其[当前审查与制作入口](BUILD.zh-CN.md)。实物与供应商验收仍待完成。
 
-以 Cipulot EC60 为基础、使用 FELK60 外壳的单 nRF52840 静电容键盘 PCB。保留感应几何、板框和安装孔位置；后侧 USB 子板连接 J1。
+以 Cipulot EC60 为基础、使用 FELK60 外壳的单 nRF52840 静电容键盘 PCB。保留前侧感应焊盘和安装孔位置；右侧新增受控圆角射频支撑区，后侧 USB 子板连接 J1。
 
 **有线使用：**电脑接受 USB 配置后，键盘一边给电池充电，一边通过 USB 发送按键。USB 自动优先于历史保存的蓝牙偏好；拔线后由 ZMK 回退到当前蓝牙配置。E73 和 Raytac 两套方案采用同一策略。描述符中的 500 mA 是输入预算，并非恒定电池充电电流。
 
 > **P2 阶段提交：**保留 C5 JSH 子板；默认改为定制 1600 mAh 单电芯，正式底壳含凹槽，充电设定和 USB500 固件同步更新。工程装配图、PCB 动画及装配渲染记录来源哈希。见[阶段记录](docs/design-checkpoint.zh-CN.md)。
 
-> **验收／射频阻塞：**本次布局检查发现天线区域铜及邻近定位板金属风险。制作或装配前先阅读[测试结果与首件验收流程](docs/testing/README.zh-CN.md)；DRC／构建通过不能关闭这些问题。
+> **验收暂停：**当前天线投影区已清铜，但射频表现尚未实测。E73 已确认存在 USB、定位板及电池插头拔出干涉问题，见[当前 E73 审查](docs/audit/e73-review.zh-CN.md)。Raytac 有独立的[候选板审查入口](variants/raytac/BUILD.zh-CN.md)，两者均未放行量产。
 
 ## 当前复查
 
-**两套方案当前 CAD、构建及集成检查均通过；尚未获得生产及实物运行验收。** [完整复查](docs/audit/yeti60-comprehensive-review.zh-CN.md)记录当前 P2 设计和待供方、公差、线束及实物验收事项。
+**E73 虽已通过原生连通性与固件检查，仍处于设计暂停状态。** [当前审查](docs/audit/e73-review.zh-CN.md)记录测得的缺陷及修补顺序；从 [BUILD.zh-CN.md](BUILD.zh-CN.md) 查找对应材料、制板文件与证据。Raytac 使用独立的[制作手册](variants/raytac/BUILD.zh-CN.md)。
 
 | 范围 | 结果 |
 |---|---|
-| PCB | E73：严格 DRC 0 错误／0 未连接，270 组信号引脚及全部关键路径通过；114 项警告（102 项虚拟元件边界、7 项走线末端、5 项过孔对中）。JLC 普通四层，无盲埋孔或模组盘中孔 |
+| PCB | E73：严格 DRC 0 错误／0 未连接，270 组信号引脚及全部关键路径通过；102 项预期虚拟元件边界警告，无末端悬空或过孔对中警告。JLC 普通四层，无盲埋孔或模组盘中孔 |
 | 固件 | 按原理图绑定的新控制核心通过主机 ASan/UBSan；已完成 GPIO/SAADC 与 USB/BLE 目标集成，普通版和校准版构建通过；实机验证待进行 |
-| 机械 | 明确暂定 Z 结构下，源 PCB／定位板／壳体无实体相交；胶碗、螺钉和树脂公差未定型 |
+| 机械 | E73 旧 1.2 mm／29 套固定件方案尚未移植 NiZ＋钢板卫星轴；PH 电池插头拔出存在实际干涉。见当前审查 |
 | 电池 | 默认定制 1600 mAh，完整包络 85×43×4.8 mm；供方签图、电流资料更正及独立温度保护验收待完成 |
-| 可视化 | 两套方案分别提供已核对的 28 步双语指南、PCB 动画和绑定来源的装配渲染 |
+| 可视化 | E73 提供绑定旧结构来源的 28 步参考指南及装配渲染；Raytac 候选板使用独立的当前装配包，不得混用 |
 
 - [内部连接及线束装配图](docs/engineering/interconnects.zh-CN.md)
 - [可行性评估回应](docs/engineering/assessment-response.zh-CN.md)
@@ -46,6 +46,8 @@
 
 ## 一把键盘需要准备的完整材料
 
+**E73 设计暂停说明：**下列是当前旧结构的材料参考，尚未同步到已要求的 NiZ＋钢板卫星轴方案，不能据此购买旧 1.2 mm 定位板和 29 套固定件。先阅读 [E73 当前入口](BUILD.zh-CN.md)；Raytac 材料使用其[独立清单](variants/raytac/BUILD.zh-CN.md)。已制作的 C5 子板直接保留。
+
 以下为 **1 把完整键盘的装机净用量，不含备件**。主板与子板可购买焊装成品；若自行焊接，分别准备下面的散件，不能再重复购买同一总成的元件。尚未选定的供应商或型号明确标注，数量确定不代表已获采购放行。
 
 **制板限制：只使用 JLC 普通四层工艺。已将旧盲孔／填孔封盖设计改为普通机械通孔；旧 HDI 文件不可用于下单。** 完成后以最新制板审查清单为准。没有第二颗主控，不需要每键二极管或 MX 热插拔座。
@@ -68,9 +70,9 @@
 
 数量为一把键盘的净用量，板厂起订数量另计。购买成品 C5 时，只制作 **一块主板**；自行焊子板时，制作 **一块主板加一块 C5 JSH 裸板**。
 
-| PCB | E73：严格 DRC 0 错误／0 未连接，270 组信号引脚及全部关键路径通过；114 项警告（102 项虚拟元件边界、7 项走线末端、5 项过孔对中）。JLC 普通四层，无盲埋孔或模组盘中孔 |
+| PCB | 数量 | 规格 | 文件 |
 |---|---:|---|---|
-| YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [可编辑 KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb)、[E73 Gerber／钻孔审查包](hardware/fabrication/yeti60-e73-p2-dfm-review.zip)、[制板工艺要求](hardware/ec60-nrf52840/fabrication-notes.zh-CN.md) |
+| YETI60 E73 主板 | 1 块 | 板框包围尺寸 289.39×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [可编辑 KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb)、[E73 Gerber／钻孔审查包](hardware/fabrication/yeti60-e73-p2-dfm-review.zip)、[制板工艺要求](hardware/ec60-nrf52840/fabrication-notes.zh-CN.md) |
 | Unified Daughterboard C5 JSH 子板 | 自焊时 1 块；买成品时 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](hardware/bom/daughterboard.zh-CN.csv) |
 
 两块板使用各自的制板文件，主板压缩包不包含 C5。两个压缩包均有四层铜，C5 不能按双层板下单。主板文件目前用于制造审查，最终物料、钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及五个走线支架属于机械件，不是额外 PCB。自行回流焊时，主板用 **B.Paste**，C5 用 **F.Paste**，钢网和温度曲线须与实际物料匹配。

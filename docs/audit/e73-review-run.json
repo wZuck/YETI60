@@ -1,0 +1,88 @@
+{
+  "status": "executed-design-hold",
+  "checks_executed_successfully": true,
+  "stages": [
+    {
+      "stage": "current-document-links",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.91
+    },
+    {
+      "stage": "current-artifact-integration",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.34
+    },
+    {
+      "stage": "RF-native-lands",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 4.62
+    },
+    {
+      "stage": "RF-case-tolerances",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 20.51
+    },
+    {
+      "stage": "RF-copper-projection",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 4.3
+    },
+    {
+      "stage": "RF-plate-projection",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 10.12
+    },
+    {
+      "stage": "USB-contact-paths",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 6.62
+    },
+    {
+      "stage": "USB-path-fault-tests",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.75
+    },
+    {
+      "stage": "AFE-SPICE",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 5.09
+    },
+    {
+      "stage": "interference-fault-tests",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 7.0
+    },
+    {
+      "stage": "PH-continuous-withdrawal",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 2.57
+    },
+    {
+      "stage": "readiness-fault-tests",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 1.17
+    },
+    {
+      "stage": "readiness-disposition",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 0.18
+    }
+  ],
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "disposition": "docs/audit/e73-readiness.json",
+  "artifact_audit_reused": true
+}

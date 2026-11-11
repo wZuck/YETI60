@@ -2,13 +2,15 @@
 
 # 干扰检查与未关闭问题
 
-本次检查针对**同一分支的两块实际设计板**执行，发现了布局阻塞项，不能证明抗射频干扰或无线距离。[验收流程](README.zh-CN.md)和[机器证据](../audit/acceptance.json)定义当前状态。较早的日期化评估及旧线束规格中的“暂缓”标记仅描述此前边界；当前已经开始干扰工作。
+**当前状态（2026 年 11 月 12 日）：**两套原生板已采用射频支撑翼，E73 暂定 3 mm 天线端区和 Raytac 厂商最小投影区在四层上的 GND／非 GND 铜交集均为 0 mm²；对应定位板金属投影为 0 mm²。见[铜检查](../audit/interference-layout.json)、[金属投影](../audit/interference-plate.json)及 [E73 当前审查](../audit/e73-review.zh-CN.md)。这不代表无线距离、抗干扰或 USB 信号完整性实测通过。Raytac 修补候选板的 USB 证据以其[独立入口](../../variants/raytac/hardware/usb-short-route/README.zh-CN.md)为准。下文旧坐标表保留为初始缺陷记录，不是当前布局值。
 
 ## 天线区域铜与定位板
 
 [Raytac 官方 L 版规格](https://www.raytac.com/download/index.php?index_id=43)第 2.3 节、PDF 第 11 页给出 10.5×3.8 mm 的最小天线投影，要求主板每层对应区域无接地铜，并建议扩大净空、靠近板边放置。本检查把该最小矩形变换至 PCB 顶视坐标；它不能代替厂商对更大净空的建议。
 
 [亿佰特官方 E73-2G4M08S1C 手册](https://www.ebyte.com/downpdf/444.html)PDF 第 9 页（印刷第 8 页）讨论模组下方走线、干扰源与天线附近金属，**没有提供数字化的主板天线净空尺寸**。因此取厂商本体天线端**最后 3 mm**作为明确暂定的工程检查区，不把它称作厂商要求或完整射频模型。发布前须由厂商确认主板净空和实际天线基准。[vendor-sources.json](vendor-sources.json)记录来源哈希和页码，PDF 留在忽略的本地目录。
+
+**初始布局的历史测量表；已被上述当前结果取代。**
 
 | 数值 | E73 | Raytac |
 |---|---:|---:|

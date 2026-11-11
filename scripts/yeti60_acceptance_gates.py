@@ -31,7 +31,7 @@ def design_and_pending_gates(layout,plate,paths,calibration):
         add(name+'.antenna-plate-projection','design','passed' if clear else 'failed',
             name+': metal plate must clear the declared antenna projection; proximity still needs physical RF validation')
         data=paths['variants'][name]
-        short=all(data[n]['ESD_branch_to_main_path_mm']<=5 for n in ['positive','negative'])
+        short=all(isinstance(data[n]['ESD_branch_to_main_path_mm'],(int,float)) and data[n]['ESD_branch_to_main_path_mm']<=5 for n in ['positive','negative'])
         add(name+'.USB-protection-branches','design','passed' if short else 'failed',
             name+': TVS signal branches must be <=5mm under the imposed project layout target')
         add(name+'.guarded-calibration','design','passed' if calibration[name]['status']=='passed' else 'failed',

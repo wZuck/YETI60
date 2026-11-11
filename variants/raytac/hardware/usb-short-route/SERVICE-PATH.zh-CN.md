@@ -2,6 +2,8 @@
 
 # 检修路径：翼板已修补，连接线束仍待验收
 
+[SH 三针电池修订](BATTERY-SERVICE.zh-CN.md)替换 PH 接口，并对 J2／J4 增加连续刚体插拔检查；工具接近、释放后的导线运动、散放插头及带线抬升组件仍需另外验收。
+
 **关壳检修尚未放行。** 当前候选底壳已修补原来的右侧翼板阻挡。连续标称刚体取出检查通过，前提是 USB 和电池线已断开，散开的插头已放在运动包络之外。这不能证明在装好的外壳内可以完成断开操作。
 
 [验证脚本](../../scripts/check_usb_short_vertical_motion.py) · [运动证据](audit/vertical-motion.json) · [壁厚及嵌件保护](audit/closed-assembly.json)

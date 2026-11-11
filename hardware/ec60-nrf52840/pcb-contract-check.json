@@ -3,6 +3,8 @@
   "netlist_parity": "pass",
   "electrode_footprints_preserved": 74,
   "mounting_holes": "pass",
+  "controlled_RF_wing": true,
+  "front_geometry_baseline": "1867e662ae13c1500941f80cd7a8599f03f8e8bf",
   "copper_layers": 4,
-  "interference_simulation": "see_shared_acceptance_report_RF_blockers_open"
+  "interference_simulation": "see_shared_acceptance_report_RF_and_USB_qualification_open"
 }

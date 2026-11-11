@@ -1,6 +1,6 @@
 {
-  "status": "candidate-land-support-passed-native-routing-pending",
-  "candidate_only": true,
+  "status": "native-RF-land-support-passed",
+  "candidate_only": false,
   "production_approved": false,
   "physical_verification": false,
   "variants": {
@@ -1068,15 +1068,15 @@
     }
   },
   "limits": [
-    "Original outline plus proposed rectangular wing only; corner fillets must preserve these margins",
+    "Final native rounded outline is used after implementation; candidate mode uses a rectangular wing",
     "No routing, DRC, intercomponent collision or solder-joint strength acceptance"
   ],
   "source_sha256": {
-    "mechanical/rf-remediation.json": "3fdd64dbc3a6d6e87ad0547d7c974460061132b7fe533e2a44e2f0f613f73171",
-    "scripts/study_yeti60_rf_lands.py": "9a8078df7a5455a7e41793d49afc0b3c252ca586ffd0ff0ff26720ad426449f9",
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
+    "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
+    "scripts/study_yeti60_rf_lands.py": "0b2c76239ac0bf88cde965b4204cd90d75efa05e9f95d820f765a44bbbd248d4",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
-    "variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "fac9dfbaac97091ef79dddedf8e0f836d67a876803a1f83cfc552ba5f1279873",
+    "variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
     "variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pro": "b40d230a79eb2fc0058408d863b40a0b079d0d5e2981f6b3922341047ed29f82"
   }
 }

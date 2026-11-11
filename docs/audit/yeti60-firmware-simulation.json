@@ -11,7 +11,7 @@
     "afe-gating: AFE can be removed while powered, scan rejects it, and power-on restores it",
     "callbacks: GPIO, wait and HID callbacks cannot reenter active operations",
     "YETI60 host simulation passed; transport, ADC and GPIO are mocked, not nRF peripheral emulation.",
-    "USB policy: concurrent configured charging and USB preference; retained BLE override; suspend/resume/reset/detach; no repeated writes; retry failures passed"
+    "USB events: synchronous charging, USB priority, deconfiguration, suspend/resume/reset/detach, safe intermediate modes, no repeated writes and retry passed"
   ],
   "errors": "",
   "source_sha256": {
@@ -25,12 +25,14 @@
     "hardware/ec60-nrf52840/pinmap.json": "76170bd6359bc89d18ab2953fceb29d2a423737ed98d49c9feec888e9ff30149",
     "scripts/simulate_yeti60_firmware.py": "7aee628f1ece266f0f38122dec997221bc4585073ac6adb4a819d5452c2247e0",
     "scripts/generate_yeti60_pin_contract.py": "6a3dba5c252b1299e4f94e294f23bb1615e62ea77db2e47f8f5aa05fac395172",
-    "firmware/target/src/usb_policy.c": "785a7cb1fb08a6f4dde6141a0d96d91d97082cc771d671bb79374aeb56566372",
-    "firmware/target/src/usb_policy.h": "6bfa67e028a8a9c46f77afc545aae4b381c45420ac6164ee5c0c8803466820d3",
-    "tests/yeti60/usb_policy.c": "bc92682594c1f72697d49dd10f620ea99fa96daa6842fca5f8ffc5bddde15a4f",
-    "tests/yeti60/stubs/zephyr/kernel.h": "37eb67e5c8508640d8fbeb04bdea7becb091db814bcb693cb36befba95d52a17",
+    "firmware/target/src/usb_policy.c": "a59aae14ae70c1e90d1d6c053447981ba4e8396a0539311956d67689ef94a0ac",
+    "firmware/target/src/usb_policy.h": "ce652609668a30169a43624168824090d7e07f78c52410cb079a914222abd1d0",
+    "tests/yeti60/usb_policy.c": "03d264ec9a72917f2c6780d2919eb671564510612c2061eb149abeb6f1e5332a",
+    "tests/yeti60/stubs/zephyr/drivers/gpio.h": "ae9a2085ad42789a5074de03ee42bff7467766774c4b8f5b9ad9be9a63a4ca0b",
+    "tests/yeti60/stubs/zephyr/kernel.h": "1f909e84dba2ded9bbe1a38e482c0ca7d46dadfdde14e5a064f9d8e14f337c33",
+    "tests/yeti60/stubs/zephyr/usb/usb_device.h": "c359b200b1c5560dd87d304ccaa1bbcf9b38743bc07466bf5717fae7055a1701",
     "tests/yeti60/stubs/zmk/endpoints.h": "9a3a89cf8c83d4ba0da307bb5bacf355009738b503edb2f089e838922a206814",
-    "tests/yeti60/stubs/zmk/usb.h": "d6c5581aadc5cfe4821f749c7feaa454eeb6649a06bdd0e4e6c2245d3ce83bb0"
+    "tests/yeti60/stubs/zmk/usb.h": "ec9ffe4787a4ebad6e2d06340997677eaa3729d56a9057ce7bcee8511b567e20"
   },
   "trace_file": "docs/audit/yeti60-firmware-trace.csv",
   "trace_sha256": "02d6f2843713dd84a682c0bea3977652c20772c3781f2f5806284ea16c84909f",

@@ -3,6 +3,7 @@ zephyr_library_sources_ifdef(CONFIG_YETI60_SCAN src/scanner.c src/usb_policy.c .
 zephyr_include_directories(../yeti60)
 
 zephyr_library_include_directories(${APPLICATION_SOURCE_DIR}/include)
+zephyr_ld_options(-Wl,--wrap=usb_enable)
 
 # Settings survive reflashing; reject thresholds from a different pin/board contract.
 file(SHA256 ${CMAKE_CURRENT_SOURCE_DIR}/../yeti60/board_pins.h pin_hash)

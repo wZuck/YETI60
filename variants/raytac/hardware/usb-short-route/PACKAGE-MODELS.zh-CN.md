@@ -4,7 +4,7 @@
 
 使用本候选板的完整工程、本地封装库及 `models/` 目录，并安装 KiCad 10.0.7 的标准三维库。75 个实装元件各有一个模型；电极和不装的 JP1 没有模型。保留的长 USB 参考板不属于本轮修补。标准模型仍依赖安装库，哈希及本地模型来源见[模型清单](models/model-sources.json)。
 
-U2／U4 改为采购型号对应的 TSSOP16，去掉重复 SSOP 模型；L1 改为高度 2.0 mm 的 3020 模型。依据为 [Nexperia 封装图](https://assets.nexperia.com/documents/package-information/SOT403-1.pdf)及 [Wurth 器件图](https://www.we-online.com/components/products/datasheet/74438336015.pdf)。J2 使用注明 Mark Harris 来源的 Celestial SMT 标称模型，平移后核对三只信号脚及两只固定脚与原生焊盘的对应关系；其[许可](models/CELESTIAL-LICENSE.txt)独立保留。U5、SW100 使用项目生成的尺寸示意模型，模具细节为近似，不能据此认定供应商公差合格。
+U2／U4 改为采购型号对应的 TSSOP16，去掉重复 SSOP 模型；L1 改为高度 2.0 mm 的 3020 模型。依据为 [Nexperia 封装图](https://assets.nexperia.com/documents/package-information/SOT403-1.pdf)及 [Wurth 器件图](https://www.we-online.com/components/products/datasheet/74438336015.pdf)。J2 按[低矮电池接口修订](BATTERY-SERVICE.zh-CN.md)改用标准 SH 三针模型，三只信号脚和两只固定脚均与替换后的原生铜焊盘核对；旧 PH／Celestial 模型属于已保留的 Git 检查点。U5、SW100 使用项目生成的尺寸示意模型，模具细节为近似，不能据此认定供应商公差合格。
 
 ## 影响打板及焊接的修改
 
@@ -18,6 +18,6 @@ PCB 与过滤掉 JP1 的背面钢网必须使用当前配套文件。选择普�
 
 ## 验证与固件
 
-[原生模型记录](audit/native-models.json)包含 75 个导出实体及七组落脚检查。SH／PH／TSSOP 平脚应落在原生铜区域；MAPI 模型存在有意的内侧趾部悬出，与原厂焊盘对应的标称平面重叠率为 **91.66%**。Panasonic／C&K 定位柱会进入 NPTH 孔，完整尺寸公差仍需实物验收。
+[原生模型记录](audit/native-models.json)包含 75 个导出实体及七组落脚检查。SH／TSSOP 平脚应落在原生铜区域；MAPI 模型存在有意的内侧趾部悬出，与原厂焊盘对应的标称平面重叠率为 **91.66%**。Panasonic／C&K 定位柱会进入 NPTH 孔，完整尺寸公差仍需实物验收。
 
 碰撞包络纳入完整标称模型及引脚，并加 0.10 mm 建模余量；SW100 使用独立的 3.60 mm 安装高度验收上限。建模余量不是供应商公差。PCB 指纹变化后必须重建配套固件；当前校准版与正常版必须一起使用，旧指纹的阈值需重新采集。继续按[当前装配入口](ASSEMBLY.zh-CN.md)及[无外壳检查](../../OPEN-BENCH.zh-CN.md)操作。

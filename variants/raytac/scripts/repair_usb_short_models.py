@@ -12,7 +12,7 @@ PCB = BASE / 'EC60-nRF52840.kicad_pcb'
 STANDARD = '${KICAD10_3DMODEL_DIR}/'
 CHOICES = {
     'J1': (STANDARD + 'Connector_JST.3dshapes/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step', [0, -.0625, 0], [0, 0, 0]),
-    'J2': ('${KIPRJMOD}/models/JST_S3B-PH-SM4-TB_Celestial.step', [0, -1.4, 0], [0, 0, 0]),
+    'J2': (STANDARD + 'Connector_JST.3dshapes/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal.step', [0, 0, 0], [0, 0, 0]),
     'U2': (STANDARD + 'Package_SO.3dshapes/TSSOP-16_4.4x5mm_P0.65mm.step', [0, 0, 0], [0, 0, -90]),
     'U4': (STANDARD + 'Package_SO.3dshapes/TSSOP-16_4.4x5mm_P0.65mm.step', [0, 0, 0], [0, 0, -90]),
     'L1': (STANDARD + 'Inductor_SMD.3dshapes/L_Wuerth_MAPI-3020.step', [0, 0, 0], [0, 0, 0]),

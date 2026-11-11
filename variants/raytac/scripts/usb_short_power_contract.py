@@ -59,6 +59,9 @@ def verify_layout():
     expected_charger=copy.deepcopy(oldparts['U5']);lands(expected_charger,'U5')
     assert local_pads(parts['U5'])==local_pads(expected_charger),'Changed RGT land/stencil contract'
     before, after = via_map(old), via_map(board)
+    from usb_short_battery_service import verify_vias, via_ids
+    verify_vias(after)
+    after = {identifier:value for identifier,value in after.items() if identifier not in via_ids()}
     actual = dict(added={k:v for k,v in after.items() if k not in before},
                   removed={k:v for k,v in before.items() if k not in after},
                   moved={k:dict(before=before[k], after=v) for k,v in after.items() if k in before and v != before[k]})

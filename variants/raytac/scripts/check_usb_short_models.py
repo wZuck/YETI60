@@ -142,8 +142,8 @@ def main():
                                                      'nominal_diametral_gap_mm': .1, 'tolerance_qualified': False}
         parts[ref] = item
     source_files = [pcb, SPEC, BASE/'models/non-model-baseline.json', BASE/'frozen-footprints.json',
-                    BASE/'mainboard-purchase.csv', BASE/'models/CELESTIAL-LICENSE.txt',
-                    ROOT/'scripts/usb_short_model_contract.py', ROOT/'scripts/repair_usb_short_models.py',
+                    BASE/'mainboard-purchase.csv', BASE/'battery-service-j2.json',
+                    ROOT/'scripts/usb_short_model_contract.py', ROOT/'scripts/usb_short_battery_service.py', ROOT/'scripts/repair_usb_short_models.py',
                     ROOT/'scripts/kicad_sexpr.py', ROOT/'scripts/cad_geometry.py',
                     ROOT/'scripts/export_usb_short_model_inputs.py', Path(__file__)]
     source_files += [ROOT/'scripts/build_usb_short_package_models.py',ROOT/'scripts/repair_usb_short_charger_package.py',ROOT/'scripts/usb_short_charger_contract.py']
@@ -153,7 +153,7 @@ def main():
     source_files += [resolve(p) for p in spec['sources'] if p.startswith('${KIPRJMOD}')]
     report = dict(status='native-model-closure-and-landing-passed', physical_verification=False,
                   manufacturer_tolerances_qualified=False, fitted_models=75,
-                  only_documented_thermal_package_and_model_changes=True, external_KiCad_version=version,
+                  only_documented_package_model_and_battery_service_changes=True, external_KiCad_version=version,
                   envelope_modeling_allowance_mm=.1, parts=parts, thermal_package_windows=charger_windows,
                   source_sha256={str(p.relative_to(ROOT)): sha(p) for p in source_files},
                   external_model_sha256={p: sha(resolve(p)) for p in spec['sources'] if not p.startswith('${KIPRJMOD}')},
@@ -162,7 +162,7 @@ def main():
                           'Pin landing does not prove solder quality or electrical operation',
                           'The retained long-USB reference PCB is outside this current-candidate native-model repair'])
     (BASE/'audit/native-models.json').write_text(json.dumps(report, indent=2)+'\n')
-    print('75 native models resolved and exported; seven package landing checks passed; only documented thermal-package and native-model changes')
+    print('75 native models resolved and exported; seven package landing checks passed; only documented package, model and battery-service changes')
 
 
 if __name__ == '__main__':

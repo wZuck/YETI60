@@ -854,11 +854,11 @@
     }
   ],
   "source_sha256": {
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "4173b732894bcf016aaa9701422ac84976b20724467e93ae8c7cd6bd7fb53eb6",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
-    "docs/audit/yeti60-assembly.json": "7dc2967d0557782c819bf0954acce9fd60c5efd3d66bcab210cf485b3116a291",
+    "docs/audit/yeti60-assembly.json": "8bc20d93d2929e9440cfea25a58b7282d317844cca917e2ec3664a14d8d454fc",
     "firmware/target/boards/yeti/yeti60/yeti60.dts": "2434f8a86afd1571c7c34d320e18f71195bac5ee3cc32dd75f098fc6088ec8a8",
-    "firmware/target/src/scanner.c": "c9ab36cb3a1688a847b421c85fd095e7143dfb7e22c6c30ad963ce6043454a1f",
+    "firmware/target/src/scanner.c": "b4573e97d897475c9efab50f708633350200335cdf21b4d3dde019aa929755e1",
     "scripts/export_yeti60_build_map.py": "37fb2a09e5697df4509ffb92b7e3ad2a75ae54441a90c82406f3970b47e07da8",
     "scripts/check_yeti60_key_geometry.py": "556493619766ed77efc43337751d96aaa43a4b6162fa19c96bc5c867c6191be1"
   },

@@ -2,6 +2,8 @@ English | [Chinese](CLOSED-CASE.zh-CN.md)
 
 # Closed-case harness and guides checkpoint
 
+The current [SH3 battery interface](BATTERY-SERVICE.md) includes a 1-to-2 mm fanout before the vertical transition. Use its revised battery lengths below; original PH leads do not fit this connector.
+
 This checkpoint contains continuous-solid checks for nine conductors, the internal bottom-shell relief and 16 removable guides. [Step illustrations and complete assembled renders](ASSEMBLY.md) now describe this design; the order package remains open. No physical assembly or electrical acceptance has been performed. This remains an engineering candidate; the previous seven-wire illustrations and fabrication archive do not describe it.
 
 ## Bottom shell
@@ -20,7 +22,7 @@ The additional wing relief spans X 357.25–365.25, Y −132.75–−113.75, Z �
 | Power, two wires | J5.1 → J1.1; J5.2 → J1.4; J1.2/3 remain empty |
 | Battery, three wires | J2.1 protected-pack positive; J2.2 negative; J2.3 NTC referenced to negative |
 
-Use AWG28 stranded copper with insulation OD ≤0.8 mm, also within the selected SH/PH contact ranges. Values below are preformed free lengths between wire-exit datums, not crimp cut lengths. Tolerance is ±0.5 mm; the supplier must preform and verify against the STEP routes. Loose 250/300 mm open-bench leads are not these enclosed harnesses.
+Use AWG28 stranded copper with insulation OD ≤0.8 mm, also within the selected SH contact ranges. Values below are preformed free lengths between wire-exit datums, not crimp cut lengths. Tolerance is ±0.5 mm; the supplier must preform and verify against the STEP routes. Loose 250/300 mm open-bench leads are not these enclosed harnesses.
 
 | Harness / pin | Free length mm | Minimum design bend radius mm |
 |---|---:|---:|
@@ -30,9 +32,9 @@ Use AWG28 stranded copper with insulation OD ≤0.8 mm, also within the selected
 | USB 4 | 305.40 | 5.50 |
 | Power 1 | 229.95 | 4.00 |
 | Power 2 | 232.20 | 4.00 |
-| Battery 1 | 110.64 | 5.00 |
-| Battery 2 | 107.50 | 7.00 |
-| Battery 3 | 104.36 | 5.00 |
+| Battery 1 | 114.92 | 4.00 |
+| Battery 2 | 111.61 | 7.00 |
+| Battery 3 | 108.63 | 4.00 |
 
 The data pair makes three full rear twists and a half-turn on each front leg, restoring pin order at C5. Geometric pair skew is approximately 0.314 mm; design bend radius is at least 4 mm. Complete pair tubes bound the twist sections for collision checks, with separate spline solids for the conductors. This does not certify impedance or a USB eye. The supplier must qualify electrical wire, crimps and forming.
 

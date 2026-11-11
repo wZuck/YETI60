@@ -2,27 +2,27 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60
 
-> **Active prototype: Raytac MDBT50Q-1MV2.** Start at [START-HERE.md](START-HERE.md) or the [ordering and build handbook](variants/raytac/BUILD.md) for PCB settings, inventory-adjusted materials, soldering, firmware, complete explosion and current review. E73 remains in the main directories as a separate option; this checkpoint reviews Raytac. Physical and supplier acceptance remain open.
+> **Active prototype: Raytac MDBT50Q-1MV2.** Start at [START-HERE.md](START-HERE.md) or the [ordering and build handbook](variants/raytac/BUILD.md) for PCB settings, inventory-adjusted materials, soldering, firmware, complete explosion and current review. E73 remains a separate option; see its [current review and build entry](BUILD.md) before using those files. Physical and supplier acceptance remain open.
 
-A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The sensing geometry, board outline and mounting locations are retained; a rear USB daughterboard connects to J1.
+A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The front sensing lands and mounting locations are retained. A controlled rounded RF wing supports the outboard antenna placement; a rear USB daughterboard connects to J1.
 
 **Wired operation:** after a computer accepts the USB configuration, the keyboard charges the battery and sends HID input over USB at the same time. USB automatically takes priority over a retained Bluetooth preference; unplugging lets ZMK fall back to the active Bluetooth profile. The E73 and Raytac options use the same policy. The 500 mA descriptor is an input budget, not a constant battery charging current.
 
 > **P2 design checkpoint:** C5 JSH is retained. The default is now a custom 1600 mAh single-cell pack with a canonical recessed bottom, revised charger settings and USB500 firmware. Engineering sheets, PCB animation and assembly renders record their source hashes. See [checkpoint details](docs/design-checkpoint.md).
 
-> **Acceptance / RF hold:** the new layout screen found antenna copper and nearby plate-metal risks. Read the [test results and first-article procedure](docs/testing/README.md) before fabrication or assembly. DRC/build passes do not close these findings.
+> **Acceptance hold:** the current antenna projection is copper-clear, but RF performance remains unmeasured. E73 has confirmed USB, plate and battery-plug service defects; see [current E73 review](docs/audit/e73-review.md). Raytac has its own [candidate review](variants/raytac/BUILD.md). Neither is a production release.
 
 ## Current review
 
-**Both alternatives pass their current CAD, build and integration checks; production and physical operation remain unqualified.** The [comprehensive review](docs/audit/yeti60-comprehensive-review.md) documents the implemented P2 design and remaining supplier, tolerance, harness and physical acceptance.
+**E73 remains on design hold despite passing native connectivity and firmware checks.** Its [current review](docs/audit/e73-review.md) records the measured defects and repair sequence. Start at [BUILD.md](BUILD.md) for matching parts, fabrication files and evidence. Raytac has a separate [build handbook](variants/raytac/BUILD.md).
 
 | Scope | Evidence and result |
 |---|---|
-| PCB | E73: strict DRC 0 errors / 0 opens; 270 physical signal pairs and all critical paths pass; 114 warnings (102 virtual courtyards, 7 dangling stubs, 5 via alignment). Ordinary JLC four-layer, no blind/buried/module vias-in-pad |
+| PCB | E73: strict DRC 0 errors / 0 opens; 270 physical signal pairs and all critical paths pass; 102 expected virtual-courtyard warnings; no dangling or via-alignment warnings. Ordinary JLC four-layer, no blind/buried/module vias-in-pad |
 | Firmware | New schematic-bound control core passes host ASan/UBSan simulation; normal/calibrator target binaries now build; on-device USB/BLE and EC calibration remain pending |
-| Mechanical | Source PCB/plate/case nominal geometry has no overlap at the explicitly provisional Z stack; final dome/fastener/resin tolerances are unqualified |
+| Mechanical | E73 retains the older 1.2 mm / 29-mount stack; NiZ and plate stabilizers are not ported, and PH battery-plug withdrawal has measured interference. See the current review |
 | Battery | Default custom 1600 mAh, complete 85×43×4.8 mm; supplier drawing/current clarification and independent thermal protection approval pending |
-| Visualization | Each alternative has its own checked 28-step bilingual guide, PCB animation and source-linked assembly renders |
+| Visualization | E73 has a source-linked 28-step reference guide and renders of its old stack. Raytac has a separate current candidate assembly package; do not interchange them |
 
 - [Internal connections and cable drawing](docs/engineering/interconnects.md)
 - [Feasibility assessment response](docs/engineering/assessment-response.md)
@@ -46,6 +46,8 @@ Based on [Cipulot/EC60](https://github.com/Cipulot/EC60) and [fredlb/felk60](htt
 
 ## Complete materials for one keyboard
 
+**E73 design hold:** the list below references the existing older stack and is not yet updated for the requested NiZ and plate-mounted stabilizers. Do not purchase its old 1.2 mm plate and 29 mounting sets as the revised build. Read the [current E73 entry](BUILD.md) first; use the [separate Raytac list](variants/raytac/BUILD.md) for that candidate. Retain the already-made C5 daughterboard.
+
 Quantities below are **net installed quantities for one complete keyboard, without spares**. Buy populated mainboard/daughterboard assemblies or their loose parts; do not count the same components twice. Unselected suppliers/MPNs are identified explicitly. A known quantity does not constitute procurement release.
 
 **Fabrication constraint: JLC ordinary four-layer FR-4 only. The previous blind-via/filled-and-capped design has been converted to mechanically drilled through vias; do not order the old HDI files.** Use the latest fabrication review after conversion. No second controller, per-key diodes or MX hot-swap sockets are required.
@@ -68,9 +70,9 @@ Use the [stock-adjusted mainboard purchase CSV](hardware/bom/mainboard-purchase.
 
 Quantities are net boards per keyboard; the fabricator's minimum order quantity is separate. Fabricate **one mainboard** when buying a populated C5, or **one mainboard plus one C5 JSH bare board** when soldering the daughterboard yourself.
 
-| PCB | E73: strict DRC 0 errors / 0 opens; 270 physical signal pairs and all critical paths pass; 114 warnings (102 virtual courtyards, 7 dangling stubs, 5 via alignment). Ordinary JLC four-layer, no blind/buried/module vias-in-pad |
+| PCB | Quantity | Specification | Files |
 |---|---:|---|---|
-| YETI60 E73 mainboard | 1 | 285.0 x 94.6 mm outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [E73 Gerber/drill review ZIP](hardware/fabrication/yeti60-e73-p2-dfm-review.zip), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
+| YETI60 E73 mainboard | 1 | 289.39 x 94.6 mm rounded-wing outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [E73 Gerber/drill review ZIP](hardware/fabrication/yeti60-e73-p2-dfm-review.zip), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
 | Unified Daughterboard C5 JSH | 1 only for self-assembly; 0 if purchased populated | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](hardware/bom/daughterboard.csv) |
 
 These are separate fabrication orders/files: the mainboard ZIP does not contain C5. Both archives contain four copper layers; do not select a two-layer process for C5. The mainboard archive is for manufacturing review, with final component/stencil and supplier acceptance still pending. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and five routing guides are mechanical parts, not additional PCBs. For self-reflow, use mainboard **B.Paste** and C5 **F.Paste** with a qualified stencil/profile.
@@ -79,7 +81,7 @@ These are separate fabrication orders/files: the mainboard ZIP does not contain 
 
 | Material | Quantity | Detailed specification and included items |
 |---|---:|---|
-| Mainboard PCB | 1 | Current YETI60 native PCB; ordinary four-layer FR-4, target nominal thickness 1.6 mm; preserve EC electrodes, outline and mounting centers; CAD envelope 1.6062 mm; review the current ordinary-process archive before ordering |
+| Mainboard PCB | 1 | Current YETI60 native PCB; ordinary four-layer FR-4, target nominal thickness 1.6 mm; preserve EC electrodes and mounting centers; use the controlled rounded RF wing; CAD envelope 1.6062 mm; review the current ordinary-process archive before ordering |
 | Mainboard fitted parts | 76 | Every reference, value, package and specified/candidate MPN is listed below; included if buying a populated mainboard |
 | USB daughterboard | 1 populated | Unified Daughterboard C5 JSH, commit `2b6c52a`; seven fitted components including USB-C receptacle and SH header; retain C rather than S |
 | Internal USB harness | 1 four-wire | AWG28 stranded copper, insulation OD <=0.8 mm; two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts included; 1-to-1 VBUS, 2-to-2 D-, 3-to-3 D+, 4-to-4 GND. 150 mm is the route centerline; individual wire-exit lengths are about 147.64/149.21/150.79/152.36 mm; preform to the controlled route |

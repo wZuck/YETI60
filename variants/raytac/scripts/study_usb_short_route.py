@@ -14,6 +14,7 @@ from cad_geometry import load,intersection_volume
 from check_yeti60_assembly import box,distance,move
 from study_yeti60_prototype import usb_study
 from usb_short_model_contract import apply_model_envelopes
+from usb_short_battery_service import apply_envelope as apply_battery_service_envelope
 from usb_short_passive_contract import apply_passive_envelopes
 from usb_short_ground import connected_ground
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'hardware/usb-short-route';AUD=BASE/'audit'
@@ -25,14 +26,14 @@ def main():
     for p,h in native['source_sha256'].items():assert sha(ROOT/p)==h,('Stale candidate',p)
     ground_check=connected_ground(native)
     screen,_,normalizations=usb_study(native,paths)
-    assembly=apply_model_envelopes(apply_passive_envelopes(read(ROOT/'docs/audit/yeti60-assembly.json'),native));spec=read(ROOT/'mechanical/pcb-fabrication-spec.json');nominal=assembly['nominal_stack']['pcb_bottom_z'];cases=[load(ROOT/'mechanical/generated'/('yeti60-'+s+'.step')) for s in ['bottom','top']]
+    assembly=apply_model_envelopes(apply_passive_envelopes(apply_battery_service_envelope(read(ROOT/'docs/audit/yeti60-assembly.json')),native));spec=read(ROOT/'mechanical/pcb-fabrication-spec.json');nominal=assembly['nominal_stack']['pcb_bottom_z'];cases=[load(ROOT/'mechanical/generated'/('yeti60-'+s+'.step')) for s in ['bottom','top']]
     obstacles=[]
     for p in assembly['component_envelopes']:
         if p['ref'] not in ['R30','R31']:obstacles.append((p['ref'],box(p['bounds_case_mm'])))
     for h in assembly['mounting_hole_matches']:
         x,y=h['pcb_center_case_mm'];obstacles.append(('mount-'+h['pcb_ref'] if 'pcb_ref' in h else 'mount',box([x-2.1,y-2.1,-3.9,x+2.1,y+2.1,-2])))
     power_fit=[]
-    revised={p['ref'] for p in native['revised_power_components']}
+    revised={p['ref'] for p in native['revised_power_components']} | {'J2'}
     mount_shapes=[(name,shape) for name,shape in obstacles if name.startswith('mount')]
     pack=box(assembly['battery_candidates'][0]['bounds_case_mm'])
     for thick in [spec['CAD_finished_envelope_mm'],*spec['ordinary_thickness_acceptance_range_mm']]:

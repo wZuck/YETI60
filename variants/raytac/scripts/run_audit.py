@@ -110,6 +110,8 @@ def main():
     add('USB-repair-printable-guides',cad,'export_usb_short_guides.py',deps=['USB-repair-closed-routes'])
     add('USB-repair-feed-budget',py,'calculate_usb_short_feed.py',deps=['USB-repair-closed-routes'])
     add('USB-repair-complete-assembly',cad,'export_usb_short_assembly.py',deps=['USB-repair-printable-guides'])
+    add('USB-repair-plug-withdrawal',cad,'check_usb_short_plug_motion.py',deps=['USB-repair-complete-assembly'])
+    stages.append(('USB-repair-plug-motion-faults',cad+['tests/audit/test_plug_motion.py'],['USB-repair-plug-withdrawal']))
     add('USB-repair-rigid-extraction',cad,'check_usb_short_vertical_motion.py',deps=['USB-repair-complete-assembly'])
     stages.append(('USB-repair-rigid-extraction-faults',cad+['tests/audit/test_vertical_motion.py'],['USB-repair-rigid-extraction']))
     add('USB-repair-bounded-fit',cad,'check_usb_short_fit.py',deps=['USB-repair-rigid-extraction'])

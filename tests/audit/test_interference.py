@@ -6,6 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 import sys
+from unittest.mock import patch
 
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts'))
@@ -13,9 +14,35 @@ import screen_yeti60_interference as layout
 import simulate_yeti60_interference as analog
 import check_yeti60_acceptance as acceptance
 from yeti60_acceptance_gates import design_and_pending_gates,summarize
+from yeti60_rf_geometry import matches_controlled_outline
+from check_single_nrf_pcb import outline
 
 
 class EvidenceFaults(unittest.TestCase):
+    def test_actual_non_ground_copper_injection_rejected_for_both_options(self):
+        for name,folder in [('e73',ROOT),('raytac',ROOT/'variants/raytac')]:
+            board=layout.pcb.LoadBoard(str(folder/'hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb'))
+            module=next(f for f in board.GetFootprints() if f.GetReference()=='U1')
+            _,roi,_=layout.vendor_projection(module,name)
+            track=layout.pcb.PCB_TRACK(board)
+            track.SetStart(layout.pcb.VECTOR2I(layout.pcb.FromMM(roi[0]+.15),layout.pcb.FromMM(roi[1]+1)))
+            track.SetEnd(layout.pcb.VECTOR2I(layout.pcb.FromMM(roi[0]+.55),layout.pcb.FromMM(roi[1]+1)))
+            track.SetWidth(layout.pcb.FromMM(.2));track.SetLayer(layout.pcb.F_Cu)
+            track.SetNetCode(board.FindNet('ROW_DRV0').GetNetCode());board.Add(track)
+            with patch.object(layout.pcb,'LoadBoard',return_value=board):record=layout.screen(folder,name,False)
+            self.assertGreater(sum(r['non_GND_union_mm2'] for r in record['layers']),.05)
+            self.assertEqual(record['status'],'failed-vendor-keepout' if name=='raytac' else 'risk-copper-in-provisional-antenna-band')
+
+    def test_native_outline_exception_does_not_allow_unrelated_changes(self):
+        pcb=layout.pcb;spec=json.loads((ROOT/'mechanical/rf-remediation.json').read_text())
+        source=outline(pcb.LoadBoard(str(ROOT/'EC60/PCB/EC60_PCB/EC60.kicad_pcb')))
+        for folder in [ROOT,ROOT/'variants/raytac']:
+            actual=outline(pcb.LoadBoard(str(folder/'hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb')))
+            self.assertTrue(matches_controlled_outline(source,actual,spec,pcb))
+            bad=list(actual);index=next(i for i,v in enumerate(bad) if v in source)
+            value=list(bad[index]);value[1]+=1000;bad[index]=tuple(value)
+            self.assertFalse(matches_controlled_outline(source,bad,spec,pcb))
+
     def test_ground_in_vendor_region_fails(self):
         self.assertEqual(layout.classify([0,0,.5,0],True),'failed-vendor-keepout')
         self.assertIn('risk',layout.classify([.5,0,0,0],False))

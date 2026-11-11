@@ -88,10 +88,9 @@ class Graph:
         return dist[found],list(reversed(nodes)),list(reversed(edges))
 
 
-def extract(path):
-    board=pcb.LoadBoard(str(path));board.BuildConnectivity();conn=board.GetConnectivity()
+def build_graph(board,nets):
+    board.BuildConnectivity();conn=board.GetConnectivity()
     pads={(f.GetReference(),p.GetNumber()):p for f in board.GetFootprints() for p in f.Pads() if p.GetNumber()}
-    nets={'D+','D-','USB_DP','USB_DM'}
     items=[i for i in [*board.GetTracks(),*pads.values()] if i.GetNetname() in nets]
     uid=lambda i:i.m_Uuid.AsString()
     by_id={uid(i):i for i in items};graph=Graph();segments={};splits={};ports={}
@@ -147,18 +146,24 @@ def extract(path):
                 s,e=at(a,b,first),at(a,b,last)
                 graph.add(node(item,layer,s),node(item,layer,e),math.dist(s,e),'trace',item=key,
                           net=item.GetNetname(),layer=board.GetLayerName(layer),width_mm=pcb.ToMM(item.GetWidth()),start=list(s),end=list(e))
+    return graph,ports,pads
+
+
+def extract(path):
+    board=pcb.LoadBoard(str(path));graph,ports,pads=build_graph(board,{'D+','D-','USB_DP','USB_DM'})
     for ref in ['R30','R31']:
         a,b=ports[ref,'1'],ports[ref,'2'];graph.add(a,b,math.dist(a[2:],b[2:]),'series-package',reference=ref)
     output={}
     for name,pin,net,front in [('positive','3','USB_DP','D+'),('negative','2','USB_DM','D-')]:
-        tvs=next(number for (ref,number),pad in pads.items() if ref=='D1' and number in ['2','3'] and pad.GetNetname()==front)
+        tvs=next((number for (ref,number),pad in pads.items() if ref=='D1' and number in ['2','3'] and pad.GetNetname()==front),None)
         endpoint=next(k for k,p in pads.items() if k[0]=='U1' and p.GetNetname()==net)
         length,nodes,edge_ids=graph.path(ports['J1',pin],{ports[endpoint]})
         edges=[graph.edges[i] for i in edge_ids]
-        stub,_,stub_ids=graph.path(ports['D1',tvs],set(nodes))
+        stub,stub_ids=None,[]
+        if tvs is not None:stub,_,stub_ids=graph.path(ports['D1',tvs],set(nodes))
         output[name]={'from':'J1.'+pin,'to':'.'.join(endpoint),'geometric_centerline_path_mm':length,
                       'actual_trace_centerline_mm':sum(e['length_mm'] for e in edges if e['kind']=='trace'),
-                      'ESD_branch_to_main_path_mm':stub,'ESD_branch_path':[graph.edges[i] for i in stub_ids],'layers':sorted({e['layer'] for e in edges if e['kind']=='trace'}),
+                      'ESD_branch_to_main_path_mm':stub,'protection_location':'mainboard D1' if tvs is not None else 'external-not-screened-here','ESD_branch_path':[graph.edges[i] for i in stub_ids],'layers':sorted({e['layer'] for e in edges if e['kind']=='trace'}),
                       'via_count':len({e['item'] for e in edges if e['kind']=='via'}),'ordered_path':edges}
     output['geometric_path_difference_mm']=abs(output['positive']['geometric_centerline_path_mm']-output['negative']['geometric_centerline_path_mm'])
     output['status']='extracted-SI-qualification-open'

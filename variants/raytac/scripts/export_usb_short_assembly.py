@@ -22,6 +22,7 @@ from export_yeti60_render_meshes import tessellate
 from kicad_sexpr import child, children, dumps, loads
 from usb_short_guides import build
 from usb_short_harness import envelope_wire, paired_data, paths
+from usb_short_battery_service import POSITION, HOUSING_DEPTH, HOUSING_WIDTH
 
 WORK = ROOT / '.assembly-work/usb-short-assembly'
 AUD = BASE / 'audit'
@@ -47,6 +48,10 @@ def plugs(local, legacy, nominal):
         owner = {'main-SH': 'J1', 'main-PH': 'J2', 'C5-SH': 'C5'}[name]
         result.append(dict(name=name, bounds_case_mm=entry['bounds_case_mm'],
                            family={'J1': 'power', 'J2': 'battery', 'C5': 'usb'}[owner], owner=owner))
+        if owner=='J2':
+            result[-1]['name']='J2-SH3-mating-plug'
+            exit_y=-POSITION[1]+4.575
+            result[-1]['bounds_case_mm']=[POSITION[0]-HOUSING_WIDTH/2,exit_y-HOUSING_DEPTH,-5.1,POSITION[0]+HOUSING_WIDTH/2,exit_y,-2.1]
     for entry in local['local_connector_and_mating_housing_checks']:
         if entry['envelope'].endswith('-mating-plug') and abs(entry['pcb_thickness_mm'] - nominal) < 1e-7:
             owner = entry['envelope'].split('-')[0]
@@ -250,7 +255,7 @@ def main():
     receipt = {k: v for k, v in geometry.items() if k != 'meshes'}
     receipt['mesh_payload_sha256'] = sha(WORK / 'render-meshes.json')
     (AUD / 'assembly-meshes.json').write_text(json.dumps(receipt, indent=2) + '\n')
-    print('Candidate assembly meshes: nine wires, five mating plugs, 16 guides, 12 films, four native headers including attributed nominal J2 and complete C5', flush=True)
+    print('Candidate assembly meshes: nine wires, five mating plugs, 16 guides, 12 films, four native headers including SH3 J2 and complete C5', flush=True)
 
 
 if __name__ == '__main__':

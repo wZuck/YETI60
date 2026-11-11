@@ -3,7 +3,7 @@
   "physical_verification": false,
   "manufacturer_tolerances_qualified": false,
   "fitted_models": 75,
-  "only_documented_thermal_package_and_model_changes": true,
+  "only_documented_package_model_and_battery_service_changes": true,
   "external_KiCad_version": "10.0.7",
   "envelope_modeling_allowance_mm": 0.1,
   "parts": {
@@ -463,94 +463,94 @@
     },
     "J2": {
       "path": ".assembly-work/usb-short-models/parts/J2.step",
-      "sha256": "865ad9d27c32437aee27714b1d5e1d52dfad6ee7dcd14b169d8471b7839a28d5",
+      "sha256": "7983f4e5413a9055af6409ab3486c3149fbc7b4625407933bc966ab8ae977277",
       "bounds_native_mm": [
-        147.04999999999995,
-        -129.2,
-        -5.6850000000000005,
-        156.95000000000002,
-        -120.58999999999999,
-        -0.08499999999999742
+        153.0,
+        -131.475,
+        -3.045000000000001,
+        158.0,
+        -126.525,
+        -0.08499999999999969
       ],
       "value": "PROTECTED_1S_4V2_NTC10K",
       "position_pcb_mm": [
-        152.0,
-        125.0
+        155.5,
+        129.0
       ],
       "angle_deg": 0.0,
       "landing": {
-        "seating_plane_native_Z_mm": -0.08499999999999742,
+        "seating_plane_native_Z_mm": -0.08499999999999969,
         "matched_lands": 5,
         "planar_feet": [
           {
-            "pin": "3",
+            "pin": "MP",
             "bounds_native_mm": [
-              153.74999999999997,
-              -129.2,
-              -0.08499999999999851,
-              154.25,
-              -127.19999999999999,
-              -0.08499999999999783
+              157.5,
+              -128.025,
+              -0.0950000000000003,
+              157.7,
+              -126.525,
+              -0.09500000000000013
             ],
-            "modeled_seating_plane_difference_mm": 4.0245584642661925e-16,
+            "modeled_seating_plane_difference_mm": 0.010000000000000439,
             "modeled_flat_face_copper_overlap_ratio": 1.0,
-            "minimum_copper_edge_margin_mm": 0.24999999999997158
+            "minimum_copper_edge_margin_mm": 0.0
           },
           {
-            "pin": "2",
+            "pin": "MP",
             "bounds_native_mm": [
-              151.74999999999997,
-              -129.2,
-              -0.0849999999999981,
-              152.25,
-              -127.19999999999999,
-              -0.08499999999999742
+              153.3,
+              -128.025,
+              -0.0950000000000003,
+              153.5,
+              -126.525,
+              -0.09500000000000013
             ],
-            "modeled_seating_plane_difference_mm": 0.0,
+            "modeled_seating_plane_difference_mm": 0.010000000000000439,
             "modeled_flat_face_copper_overlap_ratio": 1.0,
-            "minimum_copper_edge_margin_mm": 0.24999999999997158
+            "minimum_copper_edge_margin_mm": 0.0
           },
           {
             "pin": "1",
             "bounds_native_mm": [
-              149.74999999999997,
-              -129.2,
-              -0.08499999999999944,
-              150.25,
-              -127.19999999999999,
-              -0.0849999999999976
+              154.4,
+              -131.475,
+              -0.0849999999999998,
+              154.6,
+              -130.67499999999998,
+              -0.0849999999999997
             ],
-            "modeled_seating_plane_difference_mm": 1.8041124150158794e-16,
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
             "modeled_flat_face_copper_overlap_ratio": 1.0,
-            "minimum_copper_edge_margin_mm": 0.24999999999997158
+            "minimum_copper_edge_margin_mm": 0.20000000000001705
           },
           {
-            "pin": "MP",
+            "pin": "2",
             "bounds_native_mm": [
-              147.54999999999998,
-              -123.5,
-              -0.08500000000003198,
-              147.95000000000002,
-              -120.58999999999999,
-              -0.08500000000000157
+              155.4,
+              -131.475,
+              -0.0849999999999998,
+              155.6,
+              -130.67499999999998,
+              -0.0849999999999997
             ],
-            "modeled_seating_plane_difference_mm": 4.1494585545365226e-15,
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
             "modeled_flat_face_copper_overlap_ratio": 1.0,
-            "minimum_copper_edge_margin_mm": 0.18999939999909005
+            "minimum_copper_edge_margin_mm": 0.20000000000001705
           },
           {
-            "pin": "MP",
+            "pin": "3",
             "bounds_native_mm": [
-              156.04999999999998,
-              -123.50000000000003,
-              -0.08500000000000157,
-              156.45000000000002,
-              -120.58999999999999,
-              -0.08500000000000002
+              156.4,
+              -131.475,
+              -0.0849999999999998,
+              156.6,
+              -130.67499999999998,
+              -0.0849999999999997
             ],
-            "modeled_seating_plane_difference_mm": 2.5951463200613034e-15,
+            "modeled_seating_plane_difference_mm": 1.3877787807814457e-17,
             "modeled_flat_face_copper_overlap_ratio": 1.0,
-            "minimum_copper_edge_margin_mm": 0.18999919999849052
+            "minimum_copper_edge_margin_mm": 0.20000000000001705
           }
         ],
         "nonmetal_core_seating_faces": [],
@@ -2633,7 +2633,7 @@
     },
     "U6": {
       "path": ".assembly-work/usb-short-models/parts/U6.step",
-      "sha256": "044adbac6e2ebb505b40427050e72be14d16e0151d01dacffb392df8137aa2e3",
+      "sha256": "6931ef1190cc72fc88162afbec8efa6115ec4a567d2ad46f9605e29c5717b41b",
       "bounds_native_mm": [
         131.75,
         -142.03750000000002,
@@ -2719,18 +2719,19 @@
     }
   ],
   "source_sha256": {
-    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "fcc959db0cde7d467860e7bf60695f68d27152eebcaa172dc19bb8617264a26a",
-    "hardware/usb-short-route/models/model-sources.json": "dba3b976fd38b2720c6665e896e925e7dbac66889d24c6d0c752c63735e9f406",
+    "hardware/usb-short-route/EC60-nRF52840.kicad_pcb": "007f25371634e19b095bd953a43967bb9ee3107bfd3267c2194c2b3223fcb17f",
+    "hardware/usb-short-route/models/model-sources.json": "2372489dcd943d85198e33fb1de73635f2fb5056ba424e39268d0c31feb51f9e",
     "hardware/usb-short-route/models/non-model-baseline.json": "15c818cbb54b928f95ad8daddbc8b55bab3a20f48f54ce5f5b515e5592090d31",
-    "hardware/usb-short-route/frozen-footprints.json": "ab7ea995264a17c728592307d1cd27282eca55164d0c47c775e076c59effd29e",
-    "hardware/usb-short-route/mainboard-purchase.csv": "753ec64110df03c84c5af0e09248165020cc5fd034c6d55ced51ba8614f5bb13",
-    "hardware/usb-short-route/models/CELESTIAL-LICENSE.txt": "b1df6ce3b33ad54b8a0414c566168fb2ae7d04d6d4c227726a07b231a08e5625",
-    "scripts/usb_short_model_contract.py": "49b6139053bd7a91826d78fc8a312a150df7c74b678926e4f9ab3279ee2dec27",
-    "scripts/repair_usb_short_models.py": "3fee9f9ef3216db1ce779c88e3830794f25627b44b7251d3930acf21caffe87f",
+    "hardware/usb-short-route/frozen-footprints.json": "2bb4fe621b86aefef730380d32f2b72a24b7a89767b3d1b399f910f50f74ef39",
+    "hardware/usb-short-route/mainboard-purchase.csv": "052dc3e3d7da2c6fb6e5818b65e364f84bc17d4afe444d36f4720fc5e3e8de07",
+    "hardware/usb-short-route/battery-service-j2.json": "7fc3a72fed014f5bb3a0f6bda84f39d5912ec25acf30e0acd7c5af33c34a1878",
+    "scripts/usb_short_model_contract.py": "0eddb0eb61cd39a99511b88f776dbfff32947ef868c626847316a7127e90075e",
+    "scripts/usb_short_battery_service.py": "62564ccaab6fda46ae238da6f4bd05c5bc937699b08ef5fdc839d233d8c04e41",
+    "scripts/repair_usb_short_models.py": "596ec0d5deb79679f2f2590bd7998a0a80a79eaede74a3f6c8a76727e4e5fb7f",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/export_usb_short_model_inputs.py": "199941eb7950eea13c69553a45303531c9c2a287177ac14e388cfdbb39a8258c",
-    "scripts/check_usb_short_models.py": "a03f0acef762c54a0d04d7654fac6634cb5e1f20a41889d0350c1f4dc0e13de0",
+    "scripts/check_usb_short_models.py": "46ec2df8f19ed1c18c7afb31cde871fe3fe082a4a564d81a0f9aa98843014728",
     "scripts/build_usb_short_package_models.py": "d03cfb52d2d47cc8efdc93a0ef439a5bb15c893d4c0ad1d5fcb9f79f440d8a44",
     "scripts/repair_usb_short_charger_package.py": "8e74f1b7e070df3d2ec4b6f54cb14f9e94c6ea78bbc0f4f1409d50c6744d2c0f",
     "scripts/usb_short_charger_contract.py": "647d0a142f54c821bc9b1bb51804a27d73090394f6d5d267ff0786c5ab256b33",
@@ -2781,8 +2782,8 @@
     "hardware/usb-short-route/YAECKB.pretty/HOLE_M2__H9.kicad_mod": "932807d67425fa948154426dcc50fbf1ba36dec9a64a912064c9bc598f02145b",
     "hardware/usb-short-route/YAECKB.pretty/JST-SR-4__J1.kicad_mod": "820ebf4da55fc08ccef2d5a05f4f6d316853358d182796becd2988f1f838717c",
     "hardware/usb-short-route/YAECKB.pretty/JST-SR-4__J4.kicad_mod": "2571c1356f46d1d644428d6210673c2f0432839e73649e37d8b27daa89211d0e",
-    "hardware/usb-short-route/YAECKB.pretty/JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal__J2.kicad_mod": "1f626ffd9ac90b0a2bf395b0f58fb5e87ec5214c75138ce87a9608d0f1173946",
     "hardware/usb-short-route/YAECKB.pretty/JST_SH_SM02B_SRSS_TB__J5.kicad_mod": "f9b1bb0f93b66fa33fdc3fec2652290ee873fdf00e29e7458c44ecd78f135200",
+    "hardware/usb-short-route/YAECKB.pretty/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal__J2.kicad_mod": "97dc7998c537f3d0f43518fe2964a42d9be7cb0263f0ee3749f374ff83ce2b5a",
     "hardware/usb-short-route/YAECKB.pretty/LED_0603_1608Metric__D2.kicad_mod": "a86ff11f3abccfc147a5805337fb03cfd097caa4de0feadde5f5d243bdd0dd97",
     "hardware/usb-short-route/YAECKB.pretty/L_Wuerth_MAPI-3015__L1.kicad_mod": "d9cdcfc66230941a32cd06e7ade267ec16f71e8ea468252971548bc4ee022647",
     "hardware/usb-short-route/YAECKB.pretty/Panasonic_EVQPUL_EVQPUC__SW1.kicad_mod": "fdb5722a6579465a04c31fd8ba64a244f72424479422bda9f831197971db647a",
@@ -2913,7 +2914,6 @@
     "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW69.kicad_mod": "45780ce8c1e861f09e755766d2c99358c41ee47338dd66c044010aeaab5d3880",
     "hardware/usb-short-route/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "5dcd7d5efc027b1b65957f49eb562fd026dce01828bb07649eb6a3125ea37cdd",
     "hardware/usb-short-route/models/TI_RGT16_3x3_EP1p68_dimensioned.step": "6c72a249f019f0c4979772547e69a8c2a9c024001e82cd6d3079b74c651ddecd",
-    "hardware/usb-short-route/models/JST_S3B-PH-SM4-TB_Celestial.step": "12219a17a30ec7a0a07e1a2394bcc4a46b5358a9918b1eba5c2129c116c2ec26",
     "hardware/usb-short-route/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f",
     "hardware/usb-short-route/models/CK_JS102011SAQN_dimensioned.step": "203ba400009353b7074891b3dddf34433ac3f142fee1dd5a991838fbc9683885"
   },
@@ -2931,7 +2931,8 @@
     "${KICAD10_3DMODEL_DIR}/Package_SO.3dshapes/TSSOP-16_4.4x5mm_P0.65mm.step": "6ad5e98224d02a427d9a6b929a28dbc158b9925fba5adec12db05079f1016948",
     "${KICAD10_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Wuerth_MAPI-3020.step": "2eafc132738d54831fe21d0ae43613d935a836ae3a23910aefd4ec50f7bcc951",
     "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.step": "98343205ec260ec165026ba2d44329a23096779ac36c553ea84aa7b370242e6d",
-    "${KICAD10_3DMODEL_DIR}/Package_SON.3dshapes/WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm.step": "26b11479728c38545462bbe7bb9e39e93c46ecc441c206ecdfeae513ed7b7b44"
+    "${KICAD10_3DMODEL_DIR}/Package_SON.3dshapes/WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm.step": "26b11479728c38545462bbe7bb9e39e93c46ecc441c206ecdfeae513ed7b7b44",
+    "${KICAD10_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal.step": "2d236e5b20c8cc3dd36f10f0ea2096fe09667d6a6a22ecd1d9b6c3fe2392ca93"
   },
   "limits": [
     "Native models are nominal visual/landing geometry, not supplier maximum tolerance envelopes",

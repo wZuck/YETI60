@@ -23,7 +23,7 @@ Use the [revised passive specifications and seven 0805 power-capacitor positions
 | J4 / J5 | JST SM04B-SRSS-TB(LF)(SN) / SM02B-SRSS-TB(LF)(SN), bottom side | 1 each |
 | SH wire housings | SHR-04V-S for C5, J4 and J1; SHR-02V-S for J5 | 3 + 1 |
 | SH contacts | SSH-003T-P0.2-H; J1 positions 2/3 stay empty | 12 fitted; buy 20 for spares |
-| Battery housing / contacts | PHR-3 / SPH-004T-P0.5S, preferably supplied already crimped by the qualified pack vendor | 1 / 3 |
+| Battery housing / contacts | SHR-03V-S / SSH-003T-P0.2-H, preferably supplied already crimped by the qualified pack vendor | 1 / 3 |
 | Internal wires | AWG28 stranded copper, insulation OD 0.5–0.8 mm for a common SH/PH-compatible wire; nine controlled conductors | 9 |
 | Bottom shell | [Relieved candidate STEP](mechanical/yeti60-bottom-short-usb.step) / [print STL](mechanical/yeti60-bottom-short-usb.stl), original exterior at 1:1 | 1 |
 | Routing parts | [Sixteen distinct STL/STEP files](CLOSED-CASE.md#printed-parts); post-cured tough resin, dimensionally qualified ±0.05 mm | 16 |
@@ -83,7 +83,7 @@ Complete the [B0–B7 electrical procedure](../../OPEN-BENCH.md), applying the c
 
 The interior view hides the PCB/plate for route visibility; PCB-side guides remain at their actual installed datums.
 
-The case, plate, PCB substrate, conductor paths, guides and C5 derive from checked original-size geometry. J1/J4/J5 use aligned native SH STEP models. J2 retains its conservative SMT PH body envelope because the installed library lacks its STEP model; a through-hole PH model is not substituted. Mating plug boxes, NiZ housings/sliders, domes/springs, keycaps, finish, component bodies and hardware details remain illustrative where supplier geometry is unqualified. Exploded separations are for visibility, not assembly travel distances. The PCB surface visual maps use native copper/pad geometry; they are not fabrication layers or an approved finish specification.
+The case, plate, PCB substrate, conductor paths, guides and C5 derive from checked original-size geometry. J1/J2/J4/J5 use aligned native SH STEP models. J2 is the low-profile three-pin SH replacement; all four headers have native STEP geometry. Mating plug boxes, NiZ housings/sliders, domes/springs, keycaps, finish, component bodies and hardware details remain illustrative where supplier geometry is unqualified. Exploded separations are for visibility, not assembly travel distances. The PCB surface visual maps use native copper/pad geometry; they are not fabrication layers or an approved finish specification.
 
 [Closed-case dimensions](CLOSED-CASE.md) · [Combined geometry evidence](audit/assembly.json) · [Drawing provenance](audit/assembly-drawings.json) · [Render provenance](assembly/render-manifest.json) · [Package consistency check](audit/assembly-package.json) · [Candidate entry](README.md)
 

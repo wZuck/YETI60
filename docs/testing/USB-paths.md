@@ -2,12 +2,14 @@ English | [Chinese](USB-paths.zh-CN.md)
 
 # USB path review
 
-The current native boards need USB layout remediation. Their TVS branches are much longer than the imposed 5 mm project target. These are geometric findings, not measured USB failures or certification limits.
+**Current scope:** E73 values follow the [latest extraction](../audit/USB-signal-paths.json) and [current review](../audit/e73-review.md). The historical Raytac formal board has no mainboard D1; external protection is `null` in this extractor and cannot be treated as a zero-length branch. The current short-USB candidate has [separate evidence](../../variants/raytac/hardware/usb-short-route/README.md). The older formal-board discussion below does not qualify that candidate.
+
+The current native E73 board needs USB layout remediation. Its TVS branches are much longer than the imposed 5 mm project target. These are geometric findings, not measured USB failures or certification limits.
 
 | Current formal board | D+ geometric path, mm | D− geometric path, mm | D+ TVS branch, mm | D− TVS branch, mm | Main-path vias, + / − |
 |---|---:|---:|---:|---:|---:|
-| E73 | 257.497 | 263.805 | 29.748 | 37.561 | 4 / 7 |
-| Raytac | 244.103 | 246.361 | 29.748 | 37.561 | 4 / 6 |
+| E73 | 254.555 | 257.864 | 29.748 | 37.561 | 4 / 6 |
+| Raytac historical formal board | 263.038 | 265.203 | Unscreened external protection | Unscreened external protection | 4 / 6 |
 
 The [contact-aware extractor](../../scripts/check_yeti60_signal_paths.py) constructs a graph from actual KiCad copper contacts. It splits tracks at intermediate branches, includes geometric pad-access and junction bridges, includes the center-to-center span of R30/R31, and derives via lengths from the declared four-layer stack. Arcs use chords with at most 0.002 mm deviation. A shortest path runs from J1 through its series link to the module USB land; a second shortest path runs from the TVS I/O land to any node on that main path. Detailed ordered paths and source hashes are in [the generated report](../audit/USB-signal-paths.json).
 

@@ -2,6 +2,10 @@ English | [Chinese](BUILD.zh-CN.md)
 
 # YETI60 Raytac: current ordering and build entry
 
+**The SH3 revision has passed the complete artifact checks.** Native electrical checks, CAM round-trip, both matched firmware images, assembly, continuous rigid plug motion, harness documentation and renders were reverified together. Supplier, fabricator and physical qualification still apply below; this is not production release.
+
+The protected pack now uses SH3 / 1.0 mm pitch. Its three supplied SSH contacts plus the 12 USB/power-jumper contacts give 15 installed SH contacts in total.
+
 Start with the [current first-article files and ordering parameters](hardware/usb-short-route/FIRST-ARTICLE.md). This is the Raytac MDBT50Q-1MV2 board with repaired USB/power routing, the C04 plate and the revised bottom shell. The earlier long-route fabrication archive, seven-wire assembly and reference firmware are retained engineering references; use the current files linked here for this build.
 
 The first board can be tested without an enclosure. Supplier DFM precedes fabrication; protected-pack confirmation precedes real-cell connection; real USB/BLE, charging, EC calibration and mechanical acceptance follow manufacture. Current software/CAD evidence does not establish physical operation or production approval.
@@ -10,6 +14,7 @@ The first board can be tested without an enclosure. Supplier DFM precedes fabric
 
 | Task | Current document/file |
 |---|---|
+| Battery plug position and continuous body withdrawal | [J2 relocation, two ordinary vias and remaining service limits](hardware/usb-short-route/BATTERY-SERVICE.md) |
 | Native models and ordinary thermal-pad construction | [Models, lands, stencil and mask islands](hardware/usb-short-route/PACKAGE-MODELS.md) |
 | Order mainboard PCB and stencil; choose JLC parameters | [First-article order table and downloads](hardware/usb-short-route/FIRST-ARTICLE.md) |
 | Buy mainboard parts and subtract inventory | [75-part purchase CSV](hardware/usb-short-route/mainboard-purchase.csv), [generic passive/LED specifications](hardware/usb-short-route/PASSIVES.md), [selected F1](hardware/usb-short-route/F1-SELECTION.md) |
@@ -40,7 +45,7 @@ The first board can be tested without an enclosure. Supplier DFM precedes fabric
 - **75 fitted mainboard parts: 8 planned from inventory, 67 net purchases**, excluding spares. Count actual stock before ordering. R30/R31 are removed; JP1 stays open. Buy generic passives by the current specification rather than brand. IC/module, inductor, fuse and connector identities remain controlled.
 - One populated C5 JSH; alternatively one C5 bare board plus seven components (two planned inventory resistors and five purchases). Retain C5 protection components and fuse. It is a separate PCB order.
 - One four-wire C5→J4 USB harness and one two-wire J5→J1 power jumper; J1.2/J1.3 are unused. Prepare three SHR-04V-S housings, one SHR-02V-S housing and 12 fitted SSH-003T-P0.2-H contacts; 20 contacts allows eight spares. Add a USB data cable. Open-bench free lengths are 250 mm per USB wire and 300 mm per jumper wire; final enclosed lengths/radii follow the closed-case guide.
-- One protected 1S 1600 mAh pack with three-wire PHR-3 interface, matched NTC and independent voltage/current/temperature protection. A supplier-qualified exact pack is still required. Six interconnect wires plus three pack leads make **nine wires** in the complete current assembly. Pack polarity is J2.1 PACK+, J2.2 PACK−, J2.3 NTC relative to PACK−.
+- One protected 1S 1600 mAh pack with three-wire SHR-03V-S interface, matched NTC and independent voltage/current/temperature protection. A supplier-qualified exact pack is still required. Six interconnect wires plus three pack leads make **nine wires** in the complete current assembly. Pack polarity is J2.1 PACK+, J2.2 PACK−, J2.3 NTC relative to PACK−.
 - One C04 304 stainless plate, nominal 1.6 mm with finished thickness 1.55–1.60 mm and **28 M2×0.4 tapped axes**; H26 is unused. Order cutting and tapping, not only laser-cut pilot holes. Add 60 matched NiZ housings/sliders/rings, 60 conical springs, a 45g dome sheet, three plate stabilizer pairs, two short stabilizer wires, a centered 6U wire and matching keycaps as specified in K01–K07.
 - 28 custom brass adapters, 28 polyimide rings, 28 PEEK washers and 28 M1.6×5 screws; exact dimensions follow the [mechanism/hardware specification](docs/build/key-mechanism.md). Complete the threads and deburring before approaching electronics.
 - For the later enclosed assembly: one current top and one revised bottom shell; 16 routing-guide pieces; eight 33×3 mm gasket strips (four nominal 2.0 mm lower and four nominal 1.2 mm upper); specified M3 shell and M2 C5 inserts/screws/washers, feet, insulation and retention materials. Use the [shared hardware checklist](README.md#complete-materials-for-one-keyboard) with the current C04/closed-case revisions above. Foam properties, installed retention, full connector service and combined tolerances remain qualification items.

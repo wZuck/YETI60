@@ -35,6 +35,15 @@
       "mated_depth_reference": 9.6,
       "header_back_local_y": -1.6,
       "header_front_local_y": 4.4
+    },
+    "battery_connector": {
+      "header": "SM03B-SRSS-TB(LF)(SN)",
+      "housing": "SHR-03V-S",
+      "contact": "SSH-003T-P0.2-H",
+      "pitch_mm": 1,
+      "current_rating_A_AWG28": 1,
+      "url": "https://www.jst-mfg.com/product/index.php?lang=2&series=231",
+      "physical_qualification": false
     }
   },
   "wire": {
@@ -73,7 +82,7 @@
       0,
       -2
     ],
-    "main_exit_below_pcb": 2.75,
+    "main_exit_below_pcb": 1.6,
     "radius": 7,
     "rear_y": -106,
     "side_x": 221,
@@ -85,7 +94,13 @@
     ],
     "pack_exit_axis": "-X; local origin is pack minimum X/Y/Z, not cell origin",
     "minimum_pack_lead_transition_zone_length": 5,
-    "rear_z": -4.9
+    "rear_z": -4.9,
+    "header_lateral_offsets": [
+      1,
+      0,
+      -1
+    ],
+    "header_fanout_radius_mm": 4
   },
   "case_pocket": {
     "bounds_case_mm": [

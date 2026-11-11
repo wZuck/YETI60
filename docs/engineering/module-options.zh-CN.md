@@ -1,19 +1,15 @@
-中文 | [English](module-options.md)
+[English](module-options.md) | 简体中文
 
-# 主控模组备选方案
+# 控制模组两套方案
 
-## 选择方案
+两套方案保留在同一分支，每套仅使用一个 nRF52840。主板、模组和固件必须匹配；当前机械、线束与电源修订不同，不能互相继承验收。
 
-两种方案保存在同一个分支，每把键盘只安装一个 nRF52840 模组。E73 是主目录默认方案；Raytac 位于独立目录，共用原尺寸外壳、定位板、电池与上游来源。两种焊盘及引脚分配不同，PCB、模组、固件须按同一方案成套选择。
+| 方案 | 受控入口 | 当前状态 |
+|---|---|---|
+| 亿佰特 E73-2G4M08S1C | [E73 制作与审查入口](../../BUILD.zh-CN.md)、[当前门禁](../audit/e73-readiness.json) | 原生 270 组信号／电源及 142 组地连通性通过，普通／校准固件可构建。USB 支路、旧定位板和 PH 插头拔出干涉使设计继续暂停。 |
+| Raytac MDBT50Q-1MV2 | [Raytac 手册](../../variants/raytac/BUILD.zh-CN.md)、[USB 修补候选板](../../variants/raytac/hardware/usb-short-route/README.zh-CN.md) | 独立候选板、九线线束和 SH3 电池接口；供方、制板审查及实物验收仍待完成。 |
 
-| 方案 | PCB 与完整材料 | 固件 | 工艺与状态 |
-|---|---|---|---|
-| Ebyte E73-2G4M08S1C | [主目录清单](../../README.zh-CN.md)、[原生 PCB](../../hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [正常版](../../firmware/releases/normal/yeti60-e73.hex)、[校准版](../../firmware/releases/calibrator/yeti60-e73.hex) | 普通四层；DRC 0 错误／0 未连接；CAD／构建审查通过 |
-| Raytac MDBT50Q-1MV2 | [Raytac 清单](../../variants/raytac/README.zh-CN.md)、[原生 PCB](../../variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb) | [正常版](../../variants/raytac/firmware/releases/normal/yeti60-raytac.hex)、[校准版](../../variants/raytac/firmware/releases/calibrator/yeti60-raytac.hex) | 普通四层；DRC 0 错误／0 未连接；CAD／构建审查通过 |
-
-一把键盘只需制作所选主板一块，另按选择购买成品或自焊 C5 JSH，不能把两种主板都计入同一把键盘的材料。主板两方案均可计划使用同一组库存无源元件 10 只，均需补购 66 只；它们是互斥选择，不是重复扣减库存。两种模组均不在所提供库存中。
-
-用 `python3 scripts/run_all_variants.py` 顺序检查两种方案；加入 `--refresh-renders` 同时更新图像。根目录的全方案汇总将写入 `docs/audit/variants.json`。[合并验证记录](../audit/variants.json)确认两套设计及对应制板包。实物验收和信号干扰仍未验证。
+保留已经制作的 UDB-C-JSH C5 子板。主板只有满足对应放行条件后才制作所选的一套。使用各入口中的当前物料表和库存抵扣；旧元件总数及历史两方案合并检查不代表当前候选包。继续限定 JLC 普通四层工艺。
 
 ## E73 来源与引脚阶段记录
 
