@@ -38,3 +38,7 @@ After design closure, obtain fabricator DFM and inspect the first board. Bench a
 ## Reproduce
 
 Run `scripts/run_audit.py` with KiCad and the CAD Python runtime; `scripts/test_yeti60_usb_events.py` exercises the actual pinned upstream callback. Run the RF/USB extraction scripts, `scripts/study_e73_service.py`, then `scripts/review_e73_readiness.py`. The review writes an explicit HOLD with failed/open gates. `--require-design` returns a nonzero status while those gates remain unresolved; successful test execution must not be presented as design acceptance.
+
+## USB repair checkpoint
+
+The [isolated E73 USB repair](../engineering/e73-usb-repair.md) now has its own native project, schematic/netlist, purchase delta and fault checks. Its short data topology is separate from the canonical measurements above. Manufacturing release, complete return/harness/service acceptance and matched firmware/CAM remain open.

@@ -9,6 +9,7 @@ The existing **UDB-C-JSH C5 daughterboard is retained**. Its PCB, connector and 
 | Task | Controlled entry |
 |---|---|
 | Current findings and remaining work | [E73 review](docs/audit/e73-review.md), [full audit](docs/audit/outcome.json) |
+| USB repair checkpoint | [Isolated E73 candidate, native checks and material difference](docs/engineering/e73-usb-repair.md) — unreleased; canonical CAM/firmware unchanged |
 | E73 module, pads and MCU configuration | [Vendor land reference](hardware/module-options/e73.json), [pin contract](docs/audit/yeti60-e73-variant.json) |
 | Current PCB and manufacturing review files | [Native PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [ordinary four-layer requirements](hardware/ec60-nrf52840/fabrication-notes.md), [DFM review ZIP](hardware/fabrication/yeti60-e73-p2-dfm-review.zip) — design hold applies |
 | Parts, package specifications, quantities and inventory | [Preparation list](README.md#complete-materials-for-one-keyboard), [purchase CSV](hardware/bom/mainboard-purchase.csv), [stock allocation](docs/engineering/inventory-allocation.md) |

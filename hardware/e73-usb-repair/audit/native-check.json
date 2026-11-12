@@ -1,0 +1,2839 @@
+{
+  "status": "e73-usb-native-candidate-checks-passed",
+  "selected_by_assembly": false,
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "native_rules": {
+    "errors": 0,
+    "opens": 0,
+    "parity_errors": 0,
+    "warnings_by_type": {
+      "missing_courtyard": 102
+    },
+    "ERC_warnings_by_type": {
+      "endpoint_off_grid": 183,
+      "multiple_net_names": 1
+    }
+  },
+  "netlist": {
+    "components": 177,
+    "nets": 83,
+    "all_non_USB_nodes_preserved": true
+  },
+  "preserved_geometry": {
+    "E73_lands_preserved": 43,
+    "retained_copper_items_unchanged": 6734,
+    "outline_and_mount_geometry_preserved": true,
+    "ordinary_through_vias_only": true,
+    "new_or_module_via_in_pad": false,
+    "inherited_pad_via_overlaps": [
+      {
+        "reference": "U5",
+        "pad": "17",
+        "via_UUID": "1df4dc1f-1f79-484a-8421-f92423a6f7d0"
+      },
+      {
+        "reference": "D2",
+        "pad": "1",
+        "via_UUID": "2fbc09c8-3af4-4563-8086-fe4bd03b626d"
+      },
+      {
+        "reference": "C48",
+        "pad": "2",
+        "via_UUID": "d17868b1-6489-4c01-b95e-c5c196fb1bea"
+      },
+      {
+        "reference": "SW1",
+        "pad": "2",
+        "via_UUID": "d7990fa7-e065-4db3-9c82-ebd8246d6e0b"
+      }
+    ],
+    "inherited_via_limit": "Unchanged open/tented through vias overlapping retained lands (including thermal lands); pad solder wicking/DFM qualification remains open"
+  },
+  "connectivity": {
+    "signal_power_pairs": 266,
+    "ground_pairs": 143,
+    "all_pairs": [
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "C31.1"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "C45.1"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "C46.1"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "J3.1"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "R26.1"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "R45.2"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "R46.2"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "U1.19"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "U1.23"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "U6.1"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "U6.10"
+      },
+      {
+        "net": "+3.3V",
+        "from": "C30.1",
+        "to": "U8.1"
+      },
+      {
+        "net": "ADC",
+        "from": "JP1.1",
+        "to": "R16.1"
+      },
+      {
+        "net": "ADC",
+        "from": "JP1.1",
+        "to": "U1.4"
+      },
+      {
+        "net": "ADC",
+        "from": "JP1.1",
+        "to": "U3.6"
+      },
+      {
+        "net": "AFE_3V3",
+        "from": "C11.2",
+        "to": "C12.2"
+      },
+      {
+        "net": "AFE_3V3",
+        "from": "C11.2",
+        "to": "C13.1"
+      },
+      {
+        "net": "AFE_3V3",
+        "from": "C11.2",
+        "to": "C48.1"
+      },
+      {
+        "net": "AFE_3V3",
+        "from": "C11.2",
+        "to": "C9.2"
+      },
+      {
+        "net": "AFE_3V3",
+        "from": "C11.2",
+        "to": "R54.2"
+      },
+      {
+        "net": "AFE_3V3",
+        "from": "C11.2",
+        "to": "U2.16"
+      },
+      {
+        "net": "AFE_3V3",
+        "from": "C11.2",
+        "to": "U3.7"
+      },
+      {
+        "net": "AFE_3V3",
+        "from": "C11.2",
+        "to": "U4.16"
+      },
+      {
+        "net": "AFE_3V3",
+        "from": "C11.2",
+        "to": "U8.6"
+      },
+      {
+        "net": "AFE_3V3_QOD",
+        "from": "R54.1",
+        "to": "U8.5"
+      },
+      {
+        "net": "AFE_EN",
+        "from": "R50.1",
+        "to": "U1.9"
+      },
+      {
+        "net": "AFE_EN",
+        "from": "R50.1",
+        "to": "U8.3"
+      },
+      {
+        "net": "AMUX_SEL_0",
+        "from": "U1.32",
+        "to": "U2.11"
+      },
+      {
+        "net": "AMUX_SEL_0",
+        "from": "U1.32",
+        "to": "U4.11"
+      },
+      {
+        "net": "AMUX_SEL_1",
+        "from": "U1.34",
+        "to": "U2.10"
+      },
+      {
+        "net": "AMUX_SEL_1",
+        "from": "U1.34",
+        "to": "U4.10"
+      },
+      {
+        "net": "AMUX_SEL_2",
+        "from": "U1.28",
+        "to": "U2.9"
+      },
+      {
+        "net": "AMUX_SEL_2",
+        "from": "U1.28",
+        "to": "U4.9"
+      },
+      {
+        "net": "APLEX_EN_PIN_0",
+        "from": "U1.13",
+        "to": "U2.6"
+      },
+      {
+        "net": "APLEX_EN_PIN_1",
+        "from": "U1.41",
+        "to": "U4.6"
+      },
+      {
+        "net": "APLEX_OUT_PIN_0",
+        "from": "C10.1",
+        "to": "U1.12"
+      },
+      {
+        "net": "APLEX_OUT_PIN_0",
+        "from": "C10.1",
+        "to": "U2.3"
+      },
+      {
+        "net": "APLEX_OUT_PIN_0",
+        "from": "C10.1",
+        "to": "U3.3"
+      },
+      {
+        "net": "APLEX_OUT_PIN_0",
+        "from": "C10.1",
+        "to": "U4.3"
+      },
+      {
+        "net": "BAT_ADC",
+        "from": "C47.1",
+        "to": "R51.2"
+      },
+      {
+        "net": "BAT_ADC",
+        "from": "C47.1",
+        "to": "R52.1"
+      },
+      {
+        "net": "BAT_ADC",
+        "from": "C47.1",
+        "to": "U1.15"
+      },
+      {
+        "net": "BAT_CELL",
+        "from": "C41.1",
+        "to": "J2.1"
+      },
+      {
+        "net": "BAT_CELL",
+        "from": "C41.1",
+        "to": "U5.2"
+      },
+      {
+        "net": "BAT_CELL",
+        "from": "C41.1",
+        "to": "U5.3"
+      },
+      {
+        "net": "BAT_CELL",
+        "from": "C41.1",
+        "to": "U7.1"
+      },
+      {
+        "net": "BAT_MEAS_EN",
+        "from": "R49.1",
+        "to": "U1.8"
+      },
+      {
+        "net": "BAT_MEAS_EN",
+        "from": "R49.1",
+        "to": "U7.3"
+      },
+      {
+        "net": "BAT_MEAS_TOP",
+        "from": "R51.1",
+        "to": "R53.2"
+      },
+      {
+        "net": "BAT_MEAS_TOP",
+        "from": "R51.1",
+        "to": "U7.6"
+      },
+      {
+        "net": "BAT_MEAS_TOP_QOD",
+        "from": "R53.1",
+        "to": "U7.5"
+      },
+      {
+        "net": "BAT_NTC",
+        "from": "J2.3",
+        "to": "U5.1"
+      },
+      {
+        "net": "BUCK_L1",
+        "from": "L1.1",
+        "to": "U6.4"
+      },
+      {
+        "net": "BUCK_L2",
+        "from": "L1.2",
+        "to": "U6.2"
+      },
+      {
+        "net": "CHG_CE_N",
+        "from": "R44.1",
+        "to": "U1.6"
+      },
+      {
+        "net": "CHG_CE_N",
+        "from": "R44.1",
+        "to": "U5.4"
+      },
+      {
+        "net": "CHG_EN1",
+        "from": "R42.1",
+        "to": "U1.3"
+      },
+      {
+        "net": "CHG_EN1",
+        "from": "R42.1",
+        "to": "U5.6"
+      },
+      {
+        "net": "CHG_EN2",
+        "from": "R43.1",
+        "to": "U1.7"
+      },
+      {
+        "net": "CHG_EN2",
+        "from": "R43.1",
+        "to": "U5.5"
+      },
+      {
+        "net": "CHG_N",
+        "from": "R45.1",
+        "to": "U1.2"
+      },
+      {
+        "net": "CHG_N",
+        "from": "R45.1",
+        "to": "U5.9"
+      },
+      {
+        "net": "COL0",
+        "from": "R8.1",
+        "to": "SW18.1"
+      },
+      {
+        "net": "COL0",
+        "from": "R8.1",
+        "to": "SW2.1"
+      },
+      {
+        "net": "COL0",
+        "from": "R8.1",
+        "to": "SW33.1"
+      },
+      {
+        "net": "COL0",
+        "from": "R8.1",
+        "to": "SW47.2"
+      },
+      {
+        "net": "COL0",
+        "from": "R8.1",
+        "to": "SW48.1"
+      },
+      {
+        "net": "COL0",
+        "from": "R8.1",
+        "to": "SW63.1"
+      },
+      {
+        "net": "COL0",
+        "from": "R8.1",
+        "to": "U2.13"
+      },
+      {
+        "net": "COL1",
+        "from": "R11.1",
+        "to": "SW19.1"
+      },
+      {
+        "net": "COL1",
+        "from": "R11.1",
+        "to": "SW3.1"
+      },
+      {
+        "net": "COL1",
+        "from": "R11.1",
+        "to": "SW34.1"
+      },
+      {
+        "net": "COL1",
+        "from": "R11.1",
+        "to": "SW49.2"
+      },
+      {
+        "net": "COL1",
+        "from": "R11.1",
+        "to": "SW64.1"
+      },
+      {
+        "net": "COL1",
+        "from": "R11.1",
+        "to": "U2.12"
+      },
+      {
+        "net": "COL2",
+        "from": "R9.1",
+        "to": "SW20.1"
+      },
+      {
+        "net": "COL2",
+        "from": "R9.1",
+        "to": "SW35.1"
+      },
+      {
+        "net": "COL2",
+        "from": "R9.1",
+        "to": "SW4.1"
+      },
+      {
+        "net": "COL2",
+        "from": "R9.1",
+        "to": "SW50.1"
+      },
+      {
+        "net": "COL2",
+        "from": "R9.1",
+        "to": "SW65.1"
+      },
+      {
+        "net": "COL2",
+        "from": "R9.1",
+        "to": "U2.14"
+      },
+      {
+        "net": "COL3",
+        "from": "R10.1",
+        "to": "SW21.1"
+      },
+      {
+        "net": "COL3",
+        "from": "R10.1",
+        "to": "SW36.1"
+      },
+      {
+        "net": "COL3",
+        "from": "R10.1",
+        "to": "SW5.1"
+      },
+      {
+        "net": "COL3",
+        "from": "R10.1",
+        "to": "SW51.1"
+      },
+      {
+        "net": "COL3",
+        "from": "R10.1",
+        "to": "U2.15"
+      },
+      {
+        "net": "COL4",
+        "from": "R13.1",
+        "to": "SW22.1"
+      },
+      {
+        "net": "COL4",
+        "from": "R13.1",
+        "to": "SW37.1"
+      },
+      {
+        "net": "COL4",
+        "from": "R13.1",
+        "to": "SW52.1"
+      },
+      {
+        "net": "COL4",
+        "from": "R13.1",
+        "to": "SW6.1"
+      },
+      {
+        "net": "COL4",
+        "from": "R13.1",
+        "to": "SW66.1"
+      },
+      {
+        "net": "COL4",
+        "from": "R13.1",
+        "to": "U2.5"
+      },
+      {
+        "net": "COL5",
+        "from": "R15.1",
+        "to": "SW23.1"
+      },
+      {
+        "net": "COL5",
+        "from": "R15.1",
+        "to": "SW38.1"
+      },
+      {
+        "net": "COL5",
+        "from": "R15.1",
+        "to": "SW53.1"
+      },
+      {
+        "net": "COL5",
+        "from": "R15.1",
+        "to": "SW67.1"
+      },
+      {
+        "net": "COL5",
+        "from": "R15.1",
+        "to": "SW7.1"
+      },
+      {
+        "net": "COL5",
+        "from": "R15.1",
+        "to": "U2.4"
+      },
+      {
+        "net": "COL6",
+        "from": "R14.1",
+        "to": "SW24.1"
+      },
+      {
+        "net": "COL6",
+        "from": "R14.1",
+        "to": "SW39.1"
+      },
+      {
+        "net": "COL6",
+        "from": "R14.1",
+        "to": "SW54.1"
+      },
+      {
+        "net": "COL6",
+        "from": "R14.1",
+        "to": "SW68.1"
+      },
+      {
+        "net": "COL6",
+        "from": "R14.1",
+        "to": "SW75.1"
+      },
+      {
+        "net": "COL6",
+        "from": "R14.1",
+        "to": "SW8.1"
+      },
+      {
+        "net": "COL6",
+        "from": "R14.1",
+        "to": "U2.2"
+      },
+      {
+        "net": "COL7",
+        "from": "R12.1",
+        "to": "SW25.1"
+      },
+      {
+        "net": "COL7",
+        "from": "R12.1",
+        "to": "SW40.1"
+      },
+      {
+        "net": "COL7",
+        "from": "R12.1",
+        "to": "SW55.1"
+      },
+      {
+        "net": "COL7",
+        "from": "R12.1",
+        "to": "SW69.1"
+      },
+      {
+        "net": "COL7",
+        "from": "R12.1",
+        "to": "SW9.1"
+      },
+      {
+        "net": "COL7",
+        "from": "R12.1",
+        "to": "U2.1"
+      },
+      {
+        "net": "COL8",
+        "from": "R18.1",
+        "to": "SW10.1"
+      },
+      {
+        "net": "COL8",
+        "from": "R18.1",
+        "to": "SW26.1"
+      },
+      {
+        "net": "COL8",
+        "from": "R18.1",
+        "to": "SW41.1"
+      },
+      {
+        "net": "COL8",
+        "from": "R18.1",
+        "to": "SW56.1"
+      },
+      {
+        "net": "COL8",
+        "from": "R18.1",
+        "to": "U4.13"
+      },
+      {
+        "net": "COL9",
+        "from": "R21.1",
+        "to": "SW11.1"
+      },
+      {
+        "net": "COL9",
+        "from": "R21.1",
+        "to": "SW27.1"
+      },
+      {
+        "net": "COL9",
+        "from": "R21.1",
+        "to": "SW42.1"
+      },
+      {
+        "net": "COL9",
+        "from": "R21.1",
+        "to": "SW57.1"
+      },
+      {
+        "net": "COL9",
+        "from": "R21.1",
+        "to": "SW70.1"
+      },
+      {
+        "net": "COL9",
+        "from": "R21.1",
+        "to": "SW74.1"
+      },
+      {
+        "net": "COL9",
+        "from": "R21.1",
+        "to": "U4.12"
+      },
+      {
+        "net": "COL10",
+        "from": "R19.1",
+        "to": "SW12.1"
+      },
+      {
+        "net": "COL10",
+        "from": "R19.1",
+        "to": "SW28.1"
+      },
+      {
+        "net": "COL10",
+        "from": "R19.1",
+        "to": "SW43.1"
+      },
+      {
+        "net": "COL10",
+        "from": "R19.1",
+        "to": "SW58.1"
+      },
+      {
+        "net": "COL10",
+        "from": "R19.1",
+        "to": "SW71.1"
+      },
+      {
+        "net": "COL10",
+        "from": "R19.1",
+        "to": "U4.14"
+      },
+      {
+        "net": "COL11",
+        "from": "R20.1",
+        "to": "SW13.1"
+      },
+      {
+        "net": "COL11",
+        "from": "R20.1",
+        "to": "SW29.1"
+      },
+      {
+        "net": "COL11",
+        "from": "R20.1",
+        "to": "SW44.1"
+      },
+      {
+        "net": "COL11",
+        "from": "R20.1",
+        "to": "SW59.1"
+      },
+      {
+        "net": "COL11",
+        "from": "R20.1",
+        "to": "SW72.1"
+      },
+      {
+        "net": "COL11",
+        "from": "R20.1",
+        "to": "U4.15"
+      },
+      {
+        "net": "COL12",
+        "from": "R23.1",
+        "to": "SW14.1"
+      },
+      {
+        "net": "COL12",
+        "from": "R23.1",
+        "to": "SW30.1"
+      },
+      {
+        "net": "COL12",
+        "from": "R23.1",
+        "to": "SW45.1"
+      },
+      {
+        "net": "COL12",
+        "from": "R23.1",
+        "to": "SW60.1"
+      },
+      {
+        "net": "COL12",
+        "from": "R23.1",
+        "to": "SW73.1"
+      },
+      {
+        "net": "COL12",
+        "from": "R23.1",
+        "to": "U4.5"
+      },
+      {
+        "net": "COL13",
+        "from": "R25.1",
+        "to": "SW15.1"
+      },
+      {
+        "net": "COL13",
+        "from": "R25.1",
+        "to": "SW31.1"
+      },
+      {
+        "net": "COL13",
+        "from": "R25.1",
+        "to": "SW32.2"
+      },
+      {
+        "net": "COL13",
+        "from": "R25.1",
+        "to": "SW46.2"
+      },
+      {
+        "net": "COL13",
+        "from": "R25.1",
+        "to": "SW60.3"
+      },
+      {
+        "net": "COL13",
+        "from": "R25.1",
+        "to": "SW61.1"
+      },
+      {
+        "net": "COL13",
+        "from": "R25.1",
+        "to": "U4.4"
+      },
+      {
+        "net": "COL14",
+        "from": "R24.1",
+        "to": "SW16.1"
+      },
+      {
+        "net": "COL14",
+        "from": "R24.1",
+        "to": "SW17.1"
+      },
+      {
+        "net": "COL14",
+        "from": "R24.1",
+        "to": "SW62.2"
+      },
+      {
+        "net": "COL14",
+        "from": "R24.1",
+        "to": "U4.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C11.1"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C12.1"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C13.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C30.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C31.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C32.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C40.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C41.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C42.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C43.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C44.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C45.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C46.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C47.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C48.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "C9.1"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "D2.1"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "J1.4"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "J2.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "J3.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "J3.6"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "J4.4"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "J5.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R10.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R11.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R12.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R13.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R14.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R15.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R17.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R18.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R19.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R20.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R21.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R23.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R24.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R25.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R40.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R41.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R42.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R43.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R44.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R48.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R49.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R50.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R52.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R55.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R56.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R8.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "R9.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW1.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW10.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW100.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW11.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW12.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW13.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW14.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW15.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW16.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW17.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW18.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW19.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW2.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW20.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW21.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW22.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW23.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW24.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW25.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW26.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW27.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW28.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW29.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW3.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW30.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW31.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW32.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW33.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW34.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW35.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW36.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW37.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW38.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW39.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW4.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW40.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW41.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW42.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW43.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW44.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW45.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW46.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW47.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW48.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW49.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW5.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW50.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW51.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW52.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW53.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW54.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW55.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW56.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW57.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW58.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW59.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW6.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW60.4"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW61.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW62.4"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW63.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW64.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW65.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW66.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW67.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW68.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW69.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW7.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW70.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW71.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW72.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW73.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW74.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW75.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW8.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "SW9.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U1.21"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U1.24"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U1.5"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U2.7"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U2.8"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U3.4"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U4.1"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U4.7"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U4.8"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U5.17"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U5.8"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U6.11"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U6.3"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U6.7"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U6.9"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U7.2"
+      },
+      {
+        "net": "GND",
+        "from": "C10.2",
+        "to": "U8.2"
+      },
+      {
+        "net": "ICHG_SET",
+        "from": "R40.1",
+        "to": "U5.16"
+      },
+      {
+        "net": "ILIM_SET",
+        "from": "R41.1",
+        "to": "U5.12"
+      },
+      {
+        "net": "ITERM_SET",
+        "from": "R56.1",
+        "to": "U5.15"
+      },
+      {
+        "net": "LED_A",
+        "from": "D2.2",
+        "to": "R32.2"
+      },
+      {
+        "net": "Net-(JP1-B)",
+        "from": "JP1.2",
+        "to": "R16.2"
+      },
+      {
+        "net": "Net-(JP1-B)",
+        "from": "JP1.2",
+        "to": "R17.1"
+      },
+      {
+        "net": "Net-(JP1-B)",
+        "from": "JP1.2",
+        "to": "U3.2"
+      },
+      {
+        "net": "PGOOD_N",
+        "from": "R46.1",
+        "to": "U1.43"
+      },
+      {
+        "net": "PGOOD_N",
+        "from": "R46.1",
+        "to": "U5.7"
+      },
+      {
+        "net": "REG_EN",
+        "from": "R48.1",
+        "to": "SW100.2"
+      },
+      {
+        "net": "REG_EN",
+        "from": "R48.1",
+        "to": "U6.6"
+      },
+      {
+        "net": "REG_VINA",
+        "from": "C44.1",
+        "to": "R47.2"
+      },
+      {
+        "net": "REG_VINA",
+        "from": "C44.1",
+        "to": "U6.8"
+      },
+      {
+        "net": "RESET_N",
+        "from": "J3.5",
+        "to": "R26.2"
+      },
+      {
+        "net": "RESET_N",
+        "from": "J3.5",
+        "to": "SW1.1"
+      },
+      {
+        "net": "RESET_N",
+        "from": "J3.5",
+        "to": "U1.26"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW10.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW11.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW12.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW13.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW14.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW15.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW16.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW17.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW2.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW3.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW4.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW5.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW6.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW7.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW8.2"
+      },
+      {
+        "net": "ROW0",
+        "from": "R6.1",
+        "to": "SW9.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW18.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW19.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW20.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW21.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW22.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW23.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW24.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW25.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW26.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW27.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW28.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW29.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW30.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW31.2"
+      },
+      {
+        "net": "ROW1",
+        "from": "R7.2",
+        "to": "SW32.1"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW33.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW34.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW35.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW36.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW37.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW38.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW39.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW40.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW41.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW42.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW43.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW44.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW45.2"
+      },
+      {
+        "net": "ROW2",
+        "from": "R3.2",
+        "to": "SW46.1"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW47.1"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW48.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW49.1"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW50.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW51.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW52.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW53.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW54.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW55.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW56.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW57.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW58.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW59.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW60.2"
+      },
+      {
+        "net": "ROW3",
+        "from": "R5.2",
+        "to": "SW62.3"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW61.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW62.1"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW63.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW64.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW65.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW66.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW67.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW68.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW69.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW70.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW71.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW72.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW73.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW74.2"
+      },
+      {
+        "net": "ROW4",
+        "from": "R4.1",
+        "to": "SW75.2"
+      },
+      {
+        "net": "ROW_DRV0",
+        "from": "R6.2",
+        "to": "U1.33"
+      },
+      {
+        "net": "ROW_DRV1",
+        "from": "R7.1",
+        "to": "U1.1"
+      },
+      {
+        "net": "ROW_DRV2",
+        "from": "R3.1",
+        "to": "U1.35"
+      },
+      {
+        "net": "ROW_DRV3",
+        "from": "R5.1",
+        "to": "U1.17"
+      },
+      {
+        "net": "ROW_DRV4",
+        "from": "R4.2",
+        "to": "U1.11"
+      },
+      {
+        "net": "STATUS_LED",
+        "from": "R32.1",
+        "to": "U1.10"
+      },
+      {
+        "net": "SWDCLK",
+        "from": "J3.4",
+        "to": "U1.39"
+      },
+      {
+        "net": "SWDIO",
+        "from": "J3.2",
+        "to": "U1.37"
+      },
+      {
+        "net": "TMR_SET",
+        "from": "R55.1",
+        "to": "U5.14"
+      },
+      {
+        "net": "USB_5V",
+        "from": "C32.1",
+        "to": "C40.1"
+      },
+      {
+        "net": "USB_5V",
+        "from": "C32.1",
+        "to": "F1.1"
+      },
+      {
+        "net": "USB_5V",
+        "from": "C32.1",
+        "to": "U1.27"
+      },
+      {
+        "net": "USB_5V",
+        "from": "C32.1",
+        "to": "U5.13"
+      },
+      {
+        "net": "USB_DM",
+        "from": "J4.2",
+        "to": "U1.29"
+      },
+      {
+        "net": "USB_DP",
+        "from": "J4.3",
+        "to": "U1.31"
+      },
+      {
+        "net": "USB_FEED",
+        "from": "J4.1",
+        "to": "J5.1"
+      },
+      {
+        "net": "VBUS",
+        "from": "F1.2",
+        "to": "J1.1"
+      },
+      {
+        "net": "VSYS",
+        "from": "C42.1",
+        "to": "C43.1"
+      },
+      {
+        "net": "VSYS",
+        "from": "C42.1",
+        "to": "R47.1"
+      },
+      {
+        "net": "VSYS",
+        "from": "C42.1",
+        "to": "SW100.1"
+      },
+      {
+        "net": "VSYS",
+        "from": "C42.1",
+        "to": "U5.10"
+      },
+      {
+        "net": "VSYS",
+        "from": "C42.1",
+        "to": "U5.11"
+      },
+      {
+        "net": "VSYS",
+        "from": "C42.1",
+        "to": "U6.5"
+      }
+    ],
+    "limitation": "Zone-item connectivity; independent filled-island/return checks remain required"
+  },
+  "USB_paths": {
+    "negative": {
+      "from": "J4.2",
+      "to": "U1.29",
+      "geometric_centerline_path_mm": 10.166882104868117,
+      "via_count": 0,
+      "ordered_path": [
+        {
+          "a": [
+            "c12f41c4-6d69-5acc-b41f-8a9faea1bf87",
+            2,
+            348.1,
+            111.2
+          ],
+          "b": [
+            "ae46fc31-464f-4cca-8998-da3f91d77ac6",
+            2,
+            348.1,
+            111.2
+          ],
+          "length_mm": 0.0,
+          "kind": "pad-access"
+        },
+        {
+          "a": [
+            "c12f41c4-6d69-5acc-b41f-8a9faea1bf87",
+            2,
+            348.1,
+            111.2
+          ],
+          "b": [
+            "c12f41c4-6d69-5acc-b41f-8a9faea1bf87",
+            2,
+            350.1,
+            111.2
+          ],
+          "length_mm": 2.0,
+          "kind": "trace",
+          "item": "c12f41c4-6d69-5acc-b41f-8a9faea1bf87",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            348.1,
+            111.2
+          ],
+          "end": [
+            350.1,
+            111.2
+          ]
+        },
+        {
+          "a": [
+            "c12f41c4-6d69-5acc-b41f-8a9faea1bf87",
+            2,
+            350.1,
+            111.2
+          ],
+          "b": [
+            "e474a097-2ea4-58da-9cb0-38f044385974",
+            2,
+            350.1,
+            111.2
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "e474a097-2ea4-58da-9cb0-38f044385974",
+            2,
+            350.1,
+            111.2
+          ],
+          "b": [
+            "e474a097-2ea4-58da-9cb0-38f044385974",
+            2,
+            351.14,
+            112.24
+          ],
+          "length_mm": 1.4707821048679877,
+          "kind": "trace",
+          "item": "e474a097-2ea4-58da-9cb0-38f044385974",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            350.1,
+            111.2
+          ],
+          "end": [
+            351.14,
+            112.24
+          ]
+        },
+        {
+          "a": [
+            "686bf5ec-63f6-51b9-b0c4-87b32704f058",
+            2,
+            351.14,
+            112.24
+          ],
+          "b": [
+            "e474a097-2ea4-58da-9cb0-38f044385974",
+            2,
+            351.14,
+            112.24
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "686bf5ec-63f6-51b9-b0c4-87b32704f058",
+            2,
+            351.14,
+            112.24
+          ],
+          "b": [
+            "686bf5ec-63f6-51b9-b0c4-87b32704f058",
+            2,
+            351.14,
+            113.1
+          ],
+          "length_mm": 0.8599999999999994,
+          "kind": "trace",
+          "item": "686bf5ec-63f6-51b9-b0c4-87b32704f058",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            351.14,
+            112.24
+          ],
+          "end": [
+            351.14,
+            113.1
+          ]
+        },
+        {
+          "a": [
+            "40e1ecbb-cc1c-5dd1-be60-ea48918b77f1",
+            2,
+            351.14,
+            113.1
+          ],
+          "b": [
+            "686bf5ec-63f6-51b9-b0c4-87b32704f058",
+            2,
+            351.14,
+            113.1
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "40e1ecbb-cc1c-5dd1-be60-ea48918b77f1",
+            2,
+            351.14,
+            113.1
+          ],
+          "b": [
+            "40e1ecbb-cc1c-5dd1-be60-ea48918b77f1",
+            2,
+            351.624025,
+            113.1
+          ],
+          "length_mm": 0.484025000000031,
+          "kind": "trace",
+          "item": "40e1ecbb-cc1c-5dd1-be60-ea48918b77f1",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            351.14,
+            113.1
+          ],
+          "end": [
+            351.624025,
+            113.1
+          ]
+        },
+        {
+          "a": [
+            "3b8db9c8-b403-5f49-8ffd-22ce21c8a846",
+            2,
+            351.624025,
+            113.1
+          ],
+          "b": [
+            "40e1ecbb-cc1c-5dd1-be60-ea48918b77f1",
+            2,
+            351.624025,
+            113.1
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "3b8db9c8-b403-5f49-8ffd-22ce21c8a846",
+            2,
+            351.624025,
+            113.1
+          ],
+          "b": [
+            "3b8db9c8-b403-5f49-8ffd-22ce21c8a846",
+            2,
+            351.624025,
+            113.7
+          ],
+          "length_mm": 0.6000000000000085,
+          "kind": "trace",
+          "item": "3b8db9c8-b403-5f49-8ffd-22ce21c8a846",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            351.624025,
+            113.1
+          ],
+          "end": [
+            351.624025,
+            113.7
+          ]
+        },
+        {
+          "a": [
+            "2163b6ef-9357-5ecf-b0bd-64a95ab04b8d",
+            2,
+            351.624025,
+            113.7
+          ],
+          "b": [
+            "3b8db9c8-b403-5f49-8ffd-22ce21c8a846",
+            2,
+            351.624025,
+            113.7
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "2163b6ef-9357-5ecf-b0bd-64a95ab04b8d",
+            2,
+            351.624025,
+            113.7
+          ],
+          "b": [
+            "2163b6ef-9357-5ecf-b0bd-64a95ab04b8d",
+            2,
+            351.14,
+            113.7
+          ],
+          "length_mm": 0.484025000000031,
+          "kind": "trace",
+          "item": "2163b6ef-9357-5ecf-b0bd-64a95ab04b8d",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            351.624025,
+            113.7
+          ],
+          "end": [
+            351.14,
+            113.7
+          ]
+        },
+        {
+          "a": [
+            "1f485763-98de-55b5-8af7-1ea3337111b7",
+            2,
+            351.14,
+            113.7
+          ],
+          "b": [
+            "2163b6ef-9357-5ecf-b0bd-64a95ab04b8d",
+            2,
+            351.14,
+            113.7
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "1f485763-98de-55b5-8af7-1ea3337111b7",
+            2,
+            351.14,
+            113.7
+          ],
+          "b": [
+            "1f485763-98de-55b5-8af7-1ea3337111b7",
+            2,
+            351.14,
+            114.3
+          ],
+          "length_mm": 0.5999999999999943,
+          "kind": "trace",
+          "item": "1f485763-98de-55b5-8af7-1ea3337111b7",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            351.14,
+            113.7
+          ],
+          "end": [
+            351.14,
+            114.3
+          ]
+        },
+        {
+          "a": [
+            "1f485763-98de-55b5-8af7-1ea3337111b7",
+            2,
+            351.14,
+            114.3
+          ],
+          "b": [
+            "90e30748-ac7d-53f4-874e-55a4430f864b",
+            2,
+            351.14,
+            114.3
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "90e30748-ac7d-53f4-874e-55a4430f864b",
+            2,
+            351.14,
+            114.3
+          ],
+          "b": [
+            "90e30748-ac7d-53f4-874e-55a4430f864b",
+            2,
+            351.624025,
+            114.3
+          ],
+          "length_mm": 0.484025000000031,
+          "kind": "trace",
+          "item": "90e30748-ac7d-53f4-874e-55a4430f864b",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            351.14,
+            114.3
+          ],
+          "end": [
+            351.624025,
+            114.3
+          ]
+        },
+        {
+          "a": [
+            "8a642153-f0b8-55be-bea8-963592b6094b",
+            2,
+            351.624025,
+            114.3
+          ],
+          "b": [
+            "90e30748-ac7d-53f4-874e-55a4430f864b",
+            2,
+            351.624025,
+            114.3
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "8a642153-f0b8-55be-bea8-963592b6094b",
+            2,
+            351.624025,
+            114.3
+          ],
+          "b": [
+            "8a642153-f0b8-55be-bea8-963592b6094b",
+            2,
+            351.624025,
+            114.9
+          ],
+          "length_mm": 0.6000000000000085,
+          "kind": "trace",
+          "item": "8a642153-f0b8-55be-bea8-963592b6094b",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            351.624025,
+            114.3
+          ],
+          "end": [
+            351.624025,
+            114.9
+          ]
+        },
+        {
+          "a": [
+            "8a642153-f0b8-55be-bea8-963592b6094b",
+            2,
+            351.624025,
+            114.9
+          ],
+          "b": [
+            "fc2ce963-a891-5e92-a572-9164c0e5c40d",
+            2,
+            351.624025,
+            114.9
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "fc2ce963-a891-5e92-a572-9164c0e5c40d",
+            2,
+            351.624025,
+            114.9
+          ],
+          "b": [
+            "fc2ce963-a891-5e92-a572-9164c0e5c40d",
+            2,
+            351.14,
+            114.9
+          ],
+          "length_mm": 0.484025000000031,
+          "kind": "trace",
+          "item": "fc2ce963-a891-5e92-a572-9164c0e5c40d",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            351.624025,
+            114.9
+          ],
+          "end": [
+            351.14,
+            114.9
+          ]
+        },
+        {
+          "a": [
+            "8bf0941e-cf99-51b9-9a95-0c62a25abff4",
+            2,
+            351.14,
+            114.9
+          ],
+          "b": [
+            "fc2ce963-a891-5e92-a572-9164c0e5c40d",
+            2,
+            351.14,
+            114.9
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "8bf0941e-cf99-51b9-9a95-0c62a25abff4",
+            2,
+            351.14,
+            114.9
+          ],
+          "b": [
+            "8bf0941e-cf99-51b9-9a95-0c62a25abff4",
+            2,
+            351.14,
+            117.0
+          ],
+          "length_mm": 2.0999999999999943,
+          "kind": "trace",
+          "item": "8bf0941e-cf99-51b9-9a95-0c62a25abff4",
+          "net": "USB_DM",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            351.14,
+            114.9
+          ],
+          "end": [
+            351.14,
+            117.0
+          ]
+        },
+        {
+          "a": [
+            "8bf0941e-cf99-51b9-9a95-0c62a25abff4",
+            2,
+            351.14,
+            117.0
+          ],
+          "b": [
+            "4e6c06ee-5752-4134-8ccf-f99a83e39833",
+            2,
+            351.14,
+            117.0
+          ],
+          "length_mm": 0.0,
+          "kind": "pad-access"
+        }
+      ]
+    },
+    "positive": {
+      "from": "J4.3",
+      "to": "U1.31",
+      "geometric_centerline_path_mm": 10.166883835420679,
+      "via_count": 0,
+      "ordered_path": [
+        {
+          "a": [
+            "91165f32-c26b-57c6-8ba7-122ba53d88ec",
+            2,
+            348.1,
+            110.2
+          ],
+          "b": [
+            "d1252762-5b72-4c49-bf4c-960cc66c2ab8",
+            2,
+            348.1,
+            110.2
+          ],
+          "length_mm": 0.0,
+          "kind": "pad-access"
+        },
+        {
+          "a": [
+            "91165f32-c26b-57c6-8ba7-122ba53d88ec",
+            2,
+            348.1,
+            110.2
+          ],
+          "b": [
+            "91165f32-c26b-57c6-8ba7-122ba53d88ec",
+            2,
+            350.8,
+            110.2
+          ],
+          "length_mm": 2.6999999999999886,
+          "kind": "trace",
+          "item": "91165f32-c26b-57c6-8ba7-122ba53d88ec",
+          "net": "USB_DP",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            348.1,
+            110.2
+          ],
+          "end": [
+            350.8,
+            110.2
+          ]
+        },
+        {
+          "a": [
+            "91165f32-c26b-57c6-8ba7-122ba53d88ec",
+            2,
+            350.8,
+            110.2
+          ],
+          "b": [
+            "db12c4ce-3d7a-55e4-b246-1ea4531f2d3e",
+            2,
+            350.8,
+            110.2
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "db12c4ce-3d7a-55e4-b246-1ea4531f2d3e",
+            2,
+            350.8,
+            110.2
+          ],
+          "b": [
+            "db12c4ce-3d7a-55e4-b246-1ea4531f2d3e",
+            2,
+            352.41,
+            111.81
+          ],
+          "length_mm": 2.276883835420692,
+          "kind": "trace",
+          "item": "db12c4ce-3d7a-55e4-b246-1ea4531f2d3e",
+          "net": "USB_DP",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            350.8,
+            110.2
+          ],
+          "end": [
+            352.41,
+            111.81
+          ]
+        },
+        {
+          "a": [
+            "b0995c32-b6df-5928-bad8-c301ffc5c915",
+            2,
+            352.41,
+            111.81
+          ],
+          "b": [
+            "db12c4ce-3d7a-55e4-b246-1ea4531f2d3e",
+            2,
+            352.41,
+            111.81
+          ],
+          "length_mm": 0.0,
+          "kind": "junction"
+        },
+        {
+          "a": [
+            "b0995c32-b6df-5928-bad8-c301ffc5c915",
+            2,
+            352.41,
+            111.81
+          ],
+          "b": [
+            "b0995c32-b6df-5928-bad8-c301ffc5c915",
+            2,
+            352.41,
+            117.0
+          ],
+          "length_mm": 5.189999999999998,
+          "kind": "trace",
+          "item": "b0995c32-b6df-5928-bad8-c301ffc5c915",
+          "net": "USB_DP",
+          "layer": "B.Cu",
+          "width_mm": 0.3,
+          "start": [
+            352.41,
+            111.81
+          ],
+          "end": [
+            352.41,
+            117.0
+          ]
+        },
+        {
+          "a": [
+            "b0995c32-b6df-5928-bad8-c301ffc5c915",
+            2,
+            352.41,
+            117.0
+          ],
+          "b": [
+            "7dc8d83a-9b89-45dc-95f9-a557038940e6",
+            2,
+            352.41,
+            117.0
+          ],
+          "length_mm": 0.0,
+          "kind": "pad-access"
+        }
+      ]
+    },
+    "geometric_path_difference_mm": 1.7305525616961859e-06
+  },
+  "C5_protection": {
+    "status": "actual-protected-I/O-and-ground-paths-passed",
+    "paths": [
+      {
+        "net": "DP",
+        "connector_pad": "A6",
+        "J2_pad": "3",
+        "path_mm": 4.860567675943151,
+        "protected_pin_distances_mm": {
+          "1": 11.568565497546684,
+          "4": 0.0
+        }
+      },
+      {
+        "net": "DP",
+        "connector_pad": "B6",
+        "J2_pad": "3",
+        "path_mm": 14.548903941682187,
+        "protected_pin_distances_mm": {
+          "1": 0.0,
+          "4": 1.9152711395993691
+        }
+      },
+      {
+        "net": "DN",
+        "connector_pad": "A7",
+        "J2_pad": "2",
+        "path_mm": 4.88094971858082,
+        "protected_pin_distances_mm": {
+          "2": 0.0,
+          "5": 11.409746070840118
+        }
+      },
+      {
+        "net": "DN",
+        "connector_pad": "B7",
+        "J2_pad": "2",
+        "path_mm": 14.356699461433394,
+        "protected_pin_distances_mm": {
+          "2": 1.9339963279875434,
+          "5": 0
+        }
+      }
+    ],
+    "daughterboard_modified": false,
+    "physical_verification": false
+  },
+  "source_sha256": {
+    "scripts/check_e73_usb_repair.py": "f57c34b5ec654ee1d9ac3d500143b11bf407f96204b4309d773148387651cf1e",
+    "scripts/check_schematic_current.py": "908fc7181c616685f2afcc2fa93223518ea83be03ed1a401c7dac8c0dfda33aa",
+    "scripts/check_yeti60_signal_paths.py": "66543ccc4c2d3c8f0bb2da9a1ccd5717f6c8e37ac6d97e300392a80d38740513",
+    "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "hardware/e73-usb-repair/audit/build.json": "9d5d45789e164af9a0b126354f07e45d1e9c5d79b493e5f4fd6281fef16be360",
+    "variants/raytac/scripts/check_yeti60_c5_protection.py": "7a78488b95f742981ec239c072de2a39ec3f48aa6eee6349eaef1337ed10e87f",
+    "hardware/usb-daughterboard/upstream/UDB.kicad_pcb": "1d9e2732d68fbb83dfeadb0c33d573a14483963fae61aaa02cd57d2bb7f98b35",
+    "hardware/ec60-nrf52840/netlist.xml": "846b2d13a1782c6a841ee0831c1cce9fa0bfcf14bc1ce6c84d44d1846a9dc798",
+    "hardware/ec60-nrf52840/metadata-audit.json": "9a5a76d3a1d93b7c876ceb873875bb01f0ec38759e85d67b1e47a125952e7a66"
+  },
+  "open_checks": [
+    "Independent filled-ground islands and USB return reference",
+    "Connector/capacitor/plug case and tolerance envelopes",
+    "Complete nine-wire routes, connector withdrawal and service movements",
+    "Left power layout, inherited SMD-pad via overlaps and battery connector repair",
+    "Native component-model closure, candidate-specific firmware/calibration fingerprint and CAM",
+    "Supplier-qualified battery, physical USB/BLE/charging/thermal/RF/fit"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "test_methods": 9,
+  "failed_methods": [],
+  "process_isolation": true,
+  "physical_verification": false,
+  "source_sha256": {
+    "tests/audit/test_e73_usb_repair.py": "bd657c3421de7b5939a9f550c78cbd3cea3933d57061d3027b823abc58415686",
+    "scripts/check_e73_usb_repair.py": "f57c34b5ec654ee1d9ac3d500143b11bf407f96204b4309d773148387651cf1e",
+    "hardware/e73-usb-repair/EC60-nRF52840.kicad_pcb": "2ebe295ecc98ba529d892c2bee96b2302ba5d350a479db0d1b18b2fb2288d4ed",
+    "hardware/e73-usb-repair/netlist.xml": "2f00fc5b6796a288d25495f10c92ba13e103622e6a7aad42a07484c33fa5850e",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
+    "hardware/ec60-nrf52840/netlist.xml": "846b2d13a1782c6a841ee0831c1cce9fa0bfcf14bc1ce6c84d44d1846a9dc798",
+    "hardware/usb-daughterboard/upstream/UDB.kicad_pcb": "1d9e2732d68fbb83dfeadb0c33d573a14483963fae61aaa02cd57d2bb7f98b35",
+    "variants/raytac/scripts/check_yeti60_c5_protection.py": "7a78488b95f742981ec239c072de2a39ec3f48aa6eee6349eaef1337ed10e87f",
+    "scripts/check_yeti60_signal_paths.py": "66543ccc4c2d3c8f0bb2da9a1ccd5717f6c8e37ac6d97e300392a80d38740513",
+    "scripts/check_schematic_current.py": "908fc7181c616685f2afcc2fa93223518ea83be03ed1a401c7dac8c0dfda33aa"
+  }
+}

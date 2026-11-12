@@ -9,6 +9,7 @@
 | 要做的事 | 对应入口 |
 |---|---|
 | 当前问题与未完成工作 | [E73 审查](docs/audit/e73-review.zh-CN.md)、[完整检查结果](docs/audit/outcome.json) |
+| USB 修补阶段记录 | [E73 独立候选、原生检查及材料差异](docs/engineering/e73-usb-repair.zh-CN.md)；尚未放行，正式制造文件／固件未替换 |
 | E73 模组、焊盘及 MCU 配置 | [厂商焊盘参考](hardware/module-options/e73.json)、[引脚约束](docs/audit/yeti60-e73-variant.json) |
 | 当前 PCB 和制造审查文件 | [原生 PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb)、[普通四层工艺要求](hardware/ec60-nrf52840/fabrication-notes.zh-CN.md)、[制造审查 ZIP](hardware/fabrication/yeti60-e73-p2-dfm-review.zip)；仍受设计暂停放行限制 |
 | 材料、封装规格、数量和库存 | [完整准备清单](README.zh-CN.md#一把键盘需要准备的完整材料)、[采购 CSV](hardware/bom/mainboard-purchase.zh-CN.csv)、[库存分配](docs/engineering/inventory-allocation.zh-CN.md) |
