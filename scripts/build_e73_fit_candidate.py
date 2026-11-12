@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build and inspect E73-only plate/floor repair; do not select it for production."""
+"""Build and inspect E73-only plate/floor repair; selected bounded fit is not a production release."""
 import hashlib
 import json
 import math
@@ -59,9 +59,16 @@ def insert_guards(removed,spec):
 
 def main():
     fit=read(SPEC);assert fit['revision']=='YETI60-E73-FIT-M01' and not fit['canonical_selection_changed']
-    assembly=read(ROOT/'docs/audit/yeti60-assembly.json');hashes(assembly['source_sha256'])
+    meta=read(ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json')
+    assert sha(ROOT/meta['source'])==meta['source_sha256']
     spec=read(ROOT/'mechanical/assembly-spec.json');fabrication=read(ROOT/'mechanical/pcb-fabrication-spec.json')
-    assert assembly['nominal_stack']['plate_thickness_mm']==1.6
+    assert spec['stack']['plate_thickness']==1.6
+    assembly={'nominal_stack':{'plate_bottom_z':spec['stack']['plate_bottom_z'],'plate_thickness_mm':spec['stack']['plate_thickness']}}
+    assert spec['geometry']['plate']==fit['plate']['output'] and spec['geometry']['bottom']==fit['bottom_output']
+    pcb_bottom=spec['stack']['plate_bottom_z']-spec['stack']['pcb_to_plate_gap']-meta['pcb_thickness_mm']
+    switch_part=next(p for p in meta['parts'] if p['ref']=='SW100')
+    x0,y0,x1,y1=switch_part.get('physical_body_bbox_pcb_mm') or switch_part['xy_courtyard_and_graphics_bbox_pcb_mm']
+    switch_part={**switch_part,'bounds_case_mm':[x0,-y1,pcb_bottom-switch_part['height_envelope_mm'],x1,-y0,pcb_bottom]}
     selected=[ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf',ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.json',ROOT/'mechanical/yeti60-key-mechanism.e73.json']
     selected_before={str(p.relative_to(ROOT)):sha(p) for p in selected}
     source=ROOT/fit['plate']['source'];doc,plate_proof=inset_plate(ezdxf.readfile(source),fit)
@@ -80,17 +87,17 @@ def main():
     BRepMesh_IncrementalMesh(bottom,.015,False,.08,True).Perform();stl=StlAPI_Writer();stl.ASCIIMode=False;assert stl.Write(bottom,str(path.with_suffix('.stl')))
     env=plate_envelope(saved,fit,assembly['nominal_stack'])
     interfaces=[screen(bottom,env,fit,'plate-bottom-static'),screen(top,env,fit,'plate-top-static')]
-    part=next(p for p in assembly['component_envelopes'] if p['ref']=='SW100')
+    part=switch_part
     switch,terms=switch_envelope(part,fit,spec,fabrication);interfaces.append(screen(bottom,switch,fit,'SW100-bottom'))
     gaskets=gasket_coverage(saved,fit,{'lower':bottom,'upper':top})
     assert selected_before=={str(p.relative_to(ROOT)):sha(p) for p in selected},'Canonical selection changed during candidate build'
-    dependencies=[Path(__file__),ROOT/'scripts/e73_fit_geometry.py',ROOT/'scripts/build_yeti60_mechanical.py',ROOT/'scripts/check_yeti60_assembly.py',ROOT/'scripts/check_yeti60_interconnects.py',ROOT/'scripts/cad_geometry.py',SPEC,ROOT/'docs/audit/yeti60-assembly.json',ROOT/'mechanical/pcb-fabrication-spec.json',*selected]
-    report=dict(status='e73-bounded-plate-switch-repair-candidate-passed',canonical_selection_changed=False,manufacturing_released=False,physical_verification=False,complete_keyboard_tolerance_qualified=False,
-        plate=plate_proof,interfaces=interfaces,switch_budget=terms,gasket_bearing_checks=gaskets,
+    dependencies=[Path(__file__),ROOT/'scripts/e73_fit_geometry.py',ROOT/'scripts/build_yeti60_mechanical.py',ROOT/'scripts/check_yeti60_assembly.py',ROOT/'scripts/check_yeti60_interconnects.py',ROOT/'scripts/cad_geometry.py',SPEC,ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json',ROOT/'mechanical/pcb-fabrication-spec.json',*selected]
+    report=dict(status='e73-bounded-plate-switch-fit-passed',selected_by_assembly=True,canonical_selection_changed=False,manufacturing_released=False,physical_verification=False,complete_keyboard_tolerance_qualified=False,
+        selected_geometry=spec['geometry'],plate=plate_proof,interfaces=interfaces,switch_budget=terms,gasket_bearing_checks=gaskets,
         lower_shell_repair=dict(removed_volume_mm3=volume(removed),original_bounds_case_mm=bounds(original),candidate_bounds_case_mm=bounds(bottom),selected_exterior_faces_checked=len(skin),minimum_removed_to_selected_skin_after_coordinate_allowance_mm=remaining,minimum_required_wall_mm=floor['minimum_remaining_wall_mm'],insert_supports=supports),
         selected_sources_unchanged=selected_before,
         source_sha256={str(p.relative_to(ROOT)):sha(p) for p in dependencies},outputs={str(p.relative_to(ROOT)):sha(p) for p in [out,plate_step,path,path.with_suffix('.stl')]},
-        remaining=['Select candidate in the canonical assembly and calibration fingerprint, then rebuild both firmware targets and all dependent checks/drawings/renders', 'Continuous whole-PCB installation/removal and complete flexible harness/service movement', 'All other part/fastener tolerances, received NiZ/stabilizer dimensions, foam force/creep and resin/insert strength', 'Actual power/USB/BLE/charge/thermal/RF acceptance'])
+        remaining=['Continuous whole-PCB installation/removal and complete flexible harness/service movement', 'All other part/fastener tolerances, received NiZ/stabilizer dimensions, foam force/creep and resin/insert strength', 'Actual power/USB/BLE/charge/thermal/RF acceptance'])
     AUD.write_text(json.dumps(report,indent=2)+'\n')
-    print('E73 M01 plate/floor candidate passed; canonical assembly unchanged; minimum residual',min(r['remaining_air_gap_mm'] for r in interfaces),flush=True)
+    print('Selected E73 M01 plate/floor bounded fit passed; minimum residual',min(r['remaining_air_gap_mm'] for r in interfaces),flush=True)
 if __name__=='__main__':main()

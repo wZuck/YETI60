@@ -4,6 +4,8 @@
 
 [28 步逐图指南](../assembly/build-guide.zh-CN.md)涵盖主板从裸板开始焊接、可选 C5 自焊、分阶段通电、刷写及完整安装；机械图示以下方尺寸为准。
 
+E73 正式使用 [M01 定位板](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf)及 [M01 底壳](../../mechanical/e73-fit/yeti60-e73-bottom-m01.step)。下侧 **2.0 mm**、上侧 **1.2 mm** 胶棉各裁四块 **33 × 3 mm**。[局部配合证据](e73-mechanical-fit-candidate.zh-CN.md)不代表其他机械公差已经通过。
+
 工程图采用当前原尺寸 FELK60 派生壳体网格、原生定位板／PCB 几何及原生导出的 USB 子板 CAD，与旧的摄影风格渲染分别保存。键帽／轴座轮廓、螺纹及分解高度为示意，以文字尺寸要求为准。编号和数量对应[材料表](materials.zh-CN.md)。
 
 ![原尺寸工程装配图](images/assembly.zh-CN.png)

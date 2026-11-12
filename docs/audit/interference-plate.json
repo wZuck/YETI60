@@ -20,13 +20,13 @@
   },
   "source_sha256": {
     "docs/audit/interference-layout.json": "0abd8fbd695fb2cf4c42e87e15282dc6ec7c5933e3eed7c9e136c34007944795",
-    "mechanical/assembly-spec.json": "6897e50c86952257624f4fab66e835cc8184d2ad872a96c2bf487b5e93ebcc9a",
-    "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
-    "scripts/check_yeti60_assembly.py": "cda91bd94fdb8dc9bff274f211f3299422740e91fc9b344716aa3d2ea3ad9499",
+    "mechanical/assembly-spec.json": "bdf2a3f04fe6bc0552b7e733bb54f4770a3bb8f73d8cee149d201afd07d9a7e7",
+    "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
+    "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "docs/testing/afe-ac.csv": "e55e2b360919748eb0176f16d55899128a400682bdfc983a91fbd91be58c97fc",
     "docs/testing/afe-transient.csv": "de8801ea23295b77c3b58f44b58597fbd6cbce92f2797f042fa91e48e3724aad",
-    "scripts/check_yeti60_antenna_plate.py": "edd51ae3a351320d87db7ae8540177402323c65062e6401e84edb7a5039c9770"
+    "scripts/check_yeti60_antenna_plate.py": "50556abcd356616b4f1ecb7b1188cbc3ca0928dce1b8de2fddb56349ebbc67fd"
   },
   "outputs": {
     "docs/testing/images/afe-disturbance.png": "b5ddd27aa4adfa89bc89b3237a4d9be0797a1ff78531f0b73e8380ae67143222",

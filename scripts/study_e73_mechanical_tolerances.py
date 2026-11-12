@@ -152,7 +152,7 @@ def main():
                   measured_interfaces=interfaces, measured_plate_perimeter_bounds_mm=bounds(side),
                   directional_budgets=budget(interfaces, spec, fabrication),
                   switch_height_basis=switch['height_basis'],
-                  design_scope='Current E73 NiZ plate perimeter and SW100; Raytac C04 reliefs are not inherited',
+                  design_scope='Retained pre-M01 baseline plate perimeter and original floor; selected M01 fit is checked separately',
                   scope='Three current E73 interfaces only; no full key mechanism, fastener, flexing harness or service-access qualification.',
                   interpretation='Known directional allowances are a subtotal, not a completed worst-case tolerance stack. A deficit is loss of specified reserve; it is not proof of physical collision. Both shells need the plate-ear repair.',
                   source_sha256={str(p.relative_to(ROOT)):sha(p) for p in sources})

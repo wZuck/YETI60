@@ -2,7 +2,7 @@ English | [Chinese](e73-review.zh-CN.md)
 
 # E73 complete-design review — November 12, 2026
 
-**Disposition: design hold.** Passing DRC and ARM builds do not resolve the measured USB protection branches, PH connector service obstruction or deficient mechanical tolerance reserves; the NiZ/plate-stabilizer geometry is now integrated. Use the [build/review entry](../../BUILD.md) and [machine-readable gates](e73-readiness.json). The existing UDB-C-JSH C5 remains unchanged.
+**Disposition: design hold.** Passing DRC and ARM builds do not resolve the measured USB protection branches, PH connector service obstruction or complete mechanical tolerance qualification; the NiZ/plate-stabilizer geometry and bounded M01 repair are integrated. Use the [build/review entry](../../BUILD.md) and [machine-readable gates](e73-readiness.json). The existing UDB-C-JSH C5 remains unchanged.
 
 Executed results: the base artifact audit passed **63/63 stages**; the subsequent complete review executed **13/13 steps successfully**, including 28 analog-front-end SPICE sensitivity cases, RF/USB/withdrawal extraction and fault tests. See the [review execution record](e73-review-run.json). With `--require-design`, the command returned **2** because measured design defects and open gates remain. Successful execution is not design release.
 
@@ -17,14 +17,14 @@ Executed results: the base artifact audit passed **63/63 stages**; the subsequen
 
 - E73 scanner, GPIO, calibration CRC, NVS recovery and key-pipeline regressions now pass against the rebuilt normal/calibrator targets. The [current firmware evidence](../testing/e73-firmware-validation.md) documents the 308-byte record migration, guarded BLE recovery and model limits. Physical analog/timing margins remain open.
 
-## Design failures and repair order
+## Design findings and repair order
 
 | Priority | Finding | Required repair / acceptance |
 |---|---|---|
 | P1 | Mainboard TVS branches are **29.7482 / 37.5611 mm**, exceeding the imposed 5 mm project target. J1-to-module path lengths are **254.5547 / 257.8642 mm**, with **4 / 6 vias**. | Rework E73 mainboard USB routing/protection topology and reference return. Preserve the already-made C5. Regenerate native/CAM/firmware/assembly artifacts. These geometric values are not a USB compliance test. |
 | P1 | The existing PH battery housing's continuous nominal withdrawal overlaps **H8 by 6.0978 mm³** and the **bottom shell by 23.0639 mm³**. Its seated position alone is clear. | Resolve connector height, position and mating path on the E73 board; recompute battery lead exits, bend radii and guides. Raytac SH3 geometry cannot be transplanted without E73-specific routing and checks. |
 | Nominal CAD only | NiZ, 1.6 mm plate, three stabilizer pairs and 28 installed mounting sets are integrated; H26 remains a native PCB hole without hardware. | [Plate contract](plate-mount.json) checks 60 sensing centers and actual DXF cutouts. The complete nominal case stack passes; NiZ N+ plastic, wire bends, retention and full travel require physical samples. |
-| P1 | Plate-ear reserve is only 0.0980 mm and SW100 floor reserve is 0.0562 mm after known allowances, below the 0.15 mm target. | [E73 tolerance calculation](../engineering/e73-mechanical-tolerances.md): the [M01 repair candidate](../engineering/e73-mechanical-fit-candidate.md) passes enlarged plate/switch envelopes, gasket bearing and insert guards. Select and integrate it into the complete assembly/firmware pipeline; the current canonical geometry remains held. |
+| Bounded fit passed; full tolerance open | Selected M01 residuals after declared allowances are 0.1881 mm at each plate/case interface and 0.3944 mm at SW100/floor, exceeding the 0.15 mm local target. | The [selected M01 repair](../engineering/e73-mechanical-fit-candidate.md) is integrated into the assembly, drawings, renders and firmware calibration identity. Eight gasket supports and eight insert guards pass. Other components, mounts, NiZ/stabilizer travel and complete service/strength tolerances remain open. The [pre-M01 calculation](../engineering/e73-mechanical-tolerances.md) is retained as regression evidence. |
 | P1 | Raytac's improved local power routing, component landing/mask/stencil checks and nine-wire service evidence have not all been ported. | Review U5/U6 power loops, complete package dimensions, capacitor derating, ordinary thermal-via paste/mask and battery connector clearances against E73. Existing net continuity does not qualify these. |
 
 Measured source data: [USB path extraction](USB-signal-paths.json), [continuous PH withdrawal](e73-service-motion.json), [nominal assembly](yeti60-assembly.json), [USB event tests](usb-event-policy.json), [full artifact audit](outcome.json). The source hashes and individual gates are in [e73-readiness.json](e73-readiness.json).

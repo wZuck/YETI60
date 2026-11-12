@@ -1,9 +1,16 @@
 {
-  "status": "e73-bounded-plate-switch-repair-candidate-passed",
+  "status": "e73-bounded-plate-switch-fit-passed",
+  "selected_by_assembly": true,
   "canonical_selection_changed": false,
   "manufacturing_released": false,
   "physical_verification": false,
   "complete_keyboard_tolerance_qualified": false,
+  "selected_geometry": {
+    "plate": "mechanical/e73-fit/yeti60-e73-niz-m01.dxf",
+    "bottom": "mechanical/e73-fit/yeti60-e73-bottom-m01.step",
+    "top": "mechanical/generated/yeti60-top.step",
+    "fit_spec": "mechanical/e73-fit-spec.json"
+  },
   "plate": {
     "exterior_inset_mm": 0.4,
     "unchanged_internal_entities": 88,
@@ -252,24 +259,24 @@
     "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "mechanical/assembly-spec.json": "6897e50c86952257624f4fab66e835cc8184d2ad872a96c2bf487b5e93ebcc9a",
-    "mechanical/yeti60-key-mechanism.e73.json": "fe36d523bdf2feea8d0ebc7074b0996847c3998a30e9fbc1524343577a7d135c"
+    "mechanical/assembly-spec.json": "bdf2a3f04fe6bc0552b7e733bb54f4770a3bb8f73d8cee149d201afd07d9a7e7",
+    "mechanical/yeti60-key-mechanism.e73.json": "7ec89cc69dd1d842f7cd8ce7f0b588d08c2df00967f64bdfe706d8ff73902b39"
   },
   "source_sha256": {
-    "scripts/build_e73_fit_candidate.py": "864a466acb143e0fe0044c129f60b1d41913fee819592c0873202a6ef4039e61",
+    "scripts/build_e73_fit_candidate.py": "d43efd9a2cbba25b2574c9d7c38180c26d8dcdcf9dc9661485b9c9e5dd494aea",
     "scripts/e73_fit_geometry.py": "ca10466e3df2cad126ebcae704b0452e6556d71bdadb97f8bf2563ea4e10716f",
     "scripts/build_yeti60_mechanical.py": "a2324209dedb8431916dd203fdd4610787a86b2c43a945d0309607d6564b5557",
-    "scripts/check_yeti60_assembly.py": "cda91bd94fdb8dc9bff274f211f3299422740e91fc9b344716aa3d2ea3ad9499",
-    "scripts/check_yeti60_interconnects.py": "b761c91f2ead83e9e60eda3be6240516d857b7c89601905a957f8f93dd202e67",
+    "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
+    "scripts/check_yeti60_interconnects.py": "9365de90575ef18e053954a4bdf1ec26d6188d3b1df9fc860cb92f7e1b356c3e",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
-    "mechanical/e73-fit-spec.json": "01d4217dc9e7c40918913d84ce7e6eaa9dfb6b4f46573a0064ed99ea7d9e74e5",
-    "docs/audit/yeti60-assembly.json": "a73282c7d8017e7a0e10673d4b4d8da16dad120cb8b36b76e5bcf5feafc7bfa6",
+    "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
+    "docs/audit/yeti60-pcb-mechanical-metadata.json": "ea2705f0249d8c22a3442a32b917f2d394e126de5a56cb40a1702417d07eab7e",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
     "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "mechanical/assembly-spec.json": "6897e50c86952257624f4fab66e835cc8184d2ad872a96c2bf487b5e93ebcc9a",
-    "mechanical/yeti60-key-mechanism.e73.json": "fe36d523bdf2feea8d0ebc7074b0996847c3998a30e9fbc1524343577a7d135c"
+    "mechanical/assembly-spec.json": "bdf2a3f04fe6bc0552b7e733bb54f4770a3bb8f73d8cee149d201afd07d9a7e7",
+    "mechanical/yeti60-key-mechanism.e73.json": "7ec89cc69dd1d842f7cd8ce7f0b588d08c2df00967f64bdfe706d8ff73902b39"
   },
   "outputs": {
     "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
@@ -278,7 +285,6 @@
     "mechanical/e73-fit/yeti60-e73-bottom-m01.stl": "be176ede0e8095742e2b0fe1f342d65cf397508abfcd731b7c1a2f1450c3af6b"
   },
   "remaining": [
-    "Select candidate in the canonical assembly and calibration fingerprint, then rebuild both firmware targets and all dependent checks/drawings/renders",
     "Continuous whole-PCB installation/removal and complete flexible harness/service movement",
     "All other part/fastener tolerances, received NiZ/stabilizer dimensions, foam force/creep and resin/insert strength",
     "Actual power/USB/BLE/charge/thermal/RF acceptance"

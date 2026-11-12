@@ -1,10 +1,10 @@
 English | [Chinese](e73-mechanical-tolerances.zh-CN.md)
 
-# E73 nominal assembly and unresolved tolerance limits
+# E73 pre-M01 tolerance deficit regression
 
-The NiZ 1.6 mm plate preserves 60 sensing centers and uses 28 mounting sets, with H26 unused. Its nominal CAD solids do not intersect either shell. **The present external plate profile and SW100 floor do not meet the reserved clearance after known tolerances. Do not manufacture the plate/case as a tolerance-qualified set.** Raytac's C04 inset and switch relief are separate design outputs; they have not been inherited by this E73 revision.
+This document retains the **pre-M01** plate/floor diagnostic. The selected E73 now uses [M01](e73-mechanical-fit-candidate.md), whose enlarged plate/switch envelopes pass. The values below deliberately reproduce the old deficit so it cannot be reintroduced unnoticed; they are not the current selected assembly clearances.
 
-The [current diagnostic](../audit/e73-tolerance-diagnostic.json) measures the actual plate perimeter against each shell and the E73 SW100 envelope against the bottom. The calculation is:
+The [baseline diagnostic](../audit/e73-tolerance-diagnostic.json) measures the actual plate perimeter against each shell and the E73 SW100 envelope against the bottom. The calculation is:
 
 `optimistic remaining gap = measured nominal gap − sum of known directional allowances`
 
@@ -24,8 +24,8 @@ Plate cutting/registration, installed XY translation/rotation, Z setting and foa
 
 Repair the plate's external locator clearance while preserving every key/stabilizer opening and 28 tapped axes. Establish an installed switch envelope, then relieve only the internal lower floor with a checked remaining wall. Regenerate the full case/plate envelopes and continuous installation/service paths. Do not alter the existing C5 daughterboard or solve the deficit by lowering the PCB into the battery.
 
-The [diagnostic implementation](../../scripts/study_e73_mechanical_tolerances.py) and [ten fault tests](../../tests/audit/test_e73_tolerances.py) reject omitted terms, missing shell interfaces and relabelled manufacturing approval. Passing these tests means the deficit is recorded correctly. The [E73 review](../audit/e73-review.md) retains the design hold.
+The [diagnostic implementation](../../scripts/study_e73_mechanical_tolerances.py) and [ten fault tests](../../tests/audit/test_e73_tolerances.py) reject omitted terms, missing shell interfaces and relabelled manufacturing approval. Passing these tests means the deficit is recorded correctly. The [E73 review](../audit/e73-review.md) keeps other assembly, USB, power and physical gates open.
 
 CAD evidence is reproduced with **CPython 3.14.7** and `requirements-audit.txt`; the audit/review defaults select that interpreter through uv. A CPython 3.11 execution produced two wire-length differences of about 3e-14 mm while all geometry and other report fields were identical. These differences are immaterial geometrically but change whole-report hashes. Keep report and mesh generation on one runtime; changing runtimes requires regenerating affected evidence, never rewriting stored hashes. Native KiCad export and Blender use their own declared runtimes.
 
-The [M01 repair candidate](e73-mechanical-fit-candidate.md) now passes the three interfaces using enlarged installed-part envelopes. It preserves the selected canonical files while integration is pending; it does not retrospectively change this baseline diagnostic.
+The [selected M01 repair](e73-mechanical-fit-candidate.md) now passes the three interfaces using enlarged installed-part envelopes. It is now selected in the assembly and calibration inputs; this baseline diagnostic remains intentionally unchanged.

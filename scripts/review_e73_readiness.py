@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
 """Combine current E73 checks without equating software success with release."""
-import argparse,hashlib,json
+import argparse,hashlib,json,math
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 AUD=ROOT/'docs/audit'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-def gates(cad,target,events,layout,paths,assembly,service,outcome,firmware,tolerances):
+def bounded_fit_selected(assembly,fit):
+    if not fit or fit.get('status')!='e73-bounded-plate-switch-fit-passed' or not fit.get('selected_by_assembly'):return False
+    if any(fit.get(k,True) for k in ['manufacturing_released','physical_verification','complete_keyboard_tolerance_qualified']):return False
+    if assembly.get('selected_geometry')!=fit.get('selected_geometry'):return False
+    rows=fit.get('interfaces',[])
+    if {r['interface'] for r in rows}!={'plate-bottom-static','plate-top-static','SW100-bottom'} or len(rows)!=3:return False
+    return all(r['remaining_air_gap_mm']>=.15 and math.isclose(r['remaining_air_gap_mm'],r['continuous_envelope_gap_mm']-r['case_coordinate_error_L2_bound_mm']-r['computation_guard_mm'],abs_tol=1e-9) for r in rows)
+
+def gates(cad,target,events,layout,paths,assembly,service,outcome,firmware,tolerances,fit):
     result=[]
     def add(name,state,details):result.append(dict(id=name,state=state,details=details))
     add('native-PCB','passed' if cad['status']=='cad-checks-passed' and not cad['failed_ground_pairs'] and not cad['failed_pin_pairs'] and not cad['unconnected_items'] and len(cad['physical_pin_pairs'])==270 and len(cad['ground_pin_pairs'])==142 else 'failed',
@@ -23,8 +31,8 @@ def gates(cad,target,events,layout,paths,assembly,service,outcome,firmware,toler
     mechanism=assembly.get('mechanism_contract',{})
     qualified=correct_plate and mechanism.get('status')=='drawing-based-plate-mount-contract-passed' and mechanism.get('active_key_centers_preserved')==60 and mechanism.get('installed_mount_sets')==28 and mechanism.get('plate_stabilizer_pairs')==3 and mechanism.get('unused_pcb_mount_refs')==['H26']
     add('NiZ-plate-mounted-stabilizers','passed' if qualified else 'failed',dict(dimensions_match_target=correct_plate,geometry_port_qualified=qualified,contract=mechanism,physical_fit_verified=False))
-    sufficient=all(r['optimistic_remaining_gap_mm']>=r['project_minimum_air_gap_mm'] and not r['unquantified_terms'] for r in tolerances['directional_budgets'])
-    add('mechanical-tolerance-budget','passed' if sufficient and tolerances['combined_tolerance_qualified'] else 'failed',tolerances['directional_budgets'])
+    add('plate-switch-bounded-fit','passed' if bounded_fit_selected(assembly,fit) else 'failed',dict(selected=fit.get('selected_by_assembly',False),interfaces=fit.get('interfaces',[]),complete_keyboard_qualified=False))
+    add('complete-mechanical-tolerances','open','M01 plate/switch envelopes pass; other component/fastener limits, NiZ/stabilizer travel, foam force/creep, full PCB extraction and flexible service movement remain unqualified')
     add('battery-plug-service','passed' if service['status']=='passed' else 'failed',service['checks'])
     add('full-artifact-audit','passed' if outcome['checks_passed'] else 'failed',dict(passed=sum(x['state']=='passed' for x in outcome['stages']),total=len(outcome['stages'])))
     add('closed-harness-and-power-layout','open','E73 retains its original seven-wire route and long USB PCB paths; Raytac nine-wire/SH3/power-layout acceptance cannot be inherited')
@@ -52,7 +60,7 @@ def main():
         for name,value in variant['outputs'].items():assert sha(ROOT/name)==value,('Stale firmware output',name)
     from check_yeti60_firmware_suite import verify as verify_firmware_suite
     assert data['firmware-suite.json']==verify_firmware_suite(),'Stale firmware suite summary'
-    rows=gates(cad,data['yeti60-target-check.json'],data['usb-event-policy.json'],data['interference-layout.json']['variants']['e73'],data['USB-signal-paths.json']['variants']['e73'],data['yeti60-assembly.json'],data['e73-service-motion.json'],data['outcome.json'],data['firmware-suite.json'],data['e73-tolerance-diagnostic.json'])
+    rows=gates(cad,data['yeti60-target-check.json'],data['usb-event-policy.json'],data['interference-layout.json']['variants']['e73'],data['USB-signal-paths.json']['variants']['e73'],data['yeti60-assembly.json'],data['e73-service-motion.json'],data['outcome.json'],data['firmware-suite.json'],data['e73-tolerance-diagnostic.json'],data['e73-fit-candidate.json'])
     blocked=[x['id'] for x in rows if x['state']!='passed']
     report=dict(module='E73-2G4M08S1C',status='hold' if blocked else 'design-checks-passed',gates=rows,open_gate_ids=blocked,
                 production_approved=False,manufacturing_released=False,physical_verification=False,

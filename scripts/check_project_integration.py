@@ -37,7 +37,14 @@ def verify():
     meta=read(AUD/'yeti60-pcb-mechanical-metadata.json'); assert sha(ROOT/meta['source'])==meta['source_sha256']
     fit=read(AUD/'yeti60-assembly.json'); hashes(fit['source_sha256']); hashes(fit['verification_recipe_sha256'])
     repaired=read(AUD/'e73-fit-candidate.json'); hashes(repaired['source_sha256']); hashes(repaired['outputs'])
-    assert repaired['status']=='e73-bounded-plate-switch-repair-candidate-passed'
+    assert repaired['status']=='e73-bounded-plate-switch-fit-passed' and repaired['selected_by_assembly']
+    geometry=read(ROOT/'mechanical/assembly-spec.json')['geometry']
+    assert fit['selected_geometry']==repaired['selected_geometry']==geometry
+    assert fit['case_files']=={name:geometry[name] for name in ['top','bottom']}
+    assert geometry['plate'] in fit['source_sha256'] and geometry['plate'] in repaired['outputs']
+    assert geometry['bottom'] in repaired['outputs']
+    assert fit['bounded_fit_evidence_sha256']==sha(AUD/'e73-fit-candidate.json')
+    assert not repaired['complete_keyboard_tolerance_qualified']
     assert not repaired['canonical_selection_changed'] and not repaired['manufacturing_released'] and not repaired['physical_verification']
     assert len(repaired['interfaces'])==3 and all(r['remaining_air_gap_mm']>=.15 for r in repaired['interfaces'])
     assert len(repaired['gasket_bearing_checks'])==8 and len(repaired['lower_shell_repair']['insert_supports'])==8

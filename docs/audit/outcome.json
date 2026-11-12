@@ -7,7 +7,7 @@
       "stage": "schematic-current",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.04
+      "seconds": 2.85
     },
     {
       "stage": "pin-contract",
@@ -19,13 +19,13 @@
       "stage": "e73-vendor-reference",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.6
+      "seconds": 0.55
     },
     {
       "stage": "e73-module-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.82
+      "seconds": 0.81
     },
     {
       "stage": "e73-pin-fault-injection",
@@ -37,85 +37,85 @@
       "stage": "pcb-geometry-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.83
+      "seconds": 1.88
     },
     {
       "stage": "ordinary-fabrication-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.54
+      "seconds": 2.66
     },
     {
       "stage": "ordinary-fabrication-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 6.45
+      "seconds": 6.6
     },
     {
       "stage": "pcb-native-drc",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 23.15
+      "seconds": 23.26
     },
     {
       "stage": "connectivity-regression",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 14.55
+      "seconds": 14.79
     },
     {
       "stage": "electrical-review",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.06
+      "seconds": 1.04
     },
     {
       "stage": "firmware-pin-header",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.07
+      "seconds": 0.06
     },
     {
       "stage": "firmware-target-artifacts",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.28
+      "seconds": 0.27
     },
     {
       "stage": "firmware-USB-event-policy",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.16
+      "seconds": 2.4
     },
     {
       "stage": "firmware-recovery-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.22
+      "seconds": 3.71
     },
     {
       "stage": "firmware-GPIO-mode-policy",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.15
+      "seconds": 3.13
     },
     {
       "stage": "firmware-scanner-control",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 14.33
+      "seconds": 14.14
     },
     {
       "stage": "firmware-key-pipeline",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.1
+      "seconds": 3.09
     },
     {
       "stage": "firmware-NVS-powercut-model",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.46
+      "seconds": 4.36
     },
     {
       "stage": "target-power-fault-injection",
@@ -127,19 +127,19 @@
       "stage": "firmware-calibration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.01
+      "seconds": 1.97
     },
     {
       "stage": "firmware-simulation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.47
+      "seconds": 1.49
     },
     {
       "stage": "analog-scan-waveform",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 8.55
+      "seconds": 10.63
     },
     {
       "stage": "firmware-evidence-suite",
@@ -163,55 +163,67 @@
       "stage": "mechanical-metadata",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.15
+      "seconds": 0.77
     },
     {
       "stage": "daughterboard-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.47
+      "seconds": 3.46
     },
     {
       "stage": "mechanical-design",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.77
+      "seconds": 2.81
     },
     {
       "stage": "plate-source",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.28
+      "seconds": 0.3
+    },
+    {
+      "stage": "E73-mechanical-repair-candidate",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 37.19
     },
     {
       "stage": "plate-mount-contract",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.28
+      "seconds": 0.36
     },
     {
       "stage": "plate-mount-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.39
+      "seconds": 0.4
     },
     {
       "stage": "key-mechanism-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.05
+      "seconds": 1.09
     },
     {
       "stage": "assembly-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 38.79
+      "seconds": 39.87
+    },
+    {
+      "stage": "E73-mechanical-repair-fault-tests",
+      "state": "passed",
+      "exit_code": 0,
+      "seconds": 51.81
     },
     {
       "stage": "mechanical-tolerance-diagnostic",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 7.93
+      "seconds": 7.84
     },
     {
       "stage": "mechanical-tolerance-fault-tests",
@@ -220,46 +232,34 @@
       "seconds": 0.06
     },
     {
-      "stage": "E73-mechanical-repair-candidate",
-      "state": "passed",
-      "exit_code": 0,
-      "seconds": 37.15
-    },
-    {
-      "stage": "E73-mechanical-repair-fault-tests",
-      "state": "passed",
-      "exit_code": 0,
-      "seconds": 51.83
-    },
-    {
       "stage": "interconnect-native-cad",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.14
+      "seconds": 2.19
     },
     {
       "stage": "interconnect-fit",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 23.16
+      "seconds": 23.04
     },
     {
       "stage": "render-geometry",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 15.94
+      "seconds": 15.81
     },
     {
       "stage": "interconnect-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.77
+      "seconds": 3.88
     },
     {
       "stage": "board-guidance",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.76
+      "seconds": 1.75
     },
     {
       "stage": "purchase-bom",
@@ -271,7 +271,7 @@
       "stage": "inventory-purchase-plan",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.03
+      "seconds": 0.04
     },
     {
       "stage": "readme-materials",
@@ -283,25 +283,25 @@
       "stage": "illustration-native-map",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.29
+      "seconds": 1.33
     },
     {
       "stage": "plate-copper-firmware-map",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.55
+      "seconds": 0.21
     },
     {
       "stage": "plate-map-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.25
+      "seconds": 0.27
     },
     {
       "stage": "illustration-regeneration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 45.83
+      "seconds": 46.33
     },
     {
       "stage": "illustrated-build-guide",
@@ -319,31 +319,31 @@
       "stage": "fabrication-review-package",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.45
+      "seconds": 4.59
     },
     {
       "stage": "power-calculation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.04
+      "seconds": 0.05
     },
     {
       "stage": "battery-pocket",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.26
+      "seconds": 2.34
     },
     {
       "stage": "cell-screening",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 4.79
+      "seconds": 4.86
     },
     {
       "stage": "assembly-drawings",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 8.89
+      "seconds": 9.13
     },
     {
       "stage": "engineering-evidence",
@@ -355,25 +355,25 @@
       "stage": "engineering-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.14
+      "seconds": 0.16
     },
     {
       "stage": "documentation",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.83
+      "seconds": 0.86
     },
     {
       "stage": "cross-domain-integration",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.24
+      "seconds": 0.23
     },
     {
       "stage": "integration-fault-injection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.0
+      "seconds": 1.02
     },
     {
       "stage": "design-inputs-unchanged",

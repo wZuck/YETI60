@@ -20,7 +20,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
 def main():
- path=ROOT/'mechanical/battery-pocket-study.json';spec=json.loads(path.read_text());source=ROOT/'mechanical/generated/yeti60-bottom.step';s=load(ROOT/'felk60/felk60_bottom.step');top=load(ROOT/'mechanical/generated/yeti60-top.step');tool=rounded_box(spec['pocket_bounds_case_mm'],spec['pocket_corner_radius_mm']);result=load(source);assert intersection_volume(result,tool)<1e-6,'Default bottom was not cut to the current recess'
+ path=ROOT/'mechanical/battery-pocket-study.json';spec=json.loads(path.read_text());source=ROOT/'mechanical/e73-fit/yeti60-e73-bottom-m01.step';s=load(ROOT/'felk60/felk60_bottom.step');top=load(ROOT/'mechanical/generated/yeti60-top.step');tool=rounded_box(spec['pocket_bounds_case_mm'],spec['pocket_corner_radius_mm']);result=load(source);assert intersection_volume(result,tool)<1e-6,'Default bottom was not cut to the current recess'
  n=0;ex=TopExp_Explorer(result,TopAbs_SOLID)
  while ex.More():n+=1;ex.Next()
  assert n==1 and BRepCheck_Analyzer(result).IsValid();assert max(abs(a-b) for a,b in zip(bounds(s),bounds(result)))<1e-6

@@ -2,7 +2,7 @@ English | [Chinese](battery-study.zh-CN.md)
 
 # Default single-cell battery and bottom recess
 
-P2 selects **YETI60-BAT-1600-1S**, a custom protected pack based on Honcell HCP404074. The complete-pack design envelope is **85×43×4.8 mm**. The recess is included in the canonical [bottom STEP](../../mechanical/generated/yeti60-bottom.step); there is one default bottom, with the FELK60 exterior unchanged. C5 JSH remains the USB daughterboard.
+P2 selects **YETI60-BAT-1600-1S**, a custom protected pack based on Honcell HCP404074. The complete-pack design envelope is **85×43×4.8 mm**. The recess is included in the canonical [bottom STEP](../../mechanical/e73-fit/yeti60-e73-bottom-m01.step); there is one default bottom, with the FELK60 exterior unchanged. C5 JSH remains the USB daughterboard.
 
 This is the largest candidate found in the documented catalog/grid search. It is not an all-market or continuous-position maximum, and the finished pack still needs a supplier-signed drawing.
 

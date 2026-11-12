@@ -22,7 +22,7 @@ Fn + **two Backspace taps within 400 ms** clears only the selected Bluetooth pro
 | Key reporting | [Six scenarios and four rejected changes](../audit/key-pipeline.json); compiled transform/key bindings, layer release order, host reports, six-key rollover and all-key release |
 | Calibration record | [Independent CRC verification](../audit/calibration.json); 512 reference records, 2,464 single-bit flips, 308 byte inversions and 2,433 sliding 32-bit bursts rejected |
 | Interrupted storage | [14,795 bounded NVS cut trials](../audit/nvs-powercut.json); first save, rewrite, legacy replacement, garbage collection and interrupted recovery; unrelated sentinel preserved and resave checked |
-| Recovery gesture | [Pinned upstream tap-dance execution and twelve CMake mutation cases, including selected-plate and stack changes](../audit/firmware-recovery.json) |
+| Recovery gesture | [Pinned upstream tap-dance execution and fourteen CMake mutation cases, including selected-plate, stack, fit-limit and mechanism changes](../audit/firmware-recovery.json) |
 | USB and charge permission | [11 callback cases](../audit/usb-event-policy.json), including deconfiguration, suspend, detach and GPIO faults; E73 GPIO1 device retained |
 | Scan waveform | [36 passive RC sensitivities and two rejected transition orders](../audit/analog-waveform.json); clamp release precedes row rise, clamp assertion precedes row fall |
 | Combined evidence | [Suite summary](../audit/firmware-suite.json) checks source/output hashes and compiled-build associations; corrupted/cross-version evidence is rejected by [12 regression cases](../../tests/audit/test_firmware_suite.py) |

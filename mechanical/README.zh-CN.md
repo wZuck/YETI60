@@ -14,4 +14,6 @@ FELK60 上游基线为 1.2 mm 不锈钢定位板。当前 YETI60 两方案均选
 
 渲染保持 FELK60 原始壳体尺寸：原始 CAD 坐标系中，上下壳联合包围尺寸为 325.700 × 125.200 × 31.190 毫米。网格线性离散偏差为 0.015 毫米，包围坐标差值检查小于 0.02 毫米。7° 展示旋转为刚性变换，不改变外壳尺寸。见[渲染几何验证](../docs/audit/yeti60-render-geometry.json)。
 
-默认 P2 [工程装配图](../docs/engineering/assembly.zh-CN.md)与[单电芯选型和凹槽设计](../docs/engineering/battery-study.zh-CN.md)已同步。正式 `generated/yeti60-bottom.step` 包含 85×43×4.8 mm、1600 mAh 电池包的凹槽，不保留旧可选底壳副本。独立温度保护、供应商签图和实物验收仍是采购／生产条件。
+默认 P2 [工程装配图](../docs/engineering/assembly.zh-CN.md)与[单电芯选型和凹槽设计](../docs/engineering/battery-study.zh-CN.md)已同步。基础 `generated/yeti60-bottom.step` 包含 85×43×4.8 mm、1600 mAh 电池包的凹槽；E73 正式装配使用下述 M01 派生底壳。独立温度保护、供应商签图和实物验收仍是采购／生产条件。
+
+E73 正式使用 [M01 内收定位板与地板修补](../docs/engineering/e73-mechanical-fit-candidate.zh-CN.md)，Raytac 使用其独立检查的 C04 定位板及短 USB 底壳；不要混用装配选项。共享的原 NiZ DXF 和 generated 基础壳体继续作为派生输入，E73 正式底壳为 [M01 STEP](e73-fit/yeti60-e73-bottom-m01.step)。

@@ -178,5 +178,11 @@
       "3": "green",
       "4": "black"
     }
+  },
+  "geometry": {
+    "plate": "mechanical/e73-fit/yeti60-e73-niz-m01.dxf",
+    "bottom": "mechanical/e73-fit/yeti60-e73-bottom-m01.step",
+    "top": "mechanical/generated/yeti60-top.step",
+    "fit_spec": "mechanical/e73-fit-spec.json"
   }
 }

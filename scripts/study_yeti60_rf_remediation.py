@@ -18,8 +18,8 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
     specpath=ROOT/'mechanical/rf-remediation.json';spec=json.loads(specpath.read_text())
     assemblypath=ROOT/'mechanical/assembly-spec.json';assembly=json.loads(assemblypath.read_text())
-    shell=ROOT/'mechanical/generated/yeti60-bottom.step';bottom=load(shell)
-    top=load(ROOT/'mechanical/generated/yeti60-top.step')
+    shell=ROOT/assembly['geometry']['bottom'];bottom=load(shell)
+    top_path=ROOT/assembly['geometry']['top'];top=load(top_path)
     cavity=spec['bottom_relief_case_XYZ'];candidate=cut(bottom,rounded_box(cavity,spec['bottom_relief_corner_radius']))
     before=bounds(bottom);after=bounds(candidate)
     assert max(abs(a-b) for a,b in zip(before,after))<1e-6
@@ -34,7 +34,8 @@ def main():
         gap=min(distance(body,c) for c in [candidate,top])
         assert max(overlap)<1e-6 and gap-case_tol>=spec['minimum_component_gap_after_case_tolerance']
         x0,y0,x1,y1=part['antenna_projection_PCB']
-        projection=box([x0,-y1,4.2062,x1,-y0,5.4062])
+        plate_z=assembly['stack']['plate_bottom_z']
+        projection=box([x0,-y1,plate_z,x1,-y0,plate_z+assembly['stack']['plate_thickness']])
         assert intersection_volume(projection,plate)<1e-6
         lateral=distance(projection,plate)
         assert lateral>3
@@ -66,8 +67,8 @@ def main():
             if len(hits)>=2 and hits[0]<cavity[2]-1e-5:
                 floor.append(cavity[2]-hits[0])
     assert floor and min(floor)-2*case_tol>=spec['minimum_floor_after_case_tolerance']
-    sources=[specpath,assemblypath,shell,ROOT/'mechanical/generated/yeti60-top.step',
-             ROOT/'mechanical/felk60_plate_hhkb.audited.dxf',ROOT/'scripts/build_yeti60_mechanical.py',
+    sources=[specpath,assemblypath,shell,top_path,
+             ROOT/assembly['geometry']['plate'],ROOT/'scripts/build_yeti60_mechanical.py',
              ROOT/'scripts/check_yeti60_assembly.py',ROOT/'scripts/cad_geometry.py',Path(__file__)]
     report={'status':'implemented-RF-geometry-tolerance-screen-passed' if spec.get('native_implemented',False) else 'candidate-geometric-feasibility-passed-native-implementation-pending',
             'production_approved':False,'physical_verification':False,'candidate_only':not spec.get('native_implemented',False),

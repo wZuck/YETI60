@@ -28,8 +28,10 @@ def main():
                    ('waveform','firmware/yeti60/core.c',('s->cfg.charge_us','s->cfg.discharge_us')),
                    ('calibration','firmware/yeti60/calibration.c',('6 * (sr > sp','1 * (sr > sp')),
                    ('header','firmware/yeti60/calibration.h',('128u','64u')),
+                   ('fit-limits','mechanical/e73-fit-spec.json',None),
+                   ('mechanism','mechanical/yeti60-key-mechanism.e73.json',None),
                    ('stack','mechanical/assembly-spec.json',('"plate_thickness": 1.6','"plate_thickness": 1.2')),
-                   ('plate','mechanical/felk60_plate_hhkb.plate-mount.dxf',None),
+                   ('plate','mechanical/e73-fit/yeti60-e73-niz-m01.dxf',None),
                    ('keymap-only','firmware/target/config/yeti60.keymap',None),
                    ('effective-idle',None,None),('effective-gating',None,None)]
         base_version=version(baseline,options)

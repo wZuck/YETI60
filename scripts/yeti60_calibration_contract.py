@@ -12,7 +12,8 @@ INPUTS = (
     'firmware/target/config/yeti60.conf', 'firmware/target/config/west.yml',
     'firmware/target/Kconfig', 'firmware/target/CMakeLists.txt',
     'firmware/target/calibration-contract.cmake',
-    'mechanical/assembly-spec.json', 'mechanical/felk60_plate_hhkb.plate-mount.dxf',
+    'mechanical/e73-fit-spec.json', 'mechanical/yeti60-key-mechanism.e73.json',
+    'mechanical/assembly-spec.json', 'mechanical/e73-fit/yeti60-e73-niz-m01.dxf',
     'hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb',
 )
 OPTIONS = ('CONFIG_YETI60_ACTIVE_SCAN_MS', 'CONFIG_YETI60_IDLE_SCAN_MS',
@@ -27,7 +28,7 @@ def configuration(text):
 
 
 def version(root, options, pcb=None):
-    fields = ['yeti60-calibration-v4']
+    fields = ['yeti60-calibration-v5']
     for rel in INPUTS:
         path=pcb if pcb is not None and rel==INPUTS[-1] else root/rel
         fields.append(rel+'='+hashlib.sha256(path.read_bytes()).hexdigest())

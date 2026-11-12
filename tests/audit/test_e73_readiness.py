@@ -8,7 +8,7 @@ from study_e73_service import withdrawal
 class Readiness(unittest.TestCase):
  def inputs(self):
   read=lambda n:json.loads((ROOT/'docs/audit'/n).read_text())
-  return [json.loads((ROOT/'hardware/ec60-nrf52840/audit-current.json').read_text()),read('yeti60-target-check.json'),read('usb-event-policy.json'),read('interference-layout.json')['variants']['e73'],read('USB-signal-paths.json')['variants']['e73'],read('yeti60-assembly.json'),read('e73-service-motion.json'),read('outcome.json'),read('firmware-suite.json'),read('e73-tolerance-diagnostic.json')]
+  return [json.loads((ROOT/'hardware/ec60-nrf52840/audit-current.json').read_text()),read('yeti60-target-check.json'),read('usb-event-policy.json'),read('interference-layout.json')['variants']['e73'],read('USB-signal-paths.json')['variants']['e73'],read('yeti60-assembly.json'),read('e73-service-motion.json'),read('outcome.json'),read('firmware-suite.json'),read('e73-tolerance-diagnostic.json'),read('e73-fit-candidate.json')]
  def states(self,data):return {x['id']:x['state'] for x in gates(*data)}
  def test_cli_retains_design_hold(self):
   run=subprocess.run([sys.executable,str(ROOT/'scripts/review_e73_readiness.py'),'--require-design'],cwd=ROOT,capture_output=True,text=True)
@@ -16,7 +16,15 @@ class Readiness(unittest.TestCase):
   result=json.loads((ROOT/'docs/audit/e73-readiness.json').read_text());self.assertEqual(result['status'],'hold')
  def test_current_obstructions_are_not_accepted(self):
   states=self.states(self.inputs())
-  for key in ['USB-protection-branches','battery-plug-service','mechanical-tolerance-budget']:self.assertEqual(states[key],'failed')
+  for key in ['USB-protection-branches','battery-plug-service']:self.assertEqual(states[key],'failed')
+ def test_M01_selected_bounded_interfaces_pass(self):
+  states=self.states(self.inputs());self.assertEqual(states['plate-switch-bounded-fit'],'passed');self.assertEqual(states['complete-mechanical-tolerances'],'open')
+ def test_unselected_repair_does_not_qualify_current_assembly(self):
+  data=self.inputs();data[5]['selected_geometry']['bottom']='mechanical/generated/yeti60-bottom.step';self.assertEqual(self.states(data)['plate-switch-bounded-fit'],'failed')
+ def test_relabelled_whole_keyboard_qualification_rejected(self):
+  data=self.inputs();data[10]['complete_keyboard_tolerance_qualified']=True;self.assertEqual(self.states(data)['plate-switch-bounded-fit'],'failed')
+ def test_missing_interface_does_not_qualify_fit(self):
+  data=self.inputs();data[10]['interfaces'].pop();self.assertEqual(self.states(data)['plate-switch-bounded-fit'],'failed')
  def test_current_NiZ_geometry_is_integrated(self):
   self.assertEqual(self.states(self.inputs())['NiZ-plate-mounted-stabilizers'],'passed')
  def test_wrong_plate_blocks_geometry(self):

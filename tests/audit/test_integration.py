@@ -55,6 +55,10 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/e73-fit-candidate.json',
                      lambda data: data.update(manufacturing_released=True))
 
+    def test_selected_geometry_mismatch_rejected(self):
+        self.rejects('docs/audit/yeti60-assembly.json',
+                     lambda data: data['selected_geometry'].update(bottom='mechanical/generated/yeti60-bottom.step'))
+
     def test_repair_with_exhausted_reserve_rejected(self):
         self.rejects('docs/audit/e73-fit-candidate.json',
                      lambda data: data['interfaces'][0].update(remaining_air_gap_mm=.01))

@@ -28,8 +28,8 @@ Use the [E73 NiZ and plate-stabilizer specification](../build/key-mechanism.md).
 | ID | Item | Quantity | Specification / acceptance |
 |---|---|---:|---|
 | M01 | Top shell | 1 | Derived FELK60 HHKB STEP, tough SLA resin, post-cured; no exterior scaling |
-| M02 | Bottom shell | 1 | Default P2 derived STEP with 1600 mAh recess; unchanged exterior |
-| M03 | Plate | 1 | K07 NiZ plate-mount DXF, 304 stainless, CAD thickness 1.60 mm, finished 1.55-1.60 mm, 28 M2 x 0.4 axes; no H26 plate mounting hole |
+| M02 | Bottom shell | 1 | Selected [E73 M01 STEP](../../mechanical/e73-fit/yeti60-e73-bottom-m01.step), P2 1600 mAh recess and SW100 floor relief; original exterior |
+| M03 | Plate | 1 | K07 E73 M01 NiZ plate-mount DXF, 304 stainless, CAD thickness 1.60 mm, finished 1.55-1.60 mm, 28 M2 x 0.4 axes; no H26 plate mounting hole |
 | M04 | NiZ housings / sliders / original rings | 60 | K01 five per pack, buy 13 packs / 65; install 60, spare 5; ordinary center housings for big keys, no Deskeys wide assembly |
 | M05 | Rubber domes | 60 positions | K03 NiZ 45g sheet, one sheet; use 60 complete positions trimmed for HHKB; not included in K01 |
 | M06 | Conical EC springs | 60 | K02 NiZ five per pack, buy 13 packs / 65; install 60, spare 5; not helper springs |
@@ -43,7 +43,7 @@ Use the [E73 NiZ and plate-stabilizer specification](../build/key-mechanism.md).
 | M14 | Daughterboard inserts | 4 | Cold-bonded brass M2×0.4, OD 3.2, length 2.5; bores Ø3.35±0.05, depth 2.9 |
 | M15 | Shell closure screws | 4 | M3×5 with 0.30 mm shim washer; proposed from CAD seat z=2.59 and insert entry z=4.79; nominal engagement 2.50 mm, verify head Ø≤5.6 in Ø5.8 recess |
 | M16 | Daughterboard screws | 4 | M2×4 with 0.30 mm insulating washer; nominal thread engagement 4−1.6062−0.30=2.0938 mm in 2.5 mm insert; head clearance to connector requires check |
-| M17 | Gasket stock | 1 set | Lower stock 2.0 mm, upper stock 1.2 mm; trim to original ledges; nominal installed gaps 1.0162 /0.5838 mm |
+| M17 | Gasket stock | 1 set | Four 33 x 3 mm pads per layer; lower stock 2.0 mm, upper 1.2 mm; installed gaps 1.0162 /0.5838 mm; force/creep qualification open |
 | M18 | Case feet | 4 | [SKUF silicone feet](https://keeb.io/products/skuf-silicone-rubber-keyboard-feet), 41.8 x 5.8 x 2 mm, 45A, adhesive backed; four approximately 42.2 x 6.2 mm case pockets. One 8-pack leaves four spares |
 | M19 | Insert adhesive | As needed | Resin-compatible structural epoxy; cold-bond only, cure per adhesive/resin supplier, keep thread bores clear |
 | M20 | Battery retention and insulation | 1 set | Nonconductive removable retention and edge protection; include tape thickness in the pocket budget; do not clamp the pouch |

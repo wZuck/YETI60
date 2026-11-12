@@ -6,7 +6,7 @@
 
 E73 当前方案采用 **60 套 NiZ 轴座／滑块**、NiZ 45g 胶碗及锥形感应弹簧，另配 **三组 Cherry／GMK 钢板卫星轴**。回车、左 Shift 各用一根 2U 钢丝；居中 HHKB 6U 空格另用一根 6U 钢丝。键帽继续使用 NicePBT BoW。本版不再使用 Deskeys 宽键总成或空格侧轴。
 
-使用[新 NiZ 钢板卫星轴定位板](../../mechanical/felk60_plate_hhkb.plate-mount.dxf)和 [E73 专用装配规格](../../mechanical/assembly-spec.json)，原 1.2 mm Deskeys 定位板已被替换。原生 PCB 不变；固件校准指纹现在同时绑定选定定位板／叠层：PCB 仍有 29 个原孔，但 **H26 不装，实际只安装 28 套紧固件**，因为新空格开孔经过该安装轴。
+使用[新 NiZ 钢板卫星轴定位板](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf)和 [E73 专用装配规格](../../mechanical/assembly-spec.json)，原 1.2 mm Deskeys 定位板已被替换。原生 PCB 不变；固件校准指纹现在同时绑定选定定位板／叠层：PCB 仍有 29 个原孔，但 **H26 不装，实际只安装 28 套紧固件**，因为新空格开孔经过该安装轴。
 
 这是按图设计的工程样机，目前没有实物。真实 NiZ 卡扣、轴座高度、胶碗压缩、钢丝弯形及键帽／卫星轴全行程须先做局部试装；CAD 检查不等于验证了供应商塑料外形或静电容性能。
 
@@ -22,7 +22,7 @@ E73 当前方案采用 **60 套 NiZ 轴座／滑块**、NiZ 45g 胶碗及锥形�
 | K04 | [原装 GMK 卫星轴，选 **Plate mount／2u**](https://kebo.store/products/gmk-stabilizer?variant=37169593581722) | 3 组 | 六个外壳、六个被动柱；使用其中两根短钢丝，第三根短丝作备件，该组改装 K05 长丝 |
 | K05 | [Cherry MX 兼容 **6u** 卫星轴钢丝](https://mech-stock.myshopify.com/products/stabiliser-wire?variant=40929412776129) | 1 根 | 装在空格卫星轴组；卖家说明适用于 Cherry MX 的 PCB 或钢板安装机构，它不是 Deskeys 静电容钢丝 |
 | K06 | [NicePBT BoW 当前完整套装](https://cannonkeys.com/products/nicepbt-bow)，含 **6.0c Centered** | 1 套 | 使用 60 帽：居中 6U 空格、2.25U 回车／左 Shift、1.75U 右 Shift、1.5U 退格及对应 HHKB 底排 |
-| K07 | [新的 NiZ 钢板卫星轴 DXF](../../mechanical/felk60_plate_hhkb.plate-mount.dxf)，304 不锈钢 | 1 张 | 60 个有效按键开孔，三个 Cherry 式卫星轴组合开孔，28 处 M2 螺纹轴 |
+| K07 | [新的 NiZ 钢板卫星轴 DXF](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf)，304 不锈钢 | 1 张 | 60 个有效按键开孔，三个 Cherry 式卫星轴组合开孔，28 处 M2 螺纹轴 |
 
 K01、K02 是同一商品页的不同选项，不是整套轴体；胶碗 K03 也须另买，不能以为 K01 已含锥簧和胶碗。无需买完整 MX 轴、PCB 螺丝卫星轴或 PCB 卡扣卫星轴。K04 同页也卖 PCB 版本，必须选 **Plate mount**。
 
@@ -78,4 +78,4 @@ DXF 保留外轮廓和全部 60 个感应轴心。原宽静电容轴座改成普
 
 E73 电气设计仍受 USB 保护、PH 插头检修、电源布局及供应商／实物门槛限制，参见[当前 E73 审查](../audit/e73-review.zh-CN.md)。
 
-标称装配不能关闭[定位板耳部及 SW100 公差净空不足](../engineering/e73-mechanical-tolerances.zh-CN.md)。修补并验证前，定位板／壳体加工继续暂停。
+正式选用的 [M01 定位板及地板修补](../engineering/e73-mechanical-fit-candidate.zh-CN.md)在规定误差下通过三处定位板／壳体及 SW100 净空检查。定位板外沿内收 0.4 mm，内部开孔保持不变。完整机械公差、供方尺寸及实物验收仍未关闭，局部通过不代表允许加工放行。

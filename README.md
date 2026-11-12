@@ -20,7 +20,7 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 |---|---|
 | PCB | E73: strict DRC 0 errors / 0 opens; 270 physical signal pairs and all critical paths pass; 102 expected virtual-courtyard warnings; no dangling or via-alignment warnings. Ordinary JLC four-layer, no blind/buried/module vias-in-pad |
 | Firmware | New schematic-bound control core passes host ASan/UBSan simulation; normal/calibrator target binaries now build; on-device USB/BLE and EC calibration remain pending |
-| Mechanical | E73 now integrates NiZ, the 1.6 mm plate and 28 mounting sets; PH battery-plug withdrawal still has measured interference, and plate/switch tolerance reserves remain insufficient. See the current review |
+| Mechanical | E73 now integrates NiZ, the 1.6 mm plate and 28 mounting sets; PH battery-plug withdrawal still has measured interference, and selected M01 plate/switch envelopes pass; complete mechanical/service qualification remains open. See the current review |
 | Battery | Default custom 1600 mAh, complete 85×43×4.8 mm; supplier drawing/current clarification and independent thermal protection approval pending |
 | Visualization | E73 has a source-linked 28-step reference guide and renders of its old stack. Raytac has a separate current candidate assembly package; do not interchange them |
 
@@ -153,8 +153,8 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | ID | Material | Quantity | Detailed specification/acceptance |
 |---|---|---:|---|
 | M01 | Top shell | 1 | Derived FELK60 HHKB STEP, tough SLA resin, post-cured; no exterior scaling |
-| M02 | Bottom shell | 1 | Default P2 derived STEP with 1600 mAh recess; unchanged exterior |
-| M03 | Plate | 1 | K07 NiZ plate-mount DXF, 304 stainless, CAD thickness 1.60 mm, finished 1.55-1.60 mm, 28 M2 x 0.4 axes; no H26 plate mounting hole |
+| M02 | Bottom shell | 1 | Selected [E73 M01 STEP](mechanical/e73-fit/yeti60-e73-bottom-m01.step), P2 1600 mAh recess and SW100 floor relief; original exterior |
+| M03 | Plate | 1 | K07 E73 M01 NiZ plate-mount DXF, 304 stainless, CAD thickness 1.60 mm, finished 1.55-1.60 mm, 28 M2 x 0.4 axes; no H26 plate mounting hole |
 | M04 | NiZ housings / sliders / original rings | 60 | K01 five per pack, buy 13 packs / 65; install 60, spare 5; ordinary center housings for big keys, no Deskeys wide assembly |
 | M05 | Rubber domes | 60 positions | K03 NiZ 45g sheet, one sheet; use 60 complete positions trimmed for HHKB; not included in K01 |
 | M06 | Conical EC springs | 60 | K02 NiZ five per pack, buy 13 packs / 65; install 60, spare 5; not helper springs |
@@ -168,7 +168,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | M14 | Daughterboard inserts | 4 | Cold-bonded brass M2×0.4, OD 3.2, length 2.5; bores Ø3.35±0.05, depth 2.9 |
 | M15 | Shell closure screws | 4 | M3×5 with 0.30 mm shim washer; proposed from CAD seat z=2.59 and insert entry z=4.79; nominal engagement 2.50 mm, verify head Ø≤5.6 in Ø5.8 recess |
 | M16 | Daughterboard screws | 4 | M2×4 with 0.30 mm insulating washer; nominal thread engagement 4−1.6062−0.30=2.0938 mm in 2.5 mm insert; head clearance to connector requires check |
-| M17 | Gasket stock | 1 set | Lower stock 2.0 mm, upper stock 1.2 mm; trim to original ledges; nominal installed gaps 1.0162 /0.5838 mm |
+| M17 | Gasket stock | 1 set | Four 33 x 3 mm pads per layer; lower stock 2.0 mm, upper 1.2 mm; installed gaps 1.0162 /0.5838 mm; force/creep qualification open |
 | M18 | Case feet | 4 | [SKUF silicone feet](https://keeb.io/products/skuf-silicone-rubber-keyboard-feet), 41.8 x 5.8 x 2 mm, 45A, adhesive backed; four approximately 42.2 x 6.2 mm case pockets. One 8-pack leaves four spares |
 | M19 | Insert adhesive | As needed | Resin-compatible structural epoxy; cold-bond only, cure per adhesive/resin supplier, keep thread bores clear |
 | M20 | Battery retention and insulation | 1 set | Nonconductive removable retention and edge protection; include tape thickness in the pocket budget; do not clamp the pouch |
@@ -185,7 +185,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | Rear removable bridges | 2 | One each of `rear-1-bridge` and `rear-2-bridge`; three lower battery wires/four upper USB wires, groove radius 0.5 mm |
 | Front USB guide | 1 | `front-base` STEP/STL, width 6 and route-direction length 1.8 mm; install in case coordinates without scaling |
 | Polyimide insulation stock | 1 sheet | At least 100 x 100 x 0.10 mm; supplies the 28 insulating discs; do not double-count pre-cut parts. Upper harness retention uses the separately listed adhesive-backed film |
-| Gasket stock | 1 sheet | Suggested purchase >=330 x 260 x 2 mm, cut separately for both sides of the plate; stock quantity replaces M17's one-set allowance; material/hardness unselected |
+| Gasket stock | 2 sheets | One >=150 x 50 x 2.0 mm lower sheet and one >=150 x 50 x 1.2 mm upper sheet; cut four 33 x 3 mm pads from each. Replaces M17 stock allowance; force/creep and adhesive qualification open |
 | Resin-compatible structural adhesive | 1 small two-part kit | For inserts and guides; qualify and cure per adhesive/resin suppliers; quantity denotes a purchase package, not measured consumption |
 | Removable battery tape and edge insulation | 1 set | Nominal pack-to-pocket-floor space is only 0.20 mm; tape, insulation and assembly allowance must fit that total budget; do not compress the pouch |
 | Upper harness retention tape | 1 small roll, cut 3 pieces | Adhesive-backed insulating film/tape, total thickness <=0.10 mm including adhesive; wrap over the upper wires and down the guide sides |

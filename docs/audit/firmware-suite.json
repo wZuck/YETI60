@@ -10,17 +10,17 @@
   "analog_model": "passive RC sensitivity only; measured NiZ/opamp/timing margins remain open",
   "evidence_sha256": {
     "docs/audit/gpio-mode-policy.json": "a15a0ddbfe815244fb44336a4af8fc070b61a8bd1694eadcb45bc992f369c71b",
-    "docs/audit/scan-control.json": "27da42e9a3af24df4c7230dbcb955f04265205a983f2d784bd1f21b187a51dd6",
-    "docs/audit/key-pipeline.json": "94b3cc83b11e9f91050e5d0015e69d15b7740ce781503689649e18e2408ea724",
-    "docs/audit/nvs-powercut.json": "fd9e7412a1c3093e625f524937555f2ee37a0f6b289b4d84b6c7d6b3a5d54cf8",
-    "docs/audit/firmware-recovery.json": "b95a2f2a6d37b3f860010cc3d534dbcbd7d066a3edee7fd5184246ba3cd5b7d8",
-    "docs/audit/analog-waveform.json": "46206483557da4940cb7afe045f8a864cb0e828d736583f77f47f29701c00735",
+    "docs/audit/scan-control.json": "e577b5749ba5159376ac712c3077c863646d59f6f52d9253b18c5a463d085c16",
+    "docs/audit/key-pipeline.json": "b415793f502dd770d20132e74a2d9b5a76c331bcb520b8646de93a9cb4850a42",
+    "docs/audit/nvs-powercut.json": "da94c8a3867a4863870ac38cbe74f5db8582cd38393082a08ca7459686b9185b",
+    "docs/audit/firmware-recovery.json": "e704077fb136b5c8f595c3a2015d096f3ded7185245e839f6c41aeef675b544f",
+    "docs/audit/analog-waveform.json": "73b9d1818fac274b465d6b0efd2af450b6f600f1301a3e3a483c35e7f4d18c2f",
     "docs/audit/calibration.json": "b3cd82a93b3595d6b3d9da9c23f687fde4dba23eff9fd759ea8f2b927c781495",
     "docs/audit/usb-event-policy.json": "9b3c48bc6174d5694a3c8a54bcfd8ad4783aff159a680b332a0f9ca808a7ad3c",
-    "docs/audit/yeti60-target-build.json": "2c5b87c59d69f736a71a924aacc7725d42a08fb79ee3fbd0e21d823822677035",
-    "docs/audit/yeti60-target-check.json": "446d8e199deb0fb6b7a98be85aede6c8b56641633a268bcd541a29958563912d"
+    "docs/audit/yeti60-target-build.json": "4227cf4393e3e866cf14222ecb9ab22d539fa96a1f0cf9601428394644073590",
+    "docs/audit/yeti60-target-check.json": "2d37c2d350fcf33b2d00b2558e3b24f8ec134a9e72d6be101c1d2df659a7e673"
   },
   "source_sha256": {
-    "scripts/check_yeti60_firmware_suite.py": "14881fa4f103856db18571ce0b93a9bed1ce4b938011fe99251e35ee00e691c0"
+    "scripts/check_yeti60_firmware_suite.py": "b45ad04bfcd65e77e93ed7603f8353b6f139c9fc0924d68ffa8d60ddcc94c867"
   }
 }

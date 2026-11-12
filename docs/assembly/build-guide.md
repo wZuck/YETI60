@@ -354,7 +354,7 @@ References placed in this step: J1, J2, SW1, SW100, D2.
 
 [Vector enlargement](images/18-step.svg)
 
-1. Use the NiZ plate-mount DXF, CAD 1.60 mm and finished 1.55-1.60 mm. Finish 28 M2 threads; H26 has no installed hardware.
+1. Use mechanical/e73-fit/yeti60-e73-niz-m01.dxf: M01 outer edge inset 0.4 mm, all internal cutouts retained. CAD thickness 1.60 mm, finished 1.55-1.60 mm. Finish 28 M2 threads; H26 has no installed hardware.
 2. Fit three GMK Plate mount pairs first: two 2U wires and a separate Cherry-compatible 6U wire. Then trial-fit the central ordinary NiZ housings; trim only interfering nonstructural lower skirt material per the mechanism guide.
 3. Assemble 60 NiZ sliders with their original rings. Test Enter, left Shift and the centered 6U bar from each end. Check actual 95.25 mm long-span cap/wire fit before full assembly.
 

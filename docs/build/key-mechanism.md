@@ -6,7 +6,7 @@ Current stock is unverified. The current NiZ N+ listing does not establish that 
 
 The selected E73 build uses **60 NiZ housing/slider sets**, NiZ 45g domes and conical sensing springs, and **three separate Cherry/GMK plate-mounted stabilizer pairs**. Enter and left Shift each use a 2U wire; the centered HHKB 6U spacebar uses a separate 6U wire. NicePBT BoW caps remain selected. There are no Deskeys wide assemblies or Deskeys spacebar side units in this revision.
 
-Use the [YETI60-NIZ-PM1 plate](../../mechanical/felk60_plate_hhkb.plate-mount.dxf) and [E73 assembly specification](../../mechanical/assembly-spec.json). The old 1.2 mm Deskeys plate is superseded. The native PCB is unchanged; the firmware calibration fingerprint now includes the selected plate/stack: the PCB retains 29 native holes, but **H26 is unused and only 28 fastener sets are installed**. The new spacebar opening passes through that old mounting axis.
+Use the [E73 M01 plate](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf) and [E73 assembly specification](../../mechanical/assembly-spec.json). The old 1.2 mm Deskeys plate is superseded. The native PCB is unchanged; the firmware calibration fingerprint now includes the selected plate/stack: the PCB retains 29 native holes, but **H26 is unused and only 28 fastener sets are installed**. The new spacebar opening passes through that old mounting axis.
 
 This is a drawing-based engineering prototype. No sample exists. Actual NiZ clip retention, housing height, dome compression, wire bends and full cap/stabilizer travel require local first-article fitting. The CAD checks do not certify vendor plastic shapes or capacitance.
 
@@ -22,7 +22,7 @@ Source stock observation: 2026-11-02; current stock quantities have not been req
 | K04 | [Genuine GMK stabilizer, **Plate mount / 2u**](https://kebo.store/products/gmk-stabilizer?variant=37169593581722) | 3 sets | Six housings and six passive stems. Use two supplied short wires; keep the third short wire as a spare and fit K05 to that pair |
 | K05 | [Cherry-compatible **6u** stabilizer wire](https://mech-stock.myshopify.com/products/stabiliser-wire?variant=40929412776129) | 1 wire | Install on the spacebar pair. The seller lists compatibility with PCB or plate-mounted Cherry MX stabilizers; it is not a Deskeys EC wire |
 | K06 | [NicePBT BoW current full kit](https://cannonkeys.com/products/nicepbt-bow), including **6.0c Centered** | 1 kit | 60 caps: centered 6U bar, 2.25U Enter/left Shift, 1.75U right Shift, 1.5U Backspace and matching HHKB bottom row |
-| K07 | [New NiZ / plate-mount DXF](../../mechanical/felk60_plate_hhkb.plate-mount.dxf), 304 stainless | 1 plate | 60 active openings, three Cherry-style stabilizer openings and 28 M2 tapped axes |
+| K07 | [New NiZ / plate-mount DXF](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf), 304 stainless | 1 plate | 60 active openings, three Cherry-style stabilizer openings and 28 M2 tapped axes |
 
 K01 and K02 are separate product options, not whole switch sets. K03 is another purchase. Do not count springs/domes as included in K01. Do not buy complete MX switches, PCB screw-in stabilizers or PCB clip-in stabilizers. K04 must say **Plate mount** even though the same product page sells PCB variants.
 
@@ -78,4 +78,4 @@ The rendered NiZ/stabilizer bodies and wire paths are explanatory geometry, not 
 
 The E73 electronic design remains on hold for USB protection, PH plug service, power-layout and supplier/physical gates. Use the [current E73 review](../audit/e73-review.md).
 
-Nominal assembly does not close the [plate-ear and SW100 tolerance deficits](../engineering/e73-mechanical-tolerances.md). Keep plate/case machining on hold until that repair is verified.
+The selected [M01 plate and floor repair](../engineering/e73-mechanical-fit-candidate.md) closes the three bounded plate/case and SW100 clearance checks with the specified allowances. It uses a 0.4 mm outer plate inset, preserving all internal cutouts. Full mechanical tolerance, supplier and physical acceptance remain open; this local result does not release machining.

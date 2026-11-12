@@ -1,7 +1,7 @@
 {
-  "revision": "YETI60-E73-NIZ-PM1",
+  "revision": "YETI60-E73-NIZ-M01",
   "system": "NiZ ordinary 1U housings/sliders plus separate Cherry/GMK plate-mounted stabilizers",
-  "plate": "mechanical/felk60_plate_hhkb.plate-mount.dxf",
+  "plate": "mechanical/e73-fit/yeti60-e73-niz-m01.dxf",
   "assembly_spec": "mechanical/assembly-spec.json",
   "plate_material": "304 stainless steel",
   "plate_thickness_mm": 1.6,
@@ -132,5 +132,6 @@
   "physical_fit_verified": false,
   "order_scope": "E73 selected mechanical design; electronic/USB/service and first-article gates remain separate",
   "procurement_status": "Historical listing observations only; current stock, NiZ N+ plastic dimensions and 6U wire bends require supplier confirmation before ordering",
-  "current_stock_verified": false
+  "current_stock_verified": false,
+  "outer_perimeter_inset_mm": 0.4
 }

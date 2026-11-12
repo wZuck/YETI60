@@ -42,7 +42,7 @@ def write_step(shape,path):
     w=STEPControl_Writer();w.Transfer(shape,STEPControl_AsIs);w.Write(str(path))
 def build_plate(z,thickness=1.6):
     from check_yeti60_plate_mount import keys,SOURCE
-    doc=ezdxf.readfile(ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf');profiles=[];centers=keys(ezdxf.readfile(SOURCE))
+    doc=ezdxf.readfile(ROOT/'mechanical/e73-fit/yeti60-e73-niz-m01.dxf');profiles=[];centers=keys(ezdxf.readfile(SOURCE))
     for e in doc.modelspace().query('LWPOLYLINE'):
         points=[(-v.x,-v.y,z) for v in make_path(e).flattening(.002)]
         xs=[p[0] for p in points];ys=[p[1] for p in points];area=(max(xs)-min(xs))*(max(ys)-min(ys));profiles.append((area,points))
@@ -58,7 +58,7 @@ def build_plate(z,thickness=1.6):
     return shape,sorted(centers,key=lambda c:(-c['y'],c['x']))
 def main():
     meta=json.loads((ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json').read_text());pcbpath=ROOT/meta['source'];assert sha(pcbpath)==meta['source_sha256']
-    spec=json.loads((ROOT/'mechanical/assembly-spec.json').read_text());bottom=load(ROOT/'mechanical/generated/yeti60-bottom.step');top=load(ROOT/'mechanical/generated/yeti60-top.step')
+    spec=json.loads((ROOT/'mechanical/assembly-spec.json').read_text());bottom=load(ROOT/'mechanical/e73-fit/yeti60-e73-bottom-m01.step');top=load(ROOT/'mechanical/generated/yeti60-top.step')
     subprocess.run([CLI,'pcb','export','step','--board-only','--user-origin','0x0mm','-f','-o',str(WORK/'pcb-body.step'),str(pcbpath)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
     body=load(WORK/'pcb-body.step');native_bounds=bounds(body);native_thickness=native_bounds[5]-native_bounds[2]
     faces=TopExp_Explorer(body,TopAbs_FACE);base_face=None;largest=0
@@ -90,7 +90,7 @@ def main():
         if max(volumes)>1e-5:hits.append(entry)
     # Hole correspondence is not a manufacturing tolerance approval.
     hole_matches=[];used=set()
-    dxf=ezdxf.readfile(ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf')
+    dxf=ezdxf.readfile(ROOT/'mechanical/e73-fit/yeti60-e73-niz-m01.dxf')
     for circle in dxf.modelspace().query('CIRCLE'):
         center=(-circle.dxf.center.x,circle.dxf.center.y)
         choices=[(math.dist(center,h['center_pcb_mm']),i,h) for i,h in enumerate(meta['mount_holes']) if i not in used and h['ref'] not in spec['pcb_fastener']['unused_pcb_mount_refs']]
@@ -118,7 +118,7 @@ def main():
         head_clearances.append(distance(pack,head))
     assert min(head_clearances)>=.7-1e-6
     candidates=[{'bounds_case_mm':bb,'size_mm':[width,depth,height],'case_overlap_mm3':[intersection_volume(pack,s) for s in (bottom,top)],'component_and_fastener_3d_envelopes_clear':True,'minimum_component_clearance_mm':min(component_clearances),'minimum_fastener_clearance_mm':min(head_clearances),'envelope_must_include_swelling_and_protection':True,'bottom_case_distance_mm':distance(pack,bottom),'top_insulation_gap_mm':shift-pack_top,'status':'custom-pack-design-envelope-supplier-qualification-pending'}]
-    report={'status':'conditional-fit-review','source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [pcbpath,ROOT/'mechanical/generated/yeti60-bottom.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.json',ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf']},'verification_recipe_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),ROOT/'scripts/cad_geometry.py',ROOT/'scripts/export_yeti60_mechanical_metadata.py']},'mechanical_metadata_sha256':sha(ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json'),'pcb_frame_to_case':'X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z','nominal_stack':{'bottom_gasket_ledge_z':3.19,'top_gasket_ledge_z':6.39,'compressed_bottom_gasket_mm':plate_bottom-3.19,'compressed_top_gasket_mm':6.39-plate_bottom-plate_thickness,'plate_bottom_z':plate_bottom,'plate_thickness_mm':plate_thickness,'pcb_to_plate_gap_mm':nominal_gap,'pcb_top_z':pcb_top,'pcb_bottom_z':shift,'pcb_gap_basis':'4.5 mm machined shoulder plus 0.1 mm insulating film; physical dome/housing acceptance requires first article'},'mounting_hole_matches':hole_matches,'max_hole_center_offset_mm':max(h['center_offset_mm'] for h in hole_matches),'min_M2_radial_margin_before_tolerances_mm':min(h['nominal_M2_radial_margin_before_tolerances_mm'] for h in hole_matches),'power_switch_access':'8 mm underside service port; insulated-tool access to SW100','plate_profile_chord_error_mm':.002,'active_key_positions':keys,'native_step_substrate_body_thickness_mm':native_thickness,'finished_board_envelope_thickness_mm':meta['pcb_thickness_mm'],'finished_envelope_basis':'Native STEP bottom face extruded to declared finished copper/mask thickness; conservative full board envelope','pcb_case_overlap_mm3':pcb_collisions,'pcb_case_distances_mm':pcb_distances,'plate_case_overlap_mm3':plate_collision,'component_envelopes':envelopes,'colliding_envelopes':[e['ref'] for e in hits],'pcb_gap_sweep':sweep,'battery_candidates':candidates,'not_verified':['Final switch/dome/fastener PCB-to-plate gap and tolerances','Actual battery/protection/NTC, swelling/insulation, cable bend and daughterboard envelope','J2 mating plug and current component height assumptions except sourced Raytac and JST body heights','Resin insert conversion and print shrinkage; original M3 metal-thread pilots are retained','Generic keycap shapes in renders are illustrative, not qualified OEM CAD']}
+    report={'status':'conditional-fit-review','source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [pcbpath,ROOT/'mechanical/e73-fit/yeti60-e73-bottom-m01.step',ROOT/'mechanical/generated/yeti60-top.step',ROOT/'mechanical/assembly-spec.json',ROOT/'mechanical/e73-fit/yeti60-e73-niz-m01.dxf']},'verification_recipe_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [Path(__file__).resolve(),ROOT/'scripts/cad_geometry.py',ROOT/'scripts/export_yeti60_mechanical_metadata.py']},'mechanical_metadata_sha256':sha(ROOT/'docs/audit/yeti60-pcb-mechanical-metadata.json'),'pcb_frame_to_case':'X=PCB_X; Y=-PCB_Y; Z=export_Z+pcb_bottom_z','nominal_stack':{'bottom_gasket_ledge_z':3.19,'top_gasket_ledge_z':6.39,'compressed_bottom_gasket_mm':plate_bottom-3.19,'compressed_top_gasket_mm':6.39-plate_bottom-plate_thickness,'plate_bottom_z':plate_bottom,'plate_thickness_mm':plate_thickness,'pcb_to_plate_gap_mm':nominal_gap,'pcb_top_z':pcb_top,'pcb_bottom_z':shift,'pcb_gap_basis':'4.5 mm machined shoulder plus 0.1 mm insulating film; physical dome/housing acceptance requires first article'},'mounting_hole_matches':hole_matches,'max_hole_center_offset_mm':max(h['center_offset_mm'] for h in hole_matches),'min_M2_radial_margin_before_tolerances_mm':min(h['nominal_M2_radial_margin_before_tolerances_mm'] for h in hole_matches),'power_switch_access':'8 mm underside service port; insulated-tool access to SW100','plate_profile_chord_error_mm':.002,'active_key_positions':keys,'native_step_substrate_body_thickness_mm':native_thickness,'finished_board_envelope_thickness_mm':meta['pcb_thickness_mm'],'finished_envelope_basis':'Native STEP bottom face extruded to declared finished copper/mask thickness; conservative full board envelope','pcb_case_overlap_mm3':pcb_collisions,'pcb_case_distances_mm':pcb_distances,'plate_case_overlap_mm3':plate_collision,'component_envelopes':envelopes,'colliding_envelopes':[e['ref'] for e in hits],'pcb_gap_sweep':sweep,'battery_candidates':candidates,'not_verified':['Final switch/dome/fastener PCB-to-plate gap and tolerances','Actual battery/protection/NTC, swelling/insulation, cable bend and daughterboard envelope','J2 mating plug and current component height assumptions except sourced Raytac and JST body heights','Resin insert conversion and print shrinkage; original M3 metal-thread pilots are retained','Generic keycap shapes in renders are illustrative, not qualified OEM CAD']}
     # Ordinary JLC thickness range: PCB top remains fixed by the standoffs.
     profile_path=ROOT/'mechanical/pcb-fabrication-spec.json';profile=json.loads(profile_path.read_text())
     low_t,high_t=profile['ordinary_thickness_acceptance_range_mm'];deep_shift=meta['pcb_thickness_mm']-high_t;shallow_shift=meta['pcb_thickness_mm']-low_t
@@ -156,7 +156,10 @@ def main():
     assert math.dist([h26['center_pcb_mm'][0],-h26['center_pcb_mm'][1]],mechanism['unused_mount_center_case_mm'])<.1
     report['mechanism_contract']=contract
     report['source_sha256'].update({str(p.relative_to(ROOT)):sha(p) for p in [SPEC,SOURCE,TARGET,ROOT/'scripts/check_yeti60_plate_mount.py']})
-    report['case_files']={'bottom':'mechanical/generated/yeti60-bottom.step','top':'mechanical/generated/yeti60-top.step'}
+    report['case_files']={'bottom':'mechanical/e73-fit/yeti60-e73-bottom-m01.step','top':'mechanical/generated/yeti60-top.step'}
+    report['selected_geometry']=spec['geometry']
+    report['bounded_fit_evidence_sha256']=sha(ROOT/'docs/audit/e73-fit-candidate.json')
+    report['source_sha256']['docs/audit/e73-fit-candidate.json']=report['bounded_fit_evidence_sha256']
     report['selected_battery']=spec['battery']
     report['selected_fasteners']=spec['pcb_fastener']
     report['unused_pcb_mount_refs']=spec['pcb_fastener']['unused_pcb_mount_refs']

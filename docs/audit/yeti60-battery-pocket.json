@@ -3,17 +3,17 @@
   "production_approved": false,
   "source_sha256": {
     "mechanical/battery-pocket-study.json": "6983679949ebb0b6bde4a7fd28b44a813305e1663c5d995cf95cf5eff22be23f",
-    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
+    "mechanical/e73-fit/yeti60-e73-bottom-m01.step": "962b21eb044737074e797c9cb2b1db3064477a86b2fa228a7b0aaaf862c514ae",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "mechanical/assembly-spec.json": "6897e50c86952257624f4fab66e835cc8184d2ad872a96c2bf487b5e93ebcc9a",
-    "docs/audit/yeti60-assembly.json": "a73282c7d8017e7a0e10673d4b4d8da16dad120cb8b36b76e5bcf5feafc7bfa6",
-    "scripts/study_yeti60_battery_pocket.py": "47749051903bf792afafba5e5c542016766bee655952ce9f2660363a68bc7f7a",
+    "mechanical/assembly-spec.json": "bdf2a3f04fe6bc0552b7e733bb54f4770a3bb8f73d8cee149d201afd07d9a7e7",
+    "docs/audit/yeti60-assembly.json": "cb29983409482a311dc39aff1bae88bfec06f2a62e191bf8688d288898a0c0fe",
+    "scripts/study_yeti60_battery_pocket.py": "4288eb4353a2ee8509ad460271cd7c7c2d4fc87238d7d079d0ab8b67eb668cdd",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/build_yeti60_mechanical.py": "a2324209dedb8431916dd203fdd4610787a86b2c43a945d0309607d6564b5557",
-    "scripts/check_yeti60_assembly.py": "cda91bd94fdb8dc9bff274f211f3299422740e91fc9b344716aa3d2ea3ad9499"
+    "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1"
   },
-  "output": "mechanical/generated/yeti60-bottom.step",
-  "output_sha256": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
+  "output": "mechanical/e73-fit/yeti60-e73-bottom-m01.step",
+  "output_sha256": "962b21eb044737074e797c9cb2b1db3064477a86b2fa228a7b0aaaf862c514ae",
   "external_bounds_mm": [
     51.462701398115,
     -206.30970210030003,

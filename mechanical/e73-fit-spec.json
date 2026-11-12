@@ -1,7 +1,7 @@
 {
   "revision": "YETI60-E73-FIT-M01",
   "units": "mm",
-  "scope": "E73-only mechanical repair candidate, not yet selected by the canonical assembly/firmware/render pipeline. Bounded design dimensions are measured acceptance requirements, not supplier guarantees.",
+  "scope": "Selected E73 M01 plate and switch-floor repair. Bounded design dimensions are measured acceptance requirements, not supplier guarantees. Whole keyboard qualification remains open.",
   "plate": {
     "source": "mechanical/felk60_plate_hhkb.plate-mount.dxf",
     "output": "mechanical/e73-fit/yeti60-e73-niz-m01.dxf",
@@ -72,5 +72,6 @@
   "physical_verification": false,
   "complete_keyboard_tolerance_qualified": false,
   "bottom_output": "mechanical/e73-fit/yeti60-e73-bottom-m01.step",
-  "canonical_selection_changed": false
+  "canonical_selection_changed": false,
+  "selected_by_assembly": true
 }

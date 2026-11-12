@@ -3,15 +3,15 @@
   "supplier_shapes": "schematic, not qualified vendor MCAD",
   "physical_fit_verified": false,
   "outputs": {
-    "docs/engineering/images/key-mechanism.png": "2d430f264dfcfefc01dd59da5f8f60630cbb749960e7afd1213b3038d3c66e05",
-    "docs/engineering/images/key-mechanism.svg": "1f4dacbdd5e636e32ef654d61a140853dfd406daa60267072f07544a90fadc48",
-    "docs/engineering/images/key-mechanism.zh-CN.png": "f51a1e08b01a019d470f8bdfc35206ccc5edf697f643a7df9b5d9bcf504c8de4",
-    "docs/engineering/images/key-mechanism.zh-CN.svg": "e804fb515e954caff707e2c7dfcfb9e9d190340a28b25c70675731df8d5c86e9"
+    "docs/engineering/images/key-mechanism.png": "6f505d67d8068d6482113071861b4b818f5cd3f4d5eddfa7367910b1cfd8bdfc",
+    "docs/engineering/images/key-mechanism.svg": "b1a07131ae3ce3dd51b680a9691f98bdfb45346b79560c30223f7a4f4f4d9876",
+    "docs/engineering/images/key-mechanism.zh-CN.png": "9c20454cbb4eef95916f68b8f87737bc72796c53147749a071d865bfec1cb73a",
+    "docs/engineering/images/key-mechanism.zh-CN.svg": "98392f72ef069e0dc837c6a2883e90f57d1eb8c86323857b94d555736543adc0"
   },
   "source_sha256": {
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
-    "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
-    "mechanical/yeti60-key-mechanism.e73.json": "fe36d523bdf2feea8d0ebc7074b0996847c3998a30e9fbc1524343577a7d135c",
+    "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
+    "mechanical/yeti60-key-mechanism.e73.json": "7ec89cc69dd1d842f7cd8ce7f0b588d08c2df00967f64bdfe706d8ff73902b39",
     "scripts/draw_yeti60_key_mechanism.py": "9a056eeacc053f8a4100c944377fb9db882d8a075b9b57afaf7b6f32d29c9dac"
   }
 }

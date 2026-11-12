@@ -78,7 +78,7 @@ def main():
     assert len(active_electrodes) == 60
     # Read the four actual underside pocket floors, not invented corner positions.
     feet = []
-    shape = load(ROOT / 'mechanical/generated/yeti60-bottom.step')
+    shape = load(ROOT / 'mechanical/e73-fit/yeti60-e73-bottom-m01.step')
     explorer = TopExp_Explorer(shape, TopAbs_FACE)
     while explorer.More():
         face = TopoDS.Face(explorer.Current())

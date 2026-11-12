@@ -6,7 +6,7 @@
       "stage": "current-document-links",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.66
+      "seconds": 0.67
     },
     {
       "stage": "current-artifact-integration",
@@ -24,19 +24,19 @@
       "stage": "RF-case-tolerances",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 15.22
+      "seconds": 15.88
     },
     {
       "stage": "RF-copper-projection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.93
+      "seconds": 1.98
     },
     {
       "stage": "RF-plate-projection",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 9.22
+      "seconds": 8.94
     },
     {
       "stage": "USB-contact-paths",
@@ -48,31 +48,31 @@
       "stage": "USB-path-fault-tests",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 0.37
+      "seconds": 0.36
     },
     {
       "stage": "AFE-SPICE",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 2.6
+      "seconds": 2.59
     },
     {
       "stage": "interference-fault-tests",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 3.38
+      "seconds": 3.4
     },
     {
       "stage": "PH-continuous-withdrawal",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.4
+      "seconds": 1.39
     },
     {
       "stage": "readiness-fault-tests",
       "state": "passed",
       "exit_code": 0,
-      "seconds": 1.11
+      "seconds": 1.15
     },
     {
       "stage": "readiness-disposition",

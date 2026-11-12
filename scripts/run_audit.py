@@ -51,14 +51,14 @@ def main():
     add('daughterboard-native-cad',native,'export_yeti60_daughterboard.py')
     add('mechanical-design',cad,'build_yeti60_mechanical.py')
     add('plate-source',cad,'check_plate.py')
-    add('plate-mount-contract',cad,'check_yeti60_plate_mount.py',deps=['plate-source'])
+    add('E73-mechanical-repair-candidate',cad,'build_e73_fit_candidate.py',deps=['mechanical-metadata','mechanical-design','plate-source'])
+    add('plate-mount-contract',cad,'check_yeti60_plate_mount.py',deps=['plate-source','E73-mechanical-repair-candidate'])
     stages.append(('plate-mount-fault-injection',cad+['tests/audit/test_plate_mount.py'],['plate-mount-contract']))
     add('key-mechanism-drawings',cad,'draw_yeti60_key_mechanism.py',deps=['plate-mount-contract'])
     add('assembly-fit',cad,'check_yeti60_assembly.py',deps=['mechanical-metadata','plate-mount-contract','mechanical-design'])
+    stages.append(('E73-mechanical-repair-fault-tests',cad+['tests/audit/test_e73_fit_candidate.py'],['assembly-fit']))
     add('mechanical-tolerance-diagnostic',cad,'study_e73_mechanical_tolerances.py',deps=['assembly-fit'])
     stages.append(('mechanical-tolerance-fault-tests',py+['tests/audit/test_e73_tolerances.py'],['mechanical-tolerance-diagnostic']))
-    add('E73-mechanical-repair-candidate',cad,'build_e73_fit_candidate.py',deps=['assembly-fit'])
-    stages.append(('E73-mechanical-repair-fault-tests',cad+['tests/audit/test_e73_fit_candidate.py'],['E73-mechanical-repair-candidate']))
     add('interconnect-native-cad',py,'export_yeti60_interconnects.py',deps=['assembly-fit'])
     add('interconnect-fit',cad,'check_yeti60_interconnects.py',deps=['interconnect-native-cad','daughterboard-native-cad'])
     add('render-geometry',cad,'export_yeti60_render_meshes.py',deps=['assembly-fit','interconnect-fit'])
@@ -90,7 +90,7 @@ def main():
     dependencies=[name for name,_,_ in stages]
     add('cross-domain-integration',py,'check_project_integration.py',deps=dependencies)
     stages.append(('integration-fault-injection',py+['tests/audit/test_integration.py'],['cross-domain-integration']))
-    protected=[*HW.glob('*.kicad_sch'),*HW.glob('*.kicad_pcb'),*HW.glob('*.kicad_pro'),*HW.glob('*.kicad_sym'),*HW.glob('YAECKB.pretty/*.kicad_mod'),HW/'netlist.xml',HW/'components.json',HW/'pinmap.json',ROOT/'design-constraints.json',ROOT/'mechanical/felk60_plate_hhkb.audited.dxf',ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf',ROOT/'mechanical/yeti60-key-mechanism.e73.json',ROOT/'mechanical/assembly-spec.json',*sorted((ROOT/'felk60').glob('*.step')),*sorted((ROOT/'firmware/yeti60').glob('*.[ch]'))]
+    protected=[*HW.glob('*.kicad_sch'),*HW.glob('*.kicad_pcb'),*HW.glob('*.kicad_pro'),*HW.glob('*.kicad_sym'),*HW.glob('YAECKB.pretty/*.kicad_mod'),HW/'netlist.xml',HW/'components.json',HW/'pinmap.json',ROOT/'design-constraints.json',ROOT/'mechanical/felk60_plate_hhkb.audited.dxf',ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf',ROOT/'mechanical/e73-fit/yeti60-e73-niz-m01.dxf',ROOT/'mechanical/e73-fit-spec.json',ROOT/'mechanical/yeti60-key-mechanism.e73.json',ROOT/'mechanical/assembly-spec.json',*sorted((ROOT/'felk60').glob('*.step')),*sorted((ROOT/'firmware/yeti60').glob('*.[ch]'))]
     before={str(p.relative_to(ROOT)):sha(p) for p in protected}
     records=[];states={}
     for name,command,deps in stages:

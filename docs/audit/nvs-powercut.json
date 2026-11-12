@@ -77,7 +77,7 @@
     "NVS_bytes": 32768,
     "write_bytes": 4,
     "global_NVS_CRC": false,
-    "calibration_version": "0x9b053855"
+    "calibration_version": "0x5d6ae149"
   },
   "cut_patterns": [
     "before next four-byte unit",
@@ -88,7 +88,7 @@
     "selected 0xaa bits",
     "after final commit before acknowledgement"
   ],
-  "target_build_manifest_sha256": "2c5b87c59d69f736a71a924aacc7725d42a08fb79ee3fbd0e21d823822677035",
+  "target_build_manifest_sha256": "4227cf4393e3e866cf14222ecb9ab22d539fa96a1f0cf9601428394644073590",
   "resolved_configuration_sha256": "f77e2739958b227b96066459ed298b6ab305c6dc7579df19309381a06711b877",
   "resolved_devicetree_sha256": "2db90ba623a4039eb42c5e50106b0c0a42fd76051aafbffde75f18b5645c53c8",
   "upstream_revision": "10ba6d0cb38bc3d258775d27982f707599320085",

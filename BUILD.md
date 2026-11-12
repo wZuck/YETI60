@@ -29,4 +29,4 @@ Reproduce the complete review with `YETI_CAD_PYTHON=/path/to/cad/python python3 
 
 [Current E73 firmware builds, regression evidence and calibration migration](docs/testing/e73-firmware-validation.md).
 
-[E73 nominal gaps and unresolved tolerance calculation](docs/engineering/e73-mechanical-tolerances.md). The [M01 plate/floor repair candidate](docs/engineering/e73-mechanical-fit-candidate.md) passes its bounded interfaces but is not yet selected in the canonical assembly.
+[Selected M01 plate/floor repair and CAD](docs/engineering/e73-mechanical-fit-candidate.md) now feed the assembly, calibration identity and renders. The [pre-M01 deficit regression](docs/engineering/e73-mechanical-tolerances.md) remains for comparison; full mechanical/service qualification is open.

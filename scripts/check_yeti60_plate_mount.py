@@ -14,7 +14,7 @@ from shapely.ops import unary_union
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'mechanical/felk60_plate_hhkb.audited.dxf'
-TARGET=ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf'
+TARGET=ROOT/'mechanical/e73-fit/yeti60-e73-niz-m01.dxf'
 SPEC=ROOT/'mechanical/yeti60-key-mechanism.e73.json'
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -67,7 +67,9 @@ def retained_circles(source,spec):
 def generate(source,spec):
     active,profiles=expected(source,spec);doc=ezdxf.new('R2018');doc.units=4;m=doc.modelspace()
     outline=next(e for e in source.modelspace().query('LWPOLYLINE') if kind(e)=='outline')
-    m.add_lwpolyline(outline.get_points('xyseb'),format='xyseb',close=True)
+    inset=spec['outer_perimeter_inset_mm']
+    outer=Polygon([(-v.x,-v.y) for v in make_path(outline).flattening(.002)]).buffer(-inset,join_style='mitre')
+    m.add_lwpolyline([(-x,-y) for x,y in list(outer.exterior.coords)[:-1]],close=True)
     for p in profiles:m.add_lwpolyline([(-x,-y) for x,y in list(p.exterior.coords)[:-1]],close=True)
     keep,_=retained_circles(source,spec)
     for c in keep:m.add_circle(tuple(c.dxf.center),c.dxf.radius)
@@ -79,7 +81,10 @@ def verify(source,target,spec):
     active,want=expected(source,spec);polys=list(target.modelspace().query('LWPOLYLINE'))
     assert len(polys)==61 and all(p.closed for p in polys)
     baseline=next(e for e in source.modelspace().query('LWPOLYLINE') if kind(e)=='outline')
-    assert list(polys[0].get_points('xyseb'))==list(baseline.get_points('xyseb')),'Outer profile changed'
+    outer=Polygon([(-v.x,-v.y) for v in make_path(baseline).flattening(.002)]).buffer(-spec['outer_perimeter_inset_mm'],join_style='mitre')
+    actual_outer=Polygon([(-v.x,-v.y) for v in make_path(polys[0]).flattening(.002)])
+    assert actual_outer.symmetric_difference(outer).area<1e-8,'Selected M01 outer profile changed'
+    assert spec['plate']==str(TARGET.relative_to(ROOT))
     actual=[]
     for i,(e,p) in enumerate(zip(polys[1:],want)):
         q=Polygon([(-v.x,-v.y) for v in make_path(e).flattening(.001)])

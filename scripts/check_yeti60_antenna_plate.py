@@ -50,7 +50,7 @@ def main():
     font=font_manager.FontProperties(fname='/System/Library/Fonts/STHeiti Medium.ttc')
     for text in [fig._suptitle,*[t for ax in axes for t in [ax.title,ax.xaxis.label,ax.yaxis.label]]]:text.set_fontproperties(font)
     zh_image=ROOT/'docs/testing/images/afe-disturbance.zh-CN.png';fig.savefig(zh_image,dpi=170);plt.close(fig)
-    sources=[layout,spec,ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf',ROOT/'scripts/check_yeti60_assembly.py',
+    sources=[layout,spec,ROOT/'mechanical/e73-fit/yeti60-e73-niz-m01.dxf',ROOT/'scripts/check_yeti60_assembly.py',
              ROOT/'scripts/cad_geometry.py',ROOT/'docs/testing/afe-ac.csv',ROOT/'docs/testing/afe-transient.csv',Path(__file__)]
     report={'status':'plate-proximity-screen-completed','physical_test_performed':False,'production_approved':False,
             'variants':result,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources},
