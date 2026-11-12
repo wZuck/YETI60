@@ -19,14 +19,14 @@
     "shared_USB_charge_and_wired_priority_policy": true,
     "feature_parity": false,
     "differences": [
-      "E73 retains the old 1.2 mm / 29-mount plate and seven-wire PH harness",
+      "E73 now uses the NiZ 1.6 mm / 28-mount plate; its seven-wire PH harness and long USB paths remain open",
       "Raytac current candidate uses C04/NiZ 1.6 mm / 28-mount plate and nine-wire SH3 harness",
       "E73 scanner/storage/GPIO/key-pipeline regressions now pass against its own ARM builds; analog and physical margins remain unqualified"
     ],
     "variants": {
       "e73": {
         "placements": 76,
-        "mounts": 29,
+        "mounts": 28,
         "stock_parts": 10,
         "purchase_parts": 66,
         "manufacturing_package": {
@@ -50,11 +50,11 @@
   },
   "error": null,
   "source_sha256": {
-    "scripts/run_all_variants.py": "dcb33de5790c9daa7dc4b0039aa52e2e18d8255034b8a7dfbd29955459fb4496",
+    "scripts/run_all_variants.py": "1a638b62a308f467b9a31d5ba85b018d05df248adad614c716802a638017194a",
     "tests/audit/test_variant_packages.py": "11c5f4a5c4426f98060e31ec880858e5c06941712f78bbf9f2eea524483f31ff"
   },
   "outcome_sha256": {
-    "docs/audit/outcome.json": "8f55d7c81cf1b4420da54c87be9220e3de1414bdb55a7e6dc581ca648d0f4912",
+    "docs/audit/outcome.json": "3c0a45b09720bbe81d8dbfe09a330bef830a005d5dc7f3b1e41e020752fbf459",
     "variants/raytac/docs/audit/outcome.json": "bbeae487bc90e257d90d64a1a3c82f48dc49a4f24567774e06e7ccd25f9ec484"
   },
   "scope": "Independent current E73 and Raytac candidate checks; recorded maturity differences are not feature parity or physical/RF/SI acceptance"

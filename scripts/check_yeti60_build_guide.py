@@ -23,7 +23,7 @@ def main():
         for name, digest in report[mapping].items():
             assert sha(ROOT/name) == digest, 'Stale build-guide source/output: '+name
     assert sha(ROOT/'.assembly-work/build-map.json') == report['native_map_sha256']
-    assert report['steps_per_language'] == 28 and report['mounting_holes'] == 29
+    assert report['steps_per_language'] == 28 and report['mounting_holes'] == 28
     assert len(report['underside_foot_pocket_centers_case_mm']) == 4
     with (ROOT/'hardware/bom/mainboard.csv').open() as source:
         refs = {r for row in csv.DictReader(source) if int(row['Quantity']) for r in row['References'].split(', ')}

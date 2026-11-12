@@ -4,7 +4,7 @@ English | [Chinese](README.zh-CN.md)
 
 [Remediation plan and closing evidence](remediation-plan.md) · [Guarded per-key calibration](calibration.md) · [USB path review](USB-paths.md)
 
-**Design acceptance remains on hold.** Antenna engineering projections are now clear of host copper and plate metal, but RF range/immunity and USB eyes remain unmeasured. See the [current E73 review](../audit/e73-review.md) for USB branches, PH withdrawal and the unported plate. Raytac uses its [separate candidate entry](../../variants/raytac/BUILD.md). No physical item is recorded as passed.
+**Design acceptance remains on hold.** Antenna engineering projections are now clear of host copper and plate metal, but RF range/immunity and USB eyes remain unmeasured. See the [current E73 review](../audit/e73-review.md) for USB branches, PH withdrawal and the integrated NiZ plate. Raytac uses its [separate candidate entry](../../variants/raytac/BUILD.md). No physical item is recorded as passed.
 
 Choose one complete alternative throughout assembly, programming and testing:
 
@@ -28,7 +28,7 @@ Current E73 evidence is the [complete review run](../audit/e73-review-run.json) 
 | Noise behavior | 2000 hysteresis-band frames plus 2000 correlated-ripple / isolated-burst frames per option | Expected debounce behavior passes; two sustained over-threshold frames still cause synthetic false keys |
 | Analog front end | Pinned official TI OPA350 model; 28 sensitivity cases | AC/transient model checks pass; physical noise margin is unknown |
 | RF / USB SI | Actual four-layer copper intersections, plate BRep projection and contact-aware USB main/stub paths | Antenna projections clear; E73 long TVS branches remain open; no RF field solution, antenna match, impedance extraction or USB eye acceptance |
-| Assembly | 60 keys, 29 mounts, original case scale; current component/pack/harness envelopes | Conditional CAD fit only; real dome compression, supplier pack, resin and fasteners remain unqualified |
+| Assembly | 60 keys, 28 installed mounts; H26 unused, original case scale; current component/pack/harness envelopes | Conditional CAD fit only; real dome compression, supplier pack, resin and fasteners remain unqualified |
 
 ## Reproduce the checks
 
@@ -51,7 +51,7 @@ Use a separate copy of the [measurement template](first-article-template.csv) fo
 | 2 / 04–11, 14–16 | Assemble by power domain, verify polarity and resistance before first power; current-limited bench supply, no battery | Begin at a 50mA bench limit and investigate current limiting; raise only after identifying legitimate load. 3.3V rail within imposed ±5%; no hot component, persistent current limit or unstable rail. Capture startup and load transients; a DC meter alone is insufficient |
 | 3 / 12–17 | C5 CC1/CC2 resistances, numbered harness continuity and insulation, actual plug fit | Separate 5.1k CC resistors; correct D+/D−/VBUS/GND; no crossed wires or pouch loads. Confirm final routing and serviceability against drawings |
 | 4 / 16, 25 | SWD flash correct calibrator HEX, readback/verify, USB descriptor capture, sample logs | Correct module pin map and E73 UICR NFC-as-GPIO when applicable; 60 actual key positions identified; no ADC saturation or missing channels |
-| 5 / 17–24 | Dry-fit actual housings, domes, springs, spacers, film, fasteners and protected pack | 29 mounts align, no PCB bow/forced shell closure, service switch accessible, pouch not compressed, inserts secure. Record actual stack and donor parts; custom 1600mAh pack supplier approval remains mandatory |
+| 5 / 17–24 | Dry-fit actual housings, domes, springs, spacers, film, fasteners and protected pack | 28 installed mounts align; H26 remains empty, no PCB bow/forced shell closure, service switch accessible, pouch not compressed, inserts secure. Record actual stack and donor parts; custom 1600mAh pack supplier approval remains mandatory |
 | 6 / 25–26, 28 | Per-key calibration and interference matrix from the [test plan](interference.md#physical-interference-matrix) | Released/pressed distributions have positive guarded margin in every tested mode; zero false/missed/stuck keys in specified runs. Keep raw samples and threshold values |
 | 7 / 26, 28 | USB analyzer, battery-side current logger, thermocouples, temperature-sensor substitution by a qualified bench operator | Before configuration use USB100 with charging disabled; configured host enables USB500 charging. Active-firmware suspend disables charging and selects EN1/EN2=1/1 standby input high impedance. SW100-off autonomous USB100 slow charging needs separate source qualification. Charge current, termination, rail limits and independent 15–43°C interruption meet the [power](../engineering/power-budget.md) and [pack](../engineering/battery-pack-specification.md) specifications. Do not heat/cool or short a pouch to force faults |
 | 8 / 26, 28 | USB plug/unplug and suspend/resume 100 cycles; BLE connect/reconnect/profile switching 100 cycles; host HID event log | No stuck/lost key state, enumeration failure, unexpected reset or unhandled report loss. All five profiles retain intended bonds; verify on intended host systems |

@@ -4,7 +4,7 @@
 
 `felk60_plate_hhkb.audited.dxf` 来自 fredlb/FELK60。只修复三处 DXF 字典所有者句柄；圆、折线、圆弧凸度和图层几何在记录的 1e-9 毫米比较精度内不变。
 
-FELK60 要求 **1.2 毫米定位板，优先不锈钢**，以及约 2 毫米厚、压缩 50% 的垫片。这不是树脂定位板规格。原上盖 M3 底孔约 2.529 毫米；当前派生设计改为冷粘嵌件座，见装配规范。
+FELK60 上游基线为 1.2 mm 不锈钢定位板。当前 YETI60 两方案均选择 **1.6 mm NiZ／钢板卫星轴定位板**，安装 28 套固定件、H26 不装。垫条原厚下侧 2.0 mm、上侧 1.2 mm；供方压缩性能及真实机构配合待确认。见 [E73 规格](../docs/build/key-mechanism.zh-CN.md)及 [Raytac 规格](../variants/raytac/docs/build/key-mechanism.zh-CN.md)。原上盖 M3 底孔约 2.529 毫米；当前派生设计改为冷粘嵌件座，见装配规范。
 
 当前[装配报告](../docs/audit/yeti60-assembly.json)使用明确暂定的 PCB 至定位板间距，检查当前 PCB 与原始壳体、定位板几何。原生 STEP 基材厚度与声明的含铜、阻焊成品厚度分别记录。见[全面复查](../docs/audit/yeti60-comprehensive-review.zh-CN.md)和[装配渲染](../renders/yeti60-assembly/README.zh-CN.md)。
 

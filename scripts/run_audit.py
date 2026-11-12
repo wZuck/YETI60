@@ -17,7 +17,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--baseline',default='HEAD');p.add_argument('--refresh-renders',action='store_true');p.add_argument('--refresh-guide',action='store_true');p.add_argument('--require-production',action='store_true');a=p.parse_args()
     uv=shutil.which('uv') or str(Path.home()/'.local/bin/uv')
     kp=os.environ.get('KICAD_PYTHON','/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3')
-    cad=[os.environ['YETI_CAD_PYTHON']] if 'YETI_CAD_PYTHON' in os.environ else [uv,'run','--with-requirements',str(ROOT/'requirements-audit.txt'),'python']
+    cad=[os.environ['YETI_CAD_PYTHON']] if 'YETI_CAD_PYTHON' in os.environ else [uv,'run','--python','3.14.7','--with-requirements',str(ROOT/'requirements-audit.txt'),'python']
     py=[sys.executable]; native=[kp]
     stages=[]
     def add(name,runtime,script,args=(),deps=()):stages.append((name,runtime+['scripts/'+script,*args],list(deps)))
@@ -51,7 +51,12 @@ def main():
     add('daughterboard-native-cad',native,'export_yeti60_daughterboard.py')
     add('mechanical-design',cad,'build_yeti60_mechanical.py')
     add('plate-source',cad,'check_plate.py')
-    add('assembly-fit',cad,'check_yeti60_assembly.py',deps=['mechanical-metadata','plate-source','mechanical-design'])
+    add('plate-mount-contract',cad,'check_yeti60_plate_mount.py',deps=['plate-source'])
+    stages.append(('plate-mount-fault-injection',cad+['tests/audit/test_plate_mount.py'],['plate-mount-contract']))
+    add('key-mechanism-drawings',cad,'draw_yeti60_key_mechanism.py',deps=['plate-mount-contract'])
+    add('assembly-fit',cad,'check_yeti60_assembly.py',deps=['mechanical-metadata','plate-mount-contract','mechanical-design'])
+    add('mechanical-tolerance-diagnostic',cad,'study_e73_mechanical_tolerances.py',deps=['assembly-fit'])
+    stages.append(('mechanical-tolerance-fault-tests',py+['tests/audit/test_e73_tolerances.py'],['mechanical-tolerance-diagnostic']))
     add('interconnect-native-cad',py,'export_yeti60_interconnects.py',deps=['assembly-fit'])
     add('interconnect-fit',cad,'check_yeti60_interconnects.py',deps=['interconnect-native-cad','daughterboard-native-cad'])
     add('render-geometry',cad,'export_yeti60_render_meshes.py',deps=['assembly-fit','interconnect-fit'])
@@ -83,7 +88,7 @@ def main():
     dependencies=[name for name,_,_ in stages]
     add('cross-domain-integration',py,'check_project_integration.py',deps=dependencies)
     stages.append(('integration-fault-injection',py+['tests/audit/test_integration.py'],['cross-domain-integration']))
-    protected=[*HW.glob('*.kicad_sch'),*HW.glob('*.kicad_pcb'),*HW.glob('*.kicad_pro'),*HW.glob('*.kicad_sym'),*HW.glob('YAECKB.pretty/*.kicad_mod'),HW/'netlist.xml',HW/'components.json',HW/'pinmap.json',ROOT/'design-constraints.json',ROOT/'mechanical/felk60_plate_hhkb.audited.dxf',*sorted((ROOT/'felk60').glob('*.step')),*sorted((ROOT/'firmware/yeti60').glob('*.[ch]'))]
+    protected=[*HW.glob('*.kicad_sch'),*HW.glob('*.kicad_pcb'),*HW.glob('*.kicad_pro'),*HW.glob('*.kicad_sym'),*HW.glob('YAECKB.pretty/*.kicad_mod'),HW/'netlist.xml',HW/'components.json',HW/'pinmap.json',ROOT/'design-constraints.json',ROOT/'mechanical/felk60_plate_hhkb.audited.dxf',ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf',ROOT/'mechanical/yeti60-key-mechanism.e73.json',ROOT/'mechanical/assembly-spec.json',*sorted((ROOT/'felk60').glob('*.step')),*sorted((ROOT/'firmware/yeti60').glob('*.[ch]'))]
     before={str(p.relative_to(ROOT)):sha(p) for p in protected}
     records=[];states={}
     for name,command,deps in stages:

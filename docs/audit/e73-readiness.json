@@ -142,18 +142,18 @@
         "analog_model": "passive RC sensitivity only; measured NiZ/opamp/timing margins remain open",
         "evidence_sha256": {
           "docs/audit/gpio-mode-policy.json": "a15a0ddbfe815244fb44336a4af8fc070b61a8bd1694eadcb45bc992f369c71b",
-          "docs/audit/scan-control.json": "7b510dc386d689bc3303bf860dded03644b13d611cd940ea2dd429433a674b4d",
-          "docs/audit/key-pipeline.json": "b0ce46bf3d4f9c476d1a13babca19176c613517a26d6b8a7bc05822095a5135b",
-          "docs/audit/nvs-powercut.json": "76ff8685a9740289b83eec5ac41de5463087606ed1c2e68969cadbd75ff56270",
-          "docs/audit/firmware-recovery.json": "e52459e60d44e5d15f9be2237e79af6f5fe8749da76dc6e40c760d273aa86b15",
-          "docs/audit/analog-waveform.json": "b8679bc329612d724a5c234f041d917bd7e51af1dca9d9275c557c773f2fe1b8",
+          "docs/audit/scan-control.json": "27da42e9a3af24df4c7230dbcb955f04265205a983f2d784bd1f21b187a51dd6",
+          "docs/audit/key-pipeline.json": "94b3cc83b11e9f91050e5d0015e69d15b7740ce781503689649e18e2408ea724",
+          "docs/audit/nvs-powercut.json": "fd9e7412a1c3093e625f524937555f2ee37a0f6b289b4d84b6c7d6b3a5d54cf8",
+          "docs/audit/firmware-recovery.json": "b95a2f2a6d37b3f860010cc3d534dbcbd7d066a3edee7fd5184246ba3cd5b7d8",
+          "docs/audit/analog-waveform.json": "2687bb898ac2f83327e715fa73962e8e0c835979d20dabda0cf18f7876327564",
           "docs/audit/calibration.json": "b3cd82a93b3595d6b3d9da9c23f687fde4dba23eff9fd759ea8f2b927c781495",
           "docs/audit/usb-event-policy.json": "9b3c48bc6174d5694a3c8a54bcfd8ad4783aff159a680b332a0f9ca808a7ad3c",
-          "docs/audit/yeti60-target-build.json": "11d8953c398fc868a3030ed751226575d20befb8a36b32fdb7209532e9546f6d",
-          "docs/audit/yeti60-target-check.json": "f0d80f943ebec809479b2c643eae5a7a9163789f93f0422a593028ef7142010e"
+          "docs/audit/yeti60-target-build.json": "2c5b87c59d69f736a71a924aacc7725d42a08fb79ee3fbd0e21d823822677035",
+          "docs/audit/yeti60-target-check.json": "446d8e199deb0fb6b7a98be85aede6c8b56641633a268bcd541a29958563912d"
         },
         "source_sha256": {
-          "scripts/check_yeti60_firmware_suite.py": "a91b8f905570ca6254d8b16d9947543f4dfedbb50da67f672d3a7893d0a2a47b"
+          "scripts/check_yeti60_firmware_suite.py": "14881fa4f103856db18571ce0b93a9bed1ce4b938011fe99251e35ee00e691c0"
         }
       }
     },
@@ -184,17 +184,98 @@
     },
     {
       "id": "NiZ-plate-mounted-stabilizers",
-      "state": "failed",
+      "state": "passed",
       "details": {
-        "dimensions_match_target": false,
-        "geometry_port_qualified": false,
-        "current_plate_mm": 1.2,
-        "current_mounts": 29,
-        "required_plate_mm": 1.6,
-        "required_mounts": 28,
-        "unused_axis": "H26",
-        "note": "Accepted NiZ/stabilizer geometry is not yet integrated into E73"
+        "dimensions_match_target": true,
+        "geometry_port_qualified": true,
+        "contract": {
+          "status": "drawing-based-plate-mount-contract-passed",
+          "active_key_centers_preserved": 60,
+          "key_centers_preserved": 60,
+          "mount_centers_preserved": 28,
+          "PCB_native_mount_holes": 29,
+          "unused_pcb_mount_refs": [
+            "H26"
+          ],
+          "installed_mount_sets": 28,
+          "normal_housings": 60,
+          "plate_stabilizer_pairs": 3,
+          "stabilizer_side_units": 6,
+          "short_wire_span_mm": 23.8,
+          "spacebar_side_spacing_mm": 95.25,
+          "minimum_cutout_to_retained_pilot_web_mm": 1.5831880000000211,
+          "PCB_mount_holes_added": 0,
+          "case_external_dimensions_changed": false,
+          "physical_fit_verified": false,
+          "limitations": [
+            "Supplier plastic profiles/heights and 6U wire bends not certified by this 2D contract",
+            "Full key stroke, NiZ clip retention, dome preload and cap fit require first article"
+          ]
+        },
+        "physical_fit_verified": false
       }
+    },
+    {
+      "id": "mechanical-tolerance-budget",
+      "state": "failed",
+      "details": [
+        {
+          "interface": "plate-top",
+          "nominal_gap_mm": 0.24999999990328345,
+          "known_directional_allowances_mm": {
+            "case_local_wall_inward": 0.15,
+            "plate_CAD_chord_error": 0.002
+          },
+          "known_allowance_sum_mm": 0.152,
+          "optimistic_remaining_gap_mm": 0.09799999990328345,
+          "project_minimum_air_gap_mm": 0.15,
+          "unquantified_terms": [
+            "Plate outer-cut dimension and position tolerances",
+            "Installed plate XY translation, rotation and gasket compliance"
+          ],
+          "additional_clearance_needed_before_unknown_terms_mm": 0.05200000009671654,
+          "conditional_screen": "insufficient",
+          "combined_tolerance_qualified": false
+        },
+        {
+          "interface": "plate-bottom",
+          "nominal_gap_mm": 0.2499999288167162,
+          "known_directional_allowances_mm": {
+            "case_local_wall_inward": 0.15,
+            "plate_CAD_chord_error": 0.002
+          },
+          "known_allowance_sum_mm": 0.152,
+          "optimistic_remaining_gap_mm": 0.09799992881671621,
+          "project_minimum_air_gap_mm": 0.15,
+          "unquantified_terms": [
+            "Plate outer-cut dimension and position tolerances",
+            "Installed plate XY translation, rotation and gasket compliance"
+          ],
+          "additional_clearance_needed_before_unknown_terms_mm": 0.052000071183283786,
+          "conditional_screen": "insufficient",
+          "combined_tolerance_qualified": false
+        },
+        {
+          "interface": "SW100-bottom",
+          "nominal_gap_mm": 0.40999999999999837,
+          "known_directional_allowances_mm": {
+            "finished_PCB_downward_growth": 0.15379999999999994,
+            "shoulder_length": 0.03,
+            "insulating_film": 0.02,
+            "case_floor_inward": 0.15
+          },
+          "known_allowance_sum_mm": 0.35379999999999995,
+          "optimistic_remaining_gap_mm": 0.05619999999999842,
+          "project_minimum_air_gap_mm": 0.15,
+          "unquantified_terms": [
+            "Installed plate Z position and gasket compression variation",
+            "Switch maximum installed height, solder standoff and PCB warpage"
+          ],
+          "additional_clearance_needed_before_unknown_terms_mm": 0.09380000000000158,
+          "conditional_screen": "insufficient",
+          "combined_tolerance_qualified": false
+        }
+      ]
     },
     {
       "id": "battery-plug-service",
@@ -220,8 +301,8 @@
       "id": "full-artifact-audit",
       "state": "passed",
       "details": {
-        "passed": 55,
-        "total": 55
+        "passed": 61,
+        "total": 61
       }
     },
     {
@@ -242,7 +323,7 @@
   ],
   "open_gate_ids": [
     "USB-protection-branches",
-    "NiZ-plate-mounted-stabilizers",
+    "mechanical-tolerance-budget",
     "battery-plug-service",
     "closed-harness-and-power-layout",
     "battery-supplier-and-DFM",
@@ -254,18 +335,19 @@
   "existing_daughterboard": "Keep existing UDB-C-JSH C5; no daughterboard PCB change",
   "evidence_sha256": {
     "hardware/ec60-nrf52840/audit-current.json": "6a34e94b645c8d4c8662d25e86ad648c58f0302164ec5c5bd62a084f667bae88",
-    "docs/audit/integration.json": "63bf375a9695a608f6c0be105288c7f4fe4d81937bd7bab978f7a54581c3b877",
-    "docs/audit/outcome.json": "8f55d7c81cf1b4420da54c87be9220e3de1414bdb55a7e6dc581ca648d0f4912",
-    "docs/audit/yeti60-target-check.json": "f0d80f943ebec809479b2c643eae5a7a9163789f93f0422a593028ef7142010e",
-    "docs/audit/yeti60-target-build.json": "11d8953c398fc868a3030ed751226575d20befb8a36b32fdb7209532e9546f6d",
+    "docs/audit/integration.json": "209b613c6435ffa5b9401af9ed6214de5f85a5800c8b42668e1ae940245396b4",
+    "docs/audit/outcome.json": "3c0a45b09720bbe81d8dbfe09a330bef830a005d5dc7f3b1e41e020752fbf459",
+    "docs/audit/yeti60-target-check.json": "446d8e199deb0fb6b7a98be85aede6c8b56641633a268bcd541a29958563912d",
+    "docs/audit/yeti60-target-build.json": "2c5b87c59d69f736a71a924aacc7725d42a08fb79ee3fbd0e21d823822677035",
     "docs/audit/usb-event-policy.json": "9b3c48bc6174d5694a3c8a54bcfd8ad4783aff159a680b332a0f9ca808a7ad3c",
     "docs/audit/interference-layout.json": "0abd8fbd695fb2cf4c42e87e15282dc6ec7c5933e3eed7c9e136c34007944795",
     "docs/audit/USB-signal-paths.json": "c810b198ee4793bf1d23f578fda10daad50b10079ea27abe3be1425967c5e066",
-    "docs/audit/yeti60-assembly.json": "8bc20d93d2929e9440cfea25a58b7282d317844cca917e2ec3664a14d8d454fc",
-    "docs/audit/e73-service-motion.json": "87d46619c191ee9fa020b850308b38b11698cbd7abf5779b56ddccecaf9b3a66",
-    "docs/audit/firmware-suite.json": "5a735082c46803d29a16fda9d65e389baf71b950973ea5303a2c9ef4a61fc2b6"
+    "docs/audit/yeti60-assembly.json": "a73282c7d8017e7a0e10673d4b4d8da16dad120cb8b36b76e5bcf5feafc7bfa6",
+    "docs/audit/e73-service-motion.json": "841c6248993e03550f15ea197e171d576e6dd19cd7ab07948519a38259072690",
+    "docs/audit/firmware-suite.json": "c71fb2971f9e957b223c7b0de90a309b772ab8682efb7976a7fea9d6c7779bc5",
+    "docs/audit/e73-tolerance-diagnostic.json": "ff53ddfb5a0e878a0a44320dc92d3b3353f97ce9dd7323bfb9fb3e4321a865a3"
   },
   "source_sha256": {
-    "scripts/review_e73_readiness.py": "f2d0627732f7e5a1137d96c9a5b000e18a7b5825cb8d44901902ae9121a681d7"
+    "scripts/review_e73_readiness.py": "60a1b2abf3adbed61ce46c704adb67a7cfc6b5876bb2931514520b2064c491cf"
   }
 }

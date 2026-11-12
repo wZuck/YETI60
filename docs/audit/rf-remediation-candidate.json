@@ -42,12 +42,12 @@
   "scope": "Conditional BRep screen, not native PCB, RF, strength or manufacturing approval",
   "source_sha256": {
     "mechanical/rf-remediation.json": "c3f0f3d659962f5644dcc4d86204119e83e229cf97d1c0441d28115fc5a1795d",
-    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
+    "mechanical/assembly-spec.json": "6897e50c86952257624f4fab66e835cc8184d2ad872a96c2bf487b5e93ebcc9a",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
     "scripts/build_yeti60_mechanical.py": "a2324209dedb8431916dd203fdd4610787a86b2c43a945d0309607d6564b5557",
-    "scripts/check_yeti60_assembly.py": "12221f66129b35332273adaf3ed309dc20cd7994880842ceb98230b2fb97eeba",
+    "scripts/check_yeti60_assembly.py": "cda91bd94fdb8dc9bff274f211f3299422740e91fc9b344716aa3d2ea3ad9499",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/study_yeti60_rf_remediation.py": "f7cc803f50aca3ff2ac00caaeccaf388c6a9b12a59351dac07d6224eb4529ec3"
   }

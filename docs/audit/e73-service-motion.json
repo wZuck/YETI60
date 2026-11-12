@@ -41,10 +41,10 @@
   "primary_source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
   "source_sha256": {
     "scripts/study_e73_service.py": "db80dd875752f7edb5a257573078c76a60d7bdbbeb242de39a50f9c459d672e9",
-    "docs/audit/yeti60-assembly.json": "8bc20d93d2929e9440cfea25a58b7282d317844cca917e2ec3664a14d8d454fc",
-    "docs/audit/yeti60-interconnects.json": "e5632b5f4632b237511931786a99cc4441c2ae163170348a1f2693d013755cb3",
+    "docs/audit/yeti60-assembly.json": "a73282c7d8017e7a0e10673d4b4d8da16dad120cb8b36b76e5bcf5feafc7bfa6",
+    "docs/audit/yeti60-interconnects.json": "3a38f3e0cb7a57341e3c614664d42cd2476b1c41ebb63dac5c24517007f800cc",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
-    "scripts/check_yeti60_assembly.py": "12221f66129b35332273adaf3ed309dc20cd7994880842ceb98230b2fb97eeba",
+    "scripts/check_yeti60_assembly.py": "cda91bd94fdb8dc9bff274f211f3299422740e91fc9b344716aa3d2ea3ad9499",
     "mechanical/interconnect-spec.json": "b94140e220f435a720bbfdde1c2ccdc59e207d1615581a2abc3016e0da226a3d",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691"
   }

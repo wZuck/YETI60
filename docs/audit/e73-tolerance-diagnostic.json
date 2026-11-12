@@ -1,0 +1,381 @@
+{
+  "status": "diagnostic-complete-tolerance-qualification-open",
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "combined_tolerance_qualified": false,
+  "project_gap_target_basis": "0.15 mm local design reserve; not an IPC/JLC/vendor certification",
+  "measured_interfaces": {
+    "plate-top": {
+      "nominal_gap_mm": 0.24999999990328345,
+      "nearest_point_pairs_case_mm": [
+        {
+          "case": [
+            307.28770284111,
+            -200.8096647353,
+            4.79
+          ],
+          "moving": [
+            307.53770284111914,
+            -200.8096648206433,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            83.287702841102,
+            -200.8096966341,
+            4.79
+          ],
+          "moving": [
+            83.53770284110185,
+            -200.80969671944328,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            121.88770240038,
+            -200.8096897564,
+            4.79
+          ],
+          "moving": [
+            121.63770240038268,
+            -200.8096896852251,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            345.88770240039,
+            -200.8096578932,
+            4.79
+          ],
+          "moving": [
+            345.63770240039634,
+            -200.80965782202512,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            280.78770341953,
+            -101.6096708341,
+            4.79
+          ],
+          "moving": [
+            281.0377034195297,
+            -101.6096708482684,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            109.28770341952,
+            -101.609695243,
+            4.79
+          ],
+          "moving": [
+            109.53770341952831,
+            -101.6096952571684,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            319.38770307351,
+            -101.6096648284,
+            4.79
+          ],
+          "moving": [
+            319.1377030735158,
+            -101.6096648284,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            147.88770307351,
+            -101.6096892373,
+            4.79
+          ],
+          "moving": [
+            147.63770307351572,
+            -101.6096892373,
+            4.79
+          ]
+        }
+      ]
+    },
+    "plate-bottom": {
+      "nominal_gap_mm": 0.2499999288167162,
+      "nearest_point_pairs_case_mm": [
+        {
+          "case": [
+            307.28770284111,
+            -200.8096674895,
+            4.79
+          ],
+          "moving": [
+            307.53770284111823,
+            -200.80966757484327,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            121.8877023292,
+            -200.8096925107,
+            4.79
+          ],
+          "moving": [
+            121.6377024003819,
+            -200.8096924395251,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            345.88770240039,
+            -200.8096606297,
+            4.79
+          ],
+          "moving": [
+            345.63770240039554,
+            -200.8096605585251,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            280.78770341953,
+            -101.6096708341,
+            4.79
+          ],
+          "moving": [
+            281.0377034195297,
+            -101.6096708482684,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            109.28770341952,
+            -101.609695243,
+            4.79
+          ],
+          "moving": [
+            109.53770341952831,
+            -101.6096952571684,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            319.38770307351,
+            -101.6096648284,
+            4.79
+          ],
+          "moving": [
+            319.1377030735158,
+            -101.6096648284,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            147.88770307351,
+            -101.6096892373,
+            4.79
+          ],
+          "moving": [
+            147.63770307351572,
+            -101.6096892373,
+            4.79
+          ]
+        },
+        {
+          "case": [
+            85.53770184786791,
+            -205.0308477440878,
+            4.2062
+          ],
+          "moving": [
+            85.53770188346078,
+            -204.78084774413165,
+            4.2062
+          ]
+        }
+      ]
+    },
+    "SW100-bottom": {
+      "nominal_gap_mm": 0.40999999999999837,
+      "nearest_point_pairs_case_mm": [
+        {
+          "case": [
+            108.96270495529,
+            -123.6028520533,
+            -5.91
+          ],
+          "moving": [
+            108.96270495529,
+            -123.6028520533,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            108.96270421438,
+            -118.3971488112,
+            -5.91
+          ],
+          "moving": [
+            108.96270421438,
+            -118.3971488112,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            108.96270406672,
+            -117.3596949908,
+            -5.91
+          ],
+          "moving": [
+            108.96270406672,
+            -117.3596949908,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            106.975,
+            -125.525,
+            -5.910000000000013
+          ],
+          "moving": [
+            106.975,
+            -125.525,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            106.975,
+            -116.725,
+            -5.910000000000017
+          ],
+          "moving": [
+            106.975,
+            -116.725,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            108.96270522885364,
+            -125.525,
+            -5.909999999999998
+          ],
+          "moving": [
+            108.96270522885364,
+            -125.525,
+            -5.5
+          ]
+        },
+        {
+          "case": [
+            109.05407888501013,
+            -116.725,
+            -5.91
+          ],
+          "moving": [
+            109.05407888501013,
+            -116.725,
+            -5.5
+          ]
+        }
+      ]
+    }
+  },
+  "measured_plate_perimeter_bounds_mm": [
+    71.81269999999995,
+    -204.7808844902241,
+    4.2062,
+    356.81333999358,
+    -97.63850369605827,
+    5.8062000000000005
+  ],
+  "directional_budgets": [
+    {
+      "interface": "plate-top",
+      "nominal_gap_mm": 0.24999999990328345,
+      "known_directional_allowances_mm": {
+        "case_local_wall_inward": 0.15,
+        "plate_CAD_chord_error": 0.002
+      },
+      "known_allowance_sum_mm": 0.152,
+      "optimistic_remaining_gap_mm": 0.09799999990328345,
+      "project_minimum_air_gap_mm": 0.15,
+      "unquantified_terms": [
+        "Plate outer-cut dimension and position tolerances",
+        "Installed plate XY translation, rotation and gasket compliance"
+      ],
+      "additional_clearance_needed_before_unknown_terms_mm": 0.05200000009671654,
+      "conditional_screen": "insufficient",
+      "combined_tolerance_qualified": false
+    },
+    {
+      "interface": "plate-bottom",
+      "nominal_gap_mm": 0.2499999288167162,
+      "known_directional_allowances_mm": {
+        "case_local_wall_inward": 0.15,
+        "plate_CAD_chord_error": 0.002
+      },
+      "known_allowance_sum_mm": 0.152,
+      "optimistic_remaining_gap_mm": 0.09799992881671621,
+      "project_minimum_air_gap_mm": 0.15,
+      "unquantified_terms": [
+        "Plate outer-cut dimension and position tolerances",
+        "Installed plate XY translation, rotation and gasket compliance"
+      ],
+      "additional_clearance_needed_before_unknown_terms_mm": 0.052000071183283786,
+      "conditional_screen": "insufficient",
+      "combined_tolerance_qualified": false
+    },
+    {
+      "interface": "SW100-bottom",
+      "nominal_gap_mm": 0.40999999999999837,
+      "known_directional_allowances_mm": {
+        "finished_PCB_downward_growth": 0.15379999999999994,
+        "shoulder_length": 0.03,
+        "insulating_film": 0.02,
+        "case_floor_inward": 0.15
+      },
+      "known_allowance_sum_mm": 0.35379999999999995,
+      "optimistic_remaining_gap_mm": 0.05619999999999842,
+      "project_minimum_air_gap_mm": 0.15,
+      "unquantified_terms": [
+        "Installed plate Z position and gasket compression variation",
+        "Switch maximum installed height, solder standoff and PCB warpage"
+      ],
+      "additional_clearance_needed_before_unknown_terms_mm": 0.09380000000000158,
+      "conditional_screen": "insufficient",
+      "combined_tolerance_qualified": false
+    }
+  ],
+  "switch_height_basis": "provisional conservative render/clearance envelope; final MPN height unqualified",
+  "design_scope": "Current E73 NiZ plate perimeter and SW100; Raytac C04 reliefs are not inherited",
+  "scope": "Three current E73 interfaces only; no full key mechanism, fastener, flexing harness or service-access qualification.",
+  "interpretation": "Known directional allowances are a subtotal, not a completed worst-case tolerance stack. A deficit is loss of specified reserve; it is not proof of physical collision. Both shells need the plate-ear repair.",
+  "source_sha256": {
+    "scripts/study_e73_mechanical_tolerances.py": "3e0f56946c19d875e5882c055f6714418f5144ca1f5ff75a558ebcec37721257",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_yeti60_assembly.py": "cda91bd94fdb8dc9bff274f211f3299422740e91fc9b344716aa3d2ea3ad9499",
+    "docs/audit/yeti60-assembly.json": "a73282c7d8017e7a0e10673d4b4d8da16dad120cb8b36b76e5bcf5feafc7bfa6",
+    "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
+    "mechanical/assembly-spec.json": "6897e50c86952257624f4fab66e835cc8184d2ad872a96c2bf487b5e93ebcc9a",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691"
+  }
+}

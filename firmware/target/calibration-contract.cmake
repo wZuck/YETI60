@@ -19,8 +19,10 @@ function(yeti60_calibration_contract root output)
     firmware/target/Kconfig
     firmware/target/CMakeLists.txt
     firmware/target/calibration-contract.cmake
+    mechanical/assembly-spec.json
+    mechanical/felk60_plate_hhkb.plate-mount.dxf
     hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb)
-  set(signature "yeti60-calibration-v3")
+  set(signature "yeti60-calibration-v4")
   foreach(path IN LISTS inputs)
     file(SHA256 "${root}/${path}" digest)
     string(APPEND signature "\n${path}=${digest}")

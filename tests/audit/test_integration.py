@@ -47,6 +47,26 @@ class EvidenceFailures(unittest.TestCase):
         self.rejects('docs/audit/yeti60-assembly.json',
                      lambda data: data.update(colliding_envelopes=['injected collision']))
 
+    def test_nominal_fit_cannot_release_tolerances(self):
+        self.rejects('docs/audit/e73-tolerance-diagnostic.json',
+                     lambda data: data.update(combined_tolerance_qualified=True))
+
+    def test_missing_NiZ_contract(self):
+        self.rejects('docs/audit/yeti60-assembly.json',
+                     lambda data: data.update(mechanism_contract={}))
+
+    def test_unrendered_component(self):
+        self.rejects('renders/yeti60-assembly/render-manifest.json',
+                     lambda data: data['exploded_visible_objects_by_group'].update(electronics=75))
+
+    def test_duplicate_mount_position(self):
+        self.rejects('docs/audit/yeti60-assembly.json',
+                     lambda data: data['mounting_hole_matches'][1].update(pcb_center_case_mm=data['mounting_hole_matches'][0]['pcb_center_case_mm']))
+
+    def test_wrong_mount_count(self):
+        self.rejects('docs/audit/yeti60-assembly.json',
+                     lambda data: data['mounting_hole_matches'].pop())
+
     def test_inventory_cannot_credit_in_transit_parts(self):
         self.rejects('docs/audit/yeti60-inventory.json',
                      lambda data: data.update(in_transit_credited=1))

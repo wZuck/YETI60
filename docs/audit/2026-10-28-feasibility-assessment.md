@@ -2,7 +2,7 @@ English | [Chinese](2026-10-28-feasibility-assessment.zh-CN.md)
 
 # YETI60 P2 feasibility and component compatibility assessment
 
-> This dated assessment reviews the Raytac baseline. Current E73 pins, firmware and validation status are documented in [module alternatives](../engineering/module-options.md); do not use the old module pin numbers for E73.
+> This dated assessment reviews the Raytac baseline. Current E73 pins, firmware and validation status are documented in [module alternatives](../engineering/module-options.md); do not use the old module pin numbers for E73. Its 1.2 mm / 29-mount mechanism is also superseded by the [current E73 NiZ specification](../build/key-mechanism.md).
 
 Assessment date: 2026-10-28. Scope: the current YETI60 P2 working tree, based on commit `39ae3cc59d0e98faf3aea6630d677b6c8c9ea990`. This is a design assessment, not production authorization.
 

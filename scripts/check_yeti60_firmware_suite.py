@@ -32,7 +32,7 @@ def verify_reports(reports,build,build_sha,target):
     verify_pipeline(reports['key-pipeline'],build,build_sha)
     verify_nvs(reports['nvs-powercut'],build,build_sha)
     recovery=reports['firmware-recovery']
-    assert recovery['upstream_revision']==build['dependencies']['zmk'] and len(recovery['CMake_mutation_cases'])==10
+    assert recovery['upstream_revision']==build['dependencies']['zmk'] and {x['case'] for x in recovery['CMake_mutation_cases']}=={'same','scanner','GPIO-mode','scan-control','waveform','calibration','header','stack','plate','keymap-only','effective-idle','effective-gating'}
     assert target['recovery_binding']['clears']=='selected BLE profile only'
     assert not target['recovery_binding']['calibration_settings_erase_binding']
     storage=reports['calibration']['storage_integrity']

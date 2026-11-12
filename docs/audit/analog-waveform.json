@@ -3,7 +3,7 @@
   "physical_verification": false,
   "ngspice_version": "** ngspice-47 : Circuit level simulation program",
   "tool_versions": {
-    "numpy": "2.4.6",
+    "numpy": "2.5.4",
     "matplotlib": "3.11.2",
     "clang": "Apple clang version 21.0.0 (clang-2100.3.23.3)"
   },
@@ -520,7 +520,7 @@
     "firmware/target/src/gpio_modes.h": "3fae72b5f56a0ecddcb21cd68c103612aa2ab219363373b4275381e203796a8b",
     "firmware/target/src/scanner_control.c": "7214d930f8c4d6144a7d74657e79b14380a336356f508edf59f0fc1ddcf5006a",
     "firmware/target/src/scanner_control.h": "8198cb579fde32f52247776bfc4d07f3fa91969b0c095b3e0633133539f057fd",
-    "docs/audit/yeti60-target-check.json": "f0d80f943ebec809479b2c643eae5a7a9163789f93f0422a593028ef7142010e",
+    "docs/audit/yeti60-target-check.json": "446d8e199deb0fb6b7a98be85aede6c8b56641633a268bcd541a29958563912d",
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "firmware/yeti60/board_pins.h": "600c09916700dd1087d4394d867c3843ed853852be2b890045508fd2d6668773",
@@ -529,9 +529,9 @@
   },
   "outputs": {
     "docs/testing/images/analog-waveform.png": "4baae8ee8742c02a36de00f2813655f307ccc1594181fafe1042065bc9ad32cc",
-    "docs/testing/images/analog-waveform.svg": "d60d5664575cfa8705beba149076093103dea32b95206446e7f9dc0788e3abb1",
+    "docs/testing/images/analog-waveform.svg": "5cab5238140fe30040060cf7212e966c026dc3a08e59707c5a42259ddac5eae5",
     "docs/testing/images/analog-waveform.zh-CN.png": "ebd90f5a8670b69b67c228fea9e0996f84a7492e2adb48c71f7805dafa3fadbf",
-    "docs/testing/images/analog-waveform.zh-CN.svg": "3d52e23c969984fa6821ef448836731d2cf1d0c0c8aa40714ada68d442704317",
+    "docs/testing/images/analog-waveform.zh-CN.svg": "b3c5b41b4a87c1d1b46f42f860bc6493ede56f69038dbf937be3a427c76099e8",
     "docs/testing/analog-waveform-sensitivity.csv": "cf1e5748b101c2f11758783870857078f76fea52e8fdbcd568576e845675238e"
   },
   "diagnostic_counter": {

@@ -67,10 +67,10 @@ def parity():
     return {'controllers_per_keyboard':1,'keys':60,'built_ARM_targets':4,
             'shared_USB_charge_and_wired_priority_policy':True,
             'feature_parity':False,
-            'differences':['E73 retains the old 1.2 mm / 29-mount plate and seven-wire PH harness',
+            'differences':['E73 now uses the NiZ 1.6 mm / 28-mount plate; its seven-wire PH harness and long USB paths remain open',
                            'Raytac current candidate uses C04/NiZ 1.6 mm / 28-mount plate and nine-wire SH3 harness',
                            'E73 scanner/storage/GPIO/key-pipeline regressions now pass against its own ARM builds; analog and physical margins remain unqualified'],
-            'variants':{'e73':{'placements':76,'mounts':29,'stock_parts':inventory['planned_stock_parts'],'purchase_parts':inventory['net_purchase_parts'],'manufacturing_package':archive,'design_status':readiness['status']},
+            'variants':{'e73':{'placements':76,'mounts':28,'stock_parts':inventory['planned_stock_parts'],'purchase_parts':inventory['net_purchase_parts'],'manufacturing_package':archive,'design_status':readiness['status']},
                         'raytac':{'placements':required,'mounts':28,'stock_parts':stock,'purchase_parts':buy,'manufacturing_package':'variants/raytac/hardware/usb-short-route/fabrication/yeti60-raytac-candidate-gerbers.zip','design_status':'candidate-physical-and-supplier-qualification-open'}}}
 
 

@@ -73,7 +73,7 @@ def main():
                          'E73_configuration':{'LF_clock':'internal-RC','REG1':'LDO','REG0_DCDC':False,'NFC_pins':'GPIO','HEX_NFCPINS_UICR':0xfffffffe},'calibration_version':match.group(1),'calibration_scan_configuration':options,'diagnostic_clock_hz':clock_hz,'kscan_event_queue_size':queue_size,'builtin_atomics':True,'calibration_record_bytes':308,'global_NVS_data_CRC':False,
                          'recovery_binding':check_recovery_dts(dtlib.DT(str(built/'zephyr.dts')))}
     assert records['normal']['calibration_version']==records['calibrator']['calibration_version'],'Normal and calibrator thresholds would be incompatible'
-    sources=[*sorted((ROOT/'firmware/target').rglob('*')),*sorted((ROOT/'firmware/yeti60').glob('*.[ch]')),Path(__file__).resolve(),ROOT/'hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb']
+    sources=[*sorted((ROOT/'firmware/target').rglob('*')),*sorted((ROOT/'firmware/yeti60').glob('*.[ch]')),Path(__file__).resolve(),ROOT/'hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb',ROOT/'mechanical/assembly-spec.json',ROOT/'mechanical/felk60_plate_hhkb.plate-mount.dxf']
     sources += [ROOT/'scripts/yeti60_calibration_contract.py',ROOT/'scripts/yeti60_recovery_contract.py', ROOT/'scripts/yeti60_build_environment.py']
     report={'status':'built','board':'yeti60','framework':'ZMK/Zephyr','container':IMAGE,'dependencies':revisions,'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in sources if p.is_file() and p.suffix != '.md'},'variants':records,'physical_verification':False,'calibration_required':True,'flash_method':'SWD, application at 0x0; no UF2 bootloader assumed'}
     (ROOT/'docs/audit/yeti60-target-build.json').write_text(json.dumps(report,indent=2)+'\n')

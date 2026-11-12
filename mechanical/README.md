@@ -4,7 +4,7 @@ English | [Chinese](README.zh-CN.md)
 
 `felk60_plate_hhkb.audited.dxf` is derived from fredlb/FELK60. Only three DXF dictionary owner handles were repaired; circles, polylines, arc bulges and layer geometry remain unchanged to the recorded 1e-9 mm comparison precision.
 
-FELK60 specifies a **1.2 mm, preferably stainless-steel plate** and approximately 2 mm gaskets at 50% compression. This is not a resin plate specification. Original top-case M3 pilots are approximately 2.529 mm; the derived resin case now uses specified cold-bonded insert seats.
+The upstream FELK60 baseline specified a 1.2 mm stainless plate. Both current YETI60 options select the **1.6 mm NiZ / plate-stabilizer plate**, with 28 mounting sets and H26 unused. Use lower 2.0 mm and upper 1.2 mm gasket stock; supplier compression and actual mechanism fit remain pending. See the [E73 specification](../docs/build/key-mechanism.md) and [Raytac specification](../variants/raytac/docs/build/key-mechanism.md). Original top-case M3 pilots are approximately 2.529 mm; the derived resin case now uses specified cold-bonded insert seats.
 
 The current [assembly report](../docs/audit/yeti60-assembly.json) evaluates the current PCB and source case/plate geometry using an explicit, provisional PCB-to-plate gap. Native STEP substrate thickness and declared finished copper/mask thickness are kept distinct. See the [comprehensive review](../docs/audit/yeti60-comprehensive-review.md) and [assembled renders](../renders/yeti60-assembly/README.md).
 

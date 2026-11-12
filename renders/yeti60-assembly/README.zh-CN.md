@@ -16,9 +16,9 @@
 
 上下壳在原始 CAD 坐标系中的联合包围尺寸为 **325.700 × 125.200 × 31.190 毫米**。这是该坐标系中的包围盒，不代表投影到桌面后的深度，也不包含键帽总高度。整机仅做一次 7° 刚性旋转，使原有楔形底面落在桌面上。网格线性离散偏差设为 0.015 毫米，并检查网格包围坐标与原始实体的差值小于 0.02 毫米。渲染时统一将毫米换算为米。
 
-[几何验证](../../docs/audit/yeti60-render-geometry.json)和[渲染清单](render-manifest.json)记录原始文件哈希、壳体尺寸、渲染脚本、网格离散参数及图片哈希。1.2 毫米定位板与当前 PCB 使用和[装配检查](../../docs/audit/yeti60-assembly.json)一致的坐标。
+[几何验证](../../docs/audit/yeti60-render-geometry.json)和[渲染清单](render-manifest.json)记录原始文件哈希、壳体尺寸、渲染脚本、网格离散参数及图片哈希。1.6 mm NiZ 定位板、28 套实装固定件与当前 PCB 使用和[装配检查](../../docs/audit/yeti60-assembly.json)一致的坐标。
 
-**外观逼真不等于未选定部件已经完成尺寸验收。** 树脂颜色和表面处理、键帽及字符、轴体和轴心、元件高度包络均为示意。暂定 4.6 毫米板间距仍需实际胶碗／紧固件结构确认。绿色块为默认定制 1600 mAh 完整电池包包络（85×43×4.8 mm）；供应商图纸和独立温度保护仍须验收。后侧开孔保持原始壳体几何；最终 USB 子板、插头和线缆尚未作为已验证部件装入。
+**外观逼真不等于未选定部件已经完成尺寸验收。** 树脂颜色和表面处理、键帽及字符、轴体和轴心、元件高度包络均为示意。暂定 4.6 毫米板间距仍需实际胶碗／紧固件结构确认。绿色块为默认定制 1600 mAh 完整电池包包络（85×43×4.8 mm）；供应商图纸和独立温度保护仍须验收。已纳入原生 C5 子板、E73 七根线束及保守插头包络。PH 完整拔出路径仍有干涉，插合状态的渲染不能证明检修空间合格。爆炸图含主板 76 个实装位号、60 个胶碗／弹簧及三组卫星轴；供方塑料外形及钢丝形状仍为示意。
 
 ## 重新生成
 
@@ -30,6 +30,6 @@ python scripts/export_yeti60_render_meshes.py
 uv run --python 3.11 --with-requirements requirements-render.txt python scripts/render_yeti60_assembly.py
 ```
 
-参数 `--preview --view assembled` 将低分辨率试图保存到已忽略的 `.assembly-work/`。最终图片为 2600 × 1734 像素，Cycles 最高 256 采样并启用降噪。材质与照明使用[官方渲染器](https://www.blender.org/features/rendering/)和[材质接口](https://docs.blender.org/api/5.0/bpy.types.Material.html)。尚未完成的硬件条件见[完整复查](../../docs/audit/yeti60-comprehensive-review.zh-CN.md)。
+参数 `--preview --view assembled` 将低分辨率试图保存到已忽略的 `.assembly-work/`。最终图片为 2600 × 1734 像素，完整爆炸图为 3600 × 2400 像素，Cycles 最高 256 采样并启用降噪。材质与照明使用[官方渲染器](https://www.blender.org/features/rendering/)和[材质接口](https://docs.blender.org/api/5.0/bpy.types.Material.html)。尚未完成的硬件条件见[完整复查](../../docs/audit/e73-review.zh-CN.md)。
 
 E73 模组按厂商标称 18×13×3 mm 本体绘制，结构检查另计 0.1 mm 尺寸余量及 3.1 mm 高度包络。它是尺寸包络模型，表面细节并非厂商三维模型；FELK60 外壳仍直接使用原尺寸实体。

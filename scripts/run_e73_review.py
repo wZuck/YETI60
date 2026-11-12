@@ -15,7 +15,7 @@ def main():
     args=parser.parse_args()
     native=[os.environ.get('KICAD_PYTHON','/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3')]
     uv=shutil.which('uv') or str(Path.home()/'.local/bin/uv')
-    cad=[os.environ['YETI_CAD_PYTHON']] if 'YETI_CAD_PYTHON' in os.environ else [uv,'run','--with-requirements',str(ROOT/'requirements-audit.txt'),'python']
+    cad=[os.environ['YETI_CAD_PYTHON']] if 'YETI_CAD_PYTHON' in os.environ else [uv,'run','--python','3.14.7','--with-requirements',str(ROOT/'requirements-audit.txt'),'python']
     py=[sys.executable]
     stages=[]
     if args.reuse_artifact_audit:

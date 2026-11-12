@@ -1,0 +1,30 @@
+{
+  "status": "drawing-based-plate-mount-contract-passed",
+  "active_key_centers_preserved": 60,
+  "key_centers_preserved": 60,
+  "mount_centers_preserved": 28,
+  "PCB_native_mount_holes": 29,
+  "unused_pcb_mount_refs": [
+    "H26"
+  ],
+  "installed_mount_sets": 28,
+  "normal_housings": 60,
+  "plate_stabilizer_pairs": 3,
+  "stabilizer_side_units": 6,
+  "short_wire_span_mm": 23.8,
+  "spacebar_side_spacing_mm": 95.25,
+  "minimum_cutout_to_retained_pilot_web_mm": 1.5831880000000211,
+  "PCB_mount_holes_added": 0,
+  "case_external_dimensions_changed": false,
+  "physical_fit_verified": false,
+  "limitations": [
+    "Supplier plastic profiles/heights and 6U wire bends not certified by this 2D contract",
+    "Full key stroke, NiZ clip retention, dome preload and cap fit require first article"
+  ],
+  "source_sha256": {
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
+    "mechanical/yeti60-key-mechanism.e73.json": "fe36d523bdf2feea8d0ebc7074b0996847c3998a30e9fbc1524343577a7d135c",
+    "scripts/check_yeti60_plate_mount.py": "5c5f263cf0c2cb6850664040e425b442e9fe3ffef983ebc8fab2e0a0445bfb88"
+  }
+}

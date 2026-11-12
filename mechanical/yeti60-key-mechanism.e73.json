@@ -1,0 +1,136 @@
+{
+  "revision": "YETI60-E73-NIZ-PM1",
+  "system": "NiZ ordinary 1U housings/sliders plus separate Cherry/GMK plate-mounted stabilizers",
+  "plate": "mechanical/felk60_plate_hhkb.plate-mount.dxf",
+  "assembly_spec": "mechanical/assembly-spec.json",
+  "plate_material": "304 stainless steel",
+  "plate_thickness_mm": 1.6,
+  "finished_plate_thickness_range_mm": [
+    1.55,
+    1.6
+  ],
+  "normal_cutout_mm": [
+    14.0,
+    14.0
+  ],
+  "corner_radius_max_mm": 0.3,
+  "stabilizer": "Cherry/GMK Plate mount 2U, three sets; third pair receives separate Cherry-compatible 6U wire",
+  "stabilized_keys": [
+    {
+      "name": "Enter",
+      "active_index": 41,
+      "stem_spacing_mm": 23.8
+    },
+    {
+      "name": "left Shift",
+      "active_index": 42,
+      "stem_spacing_mm": 23.8
+    },
+    {
+      "name": "6U spacebar",
+      "active_index": 57,
+      "stem_spacing_mm": 95.25
+    }
+  ],
+  "unused_pcb_mount_refs": [
+    "H26"
+  ],
+  "unused_mount_center_case_mm": [
+    223.837704,
+    -189.30966
+  ],
+  "installed_mount_quantity": 28,
+  "keycaps": {
+    "part": "NicePBT BoW current complete kit including 6.0c Centered",
+    "url": "https://cannonkeys.com/products/nicepbt-bow"
+  },
+  "procurement_checked": "2026-11-02",
+  "purchases": [
+    {
+      "id": "K01",
+      "part": "NiZ Housing / Slider / Silencing Ring Only, five pieces",
+      "packs": 13,
+      "units_per_pack": 5,
+      "net_units": 60,
+      "spare_units": 5,
+      "url": "https://shop.beekeeb.com/products/niz-ec-switch?variant=45023311757619",
+      "available_snapshot": true
+    },
+    {
+      "id": "K02",
+      "part": "NiZ Conical Spring Only, five pieces",
+      "packs": 13,
+      "units_per_pack": 5,
+      "net_units": 60,
+      "spare_units": 5,
+      "url": "https://shop.beekeeb.com/products/niz-ec-switch?variant=45023311790387",
+      "available_snapshot": true
+    },
+    {
+      "id": "K03",
+      "part": "NiZ 108-position 45g dome sheet, SKU A-25-7",
+      "packs": 1,
+      "net_units": 60,
+      "url": "https://flashquark.com/product/niz-keyboard-electrocapacitive-silicone-dome-sheet-104-key-45g/",
+      "available_snapshot": true
+    },
+    {
+      "id": "K04",
+      "part": "Genuine GMK Plate mount / 2u",
+      "packs": 3,
+      "net_side_units": 6,
+      "net_short_wires": 2,
+      "spare_short_wires": 1,
+      "url": "https://kebo.store/products/gmk-stabilizer?variant=37169593581722",
+      "available_snapshot": true
+    },
+    {
+      "id": "K05",
+      "part": "Cherry MX compatible 6u stabiliser wire",
+      "packs": 1,
+      "net_units": 1,
+      "url": "https://mech-stock.myshopify.com/products/stabiliser-wire?variant=40929412776129",
+      "available_snapshot": true
+    },
+    {
+      "id": "K06",
+      "part": "NicePBT BoW current complete kit, 6.0c Centered",
+      "packs": 1,
+      "net_units": 60,
+      "url": "https://cannonkeys.com/products/nicepbt-bow",
+      "available_snapshot": true
+    },
+    {
+      "id": "K07",
+      "part": "YETI60-NIZ-PM1 stainless plate",
+      "packs": 1,
+      "net_units": 1
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/mattyintegrals/ecneko60",
+      "fact": "First-person NiZ/EC60 build uses 1.6 mm steel, 14x14 openings and plate-mount stabilizers; some NiZ housings need lower flange/wire clearance trimming."
+    },
+    {
+      "url": "https://github.com/ssbb/tako",
+      "fact": "NiZ plate 1.6 mm differs from OG/Deskeys 1.2 mm."
+    },
+    {
+      "url": "https://deskthority.net/wiki/images/d/de/Keymodule_MX.pdf",
+      "fact": "Original Cherry frame mechanism and 1.5 +/-0.1 mm plate drawing; three plate-mount pairs selected, no PCB-mount holes."
+    },
+    {
+      "url": "https://github.com/swill/kad/blob/102c24278d433488a1747ef0e5bf78a23f421299/key.go",
+      "fact": "Cherry plate profile reference; our 6U center spacing remains explicit 95.25 mm rather than the generator legacy 95.0 mm."
+    },
+    {
+      "url": "https://mech-stock.myshopify.com/products/stabiliser-wire",
+      "fact": "Individual 6U wire listed for Cherry MX PCB or plate-mounted stabilizers; exact bend geometry and cap/wire fit require a receipt sample."
+    }
+  ],
+  "physical_fit_verified": false,
+  "order_scope": "E73 selected mechanical design; electronic/USB/service and first-article gates remain separate",
+  "procurement_status": "Historical listing observations only; current stock, NiZ N+ plastic dimensions and 6U wire bends require supplier confirmation before ordering",
+  "current_stock_verified": false
+}

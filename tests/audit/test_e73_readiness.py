@@ -8,7 +8,7 @@ from study_e73_service import withdrawal
 class Readiness(unittest.TestCase):
  def inputs(self):
   read=lambda n:json.loads((ROOT/'docs/audit'/n).read_text())
-  return [json.loads((ROOT/'hardware/ec60-nrf52840/audit-current.json').read_text()),read('yeti60-target-check.json'),read('usb-event-policy.json'),read('interference-layout.json')['variants']['e73'],read('USB-signal-paths.json')['variants']['e73'],read('yeti60-assembly.json'),read('e73-service-motion.json'),read('outcome.json'),read('firmware-suite.json')]
+  return [json.loads((ROOT/'hardware/ec60-nrf52840/audit-current.json').read_text()),read('yeti60-target-check.json'),read('usb-event-policy.json'),read('interference-layout.json')['variants']['e73'],read('USB-signal-paths.json')['variants']['e73'],read('yeti60-assembly.json'),read('e73-service-motion.json'),read('outcome.json'),read('firmware-suite.json'),read('e73-tolerance-diagnostic.json')]
  def states(self,data):return {x['id']:x['state'] for x in gates(*data)}
  def test_cli_retains_design_hold(self):
   run=subprocess.run([sys.executable,str(ROOT/'scripts/review_e73_readiness.py'),'--require-design'],cwd=ROOT,capture_output=True,text=True)
@@ -16,7 +16,13 @@ class Readiness(unittest.TestCase):
   result=json.loads((ROOT/'docs/audit/e73-readiness.json').read_text());self.assertEqual(result['status'],'hold')
  def test_current_obstructions_are_not_accepted(self):
   states=self.states(self.inputs())
-  for key in ['USB-protection-branches','NiZ-plate-mounted-stabilizers','battery-plug-service']:self.assertEqual(states[key],'failed')
+  for key in ['USB-protection-branches','battery-plug-service','mechanical-tolerance-budget']:self.assertEqual(states[key],'failed')
+ def test_current_NiZ_geometry_is_integrated(self):
+  self.assertEqual(self.states(self.inputs())['NiZ-plate-mounted-stabilizers'],'passed')
+ def test_wrong_plate_blocks_geometry(self):
+  data=self.inputs();data[5]['nominal_stack']['plate_thickness_mm']=1.2;self.assertEqual(self.states(data)['NiZ-plate-mounted-stabilizers'],'failed')
+ def test_missing_stabilizer_pair_blocks_geometry(self):
+  data=self.inputs();data[5]['mechanism_contract']['plate_stabilizer_pairs']=2;self.assertEqual(self.states(data)['NiZ-plate-mounted-stabilizers'],'failed')
  def test_incomplete_storage_suite_blocks_firmware(self):
   data=self.inputs();data[8]['NVS_cut_trials']=0;self.assertEqual(self.states(data)['scanner-calibration-storage-models'],'failed')
  def test_ground_disconnection_blocks_native_acceptance(self):
@@ -26,13 +32,13 @@ class Readiness(unittest.TestCase):
  def test_bad_USB_event_evidence_blocks_policy(self):
   data=self.inputs();data[2]['configuration_zero_rejected']=False;self.assertEqual(self.states(data)['USB-event-charging-policy'],'failed')
  def test_correct_thickness_alone_does_not_qualify_mounts(self):
-  data=self.inputs();data[5]['nominal_stack']['plate_thickness_mm']=1.6;self.assertEqual(self.states(data)['NiZ-plate-mounted-stabilizers'],'failed')
+  data=self.inputs();data[5]['mechanism_contract']={};self.assertEqual(self.states(data)['NiZ-plate-mounted-stabilizers'],'failed')
  def test_physical_checks_never_inherit_CAD_success(self):
   states=self.states(self.inputs());self.assertEqual(states['physical-functional-RF-thermal-mechanical'],'not-run');self.assertEqual(states['closed-harness-and-power-layout'],'open')
  def test_absent_protection_evidence_is_not_a_zero_length_stub(self):
   data=self.inputs();data[4]['positive']['ESD_branch_to_main_path_mm']=None;self.assertEqual(self.states(data)['USB-protection-branches'],'failed')
  def test_coarse_plate_dimensions_do_not_qualify_unported_geometry(self):
-  data=self.inputs();data[5]['nominal_stack']['plate_thickness_mm']=1.6;data[5]['mounting_hole_matches']=data[5]['mounting_hole_matches'][:28];self.assertEqual(self.states(data)['NiZ-plate-mounted-stabilizers'],'failed')
+  data=self.inputs();data[5]['mechanism_contract']['unused_pcb_mount_refs']=[];self.assertEqual(self.states(data)['NiZ-plate-mounted-stabilizers'],'failed')
  def test_missing_ground_pairs_blocks_native_acceptance(self):
   data=self.inputs();data[0]['ground_pin_pairs']=[];self.assertEqual(self.states(data)['native-PCB'],'failed')
  def test_continuous_withdrawal_spans_intermediate_positions(self):

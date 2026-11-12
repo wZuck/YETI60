@@ -9,12 +9,12 @@
   "production_approved": false,
   "check_recipe_sha256": "16ed8f101e0ebc87ad6514d69ce965d486d8b99a5fa347ca1289f32a43408525",
   "evidence_sha256": {
-    "yeti60-bom.json": "696a4f72d903742b7d142e52e34fa2090ba235839a53091d35948d37b5791451",
-    "yeti60-power-budget.json": "3d9bedbe6519dbd20ea86a79981a8bf778bbc923bcaacef61e25d751f8f36686",
-    "yeti60-battery-pocket.json": "00c2114feaf809bbe5eeb2b40e59148c0c55e09579557a9788f900eca91f807e",
-    "yeti60-assembly-drawings.json": "3894b880836b937b34d83bf293f94c382194ef7851531741171398e47d0b2cf1",
-    "yeti60-cell-screening.json": "cd95657e4ea6de2a72d800f59e1574ec2815c7433b341a54e1ff33bfbe14cc20",
-    "yeti60-interconnect-drawings.json": "a731e8a2c54c8a8004c1574c880ac94b738d0740f8579eb52922c7818a62c995"
+    "yeti60-bom.json": "c16364a269288dbae5a31099471fdff1f95df1a1c4614099d633d7f30050ed72",
+    "yeti60-power-budget.json": "61cc8eebffae1d6b0ce9b1d1ef7c8e33251a9be0fcc64c6a47abcf7d17a241ac",
+    "yeti60-battery-pocket.json": "55fecbeb2dcc43ac6b9073e343fa7364a93c3dd71a012862730936491bfc10ce",
+    "yeti60-assembly-drawings.json": "ed9ea858a799f1067dbf8a76f97910b339463e887ad0c20f07694179b1992c3f",
+    "yeti60-cell-screening.json": "acf5eb37449b53f56be0c421c53904b42b8cf23c82ab2e44ccf1ee60bee7816e",
+    "yeti60-interconnect-drawings.json": "430f13c0d47b76c3b3eb0d93a9355fd203375eda0a7e18b81457654bcdc3579a"
   },
   "limits": [
     "P2 charge design calculated; supplier pack/thermal approval and physical charge-to-termination remain pending",

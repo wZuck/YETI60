@@ -1,5 +1,5 @@
 {
-  "revision": "YETI60-P2",
+  "revision": "YETI60-E73-NIZ-PM1",
   "units": "mm",
   "scope": "Engineering prototype design; physical first-article acceptance follows manufacture",
   "case": {
@@ -73,7 +73,7 @@
   },
   "stack": {
     "plate_bottom_z": 4.2062,
-    "plate_thickness": 1.2,
+    "plate_thickness": 1.6,
     "pcb_to_plate_gap": 4.6,
     "spacer_length_tolerance": 0.05,
     "pcb_thickness": 1.6062,
@@ -82,7 +82,9 @@
       1.44,
       1.76
     ],
-    "PCB_order_nominal_mm": 1.6
+    "PCB_order_nominal_mm": 1.6,
+    "bottom_gasket_stock_mm": 2.0,
+    "top_gasket_stock_mm": 1.2
   },
   "pcb_fastener": {
     "part": "YETI60-STANDOFF-46",
@@ -110,7 +112,11 @@
     "top_insulator_thickness_tolerance": 0.02,
     "top_insulator_od": 4.5,
     "top_insulator_id": 1.8,
-    "washer_material": "PEEK"
+    "washer_material": "PEEK",
+    "installed_quantity": 28,
+    "unused_pcb_mount_refs": [
+      "H26"
+    ]
   },
   "battery": {
     "part": "YETI60-BAT-1600-1S",

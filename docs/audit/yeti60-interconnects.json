@@ -3,10 +3,10 @@
   "production_approved": false,
   "source_sha256": {
     "mechanical/interconnect-spec.json": "b94140e220f435a720bbfdde1c2ccdc59e207d1615581a2abc3016e0da226a3d",
-    "mechanical/assembly-spec.json": "dfd36d76a5c1c4f433e7cf64c3773be40eb2cee86465b6bc2f7a72704e694aa9",
-    "docs/audit/yeti60-assembly.json": "8bc20d93d2929e9440cfea25a58b7282d317844cca917e2ec3664a14d8d454fc",
+    "mechanical/assembly-spec.json": "6897e50c86952257624f4fab66e835cc8184d2ad872a96c2bf487b5e93ebcc9a",
+    "docs/audit/yeti60-assembly.json": "a73282c7d8017e7a0e10673d4b4d8da16dad120cb8b36b76e5bcf5feafc7bfa6",
     "docs/audit/yeti60-daughterboard.json": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
-    "docs/audit/yeti60-interconnect-connectors.json": "9526abb1c890f937e13fdfce7f58c7213099e9575c87f51c5db5a14948236cd0",
+    "docs/audit/yeti60-interconnect-connectors.json": "06e6d365edf095911599433978f389aa574a0ddaae68192f01ff9176bd62af4b",
     "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "scripts/check_yeti60_interconnects.py": "b761c91f2ead83e9e60eda3be6240516d857b7c89601905a957f8f93dd202e67",
@@ -52,7 +52,7 @@
       {
         "pin": 1,
         "color": "red",
-        "free_length_mm": 147.6438055098077,
+        "free_length_mm": 147.64380550980766,
         "minimum_bend_radius_mm": 4.5,
         "wire_exit_start_case_mm": [
           124.21033700000001,
@@ -97,7 +97,7 @@
       {
         "pin": 2,
         "color": "white",
-        "free_length_mm": 149.21460183660258,
+        "free_length_mm": 149.21460183660255,
         "minimum_bend_radius_mm": 5.5,
         "wire_exit_start_case_mm": [
           124.21033700000001,

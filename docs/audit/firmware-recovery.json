@@ -4,43 +4,51 @@
   "CMake_mutation_cases": [
     {
       "case": "same",
-      "version": "0xd3803185"
+      "version": "0x9b053855"
     },
     {
       "case": "scanner",
-      "version": "0x5249c201"
+      "version": "0x2a581a16"
     },
     {
       "case": "GPIO-mode",
-      "version": "0x0ebbae93"
+      "version": "0x1d283cd7"
     },
     {
       "case": "scan-control",
-      "version": "0xe3fc921b"
+      "version": "0xd7d09b41"
     },
     {
       "case": "waveform",
-      "version": "0x167da998"
+      "version": "0x51376c16"
     },
     {
       "case": "calibration",
-      "version": "0x480a8a1a"
+      "version": "0xc9d5e89e"
     },
     {
       "case": "header",
-      "version": "0xfbebab74"
+      "version": "0x076c8cc2"
+    },
+    {
+      "case": "stack",
+      "version": "0xeb6c2271"
+    },
+    {
+      "case": "plate",
+      "version": "0x18b67549"
     },
     {
       "case": "keymap-only",
-      "version": "0xd3803185"
+      "version": "0x9b053855"
     },
     {
       "case": "effective-idle",
-      "version": "0xb4eb2231"
+      "version": "0x9e56d184"
     },
     {
       "case": "effective-gating",
-      "version": "0x31807089"
+      "version": "0x7ec2bffb"
     }
   ],
   "native_gesture_output": "Pinned ZMK tap dance: single, hold, slow taps and interrupted taps do not clear; double tap dispatches selected-profile clear once",
@@ -56,7 +64,7 @@
     "firmware/target/Kconfig": "66d9b8b01ae813218f36297561d89b524fe824e30f06f18e49ac45feb1c3c912",
     "firmware/target/boards/yeti/yeti60/yeti60.dts": "2434f8a86afd1571c7c34d320e18f71195bac5ee3cc32dd75f098fc6088ec8a8",
     "firmware/target/boards/yeti/yeti60/yeti60_defconfig": "982aaf599a5c844146777dee6ea5a6d4ffcd9651e4ba76246cfd506b7ce1b12f",
-    "firmware/target/calibration-contract.cmake": "11724a79b86d823c298f73d35815c7cbce89a8441564e265a3742d9ec2143cb2",
+    "firmware/target/calibration-contract.cmake": "cd08e58cfed0134a2e0fd433e51a695afeb4054fd5f2b265b6345ab9f103a65c",
     "firmware/target/config/west.yml": "04dfc8292b18ac323cc82ebd76e37f12891eb4c4ff4e49593a65409a7023d912",
     "firmware/target/config/yeti60.conf": "13332769ae78f197d3268ec8ad9c9aa1e7578f19387c3f8a1ef4f9355a6acc7f",
     "firmware/target/config/yeti60.keymap": "bb26bb848769ada293de3ee11fa968692a502139c186fabbda408edadb322979",
@@ -70,8 +78,10 @@
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
-    "scripts/test_yeti60_recovery.py": "eb38271d3fb8e47493a67353d779972d750a323be99ce9dfee637b677331e3ed",
-    "scripts/yeti60_calibration_contract.py": "3b04a419b50903429ac467ec87a2d01b56d7538743a15d45a0bf2cec5eb76f04",
+    "mechanical/assembly-spec.json": "6897e50c86952257624f4fab66e835cc8184d2ad872a96c2bf487b5e93ebcc9a",
+    "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
+    "scripts/test_yeti60_recovery.py": "a3b28889f192a353776bcec9458c471225af97546743490eeb119806f0034b84",
+    "scripts/yeti60_calibration_contract.py": "a5748fa4a0197e644e63ffd151b2e65a562ae170dc4af8f28dd2b66c1355e478",
     "scripts/yeti60_recovery_contract.py": "19d1e6672423c5bf5ec9c65e2ef85548847d44cbe656c31f40e9bee5b9f6eb84",
     "tests/yeti60/tapdance_cases.h": "3f1fab6944eac962931dd8e5e03b674a762708a258720ada4e0aebccf76b0d8e",
     "tests/yeti60/tapdance_shim.h": "eab8211f8bf487690282d7cecd03679f8b9d9296c25c97e510b214d397065a4f"
