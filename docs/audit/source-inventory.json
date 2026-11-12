@@ -14,14 +14,14 @@
     },
     {
       "path": "BUILD.md",
-      "bytes": 4173,
-      "sha256": "47519ffe5f8f3ab9644920916f2e1806cc97084360d63149bb03b111b2cd338e",
+      "bytes": 4343,
+      "sha256": "61b6b228ad129fbbaf3716024e9554fd0f65d61a687c74244dda305ce64490b6",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "BUILD.zh-CN.md",
-      "bytes": 4031,
-      "sha256": "831a420ba05359a3327e69ed44137c1cbb22394f225a0948905464d1a334e1e0",
+      "bytes": 4189,
+      "sha256": "1fd700984e57abbb0025d29643f2c894a8827327fd3b843b396402cea2b73dc5",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -829,15 +829,27 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "docs/engineering/e73-mechanical-fit-candidate.md",
+      "bytes": 4965,
+      "sha256": "b4016f5a65ed9401f1aba0bd3071a0514fd871218a4aa370e3f02e0dd101efdc",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "docs/engineering/e73-mechanical-fit-candidate.zh-CN.md",
+      "bytes": 4455,
+      "sha256": "31d803543741b866ab1ce5a536002e51968210a13d902847d7123ebf278e13cb",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "docs/engineering/e73-mechanical-tolerances.md",
-      "bytes": 3599,
-      "sha256": "8f62163db1733141cbf8ec719ffe7201c5f8abc0e350defafacf7d95593fa3e3",
+      "bytes": 3866,
+      "sha256": "b91c3380e06ca908ec799f540d7f97b9bed3cedb99153fd1bc55504713c5ad09",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
       "path": "docs/engineering/e73-mechanical-tolerances.zh-CN.md",
-      "bytes": 3157,
-      "sha256": "def74a2a8e0a96fb0bf45c5f312a18c83f4f85c3796799a6937d20ee55fdc5f4",
+      "bytes": 3375,
+      "sha256": "5678904f66cea17caa6f0eca3f6947d364f54088b605b57ca776d73d84a0ea86",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1125,7 +1137,7 @@
     {
       "path": "docs/testing/images/analog-waveform.svg",
       "bytes": 77608,
-      "sha256": "5cab5238140fe30040060cf7212e966c026dc3a08e59707c5a42259ddac5eae5",
+      "sha256": "4566d12d3d1445e9255bb1791fa6fb242e73318340e81293abfb7d50373b9ad9",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1137,7 +1149,7 @@
     {
       "path": "docs/testing/images/analog-waveform.zh-CN.svg",
       "bytes": 32981,
-      "sha256": "b3c5b41b4a87c1d1b46f42f860bc6493ede56f69038dbf937be3a427c76099e8",
+      "sha256": "16439ac8aac285e664ce42050180cfdfe721f05408098c92a8099aadcdb36687",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1497,7 +1509,7 @@
     {
       "path": "hardware/ec60-nrf52840/DRC-strict.json",
       "bytes": 37632,
-      "sha256": "6e820816edcac06a9fe9351ec6cb4b9db4698c585230ea3c093e5fc4eef92d02",
+      "sha256": "6673e86c7cf248a840257b0d7b2b4c9d4452252d0d67303ffd4a33b894c7b6e2",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -1521,7 +1533,7 @@
     {
       "path": "hardware/ec60-nrf52840/ERC.json",
       "bytes": 117023,
-      "sha256": "1636ec5f026d9eb8f3cae3bd1f0378a756fd301bf931f8dc1327368bcb0a5149",
+      "sha256": "643d0bd307ab61dd17f4726083fdabe8ffc08ef2dcf59734876701194257f9c5",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2643,7 +2655,7 @@
     {
       "path": "hardware/ec60-nrf52840/connectivity-changes.json",
       "bytes": 701,
-      "sha256": "9dac6e7f9c5095face146752346e6a440ae35773d36f130c850067158b3ad524",
+      "sha256": "90f2460da10a894ba290cee108e8f0b93ed7f9bf903508c90a1d17cfc0197c81",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -2812,6 +2824,36 @@
       "path": "mechanical/battery-pocket-study.json",
       "bytes": 1374,
       "sha256": "6983679949ebb0b6bde4a7fd28b44a813305e1663c5d995cf95cf5eff22be23f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "mechanical/e73-fit-spec.json",
+      "bytes": 2781,
+      "sha256": "01d4217dc9e7c40918913d84ce7e6eaa9dfb6b4f46573a0064ed99ea7d9e74e5",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "mechanical/e73-fit/yeti60-e73-bottom-m01.step",
+      "bytes": 1327769,
+      "sha256": "962b21eb044737074e797c9cb2b1db3064477a86b2fa228a7b0aaaf862c514ae",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "mechanical/e73-fit/yeti60-e73-bottom-m01.stl",
+      "bytes": 5921784,
+      "sha256": "be176ede0e8095742e2b0fe1f342d65cf397508abfcd731b7c1a2f1450c3af6b",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "mechanical/e73-fit/yeti60-e73-niz-m01.dxf",
+      "bytes": 153133,
+      "sha256": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
+      "path": "mechanical/e73-fit/yeti60-e73-niz-m01.step",
+      "bytes": 19490568,
+      "sha256": "0f0183702c2ca54428f39c8dd0c23e74af0db627fec648f50e50958c4da873ef",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3091,6 +3133,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/build_e73_fit_candidate.py",
+      "bytes": 7735,
+      "sha256": "864a466acb143e0fe0044c129f60b1d41913fee819592c0873202a6ef4039e61",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/build_yeti60_firmware.py",
       "bytes": 6709,
       "sha256": "566e5ac4b11e4674ecbaab5a5898738d6b9bbc5e6dc65b44cf375aa4dc751e35",
@@ -3146,8 +3194,8 @@
     },
     {
       "path": "scripts/check_project_integration.py",
-      "bytes": 10370,
-      "sha256": "0aae7392b35607591114426aa325e6082a1055382dcb0ffb2d268dcacfc9e3cf",
+      "bytes": 10984,
+      "sha256": "37ec978daada3a65d9f4601a5328f53cd128280a3bbc57e010c6a83325496db4",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3283,6 +3331,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "scripts/e73_fit_geometry.py",
+      "bytes": 7370,
+      "sha256": "ca10466e3df2cad126ebcae704b0452e6556d71bdadb97f8bf2563ea4e10716f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "scripts/export_yeti60_bom.py",
       "bytes": 6159,
       "sha256": "e0b95bb15c235f959b2aefe7f5aa1b9909c6f5e3b904a7747699bfc67d749258",
@@ -3374,8 +3428,8 @@
     },
     {
       "path": "scripts/review_e73_readiness.py",
-      "bytes": 6812,
-      "sha256": "60a1b2abf3adbed61ce46c704adb67a7cfc6b5876bb2931514520b2064c491cf",
+      "bytes": 7163,
+      "sha256": "a6154227e9c3ddae04c7d5e335e45b8b0b51595a8ef2761f439f7edae101ff25",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3392,8 +3446,8 @@
     },
     {
       "path": "scripts/run_audit.py",
-      "bytes": 11116,
-      "sha256": "4123b9bc924ac85feb0f50d7c0dd0b10dddf719a5b04610264e06a46c2b1cc03",
+      "bytes": 11353,
+      "sha256": "33328b5535ec1c6861d4f1c7ef4fc22f944657e4a9cb09de8dfe139004ad0679",
       "coverage": "inventoried-not-automatically-approved"
     },
     {
@@ -3571,6 +3625,12 @@
       "coverage": "inventoried-not-automatically-approved"
     },
     {
+      "path": "tests/audit/test_e73_fit_candidate.py",
+      "bytes": 4032,
+      "sha256": "bd3b83a892cbcc28b6494b19e47b8d1de62e01877d2935b990a6c0d49d99bb4f",
+      "coverage": "inventoried-not-automatically-approved"
+    },
+    {
       "path": "tests/audit/test_e73_readiness.py",
       "bytes": 4299,
       "sha256": "db91d07d131299ef1f4cc63d7f68c03a3068c56b765e28c39eb922fb67274382",
@@ -3602,8 +3662,8 @@
     },
     {
       "path": "tests/audit/test_integration.py",
-      "bytes": 3589,
-      "sha256": "6d521a901ecd8efbb23d2b19296332994ba395756cf4b7a238f643703ac7e504",
+      "bytes": 3999,
+      "sha256": "a7039c9ab19505843859e1a5dbfaa569c16235d42cc22465630a5fec248869b8",
       "coverage": "inventoried-not-automatically-approved"
     },
     {

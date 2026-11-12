@@ -1,0 +1,76 @@
+{
+  "revision": "YETI60-E73-FIT-M01",
+  "units": "mm",
+  "scope": "E73-only mechanical repair candidate, not yet selected by the canonical assembly/firmware/render pipeline. Bounded design dimensions are measured acceptance requirements, not supplier guarantees.",
+  "plate": {
+    "source": "mechanical/felk60_plate_hhkb.plate-mount.dxf",
+    "output": "mechanical/e73-fit/yeti60-e73-niz-m01.dxf",
+    "step": "mechanical/e73-fit/yeti60-e73-niz-m01.step",
+    "material": "304 stainless steel",
+    "outer_perimeter_inset_mm": 0.4,
+    "profile_chord_mm": 0.002,
+    "minimum_edge_web_mm": 1.6,
+    "maximum_profile_point_error_XY_radial_mm": 0.1,
+    "maximum_installed_point_error_XY_radial_mm": 0.1,
+    "maximum_installed_surface_error_Z_mm": 0.1,
+    "position_error_scope": "Includes translation, rotation and deformation at every point; not a separate 0.1 mm allowance for each source of error",
+    "maximum_installed_surface_error_Z_scope": "Combined error of each installed plate face, including finished thickness, flatness, installed height and gasket compression; no separate \u00b10.1 mm credits for those terms."
+  },
+  "case_maximum_coordinate_error_each_axis_mm": 0.15,
+  "geometric_computation_guard_mm": 0.002,
+  "minimum_residual_air_gap_mm": 0.15,
+  "switch": {
+    "reference": "SW100",
+    "part": "C&K JS102011SAQN",
+    "maximum_installed_height_below_local_PCB_mm": 3.6,
+    "maximum_installed_XY_envelope_growth_each_axis_mm": 0.1,
+    "maximum_installed_board_point_error_XY_each_axis_mm": 0.25,
+    "maximum_additional_mounted_PCB_downward_bow_mm": 0.15,
+    "height_scope": "Incoming and installed measurement including solder and actuator; a project acceptance envelope, not a maximum certified by the nominal manufacturer drawing"
+  },
+  "switch_floor_relief": {
+    "bounds_case_mm": [
+      104.975,
+      -127.525,
+      -6.71,
+      119.025,
+      -114.725,
+      -5.4
+    ],
+    "corner_radius_mm": 0.5,
+    "minimum_remaining_wall_mm": 2.0
+  },
+  "gaskets": {
+    "quantity_each_layer": 4,
+    "finished_size_XY_mm": [
+      33.0,
+      3.0
+    ],
+    "maximum_cut_and_placement_point_error_XY_each_axis_mm": 0.15,
+    "lower_stock_thickness_mm": 2.0,
+    "upper_stock_thickness_mm": 1.2,
+    "centers_case_XY_mm": [
+      [
+        102.5877,
+        -201.7
+      ],
+      [
+        326.5877,
+        -201.7
+      ],
+      [
+        128.5877,
+        -100.25
+      ],
+      [
+        300.0877,
+        -100.25
+      ]
+    ],
+    "material_qualification": "Cut-to-fit foam; compression force, creep and adhesive retention require first article"
+  },
+  "physical_verification": false,
+  "complete_keyboard_tolerance_qualified": false,
+  "bottom_output": "mechanical/e73-fit/yeti60-e73-bottom-m01.step",
+  "canonical_selection_changed": false
+}

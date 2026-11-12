@@ -27,3 +27,5 @@ NiZ 1.6 mm 定位板保留 60 个感应中心，安装 28 套固定件，H26 不
 [诊断实现](../../scripts/study_e73_mechanical_tolerances.py)及 [10 项故障测试](../../tests/audit/test_e73_tolerances.py)会拒绝漏计误差、漏掉壳体接口及擅自改为制造放行。测试通过仅代表如实记录了净空不足。[E73 审查](../audit/e73-review.zh-CN.md)继续保持设计暂停。
 
 CAD 证据使用 **CPython 3.14.7** 及 `requirements-audit.txt` 重现，审查脚本默认通过 uv 选择该解释器。一次 CPython 3.11 执行产生了两项约 3e-14 mm 的线长差异，其余报告字段及几何完全一致；几何上可忽略，但整份报告哈希会改变。报告与网格生成需使用同一运行环境；更换环境时应重生成受影响证据，不能改写存储的哈希。原生 KiCad 导出及 Blender 使用各自声明的运行环境。
+
+[M01 修补候选件](e73-mechanical-fit-candidate.zh-CN.md)现已用放大的安装零件包络通过三个接口检查。候选件接入前仍保留当前正式文件，不会据此改写本页的原缺口诊断。

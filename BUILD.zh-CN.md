@@ -29,4 +29,4 @@ E73 的 USB／充电控制使用 GPIO0 的 EN1／EN2，以及 **GPIO1.13 的 CE_
 
 [当前 E73 固件构建、回归证据和校准升级说明](docs/testing/e73-firmware-validation.zh-CN.md)。
 
-[E73 标称净空及未关闭的公差计算](docs/engineering/e73-mechanical-tolerances.zh-CN.md)。
+[E73 标称净空及未关闭的公差计算](docs/engineering/e73-mechanical-tolerances.zh-CN.md)。[M01 定位板／地板修补候选件](docs/engineering/e73-mechanical-fit-candidate.zh-CN.md)已通过其有界接口检查，但尚未选入正式装配。

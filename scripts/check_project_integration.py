@@ -36,6 +36,12 @@ def verify():
     plate=read(AUD/'plate.json'); assert plate['status']=='passed'; hashes(plate['source_sha256'])
     meta=read(AUD/'yeti60-pcb-mechanical-metadata.json'); assert sha(ROOT/meta['source'])==meta['source_sha256']
     fit=read(AUD/'yeti60-assembly.json'); hashes(fit['source_sha256']); hashes(fit['verification_recipe_sha256'])
+    repaired=read(AUD/'e73-fit-candidate.json'); hashes(repaired['source_sha256']); hashes(repaired['outputs'])
+    assert repaired['status']=='e73-bounded-plate-switch-repair-candidate-passed'
+    assert not repaired['canonical_selection_changed'] and not repaired['manufacturing_released'] and not repaired['physical_verification']
+    assert len(repaired['interfaces'])==3 and all(r['remaining_air_gap_mm']>=.15 for r in repaired['interfaces'])
+    assert len(repaired['gasket_bearing_checks'])==8 and len(repaired['lower_shell_repair']['insert_supports'])==8
+    hashes(repaired['selected_sources_unchanged'])
     assert sha(AUD/'yeti60-pcb-mechanical-metadata.json')==fit['mechanical_metadata_sha256']
     assert not fit['colliding_envelopes'] and max(fit['pcb_case_overlap_mm3']+fit['plate_case_overlap_mm3'])<1e-5
     assert len(fit['mounting_hole_matches'])==28 and len(meta['mount_holes'])==29

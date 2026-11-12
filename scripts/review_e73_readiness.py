@@ -34,11 +34,14 @@ def gates(cad,target,events,layout,paths,assembly,service,outcome,firmware,toler
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--require-design',action='store_true');a=p.parse_args()
-    names=['integration.json','outcome.json','yeti60-target-check.json','yeti60-target-build.json','usb-event-policy.json','interference-layout.json','USB-signal-paths.json','yeti60-assembly.json','e73-service-motion.json','firmware-suite.json','e73-tolerance-diagnostic.json']
+    names=['integration.json','outcome.json','yeti60-target-check.json','yeti60-target-build.json','usb-event-policy.json','interference-layout.json','USB-signal-paths.json','yeti60-assembly.json','e73-service-motion.json','firmware-suite.json','e73-tolerance-diagnostic.json','e73-fit-candidate.json']
     data={n:json.loads((AUD/n).read_text()) for n in names}
     # Fail on obsolete evidence, even when the resulting disposition is HOLD.
-    for name in ['usb-event-policy.json','interference-layout.json','USB-signal-paths.json','yeti60-assembly.json','e73-service-motion.json','yeti60-target-build.json','e73-tolerance-diagnostic.json']:
+    for name in ['usb-event-policy.json','interference-layout.json','USB-signal-paths.json','yeti60-assembly.json','e73-service-motion.json','yeti60-target-build.json','e73-tolerance-diagnostic.json','e73-fit-candidate.json']:
         for key,value in data[name].get('source_sha256',{}).items():assert sha(ROOT/key)==value,('Stale E73 evidence',name,key)
+    candidate=data['e73-fit-candidate.json']
+    assert not candidate['canonical_selection_changed'] and not candidate['manufacturing_released'] and not candidate['physical_verification']
+    for name,value in candidate['outputs'].items():assert sha(ROOT/name)==value,('Stale E73 repair output',name)
     cadpath=ROOT/'hardware/ec60-nrf52840/audit-current.json';cad=json.loads(cadpath.read_text())
     for name,value in cad['source_sha256'].items():assert sha(cadpath.parent/name)==value,('Stale native CAD',name)
     for variant in data['USB-signal-paths.json']['variants'].values():

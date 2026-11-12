@@ -146,7 +146,7 @@
           "docs/audit/key-pipeline.json": "94b3cc83b11e9f91050e5d0015e69d15b7740ce781503689649e18e2408ea724",
           "docs/audit/nvs-powercut.json": "fd9e7412a1c3093e625f524937555f2ee37a0f6b289b4d84b6c7d6b3a5d54cf8",
           "docs/audit/firmware-recovery.json": "b95a2f2a6d37b3f860010cc3d534dbcbd7d066a3edee7fd5184246ba3cd5b7d8",
-          "docs/audit/analog-waveform.json": "2687bb898ac2f83327e715fa73962e8e0c835979d20dabda0cf18f7876327564",
+          "docs/audit/analog-waveform.json": "46206483557da4940cb7afe045f8a864cb0e828d736583f77f47f29701c00735",
           "docs/audit/calibration.json": "b3cd82a93b3595d6b3d9da9c23f687fde4dba23eff9fd759ea8f2b927c781495",
           "docs/audit/usb-event-policy.json": "9b3c48bc6174d5694a3c8a54bcfd8ad4783aff159a680b332a0f9ca808a7ad3c",
           "docs/audit/yeti60-target-build.json": "2c5b87c59d69f736a71a924aacc7725d42a08fb79ee3fbd0e21d823822677035",
@@ -301,8 +301,8 @@
       "id": "full-artifact-audit",
       "state": "passed",
       "details": {
-        "passed": 61,
-        "total": 61
+        "passed": 63,
+        "total": 63
       }
     },
     {
@@ -336,7 +336,7 @@
   "evidence_sha256": {
     "hardware/ec60-nrf52840/audit-current.json": "6a34e94b645c8d4c8662d25e86ad648c58f0302164ec5c5bd62a084f667bae88",
     "docs/audit/integration.json": "209b613c6435ffa5b9401af9ed6214de5f85a5800c8b42668e1ae940245396b4",
-    "docs/audit/outcome.json": "3c0a45b09720bbe81d8dbfe09a330bef830a005d5dc7f3b1e41e020752fbf459",
+    "docs/audit/outcome.json": "ed1101bbb83dc8ec8f4b1b41a5202308094f6f1fc8e79f5bb10a4ab588c9689d",
     "docs/audit/yeti60-target-check.json": "446d8e199deb0fb6b7a98be85aede6c8b56641633a268bcd541a29958563912d",
     "docs/audit/yeti60-target-build.json": "2c5b87c59d69f736a71a924aacc7725d42a08fb79ee3fbd0e21d823822677035",
     "docs/audit/usb-event-policy.json": "9b3c48bc6174d5694a3c8a54bcfd8ad4783aff159a680b332a0f9ca808a7ad3c",
@@ -344,10 +344,11 @@
     "docs/audit/USB-signal-paths.json": "c810b198ee4793bf1d23f578fda10daad50b10079ea27abe3be1425967c5e066",
     "docs/audit/yeti60-assembly.json": "a73282c7d8017e7a0e10673d4b4d8da16dad120cb8b36b76e5bcf5feafc7bfa6",
     "docs/audit/e73-service-motion.json": "841c6248993e03550f15ea197e171d576e6dd19cd7ab07948519a38259072690",
-    "docs/audit/firmware-suite.json": "c71fb2971f9e957b223c7b0de90a309b772ab8682efb7976a7fea9d6c7779bc5",
-    "docs/audit/e73-tolerance-diagnostic.json": "ff53ddfb5a0e878a0a44320dc92d3b3353f97ce9dd7323bfb9fb3e4321a865a3"
+    "docs/audit/firmware-suite.json": "ea8913387197e0dcb16f8361e3c6ccced1b72ae1bbe116be8d76e739ec750e18",
+    "docs/audit/e73-tolerance-diagnostic.json": "ff53ddfb5a0e878a0a44320dc92d3b3353f97ce9dd7323bfb9fb3e4321a865a3",
+    "docs/audit/e73-fit-candidate.json": "c1376735d43cff32d4b0d5b838df187b01acc8069b70ed22170ab16ea729e3df"
   },
   "source_sha256": {
-    "scripts/review_e73_readiness.py": "60a1b2abf3adbed61ce46c704adb67a7cfc6b5876bb2931514520b2064c491cf"
+    "scripts/review_e73_readiness.py": "a6154227e9c3ddae04c7d5e335e45b8b0b51595a8ef2761f439f7edae101ff25"
   }
 }

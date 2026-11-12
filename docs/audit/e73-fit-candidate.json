@@ -1,0 +1,286 @@
+{
+  "status": "e73-bounded-plate-switch-repair-candidate-passed",
+  "canonical_selection_changed": false,
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "complete_keyboard_tolerance_qualified": false,
+  "plate": {
+    "exterior_inset_mm": 0.4,
+    "unchanged_internal_entities": 88,
+    "minimum_edge_web_mm": 1.749778967981195,
+    "original_area_mm2": 27913.2514968282,
+    "candidate_area_mm2": 27596.874144967853
+  },
+  "interfaces": [
+    {
+      "interface": "plate-bottom-static",
+      "continuous_envelope_gap_mm": 0.44989992881670965,
+      "case_coordinate_error_L2_bound_mm": 0.25980762113533157,
+      "computation_guard_mm": 0.002,
+      "remaining_air_gap_mm": 0.18809230768137808
+    },
+    {
+      "interface": "plate-top-static",
+      "continuous_envelope_gap_mm": 0.4498999999032992,
+      "case_coordinate_error_L2_bound_mm": 0.25980762113533157,
+      "computation_guard_mm": 0.002,
+      "remaining_air_gap_mm": 0.18809237876796764
+    },
+    {
+      "interface": "SW100-bottom",
+      "continuous_envelope_gap_mm": 0.6561999999999992,
+      "case_coordinate_error_L2_bound_mm": 0.25980762113533157,
+      "computation_guard_mm": 0.002,
+      "remaining_air_gap_mm": 0.39439237886466766
+    }
+  ],
+  "switch_budget": {
+    "downward_terms_mm": {
+      "board_growth": 0.15379999999999994,
+      "shoulder": 0.03,
+      "film": 0.02,
+      "installed_plate_Z": 0.1,
+      "mounted_board_bow": 0.15,
+      "installed_height": 0.10000000000000009
+    },
+    "downward_sum_mm": 0.5538000000000001,
+    "XY_allowance_each_axis_mm": 0.35,
+    "bounds_case_mm": [
+      106.625,
+      -125.875,
+      -6.0538,
+      117.375,
+      -116.375,
+      -1.9999999999999998
+    ]
+  },
+  "gasket_bearing_checks": [
+    {
+      "layer": "lower",
+      "index": 1,
+      "nominal_area_mm2": 99.0,
+      "case_expanded_area_mm2": 120.96000000000075,
+      "case_supported_area_mm2": 120.96000000000075,
+      "plate_supported_after_XY_allowances": true
+    },
+    {
+      "layer": "lower",
+      "index": 2,
+      "nominal_area_mm2": 99.0,
+      "case_expanded_area_mm2": 120.96000000000085,
+      "case_supported_area_mm2": 120.96000000000085,
+      "plate_supported_after_XY_allowances": true
+    },
+    {
+      "layer": "lower",
+      "index": 3,
+      "nominal_area_mm2": 99.0,
+      "case_expanded_area_mm2": 120.95999999999984,
+      "case_supported_area_mm2": 120.95999999999984,
+      "plate_supported_after_XY_allowances": true
+    },
+    {
+      "layer": "lower",
+      "index": 4,
+      "nominal_area_mm2": 99.0,
+      "case_expanded_area_mm2": 120.9599999999999,
+      "case_supported_area_mm2": 120.9599999999999,
+      "plate_supported_after_XY_allowances": true
+    },
+    {
+      "layer": "upper",
+      "index": 1,
+      "nominal_area_mm2": 99.0,
+      "case_expanded_area_mm2": 120.96000000000075,
+      "case_supported_area_mm2": 120.96000000000075,
+      "plate_supported_after_XY_allowances": true
+    },
+    {
+      "layer": "upper",
+      "index": 2,
+      "nominal_area_mm2": 99.0,
+      "case_expanded_area_mm2": 120.96000000000085,
+      "case_supported_area_mm2": 120.96000000000085,
+      "plate_supported_after_XY_allowances": true
+    },
+    {
+      "layer": "upper",
+      "index": 3,
+      "nominal_area_mm2": 99.0,
+      "case_expanded_area_mm2": 120.95999999999984,
+      "case_supported_area_mm2": 120.95999999999984,
+      "plate_supported_after_XY_allowances": true
+    },
+    {
+      "layer": "upper",
+      "index": 4,
+      "nominal_area_mm2": 99.0,
+      "case_expanded_area_mm2": 120.9599999999999,
+      "case_supported_area_mm2": 120.9599999999999,
+      "plate_supported_after_XY_allowances": true
+    }
+  ],
+  "lower_shell_repair": {
+    "removed_volume_mm3": 41.9270197832465,
+    "original_bounds_case_mm": [
+      51.462701398115,
+      -206.30970210030003,
+      -19.39959445791356,
+      377.162712995288,
+      -91.1096578864537,
+      11.790000000000015
+    ],
+    "candidate_bounds_case_mm": [
+      51.462701398115,
+      -206.30970210030003,
+      -19.39959445791356,
+      377.162712995288,
+      -91.1096578864537,
+      11.790000000000015
+    ],
+    "selected_exterior_faces_checked": 58,
+    "minimum_removed_to_selected_skin_after_coordinate_allowance_mm": 10.560440234620803,
+    "minimum_required_wall_mm": 2.0,
+    "insert_supports": [
+      {
+        "kind": "M3",
+        "axis_case_mm": [
+          64.312702,
+          -101.209701
+        ],
+        "protected_radius_mm": 4.5,
+        "protected_z_mm": [
+          2.79,
+          10.29
+        ],
+        "overlap_mm3": 0.0
+      },
+      {
+        "kind": "M3",
+        "axis_case_mm": [
+          64.312715,
+          -191.209701
+        ],
+        "protected_radius_mm": 4.5,
+        "protected_z_mm": [
+          2.79,
+          10.29
+        ],
+        "overlap_mm3": 0.0
+      },
+      {
+        "kind": "M3",
+        "axis_case_mm": [
+          364.312715,
+          -191.209659
+        ],
+        "protected_radius_mm": 4.5,
+        "protected_z_mm": [
+          2.79,
+          10.29
+        ],
+        "overlap_mm3": 0.0
+      },
+      {
+        "kind": "M3",
+        "axis_case_mm": [
+          364.312702,
+          -101.209659
+        ],
+        "protected_radius_mm": 4.5,
+        "protected_z_mm": [
+          2.79,
+          10.29
+        ],
+        "overlap_mm3": 0.0
+      },
+      {
+        "kind": "M2",
+        "axis_case_mm": [
+          207.312702,
+          -105.3597
+        ],
+        "protected_radius_mm": 3.75,
+        "protected_z_mm": [
+          -15.81,
+          -8.91
+        ],
+        "overlap_mm3": 0.0
+      },
+      {
+        "kind": "M2",
+        "axis_case_mm": [
+          221.312702,
+          -105.3597
+        ],
+        "protected_radius_mm": 3.75,
+        "protected_z_mm": [
+          -15.81,
+          -8.91
+        ],
+        "overlap_mm3": 0.0
+      },
+      {
+        "kind": "M2",
+        "axis_case_mm": [
+          207.312702,
+          -117.8597
+        ],
+        "protected_radius_mm": 3.75,
+        "protected_z_mm": [
+          -15.81,
+          -8.91
+        ],
+        "overlap_mm3": 0.0
+      },
+      {
+        "kind": "M2",
+        "axis_case_mm": [
+          221.312702,
+          -117.8597
+        ],
+        "protected_radius_mm": 3.75,
+        "protected_z_mm": [
+          -15.81,
+          -8.91
+        ],
+        "overlap_mm3": 0.0
+      }
+    ]
+  },
+  "selected_sources_unchanged": {
+    "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
+    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "mechanical/assembly-spec.json": "6897e50c86952257624f4fab66e835cc8184d2ad872a96c2bf487b5e93ebcc9a",
+    "mechanical/yeti60-key-mechanism.e73.json": "fe36d523bdf2feea8d0ebc7074b0996847c3998a30e9fbc1524343577a7d135c"
+  },
+  "source_sha256": {
+    "scripts/build_e73_fit_candidate.py": "864a466acb143e0fe0044c129f60b1d41913fee819592c0873202a6ef4039e61",
+    "scripts/e73_fit_geometry.py": "ca10466e3df2cad126ebcae704b0452e6556d71bdadb97f8bf2563ea4e10716f",
+    "scripts/build_yeti60_mechanical.py": "a2324209dedb8431916dd203fdd4610787a86b2c43a945d0309607d6564b5557",
+    "scripts/check_yeti60_assembly.py": "cda91bd94fdb8dc9bff274f211f3299422740e91fc9b344716aa3d2ea3ad9499",
+    "scripts/check_yeti60_interconnects.py": "b761c91f2ead83e9e60eda3be6240516d857b7c89601905a957f8f93dd202e67",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "mechanical/e73-fit-spec.json": "01d4217dc9e7c40918913d84ce7e6eaa9dfb6b4f46573a0064ed99ea7d9e74e5",
+    "docs/audit/yeti60-assembly.json": "a73282c7d8017e7a0e10673d4b4d8da16dad120cb8b36b76e5bcf5feafc7bfa6",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "mechanical/felk60_plate_hhkb.plate-mount.dxf": "b50b593f6764f1579fe9d58db9b65218d5afa7120cf652cb72f445890b7b9fd2",
+    "mechanical/generated/yeti60-bottom.step": "e4b36fd25373ff8f403a882aad4b2345fff7d961c1cd5372b86107f114711691",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "mechanical/assembly-spec.json": "6897e50c86952257624f4fab66e835cc8184d2ad872a96c2bf487b5e93ebcc9a",
+    "mechanical/yeti60-key-mechanism.e73.json": "fe36d523bdf2feea8d0ebc7074b0996847c3998a30e9fbc1524343577a7d135c"
+  },
+  "outputs": {
+    "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
+    "mechanical/e73-fit/yeti60-e73-niz-m01.step": "0f0183702c2ca54428f39c8dd0c23e74af0db627fec648f50e50958c4da873ef",
+    "mechanical/e73-fit/yeti60-e73-bottom-m01.step": "962b21eb044737074e797c9cb2b1db3064477a86b2fa228a7b0aaaf862c514ae",
+    "mechanical/e73-fit/yeti60-e73-bottom-m01.stl": "be176ede0e8095742e2b0fe1f342d65cf397508abfcd731b7c1a2f1450c3af6b"
+  },
+  "remaining": [
+    "Select candidate in the canonical assembly and calibration fingerprint, then rebuild both firmware targets and all dependent checks/drawings/renders",
+    "Continuous whole-PCB installation/removal and complete flexible harness/service movement",
+    "All other part/fastener tolerances, received NiZ/stabilizer dimensions, foam force/creep and resin/insert strength",
+    "Actual power/USB/BLE/charge/thermal/RF acceptance"
+  ]
+}

@@ -57,6 +57,8 @@ def main():
     add('assembly-fit',cad,'check_yeti60_assembly.py',deps=['mechanical-metadata','plate-mount-contract','mechanical-design'])
     add('mechanical-tolerance-diagnostic',cad,'study_e73_mechanical_tolerances.py',deps=['assembly-fit'])
     stages.append(('mechanical-tolerance-fault-tests',py+['tests/audit/test_e73_tolerances.py'],['mechanical-tolerance-diagnostic']))
+    add('E73-mechanical-repair-candidate',cad,'build_e73_fit_candidate.py',deps=['assembly-fit'])
+    stages.append(('E73-mechanical-repair-fault-tests',cad+['tests/audit/test_e73_fit_candidate.py'],['E73-mechanical-repair-candidate']))
     add('interconnect-native-cad',py,'export_yeti60_interconnects.py',deps=['assembly-fit'])
     add('interconnect-fit',cad,'check_yeti60_interconnects.py',deps=['interconnect-native-cad','daughterboard-native-cad'])
     add('render-geometry',cad,'export_yeti60_render_meshes.py',deps=['assembly-fit','interconnect-fit'])
