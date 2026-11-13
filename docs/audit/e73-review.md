@@ -41,4 +41,4 @@ Run `scripts/run_audit.py` with KiCad and the CAD Python runtime; `scripts/test_
 
 ## USB repair checkpoint
 
-The [isolated E73 USB repair](../engineering/e73-usb-repair.md) now has its own native project, schematic/netlist, purchase delta and fault checks. Its short data topology is separate from the canonical measurements above. Manufacturing release, complete return/harness/service acceptance and matched firmware/CAM remain open.
+The [isolated E73 USB repair](../engineering/e73-usb-repair.md) now has its own native project, schematic/netlist, purchase delta and fault checks. Its short data topology is separate from the canonical measurements above. The [host-reference and local-model checkpoint](../engineering/e73-usb-return.md) records the additional native-copper, plated-ground and solder-foot checks. Manufacturing release, full SI, harness/service acceptance and matched firmware/CAM remain open.

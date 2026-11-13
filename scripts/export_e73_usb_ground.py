@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Export actual E73 repair ground shapes; KiCad Python, read-only PCB."""
 import hashlib
+import argparse
 import json
 from pathlib import Path
 import pcbnew as pcb
+from check_e73_usb_repair import usb_paths
+from check_yeti60_signal_paths import centerline
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / 'hardware/e73-usb-repair'
@@ -24,7 +27,11 @@ def polygons(shape):
 
 
 def main():
-    path = BASE / 'EC60-nRF52840.kicad_pcb'
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--pcb', type=Path, default=BASE / 'EC60-nRF52840.kicad_pcb')
+    parser.add_argument('--output', type=Path, default=ROOT / '.assembly-work/e73-usb-ground.json')
+    args = parser.parse_args()
+    path = args.pcb.resolve()
     before = sha(path)
     board = pcb.LoadBoard(str(path))
     record = {'ground_copper': {}, 'ground_vertical_connectors': [],
@@ -58,10 +65,45 @@ def main():
             if pad.GetAttribute() == pcb.PAD_ATTRIB_PTH and pad.GetNetname() == 'GND':
                 record['ground_vertical_connectors'].append({'UUID': pad.m_Uuid.AsString(), 'by_layer':
                     {board.GetLayerName(l): polygons(pad.GetEffectivePolygon(l)) for l in LAYERS if pad.IsOnLayer(l)}})
-    record['source_sha256'] = {str(p.relative_to(ROOT)): sha(p) for p in [path, Path(__file__)]}
+    record['USB_all_copper'] = {net: {'tracks': [], 'pads': []} for net in ['USB_DM', 'USB_DP']}
+    for track in board.GetTracks():
+        net = track.GetNetname()
+        if net not in record['USB_all_copper']:
+            continue
+        assert track.GetClass() in ['PCB_TRACK', 'PCB_ARC'] and track.GetLayer() == pcb.B_Cu, 'Unexpected data layer/via'
+        shape = pcb.SHAPE_POLY_SET()
+        track.TransformShapeToPolygon(shape, pcb.B_Cu, 0, pcb.FromMM(.002), pcb.ERROR_INSIDE)
+        record['USB_all_copper'][net]['tracks'].append({'UUID': track.m_Uuid.AsString(),
+            'centerline': centerline(track), 'width_mm': pcb.ToMM(track.GetWidth()), 'polygons': polygons(shape)})
+    for footprint in board.GetFootprints():
+        for pad in footprint.Pads():
+            if pad.GetNetname() in record['USB_all_copper']:
+                record['USB_all_copper'][pad.GetNetname()]['pads'].append({
+                    'ref': footprint.GetReference(), 'pin': pad.GetNumber(),
+                    'polygons': polygons(pad.GetEffectivePolygon(pcb.B_Cu))})
+    record['local_model_pads'] = {}
+    for footprint in board.GetFootprints():
+        ref = footprint.GetReference()
+        if ref not in ['J4', 'J5', 'C32']:
+            continue
+        pads = []
+        for pad in footprint.Pads():
+            shape = pcb.SHAPE_POLY_SET()
+            pad.TransformShapeToPolygon(shape, pcb.B_Cu, 0, pcb.FromMM(.002), pcb.ERROR_INSIDE)
+            records = polygons(shape)
+            for polygon in records:
+                polygon['outer'] = [[x, -y] for x, y in polygon['outer']]
+                polygon['holes'] = [[[x, -y] for x, y in hole] for hole in polygon['holes']]
+            pads.append({'pin': pad.GetNumber(), 'polygons_native_XY_mm': records})
+        record['local_model_pads'][ref] = pads
+    record['USB_paths'] = usb_paths(board)
+    record['kicad_version'] = pcb.GetBuildVersion()
+    record['source_sha256'] = {str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p): sha(p)
+                             for p in [path, Path(__file__), ROOT / 'scripts/check_e73_usb_repair.py',
+                                       ROOT / 'scripts/check_yeti60_signal_paths.py', ROOT / 'mechanical/pcb-fabrication-spec.json']}
     assert sha(path) == before
-    target = ROOT / '.assembly-work/e73-usb-ground.json'
-    target.parent.mkdir(exist_ok=True)
+    target = args.output.resolve()
+    target.parent.mkdir(exist_ok=True, parents=True)
     target.write_text(json.dumps(record, separators=(',', ':')) + '\n')
     print('Read-only E73 ground extraction:', {k: len(v) for k, v in record['ground_copper'].items()})
 

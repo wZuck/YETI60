@@ -134,6 +134,9 @@ def preserved_geometry(board, source):
     reset_removed=set(spec['removed_RESET_B_item_UUIDs'])
     assert all(child(source_items[k],'net')[1]=='RESET_N'for k in reset_removed)
     control_removed|=reset_removed
+    analog_removed=set(spec['removed_COL14_reference_item_UUIDs'])
+    assert all(child(source_items[k],'net')[1]=='COL14'for k in analog_removed),'Unexpected analog reroute net'
+    control_removed|=analog_removed
     assert removed_ground <= set(source_items)
     for key, item in source_items.items():
         net = child(item, 'net')[1]

@@ -28,7 +28,7 @@ SPEC=json.loads(SPEC_PATH.read_text())
 POSITIONS=SPEC['headers_pcb_mm']
 DATA=SPEC['data_paths_B_Cu_mm']
 LOCAL_POWER_REMOVED=set(SPEC['removed_C32_GND_fanout_UUIDs'])
-CONTROL_REMOVED=set(SPEC['removed_ROW_DRV4_loop_item_UUIDs'])|set(SPEC['removed_RESET_B_item_UUIDs'])
+CONTROL_REMOVED=set(SPEC['removed_ROW_DRV4_loop_item_UUIDs'])|set(SPEC['removed_RESET_B_item_UUIDs'])|set(SPEC['removed_COL14_reference_item_UUIDs'])
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def uid(tag):return str(uuid.uuid5(uuid.NAMESPACE_URL,'yeti60-e73-usb-repair-v1/'+tag))
@@ -142,7 +142,8 @@ def main():
     OUT.mkdir(exist_ok=True);(OUT/'audit').mkdir(exist_ok=True)
     # An interrupted/failed rebuild must never leave a previous green report
     # looking like evidence for partly rewritten candidate files.
-    for name in ['build.json','native-check.json','DRC-strict.json','ERC.json','fault-tests.json']:
+    for name in ['build.json','native-check.json','DRC-strict.json','ERC.json','fault-tests.json',
+                 'return-check.json','return-faults.json','local-models.json','local-fit.json']:
         (OUT/'audit'/name).unlink(missing_ok=True)
     assert sha(SOURCE/(NAME+'.kicad_pcb'))==SPEC['source_board_sha256'],'Repair source PCB changed; review before replay'
     for name in ['analog.kicad_sch','matrix.kicad_sch','mounting.kicad_sch','power.kicad_sch',NAME+'.kicad_pro','sym-lib-table','fp-lib-table','frozen-footprints.json']:
@@ -173,7 +174,7 @@ def main():
     inputs=list(dict.fromkeys(inputs))
     report=dict(status='built-native-validation-pending',module='E73-2G4M08S1C',selected_by_assembly=False,manufacturing_released=False,physical_verification=False,
                 removed_references=sorted(REMOVED),new_header_positions_pcb_mm=POSITIONS,removed_data_and_local_USB_5V_items=removed_tracks,
-                purchase_counts=purchase,explicitly_repaired_control_nets=['ROW_DRV4','RESET_N'],
+                purchase_counts=purchase,explicitly_repaired_control_nets=['ROW_DRV4','RESET_N','COL14'],
                 source_sha256={str(p.relative_to(ROOT)):sha(p)for p in inputs},outputs={str(p.relative_to(ROOT)):sha(p)for p in sorted(OUT.rglob('*'))if p.is_file() and 'audit'not in p.relative_to(OUT).parts and (p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_sym','.kicad_pro','.kicad_mod','.xml','.json','.csv'] or p.name in ['sym-lib-table','fp-lib-table'])})
     (OUT/'audit/build.json').write_text(json.dumps(report,indent=2)+'\n')
     print('E73 USB repair built; native DRC, parity, reference and physical checks still required')

@@ -1,0 +1,793 @@
+{
+  "status": "return-geometry-passed",
+  "faults": [],
+  "independent_ground_connectivity": {
+    "connected_components": 1,
+    "layer_regions": 55,
+    "vertical_connectors_checked": 462,
+    "coordinate_join_allowance_mm": 1e-06,
+    "method": "Union filled ground, pads and tracks separately by layer; join layers only through GND vias/PTH pads",
+    "limitation": "Connectivity only; no return-current, impedance, thermal or EMC solution"
+  },
+  "USB_reference": {
+    "positive": {
+      "layers": {
+        "B.Cu": {
+          "nearest_adjacent_layer": "In2.Cu",
+          "trace_mm": 8.33673223590318,
+          "uncovered_centerline_mm": 0.0,
+          "covered_fraction": 1.0,
+          "outside_same_layer_partner_0_75mm_mm": 0.3356513147508676
+        }
+      },
+      "trace_mm": 8.33673223590318,
+      "uncovered_nearest_adjacent_GND_centerline_mm": 0.0,
+      "nearest_adjacent_GND_coverage_fraction": 1.0,
+      "signal_vias": [],
+      "trace_footprint_mm2": 2.5700972242368403,
+      "uncovered_trace_footprint_mm2": 0.0,
+      "nearest_adjacent_GND_trace_footprint_fraction": 1.0,
+      "all_native_USB_copper_mm2": 4.971060733456814,
+      "all_native_USB_copper_uncovered_mm2": 0.0,
+      "all_native_USB_copper_reference_fraction": 1.0,
+      "native_track_primitives": 7,
+      "native_lands": 2
+    },
+    "negative": {
+      "layers": {
+        "B.Cu": {
+          "nearest_adjacent_layer": "In2.Cu",
+          "trace_mm": 8.336732410471496,
+          "uncovered_centerline_mm": 0.0,
+          "covered_fraction": 1.0,
+          "outside_same_layer_partner_0_75mm_mm": 1.6721221629924574
+        }
+      },
+      "trace_mm": 8.336732410471496,
+      "uncovered_nearest_adjacent_GND_centerline_mm": 0.0,
+      "nearest_adjacent_GND_coverage_fraction": 1.0,
+      "signal_vias": [],
+      "trace_footprint_mm2": 2.5506696176445884,
+      "uncovered_trace_footprint_mm2": 0.0,
+      "nearest_adjacent_GND_trace_footprint_fraction": 1.0,
+      "all_native_USB_copper_mm2": 4.951042595702057,
+      "all_native_USB_copper_uncovered_mm2": 0.0,
+      "all_native_USB_copper_reference_fraction": 1.0,
+      "native_track_primitives": 11,
+      "native_lands": 2
+    }
+  },
+  "polygon_normalizations": [
+    {
+      "layer": "F.Cu",
+      "bounds_pcb_mm": [
+        112.974387,
+        141.418,
+        133.401188,
+        147.0455
+      ],
+      "original_area_mm2": 49.01595619042996,
+      "area_delta_mm2": 3.552713678800501e-14
+    },
+    {
+      "layer": "F.Cu",
+      "bounds_pcb_mm": [
+        72.313204,
+        104.41016,
+        360.6995,
+        198.00916
+      ],
+      "original_area_mm2": 13775.080024835315,
+      "area_delta_mm2": 5.4569682106375694e-12
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        72.313204,
+        104.41016,
+        356.829936,
+        198.00916
+      ],
+      "original_area_mm2": 9709.900366069392,
+      "area_delta_mm2": 5.093170329928398e-11
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        135.128767,
+        168.4545,
+        294.082952,
+        177.89894
+      ],
+      "original_area_mm2": 1296.4612082536833,
+      "area_delta_mm2": 4.547473508864641e-13
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        120.1614,
+        159.857924,
+        318.457663,
+        177.89894
+      ],
+      "original_area_mm2": 1737.2779885167997,
+      "area_delta_mm2": 1.5916157281026244e-12
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        309.898315,
+        162.023737,
+        317.788049,
+        177.89894
+      ],
+      "original_area_mm2": 70.7868219562039,
+      "area_delta_mm2": 0.0
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        318.403019,
+        131.767999,
+        356.400387,
+        162.096832
+      ],
+      "original_area_mm2": 397.01306823639123,
+      "area_delta_mm2": 2.2737367544323206e-13
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        134.48085,
+        134.558667,
+        345.6459,
+        158.848924
+      ],
+      "original_area_mm2": 2619.6310897922444,
+      "area_delta_mm2": 7.73070496506989e-12
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        116.279376,
+        141.5245,
+        139.38049,
+        148.9155
+      ],
+      "original_area_mm2": 77.58899979713007,
+      "area_delta_mm2": 7.105427357601002e-14
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        126.303361,
+        140.807908,
+        140.887589,
+        143.251849
+      ],
+      "original_area_mm2": 30.353657114257576,
+      "area_delta_mm2": 1.0658141036401503e-14
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        88.5725,
+        114.358371,
+        336.817749,
+        139.798908
+      ],
+      "original_area_mm2": 936.3447689241044,
+      "area_delta_mm2": 6.821210263296962e-13
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        121.639803,
+        132.413439,
+        136.332437,
+        139.798908
+      ],
+      "original_area_mm2": 54.14458148797762,
+      "area_delta_mm2": 7.105427357601002e-15
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        129.758679,
+        127.0139,
+        291.356908,
+        139.798908
+      ],
+      "original_area_mm2": 220.07140137003788,
+      "area_delta_mm2": 1.1368683772161603e-13
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        167.921833,
+        130.377,
+        326.832595,
+        139.798908
+      ],
+      "original_area_mm2": 1278.0636299180226,
+      "area_delta_mm2": 1.8189894035458565e-12
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        130.366367,
+        108.868,
+        349.432,
+        126.332
+      ],
+      "original_area_mm2": 1844.7868141607678,
+      "area_delta_mm2": 4.547473508864641e-13
+    },
+    {
+      "layer": "In1.Cu",
+      "bounds_pcb_mm": [
+        330.825171,
+        119.968,
+        343.132,
+        124.070504
+      ],
+      "original_area_mm2": 36.42060573449392,
+      "area_delta_mm2": 7.105427357601002e-15
+    },
+    {
+      "layer": "In2.Cu",
+      "bounds_pcb_mm": [
+        323.964908,
+        119.6845,
+        330.182,
+        122.920998
+      ],
+      "original_area_mm2": 16.53126685884554,
+      "area_delta_mm2": 7.105427357601002e-15
+    },
+    {
+      "layer": "In2.Cu",
+      "bounds_pcb_mm": [
+        72.313204,
+        104.41016,
+        360.6995,
+        198.00916
+      ],
+      "original_area_mm2": 24162.008492209374,
+      "area_delta_mm2": 2.546585164964199e-11
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        72.313204,
+        104.41016,
+        356.829936,
+        198.00916
+      ],
+      "original_area_mm2": 7719.1312413808155,
+      "area_delta_mm2": 4.547473508864641e-11
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        102.84074,
+        118.233808,
+        360.6995,
+        198.00916
+      ],
+      "original_area_mm2": 2220.550927052189,
+      "area_delta_mm2": 0.0
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        143.111296,
+        185.32202,
+        148.572625,
+        196.757959
+      ],
+      "original_area_mm2": 36.37164279069089,
+      "area_delta_mm2": 2.842170943040401e-14
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        98.811743,
+        144.573878,
+        306.655837,
+        196.308439
+      ],
+      "original_area_mm2": 2958.937471956473,
+      "area_delta_mm2": 1.2278178473934531e-11
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        75.942154,
+        159.68316,
+        134.020258,
+        193.838364
+      ],
+      "original_area_mm2": 497.7583132368602,
+      "area_delta_mm2": 2.8421709430404007e-13
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        139.472424,
+        175.25373,
+        147.295837,
+        181.899466
+      ],
+      "original_area_mm2": 15.439582992289006,
+      "area_delta_mm2": 3.552713678800501e-15
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        102.84074,
+        138.9555,
+        120.431645,
+        157.282
+      ],
+      "original_area_mm2": 76.84299926161451,
+      "area_delta_mm2": 1.4210854715202004e-14
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        330.06692,
+        121.209553,
+        344.413708,
+        129.842978
+      ],
+      "original_area_mm2": 73.49893798367255,
+      "area_delta_mm2": 0.0
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        321.582812,
+        118.808147,
+        332.174488,
+        122.732
+      ],
+      "original_area_mm2": 22.595926043740015,
+      "area_delta_mm2": 3.552713678800501e-15
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        101.619491,
+        136.62966,
+        102.134881,
+        137.136523
+      ],
+      "original_area_mm2": 0.20604842482399974,
+      "area_delta_mm2": 0.003742982877540657
+    },
+    {
+      "layer": "B.Cu",
+      "bounds_pcb_mm": [
+        100.815807,
+        136.62966,
+        101.488871,
+        137.201833
+      ],
+      "original_area_mm2": 0.29142204489300033,
+      "area_delta_mm2": 3.3443617197814746e-07
+    }
+  ],
+  "scope": "Actual filled ground, conductors and plated bridges; full trace-footprint and centerline reference coverage",
+  "coupling_screen_limit": "The 0.75 mm partner-distance statistic is a project geometry probe, not a USB impedance/compliance requirement",
+  "baseline": {
+    "commit": "aaa3292547c9831fd3fddfc1c02d843156aec34a",
+    "PCB_sha256": "2ebe295ecc98ba529d892c2bee96b2302ba5d350a479db0d1b18b2fb2288d4ed",
+    "result": {
+      "status": "requires-return-repair",
+      "faults": [
+        "negative-reference-gap",
+        "positive-reference-gap"
+      ],
+      "independent_ground_connectivity": {
+        "connected_components": 1,
+        "layer_regions": 55,
+        "vertical_connectors_checked": 462,
+        "coordinate_join_allowance_mm": 1e-06,
+        "method": "Union filled ground, pads and tracks separately by layer; join layers only through GND vias/PTH pads",
+        "limitation": "Connectivity only; no return-current, impedance, thermal or EMC solution"
+      },
+      "USB_reference": {
+        "positive": {
+          "layers": {
+            "B.Cu": {
+              "nearest_adjacent_layer": "In2.Cu",
+              "trace_mm": 10.166883835420679,
+              "uncovered_centerline_mm": 0.7090000000000032,
+              "covered_fraction": 0.930263784707572,
+              "outside_same_layer_partner_0_75mm_mm": 10.166883835420679
+            }
+          },
+          "trace_mm": 10.166883835420679,
+          "uncovered_nearest_adjacent_GND_centerline_mm": 0.7090000000000032,
+          "nearest_adjacent_GND_coverage_fraction": 0.930263784707572,
+          "signal_vias": [],
+          "trace_footprint_mm2": 3.1196409666157647,
+          "uncovered_trace_footprint_mm2": 0.21269999999996872,
+          "nearest_adjacent_GND_trace_footprint_fraction": 0.9318190771706948,
+          "all_native_USB_copper_mm2": 5.025329123954067,
+          "all_native_USB_copper_uncovered_mm2": 0.5672000000000106,
+          "all_native_USB_copper_reference_fraction": 0.8871317706742117,
+          "native_track_primitives": 3,
+          "native_lands": 2
+        },
+        "negative": {
+          "layers": {
+            "B.Cu": {
+              "nearest_adjacent_layer": "In2.Cu",
+              "trace_mm": 10.166882104868117,
+              "uncovered_centerline_mm": 0.7090000000000032,
+              "covered_fraction": 0.9302637728374445,
+              "outside_same_layer_partner_0_75mm_mm": 10.166882104868117
+            }
+          },
+          "trace_mm": 10.166882104868117,
+          "uncovered_nearest_adjacent_GND_centerline_mm": 0.7090000000000032,
+          "nearest_adjacent_GND_coverage_fraction": 0.9302637728374445,
+          "signal_vias": [],
+          "trace_footprint_mm2": 3.0807851295246285,
+          "uncovered_trace_footprint_mm2": 0.21788099756512147,
+          "nearest_adjacent_GND_trace_footprint_fraction": 0.9292774444160146,
+          "all_native_USB_copper_mm2": 4.985292133702025,
+          "all_native_USB_copper_uncovered_mm2": 0.8760244740429239,
+          "all_native_USB_copper_reference_fraction": 0.824278206663007,
+          "native_track_primitives": 11,
+          "native_lands": 2
+        }
+      },
+      "polygon_normalizations": [
+        {
+          "layer": "F.Cu",
+          "bounds_pcb_mm": [
+            112.974387,
+            141.418,
+            133.401188,
+            147.0455
+          ],
+          "original_area_mm2": 49.01595619042996,
+          "area_delta_mm2": 3.552713678800501e-14
+        },
+        {
+          "layer": "F.Cu",
+          "bounds_pcb_mm": [
+            72.313204,
+            104.41016,
+            360.6995,
+            198.00916
+          ],
+          "original_area_mm2": 13775.080024925737,
+          "area_delta_mm2": 3.637978807091713e-12
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            72.313204,
+            104.41016,
+            356.829936,
+            198.00916
+          ],
+          "original_area_mm2": 9721.85245160097,
+          "area_delta_mm2": 5.275069270282984e-11
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            135.128767,
+            168.4545,
+            294.082952,
+            177.89894
+          ],
+          "original_area_mm2": 1296.4612082536833,
+          "area_delta_mm2": 4.547473508864641e-13
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            120.1614,
+            159.857924,
+            318.457663,
+            177.89894
+          ],
+          "original_area_mm2": 1737.2779885167997,
+          "area_delta_mm2": 1.5916157281026244e-12
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            309.898315,
+            162.023737,
+            317.788049,
+            177.89894
+          ],
+          "original_area_mm2": 70.7868219562039,
+          "area_delta_mm2": 0.0
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            318.403019,
+            131.767999,
+            356.400387,
+            162.096832
+          ],
+          "original_area_mm2": 397.01306823639123,
+          "area_delta_mm2": 2.2737367544323206e-13
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            134.48085,
+            134.558667,
+            345.6459,
+            158.848924
+          ],
+          "original_area_mm2": 2619.6310897922444,
+          "area_delta_mm2": 7.73070496506989e-12
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            116.279376,
+            141.5245,
+            139.38049,
+            148.9155
+          ],
+          "original_area_mm2": 77.58899979713007,
+          "area_delta_mm2": 7.105427357601002e-14
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            126.303361,
+            140.807908,
+            140.887589,
+            143.251849
+          ],
+          "original_area_mm2": 30.353657114257576,
+          "area_delta_mm2": 1.0658141036401503e-14
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            88.5725,
+            114.358371,
+            336.817749,
+            139.798908
+          ],
+          "original_area_mm2": 936.3447689241044,
+          "area_delta_mm2": 6.821210263296962e-13
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            121.639803,
+            132.413439,
+            136.332437,
+            139.798908
+          ],
+          "original_area_mm2": 54.14458148797762,
+          "area_delta_mm2": 7.105427357601002e-15
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            129.758679,
+            127.0139,
+            291.356908,
+            139.798908
+          ],
+          "original_area_mm2": 220.07140137003788,
+          "area_delta_mm2": 1.1368683772161603e-13
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            167.921833,
+            130.377,
+            326.832595,
+            139.798908
+          ],
+          "original_area_mm2": 1278.0636299180226,
+          "area_delta_mm2": 1.8189894035458565e-12
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            130.366367,
+            108.868,
+            349.432,
+            126.332
+          ],
+          "original_area_mm2": 1844.7868142652967,
+          "area_delta_mm2": 4.547473508864641e-13
+        },
+        {
+          "layer": "In1.Cu",
+          "bounds_pcb_mm": [
+            330.825171,
+            119.968,
+            343.132,
+            124.070504
+          ],
+          "original_area_mm2": 36.42060573449392,
+          "area_delta_mm2": 7.105427357601002e-15
+        },
+        {
+          "layer": "In2.Cu",
+          "bounds_pcb_mm": [
+            72.313204,
+            104.41016,
+            356.829936,
+            198.00916
+          ],
+          "original_area_mm2": 24076.29299626437,
+          "area_delta_mm2": 2.1827872842550278e-11
+        },
+        {
+          "layer": "In2.Cu",
+          "bounds_pcb_mm": [
+            323.964908,
+            119.6845,
+            330.182,
+            122.920998
+          ],
+          "original_area_mm2": 16.531266849449537,
+          "area_delta_mm2": 3.552713678800501e-15
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            72.313204,
+            104.41016,
+            356.829936,
+            198.00916
+          ],
+          "original_area_mm2": 7719.566154441474,
+          "area_delta_mm2": 4.3655745685100555e-11
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            102.84074,
+            118.233808,
+            360.6995,
+            198.00916
+          ],
+          "original_area_mm2": 2220.550927073364,
+          "area_delta_mm2": 4.547473508864641e-13
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            143.111296,
+            185.32202,
+            148.572625,
+            196.757959
+          ],
+          "original_area_mm2": 36.37164279069089,
+          "area_delta_mm2": 2.842170943040401e-14
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            98.811743,
+            144.573878,
+            306.655837,
+            196.308439
+          ],
+          "original_area_mm2": 2958.937471956473,
+          "area_delta_mm2": 1.2278178473934531e-11
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            75.942154,
+            159.68316,
+            134.020258,
+            193.838364
+          ],
+          "original_area_mm2": 497.7583132368602,
+          "area_delta_mm2": 2.8421709430404007e-13
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            139.472424,
+            175.25373,
+            147.295837,
+            181.899466
+          ],
+          "original_area_mm2": 15.439582992289006,
+          "area_delta_mm2": 3.552713678800501e-15
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            102.84074,
+            138.9555,
+            120.431645,
+            157.282
+          ],
+          "original_area_mm2": 76.84299926161451,
+          "area_delta_mm2": 1.4210854715202004e-14
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            330.06692,
+            121.209553,
+            344.413708,
+            129.842978
+          ],
+          "original_area_mm2": 73.49893798367255,
+          "area_delta_mm2": 0.0
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            321.582812,
+            118.808147,
+            331.407588,
+            122.732
+          ],
+          "original_area_mm2": 22.071346968710504,
+          "area_delta_mm2": 1.0658141036401503e-14
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            101.619491,
+            136.62966,
+            102.134881,
+            137.136523
+          ],
+          "original_area_mm2": 0.20604842482399974,
+          "area_delta_mm2": 0.003742982877540657
+        },
+        {
+          "layer": "B.Cu",
+          "bounds_pcb_mm": [
+            100.815807,
+            136.62966,
+            101.488871,
+            137.201833
+          ],
+          "original_area_mm2": 0.29142204489300033,
+          "area_delta_mm2": 3.3443617197814746e-07
+        }
+      ],
+      "scope": "Actual filled ground, conductors and plated bridges; full trace-footprint and centerline reference coverage",
+      "coupling_screen_limit": "The 0.75 mm partner-distance statistic is a project geometry probe, not a USB impedance/compliance requirement"
+    }
+  },
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "selected_by_assembly": false,
+  "source_sha256": {
+    "scripts/study_e73_usb_return.py": "0260a15100e56fa1f65a64a2b0c84e80b33bb87e72d4ed9fa18446c14c2c137e",
+    "variants/raytac/scripts/usb_short_ground.py": "e22196ab7fc3c03383cb2e889bd38e084a634a2ac5d636e8bec78f68b054b607",
+    "variants/raytac/scripts/study_yeti60_prototype.py": "4a3ee4cdf52ddc9ff6b770228478e339c91ffe6373e8d60bea3e80ec34c67db8",
+    "scripts/export_e73_usb_ground.py": "2dd9209767b089f178e51f8b42465b8cd32af42733fbfce0557aff3daa3fbe82",
+    "hardware/e73-usb-repair/audit/native-check.json": "6a1ac1a490ecd44cd26b5defd8c0b22244f6fb9e070b6fbf11088442baea9576",
+    "hardware/e73-usb-repair/audit/build.json": "1f549e12aa4ff38dc3b56ab7656ad6e32b861dbc5913f1b48ffc8c3f4aff8bf1"
+  },
+  "native_export_sha256": {
+    "baseline": "1ad957c073ee7ce047e2d4bb52062c13a05ceb95150a36934b1e91d28a99ea89",
+    "current": "1569f22cffa14b65a927540ca1c06acacc943944fdc4d44030ae8d5d928f8566"
+  },
+  "limits": [
+    "Host-board geometry only; C5, cable and module-internal return paths are excluded",
+    "No dielectric/impedance, return-current, propagation delay, eye, ADC-noise or RF qualification",
+    "Polygon approximation, bounded validity normalization and nanometre joining are disclosed by the geometry helpers"
+  ]
+}
