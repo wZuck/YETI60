@@ -3,7 +3,7 @@
   "faults": [],
   "independent_ground_connectivity": {
     "connected_components": 1,
-    "layer_regions": 55,
+    "layer_regions": 56,
     "vertical_connectors_checked": 462,
     "coordinate_join_allowance_mm": 1e-06,
     "method": "Union filled ground, pads and tracks separately by layer; join layers only through GND vias/PTH pads",
@@ -77,8 +77,8 @@
         360.6995,
         198.00916
       ],
-      "original_area_mm2": 13775.080024835315,
-      "area_delta_mm2": 5.4569682106375694e-12
+      "original_area_mm2": 13773.393456866723,
+      "area_delta_mm2": 0.0
     },
     {
       "layer": "In1.Cu",
@@ -88,8 +88,8 @@
         356.829936,
         198.00916
       ],
-      "original_area_mm2": 9709.900366069392,
-      "area_delta_mm2": 5.093170329928398e-11
+      "original_area_mm2": 9709.900366051404,
+      "area_delta_mm2": 5.638867150992155e-11
     },
     {
       "layer": "In1.Cu",
@@ -176,7 +176,7 @@
         336.817749,
         139.798908
       ],
-      "original_area_mm2": 936.3447689241044,
+      "original_area_mm2": 936.344768930651,
       "area_delta_mm2": 6.821210263296962e-13
     },
     {
@@ -198,7 +198,7 @@
         291.356908,
         139.798908
       ],
-      "original_area_mm2": 220.07140137003788,
+      "original_area_mm2": 220.0714013718514,
       "area_delta_mm2": 1.1368683772161603e-13
     },
     {
@@ -220,8 +220,8 @@
         349.432,
         126.332
       ],
-      "original_area_mm2": 1844.7868141607678,
-      "area_delta_mm2": 4.547473508864641e-13
+      "original_area_mm2": 1843.9676216775215,
+      "area_delta_mm2": 9.094947017729282e-13
     },
     {
       "layer": "In1.Cu",
@@ -253,7 +253,7 @@
         360.6995,
         198.00916
       ],
-      "original_area_mm2": 24162.008492209374,
+      "original_area_mm2": 24148.116599721812,
       "area_delta_mm2": 2.546585164964199e-11
     },
     {
@@ -264,8 +264,8 @@
         356.829936,
         198.00916
       ],
-      "original_area_mm2": 7719.1312413808155,
-      "area_delta_mm2": 4.547473508864641e-11
+      "original_area_mm2": 7715.9096256945995,
+      "area_delta_mm2": 2.3646862246096134e-11
     },
     {
       "layer": "B.Cu",
@@ -275,8 +275,8 @@
         360.6995,
         198.00916
       ],
-      "original_area_mm2": 2220.550927052189,
-      "area_delta_mm2": 0.0
+      "original_area_mm2": 2220.5509271349774,
+      "area_delta_mm2": 9.094947017729282e-13
     },
     {
       "layer": "B.Cu",
@@ -777,13 +777,13 @@
     "scripts/study_e73_usb_return.py": "0260a15100e56fa1f65a64a2b0c84e80b33bb87e72d4ed9fa18446c14c2c137e",
     "variants/raytac/scripts/usb_short_ground.py": "e22196ab7fc3c03383cb2e889bd38e084a634a2ac5d636e8bec78f68b054b607",
     "variants/raytac/scripts/study_yeti60_prototype.py": "4a3ee4cdf52ddc9ff6b770228478e339c91ffe6373e8d60bea3e80ec34c67db8",
-    "scripts/export_e73_usb_ground.py": "2dd9209767b089f178e51f8b42465b8cd32af42733fbfce0557aff3daa3fbe82",
-    "hardware/e73-usb-repair/audit/native-check.json": "2f53bfd6dc5e2f86aa40bcf6ad389d7845cc17756384cc6164ea4544696ee12f",
-    "hardware/e73-usb-repair/audit/build.json": "f6f2c537af1abf278751cab6c99974ffdf1b092b4d41f117d39e85e4cb0523bc"
+    "scripts/export_e73_usb_ground.py": "43d131bb550c5dbfdca62736b1c647bb1e6e3ffc28406daa2c4fe323aca640b5",
+    "hardware/e73-usb-repair/audit/native-check.json": "7de365a41f8bb4d7d61b4eb784921e534dea0f6954c46a900344e4ea30fc384c",
+    "hardware/e73-usb-repair/audit/build.json": "95f871bb85d6724ed0960a2209808aabea7b888431168d2dc429cd34b771ec78"
   },
   "native_export_sha256": {
-    "baseline": "1ad957c073ee7ce047e2d4bb52062c13a05ceb95150a36934b1e91d28a99ea89",
-    "current": "1569f22cffa14b65a927540ca1c06acacc943944fdc4d44030ae8d5d928f8566"
+    "baseline": "c7cfdf192a2103fb0e6699513d10c290144c02edeb8a151c879614aa87c7369d",
+    "current": "bfb3c561f44c545d30a45164d3024ae4f20b6354e44c295328587e563f39b5fa"
   },
   "limits": [
     "Host-board geometry only; C5, cable and module-internal return paths are excluded",

@@ -76,6 +76,18 @@ class NativeRepairFaults(unittest.TestCase):
         with self.assertRaises(AssertionError):
             check.preserved_geometry(board, pcb.LoadBoard(str(check.SOURCE / (check.NAME + '.kicad_pcb'))))
 
+    def test_battery_positive_and_NTC_swap_is_rejected(self):
+        board=self.board();a,b=self.pad(board,'J2','1'),self.pad(board,'J2','3')
+        na,nb=a.GetNet(),b.GetNet();a.SetNet(nb);b.SetNet(na)
+        with self.assertRaises(AssertionError):
+            check.verify_battery(board,pcb.LoadBoard(str(check.SOURCE/(check.NAME+'.kicad_pcb'))))
+
+    def test_battery_header_displacement_is_rejected(self):
+        board=self.board();f=next(f for f in board.GetFootprints() if f.GetReference()=='J2')
+        f.SetPosition(f.GetPosition()+pcb.VECTOR2I(pcb.FromMM(.1),0))
+        with self.assertRaises(AssertionError):
+            check.verify_battery(board,pcb.LoadBoard(str(check.SOURCE/(check.NAME+'.kicad_pcb'))))
+
     def test_retained_control_copper_net_change_is_rejected(self):
         board = self.board()
         retired=set(json.loads((ROOT/'hardware/e73-usb-repair-spec.json').read_text())['removed_RESET_B_item_UUIDs'])
@@ -141,7 +153,8 @@ if __name__ == '__main__':
               check.SOURCE / (check.NAME + '.kicad_pcb'), check.SOURCE / 'netlist.xml',
               ROOT / 'hardware/usb-daughterboard/upstream/UDB.kicad_pcb',
               ROOT / 'variants/raytac/scripts/check_yeti60_c5_protection.py',
-              ROOT / 'scripts/check_yeti60_signal_paths.py', ROOT / 'scripts/check_schematic_current.py']
+              ROOT / 'scripts/check_yeti60_signal_paths.py', ROOT / 'scripts/check_schematic_current.py',
+              ROOT/'scripts/e73_battery_service.py',ROOT/'hardware/e73-battery-service-spec.json']
     report = {'status': 'passed' if successful else 'failed',
               'test_methods': len(cases), 'failed_methods': [name for name, code, _ in results if code],
               'process_isolation': True,

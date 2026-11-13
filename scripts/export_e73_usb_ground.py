@@ -30,6 +30,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--pcb', type=Path, default=BASE / 'EC60-nRF52840.kicad_pcb')
     parser.add_argument('--output', type=Path, default=ROOT / '.assembly-work/e73-usb-ground.json')
+    parser.add_argument('--model-ref', action='append', help='Footprint for native landing export; repeatable, defaults to J4/J5/C32')
     args = parser.parse_args()
     path = args.pcb.resolve()
     before = sha(path)
@@ -82,10 +83,20 @@ def main():
                     'ref': footprint.GetReference(), 'pin': pad.GetNumber(),
                     'polygons': polygons(pad.GetEffectivePolygon(pcb.B_Cu))})
     record['local_model_pads'] = {}
+    record['local_model_Fab_bounds_native_XY_mm'] = {}
+    model_refs=set(args.model_ref or ['J4','J5','C32'])
     for footprint in board.GetFootprints():
         ref = footprint.GetReference()
-        if ref not in ['J4', 'J5', 'C32']:
+        if ref not in model_refs:
             continue
+        assert abs(footprint.GetOrientationDegrees()/90-round(footprint.GetOrientationDegrees()/90))<1e-6,'Review rotated Fab-envelope extraction'
+        points=[]
+        for graphic in footprint.GraphicalItems():
+            if graphic.GetClass()=='PCB_SHAPE' and graphic.GetLayer()==pcb.B_Fab:
+                assert graphic.GetShape() in [pcb.SHAPE_T_SEGMENT,pcb.SHAPE_T_RECT],'Unsupported Fab curve requires review'
+                points.extend([[pcb.ToMM(p.x),-pcb.ToMM(p.y)] for p in [graphic.GetStart(),graphic.GetEnd()]])
+        assert points,('Missing nominal Fab geometry',ref)
+        record['local_model_Fab_bounds_native_XY_mm'][ref]=[min(p[0] for p in points),min(p[1] for p in points),max(p[0] for p in points),max(p[1] for p in points)]
         pads = []
         for pad in footprint.Pads():
             shape = pcb.SHAPE_POLY_SET()
@@ -96,6 +107,7 @@ def main():
                 polygon['holes'] = [[[x, -y] for x, y in hole] for hole in polygon['holes']]
             pads.append({'pin': pad.GetNumber(), 'polygons_native_XY_mm': records})
         record['local_model_pads'][ref] = pads
+    assert set(record['local_model_pads'])==model_refs,'Requested landing footprint is missing'
     record['USB_paths'] = usb_paths(board)
     record['kicad_version'] = pcb.GetBuildVersion()
     record['source_sha256'] = {str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p): sha(p)

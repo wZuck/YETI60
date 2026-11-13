@@ -15,7 +15,7 @@ BASE=ROOT/'hardware/e73-usb-repair'
 def draw(report,spec):
     assert report['status']=='e73-local-usb-body-and-ordered-withdrawal-screen-passed'
     plt.rcParams['font.family']=['Arial Unicode MS','DejaVu Sans']
-    plt.rcParams['svg.hashsalt']='yeti60-e73-usb-fit-m02'
+    plt.rcParams['svg.hashsalt']='yeti60-e73-usb-fit-m03'
     outputs={}
     for zh in [False,True]:
         fig,(ax,budget)=plt.subplots(1,2,figsize=(12,6),gridspec_kw={'width_ratios':[1.15,1]})
@@ -23,7 +23,7 @@ def draw(report,spec):
         ax.add_patch(FancyBboxPatch((bb[0],bb[1]),bb[3]-bb[0],bb[4]-bb[1],
                                    boxstyle=f"round,pad=0,rounding_size={spec['floor_relief']['corner_radius_mm']}",
                                    fc='#edf2fa',ec='#7189a9',lw=1.5))
-        ax.text(332.4,-121.4,'M02 内凹边界' if zh else 'M02 relief boundary',fontsize=9,color='#526a89')
+        ax.text(332.4,-121.4,'M03 USB 内凹边界' if zh else 'M03 USB relief boundary',fontsize=9,color='#526a89')
         colors={'J4':'#277e9a','J5':'#b97225','C32':'#617c47'}
         for ref,body in report['required_body_bounds_case_mm'].items():
             ax.add_patch(Rectangle((body[0],body[1]),body[3]-body[0],body[4]-body[1],fc=colors[ref],alpha=.8))

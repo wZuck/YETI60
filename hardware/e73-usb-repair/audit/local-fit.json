@@ -5,17 +5,17 @@
   "physical_verification": false,
   "complete_assembly_qualified": false,
   "source_sha256": {
-    "scripts/check_e73_usb_local_fit.py": "6eb527f89fe08fb3d9a6c7074a509ccb898f6c181955db6a5e6afb1c18fe9473",
-    "hardware/e73-usb-local-fit-spec.json": "95e1b75b74ecdc0bd91d3b0e6080b36d54198165187d6a8877f6f9ac0871998b",
+    "scripts/check_e73_usb_local_fit.py": "70ce21eba6fe76a27c5f4eff756fb4407a7a13b0bfd413f928348f4150805a5d",
+    "hardware/e73-usb-local-fit-spec.json": "81f80e0f8814f075140a137b813221c170f4e0aca7fb22f0abc18a1d71cc42ad",
     "docs/audit/yeti60-assembly.json": "cb29983409482a311dc39aff1bae88bfec06f2a62e191bf8688d288898a0c0fe",
-    "hardware/e73-usb-repair/audit/native-check.json": "2f53bfd6dc5e2f86aa40bcf6ad389d7845cc17756384cc6164ea4544696ee12f",
-    "hardware/e73-usb-repair/audit/local-models.json": "b20574cdc7fc206920757a24eb4d33bb95b5d6fc00c6783ac5a2e415dcf33dc5",
+    "hardware/e73-usb-repair/audit/native-check.json": "7de365a41f8bb4d7d61b4eb784921e534dea0f6954c46a900344e4ea30fc384c",
+    "hardware/e73-usb-repair/audit/local-models.json": "f13871b2511514642bc27980c45b5b0c9098a581b20bc599eedb23bc26554ade",
     "mechanical/assembly-spec.json": "bdf2a3f04fe6bc0552b7e733bb54f4770a3bb8f73d8cee149d201afd07d9a7e7",
     "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
     "mechanical/e73-fit/yeti60-e73-bottom-m01.step": "962b21eb044737074e797c9cb2b1db3064477a86b2fa228a7b0aaaf862c514ae",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "hardware/e73-usb-repair/EC60-nRF52840.kicad_pcb": "53f32967e23726b596c695424e5603490df8309acc3655fb8c977c2638413179",
+    "hardware/e73-usb-repair/EC60-nRF52840.kicad_pcb": "2dd91258482c63da6907aed529204e3c1170a28d06a12a7cdded74e7ff06a8a5",
     "scripts/check_yeti60_interconnects.py": "9365de90575ef18e053954a4bdf1ec26d6188d3b1df9fc860cb92f7e1b356c3e",
     "scripts/build_e73_fit_candidate.py": "d43efd9a2cbba25b2574c9d7c38180c26d8dcdcf9dc9661485b9c9e5dd494aea",
     "scripts/build_yeti60_mechanical.py": "a2324209dedb8431916dd203fdd4610787a86b2c43a945d0309607d6564b5557",
@@ -23,15 +23,16 @@
     "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
-    "scripts/draw_e73_usb_local_fit.py": "b8162a820b8473122d9b716763487a798809c87dc9bf79ef74a359ac5145021c"
+    "scripts/draw_e73_usb_local_fit.py": "50d99226063057ef72233689db11b55949d62f633914a0a7a65b8444d161e709",
+    "hardware/e73-battery-service-spec.json": "f69840ef511e94a51716535be2d49a9e5a3d9d575ed2e1014f47403fe1443ecd"
   },
   "outputs": {
-    "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-bottom-m02.step": "4469c8e818271db0149fecb6c594f173bfa36af4dda6c65ba4fac2dc16b9af7c",
-    "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-bottom-m02.stl": "6ee206b19273f4acd0ddeceb3edd78a33f469bb5509d32ab0fdfa367b6416dc9",
-    "hardware/e73-usb-repair/audit/USB-local-fit.svg": "1b2e9d032b027488d201ec50621f19b21c688b23c0c21ffa105a6d3d05ef6c2d",
-    "hardware/e73-usb-repair/audit/USB-local-fit.png": "7180b932c65257f15265685f80c14930c30d9d978e027f9f96e762b755cfa5a5",
-    "hardware/e73-usb-repair/audit/USB-local-fit.zh-CN.svg": "a4131ab4bf42f8def15de07a682edd1a6675333d23e8f5dbf04e3f443df8e150",
-    "hardware/e73-usb-repair/audit/USB-local-fit.zh-CN.png": "319ff69b9af249a7baeabfc86224777fe7d58b5380ce5d92b2a1911ee4512430"
+    "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step": "fd423a17c6a726e6bd89e5840840db6ee6a44b33d8f338ae88d006134f92e608",
+    "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.stl": "17b97686754445c968fca58a109d794fe7990f3a7a1b15eeaef2a5cb49cac50a",
+    "hardware/e73-usb-repair/audit/USB-local-fit.svg": "9d7dc2a696ebdabdd699b3ac1b8f239637f70b9d86e94b8401cc947501dc851f",
+    "hardware/e73-usb-repair/audit/USB-local-fit.png": "1ed4ff1e26bff3cc12282966ca4cb393f0fdfa463f6a9e964815f4b17f851b5a",
+    "hardware/e73-usb-repair/audit/USB-local-fit.zh-CN.svg": "f34163cee7747ea3c507d6f463e3f1e446acd28ed4b83208d716fa6b3cd8cfea",
+    "hardware/e73-usb-repair/audit/USB-local-fit.zh-CN.png": "eb4b5013a19ffe24c5ffc464c3c2c8f5f49208d7ee5fde9b20e472a769aeac3d"
   },
   "vertical_error_terms_mm": {
     "plate": 0.1,
@@ -51,7 +52,7 @@
   "case_coordinate_error_L2_mm": 0.25980762113533157,
   "required_body_bounds_case_mm": {
     "J4": [
-      343.625,
+      343.525,
       -113.7,
       -5.2,
       348.57500000000005,
@@ -63,14 +64,14 @@
       -119.97500000000001,
       -5.2,
       337.5,
-      -115.025,
+      -114.925,
       -1.9999999999999998
     ],
     "C32": [
-      349.90000000000003,
+      349.79,
       -114.8,
       -3.0,
-      350.7,
+      350.81,
       -113.2,
       -1.9999999999999998
     ]
@@ -112,7 +113,7 @@
       "kind": "body",
       "pcb_thickness_mm": 1.6062,
       "bounds_case_mm": [
-        343.275,
+        343.17499999999995,
         -114.05,
         -5.5,
         348.92500000000007,
@@ -121,11 +122,11 @@
       ],
       "case_gaps_mm": {
         "bottom": 0.7999999999999998,
-        "top": 7.752455700580954
+        "top": 7.752455692796191
       },
       "remaining_case_air_gap_mm": 0.5381923788646683,
       "nearest_foreign_part": "body-C32",
-      "minimum_foreign_part_gap_mm": 0.6249999999999432,
+      "minimum_foreign_part_gap_mm": 0.5149999999999295,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -148,7 +149,7 @@
       },
       "remaining_case_air_gap_mm": 0.5381923788646683,
       "nearest_foreign_part": "body-C32",
-      "minimum_foreign_part_gap_mm": 2.6749999999999545,
+      "minimum_foreign_part_gap_mm": 2.564999999999941,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -162,12 +163,12 @@
         -120.325,
         -5.5,
         337.85,
-        -114.67500000000001,
+        -114.575,
         -1.6999999999999997
       ],
       "case_gaps_mm": {
         "bottom": 0.7999999999999998,
-        "top": 13.261867063133245
+        "top": 13.174750495430587
       },
       "remaining_case_air_gap_mm": 0.5381923788646683,
       "nearest_foreign_part": "R26",
@@ -204,20 +205,20 @@
       "kind": "body",
       "pcb_thickness_mm": 1.6062,
       "bounds_case_mm": [
-        349.55,
+        349.44,
         -115.14999999999999,
         -3.3,
-        351.05,
+        351.16,
         -112.85000000000001,
         -1.6999999999999997
       ],
       "case_gaps_mm": {
         "bottom": 2.610000000000018,
-        "top": 9.265416672489298
+        "top": 9.187233063833569
       },
       "remaining_case_air_gap_mm": 2.348192378864687,
       "nearest_foreign_part": "body-J4",
-      "minimum_foreign_part_gap_mm": 0.6249999999999432,
+      "minimum_foreign_part_gap_mm": 0.5149999999999295,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -241,7 +242,7 @@
       "remaining_case_air_gap_mm": 0.5381923788646683,
       "nearest_foreign_part": "housing-J4",
       "minimum_foreign_part_gap_mm": 3.8249999999999886,
-      "detached_housing_to_header_gap_mm": 0.9000000000000199,
+      "detached_housing_to_header_gap_mm": 0.8000000000000114,
       "proxy_components_and_mounts_checked": 101
     },
     {
@@ -263,8 +264,8 @@
       },
       "remaining_case_air_gap_mm": 0.5381923788646683,
       "nearest_foreign_part": "body-J5",
-      "minimum_foreign_part_gap_mm": 1.1250000000000142,
-      "detached_housing_to_header_gap_mm": 0.8999999999999204,
+      "minimum_foreign_part_gap_mm": 1.0250000000000057,
+      "detached_housing_to_header_gap_mm": 0.7999999999998977,
       "proxy_components_and_mounts_checked": 101
     },
     {
@@ -273,7 +274,7 @@
       "kind": "body",
       "pcb_thickness_mm": 1.44,
       "bounds_case_mm": [
-        343.275,
+        343.17499999999995,
         -114.05,
         -5.3338,
         348.92500000000007,
@@ -282,11 +283,11 @@
       ],
       "case_gaps_mm": {
         "bottom": 0.9661999999999997,
-        "top": 7.613863397084959
+        "top": 7.613863389158493
       },
       "remaining_case_air_gap_mm": 0.7043923788646682,
       "nearest_foreign_part": "body-C32",
-      "minimum_foreign_part_gap_mm": 0.6249999999999432,
+      "minimum_foreign_part_gap_mm": 0.5149999999999295,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -309,7 +310,7 @@
       },
       "remaining_case_air_gap_mm": 0.7043923788646682,
       "nearest_foreign_part": "body-C32",
-      "minimum_foreign_part_gap_mm": 2.6749999999999545,
+      "minimum_foreign_part_gap_mm": 2.564999999999941,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -323,12 +324,12 @@
         -120.325,
         -5.3338,
         337.85,
-        -114.67500000000001,
+        -114.575,
         -1.5337999999999996
       ],
       "case_gaps_mm": {
         "bottom": 0.9661999999999997,
-        "top": 13.181330146848548
+        "top": 13.09367775137484
       },
       "remaining_case_air_gap_mm": 0.7043923788646682,
       "nearest_foreign_part": "R26",
@@ -365,20 +366,20 @@
       "kind": "body",
       "pcb_thickness_mm": 1.44,
       "bounds_case_mm": [
-        349.55,
+        349.44,
         -115.14999999999999,
         -3.1338,
-        351.05,
+        351.16,
         -112.85000000000001,
         -1.5337999999999996
       ],
       "case_gaps_mm": {
         "bottom": 2.776200000000018,
-        "top": 9.149770082075431
+        "top": 9.070589716727172
       },
       "remaining_case_air_gap_mm": 2.5143923788646867,
       "nearest_foreign_part": "body-J4",
-      "minimum_foreign_part_gap_mm": 0.6249999999999432,
+      "minimum_foreign_part_gap_mm": 0.5149999999999295,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -402,7 +403,7 @@
       "remaining_case_air_gap_mm": 0.7043923788646682,
       "nearest_foreign_part": "housing-J4",
       "minimum_foreign_part_gap_mm": 3.8249999999999886,
-      "detached_housing_to_header_gap_mm": 0.9000000000000199,
+      "detached_housing_to_header_gap_mm": 0.8000000000000114,
       "proxy_components_and_mounts_checked": 101
     },
     {
@@ -424,8 +425,8 @@
       },
       "remaining_case_air_gap_mm": 0.7043923788646682,
       "nearest_foreign_part": "body-J5",
-      "minimum_foreign_part_gap_mm": 1.1250000000000142,
-      "detached_housing_to_header_gap_mm": 0.8999999999999204,
+      "minimum_foreign_part_gap_mm": 1.0250000000000057,
+      "detached_housing_to_header_gap_mm": 0.7999999999998977,
       "proxy_components_and_mounts_checked": 101
     },
     {
@@ -434,7 +435,7 @@
       "kind": "body",
       "pcb_thickness_mm": 1.76,
       "bounds_case_mm": [
-        343.275,
+        343.17499999999995,
         -114.05,
         -5.6537999999999995,
         348.92500000000007,
@@ -443,11 +444,11 @@
       ],
       "case_gaps_mm": {
         "bottom": 0.6462000000000003,
-        "top": 7.8816589516084825
+        "top": 7.881658943951335
       },
       "remaining_case_air_gap_mm": 0.38439237886466876,
       "nearest_foreign_part": "body-C32",
-      "minimum_foreign_part_gap_mm": 0.6249999999999432,
+      "minimum_foreign_part_gap_mm": 0.5149999999999295,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -470,7 +471,7 @@
       },
       "remaining_case_air_gap_mm": 0.38439237886466876,
       "nearest_foreign_part": "body-C32",
-      "minimum_foreign_part_gap_mm": 2.6749999999999545,
+      "minimum_foreign_part_gap_mm": 2.564999999999941,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -484,12 +485,12 @@
         -120.325,
         -5.6537999999999995,
         337.85,
-        -114.67500000000001,
+        -114.575,
         -1.8537999999999994
       ],
       "case_gaps_mm": {
         "bottom": 0.6462000000000003,
-        "top": 13.337807032650396
+        "top": 13.251189722317331
       },
       "remaining_case_air_gap_mm": 0.38439237886466876,
       "nearest_foreign_part": "R26",
@@ -526,20 +527,20 @@
       "kind": "body",
       "pcb_thickness_mm": 1.76,
       "bounds_case_mm": [
-        349.55,
+        349.44,
         -115.14999999999999,
         -3.4537999999999998,
-        351.05,
+        351.16,
         -112.85000000000001,
         -1.8537999999999994
       ],
       "case_gaps_mm": {
         "bottom": 2.456200000000018,
-        "top": 9.373789231407043
+        "top": 9.296517079487174
       },
       "remaining_case_air_gap_mm": 2.194392378864687,
       "nearest_foreign_part": "body-J4",
-      "minimum_foreign_part_gap_mm": 0.6249999999999432,
+      "minimum_foreign_part_gap_mm": 0.5149999999999295,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -563,7 +564,7 @@
       "remaining_case_air_gap_mm": 0.38439237886466876,
       "nearest_foreign_part": "housing-J4",
       "minimum_foreign_part_gap_mm": 3.8249999999999886,
-      "detached_housing_to_header_gap_mm": 0.9000000000000199,
+      "detached_housing_to_header_gap_mm": 0.8000000000000114,
       "proxy_components_and_mounts_checked": 101
     },
     {
@@ -585,8 +586,8 @@
       },
       "remaining_case_air_gap_mm": 0.38439237886466876,
       "nearest_foreign_part": "body-J5",
-      "minimum_foreign_part_gap_mm": 1.1250000000000142,
-      "detached_housing_to_header_gap_mm": 0.8999999999999204,
+      "minimum_foreign_part_gap_mm": 1.0250000000000057,
+      "detached_housing_to_header_gap_mm": 0.7999999999998977,
       "proxy_components_and_mounts_checked": 101
     },
     {
@@ -598,7 +599,7 @@
         1.76
       ],
       "bounds_case_mm": [
-        343.275,
+        343.17499999999995,
         -114.05,
         -5.6537999999999995,
         348.92500000000007,
@@ -607,11 +608,11 @@
       ],
       "case_gaps_mm": {
         "bottom": 0.6462000000000003,
-        "top": 7.613863397084959
+        "top": 7.613863389158493
       },
       "remaining_case_air_gap_mm": 0.38439237886466876,
       "nearest_foreign_part": "body-C32",
-      "minimum_foreign_part_gap_mm": 0.6249999999999432,
+      "minimum_foreign_part_gap_mm": 0.5149999999999295,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -637,7 +638,7 @@
       },
       "remaining_case_air_gap_mm": 0.38439237886466876,
       "nearest_foreign_part": "body-C32",
-      "minimum_foreign_part_gap_mm": 2.6749999999999545,
+      "minimum_foreign_part_gap_mm": 2.564999999999941,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -654,12 +655,12 @@
         -120.325,
         -5.6537999999999995,
         337.85,
-        -114.67500000000001,
+        -114.575,
         -1.5337999999999996
       ],
       "case_gaps_mm": {
         "bottom": 0.6462000000000003,
-        "top": 13.181330146848548
+        "top": 13.09367775137484
       },
       "remaining_case_air_gap_mm": 0.38439237886466876,
       "nearest_foreign_part": "R26",
@@ -702,20 +703,20 @@
         1.76
       ],
       "bounds_case_mm": [
-        349.55,
+        349.44,
         -115.14999999999999,
         -3.4537999999999998,
-        351.05,
+        351.16,
         -112.85000000000001,
         -1.5337999999999996
       ],
       "case_gaps_mm": {
         "bottom": 2.456200000000018,
-        "top": 9.149770082075431
+        "top": 9.070589716727172
       },
       "remaining_case_air_gap_mm": 2.194392378864687,
       "nearest_foreign_part": "body-J4",
-      "minimum_foreign_part_gap_mm": 0.6249999999999432,
+      "minimum_foreign_part_gap_mm": 0.5149999999999295,
       "detached_housing_to_header_gap_mm": null,
       "proxy_components_and_mounts_checked": 101
     },
@@ -742,7 +743,7 @@
       "remaining_case_air_gap_mm": 0.38439237886466876,
       "nearest_foreign_part": "housing-J4",
       "minimum_foreign_part_gap_mm": 3.8249999999999886,
-      "detached_housing_to_header_gap_mm": 0.9000000000000199,
+      "detached_housing_to_header_gap_mm": 0.8000000000000114,
       "proxy_components_and_mounts_checked": 101
     },
     {
@@ -767,8 +768,8 @@
       },
       "remaining_case_air_gap_mm": 0.38439237886466876,
       "nearest_foreign_part": "body-J5",
-      "minimum_foreign_part_gap_mm": 1.1250000000000142,
-      "detached_housing_to_header_gap_mm": 0.8999999999999204,
+      "minimum_foreign_part_gap_mm": 1.0250000000000057,
+      "detached_housing_to_header_gap_mm": 0.7999999999998977,
       "proxy_components_and_mounts_checked": 101
     }
   ],
@@ -944,10 +945,20 @@
   "withdrawal_stroke_mm": 4.0,
   "case_repair": {
     "bounds_unchanged": true,
-    "removed_volume_mm3": 108.72630528371994,
+    "removed_volume_mm3": 122.3394517561451,
+    "battery_floor_relief_bounds_case_mm": [
+      151,
+      -134,
+      -6.3,
+      160,
+      -119,
+      -5.4
+    ],
+    "battery_floor_removed_volume_mm3": 13.61314647242556,
     "exported_solid_count": 1,
     "nominal_removed_to_selected_exterior_wall_mm": 4.528482906118006,
     "two_surface_case_error_deduction_mm": 0.5196152422706631,
+    "minimum_required_exterior_wall_mm": 2.0,
     "minimum_remaining_selected_exterior_wall_after_allowances_mm": 4.006867663847343,
     "exterior_faces_checked": 58,
     "insert_supports": [

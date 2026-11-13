@@ -35,6 +35,8 @@ The generated STEP files are local cache artifacts under `.assembly-work/e73-usb
 
 ## Reproduce
 
+J2 is now checked separately by the [SH3 battery study](e73-battery-service.md). Across these two local model studies, four fitted components have landing checks; the other 71 fitted components and complete assembly still require model closure.
+
 After building and checking the candidate with KiCad Python, use the pinned CAD runtime:
 
 ```sh
@@ -46,4 +48,4 @@ Both commands accept `--kicad-python /path/to/kicad/python`. Use a Git checkout 
 
 The subsequent [local connector fit checkpoint](e73-usb-local-fit.md) adds a candidate internal-floor repair and ordered J5/J4 rigid housing withdrawal with explicit tolerances. Other component models, flexible wiring and whole-keyboard assembly remain outside that result.
 
-Remaining work includes complete component models, complete case/fastener tolerances and connected service motion, the nine-wire harness and guides, the PH battery connector obstruction, left power/package/thermal closure, candidate-bound firmware/calibration and CAM, supplier battery acceptance, and physical USB/BLE/ADC/RF/charging tests. None is waived by this checkpoint.
+Remaining work includes complete component models, complete case/fastener tolerances and connected service motion, the nine-wire harness and guides, complete SH3 battery service, left power/package/thermal closure, candidate-bound firmware/calibration and CAM, supplier battery acceptance, and physical USB/BLE/ADC/RF/charging tests. None is waived by this checkpoint.

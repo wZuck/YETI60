@@ -22,7 +22,23 @@
   },
   "preserved_geometry": {
     "E73_lands_preserved": 43,
-    "retained_copper_items_unchanged": 6707,
+    "retained_copper_items_unchanged": 6692,
+    "battery_service": {
+      "header": "SM03B-SRSS-TB(LF)(SN)",
+      "housing": "SHR-03V-S",
+      "pins": {
+        "1": "BAT_CELL",
+        "2": "GND",
+        "3": "BAT_NTC"
+      },
+      "position_PCB_mm": [
+        155.5,
+        129
+      ],
+      "new_ordinary_through_vias": 2,
+      "all_other_logical_nodes_preserved": true,
+      "physical_verification": false
+    },
     "outline_and_mount_geometry_preserved": true,
     "ordinary_through_vias_only": true,
     "new_or_module_via_in_pad": false,
@@ -2729,12 +2745,15 @@
     "physical_verification": false
   },
   "source_sha256": {
-    "scripts/check_e73_usb_repair.py": "81cd1c4d660bcfd1aef333623dd4a1e9f4b576c69a4fdc3db57294fe25d46b1f",
+    "scripts/check_e73_usb_repair.py": "8e752a236f909bb626448acd7708d6ac2311e4af0581c29b3456ad830efed234",
+    "scripts/e73_battery_service.py": "58c760e3fca284e1c0d623b001c5639fe9579e4c9b006036489e4f800e0df0d0",
+    "hardware/e73-battery-service-spec.json": "f69840ef511e94a51716535be2d49a9e5a3d9d575ed2e1014f47403fe1443ecd",
+    "hardware/e73-battery-source.pretty/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal__J2.kicad_mod": "cd5cea2fca8630e2ee74185cb6e47620d81fc7f46364a9ab95e3075f58c5d934",
     "scripts/check_schematic_current.py": "908fc7181c616685f2afcc2fa93223518ea83be03ed1a401c7dac8c0dfda33aa",
     "scripts/check_yeti60_signal_paths.py": "66543ccc4c2d3c8f0bb2da9a1ccd5717f6c8e37ac6d97e300392a80d38740513",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
-    "hardware/e73-usb-repair/audit/build.json": "f6f2c537af1abf278751cab6c99974ffdf1b092b4d41f117d39e85e4cb0523bc",
+    "hardware/e73-usb-repair/audit/build.json": "95f871bb85d6724ed0960a2209808aabea7b888431168d2dc429cd34b771ec78",
     "variants/raytac/scripts/check_yeti60_c5_protection.py": "7a78488b95f742981ec239c072de2a39ec3f48aa6eee6349eaef1337ed10e87f",
     "hardware/usb-daughterboard/upstream/UDB.kicad_pcb": "1d9e2732d68fbb83dfeadb0c33d573a14483963fae61aaa02cd57d2bb7f98b35",
     "hardware/ec60-nrf52840/netlist.xml": "846b2d13a1782c6a841ee0831c1cce9fa0bfcf14bc1ce6c84d44d1846a9dc798",
@@ -2744,7 +2763,7 @@
     "Independent filled-ground islands and USB return reference",
     "Connector/capacitor/plug case and tolerance envelopes",
     "Complete nine-wire routes, connector withdrawal and service movements",
-    "Left power layout, inherited SMD-pad via overlaps and battery connector repair",
+    "Left power layout, inherited SMD-pad via overlaps and battery body/connected service qualification",
     "Native component-model closure, candidate-specific firmware/calibration fingerprint and CAM",
     "Supplier-qualified battery, physical USB/BLE/charging/thermal/RF/fit"
   ]

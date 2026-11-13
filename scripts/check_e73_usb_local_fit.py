@@ -75,6 +75,7 @@ def main():
     report_path = BASE / 'audit/local-fit.json'
     report_path.unlink(missing_ok=True)
     spec = read(SPEC)
+    battery=read(ROOT/'hardware/e73-battery-service-spec.json')
     assert not spec['selected_by_assembly'] and not spec['manufacturing_released']
     assembly_path = ROOT / 'docs/audit/yeti60-assembly.json'
     assembly = read(assembly_path); hashes(assembly['source_sha256'])
@@ -109,6 +110,11 @@ def main():
     original = load(original_path); top = load(top_path)
     relief = spec['floor_relief']
     bottom = cut(original, rounded_box(relief['bounds_case_mm'], relief['corner_radius_mm']))
+    before_battery=bottom
+    battery_floor=battery['floor_relief']
+    bottom=cut(bottom,rounded_box(battery_floor['bounds_case_mm'],battery_floor['corner_radius_mm']))
+    battery_removed=cut(before_battery,bottom)
+    assert volume(battery_removed)>1e-6,'Battery floor repair removes no material'
     removed = cut(original, bottom)
     assert volume(removed) > 1e-6
     assert max(abs(a-b) for a,b in zip(bounds(original),bounds(bottom))) < 1e-6
@@ -117,7 +123,8 @@ def main():
     # Inside and outside are different case surfaces; both may move toward
     # each other within the per-surface coordinate acceptance requirement.
     wall = nominal_wall-2*case_error-guard
-    assert wall >= relief['minimum_remaining_exterior_wall_mm'], ('Exterior wall', wall)
+    required_wall=max(relief['minimum_remaining_exterior_wall_mm'],battery_floor['minimum_remaining_exterior_wall_mm'])
+    assert wall >= required_wall, ('Exterior wall', wall)
     # The relief stays well below both gasket/plate bearing ledges.
     assert bounds(removed)[5] < assembly['nominal_stack']['bottom_gasket_ledge_z']-.2
     inserts = insert_guards(removed, mechanical)
@@ -134,16 +141,20 @@ def main():
     byref={p['ref']:p for p in assembly['component_envelopes']}
     retained=[]
     for ref,p in byref.items():
-        if ref in ['D1','R30','R31','C32']: continue
+        if ref in ['D1','R30','R31','C32','J2']: continue
         # These are the declared canonical proxies, not newly accepted models.
         retained.append((ref,box(p['bounds_case_mm'])))
+    x,y=battery['position_PCB_mm']
+    # Full SH3 native courtyard with the imposed installed height; the battery
+    # model/withdrawal is independently checked by the companion study.
+    retained.append(('J2-SH3-proxy',box([x-3.4,-y-3.28,z-battery['maximum_installed_height_below_PCB_mm'],x+3.4,-y+3.28,z])))
     for h in assembly['mounting_hole_matches']:
         x,y=h['pcb_center_case_mm']; r=mechanical['pcb_fastener']['washer_od_max']/2+.15
         retained.append(('mount-'+h['pcb_ref'],box([x-r,y-r,-3.9,x+r,y+r,z])))
     pack = box(assembly['battery_candidates'][0]['bounds_case_mm'])
     bodies={}
     for ref,part in models['parts'].items():
-        bb=part['bounds_native_mm'][:]
+        bb=part['nominal_model_and_Fab_union_bounds_native_mm'][:]
         assert spec['maximum_height_below_local_PCB_mm'][ref] >= -bb[2], (ref,'Model exceeds required installed height')
         bb[2]=z-spec['maximum_height_below_local_PCB_mm'][ref];bb[5]=z
         bodies[ref]=bb
@@ -209,7 +220,7 @@ def main():
             BASE/'EC60-nRF52840.kicad_pcb',ROOT/'scripts/check_yeti60_interconnects.py',
             ROOT/'scripts/build_e73_fit_candidate.py',ROOT/'scripts/build_yeti60_mechanical.py',
             ROOT/'scripts/e73_fit_geometry.py',ROOT/'scripts/check_yeti60_assembly.py',
-            ROOT/'scripts/cad_geometry.py',ROOT/'scripts/kicad_sexpr.py',ROOT/'scripts/draw_e73_usb_local_fit.py']
+            ROOT/'scripts/cad_geometry.py',ROOT/'scripts/kicad_sexpr.py',ROOT/'scripts/draw_e73_usb_local_fit.py',ROOT/'hardware/e73-battery-service-spec.json']
     report=dict(status='e73-local-usb-body-and-ordered-withdrawal-screen-passed',
                 selected_by_assembly=False,manufacturing_released=False,physical_verification=False,
                 complete_assembly_qualified=False,source_sha256={str(p.relative_to(ROOT)):sha(p) for p in inputs},
@@ -224,8 +235,10 @@ def main():
                 wrong_order_expanded_housing_overlap_mm3=order_overlap,
                 withdrawal_order=spec['withdrawal_order'],withdrawal_stroke_mm=spec['withdrawal_stroke_mm'],
                 case_repair=dict(bounds_unchanged=True,removed_volume_mm3=volume(removed),
+                                 battery_floor_relief_bounds_case_mm=battery_floor['bounds_case_mm'],battery_floor_removed_volume_mm3=volume(battery_removed),
                                  exported_solid_count=count,nominal_removed_to_selected_exterior_wall_mm=nominal_wall,
                                  two_surface_case_error_deduction_mm=2*case_error,
+                                 minimum_required_exterior_wall_mm=required_wall,
                                  minimum_remaining_selected_exterior_wall_after_allowances_mm=wall,
                                  exterior_faces_checked=len(skin),insert_supports=inserts),
                 limits=['Only J4/J5/C32 bodies and J4/J5 rigid axial housing motion; flexible wires/tools and connected service are not checked',

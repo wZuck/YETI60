@@ -2,6 +2,8 @@ English | [Chinese](e73-review.zh-CN.md)
 
 # E73 complete-design review — November 12, 2026
 
+The measurements below describe the selected canonical M01/PH board. Later isolated USB/SH3 repair checkpoints are recorded at the end; they do not replace the full review or close whole-keyboard gates.
+
 **Disposition: design hold.** Passing DRC and ARM builds do not resolve the measured USB protection branches, PH connector service obstruction or complete mechanical tolerance qualification; the NiZ/plate-stabilizer geometry and bounded M01 repair are integrated. Use the [build/review entry](../../BUILD.md) and [machine-readable gates](e73-readiness.json). The existing UDB-C-JSH C5 remains unchanged.
 
 Executed results: the base artifact audit passed **63/63 stages**; the subsequent complete review executed **13/13 steps successfully**, including 28 analog-front-end SPICE sensitivity cases, RF/USB/withdrawal extraction and fault tests. See the [review execution record](e73-review-run.json). With `--require-design`, the command returned **2** because measured design defects and open gates remain. Successful execution is not design release.
@@ -41,4 +43,4 @@ Run `scripts/run_audit.py` with KiCad and the CAD Python runtime; `scripts/test_
 
 ## USB repair checkpoint
 
-The [isolated E73 USB repair](../engineering/e73-usb-repair.md) now has its own native project, schematic/netlist, purchase delta and fault checks. Its short data topology is separate from the canonical measurements above. The [host-reference and local-model checkpoint](../engineering/e73-usb-return.md) records the additional native-copper, plated-ground and solder-foot checks. The [local fit checkpoint](../engineering/e73-usb-local-fit.md) adds a candidate internal-floor repair and ordered rigid J5/J4 withdrawal with bounded tolerances. Manufacturing release, full SI, flexible harness/complete service acceptance and matched firmware/CAM remain open.
+The [isolated E73 USB repair](../engineering/e73-usb-repair.md) now has its own native project, schematic/netlist, purchase delta and fault checks. Its short data topology is separate from the canonical measurements above. The [host-reference and local-model checkpoint](../engineering/e73-usb-return.md) records the additional native-copper, plated-ground and solder-foot checks. The [local fit checkpoint](../engineering/e73-usb-local-fit.md) adds a candidate internal-floor repair and ordered rigid J5/J4 withdrawal with bounded tolerances. The [SH3 battery repair](../engineering/e73-battery-service.md) independently checks E73 native reconnects, five modeled lands and rigid J2 motion, with M03 combining both internal recesses. Manufacturing release, full SI, flexible harness/complete service acceptance and matched firmware/CAM remain open.

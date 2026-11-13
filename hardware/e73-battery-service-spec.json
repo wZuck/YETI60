@@ -1,0 +1,277 @@
+{
+  "revision": "YETI60-E73-BATTERY-SH3-1",
+  "baseline_commit": "8599200305db7fc087f8152332453dfa156a8e54",
+  "source_board_sha256": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
+  "ref": "J2",
+  "position_PCB_mm": [
+    155.5,
+    129
+  ],
+  "orientation_deg": 0,
+  "footprint_id": "YAECKB:JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal__J2",
+  "source_library": "hardware/e73-battery-source.pretty/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal__J2.kicad_mod",
+  "source_library_sha256": "cd5cea2fca8630e2ee74185cb6e47620d81fc7f46364a9ab95e3075f58c5d934",
+  "upstream_library": "KiCad Connector_JST.pretty/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal.kicad_mod",
+  "upstream_library_sha256": "d158bf48fe4176444468de6a26a694f8c7e3756db6c7416e4cbc03f8372eda9c",
+  "upstream_license": "https://www.kicad.org/libraries/license/",
+  "header": "SM03B-SRSS-TB(LF)(SN)",
+  "housing": "SHR-03V-S",
+  "contact": "SSH-003T-P0.2-H",
+  "housing_nominal_width_mm": 4.0,
+  "housing_nominal_depth_mm": 5.0,
+  "housing_nominal_height_mm": 2.8,
+  "mated_depth_reference_mm": 6.25,
+  "header_rear_local_y_mm": -1.675,
+  "vendor_url": "https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf",
+  "vendor_retrieved": "2026-11-13",
+  "pin_nets": {
+    "1": "BAT_CELL",
+    "2": "GND",
+    "3": "BAT_NTC"
+  },
+  "maximum_installed_height_below_PCB_mm": 3.2,
+  "height_limit_basis": "Inspected installed envelope including solder and seating; not a supplier maximum guarantee",
+  "withdrawal_stroke_mm": 4.0,
+  "minimum_detached_gap_mm": 0.5,
+  "minimum_air_gap_mm": 0.15,
+  "removed_source_items": {
+    "1b938990-5ee8-431b-b9eb-be6d0a683a9b": {
+      "net": "APLEX_EN_PIN_0",
+      "kind": "segment",
+      "sha256": "981b76b4760c92128898d5668c1ecbf95b436ca837a5aafec5b2410d2256faf1"
+    },
+    "37823d1a-d346-42cc-952b-918cd2b1f2be": {
+      "net": "APLEX_EN_PIN_0",
+      "kind": "segment",
+      "sha256": "aeb8a689e9a113dd8b08da02dc3d3ba46560361319eca00e04549a087134d801"
+    },
+    "39b1fdfa-9461-45d7-95dc-2593b0b326cf": {
+      "net": "APLEX_EN_PIN_0",
+      "kind": "segment",
+      "sha256": "1d90412ba44d93b08dd5f4779b72ee4421dbd889bd1451b7124f0eb184513de2"
+    },
+    "3cf714ea-19fa-4c72-afb4-b281cbf6ac5b": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "21f02f16020ea16c95e2d87144fa83cbfaec0ddf49491aaf2547340b1f27aad8"
+    },
+    "4af0abd8-ae8e-4e63-89c2-cc972b65ba15": {
+      "net": "BAT_NTC",
+      "kind": "segment",
+      "sha256": "fa86092348b0e0f2c41294349cc4853c1fbf2c2fc31e351ad3eb3c0217befc87"
+    },
+    "4b65869f-f252-4441-abe5-f8c40827c6d9": {
+      "net": "BAT_NTC",
+      "kind": "segment",
+      "sha256": "75040b9e428e9e9d956567d258d310e4c643687d10498cc57b85f1ba03163db7"
+    },
+    "76375df4-cd80-4941-98c9-642503f4f369": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "a88eea402d3af0c58afa29a466aea0f3dd234390520f4ee94cc59207450385b8"
+    },
+    "85fe2728-7bc8-4293-bb60-20ccb41a7401": {
+      "net": "BAT_NTC",
+      "kind": "segment",
+      "sha256": "d005f9786578ee54c78b1e52827a3b95a7310ac344e02108f445a2b919edb69b"
+    },
+    "ca5e5025-6b2b-4969-a289-4065c9137c8a": {
+      "net": "BAT_NTC",
+      "kind": "segment",
+      "sha256": "ed6952d5e0d5a36bd1eb3626cdac8bb03a6c1b4428df0168a6c9334c25188a2b"
+    },
+    "d9d5a722-8115-4571-849c-6fd2cee8a016": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "6ab3a454252dcfb0384ff8eefaf1692e16fb6674ddaa2ccbb9ef7135ff7304da"
+    },
+    "e88590ae-4038-472c-adc2-5c2163aeec01": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "4bf8c9c22423b914ce4062dd3aa0c8f17c6781022b024a9b48f79e4092541458"
+    },
+    "f3d74554-034a-4f75-8350-14991f44a115": {
+      "net": "APLEX_EN_PIN_0",
+      "kind": "segment",
+      "sha256": "56652edcbde4b8b7e7ba362a362067f4a1daee388719546fff27a76b60dafe6d"
+    },
+    "f866a47e-30b3-4c47-ad74-8f19041bbd18": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "8f4d542285e6726cbed3058ccdeb3c3b36ec0cd2a1f55878e36b0bc1b25e4f1d"
+    },
+    "fb5d5162-afda-4e60-814f-56576f93b03d": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "5dc4ffd787489f0c447b23b27d9669fe08bae5b02b425354e3292d7c10f63ffb"
+    }
+  },
+  "changed_arc": {
+    "UUID": "7981c3d2-1c52-41b8-8ff3-62d33f5a1f99",
+    "net": "APLEX_EN_PIN_0",
+    "source_layer": "B.Cu",
+    "target_layer": "In2.Cu",
+    "source_sha256": "6b2a15378f0f6a63a84806633f84b111f9fcdd18eecd654594e1b17e17a202e0"
+  },
+  "routes": [
+    {
+      "net": "BAT_CELL",
+      "width_mm": 0.2,
+      "layer": "B.Cu",
+      "points": [
+        [
+          149.0083,
+          124.3134
+        ],
+        [
+          149.4,
+          123.9217
+        ],
+        [
+          154.5,
+          123.9217
+        ],
+        [
+          154.5,
+          131
+        ]
+      ]
+    },
+    {
+      "net": "GND",
+      "width_mm": 0.25,
+      "layer": "B.Cu",
+      "points": [
+        [
+          155.5,
+          131
+        ],
+        [
+          155.5,
+          133.85
+        ]
+      ]
+    },
+    {
+      "net": "BAT_NTC",
+      "width_mm": 0.127,
+      "layer": "B.Cu",
+      "points": [
+        [
+          156.5,
+          131
+        ],
+        [
+          156.5,
+          135.25
+        ],
+        [
+          151.8,
+          135.25
+        ],
+        [
+          147.9,
+          139.15
+        ]
+      ]
+    },
+    {
+      "net": "APLEX_EN_PIN_0",
+      "width_mm": 0.127,
+      "layer": "B.Cu",
+      "points": [
+        [
+          148.613743,
+          120.196979
+        ],
+        [
+          154.5,
+          120.196979
+        ],
+        [
+          154.5,
+          120.3
+        ]
+      ]
+    },
+    {
+      "net": "APLEX_EN_PIN_0",
+      "width_mm": 0.127,
+      "layer": "In2.Cu",
+      "points": [
+        [
+          154.5,
+          120.3
+        ],
+        [
+          154.527364,
+          124.096979
+        ]
+      ]
+    },
+    {
+      "net": "APLEX_EN_PIN_0",
+      "width_mm": 0.25,
+      "layer": "In2.Cu",
+      "points": [
+        [
+          156.485817,
+          126.055432
+        ],
+        [
+          156.485817,
+          136.8
+        ]
+      ]
+    },
+    {
+      "net": "APLEX_EN_PIN_0",
+      "width_mm": 0.25,
+      "layer": "B.Cu",
+      "points": [
+        [
+          156.485817,
+          136.8
+        ],
+        [
+          156.485817,
+          139.584773
+        ]
+      ]
+    }
+  ],
+  "through_vias": [
+    {
+      "net": "APLEX_EN_PIN_0",
+      "position_PCB_mm": [
+        154.5,
+        120.3
+      ],
+      "land_mm": 0.5,
+      "drill_mm": 0.3
+    },
+    {
+      "net": "APLEX_EN_PIN_0",
+      "position_PCB_mm": [
+        156.485817,
+        136.8
+      ],
+      "land_mm": 0.5,
+      "drill_mm": 0.3
+    }
+  ],
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "floor_relief": {
+    "bounds_case_mm": [
+      151,
+      -134,
+      -6.3,
+      160,
+      -119,
+      -5.4
+    ],
+    "corner_radius_mm": 0.5,
+    "minimum_remaining_exterior_wall_mm": 2.0
+  }
+}

@@ -16,6 +16,7 @@ import uuid
 from pathlib import Path
 import pcbnew as pcb
 from kicad_sexpr import Atom, child, children, dumps, form, loads, symbol_pins
+from e73_battery_service import apply as apply_battery, spec as battery_spec, SPEC_PATH as BATTERY_SPEC_PATH
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'hardware/ec60-nrf52840'
 RAY=ROOT/'variants/raytac/hardware/usb-short-route'
@@ -76,6 +77,10 @@ def schematic():
     assert not any(s[1]=='Conn_01x02'for s in children(lib,'symbol'))
     lib.append(copy.deepcopy(next(s for s in children(raylib,'symbol')if s[1]=='Conn_01x02')))
     (OUT/'YAECKB.kicad_sym').write_text(dumps(lib)+'\n')
+    power=loads((OUT/'power.kicad_sch').read_text())
+    j2=next(s for s in children(power,'symbol') if reference(s)=='J2')
+    next(p for p in children(j2,'property') if p[1]=='Footprint')[2]=battery_spec()['footprint_id']
+    (OUT/'power.kicad_sch').write_text(dumps(power)+'\n')
 
 def board():
     src=loads((SOURCE/(NAME+'.kicad_pcb')).read_text());ray=loads((RAY/(NAME+'.kicad_pcb')).read_text());removed_tracks=0
@@ -112,6 +117,7 @@ def board():
         if 'ground_via_at'in route:via_points.add((net,tuple(route['ground_via_at'])))
     for net,pos in sorted(via_points):
         src.append(form('via',form('at',*pos),form('size',SPEC['via_diameter_mm']),form('drill',SPEC['via_drill_mm']),form('layers','F.Cu','B.Cu'),form('tenting',form('front',Atom('yes')),form('back',Atom('yes'))),form('net',net),form('uuid',uid('via/'+net+str(pos)))))
+    apply_battery(src)
     path=OUT/(NAME+'.kicad_pcb');path.write_text(dumps(src)+'\n')
     b=pcb.LoadBoard(str(path));before={t.m_Uuid.AsString():t.GetNetname()for t in b.GetTracks()};pcb.ZONE_FILLER(b).Fill(b.Zones());b.BuildConnectivity()
     assert before=={t.m_Uuid.AsString():t.GetNetname()for t in b.GetTracks()},'Zone fill reassigned a retained copper net'
@@ -129,11 +135,15 @@ def purchase_table(suffix=''):
             assert refs<=REMOVED,'Mixed stock allocation requires explicit reassessment'
             continue
         if refs=={'J1'}:row[fields[4]]='USB_POWER_IN'
+        if refs=={'J2'}:
+            b=battery_spec();row[fields[5]]='JST SH 1.0 mm side-entry 3-pin';row[fields[7]]='JST '+b['header']
+            row[fields[-1]]+=('；改用 SH 三针；保护包正极／负极／NTC 分别接 1／2／3；胶壳 SHR-03V-S。' if suffix else
+                             '; SH3 revision: protected PACK+/PACK-/NTC on pins 1/2/3; housing SHR-03V-S.')
         result.append(row)
     with (RAY/('mainboard-purchase'+suffix+'.csv')).open()as f:
         for row in csv.DictReader(f):
             if row[fields[0]]in POSITIONS:result.append({k:row[k]for k in fields})
-    fit=json.loads(FIT_SPEC_PATH.read_text());limits=fit['maximum_height_below_local_PCB_mm'];seen=set()
+    fit=json.loads(FIT_SPEC_PATH.read_text());limits={**fit['maximum_height_below_local_PCB_mm'],'J2':battery_spec()['maximum_installed_height_below_PCB_mm']};seen=set()
     for row in result:
         refs={r.strip()for r in row[fields[0]].split(',')}
         constrained=refs&set(limits)
@@ -142,7 +152,7 @@ def purchase_table(suffix=''):
         ref=next(iter(constrained));seen.add(ref);height=limits[ref];growth=fit['maximum_body_growth_XY_each_axis_mm']
         note=(f'安装后低于局部 PCB 底面高度不超过 {height:g} mm（含焊接和就位）；XY 每方向本体及焊接位置外扩不超过 {growth:g} mm；其余公差见局部匹配度文档。' if suffix else
               f'Installed height below local PCB underside <= {height:g} mm including solder/seating; body and placement XY growth <= {growth:g} mm per direction; remaining tolerances in local fit guide.')
-        row[fields[-1]]+=' '+note
+        row[fields[-1]]=row[fields[-1]].rstrip('.。')+('；' if suffix else '. ')+note
     assert seen==set(limits),'Procurement table lost local-fit constraints'
     with (OUT/('mainboard-purchase'+suffix+'.csv')).open('w',newline='')as f:
         writer=csv.DictWriter(f,fieldnames=fields,lineterminator="\n");writer.writeheader();writer.writerows(result)
@@ -155,7 +165,7 @@ def main():
     # An interrupted/failed rebuild must never leave a previous green report
     # looking like evidence for partly rewritten candidate files.
     for name in ['build.json','native-check.json','DRC-strict.json','ERC.json','fault-tests.json',
-                 'return-check.json','return-faults.json','local-models.json','local-fit.json']:
+                 'return-check.json','return-faults.json','local-models.json','local-fit.json','battery-service.json']:
         (OUT/'audit'/name).unlink(missing_ok=True)
     assert sha(SOURCE/(NAME+'.kicad_pcb'))==SPEC['source_board_sha256'],'Repair source PCB changed; review before replay'
     for name in ['analog.kicad_sch','matrix.kicad_sch','mounting.kicad_sch','power.kicad_sch',NAME+'.kicad_pro','sym-lib-table','fp-lib-table','frozen-footprints.json']:
@@ -168,17 +178,22 @@ def main():
         (OUT/'YAECKB.pretty'/(frozen[ref]['id'].split(':')[-1]+'.kicad_mod')).unlink(missing_ok=True)
         del frozen[ref]
     frozen.update({ref:json.loads((RAY/'frozen-footprints.json').read_text())[ref]for ref in POSITIONS})
+    b=battery_spec();old_j2=frozen['J2']['id'].split(':')[-1]
+    (OUT/'YAECKB.pretty'/(old_j2+'.kicad_mod')).unlink(missing_ok=True)
+    frozen['J2']={'id':b['footprint_id'],'baseline':'Connector_JST:'+b['upstream_library'].split('/')[-1].removesuffix('.kicad_mod')}
+    shutil.copyfile(ROOT/b['source_library'],OUT/'YAECKB.pretty'/(b['footprint_id'].split(':')[-1]+'.kicad_mod'))
     (OUT/'frozen-footprints.json').write_text(json.dumps(frozen,indent=2)+'\n')
     schematic();removed_tracks=board()
     subprocess.run([CLI,'sch','export','netlist','--format','kicadxml','-o',str(OUT/'netlist.xml'),str(OUT/(NAME+'.kicad_sch'))],check=True,capture_output=True)
     parts=json.loads((SOURCE/'components.json').read_text());rayparts=json.loads((RAY/'components.json').read_text())
     for ref in REMOVED:del parts[ref]
     parts['J1']['value']='USB_POWER_IN'
+    parts['J2']['footprint']=b['footprint_id']
     for pin in ['2','3']:parts['J1']['pins'][pin]='unconnected-(J1-Pin_'+pin+'-Pad'+pin+')'
     for ref in POSITIONS:parts[ref]=rayparts[ref]
     (OUT/'components.json').write_text(json.dumps(parts,indent=2)+'\n')
     purchase=purchase_table();purchase_table('.zh-CN')
-    inputs=[Path(__file__),SPEC_PATH,FIT_SPEC_PATH,SOURCE/(NAME+'.kicad_pcb'),SOURCE/(NAME+'.kicad_sch'),SOURCE/(NAME+'.kicad_pro'),SOURCE/'components.json',SOURCE/'YAECKB.kicad_sym',RAY/(NAME+'.kicad_pcb'),RAY/(NAME+'.kicad_sch'),RAY/'components.json',RAY/'frozen-footprints.json',RAY/'YAECKB.kicad_sym']
+    inputs=[Path(__file__),SPEC_PATH,FIT_SPEC_PATH,BATTERY_SPEC_PATH,ROOT/'scripts/e73_battery_service.py',ROOT/b['source_library'],SOURCE/(NAME+'.kicad_pcb'),SOURCE/(NAME+'.kicad_sch'),SOURCE/(NAME+'.kicad_pro'),SOURCE/'components.json',SOURCE/'YAECKB.kicad_sym',RAY/(NAME+'.kicad_pcb'),RAY/(NAME+'.kicad_sch'),RAY/'components.json',RAY/'frozen-footprints.json',RAY/'YAECKB.kicad_sym']
     inputs += sorted(p for p in SOURCE.rglob('*')if p.is_file() and p.suffix in ['.kicad_sch','.kicad_mod'])
     inputs += [SOURCE/n for n in ['frozen-footprints.json','sym-lib-table','fp-lib-table']]
     inputs += [RAY/'YAECKB.pretty'/n for n in ['JST-SR-4__J4.kicad_mod','JST_SH_SM02B_SRSS_TB__J5.kicad_mod']]

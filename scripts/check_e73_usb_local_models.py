@@ -107,7 +107,10 @@ def main():
                 pass
             else:
                 raise AssertionError('Shifted solder feet were accepted')
+        fab=native['local_model_Fab_bounds_native_XY_mm'][ref]
+        envelope=[min(bb[0],fab[0]),min(bb[1],fab[1]),bb[2],max(bb[3],fab[2]),max(bb[4],fab[3]),bb[5]]
         parts[ref] = {'path': str(target.relative_to(ROOT)), 'sha256': sha(target), 'bounds_native_mm': bb,
+                      'native_Fab_bounds_native_XY_mm':fab,'nominal_model_and_Fab_union_bounds_native_mm':envelope,
                       'landing': contact, 'model_source': model_sources[ref]}
     inputs = [Path(__file__), board_path, ROOT / 'scripts/export_e73_usb_ground.py', ROOT / 'scripts/cad_geometry.py',
               ROOT / 'scripts/check_yeti60_assembly.py', ROOT / 'scripts/kicad_sexpr.py']

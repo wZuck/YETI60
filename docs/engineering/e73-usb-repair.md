@@ -38,16 +38,17 @@ The [reference and local-model checkpoint](e73-usb-return.md) evaluates the comp
 
 Use the candidate's [stock-adjusted purchase table](../../hardware/e73-usb-repair/mainboard-purchase.csv) only to review this candidate. The canonical mainboard list describes a different PCB.
 
-The candidate tables now include J4/J5/C32 installed height and body/placement limits from the [local fit specification](e73-usb-local-fit.md); package size alone is insufficient for these three positions. Stock allocation remains 8 planned fitted parts and 67 to purchase, 75 total.
+The candidate tables now include J2/J4/J5/C32 installed height and body/placement limits from the [local fit specification](e73-usb-local-fit.md); package size alone is insufficient for these four positions. Stock allocation remains 8 planned fitted parts and 67 to purchase, 75 total.
 
 | Change | Quantity per candidate mainboard |
 |---|---:|
+| Replace J2 PH3 with JST SM03B-SRSS-TB(LF)(SN), SH3 | 1 replacement |
 | Remove D1, PRTR5V0U2X / SOT-143 | 1 |
 | Remove R30 / R31, 0 Ω / 0402 | 2 |
 | Add J4, JST SM04B-SRSS-TB(LF)(SN), SH 1.0 mm side-entry four-pin | 1 |
 | Add J5, JST SM02B-SRSS-TB(LF)(SN), SH 1.0 mm side-entry two-pin | 1 |
 
-The resulting mainboard has **75 fitted parts: 8 planned stock uses and 67 purchases**. This does not include the battery, C5, mating housings, contacts, cables or mechanical parts. Complete E73 housing/contact choices, cable cut lengths, routing guides and assembly drawings must be finalized together. The original inventory workbook is not modified or published.
+The resulting mainboard has **75 fitted parts: 8 planned stock uses and 67 purchases**. This does not include the battery, C5, mating housings, contacts, cables or mechanical parts. The [SH3 battery interface](e73-battery-service.md) specifies its housing and contacts; cable cut lengths, routing guides and complete connected assembly drawings remain to be finalized together. The original inventory workbook is not modified or published.
 
 ## Reproduce
 
@@ -62,4 +63,4 @@ python scripts/export_e73_usb_ground.py
 
 The builder checks the source-board hash, copies the complete hierarchy, refills zones and rejects automatic reassignment of retained copper nets. Its ledger hashes the source and candidate libraries, sheets, netlist and purchase CSV. The ground exporter reads actual filled polygons without editing the PCB; its export alone does not accept return continuity.
 
-Remaining work includes cable/module return and full USB SI qualification, the full plug-withdrawal/tolerance envelopes, nine-wire harness and service motion, battery connector repair, left power layout and thermal/package closure, native 3D-model closure, matched firmware/calibration identity, new CAM and supplier/physical testing. **Do not order this candidate as an accepted board or use the canonical firmware/CAM as its matched release.**
+Remaining work includes cable/module return and full USB SI qualification, the full plug-withdrawal/tolerance envelopes, nine-wire harness and service motion, connected battery service, left power layout and thermal/package closure, native 3D-model closure, matched firmware/calibration identity, new CAM and supplier/physical testing. **Do not order this candidate as an accepted board or use the canonical firmware/CAM as its matched release.**
