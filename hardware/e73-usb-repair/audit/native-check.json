@@ -22,7 +22,7 @@
   },
   "preserved_geometry": {
     "E73_lands_preserved": 43,
-    "retained_copper_items_unchanged": 6692,
+    "retained_copper_items_unchanged": 6376,
     "battery_service": {
       "header": "SM03B-SRSS-TB(LF)(SN)",
       "housing": "SHR-03V-S",
@@ -39,19 +39,56 @@
       "all_other_logical_nodes_preserved": true,
       "physical_verification": false
     },
+    "power_repair": {
+      "parts": [
+        "C32",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "F1",
+        "L1",
+        "R45",
+        "R46",
+        "R47",
+        "U5",
+        "U6"
+      ],
+      "retired_or_replaced_source_items": 316,
+      "frozen_target_items": 177,
+      "physical_verification": false,
+      "manufacturing_released": false,
+      "reference_commit": "7aab295c219d1e1cf696efc4cdb52380bec64e19"
+    },
     "outline_and_mount_geometry_preserved": true,
     "ordinary_through_vias_only": true,
-    "new_or_module_via_in_pad": false,
-    "inherited_pad_via_overlaps": [
+    "module_via_in_pad": false,
+    "new_unisolated_via_in_SMD_land": false,
+    "approved_mask_isolated_EP_through_vias": [
       {
         "reference": "U5",
         "pad": "17",
         "via_UUID": "1df4dc1f-1f79-484a-8421-f92423a6f7d0"
       },
       {
+        "reference": "U6",
+        "pad": "11",
+        "via_UUID": "bd7c6e02-592d-46f4-91c6-9f93a4948ee5"
+      }
+    ],
+    "inherited_pad_via_overlaps": [
+      {
         "reference": "D2",
         "pad": "1",
         "via_UUID": "2fbc09c8-3af4-4563-8086-fe4bd03b626d"
+      },
+      {
+        "reference": "C42",
+        "pad": "2",
+        "via_UUID": "93479cbe-e898-4dfd-ae63-fa5383607b43"
       },
       {
         "reference": "C48",
@@ -2745,7 +2782,9 @@
     "physical_verification": false
   },
   "source_sha256": {
-    "scripts/check_e73_usb_repair.py": "8e752a236f909bb626448acd7708d6ac2311e4af0581c29b3456ad830efed234",
+    "scripts/check_e73_usb_repair.py": "74445c54573a4f5faf371090ddbb473cbf86637eddeb11047d058773592bf98e",
+    "scripts/e73_power_repair.py": "91676649761e9f18d72d28b5d627eb5b69855a53db47b3f5339a4b679baae34d",
+    "hardware/e73-power-repair-spec.json": "0fe91a6ff17ff29b224dcf3933eb98eea86e3efe5f252fcdaebb760f0a1c5e01",
     "scripts/e73_battery_service.py": "58c760e3fca284e1c0d623b001c5639fe9579e4c9b006036489e4f800e0df0d0",
     "hardware/e73-battery-service-spec.json": "f69840ef511e94a51716535be2d49a9e5a3d9d575ed2e1014f47403fe1443ecd",
     "hardware/e73-battery-source.pretty/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal__J2.kicad_mod": "cd5cea2fca8630e2ee74185cb6e47620d81fc7f46364a9ab95e3075f58c5d934",
@@ -2753,7 +2792,7 @@
     "scripts/check_yeti60_signal_paths.py": "66543ccc4c2d3c8f0bb2da9a1ccd5717f6c8e37ac6d97e300392a80d38740513",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
-    "hardware/e73-usb-repair/audit/build.json": "95f871bb85d6724ed0960a2209808aabea7b888431168d2dc429cd34b771ec78",
+    "hardware/e73-usb-repair/audit/build.json": "536ab342c1fb14ced1eb98c40059d9bb09b0a045c93468c3a30c7cb521ac6f05",
     "variants/raytac/scripts/check_yeti60_c5_protection.py": "7a78488b95f742981ec239c072de2a39ec3f48aa6eee6349eaef1337ed10e87f",
     "hardware/usb-daughterboard/upstream/UDB.kicad_pcb": "1d9e2732d68fbb83dfeadb0c33d573a14483963fae61aaa02cd57d2bb7f98b35",
     "hardware/ec60-nrf52840/netlist.xml": "846b2d13a1782c6a841ee0831c1cce9fa0bfcf14bc1ce6c84d44d1846a9dc798",

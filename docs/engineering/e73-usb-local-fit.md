@@ -2,6 +2,8 @@ English | [Chinese](e73-usb-local-fit.zh-CN.md)
 
 # E73 USB connector space and ordered removal
 
+**Historical checkpoint:** this document describes commit `7aab295`; evidence links and reproduction belong to that commit. Subsequent power-stage changes invalidated the old local reports. The current development direction is the [E73 lower-right migration](e73-hhkb-corner.md). This document does not release the relocated candidate.
+
 **This is an isolated design checkpoint, not an accepted keyboard or fabrication release.** It extends the [USB repair](e73-usb-repair.md) and [native-model checkpoint](e73-usb-return.md). The canonical assembly still selects M01; M03 below is not selected automatically. The existing UDB-C-JSH C5 daughterboard is unchanged.
 
 ## Geometry and inspected limits
@@ -32,9 +34,9 @@ At 1.76 mm board thickness, the original M01 floor leaves about **0.2562 mm** at
 
 The [M03 specification](../../hardware/e73-usb-local-fit-spec.json) retains the USB recess at case-coordinate bounds **X 332–350, Y −122 to −106.5, Z −6.30 to −5.40 mm**, corner radius **0.5 mm**, and adds the [SH3 battery-header recess](e73-battery-service.md). Material removed is the cutters/M01 intersection. The shell bounding dimensions, selected external skin, insert-support guards and gasket bearing height are preserved. Remaining selected exterior wall is about **4.007 mm** after deducting errors on both inner and outer surfaces and the computation guard, above the **2.0 mm** requirement. This is dimensional screening, not resin strength qualification.
 
-Candidate geometry: [STEP](../../hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step), [STL](../../hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.stl). This replaces the isolated M02 bottom. Retain the M01 plate and generated original top. These candidate files do not establish acceptance of all E73 wiring or connected battery service.
+Candidate geometry: [STEP](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step), [STL](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.stl). This replaces the isolated M02 bottom. Retain the M01 plate and generated original top. These candidate files do not establish acceptance of all E73 wiring or connected battery service.
 
-The [fit report](../../hardware/e73-usb-repair/audit/local-fit.json) checks nominal, 1.44 mm, 1.76 mm and a solid enclosing the complete continuous thickness interval. Its **28 checks** cover J4/J5/C32 bodies, two mated housings and ordered **4 mm continuous axial withdrawal**. Minimum remaining case air gap is about **0.3844 mm**, above the 0.15 mm requirement. Other components and 28 fasteners are screened with inherited proxy envelopes; their real dimensions and models remain unaccepted.
+The [fit report](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/local-fit.json) checks nominal, 1.44 mm, 1.76 mm and a solid enclosing the complete continuous thickness interval. Its **28 checks** cover J4/J5/C32 bodies, two mated housings and ordered **4 mm continuous axial withdrawal**. Minimum remaining case air gap is about **0.3844 mm**, above the 0.15 mm requirement. Other components and 28 fasteners are screened with inherited proxy envelopes; their real dimensions and models remain unaccepted.
 
 ## Connection and removal order
 
@@ -46,7 +48,7 @@ With power disconnected, connect **J4 first, then J5**. For removal, disconnect 
 
 If J5 remains mated, its expanded housing intersects the J4 removal envelope. The checker reproduces this wrong-order condition as a negative case. Fingers, tools, loose wires and parking the disconnected housing have not been checked; complete connected service remains open. The separate [battery repair](e73-battery-service.md) now uses SH3 and checks its rigid motion independently.
 
-![Local plan and vertical budget](../../hardware/e73-usb-repair/audit/USB-local-fit.png)
+![Local plan and vertical budget](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/USB-local-fit.png)
 
 ## Reproduce and remaining work
 

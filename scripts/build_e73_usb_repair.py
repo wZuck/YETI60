@@ -17,6 +17,10 @@ from pathlib import Path
 import pcbnew as pcb
 from kicad_sexpr import Atom, child, children, dumps, form, loads, symbol_pins
 from e73_battery_service import apply as apply_battery, spec as battery_spec, SPEC_PATH as BATTERY_SPEC_PATH
+from e73_power_repair import (apply as apply_power, spec as power_spec, SPEC_PATH as POWER_SPEC_PATH,
+                              install_libraries as power_libraries, update_schematic as power_schematic,
+                              update_components as power_components, purchase_rows as power_purchase,
+                              update_symbol_library as power_symbols)
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'hardware/ec60-nrf52840'
 RAY=ROOT/'variants/raytac/hardware/usb-short-route'
@@ -72,14 +76,17 @@ def schematic():
             if not isinstance(n,list)or n[0]not in ['wire','global_label']:continue
             points=[xy(p)for p in child(n,'pts')[1:]] if n[0]=='wire' else [xy(child(n,'at'))]
             if all(abs(p[0]-at[0])<10 and abs(p[1]-at[1])<8 for p in points):sch.append(copy.deepcopy(n))
+    power_schematic(sch)
     (OUT/(NAME+'.kicad_sch')).write_text(dumps(sch)+'\n')
     lib=loads((SOURCE/'YAECKB.kicad_sym').read_text());raylib=loads((RAY/'YAECKB.kicad_sym').read_text())
     assert not any(s[1]=='Conn_01x02'for s in children(lib,'symbol'))
     lib.append(copy.deepcopy(next(s for s in children(raylib,'symbol')if s[1]=='Conn_01x02')))
+    power_symbols(lib)
     (OUT/'YAECKB.kicad_sym').write_text(dumps(lib)+'\n')
     power=loads((OUT/'power.kicad_sch').read_text())
     j2=next(s for s in children(power,'symbol') if reference(s)=='J2')
     next(p for p in children(j2,'property') if p[1]=='Footprint')[2]=battery_spec()['footprint_id']
+    power_schematic(power)
     (OUT/'power.kicad_sch').write_text(dumps(power)+'\n')
 
 def board():
@@ -118,6 +125,7 @@ def board():
     for net,pos in sorted(via_points):
         src.append(form('via',form('at',*pos),form('size',SPEC['via_diameter_mm']),form('drill',SPEC['via_drill_mm']),form('layers','F.Cu','B.Cu'),form('tenting',form('front',Atom('yes')),form('back',Atom('yes'))),form('net',net),form('uuid',uid('via/'+net+str(pos)))))
     apply_battery(src)
+    apply_power(src)
     path=OUT/(NAME+'.kicad_pcb');path.write_text(dumps(src)+'\n')
     b=pcb.LoadBoard(str(path));before={t.m_Uuid.AsString():t.GetNetname()for t in b.GetTracks()};pcb.ZONE_FILLER(b).Fill(b.Zones());b.BuildConnectivity()
     assert before=={t.m_Uuid.AsString():t.GetNetname()for t in b.GetTracks()},'Zone fill reassigned a retained copper net'
@@ -143,7 +151,8 @@ def purchase_table(suffix=''):
     with (RAY/('mainboard-purchase'+suffix+'.csv')).open()as f:
         for row in csv.DictReader(f):
             if row[fields[0]]in POSITIONS:result.append({k:row[k]for k in fields})
-    fit=json.loads(FIT_SPEC_PATH.read_text());limits={**fit['maximum_height_below_local_PCB_mm'],'J2':battery_spec()['maximum_installed_height_below_PCB_mm']};seen=set()
+    result=power_purchase(result,fields,bool(suffix))
+    fit=json.loads(FIT_SPEC_PATH.read_text());limits={**fit['maximum_height_below_local_PCB_mm'],**power_spec()['maximum_installed_heights_mm'],'J2':battery_spec()['maximum_installed_height_below_PCB_mm']};seen=set()
     for row in result:
         refs={r.strip()for r in row[fields[0]].split(',')}
         constrained=refs&set(limits)
@@ -165,7 +174,7 @@ def main():
     # An interrupted/failed rebuild must never leave a previous green report
     # looking like evidence for partly rewritten candidate files.
     for name in ['build.json','native-check.json','DRC-strict.json','ERC.json','fault-tests.json',
-                 'return-check.json','return-faults.json','local-models.json','local-fit.json','battery-service.json']:
+                 'return-check.json','return-faults.json','local-models.json','local-fit.json','battery-service.json','power-repair.json']:
         (OUT/'audit'/name).unlink(missing_ok=True)
     assert sha(SOURCE/(NAME+'.kicad_pcb'))==SPEC['source_board_sha256'],'Repair source PCB changed; review before replay'
     for name in ['analog.kicad_sch','matrix.kicad_sch','mounting.kicad_sch','power.kicad_sch',NAME+'.kicad_pro','sym-lib-table','fp-lib-table','frozen-footprints.json']:
@@ -182,6 +191,11 @@ def main():
     (OUT/'YAECKB.pretty'/(old_j2+'.kicad_mod')).unlink(missing_ok=True)
     frozen['J2']={'id':b['footprint_id'],'baseline':'Connector_JST:'+b['upstream_library'].split('/')[-1].removesuffix('.kicad_mod')}
     shutil.copyfile(ROOT/b['source_library'],OUT/'YAECKB.pretty'/(b['footprint_id'].split(':')[-1]+'.kicad_mod'))
+    for name,part in power_spec()['parts'].items():
+        previous=frozen[name]['id'].split(':')[-1];new=part['footprint_id'].split(':')[-1]
+        if previous!=new:(OUT/'YAECKB.pretty'/(previous+'.kicad_mod')).unlink(missing_ok=True)
+        frozen[name]={'id':part['footprint_id'],'baseline':'Frozen common-part power geometry; see hardware/e73-power-repair-spec.json'}
+    power_libraries(OUT)
     (OUT/'frozen-footprints.json').write_text(json.dumps(frozen,indent=2)+'\n')
     schematic();removed_tracks=board()
     subprocess.run([CLI,'sch','export','netlist','--format','kicadxml','-o',str(OUT/'netlist.xml'),str(OUT/(NAME+'.kicad_sch'))],check=True,capture_output=True)
@@ -191,6 +205,7 @@ def main():
     parts['J2']['footprint']=b['footprint_id']
     for pin in ['2','3']:parts['J1']['pins'][pin]='unconnected-(J1-Pin_'+pin+'-Pad'+pin+')'
     for ref in POSITIONS:parts[ref]=rayparts[ref]
+    power_components(parts)
     (OUT/'components.json').write_text(json.dumps(parts,indent=2)+'\n')
     purchase=purchase_table();purchase_table('.zh-CN')
     inputs=[Path(__file__),SPEC_PATH,FIT_SPEC_PATH,BATTERY_SPEC_PATH,ROOT/'scripts/e73_battery_service.py',ROOT/b['source_library'],SOURCE/(NAME+'.kicad_pcb'),SOURCE/(NAME+'.kicad_sch'),SOURCE/(NAME+'.kicad_pro'),SOURCE/'components.json',SOURCE/'YAECKB.kicad_sym',RAY/(NAME+'.kicad_pcb'),RAY/(NAME+'.kicad_sch'),RAY/'components.json',RAY/'frozen-footprints.json',RAY/'YAECKB.kicad_sym']
@@ -199,10 +214,11 @@ def main():
     inputs += [RAY/'YAECKB.pretty'/n for n in ['JST-SR-4__J4.kicad_mod','JST_SH_SM02B_SRSS_TB__J5.kicad_mod']]
     inputs += [folder/('mainboard-purchase'+suffix+'.csv')for folder in [SOURCE.parent/'bom',RAY]for suffix in ['', '.zh-CN']]
     inputs=list(dict.fromkeys(inputs))
+    inputs += [POWER_SPEC_PATH,ROOT/'scripts/e73_power_repair.py']
     report=dict(status='built-native-validation-pending',module='E73-2G4M08S1C',selected_by_assembly=False,manufacturing_released=False,physical_verification=False,
                 removed_references=sorted(REMOVED),new_header_positions_pcb_mm=POSITIONS,removed_data_and_local_USB_5V_items=removed_tracks,
                 purchase_counts=purchase,explicitly_repaired_control_nets=['ROW_DRV4','RESET_N','COL14'],
-                source_sha256={str(p.relative_to(ROOT)):sha(p)for p in inputs},outputs={str(p.relative_to(ROOT)):sha(p)for p in sorted(OUT.rglob('*'))if p.is_file() and 'audit'not in p.relative_to(OUT).parts and (p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_sym','.kicad_pro','.kicad_mod','.xml','.json','.csv'] or p.name in ['sym-lib-table','fp-lib-table'])})
+                source_sha256={str(p.relative_to(ROOT)):sha(p)for p in inputs},outputs={str(p.relative_to(ROOT)):sha(p)for p in sorted(OUT.rglob('*'))if p.is_file() and 'audit'not in p.relative_to(OUT).parts and (p.suffix in ['.kicad_pcb','.kicad_sch','.kicad_sym','.kicad_pro','.kicad_mod','.xml','.json','.csv'] or (p.parent.name=='models' and p.suffix in ['.step','.wrl']) or p.name in ['sym-lib-table','fp-lib-table'])})
     (OUT/'audit/build.json').write_text(json.dumps(report,indent=2)+'\n')
     print('E73 USB repair built; native DRC, parity, reference and physical checks still required')
 if __name__=='__main__':main()

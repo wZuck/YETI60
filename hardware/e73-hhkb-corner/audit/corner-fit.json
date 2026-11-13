@@ -1,0 +1,198 @@
+{
+  "status": "bounded-corner-body-proxies-passed-harness-and-RF-open",
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "complete_keyboard_tolerance_qualified": false,
+  "continuous_PCB_thickness_range_mm": [
+    1.44,
+    1.76
+  ],
+  "body_and_board_XY_each_axis_mm": 0.35,
+  "combined_stack_bow_Z_mm": 0.3,
+  "case_each_axis_mm": 0.15,
+  "case_L2_allowance_mm": 0.25980762113533157,
+  "computation_guard_mm": 0.002,
+  "minimum_required_gap_mm": 0.15,
+  "parts": [
+    {
+      "reference": "U1",
+      "proxy": "nominal vendor module body",
+      "installed_height_limit_mm": 3.2,
+      "bounded_envelope_case_mm": [
+        331.65,
+        -195.35,
+        -0.6937999999999998,
+        350.35,
+        -181.65,
+        3.1062000000000003
+      ],
+      "overlap_mm3": {
+        "bottom": 0.0,
+        "top": 0.0,
+        "plate": 0.0
+      },
+      "gaps_mm": {
+        "bottom": 3.9596606351346226,
+        "top": 3.283800000000003,
+        "plate": 1.099999999999997
+      },
+      "residual_gap_mm": 0.8381923788646655,
+      "original_case_gap_excluding_plate_mm": 3.0219923788646716
+    },
+    {
+      "reference": "J4",
+      "proxy": "native STEP/Fab union",
+      "installed_height_limit_mm": 3.2,
+      "bounded_envelope_case_mm": [
+        343.17499999999995,
+        -114.05,
+        -5.6537999999999995,
+        348.92500000000007,
+        -107.35000000000001,
+        -1.5337999999999996
+      ],
+      "overlap_mm3": {
+        "bottom": 0.0,
+        "top": 0.0,
+        "plate": 0.0
+      },
+      "gaps_mm": {
+        "bottom": 0.6462000000000003,
+        "top": 7.613863389158493,
+        "plate": 5.872481870180611
+      },
+      "residual_gap_mm": 0.38439237886466876,
+      "original_case_gap_excluding_plate_mm": 0.38439237886466876
+    },
+    {
+      "reference": "J5",
+      "proxy": "native STEP/Fab union",
+      "installed_height_limit_mm": 3.2,
+      "bounded_envelope_case_mm": [
+        333.15,
+        -120.325,
+        -5.6537999999999995,
+        337.85,
+        -114.575,
+        -1.5337999999999996
+      ],
+      "overlap_mm3": {
+        "bottom": 0.0,
+        "top": 0.0,
+        "plate": 0.0
+      },
+      "gaps_mm": {
+        "bottom": 0.6462000000000003,
+        "top": 13.09367775137484,
+        "plate": 5.739999999999997
+      },
+      "residual_gap_mm": 0.38439237886466876,
+      "original_case_gap_excluding_plate_mm": 0.38439237886466876
+    },
+    {
+      "reference": "C32",
+      "proxy": "native STEP/Fab union",
+      "installed_height_limit_mm": 1.0,
+      "bounded_envelope_case_mm": [
+        335.34999999999997,
+        -194.85999999999999,
+        -3.4537999999999993,
+        337.65000000000003,
+        -193.14000000000001,
+        -1.5337999999999996
+      ],
+      "overlap_mm3": {
+        "bottom": 0.0,
+        "top": 0.0,
+        "plate": 0.0
+      },
+      "gaps_mm": {
+        "bottom": 2.4561999999999795,
+        "top": 7.923800000000004,
+        "plate": 5.739999999999997
+      },
+      "residual_gap_mm": 2.194392378864648,
+      "original_case_gap_excluding_plate_mm": 2.194392378864648
+    },
+    {
+      "reference": "R24",
+      "proxy": "native courtyard/graphics XY bounds",
+      "installed_height_limit_mm": 0.6,
+      "bounded_envelope_case_mm": [
+        318.155,
+        -195.305,
+        -3.0537999999999994,
+        319.845,
+        -192.695,
+        -1.5337999999999996
+      ],
+      "overlap_mm3": {
+        "bottom": 0.0,
+        "top": 0.0,
+        "plate": 0.0
+      },
+      "gaps_mm": {
+        "bottom": 2.8561999999999794,
+        "top": 7.923800000000004,
+        "plate": 5.739999999999997
+      },
+      "residual_gap_mm": 2.594392378864648,
+      "original_case_gap_excluding_plate_mm": 2.594392378864648
+    },
+    {
+      "reference": "R25",
+      "proxy": "native courtyard/graphics XY bounds",
+      "installed_height_limit_mm": 0.6,
+      "bounded_envelope_case_mm": [
+        321.695,
+        -194.845,
+        -3.0537999999999994,
+        324.305,
+        -193.155,
+        -1.5337999999999996
+      ],
+      "overlap_mm3": {
+        "bottom": 0.0,
+        "top": 0.0,
+        "plate": 0.0
+      },
+      "gaps_mm": {
+        "bottom": 2.8561999999999794,
+        "top": 7.923800000000004,
+        "plate": 5.739999999999997
+      },
+      "residual_gap_mm": 2.594392378864648,
+      "original_case_gap_excluding_plate_mm": 2.594392378864648
+    }
+  ],
+  "antenna_metal_plate_projection_overlap_mm2": 39.00000000000001,
+  "plate_material": "304 stainless steel, unchanged",
+  "front_mount": true,
+  "bottom_changed": false,
+  "bottom_source": "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step",
+  "wrong_30mm_translation_rejected": true,
+  "source_sha256": {
+    "hardware/e73-corner-spec.json": "f60d3f2fb5b77b3c75de3a57c56e26678329852cbb342490f0671c85be2a8274",
+    "hardware/e73-hhkb-corner/audit/placement-check.json": "b44a2d934241845231b25cd083c9d7ffcb075129ff051626ebf651026dd33190",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "8395348843b214c4ad37037dd15c3637f73283ef22eb2121928ded33e64edabd",
+    "mechanical/assembly-spec.json": "bdf2a3f04fe6bc0552b7e733bb54f4770a3bb8f73d8cee149d201afd07d9a7e7",
+    "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step": "fd423a17c6a726e6bd89e5840840db6ee6a44b33d8f338ae88d006134f92e608",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "hardware/e73-hhkb-corner/audit/local-models.json": "a3d0d4541d2950e19d398fae80443d4a7dbf1306691e1e27f98c64c6474c6c4e",
+    "scripts/check_e73_usb_local_models.py": "24aa856812af8d9ebfa0f563a5851b3a74f311b7e1c59991032105617ecd2986",
+    "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
+    "scripts/check_e73_corner_fit.py": "4f5a0aa213e51e772017fd4ad67503589dc0211cc8cd9088a1621fe7cb366718",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
+    "scripts/check_yeti60_plate_mount.py": "3fa66f7d6674957623f1126a4bf76ad2d1a306a82a120b1bdcdd868e8cec283f"
+  },
+  "limits": [
+    "Conservative body boxes are engineering acceptance envelopes; received parts require inspection",
+    "Module remains a nominal body proxy; only J4/J5/C32 have STEP and solder-foot checks",
+    "No flexible harness, insertion/removal, adjacent NiZ housing/clip model, resin strength or key-mechanism load qualification",
+    "Retained metal plate overlaps the provisional antenna band; 2-3 m BLE operation remains unverified",
+    "No electromagnetic field solve or EC interference acceptance"
+  ]
+}

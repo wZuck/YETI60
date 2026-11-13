@@ -2,6 +2,8 @@ English | [Chinese](BUILD.zh-CN.md)
 
 # YETI60 E73: review and build entry
 
+**Current development direction: [move E73 to the unused lower-right HHKB corner](docs/engineering/e73-hhkb-corner.md).** The new front-mounted candidate is not yet a fabrication release. Its routing, harness and assembly evidence must be completed; the upper-right source-board results below do not qualify the new placement.
+
 **E73 remains on design hold. Do not fabricate the current mainboard as an accepted build.** The [current review](docs/audit/e73-review.md) separates passing electrical/firmware checks from measured USB and connector-service defects. The matching [machine-readable gates](docs/audit/e73-readiness.json) are authoritative for this revision. Raytac acceptance does not qualify E73.
 
 The existing **UDB-C-JSH C5 daughterboard is retained**. Its PCB, connector and mounting pattern need no change for this work. Preserve its fuse/USB protection and verify its four output pins before connecting a mainboard.

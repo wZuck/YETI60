@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/Users/wzy/.codex/worktrees/yeti60-e73/YAECKB/hardware/e73-usb-repair/EC60-nRF52840.kicad_sch</source>
-    <date>2026-11-13T11:14:37</date>
+    <date>2026-11-13T23:47:17</date>
     <tool>Eeschema 10.0.7</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -169,7 +169,7 @@
       </units>
     </comp>
     <comp ref="C32">
-      <value>4.7u/10V</value>
+      <value>4.7u/16V</value>
       <footprint>YAECKB:C_0603_1608Metric__C32</footprint>
       <fields>
         <field name="Footprint">YAECKB:C_0603_1608Metric__C32</field>
@@ -217,18 +217,19 @@
       </units>
     </comp>
     <comp ref="F1">
-      <value>500mA</value>
-      <footprint>YAECKB:Fuse_1206_3216Metric__F1</footprint>
+      <value>1A_FAST_0466001_NRHF</value>
+      <footprint>YAECKB:Fuse_Littelfuse_0466_1206__F1</footprint>
+      <datasheet>https://www.littelfuse.com/assetdocs/fuse-466-datasheet?assetguid=dbe9bcd7-6072-4adf-bf5b-d33e52a6b90f</datasheet>
       <fields>
-        <field name="Footprint">YAECKB:Fuse_1206_3216Metric__F1</field>
-        <field name="Datasheet"/>
+        <field name="Footprint">YAECKB:Fuse_Littelfuse_0466_1206__F1</field>
+        <field name="Datasheet">https://www.littelfuse.com/assetdocs/fuse-466-datasheet?assetguid=dbe9bcd7-6072-4adf-bf5b-d33e52a6b90f</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="YAECKB" part="Polyfuse" description="Resettable fuse, polymeric positive temperature coefficient"/>
+      <libsource lib="YAECKB" part="Fuse" description="Fuse"/>
       <property name="Sheetname" value="EC60-nRF52840"/>
       <property name="Sheetfile" value="EC60-nRF52840.kicad_sch"/>
-      <property name="ki_keywords" value="resettable fuse PTC PPTC polyfuse polyswitch"/>
-      <property name="ki_fp_filters" value="*PTC* *polyfuse* YAECKB:Fuse_1206_3216Metric__*"/>
+      <property name="ki_keywords" value="fuse"/>
+      <property name="ki_fp_filters" value="*Fuse*"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>ec30f4b4-d823-5e4f-a7b8-0a3a79fdc25c</tstamps>
       <units>
@@ -604,10 +605,10 @@
       </units>
     </comp>
     <comp ref="C40">
-      <value>1u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C40</footprint>
+      <value>2.2u/25V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C40</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C40</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C40</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -628,10 +629,10 @@
       </units>
     </comp>
     <comp ref="C41">
-      <value>10u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C41</footprint>
+      <value>22u/10V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C41</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C41</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C41</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -652,10 +653,10 @@
       </units>
     </comp>
     <comp ref="C42">
-      <value>10u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C42</footprint>
+      <value>22u/10V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C42</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C42</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C42</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -676,10 +677,10 @@
       </units>
     </comp>
     <comp ref="C43">
-      <value>10u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C43</footprint>
+      <value>22u/10V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C43</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C43</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C43</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -724,10 +725,10 @@
       </units>
     </comp>
     <comp ref="C45">
-      <value>10u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C45</footprint>
+      <value>22u/10V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C45</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C45</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C45</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -748,10 +749,10 @@
       </units>
     </comp>
     <comp ref="C46">
-      <value>10u/10V</value>
-      <footprint>YAECKB:C_0603_1608Metric__C46</footprint>
+      <value>22u/10V</value>
+      <footprint>YAECKB:C_0805_2012Metric__C46</footprint>
       <fields>
-        <field name="Footprint">YAECKB:C_0603_1608Metric__C46</field>
+        <field name="Footprint">YAECKB:C_0805_2012Metric__C46</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
@@ -4725,6 +4726,23 @@
         <pin num="43" name="P0.10" type="bidirectional"/>
       </pins>
     </libpart>
+    <libpart lib="YAECKB" part="Fuse">
+      <description>Fuse</description>
+      <footprints>
+        <fp>*Fuse*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">Fuse</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Fuse</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="YAECKB" part="L">
       <description>Inductor</description>
       <footprints>
@@ -4765,25 +4783,6 @@
       <pins>
         <pin num="1" name="K" type="passive"/>
         <pin num="2" name="A" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="YAECKB" part="Polyfuse">
-      <description>Resettable fuse, polymeric positive temperature coefficient</description>
-      <footprints>
-        <fp>*PTC*</fp>
-        <fp>*polyfuse*</fp>
-        <fp>YAECKB:Fuse_1206_3216Metric__*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">F</field>
-        <field name="Value">Polyfuse</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description">Resettable fuse, polymeric positive temperature coefficient</field>
-      </fields>
-      <pins>
-        <pin num="1" name="" type="passive"/>
-        <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="YAECKB" part="R">

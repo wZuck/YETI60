@@ -1,0 +1,4151 @@
+{
+  "status": "placement-built-routing-open",
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "selected_for_development": true,
+  "removed_electrodes": [
+    "SW72",
+    "SW73"
+  ],
+  "removed_copper": [
+    {
+      "uuid": "6213ae2f-8703-40de-b447-e3b76d32b5c8",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "174cbdbb-c501-4fe6-93c5-b60182dd6320",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "2ce6b770-d971-44fc-bb56-39aa362a3b28",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "88753068-069c-4cdf-a5c3-c40476fbd7c4",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "9b09a09c-d0f4-480f-b1bb-300d44600755",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "9fcc4083-e739-454e-ab99-88007409c897",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "ed590fe3-ec51-4e21-8cd3-594ff2c9a03b",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "f13ee6b1-c71a-40c2-9017-2cdde8799fcf",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "f3ab92b0-5f76-4deb-9c2c-fa306a898665",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "002c3e7a-260b-4bb5-9a9d-1fb22c79d0cf",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "051d5725-0047-4c66-a6af-9f303aa68975",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "82b5803b-3c98-4e25-9ebe-d95e1a3ff240",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "d9a6c9c3-a5a8-4f34-a37b-92421a9524c4",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "303f8636-d40f-4dc1-b0b7-b9136add4530",
+      "net": "GND"
+    },
+    {
+      "uuid": "4c1cd258-836f-46fb-ad7b-00d4c6e6a898",
+      "net": "GND"
+    },
+    {
+      "uuid": "eaeea3f8-17ba-4fc0-82ff-80627acbecc2",
+      "net": "GND"
+    },
+    {
+      "uuid": "18b30db5-7ffa-4b25-b7be-cfa4ac7c7f42",
+      "net": "GND"
+    },
+    {
+      "uuid": "33bb4656-3882-4c91-bf09-73e8f8d85bd8",
+      "net": "GND"
+    },
+    {
+      "uuid": "3b096f30-7093-4b02-be09-45f93ab8ae72",
+      "net": "GND"
+    },
+    {
+      "uuid": "3d6dfa92-467d-4d26-af53-28465a306f02",
+      "net": "GND"
+    },
+    {
+      "uuid": "4bbd30b2-ce04-4a42-b5cc-0025f1450e88",
+      "net": "GND"
+    },
+    {
+      "uuid": "896c5bc9-b961-43ac-b152-dbbd51573b4d",
+      "net": "GND"
+    },
+    {
+      "uuid": "8fc260f1-7294-47a7-8e0d-bcae2a107d4e",
+      "net": "GND"
+    },
+    {
+      "uuid": "a1501e74-686b-46e4-aa1d-1ea4323dfd35",
+      "net": "GND"
+    },
+    {
+      "uuid": "a578aece-9592-45ee-8c25-2a518268b8b6",
+      "net": "GND"
+    },
+    {
+      "uuid": "c33c2b28-3e4a-4341-a11b-1d915f8ede42",
+      "net": "GND"
+    },
+    {
+      "uuid": "c5a0a070-3a98-4657-a8be-630645566646",
+      "net": "GND"
+    },
+    {
+      "uuid": "c61cb7f9-e6ac-482b-ac89-62448cf24a9f",
+      "net": "GND"
+    },
+    {
+      "uuid": "d74ffe44-0fdf-40e8-803d-a88bbdccbb8c",
+      "net": "GND"
+    },
+    {
+      "uuid": "3f8941de-6c1f-4c31-99a8-4abb1201cbf6",
+      "net": "GND"
+    },
+    {
+      "uuid": "4228a231-092d-4103-9d0c-f203ceadbec5",
+      "net": "GND"
+    },
+    {
+      "uuid": "47602679-8ac5-455b-ab97-3d7f8c58613d",
+      "net": "GND"
+    },
+    {
+      "uuid": "530664cc-a58c-48a6-ab56-85b85d11009b",
+      "net": "GND"
+    },
+    {
+      "uuid": "64f8529a-79a2-4c85-aa80-d0de93983502",
+      "net": "GND"
+    },
+    {
+      "uuid": "68293d22-1132-4f42-aa15-35cf212f5eeb",
+      "net": "GND"
+    },
+    {
+      "uuid": "aa49e871-aabb-45cf-8e73-d2a607ba072b",
+      "net": "GND"
+    },
+    {
+      "uuid": "b37e08d8-d193-424b-98fb-2149332dcfe2",
+      "net": "GND"
+    },
+    {
+      "uuid": "b4aafead-4006-4c5e-b936-be907ec29ce7",
+      "net": "GND"
+    },
+    {
+      "uuid": "ba1965fb-d5e3-44ac-81bd-2643c7a87e0e",
+      "net": "GND"
+    },
+    {
+      "uuid": "c592d383-9b55-4a21-9328-1166ea899fe2",
+      "net": "GND"
+    },
+    {
+      "uuid": "d6c702b6-5d89-4950-a1ba-7238c8f7ef1e",
+      "net": "GND"
+    },
+    {
+      "uuid": "dc18be4f-d6f5-4106-8ffa-3eff63de741c",
+      "net": "GND"
+    },
+    {
+      "uuid": "e4194a2b-6f9a-48ef-9b6c-3a4dd350add6",
+      "net": "GND"
+    },
+    {
+      "uuid": "f2685568-0562-4139-b8b7-ce4f35a6e6b2",
+      "net": "COL12"
+    },
+    {
+      "uuid": "53aed4dc-daab-4180-8883-a4307621ea95",
+      "net": "COL12"
+    },
+    {
+      "uuid": "a1525191-2f73-4b3c-9d0b-63dc09f1af1e",
+      "net": "COL12"
+    },
+    {
+      "uuid": "28080099-0e2e-4409-954b-ba5b20bfd959",
+      "net": "COL12"
+    },
+    {
+      "uuid": "ade79189-e884-4344-8d0e-ab876783cf93",
+      "net": "COL13"
+    },
+    {
+      "uuid": "0ed9cdf2-d20d-4eee-95cb-927f5e3ed7b9",
+      "net": "COL13"
+    },
+    {
+      "uuid": "25642b5a-c5b7-4625-bf8d-67b4ecb4b0eb",
+      "net": "COL13"
+    },
+    {
+      "uuid": "51cedd88-808d-49c6-b26a-a6ed2717dc71",
+      "net": "COL13"
+    },
+    {
+      "uuid": "834c2d3c-67c7-4bc5-aee1-331a0b021163",
+      "net": "COL13"
+    },
+    {
+      "uuid": "97397744-192f-43a5-b3a1-aa261b9ad46a",
+      "net": "COL13"
+    },
+    {
+      "uuid": "98b0b065-9d15-448a-b764-8d393562d311",
+      "net": "COL13"
+    },
+    {
+      "uuid": "bea268b0-3610-4a1e-b982-b82903492688",
+      "net": "COL13"
+    },
+    {
+      "uuid": "d69b9573-6376-4d57-aa56-7100b3bf8238",
+      "net": "COL13"
+    },
+    {
+      "uuid": "e67767da-a7e2-4590-80aa-3e9b8a8f4a74",
+      "net": "COL13"
+    },
+    {
+      "uuid": "f630c389-2fbc-433d-98d0-4f0287da087e",
+      "net": "COL13"
+    },
+    {
+      "uuid": "560c9187-e24c-434b-a386-b230b091bbc2",
+      "net": "COL13"
+    },
+    {
+      "uuid": "1289d1b7-81c6-42f7-b87b-e4c4a73e4b7b",
+      "net": "COL13"
+    },
+    {
+      "uuid": "800919f2-b891-46a8-93c0-ca747267763b",
+      "net": "COL14"
+    },
+    {
+      "uuid": "9b768081-fe85-454f-9cb2-c663b34e4fec",
+      "net": "COL14"
+    },
+    {
+      "uuid": "9eecd578-1c71-42ae-87b7-fc7b79f82343",
+      "net": "COL14"
+    },
+    {
+      "uuid": "cd5de821-c4b1-47ba-9ece-d505c1d5e006",
+      "net": "COL14"
+    },
+    {
+      "uuid": "d83ed1a6-4c7a-4ae7-a0d3-343ba185563c",
+      "net": "COL14"
+    },
+    {
+      "uuid": "e9dd1da0-c822-4642-be8b-bd94aafbea45",
+      "net": "COL14"
+    },
+    {
+      "uuid": "5e48b038-db75-4411-9626-789e89971b59",
+      "net": "COL14"
+    },
+    {
+      "uuid": "d2ca0ce7-54ce-46c3-a1e0-0982b15d03bf",
+      "net": "COL14"
+    },
+    {
+      "uuid": "0d1eb48b-0356-5924-a997-7bd04ae8d187",
+      "net": "COL14"
+    },
+    {
+      "uuid": "18c14466-d55e-55b8-ac34-881c2a8fd37e",
+      "net": "COL14"
+    },
+    {
+      "uuid": "2f7df857-73f9-5170-a4ec-5b26a2d76e2c",
+      "net": "COL14"
+    },
+    {
+      "uuid": "5a5842d3-a7a0-5519-9d5e-32127785c0dd",
+      "net": "COL14"
+    },
+    {
+      "uuid": "6d50a144-b334-5ead-a2c7-92233d72f804",
+      "net": "COL14"
+    },
+    {
+      "uuid": "bf80e2d0-8a2f-475c-9f43-615688cb424d",
+      "net": "COL14"
+    },
+    {
+      "uuid": "e0d1fb43-391f-4a1f-8892-f2a215108f5a",
+      "net": "COL14"
+    },
+    {
+      "uuid": "29187a01-842d-4c0b-b960-4ead15cfc430",
+      "net": "COL14"
+    },
+    {
+      "uuid": "487cdd5c-0ad7-4bab-a7d4-41edd321ac9c",
+      "net": "COL14"
+    },
+    {
+      "uuid": "5c1faa2d-9fee-40cc-99e1-a95cfc72b6ec",
+      "net": "COL14"
+    },
+    {
+      "uuid": "77b4965d-8e1a-4dd2-a95c-8fd05c69d217",
+      "net": "COL14"
+    },
+    {
+      "uuid": "c63ce8b7-2a01-4dd1-a4b8-42992384b3f5",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "b0daf5f9-d114-4ce2-bc8b-bd816939b73b",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "b8fc2c58-4dcb-44ab-b67f-2b18007b39a5",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "97a4d7c0-ef7a-4d6a-bb88-758ac120b297",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "d056b0d3-d48b-47f1-8d9d-7b1b9a8fb25c",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "034e1b01-31ac-4c01-b4b3-ee93ddebbcd1",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "07684989-117b-4514-95c6-e3137df80f92",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "23cd6ac4-27f3-4f4e-a959-da36b0ec0a20",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "2e1df9e0-5b2a-43a0-bb78-59d866c72775",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "384a9fdc-8b6e-471d-ada0-cc355f0ead62",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "3a324e18-2b34-459c-8390-5bdf93b67702",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "440c0354-72fb-4e51-a6ca-98a7bb9c05e2",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "55ca590b-af2c-44eb-aa6c-2327536b3c51",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "6c510f67-a9d0-4cf0-97a5-eca0f467f919",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "b821595f-587a-4002-b4d4-996051e97053",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "bd9823d2-dd2a-41cb-bd2b-a5c5a9b692fe",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "d7c0af02-fa30-4662-9442-6ea21f84d57b",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "e022a2a2-1bb9-4d99-b69b-6f861385ec41",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "e9152e1a-5b0b-4c30-b20a-47381b034d24",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "ff003931-eaa8-4d0f-a0a9-cb329e774309",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "a9e7f582-c0fa-4a66-9191-ce972e0cacf3",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "3b48c9d5-515d-4130-acc1-a6c19bcb2e5b",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "c1622268-dcb6-4c3c-8395-6b9e8d8fd20b",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "00e22563-d4b6-4398-9855-ba7e3987333a",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "093ef1cf-c1f2-4491-b607-d0446c4d6f3d",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "0a7c80ef-6956-4b69-8220-ffaa02f7d8f8",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "1ace20bf-f91b-4fff-8e95-9709881b5bb2",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "227c6c0f-bfc7-47cb-93a8-3ffc78996cd1",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "28bdc13b-54b3-44ba-a55c-d56b8cb7b4cf",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "28e2ca36-cbe7-4895-a0ba-0c526351cd12",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "369c1d69-c4a7-48d8-ad4a-891fb694b204",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "3f6d622e-5c0b-45b2-a6a4-6e299db331dc",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "43b584c3-cd0b-408e-b9cb-d3f6648e5e11",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "4601df77-ed5f-404f-afe1-a2cb58acb743",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "47cd085e-35de-4347-a910-0dc471642590",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "48ee6ec5-4cb1-491a-9c35-de12324d17f9",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "56af8420-f7e5-4e20-89fc-a79843a0fc28",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "6371a833-bf54-46a8-9de9-18eb97374b2d",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "69d84579-8106-42bc-b292-3cb24e63cdc3",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "6b9f253a-7f42-4bbf-867b-32d0122ed7fb",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "846052f4-daf9-4655-9634-1ee5dc1f50be",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "8944d395-0059-434a-83f9-302c572f2cf8",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "8f90336a-6670-4418-a4bd-642dfe5b2449",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "968a04ef-f3b4-4164-ba61-ef18d92bdf96",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "9a9b4f78-61a2-4846-afdd-6ee348927228",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "9e66ea91-1b60-441f-96e7-3263686b26d0",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "9fabcc8a-bf9e-4952-86d1-af286c51a7ca",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "a2d55045-6c79-4346-aa43-877592da83a3",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "abe98ca2-2b62-4aba-b0a4-e157fb4c6d32",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "b2b22624-64f4-4301-964d-75c25c0db574",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "b8e86653-0617-4683-baa7-f2136520b774",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "c6ed7f16-6488-4be3-940b-d1e812d3d6d4",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "c821c627-fc15-4a6c-8150-720406183b6f",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "cb65a61c-5247-4881-9abf-9bace49a8630",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "cf5bd619-6919-44c0-a14b-8840950ed4e1",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "d2253ec2-ce10-4f60-9dcb-a0d9c45515a9",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "d4e2e469-1bc0-4534-ba21-47716cab1f54",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "d6245526-9588-4fd3-b2e2-fa3939bd650d",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "e3929d1e-e5ec-4e24-9b71-e738ec64ab8b",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "e78cad21-0cf7-40b0-8cbb-638ea61a9a88",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "ee8f394e-8b1b-4f8f-bf82-f33138c2df7b",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "f2a7c58e-6c4c-4cc3-96d6-fa48e45bb3f8",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "f4959bfe-d3e1-4cea-8515-efab9e537497",
+      "net": "CHG_CE_N"
+    },
+    {
+      "uuid": "50a6002b-1008-4cd7-885e-8c4277479ba6",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "71c5a547-1d36-4d8f-85aa-f8e8278b5ac8",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "1288f25a-5904-42b2-970d-c2e3bdc99739",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "c814a587-90b5-4c90-ab15-9263d8793803",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "dd6f41cc-a342-40f9-93d4-4dda59eb5682",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "02a6c077-c1e0-4db6-870e-c687e30bf056",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "05dc682d-4fbd-4195-a26b-912619bc5206",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "0c2e8523-5fb0-446d-82e5-65649fb915fd",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "0c417a72-f0f9-42bc-8927-0f0ecbadbafe",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "0d6683e4-789a-4165-a8dc-8b7190aede63",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "1252e74c-a7c8-47c2-91e0-40978439e787",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "145e9520-cf47-4ac9-a413-fb8be715c3a9",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "14f5c24d-7cf8-4db6-b3d0-1e03b8658f65",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "1b9ab29e-1166-4461-8435-b497f1b61485",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "1fc498d7-bfc5-422d-9c34-36e1fed4169d",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "20b2cdcf-dc4a-46a5-9386-3ae1d1ba22e3",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "227bb8c7-91ab-4c46-a545-a8efaecc0ec8",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "23625fb4-805f-483c-8c39-cf70e659769b",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "27cbe94a-840b-4d20-a2f8-388b493f9364",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "289c7eae-91a3-4d7a-a96e-d7a8ba8505cc",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "28bc54be-f0ae-42f3-948c-4a7266044e02",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "2a20ed29-8a6f-4583-ac65-16140bebe75f",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "2a8cefcf-b12f-41cc-b822-0a368cfa11a7",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "304d88b8-6043-45e8-b08d-c6c3cbbd3d76",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "36ce2837-fad1-4434-bda8-07fab040102b",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "39159dff-c4bb-468e-a059-0fb4d29af745",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "3cc53413-b6c4-4f59-aabb-6cf7172a932b",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "3d82f42e-22b1-49ff-8e4d-a5ebe373b764",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "3f3eb9d2-a2f1-4911-9e1a-6622501b6000",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "3ff78a81-b6bc-49e8-af25-cc20a7102ad4",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "4a763e6a-56be-46c4-bd4e-7e78f157203d",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "501cc0f9-fdcb-4041-8f22-02ddc9da5067",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "5dd7caa3-911f-4621-a232-253dbd9eb7d0",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "7335c171-3115-4282-a61e-fc4e60ad17a9",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "848ba08d-97af-4084-ad66-165a19704434",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "8899a668-9d0c-4126-9f3c-492fe1f8adc9",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "93c32d11-9f44-440d-a2d0-f2a420e69319",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "947c8a32-0937-42a3-943a-e21934773858",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "9aabd373-6113-44b5-8837-5d895c5fdb52",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "a492f9b4-d269-48fa-aae5-4c406b5e46d8",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "ac7cfd6d-ea23-4951-8783-f292fe4aca14",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "b175aebe-4bfe-4739-8aaa-d2ce8c782f14",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "b6819d4c-170f-456c-b64c-7b59b996649f",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "c1b74092-4b84-43b5-8f31-ad97723832b2",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "ce47690d-f4c8-454a-9685-47f4159e3946",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "d56205e7-3f7e-4a86-88ec-8fad6dee7734",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "dc29f1d4-312e-42be-8d53-8e506be7cc85",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "de67deae-ee2d-46d9-b1b0-d3d531bde329",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "e2366198-6ea8-4796-b63b-16e368d34499",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "e83b92d1-7836-44f6-8030-60b4c7c8c32b",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "f3f18613-572f-45eb-b923-9f253e027018",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "f9dbf503-12e1-4914-990e-48dd3c879f99",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "1de1ef7a-eb39-4540-ab0d-2a2f4bc5ca4c",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "4bc638a1-4716-4244-ad3c-09a842b3bb88",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "85c8ea62-5aa5-4359-ae98-9947b0511f45",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "01f91ec5-a1ad-434a-aa49-cf4da640dc64",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "1864d618-a1b9-465d-bc7d-1c0177ceccf6",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "337277dd-89e0-47f9-8cde-d8fd2ed7cf9a",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "5c0d458b-f450-4f71-876f-6a20c0233745",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "64ff71d0-329c-47ef-8da5-855872b86967",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "67193983-d713-414f-a29f-6b587303eb30",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "7029c3d6-5e83-40c1-9810-48f44d192d99",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "72cf8175-277a-4930-9d8f-f07f62aa2117",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "820bdccb-df1c-45be-9904-ab1d0a2be748",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "aab3837d-44a9-4547-8ab1-c6a35a2a7ab9",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "ab972a82-72d2-46c9-8541-ce8b04d53a5d",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "c4338fad-52b0-490c-92f1-a2a93ea9ed3c",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "c8147b63-c6d7-4a1d-a3df-cdce80966ca7",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "df3370f9-b98a-415d-926e-8b670472632a",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "e65f3f16-85f8-4213-95fa-e7e1c85a74be",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "ed34d9ce-f78a-476d-bbd8-1ba2c25d5093",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "e70b4cdc-5d07-4e40-865c-0ec974296941",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "200b7842-be83-453d-ac58-954ea744617b",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "deb61210-3ac7-4c6d-85c1-15ede70e1788",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "431e6e96-40b4-4ffe-90fe-6018bec8adf5",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "4fbc1fd3-256a-49a1-845f-2b1e1ddbb719",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "0940b9e0-a750-451f-847b-a2d902766a29",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "11aa3596-59bb-4a21-9114-9b01ba635b6e",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "22c5e0de-3635-4d92-909f-da14df09ad64",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "269aa9ff-13bb-4842-b39b-d6b596f2bb48",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "2db455ce-b388-4a96-a2f1-7cabf68c3fb2",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "3d3599af-e287-4862-8a71-666c06e76376",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "4b3bc8b4-81f2-43cc-a16e-f7970daed12b",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "553f5c1f-d5dd-4a33-992f-1de4d1dac58b",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "5eba926b-c62f-488f-8220-b44719b6ba1f",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "5f0cff83-c00c-4f2b-87f3-fa076944f0ba",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "67a8df3e-e0cd-4b48-aa81-af6d42ea437e",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "76bcfd19-cfb2-4bbe-88bd-21f518325bcb",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "7c6dbefd-eafb-4be9-a745-71dbdb749749",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "83217d50-c8fc-4f82-91b9-b3d36adaed8e",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "885275bf-7248-4603-bbff-ed6e51dbc695",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "8cdfcc2c-9467-4d15-9717-6d4b578ae344",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "9b2e1db0-21bf-4788-a0c6-bd29ea7e12a3",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "a59710f2-8228-43e5-864a-8948c89f30b0",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "c7749983-2dd5-4bb6-a258-ef4a03502b9c",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "d381526d-c858-408e-8439-57e9a8d1e24c",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "e4239f6f-41da-4c73-bded-f2160fbe0ee1",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "e615551a-7f0e-494a-ae8b-1a9ddb094f15",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "e78526f6-5533-4a28-af1e-789388ef33a7",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "eacc7a24-771c-4ce0-b7f3-683022fda808",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "f4dcc347-81af-4228-bb26-d0e64aebd5e2",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "f5f25507-742e-4eb0-bc90-80fa6b049b37",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "ff2ab742-73ee-4fb1-aaee-5eb685d96c3d",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "0313c41c-7f4b-4647-88c5-442ff946c85d",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "0c3a2773-dffb-4a18-8c80-c6972f20c92b",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "1b3f9962-448a-44ab-a40e-2291ea02c871",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "1f3560ac-ee2e-4dc7-b98f-388c8e4d922d",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "2805821c-1f7d-412b-9729-e36ed8803acb",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "290bbacc-639c-47d2-b013-495797369f65",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "2b242258-256a-4304-9c0b-b13d978a197d",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "30ca74cd-b669-483d-95ea-a7795a4b23e2",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "3abcaca8-fc02-43c6-ad4f-b5da3addf1f2",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "4b18b8df-6d6d-48c6-84c9-f0d63f0df3bc",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "4dc385dc-8481-4645-9ac6-e23d9f4f225f",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "4dff07b7-5502-4c7f-9479-8a9825a37921",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "5555f43c-2eb9-447c-a544-9da5684152af",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "56c69965-ba28-4a1e-be56-967d9f58fa82",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "65646355-ce3f-448c-b8a3-4bbcc826c5d6",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "693b6aef-98d7-4724-b1bb-425d4a483287",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "7516dbe9-2e47-4eec-a227-b167c4f29386",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "93769e21-7726-40c2-8f5d-e8f08ea8ecc7",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "9f567727-5336-415f-a632-a6688dac1ca6",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "a58fd167-e95a-49ed-99d8-7e011435f991",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "ac5f4816-aa44-4169-b3a1-211598560ad3",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "bb221c05-d0bd-4cc8-a066-f0305f2b7fbc",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "c2e0481b-5ee7-475d-bf84-7866b1878363",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "c4d28051-c0ae-4904-8da2-81b61952176f",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "c71e4fbf-a07e-4669-ab9a-40eca92c9dc4",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "cf8afe1b-7fbc-434c-963b-cd12ccc4b0cb",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "d742e140-cd6c-4008-ba7f-bebcc48c3e1b",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "d900ad8d-8f76-488a-848d-52ebf0ed7ef2",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "ef35b6c9-cb9c-4301-a670-062190d0d466",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "f5037bcb-5571-473d-ba6a-bf20f7f72831",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "08a2e2e2-c01b-4fbb-9713-ee9ea6245be7",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "c820ac84-fb9d-4f6e-844b-b9574061e407",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "1feb4472-e796-4b51-b5c7-7719d1ab7a39",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "67c353a2-0237-499a-a0cb-42212cdb918a",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "35dbeebf-16c8-40a9-9e2c-3a41ce5c4f2d",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "6d2feee3-00d6-4c79-a952-b9c051663249",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "754d388e-053b-426f-ba32-6a4441aed7c4",
+      "net": "CHG_N"
+    },
+    {
+      "uuid": "7a38a296-679e-4048-9cf3-ac04ca41fe36",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "1353d0be-6ba1-5372-a782-8933c3d4b321",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "4241305c-9ef5-5267-8915-693f3c063d6c",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "921adc96-f601-5b7f-90e5-d8473d5dbf43",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "b2749a00-cac9-5e00-8dda-7ed237ec70db",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "ce130d84-69e6-5810-87a0-55743951ac32",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "f5961437-ae37-5652-94fc-c5c350b9a5fe",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "2dd9fdde-81e7-4417-a058-a6e085ab7075",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "a469cff5-9a8b-442c-8b76-5f6d72b01a0f",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "16a97eb5-06c0-4687-8f5e-ac1402cecb32",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "1acc01ac-9f29-45d2-941b-c96310ca7339",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "2a112ccd-0340-4f2a-9915-906a980faad9",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "30b9b762-4aa3-4b53-bb54-6140fabccbbe",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "35030f6b-76e5-49c3-a2be-51ee4bd8493b",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "3713e01a-9e09-4a8e-a746-9550fc8b883a",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "6ab49289-1bc7-4b93-b789-ff4f535d6e7b",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "6d6ddae8-de8e-472b-92cb-a2a06db9a951",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "ab4e1efe-0f2e-4ebf-806d-fbef4b11a971",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "b0d9da1c-e9c8-486c-83d6-3738d80b2038",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "b61dad79-93dd-4d41-b197-8b6e7c79cb5d",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "cf6f8d72-d04b-4cfc-8985-c0a278d7afd4",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "d6e7f6d7-dc6a-4215-98a8-d0cada9684cc",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "ef9a1f84-b4d2-480f-8936-c711451edd95",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "4b35ab9c-0d10-43d7-96df-688df4400f3d",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "5f6a663b-ca3a-40d1-bf53-93f31af4f3ee",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "845b159e-b6a7-41de-8b12-a00203a8d7d7",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "b839ad5b-09da-41b6-9ebf-46eb48ed1b4d",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "b9708fec-ba3a-4096-9c69-d8b75ba3cd07",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "1c924c6b-1d6e-42c8-876e-5bd04e2d6ca5",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "334fc3b2-f52b-4ef1-b566-1b164c5d5535",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "15c91f71-f145-4abe-a83d-2351db34513b",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "206ae380-a9b9-4e04-9eba-2d5ad2e21c14",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "2d06f492-949c-4ab3-8772-390bdc8e37e3",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "2e9dff22-2c7e-4e79-af3c-2fefa323c0da",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "310758fe-d313-4afd-8090-3d0f0d17c3d6",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "365337e0-db36-448a-bc89-367483833879",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "403b48be-d004-46a6-9784-d813aa254db1",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "42f62e91-7a94-4234-8a33-077e1dc2d567",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "5c008911-2cdf-48c4-a6f9-9df4a49e8393",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "63735d91-0205-48a5-bc28-e744b6ea8330",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "69eedc3e-53b2-429b-b6ca-a36aed2d62de",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "6d45f8e5-b54a-4774-bd96-02b385d3af3a",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "6e40c2a6-dc36-4ca5-999e-f44a0c9249fa",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "6eb3e684-7a8c-4cde-8b27-1156852248cd",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "82c8a4a4-d445-4136-a185-b535c1256715",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "92168d34-3e9e-4bed-8c00-af947494f80b",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "92f88c62-486e-472a-a0b4-9fd9ebe62c34",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "9addc109-a68b-41e7-83da-0669cad15eab",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "9d438460-b9dd-42b3-a0af-d99a025cd0a2",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "a83cceb1-5990-4fb2-8c78-9ee52f8b0004",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "b07d6e45-5d9e-44e0-a168-995219a4767a",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "b37995ce-859a-4fb3-bacd-53b0bb1e7a87",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "bce973f7-195f-4058-a3fe-ce6569cb1668",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "cd2d4114-ea1f-4548-a1eb-0cdcffc73058",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "cf89a679-4f1e-40c7-a132-f913bf06588f",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "d9c4ec3b-c1f7-413d-9e7d-26735c7deef6",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "d9ef248d-c1f3-4b46-a653-f38c2f2283e3",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "df17dfa3-76d2-48b5-aa49-8de24ceb3f00",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "eda26035-8001-47a4-a27d-34f16497c8bc",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "fbde3ff6-4e34-4851-be23-62b476b38a8f",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "fe641114-50b2-46af-9401-23a7f065d043",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "19b541c7-55a1-4813-bbfb-4d444a03e1da",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "22f6b7b9-c8cb-4e12-add7-f691d3cf45f2",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "566cc6e8-3039-4acb-aa8d-504aa195c0bd",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "6c08fbec-866f-4cb9-9f4d-89557316f1bd",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "9f8aa1d2-36b9-45d4-8a3b-dc7566f86c39",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "91cefed9-4204-48b9-a2e2-f01fb8f65eea",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "bc2bea7a-57a1-4d39-b5b0-8abbb55aac92",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "1f9c8575-2a38-4e0a-8761-f6d7aac19e13",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "1bd89171-6c73-4ad9-ae63-a971816136be",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "6ba228a4-0e48-40e6-a43b-d7651e5888cd",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "04b47791-968c-4831-a154-9e6a28159cc4",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "05f96cce-c5df-49b7-8dbc-9e6223238390",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "0e1fdec1-c661-46c9-98ad-dd662afd6bdd",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "27f18bb7-992e-4663-9094-5afb3c68d010",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "283888c1-f626-41ff-b91e-0bffb9a1b8c5",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "68e5ccc8-4c79-4eaf-b01b-293ce40494af",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "734a9cf6-d37c-4e7a-926b-413326d99f08",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "7dee6326-b1e5-4c61-9662-144210a6aacd",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "85a22ca0-58cb-4977-8568-49ea93c50fbc",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "8a618fa9-2655-4352-afc0-39ba3d52c43f",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "9156a111-af51-4188-bc05-311a12db2ba0",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "a9300118-4982-48e6-b66d-762924f60336",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "b173de77-23ef-4e09-afb8-45629942f785",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "bd6745c9-dc97-44ff-9b8b-531ef62c0958",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "bf089c66-1788-4d97-ad0a-e19eb792edce",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "c5144a50-551b-4aed-92b0-0b8277ecdb34",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "dd6ad431-f203-4a9a-b3cc-b0f1f9ddb6f0",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "e30aa6cd-c24d-41f4-93a0-90940bd59f4e",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "e80ce673-f24f-49f6-812a-a26dc0bfd584",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "eb72a557-049b-4b70-9bc8-ec036ad1c2f5",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "01ca3f9e-e74d-4f6f-9bf9-81f1c9df2aa8",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "06341d96-0120-4fd1-a5fd-5e0305630a37",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "098942b6-9987-44fc-8b35-315237ef70ef",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "0ac8c3e7-13a2-40da-a2d0-71f3b190f833",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "0cb89690-ef98-4404-b226-b2a88f16ae06",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "128567d4-7006-4680-b4dd-781437bf6d6e",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "17a41deb-8aa7-4664-861a-11291a73c77d",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "1bd1da4c-fd0a-44e8-a4cb-51593845ff20",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "1e0e4311-acaf-4ea7-8879-cce6ffa27d04",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "21cf5aaf-f1c5-45ed-a264-ac309b6a6a80",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "276282e7-9b44-4a13-81ba-84d7f92eb2f9",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "28b5de9b-f6cb-42df-8a08-d7ab850dd34c",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "292c3222-04cb-42ac-9f8d-852ec4f6d81f",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "2970be49-b755-4bbe-8cd3-d10c643487d0",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "2b17962f-0332-4b7f-ae8c-99c8a772221f",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "2bdd3a25-58f0-4a7a-85b2-0ad4c3ed0e3a",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "2e34c9ee-0f8a-47af-80e3-44460933107e",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "3802fe08-6ef6-4f6e-8775-745910461324",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "3ee614a9-a953-404f-b924-a708bf7a1cde",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "4151e0d7-333f-49a6-be4c-081a96ac20bd",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "4411ff8d-c7a5-4985-8e69-68d7e276c1e8",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "47f11855-36dd-4e20-a56b-2f9d650fdef3",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "486e59f3-39e5-4f38-99a9-614c6e28b18a",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "4d2c6880-0799-42cb-b3d1-f0b6a57e689a",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "4e10cac5-ecd9-4895-be7c-8af2ede647e3",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "51f08db0-2da1-44e0-aa5d-b6b8929d089b",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "5555c019-7075-4982-ade8-322a22eb2870",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "55ee2190-99fd-4117-923b-43d8eea752c0",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "567ccf3c-aa06-4134-81b1-ffae32cc7e77",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "56c94a4d-1891-49e1-a3de-5fbf23d28545",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "570a8f83-9eda-4435-9bd6-fe5d50fced06",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "570a9b6c-2371-432d-9e0a-00c49c95f12e",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "595c8843-f3ce-4b8e-a0eb-b64dc5d47f79",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "5a56853b-3e44-404d-9bed-1e96938cc881",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "5bc592b2-9f10-48c2-a3b9-371b2f6d421d",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "5cb2ea31-14ed-416d-b9b7-8b250b77d572",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "5f5fcd51-8425-4d3e-b9c4-340fbbda5bef",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "5ffa7431-9371-4393-8670-43839ff9a14a",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "627eac99-6384-4e8f-aa14-f577d6b9942b",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "6393f573-7c8d-4fa1-8d69-4d3b7c30e958",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "640b22eb-0542-4ea3-8b01-735279d54147",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "6438354c-0bcf-4923-83f1-883ee97d8dc0",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "666b8e04-8a56-4464-ae75-e1ddd84149eb",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "66e38849-51cf-4f08-b740-93b1ae41c4fc",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "6c137506-ebd7-4e4b-b5f4-f51264173818",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "6c53b7d8-9b3f-4237-a9ac-16fe696513cc",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "6e78373e-89c0-4d08-aca6-b374fc9eb372",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "6ffa3c51-fb5c-4527-9c77-b1ed92ff926f",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "708d7d5e-cf19-4a5e-b152-3c20f2c40075",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "76f6be94-f0ba-4d6e-afe5-f7bfbd3999eb",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "7af7970a-420e-4e18-a683-73dd6e6289b3",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "7e5c760d-f5fc-4bff-ad0a-2de6d3e5413c",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "7ec55b9e-2fc6-496e-8ddb-4106b2dc2bcd",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "808db020-3c55-4e4e-bcb8-bbf19a250825",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "809e4998-c749-4d07-b6ff-4a6e8908b478",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "84a68d6c-6d63-461f-803a-5305e2600526",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "8594de7c-8282-44ce-b511-fbeea6a06c01",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "85cb5b6d-0152-45aa-852c-e71edf81b51f",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "89812e83-fa78-4105-a516-1274958d620b",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "8dabbee0-3d07-4e47-b2d3-ac31d2fb12f4",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "8f5b98a8-b6ad-4b87-93ed-51b215ed3575",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "91d07ac5-450c-4724-9947-c39f8c2b8b6e",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "9264a5f7-c1da-4e63-af0e-b1548fb30d46",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "932df278-27ae-4ee0-a5d1-b44e4bee8379",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "982a7c19-ae2f-4cd5-b8fe-2b39462a4b03",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "984088ae-e7f1-47e5-9456-4fa92d3d7b3f",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "9ee1e2ac-69cd-4c0b-b445-e36c93a2ffa4",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "a7dd907c-7ec0-4fbe-8f84-126c04cd1220",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "a8101b95-b655-4df0-a0b7-a4c61c00be90",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "a9383408-e892-47e0-85c0-850799ae6b4d",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "aabc2fed-5fed-4a22-8838-e4e712a6a8db",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ac9d459b-fca8-4e04-97bb-6fc3b58137ca",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ad22b59a-95d6-4815-b01a-050ace543c40",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "adc9bb71-2c39-463a-907a-1a4e4d0cbb80",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "b00c2f60-aa60-4fae-a5b3-f8c1df4ef93a",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "b383de55-3f4f-4b13-b3fe-7468babdfdeb",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "b40e10f2-ae6c-4092-90b9-8bc47c5545a5",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "b6a3503c-48f4-4a31-9073-491aa3e62660",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "b7bf0ab5-2b07-44a8-9317-159e38005fae",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "bb226ac0-95e6-4668-9abd-02d2ea1cd2e9",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "bc8621cc-b5ee-4ec8-a793-bd0b005cfb24",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "bfe2dcf9-5baf-4309-b148-c0c849cdc015",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "c454b564-22e0-421e-a957-ded5df653c39",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "c4bd81d6-e5e1-4809-ae44-85e511cadde3",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "d36afe59-a3ef-4433-be0e-0623db417908",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "d43dc738-19f1-47d3-8b3a-f4a17a797a09",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "d46f8afa-89bf-4e6c-9035-b5f9e35186fa",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "dbeb5108-5eb4-41d5-94e0-9d9211d06eee",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "de184a85-9bea-4c59-97f7-8621645e742b",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "e1731209-e02c-497a-a0da-69f68179d86e",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "e5872be1-b02c-44d1-a0a6-e3f7bd7b6246",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "e7a3d1bf-e941-476c-a0af-0549fb9bff6a",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "e88214b4-cdcb-4ee7-a268-c98ab0b2347a",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "e94c30d2-c44b-407d-af09-38bc4db06c90",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "e9e38da9-7493-4fba-a305-7c795b2094c9",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ea23b450-89a6-40ae-9b96-5b3cef7ada51",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ea977efb-543c-4ad2-850f-d4da1e7e12e8",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ea9ed2bd-30d4-474d-ad07-41447be703aa",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ecea9ada-2453-4623-a203-3e25fc5f7a39",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ef6087fc-3055-43d9-91a8-34db7f31bb21",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "f4a894bd-2122-416e-9719-a911951bd71f",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "f6644134-4f9c-4886-9221-046a8824ca4a",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "f866a3f2-a22d-4515-9677-fe9fb5675b5d",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "fb8d8ed8-45a3-4c9d-8f0b-530e457096d3",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "fbf2a21b-d22b-4a44-810e-dae41682c9af",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "fd000fab-1f39-49cf-a0f4-4579470b63a5",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "fd0b71dd-ee3b-4965-b39b-4b316321b8db",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "feac580e-ebc9-4e2b-a6be-55a856227861",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "feace90e-5bad-4d28-9cd7-88e1542a6525",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ff148744-1ddc-4618-9401-110f2dfc7c7e",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ff3250b6-62e7-486e-9997-5de32bff4181",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "8949b633-be8e-40d4-9591-1b011bf86f71",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "5703935f-b3d0-415a-9e06-13f51b72c9d6",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "b1c461ac-ad85-45d3-894d-448afd8b2e42",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "d1a851d5-07bb-4c6a-8e06-78a20ca86fe2",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "37122d91-aa2c-4b2e-897f-1dbc552690a2",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "604bd1c9-8d21-4819-b809-4073b8702781",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "755bcba3-ed0b-4b4c-98f5-ef3d37c15b98",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "a7084681-1014-4b50-a65f-19b042ecd9af",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "0559466d-4639-49b1-9840-ea51b235f3f3",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "7eb22d80-eb84-4a68-b442-92771a9899e4",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "00e27670-1832-4c06-af37-7658a4398cb3",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "018fda9d-beb1-4425-b993-6d3db5c0eb3e",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "0320b53a-608c-4e99-95e9-cd5ee56a7fe6",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "05ce775b-1fe7-40c6-9879-699d14b6dadf",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "0a9aa24f-3154-4d29-91e2-86a801b4fee6",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "0c8f5747-9846-4881-b93f-78cf156b22f8",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "0f314464-a434-475d-909e-3f313a75610d",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "148299b1-cda5-4e7e-8316-48cfc3cf0cd7",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "18d77287-567d-402b-8cd9-1bb9457bbb44",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "21e2b164-44cd-43c9-bd3c-4c01163dd7a5",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "221d8220-ee33-4f1f-aa4e-ef5d1a682e9a",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "3d91d41b-9312-4967-a540-1c8c5e2b5556",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "448e40c5-6221-4871-a505-c9fcc69d052a",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "4e0dcaf7-95c3-4023-9161-1cc65951622d",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "5ab06e39-3e36-4ebe-bc04-45bc958c6dab",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "5b17b5e9-3e78-47f3-9db7-68a078e23193",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "62c9e40b-15b9-44e9-85ac-1f4a43176d0a",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "69f302af-6c0b-4028-8e53-e22ac5f0194f",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "6bba8fae-1657-4365-9eda-6db7bcc43913",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "6c9b6287-ab95-475a-83b9-7426a73235d5",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "76ce3612-db86-4534-83e4-12707f605228",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "7ca76bc0-fc66-47ea-b7fe-b5e1cec1c6d1",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "84fd6cd1-d78b-4413-8f50-eeb3fdbb151b",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "870545e9-b8f2-4267-a3bc-870c066158bb",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "89102b77-4041-46b6-8502-a264759190a0",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "8a95cafe-4937-4b3e-b657-1de8d4381470",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "8fc23f95-fb23-4f7a-b0eb-bd38d58fdf7b",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "907f5b62-89c9-442c-a780-72d60429bfc4",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "910425fa-a261-4eaa-81d0-4e95cb056342",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "91b5388e-8829-4d3c-9b3e-6058317d4f81",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "9504ddb4-471b-4c22-8592-766899953257",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "9bc83155-56e6-4eda-91de-d33c83d0b0db",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "a16da946-29f0-4e54-9db4-56ea6e801470",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "a59c53a9-9853-4115-a2d7-61d26ef1df21",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "a675e3d2-6a17-438f-b084-a8e7aa805cf3",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "a878d562-7fb3-43e8-8257-05120186ed1b",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "b35f68a4-84bd-475f-bfe5-4669762d8a06",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "ba34d3b2-80c7-4d97-b957-cb85097e0b3c",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "be2cd113-3d44-4783-9917-de46025a8275",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "bffe90ed-ee6f-4835-b571-1d17dfcee6ed",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "c1ea489e-d5e6-436c-8951-ff0b2f79c743",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "c614a146-5eb5-40fd-b076-1a6adf0a0443",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "cd0d702c-fc04-430f-8f1e-e1e72b93b9b5",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "dd949c1b-933b-4203-afd9-6671df000890",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "e5f6936f-5203-4786-ba00-b33f0449db9e",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "e7f13c28-6acd-4b2d-b7db-9482aeed4f6f",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "f0a869ff-f462-48c2-a93d-2015761e7c23",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "fc5c40b5-f2cc-4dbf-b34a-207dafc7783c",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "fc836d5a-b411-4e8c-b4b9-78fe71dcbd27",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "16526d28-4ce2-4f8a-a5b9-7994b21fc761",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "6a775114-d979-48d8-9fa1-f7de398a1945",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "f79d202f-95a0-48d3-b65e-a4dc72347c1c",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "44ad5f86-1b57-43ec-bc6f-58c315ab3feb",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "34b91c50-9fa3-525f-a18d-87bf7033f518",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "4d7e0529-8a1a-4de5-b461-d02d5c6fcc4b",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "d9ccaa53-11d9-53f5-aef4-fe67d0c5b901",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "e8e53e98-8ea0-4672-953f-df2f1729663c",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "553705cd-8a86-4b8e-a6f0-78590dbd5063",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "deb5ee3a-7ae0-45e4-9395-aab8cc7ffa1c",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "d5781a99-daac-457c-acc0-8fd3bab416a9",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "9a30caea-5815-407b-849c-098ce8e88434",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "055e2337-c0c7-4992-902f-4b7cca9063db",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "79dec845-44ea-49fd-9cd1-65eb799084b8",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "07dd747b-8f1e-4720-ac79-2452f420f213",
+      "net": "ADC"
+    },
+    {
+      "uuid": "74e74f57-75c5-402d-bbed-6ca8ed1e55a8",
+      "net": "ADC"
+    },
+    {
+      "uuid": "e2513ab5-ec19-476d-ba0a-5578ce08e4ad",
+      "net": "ADC"
+    },
+    {
+      "uuid": "32425365-8caf-4ed7-945e-df79b45fe6da",
+      "net": "ADC"
+    },
+    {
+      "uuid": "38050731-865e-44dc-85d3-c22c3c5f86ef",
+      "net": "ADC"
+    },
+    {
+      "uuid": "49e5cab6-74e1-4266-8544-45a8cf91e323",
+      "net": "ADC"
+    },
+    {
+      "uuid": "6b592d00-c4d1-47c0-befd-b317aacc0a1f",
+      "net": "ADC"
+    },
+    {
+      "uuid": "6edcbfe7-de25-414d-a3c5-8f85e5e160b7",
+      "net": "ADC"
+    },
+    {
+      "uuid": "706da9bb-8a4c-4b08-9b61-eddb27b7fcab",
+      "net": "ADC"
+    },
+    {
+      "uuid": "8e5b01d2-9e46-4453-8dfc-5e3ce1b71a8b",
+      "net": "ADC"
+    },
+    {
+      "uuid": "91f803ad-3a58-468e-9287-ac9e2483ab09",
+      "net": "ADC"
+    },
+    {
+      "uuid": "af961c0d-bd39-427f-8237-1fc245e16946",
+      "net": "ADC"
+    },
+    {
+      "uuid": "ce2f7e72-d0fb-4917-91a3-fa3b08f65297",
+      "net": "ADC"
+    },
+    {
+      "uuid": "d07fafc2-dc78-4600-baf6-204c869a07d3",
+      "net": "ADC"
+    },
+    {
+      "uuid": "d9b33b85-9c37-44e2-af23-902bb19643c2",
+      "net": "ADC"
+    },
+    {
+      "uuid": "df90bf74-45f8-4dd3-8a37-b0ba8fc50af6",
+      "net": "ADC"
+    },
+    {
+      "uuid": "0178f0c1-2367-4fc8-a597-77765efad842",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "02cb5ee8-3784-4335-a825-38a0ad2fcb3e",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "06551718-ce48-4543-a75a-758314e5d27c",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "0bde40c7-1ca5-48bd-b0e5-71f261ac2731",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "0c4def58-3ef9-43cb-84e7-bf9303e1bce8",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "0e0f35f8-f589-4e3a-a5a5-ae6ec3287cd9",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "1016be15-7a67-41f6-82f6-ddc15d281f7b",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "10c7f9d9-2064-4147-8fe9-d5006d5d7c39",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "12240e26-838f-4936-aa74-5c233455ce07",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "1355e70a-bc23-481f-8de7-64367e0e4214",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "16aec029-19f0-4c55-9332-21a492a3da1a",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "17157ae7-e40e-4e08-8b2c-451d87f1ac40",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "17f9ece9-51b2-4e5e-81bc-2c4023b17176",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "1a3fe0f1-d720-4f7d-b186-091b067a6b04",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "1dadd41b-a3d8-4746-82ed-7cbece084693",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "1e5077d6-e10f-4046-a4da-89dba86d455a",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "207cf4e3-2329-47b8-b036-b625d92d3d06",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "20d29239-b6ba-4d07-92a2-ddf42fb46072",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "251fbd4c-8eb2-41e5-aad7-9dfd17818e31",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "28ec0dd0-0e82-4dc2-9ad4-e11bc6021d19",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "2c74c354-d146-48cd-ac86-686f6d413026",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "2e55bba0-50c8-48b8-a796-bdb951a80feb",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "302bd361-c0ff-4b91-8125-fe93e253e300",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "305aa94d-d2f6-412b-bc6d-c0071641ddfe",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "33a29d40-fe3f-4ad3-80f8-fbb696abfe9f",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "39464e0f-96bc-48c0-bcb0-6082d302455b",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "3b02d0a9-1401-4fed-9b60-8f682ab35435",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "3f09129b-1ca0-497f-b53f-90f644469a6c",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "409ab1c7-7f6f-4b10-a8b3-b457c9fecffe",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "418b12f9-8027-4c56-b807-643d18c02456",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "419e1f05-740f-4b58-9fad-968dc5dff22a",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "435072de-4a57-47df-8746-6d0c4b2c06ed",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "436f3d9d-e373-46cb-bcce-e64cc66b081f",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "45614b71-4c4a-42dc-a287-cde9e5754e60",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "4903f86a-9592-49fb-a046-86ea234c861b",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "49df3899-ab30-4cd1-8f56-a1c47f441c87",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "4c20c0bb-06de-49dc-9e1d-74ab7cf10bc6",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "5105eda5-3df7-4ad8-8f01-f68a7fba4db9",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "5148373e-ebbd-4f55-8f3c-c0664547c9a7",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "5246bcf0-33ee-4311-9c08-3bf129e7ae28",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "52b87a7b-3ddf-486a-8298-da1f4dc486b7",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "555e27fa-61d5-4cbf-8dfc-ebc4bac2c90c",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "5b327500-c2ae-4376-9b25-69ac69dc052a",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "6621c535-d450-45a1-afdc-b27589522cce",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "6902968e-0217-4f1e-91d1-ce7d83389a0b",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "6982955e-252c-459b-b215-1f80ec124820",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "6bbf84c7-6ddd-4825-a54e-ab5cc6dd362a",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "6c8aef5a-33f9-4774-aac9-631526f97623",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "6df1c4c0-a2ad-4994-a54d-b859ad7b3809",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "6e9dacc7-cd10-47d3-b372-5843f35d64e6",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "709c5a88-17ef-4322-a8a1-10dc80ee8bf9",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "70bb4e7f-3994-4d7f-8bdc-147d3b743d97",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "72b8500b-79c0-4efe-83d2-10f8417028f1",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "7316d778-e442-4145-a0a7-4f7b2d1f9db6",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "738c4363-0733-4529-b71f-c057338fc8c0",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "74d82b13-c6b0-4e14-bb69-fac109061ead",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "765e5244-11f5-4e38-bc66-a65cf6c6a6a3",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "769c9383-a81b-4199-b95e-7af5971c6986",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "7c5536ea-e7fa-4653-b892-f830ff6ba5af",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "81d9fda4-2373-484f-8527-2dd6181d2ad4",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "8298edda-3af6-4058-9e0a-cc29664c2519",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "84174633-b1f1-45c3-a2aa-57cde78fa584",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "849e4360-f874-4d1c-bf32-1896303b0e3c",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "851f4d42-91f8-4d96-a47d-6676df217420",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "87b5fc7e-2e54-4fdb-b8df-166d1e58aa86",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "88116a71-2832-4aa6-8b06-6538c59f4e61",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "88dbada8-1aa0-4ded-99ac-3de411b26a50",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "89105676-1731-4c1c-805e-409be8f04a8e",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "898654f4-ead4-4ac7-89a2-4e8a5b30a32f",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "8a60838a-6c4f-4198-9a0c-1e75d4071ec6",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "8d282e30-24ba-40e2-a559-a404cb0522a7",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "8ecbe871-5825-4f9f-b95b-90d3adb4d3d5",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "900bb9d0-d9a7-499e-9ecf-410748ebc9b6",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "92672354-b5ee-46ee-bae5-8ea639db16a5",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "92cf05eb-e730-4a6b-90bb-40f2708e02ee",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "92e126c3-6cf0-403a-9d55-08d47bacf7e7",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "93d85913-bd91-4940-a66e-4efe4bff7ad0",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "94917ce2-43eb-4879-8cd0-5a7fc8c8cdd0",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "96462558-29df-48b2-9fa1-21eab874c686",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "98180d54-a7d9-462a-b931-7b57690f6a07",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "9e3c5aa2-bae0-4e89-8cce-77787d24fe97",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "a078ca42-aa33-498f-bd38-e6d53cc1b726",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "a13593c6-0f66-49d1-9531-7191d37653e8",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "a24279e5-b576-4c58-a086-736e927c3aaf",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "a3b48b3a-922e-49d2-b7c9-717c8d568bfd",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "a4225f33-609a-4ed5-b0cf-ce8deece4219",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "a5ab1591-db90-4208-9c11-e6df353f5af6",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "a6737373-8cc1-416a-8b28-de8e3ef641ca",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "a733d115-a264-4ae1-9852-7b9f462aa1ba",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "a7fe5411-bedf-4c81-935a-5b4b33438f8c",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "a9a504b0-759f-4236-8133-ff2019ba40c2",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "aa6e0e9e-f54b-4de8-bfd8-83e499f316c6",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "acc29871-25ab-40f7-967b-c8af6ff90746",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "af5651d4-d56f-485e-a1c5-5afa4a049985",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "af7caeed-1abb-4b05-9f09-6f0bcc8cde29",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "b1d6b27a-f17d-4db6-9017-e9bde96ddcda",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "b6f8252f-c031-4436-83e1-ab6ef32ca195",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "b8c1095c-df82-49b7-a385-201a95c72589",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "c0916ecf-914f-4a4b-9045-bce6f532a813",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "c3427f3d-ba25-407e-9c4e-ad257efe9d11",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "c3fe0969-0139-4ade-b158-a8363bc85922",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "c433b19e-c62b-4260-b647-f761d8e0fa49",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "c4e2351e-1987-4c4a-905c-278b6abc48d6",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "c51f101a-598e-4209-a809-0e33000d9d0e",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "c654e39f-97f4-4312-8577-b8cf3144b928",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "c808a791-b476-4cbb-b184-972d76b4bbb0",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "ca40ff9a-324b-418c-afd9-f91a769314e9",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "cb9321b0-505c-4621-beb9-09725fa0c52e",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "ce764e0d-e6bf-4ad6-84de-8a6241ba0fec",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "d1b2e880-af6e-4070-8fe7-8e6fcbbfc77c",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "d2ff3275-ee11-435a-a5af-ec3a24a917cc",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "d6bd68f0-24a2-4d23-ad48-561e52c4a454",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "d97766c1-9e51-456f-a716-d547dd6888f2",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "d978495f-f057-4dd4-9b9f-21615b1c1ce4",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "d99135cc-4b56-4c6c-9269-358ba4aa2464",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "dc9413f1-d7e7-45a4-a15f-944acf6df045",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "dcb959db-9b96-459e-bd8a-e79d1fe84e5b",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "df1f923e-6860-45c5-94fe-022d852d52fb",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "e1e60dab-7f30-4530-bcf8-1b622bb9c22e",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "e246e28a-9674-4aba-8eaf-134e25bbf93f",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "e2ffafba-b05e-40c4-b277-9802a4770c1e",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "e32527e4-1d3b-46e6-ac75-4eccb5d0a0e4",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "e71f9acd-d442-4429-92bc-78af4cc1c8d3",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "e75e53d1-d6e0-46e4-aa89-d89f6e2dfafe",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "e846216e-df88-4833-91fe-4fad1e48fa0a",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "ec1dfd06-2188-4413-b4b5-20c30bf8fe85",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "ec204f87-4a35-4bcc-926d-b91b41bfc80b",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "ec8bb174-ef5f-404b-b1e2-ce2ae0ce3b42",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "eee5e019-7fcf-4811-a5e7-01cdecb77374",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "ef4b5867-6e8f-4b4b-9f89-88f0f44ca36a",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "f011637e-442e-415c-b04f-9c9ad184267a",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "f28f2c98-0bc2-439f-b741-d733419707c9",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "f5a6da6d-7006-43a3-ba94-3dd23025bcc2",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "f60d9bd1-d98b-4419-a594-4879db510b8e",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "f84fbf25-4688-42dd-a55b-f88fe6d41a55",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "f863b936-d8b1-4561-9250-a4bcfbe090d6",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "f92c903d-f00f-4b4b-83a7-2385df8b87c8",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "fa435f8e-989b-4a4c-94b9-2e019132a4ba",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "fd054859-4d07-4672-981c-21861370b8ea",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "fe7cf9fb-7a0a-45cc-be80-b6cb52e23cb9",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "34a7905a-c89e-4ea7-84ff-d37439554347",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "0b8fea62-5274-41f2-8dc0-ce547519e59e",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "0ba4e7c3-558c-49f9-bc14-f6fe61f82326",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "70d0b800-7667-49db-8968-4a509e6aecda",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "10b5d00f-8c93-4e74-a108-1e21d85611f5",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "857e54ca-a9d4-43b4-9b80-5ede4e393145",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "8bb6b69c-1c67-4679-90f4-2f7ad5f57bd5",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "8ef7c867-1f15-47ba-993c-c7d7a59e7946",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "d2c3a32f-b412-4aed-9511-88c7ceed9a34",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "5083e246-6c2a-404b-8afa-7f195bbeaaae",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "24b5063c-e62c-4804-83e8-8a79ea25d3ac",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "8eec0d41-a9d2-4c31-8b85-c2eb5e67af2c",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "f756a2f8-2df3-4426-8b52-e826f7b6713c",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "cac81967-b130-4225-8018-e29cb897b39a",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "fdf97919-ba77-4673-b667-8d82dc420f75",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "433d3cc4-f878-4053-85bc-35418186fe57",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "e671e017-4dca-4622-9a5f-195debd42e87",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "13f69eba-0fbe-4759-944a-d125e6bf518c",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "20923c29-3ff1-4ef3-bcf6-8fcef7a30fa7",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "24b69d6e-a8f3-4e93-b629-1092f9a63630",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "50019e20-0c01-4bff-b6e2-b6b3a823e788",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "5dc1c637-b4b4-4b41-8da8-ba793ae3bcf2",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "633fa828-5869-4e53-9877-89d30b81ceca",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "77b32695-d64b-46a2-8b8f-b4edc345593c",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "91b2b51f-6b9b-4b61-b044-d75ea41e1996",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "b0b5de1d-531a-4966-8e7a-5d1ee00b8582",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "b4087e44-8de4-4816-aac2-275e6f90ae13",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "bc6e4f25-1006-440f-b9f4-12912b70ce80",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "db5aa4a5-5229-4013-ac95-6cc2abe84947",
+      "net": "STATUS_LED"
+    },
+    {
+      "uuid": "3d6c74cc-c86b-4d8d-b296-6084b68390d3",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "7047df8c-8bff-4e3e-a15b-cfef51ca09d3",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "ae04c2bb-f36e-4c24-88f5-e010f32e1f79",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "e1b9051b-9a9a-4ea5-82f0-f054a10e887e",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "05e56587-c55e-476e-8af2-dfddbb0dd5e4",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "15651dd2-218f-4735-ad8d-df197342f75e",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "197ca9a5-13f1-4146-be75-c527dafce13a",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "1e74a917-952c-44fd-a65d-a959c02f810b",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "30b575ea-fb71-4a85-8dcc-a62514e24213",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "4b6083d4-162f-4075-a581-24a3b65a823d",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "5a141572-d4ac-4353-a7b2-c6f67fa4c6fe",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "5f14b4fd-4ced-4488-b807-e9a18c9700d6",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "64dabb4b-dd5c-43d1-a993-7276a9a1bb4d",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "67da4a3f-3b25-4fc5-bdea-fc69afe7679e",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "812f957a-7ba7-4752-a546-0c5f94f22304",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "82218e05-a1c6-4b78-8707-3e8f7319e0e9",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "82cd9938-80ef-482b-a6cc-3e0510c45ea6",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "939b6de1-80fa-48f0-926a-bcf7570fd925",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "bfdc79f5-dd19-491b-9c22-72b46f9f8371",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "c411e78d-a364-4ca8-a2a6-2dae797a2b7e",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "d7d03e66-2525-499d-8eaa-6d9e1db2a0a1",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "e0c70e1b-c747-4bc4-9e49-15b4e7b48355",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "e3d95387-5d4a-4571-aee5-e44289ddae69",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "e8dc16a4-b8e2-4219-8075-51204578d7e0",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "ea6b2340-b0c3-4571-ae4b-a3942203e84e",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "f0ada54d-2f9b-46d1-87b7-42fa70018bf6",
+      "net": "ROW_DRV4"
+    },
+    {
+      "uuid": "4bb31f36-539b-4769-af72-022957e54ef0",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "2d361e2f-f912-4994-83b6-a1589df6973f",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "0e15ef63-8e0a-4efa-a779-2eef786f6476",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "ec75d560-3c48-490b-bbaa-42fbadccad85",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "32ac0a8f-e09f-4193-8e07-0088f88ca9ab",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "5f1d9d79-abba-4e5b-8295-032116acafc9",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "97b9e935-28b3-498f-b5ef-cd1daf3a59fd",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "1b8cd0c1-fd5b-4689-9c58-507721802b6f",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "6922046d-9f90-480e-8856-e12f1ea2df44",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "c003a213-2c20-4b34-b9ef-44400ecaafd0",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "e30efb3e-eab2-4f38-989a-ea1e4ec2dee2",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "f2475612-1e50-4e6d-af12-e114122b524f",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "02ead4cd-ed8e-468b-8955-7b436fd4b88b",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "5b4c4697-16b6-484a-9629-1f7f6ae7fbf1",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "a81724b6-3f89-452b-97d5-7de95d446049",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "1f485763-98de-55b5-8af7-1ea3337111b7",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "2163b6ef-9357-5ecf-b0bd-64a95ab04b8d",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "3b8db9c8-b403-5f49-8ffd-22ce21c8a846",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "40e1ecbb-cc1c-5dd1-be60-ea48918b77f1",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "686bf5ec-63f6-51b9-b0c4-87b32704f058",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "8a642153-f0b8-55be-bea8-963592b6094b",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "8bf0941e-cf99-51b9-9a95-0c62a25abff4",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "90e30748-ac7d-53f4-874e-55a4430f864b",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "c12f41c4-6d69-5acc-b41f-8a9faea1bf87",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "e474a097-2ea4-58da-9cb0-38f044385974",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "fc2ce963-a891-5e92-a572-9164c0e5c40d",
+      "net": "USB_DM"
+    },
+    {
+      "uuid": "261c668c-9a24-5501-a99d-06c3709acfe6",
+      "net": "USB_DP"
+    },
+    {
+      "uuid": "4cea8e48-36e3-5098-88a0-5e5f6216ac9b",
+      "net": "USB_DP"
+    },
+    {
+      "uuid": "709f9b28-4d17-526c-8b90-6d9ffe177e05",
+      "net": "USB_DP"
+    },
+    {
+      "uuid": "91165f32-c26b-57c6-8ba7-122ba53d88ec",
+      "net": "USB_DP"
+    },
+    {
+      "uuid": "b0995c32-b6df-5928-bad8-c301ffc5c915",
+      "net": "USB_DP"
+    },
+    {
+      "uuid": "db12c4ce-3d7a-55e4-b246-1ea4531f2d3e",
+      "net": "USB_DP"
+    },
+    {
+      "uuid": "ed31b3f4-ca06-5c8e-8c3a-2b24cf78edeb",
+      "net": "USB_DP"
+    },
+    {
+      "uuid": "2e950fda-3951-42b6-b592-9eae0e2ec615",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "8d1d2bdd-cdc0-447a-86ed-1b54c27b715f",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "9551ae9d-cbc5-479f-9259-1c73f135ee94",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "daee1def-d0f6-42a3-97af-1a38a9870a3d",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "0a78fc64-565f-4881-9716-00ac34c138aa",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "1d43a237-ad14-4c23-a288-4555b9d6edf3",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "2b7acb33-a841-4162-8913-f789b1c69698",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "2c0d0b2a-7ab7-4cc0-857a-675c9dc76db3",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "2c76fbd0-db00-41e8-827c-2f1f1a5da4ea",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "39686dc1-afbf-465f-ab9c-4bd1e9e3965b",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "39d5afba-0b93-42f6-be8b-356a315db964",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "400538f3-1172-4400-8a6c-320aeaa8c332",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "446fa75f-3344-4370-8826-7e879c936c7a",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "49a75145-648e-4867-8deb-f503a95a6004",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "54ed6fcc-ead8-43f3-b751-f099288d3cbe",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "64f6c9cf-2f7c-4534-86f0-f0eeddd10627",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "69d0dd44-4ac8-403c-8720-e9fd794277be",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "769b0734-3fdf-471b-9605-5fd1cf4f120f",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "aef5b0b7-7e9d-4377-8d05-00753782e222",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "b2d1e82a-5640-4cdf-81c3-6fc6a5bb47ad",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "b8f5a4f5-88a8-415b-b89f-c17c003067b8",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "c45723ab-0411-4a23-9dd8-eb09e33a9b7c",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "cb8d184d-5e18-4b7c-ab3b-aa88d2a55227",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "d2d1e105-1a9e-4d0e-81fc-7122d79ced6f",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "d462fd3c-c71c-43f2-8bd3-46fd769b4537",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "d74937cc-7735-4d90-8641-766c56312cac",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "d775ff54-fbe1-472e-8c38-fa30a1efaf18",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "d98838bb-3ced-4bc4-b3d7-f3aa63077801",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "f2c23065-c95d-4542-8ab1-cb0697db416f",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "00f233d3-90b1-4f07-ae9a-d5f6bb52f8d9",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "13d3cf0f-eb81-4dcf-874e-6b0d73b06884",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "5533c55f-08fe-40a3-8d30-7b3076992a9b",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "687f5bb4-9697-4e43-a749-803134073394",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "6f36453f-e549-4443-880c-2c909b60fd66",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "86c0146d-735e-4d4a-9d47-16502309939a",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "92d555ba-ef4c-4a0f-b497-4e1ac023b776",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "9abd32d1-2cab-49a0-8dda-eea2f5f7a9fb",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "acde9a51-809d-4f92-8bc6-2d0bfb9b4fa2",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "b7162920-732b-4fa2-9356-7da6f511bfc7",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "cfe48706-8ca0-40e9-b105-b368fc8ae69a",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "ee20bb74-ef53-46d3-9313-61de345f8bc4",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "f07f8002-1dae-44c3-b5be-a82548160e0b",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "f8278a49-b882-4df4-9f19-dc5f5c122a70",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "20b964e6-fae3-402f-bcf1-da591304781b",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "2a8114ee-fc5c-4df5-a62a-2a1ae744803e",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "5a058513-386b-4436-a2f8-41e166aa4501",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "6f58a3e3-2a25-481c-9d49-b4551e05abb9",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "e7de1f12-d6e9-4ba8-87bc-f0198756e540",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "09816aa0-ee46-48fe-88b2-c7989bd9c4bb",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "0d7c2b6e-a5d0-4666-924f-944e7ee3a953",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "13d6d802-c07c-422f-be9e-cd9a97e8f727",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "1f015225-3a3f-421d-b8ea-2b2748b30ce5",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "692ba774-a52a-4a9f-b272-671f230c556b",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "7b6fb02c-aa78-4652-904c-3f8242ae6e01",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "9ebab6d2-f78e-4a1e-9484-f7c2bdd636db",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "9f90498c-3899-4b5e-9f64-0465205f5fc0",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "a9ce6069-618a-42f0-8ce3-19dcdfae3e12",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "c762f788-bda4-4aa8-8301-0ba6be7ceb1c",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "dffc6baa-3fd6-45b9-ba20-90028f0c422e",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "e169c4be-54fa-4d30-b7fb-65f079ea8dae",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "e95ce1aa-4a32-496a-b545-a922c441bd1f",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "f3b8d93a-c623-472e-af07-2bfc7a6e6f43",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "fcd2fd7f-ce40-41d5-ba8e-ee96a55c21d1",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "0b86d851-1018-46ef-a1c0-6fb9503199f2",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "861d0af7-cb23-46c7-a0c6-dc4212b690a9",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "d0485eed-41a6-45cb-873e-c7c612c821c7",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "db96751e-2a47-41ad-9c35-30263e9cb67d",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "0f40f568-e92d-461e-a100-64f11a5342bb",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "110ef88b-b5a7-4944-bd99-4be5e1e3baa5",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "13abad4d-c8e8-4cd6-9817-80bfa3af912e",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "17e54f75-2f09-46e9-bd22-ddbdf77c5963",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "1d276df5-e16f-4749-8cd3-00598382743c",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "22c93884-62b7-4eec-aa12-67d299de0627",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "265a95a5-f239-41e8-acd5-376cf7fd836c",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "2e4d2e91-8359-4fde-9a89-eb4be8208ff4",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "3140ae42-c6ec-4f84-98ee-7cd352befe10",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "322cd8ce-458d-4dd2-823f-d73d6bd51bb4",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "34703dba-3837-4303-bc01-5f1da8a1d9b5",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "42a55312-b882-427c-bf69-bf2a92e8baaa",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "54d4e586-1a88-4162-9abf-39d5859bbbb5",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "693d113d-9435-4632-82e2-9a0a4e74cd5b",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "69d0d531-57c8-42e9-beba-bbbfcf4009b5",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "6ddfe291-a4a2-41f4-8f4d-ae6337aa1e63",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "6fa4fa47-d2a4-478f-8c7a-6eb9b6160a83",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "7a4a1d31-3c44-4c25-a2f2-74d8ebd31793",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "87185e6a-551d-4706-8b74-af4ee1d218ad",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "87d783fd-3f73-4cbf-9d9a-fe555f51ce0d",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "99a707eb-d5f9-4887-a41e-32644e22f864",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "ae95edb3-50c6-46a5-9df2-9c93b28319ef",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "b69d833e-84ed-41a9-8d2d-278a3a25f0d1",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "bcc2d96d-1a6f-44a7-9632-b32a41564518",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "da07c8ec-2357-46d6-9771-54a832513c55",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "e8898405-f970-4944-94f8-0db795835719",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "e9ec4b8e-dc1b-4d2d-91a9-c8e8d6f7d45f",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "f2de8c5a-db57-4470-9323-9dbe77422962",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "fd31f3a9-7d99-43fe-bcda-0d01b8bdf084",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "02b341c9-c8bc-4bdc-a17c-d9902e2a57bd",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "22fc5c58-bda5-415c-8b56-10272c3961a3",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "2357b5f0-8a50-44a4-9ec1-fb1a87932133",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "329fc14c-04b6-4901-9663-c4f111d671db",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "478625b5-2360-4a4b-bcbc-706ae9e34004",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "4d3e6fc5-c02a-49c7-b5e2-350af22b1f76",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "5be872ee-1f50-4730-8833-a6512cded0d7",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "648c61fe-acbf-4b65-aca6-4c5434ee2087",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "7f0a701c-7aa6-4d5b-bab7-ec18461d2b7e",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "8bb703e1-adc8-4418-93e8-01d9da249aed",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "958c2c0c-a700-4a73-8808-b82c7bd90871",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "980cd590-599a-40d1-97d1-f1a2808cfd98",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "9c0fe757-e702-4ebd-8ace-9190c95fe632",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "c4207c5c-56d7-4ee8-8e75-0ec415dc1186",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "c6732680-09b6-4bfb-8a9e-29c6fce5a85a",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "cbb40791-ff48-440b-b35d-1ac072aa23fb",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "e259e43f-8ce3-43c0-af7f-ef01a32a5bb6",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "ecc2f028-f3d0-4aa4-a103-ed5ef69cba61",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "f3409655-817f-4e40-a190-838cd1fa7fa2",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "fc62806d-32d2-480f-8b19-1df70001afc3",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "124b0c52-4af0-4995-91d0-79a0c89aaeb0",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "547ce6b7-4136-4fcc-990f-64893a289005",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "9d9c0c5c-ed7f-4797-b624-c28ac41a24a2",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "eacf152e-37c9-4373-bb81-a3c00fb66294",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "f9d33b1a-df90-4f11-935b-6686a5ff2877",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "00952678-1e22-41a9-9ee5-f4fddd650179",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "07d2f05a-a025-4a8f-8104-c8e79cc52be0",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "09be80fc-a277-4a18-a936-ab763651150d",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "196b1a62-2c85-43fb-9e02-7894d245f307",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "1b89f155-d492-4030-a4e7-95b2d7f55020",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "25e2a2f0-7427-41d0-afed-291923150ec0",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "2dead250-68dc-49f4-a19b-1835ec950ad6",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "31190d4e-8982-4952-86a2-24a612120bfe",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "317001cb-53cc-4e5a-a317-0afa67d9b12f",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "37c4b75f-4276-4893-9ef1-50245179ec5b",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "3dc9b6e5-a455-4b64-ae8c-fdcf212b6249",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "448b00d4-f476-46f8-aac1-68f2d7243f89",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "46e87285-5f12-4518-b792-cacbdf23fa35",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "4781a5c4-cacd-46c9-b0de-46e0e649460f",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "4a07279e-27e0-49fe-b91b-d927df04ae69",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "51438c66-1d1b-4ec4-9cfc-60dd4b8227b2",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "564f80b7-3594-4b88-a1cf-d1aac8b0fc4c",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "67db0abd-4c40-434e-8ed2-484666b85c2c",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "688aa44a-79bd-4619-a032-4ce39cedc628",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "76b27e74-47b5-44a1-b9d1-efde5bdda8d9",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "8c6edc9e-072e-4a84-9de0-b1cbb08f76f5",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "92e30b78-d888-4610-8526-4b05497d58fe",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "994bbe13-a3d5-4c7d-94b4-f514cab95d52",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "b3adc829-2a1f-451d-9214-c5ffaf9ecc59",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "b6a9f3cd-42fc-4734-915d-f6840c3fc67e",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "bc36c901-779d-47cd-9efa-e2f9b6fc5c18",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "bd378e73-c831-481d-ba64-33ef6e3aea2a",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "c462fc02-44e8-4aec-b3b4-7c31eb017684",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "ec4dc148-fcd3-5cbe-b3af-00aee1aa3156",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "efe4ca21-e109-4d3c-9a44-166cf7599379",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "fd45f24d-a81e-4602-a008-62489d577627",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "fe8ef0fd-4af0-49c3-b5a4-2cddd6bf934e",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "0245697b-c3ee-4964-b712-da9d32113455",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "0ffadaf0-6fbf-4f43-b5af-4c61eee2a21f",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "137c3fae-acb5-488a-8129-6dcd438ba31d",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "1a4bccf4-bbf3-43e5-99e2-d523e35212ea",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "1b85f8c8-5226-4689-a761-fa671ebe6f63",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "203d646b-4fd3-4727-897f-0c5e26f83c40",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "215f7c23-404a-450c-a635-48d386425bf5",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "288e2a28-2033-4da9-82a0-ff779a1d695b",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "2aaacfd4-af30-41f3-801e-04300018c61b",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "3ad81154-b370-4feb-929f-19c5ce201e87",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "47a1889f-b5db-4ac7-81ed-8c016dbabaa4",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "6673ce02-8673-4d20-beae-f9b2a518ec5c",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "6f0cefd2-95b5-42f4-a880-816ba4d49890",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "8239cb79-674b-4682-816b-aae6b8f033e8",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "8de4a25b-7d3f-42c1-a42d-ce8920ab2cf3",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "a37d884e-168e-489c-bf3c-2bfee29ced72",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "aef3b055-e689-4fb0-a8c3-33ac7eaae436",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "c086f360-e75c-4aa0-b0fd-60da84870978",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "c40dc243-6c05-4874-bde7-b824ea5e9e0b",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "c6be2570-90c9-49f1-ad64-fce91004c6bb",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "e5520d7f-d6b5-4427-9523-ea133548451b",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "e7aa7123-4a30-41e1-a856-6a6df6b70fe0",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "ee953ad3-15d9-4c93-be58-8de1cc7e2c10",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "f2d63719-d44e-4123-9078-8501402b6190",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "f85c0080-f538-4610-bdc3-cf8cf030a527",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "5b15ac58-05a3-5d59-ab33-4f1ff14095b3",
+      "net": "GND"
+    }
+  ],
+  "relocated_cluster": [
+    "U1"
+  ],
+  "module_origin_PCB_mm": [
+    332,
+    195
+  ],
+  "module_rotation_deg": 0,
+  "source_sha256": {
+    "hardware/e73-corner-spec.json": "f60d3f2fb5b77b3c75de3a57c56e26678329852cbb342490f0671c85be2a8274",
+    "scripts/build_e73_corner.py": "fef7fd9b2addb0e70a9d5a192c95e03304d7c45638c0f7615d21fa8fb6991983",
+    "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
+    "scripts/check_schematic_current.py": "908fc7181c616685f2afcc2fa93223518ea83be03ed1a401c7dac8c0dfda33aa",
+    "scripts/screen_yeti60_interference.py": "fb3bc69b0a34f40536fb759c07a3448455326829ad26d1aef31959871ccc2ee5",
+    "hardware/e73-usb-repair/EC60-nRF52840.kicad_pcb": "0353992782a636a6ca04028aca4e6a660da7ae27ce0909aba2f7d3b29d4af8ee",
+    "hardware/e73-usb-repair/EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
+    "hardware/e73-usb-repair/EC60-nRF52840.kicad_sch": "cd16b24cfc3ef48b12ec1f73d780520af8e7bdaa767b8c4c2894084992204c5c",
+    "hardware/e73-usb-repair/YAECKB.kicad_sym": "865a10d42ef566035fb3186b75ee4577e9d47b2ab3a60322f7251352b51fbe40",
+    "hardware/e73-usb-repair/analog.kicad_sch": "50213cf793f4cadf9313ddc3fcc5c6755896291a56e8ca56dec564b0b9f07bf2",
+    "hardware/e73-usb-repair/components.json": "8c574258662e94a71775adbdf3c702e1a92816afc4e4e08cd25b2ec454f0118f",
+    "hardware/e73-usb-repair/fp-lib-table": "ae74cc20692db69057b379cac2a92081855a8341eb0c5dcf3e3528140b57368a",
+    "hardware/e73-usb-repair/frozen-footprints.json": "f14d0485b862153eb75335358d7032574c9678456245f87ff270af54fc68b520",
+    "hardware/e73-usb-repair/mainboard-purchase.csv": "57652fe1efdbed769da1e48b968a6e424df8cb3f7a2131e65ce7af1ea4020c1e",
+    "hardware/e73-usb-repair/mainboard-purchase.zh-CN.csv": "6fb3ef44d41117be1398a1c5e490ef88a2fd5f59a522d8120f28b5fc729bb5fb",
+    "hardware/e73-usb-repair/matrix.kicad_sch": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
+    "hardware/e73-usb-repair/mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
+    "hardware/e73-usb-repair/netlist.xml": "60fb3973ecf716b491f0fb6e06f4834403b497d6a11492207657c3e831a3f565",
+    "hardware/e73-usb-repair/power.kicad_sch": "4264299243a7a77f1a72a9fc88e37d48015004822ac5b1386f9e13aca88c39a8",
+    "hardware/e73-usb-repair/sym-lib-table": "d45513cd8e4e4ccd05e68f16dfa9399892b19383c65133140567bda6f4228cc8",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0402_1005Metric__C10.kicad_mod": "012e14bf8e54dec36459ed956431c982fd9fd90dee697e550e276b77a5d028cf",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0402_1005Metric__C11.kicad_mod": "8888a5f215dd9d73db7e1b41ce578b7b806543dc3f1764f82d1447a25d779522",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0402_1005Metric__C12.kicad_mod": "94920c2e74f0544633af659a990366b699b384ca189002ce989b86b318560a1b",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0402_1005Metric__C13.kicad_mod": "51065f6fc884c1fe9ca4251991e0070787ef4b1b3edb8be64a0668c1b880470e",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0402_1005Metric__C31.kicad_mod": "dbba361843c09dbd7be55b3cd3a94ce868b7f95d91034f67c28cf7e420684028",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0402_1005Metric__C47.kicad_mod": "afb088ac48412ea1374be57715d27dfad06378001bcbc917ac40143c4c0fa86a",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0402_1005Metric__C48.kicad_mod": "e7a56b6182518cf11721fd11b6f8588f189068d07bb68c97e2b6b7e74ea6b25d",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0402_1005Metric__C9.kicad_mod": "8bced8fed3d3091439870eb8819d4317f1c1269a29b2ac375d575a20a7a29e07",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0603_1608Metric__C30.kicad_mod": "ac663531aa17fce4f4b677dd837b52327b0fc2f745161fe8352f9213e2bb0cff",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0603_1608Metric__C32.kicad_mod": "2794ad849ec29df3dcdcd61337277701fb66b325e3b1cca1247aa34230035ced",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0603_1608Metric__C44.kicad_mod": "ccd60b47964092532c64cc3b5f9ac6862fac3dc7ec643a8421881b957e3326b0",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0805_2012Metric__C40.kicad_mod": "49e2cacc0888c459553117095c805b1389501d9c128b7c3c072ad83f0500a65f",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0805_2012Metric__C41.kicad_mod": "f40366f6d809925d2016d547df6d82173e2684ad472a9ea8514f650d2db90829",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0805_2012Metric__C42.kicad_mod": "a5a4caa36455df866a2d3ef443f6f01708b10ccf0e662ace95195d3809e0550b",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0805_2012Metric__C43.kicad_mod": "edb569a5863d6c893a500c1212fe7a2ec9cb4d1ec4f25603bcf75ed3b3567e4e",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0805_2012Metric__C45.kicad_mod": "74185afa9b56e3ca8ebc8bbb55c27581a3e259bea49f052ae1edc6e7c03264f8",
+    "hardware/e73-usb-repair/YAECKB.pretty/C_0805_2012Metric__C46.kicad_mod": "cf954df2ea224553f5da07da55db34475a2ca9cd707f10522d89b68f1a26d3f0",
+    "hardware/e73-usb-repair/YAECKB.pretty/E73-2G4M08S1C__U1.kicad_mod": "cfd9834d36bb5f2066ceda2b6a6f91f16abfb4a4743935c48b656ed80f632315",
+    "hardware/e73-usb-repair/YAECKB.pretty/EC60_BoardOutline__REF__.kicad_mod": "999219d671fb6fb68730275e402ddf4a3c6affea57d0c6ca029dbda0377b9234",
+    "hardware/e73-usb-repair/YAECKB.pretty/Fuse_Littelfuse_0466_1206__F1.kicad_mod": "d45a7026280287ac02154d1b75351cab485a96ce8bb28a1886f70b9143ff534b",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H1.kicad_mod": "69d5df34ca62ecf821a03532d2ce848f47b1bd58d4e0e2e37360a7295c557605",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H10.kicad_mod": "1ff61f59ccdf0c410039c12842e259b768dc4c681449a2a05f697907b53edd3d",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H11.kicad_mod": "f74e37fc0c62a4ae207db2fb26db7c008e65acf5c5e2c4027683335e31405f95",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H12.kicad_mod": "8084277af979e523ea6601446246d3526016c538a11f9807a6dc6b28e3d189a6",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H13.kicad_mod": "704a290e90435faad452f80305779cf3500c853cf1a7ed376579cc25a2eff0c9",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H14.kicad_mod": "3e37e402e096cf26c7f91d8be503143eca5cbf4f3218fb5c400881ff350a5a9e",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H15.kicad_mod": "db861198b6a57ae922b214570a438ddc9033248b65aaf56eb59c4ea6641e4511",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H16.kicad_mod": "048d73c3af4748d49117f834b7bddbbc34af5cd75a2d197c565be65dd7be3791",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H17.kicad_mod": "fef92550f22b94abc5af05d800e672cd609920c88a834cc5aebf654efda4523a",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H18.kicad_mod": "f397dd76fa054d294f66375a25f64d86d1bbb59f1c6f71b546369f0054ae07fc",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H19.kicad_mod": "e4947309e271712ee38a96d7d16156352d221e92c8e2ebe849c1d69a53436c20",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H2.kicad_mod": "c9dbe2d3c38d4f8ef86678d180c013ca735501242aad870a17d1dde7daa2e523",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H20.kicad_mod": "a07e8b93b285186d9416e13128cef51ab8a41478f03ef131fae65539ef133198",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H21.kicad_mod": "28d1dc6e445a788d2448678ab8c951739b69877d0a3fcebb7ecd282fe3e25d92",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H22.kicad_mod": "faf4ee2a540e697a6093b219a2f6d4728005b46326191dd4c526bf15b1206822",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H23.kicad_mod": "68798b8dbfffa4d92b6ae3a906dff00baaac4047610df40f55b0200efc1c886c",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H24.kicad_mod": "c1ece6aa6f2c5454990d16ad4eaeb4671e1d0696b4cb644b944750626d660804",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H25.kicad_mod": "b06950cb1aee9a5d54dcd373d492eff2a97b79e4a6232e9200bae094f28966d9",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H26.kicad_mod": "6cd3e452085329b863a2120ba6aa2e483ecc4fa81aab24e4d9218f48f937554a",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H3.kicad_mod": "c9dff80925792d488b378b672d87883ce53facbf350c16732b040ede264bbc2e",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H4.kicad_mod": "228f3129f07715198beb70be257adb41750422962118c98c1905e0585bb6db95",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H5.kicad_mod": "9f90173930843729affe57e21f581ae96dee90bca5d1ee904fa3d4e3609d83f5",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H6.kicad_mod": "d645211fbc5f30d0bdb0b50f6183bbce6e80b5d6034da7f16fa339a8d6f32f37",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H7.kicad_mod": "1a9020a76a7a5b92b2e92f63cd0a2396d0013ae0c5c1d122e64d28364c7fbf1d",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H8.kicad_mod": "d77f60437d9db6e63e9301490f001b4eb65c4a2a86b1f4fa0ab6723f5147d513",
+    "hardware/e73-usb-repair/YAECKB.pretty/HOLE_M2__H9.kicad_mod": "31507c639d0ab3cd8b5c4094c3c0c483393e6ec2e046ded138b84c05d51022cf",
+    "hardware/e73-usb-repair/YAECKB.pretty/JST-SR-4__J1.kicad_mod": "1e791e4505712fa9296ed34f36e25e3a0a5b0167d4691488ce0ef5326efe7a4d",
+    "hardware/e73-usb-repair/YAECKB.pretty/JST-SR-4__J4.kicad_mod": "2571c1356f46d1d644428d6210673c2f0432839e73649e37d8b27daa89211d0e",
+    "hardware/e73-usb-repair/YAECKB.pretty/JST_SH_SM02B_SRSS_TB__J5.kicad_mod": "f9b1bb0f93b66fa33fdc3fec2652290ee873fdf00e29e7458c44ecd78f135200",
+    "hardware/e73-usb-repair/YAECKB.pretty/JST_SH_SM03B-SRSS-TB_1x03-1MP_P1.00mm_Horizontal__J2.kicad_mod": "cd5cea2fca8630e2ee74185cb6e47620d81fc7f46364a9ab95e3075f58c5d934",
+    "hardware/e73-usb-repair/YAECKB.pretty/LED_0603_1608Metric__D2.kicad_mod": "623eb53e820623b25ef94a382a9d82e16a8e99b85a51a7dac391762a0d582d9d",
+    "hardware/e73-usb-repair/YAECKB.pretty/L_Wuerth_MAPI-3015__L1.kicad_mod": "d9cdcfc66230941a32cd06e7ade267ec16f71e8ea468252971548bc4ee022647",
+    "hardware/e73-usb-repair/YAECKB.pretty/Panasonic_EVQPUL_EVQPUC__SW1.kicad_mod": "32fc9da525a04ce7f34c3623ebbc03a41d5d835de2d1a67ce5db880858f2fe79",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R10.kicad_mod": "0d29596a4a1d5f8d7525dd47166c5bb71906af3f38194bf6d7ccd01771c1ebc8",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R11.kicad_mod": "812d336bf93d63b2e865073b665d5b7067d796bdc3bbf6c039f3f41a4a3bfdc9",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R12.kicad_mod": "52f0641e724716f959d2891ab9733cc3612a7855df3035261da049cc3f4b5577",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R13.kicad_mod": "5fefec56ad92e3e5e4bca0d4f2fa9128ab1977b796c9bcd0cebcc87df6188808",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R14.kicad_mod": "8c6fc7d13d84c8376425db8f270f73c23bcf17e809228687318373920cc87ce7",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R15.kicad_mod": "f7b504bd0b34ea3d80f8120076a4be4790c3f7b7a442c302308cd4d4bfe2a324",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R16.kicad_mod": "12d555a88bc45568c8ba18d7593f1745947a58a21647f4773f9f9291bd86cb57",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R17.kicad_mod": "f9a6b57a16641ba8cdb5369e49a02a3d6648354c6a95ea61321f620ceae39edc",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R18.kicad_mod": "cf1eccac07fe6eef76e2fd6c3fc8cd3dde70375e5387e9986881da935fffce66",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R19.kicad_mod": "e24ee38206d41564710eeb8246e4a7606209a0c334d95ac6e904dff73a69ce85",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R20.kicad_mod": "dadcb5ca5a18b48e7aeaad8c9706b3b124671e9fe1d0eb935fca57c801edb6a1",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R21.kicad_mod": "e221e542f352d2389767784c250451335459dfb13458014261cacee6a8fbc8b3",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R23.kicad_mod": "93f4cf99b0b58c24d012a4a2f0d6128644a60775510e05b8c2aaf3df2c86747b",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R24.kicad_mod": "b83f8037c5cda24c91f893171004cf8228f3241dfe5f3e2dcd3bbfb734e47d1b",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R25.kicad_mod": "9edacc03723d4406152151df16b8366e121c79dad4e1b23e047958eecd8441f5",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R26.kicad_mod": "57b054deba024a8275f2987fb8bbcf292fb07c6129951374ef84075a41d3a149",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R3.kicad_mod": "36f962f1cf3809d83acd69a73b45d3926531b32e8105df7472b1ac9c3f27fad9",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R32.kicad_mod": "6c41c4d3956d71092c14c8b70b26cd916b01191992f6b207d295f17185f6c41f",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R4.kicad_mod": "056710ff72e8af4b3caf0122e33a611e0512c528f0772456e29a2be9ae4d2542",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R40.kicad_mod": "93eeb5aad5dd6e2f33d2f353b436bbc6111b41b8cbd2944591d8764e4a7f2114",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R41.kicad_mod": "93bd31233847d71243aa0a9c58c660c13ea2bb6e99fa3cae606cf384c07e86cb",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R42.kicad_mod": "e148770802eed515475f14045e91301335203c9bc2f87a46428f174aedcb27f6",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R43.kicad_mod": "8a378c5eafba6d15f5e976a1012d57694b9e54d0569641eadade30571b7f6533",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R44.kicad_mod": "8f21612c8983c76a3f27e3e5453e55c07c7dc629460a0fd796467734c7ff720b",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R45.kicad_mod": "dd5c758837b95edef86e319ef98f052b49e7f75eb1597b37f2816b4ede7b9bc4",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R46.kicad_mod": "18d4651f5143c58c0bc56892540ac3f8c4daaadb01fae302f0f99b8bfee055b2",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R47.kicad_mod": "8e7f1c5a2ade38f0704c72cdc54767759ad1ea51d2ddd1ae1be2933e096241f9",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R48.kicad_mod": "8b9be0e0ce2d3ba88e231b52552bf46efaa1d36b83300a3869142fca4551aa1c",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R49.kicad_mod": "efa584479aaff69ff18599e796b7cfa279cc1877b77a6c8057dfe994dc89685d",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R5.kicad_mod": "e51c7c075c67236fa280e542de64e34f0029faa22977377ffa0eb03191e3887a",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R50.kicad_mod": "8c5237f821e90889cbbf964498f14cfc902a3f6f0600b06db706185cdc05053e",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R51.kicad_mod": "99c05039161cfa3c7548a536a72171072caad4c4dc78a8bdc813c311c3427135",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R52.kicad_mod": "df6f3f0cc6c92fcad6273f184b40d826363d29e7a64784c55fe70a8fd0ec391c",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R53.kicad_mod": "43c7d123aacc8d52317ff1bb98083cd71a0848e348f3b67ed11611833f3f6dfe",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R54.kicad_mod": "eb00fb5a419bd0dd57a7746ae9c579679eb2bc19dea3bbb3081594cdc95836be",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R55.kicad_mod": "02b1317605ddea8b85213752672a8ebca1c15f1641d84b2e0287c66317f6a5ca",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R56.kicad_mod": "fb6e93da1221ccd76f4b6340cef8f4f777da7ac3dc4a92b42ce14effa8feda63",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R6.kicad_mod": "f4dd3a5b7547c9711f22d902e87ba1feff8c7d17de77e4d4a0468f5b3909de8e",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R7.kicad_mod": "ff587a92a4199c6950170d52a85eb9ace9742105c07ae5e89f0d87644eb125f5",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R8.kicad_mod": "de4cafcde183f30d2b288993db663d25c686d388f66bc3b72d3dc83e0597b3ae",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0402_1005Metric__R9.kicad_mod": "7797423f922e40697b1ed415769a1003a64f9b3a6ad3e2c21df58f76408b410f",
+    "hardware/e73-usb-repair/YAECKB.pretty/R_0603_1608Metric_Pad0.98x0.95mm_HandSolder__JP1.kicad_mod": "7f18e53f08c226e975cf226b67a4d0f84bb6bec5c712af5b2441198f454743bb",
+    "hardware/e73-usb-repair/YAECKB.pretty/SOIC-8_3.9x4.9mm_P1.27mm__U3.kicad_mod": "d7ea6989f46684738ac50f6c0ce86be9b6e8e31ab7858e7f17a862c88f7d6140",
+    "hardware/e73-usb-repair/YAECKB.pretty/SOT-363_SC-70-6__U7.kicad_mod": "1b4cee293f21ba2299f7a69f4affaab852023cc79e5e38dfec917e1daba76ef4",
+    "hardware/e73-usb-repair/YAECKB.pretty/SOT-363_SC-70-6__U8.kicad_mod": "acbef6002ed5721512c61c21cc28522f88182329352bd21ee912542ab5d3806e",
+    "hardware/e73-usb-repair/YAECKB.pretty/SWD_Pogo_2x03__J3.kicad_mod": "598c0503ba3a3c4c8a655862ab6c45a29093b8c84c8ad68edd3e858c5d4f99c9",
+    "hardware/e73-usb-repair/YAECKB.pretty/SW_SPDT_CK_JS102011SAQN__SW100.kicad_mod": "7beaa0485a8021208ff7c2d594e7ec8d6c2c196ff941a5511c0c743e8541fbe7",
+    "hardware/e73-usb-repair/YAECKB.pretty/TSSOP16__U2.kicad_mod": "97e17b20176a416353ef0dd3f0441bf426a19cefbe6e70ac02622fec16450c2c",
+    "hardware/e73-usb-repair/YAECKB.pretty/TSSOP16__U4.kicad_mod": "7d49411d53fc49f20af5635f8f610259922bd7d840cfc4d37ba03251143780a5",
+    "hardware/e73-usb-repair/YAECKB.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm__U5.kicad_mod": "345db1fa7508f15e13f91075a2eb3a9b6e3ee4119e5367cb8a508e63ce9733da",
+    "hardware/e73-usb-repair/YAECKB.pretty/WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm__U6.kicad_mod": "58ae92678b49381cb4c2cf805ae909a7ed38c6f7940cf120cd5e9705e0ce4e9b",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_1u1.75u__SW60.kicad_mod": "04f517e08a08423681c66eda120da0f62055bf10adee0368c967914aaa1b14fd",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_1u1.75u__SW62.kicad_mod": "6f4113dd1cc2fc494ecc93fbbf4b4a164c927e5af13d32ab540aef07d34dd1a5",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_1u_edge_cut__SW48.kicad_mod": "1c124c2c494285b84febe32572f7d3a0f84c9afde283aafdcb6073ac2f01efe4",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_1u_edge_cut__SW49.kicad_mod": "8de41abb01fa1235f6ad981f7f1d52d24c77b3c32c0079fb60e323a04de93357",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW10.kicad_mod": "d6cf7e322b1348da972a8f7769fb422ccba14c71072565a7aa8d4cb603bee571",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW11.kicad_mod": "6ac6091184ad8de7b856af8c38de782e5e9af17275061021ccc7665422c1be1d",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW12.kicad_mod": "81854fb457fb6c066e53626116ed469db4082f58cbaf7ac0934be1718781a78e",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW13.kicad_mod": "a8e0888e42e5e78c07e1b529b0035cc86dbdaf808612c3e71c6f44537677b686",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW14.kicad_mod": "bbbb64fd79a6710073dcb8de5a2883fa3dc776f8b67636ee70f3c5b1eabcb166",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW15.kicad_mod": "94f44f51ed988c2980bc96d6d316eaa7f8352d5b0d31fc9b6b16b58d68c95342",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW16.kicad_mod": "0061167124b9207631cb7435f3f3187aead259aaf25eea1f708823fef76fc534",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW17.kicad_mod": "76af5cb1b07485a14a56b68b19e82d9fc50cc315c704f55e234b8b78e1ab7560",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW18.kicad_mod": "8feda587c95a70a7eb122af7b6f849e0760a8d61a33d39b618dc92a65c7eb017",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW19.kicad_mod": "3ed84842721ff473a4801529ee7afcc2dd6812d97c8feb78bac76e6e48ccee71",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW2.kicad_mod": "b53989381964cfb4ab433ffe74781758581b19c7153efc9e24e4c4bd13765e88",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW20.kicad_mod": "832c01f980a26411a12c2ffcbbed560e0e707f152fcc37a11c2cb61ed8ad2b70",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW21.kicad_mod": "b0e2ce086e043266f69ffb9d3ecff0e753ce7dd7162460197e337540e06b12b9",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW22.kicad_mod": "b7a5eddc79efcf80dd5b1ae50aa82bd0ff9a99263360aae2aa3c2477895464c3",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW23.kicad_mod": "cfb49ebf087809e8080cae9e9a3d8c019aaa7e07aecfcdcfb57710b6b505bbd7",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW24.kicad_mod": "50679834d02506bd63cd42b001f25982c5fedc718d9fd7f0922b0dccc880b7f3",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW25.kicad_mod": "19dc85cb44e44db238c70ba03a3e8365a5357bfb51b0a07be9de627cde8f4a26",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW26.kicad_mod": "ab04dfd1d278044c921498c9057e42d1f259501ad5e76739ed768c1a670e6c0d",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW27.kicad_mod": "74fa1a25f6857bb1d49a6968b0cf44e2bad0414a52e7dc9f30cb246582a67ac3",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW28.kicad_mod": "a6ceeea382933fac331c3400d5bc56da4cd6f576bc1ca00ff62311f65651225b",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW29.kicad_mod": "d34077ce54f5677bc8334e83cf166235c0df266e298721148b0eec794ea0b4b9",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW3.kicad_mod": "b470b0ca1b02bd328171066d82a00988081a2f0d7d76d221f6f65b49b30d2f9b",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW30.kicad_mod": "80a06b04377ec2c78611b3ae81892da4c3c5c8e2cacc259a0c9b4974614b2127",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW31.kicad_mod": "b01e217625fb063309b184a15787c1406eb88fc8b2e171acacd056c3bae365dc",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW32.kicad_mod": "1541451c15497a18d85ae4fea0602a5e3c0f6638893f49e5c96bf0d5e85030ad",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW34.kicad_mod": "8f170baec1e971dc82914cd42923adbcffc85690063b3b194d041fab9255b586",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW35.kicad_mod": "e82a61a4fea22648a1041ecd318111381cbe5bb8a3aa42e935f6503400a0a50a",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW36.kicad_mod": "001896a7a8b8b5d75e09369637ca19f186ee6d632dedc52cf6d18dd009add0f8",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW37.kicad_mod": "6848eeaa7be2f9be16cdf20246aeecf0c81015ece8cea56629a9e0817b78e55a",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW38.kicad_mod": "f7cb356df5107b24f427eda8271a2b3f92f3be27eaa9dabdb0e93c37d4b17e8f",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW39.kicad_mod": "ca6ddf61a3889b8b30a4da7af891d64274c9d7044d9e2f2116fdf595716a14e2",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW4.kicad_mod": "5c129fed61c7ce1b641abbfcb4d6dfa1cfb5513c29565ff1b1e9498d105412bd",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW40.kicad_mod": "809af14d6296ba391505b39c9af6f03a304da5b422c9b184ab9c73795113c048",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW41.kicad_mod": "7c829a03fc0abe85d52a0d6c7e5cf736a3d8207745230ecd9211401ffcb5d213",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW42.kicad_mod": "5f7e2c6ca6ae27dfa09adb11d7e7311360dce830dd5203246e3086447cbf534d",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW43.kicad_mod": "cfa03766d26b0fcbc639c18ebceab836b45ea8c305f40b07e956a0bb877eb66e",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW44.kicad_mod": "435d0ec4181db48c8801f0f725383d7f9b831175aecc13e34111444b37b08bd6",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW45.kicad_mod": "c6721a5de4d985b233ed9a3bd0adf24e3636ff6594a67363cea33060e02f499b",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW46.kicad_mod": "7e195d018c9ed635d8e2acea456f6cbf9aa3c3091217443365796c044f0160b6",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW47.kicad_mod": "b4d61614659a330c1469c4f57e9abd071c44680da13ca8970b13ea4e2ed0ac2d",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW5.kicad_mod": "64f94b342634399b8b23776f1f0f38306c9b857ec8f8694bffc387e249cc7dab",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW50.kicad_mod": "4c8a4db4b5c19978891e217ab1d9698c63d041a244b14e6326f58158d9a92dc8",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW51.kicad_mod": "d9bfe767b92a17cf729b5f8c0691c90e41c01f81793115d91f8353991fa50b46",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW52.kicad_mod": "bee24a802b7eec46b928605ea8c4670ba30c67f08f61fc800c559264e19305b8",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW53.kicad_mod": "5f68fd3d95a1f59435b3e3ca626a76442b6a4bcf400952ac991d6bf5e5ad1ce7",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW54.kicad_mod": "7ac4ecb29a9fc9b7e2e2bec73b41ec7f06188438aa188b20d2fca27a676e8c0e",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW55.kicad_mod": "6e03d984407c11b670b6ceeba3f6c5b7e30e167d24b70f4fa16df6d0f6d3d08f",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW56.kicad_mod": "03826f0ce7e16410a90affab00718288d54e31c7c0c2ade153aa317014c38efd",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW57.kicad_mod": "fe1f95fd8593b175b83f182c9917cb5cbea7a57d191d4bdd90091266386caf70",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW58.kicad_mod": "39687889491f665c14bb7da8059ca3187b1e03d430025cda6712d5dd8c686fe2",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW59.kicad_mod": "d5d0149ef37c51d1c7b945bf4c9f899dd57de3d464b2df4b7104ed61ee5d07a9",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW6.kicad_mod": "70e81a1fec2501dbfb93c09cc112483d784918c7a854c40a748387a8800bfcb9",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW61.kicad_mod": "d97b976847ada27cd437de4c13304d7fa295d1722e23cd7134307818ea91b7de",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW63.kicad_mod": "9491dda15c4ec8deeb50a8d6f6ea9f236c1a00c418e9a45054118cf5487258fe",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW64.kicad_mod": "52f22b39122923e30b49acb8864c47b80dcd6a9673b8d653b77ec81a7ef6d59b",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW65.kicad_mod": "ac15a10ab8f04084de01b502135311289ab536ae599293234d9d12f3d7fe8fd2",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW66.kicad_mod": "666e23d3733d899ad5d05109ffe26cd3f0c0b3935330a16c0d6d4348b12599b8",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW67.kicad_mod": "fe457a179b89a99121d5041b28468d4bd19786d61883ec68acaf7314fdf9aee0",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW7.kicad_mod": "446e7616845b0633cf75eb4c2c8917ace1e385fbbe742f3ac836e152c95b9121",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW70.kicad_mod": "7200d74e0efa27e93ddbbf2cf0f741e55b44e368fac0fe8446c0a205066e6e74",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW72.kicad_mod": "f1c4eb891dffe473346babc2945adae27a2245a3addf0a5fe0490f64a144bfba",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW73.kicad_mod": "1e627d94226453418cfb2d4e868abb70c402fdc929811a7ab4109d9e0232fd4f",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW74.kicad_mod": "743c92ae6efe6be64b0b1059b5becd487f777cfaefb10bbe0efb4d8a0adbe2ff",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW75.kicad_mod": "2b27d85174b37095cd6c5e398080b045d45defe8e99019042a8e7eeceb48e6a3",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW8.kicad_mod": "d547b38adc8744ea57c129882e36ebe33ccc973f3af53288a36e69e1ead98aad",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring__SW9.kicad_mod": "f7ccd225e75d8c2bbfcc88e53be5512fe7c4443155d2e584ead64143e5f1aa55",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW33.kicad_mod": "53afbf80d2514af57117fd375aa239054da60792f4551cff8a0c5d0a2470f3f9",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW68.kicad_mod": "de4a114a98eb66e9b4d4a0f7b18776afee9967347c0897015f767f54f71f74f5",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW69.kicad_mod": "391c4a558bf43ff429d852feb9f10ff2c3c5bc48110862ccb1cb63c19bca181a",
+    "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "e0a319dc63587cedd4e320be824dacc4853f69eaacddfa1191c2d04979c62b71",
+    "hardware/e73-usb-repair/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f",
+    "hardware/e73-usb-repair/models/TI_RGT16_3x3_EP1p68_dimensioned.step": "6c72a249f019f0c4979772547e69a8c2a9c024001e82cd6d3079b74c651ddecd",
+    "hardware/e73-corner-routing.json": "0ea6b01e069e4e1bfcd613ac94d2cf646901c6981bec91a959489b456e726edd"
+  },
+  "pcb_sha256": "8395348843b214c4ad37037dd15c3637f73283ef22eb2121928ded33e64edabd",
+  "open_gates": [
+    "Native electrical routing and DRC/parity",
+    "USB reference-ground closure and new C5 harness",
+    "Module/case/plate/fastener tolerance checks",
+    "Whole-board and firmware rebinding",
+    "Antenna region confirmation and physical BLE/EC/power acceptance"
+  ]
+}

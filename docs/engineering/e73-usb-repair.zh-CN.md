@@ -2,9 +2,11 @@
 
 # E73 USB 修补阶段记录
 
+**历史阶段记录：**本文描述提交 `7aab295`，证据链接已冻结到该提交，复现也应使用该提交。之后的电源布局修补使本地旧报告失效；当前开发方向为[E73 右下角迁移](e73-hhkb-corner.zh-CN.md)。本文不作为迁移后候选的放行依据。
+
 **这是独立、尚未放行的候选方案。** 当前选用的 E73 主板、打样压缩包、固件及装配说明尚未被替换。[E73 整体审查](../audit/e73-review.zh-CN.md)仍然暂停放行。现有 UDB-C-JSH C5 子板保持不变。
 
-候选包含真实的 [KiCad 工程](../../hardware/e73-usb-repair/EC60-nRF52840.kicad_pro)、完整五张原理图、冻结封装、导出网表及[可重放规格](../../hardware/e73-usb-repair-spec.json)。必须运行 E73 自身的检查，不能继承 Raytac 的验收结论。
+候选包含真实的 [KiCad 工程](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/EC60-nRF52840.kicad_pro)、完整五张原理图、冻结封装、导出网表及[可重放规格](../../hardware/e73-usb-repair-spec.json)。必须运行 E73 自身的检查，不能继承 Raytac 的验收结论。
 
 ## 电路改动
 
@@ -26,17 +28,17 @@ E73 的 43 个焊盘、感应焊盘、板框及安装孔位置保持一致。数
 
 ## 原生证据及边界
 
-[原生检查报告](../../hardware/e73-usb-repair/audit/native-check.json)记录：严格 DRC 零错误、零未连接、原理图与 PCB 一致性零错误，**266 组信号／电源连接及 143 组接地连接全部连通**。按实际接触提取的两路板内 USB 中心线约 **9.96919 mm**，差值小于 **0.000002 mm**。这些是几何量，不是电气时延、阻抗或眼图结果，不包含 C5、线束及模组内部线路。
+[原生检查报告](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/native-check.json)记录：严格 DRC 零错误、零未连接、原理图与 PCB 一致性零错误，**266 组信号／电源连接及 143 组接地连接全部连通**。按实际接触提取的两路板内 USB 中心线约 **9.96919 mm**，差值小于 **0.000002 mm**。这些是几何量，不是电气时延、阻抗或眼图结果，不包含 C5、线束及模组内部线路。
 
 仍有 102 项原有虚拟庭院警告。原有非模组贴片焊盘与通孔重叠会在报告中逐项列出，吸锡及制造审查仍未放行。没有新增焊盘内过孔、模组焊盘内过孔、盲埋孔、填孔或盖铜工艺。检查保留原工程规则，在临时副本中启用被忽略的类别。
 
-[故障测试](../../tests/audit/test_e73_usb_repair.py)针对真实候选注入：电源器件／层级网表缺失、数据针脚接反、USB 断线、E73 焊盘位移、原控制网络被改变、新增模组焊盘内过孔、错误恢复 J1 数据线，以及 C5 保护通道／接地缺失。[测试结果](../../hardware/e73-usb-repair/audit/fault-tests.json)不等于实物验收。
+[故障测试](../../tests/audit/test_e73_usb_repair.py)针对真实候选注入：电源器件／层级网表缺失、数据针脚接反、USB 断线、E73 焊盘位移、原控制网络被改变、新增模组焊盘内过孔、错误恢复 J1 数据线，以及 C5 保护通道／接地缺失。[测试结果](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/fault-tests.json)不等于实物验收。
 
 [参考面及局部模型阶段记录](e73-usb-return.zh-CN.md)检查完整原生数据铜箔、独立接地连通、实际修补前回归／故障案例，以及 J4、J5、C32 原生 STEP 焊接落点。这些配套报告补充原生检查阶段没有评定的项目。
 
 ## 材料差异
 
-审阅这个候选时，使用它自身的[库存抵扣采购表](../../hardware/e73-usb-repair/mainboard-purchase.zh-CN.csv)。正式主板材料表对应另一块 PCB。
+审阅这个候选时，使用它自身的[库存抵扣采购表](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/mainboard-purchase.zh-CN.csv)。正式主板材料表对应另一块 PCB。
 
 候选采购表已加入[局部匹配度规格](e73-usb-local-fit.zh-CN.md)规定的 J2/J4/J5/C32 安装高度及本体／焊接位置限值；这四个位置仅核对封装尺寸还不够。库存分配仍为计划使用 8 只、补购 67 只，共 75 只装板元件。
 

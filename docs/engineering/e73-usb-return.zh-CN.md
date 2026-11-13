@@ -2,18 +2,20 @@
 
 # E73 USB 参考面及局部模型阶段记录
 
+**历史阶段记录：**本文描述提交 `7aab295`，证据链接已冻结到该提交，复现也应使用该提交。之后的电源布局修补使本地旧报告失效；当前开发方向为[E73 右下角迁移](e73-hhkb-corner.zh-CN.md)。本文不作为迁移后候选的放行依据。
+
 **候选仍未放行。** 本轮完成[独立 USB 修补方案](e73-usb-repair.zh-CN.md)中的部分主板几何及标称模型检查，不代表整机、线束、电池、射频表现或 USB 合规通过。当前正式选用的 PCB、固件和制造包未替换，继续保留现有 C5 子板。
 
 ## 当前检查
 
 | 范围 | 结果 | 证据 |
 |---|---|---|
-| 实际 USB 路径 | 两路均约 9.969 mm，无数据过孔；计算差值小于 0.001 mm，满足项目 0.05 mm 门槛 | [原生候选检查](../../hardware/e73-usb-repair/audit/native-check.json) |
+| 实际 USB 路径 | 两路均约 9.969 mm，无数据过孔；计算差值小于 0.001 mm，满足项目 0.05 mm 门槛 | [原生候选检查](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/native-check.json) |
 | 数据走线 | 0.3 mm 底层走线；耦合直线段中心距 0.6 mm，焊盘引出和补偿段单独测量 | [受控走线规格](../../hardware/e73-usb-repair-spec.json) |
-| 相邻接地参考 | 内层二接地覆盖两路路径中心线，以及全部 18 段数据走线、四个数据焊盘的完整原生铜箔面积 | [回流几何检查](../../hardware/e73-usb-repair/audit/return-check.json) |
-| 独立接地连通 | 整体为一个连通接地网络，各层仅通过实际接地电镀过孔／通孔焊盘连接 | [回流几何检查](../../hardware/e73-usb-repair/audit/return-check.json) |
-| 参考面故障 | 能检出修补前 COL14 穿越、USB 下方接地条带被删除、接地电镀桥接缺失 | [三项回归／故障案例](../../hardware/e73-usb-repair/audit/return-faults.json) |
-| 局部原生模型 | E73 实际位置的 J4、J5、C32 模型分别匹配 6、4、2 处焊接落点；错位连接器不能通过检查 | [局部模型检查](../../hardware/e73-usb-repair/audit/local-models.json) |
+| 相邻接地参考 | 内层二接地覆盖两路路径中心线，以及全部 18 段数据走线、四个数据焊盘的完整原生铜箔面积 | [回流几何检查](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/return-check.json) |
+| 独立接地连通 | 整体为一个连通接地网络，各层仅通过实际接地电镀过孔／通孔焊盘连接 | [回流几何检查](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/return-check.json) |
+| 参考面故障 | 能检出修补前 COL14 穿越、USB 下方接地条带被删除、接地电镀桥接缺失 | [三项回归／故障案例](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/return-faults.json) |
+| 局部原生模型 | E73 实际位置的 J4、J5、C32 模型分别匹配 6、4、2 处焊接落点；错位连接器不能通过检查 | [局部模型检查](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/local-models.json) |
 
 长度差是 CAD 算术结果，不代表实际蚀刻精度或电气时延。报告中的邻线距离只是几何接近程度检查，不是阻抗测量或 USB 标准门槛。
 

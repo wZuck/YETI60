@@ -2,6 +2,8 @@
 
 # E73 USB 接头空间与拆卸顺序
 
+**历史阶段记录：**本文描述提交 `7aab295`，证据链接已冻结到该提交，复现也应使用该提交。之后的电源布局修补使本地旧报告失效；当前开发方向为[E73 右下角迁移](e73-hhkb-corner.zh-CN.md)。本文不作为迁移后候选的放行依据。
+
 **这是独立候选方案的设计检查点，整机尚未验收，也未放行生产文件。** 本页接续 [USB 修补](e73-usb-repair.zh-CN.md)和[原生模型检查](e73-usb-return.zh-CN.md)。当前正式装配选择仍为 M01；下列 M03 不会自动替换它。已经制作的 UDB-C-JSH C5 子板保持不变。
 
 ## 几何与实测限值
@@ -32,9 +34,9 @@ J4 是四针侧插 JST SH 接头，PCB 坐标 **(346.1, 110.7) mm、90°**，朝
 
 [M03 规格](../../hardware/e73-usb-local-fit-spec.json)保留 USB 圆角凹槽：外壳坐标 **X 332–350、Y −122 至 −106.5、Z −6.30 至 −5.40 mm**，圆角半径 **0.5 mm**，并增加 [SH 三针电池接头凹槽](e73-battery-service.zh-CN.md)。实际去除部分为刀具体与 M01 实体的交集。它保留外壳边界尺寸、选定外表皮、嵌件支撑保护区及垫条承台高度。扣除内、外两个表面的误差及计算保护量后，选定外表皮的剩余壁厚约 **4.007 mm**，高于 **2.0 mm** 要求。这只检查尺寸，尚未验收树脂强度。
 
-候选几何：[STEP](../../hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step)、[STL](../../hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.stl)。它替换独立候选 M02 底壳；定位板保留 M01，上壳保留原有生成文件。这些候选文件不能证明全部 E73 线束和带线电池检修已经验收。
+候选几何：[STEP](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step)、[STL](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.stl)。它替换独立候选 M02 底壳；定位板保留 M01，上壳保留原有生成文件。这些候选文件不能证明全部 E73 线束和带线电池检修已经验收。
 
-[匹配度报告](../../hardware/e73-usb-repair/audit/local-fit.json)检查名义板厚、1.44 mm、1.76 mm，并用实体包络覆盖整个连续板厚区间。共 **28 项检查**，覆盖 J4/J5/C32 本体、两种已连接胶壳，以及按顺序进行的 **4 mm 连续轴向拔出**。扣除误差后的最小外壳间隙约为 **0.3844 mm**，高于 0.15 mm 要求。其他元件和 28 组紧固件使用已有代理包络筛查；这些元件的真实尺寸和模型尚未验收。
+[匹配度报告](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/local-fit.json)检查名义板厚、1.44 mm、1.76 mm，并用实体包络覆盖整个连续板厚区间。共 **28 项检查**，覆盖 J4/J5/C32 本体、两种已连接胶壳，以及按顺序进行的 **4 mm 连续轴向拔出**。扣除误差后的最小外壳间隙约为 **0.3844 mm**，高于 0.15 mm 要求。其他元件和 28 组紧固件使用已有代理包络筛查；这些元件的真实尺寸和模型尚未验收。
 
 ## 插接与拆卸顺序
 
@@ -46,7 +48,7 @@ J4 是四针侧插 JST SH 接头，PCB 坐标 **(346.1, 110.7) mm、90°**，朝
 
 如果 J5 仍插着，J4 扩大后的拔出包络会与 J5 胶壳相交。检查脚本使用这个错误顺序作为反例。手指、工具、松散线材与断开胶壳的停放尚未检查；完整带线检修仍未验收。另行进行的[电池接口修补](e73-battery-service.zh-CN.md)已改用 SH 三针，并独立检查其刚性插拔。
 
-![局部平面与竖向预算](../../hardware/e73-usb-repair/audit/USB-local-fit.zh-CN.png)
+![局部平面与竖向预算](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/USB-local-fit.zh-CN.png)
 
 ## 复现与剩余工作
 

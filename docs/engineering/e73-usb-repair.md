@@ -2,9 +2,11 @@ English | [Chinese](e73-usb-repair.zh-CN.md)
 
 # E73 USB repair checkpoint
 
+**Historical checkpoint:** this document describes commit `7aab295`; evidence links and reproduction belong to that commit. Subsequent power-stage changes invalidated the old local reports. The current development direction is the [E73 lower-right migration](e73-hhkb-corner.md). This document does not release the relocated candidate.
+
 **This is an isolated, unreleased candidate.** The selected E73 mainboard, fabrication ZIPs, firmware images and assembly instructions have not been replaced. The [complete E73 review](../audit/e73-review.md) remains on design hold. The existing UDB-C-JSH C5 is unchanged.
 
-The candidate is a real [KiCad project](../../hardware/e73-usb-repair/EC60-nRF52840.kicad_pro), with all five schematic sheets, frozen footprints, an exported netlist and a [replay specification](../../hardware/e73-usb-repair-spec.json). Run it through its own checks; a passing Raytac report does not accept this board.
+The candidate is a real [KiCad project](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/EC60-nRF52840.kicad_pro), with all five schematic sheets, frozen footprints, an exported netlist and a [replay specification](../../hardware/e73-usb-repair-spec.json). Run it through its own checks; a passing Raytac report does not accept this board.
 
 ## Electrical change
 
@@ -26,17 +28,17 @@ All 43 E73 lands, sensing lands, board outline and mounting locations remain pre
 
 ## Native evidence and limits
 
-The [native report](../../hardware/e73-usb-repair/audit/native-check.json) records zero strict DRC errors, zero opens, zero schematic-parity errors, **266** connected signal/power pairs and **143** connected ground pairs. Both contact-aware mainboard USB paths measure approximately **9.96919 mm**; their difference is below **0.000002 mm**. These are geometric centerline results, not electrical delay, impedance or eye-diagram measurements; C5, cable and module-internal routing are excluded.
+The [native report](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/native-check.json) records zero strict DRC errors, zero opens, zero schematic-parity errors, **266** connected signal/power pairs and **143** connected ground pairs. Both contact-aware mainboard USB paths measure approximately **9.96919 mm**; their difference is below **0.000002 mm**. These are geometric centerline results, not electrical delay, impedance or eye-diagram measurements; C5, cable and module-internal routing are excluded.
 
 There are 102 inherited virtual-courtyard warnings. Existing non-module SMD-land/through-via overlaps are explicitly listed in the report and remain a solder-wicking/DFM issue. No new land-overlapping via, module via-in-pad, blind/buried via, filling or copper capping is introduced. The check preserves the original project rules and enables ignored categories in a disposable copy.
 
-The [fault tests](../../tests/audit/test_e73_usb_repair.py) exercise an actual missing power component/netlist hierarchy, swapped data pins, a cut USB route, a moved E73 land, a changed retained control net, a new module via-in-pad, incorrect J1 data reconnection, and missing C5 protected I/O/ground. Their [result](../../hardware/e73-usb-repair/audit/fault-tests.json) is separate from physical acceptance.
+The [fault tests](../../tests/audit/test_e73_usb_repair.py) exercise an actual missing power component/netlist hierarchy, swapped data pins, a cut USB route, a moved E73 land, a changed retained control net, a new module via-in-pad, incorrect J1 data reconnection, and missing C5 protected I/O/ground. Their [result](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/fault-tests.json) is separate from physical acceptance.
 
 The [reference and local-model checkpoint](e73-usb-return.md) evaluates the complete native data copper, independent ground connectivity, real pre-repair/fault cases and J4/J5/C32 native STEP landing. These companion reports supply results not assessed by the native-only stage.
 
 ## Material difference
 
-Use the candidate's [stock-adjusted purchase table](../../hardware/e73-usb-repair/mainboard-purchase.csv) only to review this candidate. The canonical mainboard list describes a different PCB.
+Use the candidate's [stock-adjusted purchase table](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/mainboard-purchase.csv) only to review this candidate. The canonical mainboard list describes a different PCB.
 
 The candidate tables now include J2/J4/J5/C32 installed height and body/placement limits from the [local fit specification](e73-usb-local-fit.md); package size alone is insufficient for these four positions. Stock allocation remains 8 planned fitted parts and 67 to purchase, 75 total.
 

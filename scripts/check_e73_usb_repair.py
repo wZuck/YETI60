@@ -22,6 +22,7 @@ from check_schematic_current import signature
 from check_yeti60_signal_paths import build_graph
 from kicad_sexpr import child, children, loads
 from e73_battery_service import verify as verify_battery, spec as battery_spec
+from e73_power_repair import verify as verify_power, spec as power_spec, update_schematic as power_schematic
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / 'hardware/e73-usb-repair'
@@ -48,6 +49,7 @@ def netlist_contract(original, candidate):
         del expected_components[ref]
     expected_components['J1'] = ('USB_POWER_IN', components['J1'][1])
     expected_components['J2'] = (components['J2'][0],battery_spec()['footprint_id'])
+    for ref,part in power_spec()['parts'].items():expected_components[ref]=(part['value'],part['footprint_id'])
     expected_components.update({
         'J4': ('USB_C5_INPUT', 'YAECKB:JST-SR-4__J4'),
         'J5': ('USB_POWER_OUT', 'YAECKB:JST_SH_SM02B_SRSS_TB__J5'),
@@ -84,7 +86,7 @@ def preserved_geometry(board, source):
     actual = {f.GetReference(): f for f in board.GetFootprints()}
     assert set(actual) == (set(original) - REMOVED) | {'J4', 'J5'}
     for ref, before in original.items():
-        if ref in REMOVED or ref in ['C32','J2']:
+        if ref in REMOVED or ref in ['C32','J2'] or ref in power_spec()['parts']:
             continue
         after = actual[ref]
         assert before.GetPosition() == after.GetPosition(), ('Moved retained footprint', ref)
@@ -95,9 +97,8 @@ def preserved_geometry(board, source):
             expected = 'unconnected-(J1-Pin_' + pad.GetNumber() + '-Pad' + pad.GetNumber() + ')' if ref == 'J1' and pad.GetNumber() in ['2', '3'] else pad.GetNetname()
             assert target.GetNetname() == expected, ('Unexpected retained pad net', ref, pad.GetNumber())
     assert len(list(actual['U1'].Pads())) == 43
-    for before in original['C32'].Pads():
-        after=next(p for p in actual['C32'].Pads() if p.GetNumber()==before.GetNumber())
-        assert before.GetSize()==after.GetSize() and before.GetShape()==after.GetShape() and before.GetNetname()==after.GetNetname(),'Changed C32 lands/value nets'
+    # C32 now uses the explicitly frozen 0805 land pattern. Power verification
+    # checks its full land/net/paste geometry, not the retired 0603 dimensions.
     spec = json.loads((ROOT / 'hardware/e73-usb-repair-spec.json').read_text())
     for ref,position in spec['headers_pcb_mm'].items():
         assert actual[ref].GetPosition()==pcb.VECTOR2I(*[pcb.FromMM(v)for v in position]),('Header position differs from contract',ref)
@@ -126,7 +127,7 @@ def preserved_geometry(board, source):
                                 [n for n in f if isinstance(n, list) and n[0] in graphical_kinds]
                                 for f in children(tree, 'footprint')})
     for ref in original:
-        if ref not in REMOVED and ref not in ['C32','J2']:
+        if ref not in REMOVED and ref not in ['C32','J2'] and ref not in power_spec()['parts']:
             assert tree_footprints[0][ref] == tree_footprints[1][ref], ('Changed footprint graphics/outline', ref)
     for kind in ['gr_line', 'gr_arc', 'gr_circle', 'gr_poly', 'gr_rect']:
         assert children(source_tree, kind) == children(actual_tree, kind), ('Changed board drawing', kind)
@@ -145,6 +146,9 @@ def preserved_geometry(board, source):
     control_removed|=set(battery['removed_source_items'])
     assert removed_ground <= set(source_items)
     for key, item in source_items.items():
+        if key in power_spec()['retired_source_copper']:
+            if key not in power_spec()['reference_copper_UUIDs']:assert key not in actual_items,('Retired power copper restored',key)
+            continue
         net = child(item, 'net')[1]
         retired = key in removed_ground|control_removed or net in ['D-', 'D+', 'USB_DM', 'USB_DP']
         retired |= item[0] == 'segment' and net == 'USB_5V' and child(item, 'layer')[1] == 'B.Cu' and min(float(child(item, 'start')[1]), float(child(item, 'end')[1])) >= 342.5
@@ -159,7 +163,8 @@ def preserved_geometry(board, source):
             assert key in actual_items and item == actual_items[key], ('Retained copper changed', key)
             assert key in actual_native and primitive(original_native[key]) == primitive(actual_native[key]), ('Live retained copper changed', key)
             retained += 1
-    inherited_pad_via_overlaps = []
+    inherited_pad_via_overlaps = [];masked_EP_vias=[]
+    approved={v['UUID']:(v['ref'],v['pad']) for v in power_spec()['thermal_mask_island_vias']}
     for via in board.GetTracks():
         if not isinstance(via, pcb.PCB_VIA):
             continue
@@ -170,15 +175,21 @@ def preserved_geometry(board, source):
                 if pad.GetAttribute() == pcb.PAD_ATTRIB_SMD and pad.IsOnLayer(pcb.B_Cu):
                     if not pcb.SHAPE.Collide(via.GetEffectiveShape(pcb.B_Cu), pad.GetEffectiveShape(pcb.B_Cu), 0):
                         continue
+                    if approved.get(uid(via))==(fp.GetReference(),pad.GetNumber()):
+                        assert via.GetNetname()=='GND' and via.GetWidth(pcb.F_Cu)==pcb.FromMM(.5) and via.GetDrillValue()==pcb.FromMM(.3)
+                        masked_EP_vias.append({'reference':fp.GetReference(),'pad':pad.GetNumber(),'via_UUID':uid(via)})
+                        continue
                     # Retained non-module overlaps are disclosed, not qualified.
                     # New vias and all module/relocated capacitor overlaps fail.
                     # Existing solder-wicking/DFM issues stay on design hold.
                     assert fp.GetReference() not in ['U1','C32'] and uid(via) in original_native and primitive(via) == primitive(original_native[uid(via)]), ('New or module via overlaps SMD land', fp.GetReference(), pad.GetNumber())
                     inherited_pad_via_overlaps.append({'reference':fp.GetReference(),'pad':pad.GetNumber(),'via_UUID':uid(via)})
     battery_check=verify_battery(board,source)
-    return {'E73_lands_preserved': 43, 'retained_copper_items_unchanged': retained,'battery_service':battery_check,
+    power_check=verify_power(actual_tree,source_tree)
+    return {'E73_lands_preserved': 43, 'retained_copper_items_unchanged': retained,'battery_service':battery_check,'power_repair':power_check,
             'outline_and_mount_geometry_preserved': True, 'ordinary_through_vias_only': True,
-            'new_or_module_via_in_pad': False,
+            'module_via_in_pad': False,'new_unisolated_via_in_SMD_land':False,
+            'approved_mask_isolated_EP_through_vias':masked_EP_vias,
             'inherited_pad_via_overlaps': inherited_pad_via_overlaps,
             'inherited_via_limit': 'Unchanged open/tented through vias overlapping retained lands (including thermal lands); pad solder wicking/DFM qualification remains open'}
 
@@ -294,6 +305,7 @@ def main():
     expected_power=loads((SOURCE/'power.kicad_sch').read_text())
     j2=next(s for s in children(expected_power,'symbol') if any(p[1:3]==['Reference','J2'] for p in children(s,'property')))
     next(p for p in children(j2,'property') if p[1]=='Footprint')[2]=battery_spec()['footprint_id']
+    power_schematic(expected_power)
     assert loads((BASE/'power.kicad_sch').read_text())==expected_power,'Unexpected power-sheet change beyond J2 footprint identity'
     rules = native_rules()
     board = pcb.LoadBoard(str(BASE / (NAME + '.kicad_pcb')))
@@ -305,7 +317,7 @@ def main():
               'preserved_geometry': preserved_geometry(board, source),
               'connectivity': connectivity(board, BASE / 'netlist.xml'),
               'USB_paths': usb_paths(board), 'C5_protection': c5_protection(),
-              'source_sha256': {str(p.relative_to(ROOT)): sha(p) for p in [Path(__file__), ROOT/'scripts/e73_battery_service.py',ROOT/'hardware/e73-battery-service-spec.json',ROOT/battery_spec()['source_library'], ROOT / 'scripts/check_schematic_current.py', ROOT / 'scripts/check_yeti60_signal_paths.py', ROOT / 'scripts/kicad_sexpr.py', ROOT / 'mechanical/pcb-fabrication-spec.json', BASE / 'audit/build.json', ROOT / 'variants/raytac/scripts/check_yeti60_c5_protection.py', ROOT / 'hardware/usb-daughterboard/upstream/UDB.kicad_pcb', SOURCE / 'netlist.xml', SOURCE / 'metadata-audit.json']},
+              'source_sha256': {str(p.relative_to(ROOT)): sha(p) for p in [Path(__file__),ROOT/'scripts/e73_power_repair.py',ROOT/'hardware/e73-power-repair-spec.json', ROOT/'scripts/e73_battery_service.py',ROOT/'hardware/e73-battery-service-spec.json',ROOT/battery_spec()['source_library'], ROOT / 'scripts/check_schematic_current.py', ROOT / 'scripts/check_yeti60_signal_paths.py', ROOT / 'scripts/kicad_sexpr.py', ROOT / 'mechanical/pcb-fabrication-spec.json', BASE / 'audit/build.json', ROOT / 'variants/raytac/scripts/check_yeti60_c5_protection.py', ROOT / 'hardware/usb-daughterboard/upstream/UDB.kicad_pcb', SOURCE / 'netlist.xml', SOURCE / 'metadata-audit.json']},
               'open_checks': ['Independent filled-ground islands and USB return reference',
                               'Connector/capacitor/plug case and tolerance envelopes',
                               'Complete nine-wire routes, connector withdrawal and service movements',

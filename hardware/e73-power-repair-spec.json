@@ -1,0 +1,2331 @@
+{
+  "revision": "YETI60-E73-POWER-1",
+  "reference_commit": "7aab295c219d1e1cf696efc4cdb52380bec64e19",
+  "reference_board": "variants/raytac/hardware/usb-short-route/EC60-nRF52840.kicad_pcb",
+  "reference_board_sha256": "007f25371634e19b095bd953a43967bb9ee3107bfd3267c2194c2b3223fcb17f",
+  "comparison_board": "variants/raytac/hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb",
+  "comparison_board_sha256": "e13feb8bf4b835a069b8fc2cca4ad334b041b0d31a19c66e88c54e62302626e3",
+  "source_E73_board_sha256": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
+  "reference_files": {
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/Fuse_Littelfuse_0466_1206__F1.kicad_mod": "d45a7026280287ac02154d1b75351cab485a96ce8bb28a1886f70b9143ff534b",
+    "variants/raytac/hardware/usb-short-route/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm__U5.kicad_mod": "345db1fa7508f15e13f91075a2eb3a9b6e3ee4119e5367cb8a508e63ce9733da",
+    "variants/raytac/hardware/usb-short-route/models/TI_RGT16_3x3_EP1p68_dimensioned.step": "6c72a249f019f0c4979772547e69a8c2a9c024001e82cd6d3079b74c651ddecd",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm__U6.kicad_mod": "58ae92678b49381cb4c2cf805ae909a7ed38c6f7940cf120cd5e9705e0ce4e9b",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/L_Wuerth_MAPI-3015__L1.kicad_mod": "d9cdcfc66230941a32cd06e7ade267ec16f71e8ea468252971548bc4ee022647",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C40.kicad_mod": "49e2cacc0888c459553117095c805b1389501d9c128b7c3c072ad83f0500a65f",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C41.kicad_mod": "f40366f6d809925d2016d547df6d82173e2684ad472a9ea8514f650d2db90829",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C42.kicad_mod": "a5a4caa36455df866a2d3ef443f6f01708b10ccf0e662ace95195d3809e0550b",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C43.kicad_mod": "edb569a5863d6c893a500c1212fe7a2ec9cb4d1ec4f25603bcf75ed3b3567e4e",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C44.kicad_mod": "ccd60b47964092532c64cc3b5f9ac6862fac3dc7ec643a8421881b957e3326b0",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C45.kicad_mod": "74185afa9b56e3ca8ebc8bbb55c27581a3e259bea49f052ae1edc6e7c03264f8",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C46.kicad_mod": "cf954df2ea224553f5da07da55db34475a2ca9cd707f10522d89b68f1a26d3f0",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R45.kicad_mod": "dd5c758837b95edef86e319ef98f052b49e7f75eb1597b37f2816b4ede7b9bc4",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R46.kicad_mod": "18d4651f5143c58c0bc56892540ac3f8c4daaadb01fae302f0f99b8bfee055b2",
+    "variants/raytac/hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R47.kicad_mod": "8e7f1c5a2ade38f0704c72cdc54767759ad1ea51d2ddd1ae1be2933e096241f9",
+    "variants/raytac/hardware/usb-short-route/power-passives.json": "23c14670410ccf6790a9c09f3fde44ed212f911639e76420330dba4f0f739dc8",
+    "variants/raytac/hardware/usb-short-route/power-layout.json": "8152ff8088599113bec6c2a4744bff9a87785cf9a65f4fe1beec1b44f1bcc37a",
+    "variants/raytac/hardware/usb-short-route/components.json": "68b6b49ebeb4aeed0a0796580706825b8b9ed6a788b4eedc6bbb02640f02f36a",
+    "variants/raytac/hardware/usb-short-route/EC60-nRF52840.kicad_sch": "2a43cc43fade3be555d8b5614e5be0a98025046a3f48d958baddfa79d2e81973",
+    "variants/raytac/hardware/usb-short-route/YAECKB.kicad_sym": "2ecd60633fba9a790332f0ece155e77e4921b8e12d5f42e0d43b5088609cf227",
+    "variants/raytac/scripts/usb_short_power_routes.py": "1c91d09e5139226a3a069e984bc374a7bd8679c3c78ecb9fcd15843339a2989f",
+    "variants/raytac/scripts/usb_short_charger_contract.py": "647d0a142f54c821bc9b1bb51804a27d73090394f6d5d267ff0786c5ab256b33",
+    "variants/raytac/hardware/ec60-nrf52840/YAECKB.pretty/C_0603_1608Metric__C32.kicad_mod": "2794ad849ec29df3dcdcd61337277701fb66b325e3b1cca1247aa34230035ced"
+  },
+  "parts": {
+    "F1": {
+      "footprint_id": "YAECKB:Fuse_Littelfuse_0466_1206__F1",
+      "value": "1A_FAST_0466001_NRHF",
+      "position_PCB_mm": [
+        88.609827,
+        114.198524,
+        90.0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/Fuse_Littelfuse_0466_1206__F1.kicad_mod",
+      "source_instance_uuid": "df3cdddb-c368-4a42-988d-e2e2bbc54b0e"
+    },
+    "U5": {
+      "footprint_id": "YAECKB:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm__U5",
+      "value": "BQ24074RGT",
+      "position_PCB_mm": [
+        118.0,
+        145.0,
+        0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm__U5.kicad_mod",
+      "source_instance_uuid": "1ab70e45-ec29-4620-80c8-9c8152e4b17d"
+    },
+    "U6": {
+      "footprint_id": "YAECKB:WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm__U6",
+      "value": "TPS63031DSK",
+      "position_PCB_mm": [
+        133.0,
+        140.8,
+        0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm__U6.kicad_mod",
+      "source_instance_uuid": "ce845cc0-4775-4890-8e8d-c1a0b449556a"
+    },
+    "L1": {
+      "footprint_id": "YAECKB:L_Wuerth_MAPI-3015__L1",
+      "value": "1.5uH_74438336015",
+      "position_PCB_mm": [
+        128.5,
+        141.5,
+        -90.0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/L_Wuerth_MAPI-3015__L1.kicad_mod",
+      "source_instance_uuid": "9e86a48c-5c69-4de3-ac3f-95525714a14e"
+    },
+    "C40": {
+      "footprint_id": "YAECKB:C_0805_2012Metric__C40",
+      "value": "2.2u/25V",
+      "position_PCB_mm": [
+        122.0,
+        146.9,
+        -90.0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C40.kicad_mod",
+      "source_instance_uuid": "8d6d7321-79a1-407e-a5f8-83f0affec9f5"
+    },
+    "C41": {
+      "footprint_id": "YAECKB:C_0805_2012Metric__C41",
+      "value": "22u/10V",
+      "position_PCB_mm": [
+        113.0,
+        143.7,
+        180.0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C41.kicad_mod",
+      "source_instance_uuid": "22c26a3c-c3e1-419c-a3e6-8bd4e5ec79b7"
+    },
+    "C42": {
+      "footprint_id": "YAECKB:C_0805_2012Metric__C42",
+      "value": "22u/10V",
+      "position_PCB_mm": [
+        121.9,
+        142.7,
+        0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C42.kicad_mod",
+      "source_instance_uuid": "85a44930-e6eb-4216-9272-1c3bafd10f13"
+    },
+    "C43": {
+      "footprint_id": "YAECKB:C_0805_2012Metric__C43",
+      "value": "22u/10V",
+      "position_PCB_mm": [
+        132.0,
+        136.5,
+        0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C43.kicad_mod",
+      "source_instance_uuid": "26642126-08fb-4683-a002-0c60b41e6dac"
+    },
+    "C44": {
+      "footprint_id": "YAECKB:C_0603_1608Metric__C44",
+      "value": "100n/16V",
+      "position_PCB_mm": [
+        137.0,
+        139.8,
+        0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0603_1608Metric__C44.kicad_mod",
+      "source_instance_uuid": "a67489e9-d4a3-4664-90bd-f5a0dfac83e1"
+    },
+    "C45": {
+      "footprint_id": "YAECKB:C_0805_2012Metric__C45",
+      "value": "22u/10V",
+      "position_PCB_mm": [
+        132.5,
+        143.3,
+        0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C45.kicad_mod",
+      "source_instance_uuid": "ab916f3d-51b4-4ed3-a597-65e11a726400"
+    },
+    "C46": {
+      "footprint_id": "YAECKB:C_0805_2012Metric__C46",
+      "value": "22u/10V",
+      "position_PCB_mm": [
+        136.0,
+        144.0,
+        0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/C_0805_2012Metric__C46.kicad_mod",
+      "source_instance_uuid": "2193dc67-45d1-4c1f-8c16-6f93d937d610"
+    },
+    "R45": {
+      "footprint_id": "YAECKB:R_0402_1005Metric__R45",
+      "value": "100k",
+      "position_PCB_mm": [
+        124.5,
+        136.0,
+        0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R45.kicad_mod",
+      "source_instance_uuid": "5ee37666-3c6c-4094-beff-9bcee8196b2e"
+    },
+    "R46": {
+      "footprint_id": "YAECKB:R_0402_1005Metric__R46",
+      "value": "100k",
+      "position_PCB_mm": [
+        137.0,
+        135.0,
+        0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R46.kicad_mod",
+      "source_instance_uuid": "671fafe3-973f-4666-b808-355cf973b793"
+    },
+    "R47": {
+      "footprint_id": "YAECKB:R_0402_1005Metric__R47",
+      "value": "100",
+      "position_PCB_mm": [
+        136.6,
+        136.5,
+        0
+      ],
+      "library": "variants/raytac/hardware/usb-short-route/YAECKB.pretty/R_0402_1005Metric__R47.kicad_mod",
+      "source_instance_uuid": "425484dd-76ee-47a1-ae77-f650113ad11d"
+    },
+    "C32": {
+      "footprint_id": "YAECKB:C_0603_1608Metric__C32",
+      "value": "4.7u/16V",
+      "position_PCB_mm": [
+        350.3,
+        114,
+        90
+      ],
+      "library": "variants/raytac/hardware/ec60-nrf52840/YAECKB.pretty/C_0603_1608Metric__C32.kicad_mod",
+      "source_instance_uuid": "640b2800-d099-46f3-9c3d-a5f760eff58a",
+      "reference_source": "comparison_board"
+    }
+  },
+  "retired_source_copper": {
+    "000bc9fd-6d30-44a2-89c2-5607b90d822c": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "9ae0c82f223b76c8899414fd56bb061c01bb982b43d0b750265b484e636e74ed"
+    },
+    "0052f199-285e-4e70-a48e-395c5f5d6998": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "9210159bcffcac9a46a8acdd0c37be857d559f7ba9b70788063bbbea4d60a3c7"
+    },
+    "01861698-607f-47ef-8694-81e23558783f": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "18fedcb6045597abd2d8b119c7e681b6227d66e3426756eebc7584709e4b913f"
+    },
+    "02b05633-22d7-4cd7-8d67-f4ffb08cf418": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "d2f56079bae47cd2ab86a485b937843ea6a609e68037db41ebae2a05b2985dd8"
+    },
+    "041309d7-68f5-4c6a-9f49-e1e373dea32b": {
+      "net": "BUCK_L1",
+      "kind": "segment",
+      "sha256": "7f27633cb81d9701f610f4dc7227173fb1c41c31d482ada13c3b6134b32b2d6c"
+    },
+    "04b6d7c4-7a2a-4b24-ba40-89a46f08f99f": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "4b906f44abdbeac4bdb680fe3b93b785ee4b2faec2099536a15b86e8abfd9044"
+    },
+    "05343329-f105-4fa8-8d7b-2adcc1e983d2": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "1fd719e4ea56479a861f13be89b044934f55d313ce4454e8874dccafe63c1c30"
+    },
+    "054ba61f-f509-47c6-98e5-9231ade54440": {
+      "net": "CHG_N",
+      "kind": "segment",
+      "sha256": "fc5a200a162075d86e1f5490067b4887405660fbac6f9b37277a693d7399d43e"
+    },
+    "06cc8cb6-a201-4152-8591-0261b07e8aa0": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "0a1193f05419300fa3b324a66b241cf68c06b4ece375a753297a2a4e22f2446d"
+    },
+    "06f86e2b-2237-423b-9a4e-05f01d8638b2": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "787d5c692cd08fab4b3becaad71be60161872f8e0ceb368adcea62fb880557b1"
+    },
+    "06f8d870-f98b-4b32-8593-2d9d8f4f02b7": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "2012e072a13fd4e46dc23e7149f24b835174c7549d05ca6dbddcd9e4f6242093"
+    },
+    "07b8304c-4335-41ff-823a-a56cabaa0fa9": {
+      "net": "REG_EN",
+      "kind": "segment",
+      "sha256": "e07f8b042112cade0fc2b35b5612345a21bb20e6a39c9145a3b9de197022b9f9"
+    },
+    "0861e9e2-d15d-4f9d-88b0-074aef1f1be4": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "02db88a690e1b427f685c2f84fe13c7f3d82b67fc3e0f2e39f7c41cb5d94e6ef"
+    },
+    "08713787-c7b2-4a7c-9dfc-6111465ae5af": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "0775e62d9d6128595ed7cca3730add24545c9493bf1bc4785a0a5b1a30804a24"
+    },
+    "09c9c42b-fb85-47c6-ae6d-a3ff74046846": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "0b804cc0c4b950ef4d84edafabbb552ee475657246cf8dcdc93a5b62e9a28afe"
+    },
+    "09ea3137-9f97-47eb-87b4-775160aacdfc": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "b3234df36d2bc4b826e25095bf41d92471caf7448620de89d39e467ff693512b"
+    },
+    "0ce17ed9-2bce-4358-9f31-d77eb58958dc": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "a21a209844c7baeb282382cec40975d657d0cd0f921ee6399961fa054fa2a414"
+    },
+    "0dfd8350-b974-4617-acfb-0fec75179394": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "6e346b5c32ae3949bedb15c35deff5618d6bb48f15ad1f08168143540924aced"
+    },
+    "0e3aa1f6-6f41-4ec4-9315-04a51035af15": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "8db9c7df7379cb78c83a9e3a14415e0303de89e7707e8891f4f7b1e72792e963"
+    },
+    "0e8e138b-a428-42ee-8709-de64dcf784d3": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e7dae902ba8db43b45ef4fb3e090c8f77b1d88b6ec0bd66c22b6ad7ccfad548b"
+    },
+    "0f4eb7d5-50c1-4686-9d91-2faf5bb7a8f2": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "670d427da16acc150558c5b21587abeca6b8d3e35d510c37f4fdfb74006b4cb0"
+    },
+    "10787e53-28c0-4cb2-b062-384a29440f74": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "082654ddf85d9a58d1498920c5603199e909189c7c6aed511440377c1e593ab8"
+    },
+    "10e5bbc3-a04e-4579-aa83-6df6a87729d8": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "b86dabe886b21f6b1e152dd44a47765fcb0f0d81bb81fec920d55dafb0dbc1a1"
+    },
+    "1232a210-29f6-4cfe-9706-98bd8904f686": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "dd868306a8bda6dd76e415c3c69e30276f413d92488b5e4f2866a8e38dbbb721"
+    },
+    "132120e7-c540-4c9f-8adf-854b351b61c2": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "d907b77ca9bb0e591b64023a9d89f90dfe17458fa9d3c0e1c5303961ba3b063b"
+    },
+    "136efa72-1e71-4109-a0d9-ac9d4fbe0fdd": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "43bc6f717e9668912924005c28d7c2e7ad55e272b6d1994658efac6566d91211"
+    },
+    "13bfeead-938e-4d70-a4e5-e1ceb90b1b2c": {
+      "net": "ILIM_SET",
+      "kind": "segment",
+      "sha256": "d2259be768723759641c76133013e228e2e4b5f46ba4eb5c6d7ae99c1caa7035"
+    },
+    "1402f006-53ac-417a-8f8e-c8720682bb66": {
+      "net": "REG_EN",
+      "kind": "segment",
+      "sha256": "cfc0a1bc4fa5a9d0297a535dee50dc84cdec3cb37309189ad3a9a8a8f7f13c7c"
+    },
+    "15fd22e5-0add-4e14-90e0-6a0ae9ef9ab9": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "7256ad22ab5211770d638ffecb81683fd1facba5429d3e7f2416bd2f62258039"
+    },
+    "17231f4f-2a50-4088-8461-7debb1ef2f51": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "f346812d2b4ceef948b9240fed2c7d07318022fba22b5203f73b6e8819f6ef64"
+    },
+    "1744da36-d0ae-4735-aff6-14c44be35a1a": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "ee4c3856f0a6c196fcabdf3639aa5a4e3a281df5b3ec527e3350510af738a67c"
+    },
+    "1775ea0f-26b4-4efe-b997-e386866e8edf": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "053a0d90dbd05f430b1cd37879ca22826725497054e9621465f89fb7c1abcc2d"
+    },
+    "178d6eb2-20ab-4492-879a-f1bd53123f8a": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "da2bbede5a5ddea2d50f1f6ade470b9dbbd4ee8872d6570ba2aa9b70c2b5c99b"
+    },
+    "1906086b-4e87-49c9-b0d1-6415012e9c28": {
+      "net": "CHG_N",
+      "kind": "segment",
+      "sha256": "6c5a1a97b9648545fe778614178522b84a22da0acb24e6b50b253e8d58108078"
+    },
+    "1a12d16b-e7c1-481f-be3b-6bbe74525905": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "7c54cdd55a5fec7f4ea65b0089a051dbce31512a4a3707dfa1c1ded5cd222901"
+    },
+    "1a9883e8-0c2a-4482-aa58-04e30dafce19": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "db09c7a375fcd11801d3e711da0b086e2eb0bd87dfc8d9e7e55d1fda4d71f8fe"
+    },
+    "1acb1860-5ec3-4791-a937-d8cb3a553bf6": {
+      "net": "CHG_N",
+      "kind": "segment",
+      "sha256": "d2813caa6f59c2ff5af403581e2211a4ae809eb8adbc865888927d65d19e4f2d"
+    },
+    "1ce7089c-3599-47a6-ba08-03a096e9231d": {
+      "net": "REG_VINA",
+      "kind": "segment",
+      "sha256": "0d7147d10d731531f938f9c6e82a00430df05ab565440d96f89b7086fa72633f"
+    },
+    "1d3e5cbd-7bba-47cd-b671-d79968d7c2bc": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "9bb01f9da4e4cb4f5bd261df42940e92799a6b82f835ae9704f3880adf4808f7"
+    },
+    "1d70faa5-cd68-4c5d-9cd1-6b1201f03d8d": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "d12b5c0d06e9d80257ae06739c69540e3f207d4600092cbd3b8a08452561dd16"
+    },
+    "1dec2865-05a1-4e65-8c63-8023dc95f173": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "2ff12f4ef536d1be60770653af7d5085446d23e312ab75d87443005739544122"
+    },
+    "1df4dc1f-1f79-484a-8421-f92423a6f7d0": {
+      "net": "GND",
+      "kind": "via",
+      "sha256": "ee2d6bc3a1823cb2d0d39f95dc3430dac190e833901d088e0bfa7cc86cff02b2"
+    },
+    "1ee93c4a-ebd2-4e4a-ba4d-7a0bb975df6f": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "f5198c8af08f736643e47bfe8214e41218e3ac425614be132ba5a942173b7b2d"
+    },
+    "206ee574-029a-48f7-bfe9-580a18535c79": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "6f87516404d07f63c11489a80ade4fb02408061b15d2f43b626a4e5cf324b66c"
+    },
+    "207123e2-6947-4c31-a0cb-28f365b79be7": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "b348250898ffda06f63a282dea5b3e21d94a42d82900c345802f0ccd0bdc78e7"
+    },
+    "2271d7d1-c871-4c6b-a015-239f2964a832": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "8171b8a71c03c22b71cfc7281609e96656b7105e7e03ed86bdc96ab1e3a21cc9"
+    },
+    "22f2de9e-2de2-487f-a77c-4156368fcae2": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "e94ab12e8bda695690725bd0ca3b14cb6dd73c2299fe2aca53639e4c36220e77"
+    },
+    "2312e82e-be34-43f3-ada4-1e7649e0fffe": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "e506b7737db369d53d8a5016a012b2a8131d948c5aacd0af3840e7a8c768e81c"
+    },
+    "23435870-304c-408c-953f-93c240b6a1cf": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "a618533e3e7829c2c219321c286486d1951f489d6d6fa9d9dbeaa1418e80f16d"
+    },
+    "23c44f4f-161a-4bd5-8ae5-683a77e42137": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "50b66a36f3e34b40bf3cdec2ef756bae8c6669b09492d927aa6d3c80d9f40d34"
+    },
+    "24e84058-bf45-428a-bdb7-f1fd69efa2dd": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "aa99e5143a78246d2c02564890a0bbc7d19c5c50111427674e494b605122eb91"
+    },
+    "2527f4b7-b34d-49cd-9ee4-255cf7515416": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "623abaefd1278e161881ee20ac61184325b1876e798694b47f731a8143a991a6"
+    },
+    "25847b67-acc0-432a-909a-6ef460895b66": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "72ef5bbe7fe5495ca880331487fa6c3ce5ceccc785e0904c817cb2128b95edd3"
+    },
+    "25b0dbaa-fadb-4ba6-be18-16c89d08e6dd": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "3020ee52823d6497bf068f2b7acfcbee8baf714a0f668dc2120236573311c8c7"
+    },
+    "26e38f11-bd97-4325-8680-607ae7ba14c6": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "532176ee16a9c3b517b5a30e9f6dd2fa39c911b57628ba89e67b0c69b6444ead"
+    },
+    "272d5200-ebd1-4f19-aad6-af418bf205b3": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "0545cefc1d5e0c6a6ee30fcbc4880722bc37e39d2027b924dd88613bc2027a90"
+    },
+    "29f40b01-7469-4e5c-a51b-3df77d9d1c32": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "4ef9abbcfe1986ecc38d52c16cbce40194744176cad05eb07d11b4e10353e3bc"
+    },
+    "2a1498da-28ac-4aa3-9a6c-bfc2c2bb6018": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "0e1689775b87963adea1a8c4009ef9ed6589f4d42a6c4c73028837c29b61e4cf"
+    },
+    "2bf5d62c-031e-48db-ab0b-9f67cc882ae9": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "560ba6e6de78a982f4e2d54bf2d3a26884be9636334b89647a77ed0c4675b642"
+    },
+    "2bfc4b61-4628-4242-9354-3c287c58ce12": {
+      "net": "CHG_N",
+      "kind": "segment",
+      "sha256": "9b18d59baa4655d2d18b1a036386c91906a83148e7a189676e024af78dbc59e3"
+    },
+    "2ccccb7d-5f0a-4421-a3d1-6fe99aa9005f": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "151a7a5f07602ab5071b0d82b840b8e8eb101f8d70308b7e2fbc448b6a5cac4e"
+    },
+    "2f08fd2a-b791-4ddd-b894-b295bb31ba0e": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "702b9c10c91879d6cff37ececc223966c2a1e6f5c4fa292fe5790a9e8cf19fb9"
+    },
+    "2f0ef86f-1f6f-4897-8956-a3ec75f102c8": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "0a5b6aaa5eba91430103e35d318977f4210577a2b524a39aa44d375559b015da"
+    },
+    "2f6d7ab3-c2b8-4c2a-99af-57bf94ac1dec": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "588b78f50a1a7e08c5958d45ee2300e16ab06d82cf63917b74d66db06d4739a8"
+    },
+    "2ff567d0-3ae9-44b5-959b-b4cac9185136": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "c8d9a045915a0627603bde33dd87d6b9b876848bb79046830830be68e7d902f0"
+    },
+    "306f6430-9cdb-472b-8ba6-6fcb17bde6e5": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "ce74477e17df36c13423641b7ca818b9d3e5a8ab572423bc68713cc62e8aed68"
+    },
+    "31ef51bd-9bb1-451e-9fee-cf545c61f00e": {
+      "net": "ROW1",
+      "kind": "segment",
+      "sha256": "994ec1ba7fae6919fc4340e1f7bf329c8ad782a1873a615a33b10662ea202183"
+    },
+    "32d8e775-18d6-4bdb-abec-0f8735b02d05": {
+      "net": "ROW_DRV3",
+      "kind": "segment",
+      "sha256": "f80f417e7ec98cc9cb117db68ed767bcd0df2d53c2f864836c75da8e485f49ab"
+    },
+    "333daa5a-6d16-4d9d-bb81-d052f5e2a720": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "5a670e74388bbb7f0e34d6cc526d42d4a239592ef5711b21039a5edf6e3aeaa3"
+    },
+    "33a43451-9959-4dcf-a936-162a7624c6f8": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "5e92b1c72cedd0746778c654ef6adda8aa8dbeccf7b880b92229545416929968"
+    },
+    "341553cb-9724-4868-a10c-427dd48e93eb": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "5d249a90af595443a7e71a5815183e421bede71634cde069aa6954f0d13ddd5d"
+    },
+    "35313349-70c5-4965-8d78-c54e380c24fe": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "0950bcf8f3b68dd45804b80e4fc30dd16eee25ba15d60718d7de9605e3bf2601"
+    },
+    "35faf7dc-23ea-4896-b0d2-b01a7f4a538c": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "2cd7dc98ad7bd6c3ce8e4e769a4b20aa0a57f2c54513240a2b2252dd9ce08db2"
+    },
+    "38b7744b-d706-4eb0-8eff-6f32b7181178": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "5b918d55e4489d608034b0ec52955f996481403ab3cdf64d7a75b9d8e36866e0"
+    },
+    "39a27ffe-7487-4d06-9149-fa9e0f6a115f": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "1ea91b6cee1db703c300742aa6339745470f50f5967826e7dedad962411ba839"
+    },
+    "3a24994a-cd8a-4d74-9809-ba5c3a3a3ecb": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "42c1a541963a327fb4829b8004e7a4dd279017e8dc0c703ef8ff4bf150a0627d"
+    },
+    "3a8710ce-2a62-4636-9346-a35f6820def6": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "779e431d247477e72661b3aad419d97909792ef2ffaab3310450a58f40db7a1a"
+    },
+    "3b1aa578-e07d-4b4d-a309-96589f54ffe7": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "ed40eac8f987f40737fdf7db52e824a0744bebbde66f8c1d2b7b7e9599a49cfe"
+    },
+    "3bc9615a-593f-405c-8e89-f74cc5690dbc": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "594cc1482152305622998a9d0b1a6fc7eda9ae311e120b39a32d7cecb5257403"
+    },
+    "3c1906f4-e821-48ec-b09a-fa47c4e35d85": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "cd257e0f0e98defef593592848a01283de99742b0ca75ebb6eec6a05c80c54df"
+    },
+    "3cd80ccf-81aa-4bdf-9c95-ac4f031b5547": {
+      "net": "CHG_N",
+      "kind": "segment",
+      "sha256": "671b506ebf50caa13b30107bf6417c3c1603af3013af9ef945a8a883541d2248"
+    },
+    "3d06ef7a-37c3-49d2-ad4c-da68369ba8da": {
+      "net": "REG_VINA",
+      "kind": "segment",
+      "sha256": "9bef01f7934d149db86db1d2dcae7a932f76d3f46f47d8fa79e64b7360143e64"
+    },
+    "3e468e82-8885-4028-a337-be38967808f4": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "822babe011e064cafcbc46eabd37c3d642733231ec678527fbd8d2b176d45008"
+    },
+    "3ec8d8bf-704d-4204-b407-6c44edbb1722": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "fd62a2093f28dee1cd84ea4d64772bdc01179d09700b553c68fbeae7b9f29458"
+    },
+    "3f888a2b-d419-4ddd-897d-3a73002a7659": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "bd53c0d665c361f841c6489de5ad881c7aa38f2b8237a7a0c0f1abf92e1d18fe"
+    },
+    "3fc530ce-1922-486b-be83-73de79c93dba": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "32d814715d41c2171a444f123d40f27d1cf0f7750bdb98202480893c1f6eb2e2"
+    },
+    "40f4c585-cecf-4ade-bdf8-b557dd9f4d7c": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "683acad9f99bf12f8a1fa3dc271c1ad7f155387203d02e63627d07c51b7ad407"
+    },
+    "42668daf-926e-4896-8a60-57041c5ca0a4": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "51a54e49bccbfb18dd75c639dc6884b0a6d5ce90db2512b3adb30bf69859a8ce"
+    },
+    "44640fd7-4e3e-47a3-ae0c-09326d396061": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "815e7d6ed02603eba9990c8ec1ba8fbe6c189030fbc152dc0f55b9a44710a3af"
+    },
+    "460d8f98-45c6-4952-ae14-674d6e8b2e6e": {
+      "net": "BUCK_L2",
+      "kind": "segment",
+      "sha256": "2179894ede6156fb5d3984e8c15c2ec6784c36c00d6a8d17d97e750833681f4a"
+    },
+    "466f314a-c38d-4043-a466-d43708133c81": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "a8208ad3a095e9be934f1fe8284b217c1a2566334a40fbb5cc61217d1b47377d"
+    },
+    "47e44653-ee49-44ed-a71b-506c9eec38c0": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "0d3eddbd3129442aa6ab5945d34a1243fad4f8e808d6d72d36829c21de320db2"
+    },
+    "48c30d9c-1389-41f3-af8d-0bb47a4cf45f": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "16037ac1156558a528cdbbd777cf59aad4ef7c882ca77479159bb46a831e633b"
+    },
+    "4c7e43a2-481c-4c1c-ae00-352c82ed6c70": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "0453509d83fad2b63f7f64fdeeb7791128f7d0c0978c02845b5d084f10948261"
+    },
+    "4cb027bf-21f9-44f9-a2ab-ba3431b4756f": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "5e5de3d337243a441cbdf56881fc9584c666671378ccf41b2a321aaa82e42960"
+    },
+    "4cf0e00f-7d03-4a53-aef9-c04cb6d7a747": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "bff903530e34623aba40a02c4e5499520e935e88e254a381a8dc30c8d1cf8608"
+    },
+    "4dd196cd-7700-4187-bce1-d7c8f6a5de43": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "18b7d23fdfcd17d2a8a5de40dc6669a03704ec0ec8144172d2cdb0cc7cf3739c"
+    },
+    "4e0ae07a-da27-42ca-b95e-3d209a9969de": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "5385cae4e940f277e344400fa23f68fb70ce5accda8c00f660e9b592d5cae203"
+    },
+    "4e247f68-f6c0-4fd8-aa18-3dd52f57b50a": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "3e6003f3f3cd3f021450ed373beb050c17d07e9ea8aeafbf78f0691085ef89a3"
+    },
+    "4e2496d0-cfce-418e-b8fd-e08a7b3fe766": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "d5ce9daa473cdb20f9b9947f30e1f4f0b9f2b0369c766a3bda0e13d10a64bc11"
+    },
+    "4f3b363c-caa9-4881-8508-2668b73b5beb": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "d5542ed57bfab0035539ad1399ae5b8c09896286ac14fc888fad3c68c816a9f6"
+    },
+    "50dcc414-d04d-41fb-a2e1-2d9ad0a52aa5": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "4e0e8f61498d564d3a0f50d817a92b58bea65f6aba3bb4d1f6a458c5262845aa"
+    },
+    "50e7b083-6493-4929-b4d4-d611cc427cf5": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "61063f9ea49b5a52abf598c8355aa9e29064d4095a26d7d78cb108d93f5098ac"
+    },
+    "5124a377-0272-49e9-a85a-a767d36c5504": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "713a55ea1517d2aa79b893874e0669f541b8b0ba4d31edff3df2079989964685"
+    },
+    "532a4a13-3bdc-4336-8b53-1ec512883319": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "0d7c01bc2870925623ea014d47902602d619a380740281b7201c51b5ac9eb1fc"
+    },
+    "534582dd-dd50-42a2-9d33-f7885b4ab47d": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "dbd14e767a540f35802d58aa4563649cf4fd44fe2375777cc693bb4ed52b707d"
+    },
+    "53b4a132-2dd8-48c1-9796-9b651fb2ab1d": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "1554128d95a5216e28211bfd689f066f207459ea7363a8ba8ffd8a93364bfa83"
+    },
+    "5556c85b-3e3a-4118-bd9c-95c7f27c2128": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "f1589171c32029314ac7f7bc2a413cd7a4b417391a0539469fce252539e3b307"
+    },
+    "55e5ab12-ab92-439d-a67b-1b8629fefd01": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "525b8b7ffe9188f8f8c1b75095bb7b29fb0ef8fcbd645d217409e225918bd630"
+    },
+    "56a79653-54b9-4bd3-b1f6-2eb7b0525c85": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "2255f462575911fd4264df3c151d0cfb268ab29e9c6506c52a2740df541d1014"
+    },
+    "56d592b7-d3dc-4d12-98ed-ff4b3371c145": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "725fe909845b92efd2899d046bb8973e6b3d9f41102e989524c4276820b51f71"
+    },
+    "587c6b5c-6a34-4142-93e5-4939e64b75ab": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "906000009cb5c4b4d9c197524ddd1fe2e635fdd9c3aa7d930401cb8a42fcfd1b"
+    },
+    "58b431cd-8abf-4651-94ca-5ec45023032a": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "e28f8e725e73dd08d516e17cc454e3ec2036b2c2c93935308728d4f169866ed2"
+    },
+    "58c3ffd5-a445-448b-8e61-305b79faf28e": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "cffbedda300b5b1ea6fbfede19ce5c3f06e9c5fb0b0e9a60163e6f796a14a854"
+    },
+    "5a47757d-c709-4f86-b90c-6f330def8638": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "df16aec7e02e76cb7f082a0a16d6cdaf302e957756017fc8aa104640d91b4ba5"
+    },
+    "5c290905-65b5-42ab-8c23-66972d1a96ab": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "a3c3154f065ec55ec57bff50911c4b8a65621540682cb66dd401125286399501"
+    },
+    "5ca9fd59-7c25-4b74-962e-abb6dbb7be86": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "a689e80b57e3ee68d3a500836d63155d5163e0e0d42bd20875ccea7ed44a4c33"
+    },
+    "5d297d0c-a98a-4aa3-bf88-2f7b8d2855df": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "6243d3f08d570f96fd995dbf0d0857f9c3faa52b7dd927982fb78cd2a1458dde"
+    },
+    "5ec2b6fe-4870-440e-a207-7ce23d1fd61b": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e7458a4f33cd742a491c5b3ddaf82cf19d36693bcdba4c43590fcb235ad5b69f"
+    },
+    "5ed7534a-04c5-4943-9e3d-d6b7ba58919e": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e5fe4ce5d3ce10ec3192d3f3a1e578274a5abe41a7571b078f319b7d963cee2e"
+    },
+    "5f7f9103-b25e-4404-85cb-8b53fbf9f612": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "60988acc83144e293d218a43e1d3525354d39c17b0725b5dd7024fcd1146a0b3"
+    },
+    "6044f02b-35d3-4b0d-bfb3-9e6b175bc4fc": {
+      "net": "+3.3V",
+      "kind": "via",
+      "sha256": "07b25cd23984e07d0c53e534f70057461e257eecad7baf9101c5623087b0152e"
+    },
+    "606581aa-1b38-4e3e-9735-adacc60c5419": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "1f4eb37489cb5f164a76b8de4efa2cb5e924f4d3bc1d0a97cc60fe56b950c79a"
+    },
+    "6187f15f-49e3-4cf9-b9e4-41b56609b49c": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "5a13aa9e504a40ee9cb3b1b5b04e8776293111bc5e984d2b0221e9b5a56aabeb"
+    },
+    "62501249-6d15-4f3e-b9b0-dacf19f84b68": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "374dc69c520bd72ae1d572820dd6e8957ba8e70e28dd34f44ffe857b40d8c629"
+    },
+    "62b65cb1-3870-4825-8d48-1213ca7478b0": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "aff9b392fc5186da9e1f9de649ba232312fc389440dbad18129ecc62de25ce97"
+    },
+    "6401b5be-8bd8-4dcc-a312-09dcf59f501f": {
+      "net": "ILIM_SET",
+      "kind": "segment",
+      "sha256": "167642e12e757d8024d6eb0416ea8650c9df9bc148e98666c01781b641bcc3c9"
+    },
+    "64652a16-85b4-425a-b7d3-5c9810b8655f": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "c1241e2bba6e0bd64ae9a379ed3d10a672f8ccd6dedb635c048f79b1a042dc9b"
+    },
+    "646cab56-1ae7-4cd2-8c4a-6e13a79a30d4": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "ed130ad41f06b50e3b7b1fee5374bc70d9f55435468cd6969bfb3c782691270f"
+    },
+    "64aa6ed1-f5a4-4804-8e2b-8bcd7de5458f": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "d03962333c9987bbe1ec0c132a0993e845eed7c46844826ddc9df203315acbc7"
+    },
+    "64cc490c-ef16-42ba-9fdf-0ae619282ebb": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "55a5f9f159d5782dd5e3839782c49d1860e6a8a80dd7e6ecf289fba8723a3ca3"
+    },
+    "662c5e11-6589-4740-9e9c-8a90c83bd2e1": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "5485f1f4ffdd85798a75f1110debfca51ec7d25ebade1d99c51b43bcff86a150"
+    },
+    "663d9bd4-71b1-4510-9bee-25f834be9609": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "c70e56f5b6bb8bc53994d43ce43e0a73169805236e60b71cd7775e55ac0adcda"
+    },
+    "6777facd-84dc-4859-b512-82e98b1019fb": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "63b5d256b3debc4686ca62b84cef35887da39e4352e76705b84f87eae9e2c807"
+    },
+    "6811b605-6143-426e-aa3c-f79f6b482d91": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "554ca442fa84813dbf279f86c842a16ba24bd360f479535db614fcac7d0daf62"
+    },
+    "683730b1-646a-4db2-b3f1-f032c4b59732": {
+      "net": "REG_VINA",
+      "kind": "segment",
+      "sha256": "dacf0dc2b0181a8b7499a8096d3d271ab91e909aa1273936f30e2deac1941eca"
+    },
+    "6892dbe3-dc99-4b02-996f-7e3aaef9fadc": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "138460b197e6a1124cd85b6720898e8f49a21d337fbe022756625f602ebfd12d"
+    },
+    "68d180bc-ef14-457a-933e-fbbb4e866ceb": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "de0fe67a0204a08700115ae2958aaf87aef1f8929a1c4e3c88fb8ed67f98ccf4"
+    },
+    "69af7c5b-9692-4760-834b-f8b6842aca4c": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "72e9a17fd52420cbe87c97932bfad94af8cf4995c8f1b2ddeab4c08b5e7b33d4"
+    },
+    "69ffb5ba-a3b4-4bc6-870b-898ac99f29dd": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "7417de62bb396c334e05d42304b1b73243d50c9f991364c338535f657607c1b7"
+    },
+    "6c3a029c-921a-4124-9984-25ff2a1a286d": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "5755ff982f153e997484b6f5fabeec7850df6b01a60f26c59b47eecd799c337f"
+    },
+    "6ccd8c57-c26a-4cfd-bbbe-f6a0c343e16e": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "0c60ad08da7d0d67dd4887ecb71177cf4aff6df2bc0e0354d4688c9c47e1e03f"
+    },
+    "6dd5056a-fcad-4307-9d19-da7213d29619": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "85c64ff7d4e211bb6f58394140d7c567868293f80f364e9a08b97650ef4846d0"
+    },
+    "6f61910e-fbfa-4597-b6af-f5587e34d030": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e36f7276019096e380f9213352203bea3f22b147ac9147401546f487021e3251"
+    },
+    "702550fb-8d98-418f-8ee9-d31ed756d349": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "2485e716b50ae545f1551527e2a40bc9f3ba4fbb5cc330ce515c4a2644b98d1e"
+    },
+    "70597942-57e4-4905-a2b9-36f04768c238": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "8cc065d0d1cef66f2780cd7241a511f458dc7f5794007effa55fe5a8509f0a2d"
+    },
+    "70acc326-bad8-459b-a3ba-d06cf02a997c": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e81641f94cab16ca93803f69beb7e2514a9d4fba1d0b0ffc25928df8f3eddd71"
+    },
+    "721811b3-f999-4192-adb2-5d0b0fa153df": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "509ec02cc00e260de32178ee937e836d06ebe974b01d98502f4c5100dc01f713"
+    },
+    "725b10a6-0c6e-4b72-bd32-6d151977dc44": {
+      "net": "CHG_N",
+      "kind": "segment",
+      "sha256": "48d7b796e26ef73c45935f65c661056213a4954d7fb17179764fc9d76992101f"
+    },
+    "7302f978-efc0-4905-ad9c-498415870872": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "312fe55d95124eaf56898dbae21d3ae0ed1607d8a60b671de3127f9864af9748"
+    },
+    "73886e37-0056-44ba-8696-1cb1c6c83274": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "a89667a1e4885ab00f43f08c9c7ae89595b61b3b4e61d41464f86748c2a54383"
+    },
+    "74783d80-a79a-4137-93d6-ddb329d225e3": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "b6a9df7a40db40df2d22bc576ff21a71c677a7c4a29a25ad154ebe0452944dc9"
+    },
+    "752cf2ad-b996-45b3-be91-c1ad53697948": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "8b6b45c720cf3f0cefb61a33e7ccb96e7a10dce7687d4dcd883c44f4bd29bf7f"
+    },
+    "78bed4ab-7662-4a5e-b943-5f5a103642e7": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "4924cef8637278d5b5a8e13b125a4fcee26a73c9eaecb68500dd37643094ee69"
+    },
+    "78ca5067-c75e-424c-8a88-8d04dc140152": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "38dbfc0a6c6f145961379a99588118944384ccc29756f67a2ce2d5ac59f215ea"
+    },
+    "78cd74ea-4bbc-48dd-9644-f26c501d63ea": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "0afc4e076f2c5ce66beda386bca4cc712a489e2bd1b2aeae653c72cd11b14ca4"
+    },
+    "79ca7569-050f-4b3e-8c9e-639bd7d82c3b": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "27c3fc0541cf3220b1171872914560ca57a5a91e688365a7a2d440754dcfb344"
+    },
+    "79d88df0-6651-4c7a-9452-428cc696ca67": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "3cef8d5d18b9dcb09cd35975bfe06fce3639a6e055ea97756f49afdedbbb7a8a"
+    },
+    "7a6e38f4-c417-42b8-8caf-366f69245b48": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "829a80a34393f62bfa7de365b19a78409e1304892672eb8e67711cd74eae447f"
+    },
+    "7aa552e5-41f7-44d8-9b52-4f6bd3566ecf": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "888c44362903f57bc0a1cfea533dfb1e9998fca45d4514ec34d037829fdc7933"
+    },
+    "7af23518-1fd8-4f5e-aa4e-1db5a9b896a6": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "edc37c2d024b2bb1e929fe6c950d35cc13de8eab79aafef79c1ca511605af4c4"
+    },
+    "7b2a7f11-daed-4b34-b5a0-e0c672633819": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "017cab60250eff9317eb15013bfa37c98c956c774332e9f220e58019ce2807af"
+    },
+    "7b5baad0-9ccf-4268-842b-84b067f925da": {
+      "net": "REG_EN",
+      "kind": "segment",
+      "sha256": "0658d13cbb6eef6bed98e118e0177a77626015c554dd46706e0f452803b22d5d"
+    },
+    "7c9d063e-c5c4-4456-ba28-d50b557ed221": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "141c61bd21aac9d865471261d512a61ec42827da415f1fc7477c4bbe10b4d80c"
+    },
+    "7eabb6aa-24ea-478c-b5f5-77c8c7ab32ce": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "63c42b02adf5cebdff527ce80bda26d9ec00cbc6eabcbb7fb6950624513325f4"
+    },
+    "7f708bc8-6c15-458f-b8c1-dd42f456dc93": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "6bedfeb69ff4440dadafe7d23d784fdb3e771d7210ea7592824a66e954ee4dad"
+    },
+    "81def074-5eb2-44fd-846c-09030b75bd1f": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "5dda560d7fa3ee1c9789dbf58ee064ec692018e5e21824b13d74ef82b76da507"
+    },
+    "81e1aea0-dffc-44b4-9653-2ac90776b97c": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "a7fcb0eff640ebb32ca8b725b7cfa13abba1c6986ce9c8cc55a9fc023f23ea28"
+    },
+    "81ec7ef8-fe05-4ee6-8823-81e895c716cc": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "94528efa9148482b857b830cdb9f671b20dcb6517c74be5ce20cb59f64bcad8d"
+    },
+    "829810bd-ccc3-4ab2-bc32-147a32607594": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "403f2faaff7e6c8fea3000aafb03f7414759d322723e7727c5da31103c8a3673"
+    },
+    "8404f0bb-effb-4f1d-afef-5289abacd78e": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "ebccab646807f219c059e2800db26984c768c936a53cc1b9fc11177241c917f1"
+    },
+    "8512c444-d3be-4faa-be27-17fc46c47891": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e2f2a89134a5f9c5f9a13c76705dd057dd1660f69d9c58252a2348d40361165c"
+    },
+    "855b4f2e-8504-413d-b236-4fadb7c7a5c1": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "54afe926227235d862d8dcbde0f5286bd76ca09b601919b0dd24a61bf4b0de5c"
+    },
+    "873df45c-ed0a-4fff-b6b2-12dc4cd5ed7a": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "de05905e3f9da6293002db099533f38a904cf73c85a08f25b7d2a3e005912c7f"
+    },
+    "89829f02-81ec-466d-96a9-620c61866109": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "b02caf3b66a451cb18054f87deb7ebf499d054b576d1e35f10a79376cb718539"
+    },
+    "89840f8b-c46c-4393-a9e1-35a5269ed0f3": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "8d4e5f60844ff59ab8f7c30f41a088eab3e282d635f494c43e8e410b22426252"
+    },
+    "89d127dd-be9c-4cc0-a694-b472d4ebb192": {
+      "net": "GND",
+      "kind": "via",
+      "sha256": "4cea7063429fa016b453dd00c410682cc3afdf903be85f14a7dfbb72db5e3fb1"
+    },
+    "8a8a0fff-10c9-43be-8089-83ca24e12858": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "1a5da44ab48605f52795051a36152f1b60b2d1d93496e1880c9bbd2fd58a0409"
+    },
+    "8b39fd53-ac59-41ff-97a8-3f1bbd1de1e2": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "42c7da62b7a1e0dd1e84b344dcc997319f295ecba48e3ad0d9881b59ec67c0fb"
+    },
+    "8bc2a531-33ea-4b30-8f21-615d5500a695": {
+      "net": "REG_EN",
+      "kind": "segment",
+      "sha256": "10575c4c7d33b3bfa157af786185c2e29391a9c9c1eec19bc9b80b91f6656ecf"
+    },
+    "8c8230cf-0c6a-4683-8a20-4c66717b5951": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "990c66ffacf0ee71f841231e39ef151414e9f116539e80638c687acb843824cf"
+    },
+    "8cadf030-a6a8-42b6-92cc-ca8a6575d717": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "3717df7961af0ae79b8405208f2d87a24b54a5679264afc3a7ae36257a9e76ff"
+    },
+    "8e2a95eb-2af5-4bdf-a19a-f877f5bb9f40": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "666093e60d8dd63f31076670ce2dd33b8eb91e9bce94b5b4028729e51edd98b4"
+    },
+    "8f115bfa-0e3d-4694-8d19-20fe67017be9": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "7d9f08b84e0f271717e9d54e9c694637a24a83e396071d35c6dcb30e7382d69f"
+    },
+    "8fb3f4ac-5f86-4ee7-b8b1-c5ae81c54589": {
+      "net": "BUCK_L1",
+      "kind": "segment",
+      "sha256": "3f5dadb33302f7e71b408c5a8b3a4b906dd1353b286c6bd3268eb116cfdb01e2"
+    },
+    "8fbe3caf-10a6-427a-bbf5-bc33130bdf76": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "d6886111a7ba84b43ac5739fc5cb813d838c53e7d72761531460f57489ac0a20"
+    },
+    "90e8b193-e1e5-40ca-9c24-d8f5b43ca1d5": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "059542f5ceb403c086d28184e8b85f6574f77307f887aa02ac212fc851141b9e"
+    },
+    "9256cc81-2239-40c6-877b-aa7bd46018f5": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "59803e5b05f31eb7a0a635db28c71f18c4175ca15f26afc04f2b6c06b4805220"
+    },
+    "944785bf-c49e-4bd9-a5e4-e3e118257374": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "417659fe68f87b4bb3af5b8c9a1de5794e7116ea78b307d7eb539f91688c7368"
+    },
+    "96c18424-b637-43da-8022-99ad39f298b0": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "b2c41b52d28ba009d1f13bf94b9d4d0aad78c5c2db04afd14f79ab7cfe1e4610"
+    },
+    "97cf7db4-9a00-4bf6-93ef-cfcf48038de4": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "0eed749a8dd1c0ddf01a935992957bee08399b2178a17ee686ac80f18f272b48"
+    },
+    "9845fa36-467d-4342-90c4-1b7743866f60": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "b0b7dd778d381c3da8b5f79544eb7ae428050a7bc39494ff93c026a2178b6e7d"
+    },
+    "99ff0549-b931-473f-a206-969c0e66ee51": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "ab59312bfb37fe79129ddf592ea4e6c423df2ce8a7bc94667b3c46fd71746ae1"
+    },
+    "9c56d6db-b0a7-4b70-9af8-75d792477691": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e19adcdf1a194a9d415ea3df705de848c771bd6f436aea03135a30d397753f22"
+    },
+    "9c7d8190-5c1e-487f-8806-815e13c3310f": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "8aefd59ba830b695a7815b0f2599a694136a94a8087570ac8eaf44cf376d6c41"
+    },
+    "9df9aa52-6ce2-457b-be7c-7c9dd3dfd3cb": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "9dca49bc8c238329da2d3122085c8ab50892c24c955331e878ac8a7017779014"
+    },
+    "9e07d54b-3bbf-4189-84d7-5d1993dd71ee": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "471e62149174dc8876176344f19e93cb105b38273390c1a26d6a044325bc79b9"
+    },
+    "9e37f087-f927-4828-9ed7-f291c17c8ff9": {
+      "net": "CHG_EN1",
+      "kind": "segment",
+      "sha256": "9a8f2c88bbbcb1350ae99e867f498776f9baaf04a294414f3780e3cc88b6375a"
+    },
+    "9f445bdb-b1b9-4b36-aa84-e8729da5f453": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "ecfae9bceed3cdc5bfa08574f85961678e1c48beb211ca19df5aa3e2c85eefc4"
+    },
+    "a4871ae6-9b25-4b39-9f09-d1d3b3fb3771": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "95be0f46b4dbb746fa2099aeb905a57cf3810bb7e448f9178eaa2b072b54d112"
+    },
+    "a5957ed6-fd68-4a2e-a782-7b04afec6121": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "35c3cd58072e2771f478528b92ef54d2cd7522c366f7e74fc4c50a9c1eaaaa1f"
+    },
+    "a5e502e5-1005-4dd5-8c25-306a35820732": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "0193e852f8397bfa245af1e2e751e3f2892dcf338bbbb8edc34d69b9ddd20371"
+    },
+    "a7fcb0f0-a840-4019-b68f-ef774e4b9453": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "8a8405d8753a3798235dc73e778db1ad3d79eb107a7ee3af8ff353cae67fed01"
+    },
+    "a98ef740-0137-4562-bfde-6229eed41b09": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "d5535a1603fd4e5d7f20e6601b4317319d227479085ecc4ba17c0222938b8a19"
+    },
+    "a9e31bd0-27ad-4214-afea-49c17b66078d": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "9482f661c8e1e4910607a70f374a172a4e89a99572b5adc26ff1789b31bceff3"
+    },
+    "aa61a8bc-f5b5-47f4-8058-a45a29e5b043": {
+      "net": "CHG_N",
+      "kind": "segment",
+      "sha256": "d4e51bbda5961ad9c56e3b343aaaf9f5c95a0d478b2be049b8c2f62a51d6a2cc"
+    },
+    "aa8d5e32-0054-4073-89b5-0896aa2bc63e": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "c02df56224421b7abba3a4805c51a65a35b7ae5a91949c59cad1a0ba911a4fdf"
+    },
+    "ab70efd2-5f93-4573-886c-7c4669dd4ed4": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e3190ca6b011c1268a237e33a0ef220c11fb5f4e73e80d081c9343f9261436d9"
+    },
+    "aba3c54f-5814-4ced-906c-4af2756d079a": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "c5886190bb5a652ebc6e845c53b340af47f7fb2c47bf157df3d9dc49f07eb588"
+    },
+    "abb75838-5208-4bd0-8617-ce743c9c1d79": {
+      "net": "ILIM_SET",
+      "kind": "via",
+      "sha256": "4172f1120e0c418f2f1b9fabc80c05b64415c658e277822d1a7d2aa4d6ed9f4c"
+    },
+    "ae0f4ac8-1a1f-43d9-b151-3fcbf12b1552": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "9b34fefb803d49a51e367889e73840c67c7c7b295f5ae3d51ec2a78f636e30ae"
+    },
+    "afc3ac4e-009a-40c7-9ae9-e29bc7b06bb9": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "f450421645fb00243ec55a949e7efe5a6959a5299f9f574ab06eac481ebe550a"
+    },
+    "b1ed632c-d436-43c3-95d9-4f92adca0a43": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "08407cad36005ff7ab12e7e63985cf6989d5116a74375cf454ffac0e7050d8b9"
+    },
+    "b272ccd9-05c3-4483-89a4-ad67b6d2b832": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "b040a291ee79b06af845fdff895d11a2144467219a1b71232a962c8a83eb1aeb"
+    },
+    "b2efd91d-58dc-4bdd-b819-4e565139dd90": {
+      "net": "BUCK_L2",
+      "kind": "segment",
+      "sha256": "7855107c9f5387ca6518c488bac38e4e60d153e474c0c1612d3386b7b042988a"
+    },
+    "b35c1f20-6eeb-4b78-9c54-e4b0b02d67d0": {
+      "net": "REG_VINA",
+      "kind": "segment",
+      "sha256": "2ab545859c9d4f96520dbbe66eb4f4c3fa709d42755e084795f4960db8fad0bb"
+    },
+    "b4850947-25c2-483a-abe4-56490d3e36e9": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "dd9464aeba63a616348103c00bb40bc79b17ce548dcf738afaa69fb46ec45679"
+    },
+    "b51991f5-a7f9-4495-82ac-862df5d1b300": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "263bea38ff11d3029ae734137b91ee9d3d1a93cdcca2803a496db2638fc3cb2a"
+    },
+    "b6e61792-ef44-4f26-9837-7e3f242b6160": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "c12e26eea4e04e20048d487f8fff540d974966b718225acc5bad44e52ef5d48d"
+    },
+    "b769e904-fae3-4c2e-a62c-c6e9670ed704": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "0d54768cc570a8306e83a745155c7e146fcbead0cd3984fd151004a6039d6ec9"
+    },
+    "b8c7b4c6-987b-46e7-8326-d1805f5fe13a": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e3d88aa0eeca306e0e423bbf62e65b51ff83c92064323894fcc79ca1125d724e"
+    },
+    "b9b3f9a3-986c-4ed5-9688-e63c341fb3da": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "dc1d895fa639e59f6905852c1eb538d92f1b571976e7d99f38dbbabf385cc7ed"
+    },
+    "bab015d3-9713-4984-a6ff-3d69219d32b1": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "2c5421883eb79d8095a70dabce281026a971d296059cc6f499376dace251e8a0"
+    },
+    "bb58fc38-80e7-476e-9244-69ebd887c2e4": {
+      "net": "BUCK_L1",
+      "kind": "segment",
+      "sha256": "6d584a2f2bbc34a461b2e3499ab94a3d6b9aeba681af4c17b0970cc7a62055b5"
+    },
+    "bc1b3265-c56f-4de1-92d5-eb986091b704": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "74e60b93455488c42369ff2548c74f43bb5ac8524169300155cf5d7349682a94"
+    },
+    "bd40659b-6ea2-4d5a-b3b0-353ebe62400f": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "9d5f93d85b7f6900a21c3b7dced029bde97ebb20a18ee8b84a8e108947dc0da7"
+    },
+    "bd4d9908-1700-44d6-a9cb-1756eccf0f0f": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "d08028b99b1f9edcdc3d14f641729c4c02cc5e2f08121af4384fb283b159325d"
+    },
+    "bddcdbc6-fc5b-41cf-a9b2-76c073dc8495": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "c13c5e89a23b0731abdf98387175d90b3759b8816e620e00a85aa93b70d5302b"
+    },
+    "beb7aca8-1f8d-437c-b7d9-6efa31ef2459": {
+      "net": "CHG_N",
+      "kind": "via",
+      "sha256": "8dfe7609790ef8c1c9289a608ab5ff93e4c42aaa1c271a6bfdf1474d2cd7b651"
+    },
+    "befacbd8-19dc-48f7-bc41-8b5d7a3f9bca": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "048225eb5419c209097215009af2d5a611276832effbfadbf7638c3786377f08"
+    },
+    "c0d5692d-76e9-481b-829f-bbc3f57207a5": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "8b562beb4b3e404f9ddd8e322a53554ffe68f320c65b18ecd3e1555755a2e309"
+    },
+    "c2040f2a-a21e-4101-9788-39bd9d62e979": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "bdf73574aa0772b45239a30c6f7af7dcb218733dede9d859830a591e484bb978"
+    },
+    "c29631ef-39e4-4378-9f70-8b8545990cb3": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "e15419078aa06304d121501ecfc2826d6e29ac10afd9dfc68120db34969d5405"
+    },
+    "c30ed6f2-a67d-4db5-8a71-09de73f151e2": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "3040b172d944767a69e355787bf9ab3538502f20710c4631808250ec9134c170"
+    },
+    "c3c934e4-efdf-40c0-ba04-0c7709523c3e": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "2629d8c532c5417aea76d02712123a56354c6d0580afddeddfbbd1e1fd90f645"
+    },
+    "c3e23668-fa60-4b46-acd7-0708c543afaf": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "bf36e2779c775510c4cea791bd37e2112d5b1006d06f6e968a2fa095e5a2b5ab"
+    },
+    "c4472213-d910-42e6-88e1-f1fd2fc73855": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "c3e148d363b63768ea3b167814d7a27f9d04c4628dc1ae70000809d663b86154"
+    },
+    "c47a1a78-afdb-4f57-98f1-45e27b635184": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "dcba484d1b6024f39bcb7b594ae278f56436036e4e981c039238c8f9305fd431"
+    },
+    "c6804b01-362c-4e7a-a0ec-d9befc39554b": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "d570b98e175ae3932c8b2be849143fcc13f2ff5e1364b599058c1a022df327e7"
+    },
+    "c6ae9ebd-68cc-4cb2-afc3-309c25687616": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "80c580e1c47de1cf999eb40b90cd5912862d6d248eaaa2c8b8bf56a5231fc8f4"
+    },
+    "c73db2b1-9aeb-4a33-98be-3367d1a3681e": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "d8c7aa1f78291201d83006c1b2460607e4cd9ed5ae6018c88c7a5bbbf810bcce"
+    },
+    "c7dd20ae-b3be-41bc-9270-fb20e42d3585": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "8ec130a31448eddea2a6a83d89df272c250a2390e38253deb586439cdf09c328"
+    },
+    "c92d30ef-d380-4c9b-8d64-a7338ad8013b": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "82cf63cb7c71e2ebf86abc65bae866bedc0cf4ec0a25719e9179e668a135ad3a"
+    },
+    "ccb2a53a-8735-4133-a798-80b8eb8c5b6f": {
+      "net": "VSYS",
+      "kind": "segment",
+      "sha256": "8423ed3b7eb657f75741e800e72346a4e38280f7b69cd00e1307ce1098949c2e"
+    },
+    "ccca79ca-9ad0-4b9c-a9ec-6fb9d39b67a3": {
+      "net": "BUCK_L2",
+      "kind": "segment",
+      "sha256": "7d5843a286e0b27a28788a2663bb1df010552326dae17c2a14259708209c9196"
+    },
+    "ce4cfb0b-1167-4cbf-8fd4-9dc6d721ecbb": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "a7c607c47bde1c52eef79f970ea6a6f4b5ac9dc00b7c11b140f69a9483f0eb5c"
+    },
+    "cebe83fa-ffce-4652-8e88-4af7f733dc38": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "53aab53f2c036aa9963f8284fe41ebfbcf786ffd3856755dcc7df4bbfd354951"
+    },
+    "cf798815-c437-4ee7-b68f-b8beb1825c99": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "91c5c79b87104fed532b340c11993292c27c8c5db885194bca466d4036937780"
+    },
+    "cfe8a610-bfa8-4f34-806f-eeee0a5ee56e": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "ae94865096f2b02dc3d770f72e76ab0e56c32b38eae14f7dfc520bffd3520753"
+    },
+    "d0e7f57a-b571-4f50-98c1-7f0d6ba9fd91": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "3c58e93276fc3dcd9ded315e7c3ac81d27daf05c5bc216045e73ce6e922b1aaf"
+    },
+    "d27fb573-cd84-4ad2-8f3a-5a779502b8e5": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "94dc2c663788400248902728e45dd4fc306c6908f380127d744dafdf22da3687"
+    },
+    "d288b7a1-8c3f-44df-a244-d45732f4a74c": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "c528bef02d1077992582b7c48b1b74e569fe14aa52ea3c114b2e673514f5e816"
+    },
+    "d2aec932-b5d2-4268-8e10-c985e043d103": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "bb5ae41dd80b51a187f215436d7d72ef69887fae9dae7909d0d92cf6720ed670"
+    },
+    "d338273a-7673-4f4c-88ba-0c1a3843efed": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "8e6e1b17012b12d28908213235bcd9cc6d6211e69bc5542c9c2656f4a0f03fa5"
+    },
+    "d37f6a1d-8bde-4694-99be-d3f8d549a9d2": {
+      "net": "VBUS",
+      "kind": "arc",
+      "sha256": "b87f2983464ed8b0151bd5e1633b261bab8ef92b5a2c26a9f33bfd7a70ce672a"
+    },
+    "d480f70b-0c45-46d6-8e12-7072caa7eb5d": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "94346511077f750c5593b5a5aaf26c5a5ce5144e30056e21d8508b52d3e36116"
+    },
+    "d4b1a0b9-1b20-43e3-be97-a918c9ccc54e": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "cdfaebd353fae871b7decda44a799cbbbd7197c2bad2aa2d8f65fcb3f0f8341d"
+    },
+    "d4e8f3b5-3284-48eb-858b-11092d30a409": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "cfb3594dcacd469be741d6239be0639ddcdd0b109c25f22b9e3a0b083db82962"
+    },
+    "d5049098-ef81-4f6a-af0d-eea85323d419": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "173ac1e953abcb95b53fc557aae3b101df9518b3787d747b2489eef919a1a0c0"
+    },
+    "d5916187-61e9-46e8-be83-127f223e9a91": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "6b03a2a6afbd5079a69b05e1490b64abf67ceaea89e152941045071e53b64b6b"
+    },
+    "d5ba5c21-ba81-4a48-9bd1-172cc2268fe9": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "e07a17aeb080cc6c782f616e4ae4fa2e468b3f7b7c65a5f3edff8515377e3ff8"
+    },
+    "d636cfef-4666-4da8-a9d9-a29dec061b93": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "a27eeb030d0aa2fd63a7c86b57eb22d2e0a7a537cb1c1eb8be7b44d5a6e4f260"
+    },
+    "d66fe35a-61c6-42d5-adeb-e0255bac2c5e": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e2bb2a53ce8d8ddfcf3f38f785344f804b2159eda01ee4acef99bb506ab91a23"
+    },
+    "d7de0f9e-bba9-4061-ac7d-4d91d8c6d370": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "beae9d572b13d37fc415acb5d0ecfd7e252f4131a116f2645d40a5aaa1003ab0"
+    },
+    "dacdeade-85cb-4f76-a0bb-76c29d6cdc86": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "f61397fc89bba2799d2a15fa4938d2c8aa700fbb6b501a3c908ab8d002d6d388"
+    },
+    "db7cc121-c83b-421b-a0ac-e6fa162e9ad9": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "470a58a79a4b70f91e03f4e0ef23566155351b79c95e9f08ed805cb087b8b036"
+    },
+    "dbaf493b-7ac8-4c06-83e1-f8ee8bdc66e5": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "84d7b6f49164d3c2f675a8f8946def91d2975c739b49933f7725bbb5c061efbd"
+    },
+    "de104f4f-f050-42f7-b159-486006013cb0": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "0e540e441c9a5edb4e2cc6e6c8e5ff3eb86f36ac11d635fadcb10b685bdb19ee"
+    },
+    "de30d16b-b81b-4ddc-bd10-726c7ee938a3": {
+      "net": "REG_EN",
+      "kind": "segment",
+      "sha256": "8741e751cbcc28e1d3095c3cee04444480b26f34885b8fddb757444406bf6154"
+    },
+    "de5ccc03-39b2-4de6-b502-b443da8a4cf2": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "e20ddecd5734ef543e5944a409a51d51b39927bcbc35c4334d918a28f2a9c0eb"
+    },
+    "dfd86dc9-3503-4865-b802-3140c3fd280e": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "bd0b8ac3b4632596259ce6b86151dee72e3e33eb8fce17c06c3b67e8ac812b00"
+    },
+    "e1e2cab9-2aa4-4f3b-b7f5-de8825136801": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "3654d0b36f5c18435fec400bed6c3c6a11b45523656952fd98f4ea3386f3c900"
+    },
+    "e234a934-4e45-4114-87a7-d4e68a74255b": {
+      "net": "BAT_CELL",
+      "kind": "via",
+      "sha256": "cb98d10a91662fe63c44cbb5720c3e925aa47081f912bd753f7ebb2bd3964522"
+    },
+    "e34aa9c8-c965-4af1-aa77-c708beb1ceaf": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "76778e7c11c59aa7f37d385a474852d45766a22bbc8b7da8b7fe6c7ef368d78b"
+    },
+    "e37e36c5-8668-4d81-a75f-8f0b5441b308": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "8beb8cf8da249a33c55a76c1988e83e9d80ea1af95466d97f3a9eb66b97ea91d"
+    },
+    "e3915ba3-7a85-4a42-bf62-f511bd7dbbce": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "a914330bd704a5e120e0ff5791c578ca9d04bc1dbc4b03f566b811ad28771f9d"
+    },
+    "e394b1c2-584f-4248-98b0-5669ea57a5c8": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "536498b04c0e41477a43801ebd3b4f29534a755e9b9066957f407ffdcd5dd9cc"
+    },
+    "e3a8a135-233b-47ea-b16b-e209c2177e3f": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "ca4c83612ea073444c266fe81cc2a462c3336ffaf549839cdf318db585cac9d4"
+    },
+    "e3fa420f-ca97-47a4-a6e7-c39960bacaf9": {
+      "net": "CHG_N",
+      "kind": "segment",
+      "sha256": "31828452e7c459e2d8184c84020e0ae2a7515364a70aa78856c88619c7fd9c1f"
+    },
+    "e4a74b01-6120-467b-9ea2-25c7a7126332": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "076c69c10cfc0407019c12a42eced4c9c28522ec14467ddaf7922f8f150ea33c"
+    },
+    "e4e6ac47-9541-4631-9400-bac235e66304": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "0d154a52235cbb823041b3c63c839a3c1e0385181c7d7664968ec700ed4772de"
+    },
+    "e60f9536-b469-4570-8c5a-54ea6956d70e": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "300ce9afd1eb983c9182eb1a19808ac2c8372c84af4dca1a3c8ad1b844069c56"
+    },
+    "e6b27616-43a0-4f43-a343-b64455dfd3b1": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "8a637422c39972697681df027e3b734f54a6504d4be195bbe900f8db3d12d4cd"
+    },
+    "e729d6fd-7545-41af-98dd-db0029af0a4d": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "dbb4e6b48205bd0d29a782ce209c0cba88159775ba151c3736ce518255f54eaf"
+    },
+    "e7abe2d5-c5be-49a5-b461-8e6beaa4f49f": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "36f9d8af7ccd3b0fbe69d172548b6eaa6b49764272a05e1d8ed8d641d4d1c213"
+    },
+    "e7e060d7-6d6a-48cd-b941-befd44a76b49": {
+      "net": "+3.3V",
+      "kind": "via",
+      "sha256": "a9a5910c0c45d0ddf8035784bf4781c8340c7b823919dafda81cfe80572224d7"
+    },
+    "e8032a1d-d170-4f10-95b7-2b39267ed26b": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "c2477440a90a45833d92426180487ccc2db534aeb8be9ec428a14f305c655af4"
+    },
+    "ea2cdede-1470-4b87-8301-75ba3fe1bc12": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "6a2a0cd32f2f2bf77ec7512a34b03f967ac486867ed8e92824bc5062d2da08de"
+    },
+    "ea30af71-014d-4bee-a14e-ae35d375fd0a": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "49e8da42bafa288d93f5c17dc0a0f02f6392ec9b230edfb5f847c75041928230"
+    },
+    "ea49475f-e593-42c7-802a-f1cf67c0610a": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "576d173149883a6b4f49129e1fd45653804f20108bf9a73d734d4d16d486f434"
+    },
+    "eb1e1b65-48e1-4af0-8906-14361130b671": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "5917f1a56ade73ad5454839eddeb85d3def407263d0ca2261c927ecc0230fafa"
+    },
+    "eb561b85-4bc9-43ff-9ba2-3abf6f65c7f1": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "9f236e2596831d0dc3ceea7dc0b77bdb5f28d6609871cb67aa1f27e814f4cc6c"
+    },
+    "eb6cd492-3ac5-4b36-843f-6f7e5c2c65ee": {
+      "net": "REG_EN",
+      "kind": "via",
+      "sha256": "1046bf5f031137867354ae3f1a9df5d5b42a7ad0e793e1c6a60c4d68cf69d3c1"
+    },
+    "ebe6dc99-824f-49fd-b4fa-c9ba5dd68cd2": {
+      "net": "PGOOD_N",
+      "kind": "segment",
+      "sha256": "2dc12fdff6c98cbc6e94330cc4b529788e14809706ed480fba837ba2d21f1029"
+    },
+    "ed5e1371-19a3-41fb-a557-d1759908dde6": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "2dd9e4a5f5eba115afeb695ca9e45362a94ffd830a7f046e41a11c96661e50e8"
+    },
+    "ee03b07e-ee02-4530-bb4a-ffe1a7ab6a86": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "c70a6b8682c4303432f730db8b79c676289ad537841d2c5b16612e9394f7ef97"
+    },
+    "ef036896-be81-4201-b055-fe2a028eacf5": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "3559fec5fdea5900f2c72acd416f2419d25818e9b4a1f4b0277be8e29532b51a"
+    },
+    "f06fc482-7a59-4d5d-af39-69b621ca8886": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "228d0ac13b0d484a9bc76e46d2ad1cac0d194ec1ef6e5df093e1e388b8171eff"
+    },
+    "f0b0162a-c66a-4d9e-bf92-a6f156cc5805": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "1d5551da6f790d2bc7e35bb43eb81e8ca54098fbf7444e4a1a6f68c5214a9b71"
+    },
+    "f0ed3f28-7d0a-4949-a187-0a378dc42211": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "238eef582fe023597ce336c38402fa83a5149a2b484c8fbf007d5abf27cc6641"
+    },
+    "f1b627d2-c3b3-45fe-8331-0e151ce31646": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "cef36ee881fb95b50ba021b776e3369c8a68a57f366cb5d21f687dfc7b45cac8"
+    },
+    "f207270c-73f4-46b3-a7fe-df8fd039034f": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "11073b3e70183ea017510f27f46fa37c23638dcd7016be2c2bd9a96fa9fe7d31"
+    },
+    "f22e2267-05e5-4a37-8866-0649f123c8e6": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "abb445f1a55caf1580fb8f4a6d2c6d81ee3677e1e130c0ab91c50464893aa3ad"
+    },
+    "f32b01fd-d3b2-4def-aa8d-207e8cd92515": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "82e884ea22a7d35e92bea16d3a62c2d35f6cd2ab0d71781e91d9177ad7e3ef24"
+    },
+    "f4a7bc73-a5d0-4005-8f77-21d206c781e6": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "d53470ed0d5c25d2317fb3301c880468bffa077cd53259757f1458cac132dc1a"
+    },
+    "f597daf5-17ff-4ea0-a08a-936a7857c0af": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "87e4e2226cb7ded0931940f3bec9b6c7330d9560710fae7461a33f4e489c820a"
+    },
+    "f5a057ed-d791-4a50-ab9b-951d42b65e62": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "d040f41d5224f2f8ce7bb412746957ad45b467687bd5a11e849c19adff3c73fe"
+    },
+    "f66d4d61-6911-41ad-a358-49ba9ca87c3f": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "05677f65bcad038a26ce47ce44ffe043b5e3780389c66c9449f36a8200b1437a"
+    },
+    "f73a9ccd-84eb-4d8d-a823-3099faafe3b4": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "3b446d1cbf1bdc894bdc7d5d910778e1cfebeae79db366eb4c15e9c41d17b20b"
+    },
+    "f79f0353-4279-4a53-9300-b8ec9a34374a": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "0874b29bb2e6942d828ecee22dfa1335cbdbc383d4c1653df1ffbeb4091cd9b7"
+    },
+    "f9414809-a7c1-4eaf-8aab-44521eff2889": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "22625c38d413dd7fa5e4776d24ad2afa431d094917ed9dc4eb06e1146564dd8b"
+    },
+    "fa27a609-b1ee-4fc9-8379-adb62a443a7e": {
+      "net": "+3.3V",
+      "kind": "segment",
+      "sha256": "c97ef73d8d68de2664b9b98b16c559e3aab023a1e0c2ff28a9b89e84ffe314be"
+    },
+    "fb8d442b-5f6b-420f-9f70-35b5b12145b6": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "a2a84e1f468cb43975d434f0734b05e925481e48449f00968b90ed13f12c71b0"
+    },
+    "fc3f6000-f3a7-4df6-8e58-651a323ad49c": {
+      "net": "USB_5V",
+      "kind": "segment",
+      "sha256": "cb808908100cb5e1406a151cb1eadd88af62273bbc12cb23529d73aedaeca1a3"
+    },
+    "fc57ec3c-c28f-48b8-a2e7-71fd2cb4fb8e": {
+      "net": "BAT_CELL",
+      "kind": "segment",
+      "sha256": "bfc774103a5ec8b3625521a662f4e1bf146e51298e87657c49241f75ffb4273a"
+    },
+    "fc70795f-4bf3-45c0-92dc-10c63e08c1e9": {
+      "net": "GND",
+      "kind": "segment",
+      "sha256": "7a0d7baa8985726b3e8e6d301d90a73aa670b4b53dcd6f483804023637fe17bb"
+    }
+  },
+  "reference_copper_UUIDs": [
+    "0043f44b-b6fe-4601-86d8-17f4436b3af9",
+    "01232e90-d2b3-498b-8bcd-95a4e2294831",
+    "0256d198-ab8a-4719-8bce-b21f276c04d2",
+    "0390d22f-23da-42aa-adc7-6426cffd297b",
+    "04f99cbc-c4dc-473f-9737-d5905055e31a",
+    "06920f69-be86-4f38-82a7-dc32ae879a04",
+    "06ad3510-b073-4abb-8562-922128acad8a",
+    "06aebfd2-9661-4aa2-bfbd-a65a636271be",
+    "0778be1a-0328-4446-9549-00d85ccc5176",
+    "0ae8be4a-132e-497f-82ed-b505490b7c99",
+    "0b4b4dc4-884d-42f8-8e2b-3d3749c7697d",
+    "0cc003cd-2f43-483e-9b28-32793a7524db",
+    "0d2f8e92-6cc1-4572-bd7e-c9e0a6a1d48f",
+    "0fc25c87-435e-48aa-b130-7d1c6930e97a",
+    "113efabd-2957-49e2-b1e9-6330d4c0796e",
+    "115578b9-1c31-437a-9695-a7c223e5d1a2",
+    "11b0421d-90b9-4bdf-bafd-9217e50514cd",
+    "15b5431b-e881-4fb7-9155-3b2279da2fb8",
+    "1603d67f-df59-4b5c-ac2d-f480aa907644",
+    "1a920a8a-6756-48eb-baff-d2166df08add",
+    "1aa3e71d-3ce2-405f-9e73-39fb1a66c389",
+    "1afcb0d0-a768-4efb-8624-0971be71241b",
+    "1c1681c1-eceb-44c2-ab71-f289c9e67240",
+    "1d3f1707-7902-4be8-b314-8fb5509ef2cb",
+    "1df4dc1f-1f79-484a-8421-f92423a6f7d0",
+    "20b85fe8-1790-4212-9174-336e1f0a4cbd",
+    "20f1a4c3-91c6-4002-bb52-435a50e53671",
+    "21156091-1f13-47c7-9b85-737ab0a321bd",
+    "245cdda0-46e7-44fd-8a53-743667d64518",
+    "24b5fa9a-8f3d-4cc8-a78f-924f6318a573",
+    "24bef826-79df-4ce9-b98f-e20f3cebd2e0",
+    "24cc0123-a44a-4089-82a2-bf0225321478",
+    "2522104f-4c97-4c63-9ca2-fbbbe5061c9e",
+    "25d6c29f-84e1-46ca-a411-65bcbfec4ca2",
+    "287854cd-3ae3-4e62-8292-bda13891eb08",
+    "2acf8582-52e1-48fb-842b-21f1875c6a64",
+    "2c7046c3-b8d5-4aeb-b319-aba35f670bc6",
+    "2caefa49-d5ab-4c6b-ab52-e127ce6708e2",
+    "2d53d8c2-cea4-44f3-95d3-2bf10bd68792",
+    "2da632f6-2c69-48c8-bc38-aa0239aceaaf",
+    "2df8993f-92a8-462b-958c-99b0f20659ce",
+    "31a2b0b9-4f17-4ced-a7d6-521a6c738c58",
+    "33da2331-7284-46ac-9826-6734291b8db2",
+    "34ca23b4-feed-4694-8410-cb2707a5ebe8",
+    "37fd3976-acc7-406c-a556-9bc0aa9585f2",
+    "3a0c3555-186b-4076-8ec9-f7ad961e00d6",
+    "3aae67ed-eaa2-4623-ad7d-2a4ae01ec84b",
+    "3b2cc78e-3bdc-4afe-9175-dd3cbe43d1bc",
+    "3ceb65fe-6caa-4347-b6a4-8eec7de684ed",
+    "3cee7678-eb8e-4e76-8ec1-f5ee11404ed8",
+    "3e20241e-9f37-4418-bec8-bb440bbd0c4b",
+    "3ffe1c64-bc6a-4bad-8701-0eb425f77260",
+    "4014706d-6652-488d-b8b6-5a15c24a03fb",
+    "402336e0-9c6c-4f29-99bd-31811ccbfa3a",
+    "4363beb5-c378-4f1a-8a3c-04b092f78889",
+    "44c14d4c-3aa8-4030-b383-78cd929c3fb9",
+    "44e1185d-5d2c-4110-9a70-d65e655e52c4",
+    "45708e1c-1334-4309-8215-47126fca5abd",
+    "4642be5c-883f-4a62-bebd-abd7417db4dd",
+    "47f79db2-41e6-421a-8215-abab095aa170",
+    "49ca1925-4bc7-4fee-a3b8-c991e9d1d179",
+    "4a0c0efd-af4f-4ec0-835b-eb6e1fa62238",
+    "4f185a62-6399-49c6-8f10-9e0f898b4884",
+    "50966f5c-b646-40d5-9428-247fabaa3213",
+    "525aa9c4-09b0-48d8-b8e7-505d694c00c5",
+    "56519ae1-4e0d-4d5e-ae89-205a9142ad89",
+    "589f8e60-c01f-49e0-a11f-491c585271a6",
+    "5adfa835-c58b-4b94-896d-9ef2e0e07f35",
+    "5b504314-3a70-456f-81b6-1c7827add6d2",
+    "5b90bad5-e1d0-48d5-a224-920f17613e9e",
+    "5bc041a3-c4aa-4395-a6c6-394b383221a6",
+    "5c0e46ae-1e91-4dee-91e6-85913c81bd46",
+    "5d29fd33-edb7-4246-aeeb-fd61e54f2b67",
+    "5dea6e50-f022-43f9-a7ee-8f77bbbf1396",
+    "5f3bd678-e5fc-434e-8440-df030e510cd0",
+    "6301f21e-096c-4a58-a408-fe4e3276e7d2",
+    "6314f4e1-05e9-475e-bc36-49eab9e54940",
+    "64b50e08-2c58-4dd6-bb32-cd16c677b5b2",
+    "65d60cc1-b313-4fc2-abbe-1d8c522b3c40",
+    "66b2fdbb-5752-458a-b447-4dd0e1c8099b",
+    "67d1e476-1d64-47b6-ac12-74ecb2fb1a17",
+    "6959f7af-1aed-40e2-8a4a-39885452049a",
+    "6a37a158-761e-595f-b981-16c9cc643e59",
+    "6c0de1b0-2556-47bf-8e39-74ba94cd6fd5",
+    "6cf00b2d-89a9-4878-9eb6-3a096c4b59e8",
+    "6f449f5b-c670-4fd6-b10e-58b0a9076dcc",
+    "70098bc7-3ec3-402e-866c-0ab4543f4baf",
+    "7086e847-114b-48b4-a712-ba8a1fb1e420",
+    "735cecb1-8190-4324-bee9-0a87c2cb9497",
+    "765fa247-8ead-4eb9-82cf-06a20dedd8b3",
+    "78688fb9-81eb-49df-9f58-048404654f77",
+    "793ddeb6-510b-42b3-87d1-a7cd3d150390",
+    "7b5baad0-9ccf-4268-842b-84b067f925da",
+    "7b661be5-41c0-48f9-a5d1-035f696a4fe1",
+    "7b7580b4-f6a4-4318-bbe1-eaa152f9902a",
+    "7f3857ac-af83-41ec-991a-30498403845c",
+    "7f3c6d3c-d5c9-48eb-be00-d193364becb3",
+    "7fb24f99-1164-4c0c-808f-13f2ad13a5ed",
+    "86b6a4a9-ffe9-42f6-9c35-d8a75bf77af8",
+    "8975f57a-e115-44f4-b351-c43b8198c265",
+    "89d127dd-be9c-4cc0-a694-b472d4ebb192",
+    "8a4f5f75-d46a-46c1-802f-7e3c39ef077d",
+    "8ce16650-85e7-4b8b-bbe9-00c4dec576da",
+    "90038f72-cd5a-4411-a26e-7e417ca307c8",
+    "9300cd00-e8e1-44b6-88ad-cc1febcfad6c",
+    "933552cb-3bdc-43ec-9057-c1342da9a046",
+    "93b0855f-42aa-4a56-b5e1-14831baac4f4",
+    "94c4f5ab-710f-48bc-b9a0-c836f23b3b97",
+    "95688539-7f6f-40b5-b4d5-eac2ce25f5fd",
+    "960c675f-6c84-44df-8142-c650be423ef1",
+    "9834f4ba-00a9-4fa2-82ba-0c1f36af8078",
+    "993cfce2-718a-41aa-9c9d-65777aa8f2e2",
+    "99e18335-1123-40fc-808b-3509b4f1c5fd",
+    "9a6be834-0933-416e-920d-405d746234b1",
+    "9a875acf-6123-4c24-a722-c539c28e510d",
+    "9de1764a-fea1-4912-8532-16447beefabd",
+    "a1a3083c-d2fb-41d6-ac59-26cc1dcffbed",
+    "a54eb134-b6bc-4876-a9ad-945c37677023",
+    "a583a03b-d7e4-460c-9cd6-ca4c6b0fec74",
+    "a5ca4156-8d83-46e4-8a59-2b83a35977f4",
+    "aa70e6fa-a969-493e-9c66-f64e343c8734",
+    "abd4680d-0434-4cca-9d79-7b46469f5ba6",
+    "abe5b148-0188-4ff7-b15e-c873ca1ae1e0",
+    "ac07c820-f702-4898-a22f-410aac38c95d",
+    "ac58bccc-4714-4bbc-b4f7-62b0fc9ace96",
+    "acbf1f05-8166-4a53-9430-c75086fb153c",
+    "ae831244-e0f8-4853-9f74-0160ca371a38",
+    "ae99c008-c63c-44ee-8f8b-c34de1998821",
+    "aedcbcab-d0cd-4327-9d2a-ce866fc3603e",
+    "afa8b80c-880d-4f5f-8c9b-e5e0eb42ec94",
+    "b0ab7ce0-00c5-4e49-8960-c9f609cb876a",
+    "b15d572b-0f00-4a06-8885-42a856046fe2",
+    "bb67b42f-406e-4074-a824-5474a0347fbe",
+    "bc0705a2-5a45-4316-89ca-347b026a6ee4",
+    "bd7c6e02-592d-46f4-91c6-9f93a4948ee5",
+    "bf4ab0d3-0c31-435f-aae7-fb766d46476b",
+    "c102d9c6-f530-4c9f-8968-1c3cbb90cf42",
+    "c27bc5be-c62e-4b8a-961d-722e0bdea5d7",
+    "c2b9e7fe-9fa6-4baa-b13e-b19764dcd054",
+    "c3bdb4f2-5f53-46ba-a268-1ff63938dddd",
+    "c4fb3b89-4a0e-4c96-a666-7b7dc1b1eacc",
+    "c5968c6d-a590-4aee-ab8c-49630e74a174",
+    "c650c547-dfb2-463d-91bb-848db5c0f003",
+    "c8e77175-2c44-47c3-a168-d4794e132e69",
+    "c906a43a-161d-4bae-adf9-6a7b1c80a861",
+    "c92235f7-1a39-4828-937d-2c80dfff4af0",
+    "cf5a3e9d-d1ee-4d0e-8774-df0c093390ed",
+    "d220f6c5-0c32-45b0-a0f3-b85c8a12e524",
+    "d407ae97-807c-49f2-a818-bece2b087c7b",
+    "d41e775c-c6ee-4580-81be-0936c54db99e",
+    "d6145716-7969-45de-bc09-d4ce9b7c0f69",
+    "d63fdac8-2df8-47c7-9ff0-921a52feb541",
+    "d844633c-53ff-4e06-88bc-6b05ccd7f02f",
+    "d8b50859-727a-4b59-8142-e418b04ce90d",
+    "db23dcee-3617-46e6-af5b-5682ea47f0be",
+    "dbb470a8-4047-4216-97bf-8a3ed1914529",
+    "ddda7667-b1e8-4bc4-9481-0417cf4518ae",
+    "e0893c60-ec95-478a-8db7-d7d6f6e0a855",
+    "e40e6bbc-28d2-4544-8ba2-b39897351adb",
+    "e5cc9a2d-f053-48b6-9995-b6cc66f3f5c6",
+    "e6da92ba-540e-4521-901b-b91d45aee23d",
+    "e7e060d7-6d6a-48cd-b941-befd44a76b49",
+    "e880bd5c-363d-46a5-9dea-754053c3f8ad",
+    "e975f902-3159-4591-8274-41975c429ca3",
+    "eb62ed12-dc11-4f12-83d1-a9c37ae72343",
+    "eb6cd492-3ac5-4b36-843f-6f7e5c2c65ee",
+    "ec497aa6-e858-4b1c-8fda-f6e979af764a",
+    "ed840a46-e679-4442-b86b-dfb5d1fb2bd3",
+    "ee9ae25b-591c-4bc8-b3db-5a91337a7c6f",
+    "ef456a5f-f3eb-4146-accd-2c945a4a3bdd",
+    "efb5edb2-eea4-44b3-b233-8c8863a42b8a",
+    "f46e96dc-4386-4c5d-afed-c75c59dca5d8",
+    "f4b0b32e-8feb-4e6b-b849-819216979807",
+    "f75ba48b-f1f0-5900-9520-986567934298",
+    "fd0afd8c-f825-4c55-a951-fe1cec949d77",
+    "fefcf54f-a34e-4e27-a2f3-87ee29771ab4",
+    "fff125c0-eb30-46cb-bd62-85094632d155"
+  ],
+  "reference_keepout_UUID": "2236b179-ec0d-4f1e-aab2-5b0d0c4128bb",
+  "thermal_mask_island_vias": [
+    {
+      "ref": "U5",
+      "pad": "17",
+      "UUID": "1df4dc1f-1f79-484a-8421-f92423a6f7d0"
+    },
+    {
+      "ref": "U6",
+      "pad": "11",
+      "UUID": "bd7c6e02-592d-46f4-91c6-9f93a4948ee5"
+    }
+  ],
+  "local_path_limits": [
+    {
+      "from": "U6.4",
+      "to": "L1.1",
+      "max_length_mm": 4,
+      "min_width_mm": 0.3
+    },
+    {
+      "from": "U6.2",
+      "to": "L1.2",
+      "max_length_mm": 4,
+      "min_width_mm": 0.3
+    },
+    {
+      "from": "U6.5",
+      "to": "C43.1",
+      "max_length_mm": 4,
+      "min_width_mm": 0.25
+    },
+    {
+      "from": "U6.8",
+      "to": "C44.1",
+      "max_length_mm": 3,
+      "min_width_mm": 0.2
+    },
+    {
+      "from": "U6.1",
+      "to": "C45.1",
+      "max_length_mm": 3,
+      "min_width_mm": 0.25
+    },
+    {
+      "from": "U6.1",
+      "to": "C46.1",
+      "max_length_mm": 8.5,
+      "min_width_mm": 0.2
+    },
+    {
+      "from": "U6.1",
+      "to": "U6.10",
+      "max_length_mm": 5,
+      "min_width_mm": 0.2
+    },
+    {
+      "from": "U5.13",
+      "to": "C40.1",
+      "max_length_mm": 4.5,
+      "min_width_mm": 0.3
+    },
+    {
+      "from": "U5.2",
+      "to": "C41.1",
+      "max_length_mm": 4,
+      "min_width_mm": 0.25
+    },
+    {
+      "from": "U5.10",
+      "to": "C42.1",
+      "max_length_mm": 4,
+      "min_width_mm": 0.3
+    }
+  ],
+  "capacitors": {
+    "C41": {
+      "value": "22u/10V",
+      "position": [
+        113.0,
+        143.7,
+        180.0
+      ],
+      "tolerance_pct": 20,
+      "rated_voltage_min_V": 10,
+      "effective_target_uF": 4.7,
+      "bias_V": 4.23,
+      "footprint": "YAECKB:C_0805_2012Metric__C41",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C42": {
+      "value": "22u/10V",
+      "position": [
+        121.9,
+        142.7,
+        0
+      ],
+      "tolerance_pct": 20,
+      "rated_voltage_min_V": 10,
+      "effective_target_uF": 4.7,
+      "bias_V": 4.5,
+      "footprint": "YAECKB:C_0805_2012Metric__C42",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C43": {
+      "value": "22u/10V",
+      "position": [
+        132.0,
+        136.5,
+        0
+      ],
+      "tolerance_pct": 20,
+      "rated_voltage_min_V": 10,
+      "effective_target_uF": 4.7,
+      "bias_V": 4.5,
+      "footprint": "YAECKB:C_0805_2012Metric__C43",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C45": {
+      "value": "22u/10V",
+      "position": [
+        132.5,
+        143.3,
+        0
+      ],
+      "tolerance_pct": 20,
+      "rated_voltage_min_V": 10,
+      "effective_target_uF": 5,
+      "bias_V": 3.6,
+      "footprint": "YAECKB:C_0805_2012Metric__C45",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C46": {
+      "value": "22u/10V",
+      "position": [
+        136.0,
+        144.0,
+        0
+      ],
+      "tolerance_pct": 20,
+      "rated_voltage_min_V": 10,
+      "effective_target_uF": 5,
+      "bias_V": 3.6,
+      "footprint": "YAECKB:C_0805_2012Metric__C46",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C32": {
+      "value": "4.7u/16V",
+      "position": [
+        350.3,
+        114,
+        90
+      ],
+      "tolerance_pct": 10,
+      "rated_voltage_min_V": 16,
+      "effective_target_uF": 2.2,
+      "bias_V": 5.25,
+      "footprint": "YAECKB:C_0603_1608Metric__C32",
+      "body_max_LWH_mm": [
+        1.7,
+        0.9,
+        0.9
+      ],
+      "pad_size_mm": [
+        0.875,
+        0.95
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.775,
+          0
+        ],
+        [
+          0.775,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    },
+    "C40": {
+      "value": "2.2u/25V",
+      "position": [
+        122.0,
+        146.9,
+        -90.0
+      ],
+      "tolerance_pct": 10,
+      "rated_voltage_min_V": 25,
+      "effective_target_uF": 1,
+      "bias_V": 5.25,
+      "footprint": "YAECKB:C_0805_2012Metric__C40",
+      "body_max_LWH_mm": [
+        2.2,
+        1.45,
+        1.45
+      ],
+      "pad_size_mm": [
+        0.9,
+        1.2
+      ],
+      "pad_centres_local_mm": [
+        [
+          -0.95,
+          0
+        ],
+        [
+          0.95,
+          0
+        ]
+      ],
+      "dielectric": [
+        "X5R",
+        "X7R"
+      ],
+      "effective_target_basis": "Project engineering acceptance target, including selected part bias, tolerance, temperature and aging; not a generic package guarantee"
+    }
+  },
+  "fabrication": "Ordinary four-layer FR4, mechanical through vias only, land >=0.5 mm / drill >=0.3 mm; two conventional mask-isolated EP vias, no filling or capping",
+  "physical_verification": false,
+  "manufacturing_released": false,
+  "scope": "Frozen common-part geometry and local power topology only; E73 native checks and package/current/fit evidence must be regenerated. No Raytac acceptance result is reused.",
+  "preserved_battery_contract": "hardware/e73-battery-service-spec.json",
+  "reference_components": "variants/raytac/hardware/usb-short-route/components.json",
+  "maximum_installed_heights_mm": {
+    "C32": 1.0,
+    "C40": 1.6,
+    "C41": 1.6,
+    "C42": 1.6,
+    "C43": 1.6,
+    "C45": 1.6,
+    "C46": 1.6,
+    "U5": 1.2,
+    "U6": 1.0,
+    "L1": 2.2,
+    "F1": 1.2,
+    "C44": 1.0,
+    "R45": 0.6,
+    "R46": 0.6,
+    "R47": 0.6
+  },
+  "sources": {
+    "BQ24074": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+    "TPS63031": "https://www.ti.com/lit/ds/symlink/tps63031.pdf",
+    "L1": "https://www.we-online.com/components/products/datasheet/74438336015.pdf",
+    "F1": "https://www.littelfuse.com/assetdocs/fuse-466-datasheet?assetguid=dbe9bcd7-6072-4adf-bf5b-d33e52a6b90f"
+  },
+  "reference_schematic": "variants/raytac/hardware/usb-short-route/EC60-nRF52840.kicad_sch",
+  "reference_symbols": "variants/raytac/hardware/usb-short-route/YAECKB.kicad_sym"
+}

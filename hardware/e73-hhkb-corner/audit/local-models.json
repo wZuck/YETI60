@@ -1,0 +1,275 @@
+{
+  "status": "local-native-model-and-landing-passed",
+  "parts": {
+    "J4": {
+      "path": ".assembly-work/e73-corner/models/J4.step",
+      "sha256": "3b0ac653291c3b0e5877863de4383d925b4a720ae73f27e432f64f808ff3385e",
+      "bounds_native_mm": [
+        343.625,
+        -113.7,
+        -3.045000000000001,
+        348.57500000000005,
+        -107.7,
+        -0.08499999999999969
+      ],
+      "native_Fab_bounds_native_XY_mm": [
+        343.525,
+        -113.7,
+        347.775,
+        -107.7
+      ],
+      "nominal_model_and_Fab_union_bounds_native_mm": [
+        343.525,
+        -113.7,
+        -3.045000000000001,
+        348.57500000000005,
+        -107.7,
+        -0.08499999999999969
+      ],
+      "landing": {
+        "matched_lands": 6,
+        "planar_feet": [
+          {
+            "pin": "MP",
+            "bounds_native_mm": [
+              343.625,
+              -108.2,
+              -0.0950000000000003,
+              345.125,
+              -108.0,
+              -0.09500000000000013
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          },
+          {
+            "pin": "MP",
+            "bounds_native_mm": [
+              343.625,
+              -113.4,
+              -0.0950000000000003,
+              345.125,
+              -113.2,
+              -0.09500000000000013
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          },
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              347.77500000000003,
+              -112.3,
+              -0.0849999999999998,
+              348.57500000000005,
+              -112.1,
+              -0.0849999999999997
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              347.77500000000003,
+              -111.3,
+              -0.0849999999999998,
+              348.57500000000005,
+              -111.1,
+              -0.0849999999999997
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          },
+          {
+            "pin": "3",
+            "bounds_native_mm": [
+              347.77500000000003,
+              -110.3,
+              -0.0849999999999998,
+              348.57500000000005,
+              -110.1,
+              -0.0849999999999997
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          },
+          {
+            "pin": "4",
+            "bounds_native_mm": [
+              347.77500000000003,
+              -109.3,
+              -0.0849999999999998,
+              348.57500000000005,
+              -109.1,
+              -0.0849999999999997
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          }
+        ],
+        "modeled_seating_plane_native_Z_mm": -0.08499999999999969
+      },
+      "model_source": {
+        "path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Connector_JST.3dshapes/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step",
+        "sha256": "4b0f89a75d3758add0041ca9e5ded3a780c23ef4e3e99bcc398b41177dff5d0f"
+      }
+    },
+    "J5": {
+      "path": ".assembly-work/e73-corner/models/J5.step",
+      "sha256": "082e43aef75edaf2d368d007648afe0f3f4ad55e74fa4a27406f53631219d5b5",
+      "bounds_native_mm": [
+        333.5,
+        -119.97500000000001,
+        -3.045000000000001,
+        337.5,
+        -115.025,
+        -0.08499999999999969
+      ],
+      "native_Fab_bounds_native_XY_mm": [
+        333.5,
+        -119.175,
+        337.5,
+        -114.925
+      ],
+      "nominal_model_and_Fab_union_bounds_native_mm": [
+        333.5,
+        -119.97500000000001,
+        -3.045000000000001,
+        337.5,
+        -114.925,
+        -0.08499999999999969
+      ],
+      "landing": {
+        "matched_lands": 4,
+        "planar_feet": [
+          {
+            "pin": "MP",
+            "bounds_native_mm": [
+              337.0,
+              -116.525,
+              -0.0950000000000003,
+              337.2,
+              -115.025,
+              -0.09500000000000013
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          },
+          {
+            "pin": "MP",
+            "bounds_native_mm": [
+              333.8,
+              -116.525,
+              -0.0950000000000003,
+              334.0,
+              -115.025,
+              -0.09500000000000013
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          },
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              334.9,
+              -119.975,
+              -0.0849999999999998,
+              335.1,
+              -119.175,
+              -0.0849999999999997
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              335.9,
+              -119.975,
+              -0.0849999999999998,
+              336.1,
+              -119.175,
+              -0.0849999999999997
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          }
+        ],
+        "modeled_seating_plane_native_Z_mm": -0.08499999999999969
+      },
+      "model_source": {
+        "path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Connector_JST.3dshapes/JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal.step",
+        "sha256": "c7580ba6320b5978fc3e659ad51a0c3ae8aba7e2d06dfd92fed391446fa3c525"
+      }
+    },
+    "C32": {
+      "path": ".assembly-work/e73-corner/models/C32.step",
+      "sha256": "22b826a83c8b0226f907e81121cd3511cb55a32df92091faea7113c7a443bccd",
+      "bounds_native_mm": [
+        335.7,
+        -194.4,
+        -0.885,
+        337.3,
+        -193.6,
+        -0.08499999999999996
+      ],
+      "native_Fab_bounds_native_XY_mm": [
+        335.7,
+        -194.51,
+        337.3,
+        -193.49
+      ],
+      "nominal_model_and_Fab_union_bounds_native_mm": [
+        335.7,
+        -194.51,
+        -0.885,
+        337.3,
+        -193.49,
+        -0.08499999999999996
+      ],
+      "landing": {
+        "matched_lands": 2,
+        "planar_feet": [
+          {
+            "pin": "1",
+            "bounds_native_mm": [
+              337.0,
+              -194.37,
+              -0.08500000000000006,
+              337.3,
+              -193.63,
+              -0.08499999999999996
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          },
+          {
+            "pin": "2",
+            "bounds_native_mm": [
+              335.7,
+              -194.37,
+              -0.08500000000000006,
+              336.0,
+              -193.63,
+              -0.08499999999999996
+            ],
+            "foot_copper_overlap_fraction": 1.0
+          }
+        ],
+        "modeled_seating_plane_native_Z_mm": -0.08499999999999996
+      },
+      "model_source": {
+        "path": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+        "sha256": "4857b3dc717675bf1fb22edda622ac3b3ae03cf44d81eefaf3fa3ba3a86d84c1"
+      }
+    }
+  },
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "complete_model_closure": false,
+  "shifted_header_foot_fault_detected": true,
+  "kicad_version": "10.0.7",
+  "source_sha256": {
+    "scripts/check_e73_usb_local_models.py": "24aa856812af8d9ebfa0f563a5851b3a74f311b7e1c59991032105617ecd2986",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "8395348843b214c4ad37037dd15c3637f73283ef22eb2121928ded33e64edabd",
+    "scripts/export_e73_usb_ground.py": "e4ea61fb15f833db6458a545d5e98955c39f4902fcfba10590a708caf89aef30",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
+    "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a"
+  },
+  "limits": [
+    "Only J4/J5/C32 nominal geometry; other fitted parts and the E73 module remain outside this local closure",
+    "Nominal standard-model seating is not a physical coplanarity or supplier-tolerance acceptance",
+    "Actual selected MPN dimensions, solder/board bow and mechanical envelopes require separate checks"
+  ]
+}

@@ -30,6 +30,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--pcb', type=Path, default=BASE / 'EC60-nRF52840.kicad_pcb')
     parser.add_argument('--output', type=Path, default=ROOT / '.assembly-work/e73-usb-ground.json')
+    parser.add_argument('--skip-usb-paths', action='store_true', help='Export copper/models without legacy USB path assumptions')
     parser.add_argument('--model-ref', action='append', help='Footprint for native landing export; repeatable, defaults to J4/J5/C32')
     args = parser.parse_args()
     path = args.pcb.resolve()
@@ -69,7 +70,7 @@ def main():
     record['USB_all_copper'] = {net: {'tracks': [], 'pads': []} for net in ['USB_DM', 'USB_DP']}
     for track in board.GetTracks():
         net = track.GetNetname()
-        if net not in record['USB_all_copper']:
+        if args.skip_usb_paths or net not in record['USB_all_copper']:
             continue
         assert track.GetClass() in ['PCB_TRACK', 'PCB_ARC'] and track.GetLayer() == pcb.B_Cu, 'Unexpected data layer/via'
         shape = pcb.SHAPE_POLY_SET()
@@ -78,7 +79,7 @@ def main():
             'centerline': centerline(track), 'width_mm': pcb.ToMM(track.GetWidth()), 'polygons': polygons(shape)})
     for footprint in board.GetFootprints():
         for pad in footprint.Pads():
-            if pad.GetNetname() in record['USB_all_copper']:
+            if not args.skip_usb_paths and pad.GetNetname() in record['USB_all_copper']:
                 record['USB_all_copper'][pad.GetNetname()]['pads'].append({
                     'ref': footprint.GetReference(), 'pin': pad.GetNumber(),
                     'polygons': polygons(pad.GetEffectivePolygon(pcb.B_Cu))})
@@ -108,7 +109,7 @@ def main():
             pads.append({'pin': pad.GetNumber(), 'polygons_native_XY_mm': records})
         record['local_model_pads'][ref] = pads
     assert set(record['local_model_pads'])==model_refs,'Requested landing footprint is missing'
-    record['USB_paths'] = usb_paths(board)
+    record['USB_paths'] = None if args.skip_usb_paths else usb_paths(board)
     record['kicad_version'] = pcb.GetBuildVersion()
     record['source_sha256'] = {str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p): sha(p)
                              for p in [path, Path(__file__), ROOT / 'scripts/check_e73_usb_repair.py',

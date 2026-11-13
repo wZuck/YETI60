@@ -1,0 +1,407 @@
+{
+  "status": "actual-USB-reference-screen-passed",
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "checks_passed": true,
+  "reference_passed": true,
+  "launch_ground_passed": true,
+  "detached_ground_components": [],
+  "whole_ground_network_connected": true,
+  "reference_reserve_mm": 0.1,
+  "polygon_contact_allowance_mm": 0.002,
+  "back_pair_minimum_actual_copper_clearance_mm": 0.19999949620432808,
+  "back_pair_to_existing_mask_opening_clearance_mm": 0.2747527037910882,
+  "segments": [
+    {
+      "net": "USB_DM",
+      "UUID": "5f0b96b9-d5a6-5d9e-a03d-db37acb8da8c",
+      "layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "copper_area_mm2": 0.5202539278300136,
+      "launch_exception_area_mm2": 0.5416302831600996,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "05a865fe-e5f6-58e6-9591-61753a04bde7",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.42937073804299836,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "0ae12911-16dd-55bd-bda3-cca8cd5f8c18",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 1.620324758026975,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "0f9f968e-8a9c-58fb-9d78-71168e71065b",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 12.48812212783047,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "13493e6b-8873-515f-9f08-f5777d3b34f7",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.8802539278299539,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "387dedd8-8bf1-5d9c-9e51-3f43a337cfa3",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 3.6681221278301357,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "47a065df-cb8f-5b19-b8af-e73976b2e0cc",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.8202539278299943,
+      "launch_exception_area_mm2": 1.44572632542969,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "4d6ecdce-c07c-531e-8471-e203d2131c47",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 1.894588948034973,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "77fae4b1-6abc-5869-9bf9-a2acea6a3ec0",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.6882539278300206,
+      "launch_exception_area_mm2": 0.1732306948178907,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "7eae23ac-6ba1-55e7-b02a-22d9de336131",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 1.026355158026989,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "a3aa5373-01fd-58e6-bde9-fc05a772dcd1",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 1.5723857278300561,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "c7b307be-795f-50d1-95c9-32c85eb8b50f",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.7066497756239902,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "ea08280b-cfed-5cc4-81de-b148360024f8",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.36918802783001003,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "ede9c82b-ec2b-57b7-bce3-fe201d5b5b71",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.15918802783000058,
+      "launch_exception_area_mm2": 0.29626417661867016,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "f846b724-3f32-59ae-bbf9-445c288adaef",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 3.610253927830134,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "fb806e97-0971-55da-8ae6-035f567dcf26",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.3702539278300078,
+      "launch_exception_area_mm2": 0.5416302831600996,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DM",
+      "UUID": "fbbccf76-0ba9-5c0f-8895-102049a6f02a",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.7293704612609941,
+      "launch_exception_area_mm2": 0.17169727785896696,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "ca667e54-4fba-5eab-b4f5-20e0610d15fc",
+      "layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "copper_area_mm2": 0.5202539278300161,
+      "launch_exception_area_mm2": 0.5416302831601014,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "169e2963-65cd-59c9-9689-42430ba604b8",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 12.612385727830475,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "20cb5cc6-1db0-5b45-a4fa-b7207c9f5acc",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 1.4481221278300547,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "265988ac-e7d4-5a04-8553-0c78f3dab114",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.30725392783001026,
+      "launch_exception_area_mm2": 0.4605883078040598,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "297bd1da-94d4-5701-82f8-50cd8b199384",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.30510635802700137,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "36d2392e-aeda-5a34-9b2a-fc886315698d",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.22025392783000475,
+      "launch_exception_area_mm2": 0.44572632542975393,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "3b809c9a-7950-5aab-9b47-3847b802cfa6",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.4313198278300128,
+      "launch_exception_area_mm2": 0.07497435340624378,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "5a4bb501-675b-57f0-bbaa-9c303fab4241",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.15510665126900533,
+      "launch_exception_area_mm2": 0.3371475402376653,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "701001c5-e8c7-532e-a75c-6f61ffe7e6bf",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 1.744589138042969,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "81feac3f-5a1c-5d9e-aeca-f184e5a5ebd5",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 1.8945889480349736,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "83465d12-edff-54d0-885b-74b6319eed6d",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.550253927829993,
+      "launch_exception_area_mm2": 0.9957263254296962,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "8afd613b-cb93-573f-897c-251a998105db",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.8802539278299526,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "8b6ea969-d483-5eb9-be02-13d1d99aeb70",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.19753294803500135,
+      "launch_exception_area_mm2": 0.40785803969158113,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "9d6d4406-e585-59a0-acc3-cc7097efbf77",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 3.792385727830143,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "c4836415-7fa2-5313-948a-09befd510c3e",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.22131982783000168,
+      "launch_exception_area_mm2": 0.2978631627148594,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "c82a8924-51e9-5f03-bf8a-4077950b02dc",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.19025392783000306,
+      "launch_exception_area_mm2": 0.3957263254297278,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "cee7f9ae-01ce-59f0-8329-31e7f3a801ef",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 3.610253927830135,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "d88fc8a3-29c4-5e43-9921-bf59be64605c",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.7066497756239929,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "dfa6570a-fce8-5119-a3de-14d719ffb5af",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 0.8536347656319897,
+      "launch_exception_area_mm2": 0.04831256169287505,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    },
+    {
+      "net": "USB_DP",
+      "UUID": "ed78865c-d3fa-533b-9619-cb715fc8e215",
+      "layer": "B.Cu",
+      "reference_layer": "In2.Cu",
+      "copper_area_mm2": 1.1506195380429867,
+      "launch_exception_area_mm2": 0.0,
+      "uncovered_connected_reference_mm2": 0.0,
+      "missing_bounds_PCB_mm": null
+    }
+  ],
+  "launches": [
+    {
+      "net": "USB_DM",
+      "nearest_connected_ground_through_via_mm": 1.184577983925072
+    },
+    {
+      "net": "USB_DP",
+      "nearest_connected_ground_through_via_mm": 1.1845779839251025
+    }
+  ],
+  "source_sha256": {
+    "hardware/e73-corner-spec.json": "f60d3f2fb5b77b3c75de3a57c56e26678329852cbb342490f0671c85be2a8274",
+    ".assembly-work/e73-corner/copper.json": "45920136b8e55090277ed9579f91b39286a0c44a7e99a0e399e15993099d0967",
+    "scripts/check_e73_corner_usb.py": "896432919dc85fd315d27218acadcbb1c6233052d3577b9f9393d35c72baeb4f",
+    "scripts/plan_e73_corner_usb.py": "f588ef933d740e6483b1e98bd079da142a142c51cf0824cb7d93ce616559649f"
+  },
+  "limits": [
+    "Launch regions are explicitly excluded from planar coverage, not proven impedance-controlled",
+    "Ground connectivity uses actual polygons and ground-only vertical conductors",
+    "Impedance, eye diagram, EMC, all routed-board integrity and physical USB remain unqualified"
+  ]
+}

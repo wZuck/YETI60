@@ -58,14 +58,18 @@ def landing(shape, pads, expected):
 
 
 def main():
+    global BASE, WORK
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--kicad-python', default='/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3')
+    parser.add_argument('--base', type=Path, default=BASE)
+    parser.add_argument('--work', type=Path, default=WORK)
     args = parser.parse_args()
+    BASE, WORK = args.base.resolve(), args.work.resolve()
     report_path = BASE / 'audit/local-models.json'
     report_path.unlink(missing_ok=True)
     native_path = WORK / 'native-inputs.json'
     WORK.mkdir(parents=True, exist_ok=True)
-    subprocess.run([args.kicad_python, str(ROOT / 'scripts/export_e73_usb_ground.py'), '--output', str(native_path)], check=True, capture_output=True)
+    subprocess.run([args.kicad_python, str(ROOT / 'scripts/export_e73_usb_ground.py'), '--pcb',str(BASE/'EC60-nRF52840.kicad_pcb'),'--skip-usb-paths','--output', str(native_path)], check=True, capture_output=True)
     native = json.loads(native_path.read_text())
     for name, digest in native['source_sha256'].items():
         assert sha(ROOT / name) == digest

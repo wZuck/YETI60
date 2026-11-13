@@ -1,0 +1,33 @@
+{
+  "status": "native-saved-power-geometry-and-fault-checks-passed",
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "cases": [
+    {
+      "case": "EP-size",
+      "rejected": true
+    },
+    {
+      "case": "mask-aperture",
+      "rejected": true
+    },
+    {
+      "case": "model-scale",
+      "rejected": true
+    },
+    {
+      "case": "power-net",
+      "rejected": true
+    }
+  ],
+  "source_sha256": {
+    "hardware/e73-usb-repair/EC60-nRF52840.kicad_pcb": "0353992782a636a6ca04028aca4e6a660da7ae27ce0909aba2f7d3b29d4af8ee",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
+    "scripts/test_e73_power_repair.py": "746b986b3c5887b6db28e2952ede950549bab734cf1a80907be895c34ba15176",
+    "scripts/e73_power_repair.py": "91676649761e9f18d72d28b5d627eb5b69855a53db47b3f5339a4b679baae34d",
+    "hardware/e73-power-repair-spec.json": "0fe91a6ff17ff29b224dcf3933eb98eea86e3efe5f252fcdaebb760f0a1c5e01"
+  },
+  "limits": [
+    "Frozen manufacturing geometry only; routing/connectivity and component performance require separate checks"
+  ]
+}

@@ -1,0 +1,465 @@
+{
+  "revision": "YETI60-E73-HHKB-CORNER-02",
+  "source_directory": "hardware/e73-usb-repair",
+  "source_board_sha256": "0353992782a636a6ca04028aca4e6a660da7ae27ce0909aba2f7d3b29d4af8ee",
+  "output_directory": "hardware/e73-hhkb-corner",
+  "selected_for_development": true,
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "module_origin_PCB_mm": [
+    332,
+    195
+  ],
+  "rigid_rotation_deg": 0,
+  "rigid_cluster": [
+    "U1"
+  ],
+  "other_placements_PCB_mm": {
+    "J4": [
+      346.1,
+      110.7,
+      90
+    ],
+    "J5": [
+      335.5,
+      117.5,
+      0
+    ],
+    "C32": [
+      336.5,
+      194,
+      180
+    ],
+    "R24": [
+      319,
+      194,
+      -90
+    ],
+    "R25": [
+      323,
+      194,
+      180
+    ]
+  },
+  "removed_electrodes": [
+    "SW72",
+    "SW73"
+  ],
+  "module_body_PCB_mm": [
+    332,
+    182,
+    350,
+    195
+  ],
+  "provisional_antenna_PCB_mm": [
+    347,
+    182,
+    350,
+    195
+  ],
+  "provisional_antenna_keepout_PCB_mm": [
+    346.95,
+    181.9,
+    356.812704,
+    195.1
+  ],
+  "antenna_scope": "Provisional last 3 mm of module only; not a manufacturer-approved numeric antenna clearance",
+  "plate_source": "mechanical/e73-fit/yeti60-e73-niz-m01.dxf",
+  "plate_material": "304 stainless steel",
+  "plate_changed": false,
+  "daughterboard_changed": false,
+  "assembly_quantity_NiZ": 60,
+  "notes": [
+    "Keep all 28 installed PCB mounts and H26 unused; preserve 60 effective HHKB keys and GPIO roles",
+    "Move only the module and C32 to the lower-right; retain original J4/J5 back-side poses and C5 daughterboard",
+    "Use the unoccupied front-side PCB-to-plate space for U1; no new corner floor cut",
+    "A paired back-layer USB route, two data through-vias and local front-side launches replace the old pair; fresh ground-return review required",
+    "Preserve left-side analog feedback and charger-local copper; retire module feed trunks only",
+    "All new through-vias .5/.3 mm, both faces tented and outside SMD copper; no fill/cap/HDI",
+    "The steel plate still covers the provisional antenna band; 2-3 m use is unverified"
+  ],
+  "bottom_source": "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step",
+  "flip_cluster_to_front": true,
+  "front_parts": [
+    "U1"
+  ],
+  "maximum_installed_component_height_mm": {
+    "U1": 3.2,
+    "J4": 3.2,
+    "J5": 3.2,
+    "C32": 1.0,
+    "R24": 0.6,
+    "R25": 0.6
+  },
+  "front_escape_vias": {
+    "U1": {
+      "1": [
+        346.03,
+        180.5
+      ],
+      "2": [
+        345.3,
+        180.5
+      ],
+      "3": [
+        343.0,
+        180.5
+      ],
+      "4": [
+        342.22,
+        180.5
+      ],
+      "5": [
+        340.95,
+        180.5
+      ],
+      "6": [
+        339.68,
+        180.5
+      ],
+      "7": [
+        338.41,
+        180.5
+      ],
+      "8": [
+        337.14,
+        180.5
+      ],
+      "9": [
+        335.8728,
+        180.5
+      ],
+      "10": [
+        334.6,
+        180.5
+      ],
+      "11": [
+        330.5,
+        184.055
+      ],
+      "12": [
+        335.5,
+        184.69025
+      ],
+      "13": [
+        330.5,
+        185.325
+      ],
+      "15": [
+        330.5,
+        186.595
+      ],
+      "17": [
+        330.5,
+        187.865
+      ],
+      "19": [
+        330.5,
+        189.135
+      ],
+      "21": [
+        330.5,
+        190.405
+      ],
+      "23": [
+        330.5,
+        191.675
+      ],
+      "24": [
+        335.5,
+        192.31
+      ],
+      "26": [
+        334.6,
+        196.5
+      ],
+      "27": [
+        335.87,
+        196.5
+      ],
+      "28": [
+        336.505,
+        191.5
+      ],
+      "32": [
+        339.045,
+        191.5
+      ],
+      "33": [
+        339.68,
+        190.5
+      ],
+      "34": [
+        340.315,
+        191.5
+      ],
+      "35": [
+        340.95,
+        190.5
+      ],
+      "37": [
+        342.22,
+        190.5
+      ],
+      "39": [
+        343.0,
+        190.5
+      ],
+      "41": [
+        345.3,
+        190.5
+      ],
+      "43": [
+        346.03,
+        190.5
+      ]
+    }
+  },
+  "front_escape_bends": {
+    "U1": {
+      "39": [
+        [
+          343.49,
+          190.69
+        ]
+      ],
+      "41": [
+        [
+          344.7572,
+          191.0428
+        ]
+      ]
+    }
+  },
+  "data_launch_vias_PCB_mm": {
+    "USB_DM": [
+      337.14,
+      196.5
+    ],
+    "USB_DP": [
+      338.41,
+      196.5
+    ]
+  },
+  "ground_stitch_vias_PCB_mm": [
+    [
+      337.775,
+      197.5
+    ]
+  ],
+  "data_paths_B_Cu_mm": {
+    "USB_DM": [
+      [
+        348.1,
+        111.2
+      ],
+      [
+        350.6,
+        111.2
+      ],
+      [
+        350.896447,
+        111.2
+      ],
+      [
+        352.45,
+        112.753553
+      ],
+      [
+        352.45,
+        154.146447
+      ],
+      [
+        348.15,
+        158.446447
+      ],
+      [
+        348.15,
+        163.453553
+      ],
+      [
+        349.65,
+        164.953553
+      ],
+      [
+        349.65,
+        176.946447
+      ],
+      [
+        347.396447,
+        179.2
+      ],
+      [
+        344.696447,
+        179.2
+      ],
+      [
+        343.85,
+        180.046447
+      ],
+      [
+        343.85,
+        191.846447
+      ],
+      [
+        340.196447,
+        195.5
+      ],
+      [
+        339.2,
+        195.5
+      ],
+      [
+        337.14,
+        195.5
+      ],
+      [
+        337.14,
+        196.5
+      ]
+    ],
+    "USB_DP": [
+      [
+        348.1,
+        110.2
+      ],
+      [
+        348.5,
+        110.2
+      ],
+      [
+        348.7,
+        110.4
+      ],
+      [
+        350.3,
+        110.4
+      ],
+      [
+        350.6,
+        110.7
+      ],
+      [
+        351.103553,
+        110.7
+      ],
+      [
+        352.95,
+        112.546447
+      ],
+      [
+        352.95,
+        154.353553
+      ],
+      [
+        348.65,
+        158.653553
+      ],
+      [
+        348.65,
+        163.246447
+      ],
+      [
+        350.15,
+        164.746447
+      ],
+      [
+        350.15,
+        177.153553
+      ],
+      [
+        347.603553,
+        179.7
+      ],
+      [
+        344.903553,
+        179.7
+      ],
+      [
+        344.35,
+        180.253553
+      ],
+      [
+        344.35,
+        192.053553
+      ],
+      [
+        340.403553,
+        196.0
+      ],
+      [
+        339.2,
+        196.0
+      ],
+      [
+        338.41,
+        196.0
+      ],
+      [
+        338.41,
+        196.5
+      ]
+    ]
+  },
+  "reference_corridor_repair": {
+    "net": "COL14",
+    "removed_In2_UUIDs": [
+      "6d50a144-b334-5ead-a2c7-92233d72f804",
+      "18c14466-d55e-55b8-ac34-881c2a8fd37e",
+      "0d1eb48b-0356-5924-a997-7bd04ae8d187",
+      "5a5842d3-a7a0-5519-9d5e-32127785c0dd",
+      "2f7df857-73f9-5170-a4ec-5b26a2d76e2c",
+      "29187a01-842d-4c0b-b960-4ead15cfc430",
+      "e0d1fb43-391f-4a1f-8892-f2a215108f5a",
+      "487cdd5c-0ad7-4bab-a7d4-41edd321ac9c",
+      "bf80e2d0-8a2f-475c-9f43-615688cb424d",
+      "5c1faa2d-9fee-40cc-99e1-a95cfc72b6ec",
+      "77b4965d-8e1a-4dd2-a95c-8fd05c69d217"
+    ],
+    "layer": "In1.Cu",
+    "width_mm": 0.254,
+    "points_PCB_mm": [
+      [
+        346.662928,
+        113.10966
+      ],
+      [
+        347,
+        114
+      ],
+      [
+        355.7,
+        122.7
+      ],
+      [
+        355.7,
+        149
+      ],
+      [
+        350.7,
+        154
+      ],
+      [
+        350.7,
+        162
+      ],
+      [
+        352,
+        163.3
+      ],
+      [
+        352,
+        171.5
+      ],
+      [
+        347.9,
+        171.5
+      ],
+      [
+        346.662928,
+        170.259708
+      ]
+    ]
+  },
+  "routing_patch": "hardware/e73-corner-routing.json"
+}

@@ -425,7 +425,7 @@
   },
   "U5": {
     "id": "YAECKB:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm__U5",
-    "baseline": "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm"
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "U7": {
     "id": "YAECKB:SOT-363_SC-70-6__U7",
@@ -436,20 +436,20 @@
     "baseline": "Resistor_SMD:R_0402_1005Metric"
   },
   "C46": {
-    "id": "YAECKB:C_0603_1608Metric__C46",
-    "baseline": "Capacitor_SMD:C_0603_1608Metric"
+    "id": "YAECKB:C_0805_2012Metric__C46",
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "R11": {
     "id": "YAECKB:R_0402_1005Metric__R11",
     "baseline": "Resistor_SMD:R_0402_1005Metric"
   },
   "C41": {
-    "id": "YAECKB:C_0603_1608Metric__C41",
-    "baseline": "Capacitor_SMD:C_0603_1608Metric"
+    "id": "YAECKB:C_0805_2012Metric__C41",
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "C43": {
-    "id": "YAECKB:C_0603_1608Metric__C43",
-    "baseline": "Capacitor_SMD:C_0603_1608Metric"
+    "id": "YAECKB:C_0805_2012Metric__C43",
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "R50": {
     "id": "YAECKB:R_0402_1005Metric__R50",
@@ -505,7 +505,7 @@
   },
   "R47": {
     "id": "YAECKB:R_0402_1005Metric__R47",
-    "baseline": "Resistor_SMD:R_0402_1005Metric"
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "SW1": {
     "id": "YAECKB:Panasonic_EVQPUL_EVQPUC__SW1",
@@ -525,11 +525,11 @@
   },
   "R45": {
     "id": "YAECKB:R_0402_1005Metric__R45",
-    "baseline": "Resistor_SMD:R_0402_1005Metric"
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "C32": {
     "id": "YAECKB:C_0603_1608Metric__C32",
-    "baseline": "Capacitor_SMD:C_0603_1608Metric"
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "R48": {
     "id": "YAECKB:R_0402_1005Metric__R48",
@@ -545,7 +545,7 @@
   },
   "R46": {
     "id": "YAECKB:R_0402_1005Metric__R46",
-    "baseline": "Resistor_SMD:R_0402_1005Metric"
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "R54": {
     "id": "YAECKB:R_0402_1005Metric__R54",
@@ -572,8 +572,8 @@
     "baseline": "Resistor_SMD:R_0402_1005Metric"
   },
   "C42": {
-    "id": "YAECKB:C_0603_1608Metric__C42",
-    "baseline": "Capacitor_SMD:C_0603_1608Metric"
+    "id": "YAECKB:C_0805_2012Metric__C42",
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "U4": {
     "id": "YAECKB:TSSOP16__U4",
@@ -584,8 +584,8 @@
     "baseline": "Resistor_SMD:R_0402_1005Metric"
   },
   "C40": {
-    "id": "YAECKB:C_0603_1608Metric__C40",
-    "baseline": "Capacitor_SMD:C_0603_1608Metric"
+    "id": "YAECKB:C_0805_2012Metric__C40",
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "U2": {
     "id": "YAECKB:TSSOP16__U2",
@@ -605,7 +605,7 @@
   },
   "L1": {
     "id": "YAECKB:L_Wuerth_MAPI-3015__L1",
-    "baseline": "Inductor_SMD:L_Wuerth_MAPI-3015"
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "R43": {
     "id": "YAECKB:R_0402_1005Metric__R43",
@@ -617,15 +617,15 @@
   },
   "C44": {
     "id": "YAECKB:C_0603_1608Metric__C44",
-    "baseline": "Capacitor_SMD:C_0603_1608Metric"
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "R4": {
     "id": "YAECKB:R_0402_1005Metric__R4",
     "baseline": "Resistor_SMD:R_0402_1005Metric"
   },
   "C45": {
-    "id": "YAECKB:C_0603_1608Metric__C45",
-    "baseline": "Capacitor_SMD:C_0603_1608Metric"
+    "id": "YAECKB:C_0805_2012Metric__C45",
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "D2": {
     "id": "YAECKB:LED_0603_1608Metric__D2",
@@ -657,7 +657,7 @@
   },
   "U6": {
     "id": "YAECKB:WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm__U6",
-    "baseline": "Package_SON:WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm"
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "R52": {
     "id": "YAECKB:R_0402_1005Metric__R52",
@@ -668,8 +668,8 @@
     "baseline": "Resistor_SMD:R_0402_1005Metric"
   },
   "F1": {
-    "id": "YAECKB:Fuse_1206_3216Metric__F1",
-    "baseline": "Fuse:Fuse_1206_3216Metric"
+    "id": "YAECKB:Fuse_Littelfuse_0466_1206__F1",
+    "baseline": "Frozen common-part power geometry; see hardware/e73-power-repair-spec.json"
   },
   "R14": {
     "id": "YAECKB:R_0402_1005Metric__R14",

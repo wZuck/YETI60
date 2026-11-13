@@ -2,18 +2,20 @@ English | [Chinese](e73-usb-return.zh-CN.md)
 
 # E73 USB reference and local model checkpoint
 
+**Historical checkpoint:** this document describes commit `7aab295`; evidence links and reproduction belong to that commit. Subsequent power-stage changes invalidated the old local reports. The current development direction is the [E73 lower-right migration](e73-hhkb-corner.md). This document does not release the relocated candidate.
+
 **The candidate remains unreleased.** This closes specific host-board geometry and nominal model checks for the [isolated USB repair](e73-usb-repair.md). It does not accept the complete keyboard, cable, battery, RF behavior or USB compliance. The selected canonical PCB, firmware and fabrication package are unchanged; retain the existing C5 daughterboard.
 
 ## Current checks
 
 | Scope | Result | Evidence |
 |---|---|---|
-| Actual USB paths | Approximately 9.969 mm each; zero data vias; computed difference below 0.001 mm against the 0.05 mm project limit | [Native candidate check](../../hardware/e73-usb-repair/audit/native-check.json) |
+| Actual USB paths | Approximately 9.969 mm each; zero data vias; computed difference below 0.001 mm against the 0.05 mm project limit | [Native candidate check](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/native-check.json) |
 | Data routing | 0.3 mm B.Cu tracks; 0.6 mm pitch on the coupled straight section; pad fanout and length compensation measured separately | [Controlled routing specification](../../hardware/e73-usb-repair-spec.json) |
-| Adjacent reference | In2 GND covers both path centerlines and the complete native copper areas of all 18 data-track primitives and all four data lands | [Return geometry](../../hardware/e73-usb-repair/audit/return-check.json) |
-| Independent ground connectivity | One connected ground network, with layers joined only through actual plated GND vias/PTH pads | [Return geometry](../../hardware/e73-usb-repair/audit/return-check.json) |
-| Reference faults | Pre-repair COL14 crossing, a removed ground stripe under USB, and missing plated ground bridges are detected | [Three regression/fault cases](../../hardware/e73-usb-repair/audit/return-faults.json) |
-| Local native models | Actual E73-positioned J4/J5/C32 STEP geometry has 6/4/2 matched solder lands; a shifted header fails the landing check | [Local model check](../../hardware/e73-usb-repair/audit/local-models.json) |
+| Adjacent reference | In2 GND covers both path centerlines and the complete native copper areas of all 18 data-track primitives and all four data lands | [Return geometry](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/return-check.json) |
+| Independent ground connectivity | One connected ground network, with layers joined only through actual plated GND vias/PTH pads | [Return geometry](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/return-check.json) |
+| Reference faults | Pre-repair COL14 crossing, a removed ground stripe under USB, and missing plated ground bridges are detected | [Three regression/fault cases](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/return-faults.json) |
+| Local native models | Actual E73-positioned J4/J5/C32 STEP geometry has 6/4/2 matched solder lands; a shifted header fails the landing check | [Local model check](https://github.com/wZuck/YETI60/blob/7aab295c219d1e1cf696efc4cdb52380bec64e19/hardware/e73-usb-repair/audit/local-models.json) |
 
 The length differences describe CAD arithmetic, not physical etching accuracy or electrical delay. The partner-distance statistic in the return report is a geometric proximity probe; it is not an impedance measurement or a USB standard limit.
 
