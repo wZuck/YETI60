@@ -38,6 +38,8 @@ The [reference and local-model checkpoint](e73-usb-return.md) evaluates the comp
 
 Use the candidate's [stock-adjusted purchase table](../../hardware/e73-usb-repair/mainboard-purchase.csv) only to review this candidate. The canonical mainboard list describes a different PCB.
 
+The candidate tables now include J4/J5/C32 installed height and body/placement limits from the [local fit specification](e73-usb-local-fit.md); package size alone is insufficient for these three positions. Stock allocation remains 8 planned fitted parts and 67 to purchase, 75 total.
+
 | Change | Quantity per candidate mainboard |
 |---|---:|
 | Remove D1, PRTR5V0U2X / SOT-143 | 1 |

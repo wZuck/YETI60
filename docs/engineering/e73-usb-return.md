@@ -44,4 +44,6 @@ uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts
 
 Both commands accept `--kicad-python /path/to/kicad/python`. Use a Git checkout containing the baseline commit for the regression; a source ZIP without Git history cannot reproduce that case. Rebuilding the candidate invalidates the derived reports, so run the native checker and these studies again afterward.
 
-Remaining work includes complete component models, case/fastener/plug tolerances and service motion, the nine-wire harness and guides, the PH battery connector obstruction, left power/package/thermal closure, candidate-bound firmware/calibration and CAM, supplier battery acceptance, and physical USB/BLE/ADC/RF/charging tests. None is waived by this checkpoint.
+The subsequent [local connector fit checkpoint](e73-usb-local-fit.md) adds a candidate internal-floor repair and ordered J5/J4 rigid housing withdrawal with explicit tolerances. Other component models, flexible wiring and whole-keyboard assembly remain outside that result.
+
+Remaining work includes complete component models, complete case/fastener tolerances and connected service motion, the nine-wire harness and guides, the PH battery connector obstruction, left power/package/thermal closure, candidate-bound firmware/calibration and CAM, supplier battery acceptance, and physical USB/BLE/ADC/RF/charging tests. None is waived by this checkpoint.

@@ -31,8 +31,9 @@
     "COL14"
   ],
   "source_sha256": {
-    "scripts/build_e73_usb_repair.py": "3bdd0f3a4fcbe3e149ed0c4683e2c525cbde00994e620ca38cce188f24ea3085",
+    "scripts/build_e73_usb_repair.py": "83a5d7a8590a8959abe3f0fe74a4d3ade1780789935b805675204e89c1c243f3",
     "hardware/e73-usb-repair-spec.json": "d1ccdf9f951ed505d22d62bc954a83a212a2fea46a4e4958876be826464c973b",
+    "hardware/e73-usb-local-fit-spec.json": "95e1b75b74ecdc0bd91d3b0e6080b36d54198165187d6a8877f6f9ac0871998b",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "07673251cb2173f74563bd0b7edd79f104f167066650d700895e13ee3aaf310f",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_sch": "d974dd59cbe34f1b52f3e282c6bfd3988c9dd35cd400f22e5cbab2d62dfe201f",
     "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
@@ -423,11 +424,11 @@
     "hardware/e73-usb-repair/components.json": "d223f0d8f9a6075cfbd1f8e3007b355ba208cc01990e4996d6bc8448f8851ef3",
     "hardware/e73-usb-repair/fp-lib-table": "ae74cc20692db69057b379cac2a92081855a8341eb0c5dcf3e3528140b57368a",
     "hardware/e73-usb-repair/frozen-footprints.json": "05ea240af123d998ad85265110ec8d38d2603702db6607be0e351414eb1ca5d2",
-    "hardware/e73-usb-repair/mainboard-purchase.csv": "fa1946ce91632b1fdf6de1d0c516237b6062782978c2e4082ee4d9e44bc77a57",
-    "hardware/e73-usb-repair/mainboard-purchase.zh-CN.csv": "471bcfd7b3151874111d6786d18b373cec66a92d3e3d894646bfbca9191d05a3",
+    "hardware/e73-usb-repair/mainboard-purchase.csv": "2d3aab38205aa083877cdd4d58d3e53b85e743a1871d3130cac9aff82d7a6809",
+    "hardware/e73-usb-repair/mainboard-purchase.zh-CN.csv": "53b224fffc41ac133ca8cf20523dfe38df71979b0bf1d766a9d6b566d1d89214",
     "hardware/e73-usb-repair/matrix.kicad_sch": "32dea49eac95934d4629fd585bbdaec7e43b6e006b56f302f370eac1e3c40203",
     "hardware/e73-usb-repair/mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
-    "hardware/e73-usb-repair/netlist.xml": "c713ee1aaa632de4ccdccab3054fc2c6adf381555be1f8b87bed4adb54632531",
+    "hardware/e73-usb-repair/netlist.xml": "927360e04f4caeff3cffe732b4cdf3d636149f61f36d2433747d1f6d5dcd1cbb",
     "hardware/e73-usb-repair/power.kicad_sch": "1d35fb87ed82b68c829c1d409eacc09322cc079e40bdb6129543fc92412fe3cb",
     "hardware/e73-usb-repair/sym-lib-table": "d45513cd8e4e4ccd05e68f16dfa9399892b19383c65133140567bda6f4228cc8"
   }

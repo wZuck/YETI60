@@ -24,6 +24,7 @@ NAME='EC60-nRF52840'
 CLI='/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli'
 REMOVED={'D1','R30','R31'}
 SPEC_PATH=ROOT/'hardware/e73-usb-repair-spec.json'
+FIT_SPEC_PATH=ROOT/'hardware/e73-usb-local-fit-spec.json'
 SPEC=json.loads(SPEC_PATH.read_text())
 POSITIONS=SPEC['headers_pcb_mm']
 DATA=SPEC['data_paths_B_Cu_mm']
@@ -132,6 +133,17 @@ def purchase_table(suffix=''):
     with (RAY/('mainboard-purchase'+suffix+'.csv')).open()as f:
         for row in csv.DictReader(f):
             if row[fields[0]]in POSITIONS:result.append({k:row[k]for k in fields})
+    fit=json.loads(FIT_SPEC_PATH.read_text());limits=fit['maximum_height_below_local_PCB_mm'];seen=set()
+    for row in result:
+        refs={r.strip()for r in row[fields[0]].split(',')}
+        constrained=refs&set(limits)
+        if not constrained:continue
+        assert len(refs)==len(constrained)==1,'Mixed fit-limited procurement row requires review'
+        ref=next(iter(constrained));seen.add(ref);height=limits[ref];growth=fit['maximum_body_growth_XY_each_axis_mm']
+        note=(f'安装后低于局部 PCB 底面高度不超过 {height:g} mm（含焊接和就位）；XY 每方向本体及焊接位置外扩不超过 {growth:g} mm；其余公差见局部匹配度文档。' if suffix else
+              f'Installed height below local PCB underside <= {height:g} mm including solder/seating; body and placement XY growth <= {growth:g} mm per direction; remaining tolerances in local fit guide.')
+        row[fields[-1]]+=' '+note
+    assert seen==set(limits),'Procurement table lost local-fit constraints'
     with (OUT/('mainboard-purchase'+suffix+'.csv')).open('w',newline='')as f:
         writer=csv.DictWriter(f,fieldnames=fields,lineterminator="\n");writer.writeheader();writer.writerows(result)
     counts={key:sum(int(r[fields[i]])for r in result)for key,i in [('Required',1),('Planned stock use',2),('Net purchase',3)]}
@@ -166,7 +178,7 @@ def main():
     for ref in POSITIONS:parts[ref]=rayparts[ref]
     (OUT/'components.json').write_text(json.dumps(parts,indent=2)+'\n')
     purchase=purchase_table();purchase_table('.zh-CN')
-    inputs=[Path(__file__),SPEC_PATH,SOURCE/(NAME+'.kicad_pcb'),SOURCE/(NAME+'.kicad_sch'),SOURCE/(NAME+'.kicad_pro'),SOURCE/'components.json',SOURCE/'YAECKB.kicad_sym',RAY/(NAME+'.kicad_pcb'),RAY/(NAME+'.kicad_sch'),RAY/'components.json',RAY/'frozen-footprints.json',RAY/'YAECKB.kicad_sym']
+    inputs=[Path(__file__),SPEC_PATH,FIT_SPEC_PATH,SOURCE/(NAME+'.kicad_pcb'),SOURCE/(NAME+'.kicad_sch'),SOURCE/(NAME+'.kicad_pro'),SOURCE/'components.json',SOURCE/'YAECKB.kicad_sym',RAY/(NAME+'.kicad_pcb'),RAY/(NAME+'.kicad_sch'),RAY/'components.json',RAY/'frozen-footprints.json',RAY/'YAECKB.kicad_sym']
     inputs += sorted(p for p in SOURCE.rglob('*')if p.is_file() and p.suffix in ['.kicad_sch','.kicad_mod'])
     inputs += [SOURCE/n for n in ['frozen-footprints.json','sym-lib-table','fp-lib-table']]
     inputs += [RAY/'YAECKB.pretty'/n for n in ['JST-SR-4__J4.kicad_mod','JST_SH_SM02B_SRSS_TB__J5.kicad_mod']]

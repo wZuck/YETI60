@@ -4,7 +4,7 @@ C10,1,0,1,220p,C_0402_1005Metric,,厂商型号待选,,未匹配可用库存；�
 C13,1,1,0,1u,C_0402_1005Metric,Samsung CL05A105KA5NQNC,,57,已有：Samsung CL05A105KA5NQNC；订单已收货池 50 只（同来源行共享，不可逐行相加）；装配前清点；须确认有效容量
 "C30, C41, C42, C43, C45, C46",6,0,6,10u/10V,C_0603_1608Metric,,厂商型号待选,,未匹配可用库存；需补购
 C31,1,1,0,100n/16V,C_0402_1005Metric,Samsung CL05B104KO5NNNC,,48,已有：Samsung CL05B104KO5NNNC；订单已收货池 100 只（同来源行共享，不可逐行相加）；装配前清点；须确认有效容量
-C32,1,0,1,4.7u/10V,C_0603_1608Metric,,厂商型号待选,,未匹配可用库存；需补购
+C32,1,0,1,4.7u/10V,C_0603_1608Metric,,厂商型号待选,,未匹配可用库存；需补购 安装后低于局部 PCB 底面高度不超过 1 mm（含焊接和就位）；XY 每方向本体及焊接位置外扩不超过 0.1 mm；其余公差见局部匹配度文档。
 C40,1,0,1,1u/10V,C_0603_1608Metric,,厂商型号待选,,未匹配可用库存；需补购
 C44,1,0,1,100n/16V,C_0603_1608Metric,,厂商型号待选,,未匹配可用库存；需补购
 C47,1,0,1,10n,C_0402_1005Metric,,厂商型号待选,,未匹配可用库存；需补购
@@ -32,5 +32,5 @@ U3,1,0,1,OPA350,SOIC-8_3.9x4.9mm_P1.27mm,,TI OPA350UA,,未匹配可用库存；�
 U5,1,0,1,BQ24074RGT,VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm,,TI BQ24074RGTR,,未匹配可用库存；需补购
 U6,1,0,1,TPS63031DSK,WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm,,TI TPS63031DSKR,,未匹配可用库存；需补购
 "U7, U8",2,0,2,TPS22919DCK,SOT-363_SC-70-6,,TI TPS22919DCKR,,未匹配可用库存；需补购
-J4,1,0,1,USB_C5_INPUT,JST SH 1.0 mm side-entry 4-pin,,JST SM04B-SRSS-TB(LF)(SN),,无库存抵扣；用于 USB 修补候选，尚未批准制板。
-J5,1,0,1,USB_POWER_OUT,JST SH 1.0 mm side-entry 2-pin,,JST SM02B-SRSS-TB(LF)(SN),,无库存抵扣；用于 USB 修补候选，尚未批准制板。
+J4,1,0,1,USB_C5_INPUT,JST SH 1.0 mm side-entry 4-pin,,JST SM04B-SRSS-TB(LF)(SN),,无库存抵扣；用于 USB 修补候选，尚未批准制板。 安装后低于局部 PCB 底面高度不超过 3.2 mm（含焊接和就位）；XY 每方向本体及焊接位置外扩不超过 0.1 mm；其余公差见局部匹配度文档。
+J5,1,0,1,USB_POWER_OUT,JST SH 1.0 mm side-entry 2-pin,,JST SM02B-SRSS-TB(LF)(SN),,无库存抵扣；用于 USB 修补候选，尚未批准制板。 安装后低于局部 PCB 底面高度不超过 3.2 mm（含焊接和就位）；XY 每方向本体及焊接位置外扩不超过 0.1 mm；其余公差见局部匹配度文档。

@@ -1,0 +1,34 @@
+{
+  "revision": "YETI60-E73-USB-LOCAL-FIT-M02",
+  "units": "mm",
+  "supplier_drawing": {
+    "url": "https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf",
+    "retrieved": "2026-11-13",
+    "pages": [1, 2, 3],
+    "housing_depth_mm": 5.0,
+    "housing_height_nominal_mm": 2.8,
+    "side_entry_assembly_depth_reference_mm": 6.25,
+    "header_rear_local_y_mm": -1.675,
+    "housing_widths_mm": {"J4": 5.0, "J5": 3.0},
+    "parts": {"J4": ["SM04B-SRSS-TB(LF)(SN)", "SHR-04V-S"], "J5": ["SM02B-SRSS-TB(LF)(SN)", "SHR-02V-S"]},
+    "limit": "Catalog dimensions are nominal/reference values, not maximum installed-size guarantees. Obtain the current JST detail drawing and inspect the declared installed envelopes."
+  },
+  "maximum_body_growth_XY_each_axis_mm": 0.1,
+  "maximum_installed_board_point_error_XY_each_axis_mm": 0.25,
+  "maximum_additional_mounted_PCB_bow_Z_mm": 0.15,
+  "maximum_height_below_local_PCB_mm": {"J4": 3.2, "J5": 3.2, "C32": 1.0},
+  "allowance_basis": "Measured incoming/installed acceptance requirements. Body growth includes part dimensions, solder and placement relative to nominal model. Board point error includes translation, rotation and deformation at every point. Neither value is a certified supplier tolerance.",
+  "minimum_foreign_part_air_gap_mm": 0.15,
+  "minimum_detached_housing_to_header_gap_mm": 0.5,
+  "withdrawal_stroke_mm": 4.0,
+  "withdrawal_order": ["J5", "J4"],
+  "floor_relief": {
+    "bounds_case_mm": [332.0, -122.0, -6.3, 350.0, -106.5, -5.4],
+    "corner_radius_mm": 0.5,
+    "minimum_remaining_exterior_wall_mm": 2.0
+  },
+  "bottom_output": "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-bottom-m02.step",
+  "selected_by_assembly": false,
+  "physical_verification": false,
+  "manufacturing_released": false
+}
