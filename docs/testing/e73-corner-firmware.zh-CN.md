@@ -16,3 +16,5 @@ python3 scripts/check_e73_corner_firmware.py
 **首次通过 SWD 写入时使用 HEX**，其中包含将 NFC 引脚释放为 GPIO 的 UICR 记录，BIN 不包含这项显式记录。应用从地址零开始，不假定存在 UF2 引导程序。连接探针前必须核对自定义 J3 针序。按[现有校准步骤](../../firmware/target/README.zh-CN.md)操作，但替换为本候选版 HEX：先刷校准版，完成全部 60 键并保存，再刷正常版，保留最后 64 KiB 设置分区。全片擦除会丢失校准和蓝牙配对；PCB 指纹变化必须重新校准。
 
 两份固件均使用内部低频 RC 时钟和 REG1 LDO。主机完成配置后，可同时充电和使用 USB HID，并优先走 USB；挂起时关闭充电器输入，拔线后允许回退蓝牙。这些是链接产物及主机模型检查，尚无实物 USB、蓝牙、静电容、充电、温升或无线验收。电量上报仍待电池及测量集成完成后启用。被动 RC 模型采用假定寄生参数，并非 PCB／NiZ 提取电容。
+
+[固件清单](../../hardware/e73-hhkb-corner/firmware/manifest.json) · [正常版 HEX](../../hardware/e73-hhkb-corner/firmware/releases/normal/yeti60-e73.hex) · [校准版 HEX](../../hardware/e73-hhkb-corner/firmware/releases/calibrator/yeti60-e73.hex)

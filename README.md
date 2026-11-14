@@ -14,12 +14,12 @@ A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived fr
 
 ## Current review
 
-**The E73 corner version is still being routed and checked.** Start at [BUILD.md](BUILD.md). The results below describe the [corner candidate](docs/engineering/e73-hhkb-corner.md); earlier upper-right acceptance does not transfer.
+**The E73 corner version has completed native routing; whole-board acceptance remains open.** Start at [BUILD.md](BUILD.md). The results below describe the [corner candidate](docs/engineering/e73-hhkb-corner.md); earlier upper-right acceptance does not transfer.
 
 | Scope | Current evidence and result |
 |---|---|
 | PCB | Strict DRC: 0 violation errors, zero unconnected items, 0 schematic-parity differences; 60 effective sensing positions and 43 module pad roles retained; fabrication remains on hold |
-| Firmware | GPIO/ADC/mux roles retained; candidate calibration identity and normal/calibrator images still need rebuilding; old images are reference artifacts |
+| Firmware | [Candidate normal/calibrator images and manifest](hardware/e73-hhkb-corner/firmware/manifest.json) rebuilt for this PCB; linked-target and host suite passed; physical tests remain open |
 | Mechanical | NiZ, the 1.6 mm steel plate and 28 mounting sets retained; module/local body bounds passed, complete mechanism and harness motion still open |
 | Battery | Protected 1S 1600 mAh, complete 85 × 43 × 4.8 mm envelope retained; mainboard uses a three-pin SH connector; supplier parameters and independent thermal protection remain open |
 | Visualization | [Current native PCB placement](hardware/e73-hhkb-corner/audit/corner-layout.png); old 28-step guide and complete renders are pre-migration references, not this revision's assembly proof |
