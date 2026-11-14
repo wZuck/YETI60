@@ -2,15 +2,15 @@
   "status": "native-placement-drawings-generated",
   "physical_verification": false,
   "source_sha256": {
-    "hardware/e73-corner-spec.json": "f60d3f2fb5b77b3c75de3a57c56e26678329852cbb342490f0671c85be2a8274",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "8395348843b214c4ad37037dd15c3637f73283ef22eb2121928ded33e64edabd",
-    "hardware/e73-hhkb-corner/audit/placement-check.json": "b44a2d934241845231b25cd083c9d7ffcb075129ff051626ebf651026dd33190",
-    "scripts/draw_e73_corner.py": "44cba41e2c289943e19fdb548de6aeb99646b3ad7a90507af91430237786db6b"
+    "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "6c9697a28935754eb68de79e1782736156741987fc95d278658a8fa50aa124b1",
+    "hardware/e73-hhkb-corner/audit/placement-check.json": "9e799b0b5ea90a6d33841bf378a017cbf6ef751e81d683670f7741907cb692a4",
+    "scripts/draw_e73_corner.py": "93a79a0758ea497412c2e3a4765c6504f9a254b4bd0d596640ff243eedcd0e30"
   },
   "outputs": {
-    "hardware/e73-hhkb-corner/audit/corner-layout.png": "f2a6ea20d76bc4c0fe009d0b974b14915cf166ba41c1999ca6829ecd38b9f83d",
-    "hardware/e73-hhkb-corner/audit/corner-layout.svg": "edcbdd3501a6c95fe296949445f6c632d6adb54b37f803d5feab8a4d43c8c5ee",
-    "hardware/e73-hhkb-corner/audit/corner-layout.zh-CN.png": "ef8b8a564dbcebb2c78d54c5dcfa6f58f50e445db10c6dac4664086d8e09c352",
-    "hardware/e73-hhkb-corner/audit/corner-layout.zh-CN.svg": "4897c059b97e830f39e1e9b500b65e7817ed0d87606338990f688b75de7a1120"
+    "hardware/e73-hhkb-corner/audit/corner-layout.png": "0af5920e38200de87d581cfb18533e59d30e58b482040c90e8f61a66e422cc19",
+    "hardware/e73-hhkb-corner/audit/corner-layout.svg": "346cf41280e2cea49d79dff631575c22ab4619941d8f2fdbca77ff31760bf2dc",
+    "hardware/e73-hhkb-corner/audit/corner-layout.zh-CN.png": "38cfa95712c92adeff6833bec4c93b389ca79324048de6be846e42da7fe5a6d8",
+    "hardware/e73-hhkb-corner/audit/corner-layout.zh-CN.svg": "2ab5c06b013500cf48549189cc17c5dd83d2a78067df0f35ba38f18d8e5c35dc"
   }
 }

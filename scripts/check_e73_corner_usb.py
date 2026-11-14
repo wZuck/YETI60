@@ -19,15 +19,19 @@ LAYERS = ['F.Cu','In1.Cu','In2.Cu','B.Cu']
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--require-pass',action='store_true')
+    parser.add_argument('--spec',type=Path,default=ROOT/'hardware/e73-corner-spec.json')
+    parser.add_argument('--copper',type=Path,default=ROOT/'.assembly-work/e73-corner/copper.json')
     args = parser.parse_args()
-    spec_path = ROOT/'hardware/e73-corner-spec.json'
+    spec_path = args.spec.resolve()
     s = json.loads(spec_path.read_text())
     base = ROOT/s['output_directory']
-    data_path = ROOT/'.assembly-work/e73-corner/copper.json'
+    data_path = args.copper.resolve()
     d = json.loads(data_path.read_text())
     sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
     for name,digest in d['source_sha256'].items():
         assert sha(ROOT/name) == digest, ('Stale actual copper export',name)
+    pcb_path=base/'EC60-nRF52840.kicad_pcb'
+    assert d['source_sha256'].get(str(pcb_path.relative_to(ROOT)))==sha(pcb_path), 'Wrong candidate reference geometry'
     # Merge touching polygons on each layer, preserving every interior hole.
     # 2 um accommodates the independently exported 1 um polygon approximation.
     grounds = {l:union(d['ground_copper'][l]).buffer(.002) for l in LAYERS}

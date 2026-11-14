@@ -16,6 +16,7 @@ def main():
     parser.add_argument('--pcb', type=Path, default=ROOT/'hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb')
     parser.add_argument('--output', type=Path, default=ROOT/'.assembly-work/e73-corner/copper.json')
     args = parser.parse_args()
+    args.pcb=args.pcb.resolve();args.output=args.output.resolve()
     sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
     before = sha(args.pcb)
     board = pcb.LoadBoard(str(args.pcb))

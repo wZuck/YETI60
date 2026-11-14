@@ -1,5 +1,5 @@
 {
-  "revision": "YETI60-E73-HHKB-CORNER-02",
+  "revision": "YETI60-E73-HHKB-CORNER-03",
   "source_directory": "hardware/e73-usb-repair",
   "source_board_sha256": "0353992782a636a6ca04028aca4e6a660da7ae27ce0909aba2f7d3b29d4af8ee",
   "output_directory": "hardware/e73-hhkb-corner",
@@ -39,6 +39,11 @@
       323,
       194,
       180
+    ],
+    "C31": [
+      329,
+      189.7,
+      180
     ]
   },
   "removed_electrodes": [
@@ -76,7 +81,8 @@
     "A paired back-layer USB route, two data through-vias and local front-side launches replace the old pair; fresh ground-return review required",
     "Preserve left-side analog feedback and charger-local copper; retire module feed trunks only",
     "All new through-vias .5/.3 mm, both faces tented and outside SMD copper; no fill/cap/HDI",
-    "The steel plate still covers the provisional antenna band; 2-3 m use is unverified"
+    "The steel plate still covers the provisional antenna band; 2-3 m use is unverified",
+    "Move C31 100 nF local 3.3 V decoupling to the module supply launch; retain its existing 0402 part and pin roles"
   ],
   "bottom_source": "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step",
   "flip_cluster_to_front": true,
@@ -89,7 +95,8 @@
     "J5": 3.2,
     "C32": 1.0,
     "R24": 0.6,
-    "R25": 0.6
+    "R25": 0.6,
+    "C31": 0.65
   },
   "front_escape_vias": {
     "U1": {
@@ -461,5 +468,26 @@
       ]
     ]
   },
-  "routing_patch": "hardware/e73-corner-routing.json"
+  "routing_patch": "hardware/e73-corner-routing.json",
+  "signal_routing_layers": [
+    "B.Cu",
+    "In2.Cu",
+    "In1.Cu"
+  ],
+  "adjacent_assembly_acceptance_envelopes": {
+    "scope": "Project incoming-part limits, not vendor-certified NiZ plastic dimensions; applies below the plate only. Physical clips, dome preload and travel remain unqualified.",
+    "NiZ_below_plate_XY_mm": [
+      16,
+      16
+    ],
+    "NiZ_center_position_error_each_axis_mm": 0.2,
+    "stabilizer_below_plate_XY_mm": [
+      8,
+      14
+    ],
+    "stabilizer_center_position_error_each_axis_mm": 0.2,
+    "wire_full_stroke_Y_half_band_mm": 10,
+    "wire_extra_X_each_end_mm": 5,
+    "minimum_module_gap_mm": 0.15
+  }
 }

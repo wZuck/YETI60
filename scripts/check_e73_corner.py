@@ -72,6 +72,15 @@ def main():
         assert list(pcb.ToMM(now[ref].GetPosition())) == pose[:2], ('Changed intended part position', ref)
         assert abs((now[ref].GetOrientationDegrees()-pose[2]+180)%360-180) < 1e-6
         assert now[ref].GetLayer() == (pcb.F_Cu if ref in s['front_parts'] else pcb.B_Cu)
+    def mounts(board):
+        return {p.m_Uuid.AsString():dict(reference=f.GetReference(),
+                xy=list(pcb.ToMM(p.GetPosition())),drill=list(pcb.ToMM(p.GetDrillSize())),
+                attribute=p.GetAttribute(),net=p.GetNetname())
+                for f in board.GetFootprints() for p in f.Pads()
+                if f.GetReference().startswith('H') or
+                (f.GetReference()=='REF**' and min(pcb.ToMM(p.GetDrillSize()))>=2.2)}
+    old_mounts,new_mounts=mounts(old),mounts(b)
+    assert len(old_mounts)==len(new_mounts)==29 and old_mounts==new_mounts, 'Changed mount/slot geometry'
     retired = {q['uuid'] for q in build['removed_copper']}
     retained_tracks = {t.m_Uuid.AsString(): t for t in old.GetTracks() if t.m_Uuid.AsString() not in retired}
     actual_tracks = {t.m_Uuid.AsString(): t for t in b.GetTracks()}
@@ -263,7 +272,7 @@ def main():
     failures = Counter(q['type'] for q in drc['violations'])
     electrically_complete = (not drc['unconnected_items'] and not drc['schematic_parity']
                              and not any(q['severity'] == 'error' for q in drc['violations']))
-    d = dict(status='placement-geometry-passed-electrical-routing-open', manufacturing_released=False,
+    d = dict(status='native-routing-and-placement-checks-passed' if electrically_complete else 'placement-geometry-passed-electrical-routing-open', manufacturing_released=False,
              physical_verification=False, selected_for_development=True,
              electrical_routing_complete=electrically_complete,
              module_body_PCB_mm=body, provisional_antenna_PCB_mm=antenna,
@@ -273,11 +282,12 @@ def main():
              removed_electrodes=s['removed_electrodes'], effective_electrode_overlaps=overlap,
              supported_module_lands_with_0p7mm_enlargement=land_edge,
              preserved_mount_references=sorted(r for r in now if r.startswith('H')),
+             preserved_mount_holes_and_slots=list(new_mounts.values()),
              USB_pair=pair, USB_track_count=len(new_data), antenna_copper=copper,
              DRC_violations_by_type=dict(failures), unconnected_items=len(drc['unconnected_items']),
              schematic_parity_items=len(drc['schematic_parity']),
              source_sha256={str(p.relative_to(ROOT)): sha(p) for p in [SPEC, path, build_path, source / path.name, active_path, Path(__file__), ROOT / 'scripts/screen_yeti60_interference.py']},
-             limits=['Placement-only proof; the candidate is not routed or released',
+             limits=['Native geometry/connectivity checks only; no manufacturing or physical release',
                      'Antenna projection is provisional; retained metal plate remains above the antenna',
                      'C5 harness lengths and case/connector tolerance/service checks must be redone',
                      'Whole-board RF, EC noise and hardware power/USB/BLE acceptance remain open'])
@@ -285,7 +295,7 @@ def main():
     # Geometry for a drawing comes from native objects, never from a mock PCB.
     work = ROOT / '.assembly-work/e73-corner' if SPEC == ROOT / 'hardware/e73-corner-spec.json' else base / 'audit'
     work.mkdir(parents=True, exist_ok=True)
-    drawing = dict(pcb_sha256=sha(path), outline=rings(outline), body=body, antenna=antenna, electrodes=[], parts=[])
+    drawing = dict(pcb_sha256=sha(path), outline=rings(outline), body=body, antenna=antenna, electrodes=[], parts=[],mounts=list(new_mounts.values()))
     for ref, f in now.items():
         if ref.startswith('SW') and ref != 'SW100':
             polygons = []
@@ -293,7 +303,7 @@ def main():
                 if p.IsOnLayer(pcb.F_Cu):
                     polygons.extend(rings(p.GetEffectivePolygon(pcb.F_Cu)))
             drawing['electrodes'].append(dict(ref=ref, active=ref in active_refs, polygons=polygons))
-        elif ref in ['J4', 'J5', 'C32', 'R24', 'R25'] or ref.startswith('H'):
+        elif ref in ['J4', 'J5', 'C31', 'C32', 'R24', 'R25'] or ref.startswith('H'):
             bb = f.GetBoundingBox(False, False)
             drawing['parts'].append(dict(ref=ref, xy=list(pcb.ToMM(f.GetPosition())), bbox=[pcb.ToMM(v) for v in [bb.GetLeft(), bb.GetTop(), bb.GetRight(), bb.GetBottom()]]))
     (work / 'native-layout.json').write_text(json.dumps(drawing) + '\n')

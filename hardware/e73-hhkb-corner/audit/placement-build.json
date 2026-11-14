@@ -3938,8 +3938,8 @@
   ],
   "module_rotation_deg": 0,
   "source_sha256": {
-    "hardware/e73-corner-spec.json": "f60d3f2fb5b77b3c75de3a57c56e26678329852cbb342490f0671c85be2a8274",
-    "scripts/build_e73_corner.py": "fef7fd9b2addb0e70a9d5a192c95e03304d7c45638c0f7615d21fa8fb6991983",
+    "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
+    "scripts/build_e73_corner.py": "80612109814383249c26a85a67f5b16d0ef69738c7f1bcf0669a3fbfba176a25",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "scripts/check_schematic_current.py": "908fc7181c616685f2afcc2fa93223518ea83be03ed1a401c7dac8c0dfda33aa",
     "scripts/screen_yeti60_interference.py": "fb3bc69b0a34f40536fb759c07a3448455326829ad26d1aef31959871ccc2ee5",
@@ -4138,9 +4138,9 @@
     "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "e0a319dc63587cedd4e320be824dacc4853f69eaacddfa1191c2d04979c62b71",
     "hardware/e73-usb-repair/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f",
     "hardware/e73-usb-repair/models/TI_RGT16_3x3_EP1p68_dimensioned.step": "6c72a249f019f0c4979772547e69a8c2a9c024001e82cd6d3079b74c651ddecd",
-    "hardware/e73-corner-routing.json": "0ea6b01e069e4e1bfcd613ac94d2cf646901c6981bec91a959489b456e726edd"
+    "hardware/e73-corner-routing.json": "16a4a01931fc98418908f53487f9ebddc71509404a523b2eb76a143829a7a67b"
   },
-  "pcb_sha256": "8395348843b214c4ad37037dd15c3637f73283ef22eb2121928ded33e64edabd",
+  "pcb_sha256": "6c9697a28935754eb68de79e1782736156741987fc95d278658a8fa50aa124b1",
   "open_gates": [
     "Native electrical routing and DRC/parity",
     "USB reference-ground closure and new C5 harness",

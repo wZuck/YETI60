@@ -1,0 +1,21 @@
+{
+  "status": "native-USB-reference-mutation-rejected",
+  "physical_verification": false,
+  "manufacturing_released": false,
+  "source_unchanged": true,
+  "control_passed": true,
+  "negative_case": "actual In2 copper added outside track keepout, GND refilled",
+  "rejected_reference_cut": true,
+  "exit_code": 2,
+  "uncovered_reference_mm2": 0.23234701896553578,
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "6c9697a28935754eb68de79e1782736156741987fc95d278658a8fa50aa124b1",
+    "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
+    "scripts/check_e73_corner_usb.py": "f4f32b960a0166979bd9a3085369a2bc9666130c469658a13ace7e6c441e24a8",
+    "scripts/export_e73_corner_geometry.py": "369737d517b024334037fe793df137c83763bd6ff8be060849b20fe2e2fdcead",
+    "scripts/test_e73_corner_usb.py": "bf2a1d0a7158a761b8fd605e5d2acd7ef5d51c0fa982c393fe64ad96770ed0d4"
+  },
+  "limits": [
+    "Geometry regression only; no impedance, eye, RF or physical USB qualification"
+  ]
+}

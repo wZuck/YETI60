@@ -246,7 +246,7 @@ def main():
             assert q[0] in ['segment','arc','via'] and child(q,'net')[1] in allowed
             identifier = str(child(q,'uuid')[1])
             assert identifier not in copper_nodes, 'Route patch duplicates existing copper'
-            if q[0]!='via':assert child(q,'layer')[1] in ['B.Cu','In2.Cu']
+            if q[0]!='via':assert child(q,'layer')[1] in s.get('signal_routing_layers',['B.Cu','In2.Cu'])
             route_tree.append(q)
             copper_nodes[identifier]=q
         pcb_path.write_text(dumps(route_tree)+'\n')

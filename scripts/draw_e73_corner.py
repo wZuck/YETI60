@@ -68,9 +68,9 @@ def main():
         info.axis('off')
         info.text(.02,.95,'右下空角，模组正面安装' if zh else 'Front-mounted module in the empty corner',fontsize=13,weight='bold',va='top',color='#194e6d')
         lines = (['60 个有效感应位置保留','43 个模组焊盘用途保持一致','28 处已用安装孔保留，H26 仍不装','天线朝右侧；金属定位板仍覆盖其上方',
-                  '蓝／紫线：新的背面 USB 差分走线','仅模组在正面','J4／J5／C32／R24／R25 在背面','当前布线尚未完成，不能据此下单'] if zh else
+                  '蓝／紫线：新的背面 USB 差分走线','仅模组在正面','C31 随模组迁移，靠近 3.3 V 供电脚','仍需装配／无线验收，不能据此下单'] if zh else
                  ['60 effective sensing positions retained','43 module pad roles preserved','28 installed mounts retained; H26 stays unused','Antenna toward right; steel plate remains above it',
-                  'Blue/purple: new back-layer USB routes','Only U1 is front-mounted','J4/J5/C32/R24/R25 on the back','Routing is incomplete; do not fabricate from this view'])
+                  'Blue/purple: new back-layer USB routes','Only U1 is front-mounted','C31 moved beside the 3.3 V supply launch','Assembly/RF open; not a fabrication release'])
         for index, text in enumerate(lines):
             info.text(.02,.82-index*.095,text,fontsize=10,va='top',color='#314038')
         fig.suptitle('YETI60 · E73 右下角迁移候选' if zh else 'YETI60 · E73 lower-right placement candidate',fontsize=16,x=.05,ha='left')

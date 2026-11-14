@@ -4,25 +4,27 @@ English | [Chinese](README.zh-CN.md)
 
 > **Active prototype: Raytac MDBT50Q-1MV2.** Start at [START-HERE.md](START-HERE.md) or the [ordering and build handbook](variants/raytac/BUILD.md) for PCB settings, inventory-adjusted materials, soldering, firmware, complete explosion and current review. E73 remains a separate option; see its [current review and build entry](BUILD.md) before using those files. Physical and supplier acceptance remain open.
 
-A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The front sensing lands and mounting locations are retained. A controlled rounded RF wing supports the outboard antenna placement; a rear USB daughterboard connects to J1.
+A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The 60 effective sensing positions and mounts are retained. Raytac retains its RF wing; the E73 corner candidate restores the straight edge and front-mounts the module. C5 feeds USB through J4, with a J5/J1 power bridge.
 
 **Wired operation:** after a computer accepts the USB configuration, the keyboard charges the battery and sends HID input over USB at the same time. USB automatically takes priority over a retained Bluetooth preference; unplugging lets ZMK fall back to the active Bluetooth profile. The E73 and Raytac options use the same policy. The 500 mA descriptor is an input budget, not a constant battery charging current.
 
 > **P2 design checkpoint:** C5 JSH is retained. The default is now a custom 1600 mAh single-cell pack with a canonical recessed bottom, revised charger settings and USB500 firmware. Engineering sheets, PCB animation and assembly renders record their source hashes. See [checkpoint details](docs/design-checkpoint.md).
 
-> **Acceptance hold:** the current antenna projection is copper-clear, but RF performance remains unmeasured. E73 has confirmed USB and battery-plug service defects; see [current E73 review](docs/audit/e73-review.md). Raytac has its own [candidate review](variants/raytac/BUILD.md). Neither is a production release.
+> **Acceptance hold:** E73 is now in the lower-right HHKB corner. Strict DRC has zero violation errors but zero unconnected items; earlier zero-open and firmware reports do not qualify this placement. See the [current migration review](docs/engineering/e73-hhkb-corner.md). Raytac has a separate [review](variants/raytac/BUILD.md). Neither is a production release.
 
 ## Current review
 
-**E73 remains on design hold despite passing native connectivity and firmware checks.** Its [current review](docs/audit/e73-review.md) records the measured defects and repair sequence. Start at [BUILD.md](BUILD.md) for matching parts, fabrication files and evidence. Raytac has a separate [build handbook](variants/raytac/BUILD.md).
+**The E73 corner version is still being routed and checked.** Start at [BUILD.md](BUILD.md). The results below describe the [corner candidate](docs/engineering/e73-hhkb-corner.md); earlier upper-right acceptance does not transfer.
 
-| Scope | Evidence and result |
+| Scope | Current evidence and result |
 |---|---|
-| PCB | E73: strict DRC 0 errors / 0 opens; 270 physical signal pairs and all critical paths pass; 102 expected virtual-courtyard warnings; no dangling or via-alignment warnings. Ordinary JLC four-layer, no blind/buried/module vias-in-pad |
-| Firmware | New schematic-bound control core passes host ASan/UBSan simulation; normal/calibrator target binaries now build; on-device USB/BLE and EC calibration remain pending |
-| Mechanical | E73 now integrates NiZ, the 1.6 mm plate and 28 mounting sets; PH battery-plug withdrawal still has measured interference, and selected M01 plate/switch envelopes pass; complete mechanical/service qualification remains open. See the current review |
-| Battery | Default custom 1600 mAh, complete 85×43×4.8 mm; supplier drawing/current clarification and independent thermal protection approval pending |
-| Visualization | E73 has a source-linked 28-step reference guide and renders of its old stack. Raytac has a separate current candidate assembly package; do not interchange them |
+| PCB | Strict DRC: 0 violation errors, zero unconnected items, 0 schematic-parity differences; 60 effective sensing positions and 43 module pad roles retained; fabrication remains on hold |
+| Firmware | GPIO/ADC/mux roles retained; candidate calibration identity and normal/calibrator images still need rebuilding; old images are reference artifacts |
+| Mechanical | NiZ, the 1.6 mm steel plate and 28 mounting sets retained; module/local body bounds passed, complete mechanism and harness motion still open |
+| Battery | Protected 1S 1600 mAh, complete 85 × 43 × 4.8 mm envelope retained; mainboard uses a three-pin SH connector; supplier parameters and independent thermal protection remain open |
+| Visualization | [Current native PCB placement](hardware/e73-hhkb-corner/audit/corner-layout.png); old 28-step guide and complete renders are pre-migration references, not this revision's assembly proof |
+
+The remaining study and step-guide links below retain pre-migration reference records; use the corner reports above for this revision.
 
 - [Internal connections and cable drawing](docs/engineering/interconnects.md)
 - [Feasibility assessment response](docs/engineering/assessment-response.md)
@@ -54,17 +56,16 @@ Quantities below are **net installed quantities for one complete keyboard, witho
 
 ### Use existing inventory first
 
-The supplied order-derived inventory covers **10** of the 76 mainboard parts by nominal value/package, leaving **66** to purchase for one keyboard. Count the actual unused stock and qualify capacitor effective capacitance before assembly. In-transit items are excluded. The original workbook is unchanged and is not published.
+The supplied order-derived inventory covers **8** of the 75 current corner mainboard parts by nominal value/package, leaving **67** to purchase for one keyboard. Count the actual unused stock and qualify capacitor effective capacitance before assembly. In-transit items are excluded. The original workbook is unchanged and is not published.
 
 | Stock MPN | References | Planned use |
 |---|---|---:|
 | Samsung CL05B104KO5NNNC, 100 nF / 16 V / X7R / 0402 | C9, C11, C12, C31 | 4 |
 | Samsung CL05A105KA5NQNC, 1 uF / 25 V / X5R / 0402 | C13, C48 | 2 |
-| Uniroyal 0402WGF0000TCE, 0 ohm / 0402 | R30, R31 | 2 |
 | Uniroyal 0402WGF1001TCE, 1 kohm / 1% / 0402 | R17 | 1 |
 | Uniroyal 0402WGF1002TCE, 10 kohm / 1% / 0402 | R26 | 1 |
 
-Use the [stock-adjusted mainboard purchase CSV](hardware/bom/mainboard-purchase.csv) and [inventory decisions](docs/engineering/inventory-allocation.md) alongside the full preparation list below. Other assemblies and mechanical materials still require procurement or compatibility confirmation. A populated C5 includes its seven parts; if self-assembling a bare C5 instead, two stocked 5.1 kohm resistors can supply C5 R1/R2. The stock nice!nano, 110 mAh cell, 0805 capacitors and short PCB screws do not directly replace the specified parts. No board or case dimensions change for this allocation.
+Use the [stock-adjusted mainboard purchase CSV](hardware/e73-hhkb-corner/mainboard-purchase.csv) and [inventory decisions](docs/engineering/inventory-allocation.md) alongside the full preparation list below. Other assemblies and mechanical materials still require procurement or compatibility confirmation. A populated C5 includes its seven parts; if self-assembling a bare C5 instead, two stocked 5.1 kohm resistors can supply C5 R1/R2. The stock nice!nano, 110 mAh cell, 0805 capacitors and short PCB screws do not directly replace the specified parts. No board or case dimensions change for this allocation.
 
 ### Which PCBs to fabricate
 
@@ -72,50 +73,84 @@ Quantities are net boards per keyboard; the fabricator's minimum order quantity 
 
 | PCB | Quantity | Specification | Files |
 |---|---:|---|---|
-| YETI60 E73 mainboard | 1 | 289.39 x 94.6 mm rounded-wing outline envelope; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Editable KiCad PCB](hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb), [E73 Gerber/drill review ZIP](hardware/fabrication/yeti60-e73-p2-dfm-review.zip), [fabrication requirements](hardware/ec60-nrf52840/fabrication-notes.md) |
+| YETI60 E73 mainboard | 1 | 285.0 × 94.6 mm restored straight-edge outline; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Current KiCad PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb), [migration gates](docs/engineering/e73-hhkb-corner.md); no fabrication package released for this revision; do not substitute old Gerbers |
 | Unified Daughterboard C5 JSH | 1 only for self-assembly; 0 if purchased populated | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](hardware/bom/daughterboard.csv) |
 
-These are separate fabrication orders/files: the mainboard ZIP does not contain C5. Both archives contain four copper layers; do not select a two-layer process for C5. The mainboard archive is for manufacturing review, with final component/stencil and supplier acceptance still pending. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and five routing guides are mechanical parts, not additional PCBs. For self-reflow, use mainboard **B.Paste** and C5 **F.Paste** with a qualified stencil/profile.
+No fabrication package is released for this corner mainboard. Do not substitute an old mainboard archive. C5 uses separate, unchanged four-layer files; do not order it as two layers. Reuse the already-made C5. Final stencil and supplier acceptance remain open. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and five routing guides are mechanical parts, not additional PCBs. For self-reflow, use mainboard **F.Paste and B.Paste** (E73 on front, other parts on back) and C5 **F.Paste** with a qualified stencil/profile.
 
 ### Electronic assemblies, battery and cables
 
 | Material | Quantity | Detailed specification and included items |
 |---|---:|---|
-| Mainboard PCB | 1 | Current YETI60 native PCB; ordinary four-layer FR-4, target nominal thickness 1.6 mm; preserve EC electrodes and mounting centers; use the controlled rounded RF wing; CAD envelope 1.6062 mm; review the current ordinary-process archive before ordering |
-| Mainboard fitted parts | 76 | Every reference, value, package and specified/candidate MPN is listed below; included if buying a populated mainboard |
+| Mainboard PCB | 1 | Current YETI60 native PCB; ordinary four-layer FR-4, target nominal thickness 1.6 mm; preserve EC electrodes and mounting centers; use the restored straight right edge; CAD envelope 1.6062 mm; wait for this revision to be released with matching fabrication files |
+| Mainboard fitted parts | 75 | Every reference, value, package and specified/candidate MPN is listed below; included if buying a populated mainboard |
 | USB daughterboard | 1 populated | Unified Daughterboard C5 JSH, commit `2b6c52a`; seven fitted components including USB-C receptacle and SH header; retain C rather than S |
-| Internal USB harness | 1 four-wire | AWG28 stranded copper, insulation OD <=0.8 mm; two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts included; 1-to-1 VBUS, 2-to-2 D-, 3-to-3 D+, 4-to-4 GND. 150 mm is the route centerline; individual wire-exit lengths are about 147.64/149.21/150.79/152.36 mm; preform to the controlled route |
+| Internal USB harness | 1 four-wire | AWG28 stranded copper, insulation OD ≤0.8 mm; two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts; C5 to J4: 1-to-1 power, 2-to-2 D−, 3-to-3 D+, 4-to-4 GND. Complete new routing remains unqualified; do not cut to the old 150 mm figure |
+| J5-to-J1 power bridge | 1 two-wire | AWG28, insulation OD ≤0.8 mm; one SHR-02V-S, one SHR-04V-S and four SSH-003T-P0.2-H contacts; J5.1→J1.1 and J5.2→J1.4, J1.2/J1.3 empty; final lengths and retention remain open |
 | Battery assembly | 1 pack | Custom single-cell YETI60-BAT-1600-1S, target minimum 1600 mAh; complete pack <=85 x 43 x 4.8 mm including PCM, sensors, wrap, tabs and growth; independent thermal interruption, actual charging window within 15–43 C; supplier must accept >=500 mA continuous charging capability and the 4.16–4.23 V regulation range |
-| Battery leads and plug | 1 three-wire set, included in pack | AWG28, OD <=0.8 mm; one PHR-3 housing and three SPH-004T-P0.5S contacts; pin 1 red positive, 2 black negative, 3 yellow separate 10k NTC. Independent thermal protection and third-wire NTC feedback are separate requirements; supplier-signed envelope/lead-exit drawing required |
+| Battery leads and plug | 1 three-wire set, included in pack | AWG28, OD <=0.8 mm; one SHR-03V-S housing and three SSH-003T-P0.2-H contacts, mating with SM03B-SRSS-TB at 1.00 mm pitch; pin 1 red positive, 2 black negative, 3 yellow separate 10k NTC. Independent thermal protection and third-wire NTC feedback are separate requirements; supplier-signed envelope/lead-exit drawing required |
 | External USB data cable | 1 | USB-C at keyboard; USB-A or USB-C at host as appropriate; data capable, not charge-only |
 
 ### Every fitted mainboard component
 
 0402 resistors: 1%, >=50 mW; fit 0-ohm links where specified. The 220 pF capacitor is C0G; others X5R/X7R, 10% or better, >=10 V (16 V where specified), with effective DC-biased capacitance to be qualified. Values below are current circuit requirements; unselected MPNs are not frozen parts.
 
-| References | Quantity | Value/function | Package | Specified/candidate MPN | Planned stock use | To buy | Inventory note |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| C9, C11, C12 | 3 | 100n | C_0402_1005Metric | Vendor MPN unselected | 3 | 0 | In inventory: Samsung CL05B104KO5NNNC; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
+| References | Quantity | Value/function | Package | Specified/candidate MPN | Planned stock | To buy | Stock and qualification notes |
+|---|---:|---|---|---|---:|---:|---|
+| C9, C11, C12 | 3 | 100n | C_0402_1005Metric | Samsung CL05B104KO5NNNC | 3 | 0 | In inventory: Samsung CL05B104KO5NNNC; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
 | C10 | 1 | 220p | C_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
-| C13 | 1 | 1u | C_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
-| C30, C41, C42, C43, C45, C46 | 6 | 10u/10V | C_0603_1608Metric | Vendor MPN unselected | 0 | 6 | No matched usable stock; purchase required |
-| C31 | 1 | 100n/16V | C_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Samsung CL05B104KO5NNNC; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
-| C32 | 1 | 4.7u/10V | C_0603_1608Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
-| C40 | 1 | 1u/10V | C_0603_1608Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
-| C44 | 1 | 100n/16V | C_0603_1608Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| C13 | 1 | 1u | C_0402_1005Metric | Samsung CL05A105KA5NQNC | 1 | 0 | In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
+| C30 | 1 | 10u/10V | C_0603_1608Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| C41 | 1 | 22u/10V | C_0805_2012Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 4.7 uF at 4.23 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| C42 | 1 | 22u/10V | C_0805_2012Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 4.7 uF at 4.5 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| C43 | 1 | 22u/10V | C_0805_2012Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 4.7 uF at 4.5 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| C45 | 1 | 22u/10V | C_0805_2012Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 5 uF at 3.6 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| C46 | 1 | 22u/10V | C_0805_2012Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 5 uF at 3.6 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| C31 | 1 | 100n/16V | C_0402_1005Metric | Samsung CL05B104KO5NNNC | 1 | 0 | In inventory: Samsung CL05B104KO5NNNC; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
+| C32 | 1 | 4.7u/16V | C_0603_1608Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required; 0603 X5R/X7R; require effective capacitance >= 2.2 uF at 5.25 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| C40 | 1 | 2.2u/25V | C_0805_2012Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 1 uF at 5.25 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| C44 | 1 | 100n/16V | C_0603_1608Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required. Installed height below local PCB underside <= 1 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
 | C47 | 1 | 10n | C_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
-| C48 | 1 | 1u/10V | C_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
-| D1 | 1 | PRTR5V0U2X | SOT-143 | Nexperia PRTR5V0U2X | 0 | 1 | No matched usable stock; purchase required |
+| C48 | 1 | 1u/10V | C_0402_1005Metric | Samsung CL05A105KA5NQNC | 1 | 0 | In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance |
 | D2 | 1 | STATUS | LED_0603_1608Metric | 0603 status LED; vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
-| F1 | 1 | 500mA | Fuse_1206_3216Metric | 1206 resettable fuse, 0.5 A hold | 0 | 1 | No matched usable stock; purchase required |
-| J1 | 1 | REAR_USB_DAUGHTERBOARD | JST-SR-4 | JST SM04B-SRSS-TB(LF)(SN), candidate | 0 | 1 | No matched usable stock; purchase required |
-| J2 | 1 | PROTECTED_1S_4V2_NTC10K | JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal | JST S3B-PH-SM4-TB(LF)(SN) | 0 | 1 | No matched usable stock; purchase required |
-| L1 | 1 | 1.5uH_74438336015 | L_Wuerth_MAPI-3015 | Wurth 74438336015 | 0 | 1 | No matched usable stock; purchase required |
-| R3, R4, R5, R6, R7, R47, R53, R54 | 8 | 100 | R_0402_1005Metric | Vendor MPN unselected | 0 | 8 | No matched usable stock; purchase required |
-| R8, R9, R10, R11, R12, R13, R14, R15, R16, R18, R19, R20, R21, R23, R24, R25, R42, R43, R44, R45, R46, R48, R49, R50 | 24 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 24 | No matched usable stock; purchase required |
-| R17 | 1 | 1k | R_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Uniroyal 0402WGF1001TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly |
-| R26 | 1 | 10k | R_0402_1005Metric | Vendor MPN unselected | 1 | 0 | In inventory: Uniroyal 0402WGF1002TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly |
-| R30, R31 | 2 | 0 | R_0402_1005Metric | Vendor MPN unselected | 2 | 0 | In inventory: Uniroyal 0402WGF0000TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly |
+| F1 | 1 | 1A_FAST_0466001_NRHF | Fuse_Littelfuse_0466_1206 | Littelfuse 0466001.NRHF (1 A fast, not resettable) | 0 | 1 | No matched usable stock; purchase required. Installed height below local PCB underside <= 1.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| J1 | 1 | USB_POWER_IN | JST-SR-4 | JST SM04B-SRSS-TB(LF)(SN), candidate | 0 | 1 | No matched usable stock; purchase required |
+| J2 | 1 | PROTECTED_1S_4V2_NTC10K | JST SH 1.0 mm side-entry 3-pin | JST SM03B-SRSS-TB(LF)(SN) | 0 | 1 | No matched usable stock; purchase required; SH3 revision: protected PACK+/PACK-/NTC on pins 1/2/3; housing SHR-03V-S. Installed height below local PCB underside <= 3.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| L1 | 1 | 1.5uH_74438336015 | WE-MAPI 3020, 3.0 x 3.0 x 2.0 mm | Wuerth 74438336015 | 0 | 1 | No matched usable stock; purchase required. Installed height below local PCB underside <= 2.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| R3 | 1 | 100 | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R4 | 1 | 100 | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R5 | 1 | 100 | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R6 | 1 | 100 | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R7 | 1 | 100 | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R47 | 1 | 100 | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required. Installed height below local PCB underside <= 0.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| R53 | 1 | 100 | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R54 | 1 | 100 | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R8 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R9 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R10 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R11 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R12 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R13 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R14 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R15 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R16 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R18 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R19 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R20 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R21 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R23 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R24 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R25 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R42 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R43 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R44 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R45 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required. Installed height below local PCB underside <= 0.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| R46 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required. Installed height below local PCB underside <= 0.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| R48 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R49 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R50 | 1 | 100k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
+| R17 | 1 | 1k | R_0402_1005Metric | Uniroyal 0402WGF1001TCE | 1 | 0 | In inventory: Uniroyal 0402WGF1001TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly |
+| R26 | 1 | 10k | R_0402_1005Metric | Uniroyal 0402WGF1002TCE | 1 | 0 | In inventory: Uniroyal 0402WGF1002TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly |
 | R32 | 1 | 2.2k | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
 | R40 | 1 | 2.21k/1% | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
 | R41 | 1 | 7.50k/1% | R_0402_1005Metric | Vendor MPN unselected | 0 | 1 | No matched usable stock; purchase required |
@@ -127,11 +162,12 @@ These are separate fabrication orders/files: the mainboard ZIP does not contain 
 | U1 | 1 | E73-2G4M08S1C | E73-2G4M08S1C | Ebyte E73-2G4M08S1C | 0 | 1 | No matched usable stock; purchase required |
 | U2, U4 | 2 | 74HC4051 | TSSOP16 | Nexperia 74HC4051PW,118 | 0 | 2 | No matched usable stock; purchase required |
 | U3 | 1 | OPA350 | SOIC-8_3.9x4.9mm_P1.27mm | TI OPA350UA | 0 | 1 | No matched usable stock; purchase required |
-| U5 | 1 | BQ24074RGT | VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm | TI BQ24074RGTR | 0 | 1 | No matched usable stock; purchase required |
-| U6 | 1 | TPS63031DSK | WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm | TI TPS63031DSKR | 0 | 1 | No matched usable stock; purchase required |
+| U5 | 1 | BQ24074RGT | VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm | TI BQ24074RGTR | 0 | 1 | No matched usable stock; purchase required. Installed height below local PCB underside <= 1.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| U6 | 1 | TPS63031DSK | WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm | TI TPS63031DSKR | 0 | 1 | No matched usable stock; purchase required. Installed height below local PCB underside <= 1 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
 | U7, U8 | 2 | TPS22919DCK | SOT-363_SC-70-6 | TI TPS22919DCKR | 0 | 2 | No matched usable stock; purchase required |
+| J4 | 1 | USB_C5_INPUT | JST SH 1.0 mm side-entry 4-pin | JST SM04B-SRSS-TB(LF)(SN) | 0 | 1 | No inventory credit; USB repair candidate, fabrication release still on hold. Installed height below local PCB underside <= 3.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
+| J5 | 1 | USB_POWER_OUT | JST SH 1.0 mm side-entry 2-pin | JST SM02B-SRSS-TB(LF)(SN) | 0 | 1 | No inventory credit; USB repair candidate, fabrication release still on hold. Installed height below local PCB underside <= 3.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide. |
 
-JP1 quantity is **0**, DNP. J3 is six PCB SWD contact pads, with no fitted header. Mainboard totals: 43 resistors, 17 capacitors and 16 other components = 76.
 
 ### Optional: solder a bare C5 JSH daughterboard
 
@@ -203,7 +239,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | Insulated switch tool | 1 | SW100 access through underside service port |
 | Cutting/deburring tools and tweezers | 1 set | Gaskets/guides/assembly, without damaging battery insulation |
 | Soldering, hot-air/reflow equipment, solder, flux and cleaning supplies | 1 each (self-assembly only) | Must support 0402, module and exposed-pad assembly; not installed keyboard parts |
-| Back-side stencil | 1 (self-reflow only) | Laser cut from current B.Paste Gerber; 0.10 mm stainless prototype proposal, final thickness/thermal-pad apertures require assembly-process acceptance |
+| Mainboard stencils | 1 front + 1 back (self-reflow only) | Laser cut from matching F.Paste and B.Paste Gerbers; 0.10 mm stainless prototype proposal, final thickness/thermal-pad apertures require assembly-process acceptance |
 | Plate tapping tools | 1 set (self-machined plate only) | M2 x 0.4 tap and matching pilot-hole tools; do not retap a supplied finished plate unnecessarily |
 | Insert-bore finishing tools | 1 set (unless supplied finished) | Finish to diameter 4.85 +/-0.05 and 3.35 +/-0.05 mm and specified depths; unmeasured printed bores are not equivalent |
 | Current-limited supply, battery simulator, current logger and temperature probes | 1 each (prototype qualification) | Bring-up, charging/termination/thermal/runtime acceptance; not fitted parts |

@@ -11,6 +11,7 @@ import math
 from pathlib import Path
 from cad_geometry import intersection_volume, load
 from check_yeti60_assembly import box, build_plate, distance
+from shapely.geometry import box as rectangle, Point
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -90,6 +91,36 @@ def main():
                       a['stack']['plate_bottom_z'] + a['stack']['plate_thickness']])
     antenna_metal = intersection_volume(projection, plate)/a['stack']['plate_thickness']
     assert antenna_metal > 0
+    # Use explicit incoming-part limits rather than treating illustrative
+    # render housings as supplier-qualified plastic geometry. XY separation
+    # establishes clearance independently of the unknown below-plate Z shape.
+    limits=s['adjacent_assembly_acceptance_envelopes']
+    module=rectangle(*layout['body']).buffer(xy,join_style=2)
+    keys_path=ROOT/'docs/audit/yeti60-key-geometry.json'
+    key_positions=json.loads(keys_path.read_text())['matches']
+    adjacent=[]
+    def require_gap(name,shape):
+        gap=module.distance(shape)
+        assert gap>=limits['minimum_module_gap_mm'],(name,'Module assembly interference',gap)
+        adjacent.append(dict(part=name,module_XY_gap_mm=gap))
+    for key in key_positions:
+        x,y=key['plate_center_case_mm'];y=-y
+        w,h=limits['NiZ_below_plate_XY_mm'];e=limits['NiZ_center_position_error_each_axis_mm']
+        require_gap('NiZ '+str(key['index']),rectangle(x-w/2-e,y-h/2-e,x+w/2+e,y+h/2+e))
+    for mount in layout['mounts']:
+        if mount['reference']in a['pcb_fastener']['unused_pcb_mount_refs']:continue
+        radius=max(a['pcb_fastener']['body_diameter'],a['pcb_fastener']['top_insulator_od'],a['pcb_fastener']['washer_od_max'])/2+.2
+        require_gap('mount '+mount['reference']+' '+str(mount['xy']),Point(mount['xy']).buffer(radius))
+    mechanism_path=ROOT/'mechanical/yeti60-key-mechanism.e73.json'
+    mechanism=json.loads(mechanism_path.read_text())
+    for key in mechanism['stabilized_keys']:
+        x,y=key_positions[key['active_index']]['plate_center_case_mm'];y=-y;half=key['stem_spacing_mm']/2
+        w,h=limits['stabilizer_below_plate_XY_mm'];e=limits['stabilizer_center_position_error_each_axis_mm']
+        for sign in [-1,1]:
+            center=x+sign*half
+            require_gap(key['name']+' stabilizer '+str(sign),rectangle(center-w/2-e,y-h/2-e,center+w/2+e,y+h/2+e))
+        band=limits['wire_full_stroke_Y_half_band_mm'];extra=limits['wire_extra_X_each_end_mm']
+        require_gap(key['name']+' wire band',rectangle(x-half-extra,y-band,x+half+extra,y+band))
     # Deliberately shift the accepted envelope into the right wall. If this
     # negative witness passes, the shape/case test is not detecting interference.
     wrong = records[0]['bounded_envelope_case_mm'][:]
@@ -99,13 +130,15 @@ def main():
     sources = [spec_path, native_path, pcb_path, assembly_path, fit_path, fab_path,
                source, top_path, models_path, ROOT / 'scripts/check_e73_usb_local_models.py', ROOT / a['geometry']['plate'], Path(__file__),
                ROOT / 'scripts/cad_geometry.py', ROOT / 'scripts/check_yeti60_assembly.py',
-               ROOT / 'scripts/check_yeti60_plate_mount.py']
+               ROOT / 'scripts/check_yeti60_plate_mount.py',keys_path,mechanism_path]
     d = dict(status='bounded-corner-body-proxies-passed-harness-and-RF-open', manufacturing_released=False,
              physical_verification=False, complete_keyboard_tolerance_qualified=False,
              continuous_PCB_thickness_range_mm=[low, high], body_and_board_XY_each_axis_mm=xy,
              combined_stack_bow_Z_mm=z_error, case_each_axis_mm=fit['case_maximum_coordinate_error_each_axis_mm'],
              case_L2_allowance_mm=case_error, computation_guard_mm=guard, minimum_required_gap_mm=.15,
              parts=records, antenna_metal_plate_projection_overlap_mm2=antenna_metal,
+             adjacent_assembly_project_limits=limits,adjacent_assembly_XY_gaps=adjacent,
+             minimum_adjacent_assembly_XY_gap_mm=min(q['module_XY_gap_mm']for q in adjacent),
              plate_material='304 stainless steel, unchanged',
              front_mount=True, bottom_changed=False,
              bottom_source=s['bottom_source'],
@@ -113,7 +146,8 @@ def main():
              source_sha256={str(p.relative_to(ROOT)): sha(p) for p in sources},
              limits=['Conservative body boxes are engineering acceptance envelopes; received parts require inspection',
                      'Module remains a nominal body proxy; only J4/J5/C32 have STEP and solder-foot checks',
-                     'No flexible harness, insertion/removal, adjacent NiZ housing/clip model, resin strength or key-mechanism load qualification',
+                     'Adjacent NiZ/stabilizer/fastener XY separation uses stated project acceptance limits, not qualified vendor plastic or clip models',
+                     'No flexible harness, insertion/removal, resin strength, dome preload or key-mechanism load qualification',
                      'Retained metal plate overlaps the provisional antenna band; 2-3 m BLE operation remains unverified',
                      'No electromagnetic field solve or EC interference acceptance'])
     report_path.write_text(json.dumps(d, indent=2) + '\n')

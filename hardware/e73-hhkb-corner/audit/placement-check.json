@@ -1,9 +1,9 @@
 {
-  "status": "placement-geometry-passed-electrical-routing-open",
+  "status": "native-routing-and-placement-checks-passed",
   "manufacturing_released": false,
   "physical_verification": false,
   "selected_for_development": true,
-  "electrical_routing_complete": false,
+  "electrical_routing_complete": true,
   "module_body_PCB_mm": [
     332.0,
     182.0,
@@ -480,19 +480,6 @@
     {
       "reference": "routed",
       "pin": "2",
-      "net": "RESET_N",
-      "center_PCB_mm": [
-        345.6142,
-        120.4112
-      ],
-      "diameter_mm": 0.5,
-      "drill_mm": 0.3,
-      "both_faces_tented": true,
-      "SMD_land_overlap": false
-    },
-    {
-      "reference": "routed",
-      "pin": "3",
       "net": "BAT_ADC",
       "center_PCB_mm": [
         329.0965,
@@ -505,7 +492,7 @@
     },
     {
       "reference": "routed",
-      "pin": "4",
+      "pin": "3",
       "net": "APLEX_EN_PIN_0",
       "center_PCB_mm": [
         333.4804,
@@ -518,7 +505,7 @@
     },
     {
       "reference": "routed",
-      "pin": "5",
+      "pin": "4",
       "net": "APLEX_EN_PIN_0",
       "center_PCB_mm": [
         330.4351,
@@ -531,7 +518,7 @@
     },
     {
       "reference": "routed",
-      "pin": "6",
+      "pin": "5",
       "net": "STATUS_LED",
       "center_PCB_mm": [
         335.7242,
@@ -544,7 +531,7 @@
     },
     {
       "reference": "routed",
-      "pin": "7",
+      "pin": "6",
       "net": "STATUS_LED",
       "center_PCB_mm": [
         338.6733,
@@ -557,7 +544,7 @@
     },
     {
       "reference": "routed",
-      "pin": "8",
+      "pin": "7",
       "net": "BAT_MEAS_EN",
       "center_PCB_mm": [
         339.5875,
@@ -570,7 +557,7 @@
     },
     {
       "reference": "routed",
-      "pin": "9",
+      "pin": "8",
       "net": "BAT_MEAS_EN",
       "center_PCB_mm": [
         337.14,
@@ -583,7 +570,7 @@
     },
     {
       "reference": "routed",
-      "pin": "10",
+      "pin": "9",
       "net": "ROW_DRV1",
       "center_PCB_mm": [
         331.2636,
@@ -596,7 +583,7 @@
     },
     {
       "reference": "routed",
-      "pin": "11",
+      "pin": "10",
       "net": "GND",
       "center_PCB_mm": [
         337.5,
@@ -609,11 +596,921 @@
     },
     {
       "reference": "routed",
-      "pin": "12",
+      "pin": "11",
       "net": "GND",
       "center_PCB_mm": [
         339.0,
         122.4
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "12",
+      "net": "APLEX_EN_PIN_1",
+      "center_PCB_mm": [
+        310.7605,
+        195.2643
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "13",
+      "net": "AMUX_SEL_1",
+      "center_PCB_mm": [
+        337.9853,
+        163.2138
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "14",
+      "net": "AMUX_SEL_0",
+      "center_PCB_mm": [
+        335.264,
+        163.1927
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "15",
+      "net": "ADC",
+      "center_PCB_mm": [
+        343.4358,
+        150.0016
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "16",
+      "net": "USB_5V",
+      "center_PCB_mm": [
+        319.8,
+        138.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "17",
+      "net": "USB_5V",
+      "center_PCB_mm": [
+        326.0,
+        145.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "18",
+      "net": "ROW4",
+      "center_PCB_mm": [
+        329.5,
+        180.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "19",
+      "net": "COL13",
+      "center_PCB_mm": [
+        307.9,
+        183.0
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "20",
+      "net": "COL13",
+      "center_PCB_mm": [
+        325.8,
+        182.3
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "21",
+      "net": "COL13",
+      "center_PCB_mm": [
+        327.4,
+        180.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "22",
+      "net": "COL13",
+      "center_PCB_mm": [
+        326.0,
+        178.8
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "23",
+      "net": "COL13",
+      "center_PCB_mm": [
+        326.8,
+        177.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "24",
+      "net": "COL13",
+      "center_PCB_mm": [
+        323.2,
+        193.3
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "25",
+      "net": "COL14",
+      "center_PCB_mm": [
+        337.1,
+        183.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "26",
+      "net": "COL14",
+      "center_PCB_mm": [
+        338.3,
+        183.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "27",
+      "net": "ADC",
+      "center_PCB_mm": [
+        341.2,
+        163.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "28",
+      "net": "CHG_EN2",
+      "center_PCB_mm": [
+        327.9,
+        129.4
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "29",
+      "net": "CHG_EN2",
+      "center_PCB_mm": [
+        327.9,
+        134.6
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "30",
+      "net": "CHG_EN2",
+      "center_PCB_mm": [
+        336.2,
+        160.8
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "31",
+      "net": "AFE_EN",
+      "center_PCB_mm": [
+        327.2,
+        129.5
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "32",
+      "net": "AFE_EN",
+      "center_PCB_mm": [
+        322.9,
+        141.2
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "33",
+      "net": "AFE_EN",
+      "center_PCB_mm": [
+        326.7,
+        160.8
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "34",
+      "net": "AFE_EN",
+      "center_PCB_mm": [
+        328.1,
+        160.8
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "35",
+      "net": "STATUS_LED",
+      "center_PCB_mm": [
+        335.2,
+        139.4
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "36",
+      "net": "ROW_DRV3",
+      "center_PCB_mm": [
+        341.3,
+        159.8
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "37",
+      "net": "ROW_DRV3",
+      "center_PCB_mm": [
+        336.3,
+        141.2
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "38",
+      "net": "ROW_DRV3",
+      "center_PCB_mm": [
+        335.8,
+        133.3
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "39",
+      "net": "ROW_DRV3",
+      "center_PCB_mm": [
+        331.3,
+        126.6
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "40",
+      "net": "ROW_DRV0",
+      "center_PCB_mm": [
+        339.7,
+        183.5
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "41",
+      "net": "ROW_DRV0",
+      "center_PCB_mm": [
+        339.0,
+        163.9
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "42",
+      "net": "ROW_DRV0",
+      "center_PCB_mm": [
+        331.8,
+        163.2
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "43",
+      "net": "ROW_DRV0",
+      "center_PCB_mm": [
+        328.8,
+        163.2
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "44",
+      "net": "ROW_DRV0",
+      "center_PCB_mm": [
+        326.2,
+        163.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "45",
+      "net": "ROW_DRV0",
+      "center_PCB_mm": [
+        324.0,
+        160.2
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "46",
+      "net": "ROW_DRV0",
+      "center_PCB_mm": [
+        318.3,
+        154.5
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "47",
+      "net": "ROW_DRV0",
+      "center_PCB_mm": [
+        318.3,
+        147.9
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "48",
+      "net": "ROW_DRV0",
+      "center_PCB_mm": [
+        318.8,
+        141.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "49",
+      "net": "ROW_DRV1",
+      "center_PCB_mm": [
+        327.4,
+        124.3
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "50",
+      "net": "ROW_DRV1",
+      "center_PCB_mm": [
+        325.5,
+        126.2
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "51",
+      "net": "ROW_DRV1",
+      "center_PCB_mm": [
+        346.7,
+        154.5
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "52",
+      "net": "ROW_DRV1",
+      "center_PCB_mm": [
+        346.5,
+        169.4
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "53",
+      "net": "ROW_DRV2",
+      "center_PCB_mm": [
+        322.1,
+        177.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "54",
+      "net": "SWDIO",
+      "center_PCB_mm": [
+        325.2,
+        124.9
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "55",
+      "net": "SWDIO",
+      "center_PCB_mm": [
+        324.9,
+        126.5
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "56",
+      "net": "SWDIO",
+      "center_PCB_mm": [
+        320.3,
+        133.4
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "57",
+      "net": "SWDIO",
+      "center_PCB_mm": [
+        321.5,
+        145.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "58",
+      "net": "SWDIO",
+      "center_PCB_mm": [
+        322.8,
+        157.6
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "59",
+      "net": "SWDIO",
+      "center_PCB_mm": [
+        325.0,
+        162.3
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "60",
+      "net": "SWDCLK",
+      "center_PCB_mm": [
+        346.1,
+        159.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "61",
+      "net": "SWDCLK",
+      "center_PCB_mm": [
+        342.5,
+        163.9
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "62",
+      "net": "SWDCLK",
+      "center_PCB_mm": [
+        341.2,
+        177.4
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "63",
+      "net": "+3.3V",
+      "center_PCB_mm": [
+        318.1,
+        157.0
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "64",
+      "net": "+3.3V",
+      "center_PCB_mm": [
+        317.8,
+        145.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "65",
+      "net": "+3.3V",
+      "center_PCB_mm": [
+        317.9,
+        133.4
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "66",
+      "net": "ROW_DRV4",
+      "center_PCB_mm": [
+        332.5,
+        169.5
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "67",
+      "net": "ROW_DRV4",
+      "center_PCB_mm": [
+        343.7,
+        163.4
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "68",
+      "net": "ROW_DRV4",
+      "center_PCB_mm": [
+        344.2,
+        158.8
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "69",
+      "net": "ROW_DRV4",
+      "center_PCB_mm": [
+        348.3,
+        151.6
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "70",
+      "net": "RESET_N",
+      "center_PCB_mm": [
+        334.1,
+        176.9
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "71",
+      "net": "RESET_N",
+      "center_PCB_mm": [
+        338.0,
+        159.9
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "72",
+      "net": "RESET_N",
+      "center_PCB_mm": [
+        342.2,
+        150.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "73",
+      "net": "RESET_N",
+      "center_PCB_mm": [
+        341.4,
+        133.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "74",
+      "net": "RESET_N",
+      "center_PCB_mm": [
+        332.4,
+        125.2
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "75",
+      "net": "PGOOD_N",
+      "center_PCB_mm": [
+        313.6,
+        125.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "76",
+      "net": "PGOOD_N",
+      "center_PCB_mm": [
+        316.9,
+        153.6
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "77",
+      "net": "PGOOD_N",
+      "center_PCB_mm": [
+        324.3,
+        162.3
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "78",
+      "net": "PGOOD_N",
+      "center_PCB_mm": [
+        339.2,
+        188.2
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "79",
+      "net": "PGOOD_N",
+      "center_PCB_mm": [
+        342.7,
+        191.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "80",
+      "net": "CHG_N",
+      "center_PCB_mm": [
+        354.0,
+        142.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "81",
+      "net": "CHG_N",
+      "center_PCB_mm": [
+        351.2,
+        175.7
       ],
       "diameter_mm": 0.5,
       "drill_mm": 0.3,
@@ -940,6 +1837,385 @@
     "H8",
     "H9"
   ],
+  "preserved_mount_holes_and_slots": [
+    {
+      "reference": "H26",
+      "xy": [
+        223.837704,
+        189.30966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H5",
+      "xy": [
+        238.125204,
+        151.20966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H25",
+      "xy": [
+        145.256454,
+        189.30966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H9",
+      "xy": [
+        276.225204,
+        151.20966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H19",
+      "xy": [
+        161.925204,
+        151.20966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H6",
+      "xy": [
+        123.825204,
+        151.20966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H14",
+      "xy": [
+        290.512704,
+        132.15966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H18",
+      "xy": [
+        266.700204,
+        170.25966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H17",
+      "xy": [
+        152.400204,
+        170.25966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H13",
+      "xy": [
+        138.112704,
+        132.15966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H16",
+      "xy": [
+        252.412704,
+        132.15966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H10",
+      "xy": [
+        314.325204,
+        151.20966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H24",
+      "xy": [
+        97.631468,
+        189.30966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H3",
+      "xy": [
+        76.200204,
+        132.15966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "REF**",
+      "xy": [
+        97.012704,
+        131.80966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 0,
+      "net": ""
+    },
+    {
+      "reference": "REF**",
+      "xy": [
+        200.012704,
+        150.90966
+      ],
+      "drill": [
+        5.0,
+        2.2
+      ],
+      "attribute": 0,
+      "net": ""
+    },
+    {
+      "reference": "REF**",
+      "xy": [
+        331.862704,
+        131.80966
+      ],
+      "drill": [
+        5.0,
+        2.2
+      ],
+      "attribute": 0,
+      "net": ""
+    },
+    {
+      "reference": "H11",
+      "xy": [
+        304.800204,
+        170.25966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H7",
+      "xy": [
+        309.432392,
+        189.30966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H4",
+      "xy": [
+        114.300204,
+        170.25966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H12",
+      "xy": [
+        228.600204,
+        170.25966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H15",
+      "xy": [
+        176.212704,
+        132.15966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H8",
+      "xy": [
+        147.637704,
+        113.10966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H1",
+      "xy": [
+        109.537704,
+        113.10966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H23",
+      "xy": [
+        319.087704,
+        113.10966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H22",
+      "xy": [
+        261.937704,
+        113.10966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H2",
+      "xy": [
+        223.837704,
+        113.10966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H21",
+      "xy": [
+        214.312704,
+        132.15966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    },
+    {
+      "reference": "H20",
+      "xy": [
+        185.737704,
+        113.10966
+      ],
+      "drill": [
+        2.2,
+        2.2
+      ],
+      "attribute": 3,
+      "net": ""
+    }
+  ],
   "USB_pair": {
     "USB_DM": {
       "track_length_mm": 101.19624863103486,
@@ -982,23 +2258,24 @@
     }
   ],
   "DRC_violations_by_type": {
-    "via_dangling": 29,
-    "track_dangling": 34,
+    "track_dangling": 28,
+    "via_dangling": 5,
+    "track_not_centered_on_via": 3,
     "missing_courtyard": 100
   },
-  "unconnected_items": 30,
+  "unconnected_items": 0,
   "schematic_parity_items": 0,
   "source_sha256": {
-    "hardware/e73-corner-spec.json": "f60d3f2fb5b77b3c75de3a57c56e26678329852cbb342490f0671c85be2a8274",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "8395348843b214c4ad37037dd15c3637f73283ef22eb2121928ded33e64edabd",
-    "hardware/e73-hhkb-corner/audit/placement-build.json": "0e605d8cfa6fdacdbeb726d8462a4b14de44945481b1dd4f880385b4062e0677",
+    "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "6c9697a28935754eb68de79e1782736156741987fc95d278658a8fa50aa124b1",
+    "hardware/e73-hhkb-corner/audit/placement-build.json": "5ac5356f2e72dfb8ea298c4f233bd930417de14fd1a36f0a79d5524b963c4727",
     "hardware/e73-usb-repair/EC60-nRF52840.kicad_pcb": "0353992782a636a6ca04028aca4e6a660da7ae27ce0909aba2f7d3b29d4af8ee",
     "docs/audit/yeti60-key-geometry.json": "49d53c2e3a8a230fb679337535bdfde013d9ae934569220d4efe917968d92f24",
-    "scripts/check_e73_corner.py": "f9ed18f99e0a5f7bd4907cacccfe60c1a90fe260979a914216d83486c4c22e08",
+    "scripts/check_e73_corner.py": "9815aa19a16576f216e1309dad9f14258aea2cf3704278f341b847be49f1735b",
     "scripts/screen_yeti60_interference.py": "fb3bc69b0a34f40536fb759c07a3448455326829ad26d1aef31959871ccc2ee5"
   },
   "limits": [
-    "Placement-only proof; the candidate is not routed or released",
+    "Native geometry/connectivity checks only; no manufacturing or physical release",
     "Antenna projection is provisional; retained metal plate remains above the antenna",
     "C5 harness lengths and case/connector tolerance/service checks must be redone",
     "Whole-board RF, EC noise and hardware power/USB/BLE acceptance remain open"
