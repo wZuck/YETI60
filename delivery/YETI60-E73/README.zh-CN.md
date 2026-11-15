@@ -10,6 +10,7 @@
 
 | 序号 | 入口 |
 |---|---|
+| 00 | [从这里开始](START-HERE.zh-CN.md) |
 | 01 | [PCB 下单文件](01-pcb/YETI60-E73-gerbers-REVIEW.zip) |
 | 02 | [外壳及定位板](02-mechanical/bottom.stl) |
 | 03 | [材料及库存](03-bom/materials.zh-CN.md) |

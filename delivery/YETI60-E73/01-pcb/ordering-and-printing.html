@@ -1,0 +1,135 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E73 PCB and mechanical manufacturing instructions</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="ordering-and-printing.zh-CN.html">Chinese</a></p>
+<h1 id="e73-pcb-and-mechanical-manufacturing-instructions">E73 PCB and mechanical manufacturing instructions</h1>
+<p><strong>Engineering review only.</strong> These are the intended ordinary-process parameters for the current corner PCB. Consult <a href="../START-HERE.html">start here</a> and the snapshot manifest before ordering. A Gerber review archive exists; final manufacture acceptance remains open.</p>
+<h2 id="pcb-order">PCB order</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Selection / requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mainboard count</td>
+<td>Install 1 per keyboard; fabrication quantity is the factory minimum or your chosen spare count</td>
+</tr>
+<tr>
+<td>Daughterboard count</td>
+<td><strong>0 new boards for this build</strong>; retain the already-made UDB C5 JSH</td>
+</tr>
+<tr>
+<td>Mainboard source</td>
+<td><a href="source/EC60-nRF52840.kicad_pcb">Current native PCB</a>; the delivery folder contains the matching Gerber/drill ZIP</td>
+</tr>
+<tr>
+<td>Dimensions</td>
+<td>285.0 × 94.6 mm; use the supplied Edge.Cuts, holes and slots without scaling</td>
+</tr>
+<tr>
+<td>Material / layer count</td>
+<td>FR-4 / <strong>4 copper layers</strong></td>
+</tr>
+<tr>
+<td>Layer order</td>
+<td>F.Cu, In1.Cu, In2.Cu, B.Cu; upload all four, not just the outer pair</td>
+</tr>
+<tr>
+<td>Thickness</td>
+<td><strong>1.6 mm nominal</strong>; assembly accepts the specified 1.44–1.76 mm range subject to its tolerance checks</td>
+</tr>
+<tr>
+<td>Stack-up</td>
+<td><strong>JLC04161H-7628</strong>; compare the manufacturer's offered ordinary stack with <code>01-pcb/process-spec.json</code></td>
+</tr>
+<tr>
+<td>Copper</td>
+<td>Nominal outer 35 µm, inner 15.2 µm per the selected stack; have the manufacturer confirm the offered stack</td>
+</tr>
+<tr>
+<td>Finish</td>
+<td>ENIG, ordinary selectable finish</td>
+</tr>
+<tr>
+<td>Vias</td>
+<td>Mechanically drilled F.Cu–B.Cu through only; newly routed vias 0.50 mm diameter / 0.30 mm drill</td>
+</tr>
+<tr>
+<td>Via treatment</td>
+<td>Both-side tenting; no resin-fill/copper-cap requirement; no blind, buried or laser vias</td>
+</tr>
+<tr>
+<td>Solder mask / legend</td>
+<td>Retain the supplied mask and functional pin/hole/reference legends; normal offered colour</td>
+</tr>
+<tr>
+<td>Drill files</td>
+<td>Include separate plated and non-plated drills, plus the supplied board outline/slots</td>
+</tr>
+<tr>
+<td>Impedance</td>
+<td>Preserve geometry and selected stack; USB signal integrity is not qualified by choosing an impedance option alone</td>
+</tr>
+<tr>
+<td>Assembly service</td>
+<td>This guide assumes self-soldering; placement CSV is a reference, not an approved turnkey JLC assembly order</td>
+</tr>
+<tr>
+<td>Stencil</td>
+<td>Front <strong>and</strong> back paste layers: E73 is on front; the other fitted components are on back. Hidden module lands require an inspected reflow/stencil process</td>
+</tr>
+</tbody>
+</table>
+<p>Upload the <strong>single matching Gerber/drill ZIP</strong>, then inspect the factory preview: correct board outline, four copper layers, slot/non-plated holes, sensing geometry and mask openings. Stop if it imports as two layers or the factory proposes changing the specified geometry/process. The exported position file contains 75 fitted parts; sensing electrodes, mounting holes and pogo pads are not purchased components.</p>
+<p>JLC ordinary-process references: <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">capabilities</a> and <a href="https://jlcpcb.com/impedance">stack-ups</a>. Availability/options must be checked against the actual quotation. Neither this document nor a clean DRC is a factory DFM approval.</p>
+<h2 id="which-mechanical-files-to-send">Which mechanical files to send</h2>
+<table>
+<thead>
+<tr>
+<th>Item / net quantity</th>
+<th>Delivery path</th>
+<th>Manufacturing instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top / 1</td>
+<td><code>02-mechanical/top.step</code> or <code>top.stl</code></td>
+<td>Fully post-cured tough engineering SLA resin; millimetres; 100% scale</td>
+</tr>
+<tr>
+<td>Bottom / 1</td>
+<td><code>02-mechanical/bottom.step</code> or <code>bottom.stl</code></td>
+<td>Same resin/units; current baseline only while final retained harness is open; do not print an old bottom found elsewhere</td>
+</tr>
+<tr>
+<td>Plate / 1</td>
+<td><code>02-mechanical/steel-plate.dxf</code></td>
+<td><strong>304 stainless steel</strong>, CAD nominal 1.60 mm, finished 1.55–1.60 mm; machine and deburr functional openings; not a PCB or resin print</td>
+</tr>
+<tr>
+<td>Standoffs / 28</td>
+<td><code>02-mechanical/standoff.step</code>, <code>assembly-spec.json</code></td>
+<td>Machined brass, OD3.5, 4.50 ±0.03 mm shoulder; top M2×0.4 stud 1.0 mm, bottom M1.6×0.35 internal thread depth 3.2 mm; model alone does not specify qualified threads</td>
+</tr>
+<tr>
+<td>Cable guides</td>
+<td>Final count/files not released</td>
+<td>Use the final indexed files after retention/clearance acceptance; do not print the historical guide set</td>
+</tr>
+</tbody>
+</table>
+<p>Use STEP as the dimension reference; STL is a mesh export in the same millimetre coordinates. Do not rescale the FELK60 shell or add an arbitrary shrinkage percentage. Agree on the supplier's process compensation and verify the finished dimensions. Orient/support the resin parts so mating ledges, insert bores and cable channels remain dimensionally controlled; clean and post-cure before finishing bores. Printed threads are not substitutes for the specified brass inserts or machined standoff threads.</p>
+<p>The project case coordinate tolerance is ±0.15 mm per axis; a print supplier must demonstrate it at the functional datums, not only at the outer bounding box. Plate opening corners, finished thickness and actual NiZ/stabilizer retention require a local sample. Fit without force.</p>
+<h2 id="finish-and-inspect-before-electronics">Finish and inspect before electronics</h2>
+<ul>
+<li>Shell closure: four cold-bonded M3×0.5 knurled inserts, OD4.6 × length3.0 mm; finished bore Ø4.85 ±0.05 mm, depth3.5 mm. Use four M3×5 screws with 0.30 mm shim washers and confirm actual head clearance/engagement.</li>
+<li>Daughterboard: four cold-bonded M2×0.4 inserts, OD3.2 × length2.5 mm; finished bore Ø3.35 ±0.05 mm, depth2.9 mm. Use four M2×4 screws with 0.30 mm insulating washers. Preserve the existing C5 mounting rectangle 14 ×12.5 mm.</li>
+<li>Do not heat-insert into thermoset resin. Follow the insert adhesive's cure requirements and keep adhesive out of the threads and electronics.</li>
+<li>Plate: preserve all 60 sensing centres and 28 mounting axes. The mount circles are <strong>M2×0.4 machining/tapping datums</strong>, not generic clearance holes. H26 is unused and receives no standoff, film, washer or screw.</li>
+<li>Stack: 4.50 mm shoulders plus 0.10 mm polyimide top insulation give nominal 4.60 mm plate-to-PCB gap. Use 28 PEEK washers, OD≤4.0 / ID2.2 / thickness0.8 mm, and 28 M1.6×5 PCB screws.</li>
+<li>Gaskets: lower stock <strong>2.0 mm</strong>, upper stock <strong>1.2 mm</strong>. Do not reuse the historical 2 mm upper gasket. Inspect actual compression and mechanism preload.</li>
+<li>Inspect shell ledges/registration, every bore/axis, USB opening, switch access, battery pocket and cable exits. Resin surface finish or a plausible render does not establish fit.</li>
+</ul>
+<p>Detailed mechanism and sample checks: <a href="../04-assembly/key-mechanism.html">NiZ / plate stabilizer guide</a>. Complete purchased materials: <a href="../03-bom/materials.html">materials and stock</a>. Battery: <a href="../03-bom/battery-requirements.html">pack requirements</a>. Soldering begins with the <a href="../04-assembly/soldering.html">blank-PCB inspection</a>.</p>
+</main></html>

@@ -10,6 +10,7 @@ Review the mainboard as ordinary 4-layer FR-4, nominal 1.6 mm, JLC04161H-7628, E
 
 | Step | Entry |
 |---|---|
+| 00 | [Start here](START-HERE.md) |
 | 01 | [PCB fabrication](01-pcb/YETI60-E73-gerbers-REVIEW.zip) |
 | 02 | [Case and plate](02-mechanical/bottom.stl) |
 | 03 | [Materials and inventory](03-bom/materials.md) |
