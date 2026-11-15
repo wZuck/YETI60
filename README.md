@@ -48,7 +48,7 @@ Based on [Cipulot/EC60](https://github.com/Cipulot/EC60) and [fredlb/felk60](htt
 
 ## Complete materials for one keyboard
 
-**E73 design hold:** the list below now uses NiZ, a 1.6 mm plate and 28 mounting sets. USB routing and PH connector service remain unresolved, so mainboard manufacturing is still on hold. Read the [current E73 entry](BUILD.md) first; use the [separate Raytac list](variants/raytac/BUILD.md) for that candidate. Retain the already-made C5 daughterboard.
+**E73 design hold:** the list below now uses NiZ, a 1.6 mm plate and 28 mounting sets. Native USB routing and the SH3 battery landing are repaired; complete harness, power/battery and manufacturing review remain open. Read the [current E73 entry](BUILD.md) first; use the [separate Raytac list](variants/raytac/BUILD.md) for that candidate. Retain the already-made C5 daughterboard.
 
 Quantities below are **net installed quantities for one complete keyboard, without spares**. Buy populated mainboard/daughterboard assemblies or their loose parts; do not count the same components twice. Unselected suppliers/MPNs are identified explicitly. A known quantity does not constitute procurement release.
 
@@ -245,3 +245,5 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | Current-limited supply, battery simulator, current logger and temperature probes | 1 each (prototype qualification) | Bring-up, charging/termination/thermal/runtime acceptance; not fitted parts |
 
 See [materials](docs/engineering/materials.md) and [power/charging calculations](docs/engineering/power-budget.md) for purchasing limits. Supplier pack approval, unselected parts, key mechanism and ordinary-process conversion acceptance remain required before treating this preparation list as a production purchase order.
+
+Consolidated delivery folder (engineering review draft; order release remains open): [Markdown entry](delivery/YETI60-E73/README.md) · [offline web index](delivery/YETI60-E73/index.html).

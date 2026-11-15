@@ -91,13 +91,13 @@
     "scripts/check_yeti60_target.py": "46e58ca4acaab9a2096890cb063b37fb297d6bf0339095823d8f23f03195fc4d",
     "scripts/build_yeti60_firmware.py": "8f42cae9c9b506da62b0487030ae76ad9969b8bc8f6932922d5e64be57b9b58f",
     "scripts/yeti60_recovery_contract.py": "19d1e6672423c5bf5ec9c65e2ef85548847d44cbe656c31f40e9bee5b9f6eb84",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "6c9697a28935754eb68de79e1782736156741987fc95d278658a8fa50aa124b1",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
     "hardware/e73-hhkb-corner/power.kicad_sch": "6cd91b292a7f05bf1a5f0089fccd3584a4222580a61b1a5efa41d4d25a335263",
     "hardware/e73-hhkb-corner/matrix.kicad_sch": "d27dcf59c2685ef1a21c85409a70ba879e44c0db36e0b9695be45781d11fbaf6",
     "hardware/e73-hhkb-corner/YAECKB.kicad_sym": "f63f196a8960cc589c305f394fb28d314da04a7107dd91c9943293d94140a101",
     "hardware/e73-hhkb-corner/frozen-footprints.json": "a79b1f9d0adfced6a338be426be27b3be58b76547c019e028f307b46c28965f1",
     "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
-    "hardware/e73-hhkb-corner/netlist.xml": "0c014111019768f5005d66218052e1785c4fcc8a4264f3a8a272539c40f2c449",
+    "hardware/e73-hhkb-corner/netlist.xml": "4774ef134d98bb6df116d9e8e185cd42b3a3f88ca40dc155e3ee99ed17fe9974",
     "hardware/e73-hhkb-corner/components.json": "8c574258662e94a71775adbdf3c702e1a92816afc4e4e08cd25b2ec454f0118f",
     "hardware/e73-hhkb-corner/mounting.kicad_sch": "a32cefc236431bde7a3347b66ffe41417b5993c3c7b7aac46c2104c0f2e2ad21",
     "hardware/e73-hhkb-corner/analog.kicad_sch": "50213cf793f4cadf9313ddc3fcc5c6755896291a56e8ca56dec564b0b9f07bf2",
@@ -110,27 +110,27 @@
     "docs/testing/analog-waveform-inputs.json": "9ff139d65bfb4cff5c05c7a2bb8ca6dbcdf5a8f647cc732b452424baaced841f"
   },
   "published_outputs": {
-    "hardware/e73-hhkb-corner/firmware/releases/normal/yeti60-e73.hex": "c6c29bad57f3fcf5ff6d1dcf43967e63a972ed8e2d7d2a2913e207f25e84c4d3",
-    "hardware/e73-hhkb-corner/firmware/releases/normal/yeti60-e73.bin": "fc40150ca325e6c1c92816498eb496d9bed835d8ce09f456a0bfed40ead2b553",
-    "hardware/e73-hhkb-corner/firmware/releases/calibrator/yeti60-e73.hex": "10f818003a38eceadf77e5c693712d582fee74c4cd413313ec1e23519789c12c",
-    "hardware/e73-hhkb-corner/firmware/releases/calibrator/yeti60-e73.bin": "a840fbaa99d6d02c8c04925eb9ea34a5500d3be224d244383dc8850a9b106d59"
+    "hardware/e73-hhkb-corner/firmware/releases/normal/yeti60-e73.hex": "910c022b1fc8d7c73d8ebe7e907e43bfc8df35ae4437b7fe263bebf120b67fc3",
+    "hardware/e73-hhkb-corner/firmware/releases/normal/yeti60-e73.bin": "b17e96bf7f7fb0d177294c9ef1667d749d8b24a63aa61c711645ff76a477138e",
+    "hardware/e73-hhkb-corner/firmware/releases/calibrator/yeti60-e73.hex": "14b871d7aae781d3fe519a55e968124313767b673809dd15b82c055f497f77c5",
+    "hardware/e73-hhkb-corner/firmware/releases/calibrator/yeti60-e73.bin": "fbfb6ac51d1b6664ebbde11cc007ce9cca0ea2ef9ca519384b2c9ce282898a27"
   },
   "evidence": {
-    "hardware/e73-hhkb-corner/firmware/yeti60-target-build.json": "ab7d0b0f625250e3d6174442ac29c6af0aeb31e1d49d39e3e65d35f72f86e02f",
-    "hardware/e73-hhkb-corner/firmware/yeti60-target-check.json": "0b07b282f4b777e56a34c30f78ad1e236c7d36cbd0c5e0d2afacf3f6d7ea26fe",
-    "hardware/e73-hhkb-corner/firmware/yeti60-firmware-simulation.json": "dc80a6bdbd580e1b54cd036b223ac72cfc07063004fbf1ac45b6f84839a49612",
+    "hardware/e73-hhkb-corner/firmware/yeti60-target-build.json": "3cf6a3bba12e1f41aed304d4fd6db15fadbeceaa42ceec3245346f69540a9a1f",
+    "hardware/e73-hhkb-corner/firmware/yeti60-target-check.json": "7d3634412af77d2236b8e18bebe3c08bc2255e76f254fe6ec296637f8ba97b1a",
+    "hardware/e73-hhkb-corner/firmware/yeti60-firmware-simulation.json": "dd882b8dfa69dfd9a38de88ff4f62f4673eb5554dc784c060fadf27d96b86276",
     "hardware/e73-hhkb-corner/firmware/calibration.json": "b3cd82a93b3595d6b3d9da9c23f687fde4dba23eff9fd759ea8f2b927c781495",
     "hardware/e73-hhkb-corner/firmware/gpio-mode-policy.json": "a15a0ddbfe815244fb44336a4af8fc070b61a8bd1694eadcb45bc992f369c71b",
-    "hardware/e73-hhkb-corner/firmware/scan-control.json": "89c1c6cfbf073ab57660ddc4e09f23e68b833997b5952ec99053b62b08be1715",
-    "hardware/e73-hhkb-corner/firmware/key-pipeline.json": "3e5862cccbccf2aac3b5b85cd5a1021c97339e6bc509ad96c62c161976f55210",
-    "hardware/e73-hhkb-corner/firmware/nvs-powercut.json": "e688c34698eb17f65501379b7e95ea88d45ddcbe0011c5d750fc06a0e6179ccb",
-    "hardware/e73-hhkb-corner/firmware/firmware-recovery.json": "6e5367307a2d4347c3e72cb145c4ecc9e8e539256a852974a459357452c80c32",
-    "hardware/e73-hhkb-corner/firmware/analog-waveform.json": "4ead200a75dd76583daec3ddf0bce0fd35dc83fb4dfaa0d1ca0bd6bd25a87a4b",
+    "hardware/e73-hhkb-corner/firmware/scan-control.json": "1f5ddc396f6854bd222a6b94904c27e8ee55461def6d28b101e05a593ec3ee21",
+    "hardware/e73-hhkb-corner/firmware/key-pipeline.json": "340226c0ddbc690dddaccca2b133fba7f81e564c8be236b7deb85307a2b8fdfa",
+    "hardware/e73-hhkb-corner/firmware/nvs-powercut.json": "226b1e6c48262d1d5108ca2642a78c9a4037d651dc3553d7a5e0450623a842d2",
+    "hardware/e73-hhkb-corner/firmware/firmware-recovery.json": "574a9d95b2954dae8808271806fa1e5888971c06672b5bb26dc7a0e0d491b4c8",
+    "hardware/e73-hhkb-corner/firmware/analog-waveform.json": "23c7e733e299322554717155c390d379c79ad9c2976d1eac3c4e66a3e89e82a5",
     "hardware/e73-hhkb-corner/firmware/usb-event-policy.json": "9b3c48bc6174d5694a3c8a54bcfd8ad4783aff159a680b332a0f9ca808a7ad3c",
-    "hardware/e73-hhkb-corner/firmware/firmware-suite.json": "dd12d1a40005425895fe219ce7ea46f41a4de0e4aca4a77b5de9fe774396345b"
+    "hardware/e73-hhkb-corner/firmware/firmware-suite.json": "9efab18e5b4509e80f43104ee8fff3be2aebd3330d88754cf2c45c10a8e2ddc2"
   },
-  "native_evidence_sha256": "9e799b0b5ea90a6d33841bf378a017cbf6ef751e81d683670f7741907cb692a4",
-  "source_PCB_sha256": "6c9697a28935754eb68de79e1782736156741987fc95d278658a8fa50aa124b1",
+  "native_evidence_sha256": "406acbe9d13ec61e598adf126e41cc3be1b3856ad33d38b16b384a80d352a150",
+  "source_PCB_sha256": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
   "original_report_path_basis": "Copied evidence paths are relative to the isolated firmware-build root; map canonical PCB/netlist paths to this corner candidate. ELF files remain in the ignored build root.",
   "limits": [
     "Host and linked-binary checks only; no physical USB/BLE/EC, battery, thermal or range acceptance"

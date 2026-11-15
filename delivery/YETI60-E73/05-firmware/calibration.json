@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "execution": "native host ASan/UBSan; no physical calibration performed",
+  "output": [
+    "Calibration storage: 2464 single-bit flips, 308 byte inversions and 2433 sliding 32-bit bursts rejected.",
+    "Calibration: guarded worst-case populations accepted; insufficient, overlapping, noisy, saturated and out-of-range samples rejected (ASan/UBSan)."
+  ],
+  "minimum_samples": 64,
+  "capture_samples": 128,
+  "source_sha256": {
+    "firmware/yeti60/calibration.c": "12eef7ea0b6af3cdcf01b8558f81bb767f137f02b8f523a7950861de9f98a3bf",
+    "firmware/yeti60/calibration.h": "df57aaa55fc77794eca70fe1c6d092f4476394bc30d7798a84633e6f3fec6f0c",
+    "tests/yeti60/calibration.c": "ca69ab2691649c07451ac7eb0861405134193033dafe7b3ba462461f5bffe439",
+    "scripts/test_yeti60_calibration.py": "07ee65b82264beb66a22f36f36ea0bcb2b4119b547b9d22b57fec24a8e998dbe",
+    "firmware/yeti60/board_pins.h": "600c09916700dd1087d4394d867c3843ed853852be2b890045508fd2d6668773"
+  },
+  "physical_verification": false,
+  "storage_integrity": {
+    "record_bytes": 308,
+    "legacy_record_bytes": 304,
+    "CRC": "CRC-32/ISO-HDLC; version/low/high little-endian fields; excludes CRC field",
+    "golden_record_crc32": "0x5dcadfc6",
+    "independent_zlib_records": 512,
+    "single_bit_flips_rejected": 2464,
+    "byte_inversions_rejected": 308,
+    "sliding_32_bit_bursts_rejected": 2433,
+    "rejected_mutants": [
+      {
+        "case": "omit-CRC-check",
+        "exit_code": -6,
+        "output": "Assertion failed: (!yeti_calibration_valid(&record, 0x12345678)), function main, file calibration.c, line 49."
+      },
+      {
+        "case": "omit-ADC-range",
+        "exit_code": -6,
+        "output": "Assertion failed: (!yeti_calibration_valid(&record, record.version)), function main, file calibration.c, line 38."
+      },
+      {
+        "case": "wrong-CRC-polynomial",
+        "exit_code": -6,
+        "output": "Assertion failed: (record.crc32 == EXPECTED_RECORD_CRC), function main, file calibration.c, line 30."
+      }
+    ],
+    "physical_power_cut_tested": false
+  }
+}

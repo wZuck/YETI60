@@ -1,0 +1,16 @@
+{
+  "status": "native-placement-drawings-generated",
+  "physical_verification": false,
+  "source_sha256": {
+    "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
+    "hardware/e73-hhkb-corner/audit/placement-check.json": "406acbe9d13ec61e598adf126e41cc3be1b3856ad33d38b16b384a80d352a150",
+    "scripts/draw_e73_corner.py": "93a79a0758ea497412c2e3a4765c6504f9a254b4bd0d596640ff243eedcd0e30"
+  },
+  "outputs": {
+    "hardware/e73-hhkb-corner/audit/corner-layout.png": "0af5920e38200de87d581cfb18533e59d30e58b482040c90e8f61a66e422cc19",
+    "hardware/e73-hhkb-corner/audit/corner-layout.svg": "346cf41280e2cea49d79dff631575c22ab4619941d8f2fdbca77ff31760bf2dc",
+    "hardware/e73-hhkb-corner/audit/corner-layout.zh-CN.png": "38cfa95712c92adeff6833bec4c93b389ca79324048de6be846e42da7fe5a6d8",
+    "hardware/e73-hhkb-corner/audit/corner-layout.zh-CN.svg": "2ab5c06b013500cf48549189cc17c5dd83d2a78067df0f35ba38f18d8e5c35dc"
+  }
+}

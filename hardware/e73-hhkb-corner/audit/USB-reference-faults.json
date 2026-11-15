@@ -7,9 +7,9 @@
   "negative_case": "actual In2 copper added outside track keepout, GND refilled",
   "rejected_reference_cut": true,
   "exit_code": 2,
-  "uncovered_reference_mm2": 0.23234701896553578,
+  "uncovered_reference_mm2": 0.2323470095439757,
   "source_sha256": {
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "6c9697a28935754eb68de79e1782736156741987fc95d278658a8fa50aa124b1",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
     "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
     "scripts/check_e73_corner_usb.py": "f4f32b960a0166979bd9a3085369a2bc9666130c469658a13ace7e6c441e24a8",
     "scripts/export_e73_corner_geometry.py": "369737d517b024334037fe793df137c83763bd6ff8be060849b20fe2e2fdcead",

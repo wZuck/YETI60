@@ -76,6 +76,6 @@ The rendered NiZ/stabilizer bodies and wire paths are explanatory geometry, not 
 
 [Build entry](../../BUILD.md) · [materials](../engineering/materials.md) · [assembly](../engineering/assembly.md)
 
-The E73 electronic design remains on hold for USB protection, PH plug service, power-layout and supplier/physical gates. Use the [current E73 review](../audit/e73-review.md).
+The current E73 uses the lower-right module and SH3 battery connector; follow the [corner review](../engineering/e73-hhkb-corner.md). Complete harness, power/battery and physical acceptance remain open.
 
 The selected [M01 plate and floor repair](../engineering/e73-mechanical-fit-candidate.md) closes the three bounded plate/case and SW100 clearance checks with the specified allowances. It uses a 0.4 mm outer plate inset, preserving all internal cutouts. Full mechanical tolerance, supplier and physical acceptance remain open; this local result does not release machining.

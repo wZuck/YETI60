@@ -35,3 +35,5 @@ The legacy `scripts/run_e73_review.py` workflow still targets the pre-migration 
 [Selected M01 plate/floor repair and CAD](docs/engineering/e73-mechanical-fit-candidate.md) now feed the assembly, calibration identity and renders. The [pre-M01 deficit regression](docs/engineering/e73-mechanical-tolerances.md) remains for comparison; full mechanical/service qualification is open.
 
 For the relocated PCB, use the [candidate firmware build and flashing guide](docs/testing/e73-corner-firmware.md).
+
+Consolidated delivery folder (engineering review draft; order release remains open): [Markdown entry](delivery/YETI60-E73/README.md) · [offline web index](delivery/YETI60-E73/index.html).

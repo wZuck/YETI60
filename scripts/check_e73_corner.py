@@ -6,6 +6,7 @@ acceptance. The independent strict DRC is recorded even while routing is open.
 """
 from collections import Counter
 import argparse
+import csv
 import hashlib
 import json
 import math
@@ -270,6 +271,19 @@ def main():
         subprocess.run(command, check=True, capture_output=True)
     drc = json.loads((base / 'audit/DRC-routing-open.json').read_text())
     failures = Counter(q['type'] for q in drc['violations'])
+    purchase_path=source/'mainboard-purchase.csv'
+    purchased={ref.strip() for row in csv.DictReader(purchase_path.open()) for ref in row['References'].split(',')}
+    by_uuid={f.m_Uuid.AsString():f for f in b.GetFootprints()}
+    virtual_courtyards=[]
+    for violation in drc['violations']:
+        if violation['type']!='missing_courtyard':continue
+        for item in violation['items']:
+            f=by_uuid[item['uuid']];ref=f.GetReference()
+            virtual=(ref.startswith('H') or ref=='REF**' or
+                     (ref.startswith('SW') and ref not in ['SW1','SW100']) or
+                     (ref=='J3' and f.GetValue()=='SWD_POGO'))
+            assert virtual and ref not in purchased, ('Purchased part lacks a courtyard',ref)
+            virtual_courtyards.append(ref)
     electrically_complete = (not drc['unconnected_items'] and not drc['schematic_parity']
                              and not any(q['severity'] == 'error' for q in drc['violations']))
     d = dict(status='native-routing-and-placement-checks-passed' if electrically_complete else 'placement-geometry-passed-electrical-routing-open', manufacturing_released=False,
@@ -285,8 +299,9 @@ def main():
              preserved_mount_holes_and_slots=list(new_mounts.values()),
              USB_pair=pair, USB_track_count=len(new_data), antenna_copper=copper,
              DRC_violations_by_type=dict(failures), unconnected_items=len(drc['unconnected_items']),
+             missing_courtyard_non_purchased_geometry=sorted(virtual_courtyards),
              schematic_parity_items=len(drc['schematic_parity']),
-             source_sha256={str(p.relative_to(ROOT)): sha(p) for p in [SPEC, path, build_path, source / path.name, active_path, Path(__file__), ROOT / 'scripts/screen_yeti60_interference.py']},
+             source_sha256={str(p.relative_to(ROOT)): sha(p) for p in [SPEC, path, build_path, source / path.name, active_path, purchase_path, Path(__file__), ROOT / 'scripts/screen_yeti60_interference.py']},
              limits=['Native geometry/connectivity checks only; no manufacturing or physical release',
                      'Antenna projection is provisional; retained metal plate remains above the antenna',
                      'C5 harness lengths and case/connector tolerance/service checks must be redone',

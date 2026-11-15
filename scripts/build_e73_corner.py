@@ -6,6 +6,7 @@ The generated report deliberately records open connections and failed gates.
 """
 import hashlib
 import json
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -237,7 +238,11 @@ def main():
         for item in patch.get('items_to_remove',[]):
             q = copper_nodes[item['uuid']]
             assert hashlib.sha256(dumps(q).encode()).hexdigest()==item['sha256']
-            assert child(q,'net')[1]==item['net']=='GND', 'Only the reviewed orphan ground tail may be removed'
+            assert child(q,'net')[1]==item['net']
+            if item['net']!='GND':
+                assert item.get('review')=='native-dangling-cleanup'
+                assert item.get('native_warning') in ['track_dangling','via_dangling']
+                assert item['net'] not in ['USB_DM','USB_DP'], 'USB pair retirement needs a separate reviewed repair'
             route_tree.remove(q)
             removed.append(dict(uuid=item['uuid'],net=item['net']))
         allowed = {p.GetNetname() for p in fps['U1'].Pads()}|{'COL13','COL14','ROW4'}
@@ -304,6 +309,10 @@ def main():
     # SWxx are copper electrodes, not purchased switches: assembly still needs
     # 60 NiZ housings, sliders, domes and conical springs.
     subprocess.run([CLI, 'sch', 'export', 'netlist', '--format', 'kicadxml', '-o', str(out / 'netlist.xml'), str(out / (NAME + '.kicad_sch'))], check=True, capture_output=True)
+    # Export time is not electrical input. Keep repeated design builds from
+    # invalidating a source-bound firmware build solely through this field.
+    netlist_path=out/'netlist.xml'
+    netlist_path.write_text(re.sub(r'<date>[^<]*</date>','<date>2000-01-01T00:00:00</date>',netlist_path.read_text()))
     from check_schematic_current import signature
     components, nets = signature(source / 'netlist.xml')
     components = {r: v for r, v in components.items() if r not in s['removed_electrodes']}

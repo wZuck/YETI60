@@ -3927,6 +3927,2674 @@
     {
       "uuid": "5b15ac58-05a3-5d59-ab33-4f1ff14095b3",
       "net": "GND"
+    },
+    {
+      "uuid": "003cffca-df28-485b-9ecb-37f048dad67f",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "009d588d-8cab-4ceb-af58-cc78a343711c",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "00c15819-190c-4984-b737-528334bdd542",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "00f46bd3-b1bf-473d-886d-feb52d347ced",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "019f1311-ed55-4046-a821-a86a94bf5ba1",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "01e0e8f6-f42a-427e-85d2-d2d7183f0fc7",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "028b7f54-4164-47b9-94da-4490939071a4",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "0306aa20-aee5-4a9a-8be0-027714f67e11",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "03261669-85c4-4309-b7d2-1e7cbe8f0e08",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "0362f80f-127e-42b9-92ef-278b1c292dd3",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "036d9f56-3fa7-4984-a025-dcf0a86f6fe0",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "03b81f9e-5026-4a63-b85a-feaeb8c58815",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "052ed61e-b6b2-49ca-8b11-09cb71c40db9",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "0598feac-3b20-4b03-b405-ad3cfbb85d0c",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "05e4094d-f94d-4401-a244-62b20edd27a4",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "06814901-8a41-4623-bb6f-c5624843ae5d",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "06abdf54-c4b6-47d7-a15d-9455e71d8f47",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "073dab4d-3719-4420-aea3-90e228307962",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "073ef752-fc8b-4a9d-9a32-69dbb4a7db7d",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "074921aa-37a7-490d-b285-7aab21466ef3",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "07d3c041-4349-4ca2-8378-3a655c3556cb",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "07f09641-4a97-4a22-a0c3-d96e53b90940",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "0814c971-2514-49fa-ba04-a40d4abba2ea",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "0824781f-761a-4fe1-90f3-0ecb8b55f466",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "087f4ff4-dc85-4269-a0c7-0cf7c62a7ed7",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "088c68c1-8e65-41b3-aee4-1ce1f596633d",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "08c00eed-9e2e-4d77-a809-80fe1fce08b1",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "08f3fd9b-c669-4779-9fcf-276f8479c682",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "0991649a-97e9-4000-8ab7-204dfdae254f",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "0a271444-d830-4262-8e4b-b52f9d06c39b",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "0b545309-c495-43a0-9226-176f6dee3e3f",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "0b9d59b5-610e-4416-80d6-b8af0ea0093f",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "0bf5cb0a-bb4f-4548-933e-61cfdfad54d6",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "0c1093c0-ca4e-549b-8ef1-5db2a1367b52",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "0c1cfdec-3316-4aef-b44b-8017677fc0b9",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "0c4e1df7-ab2b-4cad-928e-7779954de040",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "0c62196e-e11d-4407-b012-360953788fc7",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "0c6c8386-052a-4e7f-bbdc-031abe9f3660",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "0cee1a23-66e7-467c-b1cc-3c70625a6355",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "0d72229a-5c5e-4663-a23f-b48b784b89e9",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "0d7ca66c-5dad-4dca-ac1c-d9fef82dcd78",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "0de8149c-bb89-40b5-b7b8-c095f079df1f",
+      "net": "COL11"
+    },
+    {
+      "uuid": "0de8252e-c3f7-4d04-9662-dd7bdff32881",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "0df9ca76-95dc-4c1f-b457-6a42e7d2c1cc",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "0f22cde0-b8f6-4b83-9365-a9c7309e8667",
+      "net": "GND"
+    },
+    {
+      "uuid": "0f28b232-9940-4449-91d9-c07bf5c087c8",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "0f2cd4d2-ae6e-4bb7-8bba-fc6275cb5dcd",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "10159179-5b7a-4013-8909-7d9954264ec3",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "10fefcd6-11a0-4dc9-85f0-1c3b59976259",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "11bc1d38-2e92-4774-99e8-a8d7fb8cabed",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "11e8ef3e-ef72-48e3-9e56-6d540b82a455",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "12194857-46da-45ee-b6ec-82694883ab2a",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "137fef6a-e70c-4f38-a103-82d48472f5d4",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "13df558e-83c3-4b3b-8afe-838085bf33e4",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "1442a23f-81de-4dad-86c7-e49756677399",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "1479dfce-0fb2-4f55-8069-080d4a1c1669",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "14d29af0-1266-4c73-9c39-e0fa9385991e",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "15aeacf0-8b6e-41c7-aac6-047b57cb0c10",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "160eefc6-32c8-42c0-ac3b-72d0f8a82355",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "16a7c2d3-fec4-470e-a9a3-0fd839d8b2b4",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "17eb43aa-8f6d-4e70-8bbd-8bfba484ec69",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "17f8d691-dbb9-42ec-a833-c8165f4c11ea",
+      "net": "COL11"
+    },
+    {
+      "uuid": "1807ba13-1bcc-483b-9e8b-36c22eec37d6",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "184f6f7c-d27a-4092-a8cb-d3fdaca7579b",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "1867febe-d003-4593-95a7-9664b98c085c",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "1868e05e-7a81-4d40-bc46-60703908ec40",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "19035ca4-8f06-4e14-826b-e8cc7c1a8552",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "191a9b1e-d8d3-45b8-ac6f-e1b914876660",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "19e57c4c-68bf-47f6-b51f-104be9f1e72f",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "19f07b17-af41-4b4b-b0e2-782bfba178fa",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "1a4de549-89ba-4ca3-882a-ca08ce0aa450",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "1a8033d0-18ab-485d-9302-193555be099e",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "1a853e8f-a3b0-4d2f-821d-408b4ab092d6",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "1b505ae1-62ff-4c01-93b5-899de79002cd",
+      "net": "GND"
+    },
+    {
+      "uuid": "1be171ec-b52d-438e-a902-715b93a1c347",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "1c12a262-186e-49c8-9f60-dfa1f32a3237",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "1c48c0f7-d270-4233-b390-827ed3a920cf",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "1c4e8ba1-1cfe-4bde-ac45-316d17eee785",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "1d6f35c9-4dcd-48fb-a0a0-7b18ae7df910",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "1d797d64-4f4f-497a-90fa-f414172f62f2",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "1df2063e-73b1-43ec-a596-e50192840c28",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "1f8f9121-24f1-4db8-a933-54d500e5e6c8",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "1f989597-034b-42dc-92c8-effcc5473eec",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "1fb4f8c9-f30a-4d15-ba41-8a4d7e0d3e43",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "1fe58815-ec48-41d9-aa5e-363b0fda14b9",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "20131299-5217-57e9-82f1-3bd9b9ea2f4b",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "204ce924-efbe-45a9-bbae-f1d9ce164eb1",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "2221c3f5-2995-419d-8664-40b55b6e5454",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "227dee61-3a2d-485f-996f-648ee78a6e0b",
+      "net": "GND"
+    },
+    {
+      "uuid": "22ad9aae-aa2e-4d1c-8df3-d6aa5d91f281",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "2403404b-1689-42f8-81ae-d23a7b1a9085",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "247da4f5-f670-4fe4-b395-30872acbcbf9",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "24baa78f-84a7-4d12-9edd-db5f7ee7045a",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "24c7bc64-7651-4119-bc7b-41e7e833d31c",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "254c520b-8523-4a56-b411-689d54095d18",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "25545798-d353-4111-b05d-b49b9b22de85",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "25623712-fbaa-49ab-bb0c-820861ab871b",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "25c62f5e-3093-4d55-9bec-f03547069ad8",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "26a35109-2445-4bcd-a5f1-a05b6f5df489",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "26c4110f-2a8d-4916-b9c3-1de592c1c55c",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "27224c83-3aed-483a-9815-5f6c2b989b82",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "272fa0fe-2ec5-4db1-b8e5-0f38b3938670",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "27c3a798-882d-4bd2-94da-d55fc375e743",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "29098fe5-3427-42c3-a1d2-204e974ad2a8",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "29151f34-c96a-4747-a967-969ef61b3d4b",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "2942c212-e909-48b4-a65a-b63f59535f75",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "295d1200-a6fc-407c-a06e-8ec276304503",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "29d94f7a-b39f-4ec5-baf1-ebcb1c7b7559",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "2a8204d4-047c-43c2-89f9-e7ce196c4aa6",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "2ae8b496-34b4-4541-896d-27d4577fb2b2",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "2af308c7-9780-4947-a6c1-df0a8c6d90e4",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "2b52930c-1450-4507-b74a-6e10ca042d33",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "2c7c1082-3029-4c0a-b5b4-b3e81743c988",
+      "net": "GND"
+    },
+    {
+      "uuid": "2c7cd5a2-91af-41d0-b430-430e3c79a0bd",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "2c811058-8c1c-484c-8dda-1ffebcd2dfe4",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "2c8f5827-f256-4dd7-9576-084096f663d9",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "2cc29979-4ae5-4630-8bda-7295443c1af9",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "2d1d9c9b-8a6d-4c37-96a9-1057966c2352",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "2d7418b8-3ad1-4a11-a627-450ed638f6dc",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "2d7af230-8568-458d-afe4-6ef5f2dd6c5e",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "2d8b852f-3f78-4e6b-9a43-2001dc74fe6c",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "2e0fe3fd-b65e-4a26-8422-1b98ffbebace",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "2e1c7315-050e-4e48-a5fd-1946259e9c42",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "2e2bed01-bf80-488f-bb92-f04057b8d4fe",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "2f0de773-7894-4cc1-97fd-8cd3d2ac2f5a",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "2ffabf32-1667-46c6-b10a-e08e17c11d75",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "308faccd-f84f-46c8-a5ab-a94538a321c8",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "30c49a5d-1f72-43e4-ae94-f82efe842dd8",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "30f7870e-901c-4a72-82aa-09b2765dc3fc",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "3191778f-4851-4698-85d1-52f29c991636",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "3197f1e4-4169-4052-b807-078ce3bd24f3",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "31e3806f-161d-4d83-8c1d-c25e08cefdb8",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "320ad21a-3f59-4fa9-b821-d42a6553bf66",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "3227c9cc-7dd6-48e3-bbac-5d6225fd72bc",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "3233face-7450-4a0b-9129-db64c2612361",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "32d16227-6f77-4029-ae62-81ddb1dbddc9",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "344d0e4c-3f8c-4cdc-aebc-f7c421255250",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "34782f70-d7d8-47a1-a98c-dc2fcf7f2865",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "347ed0db-5284-46dd-b6a4-8bf5a90c0e19",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "353c4e97-47e6-4935-a80c-bc4701ecb876",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "3593ebe4-e06d-4145-bf75-25ead5dcc76e",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "3596fc55-ff80-459e-a484-6109d1349d07",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "36167307-51c9-4416-b934-ff4f52fdfece",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "36737d29-78bc-49ef-b4f3-1e6fabba32d8",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "37600ad7-4412-4cc9-bcc4-68d294b6958b",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "382b6841-0b44-4940-9415-06eab668ed98",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "38584f41-e7e0-4b6c-8df5-70efa2bc708d",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "387f231c-184d-4511-a946-fad33c0d7cca",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "39112713-6029-403e-9ee6-29d98c6c1ac8",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "39a2beb9-5d4f-4ce1-bf2c-27f1614d4288",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "39c046b5-a27f-4fc9-a487-94b505528924",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "3aafa326-018c-4221-97b4-46c980d64173",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "3b0cc899-2718-46ad-a89a-334233363e18",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "3beb89b9-4cc4-413f-b98e-9c5147065bee",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "3c56e312-f334-46dd-a427-091869adbc70",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "3c6ce486-9a0b-4500-a309-ef805064d6ed",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "3cbfeba0-5ff1-4be4-b25c-2770cce4b7cc",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "3d5ada37-f134-417a-b907-56aab5c3d1b6",
+      "net": "+3.3V"
+    },
+    {
+      "uuid": "3d6f3410-f19e-4a85-9db3-18bfd0d26e89",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "3e029df6-7add-46f0-82c7-49c9e2a8c55c",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "3eb7d803-3263-4cf2-9f6b-08e2e80a0f9e",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "3eeca8a2-cb2a-40b6-b5ad-61e5ae7ae793",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "3f4154b7-3d1d-49d3-97ea-f9afdb7f62b3",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "3f4a9e4f-6595-4050-80ab-732964982736",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "3f4bda71-b999-4f07-93bd-51235c78d0f6",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "3f6fd363-6b41-4bcd-95e6-2207fed64c0d",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "40b9d211-746a-4c26-95ad-d7630521f268",
+      "net": "COL11"
+    },
+    {
+      "uuid": "40d4a574-c7b0-4bba-99cc-43fef3eeec43",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "4159c2df-8689-4eaa-9ebf-398c5a9c5327",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "41aadf7c-8036-428e-a07c-4294ae7a4956",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "41c95cb2-77b1-4c7f-bde5-338e8a0bc9d9",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "420fe676-67b2-4170-8974-ad9efab73194",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "4225b271-c0f3-4197-a800-5044b7cf1e26",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "42559e3d-bec0-4900-bb0a-66adba8169d4",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "430386c4-9a0a-42d1-880b-74bc145bb23b",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "43100518-b5dd-4914-95e1-2a6b1090c620",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "43bfbd5e-e4bd-4f3b-9076-c988e3b97e40",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "44fed7f7-3ce6-4ce0-a0f5-6d9e3d9241b7",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "45747eb1-ed74-482a-99b1-5b4f1c52a5b2",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "45caf6a4-cd0d-47d6-b3a3-c82d97bc2617",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "45d1f4c2-9606-4d0e-9e61-5b786a475fd2",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "4611b22b-c2d9-4aac-81bd-0b4ded0fc7f4",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "46597ef9-d0af-445b-ad0f-3112dcd67a47",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "469d1dc0-89c7-469e-af1a-650540ab7b5c",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "46c7ae96-af3c-4f1f-bdd7-4d639acb3fae",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "47ab2c51-0103-4485-8689-df2f361b9828",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "48186ea4-cfd6-4977-9405-c25ecdf75ac5",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "488a34e5-ed28-4f6f-bc22-0ef09fcff832",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "49130834-a32f-4e1c-8664-ace606dab6ea",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "4930c641-3e30-44d8-b90f-80b14747cb44",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "497c4007-7203-4894-9a19-39768fe01726",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "49bb60d7-4d1a-4167-b619-a96dea0a8f0c",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "49fefd7a-d44c-4c03-a219-a79039063533",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "4a1b8b29-aee7-459d-8841-a342716e7dc0",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "4aa60904-30df-498a-80ea-223f5da61d80",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "4be1f122-fbed-48d4-a7c1-5d853ae35165",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "4ca152ee-a071-409e-a9bf-7ae01349d2e9",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "4cc264c5-88a4-4d6b-81f6-18819e68e66b",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "4ce043f7-364e-4dd1-bc06-dacdba808b83",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "4d61f3e9-9516-43c7-8dca-292fd50c3011",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "4d89959f-0d3a-4cae-9ac6-b5b72013fdda",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "4daa099f-aebe-4442-a44d-2fa8620ab4b1",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "4e03b505-01bb-4fd0-ad64-43f52a083dcd",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "4e1277b6-7147-46ba-9cfa-d1c01c150f57",
+      "net": "GND"
+    },
+    {
+      "uuid": "4e24fbf2-c11d-494b-9b81-45a53665ddd7",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "4e340621-40dc-4046-a157-21a64dd5a9aa",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "4e65ac91-f055-4ccd-9952-2a54eefc7c54",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "4e6630ac-bec0-4ecf-a23c-3c91e2489761",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "4eaefda0-cad2-47ed-8132-b561e23b3683",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "4ec4a7bd-5d4a-4b7c-bae6-1e5f3b12a0bd",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "4ef70f2c-f69c-46b6-81d9-34e917a8f309",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "4fc799f1-ab35-4a8a-8c9a-4c7b0a8fbb7c",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "500c5b01-249a-4f9b-8663-366ee321a336",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "5026614c-8169-4b14-b886-0b7941bd7dd3",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "50be5919-61a4-4bc5-8e76-f1f3c5fecd10",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "510e5eae-e5da-422d-88df-b1752daade56",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "5198abbc-585f-4fbb-b7b9-4abc372d615d",
+      "net": "COL11"
+    },
+    {
+      "uuid": "51a960b9-93d9-4ca8-8e70-1150ff886c5a",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "51b7fdea-20bc-4167-b242-9bdf9ac88602",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "522a8935-0bcb-4cd2-ab93-42bbaa414553",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "524cb556-4bbc-429f-affd-993f9bde736c",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "529b9f5e-735f-4ec9-8fc4-cbfc830b462a",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "52a77fb9-d10a-424d-aa74-8f4ba3a0f9d0",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "5326f208-6d82-42d8-832d-0e5597c54232",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "5336f6e8-fc15-4d8a-8de3-cbf92eb8b7b3",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "5444ba20-f6d2-4703-874a-5ccb7ac2f869",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "54ac5526-30c8-4ee5-add9-88e485fbd6be",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "5604d304-0e45-4d61-bc52-d38eb46beef8",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "56923c30-76cd-47a1-a9ba-f534f09ea57b",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "56a1c442-6e0d-44fa-9f19-14f44a52efd7",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "5716200f-53cf-4271-8682-6280eb168ab7",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "583297b6-55b8-4e61-8fb5-d3a2499fbcd0",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "594f8e31-a36b-4d81-b46d-b3708d47b6bd",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "59eeab7c-515f-45da-bdec-126085f88187",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "5a483003-2732-4088-93c5-a03843789567",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "5ac8f44d-864b-4b22-84b9-79f7450b6aff",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "5b1047fe-85bf-4859-9ca2-9d763fde4427",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "5b9a102a-c854-40aa-9ef2-66f3f4c91abd",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "5bafb1be-5c54-5529-b389-aaac2e7ef4dc",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "5c19bee6-c684-4262-b41c-3911874e727f",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "5c31d608-67d4-488b-91a6-eaaec2f04c8e",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "5c5005eb-e1af-4ba6-935c-b42f9104feb8",
+      "net": "COL12"
+    },
+    {
+      "uuid": "5db593be-9d56-4d4a-82f9-b2640b9e9ee6",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "5ddebd67-8ce2-4b43-81dd-a376ebde1672",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "5dfd04ed-18df-4c04-8e42-a32339755576",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "5ee2d344-a5f2-4857-899c-8416a69ccd2e",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "5f4af352-a9ec-43b8-8c2e-5ceeaaead715",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "5f7465de-03f6-4a90-a711-959e12e3d771",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "5f79c399-06ba-44b0-90a8-c40a0b8ae76e",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "5fbf1f5e-4306-45d0-8ff1-ee0798c84fdc",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "5fe79c16-51a6-4fbe-9a23-0c5094dfdca3",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "602f1b17-bc27-4479-8b9a-30ea18abb07d",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "607038b4-cc87-4f26-aef0-1ab609a4a302",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "60cf32af-4a88-4d86-a1dc-7ace6241b0c5",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "60d726b7-b504-46b5-ae6a-1f3bb631a612",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "60d8a843-6c04-429c-a2dd-92aad6293b1d",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "6132b901-7163-4d68-bf47-b641a851d48f",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "61ed491f-3cc0-4118-89ea-d15af5cd768e",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "628791d0-c7e6-4a96-a3db-19b7e117e01f",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "62a18c1a-c520-4e9d-963d-855812c93e84",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "62caea0c-2dcc-4f31-9ef5-69a85c1f60a3",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "63e8c56d-c94b-4a64-9731-e71bf09f4a30",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "644a979c-844b-458a-80f3-46b1d8f74ce0",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "64ddc264-691c-4f3e-a92d-da55d83cd391",
+      "net": "COL11"
+    },
+    {
+      "uuid": "6545a018-5de1-493e-9cb5-8deaf5ca9943",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "65f2cb51-5242-4a74-98ca-fa1f9c613d66",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "6632fc34-d1f0-4177-a5d9-74da2505c6bb",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "6673d51c-6e6a-4e8d-9cdb-2760d3f0c630",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "66a893ca-8e5c-4566-bde2-9c288c12e614",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "66f8e5bc-6d1f-4379-86c7-2ad8bcf3b8be",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "66fb56b6-8ba6-48a0-98e5-48af2021d048",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "67439ab7-1003-4c08-9f45-2716c5f96b74",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "676dc13c-2a29-4062-aecb-18cbe8269f73",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "67a6a251-22c0-46ec-bfcd-76aa7835925f",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "68332751-b7f9-4c5d-af52-5b3cf820cf4a",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "686fcd25-7385-44ab-8936-e86edc7c8815",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "688c949f-8312-40a7-a0d8-84275fd86a2c",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "690ae6c1-a650-4099-b6cd-449c6e1a81cf",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "69dcbeae-27b1-411b-9ca9-3bcd46d27343",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "6a4dbbdb-efa0-404d-a2c6-738180e9916c",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "6a85ae17-3ead-4a37-8d5c-5e4a3e190373",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "6b3169b4-0052-4d37-9168-1541f491abf0",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "6b5484e3-af47-47e2-99a1-60fcafece24e",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "6b7f6d1f-340b-4fbc-bbcc-3f44db6999c5",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "6bbb6c3c-3c3f-42fd-b29b-83e86695c5ce",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "6bdf1af7-6313-4f9b-bedb-abf9b40650ae",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "6c083341-fa77-4a96-af84-8d28094019b0",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "6ca9ddef-d256-4147-b79e-f3843fdc65e4",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "6cf8fc0f-8bdb-443f-8525-9d9fcac2a627",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "6d2ba720-9664-4220-bf36-cb505ed88948",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "6d726330-2516-445f-9d04-39fa4780c084",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "6e6ed528-4045-44a3-a082-e5266ed0ae6c",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "6f89d54c-92e1-444b-a84d-333b2186bb1f",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "6ffe09cb-615e-4e68-9a1c-ba6b517f3d4f",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "7020509e-2c21-48b0-98d7-d93ddacaea72",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "70213671-bbd1-4676-be3e-7e2f33d7bc85",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "7070f140-c53c-4e71-84ee-41b63fbd470b",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "70811738-b1e5-41f4-a343-9b4d37eba790",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "7125135c-2aee-4220-bf66-9ef615f1f022",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "717558e5-bae0-4452-968c-6dc48e959b40",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "71ae0862-0d25-47f3-bae3-e7250cce192a",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "71cc1e4e-73f8-44c3-b26e-570646ea45fc",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "71f81438-9c44-4766-a4a4-39b19f60a388",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "723e9ec0-4fb0-419a-b323-cc801b3e0d7b",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "7242c01e-c045-4f87-8a3a-f726806df5fd",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "72a2ed94-2a49-488d-ab09-a1567d97bf5e",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "73ac8a7a-679b-4cfa-90b9-2a242565db74",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "74957ce6-c0ed-4e58-a445-0280789e40b5",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "7577f97e-5670-46f5-945d-26d89ea94d15",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "761898fd-5bf3-431f-b428-93a4f3d832ab",
+      "net": "COL11"
+    },
+    {
+      "uuid": "76c31a92-a5aa-4f0d-98e2-c473b756fd64",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "76c43032-c6a2-450a-b026-0cfad48df3b0",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "76d9f737-28d1-454f-8816-76c953610140",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "76eeac76-a690-408b-aed5-0711f986fb91",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "7766b464-bd56-4bf3-8a62-a2a92a8bd8c1",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "77717ab3-da8a-4538-a61e-cc203c1e40f4",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "77cf53b6-ff18-4d9d-9243-f2a47b59f900",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "77f971a1-5f59-4265-88c8-7f1246fb22ae",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "781266d6-94b8-4d7b-83b3-52228b73d24b",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "7893840e-a9f7-4915-a379-b13d88ea5016",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "79252bfe-2a15-4703-a8b7-d8ae180b7a73",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "7a043c68-cbdb-43db-b14d-e76e28a28f35",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "7a24773a-38ca-41d2-8526-26283101a142",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "7a6198e5-875c-4b40-a57f-95b3169f8887",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "7ab1a041-5d17-4216-898b-879ae022dae4",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "7aecd705-c658-4328-abc2-534d43f8f2f2",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "7b5a4681-b0a9-4852-ac74-9f22fa4b4173",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "7beabccc-e5fb-4f3d-af20-ffc0f4ebc22d",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "7c2b324b-25bb-4721-b1c2-2ce1a93a097b",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "7c705670-e83b-4f85-b5df-cfc1e40a92cb",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "7ca58eb7-596f-44df-a439-924b520e41aa",
+      "net": "GND"
+    },
+    {
+      "uuid": "7ca70fef-8c26-40a1-90d1-b030bbe70dcd",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "7cc08e93-7b13-46cb-b7fc-8037ada1fd3b",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "7cdd8c71-8857-469b-a262-56cd39053da1",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "7d02c627-dbea-4e61-af61-39f06b5a25cc",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "7d14cd3f-5468-473d-b056-4b6d914b31b0",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "7d32aba5-e6e8-4f7e-b0b3-740ee6aa9c66",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "7d97870f-acae-43b0-8ebb-2216a43cbe22",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "7dfb321e-181c-4493-a02b-a788cf1d77b8",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "7e37154a-04d9-4b55-aaf1-0fde776caca7",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "7e4f735a-6083-4e1e-8423-552847490c58",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "7ea3183d-0e23-469b-894c-f83858f9d36e",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "7ea6cc2d-b08a-499e-857f-ee10b562ce89",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "7f07e653-e486-440b-9d5d-06031817fe1e",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "7f3f7874-9b56-4901-b1c0-27c9b8c1a6a2",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "807f7e39-0a0e-4da5-9e01-24c7768ef18f",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "80a348c1-3f54-4e68-8906-2e6de14a3817",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "81261896-f6a0-49ed-8f45-5e785eb1fec8",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "81530c41-fa54-4f95-b1ee-3b0f125a9b0e",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "8194361f-4bd0-424e-8452-99dd4d426c5b",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "8323a29c-8cb0-40a6-838f-8b7a783abc95",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "833400ef-6d9b-4d5b-89d6-7518fecae7b0",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "83440f8c-b5e3-46e9-bb93-1ede799a7503",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "837b6c03-af3c-4d31-ae4e-180b8f727260",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "8483126d-f39b-4350-8d9d-647b7008e839",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "86b8cee9-46f7-46ed-8ea3-3727ae1e0eba",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "86f527b8-75d5-4ad7-ae2f-c6038e54b32d",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "87232a97-7dc9-492e-80b9-2ba367217b20",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "882d66e0-ee09-4163-abcb-ce6175650ebe",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "888186d7-0d7f-4762-a7a4-740af969fdfd",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "8892f40d-4d98-4374-8b10-417bae8c6991",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "88c3cfd8-bff8-4c6f-aa7d-927f8f6c73c7",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "890b69e3-a721-460b-af2e-52eb804e6111",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "89e3a95d-7611-4230-9251-213a8539dc74",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "8a365908-f8a3-4a2a-8f59-3a5689e0cadf",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "8a8ae692-9373-44a7-95fa-d50fa2b3a451",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "8ab45f75-0870-4575-9ce3-a294168d9d17",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "8ad9610a-52c8-40a9-884c-c8dd3aabe82f",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "8b9a7753-55df-410e-965d-c5d3b9bb8ad5",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "8c94c942-d0e2-477f-994e-bb41dbf62d3c",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "8c9a5ffd-27db-4581-8ed5-c15ce1764e28",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "8d45350d-642c-439c-818f-c878a305b983",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "8d4947cc-785d-4fee-b7ec-b6f49b24d989",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "8e8fb696-08a5-4f3a-9d14-9f32c83eff11",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "8eb2140b-aaf3-44ef-8806-e08ad4af8619",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "8f46fb62-e517-45af-98e6-9e828341cb23",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "90247633-6d8d-4e35-9ff0-c0dc05692326",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "9066bd2c-477a-4021-a407-acb39f2019c9",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "90ab15de-2f2d-4a2c-a7b9-e7ae025a7f3f",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "90f12fde-add1-4766-8190-1b833f29f727",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "913ff4a5-2137-4e1e-9814-22653b09429c",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "915afb86-41fc-4e89-a273-93790e0933b0",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "91e8cffc-ea3c-4d22-9136-ff6459092bb6",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "920cf18d-3c1a-44ee-ba54-f91ff9ca3b83",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "92fb3ffa-63b5-47e0-875d-8ca4c2c4b159",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "93253244-c1fd-4d35-9e04-bab53ce02134",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "939781d3-6989-4c81-bac6-a7b337e15004",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "93c3e419-6c30-414d-8bbf-043ed0890dcd",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "93e2f3f2-a9d5-45f9-866a-5e918b8fe71d",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "942e14e6-ded4-41df-8669-92a04fb95ea2",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "94363a09-bcd6-4e72-97b2-8abd060d12d1",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "9490b375-fd8d-4d81-b38f-c73e5c69e964",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "94d143df-3deb-4fa3-88ce-6d09b771b5d4",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "95155fee-da97-42f6-aa70-44d0010dd924",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "955d64bb-9811-4068-910e-c91d274df5ab",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "957b16c1-86a7-4ed0-aa0d-65bae1590659",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "966d0a4b-59b2-463e-b346-fb8f92f0217c",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "97191cd8-7596-4aba-8440-9fcc3321810c",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "97a7aa3c-d544-4847-af5a-b56b866d8c4e",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "9817b292-7aef-4a1e-bbb6-9916ce89d8b5",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "984de5bb-8f50-5f51-a762-7bca41cd4fe4",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "9891f77e-6870-448f-ad59-9b92528f3f5e",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "98ad635f-3a03-4433-ba9a-1f97f050c3d6",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "9942fd9d-29b6-43ac-bca2-92517a9bf858",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "995d2ea0-aef6-406a-98b4-f7d3fea8a19f",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "99f16084-f18a-449b-8a47-7df8ee5e5549",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "99f2a5fd-3e3b-4ac3-8bb8-632019637e0d",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "9a0205c7-0a62-4844-9705-470b09ef2c94",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "9a12f5d2-8087-4c45-a86c-7703ecd04539",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "9a41cca7-a7b8-4c0e-9fe9-322eebbc2c1b",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "9ba17512-da24-423a-845a-23fc40d3bfc4",
+      "net": "COL11"
+    },
+    {
+      "uuid": "9bc3c565-5f67-4fdb-b3a6-1d00776af21c",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "9c4f65ec-415c-4777-a1b1-6e3bbbc173c4",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "9c8ac242-2cd1-4008-a1d5-519ef800dcff",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "9e13bdde-4d43-488c-a0fb-8a1ae8f19c2e",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "9e4c8195-c28d-4d5e-b5c9-1194cb518893",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "9e513eb6-b9ac-43c3-8f3b-14570c225199",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "9e86569b-b73b-4220-98df-a623e7d51acc",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "9e9196d9-4043-44e9-9d1f-abd5b3d6246b",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "9e939b38-06ad-4ba7-9256-4cef49aa0c3a",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "9efb70da-b9f0-401c-900c-b7b876bb26fd",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "9f1bca54-739b-4c91-8245-324d7cfead50",
+      "net": "COL11"
+    },
+    {
+      "uuid": "9f565324-def9-4a7f-87a6-c874218a1da1",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "9f716d39-4582-4157-a6b1-90691c28cfbe",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "9fa8c1e9-f51d-4d80-85b1-f666b56c8b62",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "9fecf9b0-31f1-45d1-bb46-0f0a92bec37c",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "9ff4ef4c-291c-464e-bf44-bf2fcaa2ba32",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "a00c1dd3-62ce-47e3-bb4c-232ffd889b8c",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "a019b89e-ff98-41a7-b32f-b2dca8e7e9e5",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "a0733174-6923-482d-bc91-5426b9da7e23",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "a0874268-52ad-4648-a4cf-e3ef2ca1d65a",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "a0b993e0-9264-4598-8c21-d0e9e842b039",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "a10030bc-bc90-428a-a273-d2785c91094b",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "a13ee557-5056-479a-b148-7c982d4381fd",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "a2a69cc6-1fb4-46f2-ae0d-355ad1f79e55",
+      "net": "COL12"
+    },
+    {
+      "uuid": "a2bbb2d1-c1ed-4646-89ea-cf744cf393cd",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "a321b94a-614f-422d-8a84-ed8e19d45bb2",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "a34b2d62-6f10-4206-8aa1-7adccb8f968c",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "a41e39eb-fb15-480d-8710-e7b5a1154738",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "a4361187-b372-43f0-9ee6-5b2f0409b3cb",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "a45ee4ef-9710-4049-bf78-c144edb9d999",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "a4aaf5e9-b663-4550-9db3-745791bcf410",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "a50e8bd4-1e35-4f8e-8ccb-f33626187d88",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "a6a8ef7a-92ea-4a05-bac0-938fc22c44b0",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "a6f253b5-462d-43e5-b5a7-00278ccd6fe1",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "a6f32eb2-21de-4df9-ba5a-9c56dccb0bdf",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "a7b9c397-519c-4c20-a65d-45973d724e4d",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "a7de1e90-1ab5-47e4-8fd1-73fae29a52ed",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "a87293ef-9e15-4e47-999b-d62d30ab50a3",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "a8d20f05-59fe-4ea6-a5a3-5fcd2145361f",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "a9488afe-af39-40f8-9b23-00321ab6d760",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "aa1764ec-ff91-455d-b4a4-e17beee3b431",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "aa3658b2-0fe0-4a81-86b5-0eacae68161b",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "aa416f86-fc90-4bab-a452-6e140fb779f2",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "aa4ae71e-7f7f-4f13-9c46-84ea49e4653b",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "aa659cb5-90bf-41e3-9d17-122e518399d5",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "aa681f3e-d774-481d-bc80-067bda26fdd9",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "aad237da-2b0a-45c2-91dc-86ad26a31a83",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "ab338604-3d64-4652-90b3-6ba77b251e9a",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "ab9212b9-f0d4-4fe0-b1ca-823303bcf325",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "abb64fae-4c4b-4f80-914f-6d753d55d80c",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ac70aeb0-9f2d-4267-9827-ddbfa704ba22",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "adb24893-e69d-4a89-a3e2-fdf923356c69",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "afd81ce8-e241-4980-adad-b9197ea75b89",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "b0752470-0dc5-45b8-8a17-88eea8249e01",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "b105b52b-6b7d-498d-9bf3-a5efe618a27d",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "b14e0c66-4bb3-4dce-9605-eb49aa681d5c",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "b20fa054-afa4-4496-9cfe-0c357880156c",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "b223634a-f53e-4ee8-9fd8-881105b1461a",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "b28a7427-97af-48b7-8b53-240c79870847",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "b2b5ffe1-a6c5-439c-bfd9-c3c8f6660baa",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "b360d944-5211-461c-b729-cfbd9e511771",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "b3899d1c-9698-4cd8-a11d-4a70663e1a5c",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "b45b1db2-24f8-4b7c-89e0-58d155c58e9e",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "b4735759-8f62-45b8-a466-dfda3c279bb6",
+      "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "b4916b3e-7e1a-49b0-87f5-e72593834e6c",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "b57d2b17-aa73-4530-82d5-c1745a99a1cc",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "b6a508f3-17f6-4b5b-946c-17add4b9d321",
+      "net": "APLEX_EN_PIN_1"
+    },
+    {
+      "uuid": "b6efbd1e-532d-4ecd-aeb9-676790535163",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "b7b4b349-98f3-4a42-b549-c0315a14ac55",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "b8154912-85a8-43d0-bc16-8d153d7d83b3",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "b861bd44-e5dd-4040-9857-3029fe102182",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "b877e6fa-0193-41df-9ab1-3892bc757afe",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "b8b146ae-8b9a-4793-9050-e767274f435d",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "b8e201f5-774e-4e7c-8ed8-339a954cb0b2",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "b989a627-4dfd-45db-af99-5de879359242",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "b98feae1-2dbd-4254-a61b-9411065bb42b",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "b9b5b82b-a4b7-4a25-9f0c-dc3a391d9a89",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "b9d2f23f-c409-4213-aae8-fd15ff792d8a",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "babc4706-47a7-4908-a740-61540d6cd182",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "badcb1b3-4ac7-4746-8a9f-d1b5f1becc57",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "bbb181b5-ef74-40dc-bb47-aecb703d6f4d",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "bbb82b2c-9575-42da-bef8-af42b392fa5e",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "bccea5e2-1589-4e00-b4c4-ae94a645894f",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "bd423a37-49e3-4257-88ab-ac25c4d08ec2",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "bdfdd362-1840-400c-8df8-c118814b0338",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "be63939a-b666-4f9f-9575-21867dd28206",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "bed7888c-9f9d-4280-b4ba-ddfd4c5605fb",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "bee91f02-3809-49c0-a06d-5846223edaf4",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "bf3d9bc7-bfaa-4b7c-bc67-b77a08c08956",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "bf459522-fd86-4f92-b46f-357600cc8512",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "bf71d3f3-a607-4e43-88c3-c891f42a73f3",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "bf88bd02-b1c6-45a3-a9f8-3b195ddda2e7",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "bf949f82-3eaa-4203-88c3-1b8f06416008",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "bfffccd1-55f1-4360-ab2e-b7a051b0d547",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "c010903b-2434-423c-b110-13015bfad7bf",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "c0a14fb7-bf70-4a4d-b7b9-22848a8685e7",
+      "net": "PGOOD_N"
+    },
+    {
+      "uuid": "c11f9eb4-bc25-45bf-b6cf-7d7308193337",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "c172bf24-7f94-4736-b60b-5385049cd0f5",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "c1b667b2-f8b0-46ec-acd4-565b238dd7a4",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "c1be758e-f733-4a10-9739-80431036921d",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "c1f2b245-7c7f-4bea-a1aa-f29464fa2107",
+      "net": "ROW_DRV1"
+    },
+    {
+      "uuid": "c22b0535-7ee5-4a68-983e-5e5f12bc239d",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "c2468dc8-5369-438d-8e9a-636467c0f9f3",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "c24aca5d-51cd-45ad-a18c-d4f8d11f4545",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "c26cb18c-cfef-47d2-b33d-e0f6954d13fc",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "c2735ac0-4d8d-49ff-b41d-f4f874ad8685",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "c2dc0949-1b50-4819-acf6-5bbf75441a1e",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "c2e9dc5a-6878-47cd-86fd-0e2f581e0c57",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "c337db23-f19b-42ac-8418-ff4af0bee239",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "c34f0eaf-d2ce-469b-9a5b-aa075ba98481",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "c4bd226a-803a-4534-8ae8-2f8de1bed904",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "c515eb87-a3ab-4682-8b3d-19e47cf60f0d",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "c5591d8a-ea94-4752-aab1-415341b18d32",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "c68f6206-1055-4ab4-906a-1aef407d6ba5",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "c735d2f4-b90b-454d-b34f-9a8fb212e9ae",
+      "net": "GND"
+    },
+    {
+      "uuid": "c73d0a74-be2e-48a2-a7a1-86024115d6d1",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "c742c3f6-9fb7-4302-b097-48dcbf686a2d",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "c7501266-13cd-486b-80a3-040dd7e4fe76",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "c7cc2a11-6792-4069-8e6e-84fbfd998cd0",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "c801baa3-1ba2-40ce-ab2d-182f53dede73",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "c802d620-b454-4409-a84d-56e58032f8db",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "c83e1eee-b5f1-46a9-8017-d9e2b23e21f4",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "c8bfdba6-c88b-455e-a3a0-767219d02c73",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "c8c91822-3879-41ec-b133-9ca875f3f646",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "c8e1972d-44d6-43a0-8bb9-a8db6ff960e6",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "c9bbfbaa-db69-4cc6-8708-9a08d8c1fa62",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "cab005dc-eb69-4356-bda9-585b81db1e8d",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "cc19fcc6-375c-473d-932e-8d5ed952e822",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "cc2dd08f-8944-48c9-b711-dfb2241cbbf7",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "cc5806aa-d561-4a2c-a238-97846f4cdd75",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "cca04a47-c140-4d50-a274-c9377e172730",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "cdeef907-f093-4872-ba08-4832c2f44140",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "ce5e9a41-89b2-4c55-8cde-63719341c4ca",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "ce849831-d46b-48cc-80eb-83dabb10cbc6",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "cebf510c-d64f-4bd9-afe8-73bff82333d5",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "ced1aa32-168c-4f54-93f8-da06b5d2018f",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "cee3e6c4-f5d6-4a60-a5df-beecf478e189",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "cfa1d510-68f2-4ef4-a7d4-ca89b6320dcd",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "cfab57dc-f0ec-43e9-9b86-edd0aabdcf48",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "d01d48f6-227a-4ae0-81ee-ff07916f9806",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "d03d4af4-970c-4f64-910a-9eaf8a05ebd7",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "d0494873-2d99-4176-ac6e-4b4e064b04bd",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "d0583595-2157-468b-a9df-31098932b8fc",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "d087c46b-fae7-44ba-b014-33680d3b6598",
+      "net": "GND"
+    },
+    {
+      "uuid": "d09ca16b-2cf0-4f82-ac68-655d687c01b8",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "d0f7efc7-a1be-4746-85ea-e3750162f079",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "d1573e34-9581-4270-ba89-6adb7fa76e2b",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "d286dce5-af04-43c7-9753-14d50409d88f",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "d2bfa350-6768-4fc4-875a-3e40861521e5",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "d474f0d2-e6df-4188-85ef-a816b5a66534",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "d47ce080-c45f-473f-bfc5-c5b41fdcf1ba",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "d4bf0786-9506-43bf-9a34-62b8bb6792fd",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "d4e53ae6-2189-49a7-baec-b72ed1e77678",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "d52a39d5-ad44-42dd-9584-fc6fe5ee9f13",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "d52be967-ed78-477f-87fd-dce6c9b5a99b",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "d5412b38-e1ca-4a14-9233-604494bb7dce",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "d563dabb-6465-4be6-b9f0-273ffbac3b5a",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "d57e9f70-c2ef-4036-a9b7-a0c298c5db93",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "d662160a-760e-4cba-b98d-dc826a633ca2",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "d66a1410-eea3-407d-931f-6865c0462851",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "d6c9e19c-1404-4fb9-a6cb-0d8f0a073005",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "d704f932-0a19-43d7-8ce7-e9026030aae7",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "d79e38e3-e42b-49f3-86de-17b5afb0a18b",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "d7f36f00-3d66-4d1f-acf9-459943eaf35c",
+      "net": "CHG_EN1"
+    },
+    {
+      "uuid": "d863ea11-4ddf-42ec-90aa-04e30061dc34",
+      "net": "CHG_EN2"
+    },
+    {
+      "uuid": "d8710f7f-24e1-4e90-9d10-f63512a9e990",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "d8be03b2-d5a3-4db7-bce2-f7730f969095",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "d8f52216-c399-4453-9b6d-a75458d46693",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "d8fbe843-2219-4d50-8923-dde411fad307",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "daef8b59-5835-4862-8238-d8efd9f38aef",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "db8e194b-07e4-4096-adc8-482d87684422",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "dba26751-9fd8-4a93-81e7-37cf5289db26",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "dbea6b60-19f9-4349-8623-7295847fe48e",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "dc051e6a-8e14-463a-b078-6c0c8e754d2c",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "dc1a2897-f38d-4d9a-bdf1-93a27b38f69e",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "dc906565-44ac-4763-ba51-b0ab8283267c",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "dcfde3ee-059b-4ce8-adaa-c41e69071a54",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "ddc4d2de-5646-477d-bc01-61f0d7d21db6",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "ddc5b057-366a-4b58-b58f-8fafc9e0c38c",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "ddd26589-c37b-438a-9084-ef987dca86ff",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "de049711-6535-4695-96b4-5e04ee2c0358",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "debaae1a-76dd-4472-a2bc-f7678c2366c1",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "df144a90-7629-4422-a8c6-c64c5d248f37",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "e062f8be-cad2-47d3-9574-e7bdf841a6e0",
+      "net": "GND"
+    },
+    {
+      "uuid": "e13525ff-5489-45fe-8b9b-f31860520eb9",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "e13c7f8e-2378-4113-a495-ce6841145878",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "e14dc9bb-525f-4d99-b466-aeb330f59da5",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "e14fb012-b2dc-45ab-98a1-c44a58339cb5",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "e34f4ac5-5575-4723-96ed-4eed62413b3a",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "e42e26f5-9ec2-4a2d-827a-e3dec1efaf11",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "e44bf800-aaf0-4c10-a506-a2a040784058",
+      "net": "ROW4"
+    },
+    {
+      "uuid": "e48db7d7-2443-412d-b974-13f742032716",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "e4e0aaf7-6258-4293-aea5-7cdd0c3aff1f",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "e517f774-1566-437e-8d40-bdb3790f88dd",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "e563c871-2949-4958-8f4e-57eca74eab9b",
+      "net": "ROW_DRV3"
+    },
+    {
+      "uuid": "e5a93136-a119-40a5-a527-1aaa0e030114",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "e6d6b90d-a1b7-4d6a-95a9-499fa84f3feb",
+      "net": "SWDCLK"
+    },
+    {
+      "uuid": "e6f5bda3-a024-5741-b996-12ef30550aea",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "e7076b6c-cb66-46f2-a5ec-67435d18799a",
+      "net": "SWDIO"
+    },
+    {
+      "uuid": "e71d3dec-769a-460c-b9ce-59ccf2dbf5ab",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "e736f2e4-516c-43fc-888d-1f15233b7b49",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "e78e7643-160f-46de-a8cc-8eb1986bab23",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "e7ca25d3-bdee-4bf9-8e79-cfff79d30b1a",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "e8873fa1-58fa-428f-9ede-0aabfbcb51ed",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "e8a3cfe7-0cb0-4d9a-8d5e-e473c23a424b",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "e94f36e7-4a85-4460-8ebb-cd65bcfdbfed",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "ea52705f-f286-53a3-9ba5-74783d276922",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "ea8e365c-e022-44ce-ba07-5dabc62d81ac",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "ea8e7adf-e32f-465f-bc44-550c65128ab6",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "eb126e3e-6d2d-4614-9000-d92d5fb4bd58",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "ec186120-7d71-475c-a3e7-3b1d13bedcb1",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "ec808fef-8834-434a-9058-bb3501c12e66",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "ecea728a-db3b-48d3-936b-61cbfe9fb5f1",
+      "net": "ROW_DRV2"
+    },
+    {
+      "uuid": "ed8f3ce1-57c3-4bcd-8f21-a1122ddf26a1",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "edf21f70-2f15-4c19-8b3c-ebd0eb995be2",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "ee1be1d1-23fc-448e-a657-f794a909a62f",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "ee47b4b3-59c8-4eb6-b4f1-967b40192f59",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "f06bb561-1014-4248-8798-1cb03f1c7758",
+      "net": "GND"
+    },
+    {
+      "uuid": "f0a90a1f-b01a-4748-8849-172133420ca0",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "f0eb49d6-9d52-4524-99fb-6bbfe17f9862",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "f1352fc7-5ba5-4b4a-a7c5-0817ed91b306",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "f1c5230f-0e30-4e54-a9b9-e22a1eea6648",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "f2614ef6-a3a0-4233-91e7-3b1b228babad",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "f38fef39-8195-4848-839f-7f4e5ef69c2f",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "f3a4b29c-1528-4789-9221-a303c42e1241",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "f3fb7e56-fef4-4c8f-a16e-f007a49996d3",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "f40d8900-41fb-45b3-9097-38861c63eafd",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "f4455ede-64ae-46fd-b49c-e43d2156b059",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "f44f3dbd-1bdd-4681-b782-d7dedc91622f",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "f4548bf1-ede3-43e7-90f1-264d276422c3",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "f4a34156-c672-4362-8078-a6b81052101b",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "f4adb484-0991-490e-8883-48ee3d624d40",
+      "net": "AMUX_SEL_0"
+    },
+    {
+      "uuid": "f54ca8c2-00de-4276-891e-3dc95ced2999",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "f59dda89-7f5e-4187-93c8-38631bb0b403",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "f7402797-f33f-41fa-a1d3-a7b11a92fa5d",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "f78635d7-410b-4ca7-9657-56939f6d5223",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "f8172cc9-b959-4f3b-bf98-843024135e6f",
+      "net": "AMUX_SEL_2"
+    },
+    {
+      "uuid": "f846eccb-6bf7-4994-af1e-eb1ed2125eba",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "f9226289-9d32-461c-bcc4-f35665559b43",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "f937cd92-e88a-462c-a812-a7621b4a43bc",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "f9bee44e-ef95-4330-9090-9ea0253b246c",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "f9fd8f13-959b-5b8d-9455-90394a85bbc5",
+      "net": "RESET_N"
+    },
+    {
+      "uuid": "fc2d6d67-e31e-4112-b109-a6db1c18de9b",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "fd0c2e60-1a93-49a9-b5c1-3a90cf570398",
+      "net": "APLEX_EN_PIN_0"
+    },
+    {
+      "uuid": "fd177bce-f19a-4cd9-a3e6-ab38dfb17bae",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "fd18a595-bd39-4204-82ef-aa822b273efb",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "fd37b4ae-b534-4df5-a630-9df50ecf671c",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "fd39f44f-7a28-4839-90c0-0545ce07b6ec",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "fe0a2034-85a1-4aa5-a446-55349726a08d",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "fe22bf00-1628-4e3c-9d34-adf9b80f68b2",
+      "net": "APLEX_OUT_PIN_0"
+    },
+    {
+      "uuid": "fe87e97d-ea18-44e8-935c-f4175d797a23",
+      "net": "ROW_DRV0"
+    },
+    {
+      "uuid": "fe910bab-81f9-4766-b388-00534e26bbe4",
+      "net": "BAT_MEAS_EN"
+    },
+    {
+      "uuid": "fec1d7c1-bc73-402e-abcb-1af8857d521b",
+      "net": "BAT_ADC"
+    },
+    {
+      "uuid": "ff10fd5e-5e1f-4fa9-9d2d-e482057d0b28",
+      "net": "USB_5V"
+    },
+    {
+      "uuid": "ff124aab-bdae-406c-bdc1-152cbb1541dc",
+      "net": "AFE_EN"
+    },
+    {
+      "uuid": "ff2956dc-3296-4518-9ad9-8ce99247a1eb",
+      "net": "AMUX_SEL_1"
     }
   ],
   "relocated_cluster": [
@@ -3939,7 +6607,7 @@
   "module_rotation_deg": 0,
   "source_sha256": {
     "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
-    "scripts/build_e73_corner.py": "80612109814383249c26a85a67f5b16d0ef69738c7f1bcf0669a3fbfba176a25",
+    "scripts/build_e73_corner.py": "e3c1c4d2459eef7ad72294295d32b3183696249ee672574bc3ce7de64d427b97",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "scripts/check_schematic_current.py": "908fc7181c616685f2afcc2fa93223518ea83be03ed1a401c7dac8c0dfda33aa",
     "scripts/screen_yeti60_interference.py": "fb3bc69b0a34f40536fb759c07a3448455326829ad26d1aef31959871ccc2ee5",
@@ -4138,9 +6806,9 @@
     "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "e0a319dc63587cedd4e320be824dacc4853f69eaacddfa1191c2d04979c62b71",
     "hardware/e73-usb-repair/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f",
     "hardware/e73-usb-repair/models/TI_RGT16_3x3_EP1p68_dimensioned.step": "6c72a249f019f0c4979772547e69a8c2a9c024001e82cd6d3079b74c651ddecd",
-    "hardware/e73-corner-routing.json": "16a4a01931fc98418908f53487f9ebddc71509404a523b2eb76a143829a7a67b"
+    "hardware/e73-corner-routing.json": "a8ef7cc55e13f7f59f2ca82be1b6579ae70005c1ebfe0f02f4eab226bd484a66"
   },
-  "pcb_sha256": "6c9697a28935754eb68de79e1782736156741987fc95d278658a8fa50aa124b1",
+  "pcb_sha256": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
   "open_gates": [
     "Native electrical routing and DRC/parity",
     "USB reference-ground closure and new C5 harness",

@@ -76,6 +76,6 @@ DXF 保留外轮廓和全部 60 个感应轴心。原宽静电容轴座改成普
 
 [制作总入口](../../BUILD.zh-CN.md) · [材料表](../engineering/materials.zh-CN.md) · [总装配](../engineering/assembly.zh-CN.md)
 
-E73 电气设计仍受 USB 保护、PH 插头检修、电源布局及供应商／实物门槛限制，参见[当前 E73 审查](../audit/e73-review.zh-CN.md)。
+当前 E73 采用右下角模组及 SH3 电池接口；以[右下角审查](../engineering/e73-hhkb-corner.zh-CN.md)为准。完整线束、电源／电池及实物验收仍未关闭。
 
 正式选用的 [M01 定位板及地板修补](../engineering/e73-mechanical-fit-candidate.zh-CN.md)在规定误差下通过三处定位板／壳体及 SW100 净空检查。定位板外沿内收 0.4 mm，内部开孔保持不变。完整机械公差、供方尺寸及实物验收仍未关闭，局部通过不代表允许加工放行。

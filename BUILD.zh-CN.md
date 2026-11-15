@@ -35,3 +35,5 @@ E73 的 USB／充电控制使用 GPIO0 的 EN1／EN2，以及 **GPIO1.13 的 CE_
 [正式 M01 定位板／地板修补及 CAD](docs/engineering/e73-mechanical-fit-candidate.zh-CN.md)已接入装配、校准标识和渲染。[M01 前缺口回归](docs/engineering/e73-mechanical-tolerances.zh-CN.md)保留作对照；完整机械／检修验收仍未完成。
 
 当前右下角 PCB 的固件、构建和刷写边界见[独立说明](docs/testing/e73-corner-firmware.zh-CN.md)。
+
+集中交付目录（目前为工程审查稿，尚未放行下单）：[Markdown 入口](delivery/YETI60-E73/README.zh-CN.md) · [离线网页](delivery/YETI60-E73/index.zh-CN.html)。

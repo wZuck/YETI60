@@ -1,0 +1,71 @@
+References,Required,Planned stock use,Net purchase,Design value,Package,Stock MPN,Purchase specified or candidate MPN,Source rows,Notes
+"C9, C11, C12",3,3,0,100n,C_0402_1005Metric,Samsung CL05B104KO5NNNC,,48,"In inventory: Samsung CL05B104KO5NNNC; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance"
+C10,1,0,1,220p,C_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+C13,1,1,0,1u,C_0402_1005Metric,Samsung CL05A105KA5NQNC,,57,"In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance"
+C30,1,0,1,10u/10V,C_0603_1608Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+C41,1,0,1,22u/10V,C_0805_2012Metric,,Vendor MPN unselected,,No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 4.7 uF at 4.23 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+C42,1,0,1,22u/10V,C_0805_2012Metric,,Vendor MPN unselected,,No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 4.7 uF at 4.5 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+C43,1,0,1,22u/10V,C_0805_2012Metric,,Vendor MPN unselected,,No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 4.7 uF at 4.5 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+C45,1,0,1,22u/10V,C_0805_2012Metric,,Vendor MPN unselected,,No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 5 uF at 3.6 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+C46,1,0,1,22u/10V,C_0805_2012Metric,,Vendor MPN unselected,,No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 5 uF at 3.6 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+C31,1,1,0,100n/16V,C_0402_1005Metric,Samsung CL05B104KO5NNNC,,48,"In inventory: Samsung CL05B104KO5NNNC; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance"
+C32,1,0,1,4.7u/16V,C_0603_1608Metric,,Vendor MPN unselected,,No matched usable stock; purchase required; 0603 X5R/X7R; require effective capacitance >= 2.2 uF at 5.25 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+C40,1,0,1,2.2u/25V,C_0805_2012Metric,,Vendor MPN unselected,,No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance >= 1 uF at 5.25 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside <= 1.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+C44,1,0,1,100n/16V,C_0603_1608Metric,,Vendor MPN unselected,,No matched usable stock; purchase required. Installed height below local PCB underside <= 1 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+C47,1,0,1,10n,C_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+C48,1,1,0,1u/10V,C_0402_1005Metric,Samsung CL05A105KA5NQNC,,57,"In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance"
+D2,1,0,1,STATUS,LED_0603_1608Metric,,0603 status LED; vendor MPN unselected,,No matched usable stock; purchase required
+F1,1,0,1,1A_FAST_0466001_NRHF,Fuse_Littelfuse_0466_1206,,"Littelfuse 0466001.NRHF (1 A fast, not resettable)",,No matched usable stock; purchase required. Installed height below local PCB underside <= 1.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+J1,1,0,1,USB_POWER_IN,JST-SR-4,,"JST SM04B-SRSS-TB(LF)(SN), candidate",,No matched usable stock; purchase required
+J2,1,0,1,PROTECTED_1S_4V2_NTC10K,JST SH 1.0 mm side-entry 3-pin,,JST SM03B-SRSS-TB(LF)(SN),,No matched usable stock; purchase required; SH3 revision: protected PACK+/PACK-/NTC on pins 1/2/3; housing SHR-03V-S. Installed height below local PCB underside <= 3.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+L1,1,0,1,1.5uH_74438336015,"WE-MAPI 3020, 3.0 x 3.0 x 2.0 mm",,Wuerth 74438336015,,No matched usable stock; purchase required. Installed height below local PCB underside <= 2.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+R3,1,0,1,100,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R4,1,0,1,100,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R5,1,0,1,100,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R6,1,0,1,100,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R7,1,0,1,100,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R47,1,0,1,100,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required. Installed height below local PCB underside <= 0.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+R53,1,0,1,100,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R54,1,0,1,100,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R8,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R9,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R10,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R11,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R12,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R13,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R14,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R15,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R16,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R18,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R19,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R20,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R21,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R23,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R24,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R25,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R42,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R43,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R44,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R45,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required. Installed height below local PCB underside <= 0.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+R46,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required. Installed height below local PCB underside <= 0.6 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+R48,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R49,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R50,1,0,1,100k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R17,1,1,0,1k,R_0402_1005Metric,Uniroyal 0402WGF1001TCE,,51,"In inventory: Uniroyal 0402WGF1001TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly"
+R26,1,1,0,10k,R_0402_1005Metric,Uniroyal 0402WGF1002TCE,,52,"In inventory: Uniroyal 0402WGF1002TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly"
+R32,1,0,1,2.2k,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R40,1,0,1,2.21k/1%,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R41,1,0,1,7.50k/1%,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+"R51, R52",2,0,2,1M/1%,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R55,1,0,1,69.8k/1%,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+R56,1,0,1,1.69k/1%,R_0402_1005Metric,,Vendor MPN unselected,,No matched usable stock; purchase required
+SW1,1,0,1,EVQPUC02K_RESET,Panasonic_EVQPUL_EVQPUC,,Panasonic EVQPUC02K,,No matched usable stock; purchase required
+SW100,1,0,1,JS102011SAQN_POWER,SW_SPDT_CK_JS102011SAQN,,C&K JS102011SAQN,,No matched usable stock; purchase required
+U1,1,0,1,E73-2G4M08S1C,E73-2G4M08S1C,,Ebyte E73-2G4M08S1C,,No matched usable stock; purchase required
+"U2, U4",2,0,2,74HC4051,TSSOP16,,"Nexperia 74HC4051PW,118",,No matched usable stock; purchase required
+U3,1,0,1,OPA350,SOIC-8_3.9x4.9mm_P1.27mm,,TI OPA350UA,,No matched usable stock; purchase required
+U5,1,0,1,BQ24074RGT,VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm,,TI BQ24074RGTR,,No matched usable stock; purchase required. Installed height below local PCB underside <= 1.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+U6,1,0,1,TPS63031DSK,WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm,,TI TPS63031DSKR,,No matched usable stock; purchase required. Installed height below local PCB underside <= 1 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide.
+"U7, U8",2,0,2,TPS22919DCK,SOT-363_SC-70-6,,TI TPS22919DCKR,,No matched usable stock; purchase required
+J4,1,0,1,USB_C5_INPUT,JST SH 1.0 mm side-entry 4-pin,,JST SM04B-SRSS-TB(LF)(SN),,"No inventory credit; USB repair candidate, fabrication release still on hold. Installed height below local PCB underside <= 3.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide."
+J5,1,0,1,USB_POWER_OUT,JST SH 1.0 mm side-entry 2-pin,,JST SM02B-SRSS-TB(LF)(SN),,"No inventory credit; USB repair candidate, fabrication release still on hold. Installed height below local PCB underside <= 3.2 mm including solder/seating; body and placement XY growth <= 0.1 mm per direction; remaining tolerances in local fit guide."

@@ -27,7 +27,7 @@ Coordinates are PCB top-view coordinates in millimetres, including back-mounted 
 - Restore the old upper-right wing to the original straight PCB edge in both the board and frozen outline library.
 - Replace USB data routing with a paired B.Cu path avoiding the retained side-clamp mask openings, and one ordinary through-via per data net to a short F.Cu module launch. The planned pair has 0.30 mm trace width and 0.50 mm centre spacing. These dimensions are not a certified 90 Ω stack-up. Fresh native DRC, reference connectivity and impedance review are required after all routing is complete.
 - Move the former right-edge COL14 backbone from In2.Cu to In1.Cu between existing through-via connections. This frees the adjacent In2 ground reference corridor without changing an effective sensor land or its net. The exact retired primitives and replacement path are recorded in the replay specification and checked against the actual PCB.
-- Provide 33 placement/USB escape vias and 82 routed/repair vias: 115 new ordinary 0.50/0.30 mm through-vias, both faces tented, outside SMD copper. This excludes existing source vias and the separately documented power exposed-pad vias. Signal additions use B.Cu, In2.Cu and In1.Cu; the front sensing copper remains unchanged.
+- Provide 33 placement/USB escape vias and 81 routed/repair vias: 114 new ordinary 0.50/0.30 mm through-vias, both faces tented, outside SMD copper. This excludes existing source vias and the separately documented power exposed-pad vias. Signal additions use B.Cu, In2.Cu and In1.Cu; the front sensing copper remains unchanged.
 - Preserve the SH3 battery repair and current power-stage repair. Their earlier results do not constitute whole-board acceptance of the relocated module.
 
 ## Antenna and assembly limits
@@ -42,13 +42,13 @@ J4/J5 and C5 connector positions are retained. Do not change the C5 board. Exist
 
 ## Current checkpoint
 
-The [replayable routing patch](../../hardware/e73-corner-routing.json) contains 455 traces and 82 vias. Native routing has zero violation errors, zero unconnected items and zero schematic-parity differences. Fabrication and complete assembly release remain open. Dangling-copper, via-centering and missing-courtyard warnings remain visible in the native report; this is not a zero-warning claim.
+The [replayable routing patch](../../hardware/e73-corner-routing.json) contains 446 traces and 81 vias. Native routing has zero violation errors, zero unconnected items and zero schematic-parity differences. Fabrication and complete assembly release remain open. Dangling copper and off-centre via connections have been repaired. The 100 remaining courtyard warnings are checked against non-purchased geometry and the procurement table; purchased-part courtyard omissions fail the checker. This is not a zero-warning claim.
 
 | Gate | Current evidence and disposition |
 |---|---|
 | Effective keys and module lands | [Placement proof](../../hardware/e73-hhkb-corner/audit/placement-check.json): 60 effective positions, all 43 module pad roles and transformed coordinates retained |
 | Strict native DRC | Same report: zero violation errors and zero schematic-parity differences; zero unconnected items; mechanical/supplier/physical gates remain open |
-| Ordinary vias | Same report: 33 placement vias plus 82 routing/repair vias; all 0.50/0.30 mm through-vias, both faces tented, outside SMD copper |
+| Ordinary vias | Same report: 33 placement vias plus 81 routing/repair vias; all 0.50/0.30 mm through-vias, both faces tented, outside SMD copper |
 | USB and ground | [Actual-copper screen](../../hardware/e73-hhkb-corner/audit/USB-reference.json): paired-route reference, local ground stitches and whole-ground connectivity screened successfully; no impedance or physical USB acceptance |
 | Models and assembly bounds | [J4/J5/C32 models and feet](../../hardware/e73-hhkb-corner/audit/local-models.json), [body/case/plate envelopes](../../hardware/e73-hhkb-corner/audit/corner-fit.json); project-bound XY separation covers 60 NiZ housings, six stabilizer sides, three wire bands and 28 mounts; supplier plastic geometry and harness motion remain open |
 | Frozen power geometry | [Native-saved geometry and fault tests](../../hardware/e73-usb-repair/audit/power-geometry-faults.json) passed; relocated whole-board power connectivity/returns still require final routing acceptance |
