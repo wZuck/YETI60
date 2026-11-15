@@ -37,3 +37,5 @@ The legacy `scripts/run_e73_review.py` workflow still targets the pre-migration 
 For the relocated PCB, use the [candidate firmware build and flashing guide](docs/testing/e73-corner-firmware.md).
 
 Consolidated delivery folder (engineering review draft; order release remains open): [Markdown entry](delivery/YETI60-E73/README.md) · [offline web index](delivery/YETI60-E73/index.html).
+
+The current corner PCB has a [75-part soldering and bench guide](docs/assembly/e73-corner/soldering.md) and [web edition](docs/assembly/e73-corner/soldering.html), including calibration coordinates. Complete closed-case harness and assembly explosion remain open.

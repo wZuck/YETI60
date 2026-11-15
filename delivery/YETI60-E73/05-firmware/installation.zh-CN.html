@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E73 右下角 PCB 对应固件</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="installation.html">English</a> | <a href="installation.zh-CN.html">中文</a></p>
+<h1 id="e73-右下角-pcb-对应固件">E73 右下角 PCB 对应固件</h1>
+<p>使用 <code>hardware/e73-hhkb-corner/firmware/</code> 内的 CORNER-03 构建，包括 <code>manifest.json</code>、<code>releases/normal/yeti60-e73.hex</code> 正常版及 <code>releases/calibrator/yeti60-e73.hex</code> 校准版。根目录迁移前固件和 Raytac 固件不匹配本板的校准身份。<a href="../06-validation/corner-review.zh-CN.html">右下角审查</a>中的设计暂停放行条件仍有效。</p>
+<p>当前原生布线、USB 参考地及有界装配检查完成后，重现方式为：</p>
+<pre><code class="language-sh">uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts/build_e73_corner_firmware.py
+python3 scripts/check_e73_corner_firmware.py
+</code></pre>
+<p>构建需要锁定版本的 ZMK 工作区、固定摘要的 Docker 镜像，以及正在运行的 Docker 服务。脚本在忽略目录内隔离构建，检查两份 ARM 链接产物，运行核心、校准、USB、GPIO、扫描、按键事件、NVS、恢复及 RC 灵敏度测试，并执行链接目标和套件故障注入测试，通过后才复制固件。<code>--prepare-only</code> 仅准备引脚契约；<code>--development-build</code> 仅在忽略目录构建测试，不发布镜像。</p>
+<p><strong>首次通过 SWD 写入时使用 HEX</strong>，其中包含将 NFC 引脚释放为 GPIO 的 UICR 记录，BIN 不包含这项显式记录。应用从地址零开始，不假定存在 UF2 引导程序。连接探针前必须核对自定义 J3 针序。按<a href="https://github.com/wZuck/YETI60/blob/master/firmware/target/README.zh-CN.md">现有校准步骤</a>操作，但替换为本候选版 HEX：先刷校准版，完成全部 60 键并保存，再刷正常版，保留最后 64 KiB 设置分区。全片擦除会丢失校准和蓝牙配对；PCB 指纹变化必须重新校准。</p>
+<p>两份固件均使用内部低频 RC 时钟和 REG1 LDO。主机完成配置后，可同时充电和使用 USB HID，并优先走 USB；挂起时关闭充电器输入，拔线后允许回退蓝牙。这些是链接产物及主机模型检查，尚无实物 USB、蓝牙、静电容、充电、温升或无线验收。电量上报仍待电池及测量集成完成后启用。被动 RC 模型采用假定寄生参数，并非 PCB／NiZ 提取电容。</p>
+<p><a href="manifest.json">固件清单</a> · <a href="releases/normal/yeti60-e73.hex">正常版 HEX</a> · <a href="releases/calibrator/yeti60-e73.hex">校准版 HEX</a></p>
+<h2 id="使用-j-link-首次刷写">使用 J-Link 首次刷写</h2>
+<p>安装 <a href="https://kb.segger.com/J-Link_Commander">SEGGER J-Link 软件</a>，探针使用 3.3 V 目标逻辑。通过已检查的电源路径供电，打开 SW100，先确认 3.3 V。J3 的 1 脚是 VTref，不是探针供电输入；2／3／4／5／6 分别为 SWDIO／GND／SWDCLK／RESET_N／GND。不要同时接入两个互相竞争的 5 V 电源。</p>
+<p>在包含本版固件清单及 <code>releases/</code> 的目录打开终端：集中交付版为 <code>05-firmware/</code>，仓库内为 <code>hardware/e73-hhkb-corner/firmware/</code>。启动 Commander，Windows 程序名为 <code>JLink.exe</code>：</p>
+<pre><code class="language-sh">JLinkExe -device nRF52840_xxAA -if SWD -speed 1000 -autoconnect 1
+</code></pre>
+<p>在提示符下写入校准版：</p>
+<pre><code class="language-text">r
+h
+loadfile releases/calibrator/yeti60-e73.hex
+r
+g
+q
+</code></pre>
+<p>确认下载／校验成功。这是按工具文档给出的命令，不是本板的实物刷写通过记录。出厂锁定模组可能需要恢复，但恢复／全片擦除会清空设置，完成校准后的更新不得这样操作。代码分区为 <code>0x00000～0xEFFFF</code>，必须保留 <code>0xF0000～0xFFFFF</code> 的设置。更新前检查烧录器擦除计划并备份设置；若工具要求全片擦除，先停止并解决保留问题。HEX 已包含所需 UICR 记录，不会出现 UF2 拖拽盘。</p>
+<h2 id="逐键采样并安装正常版">逐键采样并安装正常版</h2>
+<p>连接电脑 USB 前物理断开台架电源。校准版提供 USB 日志／命令行接口，在串口终端打开对应端口，可设置为 115200、8N1、无硬件流控。用另一把键盘输入命令。先安装定位板、胶碗和弹簧；用手触摸裸电极不能替代完整机构的校准。</p>
+<p>使用 <a href="../04-assembly/calibration-keys.csv">60 键行列坐标表</a>及正面图。空格仅中央静电容位置参与采样，卫星轴侧柱是被动机构。</p>
+<p><img src="../04-assembly/images/calibration.zh-CN.svg" alt="校准行列坐标" /></p>
+<ol>
+<li>全部按键释放，执行 <code>yeti_calibrate release</code>，等待 128 帧完成提示。</li>
+<li><strong>先完全按住</strong>一个键，再输入对应命令。图中 <code>0,0</code> 位置使用 <code>yeti_calibrate press 0 0</code>。保持到 128 样本完成提示再松开，依图对全部 60 个有效位置重复操作。</li>
+<li>执行 <code>yeti_calibrate status</code>。样本不足、区间重叠、饱和或保护量不合格时先排查，不绕过保护。全部按键通过后才执行 <code>yeti_calibrate save</code>。</li>
+<li>按相同电压和极性要求重新接 SWD，使用上述流程写入 <code>releases/normal/yeti60-e73.hex</code>，保留设置分区；不要混用别的交付包中的正常版。</li>
+<li>检查 USB 按下／释放、修饰键、Fn 和大键边缘回弹，再测试蓝牙配对、重连、唤醒和 USB 优先。轴座、胶碗、弹簧、定位板叠层或 PCB 指纹变化后必须重新校准。</li>
+</ol>
+<p>记录真实结果；交付的主机测试不能代替这些样机测试。</p>
+</main></html>

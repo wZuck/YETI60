@@ -13,11 +13,11 @@
 | 01 | [PCB 下单文件](01-pcb/YETI60-E73-gerbers-REVIEW.zip) |
 | 02 | [外壳及定位板](02-mechanical/bottom.stl) |
 | 03 | [材料及库存](03-bom/materials.zh-CN.md) |
-| 04 | [机构装配](04-assembly/key-mechanism.zh-CN.md) |
+| 04 | [焊接与台架装配](04-assembly/soldering.zh-CN.html) |
 | 05 | [固件与安装](05-firmware/installation.zh-CN.md) |
 | 06 | [验收与边界](06-validation/corner-review.zh-CN.md) |
 
-完整九线线束及理线件、最终装配图和逐步焊接网页仍需同步；电源／电池与制造复核、实物 USB／蓝牙／静电容／温升验收未完成。当前机构指南不是整机装配放行。Gerber ZIP 仅供审查，不能当作已放行订单。
+完整九线线束及理线件、最终整机装配图仍需同步；电源／电池与制造复核、实物 USB／蓝牙／静电容／温升验收未完成。当前机构指南不是整机装配放行。Gerber ZIP 仅供审查，不能当作已放行订单。
 
 [Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [Bottom STEP](02-mechanical/bottom.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase.zh-CN.csv) · [Checksums](manifest.json)
 

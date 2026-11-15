@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Firmware for the E73 lower-right PCB</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p><a href="installation.html">English</a> | <a href="installation.zh-CN.html">Chinese</a></p>
+<h1 id="firmware-for-the-e73-lower-right-pcb">Firmware for the E73 lower-right PCB</h1>
+<p>Use the CORNER-03 build under <code>hardware/e73-hhkb-corner/firmware/</code>, with <code>manifest.json</code> and both <code>releases/normal/yeti60-e73.hex</code> and <code>releases/calibrator/yeti60-e73.hex</code>. Root-level pre-migration images and Raytac images do not match this PCB calibration identity. The <a href="../06-validation/corner-review.html">corner review</a> controls the design hold.</p>
+<p>Reproduce after the current native routing, USB-reference and bounded-fit checks:</p>
+<pre><code class="language-sh">uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts/build_e73_corner_firmware.py
+python3 scripts/check_e73_corner_firmware.py
+</code></pre>
+<p>The builder requires the pinned ZMK workspace, its pinned Docker image and a running Docker daemon. It builds in an ignored isolated root, checks both linked ARM images, runs the core/calibration/USB/GPIO/scan/key-pipeline/NVS/recovery and RC sensitivity suite, and runs linked-target and suite mutation tests before copying images. <code>--prepare-only</code> prepares the pin contract without building. <code>--development-build</code> builds/tests in the ignored workspace and publishes no images.</p>
+<p>Use <strong>HEX for initial SWD programming</strong>: it also releases NFC pins as GPIO through UICR. The BIN omits that explicit record. Application address is zero; no UF2 bootloader is assumed. Confirm the custom J3 pinout before connecting a probe. Follow the <a href="https://github.com/wZuck/YETI60/blob/master/firmware/target/README.md#calibration-and-operation">existing calibration procedure</a>, substituting these candidate HEX files. Program calibrator first, complete all 60 keys, save, then program normal while preserving the final 64 KiB settings partition. Full erase loses calibration and BLE bonds. A changed PCB fingerprint requires fresh calibration.</p>
+<p>Both images use internal RC low-frequency clock and REG1 LDO. After host configuration, charging and USB HID operate together with USB priority; suspend disables charger input, and detach permits BLE fallback. These are linked-binary and host-model checks. No unit has passed physical USB/BLE/EC, battery charging, thermal or RF tests. Battery reporting remains disabled pending pack/measurement integration. The passive RC model uses assumed parasitics, not extracted PCB/NiZ capacitance.</p>
+<p><a href="manifest.json">Manifest</a> · <a href="releases/normal/yeti60-e73.hex">Normal HEX</a> · <a href="releases/calibrator/yeti60-e73.hex">Calibrator HEX</a></p>
+<h2 id="first-programming-with-a-j-link">First programming with a J-Link</h2>
+<p>Install the <a href="https://kb.segger.com/J-Link_Commander">SEGGER J-Link software</a>, and use a probe with 3.3 V target logic. Power the board through the verified supply path, switch SW100 on and confirm 3.3 V before connecting. J3 pin 1 is VTref, not a probe power input; pins 2/3/4/5/6 are SWDIO/GND/SWDCLK/RESET_N/GND. Do not connect two competing 5 V sources.</p>
+<p>Open a terminal in the directory containing this image manifest and <code>releases/</code>: <code>05-firmware/</code> in the delivery folder, or <code>hardware/e73-hhkb-corner/firmware/</code> in the repository. Start Commander (Windows uses <code>JLink.exe</code>):</p>
+<pre><code class="language-sh">JLinkExe -device nRF52840_xxAA -if SWD -speed 1000 -autoconnect 1
+</code></pre>
+<p>At its prompt, program the calibrator:</p>
+<pre><code class="language-text">r
+h
+loadfile releases/calibrator/yeti60-e73.hex
+r
+g
+q
+</code></pre>
+<p>Check that download/verification succeeds. These are documented Commander commands, not a physical flash test of this board. A locked factory module may require recovery; recovery/full-chip erase loses settings. Do not use it for an update after calibration. The code partition is <code>0x00000–0xEFFFF</code>; preserve settings at <code>0xF0000–0xFFFFF</code>. Inspect the programmer's erase plan and back up settings before updating. If it proposes a full erase, stop and resolve preservation first. HEX includes the required UICR record; no UF2 drive is expected.</p>
+<h2 id="capture-every-key-and-install-normal-firmware">Capture every key and install normal firmware</h2>
+<p>Disconnect the bench supply before connecting the host USB cable. Calibrator exposes the USB logging/shell interface. Open its serial port in a terminal; 115200, 8N1 and no hardware flow control is a suitable terminal setting. Use another keyboard to enter commands. First assemble the plate, domes and springs; finger-touching bare electrodes is not the final mechanism's calibration.</p>
+<p>Use the <a href="../04-assembly/calibration-keys.csv">60-key row/column sheet</a> and front-view diagram. Only the central spacebar EC position is active; stabilizer side stems are passive.</p>
+<p><img src="../04-assembly/images/calibration.svg" alt="Calibration coordinates" /></p>
+<ol>
+<li>Release every key, run <code>yeti_calibrate release</code>, and wait for the 128-frame completion message.</li>
+<li>Hold one key fully down <strong>before</strong> running its command. For the diagram's <code>0,0</code> position use <code>yeti_calibrate press 0 0</code>. Keep it held until the 128-sample completion message, then release. Repeat the corresponding command for all 60 active positions.</li>
+<li>Run <code>yeti_calibrate status</code>. Resolve insufficient samples, overlap, saturation or guard failures; do not bypass them. Run <code>yeti_calibrate save</code> only after every key passes.</li>
+<li>Reconnect the SWD probe with the same voltage/polarity precautions and program <code>releases/normal/yeti60-e73.hex</code> using the sequence above, preserving the settings partition. Do not mix a normal image from another bundle.</li>
+<li>Confirm USB key-down/release, modifiers, Fn and large-key edge return; then test BLE pairing, reconnect, wake and USB priority. A changed housing/dome/spring/plate stack or PCB fingerprint requires recalibration.</li>
+</ol>
+<p>Record real results; the delivered host tests do not replace these unit tests.</p>
+</main></html>

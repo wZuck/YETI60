@@ -37,3 +37,5 @@ E73 的 USB／充电控制使用 GPIO0 的 EN1／EN2，以及 **GPIO1.13 的 CE_
 当前右下角 PCB 的固件、构建和刷写边界见[独立说明](docs/testing/e73-corner-firmware.zh-CN.md)。
 
 集中交付目录（目前为工程审查稿，尚未放行下单）：[Markdown 入口](delivery/YETI60-E73/README.zh-CN.md) · [离线网页](delivery/YETI60-E73/index.zh-CN.html)。
+
+当前右下角主板的[75 件元件逐步焊接与台架指南](docs/assembly/e73-corner/soldering.zh-CN.md)及[网页](docs/assembly/e73-corner/soldering.zh-CN.html)已生成，包含逐键校准坐标。完整关壳线束和整机爆炸图仍待验收。

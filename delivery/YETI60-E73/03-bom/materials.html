@@ -1,0 +1,1190 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>materials</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="materials.zh-CN.html">Chinese</a></p>
+<h2 id="complete-materials-for-one-keyboard">Complete materials for one keyboard</h2>
+<p><strong>E73 design hold:</strong> the list below now uses NiZ, a 1.6 mm plate and 28 mounting sets. Native USB routing and the SH3 battery landing are repaired; complete harness, power/battery and manufacturing review remain open. Read the <a href="https://github.com/wZuck/YETI60/blob/master/BUILD.md">current E73 entry</a> first; use the <a href="https://github.com/wZuck/YETI60/blob/master/variants/raytac/BUILD.md">separate Raytac list</a> for that candidate. Retain the already-made C5 daughterboard.</p>
+<p>Quantities below are <strong>net installed quantities for one complete keyboard, without spares</strong>. Buy populated mainboard/daughterboard assemblies or their loose parts; do not count the same components twice. Unselected suppliers/MPNs are identified explicitly. A known quantity does not constitute procurement release.</p>
+<p><strong>Fabrication constraint: JLC ordinary four-layer FR-4 only. The previous blind-via/filled-and-capped design has been converted to mechanically drilled through vias; do not order the old HDI files.</strong> Use the latest fabrication review after conversion. No second controller, per-key diodes or MX hot-swap sockets are required.</p>
+<h3 id="use-existing-inventory-first">Use existing inventory first</h3>
+<p>The supplied order-derived inventory covers <strong>8</strong> of the 75 current corner mainboard parts by nominal value/package, leaving <strong>67</strong> to purchase for one keyboard. Count the actual unused stock and qualify capacitor effective capacitance before assembly. In-transit items are excluded. The original workbook is unchanged and is not published.</p>
+<table>
+<thead>
+<tr>
+<th>Stock MPN</th>
+<th>References</th>
+<th style="text-align:right">Planned use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Samsung CL05B104KO5NNNC, 100 nF / 16 V / X7R / 0402</td>
+<td>C9, C11, C12, C31</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td>Samsung CL05A105KA5NQNC, 1 uF / 25 V / X5R / 0402</td>
+<td>C13, C48</td>
+<td style="text-align:right">2</td>
+</tr>
+<tr>
+<td>Uniroyal 0402WGF1001TCE, 1 kohm / 1% / 0402</td>
+<td>R17</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>Uniroyal 0402WGF1002TCE, 10 kohm / 1% / 0402</td>
+<td>R26</td>
+<td style="text-align:right">1</td>
+</tr>
+</tbody>
+</table>
+<p>Use the <a href="mainboard-purchase.csv">stock-adjusted mainboard purchase CSV</a> and <a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/inventory-allocation.md">inventory decisions</a> alongside the full preparation list below. Other assemblies and mechanical materials still require procurement or compatibility confirmation. A populated C5 includes its seven parts; if self-assembling a bare C5 instead, two stocked 5.1 kohm resistors can supply C5 R1/R2. The stock nice!nano, 110 mAh cell, 0805 capacitors and short PCB screws do not directly replace the specified parts. No board or case dimensions change for this allocation.</p>
+<h3 id="which-pcbs-to-fabricate">Which PCBs to fabricate</h3>
+<p>Quantities are net boards per keyboard; the fabricator's minimum order quantity is separate. Fabricate <strong>one mainboard</strong> when buying a populated C5, or <strong>one mainboard plus one C5 JSH bare board</strong> when soldering the daughterboard yourself.</p>
+<table>
+<thead>
+<tr>
+<th>PCB</th>
+<th style="text-align:right">Quantity</th>
+<th>Specification</th>
+<th>Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YETI60 E73 mainboard</td>
+<td style="text-align:right">1</td>
+<td>285.0 × 94.6 mm restored straight-edge outline; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only</td>
+<td><a href="../01-pcb/source/EC60-nRF52840.kicad_pcb">Current KiCad PCB</a>, <a href="../06-validation/corner-review.html">migration gates</a>; no fabrication package released for this revision; do not substitute old Gerbers</td>
+</tr>
+<tr>
+<td>Unified Daughterboard C5 JSH</td>
+<td style="text-align:right">1 only for self-assembly; 0 if purchased populated</td>
+<td>18.0 x 16.5 mm; <strong>four layers</strong>, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle</td>
+<td><a href="https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb">Pinned upstream KiCad PCB</a>, <a href="https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip">download pinned Gerber/drill ZIP</a>, <a href="https://github.com/wZuck/YETI60/blob/master/hardware/bom/daughterboard.csv">seven loose parts</a></td>
+</tr>
+</tbody>
+</table>
+<p>No fabrication package is released for this corner mainboard. Do not substitute an old mainboard archive. C5 uses separate, unchanged four-layer files; do not order it as two layers. Reuse the already-made C5. Final stencil and supplier acceptance remain open. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and five routing guides are mechanical parts, not additional PCBs. For self-reflow, use mainboard <strong>F.Paste and B.Paste</strong> (E73 on front, other parts on back) and C5 <strong>F.Paste</strong> with a qualified stencil/profile.</p>
+<h3 id="electronic-assemblies-battery-and-cables">Electronic assemblies, battery and cables</h3>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th style="text-align:right">Quantity</th>
+<th>Detailed specification and included items</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mainboard PCB</td>
+<td style="text-align:right">1</td>
+<td>Current YETI60 native PCB; ordinary four-layer FR-4, target nominal thickness 1.6 mm; preserve EC electrodes and mounting centers; use the restored straight right edge; CAD envelope 1.6062 mm; wait for this revision to be released with matching fabrication files</td>
+</tr>
+<tr>
+<td>Mainboard fitted parts</td>
+<td style="text-align:right">75</td>
+<td>Every reference, value, package and specified/candidate MPN is listed below; included if buying a populated mainboard</td>
+</tr>
+<tr>
+<td>USB daughterboard</td>
+<td style="text-align:right">1 populated</td>
+<td>Unified Daughterboard C5 JSH, commit <code>2b6c52a</code>; seven fitted components including USB-C receptacle and SH header; retain C rather than S</td>
+</tr>
+<tr>
+<td>Internal USB harness</td>
+<td style="text-align:right">1 four-wire</td>
+<td>AWG28 stranded copper, insulation OD ≤0.8 mm; two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts; C5 to J4: 1-to-1 power, 2-to-2 D−, 3-to-3 D+, 4-to-4 GND. Complete new routing remains unqualified; do not cut to the old 150 mm figure</td>
+</tr>
+<tr>
+<td>J5-to-J1 power bridge</td>
+<td style="text-align:right">1 two-wire</td>
+<td>AWG28, insulation OD ≤0.8 mm; one SHR-02V-S, one SHR-04V-S and four SSH-003T-P0.2-H contacts; J5.1→J1.1 and J5.2→J1.4, J1.2/J1.3 empty; final lengths and retention remain open</td>
+</tr>
+<tr>
+<td>Battery assembly</td>
+<td style="text-align:right">1 pack</td>
+<td>Custom single-cell YETI60-BAT-1600-1S, target minimum 1600 mAh; complete pack &lt;=85 x 43 x 4.8 mm including PCM, sensors, wrap, tabs and growth; independent thermal interruption, actual charging window within 15–43 C; supplier must accept &gt;=500 mA continuous charging capability and the 4.16–4.23 V regulation range</td>
+</tr>
+<tr>
+<td>Battery leads and plug</td>
+<td style="text-align:right">1 three-wire set, included in pack</td>
+<td>AWG28, OD &lt;=0.8 mm; one SHR-03V-S housing and three SSH-003T-P0.2-H contacts, mating with SM03B-SRSS-TB at 1.00 mm pitch; pin 1 red positive, 2 black negative, 3 yellow separate 10k NTC. Independent thermal protection and third-wire NTC feedback are separate requirements; supplier-signed envelope/lead-exit drawing required</td>
+</tr>
+<tr>
+<td>External USB data cable</td>
+<td style="text-align:right">1</td>
+<td>USB-C at keyboard; USB-A or USB-C at host as appropriate; data capable, not charge-only</td>
+</tr>
+</tbody>
+</table>
+<h3 id="every-fitted-mainboard-component">Every fitted mainboard component</h3>
+<p>0402 resistors: 1%, &gt;=50 mW; fit 0-ohm links where specified. The 220 pF capacitor is C0G; others X5R/X7R, 10% or better, &gt;=10 V (16 V where specified), with effective DC-biased capacitance to be qualified. Values below are current circuit requirements; unselected MPNs are not frozen parts.</p>
+<table>
+<thead>
+<tr>
+<th>References</th>
+<th style="text-align:right">Quantity</th>
+<th>Value/function</th>
+<th>Package</th>
+<th>Specified/candidate MPN</th>
+<th style="text-align:right">Planned stock</th>
+<th style="text-align:right">To buy</th>
+<th>Stock and qualification notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C9, C11, C12</td>
+<td style="text-align:right">3</td>
+<td>100n</td>
+<td>C_0402_1005Metric</td>
+<td>Samsung CL05B104KO5NNNC</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">0</td>
+<td>In inventory: Samsung CL05B104KO5NNNC; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance</td>
+</tr>
+<tr>
+<td>C10</td>
+<td style="text-align:right">1</td>
+<td>220p</td>
+<td>C_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>C13</td>
+<td style="text-align:right">1</td>
+<td>1u</td>
+<td>C_0402_1005Metric</td>
+<td>Samsung CL05A105KA5NQNC</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+<td>In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance</td>
+</tr>
+<tr>
+<td>C30</td>
+<td style="text-align:right">1</td>
+<td>10u/10V</td>
+<td>C_0603_1608Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>C41</td>
+<td style="text-align:right">1</td>
+<td>22u/10V</td>
+<td>C_0805_2012Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance &gt;= 4.7 uF at 4.23 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside &lt;= 1.6 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>C42</td>
+<td style="text-align:right">1</td>
+<td>22u/10V</td>
+<td>C_0805_2012Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance &gt;= 4.7 uF at 4.5 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside &lt;= 1.6 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>C43</td>
+<td style="text-align:right">1</td>
+<td>22u/10V</td>
+<td>C_0805_2012Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance &gt;= 4.7 uF at 4.5 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside &lt;= 1.6 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>C45</td>
+<td style="text-align:right">1</td>
+<td>22u/10V</td>
+<td>C_0805_2012Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance &gt;= 5 uF at 3.6 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside &lt;= 1.6 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>C46</td>
+<td style="text-align:right">1</td>
+<td>22u/10V</td>
+<td>C_0805_2012Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance &gt;= 5 uF at 3.6 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside &lt;= 1.6 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>C31</td>
+<td style="text-align:right">1</td>
+<td>100n/16V</td>
+<td>C_0402_1005Metric</td>
+<td>Samsung CL05B104KO5NNNC</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+<td>In inventory: Samsung CL05B104KO5NNNC; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance</td>
+</tr>
+<tr>
+<td>C32</td>
+<td style="text-align:right">1</td>
+<td>4.7u/16V</td>
+<td>C_0603_1608Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required; 0603 X5R/X7R; require effective capacitance &gt;= 2.2 uF at 5.25 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside &lt;= 1 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>C40</td>
+<td style="text-align:right">1</td>
+<td>2.2u/25V</td>
+<td>C_0805_2012Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required; 0805 X5R/X7R; require effective capacitance &gt;= 1 uF at 5.25 V including tolerance/temperature/aging; nominal value alone is insufficient. Installed height below local PCB underside &lt;= 1.6 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>C44</td>
+<td style="text-align:right">1</td>
+<td>100n/16V</td>
+<td>C_0603_1608Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required. Installed height below local PCB underside &lt;= 1 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>C47</td>
+<td style="text-align:right">1</td>
+<td>10n</td>
+<td>C_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>C48</td>
+<td style="text-align:right">1</td>
+<td>1u/10V</td>
+<td>C_0402_1005Metric</td>
+<td>Samsung CL05A105KA5NQNC</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+<td>In inventory: Samsung CL05A105KA5NQNC; recorded received pool 50 (shared by source row, do not sum per BOM row); count before assembly; qualify effective capacitance</td>
+</tr>
+<tr>
+<td>D2</td>
+<td style="text-align:right">1</td>
+<td>STATUS</td>
+<td>LED_0603_1608Metric</td>
+<td>0603 status LED; vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>F1</td>
+<td style="text-align:right">1</td>
+<td>1A_FAST_0466001_NRHF</td>
+<td>Fuse_Littelfuse_0466_1206</td>
+<td>Littelfuse 0466001.NRHF (1 A fast, not resettable)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required. Installed height below local PCB underside &lt;= 1.2 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>J1</td>
+<td style="text-align:right">1</td>
+<td>USB_POWER_IN</td>
+<td>JST-SR-4</td>
+<td>JST SM04B-SRSS-TB(LF)(SN), candidate</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>J2</td>
+<td style="text-align:right">1</td>
+<td>PROTECTED_1S_4V2_NTC10K</td>
+<td>JST SH 1.0 mm side-entry 3-pin</td>
+<td>JST SM03B-SRSS-TB(LF)(SN)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required; SH3 revision: protected PACK+/PACK-/NTC on pins 1/2/3; housing SHR-03V-S. Installed height below local PCB underside &lt;= 3.2 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>L1</td>
+<td style="text-align:right">1</td>
+<td>1.5uH_74438336015</td>
+<td>WE-MAPI 3020, 3.0 x 3.0 x 2.0 mm</td>
+<td>Wuerth 74438336015</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required. Installed height below local PCB underside &lt;= 2.2 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>R3</td>
+<td style="text-align:right">1</td>
+<td>100</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R4</td>
+<td style="text-align:right">1</td>
+<td>100</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R5</td>
+<td style="text-align:right">1</td>
+<td>100</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R6</td>
+<td style="text-align:right">1</td>
+<td>100</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R7</td>
+<td style="text-align:right">1</td>
+<td>100</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R47</td>
+<td style="text-align:right">1</td>
+<td>100</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required. Installed height below local PCB underside &lt;= 0.6 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>R53</td>
+<td style="text-align:right">1</td>
+<td>100</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R54</td>
+<td style="text-align:right">1</td>
+<td>100</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R8</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R9</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R10</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R11</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R12</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R13</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R14</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R15</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R16</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R18</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R19</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R20</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R21</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R23</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R24</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R25</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R42</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R43</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R44</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R45</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required. Installed height below local PCB underside &lt;= 0.6 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>R46</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required. Installed height below local PCB underside &lt;= 0.6 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>R48</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R49</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R50</td>
+<td style="text-align:right">1</td>
+<td>100k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R17</td>
+<td style="text-align:right">1</td>
+<td>1k</td>
+<td>R_0402_1005Metric</td>
+<td>Uniroyal 0402WGF1001TCE</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+<td>In inventory: Uniroyal 0402WGF1001TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly</td>
+</tr>
+<tr>
+<td>R26</td>
+<td style="text-align:right">1</td>
+<td>10k</td>
+<td>R_0402_1005Metric</td>
+<td>Uniroyal 0402WGF1002TCE</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+<td>In inventory: Uniroyal 0402WGF1002TCE; recorded received pool 100 (shared by source row, do not sum per BOM row); count before assembly</td>
+</tr>
+<tr>
+<td>R32</td>
+<td style="text-align:right">1</td>
+<td>2.2k</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R40</td>
+<td style="text-align:right">1</td>
+<td>2.21k/1%</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R41</td>
+<td style="text-align:right">1</td>
+<td>7.50k/1%</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R51, R52</td>
+<td style="text-align:right">2</td>
+<td>1M/1%</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">2</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R55</td>
+<td style="text-align:right">1</td>
+<td>69.8k/1%</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>R56</td>
+<td style="text-align:right">1</td>
+<td>1.69k/1%</td>
+<td>R_0402_1005Metric</td>
+<td>Vendor MPN unselected</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>SW1</td>
+<td style="text-align:right">1</td>
+<td>EVQPUC02K_RESET</td>
+<td>Panasonic_EVQPUL_EVQPUC</td>
+<td>Panasonic EVQPUC02K</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>SW100</td>
+<td style="text-align:right">1</td>
+<td>JS102011SAQN_POWER</td>
+<td>SW_SPDT_CK_JS102011SAQN</td>
+<td>C&amp;K JS102011SAQN</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>U1</td>
+<td style="text-align:right">1</td>
+<td>E73-2G4M08S1C</td>
+<td>E73-2G4M08S1C</td>
+<td>Ebyte E73-2G4M08S1C</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>U2, U4</td>
+<td style="text-align:right">2</td>
+<td>74HC4051</td>
+<td>TSSOP16</td>
+<td>Nexperia 74HC4051PW,118</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">2</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>U3</td>
+<td style="text-align:right">1</td>
+<td>OPA350</td>
+<td>SOIC-8_3.9x4.9mm_P1.27mm</td>
+<td>TI OPA350UA</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>U5</td>
+<td style="text-align:right">1</td>
+<td>BQ24074RGT</td>
+<td>VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm</td>
+<td>TI BQ24074RGTR</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required. Installed height below local PCB underside &lt;= 1.2 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>U6</td>
+<td style="text-align:right">1</td>
+<td>TPS63031DSK</td>
+<td>WSON-10-1EP_2.5x2.5mm_P0.5mm_EP1.2x2mm</td>
+<td>TI TPS63031DSKR</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No matched usable stock; purchase required. Installed height below local PCB underside &lt;= 1 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>U7, U8</td>
+<td style="text-align:right">2</td>
+<td>TPS22919DCK</td>
+<td>SOT-363_SC-70-6</td>
+<td>TI TPS22919DCKR</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">2</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>J4</td>
+<td style="text-align:right">1</td>
+<td>USB_C5_INPUT</td>
+<td>JST SH 1.0 mm side-entry 4-pin</td>
+<td>JST SM04B-SRSS-TB(LF)(SN)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No inventory credit; USB repair candidate, fabrication release still on hold. Installed height below local PCB underside &lt;= 3.2 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+<tr>
+<td>J5</td>
+<td style="text-align:right">1</td>
+<td>USB_POWER_OUT</td>
+<td>JST SH 1.0 mm side-entry 2-pin</td>
+<td>JST SM02B-SRSS-TB(LF)(SN)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td>No inventory credit; USB repair candidate, fabrication release still on hold. Installed height below local PCB underside &lt;= 3.2 mm including solder/seating; body and placement XY growth &lt;= 0.1 mm per direction; remaining tolerances in local fit guide.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-solder-a-bare-c5-jsh-daughterboard">Optional: solder a bare C5 JSH daughterboard</h3>
+<p>Prepare <strong>one bare C5 JSH PCB and the seven parts below</strong> instead of buying a populated C5. <a href="https://github.com/wZuck/YETI60/blob/master/hardware/bom/daughterboard.csv">Local stock-adjusted CSV</a> · <a href="https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_bom.csv">Pinned upstream BOM</a> · <a href="https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip">Pinned upstream Gerber archive</a>.</p>
+<table>
+<thead>
+<tr>
+<th>References</th>
+<th>Quantity</th>
+<th>Manufacturer and specified MPN</th>
+<th>Package / connector footprint</th>
+<th>LCSC code</th>
+<th>Planned stock use</th>
+<th>To buy</th>
+<th>Inventory note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>1</td>
+<td>FTR SMF6.0A</td>
+<td>SOD-123FL</td>
+<td>C708002</td>
+<td>0</td>
+<td>1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>1</td>
+<td>Shenzhen JDT Fuse ASMD1206-150</td>
+<td>F1206</td>
+<td>C135342</td>
+<td>0</td>
+<td>1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>J2</td>
+<td>1</td>
+<td>JST SM04B-SRSS-TB(LF)(SN)</td>
+<td>SM04B-SRSS-TB(LF)(SN)_mounting-reliefs</td>
+<td>C160404</td>
+<td>0</td>
+<td>1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+<tr>
+<td>J1</td>
+<td>1</td>
+<td>Korean Hroparts TYPE-C-31-M-12</td>
+<td>TYPE-C-31-M-12</td>
+<td>C165948</td>
+<td>0</td>
+<td>1</td>
+<td>6 domestic substitutes recorded received; geometry/pinout unconfirmed, no credit</td>
+</tr>
+<tr>
+<td>R1, R2</td>
+<td>2</td>
+<td>Uniroyal 0402WGF5101TCE</td>
+<td>R0402</td>
+<td>C25905</td>
+<td>2</td>
+<td>0</td>
+<td>Matching stock; recorded received pool 100, plan to use 2; count before assembly</td>
+</tr>
+<tr>
+<td>U1</td>
+<td>1</td>
+<td>Texas Instruments TPD4E05U06DQAR</td>
+<td>uSON-10</td>
+<td>C138714</td>
+<td>0</td>
+<td>1</td>
+<td>No matched usable stock; purchase required</td>
+</tr>
+</tbody>
+</table>
+<p>The stock 5.1 kohm resistors cover R1/R2, so this option needs <strong>five more loose parts plus one bare PCB</strong>. The stock domestic TYPE-C-31-M-12 is not credited until its geometry is confirmed. These are daughterboard reference numbers, separate from mainboard references. The USB harness, four M2 screws and washers are separate assembly items below. LCSC codes identify the pinned upstream entries, not current prices or stock guarantees. BOM data: Copyright (c) 2023 Unified Daughterboard Project, <a href="../licenses/LICENSE.UDB">MIT license</a>.</p>
+<h3 id="case-ec-mechanism-and-fasteners">Case, EC mechanism and fasteners</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Material</th>
+<th style="text-align:right">Quantity</th>
+<th>Detailed specification/acceptance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M01</td>
+<td>Top shell</td>
+<td style="text-align:right">1</td>
+<td>Derived FELK60 HHKB STEP, tough SLA resin, post-cured; no exterior scaling</td>
+</tr>
+<tr>
+<td>M02</td>
+<td>Bottom shell</td>
+<td style="text-align:right">1</td>
+<td>Selected <a href="https://github.com/wZuck/YETI60/blob/master/mechanical/e73-fit/yeti60-e73-bottom-m01.step">E73 M01 STEP</a>, P2 1600 mAh recess and SW100 floor relief; original exterior</td>
+</tr>
+<tr>
+<td>M03</td>
+<td>Plate</td>
+<td style="text-align:right">1</td>
+<td>K07 E73 M01 NiZ plate-mount DXF, 304 stainless, CAD thickness 1.60 mm, finished 1.55-1.60 mm, 28 M2 x 0.4 axes; no H26 plate mounting hole</td>
+</tr>
+<tr>
+<td>M04</td>
+<td>NiZ housings / sliders / original rings</td>
+<td style="text-align:right">60</td>
+<td>K01 five per pack, buy 13 packs / 65; install 60, spare 5; ordinary center housings for big keys, no Deskeys wide assembly</td>
+</tr>
+<tr>
+<td>M05</td>
+<td>Rubber domes</td>
+<td style="text-align:right">60 positions</td>
+<td>K03 NiZ 45g sheet, one sheet; use 60 complete positions trimmed for HHKB; not included in K01</td>
+</tr>
+<tr>
+<td>M06</td>
+<td>Conical EC springs</td>
+<td style="text-align:right">60</td>
+<td>K02 NiZ five per pack, buy 13 packs / 65; install 60, spare 5; not helper springs</td>
+</tr>
+<tr>
+<td>M07</td>
+<td>Plate-mounted stabilizers / wires</td>
+<td style="text-align:right">1 matched set</td>
+<td>K04 genuine GMK Plate mount / 2u, three sets / six side units; use two short wires and separate K05 6U wire, spare one short wire</td>
+</tr>
+<tr>
+<td>M08</td>
+<td>Keycaps</td>
+<td style="text-align:right">60</td>
+<td>K06 NicePBT BoW current complete kit, one kit including 6.0c Centered spacebar; MX mounts</td>
+</tr>
+<tr>
+<td>M09</td>
+<td>Adapter standoffs</td>
+<td style="text-align:right">28</td>
+<td>YETI60-STANDOFF-46, brass OD3.5, shoulder 4.50 +/-0.03; top M2 x0.4 stud 1.0; bottom M1.6 x0.35 female depth 3.2; H26 unused</td>
+</tr>
+<tr>
+<td>M10</td>
+<td>Top insulating films</td>
+<td style="text-align:right">28</td>
+<td>Polyimide 0.10 +/-0.02 mm, OD4.5 / ID1.8; between standoff and PCB; H26 unused</td>
+</tr>
+<tr>
+<td>M11</td>
+<td>PCB screws</td>
+<td style="text-align:right">28</td>
+<td>M1.6 x5 pan head; verify actual head/thread; H26 unused</td>
+</tr>
+<tr>
+<td>M12</td>
+<td>PCB washers</td>
+<td style="text-align:right">28</td>
+<td>PEEK OD &lt;=4.0, ID2.2, thickness0.8 mm; H26 unused; no conductive metal substitution</td>
+</tr>
+<tr>
+<td>M13</td>
+<td>Top-shell inserts</td>
+<td style="text-align:right">4</td>
+<td>Cold-bonded knurled brass M3×0.5, OD 4.6, length 3.0; bores Ø4.85±0.05, depth 3.5</td>
+</tr>
+<tr>
+<td>M14</td>
+<td>Daughterboard inserts</td>
+<td style="text-align:right">4</td>
+<td>Cold-bonded brass M2×0.4, OD 3.2, length 2.5; bores Ø3.35±0.05, depth 2.9</td>
+</tr>
+<tr>
+<td>M15</td>
+<td>Shell closure screws</td>
+<td style="text-align:right">4</td>
+<td>M3×5 with 0.30 mm shim washer; proposed from CAD seat z=2.59 and insert entry z=4.79; nominal engagement 2.50 mm, verify head Ø≤5.6 in Ø5.8 recess</td>
+</tr>
+<tr>
+<td>M16</td>
+<td>Daughterboard screws</td>
+<td style="text-align:right">4</td>
+<td>M2×4 with 0.30 mm insulating washer; nominal thread engagement 4−1.6062−0.30=2.0938 mm in 2.5 mm insert; head clearance to connector requires check</td>
+</tr>
+<tr>
+<td>M17</td>
+<td>Gasket stock</td>
+<td style="text-align:right">1 set</td>
+<td>Four 33 x 3 mm pads per layer; lower stock 2.0 mm, upper 1.2 mm; installed gaps 1.0162 /0.5838 mm; force/creep qualification open</td>
+</tr>
+<tr>
+<td>M18</td>
+<td>Case feet</td>
+<td style="text-align:right">4</td>
+<td><a href="https://keeb.io/products/skuf-silicone-rubber-keyboard-feet">SKUF silicone feet</a>, 41.8 x 5.8 x 2 mm, 45A, adhesive backed; four approximately 42.2 x 6.2 mm case pockets. One 8-pack leaves four spares</td>
+</tr>
+<tr>
+<td>M19</td>
+<td>Insert adhesive</td>
+<td style="text-align:right">As needed</td>
+<td>Resin-compatible structural epoxy; cold-bond only, cure per adhesive/resin supplier, keep thread bores clear</td>
+</tr>
+<tr>
+<td>M20</td>
+<td>Battery retention and insulation</td>
+<td style="text-align:right">1 set</td>
+<td>Nonconductive removable retention and edge protection; include tape thickness in the pocket budget; do not clamp the pouch</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The selected mechanism is NiZ plus plate-mounted stabilizers.</strong> Use the <a href="../04-assembly/key-mechanism.html">E73 mechanism specification</a>, including the 6U wire datum, 28 mounting sets and H26 omission. Supplier plastic dimensions, retention, dome preload and full travel require local samples before metal-part production.</p>
+<h3 id="additional-retention-parts-and-consumables">Additional retention parts and consumables</h3>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th style="text-align:right">Quantity</th>
+<th>Specification/inclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shell screw shims</td>
+<td style="text-align:right">4</td>
+<td>0.30 mm thick, M3 clearance, used with the four M3 x 5 screws above; OD must fit the screw seat</td>
+</tr>
+<tr>
+<td>Daughterboard insulating washers</td>
+<td style="text-align:right">4</td>
+<td>0.30 mm thick, M2 clearance, for four M2 x 4 screws</td>
+</tr>
+<tr>
+<td>Rear harness guide bases</td>
+<td style="text-align:right">2</td>
+<td>One each of <code>mechanical/generated/interconnect-guides/rear-1-base</code> and <code>rear-2-base</code> STEP/STL; current width 5.4 and route-direction length 2 mm</td>
+</tr>
+<tr>
+<td>Rear removable bridges</td>
+<td style="text-align:right">2</td>
+<td>One each of <code>rear-1-bridge</code> and <code>rear-2-bridge</code>; three lower battery wires/four upper USB wires, groove radius 0.5 mm</td>
+</tr>
+<tr>
+<td>Front USB guide</td>
+<td style="text-align:right">1</td>
+<td><code>front-base</code> STEP/STL, width 6 and route-direction length 1.8 mm; install in case coordinates without scaling</td>
+</tr>
+<tr>
+<td>Polyimide insulation stock</td>
+<td style="text-align:right">1 sheet</td>
+<td>At least 100 x 100 x 0.10 mm; supplies the 28 insulating discs; do not double-count pre-cut parts. Upper harness retention uses the separately listed adhesive-backed film</td>
+</tr>
+<tr>
+<td>Gasket stock</td>
+<td style="text-align:right">2 sheets</td>
+<td>One &gt;=150 x 50 x 2.0 mm lower sheet and one &gt;=150 x 50 x 1.2 mm upper sheet; cut four 33 x 3 mm pads from each. Replaces M17 stock allowance; force/creep and adhesive qualification open</td>
+</tr>
+<tr>
+<td>Resin-compatible structural adhesive</td>
+<td style="text-align:right">1 small two-part kit</td>
+<td>For inserts and guides; qualify and cure per adhesive/resin suppliers; quantity denotes a purchase package, not measured consumption</td>
+</tr>
+<tr>
+<td>Removable battery tape and edge insulation</td>
+<td style="text-align:right">1 set</td>
+<td>Nominal pack-to-pocket-floor space is only 0.20 mm; tape, insulation and assembly allowance must fit that total budget; do not compress the pouch</td>
+</tr>
+<tr>
+<td>Upper harness retention tape</td>
+<td style="text-align:right">1 small roll, cut 3 pieces</td>
+<td>Adhesive-backed insulating film/tape, total thickness &lt;=0.10 mm including adhesive; wrap over the upper wires and down the guide sides</td>
+</tr>
+<tr>
+<td>Removable bridge tape</td>
+<td style="text-align:right">1 small roll</td>
+<td>Nonconductive removable double-sided tape, 0.05 mm total thickness, for the two rear bridge side lands; upper film plus adhesive must total &lt;=0.10 mm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tools-shared-not-one-set-per-keyboard">Tools (shared, not one set per keyboard)</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th style="text-align:right">Quantity</th>
+<th>Use/specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nRF52840-compatible SWD probe</td>
+<td style="text-align:right">1</td>
+<td>3.3 V target logic, SWDIO/SWDCLK/GND/reset</td>
+</tr>
+<tr>
+<td>J3 pogo fixture</td>
+<td style="text-align:right">1 set</td>
+<td>Six pins to the J3 pad drawing; 3.3 V is target reference, avoid backfeeding an already powered board</td>
+</tr>
+<tr>
+<td>Multimeter</td>
+<td style="text-align:right">1</td>
+<td>Every wire's continuity/polarity and power short checks</td>
+</tr>
+<tr>
+<td>Calipers and thickness gauge</td>
+<td style="text-align:right">1 each</td>
+<td>Complete pack envelope, PCB, standoffs and insulation</td>
+</tr>
+<tr>
+<td>Low-torque driver and matching bits</td>
+<td style="text-align:right">1 set</td>
+<td>M1.6/M2/M3; qualify torque against sample threads</td>
+</tr>
+<tr>
+<td>Insulated switch tool</td>
+<td style="text-align:right">1</td>
+<td>SW100 access through underside service port</td>
+</tr>
+<tr>
+<td>Cutting/deburring tools and tweezers</td>
+<td style="text-align:right">1 set</td>
+<td>Gaskets/guides/assembly, without damaging battery insulation</td>
+</tr>
+<tr>
+<td>Soldering, hot-air/reflow equipment, solder, flux and cleaning supplies</td>
+<td style="text-align:right">1 each (self-assembly only)</td>
+<td>Must support 0402, module and exposed-pad assembly; not installed keyboard parts</td>
+</tr>
+<tr>
+<td>Mainboard stencils</td>
+<td style="text-align:right">1 front + 1 back (self-reflow only)</td>
+<td>Laser cut from matching F.Paste and B.Paste Gerbers; 0.10 mm stainless prototype proposal, final thickness/thermal-pad apertures require assembly-process acceptance</td>
+</tr>
+<tr>
+<td>Plate tapping tools</td>
+<td style="text-align:right">1 set (self-machined plate only)</td>
+<td>M2 x 0.4 tap and matching pilot-hole tools; do not retap a supplied finished plate unnecessarily</td>
+</tr>
+<tr>
+<td>Insert-bore finishing tools</td>
+<td style="text-align:right">1 set (unless supplied finished)</td>
+<td>Finish to diameter 4.85 +/-0.05 and 3.35 +/-0.05 mm and specified depths; unmeasured printed bores are not equivalent</td>
+</tr>
+<tr>
+<td>Current-limited supply, battery simulator, current logger and temperature probes</td>
+<td style="text-align:right">1 each (prototype qualification)</td>
+<td>Bring-up, charging/termination/thermal/runtime acceptance; not fitted parts</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/materials.md">materials</a> and <a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/power-budget.md">power/charging calculations</a> for purchasing limits. Supplier pack approval, unselected parts, key mechanism and ordinary-process conversion acceptance remain required before treating this preparation list as a production purchase order.</p>
+</main></html>
