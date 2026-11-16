@@ -10,15 +10,15 @@
   "analog_model": "passive RC sensitivity only; measured NiZ/opamp/timing margins remain open",
   "evidence_sha256": {
     "docs/audit/gpio-mode-policy.json": "a15a0ddbfe815244fb44336a4af8fc070b61a8bd1694eadcb45bc992f369c71b",
-    "docs/audit/scan-control.json": "1f5ddc396f6854bd222a6b94904c27e8ee55461def6d28b101e05a593ec3ee21",
-    "docs/audit/key-pipeline.json": "340226c0ddbc690dddaccca2b133fba7f81e564c8be236b7deb85307a2b8fdfa",
-    "docs/audit/nvs-powercut.json": "226b1e6c48262d1d5108ca2642a78c9a4037d651dc3553d7a5e0450623a842d2",
-    "docs/audit/firmware-recovery.json": "574a9d95b2954dae8808271806fa1e5888971c06672b5bb26dc7a0e0d491b4c8",
-    "docs/audit/analog-waveform.json": "23c7e733e299322554717155c390d379c79ad9c2976d1eac3c4e66a3e89e82a5",
+    "docs/audit/scan-control.json": "f65ddd905d656f512bf0529d925f1fae996b73dd24eae8d5fc00ae2197602d01",
+    "docs/audit/key-pipeline.json": "df3849da7f1565fa932231ce9772495f986812d7ffd2e21b07b0aad0e0dd53d9",
+    "docs/audit/nvs-powercut.json": "1f7c4393fb41e31caf46f3e9961b728d78ffe3d8e3ae34b4fcc2a17144ad9755",
+    "docs/audit/firmware-recovery.json": "bc16846d3df021c74e8376acd7709dc26a2b75b8cb5f715abcd56a16e11b6ec3",
+    "docs/audit/analog-waveform.json": "3a526831f6179fe759c520e531fa4992e6208b721c7afd66008449f7191270e4",
     "docs/audit/calibration.json": "b3cd82a93b3595d6b3d9da9c23f687fde4dba23eff9fd759ea8f2b927c781495",
     "docs/audit/usb-event-policy.json": "9b3c48bc6174d5694a3c8a54bcfd8ad4783aff159a680b332a0f9ca808a7ad3c",
-    "docs/audit/yeti60-target-build.json": "3cf6a3bba12e1f41aed304d4fd6db15fadbeceaa42ceec3245346f69540a9a1f",
-    "docs/audit/yeti60-target-check.json": "7d3634412af77d2236b8e18bebe3c08bc2255e76f254fe6ec296637f8ba97b1a"
+    "docs/audit/yeti60-target-build.json": "6814bb563784fcfc447adebd68771124e71e43ba6258cfc1f84c7e2f486ea92b",
+    "docs/audit/yeti60-target-check.json": "a5babc07b556b9234be4afd9ade9371aadf3be5917e25b709facc42e7513d431"
   },
   "source_sha256": {
     "scripts/check_yeti60_firmware_suite.py": "b45ad04bfcd65e77e93ed7603f8353b6f139c9fc0924d68ffa8d60ddcc94c867"

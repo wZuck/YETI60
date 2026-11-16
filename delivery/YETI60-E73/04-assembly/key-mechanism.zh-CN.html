@@ -2,7 +2,7 @@
 <p>当前库存未核实。NiZ 现售 N+ 产品页面不能证明其塑料卡扣高度与早期 EC60 装机相同；批量加工金属件前，先用一个实收轴座及 6U 钢丝试配。</p>
 <h1 id="niz-轴体与钢板卫星轴方案">NiZ 轴体与钢板卫星轴方案</h1>
 <p>E73 当前方案采用 <strong>60 套 NiZ 轴座／滑块</strong>、NiZ 45g 胶碗及锥形感应弹簧，另配 <strong>三组 Cherry／GMK 钢板卫星轴</strong>。回车、左 Shift 各用一根 2U 钢丝；居中 HHKB 6U 空格另用一根 6U 钢丝。键帽继续使用 NicePBT BoW。本版不再使用 Deskeys 宽键总成或空格侧轴。</p>
-<p>使用<a href="../02-mechanical/steel-plate.dxf">新 NiZ 钢板卫星轴定位板</a>和 <a href="../02-mechanical/assembly-spec.json">E73 专用装配规格</a>，原 1.2 mm Deskeys 定位板已被替换。原生 PCB 不变；固件校准指纹现在同时绑定选定定位板／叠层：PCB 仍有 29 个原孔，但 <strong>H26 不装，实际只安装 28 套紧固件</strong>，因为新空格开孔经过该安装轴。</p>
+<p>使用<a href="../02-mechanical/steel-plate.dxf">新 NiZ 钢板卫星轴定位板</a>和 <a href="../02-mechanical/assembly-spec.json">E73 专用装配规格</a>，原 1.2 mm Deskeys 定位板已被替换。有效感应位置与原 PCB 孔位保留；固件校准指纹现在同时绑定选定定位板／叠层：PCB 仍有 29 个原孔，但 <strong>H26 不装，实际只安装 28 套紧固件</strong>，因为新空格开孔经过该安装轴。</p>
 <p>这是按图设计的工程样机，目前没有实物。真实 NiZ 卡扣、轴座高度、胶碗压缩、钢丝弯形及键帽／卫星轴全行程须先做局部试装；CAD 检查不等于验证了供应商塑料外形或静电容性能。</p>
 <h2 id="按这张表购买">按这张表购买</h2>
 <p>库存查询日期：2026-11-02。列出的选项查询时可购买，未进行结账、配送或数量预留。机械件已有库存未核实，不作抵扣。不再同时购买被替换的 Deskeys 整包。</p>
@@ -134,11 +134,11 @@
 <li>原支承台下侧贴 <strong>2.0 mm</strong> 胶棉，上侧改贴 <strong>1.2 mm</strong>。不能通过外壳加高 0.4 mm、下移 PCB、挤压电池或强行合壳来容纳厚钢板。</li>
 <li>装完整套机构后逐键重新校准；按三个大键时也要检查附近未按键，移动金属、胶碗及结构变化都须实测静电容性能。合壳后复测全部键、完整行程和两端回弹。任何轴座、胶碗、弹簧、消音圈或高度改动，都需要重新校准，即使 PCB／固件指纹未变。</li>
 </ol>
-<p>主板焊接、供电、SWD、线束和外壳顺序继续按 <a href="https://github.com/wZuck/YETI60/blob/master/docs/assembly/build-guide.zh-CN.md">28 步配图指南</a>。机械改版不增加 PCB 订单或电子材料；USB／蓝牙及同时充电策略仍使用匹配的 E73 固件。</p>
+<p>主板焊接、供电及 SWD 按<a href="soldering.zh-CN.html">当前 12 步指南</a>，实际接法见<a href="harness-routing.zh-CN.html">当前线束检查</a>。完整合壳装配及固定件仍未完成。机械改版不增加 PCB 订单或电子材料；USB／蓝牙及同时充电策略仍使用匹配的 E73 固件。</p>
 <h2 id="验证范围">验证范围</h2>
 <p><a href="https://github.com/wZuck/YETI60/blob/master/docs/audit/plate-mount.json">定位板检查</a>验证外轮廓、60 个感应中心、28 个保留安装轴、H26 冲突、三个卫星轴组合开孔、相邻开孔及最小余料；错误注入测试会移动孔、改孔尺寸、移动卫星轴并重新加回 H26。主装配、电极映射及图像均使用新定位板。</p>
 <p>渲染中的 NiZ、卫星轴塑料及钢丝路径是说明性几何，不是供应商认证的三维模型。尚无实物，未证明实际卡扣、手感、局部刚度、USB／蓝牙、充电或干扰验收通过。</p>
-<p><a href="https://github.com/wZuck/YETI60/blob/master/BUILD.zh-CN.md">制作总入口</a> · <a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/materials.zh-CN.md">材料表</a> · <a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/assembly.zh-CN.md">总装配</a></p>
+<p><a href="https://github.com/wZuck/YETI60/blob/master/BUILD.zh-CN.md">制作总入口</a> · <a href="../03-bom/materials.zh-CN.html">材料表</a> · <a href="harness-routing.zh-CN.html">当前线束</a></p>
 <p>当前 E73 采用右下角模组及 SH3 电池接口；以<a href="../06-validation/corner-review.zh-CN.html">右下角审查</a>为准。完整线束、电源／电池及实物验收仍未关闭。</p>
 <p>正式选用的 <a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/e73-mechanical-fit-candidate.zh-CN.md">M01 定位板及地板修补</a>在规定误差下通过三处定位板／壳体及 SW100 净空检查。定位板外沿内收 0.4 mm，内部开孔保持不变。完整机械公差、供方尺寸及实物验收仍未关闭，局部通过不代表允许加工放行。</p>
 </main></html>

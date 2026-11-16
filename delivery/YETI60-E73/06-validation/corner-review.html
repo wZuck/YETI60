@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E73 in the HHKB lower-right corner</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p><a href="corner-review.html">English</a> | <a href="corner-review.zh-CN.html">Chinese</a></p>
 <h1 id="e73-in-the-hhkb-lower-right-corner">E73 in the HHKB lower-right corner</h1>
 <p><strong>Selected development direction; manufacturing remains on hold.</strong> The <a href="https://github.com/wZuck/YETI60/blob/master/hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro">native corner project</a> and <a href="https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-spec.json">replay specification</a> replace the upper-right module position for development. This candidate is not an order package. Older upper-right acceptance reports do not qualify this revision.</p>
-<p>Revision CORNER-03 also moves C31, the existing 100 nF 0402 VDD decoupling capacitor, beside the module supply escape. Its local connection is approximately 1.17 mm. Only the E73 module is front-mounted, between the PCB and plate. J4 USB input and J5 power bridge retain their original back-side positions, preserving the already-made UDB-C-JSH C5 daughterboard and its interfaces. The retained 1.6 mm steel plate and case exterior are unchanged. No additional lower-right floor cut is required by the selected placement; the earlier back-mounted trial did not retain the required floor-wall reserve.</p>
+<p>Revision CORNER-04 also moves C31, the existing 100 nF 0402 VDD decoupling capacitor, beside the module supply escape. Its local connection is approximately 1.17 mm. Only the E73 module is front-mounted, between the PCB and plate. J4 USB input retains its back-side pose; J5 stays at the same back-side origin and rotates 180 degrees, preserving the already-made UDB-C-JSH C5 daughterboard and its interfaces. The retained 1.6 mm steel plate and case exterior are unchanged. No additional lower-right floor cut is required by the selected placement; the earlier back-mounted trial did not retain the required floor-wall reserve.</p>
 <p><img src="corner-layout.png" alt="Actual PCB geometry and corner detail" /></p>
 <h2 id="controlled-changes">Controlled changes</h2>
 <p>Coordinates are PCB top-view coordinates in millimetres, including back-mounted parts.</p>
@@ -30,8 +30,8 @@
 <tr>
 <td>J5, power bridge</td>
 <td>335.5, 117.5</td>
-<td>0°</td>
-<td>Back, retained</td>
+<td>180°</td>
+<td>Back, rotated for cable clearance</td>
 </tr>
 <tr>
 <td>C31, 3.3 V decoupling</td>
@@ -65,16 +65,16 @@
 <li>Restore the old upper-right wing to the original straight PCB edge in both the board and frozen outline library.</li>
 <li>Replace USB data routing with a paired B.Cu path avoiding the retained side-clamp mask openings, and one ordinary through-via per data net to a short F.Cu module launch. The planned pair has 0.30 mm trace width and 0.50 mm centre spacing. These dimensions are not a certified 90 Ω stack-up. Fresh native DRC, reference connectivity and impedance review are required after all routing is complete.</li>
 <li>Move the former right-edge COL14 backbone from In2.Cu to In1.Cu between existing through-via connections. This frees the adjacent In2 ground reference corridor without changing an effective sensor land or its net. The exact retired primitives and replacement path are recorded in the replay specification and checked against the actual PCB.</li>
-<li>Provide 33 placement/USB escape vias and 81 routed/repair vias: 114 new ordinary 0.50/0.30 mm through-vias, both faces tented, outside SMD copper. This excludes existing source vias and the separately documented power exposed-pad vias. Signal additions use B.Cu, In2.Cu and In1.Cu; the front sensing copper remains unchanged.</li>
+<li>Provide 33 placement/USB escape vias and 83 final routed/repair vias: 116 newly generated ordinary 0.50/0.30 mm through-vias, both faces tented, outside SMD copper. This excludes existing source vias and the separately documented power exposed-pad vias. Signal additions use B.Cu, In2.Cu and In1.Cu; the front sensing copper remains unchanged.</li>
 <li>Preserve the SH3 battery repair and current power-stage repair. Their earlier results do not constitute whole-board acceptance of the relocated module.</li>
 </ul>
 <h2 id="antenna-and-assembly-limits">Antenna and assembly limits</h2>
 <p>The nominal module body occupies <strong>X 332–350, Y 182–195</strong>. The provisional last 3 mm antenna band occupies <strong>X 347–350, Y 182–195</strong>, pointing right. The specification also defines an explicit four-layer copper keepout extending to the board edge. This band is an engineering screening assumption, not an Ebyte-approved numeric clearance.</p>
 <p>The steel plate remains above the antenna band. Its projection covers the nominal 39 mm² band; a copper keepout does not remove that metal. The requested 2–3 m range remains a physical acceptance target. Confirm the keepout with Ebyte and test the assembled board with normal hand positions and orientations. Zero body overlap with active sensing copper does not prove EC noise immunity.</p>
 <p>The nominal PCB-to-plate gap is 4.6 mm. Maximum installed heights, including solder and seating, are 3.2 mm for U1/J4/J5, 0.65 mm for C31, 1.0 mm for C32 and 0.6 mm for R24/R25. These are inspection requirements, not vendor maximum-height certifications. Only U1 consumes the front gap. Check NiZ lower flanges/clips, stabilizers, all fasteners, mated plugs, withdrawal sweeps and flexible wires against the final board revision. Body-box checks alone do not establish full assembly fit.</p>
-<p>J4/J5 and C5 connector positions are retained. Do not change the C5 board. Existing cable specifications are reference inputs; the complete final assembly and service motion still need to be checked before declaring the harness accepted. Battery selection remains the protected 1S 1600 mAh pack envelope, 85 × 43 × 4.8 mm, with supplier electrical and protection parameters pending confirmation.</p>
+<p>J4 and C5 retain their poses; J5 retains its origin and reverses its cable exit. Do not change the C5 board. Existing cable specifications are reference inputs; the complete final assembly and service motion still need to be checked before declaring the harness accepted. Battery selection remains the protected 1S 1600 mAh pack envelope, 85 × 43 × 4.8 mm, with supplier electrical and protection parameters pending confirmation.</p>
 <h2 id="current-checkpoint">Current checkpoint</h2>
-<p>The <a href="https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-routing.json">replayable routing patch</a> contains 446 traces and 81 vias. Native routing has zero violation errors, zero unconnected items and zero schematic-parity differences. Fabrication and complete assembly release remain open. Dangling copper and off-centre via connections have been repaired. The 100 remaining courtyard warnings are checked against non-purchased geometry and the procurement table; purchased-part courtyard omissions fail the checker. This is not a zero-warning claim.</p>
+<p>The <a href="https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-routing.json">base routing patch</a> contains 446 traces and 81 vias. A source-bound <a href="j5-repair.json">J5 orientation repair</a> then retires 12 copper primitives and adds 13, preserving USB data geometry and all effective sensing lands. Native routing has zero violation errors, zero unconnected items and zero schematic-parity differences. Fabrication and complete assembly release remain open. Dangling copper and off-centre via connections have been repaired. The 100 remaining courtyard warnings are checked against non-purchased geometry and the procurement table; purchased-part courtyard omissions fail the checker. This is not a zero-warning claim.</p>
 <table>
 <thead>
 <tr>
@@ -93,7 +93,7 @@
 </tr>
 <tr>
 <td>Ordinary vias</td>
-<td>Same report: 33 placement vias plus 81 routing/repair vias; all 0.50/0.30 mm through-vias, both faces tented, outside SMD copper</td>
+<td>Same report: 33 placement vias plus 83 final routing/repair vias; all 0.50/0.30 mm through-vias, both faces tented, outside SMD copper</td>
 </tr>
 <tr>
 <td>USB and ground</td>
@@ -109,11 +109,11 @@
 </tr>
 <tr>
 <td>Verifier fault witnesses</td>
-<td><a href="placement-faults.json">Placement mutation tests</a> must reject a wrong GPIO, sensor overlap and a removed antenna keepout</td>
+<td><a href="placement-faults.json">Placement mutation tests</a> reject a wrong GPIO, sensor overlap, a removed antenna keepout and the wrong J5 orientation</td>
 </tr>
 <tr>
 <td>Firmware and fabrication</td>
-<td><a href="../05-firmware/manifest.json">Candidate images and source manifest</a> built and host/linked-target suite passed; pre-migration root images do not match CORNER-03; no fabrication release</td>
+<td><a href="../05-firmware/manifest.json">Candidate images and source manifest</a> built and host/linked-target suite passed; pre-migration root images do not match CORNER-04; no fabrication release</td>
 </tr>
 <tr>
 <td>RF and battery measurements</td>
@@ -136,4 +136,5 @@ uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts
 <p>The fit checker uses conservative body proxies, the ordinary 1.44–1.76 mm PCB thickness interval where applicable and a deliberate wrong-placement witness. It does not qualify detailed NiZ plastic, flexible wire motion, structural strength or RF performance. Mutation tests deliberately reseal fixture hashes so geometric/semantic checks must detect the changed board.</p>
 <p>Use only current, source-bound reports in the <a href="https://github.com/wZuck/YETI60/blob/master/hardware/e73-hhkb-corner/audit">candidate audit directory</a>. Remaining gates include power-layout/return review, USB impedance, full mechanism/harness tolerances, power/battery review. Physical USB/BLE/EC, charging, thermal and range tests require a sample. The source electronics count remains 75: 8 planned stock parts and 67 purchases. The mechanism still needs 60 NiZ housing/slider sets, 60 domes and 60 conical springs.</p>
 <p>The adjacent-mechanism screen uses explicit <strong>incoming-part limits</strong>, not vendor-certified plastic CAD: below-plate NiZ XY envelope at most 16 × 16 mm, stabilizer side at most 8 × 14 mm, each with 0.2 mm position allowance. Received parts must meet these limits; clip retention, dome preload and full stroke still require a sample. The independent USB screen includes actual filled ground and all ground vertical conductors. Rerouting reserves both pour clearance and its existing 0.254 mm minimum width; a native PCB mutation must demonstrate reference-cut rejection.</p>
+<p>The <a href="../04-assembly/harness-routing.html">current nine-conductor routing study</a> checks continuous solids, same-harness insulation, native pin order and the ordinary PCB thickness endpoints. Retention/guides and complete service motion remain separate open gates. The added M04 rear channel changes internal material only; current baseline body checks remain conservative.</p>
 </main></html>

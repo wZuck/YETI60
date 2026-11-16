@@ -30,16 +30,16 @@
 - [可行性评估回应](docs/engineering/assessment-response.zh-CN.md)
 - [普通工艺制板审查包](docs/engineering/fabrication-review.zh-CN.md)
 - [工程装配图及步骤](docs/engineering/assembly.zh-CN.md)
-- [28 步逐图焊接与安装指南](docs/assembly/build-guide.zh-CN.md)
+- [当前 12 步 PCB 焊接与台架指南](docs/assembly/e73-corner/soldering.zh-CN.md)
 - [电池下挖可行性](docs/engineering/battery-study.zh-CN.md)
 - [功耗、续航及充电计算](docs/engineering/power-budget.zh-CN.md)
 - [材料与采购表](docs/engineering/materials.zh-CN.md)
 - [PCB 标记清理](docs/engineering/board-markings.zh-CN.md)
 - [完整复查](docs/audit/yeti60-comprehensive-review.zh-CN.md)
-- [硬件及特殊制板要求](hardware/ec60-nrf52840/README.zh-CN.md)
+- [普通工艺 PCB 下单及机械件打印要求](docs/build/e73-ordering-printing.zh-CN.md)
 - [控制核心、模拟和轨迹](firmware/yeti60/README.zh-CN.md)
 - [装配渲染](renders/yeti60-assembly/README.zh-CN.md)
-- [PCB 渲染及 360° 动画](renders/ec60-nrf52840/README.zh-CN.md)
+- [迁移前 PCB 渲染及动画，仅供参考](renders/ec60-nrf52840/README.zh-CN.md)
 - [当前审查索引](docs/audit/README.zh-CN.md)
 
 外壳暂按树脂，信号／射频检查已开始，天线布局阻塞项及实物验收仍待解决。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
@@ -76,7 +76,7 @@
 | YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [当前可编辑 KiCad PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb)、[迁移检查及放行条件](docs/engineering/e73-hhkb-corner.zh-CN.md)；尚无本版投板包，不得使用旧 Gerber 替代 |
 | Unified Daughterboard C5 JSH 子板 | 自焊时 1 块；买成品时 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](hardware/bom/daughterboard.zh-CN.csv) |
 
-本版右下角主板尚无放行的制造包，不能使用旧主板压缩包替代。C5 使用独立且不变的四层文件，不能按双层板下单；已做好的 C5 不必重做。最终钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及五个走线支架属于机械件，不是额外 PCB。自行回流焊时，主板现在需要 **F.Paste 与 B.Paste**（E73 在正面，其余散件在背面），C5 用 **F.Paste**，钢网和温度曲线须与实际物料匹配。
+本版右下角主板尚无放行的制造包，不能使用旧主板压缩包替代。C5 使用独立且不变的四层文件，不能按双层板下单；已做好的 C5 不必重做。最终钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及尚待完成的线束固定件属于机械件，不是额外 PCB。自行回流焊时，主板现在需要 **F.Paste 与 B.Paste**（E73 在正面，其余散件在背面），C5 用 **F.Paste**，钢网和温度曲线须与实际物料匹配。
 
 ### 电子总成、电池和连接线
 
@@ -85,10 +85,10 @@
 | 主板 PCB | 1 块 | 当前 YETI60 原生 PCB；普通四层 FR-4，目标 1.6 mm 标称厚度，保留 EC 电极／板框／安装中心；CAD 包络 1.6062 mm；待本版放行后再按匹配的制造文件下单 |
 | 主板焊装散件 | 75 件 | 下表列明全部位号、数值、封装及指定／候选型号；购买焊装主板时此行已包含 |
 | USB 子板 | 1 块焊装成品 | Unified Daughterboard C5 JSH，版本提交 `2b6c52a`；含 USB-C 母座、SH 板端座及其余元件，共 7 个实装元件；不选 S 版 |
-| USB 内部线束 | 1 条四芯 | AWG28 多股铜线，绝缘外径 ≤0.8 mm；两端共 2 个 SHR-04V-S 插壳和 8 个 SSH-003T-P0.2-H 端子；C5 到 J4 按 1→1 电源、2→2 D−、3→3 D+、4→4 地连接。新版本完整路径未验收，暂不按旧 150 mm 数值裁线 |
-| J5 到 J1 电源桥 | 1 条两芯 | AWG28、绝缘外径 ≤0.8 mm；SHR-02V-S 与 SHR-04V-S 各 1 个、SSH-003T-P0.2-H 共 4 个；J5.1→J1.1，J5.2→J1.4，J1.2／J1.3 留空；最终长度与理线待验收 |
+| USB 内部线束 | 1 条四芯 | AWG28 多股铜线，绝缘外径 ≤0.65 mm；两端共 2 个 SHR-04V-S 插壳和 8 个 SSH-003T-P0.2-H 端子；C5 到 J4 按 1→1 电源、2→2 D−、3→3 D+、4→4 地连接。新版本完整路径未验收，暂不按旧 150 mm 数值裁线 |
+| J5 到 J1 电源桥 | 1 条两芯 | AWG28、绝缘外径 ≤0.65 mm；SHR-02V-S 与 SHR-04V-S 各 1 个、SSH-003T-P0.2-H 共 4 个；J5.1→J1.1，J5.2→J1.4，J1.2／J1.3 留空；最终长度与理线待验收 |
 | 电池总成 | 1 包 | 定制单电芯 YETI60-BAT-1600-1S，最低目标 1600 mAh，整个电池包不超过 85×43×4.8 mm，已包含保护板、温度传感器、包覆、焊片和增长空间；独立温度断充，实际充电窗口须在 15…43°C 内；供方须接受至少 500 mA 连续充电及 4.16–4.23 V 充电稳压范围 |
-| 电池引线及插头 | 1 套三线，含在电池总成中 | AWG28、外径不大于 0.8 mm；SHR-03V-S 插壳 1 个、SSH-003T-P0.2-H 端子 3 个；配合主板 SM03B-SRSS-TB，1.00 mm 间距；1 红色正极、2 黑色负极、3 黄色独立 10k NTC 温度线。温度保护和第三线 NTC 反馈须分开；尺寸和出线位置须供方签图 |
+| 电池引线及插头 | 1 套三线，含在电池总成中 | AWG28、外径不大于 0.65 mm；SHR-03V-S 插壳 1 个、SSH-003T-P0.2-H 端子 3 个；配合主板 SM03B-SRSS-TB，1.00 mm 间距；1 红色正极、2 黑色负极、3 黄色独立 10k NTC 温度线。温度保护和第三线 NTC 反馈须分开；尺寸和出线位置须供方签图 |
 | 外部 USB 数据线 | 1 条 | 主机端按电脑选择 USB-A／USB-C，键盘端 USB-C；必须支持 USB 数据，不能用仅充电线 |
 
 ### 主板全部实装元件
@@ -189,7 +189,7 @@
 | 编号 | 材料 | 数量 | 详细规格／验收要求 |
 |---|---|---:|---|
 | M01 | 上壳 | 1 | 派生 FELK60 HHKB STEP；韧性 SLA 树脂，完成后固化；外部尺寸不缩放 |
-| M02 | 底壳 | 1 | [E73 正式 M01 STEP](mechanical/e73-fit/yeti60-e73-bottom-m01.step)，含 1600 mAh 电池槽与 SW100 地板避空，外形不变 |
+| M02 | 底壳 | 1 | 选定 [E73 M04 STEP](hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step)，含完整保护包槽、SW100 让位及当前内部线槽，保留原外形 |
 | M03 | 定位板 | 1 | K07 E73 M01 NiZ 钢板卫星轴 DXF，304 不锈钢，CAD 厚 1.60 mm、成品 1.55—1.60 mm，28 处 M2×0.4；H26 不开安装孔 |
 | M04 | NiZ 轴座／滑块及原配消音圈 | 60 套 | K01 每包 5 套，买 13 包共 65 套，装 60、余 5；大键也用普通中央轴座，不用 Deskeys 宽总成 |
 | M05 | 胶碗 | 60 个位置 | K03 NiZ 45g 整张 1 张，取至少 60 个完整位置并按 HHKB 裁分；不是 K01 内含材料 |
@@ -217,15 +217,13 @@
 |---|---:|---|
 | 合壳薄垫片 | 4 | 厚 0.30 mm，配上表 4 颗 M3×5；孔适配 M3，外径不超过螺钉座可用空间 |
 | 子板绝缘垫片 | 4 | 厚 0.30 mm，孔适配 M2，配 4 颗 M2×4 |
-| 后侧线束固定座底座 | 2 | `mechanical/generated/interconnect-guides/rear-1-base` 和 `rear-2-base` 的 STEP／STL 各 1 件；当前宽 5.4、路径方向长 2 mm |
-| 后侧固定座可拆桥 | 2 | 对应 `rear-1-bridge` 和 `rear-2-bridge` 各 1 件；下层三根电池线、上层四根 USB 线，槽半径 0.5 mm |
-| 前侧 USB 固定座 | 1 | `front-base` 的 STEP／STL；宽 6、路径方向长 1.8 mm；按壳体坐标安装，不能缩放 |
+| 当前 E73 理线固定件 | 数量待定 | 固定件／薄膜须符合 CORNER-04 路线并通过最终间隙检查，目前尚未放行文件；不要打印历史后支架、桥架及前支架套装 |
 | 聚酰亚胺绝缘片材 | 1 张 | 至少 100×100×0.10 mm；用于上表 28 片绝缘圆片，已购买裁切件时不重复计入；线束保持膜另用下列带胶材料 |
 | 垫片安装胶棉片材 | 2 张 | 下层至少 150×50×2.0 mm 一张，上层至少 150×50×1.2 mm 一张；每张裁四片 33×3 mm。替代 M17 片材量；受力／蠕变及胶粘保持力待验收 |
 | 树脂相容双组分结构胶 | 1 小套 | 嵌件和支座粘接用，按胶与树脂供方工艺选型并完全固化；这是采购包装数，不是已测得耗胶量 |
 | 电池可拆固定胶与边缘绝缘 | 1 套 | 槽底到电池包名义仅 0.20 mm；底部胶、绝缘和装配余量的总厚度不得超预算，不能额外压缩软包 |
-| 上侧线束保持胶带 | 1 小卷，裁 3 片 | 带胶绝缘膜／胶带，含胶总厚不超过 0.10 mm；覆盖上层导线并向固定座侧面包覆 |
-| 可拆桥固定胶带 | 1 小卷 | 非导电、可移除双面胶，总厚 0.05 mm，用于 2 个后侧桥的侧面支承区；上层保持膜与胶总厚不得超过 0.10 mm |
+| 上侧线束保持胶带 | 1 小卷，裁片方案待定 | 带胶绝缘膜／胶带，含胶总厚不超过 0.10 mm；覆盖上层导线并向固定座侧面包覆 |
+| 可拆桥固定胶带 | 1 小卷 | 非导电、可移除双面胶，总厚 0.05 mm，最终粘接区及数量随 E73 固定件方案确定；上层保持膜与胶总厚不得超过 0.10 mm |
 
 ### 需要的工具（可共用，无须每把配一套）
 

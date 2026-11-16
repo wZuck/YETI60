@@ -12,7 +12,7 @@ class Links(HTMLParser):
 def main():
  parser=argparse.ArgumentParser();parser.add_argument('--require-release',action='store_true');args=parser.parse_args();base=ROOT/'delivery/YETI60-E73';m=json.loads((base/'manifest.json').read_text())
  for name,digest in m['source_sha256'].items():assert sha(ROOT/name)==digest,('Stale source',name)
- files={str(p.relative_to(base))for p in base.rglob('*')if p.is_file()and p!=base/'manifest.json'}
+ files={str(p.relative_to(base))for p in base.rglob('*')if p.is_file()and p!=base/'manifest.json'and p.name!='.DS_Store'}
  assert files==set(m['files_sha256']),'Unlisted or missing delivery file'
  for name,digest in m['files_sha256'].items():assert sha(base/name)==digest,('Changed delivery file',name)
  for p in base.rglob('*'):

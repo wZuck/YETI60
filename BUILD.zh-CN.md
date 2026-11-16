@@ -28,7 +28,7 @@
 
 E73 的 USB／充电控制使用 GPIO0 的 EN1／EN2，以及 **GPIO1.13 的 CE_N**。正常版与校准版构建必须保留内部 RC 低频时钟、REG1 LDO，以及明确释放 NFC 引脚为 GPIO 的 UICR 设置。该模组有五个实际连接的底部焊盘，只焊边缘引脚不能完成电气连接，需按合适的锡膏／回流及检查流程装配。
 
-旧 `scripts/run_e73_review.py` 流程仍对应迁移前工程，不能验收 CORNER-03。当前应按[右下角说明](docs/engineering/e73-hhkb-corner.zh-CN.md#重现及验收)依次运行原生布线、参考地、元件模型、装配边界及故障注入检查，再按本页末尾的独立固件说明构建。完整线束、功耗／电池和实物验收仍需同步完成。
+旧 `scripts/run_e73_review.py` 流程仍对应迁移前工程，不能验收 CORNER-04。当前应按[右下角说明](docs/engineering/e73-hhkb-corner.zh-CN.md#重现及验收)依次运行原生布线、参考地、元件模型、装配边界及故障注入检查，再按本页末尾的独立固件说明构建。完整线束、功耗／电池和实物验收仍需同步完成。
 
 [当前 E73 固件构建、回归证据和校准升级说明](docs/testing/e73-firmware-validation.zh-CN.md)。
 

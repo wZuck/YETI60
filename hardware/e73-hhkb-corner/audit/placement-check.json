@@ -18,7 +18,7 @@
   ],
   "module_pin_count": 43,
   "unchanged_effective_keys": 60,
-  "unchanged_retained_copper_items": 4970,
+  "unchanged_retained_copper_items": 4960,
   "ordinary_front_escape_vias": [
     {
       "reference": "U1",
@@ -573,19 +573,6 @@
       "pin": "9",
       "net": "GND",
       "center_PCB_mm": [
-        337.5,
-        120.2
-      ],
-      "diameter_mm": 0.5,
-      "drill_mm": 0.3,
-      "both_faces_tented": true,
-      "SMD_land_overlap": false
-    },
-    {
-      "reference": "routed",
-      "pin": "10",
-      "net": "GND",
-      "center_PCB_mm": [
         339.0,
         122.4
       ],
@@ -596,7 +583,7 @@
     },
     {
       "reference": "routed",
-      "pin": "11",
+      "pin": "10",
       "net": "APLEX_EN_PIN_1",
       "center_PCB_mm": [
         310.7605,
@@ -609,7 +596,7 @@
     },
     {
       "reference": "routed",
-      "pin": "12",
+      "pin": "11",
       "net": "AMUX_SEL_1",
       "center_PCB_mm": [
         337.9853,
@@ -622,7 +609,7 @@
     },
     {
       "reference": "routed",
-      "pin": "13",
+      "pin": "12",
       "net": "AMUX_SEL_0",
       "center_PCB_mm": [
         335.264,
@@ -635,7 +622,7 @@
     },
     {
       "reference": "routed",
-      "pin": "14",
+      "pin": "13",
       "net": "ADC",
       "center_PCB_mm": [
         343.4358,
@@ -648,7 +635,7 @@
     },
     {
       "reference": "routed",
-      "pin": "15",
+      "pin": "14",
       "net": "USB_5V",
       "center_PCB_mm": [
         319.8,
@@ -661,7 +648,7 @@
     },
     {
       "reference": "routed",
-      "pin": "16",
+      "pin": "15",
       "net": "USB_5V",
       "center_PCB_mm": [
         326.0,
@@ -674,7 +661,7 @@
     },
     {
       "reference": "routed",
-      "pin": "17",
+      "pin": "16",
       "net": "ROW4",
       "center_PCB_mm": [
         329.5,
@@ -687,7 +674,7 @@
     },
     {
       "reference": "routed",
-      "pin": "18",
+      "pin": "17",
       "net": "COL13",
       "center_PCB_mm": [
         307.9,
@@ -700,7 +687,7 @@
     },
     {
       "reference": "routed",
-      "pin": "19",
+      "pin": "18",
       "net": "COL13",
       "center_PCB_mm": [
         325.8,
@@ -713,7 +700,7 @@
     },
     {
       "reference": "routed",
-      "pin": "20",
+      "pin": "19",
       "net": "COL13",
       "center_PCB_mm": [
         327.4,
@@ -726,7 +713,7 @@
     },
     {
       "reference": "routed",
-      "pin": "21",
+      "pin": "20",
       "net": "COL13",
       "center_PCB_mm": [
         326.0,
@@ -739,7 +726,7 @@
     },
     {
       "reference": "routed",
-      "pin": "22",
+      "pin": "21",
       "net": "COL13",
       "center_PCB_mm": [
         326.8,
@@ -752,7 +739,7 @@
     },
     {
       "reference": "routed",
-      "pin": "23",
+      "pin": "22",
       "net": "COL13",
       "center_PCB_mm": [
         323.2,
@@ -765,7 +752,7 @@
     },
     {
       "reference": "routed",
-      "pin": "24",
+      "pin": "23",
       "net": "COL14",
       "center_PCB_mm": [
         337.1,
@@ -778,7 +765,7 @@
     },
     {
       "reference": "routed",
-      "pin": "25",
+      "pin": "24",
       "net": "COL14",
       "center_PCB_mm": [
         338.3,
@@ -791,7 +778,7 @@
     },
     {
       "reference": "routed",
-      "pin": "26",
+      "pin": "25",
       "net": "ADC",
       "center_PCB_mm": [
         341.2,
@@ -804,7 +791,7 @@
     },
     {
       "reference": "routed",
-      "pin": "27",
+      "pin": "26",
       "net": "CHG_EN2",
       "center_PCB_mm": [
         327.9,
@@ -817,7 +804,7 @@
     },
     {
       "reference": "routed",
-      "pin": "28",
+      "pin": "27",
       "net": "CHG_EN2",
       "center_PCB_mm": [
         327.9,
@@ -830,7 +817,7 @@
     },
     {
       "reference": "routed",
-      "pin": "29",
+      "pin": "28",
       "net": "CHG_EN2",
       "center_PCB_mm": [
         336.2,
@@ -843,7 +830,7 @@
     },
     {
       "reference": "routed",
-      "pin": "30",
+      "pin": "29",
       "net": "AFE_EN",
       "center_PCB_mm": [
         327.2,
@@ -856,7 +843,7 @@
     },
     {
       "reference": "routed",
-      "pin": "31",
+      "pin": "30",
       "net": "AFE_EN",
       "center_PCB_mm": [
         322.9,
@@ -869,7 +856,7 @@
     },
     {
       "reference": "routed",
-      "pin": "32",
+      "pin": "31",
       "net": "AFE_EN",
       "center_PCB_mm": [
         326.7,
@@ -882,7 +869,7 @@
     },
     {
       "reference": "routed",
-      "pin": "33",
+      "pin": "32",
       "net": "AFE_EN",
       "center_PCB_mm": [
         328.1,
@@ -895,7 +882,7 @@
     },
     {
       "reference": "routed",
-      "pin": "34",
+      "pin": "33",
       "net": "STATUS_LED",
       "center_PCB_mm": [
         335.2,
@@ -908,7 +895,7 @@
     },
     {
       "reference": "routed",
-      "pin": "35",
+      "pin": "34",
       "net": "ROW_DRV3",
       "center_PCB_mm": [
         341.3,
@@ -921,7 +908,7 @@
     },
     {
       "reference": "routed",
-      "pin": "36",
+      "pin": "35",
       "net": "ROW_DRV3",
       "center_PCB_mm": [
         336.3,
@@ -934,7 +921,7 @@
     },
     {
       "reference": "routed",
-      "pin": "37",
+      "pin": "36",
       "net": "ROW_DRV3",
       "center_PCB_mm": [
         335.8,
@@ -947,7 +934,7 @@
     },
     {
       "reference": "routed",
-      "pin": "38",
+      "pin": "37",
       "net": "ROW_DRV3",
       "center_PCB_mm": [
         331.3,
@@ -960,7 +947,7 @@
     },
     {
       "reference": "routed",
-      "pin": "39",
+      "pin": "38",
       "net": "ROW_DRV0",
       "center_PCB_mm": [
         339.7,
@@ -973,7 +960,7 @@
     },
     {
       "reference": "routed",
-      "pin": "40",
+      "pin": "39",
       "net": "ROW_DRV0",
       "center_PCB_mm": [
         339.0,
@@ -986,7 +973,7 @@
     },
     {
       "reference": "routed",
-      "pin": "41",
+      "pin": "40",
       "net": "ROW_DRV0",
       "center_PCB_mm": [
         331.8,
@@ -999,7 +986,7 @@
     },
     {
       "reference": "routed",
-      "pin": "42",
+      "pin": "41",
       "net": "ROW_DRV0",
       "center_PCB_mm": [
         328.8,
@@ -1012,7 +999,7 @@
     },
     {
       "reference": "routed",
-      "pin": "43",
+      "pin": "42",
       "net": "ROW_DRV0",
       "center_PCB_mm": [
         326.2,
@@ -1025,7 +1012,7 @@
     },
     {
       "reference": "routed",
-      "pin": "44",
+      "pin": "43",
       "net": "ROW_DRV0",
       "center_PCB_mm": [
         324.0,
@@ -1038,7 +1025,7 @@
     },
     {
       "reference": "routed",
-      "pin": "45",
+      "pin": "44",
       "net": "ROW_DRV0",
       "center_PCB_mm": [
         318.3,
@@ -1051,7 +1038,7 @@
     },
     {
       "reference": "routed",
-      "pin": "46",
+      "pin": "45",
       "net": "ROW_DRV0",
       "center_PCB_mm": [
         318.3,
@@ -1064,7 +1051,7 @@
     },
     {
       "reference": "routed",
-      "pin": "47",
+      "pin": "46",
       "net": "ROW_DRV0",
       "center_PCB_mm": [
         318.8,
@@ -1077,7 +1064,7 @@
     },
     {
       "reference": "routed",
-      "pin": "48",
+      "pin": "47",
       "net": "ROW_DRV1",
       "center_PCB_mm": [
         327.4,
@@ -1090,7 +1077,7 @@
     },
     {
       "reference": "routed",
-      "pin": "49",
+      "pin": "48",
       "net": "ROW_DRV1",
       "center_PCB_mm": [
         325.5,
@@ -1103,7 +1090,7 @@
     },
     {
       "reference": "routed",
-      "pin": "50",
+      "pin": "49",
       "net": "ROW_DRV1",
       "center_PCB_mm": [
         346.7,
@@ -1116,7 +1103,7 @@
     },
     {
       "reference": "routed",
-      "pin": "51",
+      "pin": "50",
       "net": "ROW_DRV1",
       "center_PCB_mm": [
         346.5,
@@ -1129,7 +1116,7 @@
     },
     {
       "reference": "routed",
-      "pin": "52",
+      "pin": "51",
       "net": "ROW_DRV2",
       "center_PCB_mm": [
         322.1,
@@ -1142,7 +1129,7 @@
     },
     {
       "reference": "routed",
-      "pin": "53",
+      "pin": "52",
       "net": "SWDIO",
       "center_PCB_mm": [
         325.2,
@@ -1155,7 +1142,7 @@
     },
     {
       "reference": "routed",
-      "pin": "54",
+      "pin": "53",
       "net": "SWDIO",
       "center_PCB_mm": [
         324.9,
@@ -1168,7 +1155,7 @@
     },
     {
       "reference": "routed",
-      "pin": "55",
+      "pin": "54",
       "net": "SWDIO",
       "center_PCB_mm": [
         320.3,
@@ -1181,7 +1168,7 @@
     },
     {
       "reference": "routed",
-      "pin": "56",
+      "pin": "55",
       "net": "SWDIO",
       "center_PCB_mm": [
         321.5,
@@ -1194,7 +1181,7 @@
     },
     {
       "reference": "routed",
-      "pin": "57",
+      "pin": "56",
       "net": "SWDIO",
       "center_PCB_mm": [
         322.8,
@@ -1207,7 +1194,7 @@
     },
     {
       "reference": "routed",
-      "pin": "58",
+      "pin": "57",
       "net": "SWDIO",
       "center_PCB_mm": [
         325.0,
@@ -1220,7 +1207,7 @@
     },
     {
       "reference": "routed",
-      "pin": "59",
+      "pin": "58",
       "net": "SWDCLK",
       "center_PCB_mm": [
         346.1,
@@ -1233,7 +1220,7 @@
     },
     {
       "reference": "routed",
-      "pin": "60",
+      "pin": "59",
       "net": "SWDCLK",
       "center_PCB_mm": [
         342.5,
@@ -1246,7 +1233,7 @@
     },
     {
       "reference": "routed",
-      "pin": "61",
+      "pin": "60",
       "net": "SWDCLK",
       "center_PCB_mm": [
         341.2,
@@ -1259,7 +1246,7 @@
     },
     {
       "reference": "routed",
-      "pin": "62",
+      "pin": "61",
       "net": "+3.3V",
       "center_PCB_mm": [
         318.1,
@@ -1272,7 +1259,7 @@
     },
     {
       "reference": "routed",
-      "pin": "63",
+      "pin": "62",
       "net": "+3.3V",
       "center_PCB_mm": [
         317.8,
@@ -1285,7 +1272,7 @@
     },
     {
       "reference": "routed",
-      "pin": "64",
+      "pin": "63",
       "net": "+3.3V",
       "center_PCB_mm": [
         317.9,
@@ -1298,7 +1285,7 @@
     },
     {
       "reference": "routed",
-      "pin": "65",
+      "pin": "64",
       "net": "ROW_DRV4",
       "center_PCB_mm": [
         332.5,
@@ -1311,7 +1298,7 @@
     },
     {
       "reference": "routed",
-      "pin": "66",
+      "pin": "65",
       "net": "ROW_DRV4",
       "center_PCB_mm": [
         343.7,
@@ -1324,7 +1311,7 @@
     },
     {
       "reference": "routed",
-      "pin": "67",
+      "pin": "66",
       "net": "ROW_DRV4",
       "center_PCB_mm": [
         344.2,
@@ -1337,7 +1324,7 @@
     },
     {
       "reference": "routed",
-      "pin": "68",
+      "pin": "67",
       "net": "ROW_DRV4",
       "center_PCB_mm": [
         348.3,
@@ -1350,7 +1337,7 @@
     },
     {
       "reference": "routed",
-      "pin": "69",
+      "pin": "68",
       "net": "RESET_N",
       "center_PCB_mm": [
         334.1,
@@ -1363,7 +1350,7 @@
     },
     {
       "reference": "routed",
-      "pin": "70",
+      "pin": "69",
       "net": "RESET_N",
       "center_PCB_mm": [
         338.0,
@@ -1376,7 +1363,7 @@
     },
     {
       "reference": "routed",
-      "pin": "71",
+      "pin": "70",
       "net": "RESET_N",
       "center_PCB_mm": [
         342.2,
@@ -1389,7 +1376,7 @@
     },
     {
       "reference": "routed",
-      "pin": "72",
+      "pin": "71",
       "net": "RESET_N",
       "center_PCB_mm": [
         341.4,
@@ -1402,7 +1389,7 @@
     },
     {
       "reference": "routed",
-      "pin": "73",
+      "pin": "72",
       "net": "RESET_N",
       "center_PCB_mm": [
         332.4,
@@ -1415,7 +1402,7 @@
     },
     {
       "reference": "routed",
-      "pin": "74",
+      "pin": "73",
       "net": "PGOOD_N",
       "center_PCB_mm": [
         313.6,
@@ -1428,7 +1415,7 @@
     },
     {
       "reference": "routed",
-      "pin": "75",
+      "pin": "74",
       "net": "PGOOD_N",
       "center_PCB_mm": [
         316.9,
@@ -1441,7 +1428,7 @@
     },
     {
       "reference": "routed",
-      "pin": "76",
+      "pin": "75",
       "net": "PGOOD_N",
       "center_PCB_mm": [
         324.3,
@@ -1454,7 +1441,7 @@
     },
     {
       "reference": "routed",
-      "pin": "77",
+      "pin": "76",
       "net": "PGOOD_N",
       "center_PCB_mm": [
         339.2,
@@ -1467,7 +1454,7 @@
     },
     {
       "reference": "routed",
-      "pin": "78",
+      "pin": "77",
       "net": "PGOOD_N",
       "center_PCB_mm": [
         342.7,
@@ -1480,7 +1467,7 @@
     },
     {
       "reference": "routed",
-      "pin": "79",
+      "pin": "78",
       "net": "CHG_N",
       "center_PCB_mm": [
         354.0,
@@ -1493,11 +1480,50 @@
     },
     {
       "reference": "routed",
-      "pin": "80",
+      "pin": "79",
       "net": "CHG_N",
       "center_PCB_mm": [
         351.2,
         175.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "80",
+      "net": "ROW_DRV4",
+      "center_PCB_mm": [
+        343.4,
+        120.7
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "81",
+      "net": "USB_FEED",
+      "center_PCB_mm": [
+        336.6,
+        114.0
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "both_faces_tented": true,
+      "SMD_land_overlap": false
+    },
+    {
+      "reference": "routed",
+      "pin": "82",
+      "net": "GND",
+      "center_PCB_mm": [
+        336.2,
+        119.4
       ],
       "diameter_mm": 0.5,
       "drill_mm": 0.3,
@@ -2352,13 +2378,13 @@
   ],
   "schematic_parity_items": 0,
   "source_sha256": {
-    "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
-    "hardware/e73-hhkb-corner/audit/placement-build.json": "8da815f2989f593423dabf8f9bde38401ed40e97a75ad63bd34c17aba7f2f0b3",
+    "hardware/e73-corner-spec.json": "c1e56e5e3aff3fd7b928f7794f3628b4793858f851fb562457d44a094f63b369",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "cbe66a53abd9f4e5674115a2891e27735a093c13d25cfff900507fe63420447e",
+    "hardware/e73-hhkb-corner/audit/placement-build.json": "7fafc1ab06681945d07b337c1a16f80c283b34c9ce3155693e1d863451a6be01",
     "hardware/e73-usb-repair/EC60-nRF52840.kicad_pcb": "0353992782a636a6ca04028aca4e6a660da7ae27ce0909aba2f7d3b29d4af8ee",
     "docs/audit/yeti60-key-geometry.json": "49d53c2e3a8a230fb679337535bdfde013d9ae934569220d4efe917968d92f24",
     "hardware/e73-usb-repair/mainboard-purchase.csv": "57652fe1efdbed769da1e48b968a6e424df8cb3f7a2131e65ce7af1ea4020c1e",
-    "scripts/check_e73_corner.py": "54a477cb70d89681c5e5664049cfb10a55fc98256e034dadd0c45ff026edbf51",
+    "scripts/check_e73_corner.py": "6844177367f3f491a3cc4940757528d79a7368d6890b7af81bc4a0c682707345",
     "scripts/screen_yeti60_interference.py": "fb3bc69b0a34f40536fb759c07a3448455326829ad26d1aef31959871ccc2ee5"
   },
   "limits": [

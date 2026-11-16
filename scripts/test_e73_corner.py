@@ -26,7 +26,8 @@ def main():
     results = []
     for case, expected in [('control', ''), ('wrong-GPIO-net', 'Changed pin identity or role'),
                            ('body-over-effective-key', 'Module overlaps effective sensing copper'),
-                           ('missing-antenna-keepout', 'Copper in provisional antenna band')]:
+                           ('missing-antenna-keepout', 'Copper in provisional antenna band'),
+                           ('wrong-J5-orientation','Changed intended part orientation')]:
         folder = WORK / case
         if folder.exists():
             shutil.rmtree(folder)
@@ -52,6 +53,9 @@ def main():
             for key in ['module_body_PCB_mm', 'provisional_antenna_PCB_mm']:
                 spec[key][1] -= 6
                 spec[key][3] -= 6
+        elif case == 'wrong-J5-orientation':
+            header=next(f for f in children(tree,'footprint')if ref(f)=='J5')
+            child(header,'at')[3]=0
         elif case == 'missing-antenna-keepout':
             zone = next(z for z in children(tree, 'zone') if child(z, 'name') and child(z, 'name')[1] == 'E73_CORNER_ANTENNA_PROVISIONAL')
             tree.remove(zone)
@@ -81,7 +85,7 @@ def main():
                BASE/'audit/placement-build.json', ROOT/'scripts/check_e73_corner.py',
                ROOT/'scripts/kicad_sexpr.py', Path(__file__)]
     report = dict(status='native-placement-mutation-checks-passed', physical_verification=False,
-                  manufacturing_released=False, control_runs=1, rejected_mutations=3, cases=results,
+                  manufacturing_released=False, control_runs=1, rejected_mutations=4, cases=results,
                   resealed_fixture_hashes=True, source_unchanged=True,
                   source_sha256={str(p.relative_to(ROOT)):sha(p) for p in sources},
                   limits=['Placement and provisional copper-band checks only', 'Does not establish routing completion, RF or EC hardware acceptance'])

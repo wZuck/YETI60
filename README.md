@@ -30,16 +30,16 @@ The remaining study and step-guide links below retain pre-migration reference re
 - [Feasibility assessment response](docs/engineering/assessment-response.md)
 - [Ordinary fabrication review package](docs/engineering/fabrication-review.md)
 - [Engineering assembly sheets and sequence](docs/engineering/assembly.md)
-- [28-step illustrated soldering and installation guide](docs/assembly/build-guide.md)
+- [Current 12-step PCB soldering and bench guide](docs/assembly/e73-corner/soldering.md)
 - [Battery recess feasibility](docs/engineering/battery-study.md)
 - [Power, runtime and charging calculation](docs/engineering/power-budget.md)
 - [Materials and procurement table](docs/engineering/materials.md)
 - [PCB marking cleanup](docs/engineering/board-markings.md)
 - [Complete review](docs/audit/yeti60-comprehensive-review.md)
-- [Hardware and fabrication notes](hardware/ec60-nrf52840/README.md)
+- [Ordinary PCB ordering and mechanical printing requirements](docs/build/e73-ordering-printing.md)
 - [Firmware core, simulation and trace](firmware/yeti60/README.md)
 - [Assembly renders](renders/yeti60-assembly/README.md)
-- [PCB renders and 360° animation](renders/ec60-nrf52840/README.md)
+- [Pre-migration PCB renders and animation, reference only](renders/ec60-nrf52840/README.md)
 - [Current audit index](docs/audit/README.md)
 
 The case material is provisionally resin. SI/RF screening has started; antenna layout blockers and physical qualification remain open. Project-owned prose defaults to English with a parallel `.zh-CN.md`; machine-readable field names stay stable.
@@ -76,7 +76,7 @@ Quantities are net boards per keyboard; the fabricator's minimum order quantity 
 | YETI60 E73 mainboard | 1 | 285.0 × 94.6 mm restored straight-edge outline; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Current KiCad PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb), [migration gates](docs/engineering/e73-hhkb-corner.md); no fabrication package released for this revision; do not substitute old Gerbers |
 | Unified Daughterboard C5 JSH | 1 only for self-assembly; 0 if purchased populated | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](hardware/bom/daughterboard.csv) |
 
-No fabrication package is released for this corner mainboard. Do not substitute an old mainboard archive. C5 uses separate, unchanged four-layer files; do not order it as two layers. Reuse the already-made C5. Final stencil and supplier acceptance remain open. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and five routing guides are mechanical parts, not additional PCBs. For self-reflow, use mainboard **F.Paste and B.Paste** (E73 on front, other parts on back) and C5 **F.Paste** with a qualified stencil/profile.
+No fabrication package is released for this corner mainboard. Do not substitute an old mainboard archive. C5 uses separate, unchanged four-layer files; do not order it as two layers. Reuse the already-made C5. Final stencil and supplier acceptance remain open. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and forthcoming cable retention parts are mechanical parts, not additional PCBs. For self-reflow, use mainboard **F.Paste and B.Paste** (E73 on front, other parts on back) and C5 **F.Paste** with a qualified stencil/profile.
 
 ### Electronic assemblies, battery and cables
 
@@ -85,10 +85,10 @@ No fabrication package is released for this corner mainboard. Do not substitute 
 | Mainboard PCB | 1 | Current YETI60 native PCB; ordinary four-layer FR-4, target nominal thickness 1.6 mm; preserve EC electrodes and mounting centers; use the restored straight right edge; CAD envelope 1.6062 mm; wait for this revision to be released with matching fabrication files |
 | Mainboard fitted parts | 75 | Every reference, value, package and specified/candidate MPN is listed below; included if buying a populated mainboard |
 | USB daughterboard | 1 populated | Unified Daughterboard C5 JSH, commit `2b6c52a`; seven fitted components including USB-C receptacle and SH header; retain C rather than S |
-| Internal USB harness | 1 four-wire | AWG28 stranded copper, insulation OD ≤0.8 mm; two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts; C5 to J4: 1-to-1 power, 2-to-2 D−, 3-to-3 D+, 4-to-4 GND. Complete new routing remains unqualified; do not cut to the old 150 mm figure |
-| J5-to-J1 power bridge | 1 two-wire | AWG28, insulation OD ≤0.8 mm; one SHR-02V-S, one SHR-04V-S and four SSH-003T-P0.2-H contacts; J5.1→J1.1 and J5.2→J1.4, J1.2/J1.3 empty; final lengths and retention remain open |
+| Internal USB harness | 1 four-wire | AWG28 stranded copper, insulation OD ≤0.65 mm; two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts; C5 to J4: 1-to-1 power, 2-to-2 D−, 3-to-3 D+, 4-to-4 GND. Complete new routing remains unqualified; do not cut to the old 150 mm figure |
+| J5-to-J1 power bridge | 1 two-wire | AWG28, insulation OD ≤0.65 mm; one SHR-02V-S, one SHR-04V-S and four SSH-003T-P0.2-H contacts; J5.1→J1.1 and J5.2→J1.4, J1.2/J1.3 empty; final lengths and retention remain open |
 | Battery assembly | 1 pack | Custom single-cell YETI60-BAT-1600-1S, target minimum 1600 mAh; complete pack <=85 x 43 x 4.8 mm including PCM, sensors, wrap, tabs and growth; independent thermal interruption, actual charging window within 15–43 C; supplier must accept >=500 mA continuous charging capability and the 4.16–4.23 V regulation range |
-| Battery leads and plug | 1 three-wire set, included in pack | AWG28, OD <=0.8 mm; one SHR-03V-S housing and three SSH-003T-P0.2-H contacts, mating with SM03B-SRSS-TB at 1.00 mm pitch; pin 1 red positive, 2 black negative, 3 yellow separate 10k NTC. Independent thermal protection and third-wire NTC feedback are separate requirements; supplier-signed envelope/lead-exit drawing required |
+| Battery leads and plug | 1 three-wire set, included in pack | AWG28, OD <=0.65 mm; one SHR-03V-S housing and three SSH-003T-P0.2-H contacts, mating with SM03B-SRSS-TB at 1.00 mm pitch; pin 1 red positive, 2 black negative, 3 yellow separate 10k NTC. Independent thermal protection and third-wire NTC feedback are separate requirements; supplier-signed envelope/lead-exit drawing required |
 | External USB data cable | 1 | USB-C at keyboard; USB-A or USB-C at host as appropriate; data capable, not charge-only |
 
 ### Every fitted mainboard component
@@ -189,7 +189,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | ID | Material | Quantity | Detailed specification/acceptance |
 |---|---|---:|---|
 | M01 | Top shell | 1 | Derived FELK60 HHKB STEP, tough SLA resin, post-cured; no exterior scaling |
-| M02 | Bottom shell | 1 | Selected [E73 M01 STEP](mechanical/e73-fit/yeti60-e73-bottom-m01.step), P2 1600 mAh recess and SW100 floor relief; original exterior |
+| M02 | Bottom shell | 1 | Selected [E73 M04 STEP](hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step), protected-pack pocket, SW100 relief and current internal cable channel; original exterior |
 | M03 | Plate | 1 | K07 E73 M01 NiZ plate-mount DXF, 304 stainless, CAD thickness 1.60 mm, finished 1.55-1.60 mm, 28 M2 x 0.4 axes; no H26 plate mounting hole |
 | M04 | NiZ housings / sliders / original rings | 60 | K01 five per pack, buy 13 packs / 65; install 60, spare 5; ordinary center housings for big keys, no Deskeys wide assembly |
 | M05 | Rubber domes | 60 positions | K03 NiZ 45g sheet, one sheet; use 60 complete positions trimmed for HHKB; not included in K01 |
@@ -217,15 +217,13 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 |---|---:|---|
 | Shell screw shims | 4 | 0.30 mm thick, M3 clearance, used with the four M3 x 5 screws above; OD must fit the screw seat |
 | Daughterboard insulating washers | 4 | 0.30 mm thick, M2 clearance, for four M2 x 4 screws |
-| Rear harness guide bases | 2 | One each of `mechanical/generated/interconnect-guides/rear-1-base` and `rear-2-base` STEP/STL; current width 5.4 and route-direction length 2 mm |
-| Rear removable bridges | 2 | One each of `rear-1-bridge` and `rear-2-bridge`; three lower battery wires/four upper USB wires, groove radius 0.5 mm |
-| Front USB guide | 1 | `front-base` STEP/STL, width 6 and route-direction length 1.8 mm; install in case coordinates without scaling |
+| Current E73 cable retainers | Count pending | Retainers/films must follow the CORNER-04 route and final clearance checks; no guide files are released yet. Do not print the historical rear/bridge/front guide set |
 | Polyimide insulation stock | 1 sheet | At least 100 x 100 x 0.10 mm; supplies the 28 insulating discs; do not double-count pre-cut parts. Upper harness retention uses the separately listed adhesive-backed film |
 | Gasket stock | 2 sheets | One >=150 x 50 x 2.0 mm lower sheet and one >=150 x 50 x 1.2 mm upper sheet; cut four 33 x 3 mm pads from each. Replaces M17 stock allowance; force/creep and adhesive qualification open |
 | Resin-compatible structural adhesive | 1 small two-part kit | For inserts and guides; qualify and cure per adhesive/resin suppliers; quantity denotes a purchase package, not measured consumption |
 | Removable battery tape and edge insulation | 1 set | Nominal pack-to-pocket-floor space is only 0.20 mm; tape, insulation and assembly allowance must fit that total budget; do not compress the pouch |
-| Upper harness retention tape | 1 small roll, cut 3 pieces | Adhesive-backed insulating film/tape, total thickness <=0.10 mm including adhesive; wrap over the upper wires and down the guide sides |
-| Removable bridge tape | 1 small roll | Nonconductive removable double-sided tape, 0.05 mm total thickness, for the two rear bridge side lands; upper film plus adhesive must total <=0.10 mm |
+| Upper harness retention tape | 1 small roll; cut plan pending | Adhesive-backed insulating film/tape, total thickness <=0.10 mm including adhesive; wrap over the upper wires and down the guide sides |
+| Removable bridge tape | 1 small roll | Nonconductive removable double-sided tape, 0.05 mm total thickness, final lands/count pending E73 retention design; upper film plus adhesive must total <=0.10 mm |
 
 ### Tools (shared, not one set per keyboard)
 

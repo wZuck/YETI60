@@ -1,5 +1,5 @@
 {
-  "revision": "YETI60-E73-HHKB-CORNER-03",
+  "revision": "YETI60-E73-HHKB-CORNER-04",
   "source_directory": "hardware/e73-usb-repair",
   "source_board_sha256": "0353992782a636a6ca04028aca4e6a660da7ae27ce0909aba2f7d3b29d4af8ee",
   "output_directory": "hardware/e73-hhkb-corner",
@@ -23,7 +23,7 @@
     "J5": [
       335.5,
       117.5,
-      0
+      180
     ],
     "C32": [
       336.5,
@@ -76,7 +76,7 @@
   "assembly_quantity_NiZ": 60,
   "notes": [
     "Keep all 28 installed PCB mounts and H26 unused; preserve 60 effective HHKB keys and GPIO roles",
-    "Move only the module and C32 to the lower-right; retain original J4/J5 back-side poses and C5 daughterboard",
+    "Move only the module and C32 to the lower-right; retain J4 and the C5 daughterboard; rotate back-side J5 by 180 degrees for cable clearance",
     "Use the unoccupied front-side PCB-to-plate space for U1; no new corner floor cut",
     "A paired back-layer USB route, two data through-vias and local front-side launches replace the old pair; fresh ground-return review required",
     "Preserve left-side analog feedback and charger-local copper; retire module feed trunks only",
@@ -489,5 +489,6 @@
     "wire_full_stroke_Y_half_band_mm": 10,
     "wire_extra_X_each_end_mm": 5,
     "minimum_module_gap_mm": 0.15
-  }
+  },
+  "post_route_header_repair": "hardware/e73-corner-j5-repair.json"
 }

@@ -6,7 +6,7 @@ Current stock is unverified. The current NiZ N+ listing does not establish that 
 
 The selected E73 build uses **60 NiZ housing/slider sets**, NiZ 45g domes and conical sensing springs, and **three separate Cherry/GMK plate-mounted stabilizer pairs**. Enter and left Shift each use a 2U wire; the centered HHKB 6U spacebar uses a separate 6U wire. NicePBT BoW caps remain selected. There are no Deskeys wide assemblies or Deskeys spacebar side units in this revision.
 
-Use the [E73 M01 plate](../02-mechanical/steel-plate.dxf) and [E73 assembly specification](../02-mechanical/assembly-spec.json). The old 1.2 mm Deskeys plate is superseded. The native PCB is unchanged; the firmware calibration fingerprint now includes the selected plate/stack: the PCB retains 29 native holes, but **H26 is unused and only 28 fastener sets are installed**. The new spacebar opening passes through that old mounting axis.
+Use the [E73 M01 plate](../02-mechanical/steel-plate.dxf) and [E73 assembly specification](../02-mechanical/assembly-spec.json). The old 1.2 mm Deskeys plate is superseded. The effective sensing positions and original PCB holes are retained; the firmware calibration fingerprint now includes the selected plate/stack: the PCB retains 29 native holes, but **H26 is unused and only 28 fastener sets are installed**. The new spacebar opening passes through that old mounting axis.
 
 This is a drawing-based engineering prototype. No sample exists. Actual NiZ clip retention, housing height, dome compression, wire bends and full cap/stabilizer travel require local first-article fitting. The CAD checks do not certify vendor plastic shapes or capacitance.
 
@@ -66,7 +66,7 @@ The 6U label alone does not establish exact fit. Before final metalwork/bulk ord
 8. Fit 2.0 mm lower gasket stock and **1.2 mm upper stock** at the original ledges. Do not add 0.4 mm to the outer case, move the PCB down, compress the battery or force the shell closed to fit the thicker plate.
 9. Calibrate every key with the completed mechanism installed. While operating each stabilized key, check neighboring unpressed keys as well: moving metal and a changed dome/stack require real EC qualification. Repeat all keys, full travel and edge return after closing the case. Any housing, dome, spring, ring or stack change requires recalibration including changes to an actual received part even when the design fingerprint is unchanged.
 
-Use the [28-step guide](https://github.com/wZuck/YETI60/blob/master/docs/assembly/build-guide.md) for soldering, power, SWD, harness and shell assembly. These mechanical changes add no PCB order or electronic BOM part. Mainboard USB/BLE/charging behavior remains the matched E73 firmware policy.
+Use the [current 12-step guide](soldering.md) for PCB soldering, power and SWD, and the [current wire study](harness-routing.md) for native connections. Complete shell assembly and retainers remain open. These mechanical changes add no PCB order or electronic BOM part. Mainboard USB/BLE/charging behavior remains the matched E73 firmware policy.
 
 ## Verification boundary
 
@@ -74,7 +74,7 @@ Use the [28-step guide](https://github.com/wZuck/YETI60/blob/master/docs/assembl
 
 The rendered NiZ/stabilizer bodies and wire paths are explanatory geometry, not supplier-qualified MCAD. No physical switch fit, key feel, local stiffness, USB/BLE operation, charge performance or interference test has been passed by an actual unit.
 
-[Build entry](https://github.com/wZuck/YETI60/blob/master/BUILD.md) · [materials](https://github.com/wZuck/YETI60/blob/master/docs/engineering/materials.md) · [assembly](https://github.com/wZuck/YETI60/blob/master/docs/engineering/assembly.md)
+[Build entry](https://github.com/wZuck/YETI60/blob/master/BUILD.md) · [materials](../03-bom/materials.md) · [current wire routing](harness-routing.md)
 
 The current E73 uses the lower-right module and SH3 battery connector; follow the [corner review](../06-validation/corner-review.md). Complete harness, power/battery and physical acceptance remain open.
 

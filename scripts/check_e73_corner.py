@@ -71,7 +71,7 @@ def main():
             assert old_pads[key][4:7] == new_pads[key][4:7], ('Changed land size/shape', ref, key)
     for ref, pose in s['other_placements_PCB_mm'].items():
         assert list(pcb.ToMM(now[ref].GetPosition())) == pose[:2], ('Changed intended part position', ref)
-        assert abs((now[ref].GetOrientationDegrees()-pose[2]+180)%360-180) < 1e-6
+        assert abs((now[ref].GetOrientationDegrees()-pose[2]+180)%360-180) < 1e-6, ('Changed intended part orientation',ref)
         assert now[ref].GetLayer() == (pcb.F_Cu if ref in s['front_parts'] else pcb.B_Cu)
     def mounts(board):
         return {p.m_Uuid.AsString():dict(reference=f.GetReference(),
@@ -216,10 +216,20 @@ def main():
         verify_via(str(uuid.uuid5(uuid.NAMESPACE_URL,'yeti60-e73-corner/USB-GND/'+str(i))),position,'GND','USB-return',str(i))
     assert len(escape) == sum(len(p) for p in s['front_escape_vias'].values())+len(s['data_launch_vias_PCB_mm'])+len(s['ground_stitch_vias_PCB_mm'])
     routed_vias=[]
+    connector_patch=None
+    if s.get('post_route_header_repair'):
+        from e73_corner_connector_repair import validate_patch
+        connector_patch=validate_patch(json.loads((ROOT/s['post_route_header_repair']).read_text()))
+        assert s['other_placements_PCB_mm'][connector_patch['part']]==connector_patch['final_pose']
+        assert not set(q['uuid']for q in connector_patch['retired']).intersection(actual_tracks),'Retired J5 copper survives'
     if s.get('routing_patch'):
         patch_path=ROOT/s['routing_patch']
         patch=json.loads(patch_path.read_text())
-        for text in patch['items']:
+        texts=patch['items']
+        if connector_patch:
+            retired_ids={q['uuid']for q in connector_patch['retired']}
+            texts=[text for text in texts if str(child(loads(text),'uuid')[1])not in retired_ids]+connector_patch['added']
+        for text in texts:
             q=loads(text);identifier=str(child(q,'uuid')[1]);actual=actual_tracks[identifier]
             assert actual.GetNetname()==child(q,'net')[1], ('Changed routed net',identifier)
             if q[0]=='via':

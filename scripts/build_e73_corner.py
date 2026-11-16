@@ -118,7 +118,13 @@ def main():
         fps[ref].Flip(origin, pcb.FLIP_DIRECTION_TOP_BOTTOM)
         fps[ref].Rotate(origin, angle)
         fps[ref].Move(delta)
+    header_repair=None
+    if s.get('post_route_header_repair'):
+        from e73_corner_connector_repair import validate_patch
+        header_repair=validate_patch(json.loads((ROOT/s['post_route_header_repair']).read_text()))
+        assert s['other_placements_PCB_mm'][header_repair['part']]==header_repair['final_pose']
     for ref, pose in s['other_placements_PCB_mm'].items():
+        if header_repair and ref==header_repair['part']:pose=header_repair['expected_pose']
         wanted_side = pcb.F_Cu if ref in s['front_parts'] else pcb.B_Cu
         if fps[ref].GetLayer() != wanted_side:
             fps[ref].Flip(fps[ref].GetPosition(), pcb.FLIP_DIRECTION_TOP_BOTTOM)
@@ -260,6 +266,10 @@ def main():
         routed.BuildConnectivity()
         pcb.SaveBoard(str(pcb_path),routed)
         inputs.append(patch_path)
+    if header_repair:
+        from e73_corner_connector_repair import apply
+        removed.extend(apply(pcb_path,header_repair))
+        inputs.extend([ROOT/s['post_route_header_repair'],ROOT/'scripts/e73_corner_connector_repair.py'])
     plugin = pcb.PCB_IO_MGR.FindPlugin(pcb.PCB_IO_MGR.KICAD_SEXP)
     plugin.FootprintSave(str(out / 'YAECKB.pretty'), fps['REF**'])
     # Remove the two unused sensing symbols and only their generated dedicated

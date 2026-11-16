@@ -9,6 +9,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Task | Read / use |
 |---|---|
 | Understand what to order and which options to select | [PCB and mechanical manufacturing instructions](01-pcb/ordering-and-printing.md) |
+| Check all nine leads, pin maps, free lengths and open gates | [Current harness study](04-assembly/harness-routing.md) |
 | Buy parts, credit existing inventory, identify every fitted reference | [Complete materials](03-bom/materials.md), [mainboard BOM / stock CSV](03-bom/mainboard-purchase.csv) |
 | Ask the battery supplier to confirm pack parameters | [Complete pack specification](03-bom/battery-requirements.md) |
 | Solder a blank PCB in stages and test each stage | [12-step PCB soldering and bench guide](04-assembly/soldering.md), [illustrated web guide](04-assembly/soldering.html) |

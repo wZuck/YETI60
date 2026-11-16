@@ -4,59 +4,59 @@
   "CMake_mutation_cases": [
     {
       "case": "same",
-      "version": "0x99578601"
+      "version": "0x43ad6b58"
     },
     {
       "case": "scanner",
-      "version": "0x34f3c03a"
+      "version": "0xceac551d"
     },
     {
       "case": "GPIO-mode",
-      "version": "0x027d0bf2"
+      "version": "0xbd9091ef"
     },
     {
       "case": "scan-control",
-      "version": "0xa61c7057"
+      "version": "0x08c82eff"
     },
     {
       "case": "waveform",
-      "version": "0x38b03bee"
+      "version": "0xca2d5951"
     },
     {
       "case": "calibration",
-      "version": "0x1f7c58f7"
+      "version": "0xfe1e5587"
     },
     {
       "case": "header",
-      "version": "0xf8b34b49"
+      "version": "0x1525018b"
     },
     {
       "case": "fit-limits",
-      "version": "0xfb4c0a84"
+      "version": "0xa0294daa"
     },
     {
       "case": "mechanism",
-      "version": "0x342d9603"
+      "version": "0x65498009"
     },
     {
       "case": "stack",
-      "version": "0x42882851"
+      "version": "0x444e945f"
     },
     {
       "case": "plate",
-      "version": "0x030d1e9e"
+      "version": "0xf64583ed"
     },
     {
       "case": "keymap-only",
-      "version": "0x99578601"
+      "version": "0x43ad6b58"
     },
     {
       "case": "effective-idle",
-      "version": "0xbb459fdc"
+      "version": "0x1d324352"
     },
     {
       "case": "effective-gating",
-      "version": "0x607d1a52"
+      "version": "0x02a3624a"
     }
   ],
   "native_gesture_output": "Pinned ZMK tap dance: single, hold, slow taps and interrupted taps do not clear; double tap dispatches selected-profile clear once",
@@ -85,8 +85,8 @@
     "firmware/yeti60/calibration.h": "df57aaa55fc77794eca70fe1c6d092f4476394bc30d7798a84633e6f3fec6f0c",
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
-    "mechanical/assembly-spec.json": "bdf2a3f04fe6bc0552b7e733bb54f4770a3bb8f73d8cee149d201afd07d9a7e7",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "cbe66a53abd9f4e5674115a2891e27735a093c13d25cfff900507fe63420447e",
+    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
     "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
     "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
     "mechanical/yeti60-key-mechanism.e73.json": "7ec89cc69dd1d842f7cd8ce7f0b588d08c2df00967f64bdfe706d8ff73902b39",

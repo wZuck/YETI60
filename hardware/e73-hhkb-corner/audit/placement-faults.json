@@ -3,7 +3,7 @@
   "physical_verification": false,
   "manufacturing_released": false,
   "control_runs": 1,
-  "rejected_mutations": 3,
+  "rejected_mutations": 4,
   "cases": [
     {
       "case": "control",
@@ -28,17 +28,23 @@
       "expected_rejection": "Copper in provisional antenna band",
       "rejected": true,
       "exit_code": 1
+    },
+    {
+      "case": "wrong-J5-orientation",
+      "expected_rejection": "Changed intended part orientation",
+      "rejected": true,
+      "exit_code": 1
     }
   ],
   "resealed_fixture_hashes": true,
   "source_unchanged": true,
   "source_sha256": {
-    "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
-    "hardware/e73-hhkb-corner/audit/placement-build.json": "8da815f2989f593423dabf8f9bde38401ed40e97a75ad63bd34c17aba7f2f0b3",
-    "scripts/check_e73_corner.py": "54a477cb70d89681c5e5664049cfb10a55fc98256e034dadd0c45ff026edbf51",
+    "hardware/e73-corner-spec.json": "c1e56e5e3aff3fd7b928f7794f3628b4793858f851fb562457d44a094f63b369",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "cbe66a53abd9f4e5674115a2891e27735a093c13d25cfff900507fe63420447e",
+    "hardware/e73-hhkb-corner/audit/placement-build.json": "7fafc1ab06681945d07b337c1a16f80c283b34c9ce3155693e1d863451a6be01",
+    "scripts/check_e73_corner.py": "6844177367f3f491a3cc4940757528d79a7368d6890b7af81bc4a0c682707345",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
-    "scripts/test_e73_corner.py": "e82d467b7148406ff9ae90a4da8d1504df8592fd6662f49673c10d508863fda4"
+    "scripts/test_e73_corner.py": "971a5bf78dbd04a8a926e6526ebb7e209316d3b6dd2062c49a861d52c2ad4192"
   },
   "limits": [
     "Placement and provisional copper-band checks only",

@@ -18,7 +18,7 @@ Review the mainboard as ordinary 4-layer FR-4, nominal 1.6 mm, JLC04161H-7628, E
 | 05 | [Firmware installation](05-firmware/installation.md) |
 | 06 | [Validation and limits](06-validation/corner-review.md) |
 
-The complete nine-wire harness/guides, final closed-case assembly drawings still require integration. Power/battery and manufacturing review, physical USB/BLE/EC and thermal acceptance remain open. The mechanism guide is not complete assembly release. The Gerber ZIP is for review, not an accepted order.
+Continuous nine-wire geometry has passed; retainers/guides and final closed-case assembly drawings still require integration. Power/battery and manufacturing review, physical USB/BLE/EC and thermal acceptance remain open. The mechanism guide is not complete assembly release. The Gerber ZIP is for review, not an accepted order.
 
 [Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [Bottom STEP](02-mechanical/bottom.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase.csv) · [Checksums](manifest.json)
 

@@ -111,27 +111,27 @@
     },
     "J5": {
       "path": ".assembly-work/e73-corner/models/J5.step",
-      "sha256": "082e43aef75edaf2d368d007648afe0f3f4ad55e74fa4a27406f53631219d5b5",
+      "sha256": "4ece7f07b599934ab932ed7b5d251612eb44a79be5e8a70e245e8eec0d777c90",
       "bounds_native_mm": [
         333.5,
-        -119.97500000000001,
+        -119.975,
         -3.045000000000001,
         337.5,
-        -115.025,
+        -115.02499999999999,
         -0.08499999999999969
       ],
       "native_Fab_bounds_native_XY_mm": [
         333.5,
-        -119.175,
+        -120.075,
         337.5,
-        -114.925
+        -115.825
       ],
       "nominal_model_and_Fab_union_bounds_native_mm": [
         333.5,
-        -119.97500000000001,
+        -120.075,
         -3.045000000000001,
         337.5,
-        -114.925,
+        -115.02499999999999,
         -0.08499999999999969
       ],
       "landing": {
@@ -140,11 +140,11 @@
           {
             "pin": "MP",
             "bounds_native_mm": [
-              337.0,
-              -116.525,
+              333.8,
+              -119.975,
               -0.0950000000000003,
-              337.2,
-              -115.025,
+              334.0,
+              -118.475,
               -0.09500000000000013
             ],
             "foot_copper_overlap_fraction": 1.0
@@ -152,11 +152,11 @@
           {
             "pin": "MP",
             "bounds_native_mm": [
-              333.8,
-              -116.525,
+              337.0,
+              -119.975,
               -0.0950000000000003,
-              334.0,
-              -115.025,
+              337.2,
+              -118.475,
               -0.09500000000000013
             ],
             "foot_copper_overlap_fraction": 1.0
@@ -164,11 +164,11 @@
           {
             "pin": "1",
             "bounds_native_mm": [
-              334.9,
-              -119.975,
+              335.9,
+              -115.825,
               -0.0849999999999998,
-              335.1,
-              -119.175,
+              336.1,
+              -115.025,
               -0.0849999999999997
             ],
             "foot_copper_overlap_fraction": 1.0
@@ -176,11 +176,11 @@
           {
             "pin": "2",
             "bounds_native_mm": [
-              335.9,
-              -119.975,
+              334.9,
+              -115.825,
               -0.0849999999999998,
-              336.1,
-              -119.175,
+              335.1,
+              -115.025,
               -0.0849999999999997
             ],
             "foot_copper_overlap_fraction": 1.0
@@ -261,7 +261,7 @@
   "kicad_version": "10.0.7",
   "source_sha256": {
     "scripts/check_e73_usb_local_models.py": "24aa856812af8d9ebfa0f563a5851b3a74f311b7e1c59991032105617ecd2986",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "cbe66a53abd9f4e5674115a2891e27735a093c13d25cfff900507fe63420447e",
     "scripts/export_e73_usb_ground.py": "e4ea61fb15f833db6458a545d5e98955c39f4902fcfba10590a708caf89aef30",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",

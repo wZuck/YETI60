@@ -6595,6 +6595,66 @@
     {
       "uuid": "ff2956dc-3296-4518-9ad9-8ce99247a1eb",
       "net": "AMUX_SEL_1"
+    },
+    {
+      "uuid": "e07afa56-e5cd-5078-95f0-0c3d4ef3cb6c",
+      "net": "GND",
+      "sha256": "6a41addbba6ea53cc126fd6d0133b034f9b1047286421826c2ec8d0ebc7de5d8"
+    },
+    {
+      "uuid": "615d4bb1-202e-5cd4-a550-48c1ee1ee8e4",
+      "net": "GND",
+      "sha256": "6e0a7eb0ff26de9a09551970650bcb8895cb7e27679c7fc772d795a6e4e4682c"
+    },
+    {
+      "uuid": "df430e23-60ab-4d67-8ec6-b8afc24d4579",
+      "net": "ROW_DRV4",
+      "sha256": "1ffa4d8a4b52205ac0e93cd3e5e1d8842205f9d63894184e34c957eec1257b4b"
+    },
+    {
+      "uuid": "df87a922-bf8a-4616-bf62-4f0663c0b3d2",
+      "net": "ROW_DRV4",
+      "sha256": "06537a620c4a7e1b6fb69bae8570482003dcb031594c9f2894cbca547192d005"
+    },
+    {
+      "uuid": "31369db6-cab0-4035-bf6a-64a6d7dc9ad9",
+      "net": "ROW_DRV4",
+      "sha256": "1f97384c3d72be7a32df3f6bd66cb2f0261a2079e62b1cae81fdc99fd8f21d6c"
+    },
+    {
+      "uuid": "7db4de29-4684-5c2c-b9dd-5d5f66d7f762",
+      "net": "USB_FEED",
+      "sha256": "a45643ed2d5bcd8c3cade799bb344e7c9c0a175ba3d2cfdb6fd1ae5ef0f51349"
+    },
+    {
+      "uuid": "7c9e8391-d665-599e-b265-d2b8459c030a",
+      "net": "USB_FEED",
+      "sha256": "e10834b1651a693606a3fe84af107f93fb5927ad41c2e985448724a626cb6c54"
+    },
+    {
+      "uuid": "a0cf6826-6ea9-5f7e-b5d7-3ea8b8b5ab1a",
+      "net": "USB_FEED",
+      "sha256": "9a8c8d558cc189ee58f632a5baccb2bcb350dde76eb6a14b77093f26b3c07efa"
+    },
+    {
+      "uuid": "ee957737-3cdd-591b-b28e-2f9b2ba24770",
+      "net": "USB_FEED",
+      "sha256": "7858cf68b7b60d84befff9d50960523cefec7291dc93827f21ab61610ab0b0e2"
+    },
+    {
+      "uuid": "6b652a22-d22d-5b16-a946-05d0c6f7ad86",
+      "net": "USB_FEED",
+      "sha256": "99d0e00172a309dafe5624f5a7dc810ac4eeefca80b75db4e666d7aedc5d3c90"
+    },
+    {
+      "uuid": "8b7959ee-1ec3-572b-a00e-dbbadc7e0d2d",
+      "net": "USB_FEED",
+      "sha256": "d530927c45ac4c97cd500816d4135a1fc77ed848dfe90e5534a88b4e941d6ca4"
+    },
+    {
+      "uuid": "2b2a9cbb-3ba5-4d9f-8be6-64ef6a3171f5",
+      "net": "ROW_DRV4",
+      "sha256": "38167f792e32252c58df61e59954676973a856f096413bf97cf6886af8f48473"
     }
   ],
   "relocated_cluster": [
@@ -6606,8 +6666,8 @@
   ],
   "module_rotation_deg": 0,
   "source_sha256": {
-    "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
-    "scripts/build_e73_corner.py": "e3c1c4d2459eef7ad72294295d32b3183696249ee672574bc3ce7de64d427b97",
+    "hardware/e73-corner-spec.json": "c1e56e5e3aff3fd7b928f7794f3628b4793858f851fb562457d44a094f63b369",
+    "scripts/build_e73_corner.py": "10e9de4617953d2251460d896a155e024b1314f0eb0cd8517d145e23dbce7503",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "scripts/check_schematic_current.py": "908fc7181c616685f2afcc2fa93223518ea83be03ed1a401c7dac8c0dfda33aa",
     "scripts/screen_yeti60_interference.py": "fb3bc69b0a34f40536fb759c07a3448455326829ad26d1aef31959871ccc2ee5",
@@ -6806,9 +6866,11 @@
     "hardware/e73-usb-repair/YAECKB.pretty/ecs_pad_no_ring_stepped&normal__SW71.kicad_mod": "e0a319dc63587cedd4e320be824dacc4853f69eaacddfa1191c2d04979c62b71",
     "hardware/e73-usb-repair/models/Littelfuse_0466001_NRHF_nominal.step": "9ee1bf16196e8ae677c15f533ae433479fc172d00e2111ee9549ee10c258aa7f",
     "hardware/e73-usb-repair/models/TI_RGT16_3x3_EP1p68_dimensioned.step": "6c72a249f019f0c4979772547e69a8c2a9c024001e82cd6d3079b74c651ddecd",
-    "hardware/e73-corner-routing.json": "a8ef7cc55e13f7f59f2ca82be1b6579ae70005c1ebfe0f02f4eab226bd484a66"
+    "hardware/e73-corner-routing.json": "a8ef7cc55e13f7f59f2ca82be1b6579ae70005c1ebfe0f02f4eab226bd484a66",
+    "hardware/e73-corner-j5-repair.json": "5312eb764c41805ec619efd5cbee5412a6814a63031f628fe36ab5f038f7cb5a",
+    "scripts/e73_corner_connector_repair.py": "91af121d88658ef0cb6b8d0d6303d10e2442d2a1add2d754c4d83a3871980781"
   },
-  "pcb_sha256": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
+  "pcb_sha256": "cbe66a53abd9f4e5674115a2891e27735a093c13d25cfff900507fe63420447e",
   "open_gates": [
     "Native electrical routing and DRC/parity",
     "USB reference-ground closure and new C5 harness",

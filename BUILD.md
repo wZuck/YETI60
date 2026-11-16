@@ -28,7 +28,7 @@ The existing mainboard is ordinary four-layer FR-4, nominal 1.6 mm with mechanic
 
 E73's USB/charging adapter uses GPIO0 for EN1/EN2 and **GPIO1.13 for CE_N**. Normal/calibrator builds must retain internal RC LFCLK, REG1 LDO and the explicit NFC-pin GPIO UICR setting. The module has five connected bottom lands; edge-only hand soldering is insufficient to connect them. Follow a qualified paste/reflow and inspection process.
 
-The legacy `scripts/run_e73_review.py` workflow still targets the pre-migration project and does not qualify CORNER-03. Follow the [corner reproduction sequence](docs/engineering/e73-hhkb-corner.md#reproduction-and-acceptance) for native routing, reference ground, models, bounded assembly and mutation checks, then the candidate firmware guide below. Complete harness, power/battery and physical acceptance still require integration.
+The legacy `scripts/run_e73_review.py` workflow still targets the pre-migration project and does not qualify CORNER-04. Follow the [corner reproduction sequence](docs/engineering/e73-hhkb-corner.md#reproduction-and-acceptance) for native routing, reference ground, models, bounded assembly and mutation checks, then the candidate firmware guide below. Complete harness, power/battery and physical acceptance still require integration.
 
 [Current E73 firmware builds, regression evidence and calibration migration](docs/testing/e73-firmware-validation.md).
 

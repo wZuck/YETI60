@@ -1,0 +1,219 @@
+{
+  "revision": "YETI60-E73-CORNER-HARNESS-01",
+  "units": "mm",
+  "sources": {
+    "SH": {
+      "url": "https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf",
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "header": "SM04B-SRSS-TB(LF)(SN)",
+      "housing": "SHR-04V-S",
+      "contact": "SSH-003T-P0.2-H",
+      "housing_width": 5,
+      "housing_depth": 5,
+      "housing_height": 2.8,
+      "mated_depth_reference": 6.25,
+      "header_back_local_y": -1.675,
+      "header_front_local_y": 2.575
+    },
+    "battery_connector": {
+      "header": "SM03B-SRSS-TB(LF)(SN)",
+      "housing": "SHR-03V-S",
+      "contact": "SSH-003T-P0.2-H",
+      "pitch_mm": 1,
+      "current_rating_A_AWG28": 1,
+      "url": "https://www.jst-mfg.com/product/index.php?lang=2&series=231",
+      "physical_qualification": false
+    }
+  },
+  "wire": {
+    "gauge": "AWG28 stranded copper; thin-wall UL10064 or equivalent, installed insulation OD <= 0.65 mm",
+    "insulation_od_max": 0.65,
+    "SH_allowed_od": [
+      0.4,
+      0.8
+    ],
+    "minimum_static_bend_radius": 4,
+    "bend_rule_basis": "Chosen engineering requirement, not a vendor bend-radius guarantee; wire supplier must approve",
+    "case_and_route_position_allowance": 0.25,
+    "minimum_air_gap_after_allowance": 0.15,
+    "manufactured_free_length_tolerance": 0.5,
+    "length_definition": "Along each conductor insulation between the two housing wire-exit planes, or housing exit to pack strain-relief face; not a crimp cut-length",
+    "tolerance_basis": "0.25 mm is the inspected assembled-route acceptance envelope; not an assumed sum of unverified print, tape and wire errors.",
+    "nominal_insulation_od_mm": 0.6,
+    "maximum_insulation_od_includes_tolerance": true,
+    "relative_non_twisted_position_allowance_mm": 0.1
+  },
+  "battery": {
+    "part": "YETI60-CABLE-BAT-P2",
+    "pin_map": {
+      "1": "PACK+",
+      "2": "PACK-",
+      "3": "NTC"
+    },
+    "colors": {
+      "1": "red",
+      "2": "black",
+      "3": "yellow"
+    },
+    "lateral_offsets": [
+      2,
+      0,
+      -2
+    ],
+    "main_exit_below_pcb": 1.6,
+    "radius": 7,
+    "rear_y": -106.4,
+    "side_x": 221,
+    "drop_y": -119,
+    "pack_exit_local": [
+      0,
+      14,
+      4.5
+    ],
+    "pack_exit_axis": "-X; local origin is pack minimum X/Y/Z, not cell origin",
+    "minimum_pack_lead_transition_zone_length": 5,
+    "rear_z": -4.85,
+    "header_lateral_offsets": [
+      1,
+      0,
+      -1
+    ],
+    "header_fanout_radius_mm": 4
+  },
+  "case_pocket": {
+    "bounds_case_mm": [
+      190,
+      -106.3,
+      -5.25,
+      354,
+      -98,
+      -1.5
+    ],
+    "minimum_remaining_wall_mm": 2.0,
+    "purpose": "Internal underside relief beneath rear ledge; external shell and upper bearing surfaces retained"
+  },
+  "usb": {
+    "initial_radius": 5.5,
+    "bend_radius": 5.5,
+    "rear_y": -102,
+    "drop_start_x": 314,
+    "low_z": -3.75,
+    "drop_x": 193,
+    "front_y": -170,
+    "end_straight": 1.5,
+    "colors": {
+      "1": "red",
+      "2": "white",
+      "3": "green",
+      "4": "black"
+    },
+    "twist_turns": 3,
+    "twist_envelope_diameter": 1.8,
+    "drop_y": -115,
+    "cross_z": -3.065,
+    "rise_x": 230,
+    "front_z": -4.4,
+    "last_z": -4.87,
+    "return_lower_y": -142,
+    "endpoint_pair_radius": 0.5,
+    "bulk_pair_radius": 0.325,
+    "twist_rear_turns": 3.25,
+    "twist_down_turns": 0.5,
+    "twist_return_turns": 0.25,
+    "header_z": -3.6,
+    "header_radius": 4
+  },
+  "power": {
+    "initial_radius": 8,
+    "side_radius": 7,
+    "high_z": -3.1,
+    "rear_y": -109.5,
+    "low_start_x": 152,
+    "low_z": -4.76,
+    "left_x": 140,
+    "turn_radius": 5.2,
+    "fan_radius": 4,
+    "colors": {
+      "1": "red",
+      "2": "black"
+    },
+    "cross_start_x": 220,
+    "cross_end_x": 182,
+    "cross_lower_start_x": 214,
+    "header_low_z": -4.76,
+    "header_radius": 4,
+    "initial_direction_y": -1,
+    "rise_radius": 4,
+    "cross_lateral_shift_by_pin_mm": {
+      "1": -0.65,
+      "2": -0.75
+    }
+  },
+  "guides": {
+    "USB_rear_x": [
+      240,
+      270,
+      300
+    ],
+    "USB_front_y": -153,
+    "battery_x": [
+      165,
+      175
+    ],
+    "power_x": [
+      160,
+      180,
+      230,
+      270,
+      300
+    ],
+    "power_fan_x": 132,
+    "depth": 2,
+    "bond_gap": 0.1,
+    "groove_radius": 0.5,
+    "pair_groove_radius": 1.01,
+    "retention_film_thickness": 0.1,
+    "minimum_floor_web": 0.3,
+    "local_wire_position_allowance": 0.1,
+    "lid_roof_nominal": 0.5,
+    "case_print_wall_tolerance": 0.15,
+    "guide_print_tolerance": 0.05,
+    "USB_down_y": -140,
+    "USB_rear_front_half_width": 2.35,
+    "PCB_service_XY_allowance": 0.25,
+    "service_mount_position_allowance": 0.1
+  },
+  "qualification": "Design CAD checks only; supplier wire/crimp/strain, resin and physical USB/BLE/thermal acceptance remain open",
+  "scope": "E73 CORNER-04 native connector poses; continuous-wire proof, retention and physical acceptance separate",
+  "assembly_limits": {
+    "R": 0.6,
+    "C_0402": 0.65,
+    "C_0603": 1.0,
+    "C_0805": 1.6,
+    "U2": 1.35,
+    "U4": 1.35,
+    "U3": 1.95,
+    "U5": 1.2,
+    "U6": 1.0,
+    "U7": 1.35,
+    "U8": 1.35,
+    "F1": 1.2,
+    "L1": 2.2,
+    "SW1": 1.8,
+    "SW100": 3.6,
+    "J1": 3.2,
+    "J2": 3.2,
+    "J4": 3.2,
+    "J5": 3.2,
+    "D2": 1.0,
+    "U1": 3.2
+  },
+  "assembly_limit_basis": "Incoming/installed measurement requirements; not vendor-certified maximum dimensions. Native XY bounding boxes used conservatively.",
+  "source_bottom": "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step",
+  "manufacturing_released": false,
+  "physical_verification": false
+}

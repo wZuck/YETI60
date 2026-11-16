@@ -146,7 +146,7 @@
     ],
     "temperature_protection": "Pack PCM must independently interrupt charging outside its guaranteed window; a voltage/current-only PCM is not a substitute",
     "ntc": "10k 103AT-2 compatible, thermally coupled to cell, separate from PCM thermal protection",
-    "connector": "JST PHR-3; pin1 PACK+, pin2 PACK-, pin3 NTC to PACK-",
+    "connector": "JST SHR-03V-S / SM03B-SRSS-TB, 1.00 mm pitch; pin1 PACK+, pin2 PACK-, pin3 separate NTC to PACK-",
     "procurement_status": "Default selected single-cell pack design; supplier must resolve the source charge-row inconsistency and sign full-pack/temperature limits before order release",
     "position_tolerance": 0.25,
     "fastener_exclusion_radius": 3.4,
@@ -165,7 +165,7 @@
     "pcb_thickness": 1.6062,
     "source_to_case_x_offset": 139.308202,
     "source_to_case_y_offset": -46.8167,
-    "cable": "150 mm four-wire JST-SH compatible harness; electrical pin1-to-pin1 continuity",
+    "cable": "Current E73 corner harness: C5 to J4 four-wire SH, plus J5 to J1 two-wire power bridge; measured insulation OD <=0.65 mm, route-defined conductor lengths; no legacy 150 mm cable",
     "pin_contract": {
       "1": "VBUS",
       "2": "D-",
@@ -177,11 +177,12 @@
       "2": "white",
       "3": "green",
       "4": "black"
-    }
+    },
+    "cable_spec": "hardware/e73-corner-harness-spec.json"
   },
   "geometry": {
     "plate": "mechanical/e73-fit/yeti60-e73-niz-m01.dxf",
-    "bottom": "mechanical/e73-fit/yeti60-e73-bottom-m01.step",
+    "bottom": "hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step",
     "top": "mechanical/generated/yeti60-top.step",
     "fit_spec": "mechanical/e73-fit-spec.json"
   }

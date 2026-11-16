@@ -2,7 +2,7 @@
 
 # E73 右下角 PCB 对应固件
 
-使用 `hardware/e73-hhkb-corner/firmware/` 内的 CORNER-03 构建，包括 `manifest.json`、`releases/normal/yeti60-e73.hex` 正常版及 `releases/calibrator/yeti60-e73.hex` 校准版。根目录迁移前固件和 Raytac 固件不匹配本板的校准身份。[右下角审查](../engineering/e73-hhkb-corner.zh-CN.md)中的设计暂停放行条件仍有效。
+使用 `hardware/e73-hhkb-corner/firmware/` 内的 CORNER-04 构建，包括 `manifest.json`、`releases/normal/yeti60-e73.hex` 正常版及 `releases/calibrator/yeti60-e73.hex` 校准版。根目录迁移前固件和 Raytac 固件不匹配本板的校准身份。[右下角审查](../engineering/e73-hhkb-corner.zh-CN.md)中的设计暂停放行条件仍有效。
 
 当前原生布线、USB 参考地及有界装配检查完成后，重现方式为：
 

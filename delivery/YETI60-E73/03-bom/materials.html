@@ -63,7 +63,7 @@
 </tr>
 </tbody>
 </table>
-<p>No fabrication package is released for this corner mainboard. Do not substitute an old mainboard archive. C5 uses separate, unchanged four-layer files; do not order it as two layers. Reuse the already-made C5. Final stencil and supplier acceptance remain open. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and five routing guides are mechanical parts, not additional PCBs. For self-reflow, use mainboard <strong>F.Paste and B.Paste</strong> (E73 on front, other parts on back) and C5 <strong>F.Paste</strong> with a qualified stencil/profile.</p>
+<p>No fabrication package is released for this corner mainboard. Do not substitute an old mainboard archive. C5 uses separate, unchanged four-layer files; do not order it as two layers. Reuse the already-made C5. Final stencil and supplier acceptance remain open. J3 is part of the main PCB and needs a pogo fixture, not another PCB in this design. The stainless plate, resin shells and forthcoming cable retention parts are mechanical parts, not additional PCBs. For self-reflow, use mainboard <strong>F.Paste and B.Paste</strong> (E73 on front, other parts on back) and C5 <strong>F.Paste</strong> with a qualified stencil/profile.</p>
 <h3 id="electronic-assemblies-battery-and-cables">Electronic assemblies, battery and cables</h3>
 <table>
 <thead>
@@ -92,12 +92,12 @@
 <tr>
 <td>Internal USB harness</td>
 <td style="text-align:right">1 four-wire</td>
-<td>AWG28 stranded copper, insulation OD ≤0.8 mm; two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts; C5 to J4: 1-to-1 power, 2-to-2 D−, 3-to-3 D+, 4-to-4 GND. Complete new routing remains unqualified; do not cut to the old 150 mm figure</td>
+<td>AWG28 stranded copper, insulation OD ≤0.65 mm; two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts; C5 to J4: 1-to-1 power, 2-to-2 D−, 3-to-3 D+, 4-to-4 GND. Complete new routing remains unqualified; do not cut to the old 150 mm figure</td>
 </tr>
 <tr>
 <td>J5-to-J1 power bridge</td>
 <td style="text-align:right">1 two-wire</td>
-<td>AWG28, insulation OD ≤0.8 mm; one SHR-02V-S, one SHR-04V-S and four SSH-003T-P0.2-H contacts; J5.1→J1.1 and J5.2→J1.4, J1.2/J1.3 empty; final lengths and retention remain open</td>
+<td>AWG28, insulation OD ≤0.65 mm; one SHR-02V-S, one SHR-04V-S and four SSH-003T-P0.2-H contacts; J5.1→J1.1 and J5.2→J1.4, J1.2/J1.3 empty; final lengths and retention remain open</td>
 </tr>
 <tr>
 <td>Battery assembly</td>
@@ -107,7 +107,7 @@
 <tr>
 <td>Battery leads and plug</td>
 <td style="text-align:right">1 three-wire set, included in pack</td>
-<td>AWG28, OD &lt;=0.8 mm; one SHR-03V-S housing and three SSH-003T-P0.2-H contacts, mating with SM03B-SRSS-TB at 1.00 mm pitch; pin 1 red positive, 2 black negative, 3 yellow separate 10k NTC. Independent thermal protection and third-wire NTC feedback are separate requirements; supplier-signed envelope/lead-exit drawing required</td>
+<td>AWG28, OD &lt;=0.65 mm; one SHR-03V-S housing and three SSH-003T-P0.2-H contacts, mating with SM03B-SRSS-TB at 1.00 mm pitch; pin 1 red positive, 2 black negative, 3 yellow separate 10k NTC. Independent thermal protection and third-wire NTC feedback are separate requirements; supplier-signed envelope/lead-exit drawing required</td>
 </tr>
 <tr>
 <td>External USB data cable</td>
@@ -934,7 +934,7 @@
 <td>M02</td>
 <td>Bottom shell</td>
 <td style="text-align:right">1</td>
-<td>Selected <a href="https://github.com/wZuck/YETI60/blob/master/mechanical/e73-fit/yeti60-e73-bottom-m01.step">E73 M01 STEP</a>, P2 1600 mAh recess and SW100 floor relief; original exterior</td>
+<td>Selected <a href="../02-mechanical/bottom.step">E73 M04 STEP</a>, protected-pack pocket, SW100 relief and current internal cable channel; original exterior</td>
 </tr>
 <tr>
 <td>M03</td>
@@ -1068,19 +1068,9 @@
 <td>0.30 mm thick, M2 clearance, for four M2 x 4 screws</td>
 </tr>
 <tr>
-<td>Rear harness guide bases</td>
-<td style="text-align:right">2</td>
-<td>One each of <code>mechanical/generated/interconnect-guides/rear-1-base</code> and <code>rear-2-base</code> STEP/STL; current width 5.4 and route-direction length 2 mm</td>
-</tr>
-<tr>
-<td>Rear removable bridges</td>
-<td style="text-align:right">2</td>
-<td>One each of <code>rear-1-bridge</code> and <code>rear-2-bridge</code>; three lower battery wires/four upper USB wires, groove radius 0.5 mm</td>
-</tr>
-<tr>
-<td>Front USB guide</td>
-<td style="text-align:right">1</td>
-<td><code>front-base</code> STEP/STL, width 6 and route-direction length 1.8 mm; install in case coordinates without scaling</td>
+<td>Current E73 cable retainers</td>
+<td style="text-align:right">Count pending</td>
+<td>Retainers/films must follow the CORNER-04 route and final clearance checks; no guide files are released yet. Do not print the historical rear/bridge/front guide set</td>
 </tr>
 <tr>
 <td>Polyimide insulation stock</td>
@@ -1104,13 +1094,13 @@
 </tr>
 <tr>
 <td>Upper harness retention tape</td>
-<td style="text-align:right">1 small roll, cut 3 pieces</td>
+<td style="text-align:right">1 small roll; cut plan pending</td>
 <td>Adhesive-backed insulating film/tape, total thickness &lt;=0.10 mm including adhesive; wrap over the upper wires and down the guide sides</td>
 </tr>
 <tr>
 <td>Removable bridge tape</td>
 <td style="text-align:right">1 small roll</td>
-<td>Nonconductive removable double-sided tape, 0.05 mm total thickness, for the two rear bridge side lands; upper film plus adhesive must total &lt;=0.10 mm</td>
+<td>Nonconductive removable double-sided tape, 0.05 mm total thickness, final lands/count pending E73 retention design; upper film plus adhesive must total &lt;=0.10 mm</td>
 </tr>
 </tbody>
 </table>

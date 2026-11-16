@@ -63,7 +63,7 @@
 </tr>
 </tbody>
 </table>
-<p>本版右下角主板尚无放行的制造包，不能使用旧主板压缩包替代。C5 使用独立且不变的四层文件，不能按双层板下单；已做好的 C5 不必重做。最终钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及五个走线支架属于机械件，不是额外 PCB。自行回流焊时，主板现在需要 <strong>F.Paste 与 B.Paste</strong>（E73 在正面，其余散件在背面），C5 用 <strong>F.Paste</strong>，钢网和温度曲线须与实际物料匹配。</p>
+<p>本版右下角主板尚无放行的制造包，不能使用旧主板压缩包替代。C5 使用独立且不变的四层文件，不能按双层板下单；已做好的 C5 不必重做。最终钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及尚待完成的线束固定件属于机械件，不是额外 PCB。自行回流焊时，主板现在需要 <strong>F.Paste 与 B.Paste</strong>（E73 在正面，其余散件在背面），C5 用 <strong>F.Paste</strong>，钢网和温度曲线须与实际物料匹配。</p>
 <h3 id="电子总成电池和连接线">电子总成、电池和连接线</h3>
 <table>
 <thead>
@@ -92,12 +92,12 @@
 <tr>
 <td>USB 内部线束</td>
 <td style="text-align:right">1 条四芯</td>
-<td>AWG28 多股铜线，绝缘外径 ≤0.8 mm；两端共 2 个 SHR-04V-S 插壳和 8 个 SSH-003T-P0.2-H 端子；C5 到 J4 按 1→1 电源、2→2 D−、3→3 D+、4→4 地连接。新版本完整路径未验收，暂不按旧 150 mm 数值裁线</td>
+<td>AWG28 多股铜线，绝缘外径 ≤0.65 mm；两端共 2 个 SHR-04V-S 插壳和 8 个 SSH-003T-P0.2-H 端子；C5 到 J4 按 1→1 电源、2→2 D−、3→3 D+、4→4 地连接。新版本完整路径未验收，暂不按旧 150 mm 数值裁线</td>
 </tr>
 <tr>
 <td>J5 到 J1 电源桥</td>
 <td style="text-align:right">1 条两芯</td>
-<td>AWG28、绝缘外径 ≤0.8 mm；SHR-02V-S 与 SHR-04V-S 各 1 个、SSH-003T-P0.2-H 共 4 个；J5.1→J1.1，J5.2→J1.4，J1.2／J1.3 留空；最终长度与理线待验收</td>
+<td>AWG28、绝缘外径 ≤0.65 mm；SHR-02V-S 与 SHR-04V-S 各 1 个、SSH-003T-P0.2-H 共 4 个；J5.1→J1.1，J5.2→J1.4，J1.2／J1.3 留空；最终长度与理线待验收</td>
 </tr>
 <tr>
 <td>电池总成</td>
@@ -107,7 +107,7 @@
 <tr>
 <td>电池引线及插头</td>
 <td style="text-align:right">1 套三线，含在电池总成中</td>
-<td>AWG28、外径不大于 0.8 mm；SHR-03V-S 插壳 1 个、SSH-003T-P0.2-H 端子 3 个；配合主板 SM03B-SRSS-TB，1.00 mm 间距；1 红色正极、2 黑色负极、3 黄色独立 10k NTC 温度线。温度保护和第三线 NTC 反馈须分开；尺寸和出线位置须供方签图</td>
+<td>AWG28、外径不大于 0.65 mm；SHR-03V-S 插壳 1 个、SSH-003T-P0.2-H 端子 3 个；配合主板 SM03B-SRSS-TB，1.00 mm 间距；1 红色正极、2 黑色负极、3 黄色独立 10k NTC 温度线。温度保护和第三线 NTC 反馈须分开；尺寸和出线位置须供方签图</td>
 </tr>
 <tr>
 <td>外部 USB 数据线</td>
@@ -934,7 +934,7 @@
 <td>M02</td>
 <td>底壳</td>
 <td style="text-align:right">1</td>
-<td><a href="https://github.com/wZuck/YETI60/blob/master/mechanical/e73-fit/yeti60-e73-bottom-m01.step">E73 正式 M01 STEP</a>，含 1600 mAh 电池槽与 SW100 地板避空，外形不变</td>
+<td>选定 <a href="../02-mechanical/bottom.step">E73 M04 STEP</a>，含完整保护包槽、SW100 让位及当前内部线槽，保留原外形</td>
 </tr>
 <tr>
 <td>M03</td>
@@ -1068,19 +1068,9 @@
 <td>厚 0.30 mm，孔适配 M2，配 4 颗 M2×4</td>
 </tr>
 <tr>
-<td>后侧线束固定座底座</td>
-<td style="text-align:right">2</td>
-<td><code>mechanical/generated/interconnect-guides/rear-1-base</code> 和 <code>rear-2-base</code> 的 STEP／STL 各 1 件；当前宽 5.4、路径方向长 2 mm</td>
-</tr>
-<tr>
-<td>后侧固定座可拆桥</td>
-<td style="text-align:right">2</td>
-<td>对应 <code>rear-1-bridge</code> 和 <code>rear-2-bridge</code> 各 1 件；下层三根电池线、上层四根 USB 线，槽半径 0.5 mm</td>
-</tr>
-<tr>
-<td>前侧 USB 固定座</td>
-<td style="text-align:right">1</td>
-<td><code>front-base</code> 的 STEP／STL；宽 6、路径方向长 1.8 mm；按壳体坐标安装，不能缩放</td>
+<td>当前 E73 理线固定件</td>
+<td style="text-align:right">数量待定</td>
+<td>固定件／薄膜须符合 CORNER-04 路线并通过最终间隙检查，目前尚未放行文件；不要打印历史后支架、桥架及前支架套装</td>
 </tr>
 <tr>
 <td>聚酰亚胺绝缘片材</td>
@@ -1104,13 +1094,13 @@
 </tr>
 <tr>
 <td>上侧线束保持胶带</td>
-<td style="text-align:right">1 小卷，裁 3 片</td>
+<td style="text-align:right">1 小卷，裁片方案待定</td>
 <td>带胶绝缘膜／胶带，含胶总厚不超过 0.10 mm；覆盖上层导线并向固定座侧面包覆</td>
 </tr>
 <tr>
 <td>可拆桥固定胶带</td>
 <td style="text-align:right">1 小卷</td>
-<td>非导电、可移除双面胶，总厚 0.05 mm，用于 2 个后侧桥的侧面支承区；上层保持膜与胶总厚不得超过 0.10 mm</td>
+<td>非导电、可移除双面胶，总厚 0.05 mm，最终粘接区及数量随 E73 固定件方案确定；上层保持膜与胶总厚不得超过 0.10 mm</td>
 </tr>
 </tbody>
 </table>

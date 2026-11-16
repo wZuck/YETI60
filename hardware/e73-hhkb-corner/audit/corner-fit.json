@@ -70,10 +70,10 @@
       "installed_height_limit_mm": 3.2,
       "bounded_envelope_case_mm": [
         333.15,
-        -120.325,
+        -120.425,
         -5.6537999999999995,
         337.85,
-        -114.575,
+        -114.675,
         -1.5337999999999996
       ],
       "overlap_mm3": {
@@ -83,7 +83,7 @@
       },
       "gaps_mm": {
         "bottom": 0.6462000000000003,
-        "top": 13.09367775137484,
+        "top": 13.181330146848536,
         "plate": 5.739999999999997
       },
       "residual_gap_mm": 0.38439237886466876,
@@ -604,15 +604,15 @@
   "bottom_source": "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step",
   "wrong_30mm_translation_rejected": true,
   "source_sha256": {
-    "hardware/e73-corner-spec.json": "c00eabe99e9a31e0d335b499a74e7c66e38f15457c660ef12343c7765526b807",
-    "hardware/e73-hhkb-corner/audit/placement-check.json": "406acbe9d13ec61e598adf126e41cc3be1b3856ad33d38b16b384a80d352a150",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
-    "mechanical/assembly-spec.json": "bdf2a3f04fe6bc0552b7e733bb54f4770a3bb8f73d8cee149d201afd07d9a7e7",
+    "hardware/e73-corner-spec.json": "c1e56e5e3aff3fd7b928f7794f3628b4793858f851fb562457d44a094f63b369",
+    "hardware/e73-hhkb-corner/audit/placement-check.json": "08f17f19f5475603f4edb633e8405161895daffe109067f8574d5b90fcce5567",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "cbe66a53abd9f4e5674115a2891e27735a093c13d25cfff900507fe63420447e",
+    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
     "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
     "hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.step": "fd423a17c6a726e6bd89e5840840db6ee6a44b33d8f338ae88d006134f92e608",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "hardware/e73-hhkb-corner/audit/local-models.json": "a2132d08f436da0b54584100fd48c780d27b6e85e1f656274ace28427630deee",
+    "hardware/e73-hhkb-corner/audit/local-models.json": "349cae3ac4a9940c95443dbd98448ce877a7b81de851c3c0395d544bb90c0e34",
     "scripts/check_e73_usb_local_models.py": "24aa856812af8d9ebfa0f563a5851b3a74f311b7e1c59991032105617ecd2986",
     "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
     "scripts/check_e73_corner_fit.py": "2361343e046dc16875e95d64859e76c674980999bf0244e928ccae4ba2ad1683",

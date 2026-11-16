@@ -1,0 +1,107 @@
+{
+  "source_PCB_sha256": "f23540451851bef5923452547c90ac57dbacbe60bba6e0e08c03cc4491f3b018",
+  "part": "J5",
+  "expected_pose": [
+    335.5,
+    117.5,
+    0
+  ],
+  "final_pose": [
+    335.5,
+    117.5,
+    180
+  ],
+  "retired": [
+    {
+      "uuid": "e07afa56-e5cd-5078-95f0-0c3d4ef3cb6c",
+      "net": "GND",
+      "sha256": "6a41addbba6ea53cc126fd6d0133b034f9b1047286421826c2ec8d0ebc7de5d8"
+    },
+    {
+      "uuid": "615d4bb1-202e-5cd4-a550-48c1ee1ee8e4",
+      "net": "GND",
+      "sha256": "6e0a7eb0ff26de9a09551970650bcb8895cb7e27679c7fc772d795a6e4e4682c"
+    },
+    {
+      "uuid": "df430e23-60ab-4d67-8ec6-b8afc24d4579",
+      "net": "ROW_DRV4",
+      "sha256": "1ffa4d8a4b52205ac0e93cd3e5e1d8842205f9d63894184e34c957eec1257b4b"
+    },
+    {
+      "uuid": "df87a922-bf8a-4616-bf62-4f0663c0b3d2",
+      "net": "ROW_DRV4",
+      "sha256": "06537a620c4a7e1b6fb69bae8570482003dcb031594c9f2894cbca547192d005"
+    },
+    {
+      "uuid": "31369db6-cab0-4035-bf6a-64a6d7dc9ad9",
+      "net": "ROW_DRV4",
+      "sha256": "1f97384c3d72be7a32df3f6bd66cb2f0261a2079e62b1cae81fdc99fd8f21d6c"
+    },
+    {
+      "uuid": "7db4de29-4684-5c2c-b9dd-5d5f66d7f762",
+      "net": "USB_FEED",
+      "sha256": "a45643ed2d5bcd8c3cade799bb344e7c9c0a175ba3d2cfdb6fd1ae5ef0f51349"
+    },
+    {
+      "uuid": "7c9e8391-d665-599e-b265-d2b8459c030a",
+      "net": "USB_FEED",
+      "sha256": "e10834b1651a693606a3fe84af107f93fb5927ad41c2e985448724a626cb6c54"
+    },
+    {
+      "uuid": "a0cf6826-6ea9-5f7e-b5d7-3ea8b8b5ab1a",
+      "net": "USB_FEED",
+      "sha256": "9a8c8d558cc189ee58f632a5baccb2bcb350dde76eb6a14b77093f26b3c07efa"
+    },
+    {
+      "uuid": "ee957737-3cdd-591b-b28e-2f9b2ba24770",
+      "net": "USB_FEED",
+      "sha256": "7858cf68b7b60d84befff9d50960523cefec7291dc93827f21ab61610ab0b0e2"
+    },
+    {
+      "uuid": "6b652a22-d22d-5b16-a946-05d0c6f7ad86",
+      "net": "USB_FEED",
+      "sha256": "99d0e00172a309dafe5624f5a7dc810ac4eeefca80b75db4e666d7aedc5d3c90"
+    },
+    {
+      "uuid": "8b7959ee-1ec3-572b-a00e-dbbadc7e0d2d",
+      "net": "USB_FEED",
+      "sha256": "d530927c45ac4c97cd500816d4135a1fc77ed848dfe90e5534a88b4e941d6ca4"
+    },
+    {
+      "uuid": "2b2a9cbb-3ba5-4d9f-8be6-64ef6a3171f5",
+      "net": "ROW_DRV4",
+      "sha256": "38167f792e32252c58df61e59954676973a856f096413bf97cf6886af8f48473"
+    }
+  ],
+  "added": [
+    "(segment (start 330.0 119.65) (end 333.2 120.6) (width 0.127) (layer \"B.Cu\") (net \"ROW_DRV4\") (uuid \"3ad07d2f-3a5c-54f0-bcf1-eff3d437a5ac\"))",
+    "(segment (start 333.2 120.6) (end 343.0 120.5) (width 0.127) (layer \"B.Cu\") (net \"ROW_DRV4\") (uuid \"fdca8562-6da2-5e48-a99f-cd1c47cc1617\"))",
+    "(segment (start 343.0 120.5) (end 343.4 120.7) (width 0.127) (layer \"B.Cu\") (net \"ROW_DRV4\") (uuid \"79af3c98-6ab3-5daa-864e-7f24b8706326\"))",
+    "(segment (start 343.4 120.7) (end 343.45 120.65) (width 0.127) (layer \"In1.Cu\") (net \"ROW_DRV4\") (uuid \"7e66868b-8e42-5eb8-9398-bf4049160d94\"))",
+    "(via (at 343.4 120.7) (size 0.5) (drill 0.3) (layers \"F.Cu\" \"B.Cu\") (tenting (front yes) (back yes)) (net \"ROW_DRV4\") (uuid \"3c5c9b5d-d832-5106-bda6-3477541931f4\"))",
+    "(segment (start 336.0 115.5) (end 336.6 114.0) (width 0.25) (layer \"B.Cu\") (net \"USB_FEED\") (uuid \"f778fa4c-a679-5429-82e3-81a880cfb980\"))",
+    "(segment (start 336.6 114.0) (end 336.4 113.4) (width 0.25) (layer \"In2.Cu\") (net \"USB_FEED\") (uuid \"1082e1f2-99a9-5f29-898c-a83feeb6b922\"))",
+    "(segment (start 336.4 113.4) (end 336.4 112.7) (width 0.25) (layer \"In2.Cu\") (net \"USB_FEED\") (uuid \"4f9d3d4d-2b6a-5840-94d3-096df61b59e1\"))",
+    "(via (at 336.6 114.0) (size 0.5) (drill 0.3) (layers \"F.Cu\" \"B.Cu\") (tenting (front yes) (back yes)) (net \"USB_FEED\") (uuid \"bc159240-3e71-5858-8d30-e7d605dc2b86\"))",
+    "(segment (start 335.0 115.5) (end 336.2 119.4) (width 0.3) (layer \"B.Cu\") (net \"GND\") (uuid \"d71289a2-6b7f-5c6c-9a83-82956d1fdef6\"))",
+    "(segment (start 336.2 119.4) (end 339.0 122.4) (width 0.3) (layer \"In2.Cu\") (net \"GND\") (uuid \"78bbeac6-7a0f-5078-9a25-4e82ac8b0162\"))",
+    "(via (at 336.2 119.4) (size 0.5) (drill 0.3) (layers \"F.Cu\" \"B.Cu\") (tenting (front yes) (back yes)) (net \"GND\") (uuid \"7f442467-0c65-5036-bcb3-32c3aecac785\"))",
+    "(segment (start 343.45 123.65) (end 343.45 120.65) (width 0.127) (layer \"In1.Cu\") (net \"ROW_DRV4\") (uuid \"80d65910-9fb0-5636-849c-698c4c785872\"))"
+  ],
+  "revision": "YETI60-E73-J5-ROTATION-01",
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "reason": "Reverse the mainboard J5 cable exit to avoid the rotated J4 harness; C5 remains unchanged",
+  "allowed_nets": [
+    "GND",
+    "USB_FEED",
+    "ROW_DRV4"
+  ],
+  "repair_bounds_PCB_mm": [
+    329,
+    112,
+    344,
+    124
+  ],
+  "maximum_new_vias": 3
+}
