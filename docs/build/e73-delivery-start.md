@@ -4,12 +4,14 @@ English | [Chinese](e73-delivery-start.zh-CN.md)
 
 This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this whole folder together. The English and Chinese manuals are separate documents; filenames and part numbers identify the same physical design.
 
-**Current state: engineering review, not an order release.** Matching PCB, CAM, BOM and buildable firmware are bundled. Complete retained cable routing/guides, closed-case assembly/explosion and the final power/battery/manufacturing review still have open gates. The supplied bottom is the reviewed mechanical baseline, not a qualified complete harness assembly. The manifest records these limitations; a successful file-integrity check does not waive them.
+**Current state: engineering review, not an order release.** Matching PCB, CAM, BOM and buildable firmware are bundled. The nine-wire route and 16 rigid retainers / 17 film pieces have passed bounded static checks. Retainer process/service, closed-case assembly/explosion and the final power/battery/manufacturing review still have open gates. The supplied bottom is the reviewed mechanical baseline, not a qualified complete harness assembly. The manifest records these limitations; a successful file-integrity check does not waive them.
 
 | Task | Read / use |
 |---|---|
+| Open the current native KiCad project, identify the revision | [Project files and revision checks](e73-project-files.md) |
 | Understand what to order and which options to select | [PCB and mechanical manufacturing instructions](e73-ordering-printing.md) |
 | Check all nine leads, pin maps, free lengths and open gates | [Current harness study](../engineering/e73-corner-harness.md) |
+| Print and locate the 16 retainers and cut 17 films | [Retainer files, placement plan and dry-fit guide](../engineering/e73-retention.md) |
 | Buy parts, credit existing inventory, identify every fitted reference | [Complete materials](../../README.md), [mainboard BOM / stock CSV](../../hardware/e73-hhkb-corner/mainboard-purchase.csv) |
 | Ask the battery supplier to confirm pack parameters | [Complete pack specification](../engineering/battery-pack-specification.md) |
 | Solder a blank PCB in stages and test each stage | [12-step PCB soldering and bench guide](../assembly/e73-corner/soldering.md), [illustrated web guide](../assembly/e73-corner/soldering.html) |

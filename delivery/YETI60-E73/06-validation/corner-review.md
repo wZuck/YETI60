@@ -2,7 +2,7 @@
 
 # E73 in the HHKB lower-right corner
 
-**Selected development direction; manufacturing remains on hold.** The [native corner project](https://github.com/wZuck/YETI60/blob/master/hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro) and [replay specification](https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-spec.json) replace the upper-right module position for development. This candidate is not an order package. Older upper-right acceptance reports do not qualify this revision.
+**Selected development direction; manufacturing remains on hold.** The [native corner project](../01-pcb/source/EC60-nRF52840.kicad_pro) and [replay specification](https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-spec.json) replace the upper-right module position for development. This candidate is not an order package. Older upper-right acceptance reports do not qualify this revision.
 
 Revision CORNER-04 also moves C31, the existing 100 nF 0402 VDD decoupling capacitor, beside the module supply escape. Its local connection is approximately 1.17 mm. Only the E73 module is front-mounted, between the PCB and plate. J4 USB input retains its back-side pose; J5 stays at the same back-side origin and rotates 180 degrees, preserving the already-made UDB-C-JSH C5 daughterboard and its interfaces. The retained 1.6 mm steel plate and case exterior are unchanged. No additional lower-right floor cut is required by the selected placement; the earlier back-mounted trial did not retain the required floor-wall reserve.
 

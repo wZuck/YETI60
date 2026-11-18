@@ -1,41 +1,29 @@
 English | [Chinese](BUILD.zh-CN.md)
 
-# YETI60 E73: review and build entry
+# YETI60 E73: current build and review entry
 
-**Current development direction: [move E73 to the unused lower-right HHKB corner](docs/engineering/e73-hhkb-corner.md).** The new front-mounted candidate is not yet a fabrication release. Its routing, harness and assembly evidence must be completed; the upper-right source-board results below do not qualify the new placement.
+The selected design is **E73 CORNER-04**, with the module on the front in the unused lower-right HHKB corner. Open the [current KiCad project](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro) and [PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb). [Revision and project-file checks](docs/build/e73-project-files.md) explain how to distinguish the historical candidates.
 
-**E73 whole-board acceptance remains open; do not fabricate it as an accepted build.** The [corner migration report](docs/engineering/e73-hhkb-corner.md) and its native project control current development. Older review files, CAM, firmware and assembly guides below are pre-migration references and do not qualify this revision. Raytac acceptance does not qualify E73.
+**Engineering review; order release remains open.** Native routing/reference checks and matching firmware builds passed. The nine-conductor route, 16 rigid retainers and 17 film pieces passed bounded static checks. Retainer manufacturing/service, complete closed-case drawings, final power/battery/manufacturing review and physical acceptance remain open. A clean DRC or a verified file manifest does not close those gates.
 
-The existing **UDB-C-JSH C5 daughterboard is retained**. Its PCB, connector and mounting pattern need no change for this work. Preserve its fuse/USB protection and verify its four output pins before connecting a mainboard.
+The already-made **UDB-C-JSH C5 daughterboard stays unchanged**. No replacement daughterboard PCB is needed.
 
-| Task | Controlled entry |
+| Task | Current controlled entry |
 |---|---|
-| Current findings and remaining work | [E73 review](docs/audit/e73-review.md), [full audit](docs/audit/outcome.json) |
-| USB repair checkpoint | [Isolated E73 candidate, native checks and material difference](docs/engineering/e73-usb-repair.md) — unreleased; canonical CAM/firmware unchanged |
-| E73 module, pads and MCU configuration | [Vendor land reference](hardware/module-options/e73.json), [pin contract](docs/audit/yeti60-e73-variant.json) |
-| Current development PCB | [Corner native PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb), [current checks and release gates](docs/engineering/e73-hhkb-corner.md); no fabrication release package for this revision |
-| Parts, package specifications, quantities and inventory | [Preparation list](README.md#complete-materials-for-one-keyboard), [purchase CSV](hardware/e73-hhkb-corner/mainboard-purchase.csv), [stock allocation](docs/engineering/inventory-allocation.md) |
-| Existing daughterboard | [C5 parts](hardware/bom/daughterboard.csv); reuse the already-made board |
-| Bare PCB soldering | [Illustrated soldering and assembly guide](docs/assembly/build-guide.md); NiZ, 1.6 mm plate and 28 mounting sets are integrated |
-| Pre-migration firmware reference | [Target build/flash instructions](firmware/target/README.md), [normal HEX](firmware/releases/normal/yeti60-e73.hex), [calibrator HEX](firmware/releases/calibrator/yeti60-e73.hex) |
-| USB charging and wired priority | [Event/fault evidence](docs/audit/usb-event-policy.json); charging and USB HID coexist after accepted configuration |
-| Battery supplier confirmation | [Pack specification](docs/engineering/battery-pack-specification.md); supplier must confirm the stated limits |
-| Pre-migration assembly/signal reference | [Nominal assembly](docs/audit/yeti60-assembly.json), [USB paths](docs/audit/USB-signal-paths.json), [PH withdrawal](docs/audit/e73-service-motion.json) |
-| Requested NiZ and plate stabilizers | [E73 mechanism specification](docs/build/key-mechanism.md); 60 sensing centers, three stabilizer pairs, 28 mounts, H26 unused; physical fit pending |
-| Verification commands | `YETI_CAD_PYTHON=/path/to/cad/python python3 scripts/run_audit.py --baseline HEAD --refresh-guide`; then `python3 scripts/review_e73_readiness.py --require-design` |
+| All delivery assets in one folder | [Start here](delivery/YETI60-E73/START-HERE.md), [offline web index](delivery/YETI60-E73/index.html) |
+| PCB options, files and printing requirements | [PCB and mechanical manufacturing](docs/build/e73-ordering-printing.md) |
+| Current electrical and mechanical evidence | [Corner review and reproduction commands](docs/engineering/e73-hhkb-corner.md) |
+| Full materials, packages, counts and inventory | [Preparation list](README.md#complete-materials-for-one-keyboard), [75-part mainboard purchase CSV](hardware/e73-hhkb-corner/mainboard-purchase.csv) |
+| Start from a blank PCB | [12-step soldering and bench guide](docs/assembly/e73-corner/soldering.md), [illustrated web guide](docs/assembly/e73-corner/soldering.html) |
+| Cables, exact pin connections and free lengths | [Nine-conductor harness](docs/engineering/e73-corner-harness.md) |
+| Retainer files, placement and film templates | [16 rigid parts and 17 film pieces](docs/engineering/e73-retention.md) |
+| NiZ housings/sliders and steel-plate stabilizers | [Mechanism and assembly](docs/build/key-mechanism.md); 60 keys, three stabilizer pairs, 28 mounting sets, H26 unused |
+| Battery supplier confirmation | [Protected 1S pack specification](docs/engineering/battery-pack-specification.md) |
+| Build, flash and calibrate matching firmware | [Current corner firmware](docs/testing/e73-corner-firmware.md) |
+| File-integrity and source consistency | `python3 scripts/check_e73_delivery.py`; `--require-release` must still fail while the listed gates remain open |
 
-The existing mainboard is ordinary four-layer FR-4, nominal 1.6 mm with mechanically drilled through vias. No blind/buried vias, resin filling or copper capping are required. These process parameters do not remove the design hold. Do not reuse a Raytac mainboard Gerber or firmware image for E73.
+The mainboard uses ordinary 4-layer FR-4, nominal 1.6 mm, mechanical through vias and both-side tenting. No HDI, filled/capped vias or daughterboard redesign is required. The current review CAM archive is indexed in the delivery folder. It is not a released factory order.
 
-E73's USB/charging adapter uses GPIO0 for EN1/EN2 and **GPIO1.13 for CE_N**. Normal/calibrator builds must retain internal RC LFCLK, REG1 LDO and the explicit NFC-pin GPIO UICR setting. The module has five connected bottom lands; edge-only hand soldering is insufficient to connect them. Follow a qualified paste/reflow and inspection process.
+E73 has five connected bottom lands: soldering only the module edges is insufficient. Both paste sides, staged inspection and a suitable reflow process are required. A shell is not required to begin current-limited power, USB enumeration, SWD, raw sensing or BLE bench tests; the completed NiZ/plate mechanism is needed for meaningful 60-key calibration. Actual charging temperatures, USB data, BLE range, EC interference and resin/adhesive fit remain prototype tests.
 
-The legacy `scripts/run_e73_review.py` workflow still targets the pre-migration project and does not qualify CORNER-04. Follow the [corner reproduction sequence](docs/engineering/e73-hhkb-corner.md#reproduction-and-acceptance) for native routing, reference ground, models, bounded assembly and mutation checks, then the candidate firmware guide below. Complete harness, power/battery and physical acceptance still require integration.
-
-[Current E73 firmware builds, regression evidence and calibration migration](docs/testing/e73-firmware-validation.md).
-
-[Selected M01 plate/floor repair and CAD](docs/engineering/e73-mechanical-fit-candidate.md) now feed the assembly, calibration identity and renders. The [pre-M01 deficit regression](docs/engineering/e73-mechanical-tolerances.md) remains for comparison; full mechanical/service qualification is open.
-
-For the relocated PCB, use the [candidate firmware build and flashing guide](docs/testing/e73-corner-firmware.md).
-
-Consolidated delivery folder (engineering review draft; order release remains open): [Markdown entry](delivery/YETI60-E73/README.md) · [offline web index](delivery/YETI60-E73/index.html).
-
-The current corner PCB has a [75-part soldering and bench guide](docs/assembly/e73-corner/soldering.md) and [web edition](docs/assembly/e73-corner/soldering.html), including calibration coordinates. Complete closed-case harness and assembly explosion remain open.
+The old `hardware/ec60-nrf52840`, intermediate `hardware/e73-usb-repair`, old complete renders and legacy `scripts/run_e73_review.py` / `scripts/run_audit.py` target other revisions. They are provenance references, not acceptance for this corner board. Raytac assets are under [their separate entry](variants/raytac/BUILD.md).

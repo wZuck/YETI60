@@ -1,0 +1,879 @@
+{
+  "status": "local-mm-rigid-mesh-and-film-blank-exports-passed",
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "rigid_parts": [
+    {
+      "name": "USB-R1",
+      "quantity": 1,
+      "family": "usb",
+      "mount": "case-roof",
+      "datum_case_mm": [
+        240,
+        -102,
+        -3.75
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/USB-R1.step",
+      "source_sha256": "d8fb898099f1cf1943e0494e8a0fd568d5471dc3d42ece3f5cc981efb72ccc77",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -239.0,
+        -99.3,
+        -1.5999999999999874
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/USB-R1.stl",
+      "triangles": 936,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        5.099999904632568,
+        2.1500000953674316
+      ],
+      "mesh_volume_mm3": 13.126802713940904,
+      "STEP_volume_mm3": 13.125642642754219
+    },
+    {
+      "name": "USB-R2",
+      "quantity": 1,
+      "family": "usb",
+      "mount": "case-roof",
+      "datum_case_mm": [
+        270,
+        -102,
+        -3.75
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/USB-R2.step",
+      "source_sha256": "690728cd0f218c2b3b21c9578588dcef0b3bf45fc400ed88a31bf5c7a7c78ebe",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -269.0,
+        -99.3,
+        -1.5999999999999874
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/USB-R2.stl",
+      "triangles": 936,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        5.099999904632568,
+        2.1500000953674316
+      ],
+      "mesh_volume_mm3": 13.126802713940904,
+      "STEP_volume_mm3": 13.125642642754219
+    },
+    {
+      "name": "USB-R3",
+      "quantity": 1,
+      "family": "usb",
+      "mount": "case-roof",
+      "datum_case_mm": [
+        300,
+        -102,
+        -3.75
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/USB-R3.step",
+      "source_sha256": "42a0afb4bba5173221699e1d51e695cc7c4c791d6bf201a7ed269cf4948212cf",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -299.0,
+        -99.3,
+        -1.5999999999999874
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/USB-R3.stl",
+      "triangles": 936,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        5.099999904632568,
+        2.1500000953674316
+      ],
+      "mesh_volume_mm3": 13.126802713940904,
+      "STEP_volume_mm3": 13.125642642754219
+    },
+    {
+      "name": "USB-F1-base",
+      "quantity": 1,
+      "family": "usb",
+      "mount": "case-floor",
+      "datum_case_mm": [
+        193,
+        -140,
+        -4.4
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/USB-F1-base.step",
+      "source_sha256": "2d5430077a81fddc2cf200b43a3ffd61a4e9120d7df854f8ef21f9822f110d03",
+      "X_rotation_deg": 0,
+      "local_translation_mm": [
+        -190.3,
+        141.0,
+        5.81
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/USB-F1-base.stl",
+      "triangles": 916,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        5.400000095367432,
+        2.0,
+        1.409999966621399
+      ],
+      "mesh_volume_mm3": 10.455833629317695,
+      "STEP_volume_mm3": 10.454642642758206
+    },
+    {
+      "name": "USB-F1-lid",
+      "quantity": 1,
+      "family": "usb",
+      "mount": "removable-cover",
+      "datum_case_mm": [
+        193,
+        -140,
+        -4.4
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/USB-F1-lid.step",
+      "source_sha256": "e9b5357c750ddcfbc3ce4235e3d77d421d1a8bde32a3651dfd2d1d0e584a2ba5",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -190.3,
+        -139.0,
+        -2.989999999999983
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/USB-F1-lid.stl",
+      "triangles": 904,
+      "mesh_bounds_mm": [
+        0.0,
+        -1.235942566332396e-16,
+        0.0,
+        5.400000095367432,
+        2.0,
+        1.3600000143051147
+      ],
+      "mesh_volume_mm3": 10.315627388297687,
+      "STEP_volume_mm3": 10.314475725193171
+    },
+    {
+      "name": "USB-F2-base",
+      "quantity": 1,
+      "family": "usb",
+      "mount": "case-floor",
+      "datum_case_mm": [
+        214.312702,
+        -153,
+        -4.4
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/USB-F2-base.step",
+      "source_sha256": "90aac0d4e15b2218bc6886d3566dfe2c222de7c54aa38b56c7949d3856228c6e",
+      "X_rotation_deg": 0,
+      "local_translation_mm": [
+        -211.612702,
+        154.0,
+        5.81
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/USB-F2-base.stl",
+      "triangles": 916,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        5.400000095367432,
+        2.0,
+        1.409999966621399
+      ],
+      "mesh_volume_mm3": 10.455833629317695,
+      "STEP_volume_mm3": 10.454642642758206
+    },
+    {
+      "name": "USB-F2-lid",
+      "quantity": 1,
+      "family": "usb",
+      "mount": "removable-cover",
+      "datum_case_mm": [
+        214.312702,
+        -153,
+        -4.4
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/USB-F2-lid.step",
+      "source_sha256": "d48311eedda4ce70c85402e56aa2be7005eb37213f842e85e158bb9b1b8dc90b",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -211.612702,
+        -152.0,
+        -2.9899999999999816
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/USB-F2-lid.stl",
+      "triangles": 904,
+      "mesh_bounds_mm": [
+        0.0,
+        -1.235942566332396e-16,
+        0.0,
+        5.400000095367432,
+        2.0,
+        1.3600000143051147
+      ],
+      "mesh_volume_mm3": 10.315627388297688,
+      "STEP_volume_mm3": 10.314475725193166
+    },
+    {
+      "name": "BAT-R1",
+      "quantity": 1,
+      "family": "battery",
+      "mount": "case-floor",
+      "datum_case_mm": [
+        165,
+        -106.6,
+        -4.85
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/BAT-R1.step",
+      "source_sha256": "4faf15797a3a8ab02108d21a6d94508d4162c7ad1275d35da233892e25d749d1",
+      "X_rotation_deg": 0,
+      "local_translation_mm": [
+        -164.0,
+        109.5,
+        5.81
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/BAT-R1.stl",
+      "triangles": 972,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        5.800000190734863,
+        0.9599999785423279
+      ],
+      "mesh_volume_mm3": 8.780426747612253,
+      "STEP_volume_mm3": 8.779805509807547
+    },
+    {
+      "name": "BAT-R2",
+      "quantity": 1,
+      "family": "battery",
+      "mount": "case-floor",
+      "datum_case_mm": [
+        175,
+        -106.6,
+        -4.85
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/BAT-R2.step",
+      "source_sha256": "56fdc6322153b363dbccb5a8f124c6de1a072617b4fb594f672dcfdca7b2f689",
+      "X_rotation_deg": 0,
+      "local_translation_mm": [
+        -174.0,
+        109.5,
+        5.81
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/BAT-R2.stl",
+      "triangles": 972,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        5.800000190734863,
+        0.9599999785423279
+      ],
+      "mesh_volume_mm3": 8.780426747612253,
+      "STEP_volume_mm3": 8.779805509807547
+    },
+    {
+      "name": "PWR-R1",
+      "quantity": 1,
+      "family": "power",
+      "mount": "PCB",
+      "datum_case_mm": [
+        160,
+        -109.5,
+        -3.1
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/PWR-R1.step",
+      "source_sha256": "1e123e4c84157b9a9910f6e88bf52d7df59ec46526c3b02503525adb4f1b04c1",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -159.0,
+        -107.8,
+        -2.0999999999999863
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-R1.stl",
+      "triangles": 656,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        3.4000000953674316,
+        1.0
+      ],
+      "mesh_volume_mm3": 5.2296075566845905,
+      "STEP_volume_mm3": 5.229203673227362
+    },
+    {
+      "name": "PWR-R2",
+      "quantity": 1,
+      "family": "power",
+      "mount": "PCB",
+      "datum_case_mm": [
+        165,
+        -109.5,
+        -3.1
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/PWR-R2.step",
+      "source_sha256": "8dec35b30ae4c44635e581c00339a2ef0afb75f32fe9f2aaccb4708de7194e63",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -164.0,
+        -107.8,
+        -2.0999999999999863
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-R2.stl",
+      "triangles": 656,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        3.4000000953674316,
+        1.0
+      ],
+      "mesh_volume_mm3": 5.2296075566845905,
+      "STEP_volume_mm3": 5.229203673227362
+    },
+    {
+      "name": "PWR-R3",
+      "quantity": 1,
+      "family": "power",
+      "mount": "PCB",
+      "datum_case_mm": [
+        230,
+        -109.5,
+        -3.1
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/PWR-R3.step",
+      "source_sha256": "a8d8b6762f0273ca187d024698f53eb8f6f4d3b9b7b6f729ca88515a7a0c2a9c",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -229.0,
+        -107.8,
+        -2.0999999999999863
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-R3.stl",
+      "triangles": 656,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        3.4000000953674316,
+        1.0
+      ],
+      "mesh_volume_mm3": 5.2296075566845905,
+      "STEP_volume_mm3": 5.229203673227362
+    },
+    {
+      "name": "PWR-R4",
+      "quantity": 1,
+      "family": "power",
+      "mount": "PCB",
+      "datum_case_mm": [
+        270,
+        -109.5,
+        -3.1
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/PWR-R4.step",
+      "source_sha256": "68d8e7ca13e80d4c99e6edf17d099648541874ba5a6eb8a0921d3c078271b25a",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -269.0,
+        -107.8,
+        -2.0999999999999863
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-R4.stl",
+      "triangles": 656,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        3.4000000953674316,
+        1.0
+      ],
+      "mesh_volume_mm3": 5.2296075566845905,
+      "STEP_volume_mm3": 5.229203673227362
+    },
+    {
+      "name": "PWR-R5",
+      "quantity": 1,
+      "family": "power",
+      "mount": "PCB",
+      "datum_case_mm": [
+        300,
+        -109.5,
+        -3.1
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/PWR-R5.step",
+      "source_sha256": "aaaceeb280397f80ad20cfd86a5f3cb2f98267d332b3c36804d2f69f71ad3e9f",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -299.0,
+        -107.8,
+        -2.0999999999999863
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-R5.stl",
+      "triangles": 656,
+      "mesh_bounds_mm": [
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        3.4000000953674316,
+        1.0
+      ],
+      "mesh_volume_mm3": 5.2296075566845905,
+      "STEP_volume_mm3": 5.229203673227362
+    },
+    {
+      "name": "PWR-F-upper",
+      "quantity": 1,
+      "family": "power",
+      "mount": "PCB",
+      "datum_case_mm": [
+        132,
+        -123.527723,
+        -3.1
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/PWR-F-upper.step",
+      "source_sha256": "ebecaf47052fb4a95551c5411ef5ead78cad54f466ca3d4af90f7b1f30a0c8fb",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -130.99999989997602,
+        -121.0277229,
+        -2.0999998999999847
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-F-upper.stl",
+      "triangles": 5476,
+      "mesh_bounds_mm": [
+        1.0002398198594165e-07,
+        9.999999406318238e-08,
+        1.0000000116860974e-07,
+        2.0,
+        5.0,
+        1.0000001192092896
+      ],
+      "mesh_volume_mm3": 9.06381448800853,
+      "STEP_volume_mm3": 9.06347044507436
+    },
+    {
+      "name": "PWR-F-lower",
+      "quantity": 1,
+      "family": "power",
+      "mount": "PCB-removable",
+      "datum_case_mm": [
+        132,
+        -123.527723,
+        -4.76
+      ],
+      "source_assembly_STEP": "hardware/e73-hhkb-corner/mechanical/retention-review/PWR-F-lower.step",
+      "source_sha256": "be3f5c44adfdc52a078d1119bc39085e7a5f0fcb470a15ef7fcfd9ccb352d51d",
+      "X_rotation_deg": 180,
+      "local_translation_mm": [
+        -130.9999999,
+        -121.0277229,
+        -3.1499999999999844
+      ],
+      "scaled": false,
+      "local_STL": "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-F-lower.stl",
+      "triangles": 5492,
+      "mesh_bounds_mm": [
+        9.999999406318238e-08,
+        9.999999406318238e-08,
+        0.0,
+        2.0,
+        5.0,
+        1.6100000143051147
+      ],
+      "mesh_volume_mm3": 11.203807486576059,
+      "STEP_volume_mm3": 11.203470476439621
+    }
+  ],
+  "film_blanks": [
+    {
+      "name": "USB-R1-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 9.45,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        239.0,
+        -104.47500000000001,
+        -4.7250000000000005,
+        241.0,
+        -99.225,
+        -3.05
+      ]
+    },
+    {
+      "name": "USB-R2-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 9.45,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        269.0,
+        -104.47500000000001,
+        -4.7250000000000005,
+        271.0,
+        -99.225,
+        -3.05
+      ]
+    },
+    {
+      "name": "USB-R3-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 9.45,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        299.0,
+        -104.47500000000001,
+        -4.7250000000000005,
+        301.0,
+        -99.225,
+        -3.05
+      ]
+    },
+    {
+      "name": "USB-F1-seam-1",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 1.4,
+      "trim_allowance_each_end_mm": 0,
+      "folded": false,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        190.22500000000002,
+        -141.0,
+        -5.1000000000000005,
+        190.3,
+        -139.0,
+        -3.7
+      ]
+    },
+    {
+      "name": "USB-F1-seam-2",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 1.4,
+      "trim_allowance_each_end_mm": 0,
+      "folded": false,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        195.7,
+        -141.0,
+        -5.1000000000000005,
+        195.77499999999998,
+        -139.0,
+        -3.7
+      ]
+    },
+    {
+      "name": "USB-F2-seam-1",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 1.4,
+      "trim_allowance_each_end_mm": 0,
+      "folded": false,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        211.53770200000002,
+        -154.0,
+        -5.1000000000000005,
+        211.612702,
+        -152.0,
+        -3.7
+      ]
+    },
+    {
+      "name": "USB-F2-seam-2",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 1.4,
+      "trim_allowance_each_end_mm": 0,
+      "folded": false,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        217.012702,
+        -154.0,
+        -5.1000000000000005,
+        217.08770199999998,
+        -152.0,
+        -3.7
+      ]
+    },
+    {
+      "name": "BAT-R1-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 8.55,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        164.0,
+        -109.575,
+        -5.25,
+        166.0,
+        -103.62499999999999,
+        -4.374999999999999
+      ]
+    },
+    {
+      "name": "BAT-R2-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 8.55,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        174.0,
+        -109.575,
+        -5.25,
+        176.0,
+        -103.62499999999999,
+        -4.374999999999999
+      ]
+    },
+    {
+      "name": "PWR-R1-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 6.75,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        159.0,
+        -111.275,
+        -3.575,
+        161.0,
+        -107.725,
+        -2.4000000000000004
+      ]
+    },
+    {
+      "name": "PWR-R2-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 6.75,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        164.0,
+        -111.275,
+        -3.575,
+        166.0,
+        -107.725,
+        -2.4000000000000004
+      ]
+    },
+    {
+      "name": "PWR-R3-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 6.75,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        229.0,
+        -111.275,
+        -3.575,
+        231.0,
+        -107.725,
+        -2.4000000000000004
+      ]
+    },
+    {
+      "name": "PWR-R4-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 6.75,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        269.0,
+        -111.275,
+        -3.575,
+        271.0,
+        -107.725,
+        -2.4000000000000004
+      ]
+    },
+    {
+      "name": "PWR-R5-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 6.75,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        299.0,
+        -111.275,
+        -3.575,
+        301.0,
+        -107.725,
+        -2.4000000000000004
+      ]
+    },
+    {
+      "name": "PWR-F-seam-1",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 1.45,
+      "trim_allowance_each_end_mm": 0,
+      "folded": false,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        131.0,
+        -126.102723,
+        -3.8,
+        133.0,
+        -126.027723,
+        -2.35
+      ]
+    },
+    {
+      "name": "PWR-F-seam-2",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 1.45,
+      "trim_allowance_each_end_mm": 0,
+      "folded": false,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        131.0,
+        -121.027723,
+        -3.8,
+        133.0,
+        -120.95272299999999,
+        -2.35
+      ]
+    },
+    {
+      "name": "PWR-F-lower-film",
+      "quantity": 1,
+      "blank_width_mm": 2.0,
+      "blank_length_mm": 7.95,
+      "trim_allowance_each_end_mm": 0.5,
+      "folded": true,
+      "total_thickness_max_mm": 0.075,
+      "assembly_bounds_case_mm": [
+        131.0,
+        -126.102723,
+        -5.235,
+        133.0,
+        -120.95272299999999,
+        -4.26
+      ]
+    }
+  ],
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/audit/retention-study.json": "91eb5aee256fca61e339b15abb2286f6e3acb70f2ba89078c6e0c2edbc4d609b",
+    "hardware/e73-hhkb-corner/audit/harness-study.json": "1f708152b7192e8b490125ba4e016af84c66ff2eeab0a31830f2a876d47e53dc",
+    "hardware/e73-corner-retention-spec.json": "45fbaa8132a87181daf1d9139ecb7b2ccb5db6e6dda8ea1d43db69d0c0c081b1",
+    "scripts/e73_corner_retention.py": "225a62f28ebf9f2861ed903ba005c265b306c5265b11dbb77b66fdc9a5e66dbc",
+    "scripts/export_e73_retention_prints.py": "a9e3e667dacbf5b901e8e05144b9c04ec021882b01fd6fd282007e7c6783d86d"
+  },
+  "outputs": {
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R1-film.step": "f74dc48f0c4a98fac4f784a3338ecf30a72b0e58b925950142847d0ac65b4c76",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R1.step": "092552e8a1daba392a72e0870c344c623fff67f2f22923eab6bca9d0ee636fdf",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R2-film.step": "33352a8bed2961fcfaf20b18822a193e7af6bc18ac8f5587d46a6bfaee14bd92",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R2.step": "1d28b56fa57c4071ccfcace2198c9117775cdb6e25911a28fca025452379b766",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-lower-film.step": "63293a25ed0509679ad5ddeb9f115fec8fc4582823e99c974e3becfd9bc9ff34",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-lower.step": "cbe4daa06b4b79b0da90d8c6a8e54ef7848b33751939fe62b0839b61ca15dbb7",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-seam-1.step": "13f86f9bb530bd58f08f93b8199210676e451d225ffa45eb0237f761c76d5f29",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-seam-2.step": "a4da1db40b7d9c1def15e614e2c368b4e6669f149169e079c5bb73eec5e626bb",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-upper.step": "dcffdd7fbfaf4b01e5fa7a1f6284f6f461fca132e41bb6fb3f3fe4bbe5610192",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R1-film.step": "d5bd1100f503455b4975bee28885ba5a9787fa3d0b395ed1f4a6447051f43523",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R1.step": "579e74f220b7dd3ebdb9226942c3a616c912433c99e9daa27c8184ae1ccce2fb",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R2-film.step": "ff1f43d3679d29e7a940301f4c9c5684e08503e378414dfb47a663f530bfb7d2",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R2.step": "a971c534f5a83a6c0bd348dafd24e9368aecd3a277344dc5ba6190f49a8b3cde",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R3-film.step": "9064d2ad27e7762bdeb4d0446c10ab296ba2ffa4e3fc85019f43e9d895a41ad3",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R3.step": "46b910e54e659fdf9791b4ac6549769139e6f979983aad3969846a10692b0729",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R4-film.step": "53e98e5700c93d86d67a22c1efef4f33d865eba266f422b679abc0d709bb91f7",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R4.step": "b264711f6263edaaf28d1eee6acdc1a6da2b0d1bbbdb0d8a600fce37f2aceb1c",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R5-film.step": "123ed8897490042fc83025a45dfc4ea40ba3be4e2c2b4e99e20aac9b062add7a",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R5.step": "9f93d9d301c8ffaeb5b100d589b613376dca2a70e4e33c7ca5dfb960febb6c48",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-base.step": "33bb209e74ab8bd0ef6a3ef6fd20b419a1b487e7f53483a64162902bb9f329cc",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-lid.step": "050b07126775d08413d3ba7a803bbc6d760a8c67880ad24f705dd6c0f6fa2094",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-seam-1.step": "382c34ced31c134562dcf0821c5b1e125b1bdae2edc96cc01a8d0b30d21c547a",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-seam-2.step": "b2ffc67ab26d839d0358ecadd0a9cb799764be5aec5aa9078336ff66eb326d49",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-base.step": "22b831e2b8e4c530620d3cd8fd44b543e9a8fac8574833ac6fb28a9c89fa5428",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-lid.step": "93c06b3e549505c1535649512b490280da27827ddbd8a60f4f377fd7825e3f8c",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-seam-1.step": "612c0c56269141f20132795dc58cd651e1cdf30009a54f13fb63b8e2cf48d8a9",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-seam-2.step": "f5d0826241817191c34ae589e0a2edb118852d34fdabdec69910af5bb27cc8da",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R1-film.step": "8bd19ba1275a34a150ee2b5b01a4944923c29c2f83baa44dbf741303a4a674dc",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R1.step": "844b682a2d7c61f1a59ac5f4705cd7fa754195b463ea0e8bb3ed153f368d0709",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R2-film.step": "5cf84a02f6df49864ad569cd27a0b6c2de7dc61538af6ff05033bbd8fbfc8185",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R2.step": "5c44ae8a2ac274eb0a48005d2c44905e74b35b0e3e5abdfde28ee83d2afeabab",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R3-film.step": "9249d652e021143a70e34cd0a71dd4a00984537484571bb0d15fd558bbc366ad",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R3.step": "82530eba1de2ec6d1534fb88d0b35231681d7def132ab143c7438eaf8ebd365c",
+    "hardware/e73-hhkb-corner/mechanical/retention/film-blanks.svg": "f15ea673bfc1e958901af3608991fa651a917cdcb0ec9e06703310f61d4f9949",
+    "hardware/e73-hhkb-corner/mechanical/retention/film-blanks.zh-CN.svg": "1251d4e66fe80e4b205d0e1da8e3eaca6600b54da638dc019f0c390897ac9323",
+    "hardware/e73-hhkb-corner/mechanical/retention/parts.csv": "69b128b870ce3212bf6703f73cc55df9620962f032c1da407c55df46e4e5cffb",
+    "hardware/e73-hhkb-corner/mechanical/retention/parts.zh-CN.csv": "8a204250d43350b39b6dfbe4f4a576c09498e2909313e8fe9b314b9e9a9987ce",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/ALL-16-GUIDES-ONE-EACH.step": "eddb9dc34f42bf7a7489bc18d7689eb838a6f046f2a695556ef780d228170970",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/ALL-16-GUIDES-ONE-EACH.stl": "3005f9df3bd11cbb63d112d97518b4ca15b55ae11b0fd0587b96019d92511f81",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/BAT-R1.stl": "ece157cd1fe5460a374b1f24b16341b80681d21ac51d008488f9cddd99b80a3f",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/BAT-R2.stl": "ece157cd1fe5460a374b1f24b16341b80681d21ac51d008488f9cddd99b80a3f",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-F-lower.stl": "e40c1edb52c53710c3100a456f1589b2015c7e8e26c367dff293f65098770d14",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-F-upper.stl": "3c6dba8b9f6d2b3dd10b75b598caa8554b37cf440582157eafa26105a633ec06",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-R1.stl": "3bc6bbf4df89474d100a708d37ba451d3d4ede08f5659c7b2aa0ae8cd43d547d",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-R2.stl": "3bc6bbf4df89474d100a708d37ba451d3d4ede08f5659c7b2aa0ae8cd43d547d",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-R3.stl": "3bc6bbf4df89474d100a708d37ba451d3d4ede08f5659c7b2aa0ae8cd43d547d",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-R4.stl": "3bc6bbf4df89474d100a708d37ba451d3d4ede08f5659c7b2aa0ae8cd43d547d",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/PWR-R5.stl": "3bc6bbf4df89474d100a708d37ba451d3d4ede08f5659c7b2aa0ae8cd43d547d",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/USB-F1-base.stl": "dc06f0a662e0a77a1961748ae249a2ee6c8e3b0d7b6ed7686545349ba29af58a",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/USB-F1-lid.stl": "86a8e4a057948ce30d0c294aff51558d785f32d0d41e63f99a3895f17c20aca3",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/USB-F2-base.stl": "dc06f0a662e0a77a1961748ae249a2ee6c8e3b0d7b6ed7686545349ba29af58a",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/USB-F2-lid.stl": "150d5db37fea91d58ffd40d0fa825203a114353b5084db2369ba7bc5c7e0388c",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/USB-R1.stl": "677cac278d447409e86e363a0853deb3e0630278b2f2bccb6828c6e0468afe37",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/USB-R2.stl": "677cac278d447409e86e363a0853deb3e0630278b2f2bccb6828c6e0468afe37",
+    "hardware/e73-hhkb-corner/mechanical/retention/print/USB-R3.stl": "677cac278d447409e86e363a0853deb3e0630278b2f2bccb6828c6e0468afe37"
+  },
+  "limits": [
+    "STL origin/orientation changed by rigid transforms only; assembly STEP retains case coordinates",
+    "ALL-16 is one copy of every rigid guide, not a seventeenth part",
+    "Film SVG blanks require actual folding, trimming and incoming-thickness inspection; sharp CAD folds are explanatory"
+  ]
+}

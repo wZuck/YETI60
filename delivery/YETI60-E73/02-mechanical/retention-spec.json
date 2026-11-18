@@ -1,0 +1,63 @@
+{
+  "revision": "YETI60-E73-RETENTION-STUDY-01",
+  "scope": "Unreleased current-route rigid retainers and films; no Raytac acceptance inherited",
+  "units": "mm",
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "guides": {
+    "USB_rear_x": [
+      240,
+      270,
+      300
+    ],
+    "USB_front_y": -153,
+    "battery_x": [
+      165,
+      175
+    ],
+    "power_x": [
+      160,
+      165,
+      230,
+      270,
+      300
+    ],
+    "power_fan_x": 132,
+    "depth": 2,
+    "bond_gap": 0.1,
+    "groove_radius": 0.5,
+    "pair_groove_radius": 1.01,
+    "retention_film_thickness": 0.075,
+    "minimum_floor_web": 0.3,
+    "local_wire_position_allowance": 0.1,
+    "lid_roof_nominal": 0.4,
+    "case_print_wall_tolerance": 0.15,
+    "guide_print_tolerance": 0.05,
+    "USB_down_y": -140,
+    "USB_rear_front_half_width": 2.4,
+    "PCB_service_XY_allowance": 0.25,
+    "service_mount_position_allowance": 0.1,
+    "rear_front_step_boundary_y_mm": -102.95,
+    "rear_front_step_roof_z_mm": -2.99,
+    "battery_half_width_mm": 2.9
+  },
+  "tolerance_contract": {
+    "guide_maximum_surface_point_error_L2_mm": 0.05,
+    "guide_installed_datum_error_L2_mm": 0.05,
+    "film_edge_error_L2_mm": 0.05,
+    "film_maximum_total_thickness_mm": 0.075,
+    "case_maximum_coordinate_error_each_axis_mm": 0.15,
+    "PCB_installed_pose_Z_error_mm": 0.3,
+    "minimum_foreign_air_gap_mm": 0.15,
+    "minimum_finished_web_mm": 0.3,
+    "bondline_nominal_mm": 0.1,
+    "bondline_scope": "Matched/finished bonding faces; inspect bondline and remaining webs on the actual post-cured case. Does not assume independent untrimmed print errors fit a 0.1 mm bondline."
+  },
+  "material_candidate": {
+    "guides": "Tough SLA engineering resin or machined insulating polymer; supplier must meet the inspected surface and wall limits",
+    "film": "3M 5413 polyimide tape, nominal 0.069 mm; incoming total thickness <=0.075 mm including adhesive; bond/pull qualification open",
+    "source": "https://multimedia.3m.com/mws/media/136011O/3m-polyimide-film-tape-5413-tds.pdf",
+    "source_retrieved": "2026-11-18",
+    "thickness_scope": "0.069 mm is a typical manufacturer value, not a guaranteed maximum. <=0.075 mm is the project incoming limit; measure the actual lot."
+  }
+}

@@ -1,0 +1,42 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>打开正确的 E73 PCB 工程</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="project-files.html">English</a> | 中文</p>
+<h1 id="打开正确的-e73-pcb-工程">打开正确的 E73 PCB 工程</h1>
+<p>当前右下角、正面安装 E73 的版本是 <strong>CORNER-04</strong>。受控来源为<a href="source/EC60-nRF52840.kicad_pro">右下角工程</a>，<a href="source/EC60-nRF52840.kicad_pcb">PCB 文件</a>在同一目录。用 KiCad 打开该工程，再进入 PCB 编辑器。交付快照的 <code>01-pcb/source/</code> 包含工程、全部原理图子页、本地符号／封装库和本地模型。</p>
+<p>不能只凭 <code>EC60-nRF52840</code> 这个共同文件名判断版本：几个历史候选都使用该名称。<code>hardware/ec60-nrf52840</code> 是旧基线，<code>hardware/e73-usb-repair</code> 是中间来源，<code>variants/raytac</code> 是另一模组方案；这些都不是当前右下角板。</p>
+<table>
+<thead>
+<tr>
+<th>原生 PCB 核对项</th>
+<th>当前版本应有的内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U1 模组</td>
+<td>正面，原点 X332／Y195 mm、0°；本体位于 PCB X332–350／Y182–195 mm</td>
+</tr>
+<tr>
+<td>J5 电源桥接口</td>
+<td>背面，X335.5／Y117.5 mm、180°</td>
+</tr>
+<tr>
+<td>J4 USB 接口</td>
+<td>背面，X346.1／Y110.7 mm、90°</td>
+</tr>
+<tr>
+<td>板框</td>
+<td>285.0 ×94.6 mm，已去掉原右上凸出部分</td>
+</tr>
+<tr>
+<td>按键排列</td>
+<td>60 个有效 HHKB 感应位置；去掉未用 SW72／SW73 电极</td>
+</tr>
+<tr>
+<td>制造</td>
+<td>普通四层 FR-4、标称 1.6 mm、机械贯通过孔</td>
+</tr>
+</tbody>
+</table>
+<p>2026 年 11 月 14 日的 <code>b523e60</code> 新增右下角 PCB；<code>7d8b826</code> 完成布线／参考地修补，<code>91aa2f1</code> 清理残余铜线，11 月 17 日的 <code>d8c1bf0</code> 提交 J5 反向及局部走线修补。之后的理线件／胶膜工作修改机械产物，没有改动铜线。</p>
+<p><code>.kicad_pro</code> 保存工程配置，它的修改时间不会跟随每一次封装或走线编辑变化；实际 PCB 几何保存在 <code>.kicad_pcb</code>。请通过 Git 内容／历史及交付 <code>manifest.json</code> 内的 SHA-256 判断版本，不以 Finder 时间为准。交付 PCB 与固件清单中的板文件摘要必须一致。</p>
+<p>PCB 历史轴体三维链接不是当前 NiZ 机构，部分还依赖旧版 KiCad 本机模型路径。原生三维预览不等于完整装配证据。请配套使用当前<a href="../04-assembly/key-mechanism.zh-CN.html">机构</a>、<a href="../04-assembly/harness-routing.zh-CN.html">线束</a>及<a href="../04-assembly/retainers.zh-CN.html">理线件</a>文档；完整整机渲染与拆修验收仍待完成。</p>
+</main></html>

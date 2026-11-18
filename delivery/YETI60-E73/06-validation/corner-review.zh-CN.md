@@ -2,7 +2,7 @@
 
 # E73 迁移至 HHKB 右下角
 
-**已选定的开发方向，尚未放行生产。** 后续开发使用[右下角原生工程](https://github.com/wZuck/YETI60/blob/master/hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro)和[可重放规格](https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-spec.json)，替代原右上角模组位置。该候选不是下单包，旧版右上角验收报告不能用于验收本版。
+**已选定的开发方向，尚未放行生产。** 后续开发使用[右下角原生工程](../01-pcb/source/EC60-nRF52840.kicad_pro)和[可重放规格](https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-spec.json)，替代原右上角模组位置。该候选不是下单包，旧版右上角验收报告不能用于验收本版。
 
 仅 E73 模组安装在正面，利用 PCB 与定位板之间的空间。J4 USB 输入保留背面原姿态；J5 电源桥保留背面原坐标、旋转 180°，沿用已制作的 UDB-C-JSH C5 子板及其接口。1.6 mm 钢定位板和外壳外形保留。当前布局不需要额外切除右下角底壳；此前的背面安装试案无法保留要求的底壁余量。
 

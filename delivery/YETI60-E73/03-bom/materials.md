@@ -171,13 +171,12 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 |---|---:|---|
 | Shell screw shims | 4 | 0.30 mm thick, M3 clearance, used with the four M3 x 5 screws above; OD must fit the screw seat |
 | Daughterboard insulating washers | 4 | 0.30 mm thick, M2 clearance, for four M2 x 4 screws |
-| Current E73 cable retainers | Count pending | Retainers/films must follow the CORNER-04 route and final clearance checks; no guide files are released yet. Do not print the historical rear/bridge/front guide set |
+| Current E73 cable retainers | **16 rigid parts + 17 film pieces** | [Files, part table, printing and dry fitting](../04-assembly/retainers.md); one of each rigid local-mm STL, films cut separately. Static bounded checks passed; process, installation and service acceptance remain open |
 | Polyimide insulation stock | 1 sheet | At least 100 x 100 x 0.10 mm; supplies the 28 insulating discs; do not double-count pre-cut parts. Upper harness retention uses the separately listed adhesive-backed film |
 | Gasket stock | 2 sheets | One >=150 x 50 x 2.0 mm lower sheet and one >=150 x 50 x 1.2 mm upper sheet; cut four 33 x 3 mm pads from each. Replaces M17 stock allowance; force/creep and adhesive qualification open |
 | Resin-compatible structural adhesive | 1 small two-part kit | For inserts and guides; qualify and cure per adhesive/resin suppliers; quantity denotes a purchase package, not measured consumption |
 | Removable battery tape and edge insulation | 1 set | Nominal pack-to-pocket-floor space is only 0.20 mm; tape, insulation and assembly allowance must fit that total budget; do not compress the pouch |
-| Upper harness retention tape | 1 small roll; cut plan pending | Adhesive-backed insulating film/tape, total thickness <=0.10 mm including adhesive; wrap over the upper wires and down the guide sides |
-| Removable bridge tape | 1 small roll | Nonconductive removable double-sided tape, 0.05 mm total thickness, final lands/count pending E73 retention design; upper film plus adhesive must total <=0.10 mm |
+| Guide retention film tape | 1 small roll; **17 net cut pieces** | Candidate 3M 5413; actual received total thickness **<=0.075 mm including adhesive**, typical manufacturer value 0.069 mm is not a guaranteed maximum. [Cut/fold templates and contact requirements](../04-assembly/retainers.md); adhesive performance still requires a coupon test |
 
 ### Tools (shared, not one set per keyboard)
 
