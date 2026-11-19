@@ -23,9 +23,21 @@ The [machine-readable report](service-motion.json) includes the trial's free len
 
 ## Access and rigid lift trials
 
-At each thickness, the PCB, fitted component and mount proxies, power-bridge housings and board-mounted retainers clear the bottom, C5, battery and case-mounted retainers by more than 0.48 mm throughout a 25 mm straight lift. This rigid-body trial assumes the J2 and J4 plugs are already out of the lift path. The steel plate, flexible leads and unplugged plug poses still need to be included in the full assembly check.
+At each thickness, the PCB, fitted component and mount proxies, power-bridge housings and board-mounted retainers clear the bottom, C5, battery and case-mounted retainers by more than 0.48 mm throughout a 25 mm straight lift. This rigid-body trial assumes the J2 and J4 plugs are already out of the lift path.
 
 Two hypothetical underside openings admit the geometric tip envelopes of a pair of jaws throughout 4 mm of axial travel. The J4 opening is 11.50 × 7.50 mm and the J2 opening is 6.50 × 11.50 mm in XY. The tips clear the checked solid obstacles by at least 0.30 mm at all three thicknesses, and the openings avoid the insert guards. These sizes describe a CAD experiment. A workable solution needs room for the actual tool, wire movement and connector parking, plus closure parts and strength checks for any opening. The supplied M04 shell uses its existing geometry.
+
+## Cable feed and parking trial
+
+The trial disconnects J2 first and J4 second. It translates each housing along its extraction axis, 4.50 mm for J2 and 4.00 mm for J4, then lowers it 0.45 mm. The two-step housing sweeps clear the checked rigid geometry at all three thicknesses. They approach within 0.10 mm of the PCB before lowering. Once parked, the housings clear the checked rigid objects by more than 0.50 mm during the 25 mm PCB lift. A real tool still needs to reach and move the actual housings through the full sequence.
+
+The battery leads combine the three-pin fan-out and the height change at J2. A bow starts at case X 162.60 mm, ahead of the proposed battery guide positions at X 186 and 189 mm. The USB cable takes up its extra length by deflecting its front loop by up to 2 mm. Both moves require that the installed guides allow the leads to feed along their slots.
+
+![Top view of the seated and parked battery lead and USB loop](service-lead-paths.png)
+
+The [sampled-pose report](service-leads.json) covers seven connector poses at each of the three board thicknesses. The swept wire volumes in each pose clear the checked obstacles by at least 0.15 mm after the stated routing allowances. The worst change in a conductor's modeled free length is under 0.06 mm. The report also checks guide capture and the parked housings. Clearance between poses, actual wire motion and friction, contact strain and the finished covers still require qualification. Build wire lengths and guide locations remain those of the current delivery.
+
+The [plate envelope report](service-reference.json) separately sweeps the steel plate's tolerance-expanded DXF outline through 25 mm of vertical removal against the M04 bottom. The remaining gap after the case tolerance and geometric allowance is 0.188 mm. The top shell is removed for this check.
 
 ## Dry fit and bench verification
 

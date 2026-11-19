@@ -13,7 +13,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
  native=json.loads((BASE/'audit/placement-check.json').read_text());assert native['electrical_routing_complete']
- for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','service-motion']:
+ for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','service-motion','service-leads','service-reference']:
   report=json.loads((BASE/'audit'/f'{name}.json').read_text())
   for path,digest in report['source_sha256'].items():assert sha(ROOT/path)==digest,('Stale delivery input',path)
   if name=='power-process':assert report['status']=='repaired-power-routing-and-aperture-checks-passed'
@@ -32,6 +32,17 @@ def main():
    for variant in trial['variants']:
     assert len(variant['wire_lift_pairs'])==14
     assert all(pair['certified_gap_mm']>=trial['minimum_gap_mm']for pair in variant['wire_lift_pairs'])
+  if name=='service-leads':
+   assert report['status']=='service-lead-candidate-poses-passed'and not report['selected_for_assembly']
+   assert len(report['variants'])==3
+   for variant in report['variants']:
+    assert len(variant['states'])==7 and len(variant['parked_housings'])==2
+    assert all(state['residual_gap_mm']>=.15-1e-6 for state in variant['states'])
+  if name=='service-reference':
+   assert report['status']=='service-reference-drawings-and-plate-clearance-checked'
+   assert not report['selected_for_assembly']and len(report['outputs'])==2
+   assert report['plate_clearance']['remaining_air_gap_mm']>=.15
+   assert len(report['rigid_housing_travel'])==6
   for path,digest in report.get('outputs',{}).items():assert sha(ROOT/path)==digest,('Stale engineering output',path)
  assembly_render=ROOT/'renders/e73-corner-assembly/manifest.json'
  render_report=json.loads(assembly_render.read_text())
