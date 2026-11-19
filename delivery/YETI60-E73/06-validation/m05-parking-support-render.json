@@ -1,0 +1,21 @@
+{
+  "status": "checked-M05-parking-parts-rendered",
+  "physical_verification": false,
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/parking-support/J2-carrier.step": "f2627e2251ed6d5fd65bd8cf8775ab915cd09d836d589bfe5b3747e3c6b04dc2",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/parking-support/J2-carrier.stl": "7bcf47e3a9763bc8b00ab1075b3dd00b344076e7435428a09d7528e9be79d200",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/parking-support/J2-rod-shelf.step": "41b9d6d74660a2bbbecd9ac7d42155a9bb991afe8b84427a7a036da73dfecb98",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/parking-support/J2-rod-shelf.stl": "b3fbbbfd8b1b4803317ae41bf53914635d8fdd9156020e90e5f4f43c200d2916",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/parking-support/J4-carrier.step": "8d3f9b1d4fe0ccdcbdbde37f7161c053857bbf36adfcce21e80142bba87e2785",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/parking-support/J4-carrier.stl": "1794a03cde7c0e29e427f1e3a3c8bc77376e825fc1830d98961c862cf51b1693",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/parking-support/J4-rod-shelf.step": "f5a17ac6909295d741320a8622b8b8acac4186dc2221ea1b5a44e20cbcd372b4",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/parking-support/J4-rod-shelf.stl": "e4aabb2fccc11f3e2402e98f402bef02e6d9fb75cb3ae8295341ec7832da4cab",
+    "hardware/e73-hhkb-corner/audit/m05-parking-support.json": "9cf947ac1d2edd047596303985d5b18418c57eac6c2d605ede7f0589915345bd",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.stl": "1557da74ee648bf1d16952f4b1c6036ddc22cd34cd626c7c45eda8dfe16429ce",
+    "scripts/render_e73_parking_support.py": "ceb0fd7d6ff0521f3c923b6ec757c17cf5de00e6083e22b18e7691447bf9437a",
+    "scripts/render_e73_corner_assembly.py": "cc4178fed20ce1b23256524482cb852be3c8541f625484971225b990bf6931cd"
+  },
+  "outputs": {
+    "hardware/e73-hhkb-corner/audit/m05-parking-support.png": "1e7cda8dfd53593080d8858a360d7ceeac320c91d53d7356ab2ac2127c4aaf71"
+  }
+}

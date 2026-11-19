@@ -13,7 +13,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
  native=json.loads((BASE/'audit/placement-check.json').read_text());assert native['electrical_routing_complete']
- for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift','m05-tool','m05-tool-drawing']:
+ for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift','m05-tool','m05-tool-drawing','m05-parking-support','m05-parking-support-render']:
   report=json.loads((BASE/'audit'/f'{name}.json').read_text())
   for path,digest in report['source_sha256'].items():assert sha(ROOT/path)==digest,('Stale delivery input',path)
   if name=='power-process':assert report['status']=='repaired-power-routing-and-aperture-checks-passed'
@@ -69,6 +69,13 @@ def main():
    tool_models=report['outputs']
   if name=='m05-tool-drawing':
    assert report['status']=='M05-tool-fabrication-drawing-exported'and len(report['outputs'])==2
+  if name=='m05-parking-support':
+   assert report['status']=='M05-parking-support-design-screened'and len(report['outputs'])==8
+   assert {p['ref'] for p in report['ports']}=={'J2','J4'}
+   assert all(len(p['checks'])==3 and len(p['media'])==2 for p in report['ports'])
+   parking_models=report['outputs']
+  if name=='m05-parking-support-render':
+   assert report['status']=='checked-M05-parking-parts-rendered'and len(report['outputs'])==1
   for path,digest in report.get('outputs',{}).items():assert sha(ROOT/path)==digest,('Stale engineering output',path)
  assembly_render=ROOT/'renders/e73-corner-assembly/manifest.json'
  render_report=json.loads(assembly_render.read_text())
@@ -100,6 +107,7 @@ def main():
  for rel in access_models:copy(rel,'02-mechanical/service-case-m05/'+Path(rel).name)
  for rel in harness_models:copy(rel,'02-mechanical/service-case-m05/harness/'+Path(rel).name)
  for rel in tool_models:copy(rel,'02-mechanical/service-case-m05/tool/'+Path(rel).name)
+ for rel in parking_models:copy(rel,'02-mechanical/service-case-m05/parking-support/'+Path(rel).name)
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/export_e73_delivery_top.py'),'--output',str(out/'02-mechanical/top.stl')],check=True)
  inputs['scripts/export_e73_delivery_top.py']=sha(ROOT/'scripts/export_e73_delivery_top.py')
  for p in sorted((BASE/'firmware').rglob('*')):
@@ -108,6 +116,7 @@ def main():
  docs['docs/engineering/e73-corner-service']='06-validation/case-service'
  docs['docs/build/e73-m05-prototype']='02-mechanical/service-case-m05/print-guide'
  docs['docs/build/e73-m05-service-tool']='02-mechanical/service-case-m05/tool-guide'
+ docs['docs/build/e73-m05-parking-support']='02-mechanical/service-case-m05/parking-guide'
  for source,target in docs.items():
   for suffix in ['.md','.zh-CN.md']:copy(source+suffix,target+suffix)
  for lang in ['', '.zh-CN']:

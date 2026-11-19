@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M05 plug parking supports</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../../index.html">Back to delivery index</a></header><p>English | <a href="parking-guide.zh-CN.html">Chinese</a></p>
+<h1 id="m05-plug-parking-supports">M05 plug parking supports</h1>
+<p>The J2 and J4 supports use the existing M05 cover screws. Each support has a fixed carrier and a removable shelf that holds the exposed guide pins on one parallel-jaw tool. This lets both tools hold their housings below the mainboard during the vertical deck lift.</p>
+<p><img src="../../06-validation/m05-parking-support.png" alt="J2 and J4 parking supports fitted to the M05 underside" /></p>
+<h2 id="parts-for-one-keyboard">Parts for one keyboard</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th style="text-align:right">Quantity</th>
+<th>File or specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J2 carrier and rod shelf</td>
+<td style="text-align:right">One of each</td>
+<td>Carrier <a href="parking-support/J2-carrier.stl">STL</a> / <a href="parking-support/J2-carrier.step">STEP</a> and shelf <a href="parking-support/J2-rod-shelf.stl">STL</a> / <a href="parking-support/J2-rod-shelf.step">STEP</a></td>
+</tr>
+<tr>
+<td>J4 carrier and rod shelf</td>
+<td style="text-align:right">One of each</td>
+<td>Carrier <a href="parking-support/J4-carrier.stl">STL</a> / <a href="parking-support/J4-carrier.step">STEP</a> and shelf <a href="parking-support/J4-rod-shelf.stl">STL</a> / <a href="parking-support/J4-rod-shelf.step">STEP</a></td>
+</tr>
+<tr>
+<td>Parallel-jaw tools</td>
+<td style="text-align:right">2</td>
+<td>One assembled <a href="tool-guide.html">M05 tool</a> for each housing so both remain gripped.</td>
+</tr>
+<tr>
+<td>Carrier screws</td>
+<td style="text-align:right">4</td>
+<td>Reuse the M2 × 0.4 × 4 mm low-head cover screws and the existing cover inserts.</td>
+</tr>
+<tr>
+<td>Shelf screws and inserts</td>
+<td style="text-align:right">4 of each</td>
+<td>M2 × 0.4 × 5 mm screws and Ø3.2 × 2.5 mm knurled M2 inserts. The carrier insert bores are Ø3.35 mm × 3.2 mm deep.</td>
+</tr>
+<tr>
+<td>Rod ties and shims</td>
+<td style="text-align:right">4 each</td>
+<td>Four nylon ties with straps up to 2.2 × 0.8 mm. Use smooth insulating shims under the pins, cut to fit the saddle floor.</td>
+</tr>
+</tbody>
+</table>
+<p>Print the four rigid parts in tough insulating resin at 100% in millimetres. Select STEP or STL for each part. The STEP files preserve case assembly coordinates. The STL files are moved to local origins for printing. Post-cure before checking the screw seats, shelves and insert bores. Cold-bond the shelf inserts into the carriers before bringing the parts near any electronics.</p>
+<h2 id="fit-the-supports-during-an-unpowered-trial">Fit the supports during an unpowered trial</h2>
+<ol>
+<li>With the covers removed, fasten each carrier to its original cover screw seats. Fit the carriers before inserting the jaws. Support the case so there is room for the tools below and for lifting the deck from above.</li>
+<li>Use an inert pack gauge and unpowered connectors. Grip J2, withdraw it along +Y and lower it 0.45 mm toward the underside. Keep it gripped as you bring the J2 shelf up from below around the exposed pins. Fit two M2 × 5 mm screws from below. Repeat at J4 with withdrawal along −X.</li>
+<li>Fit each insulating shim under its rod so the released housing stays in the parked pose. The nominal shim is 0.436 mm for a 1.44 mm PCB, 0.270 mm for 1.6062 mm and 0.116 mm for 1.76 mm. Fit to the actual case and tool. Thread a tie around each pin through the slot under its saddle. Mark the pin positions at the saddles and check that the ties hold the pins down and prevent sideways sliding.</li>
+<li>With both housings supported, check that the wires can feed through the guide slots. Lift the deck along the 25 mm straight path. During reassembly first return the deck to its seats, support each tool while removing its shelf and ties, then partially raise and re-seat J4 followed by J2.</li>
+</ol>
+<p>The <a href="../../06-validation/m05-parking-support.json">parking support report</a> checks the fixed carriers against the tool strokes and checks 12 mm of vertical shelf approach at each port and board thickness. The rod slots have 0.175 mm nominal per-side clearance. The <a href="../../06-validation/m05-lift.json">lift report</a> uses the resulting parked-housing positions. Printed stiffness, fit, tie preload, lateral retention and repeated handling still require samples.</p>
+</main></html>
