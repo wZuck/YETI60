@@ -24,8 +24,11 @@ def main():
   if name=='retention-drawing':assert report['status']=='source-bound-retainer-placement-plans-generated'
   if name=='service-motion':
    trial=report['alternate_crossing_trial']
+   access=report['alternative_access_trial']
    assert report['status']=='service-obstructions-reproduced'and not report['complete_service_path_qualified']
    assert not trial['selected_for_assembly']and len(trial['variants'])==3
+   assert not access['selected_for_assembly']
+   assert len(access['rigid_only_deck_lift'])==3 and len(access['underside_jaw_checks'])==6
    for variant in trial['variants']:
     assert len(variant['wire_lift_pairs'])==14
     assert all(pair['certified_gap_mm']>=trial['minimum_gap_mm']for pair in variant['wire_lift_pairs'])

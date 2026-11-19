@@ -21,6 +21,12 @@ The 14 moving-versus-fixed conductor pairs at each thickness maintain at least 0
 
 The [machine-readable report](service-motion.json) includes the trial's free lengths. Use the [selected harness table](../04-assembly/harness-routing.md) for the current build. The alternate still requires retention, parked plug and tool clearance, controlled mating/release with strain relief, and data checks. The 4 mm trial stroke is a geometric input. Sample housing release travel and the force needed to release or re-seat it still need to be measured. [JST SH series drawing](https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf)
 
+## Access and rigid lift trials
+
+At each thickness, the PCB, fitted component and mount proxies, power-bridge housings and board-mounted retainers clear the bottom, C5, battery and case-mounted retainers by more than 0.48 mm throughout a 25 mm straight lift. This rigid-body trial assumes the J2 and J4 plugs are already out of the lift path. The steel plate, flexible leads and unplugged plug poses still need to be included in the full assembly check.
+
+Two hypothetical underside openings admit the geometric tip envelopes of a pair of jaws throughout 4 mm of axial travel. The J4 opening is 11.50 × 7.50 mm and the J2 opening is 6.50 × 11.50 mm in XY. The tips clear the checked solid obstacles by at least 0.30 mm at all three thicknesses, and the openings avoid the insert guards. These sizes describe a CAD experiment. A workable solution needs room for the actual tool, wire movement and connector parking, plus closure parts and strength checks for any opening. The supplied M04 shell uses its existing geometry.
+
 ## Dry fit and bench verification
 
 1. Verify the board, USB, charging and keys outside the case using the [first-article record](first-article.md).

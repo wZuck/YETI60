@@ -19,7 +19,7 @@
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/check_yeti60_interconnects.py": "9365de90575ef18e053954a4bdf1ec26d6188d3b1df9fc860cb92f7e1b356c3e",
     "scripts/e73_service_route.py": "be7e91db87e5a4d2e21f4697004adbae898d28bbb48a35341c689d52cbe4653b",
-    "scripts/check_e73_corner_service.py": "b65c8519f5752f96b8fb830067f3b9783d82a4d0897fd9cd9f051d20a5e5647b",
+    "scripts/check_e73_corner_service.py": "28c5b5b6fedbb096c7515a19f789a7fefc2355b305ec58abec68d8acae136344",
     "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
     "hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step": "05df1190f4a9a418e9861851fa32bb15da3e71a9545af5b2126141a647411428",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R1.step": "844b682a2d7c61f1a59ac5f4705cd7fa754195b463ea0e8bb3ed153f368d0709",
@@ -351,6 +351,343 @@
         "fixed_wire": "usb.3",
         "lift_mm": 0.75,
         "intersection_mm3": 0.0008976474048414133
+      }
+    ]
+  },
+  "alternative_access_trial": {
+    "selected_for_assembly": false,
+    "underside_jaw_checks": [
+      {
+        "ref": "J4",
+        "PCB_bottom_shift_mm": 0,
+        "window_case_bounds_mm": [
+          336.27500000000003,
+          -114.45,
+          -22,
+          347.77500000000003,
+          -106.95,
+          -2
+        ],
+        "removed_material_case_bounds_mm": [
+          336.27500000000003,
+          -114.45,
+          -18.874102901637443,
+          347.77500000000003,
+          -106.95,
+          -6.3
+        ],
+        "jaw_width_mm_with_open_approach_allowance": 0.85,
+        "jaw_axial_length_mm": 0.8,
+        "jaws": [
+          {
+            "jaw_side": -1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.3999999999999915,
+                "intersection_mm3": 0
+              },
+              {
+                "obstacle": "J5",
+                "gap_mm": 0.875,
+                "intersection_mm3": 0
+              }
+            ]
+          },
+          {
+            "jaw_side": 1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.4000000000000057,
+                "intersection_mm3": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ref": "J2",
+        "PCB_bottom_shift_mm": 0,
+        "window_case_bounds_mm": [
+          152.25,
+          -130.675,
+          -22,
+          158.75,
+          -119.175,
+          -2
+        ],
+        "removed_material_case_bounds_mm": [
+          152.24999999999997,
+          -130.675,
+          -17.373064860517246,
+          158.75,
+          -119.17499999999998,
+          -6.3
+        ],
+        "jaw_width_mm_with_open_approach_allowance": 0.85,
+        "jaw_axial_length_mm": 0.8,
+        "jaws": [
+          {
+            "jaw_side": -1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "J2",
+                "gap_mm": 0.3199999999999932,
+                "intersection_mm3": 0
+              },
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.4000000000000057,
+                "intersection_mm3": 0
+              }
+            ]
+          },
+          {
+            "jaw_side": 1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "J2",
+                "gap_mm": 0.3199999999999932,
+                "intersection_mm3": 0
+              },
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.39999999999997726,
+                "intersection_mm3": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ref": "J4",
+        "PCB_bottom_shift_mm": 0.16620000000000013,
+        "window_case_bounds_mm": [
+          336.27500000000003,
+          -114.45,
+          -22,
+          347.77500000000003,
+          -106.95,
+          -2
+        ],
+        "removed_material_case_bounds_mm": [
+          336.27500000000003,
+          -114.45,
+          -18.874102901637443,
+          347.77500000000003,
+          -106.95,
+          -6.3
+        ],
+        "jaw_width_mm_with_open_approach_allowance": 0.85,
+        "jaw_axial_length_mm": 0.8,
+        "jaws": [
+          {
+            "jaw_side": -1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.3999999999999915,
+                "intersection_mm3": 0
+              },
+              {
+                "obstacle": "J5",
+                "gap_mm": 0.875,
+                "intersection_mm3": 0
+              }
+            ]
+          },
+          {
+            "jaw_side": 1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.4000000000000057,
+                "intersection_mm3": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ref": "J2",
+        "PCB_bottom_shift_mm": 0.16620000000000013,
+        "window_case_bounds_mm": [
+          152.25,
+          -130.675,
+          -22,
+          158.75,
+          -119.175,
+          -2
+        ],
+        "removed_material_case_bounds_mm": [
+          152.24999999999997,
+          -130.675,
+          -17.373064860517246,
+          158.75,
+          -119.17499999999998,
+          -6.3
+        ],
+        "jaw_width_mm_with_open_approach_allowance": 0.85,
+        "jaw_axial_length_mm": 0.8,
+        "jaws": [
+          {
+            "jaw_side": -1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "J2",
+                "gap_mm": 0.3199999999999932,
+                "intersection_mm3": 0
+              },
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.4000000000000057,
+                "intersection_mm3": 0
+              }
+            ]
+          },
+          {
+            "jaw_side": 1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "J2",
+                "gap_mm": 0.3199999999999932,
+                "intersection_mm3": 0
+              },
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.39999999999997726,
+                "intersection_mm3": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ref": "J4",
+        "PCB_bottom_shift_mm": -0.15379999999999994,
+        "window_case_bounds_mm": [
+          336.27500000000003,
+          -114.45,
+          -22,
+          347.77500000000003,
+          -106.95,
+          -2
+        ],
+        "removed_material_case_bounds_mm": [
+          336.27500000000003,
+          -114.45,
+          -18.874102901637443,
+          347.77500000000003,
+          -106.95,
+          -6.3
+        ],
+        "jaw_width_mm_with_open_approach_allowance": 0.85,
+        "jaw_axial_length_mm": 0.8,
+        "jaws": [
+          {
+            "jaw_side": -1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.3999999999999915,
+                "intersection_mm3": 0
+              },
+              {
+                "obstacle": "J5",
+                "gap_mm": 0.875,
+                "intersection_mm3": 0
+              }
+            ]
+          },
+          {
+            "jaw_side": 1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.4000000000000057,
+                "intersection_mm3": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ref": "J2",
+        "PCB_bottom_shift_mm": -0.15379999999999994,
+        "window_case_bounds_mm": [
+          152.25,
+          -130.675,
+          -22,
+          158.75,
+          -119.175,
+          -2
+        ],
+        "removed_material_case_bounds_mm": [
+          152.24999999999997,
+          -130.675,
+          -17.373064860517246,
+          158.75,
+          -119.17499999999998,
+          -6.3
+        ],
+        "jaw_width_mm_with_open_approach_allowance": 0.85,
+        "jaw_axial_length_mm": 0.8,
+        "jaws": [
+          {
+            "jaw_side": -1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "J2",
+                "gap_mm": 0.3199999999999932,
+                "intersection_mm3": 0
+              },
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.4000000000000057,
+                "intersection_mm3": 0
+              }
+            ]
+          },
+          {
+            "jaw_side": 1,
+            "open_jaw_swept_clearances": [
+              {
+                "obstacle": "J2",
+                "gap_mm": 0.3199999999999932,
+                "intersection_mm3": 0
+              },
+              {
+                "obstacle": "bottom",
+                "gap_mm": 0.39999999999997726,
+                "intersection_mm3": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "rigid_only_deck_lift": [
+      {
+        "PCB_thickness_mm": 1.6062,
+        "lift_mm": 25.0,
+        "rigid_moving_items_checked": 121,
+        "rigid_fixed_items_checked": 26,
+        "nominal_gap_mm_greater_than": 0.48
+      },
+      {
+        "PCB_thickness_mm": 1.44,
+        "lift_mm": 25.0,
+        "rigid_moving_items_checked": 121,
+        "rigid_fixed_items_checked": 26,
+        "nominal_gap_mm_greater_than": 0.48
+      },
+      {
+        "PCB_thickness_mm": 1.76,
+        "lift_mm": 25.0,
+        "rigid_moving_items_checked": 121,
+        "rigid_fixed_items_checked": 26,
+        "nominal_gap_mm_greater_than": 0.48
       }
     ]
   },
@@ -888,6 +1225,7 @@
     "Four millimetres is a trial stroke for nominal rigid housings, excluding each plug\u2019s owning header and PCB mating plane. It does not qualify travel, release force, tool tolerance, or lead flex.",
     "The rigid lift translates the power bridge relative to the seated USB and battery routes. Interference with the assumed full insulation diameter is a counterexample to this motion, not a proof that all removal motions fail.",
     "No new case opening or harness retainer placement is released by this report.",
-    "The alternate crossing proves only installed wire clearances and relative wire translation. It does not prove deck or mount motion, parked plugs, release and re-mating, retention, strain, or electrical performance."
+    "The alternate crossing proves only installed wire clearances and relative wire translation. It does not prove deck or mount motion, parked plugs, release and re-mating, retention, strain, or electrical performance.",
+    "The alternate access uses hypothetical openings in the underside. Its jaw envelopes exclude the handle, insulated tool material, grip force, actual lead flex and structural approval. The rigid-only deck lift excludes flexible leads and assumes J2/J4 are parked completely out of the way."
   ]
 }

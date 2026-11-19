@@ -8,9 +8,12 @@ import math
 from pathlib import Path
 from unittest.mock import patch
 
+from OCP.BRepPrimAPI import BRepPrimAPI_MakeCylinder
+from OCP.gp import gp_Ax2, gp_Dir, gp_Pnt
+
 import check_e73_corner_harness as harness_check
 from cad_geometry import bounds, intersection_volume, load
-from check_e73_corner_harness import bodies, datums, pcb_solid
+from check_e73_corner_harness import bodies, cut, datums, pcb_solid
 from check_yeti60_assembly import box, distance, move
 from check_yeti60_interconnects import near
 from e73_corner_harness_paths import envelope_wire, sweep_wire
@@ -167,6 +170,70 @@ def audit_trial(spec, native, assembly, exits, bottom, case, variants):
             'selected_for_assembly': False}
 
 
+def rigid_deck_lift(parts, case, pack, fixed_guides, pcb_guides, exits, bottom, delta, thickness):
+    """Assume the J2 and J4 housings have been parked away from the deck."""
+    fixed = {name: solid for name, solid in parts.items() if name.startswith('C5')}
+    fixed.update(dict(bottom=case, pack=pack, **fixed_guides))
+    fixed['C5-plug'] = box(plug_bounds(exits['C5'], *PORTS['C5']))
+
+    moving = {name: solid for name, solid in parts.items() if name not in fixed}
+    moving.update({name: move(solid, z=delta) for name, solid in pcb_guides.items()})
+    for ref, count, vx, vy in [('J1', 4, 1, 0), ('J5', 2, 0, -1)]:
+        x, y, z = exits[ref]
+        moving[ref+'-plug'] = box(plug_bounds([x, y, z+delta], count, vx, vy))
+
+    # A translated bounding box overapproximates the whole sweep of a
+    # rigid proxy or irregular guide. Keep the actual outline for the PCB.
+    swept = {name: box(translated_union_bounds(bounds(solid), (0, 0, LIFT_MM)))
+             for name, solid in moving.items()}
+    swept['PCB'] = pcb_solid(bottom+delta, thickness+LIFT_MM)
+    threshold = .48
+    contacts = {name: nearest(solid, fixed, threshold) for name, solid in swept.items()}
+    assert not any(contacts.values()), ('Rigid-only deck lift is obstructed', contacts)
+    return {'PCB_thickness_mm': thickness, 'lift_mm': LIFT_MM,
+            'rigid_moving_items_checked': len(swept),
+            'rigid_fixed_items_checked': len(fixed),
+            'nominal_gap_mm_greater_than': threshold}
+
+
+def underside_jaws(case, assembly, exits, obstacles, port, delta):
+    """Check only the geometric reach of two small jaws through a trial opening."""
+    count, vx, vy = PORTS[port]
+    depth = 0 if vx else 1
+    width = 1-depth
+    x, y, z = exits[port]
+    housing = plug_bounds([x, y, z+delta], count, vx, vy)
+    stroke = (vx*PROXY_STROKE_MM, vy*PROXY_STROKE_MM, 0)
+    travel = translated_union_bounds(housing, stroke)
+    window = [travel[0]-1.25, travel[1]-1.25, -22,
+              travel[3]+1.25, travel[4]+1.25, -2]
+    opening = box(window)
+    trial_bottom = cut(case, opening)
+    removed = cut(case, trial_bottom)
+    for role in ('top', 'daughterboard'):
+        insert = assembly['case'][role+'_insert']
+        for cx, cy in assembly['case'][role+'_screw_axes']:
+            axis = gp_Ax2(gp_Pnt(cx, cy, -22), gp_Dir(0, 0, 1))
+            radius = (insert['bore_diameter']+insert['bore_tolerance'])/2
+            radius += assembly['case']['finished_bore_position_tolerance']+2
+            assert intersection_volume(opening, BRepPrimAPI_MakeCylinder(axis, radius, 26).Shape()) < 1e-6
+    fixed = dict(obstacles, bottom=trial_bottom)
+    jaws = []
+    for sign in (-1, 1):
+        jaw = [x-1, y-1, -23, x+1, y+1, z+delta-.42]
+        centre = (x-vx*.45, y-vy*.45)[depth]
+        jaw[depth], jaw[depth+3] = centre-.40, centre+.40
+        side = housing[width if sign<0 else width+3]
+        jaw[width], jaw[width+3] = sorted((side, side+sign*.85))
+        checks = nearest(box(translated_union_bounds(jaw, stroke)), fixed, 1)
+        assert all(row['gap_mm'] >= .30-1e-6 for row in checks), (port, sign, checks)
+        jaws.append({'jaw_side': sign, 'open_jaw_swept_clearances': checks})
+    return {'ref': port, 'PCB_bottom_shift_mm': delta, 'window_case_bounds_mm': window,
+            'removed_material_case_bounds_mm': bounds(removed),
+            'jaw_width_mm_with_open_approach_allowance': .85,
+            'jaw_axial_length_mm': .80, 'jaws': jaws}
+
+
 def main():
     derived_export = WORK/'copper.json'
     sources = [AUDIT/'harness-study.json', AUDIT/'retention-study.json', AUDIT/'harness-native.json',
@@ -210,6 +277,8 @@ def main():
     before = {str(path.relative_to(ROOT)):sha(path) for path in sources}
 
     records = []
+    rigid_travel = []
+    access_trials = []
     for variant in harness['variants']:
         delta = variant['pcb_bottom_shift_mm']
         thickness = assembly['stack']['pcb_thickness']-delta
@@ -217,6 +286,10 @@ def main():
         pcb_parts = bodies(native,assembly,spec,bottom,delta)
         obstacles = dict(pcb_parts, bottom=case, pack=pack, PCB=board_solid, **fixed_guides)
         obstacles.update({ref: move(part,z=delta) for ref,part in pcb_guides.items()})
+        rigid_travel.append(rigid_deck_lift(pcb_parts, case, pack, fixed_guides, pcb_guides,
+                                           exits, bottom, delta, thickness))
+        for port in ('J4', 'J2'):
+            access_trials.append(underside_jaws(case, assembly, exits, obstacles, port, delta))
         plugs = {}
         for port,(count,vx,vy) in PORTS.items():
             x,y,z = exits[port]
@@ -273,12 +346,15 @@ def main():
             'PCB_mounted_guide_case_near_contacts':front_power_guides,
             'blocked_power_conductor_witnesses':witnesses,
         },
+        'alternative_access_trial': {'selected_for_assembly': False,
+            'underside_jaw_checks': access_trials, 'rigid_only_deck_lift': rigid_travel},
         'alternate_crossing_trial':candidate,
         'scope':[
             'Four millimetres is a trial stroke for nominal rigid housings, excluding each plug’s owning header and PCB mating plane. It does not qualify travel, release force, tool tolerance, or lead flex.',
             'The rigid lift translates the power bridge relative to the seated USB and battery routes. Interference with the assumed full insulation diameter is a counterexample to this motion, not a proof that all removal motions fail.',
             'No new case opening or harness retainer placement is released by this report.',
             'The alternate crossing proves only installed wire clearances and relative wire translation. It does not prove deck or mount motion, parked plugs, release and re-mating, retention, strain, or electrical performance.',
+            'The alternate access uses hypothetical openings in the underside. Its jaw envelopes exclude the handle, insulated tool material, grip force, actual lead flex and structural approval. The rigid-only deck lift excludes flexible leads and assumes J2/J4 are parked completely out of the way.',
         ],
     }
     (AUDIT/'service-motion.json').write_text(json.dumps(report,indent=2)+'\n')
