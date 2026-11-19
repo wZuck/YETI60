@@ -1,0 +1,79 @@
+{
+  "status": "cam-geometry-matches-native-pcb",
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "hardware/e73-hhkb-corner/audit/power-process.json": "5add99c0c1a4693cbc2944bdd32ad44c66269c9b9e655cf388a4bcade49ab788",
+    "scripts/check_e73_cam.py": "ef9bdc110e218a1c0884431d2e3002989a9c7a361dec586857f18b700fc4b995"
+  },
+  "archive_sha256": "6eaefc131e046c3a63f5557d55d6380b586a03a8ce0ab62bca806b09e1c16375",
+  "ordinary_process_profile": "JLC-ordinary-4L-7628",
+  "layer_roles": {
+    "F_Cu.gtl": "Copper,L1,Top",
+    "In1_Cu.g1": "Copper,L2,Inr",
+    "In2_Cu.g2": "Copper,L3,Inr",
+    "B_Cu.gbl": "Copper,L4,Bot",
+    "F_Mask.gts": "Soldermask,Top",
+    "B_Mask.gbs": "Soldermask,Bot",
+    "F_Paste.gtp": "Paste,Top",
+    "B_Paste.gbp": "Paste,Bot",
+    "F_Silkscreen.gto": "Legend,Top",
+    "B_Silkscreen.gbo": "Legend,Bot",
+    "Edge_Cuts.gm1": "Profile,NP"
+  },
+  "stackup": "JLC04161H-7628",
+  "pcb_order_thickness_mm": 1.6,
+  "cad_stack_thickness_mm": 1.6062,
+  "profile": {
+    "width_mm": 285.0,
+    "height_mm": 94.6,
+    "lines": 17,
+    "arcs": 23,
+    "closed_contours": 1
+  },
+  "through_via_count": 852,
+  "via_copper_flashes_per_layer": 852,
+  "minimum_via_drill_edge_gap_mm": 0.357647,
+  "via_sizes_mm": [
+    {
+      "drill": 0.3,
+      "land": 0.5,
+      "copper_flashes_all_layers": 812
+    },
+    {
+      "drill": 0.3,
+      "land": 0.6,
+      "copper_flashes_all_layers": 252
+    },
+    {
+      "drill": 0.4,
+      "land": 0.8,
+      "copper_flashes_all_layers": 2344
+    }
+  ],
+  "plated_round_component_count": 1,
+  "plated_slots": [
+    {
+      "width_mm": 2.2,
+      "length_mm": 5.0
+    },
+    {
+      "width_mm": 2.2,
+      "length_mm": 5.0
+    }
+  ],
+  "non_plated_round_counts_by_diameter_mm": {
+    "0.75": 2,
+    "0.9": 2,
+    "2.2": 26
+  },
+  "SW1_pad2_registration": {
+    "via_uuid": "d7990fa7-e065-4db3-9c82-ebd8246d6e0b",
+    "nominal_native_mask_gap_mm": 0.037469,
+    "published_drill_position_tolerance_mm": 0.075,
+    "gap_after_drill_position_tolerance_only_mm": -0.037531,
+    "status": "factory-confirmation-open"
+  },
+  "production_approved": false,
+  "capabilities": "https://jlcpcb.com/capabilities/Capabilities"
+}

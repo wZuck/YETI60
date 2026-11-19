@@ -5,7 +5,7 @@
   "physical_verification": false,
   "source_PCB_sha256": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
   "source_sha256": {
-    "scripts/build_e73_delivery.py": "8233e86444a2950439174e523e7a1adb0532b4f639c894a948dce48e21104146",
+    "scripts/build_e73_delivery.py": "1f61c0740ed07765547f20f71c841e4da7c7fe4b3579eb31f10d0415a9d25d5b",
     "hardware/e73-corner-spec.json": "c29d651caf43c067a3e8c0f06e943b962719b85e5688216b492a3f0896d56a02",
     "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
     "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
@@ -256,8 +256,8 @@
     "hardware/e73-hhkb-corner/firmware/yeti60-target-check.json": "46473af38a6f922c67275b6e7ae9816ed72eadcee2d2af4cc015bbb59bde7bac",
     "docs/build/e73-delivery-start.md": "de82e2404ff2f8cd2bd78300612a00b0a37b5ce2cff1e532594563050a1c83c7",
     "docs/build/e73-delivery-start.zh-CN.md": "6321214a7c31635582e7aa5d163b98454e0f9e4fb53ce747e0ce5846b7c95808",
-    "docs/build/e73-ordering-printing.md": "b31c8a4081c9f6b4b5a8157de217f32e29ea6d1009d13029ecb62b74a950cb76",
-    "docs/build/e73-ordering-printing.zh-CN.md": "7010c5e20956a70f09179a3e47903c66ef2291b4225c72a91ef42dff4c37718c",
+    "docs/build/e73-ordering-printing.md": "bcb984348ac5ab65490769111dc23aa5ee0f36c6bb5ce701f6387f084340ec56",
+    "docs/build/e73-ordering-printing.zh-CN.md": "025f49c9282764c210619cd587740eee99f39efb64cc5489027815b408d77c1d",
     "docs/build/e73-project-files.md": "7390b193366a5652a0c73cd0caa8725ad0006f02e4e04e8b8bfe325e552f74f8",
     "docs/build/e73-project-files.zh-CN.md": "deba28fe728dd70927afc2ba3bac1899946060dcdb93c86316e288d5fed1b966",
     "docs/build/e73-assembly-views.md": "b6b4a27600cc04c1a7dbfc1efc9389bee9e16131877757b7d73ee757beddea31",
@@ -464,6 +464,7 @@
     "hardware/e73-hhkb-corner/audit/service-motion.json": "ecfd14ff10e2bfa7835965dd215b25f346149967079f3cb0e4ff05f745d4514d",
     "hardware/e73-hhkb-corner/audit/service-reference.json": "8d2c23d791c682060f25f6d5d32525df57f98384ff93f095bc636f11a39972ea",
     "hardware/e73-hhkb-corner/audit/solder-guide.json": "6ca5a2485768f89c071d2642ba705dd17bcf196889ca19f54c3c4584a7639ac0",
+    "scripts/check_e73_cam.py": "ef9bdc110e218a1c0884431d2e3002989a9c7a361dec586857f18b700fc4b995",
     "scripts/render_e73_delivery_docs.py": "640f98f79368ce8af4c2f34f25a8e581d9c96e35e96d11c6fe7dab89af37e731"
   },
   "source_mapping": {
@@ -922,7 +923,9 @@
     "hardware/e73-hhkb-corner/audit/service-leads.json": "06-validation/service-leads.json",
     "hardware/e73-hhkb-corner/audit/service-motion.json": "06-validation/service-motion.json",
     "hardware/e73-hhkb-corner/audit/service-reference.json": "06-validation/service-reference.json",
-    "hardware/e73-hhkb-corner/audit/solder-guide.json": "06-validation/solder-guide.json"
+    "hardware/e73-hhkb-corner/audit/solder-guide.json": "06-validation/solder-guide.json",
+    "delivery/YETI60-E73/01-pcb/YETI60-E73-gerbers-REVIEW.zip": "01-pcb/YETI60-E73-gerbers-REVIEW.zip",
+    "delivery/YETI60-E73/06-validation/cam-ordinary.json": "06-validation/cam-ordinary.json"
   },
   "pending": [
     "Retainer manufacturing process, physical routing and service",
@@ -947,10 +950,10 @@
     "01-pcb/gerbers/EC60-nRF52840-PTH.drl": "17e9d8e53faafaf5ec693a076c5779d0af0c0dcb7c9d0f20f6315164b13c10e0",
     "01-pcb/gerbers/EC60-nRF52840-job.gbrjob": "bc80b332775e78c8f160eb0f2bad4a108514f345e6ea92c1bfca4c4cba570e96",
     "01-pcb/gerbers/drill-report.txt": "bb07f5548e19907601a344fc01d952fc66f213f398369fd76f3592389b1d8831",
-    "01-pcb/ordering-and-printing.html": "d37813071346d3567187280824d0e8ac1a282fd114e3c7be529eb0f25f716855",
-    "01-pcb/ordering-and-printing.md": "199143009921fd01ee948767d4a6290b61d67632ab4409e7aaf874c0366c224e",
-    "01-pcb/ordering-and-printing.zh-CN.html": "704fb9f06d08ebd24f35b0b03277bb52766d6b86610308fc338b3f5d209e376d",
-    "01-pcb/ordering-and-printing.zh-CN.md": "735a040c3924fdf337548d882dca3ecb378796998e4604d5742fe21f05020059",
+    "01-pcb/ordering-and-printing.html": "065ee7e4a3aafc1f3ee3dea81ccb927333f45d0ebab375646350263733aa7a2f",
+    "01-pcb/ordering-and-printing.md": "93b74f9f3a1883d40a7bd81b041a061dad1d5cb7a4113f6a5498a78b9591682f",
+    "01-pcb/ordering-and-printing.zh-CN.html": "4a37693b8e19d3423b269cee37b622f694ccb0073cb8f87d94fa39f68d5653eb",
+    "01-pcb/ordering-and-printing.zh-CN.md": "460c52378893f3f5a02f8f8a19ecdfaf8d9aad36f38a194859a97afed6b0bc3f",
     "01-pcb/placements.csv": "c13287e6b1ce8f8b8d690a39e22771626ee6cdaeec65d5c4ab2694678951951c",
     "01-pcb/process-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
     "01-pcb/project-files.html": "fdf302e8ddf0dd2a7979350c59c809b7129eb9200d91954021d1a12d7f5b9713",
@@ -1378,6 +1381,7 @@
     "06-validation/USB-reference-faults.json": "7251e238873d5b38764aafc3422af2cedf3f77a998d707001217dd5ecfc19a8a",
     "06-validation/USB-reference.json": "c2f6d3ddaba117f57f4d5d0455423b1095a3d2cae232612a14b916ee2f90aced",
     "06-validation/assembly-render.json": "e69b27a0996706d13e633e627fd1206c1753ccc0b8c2416bc112ad0f6b6fab57",
+    "06-validation/cam-ordinary.json": "a703f273673c8a04cf9b1eb94f3d1e2e06aed74b563bd4da35b38ccef5460b7d",
     "06-validation/case-service.html": "56ca71bccaa8d7a5a2a39573b9d9c3d2a50ac22e3fcaef424149cc4e46e4f223",
     "06-validation/case-service.md": "dd30775785498fc0ca662a3ff67a3064901ad66dd705621504fa9e3587ae0ae4",
     "06-validation/case-service.zh-CN.html": "c49acdf69cf583e980d53b6797aad6446a8bef05396a3783f3b26a2aee287d24",

@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'hardware/e73-hhkb-corner'
 CLI='/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli'
+KICAD_PYTHON='/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
@@ -137,6 +138,9 @@ def main():
   if p.is_file():copy(str(p.relative_to(ROOT)),'04-assembly/'+str(p.relative_to(ROOT/'docs/assembly/e73-corner')))
  for p in sorted((BASE/'audit').glob('*')):
   if p.suffix in ['.json','.png','.svg']:copy(str(p.relative_to(ROOT)),'06-validation/'+p.name)
+ inputs['scripts/check_e73_cam.py']=sha(ROOT/'scripts/check_e73_cam.py')
+ for generated in ['01-pcb/YETI60-E73-gerbers-REVIEW.zip','06-validation/cam-ordinary.json']:
+  mapping['delivery/YETI60-E73/'+generated]=generated
  # Resolve both Markdown and HTML assets into the offline bundle.
  for rel,target in list(mapping.items()):
   if not target.endswith(('.md','.html')):continue
@@ -170,10 +174,13 @@ def main():
  assert {'.gtl','.gbl','.g1','.g2'}<={p.suffix for p in cam.iterdir()},'Missing copper layer'
  assert len(list(cam.glob('*.drl')))>=2
  assert not any(re.search(r'in[12]',p.name,re.I)for p in cam.glob('*.drl')),'Unexpected layer-pair drill'
- with zipfile.ZipFile(out/'01-pcb/YETI60-E73-gerbers-REVIEW.zip','w',compression=zipfile.ZIP_DEFLATED)as z:
+ archive=out/'01-pcb/YETI60-E73-gerbers-REVIEW.zip'
+ with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED)as z:
   for p in sorted(cam.iterdir()):
    if p.name=='.DS_Store':continue
    info=zipfile.ZipInfo(p.name,(2000,1,1,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;z.writestr(info,p.read_bytes())
+ subprocess.run([KICAD_PYTHON,str(ROOT/'scripts/check_e73_cam.py'),'--archive',str(archive),
+                 '--output',str(out/'06-validation/cam-ordinary.json')],check=True)
  sources={'capabilities':'https://jlcpcb.com/capabilities/Capabilities','stackup':'https://jlcpcb.com/impedance'}
  for zh in [False,True]:
   suffix='.zh-CN'if zh else '';lang='zh-CN'if zh else 'en'

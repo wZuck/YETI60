@@ -26,11 +26,13 @@ English | [Chinese](ordering-and-printing.zh-CN.md)
 | Assembly service | This guide assumes self-soldering; placement CSV is a reference, not an approved turnkey JLC assembly order |
 | Stencil | Front **and** back paste layers: E73 is on front; the other fitted components are on back. Hidden module lands require an inspected reflow/stencil process |
 
-Upload the **single matching Gerber/drill ZIP**, then inspect the factory preview: correct board outline, four copper layers, slot/non-plated holes, sensing geometry and mask openings. Stop if it imports as two layers or the factory proposes changing the specified geometry/process. The exported position file contains 75 fitted parts; sensing electrodes, mounting holes and pogo pads are not purchased components.
+Use the [matching Gerber and drill ZIP](YETI60-E73-gerbers-REVIEW.zip) for the factory preview. Verify the outline, four copper layers, slots, non-plated holes, sensing geometry and mask openings before accepting the quotation. Stop if it imports as two layers or the factory proposes changing the specified geometry/process. The exported position file contains 75 fitted parts; sensing electrodes, mounting holes and pogo pads are not purchased components.
+
+The [fabrication ZIP audit](../06-validation/cam-ordinary.json) matches the 285.0 × 94.6 mm closed profile to all 40 source segments and arcs. It also matches 852 through-via drill hits and their land flashes on each copper layer, one plated round mounting hole, two plated 2.20 × 5.00 mm slots and 30 non-plated holes. The smallest routed via drill is 0.30 mm and the tightest nominal via-hole edge gap is 0.358 mm.
 
 JLC ordinary-process references: [capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/) and [stack-ups](https://jlcpcb.com/impedance). Availability/options must be checked against the actual quotation. Neither this document nor a clean DRC is a factory DFM approval.
 
-CORNER-05 moves the C42 and C48 ground drills outside both mask and paste openings and reroutes three USB supply spans. Check the current CAM preview, SW1 registration and the U5/U6 mask islands with the factory. [Current power and process review](../06-validation/power-process.md).
+CORNER-05 moves the C42 and C48 ground drills outside both mask and paste openings and reroutes three USB supply spans. The nominal drill-to-mask gap at SW1.2 is 0.037 mm. Applying the published ±0.075 mm drill-position tolerance alone can consume that gap. Ask the factory to assess that location and the U5/U6 mask islands before ordering. [JLCPCB drill tolerances](https://jlcpcb.com/capabilities/Capabilities) · [Current power and process review](../06-validation/power-process.md)
 
 ## Which mechanical files to send
 
