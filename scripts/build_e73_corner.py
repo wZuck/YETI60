@@ -270,6 +270,11 @@ def main():
         from e73_corner_connector_repair import apply
         removed.extend(apply(pcb_path,header_repair))
         inputs.extend([ROOT/s['post_route_header_repair'],ROOT/'scripts/e73_corner_connector_repair.py'])
+    if s.get('post_route_charge_repair'):
+        from e73_corner_charge_repair import apply
+        charge_patch = ROOT / s['post_route_charge_repair']
+        removed.extend(apply(pcb_path, json.loads(charge_patch.read_text())))
+        inputs.extend([charge_patch, ROOT/'scripts/e73_corner_charge_repair.py'])
     plugin = pcb.PCB_IO_MGR.FindPlugin(pcb.PCB_IO_MGR.KICAD_SEXP)
     plugin.FootprintSave(str(out / 'YAECKB.pretty'), fps['REF**'])
     # Remove the two unused sensing symbols and only their generated dedicated

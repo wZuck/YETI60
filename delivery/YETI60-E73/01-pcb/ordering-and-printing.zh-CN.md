@@ -30,7 +30,7 @@
 
 JLC 普通工艺参考：[制造能力](https://jlcpcb.com/capabilities/pcb-capabilities/)、[叠层](https://jlcpcb.com/impedance)。选项以实际报价核对。本说明和无错误 DRC 均不能替代工厂可制造性审核。
 
-当前 PCB 的 C42、C48 地过孔与锡膏及阻焊开窗相交。应先修改 PCB 并重新导出制造文件，再请工厂检查。详见[本版电源与工艺复核](../06-validation/power-process.zh-CN.md)。
+CORNER-05 已将 C42、C48 的接地钻孔移出阻焊与锡膏开窗，并重布三段 USB 供电走线。请用新版制造文件核对工厂预览、SW1 钻孔对位及 U5、U6 的阻焊岛。[本版电源及工艺](../06-validation/power-process.zh-CN.md)。
 
 ## 机械文件发哪些
 

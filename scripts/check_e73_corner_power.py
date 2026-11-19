@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only CORNER-04 power, charge-headroom and solder-wicking review."""
+"""Read-only CORNER-05 power, charge-headroom and solder-aperture review."""
 
 import argparse
 from collections import Counter
@@ -166,6 +166,30 @@ def process_checks(board, path, power, profile):
     }
 
 
+def repaired_apertures(board, patch):
+    moved = {'93479cbe-e898-4dfd-ae63-fa5383607b43': 'C42',
+             'd17868b1-6489-4c01-b95e-c5c196fb1bea': 'C48'}
+    vias = {uid(via):via for via in board.GetTracks() if isinstance(via,pcb.PCB_VIA)}
+    footprints = {part.GetReference():part for part in board.GetFootprints()}
+    result = {}
+    expected = {child(form,'uuid')[1]:form for form in map(loads,patch['added'])}
+    for identifier, ref in moved.items():
+        via = vias[identifier]
+        coordinates = list(pcb.ToMM(via.GetPosition()))
+        assert coordinates == list(map(float,child(expected[identifier],'at')[1:3]))
+        assert via.GetNetname() == 'GND' and pcb.ToMM(via.GetDrillValue()) == .3
+        openings = {}
+        for layer in (pcb.B_Mask,pcb.B_Paste):
+            shapes = layer_shapes(footprints[ref],layer)
+            assert not any(shape.Contains(via.GetPosition()) for shape in shapes)
+            gap = pcb.ToMM(min(shape.Distance(via.GetPosition()) for shape in shapes)) - .15
+            assert gap >= .10, (ref, gap)
+            openings[board.GetLayerName(layer)] = gap
+        result[ref] = {'via_uuid':identifier,'xy_PCB_mm':coordinates,
+                       'nominal_drill_to_own_opening_mm':openings}
+    return result
+
+
 def charge_screen(paths, harness):
     wires = {(w['family'],w['pin']): w['free_length_mm'] for w in harness['variants'][0]['wires']}
     usb_pins = [('usb','1'),('usb','4'),('power','1'),('power','2')]
@@ -223,15 +247,23 @@ def main():
     assert harness['source_sha256'][str(BOARD.relative_to(ROOT))] == sha(BOARD)
     paths = route_checks(board,power,profile)
     process = process_checks(board,path,power,profile)
+    patch_path = ROOT/'hardware/e73-corner-charge-trial.json'
+    repaired = repaired_apertures(board,load(patch_path))
+    assert not any(gap < 0 for row in process['annulus_overlaps_SMD_lands']
+                   for gap in row['same_footprint_drill_to_aperture_mm'].values())
+    assert process['through_vias'] == 852
+    headroom = charge_screen(paths,harness)
+    assert headroom['modeled_series_at_temperature_ohm'] < .425
     source_paths = [path, path.with_suffix('.kicad_pro'), power_path, profile_path, harness_path,
                     Path(__file__), ROOT/'scripts/check_yeti60_signal_paths.py', ROOT/'scripts/kicad_sexpr.py',
-                    ROOT/'mechanical/assembly-spec.json']
+                    ROOT/'mechanical/assembly-spec.json',patch_path]
     digests = {str(p.relative_to(ROOT)):sha(p) for p in source_paths}
     assert sha(path) == board_hash
     document = {
-        'status':'source-bound-power-process-review-open',
+        'status':'repaired-power-routing-and-aperture-checks-passed',
         'source_sha256':digests, 'physical_verification':False, 'production_approved':False,
-        'local_power_paths':paths, 'fabrication_geometry':process, 'charge_headroom':charge_screen(paths,harness),
+        'local_power_paths':paths, 'fabrication_geometry':process, 'charge_headroom':headroom,
+        'repaired_apertures':repaired,
         'references':{'charger':power['sources']['BQ24074'], 'regulator':power['sources']['TPS63031'],
                       'USB_VBUS':'https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/power.html',
                       'fabrication':profile['capabilities_url'],

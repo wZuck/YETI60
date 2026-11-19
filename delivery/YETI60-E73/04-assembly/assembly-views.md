@@ -1,6 +1,6 @@
 English | [Chinese](assembly-views.zh-CN.md)
 
-# CORNER-04 assembly views
+# CORNER-05 assembly views
 
 ![Assembled YETI60](images/assembled.png)
 

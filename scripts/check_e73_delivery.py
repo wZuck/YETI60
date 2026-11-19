@@ -24,7 +24,12 @@ def main():
    if re.match(r'^[a-z]+:|^#',link):continue
    assert (p.parent/link.split('#')[0]).is_file(),('Broken local delivery link',str(p.relative_to(base)),link)
  with zipfile.ZipFile(base/'01-pcb/YETI60-E73-gerbers-REVIEW.zip')as z:
+  expected={p.name for p in (base/'01-pcb/gerbers').iterdir()
+            if p.is_file() and p.name!='.DS_Store'}
+  assert len(z.namelist())==len(expected) and set(z.namelist())==expected,'Incomplete or duplicate Gerber archive entries'
   for name in z.namelist():assert z.read(name)==(base/'01-pcb/gerbers'/name).read_bytes(),('Gerber archive mismatch',name)
+ assert sha(base/'01-pcb/source/EC60-nRF52840.kicad_pcb')==m['source_PCB_sha256']
+ assert m['revision']==json.loads((ROOT/'hardware/e73-corner-spec.json').read_text())['revision']
  assert (base/'05-firmware/manifest.json').is_file()
  fm=json.loads((base/'05-firmware/manifest.json').read_text());assert fm['source_PCB_sha256']==m['source_PCB_sha256']
  print('Delivery hashes, current sources, local links, Gerber archive and firmware/PCB identity passed')

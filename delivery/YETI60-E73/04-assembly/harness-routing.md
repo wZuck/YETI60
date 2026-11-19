@@ -2,9 +2,9 @@ English | [Chinese](harness-routing.zh-CN.md)
 
 # E73 corner harness and internal case channel
 
-CORNER-04 rotates **mainboard J5 by 180° at the same origin**; J4 and the already-made **C5 JSH daughterboard stay unchanged**. J5 now exits toward the front of the case, permitting a separate route past the J4 USB cable. The bounded copper repair is replayed after the original routing patch and independently checked by native DRC. It affects GND, USB_FEED and ROW_DRV4 locally; USB data traces and effective sensing lands are retained.
+CORNER-05 rotates **mainboard J5 by 180° at the same origin**; J4 and the already-made **C5 JSH daughterboard stay unchanged**. J5 now exits toward the front of the case, permitting a separate route past the J4 USB cable. The bounded copper repair is replayed after the original routing patch and independently checked by native DRC. It affects GND, USB_FEED and ROW_DRV4 locally; USB data traces and effective sensing lands are retained.
 
-**Engineering routing study, not complete closed-case assembly acceptance.** [Native wire/plug/obstacle study](../06-validation/harness-study.json) and [source specification](../02-mechanical/interconnect-spec.json). Retainers, complete insertion/service movement and the final assembly/explosion remain open. The drawings are coordinate plans, not photographs or measured assemblies.
+**Engineering routing study, not complete closed-case assembly acceptance.** [Native wire/plug/obstacle study](../06-validation/harness-study.json) and [source specification](../02-mechanical/interconnect-spec.json). The static retainers and assembly views are in the delivery. Actual insertion and service motion remain open. The drawings are coordinate plans, not photographs or measured assemblies.
 
 ![Nine-conductor coordinate plan](images/e73-corner-harness.png)
 

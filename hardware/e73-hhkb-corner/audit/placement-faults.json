@@ -39,10 +39,10 @@
   "resealed_fixture_hashes": true,
   "source_unchanged": true,
   "source_sha256": {
-    "hardware/e73-corner-spec.json": "c1e56e5e3aff3fd7b928f7794f3628b4793858f851fb562457d44a094f63b369",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "cbe66a53abd9f4e5674115a2891e27735a093c13d25cfff900507fe63420447e",
-    "hardware/e73-hhkb-corner/audit/placement-build.json": "7fafc1ab06681945d07b337c1a16f80c283b34c9ce3155693e1d863451a6be01",
-    "scripts/check_e73_corner.py": "6844177367f3f491a3cc4940757528d79a7368d6890b7af81bc4a0c682707345",
+    "hardware/e73-corner-spec.json": "c29d651caf43c067a3e8c0f06e943b962719b85e5688216b492a3f0896d56a02",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
+    "hardware/e73-hhkb-corner/audit/placement-build.json": "72299a2ef8612b9ab5d871b6ccc70a5095962e28ac04d61badcef64616153f5a",
+    "scripts/check_e73_corner.py": "88aec6fa34148cc60cad99224db4be8aa97c7b0ad147584f5b4c8d6bab6bb419",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "scripts/test_e73_corner.py": "971a5bf78dbd04a8a926e6526ebb7e209316d3b6dd2062c49a861d52c2ad4192"
   },

@@ -90,7 +90,7 @@
     "firmware/yeti60/core.c": "69a690fccfd063fb2e93362371ad9dcef6944080039bddf52123f8e7d8852dd1",
     "firmware/yeti60/core.h": "af43009d5e105b4afc7d8d8300c0951e1a098b715750b758b68d212f4dbb5849",
     "scripts/build_yeti60_firmware.py": "8f42cae9c9b506da62b0487030ae76ad9969b8bc8f6932922d5e64be57b9b58f",
-    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "cbe66a53abd9f4e5674115a2891e27735a093c13d25cfff900507fe63420447e",
+    "hardware/ec60-nrf52840/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
     "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
     "mechanical/yeti60-key-mechanism.e73.json": "7ec89cc69dd1d842f7cd8ce7f0b588d08c2df00967f64bdfe706d8ff73902b39",
     "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
@@ -102,9 +102,9 @@
   "variants": {
     "normal": {
       "outputs": {
-        "firmware/releases/normal/yeti60-e73.hex": "946375ff70762aea0fbe399bb0484117341fa70a9c4fd1ea6ed39b9cbf35eb23",
-        "firmware/releases/normal/yeti60-e73.bin": "a1abb5140686972d781ef5b55c8ab0fc78b04e45881ac5cf91fa3ca0592b4d03",
-        "firmware/releases/normal/yeti60-e73.elf": "694439c547a3bccd1f82970ccb6428741bf8bd72cdaa3d281b6601e59dc30691"
+        "firmware/releases/normal/yeti60-e73.hex": "49280bfcef1da4be2b579102794ae7164f2f2fbef1669194b569630d84145468",
+        "firmware/releases/normal/yeti60-e73.bin": "294ef804c29d87296b4019e7217542e661b6ccf7853fc932e0863a1699c16984",
+        "firmware/releases/normal/yeti60-e73.elf": "024c9059e9f894670901211dda92060dee9eb0760806e24d3fa40bf59dc2b368"
       },
       "configuration_sha256": "f77e2739958b227b96066459ed298b6ab305c6dc7579df19309381a06711b877",
       "devicetree_sha256": "2db90ba623a4039eb42c5e50106b0c0a42fd76051aafbffde75f18b5645c53c8",
@@ -115,7 +115,7 @@
         "NFC_pins": "GPIO",
         "HEX_NFCPINS_UICR": 4294967294
       },
-      "calibration_version": "0x43ad6b58",
+      "calibration_version": "0x52ef5dea",
       "calibration_scan_configuration": {
         "CONFIG_YETI60_ACTIVE_SCAN_MS": "4",
         "CONFIG_YETI60_IDLE_SCAN_MS": "30",
@@ -140,9 +140,9 @@
     },
     "calibrator": {
       "outputs": {
-        "firmware/releases/calibrator/yeti60-e73.hex": "48e6d302ae6562d7037b1b6256a8cfe93afa9827f50476ff3f8a60f09c8df2fa",
-        "firmware/releases/calibrator/yeti60-e73.bin": "a897bf077f9c2b1ba11bc6aa5f82174fd8b2dd5b23172d34166e91feac502911",
-        "firmware/releases/calibrator/yeti60-e73.elf": "232d59e01a496ef9addb62b6cd8fd18c2ec5c47583df3057e2cc491b5ce8338e"
+        "firmware/releases/calibrator/yeti60-e73.hex": "23c0469e4034d460101609d1e28944cbffa366815f3b07693165b2b678e10326",
+        "firmware/releases/calibrator/yeti60-e73.bin": "3bcf7a630ba21eceb6926ac6ab3bc2fec645cc4f00110068daef85d750718b97",
+        "firmware/releases/calibrator/yeti60-e73.elf": "6cb69442a8f818cc935f429b13b32fcafad8f69163acd03b465226a29c6754eb"
       },
       "configuration_sha256": "6b190ab3084c34c0a93469f4ae8d2a1a372f58c5dd6e582eaa80c2c6e54bc6c1",
       "devicetree_sha256": "63a16eaf5b777a03c33330f12968d83f311fd9e88c2c58da73f5e3415bb22e33",
@@ -153,7 +153,7 @@
         "NFC_pins": "GPIO",
         "HEX_NFCPINS_UICR": 4294967294
       },
-      "calibration_version": "0x43ad6b58",
+      "calibration_version": "0x52ef5dea",
       "calibration_scan_configuration": {
         "CONFIG_YETI60_ACTIVE_SCAN_MS": "4",
         "CONFIG_YETI60_IDLE_SCAN_MS": "30",

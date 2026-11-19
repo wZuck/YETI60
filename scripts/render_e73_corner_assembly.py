@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render checked CORNER-04 geometry and identified visual stand-ins in Cycles."""
+"""Render checked CORNER-05 geometry and identified visual stand-ins in Cycles."""
 
 import argparse
 import json

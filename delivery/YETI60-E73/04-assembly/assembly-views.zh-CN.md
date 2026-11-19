@@ -1,6 +1,6 @@
 [English](assembly-views.md) | 中文
 
-# CORNER-04 整机装配图
+# CORNER-05 整机装配图
 
 ![装好的 YETI60](images/assembled.png)
 

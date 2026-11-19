@@ -19,7 +19,7 @@ Review the mainboard as ordinary 4-layer FR-4, nominal 1.6 mm, JLC04161H-7628, E
 | 06 | [Firmware installation](05-firmware/installation.md) |
 | 07 | [Validation and limits](06-validation/corner-review.md) |
 
-Static geometry for nine wires, 16 rigid retainers and 17 film pieces has passed; assembled and exploded views are included. Retainer process and closed-case service remain open. C42/C48 solder openings, charging headroom, pack and factory review, and physical USB/BLE/EC and thermal acceptance remain open. The mechanism guide is not complete assembly release. The Gerber ZIP is for review, not an accepted order.
+Static geometry for nine wires, 16 rigid retainers and 17 film pieces has passed; assembled and exploded views are included. Retainer process and closed-case service remain open. The C42/C48 apertures and charge feed are repaired. Pack and factory review and physical USB/BLE/EC and thermal acceptance remain open. The mechanism guide is not complete assembly release. The Gerber ZIP is for review, not an accepted order.
 
 [Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [Bottom STEP](02-mechanical/bottom.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase.csv) · [Checksums](manifest.json)
 

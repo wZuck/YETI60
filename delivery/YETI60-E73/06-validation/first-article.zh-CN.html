@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-05 首件验收</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="first-article.html">English</a> | 中文</p>
+<h1 id="corner-05-首件验收">CORNER-05 首件验收</h1>
+<p>从裸主板和已经制作的 C5 子板开始，壳外即可完成台架阶段。最初充电测试使用电池模拟器。之后的步骤使用 NiZ 机构、符合规格的保护电池包及合壳样机。</p>
+<p>每台样机复制一份本页。记录交付清单中的 PCB 和固件摘要、板材实测厚度、C5 版本、电池包编号、环境温度、主机、USB 线和仪器。逐项填写测量结果。设计报告的检查结果与实测结果分别记录。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>验收动作和记录</th>
+<th>通过条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工厂制造预览</td>
+<td>将预览和工厂叠层报价与<a href="../01-pcb/ordering-and-printing.zh-CN.html">下单说明</a>比对。核对非金属化孔、槽、双面钢网、C42／C48 孔位和 SW1、U5、U6 的阻焊对位</td>
+<td>工厂确认普通四层工艺和提交的几何。工厂如提出修改，确认后记录</td>
+</tr>
+<tr>
+<td>裸板</td>
+<td>检查焊点和极性，按顺序限流上电。确认 3.3 V 和 J3 针序</td>
+<td>无短路、异常电流或发热。电源轨及 SWD 识别正确。<a href="../04-assembly/soldering.zh-CN.html">焊接步骤</a></td>
+</tr>
+<tr>
+<td>壳外刷写</td>
+<td>电池断开时通过 SWD 刷校准固件。核对 C5 线束针序，检查 USB 枚举</td>
+<td>烧录器校验通过。电脑识别设备且连接稳定。<a href="../05-firmware/installation.zh-CN.html">固件和 J3 针序</a></td>
+</tr>
+<tr>
+<td>电池模拟器</td>
+<td>测 USB 配置前后、弱供电、挂起、恢复及关机 USB100 时，充电器 IN、OUT、BAT、电流和 E73 VBUS。按需对比实际线材</td>
+<td>充电状态符合说明。降流期间仍走 USB HID，U1 VBUS 在 USB 工作时满足规格，输入字符无丢失且无复位。<a href="power-process.zh-CN.html">供电限制和测点</a></td>
+</tr>
+<tr>
+<td>全键</td>
+<td>在壳外装定位板、胶碗和弹簧。保存全部 60 键的校准值，再保留设置刷正常版。逐键测试按下、释放，以及三个卫星轴大键的两侧</td>
+<td>60 个位置均触发预期键值或层功能。大键两侧均能回弹且不卡滞。<a href="../04-assembly/key-mechanism.zh-CN.html">机构指南</a></td>
+</tr>
+<tr>
+<td>实物电池</td>
+<td>核对供应商图纸、电流、极性、热敏电阻和独立过温／低温断充。模拟器通过后再实测充电电流、终止、温度及关机电流</td>
+<td>符合供应商确认的<a href="../03-bom/battery-requirements.zh-CN.html">完整保护包要求</a>，包括独立断充及正常充满所需时间</td>
+</tr>
+<tr>
+<td>试装和拆开</td>
+<td>用临时定位试装外壳和全部线束。确认叠层装入、取出，以及拆装电池和 C5 时的插头和工具空间</td>
+<td>实际部件可装可拆。无强压、夹线、触点损伤、插头松动或挤压电池。<a href="../04-assembly/assembly-views.zh-CN.html">装配图</a> · <a href="../04-assembly/retainers.zh-CN.html">理线件</a></td>
+</tr>
+<tr>
+<td>关壳</td>
+<td>空闲、充电和拔线后分别测试 USB 及蓝牙输入。用实际手位和方向测试 2 米、3 米。测充电器及电池温度，同时记录充电和发射时是否漏键、误触或连发</td>
+<td>在记录的时长及条件下满足使用距离和温度要求，无异常键盘事件、断线或发热</td>
+</tr>
+</tbody>
+</table>
+<p>出现失败时先记录并整改，再按对应条件复测。所有使用条件相关项目通过后再验收整机。</p>
+</main></html>

@@ -1,15 +1,16 @@
 {
-  "status": "source-bound-power-process-review-open",
+  "status": "repaired-power-routing-and-aperture-checks-passed",
   "source_sha256": {
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "cbe66a53abd9f4e5674115a2891e27735a093c13d25cfff900507fe63420447e",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
     "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
     "hardware/e73-power-repair-spec.json": "0fe91a6ff17ff29b224dcf3933eb98eea86e3efe5f252fcdaebb760f0a1c5e01",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
-    "hardware/e73-hhkb-corner/audit/harness-study.json": "1f708152b7192e8b490125ba4e016af84c66ff2eeab0a31830f2a876d47e53dc",
-    "scripts/check_e73_corner_power.py": "a939bb4f08552551505396eb22759631ba54c231bd3cb3b26f2c17aa7b6bde37",
+    "hardware/e73-hhkb-corner/audit/harness-study.json": "266c12e49947cacf98984ff8c4a62f36274e72352337d426b86beeb9e5d64440",
+    "scripts/check_e73_corner_power.py": "5e66fde15cd04bbe6b646bc285c901b713856e8b14035e68a82408f7c1b4b774",
     "scripts/check_yeti60_signal_paths.py": "66543ccc4c2d3c8f0bb2da9a1ccd5717f6c8e37ac6d97e300392a80d38740513",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
-    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81"
+    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
+    "hardware/e73-corner-charge-trial.json": "a3c1d24e28a51af9baadcf5bae9e7eac23e5a561e71f6df2dcc1568681112161"
   },
   "physical_verification": false,
   "production_approved": false,
@@ -156,42 +157,38 @@
     },
     "J4.1 to J5.1": {
       "net": "USB_FEED",
-      "contact_aware_path_mm": 23.155228340428284,
-      "trace_width_min_mm": 0.25,
+      "contact_aware_path_mm": 13.548344941559895,
+      "trace_width_min_mm": 0.45,
       "trace_layers": [
-        "B.Cu",
-        "In1.Cu",
-        "In2.Cu"
+        "B.Cu"
       ],
-      "trace_only_20C_ohm": 0.08613211563945151,
-      "vertical_graph_edges": 4
+      "trace_only_20C_ohm": 0.014830061383650318,
+      "vertical_graph_edges": 0
     },
     "J1.1 to F1.2": {
       "net": "VBUS",
-      "contact_aware_path_mm": 43.81187266838978,
-      "trace_width_min_mm": 0.35,
+      "contact_aware_path_mm": 36.295922324503344,
+      "trace_width_min_mm": 0.6,
       "trace_layers": [
-        "B.Cu",
-        "F.Cu"
+        "B.Cu"
       ],
-      "trace_only_20C_ohm": 0.056709850509408494,
-      "vertical_graph_edges": 6
+      "trace_only_20C_ohm": 0.029171556931129907,
+      "vertical_graph_edges": 0
     },
     "F1.1 to U5.13": {
       "net": "USB_5V",
-      "contact_aware_path_mm": 68.21106419283682,
-      "trace_width_min_mm": 0.2,
+      "contact_aware_path_mm": 52.779844337922704,
+      "trace_width_min_mm": 0.3,
       "trace_layers": [
         "B.Cu",
-        "In1.Cu",
         "In2.Cu"
       ],
-      "trace_only_20C_ohm": 0.2917712675433511,
+      "trace_only_20C_ohm": 0.08934347298362362,
       "vertical_graph_edges": 4
     },
     "F1.1 to U1.27": {
       "net": "USB_5V",
-      "contact_aware_path_mm": 344.2534008203639,
+      "contact_aware_path_mm": 338.68299047251634,
       "trace_width_min_mm": 0.2,
       "trace_layers": [
         "B.Cu",
@@ -199,8 +196,8 @@
         "In1.Cu",
         "In2.Cu"
       ],
-      "trace_only_20C_ohm": 1.1125520629327437,
-      "vertical_graph_edges": 15
+      "trace_only_20C_ohm": 0.9264806670837722,
+      "vertical_graph_edges": 17
     },
     "J2.1 to U5.2": {
       "net": "BAT_CELL",
@@ -301,22 +298,22 @@
       "In2.Cu": 0.0152,
       "B.Cu": 0.035
     },
-    "through_vias": 856,
+    "through_vias": 852,
     "via_size_counts": [
       {
         "diameter_mm": 0.5,
         "drill_mm": 0.3,
-        "count": 200
+        "count": 203
       },
       {
         "diameter_mm": 0.6,
         "drill_mm": 0.3,
-        "count": 65
+        "count": 63
       },
       {
         "diameter_mm": 0.8,
         "drill_mm": 0.4,
-        "count": 591
+        "count": 586
       }
     ],
     "minimum_via_drill_edge_gap_mm": 0.357647,
@@ -2210,21 +2207,6 @@
         }
       },
       {
-        "reference": "C48",
-        "pad": "2",
-        "via_uuid": "d17868b1-6489-4c01-b95e-c5c196fb1bea",
-        "net": "GND",
-        "xy_PCB_mm": [
-          107.454177,
-          147.340215
-        ],
-        "drill_mm": 0.4,
-        "same_footprint_drill_to_aperture_mm": {
-          "B.Mask": -0.16978500000000002,
-          "B.Paste": -0.16978500000000002
-        }
-      },
-      {
         "reference": "SW1",
         "pad": "2",
         "via_uuid": "d7990fa7-e065-4db3-9c82-ebd8246d6e0b",
@@ -2237,21 +2219,6 @@
         "same_footprint_drill_to_aperture_mm": {
           "B.Mask": 0.037469,
           "B.Paste": 0.037469
-        }
-      },
-      {
-        "reference": "C42",
-        "pad": "2",
-        "via_uuid": "93479cbe-e898-4dfd-ae63-fa5383607b43",
-        "net": "GND",
-        "xy_PCB_mm": [
-          122.634684,
-          142.577802
-        ],
-        "drill_mm": 0.4,
-        "same_footprint_drill_to_aperture_mm": {
-          "B.Mask": -0.2,
-          "B.Paste": -0.2
         }
       },
       {
@@ -2291,8 +2258,8 @@
     "AWG28_copper_area_mm2_assumed": 0.0804,
     "four_wire_free_lengths_sum_mm": 1082.7520651107043,
     "wire_loop_20C_ohm": 0.23217220898642466,
-    "positive_PCB_centerline_20C_ohm": 0.4346132336922111,
-    "modeled_series_at_temperature_ohm": 0.7716041142677172,
+    "positive_PCB_centerline_20C_ohm": 0.13334509129840383,
+    "modeled_series_at_temperature_ohm": 0.4229766198896035,
     "excluded": [
       "PCB ground return and via barrels",
       "C5 traces",
@@ -2305,74 +2272,74 @@
       {
         "type_c_input_V_assumed": 4.75,
         "current_A_assumed": 0.1,
-        "included_path_drop_V": 0.07716041142677173,
-        "U5_IN_V_before_unmodeled_losses": 4.672839588573228,
-        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.04283958857322823,
-        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.3228395885732285
+        "included_path_drop_V": 0.04229766198896035,
+        "U5_IN_V_before_unmodeled_losses": 4.70770233801104,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.07770233801103998,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.35770233801104023
       },
       {
         "type_c_input_V_assumed": 4.75,
         "current_A_assumed": 0.45,
-        "included_path_drop_V": 0.3472218514204728,
-        "U5_IN_V_before_unmodeled_losses": 4.402778148579527,
-        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": -0.2272218514204729,
-        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.05277814857952734
+        "included_path_drop_V": 0.19033947895032158,
+        "U5_IN_V_before_unmodeled_losses": 4.559660521049678,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": -0.07033947895032178,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.20966052104967847
       },
       {
         "type_c_input_V_assumed": 4.75,
         "current_A_assumed": 0.5,
-        "included_path_drop_V": 0.3858020571338586,
-        "U5_IN_V_before_unmodeled_losses": 4.3641979428661415,
-        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": -0.2658020571338584,
-        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.014197942866141844
+        "included_path_drop_V": 0.21148830994480175,
+        "U5_IN_V_before_unmodeled_losses": 4.5385116900551985,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": -0.0914883099448014,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.18851169005519886
       },
       {
         "type_c_input_V_assumed": 5,
         "current_A_assumed": 0.1,
-        "included_path_drop_V": 0.07716041142677173,
-        "U5_IN_V_before_unmodeled_losses": 4.922839588573228,
-        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.2928395885732282,
-        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.5728395885732285
+        "included_path_drop_V": 0.04229766198896035,
+        "U5_IN_V_before_unmodeled_losses": 4.95770233801104,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.32770233801104,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.6077023380110402
       },
       {
         "type_c_input_V_assumed": 5,
         "current_A_assumed": 0.45,
-        "included_path_drop_V": 0.3472218514204728,
-        "U5_IN_V_before_unmodeled_losses": 4.652778148579527,
-        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.02277814857952709,
-        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.30277814857952734
+        "included_path_drop_V": 0.19033947895032158,
+        "U5_IN_V_before_unmodeled_losses": 4.809660521049678,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.17966052104967822,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.45966052104967847
       },
       {
         "type_c_input_V_assumed": 5,
         "current_A_assumed": 0.5,
-        "included_path_drop_V": 0.3858020571338586,
-        "U5_IN_V_before_unmodeled_losses": 4.6141979428661415,
-        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": -0.015802057133858405,
-        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.26419794286614184
+        "included_path_drop_V": 0.21148830994480175,
+        "U5_IN_V_before_unmodeled_losses": 4.7885116900551985,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.1585116900551986,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.43851169005519886
       },
       {
         "type_c_input_V_assumed": 5.25,
         "current_A_assumed": 0.1,
-        "included_path_drop_V": 0.07716041142677173,
-        "U5_IN_V_before_unmodeled_losses": 5.172839588573228,
-        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.5428395885732282,
-        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.8228395885732285
+        "included_path_drop_V": 0.04229766198896035,
+        "U5_IN_V_before_unmodeled_losses": 5.20770233801104,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.57770233801104,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.8577023380110402
       },
       {
         "type_c_input_V_assumed": 5.25,
         "current_A_assumed": 0.45,
-        "included_path_drop_V": 0.3472218514204728,
-        "U5_IN_V_before_unmodeled_losses": 4.902778148579527,
-        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.2727781485795271,
-        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.5527781485795273
+        "included_path_drop_V": 0.19033947895032158,
+        "U5_IN_V_before_unmodeled_losses": 5.059660521049678,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.4296605210496782,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.7096605210496785
       },
       {
         "type_c_input_V_assumed": 5.25,
         "current_A_assumed": 0.5,
-        "included_path_drop_V": 0.3858020571338586,
-        "U5_IN_V_before_unmodeled_losses": 4.8641979428661415,
-        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.2341979428661416,
-        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.5141979428661418
+        "included_path_drop_V": 0.21148830994480175,
+        "U5_IN_V_before_unmodeled_losses": 5.0385116900551985,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.4085116900551986,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.6885116900551989
       }
     ],
     "BQ24074_dissipation_sensitivity": [
@@ -2418,6 +2385,30 @@
       4.23
     ],
     "BQ24074_RGT_JEDEC_RthetaJA_C_per_W": 44.5
+  },
+  "repaired_apertures": {
+    "C42": {
+      "via_uuid": "93479cbe-e898-4dfd-ae63-fa5383607b43",
+      "xy_PCB_mm": [
+        122.12,
+        142.315
+      ],
+      "nominal_drill_to_own_opening_mm": {
+        "B.Mask": 0.13000000000000003,
+        "B.Paste": 0.13000000000000003
+      }
+    },
+    "C48": {
+      "via_uuid": "d17868b1-6489-4c01-b95e-c5c196fb1bea",
+      "xy_PCB_mm": [
+        107.1368,
+        147.6572
+      ],
+      "nominal_drill_to_own_opening_mm": {
+        "B.Mask": 0.23692300000000002,
+        "B.Paste": 0.23692300000000002
+      }
+    }
   },
   "references": {
     "charger": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",

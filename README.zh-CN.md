@@ -76,7 +76,7 @@
 | YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [当前可编辑 KiCad PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb)、[迁移检查及放行条件](docs/engineering/e73-hhkb-corner.zh-CN.md)；尚无本版投板包，不得使用旧 Gerber 替代 |
 | Unified Daughterboard C5 JSH 子板 | 自焊时 1 块；买成品时 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](hardware/bom/daughterboard.zh-CN.csv) |
 
-本版右下角主板尚无放行的制造包，不能使用旧主板压缩包替代。C5 使用独立且不变的四层文件，不能按双层板下单；已做好的 C5 不必重做。最终钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及尚待完成的线束固定件属于机械件，不是额外 PCB。自行回流焊时，主板现在需要 **F.Paste 与 B.Paste**（E73 在正面，其余散件在背面），C5 用 **F.Paste**，钢网和温度曲线须与实际物料匹配。
+本版右下角主板尚无放行的制造包，不能使用旧主板压缩包替代。C5 使用独立且不变的四层文件，不能按双层板下单；已做好的 C5 不必重做。最终钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及线束固定件属于机械件，不是额外 PCB。自行回流焊时，主板现在需要 **F.Paste 与 B.Paste**（E73 在正面，其余散件在背面），C5 用 **F.Paste**，钢网和温度曲线须与实际物料匹配。
 
 ### 电子总成、电池和连接线
 

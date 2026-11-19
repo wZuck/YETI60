@@ -2,7 +2,7 @@ English | [Chinese](e73-retention.zh-CN.md)
 
 # E73 cable retainers: parts, printing and dry fitting
 
-This set follows **E73 CORNER-04**, its rotated mainboard J5 and the current nine-conductor route. The existing C5 daughterboard, PCB and 60-key layout are unchanged. Use the current [wire connections and conductor lengths](e73-corner-harness.md).
+This set follows **E73 CORNER-05**, its rotated mainboard J5 and the current nine-conductor route. The existing C5 daughterboard, PCB and 60-key layout are unchanged. Use the current [wire connections and conductor lengths](e73-corner-harness.md).
 
 **Engineering parts for review and measured dry fitting.** Rigid-body, film, wire-capture and tolerance checks do not qualify resin strength, tape adhesion, human access or the complete installation/withdrawal sequence. Complete closed-case assembly release remains open. Do not permanently bond the review set before the process and service gates are resolved.
 

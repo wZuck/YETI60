@@ -19,7 +19,7 @@
 | 06 | [固件与安装](05-firmware/installation.zh-CN.md) |
 | 07 | [验收与边界](06-validation/corner-review.zh-CN.md) |
 
-九根导线、16 件刚性理线件及 17 片胶膜的静态几何检查已通过；整机装配图已附上，固定件工艺和实际关壳装拆仍需验收；C42／C48 焊盘开窗、充电压降、电池包及工厂复核仍待处理，实物 USB／蓝牙／静电容／温升仍待验收。当前机构指南不是整机装配放行。Gerber ZIP 仅供审查，不能当作已放行订单。
+九根导线、16 件刚性理线件及 17 片胶膜的静态几何检查已通过；整机装配图已附上，固定件工艺和实际关壳装拆仍需验收；C42／C48 焊盘开窗及充电路线已修补，电池包及工厂复核仍待处理，实物 USB／蓝牙／静电容／温升仍待验收。当前机构指南不是整机装配放行。Gerber ZIP 仅供审查，不能当作已放行订单。
 
 [Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [Bottom STEP](02-mechanical/bottom.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase.zh-CN.csv) · [Checksums](manifest.json)
 

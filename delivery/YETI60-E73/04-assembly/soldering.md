@@ -2,7 +2,7 @@ English | [Chinese](soldering.zh-CN.md)
 
 # Bare PCB to bench bring-up
 
-This guide covers all 75 fitted parts. No physical unit has validated it. Closed-case nine-wire routing, full explosion and physical safety/RF acceptance remain open.
+This guide covers all 75 fitted parts. No physical unit has validated it. Verify harness access before closure. Physical thermal, safety and RF acceptance require a prototype.
 
 ## 01 · Inspect and prepare
 

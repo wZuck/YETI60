@@ -221,7 +221,25 @@ def main():
         from e73_corner_connector_repair import validate_patch
         connector_patch=validate_patch(json.loads((ROOT/s['post_route_header_repair']).read_text()))
         assert s['other_placements_PCB_mm'][connector_patch['part']]==connector_patch['final_pose']
-        assert not set(q['uuid']for q in connector_patch['retired']).intersection(actual_tracks),'Retired J5 copper survives'
+    charge_patch_path = ROOT / s['post_route_charge_repair'] if s.get('post_route_charge_repair') else None
+    charge_patch = json.loads(charge_patch_path.read_text()) if charge_patch_path else None
+    charge_retired = {row['UUID'] for row in charge_patch['retired']} if charge_patch else set()
+    if connector_patch:
+        assert not ({row['uuid'] for row in connector_patch['retired']} - charge_retired).intersection(actual_tracks), 'Retired J5 copper survives'
+    if charge_patch:
+        from e73_corner_charge_repair import copper
+
+        added = {child(loads(text), 'uuid')[1]: loads(text) for text in charge_patch['added']}
+        native_copper = copper(native_tree)
+        assert all(native_copper.get(uid) == form for uid, form in added.items()), 'Changed charge repair copper'
+        assert not (charge_retired - added.keys()).intersection(actual_tracks), 'Retired charge copper survives'
+        assert charge_retired <= retired, 'Charge copper is missing from rebuild provenance'
+        # Validate the new supply vias separately from the two inherited
+        # relocated ground vias. The power audit checks their apertures.
+        for uid, form in added.items():
+            if form[0] == 'via' and child(form, 'net')[1] == 'USB_5V':
+                verify_via(uid, list(map(float, child(form, 'at')[1:3])), 'USB_5V',
+                           'charge-repair', str(len(routed_vias)), routed_vias)
     if s.get('routing_patch'):
         patch_path=ROOT/s['routing_patch']
         patch=json.loads(patch_path.read_text())
@@ -229,6 +247,7 @@ def main():
         if connector_patch:
             retired_ids={q['uuid']for q in connector_patch['retired']}
             texts=[text for text in texts if str(child(loads(text),'uuid')[1])not in retired_ids]+connector_patch['added']
+        texts = [text for text in texts if child(loads(text), 'uuid')[1] not in charge_retired]
         for text in texts:
             q=loads(text);identifier=str(child(q,'uuid')[1]);actual=actual_tracks[identifier]
             assert actual.GetNetname()==child(q,'net')[1], ('Changed routed net',identifier)

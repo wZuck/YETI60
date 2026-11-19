@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-05 first article</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="first-article.zh-CN.html">Chinese</a></p>
+<h1 id="corner-05-first-article">CORNER-05 first article</h1>
+<p>Start with the bare board and the already-made C5 daughterboard. The bench stages do not require a case. Use a battery simulator for the first charging tests. The later stages require the NiZ mechanism, the specified pack and the closed case.</p>
+<p>Copy this page for each unit. Record the PCB and firmware digests from the delivery manifest, the actual PCB thickness, the C5 revision, the pack identifier, ambient temperature, host, cable and instruments. Record measurements beside each result. A checked design report cannot populate a physical result.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Test and evidence</th>
+<th>Pass condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Factory CAM</td>
+<td>Compare board preview and stack offer with the <a href="../01-pcb/ordering-and-printing.html">order instructions</a>. Inspect NPTH, slots, two stencil layers, C42/C48 drill relocation and SW1, U5 and U6 registration</td>
+<td>Ordinary four-layer process and the reviewed geometry accepted by the factory. Record any proposed CAM changes before accepting them</td>
+</tr>
+<tr>
+<td>Bare board</td>
+<td>Check joints and polarity, then use the staged limited-power test. Confirm the 3.3 V rail and the J3 contact map</td>
+<td>No short, abnormal current or heating. Correct rail and SWD identification. <a href="../04-assembly/soldering.html">Soldering steps</a></td>
+</tr>
+<tr>
+<td>Flash and open bench</td>
+<td>Program the calibrator using SWD. Start with the pack disconnected. Check the C5 cable orientation and USB enumeration</td>
+<td>Programmer verifies the image. Correct USB device enumerates and stays connected. <a href="../05-firmware/installation.html">Firmware and J3 pin map</a></td>
+</tr>
+<tr>
+<td>Pack simulator</td>
+<td>Observe charger IN, OUT, BAT, current and VBUS at the E73 during USB preconfiguration, configuration, weak input, suspend, resume and board-off USB100. Check new and worn cable conditions as applicable</td>
+<td>Charging follows the documented policy. Keyboard stays on USB HID during current foldback. VBUS at U1 stays within its operating range while active. No reset or loss of the typed sequence. <a href="power-process.html">Power-path limits and test points</a></td>
+</tr>
+<tr>
+<td>All keys</td>
+<td>Assemble the plate, domes and springs outside the case. Save 60 calibration positions and program the matching normal image with settings retained. Test each press and release, plus both stabilized ends of the three large keys</td>
+<td>All 60 physical positions produce their expected key or layer behavior. Both edges of each stabilized key return without sticking. <a href="../04-assembly/key-mechanism.html">Mechanism guide</a></td>
+</tr>
+<tr>
+<td>Physical battery</td>
+<td>Review the pack supplier drawing, ratings, polarity, thermistor and separately implemented temperature interruption. Measure charge current, termination, temperature and off-state draw after the simulator test</td>
+<td>Meets the complete supplier-confirmed <a href="../03-bom/battery-requirements.html">pack specification</a>, including independent temperature interruption and full charge timing</td>
+</tr>
+<tr>
+<td>Dry-fit and reopening</td>
+<td>Fit the printed case and the retained leads without permanent adhesive. Check tool and plug access when inserting and withdrawing the stack and when removing the pack and C5</td>
+<td>Demonstrated insertion and withdrawal with actual parts. No forced motion, cable pinch, contact damage, plug lash or compression on the pouch. <a href="../04-assembly/assembly-views.html">Assembly views</a> · <a href="../04-assembly/retainers.html">Retainers</a></td>
+</tr>
+<tr>
+<td>Closed case</td>
+<td>Repeat USB and BLE typing while idle, charging and after detach. Try orientations and normal hand positions at 2 and 3 m. Measure charger and pack temperature. Look for missed, false or repeated keys while the radio and charger operate</td>
+<td>Meets the target use range and pack/board temperature limits. No unexpected HID events, link loss or unsafe heating over the recorded duration and conditions</td>
+</tr>
+</tbody>
+</table>
+<p>Record a failed stage before continuing. Do not qualify the finished build until the relevant failures are corrected and retested.</p>
+</main></html>

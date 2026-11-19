@@ -1,5 +1,5 @@
 {
-  "revision": "YETI60-E73-HHKB-CORNER-04",
+  "revision": "YETI60-E73-HHKB-CORNER-05",
   "source_directory": "hardware/e73-usb-repair",
   "source_board_sha256": "0353992782a636a6ca04028aca4e6a660da7ae27ce0909aba2f7d3b29d4af8ee",
   "output_directory": "hardware/e73-hhkb-corner",
@@ -490,5 +490,6 @@
     "wire_extra_X_each_end_mm": 5,
     "minimum_module_gap_mm": 0.15
   },
-  "post_route_header_repair": "hardware/e73-corner-j5-repair.json"
+  "post_route_header_repair": "hardware/e73-corner-j5-repair.json",
+  "post_route_charge_repair": "hardware/e73-corner-charge-trial.json"
 }
