@@ -19,4 +19,4 @@
 
 `.kicad_pro` 保存工程配置，它的修改时间不会跟随每一次封装或走线编辑变化；实际 PCB 几何保存在 `.kicad_pcb`。请通过 Git 内容／历史及交付 `manifest.json` 内的 SHA-256 判断版本，不以 Finder 时间为准。交付 PCB 与固件清单中的板文件摘要必须一致。
 
-PCB 历史轴体三维链接不是当前 NiZ 机构，部分还依赖旧版 KiCad 本机模型路径。原生三维预览不等于完整装配证据。请配套使用当前[机构](../04-assembly/key-mechanism.zh-CN.md)、[线束](../04-assembly/harness-routing.zh-CN.md)及[理线件](../04-assembly/retainers.zh-CN.md)文档；完整整机渲染与拆修验收仍待完成。
+PCB 历史轴体三维链接不是当前 NiZ 机构，部分还依赖旧版 KiCad 本机模型路径。原生三维预览不等于完整装配证据。请配套使用当前[机构](../04-assembly/key-mechanism.zh-CN.md)、[线束](../04-assembly/harness-routing.zh-CN.md)及[理线件](../04-assembly/retainers.zh-CN.md)文档；整机叠层见[当前装配图](../04-assembly/assembly-views.zh-CN.md)。拆修仍待验收。

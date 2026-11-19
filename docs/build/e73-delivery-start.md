@@ -4,7 +4,7 @@ English | [Chinese](e73-delivery-start.zh-CN.md)
 
 This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this whole folder together. The English and Chinese manuals are separate documents; filenames and part numbers identify the same physical design.
 
-**Current state: engineering review, not an order release.** Matching PCB, CAM, BOM and buildable firmware are bundled. The nine-wire route and 16 rigid retainers / 17 film pieces have passed bounded static checks. Retainer process/service, closed-case assembly/explosion and the final power/battery/manufacturing review still have open gates. The supplied bottom is the reviewed mechanical baseline, not a qualified complete harness assembly. The manifest records these limitations; a successful file-integrity check does not waive them.
+**Current state: engineering review, not an order release.** Matching PCB, CAM, BOM and buildable firmware are bundled. The nine-wire route and 16 rigid retainers / 17 film pieces have passed bounded static checks. The delivery includes assembled, exploded, interior and PCB underside views. Retainer process, closed-case service and the final power/battery/manufacturing review remain open. The supplied bottom is the reviewed mechanical baseline, not a qualified complete harness assembly. The manifest records these limitations; a successful file-integrity check does not waive them.
 
 | Task | Read / use |
 |---|---|
@@ -15,6 +15,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Buy parts, credit existing inventory, identify every fitted reference | [Complete materials](../../README.md), [mainboard BOM / stock CSV](../../hardware/e73-hhkb-corner/mainboard-purchase.csv) |
 | Ask the battery supplier to confirm pack parameters | [Complete pack specification](../engineering/battery-pack-specification.md) |
 | Solder a blank PCB in stages and test each stage | [12-step PCB soldering and bench guide](../assembly/e73-corner/soldering.md), [illustrated web guide](../assembly/e73-corner/soldering.html) |
+| View the closed keyboard, exploded parts and dry-fit stages | [Assembly views](e73-assembly-views.md) |
 | Assemble the NiZ mechanism and plate stabilizers | [Parts, plate and mechanism guide](key-mechanism.md) |
 | Connect SWD, install calibration firmware, calibrate all 60 keys and install normal firmware | [Firmware installation and calibration](../testing/e73-corner-firmware.md) |
 | Review electrical, fit, antenna and release limitations | [Current E73 engineering review](../engineering/e73-hhkb-corner.md) |

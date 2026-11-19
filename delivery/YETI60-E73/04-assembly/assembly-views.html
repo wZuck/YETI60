@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-04 assembly views</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="assembly-views.zh-CN.html">Chinese</a></p>
+<h1 id="corner-04-assembly-views">CORNER-04 assembly views</h1>
+<p><img src="images/assembled.png" alt="Assembled YETI60" /></p>
+<p>The shell surfaces use the FELK60-based upper case and M04 lower case from this delivery. Both retain their source dimensions. The steel plate uses the current NiZ DXF. The mainboard shows copper, solder mask, markings and drills from the selected native PCB. The illustrated finish, keycap profile and legends can differ from purchased parts.</p>
+<p><img src="images/exploded.png" alt="Exploded YETI60 with wiring and hardware" /></p>
+<p>Read the stack from the bottom case upward through the PCB, insulated standoffs, conical springs, silicone domes, steel plate, NiZ housings and sliders, upper case and caps. The illustration separates the wiring, battery and C5 from their installed positions so they can be seen. It shows the four feet together below the shell. Use the CAD and guides for slot assignments and installation datums.</p>
+<table>
+<thead>
+<tr>
+<th>Assembly stage</th>
+<th>Parts and reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Prepare the case and steel plate</td>
+<td>Inspect finished case dimensions, bores and switch opening samples. Prepare four M3 and four M2 cold-bond inserts. Cut four gaskets for each of the two plate faces. <a href="../01-pcb/ordering-and-printing.html">Manufacturing instructions</a></td>
+</tr>
+<tr>
+<td>2. Complete the mainboard</td>
+<td>Solder and inspect all 75 fitted references in the prescribed order. Keep the pack disconnected during initial tests. <a href="soldering.html">Illustrated bench guide</a></td>
+</tr>
+<tr>
+<td>3. Dry-fit the sensing stack</td>
+<td>Use 60 NiZ housings/sliders, 60 domes, 60 springs and three plate stabilizer pairs. Fit two short wires and the centered 6U wire. Use 28 standoffs, 28 insulating discs, 28 washers and 28 M1.6 screws. Leave H26 unused. <a href="key-mechanism.html">Mechanism guide</a></td>
+</tr>
+<tr>
+<td>4. Flash and calibrate outside the shell</td>
+<td>Confirm USB and BLE behavior, save all 60 key baselines with the calibrator and load the normal image while preserving settings. <a href="../05-firmware/installation.html">Firmware installation</a></td>
+</tr>
+<tr>
+<td>5. Trial the lower case</td>
+<td>Check the existing C5 on its four M2 screws and insulating washers. Check the complete protected pack envelope and keep its connector isolated. Trial the three harnesses in the M04 lower case and the 16 rigid parts with removable positioning. <a href="harness-routing.html">Harness routing</a> · <a href="retainers.html">Retainer guide</a></td>
+</tr>
+<tr>
+<td>6. Verify installation access</td>
+<td>Before permanent bonding, demonstrate insertion and withdrawal of the stack with the actual plugs and wires. Verify that no connector, wire or pack is strained or trapped. After these checks and prototype electrical acceptance, verify the closed keyboard using four M3 closure screws and shims. <a href="../03-bom/battery-requirements.html">Pack requirements</a></td>
+</tr>
+</tbody>
+</table>
+<p><img src="images/interior.png" alt="C5, pack and nine-wire route before installing the PCB" /></p>
+<p>The interior view shows the installed geometry with the PCB hidden. Some clips in this view attach to the removed PCB. Match their installed Z positions and mating faces to the retainer STEP references. The nine wire centrelines come from the nominal harness study, with diameter set to the specified insulation limit.</p>
+<p><img src="images/pcb-underside.png" alt="Components on the mainboard underside" /></p>
+<p>The scene includes models for 73 fitted references. U1 and SW100 use the design envelopes. The five mating plugs, battery wrap, NiZ plastic, domes, springs, keycaps, stabilizers, gaskets and thread details are visual representations. Use the <a href="../06-validation/assembly-render.json">source manifest</a> to check the exact revision, model coverage and image hashes. Measured tool access, cable service motion, resin and tape performance, RF behavior and physical electrical acceptance remain open.</p>
+</main></html>

@@ -4,7 +4,7 @@
 
 当前选择 **E73 CORNER-04**，模组正面安装在标准 HHKB 未用的右下角。请打开[当前 KiCad 工程](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro)和 [PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb)。[版本及工程文件核对](docs/build/e73-project-files.zh-CN.md)说明了如何区分历史候选。
 
-**工程审查版，尚未放行下单。** 原生布线／参考地检查及配套固件构建通过；九根导线、16 件刚性理线件和 17 片胶膜通过静态公差检查。理线件制造工艺／拆修、完整关壳图纸、最终电源／电池／制造复核及实物验收仍待完成。原生规则检查或文件清单校验通过，不能关闭这些未完成项。
+**工程审查版，尚未放行下单。** 原生布线／参考地检查及配套固件构建通过；九根导线、16 件刚性理线件和 17 片胶膜通过静态公差检查。理线件制造工艺／拆修、完整关壳装拆、最终电源／电池／制造复核及实物验收仍待完成。原生规则检查或文件清单校验通过，不能关闭这些未完成项。
 
 已经制作的 **UDB-C-JSH C5 子板保持不变**，不需要重做子板 PCB。
 
@@ -17,6 +17,7 @@
 | 从空 PCB 开始制作 | [12 步焊接与台架教程](docs/assembly/e73-corner/soldering.zh-CN.md)、[图文网页](docs/assembly/e73-corner/soldering.zh-CN.html) |
 | 线束、准确针序和自由长度 | [九根导线线束](docs/engineering/e73-corner-harness.zh-CN.md) |
 | 理线件文件、位置和裁膜模板 | [16 件刚性件及 17 片胶膜](docs/engineering/e73-retention.zh-CN.md) |
+| 整机、爆炸、底壳线束和 PCB 背面 | [装配图及试装步骤](docs/build/e73-assembly-views.zh-CN.md) |
 | NiZ 轴座／滑块及钢板卫星轴 | [机构与装配](docs/build/key-mechanism.zh-CN.md)；60 键、三组卫星轴、28 套固定件，H26 不装 |
 | 请电池供应商核实参数 | [单节保护电池包规格](docs/engineering/battery-pack-specification.zh-CN.md) |
 | 构建、刷写并校准配套固件 | [当前右下角固件](docs/testing/e73-corner-firmware.zh-CN.md) |

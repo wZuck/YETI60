@@ -15,10 +15,11 @@
 | 02 | [外壳及定位板](02-mechanical/bottom.stl) |
 | 03 | [材料及库存](03-bom/materials.zh-CN.md) |
 | 04 | [焊接与台架装配](04-assembly/soldering.zh-CN.html) |
-| 05 | [固件与安装](05-firmware/installation.zh-CN.md) |
-| 06 | [验收与边界](06-validation/corner-review.zh-CN.md) |
+| 05 | [整机装配图](04-assembly/assembly-views.zh-CN.html) |
+| 06 | [固件与安装](05-firmware/installation.zh-CN.md) |
+| 07 | [验收与边界](06-validation/corner-review.zh-CN.md) |
 
-九根导线、16 件刚性理线件及 17 片胶膜的静态几何检查已通过；固定件工艺／拆修和最终整机装配图仍需完成；电源／电池与制造复核、实物 USB／蓝牙／静电容／温升验收未完成。当前机构指南不是整机装配放行。Gerber ZIP 仅供审查，不能当作已放行订单。
+九根导线、16 件刚性理线件及 17 片胶膜的静态几何检查已通过；整机装配图已附上，固定件工艺和实际关壳装拆仍需验收；电源／电池与制造复核、实物 USB／蓝牙／静电容／温升验收未完成。当前机构指南不是整机装配放行。Gerber ZIP 仅供审查，不能当作已放行订单。
 
 [Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [Bottom STEP](02-mechanical/bottom.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase.zh-CN.csv) · [Checksums](manifest.json)
 

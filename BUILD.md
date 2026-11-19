@@ -4,7 +4,7 @@ English | [Chinese](BUILD.zh-CN.md)
 
 The selected design is **E73 CORNER-04**, with the module on the front in the unused lower-right HHKB corner. Open the [current KiCad project](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro) and [PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb). [Revision and project-file checks](docs/build/e73-project-files.md) explain how to distinguish the historical candidates.
 
-**Engineering review; order release remains open.** Native routing/reference checks and matching firmware builds passed. The nine-conductor route, 16 rigid retainers and 17 film pieces passed bounded static checks. Retainer manufacturing/service, complete closed-case drawings, final power/battery/manufacturing review and physical acceptance remain open. A clean DRC or a verified file manifest does not close those gates.
+**Engineering review; order release remains open.** Native routing/reference checks and matching firmware builds passed. The nine-conductor route, 16 rigid retainers and 17 film pieces passed bounded static checks. Retainer manufacturing/service, closed-case installation and withdrawal, final power/battery/manufacturing review and physical acceptance remain open. A clean DRC or a verified file manifest does not close those gates.
 
 The already-made **UDB-C-JSH C5 daughterboard stays unchanged**. No replacement daughterboard PCB is needed.
 
@@ -17,6 +17,7 @@ The already-made **UDB-C-JSH C5 daughterboard stays unchanged**. No replacement 
 | Start from a blank PCB | [12-step soldering and bench guide](docs/assembly/e73-corner/soldering.md), [illustrated web guide](docs/assembly/e73-corner/soldering.html) |
 | Cables, exact pin connections and free lengths | [Nine-conductor harness](docs/engineering/e73-corner-harness.md) |
 | Retainer files, placement and film templates | [16 rigid parts and 17 film pieces](docs/engineering/e73-retention.md) |
+| Assembled, exploded, case interior and PCB underside views | [Assembly views and dry-fit stages](docs/build/e73-assembly-views.md) |
 | NiZ housings/sliders and steel-plate stabilizers | [Mechanism and assembly](docs/build/key-mechanism.md); 60 keys, three stabilizer pairs, 28 mounting sets, H26 unused |
 | Battery supplier confirmation | [Protected 1S pack specification](docs/engineering/battery-pack-specification.md) |
 | Build, flash and calibrate matching firmware | [Current corner firmware](docs/testing/e73-corner-firmware.md) |
