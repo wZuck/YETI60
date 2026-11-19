@@ -45,12 +45,80 @@
 </tbody>
 </table>
 <p>Print at 100% in millimetres using tough engineering SLA resin. Make one of each of the three parts and choose either STEP or STL for each part. Both formats use the same case coordinates. Inspect the seating faces, foot recess and blind bores after the resin is fully post-cured. Choose supports and drainage before printing and keep support damage off those faces.</p>
+<h2 id="build-the-matched-m05-harness">Build the matched M05 harness</h2>
+<p>Use the <a href="harness/wire-lengths-m05.csv">M05 free lengths</a> for all nine conductors. These are lengths along the insulation, from housing exit to housing exit or to the pack strain-relief face. Add the termination and stripping allowances for the actual contacts when cutting the wire. The trial uses stranded AWG28 copper with a maximum finished insulation diameter of 0.65 mm.</p>
+<p><img src="../../06-validation/m05-harness-plan.png" alt="M05 installed cable paths and winding stations" /></p>
+<table>
+<thead>
+<tr>
+<th>Set</th>
+<th>Parts and placement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USB from J4 to C5</td>
+<td>Two SHR-04V-S housings and eight SSH-003T-P0.2-H contacts. Match pins 1–4 directly. The two data conductors use the same 285.189 mm free-length target.</td>
+</tr>
+<tr>
+<td>PCB power bridge</td>
+<td>One SHR-02V-S at J5, one SHR-04V-S at J1 and four contacts. J5.1 goes to J1.1, J5.2 goes to J1.4. Leave the center two positions empty at J1. Route both wires above the USB cable at the crossover.</td>
+</tr>
+<tr>
+<td>Pack to J2</td>
+<td>One SHR-03V-S with three contacts on the PCB end. Pin order is PACK+, PACK−, NTC. Use the specified complete protected pack or an inert gauge during fitting.</td>
+</tr>
+<tr>
+<td>Battery retainers</td>
+<td>Two new prints, <a href="harness/BAT-R1-M05.stl">BAT-R1</a> and <a href="harness/BAT-R2-M05.stl">BAT-R2</a>. Locate their centers at case X 186 and 189 mm respectively, both at Y −106.60 mm. The <a href="harness/BAT-R1-M05.step">BAT-R1 placement STEP</a> and <a href="harness/BAT-R2-M05.step">BAT-R2 placement STEP</a> retain the original case datums.</td>
+</tr>
+<tr>
+<td>Other retainers and films</td>
+<td>Reuse the 14 remaining rigid files and 17 film blank shapes from the <a href="../../04-assembly/retainers.html">retainer set</a>. Place the two battery films on the new battery retainers. Use their <a href="harness/BAT-R1-film-M05.step">BAT-R1</a> and <a href="harness/BAT-R2-film-M05.step">BAT-R2</a> folded shapes as placement references.</td>
+</tr>
+</tbody>
+</table>
+<p>Print the two battery retainers at the same scale and finish as the other guides. Match their case surfaces and inspect the 0.10 mm nominal bonding gap. Leave the slots free of adhesive and retain the wires without clamping their axial movement.</p>
+<p>Follow the USB winding stations from <strong>J4 toward C5</strong>. The turns describe the CAD centerline geometry. The <a href="harness/seated-wires-REFERENCE.step">seated lead assembly STEP</a> shows the full wire paths for comparison with a fabricated harness.</p>
+<table>
+<thead>
+<tr>
+<th>Station</th>
+<th>Section</th>
+<th style="text-align:right">Centerline span</th>
+<th style="text-align:right">Turns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>Rear straight at X 312.190 → 230.000 mm, Y −102.000 mm</td>
+<td style="text-align:right">82.190 mm</td>
+<td style="text-align:right">3.060</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>Forward straight at X 193.000 mm, Y −126.674 → −164.500 mm</td>
+<td style="text-align:right">37.826 mm</td>
+<td style="text-align:right">0.613</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>Return straight at X 214.313 mm, Y −164.500 → −142.000 mm</td>
+<td style="text-align:right">22.500 mm</td>
+<td style="text-align:right">0.327</td>
+</tr>
+</tbody>
+</table>
+<p>With the new routed lengths, the four current-carrying wires total 1.095 m. Using the <a href="../../06-validation/power-process.html">existing charging model</a>, the included hot-path resistance is 0.426 Ω at 60 °C, with about 1.55 mV extra drop at 500 mA relative to M04. The <a href="../../06-validation/m05-harness.json">M05 wire and fit report</a> retains the assumptions and excluded losses. It also records the seven checked connector poses at each PCB thickness with the actual M05 parts modeled in place.</p>
 <h2 id="fit-the-covers-before-installing-electronics">Fit the covers before installing electronics</h2>
 <ol>
 <li>Dry-fit each cover to its matching pocket and confirm that it comes off straight down. The nominal perimeter clearance is 0.35 mm per side and the exterior surfaces are flush in CAD. Keep the cover and the right rear foot recess flush when finishing the parts.</li>
 <li>Finish the four blind insert bores to <strong>Ø3.35 ±0.05 mm</strong>. Set the depth stop to <strong>2.90 mm from the seating shelf at the bore axis</strong>. Cold-bond the inserts with the outward face recessed <strong>0.30 mm</strong> at that axis. Bond and cure the empty shell before installing the battery or PCB.</li>
 <li>Confirm the screws clamp each cover and clear the blind bottom. CAD gives <strong>2.15 mm</strong> nominal thread overlap and <strong>0.45 mm</strong> at the screw tip. Inspect the actual head envelope and tip clearance. Check for cover flex, stripped resin, loose inserts and rocking with the feet fitted.</li>
 <li>Attach the right rear footpad wholly within the J4 cover recess. Keep both screw heads exposed. Remove the two covers to gain access to J2 and J4. Open-shell trials use an inert gauge in place of the battery and unpowered harnesses.</li>
+<li>Dry-fit the C5, temporary guides, mainboard and unpowered harness using the plan above. Verify continuity and J1’s two empty positions before any powered test. Confirm the battery bow forms before its two guides, the USB loop can move forward and the power bridge stays above it. The intended removal order is J2, J4, then a straight PCB and plate lift. Check actual release tool access and cable feed with the covers removed before fixing the guides in place.</li>
 </ol>
 <p>The <a href="../../06-validation/service-case-m05.json">CAD report</a> checks envelope dimensions, the four new insert supports, the eight existing screw regions, full cover withdrawal and the open paths around J2 and J4. <a href="../../06-validation/case-service.html">Case service checks</a> document the paired wire routing trial. M05 is for mechanical fit testing. It still needs a qualified release tool, a complete wired service demonstration, load and repeated removal tests before production use.</p>
+<p>With the shell and covers open and the two plugs parked, the <a href="../../06-validation/m05-lift.json">continuous lift study</a> checks 25 mm of straight motion at all three PCB thicknesses. It maintains at least 0.15 mm clearance between the modeled moving power wires and checked stationary objects. It also checks the moving PCB and rigid envelopes against all seven stationary conductors. Actual plug removal, flexible wire feed and tool force require a sample.</p>
 </main></html>

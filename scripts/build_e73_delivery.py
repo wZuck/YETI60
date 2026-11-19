@@ -13,7 +13,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
  native=json.loads((BASE/'audit/placement-check.json').read_text());assert native['electrical_routing_complete']
- for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render']:
+ for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift']:
   report=json.loads((BASE/'audit'/f'{name}.json').read_text())
   for path,digest in report['source_sha256'].items():assert sha(ROOT/path)==digest,('Stale delivery input',path)
   if name=='power-process':assert report['status']=='repaired-power-routing-and-aperture-checks-passed'
@@ -49,6 +49,20 @@ def main():
    assert len(report['meshes'])==3 and all(mesh['two_faces_per_welded_edge'] for mesh in report['meshes'])
    access_models=report['outputs']
   if name=='service-case-m05-render':assert report['status']=='checked-M05-meshes-rendered'
+  if name=='m05-harness':
+   assert report['status']=='M05-prototype-paired-harness-ready-for-dry-fit'
+   assert not report['manufacturing_released']and len(report['outputs'])==8
+   assert len(report['trial_variants'])==3 and len(report['shifted_battery_parts'])==4
+   assert all(len(v['states'])==7 and max(s['USB_pair_skew_mm']for s in v['states'])<.005 for v in report['trial_variants'])
+   harness_models=list(report['outputs'])
+  if name=='m05-harness-plan':
+   assert report['status']=='checked-M05-seated-harness-plan'and len(report['winding_stations'])==3
+   harness_models.extend(p for p in report['outputs'] if p.endswith('.step'))
+  if name=='m05-lift':
+   assert report['status']=='M05-parked-harness-vertical-clearance-checked'and len(report['variants'])==3
+   for variant in report['variants']:
+    assert variant['stationary_conductors_checked_against_moving_rigid_items']==7
+    assert all(check['certified_gap_mm']>=.15 for check in variant['moving_power_wire_checks'])
   for path,digest in report.get('outputs',{}).items():assert sha(ROOT/path)==digest,('Stale engineering output',path)
  assembly_render=ROOT/'renders/e73-corner-assembly/manifest.json'
  render_report=json.loads(assembly_render.read_text())
@@ -78,6 +92,7 @@ def main():
  for name in ['README.md','README.zh-CN.md']:copy(name,'03-bom/materials'+('.zh-CN'if 'zh-CN'in name else '')+'.md')
  for rel,target in [('mechanical/generated/yeti60-top.step','02-mechanical/top.step'),('hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step','02-mechanical/bottom.step'),('hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.stl','02-mechanical/bottom.stl'),('mechanical/e73-fit/yeti60-e73-niz-m01.dxf','02-mechanical/steel-plate.dxf'),('mechanical/generated/yeti60-standoff-46.step','02-mechanical/standoff.step'),('mechanical/assembly-spec.json','02-mechanical/assembly-spec.json'),('mechanical/pcb-fabrication-spec.json','01-pcb/process-spec.json')]:copy(rel,target)
  for rel in access_models:copy(rel,'02-mechanical/service-case-m05/'+Path(rel).name)
+ for rel in harness_models:copy(rel,'02-mechanical/service-case-m05/harness/'+Path(rel).name)
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/export_e73_delivery_top.py'),'--output',str(out/'02-mechanical/top.stl')],check=True)
  inputs['scripts/export_e73_delivery_top.py']=sha(ROOT/'scripts/export_e73_delivery_top.py')
  for p in sorted((BASE/'firmware').rglob('*')):

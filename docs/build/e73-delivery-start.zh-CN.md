@@ -13,7 +13,7 @@
 | 核对九根导线、针序、线长和未通过项 | [当前线束检查](../engineering/e73-corner-harness.zh-CN.md) |
 | 打印并定位 16 件理线件、裁切 17 片胶膜 | [固定件文件、位置图及试装说明](../engineering/e73-retention.zh-CN.md) |
 | 关壳前核对插拔工具空间和抬板动作 | [关壳装拆检查](../engineering/e73-corner-service.zh-CN.md) |
-| 查看带可拆封盖的 M05 试制底壳 | [试制打印文件与材料](e73-m05-prototype.zh-CN.md) |
+| 试配 M05 底壳、封盖与配套线束 | [M05 试制打印、布线和材料](e73-m05-prototype.zh-CN.md) |
 | 采购材料、抵扣已有库存、找到每个元件位号 | [完整材料表](../../README.zh-CN.md)、[主板材料与库存表格](../../hardware/e73-hhkb-corner/mainboard-purchase.zh-CN.csv) |
 | 请电池供应商核实参数 | [完整保护电池包规格](../engineering/battery-pack-specification.zh-CN.md) |
 | 从空板开始分阶段焊接、逐段检查 | [12 步焊接与台架教程](../assembly/e73-corner/soldering.zh-CN.md)、[图文网页](../assembly/e73-corner/soldering.zh-CN.html) |

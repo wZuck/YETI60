@@ -45,12 +45,80 @@
 </tbody>
 </table>
 <p>使用韧性工程 SLA 树脂，按毫米、100% 比例打印。三种零件各做一件，每件从 STEP 和 STL 中选一个文件。两种格式使用相同的壳体坐标。在树脂完全后固化后复查承压面、脚垫槽和盲孔。安排打印支撑和排液方向时，避免支撑损伤这些面。</p>
+<h2 id="制作-m05-配套线束">制作 M05 配套线束</h2>
+<p>九根导线均按 <a href="harness/wire-lengths-m05.zh-CN.csv">M05 自由长度表</a>制作。自由长度沿绝缘层测量，从一端胶壳出口量到另一端出口或保护包的应力释放面。裁线时按实际端子另计剥皮和压接的余量。试装使用 AWG28 多股铜线，成品绝缘外径最大 0.65 mm。</p>
+<p><img src="../../06-validation/m05-harness-plan.zh-CN.png" alt="M05 坐合状态的线束走向与绞线位置" /></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>材料与安装位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J4 到 C5 的 USB 线束</td>
+<td>两只 SHR-04V-S 胶壳、八只 SSH-003T-P0.2-H 端子。1–4 号逐针直连，两根数据线的自由长度目标均为 285.189 mm。</td>
+</tr>
+<tr>
+<td>主板电源桥</td>
+<td>J5 用一只 SHR-02V-S，J1 用一只 SHR-04V-S，共四只端子。J5.1 接 J1.1，J5.2 接 J1.4，J1 中间两孔留空。交叉处两根电源桥导线都走 USB 线束上方。</td>
+</tr>
+<tr>
+<td>保护包到 J2</td>
+<td>主板端用一只 SHR-03V-S 和三只端子，针序为 PACK+、PACK−、NTC。实物须为符合规格的完整保护包，试配可用无电量块。</td>
+</tr>
+<tr>
+<td>电池理线件</td>
+<td>两件新打印件 <a href="harness/BAT-R1-M05.stl">BAT-R1</a> 和 <a href="harness/BAT-R2-M05.stl">BAT-R2</a>。中心分别位于外壳 X 186 mm 和 189 mm，两件的 Y 均为 −106.60 mm。<a href="harness/BAT-R1-M05.step">BAT-R1 定位 STEP</a>与 <a href="harness/BAT-R2-M05.step">BAT-R2 定位 STEP</a>保留装配坐标。</td>
+</tr>
+<tr>
+<td>其他理线件及胶膜</td>
+<td>其余 14 件刚性件和 17 片胶膜的下料形状沿用<a href="../../04-assembly/retainers.zh-CN.html">现有理线件套件</a>。两片电池胶膜装到新支架，可对照 <a href="harness/BAT-R1-film-M05.step">BAT-R1</a> 和 <a href="harness/BAT-R2-film-M05.step">BAT-R2</a> 的折后模型。</td>
+</tr>
+</tbody>
+</table>
+<p>两件电池支架按其他理线件的比例和工艺打印。试配壳底时核查标称 0.10 mm 的胶层。线槽内避免溢胶，固定后导线仍需能沿槽轴向滑动。</p>
+<p>从 <strong>J4 向 C5</strong> 按下表布置数据对的绞合段。圈数对应 CAD 中心线几何。制作后可用<a href="harness/seated-wires-REFERENCE.step">坐合线束 STEP</a>核对完整走线形状。</p>
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>位置</th>
+<th style="text-align:right">中心线段长</th>
+<th style="text-align:right">圈数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>后侧直段，X 从 312.190 到 230.000 mm，Y 为 −102.000 mm</td>
+<td style="text-align:right">82.190 mm</td>
+<td style="text-align:right">3.060</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>向前直段，X 为 193.000 mm，Y 从 −126.674 到 −164.500 mm</td>
+<td style="text-align:right">37.826 mm</td>
+<td style="text-align:right">0.613</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>回程直段，X 为 214.313 mm，Y 从 −164.500 到 −142.000 mm</td>
+<td style="text-align:right">22.500 mm</td>
+<td style="text-align:right">0.327</td>
+</tr>
+</tbody>
+</table>
+<p>按新线长，四根供电和回流导线合计 1.095 m。沿用<a href="../../06-validation/power-process.zh-CN.html">原充电模型</a>，60 °C 下纳入计算的串联电阻为 0.426 Ω，500 mA 时比 M04 多约 1.55 mV 压降。<a href="../../06-validation/m05-harness.json">M05 线束与试装报告</a>记录了计算前提、未计入的损耗，以及按 M05 实际壳体模型检查的三种板厚各七个插头姿态。</p>
 <h2 id="装电子件前试配封盖">装电子件前试配封盖</h2>
 <ol>
 <li>先把两只盖分别放进对应的凹槽，确认可垂直向下取出。每侧标称留缝 0.35 mm，CAD 外表面齐平。修整时保持封盖与底壳齐平，也保留右后脚垫槽原有高度。</li>
 <li>四个嵌件盲孔按 <strong>Ø3.35 ±0.05 mm</strong> 修孔。从孔轴中心所在的承压台阶计算，盲孔深度为 <strong>2.90 mm</strong>。冷粘嵌件，外端面比该处台阶内缩 <strong>0.30 mm</strong>。待空壳上的胶固化后再装电池和 PCB。</li>
 <li>确认螺钉能压住封盖，末端与盲孔底留有间隙。CAD 中标称螺纹重叠 <strong>2.15 mm</strong>，螺钉末端距孔底 <strong>0.45 mm</strong>。实测头部尺寸和孔底余量，并检查封盖受力、树脂裂纹、嵌件松动及装脚垫后是否摇晃。</li>
 <li>将右后脚垫完整贴在 J4 封盖槽内，留出两只螺钉的位置。取下两只盖后可接近 J2 和 J4。试装用无电池尺寸量块代替电池，并保持线束断电。</li>
+<li>按上图试放 C5、临时定位的理线件、主板和断电线束。上电前测通断，并核对 J1 中间两孔留空。确认电池侧弯在两只理线件之前形成，USB 前侧回环能向前移动，电源桥留在其上方。拆卸顺序为先 J2、再 J4，最后垂直抬起主板和定位板。在永久固定理线件前，取下封盖验证实际工具空间和导线滑动。</li>
 </ol>
 <p><a href="../../06-validation/service-case-m05.json">CAD 报告</a>检查了外形尺寸、四处新增嵌件的支撑、八处原有螺孔保护区、封盖拆出行程，以及打开后 J2、J4 的通道。<a href="../../06-validation/case-service.zh-CN.html">关壳装拆检查</a>记录了配套的线束试验。M05 用于机械试配，仍需验证实际拔插工具、带线完整拆装、承载和反复拆装，之后才能用于正式装配。</p>
+<p>上壳和封盖已拆下且两个插头已停放时，<a href="../../06-validation/m05-lift.json">连续抬升报告</a>检查了三种板厚下 25 mm 的直线行程。模型中的电源桥与所检静止物体始终至少保有 0.15 mm 间隙。报告也核对了移动的 PCB 和刚体包络与全部七根静止导线之间的空间。实际插头拔出、导线随动和工具受力仍需用样件验证。</p>
 </main></html>
