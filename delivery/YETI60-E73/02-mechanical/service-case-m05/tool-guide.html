@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M05 parallel-jaw service tool</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../../index.html">Back to delivery index</a></header><p>English | <a href="tool-guide.zh-CN.html">Chinese</a></p>
+<h1 id="m05-parallel-jaw-service-tool">M05 parallel-jaw service tool</h1>
+<p>The trial tool reaches J2 and J4 through the M05 bottom openings. It grips the exterior sides of the current SHR-03V-S and SHR-04V-S housings near the wire exit. Two transverse guide pins keep the jaws parallel. The nominal shaft and tip sizes follow the public SH dimensions. Grip on the actual molded housing needs to be confirmed using sample parts. <a href="https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf">JST SH drawing</a></p>
+<h2 id="parts-for-one-tool">Parts for one tool</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th style="text-align:right">Quantity</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Printed grip</td>
+<td style="text-align:right">2</td>
+<td><a href="tool/parallel-grip.stl">STL</a> or <a href="tool/parallel-grip.step">STEP</a>. Print in tough insulating resin at 100% in millimetres.</td>
+</tr>
+<tr>
+<td>Sheet blade</td>
+<td style="text-align:right">2</td>
+<td><a href="tool/blade-06mm-profile.dxf">Blade profile DXF</a>, 0.60 mm spring stainless sheet. Deburr all edges. Finish the insulated blade thickness at no more than 0.80 mm.</td>
+</tr>
+<tr>
+<td>Guide pin</td>
+<td style="text-align:right">2</td>
+<td>Ø2 × 25 mm straight pins for the two parallel bores. Retain each pin in one grip, with a free sliding fit in the other.</td>
+</tr>
+<tr>
+<td>Blade fasteners</td>
+<td style="text-align:right">4 sets</td>
+<td>M2 × 8 mm low heads and matching nuts. Keep their heads within the space between the grips without touching the other grip at the measured clamping width.</td>
+</tr>
+<tr>
+<td>Clamping hardware</td>
+<td style="text-align:right">1 set</td>
+<td>M3 × 25 mm screw, matching nut and washers. Adjust it by hand during fitting.</td>
+</tr>
+<tr>
+<td>Blade insulation</td>
+<td style="text-align:right">As needed</td>
+<td>Thin, firmly attached electrical insulation on all metal that enters the case. Inspect edges and check total thickness after application.</td>
+</tr>
+</tbody>
+</table>
+<p>Print the two identical grips. Rotate the second grip by 180° about its vertical axis so the blade pockets face each other. Fasten each blade into its pocket with the same tip projection. Fit the pins into the outer pair of holes and the M3 screw into the lower central hole. Check that the moving grip slides freely without appreciable skew.</p>
+<p><img src="../../06-validation/m05-tool-drawing.png" alt="Blade profile and opposing grips in the J2 position" /></p>
+<h2 id="fit-and-verify-on-unpowered-parts">Fit and verify on unpowered parts</h2>
+<ol>
+<li>Use disconnected sample connectors and an inert pack gauge for the first mechanical trial. Fit the covers, take them off, and approach the wire-side housing faces from below with open jaws. Check that the tool hardware remains outside the shell and the tips bear on the housing sides.</li>
+<li>Close the jaws on the housing. Compare the tool’s grip with the force needed to release and re-seat a spare mated connector. Check for slip, gouging, deformation and insulation wear. JST calls for supporting the housing during removal and avoiding angled withdrawal. <a href="https://www.jst-mfg.com/product/pdf/eng/handling_e.pdf">JST handling precautions</a></li>
+<li>In the M05 fixture, withdraw J2 along +Y and J4 along −X, keeping the jaw pair aligned with the corresponding mating axis. The modeled travels are 4.50 and 4.00 mm. Once free, move each housing 0.45 mm toward the underside. Use a separate support to hold each housing parked until the deck clears it. Confirm wire feed and check for any bounce back into the lift path.</li>
+<li>Repeat in reverse with the wires supervised, re-seat each plug and check strain, continuity and seating. Record the measured travel, tool fit, grip and retention for both connectors before trying the wired assembly.</li>
+</ol>
+<p>The <a href="../../06-validation/m05-tool.json">tool fit report</a> covers approaching, closing, pulling and lowering both jaws at three PCB thicknesses. It models the blade, handle and the external fastener envelope against the actual M05 case. The tool’s relationship to the wire envelopes is sampled separately. Grip force, elastic deflection, hold-open support and installed wire movement still need a physical trial.</p>
+</main></html>
