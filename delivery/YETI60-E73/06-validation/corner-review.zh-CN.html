@@ -73,7 +73,7 @@
 <p>PCB 到定位板标称间隙为 4.6 mm。含焊锡及落座后的安装高度上限：U1／J4／J5 为 3.2 mm，C32 为 1.0 mm，R24／R25 为 0.6 mm。这是装配检验要求，并非厂商最大高度认证；其中只有 U1 占用正面间隙。必须按最终板版核对 NiZ 底部凸缘／卡扣、卫星轴、全部紧固件、插头、拔插运动和柔性导线；元件包围盒检查不能替代完整装配检查。</p>
 <p>J4 和 C5 姿态保留，J5 保留坐标并反转出线方向，不要修改已制作的 C5 子板。现有线缆规格可作为输入，但完整装配及维修拔插仍需按本版复核后才能验收。电池维持带保护的单节 1600 mAh 包，外形包络 85 × 43 × 4.8 mm，供应商电气及保护参数仍待核实。</p>
 <h2 id="当前阶段验收记录">当前阶段验收记录</h2>
-<p>右下角布局将现有 100 nF、0402 的 C31 移到模组供电脚附近，局部连接约 1.17 mm。<a href="https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-routing.json">基础布线补丁</a>含 446 段线路、81 个过孔；随后执行来源绑定的 <a href="j5-repair.json">J5 朝向修补</a>，移除 12 项铜图元、加入 13 项，保留 USB 数据几何和有效感应焊盘。<a href="https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-charge-trial.json">CORNER-05 供电补丁</a>重布三段供电线及两处地孔。最终新生成过孔为 33 个基础引出加 86 个布线／修补，共 119 个普通 0.50／0.30 mm 通孔。两面盖油且避开贴片焊盘。整板另含继承的通孔，共计 852 个。原生检查为 0 条违规错误、0 项未连接、0 项原理图一致性差异。悬空线路、悬空过孔及接入未居中警告均已消除；仍保留 100 项非采购几何的庭院层提示，不能宣称零警告；完整装配及投板尚未放行。</p>
+<p>右下角布局将现有 100 nF、0402 的 C31 移到模组供电脚附近，局部连接约 1.17 mm。<a href="https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-routing.json">基础布线补丁</a>含 446 段线路、81 个过孔。<a href="j5-repair.json">J5 朝向修补</a>移除 12 项铜图元、加入 13 项。<a href="https://github.com/wZuck/YETI60/blob/master/hardware/e73-corner-charge-trial.json">CORNER-05 供电补丁</a>重布三段供电线并调整 C42、C48 地孔，CORNER-06 又调整 SW1.2 地孔。整板共 852 个机械贯通孔，其中 119 个新生成过孔为 33 个基础引出和 86 个布线／修补过孔，规格为 0.50／0.30 mm，两面盖油并避开贴片焊盘。原生检查为 0 条错误、0 项未连接、0 项原理图差异，另有 100 项非采购几何的庭院层提示。整机装配和投板仍待验收。</p>
 <table>
 <thead>
 <tr>
@@ -104,7 +104,7 @@
 </tr>
 <tr>
 <td>当前电源走线及制板</td>
-<td><a href="power-process.zh-CN.html">CORNER-05 供电、压降及过孔开窗</a>已复核，电池与实际充电仍须样机验收</td>
+<td><a href="power-process.zh-CN.html">CORNER-06 供电、压降及过孔开窗</a>已复核，电池与实际充电仍须样机验收</td>
 </tr>
 <tr>
 <td>校验器故障样本</td>

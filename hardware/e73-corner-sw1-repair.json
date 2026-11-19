@@ -1,0 +1,15 @@
+{
+  "baseline_pcb_sha256": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
+  "via_uuid": "d7990fa7-e065-4db3-9c82-ebd8246d6e0b",
+  "segment_uuid": "855c8e9c-6506-4b78-9427-336f583cb6f7",
+  "before": {
+    "center_PCB_mm": [322.362531, 122.337058],
+    "land_mm": 0.8,
+    "drill_mm": 0.4
+  },
+  "after": {
+    "center_PCB_mm": [322.22, 122.37],
+    "land_mm": 0.6,
+    "drill_mm": 0.3
+  }
+}

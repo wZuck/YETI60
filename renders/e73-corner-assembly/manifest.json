@@ -7,24 +7,24 @@
     1
   ],
   "source_sha256": {
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
-    "hardware/e73-hhkb-corner/audit/harness-native.json": "c29375fda599b341429018a55e9bb7c1ab2dbdaa4ba21520b945add62c4abe8f",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
+    "hardware/e73-hhkb-corner/audit/harness-native.json": "b832b9d54506ee123159ab85bdcd95c033e1bab9e3f95988eea99c65ceb8b7a2",
     "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
     "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
     "mechanical/yeti60-key-mechanism.e73.json": "7ec89cc69dd1d842f7cd8ce7f0b588d08c2df00967f64bdfe706d8ff73902b39",
     "docs/audit/yeti60-key-geometry.json": "49d53c2e3a8a230fb679337535bdfde013d9ae934569220d4efe917968d92f24",
-    "hardware/e73-hhkb-corner/audit/harness-study.json": "266c12e49947cacf98984ff8c4a62f36274e72352337d426b86beeb9e5d64440",
-    "hardware/e73-hhkb-corner/audit/retention-prints.json": "87ac2bde682bcf9e6e1e1d3d2f9c90d62a57463f7ae8cbb7b5b5d4d7d98f8e29",
-    "hardware/e73-hhkb-corner/audit/retention-study.json": "694421fc4085fa27a585166b575d24e77e169fe43c7cbc2f70790866f9c8f4cd",
+    "hardware/e73-hhkb-corner/audit/harness-study.json": "d6f8896f10b3fcc61641040b93f9c29477d53a84bfb5af2615d74c9278a850c1",
+    "hardware/e73-hhkb-corner/audit/retention-prints.json": "de5bb4d8676dfffac1d4980910b730a044e6512c9937f041f431da25baff94a3",
+    "hardware/e73-hhkb-corner/audit/retention-study.json": "887d80b2651426f44b0ceb7100f6ceefad7e98e202e601f993b2e0c140e6addd",
     "docs/audit/yeti60-daughterboard.json": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
-    "scripts/export_e73_corner_assembly_scene.py": "d023dafc6745bb2c618ac1e093a7b7bf7c99f4b1e675ae4da8d98f0c20934fdf",
+    "scripts/export_e73_corner_assembly_scene.py": "8c02adaa6b59d9dda4c80111674a2e1b51787d0ffbe9ec0e94c1d1f579fbd003",
     "scripts/export_yeti60_render_meshes.py": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
     "scripts/e73_corner_harness_paths.py": "d8d9e29d0d3654526705790a46d43d37531a6a975e12cd6f4ff70c30dbf5c464",
     "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
     "hardware/e73-corner-harness-spec.json": "015f0904c0868a9563cf9e797a1e858f4b8eb31116829e525f27e6bcf57b930c",
-    "hardware/e73-corner-spec.json": "c29d651caf43c067a3e8c0f06e943b962719b85e5688216b492a3f0896d56a02",
+    "hardware/e73-corner-spec.json": "d0f457d9a376f782d4cde0560417ca22cd179fe0b52dd974be96ff709d6fe89e",
     "scripts/interconnect_geometry.py": "a3ea2cd5cbe15cfa5aebaf89d961e3387e9c183e147564f27fa4d5aa9477c5c2",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step": "05df1190f4a9a418e9861851fa32bb15da3e71a9545af5b2126141a647411428",
@@ -63,7 +63,7 @@
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-seam-1.step": "13f86f9bb530bd58f08f93b8199210676e451d225ffa45eb0237f761c76d5f29",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-seam-2.step": "a4da1db40b7d9c1def15e614e2c368b4e6669f149169e079c5bb73eec5e626bb",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-lower-film.step": "63293a25ed0509679ad5ddeb9f115fec8fc4582823e99c974e3becfd9bc9ff34",
-    "scripts/render_e73_corner_assembly.py": "cc4178fed20ce1b23256524482cb852be3c8541f625484971225b990bf6931cd"
+    "scripts/render_e73_corner_assembly.py": "7012f419f2a85819d8ec496659213e5d792b9dc6050707b71f0c95a4ab60ca89"
   },
   "native_component_models": [
     "C10",
@@ -174,7 +174,7 @@
         "wires": 9
       },
       "minimum_image_border_fraction": 0.0535714216530323,
-      "sha256": "d55d1ab40a2686aca6d093aaa5e9137bc16c90254378a0b2f2d98e4f48919111"
+      "sha256": "863ada049f241593b86931a8b2c32565c1e16160eb4ca82948a1b0ea5fd2da46"
     },
     "exploded": {
       "objects_by_group": {
@@ -200,7 +200,7 @@
         "wires": 9
       },
       "minimum_image_border_fraction": 0.053571343421936035,
-      "sha256": "e4b2ce57439d09e755c30da29df63a11bdcbdbd920293de71291f95569ac2536"
+      "sha256": "7422903bfc33a7c79a06bfaaeb07bc5a684e23fa11faaa82c4de8b4bbf16e6fa"
     },
     "interior": {
       "objects_by_group": {
@@ -212,7 +212,7 @@
         "wires": 9
       },
       "minimum_image_border_fraction": 0.053571343421936035,
-      "sha256": "f4972f7233e762f908c2ffc9f5a8692afc8b85fbd50d6bbb94853ef9aa7419bb"
+      "sha256": "5c273fe20a4db984e2d612ec137af2b3227b58695bb86e1f997fb3455aed42e4"
     },
     "pcb-underside": {
       "objects_by_group": {
@@ -220,14 +220,14 @@
         "pcb": 9
       },
       "minimum_image_border_fraction": 0.053571343421936035,
-      "sha256": "57101a792966a18b02ba4df81e27241e64081dbaf0391a35750f26bbcf11e2d6"
+      "sha256": "728d5c598db7b1d115f7fdb69e05c3402d58584dffe824676418df44ad8155ef"
     }
   },
   "outputs": {
-    "renders/e73-corner-assembly/assembled.png": "d55d1ab40a2686aca6d093aaa5e9137bc16c90254378a0b2f2d98e4f48919111",
-    "renders/e73-corner-assembly/exploded.png": "e4b2ce57439d09e755c30da29df63a11bdcbdbd920293de71291f95569ac2536",
-    "renders/e73-corner-assembly/interior.png": "f4972f7233e762f908c2ffc9f5a8692afc8b85fbd50d6bbb94853ef9aa7419bb",
-    "renders/e73-corner-assembly/pcb-underside.png": "57101a792966a18b02ba4df81e27241e64081dbaf0391a35750f26bbcf11e2d6"
+    "renders/e73-corner-assembly/assembled.png": "863ada049f241593b86931a8b2c32565c1e16160eb4ca82948a1b0ea5fd2da46",
+    "renders/e73-corner-assembly/exploded.png": "7422903bfc33a7c79a06bfaaeb07bc5a684e23fa11faaa82c4de8b4bbf16e6fa",
+    "renders/e73-corner-assembly/interior.png": "5c273fe20a4db984e2d612ec137af2b3227b58695bb86e1f997fb3455aed42e4",
+    "renders/e73-corner-assembly/pcb-underside.png": "728d5c598db7b1d115f7fdb69e05c3402d58584dffe824676418df44ad8155ef"
   },
   "case_bounds_mm": {
     "top": [

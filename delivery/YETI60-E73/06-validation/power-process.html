@@ -1,12 +1,12 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-05 power and ordinary PCB process review</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="power-process.zh-CN.html">Chinese</a></p>
-<h1 id="corner-05-power-and-ordinary-pcb-process-review">CORNER-05 power and ordinary PCB process review</h1>
-<p>CORNER-05 integrates the lower-resistance USB supply route and moves the C42 and C48 ground drills outside their solder openings. The native PCB, firmware, BOM and CAM in this delivery identify this revision. The current path preserves direct USB HID while charging after host configuration.</p>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-06 power and ordinary PCB process review</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="power-process.zh-CN.html">Chinese</a></p>
+<h1 id="corner-06-power-and-ordinary-pcb-process-review">CORNER-06 power and ordinary PCB process review</h1>
+<p>CORNER-06 relocates the SW1 ground via and retains the lower-resistance USB supply route and relocated C42 and C48 ground drills from CORNER-05. The native PCB, firmware, BOM and CAM in this delivery identify this revision. The current path preserves direct USB HID while charging after host configuration.</p>
 <table>
 <thead>
 <tr>
 <th>Mainboard supply span</th>
 <th style="text-align:right">CORNER-04 trace resistance</th>
-<th style="text-align:right">CORNER-05 trace resistance</th>
+<th style="text-align:right">CORNER-06 trace resistance</th>
 </tr>
 </thead>
 <tbody>
@@ -74,7 +74,7 @@
 <p>The BQ24074 can reduce current at its 4.35–4.63 V input threshold. At a weak source, the upper end of that threshold can still cause charge-current foldback at the requested load. The nRF52840 VBUS operating minimum is 4.35 V. U1 has its own branch after F1, so measure U1 VBUS relative to its local ground and U5 IN relative to the charger ground. This calculation does not solve the input-control loop. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 electrical characteristics</a> · <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/power.html">Nordic USB supply limits</a></p>
 <p>The ten local power paths meet their project width and length limits. The programmed charge current remains 357.06 / 402.71 / 445.63 mA min / typ / max with R40 at 2.21 kΩ. The approved supply range of the complete pack must cover 4.16–4.23 V. At an assumed U5 IN of 5.25 V, BAT of 3.10 V and OUT of 4.50 V with a 40 mA load, <code>P = (VIN−VBAT)×IBAT + (VIN−VOUT)×IOUT</code> gives about <strong>0.99 W</strong> at 445.63 mA. The standardized thermal resistance cannot predict temperature inside this case. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 charge and thermal data</a></p>
 <h2 id="ordinary-drilling-and-solder-apertures">Ordinary drilling and solder apertures</h2>
-<p>All 852 vias are mechanical through holes. Nominal drill / land sizes are 0.30 / 0.50 mm (203), 0.30 / 0.60 mm (63) and 0.40 / 0.80 mm (586). The minimum trace width is 0.127 mm. The mainboard uses the specified ordinary four-layer stack and tenting. Review the actual CAM and mask alignment with the factory. <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">JLCPCB capabilities</a></p>
+<p>All 852 vias are mechanical through holes. Nominal drill / land sizes are 0.30 / 0.50 mm (203), 0.30 / 0.60 mm (64) and 0.40 / 0.80 mm (585). The minimum trace width is 0.127 mm. The mainboard uses the specified ordinary four-layer stack and tenting. Review the actual CAM and mask alignment with the factory. <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">JLCPCB capabilities</a></p>
 <table>
 <thead>
 <tr>
@@ -92,8 +92,12 @@
 <td>Ground via at PCB (107.1368, 147.6572) mm. Gap to the respective paste and mask openings is 0.237 mm</td>
 </tr>
 <tr>
-<td>SW1.2, D2.1</td>
-<td>Nominal gaps are 0.037 mm and 0.142 mm. Verify factory drill and mask registration, especially SW1</td>
+<td>SW1.2</td>
+<td>Ground via at PCB (322.220, 122.370) mm with a 0.30 mm drill and 0.60 mm land. Both gaps increase from 0.037 mm to 0.230 mm</td>
+</tr>
+<tr>
+<td>D2.1</td>
+<td>The nominal drill-to-opening gap is 0.142 mm. Verify factory registration</td>
 </tr>
 <tr>
 <td>U5.17, U6.11</td>
@@ -101,7 +105,8 @@
 </tr>
 </tbody>
 </table>
-<p>The native check covers the drill radius and openings around SMD lands whose copper intersects a via annulus. Inspect actual tenting and the split stencil for both exposed pads. The JST SH terminals accept AWG32–28. The harness uses AWG28 within that wire-size range and needs the specified crimp quality and insulation diameter. <a href="https://jlcpcb.com/help/article/pcb-via-covering">JLCPCB via covering</a> · <a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH specification</a></p>
+<p>The SW1 drill screen uses <code>0.230 − √2 × 0.075 − 0.13 / 2 = 0.059 mm</code> of residual gap after a conservative diagonal position error and maximum radial growth from the published finished-hole diameter tolerance. Mask registration remains a factory check. Inspect actual tenting and the split stencil for both exposed pads. <a href="https://jlcpcb.com/capabilities/Capabilities">JLCPCB drill tolerances</a> · <a href="https://jlcpcb.com/help/article/pcb-via-covering">JLCPCB via covering</a> · <a href="cam-ordinary.json">Fabrication ZIP audit</a></p>
+<p>The JST SH terminals accept AWG32–28. The harness uses AWG28 within that wire-size range and needs the specified crimp quality and insulation diameter. <a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH specification</a></p>
 <h2 id="prototype-checks">Prototype checks</h2>
 <p>First use a battery simulator. Record jack, J4, J1, F1, U5 IN and U1 VBUS voltages during enumeration, charging under USB load, suspend and resume. Check typing while current folds back, then BLE on detach. Verify pack protections and the separate NTC before physical charging. Measure charger, PCB and cell temperatures on the closed first article. See the <a href="../03-bom/battery-requirements.html">battery pack</a> and <a href="../05-firmware/installation.html">firmware</a> requirements.</p>
 <p>Run <code>scripts/check_e73_corner_power.py</code> with KiCad 10 Python after regenerating the harness report. <a href="power-process.json">Current audit and calculations</a> · <a href="https://github.com/wZuck/YETI60/tree/c3872db49bbff5188b7be3fab3fa73b81b2b9028/hardware/e73-hhkb-corner/audit">CORNER-04 comparison and combined trial</a></p>

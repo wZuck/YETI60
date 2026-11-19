@@ -2,16 +2,16 @@
   "status": "source-bound-retainer-placement-plans-generated",
   "physical_verification": false,
   "source_sha256": {
-    "hardware/e73-hhkb-corner/audit/retention-study.json": "694421fc4085fa27a585166b575d24e77e169fe43c7cbc2f70790866f9c8f4cd",
-    "hardware/e73-hhkb-corner/audit/retention-prints.json": "87ac2bde682bcf9e6e1e1d3d2f9c90d62a57463f7ae8cbb7b5b5d4d7d98f8e29",
-    "hardware/e73-hhkb-corner/audit/harness-study.json": "266c12e49947cacf98984ff8c4a62f36274e72352337d426b86beeb9e5d64440",
-    "scripts/draw_e73_corner_retention.py": "ebc8334b989407b6181ad34d30be78407dc4767241fbc6c5b3b95801ae5b2d7f",
+    "hardware/e73-hhkb-corner/audit/retention-study.json": "887d80b2651426f44b0ceb7100f6ceefad7e98e202e601f993b2e0c140e6addd",
+    "hardware/e73-hhkb-corner/audit/retention-prints.json": "de5bb4d8676dfffac1d4980910b730a044e6512c9937f041f431da25baff94a3",
+    "hardware/e73-hhkb-corner/audit/harness-study.json": "d6f8896f10b3fcc61641040b93f9c29477d53a84bfb5af2615d74c9278a850c1",
+    "scripts/draw_e73_corner_retention.py": "533e094d433acd04432bce8e51f935d3c96cd015ed778ae2690e3cbfff424827",
     "scripts/e73_corner_harness_paths.py": "d8d9e29d0d3654526705790a46d43d37531a6a975e12cd6f4ff70c30dbf5c464"
   },
   "outputs": {
-    "docs/engineering/images/e73-retention.png": "c706d55385bc9097f77f82cc1c4b1a1168393286b2a805145ddf9dcf6907465c",
-    "docs/engineering/images/e73-retention.svg": "2d2e6e446b1b5318a10d840c668e0b4e545d571d1a7639a2271a1c9cf82126df",
-    "docs/engineering/images/e73-retention.zh-CN.png": "ee11a1a4f0c4b2bcf7b1c328ffc5e84907aa9894decf9ec0130a05b44569bc5e",
-    "docs/engineering/images/e73-retention.zh-CN.svg": "3ce1c37d8cb05141aab202ec3c97715cb81322ce20781f756c214872c0c40bba"
+    "docs/engineering/images/e73-retention.png": "02d0fa55b3ae4eee3f05151dc104d06295ccc67bc7e4046e8b3d4a07614b5060",
+    "docs/engineering/images/e73-retention.svg": "5db25259fd26354d131ea11870c687a4300ec48b41df4711ee70f5425ef8fc10",
+    "docs/engineering/images/e73-retention.zh-CN.png": "13cebc13ee1217288f963e8916b9a2c3cfa723ad59cfd267035e88c307c1e802",
+    "docs/engineering/images/e73-retention.zh-CN.svg": "81e1789fff6d350966de2858c8438aa7307d5bfc12337a82254f799752879a80"
   }
 }

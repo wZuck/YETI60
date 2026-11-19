@@ -32,7 +32,7 @@
 
 JLC 普通工艺参考：[制造能力](https://jlcpcb.com/capabilities/pcb-capabilities/)、[叠层](https://jlcpcb.com/impedance)。选项以实际报价核对。本说明和无错误 DRC 均不能替代工厂可制造性审核。
 
-CORNER-05 已将 C42、C48 的接地钻孔移出阻焊与锡膏开窗，并重布三段 USB 供电走线。SW1.2 的钻孔到阻焊开窗标称距离为 0.037 mm。仅按嘉立创公布的 ±0.075 mm 孔位公差计算，就可能耗尽这段间距。下单前请工厂复核该处及 U5、U6 的阻焊岛。[嘉立创钻孔公差](https://jlcpcb.com/capabilities/Capabilities) · [本版电源及工艺](../06-validation/power-process.zh-CN.md)
+CORNER-06 移动了 SW1.2 的接地过孔及短接线，钻孔到阻焊与锡膏开窗的标称距离均增至 0.230 mm。按保守的孔位与成品孔径公差计算，剩余 0.059 mm 供其他相对偏移使用。下单前请工厂确认阻焊对位和 U5、U6 的阻焊岛。[嘉立创钻孔公差](https://jlcpcb.com/capabilities/Capabilities) · [本版电源及工艺](../06-validation/power-process.zh-CN.md)
 
 ## 机械文件发哪些
 

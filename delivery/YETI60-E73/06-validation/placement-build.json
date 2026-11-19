@@ -6927,6 +6927,14 @@
     {
       "uuid": "fdc08169-84d6-4216-93b5-a166267d1af3",
       "net": "USB_5V"
+    },
+    {
+      "uuid": "855c8e9c-6506-4b78-9427-336f583cb6f7",
+      "net": "GND"
+    },
+    {
+      "uuid": "d7990fa7-e065-4db3-9c82-ebd8246d6e0b",
+      "net": "GND"
     }
   ],
   "relocated_cluster": [
@@ -6938,8 +6946,8 @@
   ],
   "module_rotation_deg": 0,
   "source_sha256": {
-    "hardware/e73-corner-spec.json": "c29d651caf43c067a3e8c0f06e943b962719b85e5688216b492a3f0896d56a02",
-    "scripts/build_e73_corner.py": "c003a4d08aead7d5359abf2c32255d232d467d5d0fd877dc0c4fe2f4ca387dba",
+    "hardware/e73-corner-spec.json": "d0f457d9a376f782d4cde0560417ca22cd179fe0b52dd974be96ff709d6fe89e",
+    "scripts/build_e73_corner.py": "48971cf640d6f24d47e74b606f8ec4019fff79f41874dd88c517da1ea03cc4b3",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "scripts/check_schematic_current.py": "908fc7181c616685f2afcc2fa93223518ea83be03ed1a401c7dac8c0dfda33aa",
     "scripts/screen_yeti60_interference.py": "fb3bc69b0a34f40536fb759c07a3448455326829ad26d1aef31959871ccc2ee5",
@@ -7142,9 +7150,11 @@
     "hardware/e73-corner-j5-repair.json": "5312eb764c41805ec619efd5cbee5412a6814a63031f628fe36ab5f038f7cb5a",
     "scripts/e73_corner_connector_repair.py": "91af121d88658ef0cb6b8d0d6303d10e2442d2a1add2d754c4d83a3871980781",
     "hardware/e73-corner-charge-trial.json": "a3c1d24e28a51af9baadcf5bae9e7eac23e5a561e71f6df2dcc1568681112161",
-    "scripts/e73_corner_charge_repair.py": "b6df37743c7d6e9e490626290ed1b71cd8ff24dd4ef3cce2495864d6f475f738"
+    "scripts/e73_corner_charge_repair.py": "b6df37743c7d6e9e490626290ed1b71cd8ff24dd4ef3cce2495864d6f475f738",
+    "hardware/e73-corner-sw1-repair.json": "9da76b459d21424f8d2c92ad25f643d7ab776dc14e42558f5aee7234dd77c7ae",
+    "scripts/e73_corner_switch_repair.py": "6cfe96eb61598c3ce7c65e3a51f195c6cb86501e9085fdd501f9d1ff0c47cadb"
   },
-  "pcb_sha256": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
+  "pcb_sha256": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
   "open_gates": [
     "Native electrical routing and DRC/parity",
     "USB reference-ground closure and new C5 harness",

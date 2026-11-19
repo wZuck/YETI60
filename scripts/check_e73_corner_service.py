@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Screen CORNER-05 unplugging and lift motion against current installed CAD."""
+"""Screen CORNER-06 unplugging and lift motion against current installed CAD."""
 
 import hashlib
 from itertools import product

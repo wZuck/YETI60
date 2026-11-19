@@ -270,11 +270,12 @@ def check(archive):
 
     baked_power = json.loads(POWER.read_text())
     assert baked_power["source_sha256"][str(BOARD.relative_to(ROOT))] == sha(BOARD)
-    switch = next(row for row in baked_power["fabrication_geometry"]["annulus_overlaps_SMD_lands"]
-                  if (row["reference"], row["pad"]) == ("SW1", "2"))
-    gap = switch["same_footprint_drill_to_aperture_mm"]["B.Mask"]
-    # Screen against position tolerance alone on the nominal CAD geometry.
-    # Finished hole diameter and mask registration are separate tolerances.
+    switch = baked_power["repaired_apertures"]["SW1"]
+    gap = switch["nominal_drill_to_own_opening_mm"]["B.Mask"]
+    # Screen a conservative diagonal position error and half the finished-hole
+    # diameter growth. The mask registration tolerance is a separate gate.
+    drill_budget = math.hypot(.075, .075) + .13 / 2
+    assert gap > drill_budget
     return {
         "status": "cam-geometry-matches-native-pcb",
         "source_sha256": {str(p.relative_to(ROOT)): sha(p) for p in (BOARD, PROFILE, POWER, Path(__file__))},
@@ -300,8 +301,9 @@ def check(archive):
             "via_uuid": switch["via_uuid"],
             "nominal_native_mask_gap_mm": round(gap, 6),
             "published_drill_position_tolerance_mm": .075,
-            "gap_after_drill_position_tolerance_only_mm": round(gap - .075, 6),
-            "status": "factory-confirmation-open" if gap < .075 else "drill-position-screen-passed",
+            "published_maximum_positive_hole_diameter_tolerance_mm": .13,
+            "gap_after_drill_position_and_size_screen_mm": round(gap - drill_budget, 6),
+            "status": "drill-tolerance-screen-passed-mask-registration-open",
         },
         "production_approved": False,
         "capabilities": "https://jlcpcb.com/capabilities/Capabilities",

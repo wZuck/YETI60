@@ -1,12 +1,12 @@
 {
   "status": "cam-geometry-matches-native-pcb",
   "source_sha256": {
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
-    "hardware/e73-hhkb-corner/audit/power-process.json": "5add99c0c1a4693cbc2944bdd32ad44c66269c9b9e655cf388a4bcade49ab788",
-    "scripts/check_e73_cam.py": "ef9bdc110e218a1c0884431d2e3002989a9c7a361dec586857f18b700fc4b995"
+    "hardware/e73-hhkb-corner/audit/power-process.json": "90f8dc652ffdf9e6c8128787f403266308815cf951aee4f0c3cbe9199fba8b70",
+    "scripts/check_e73_cam.py": "1c20936222bcf126ba45035c7f5c9bcc0204f483e345f9593dcab8b63dd190bd"
   },
-  "archive_sha256": "6eaefc131e046c3a63f5557d55d6380b586a03a8ce0ab62bca806b09e1c16375",
+  "archive_sha256": "d681f2a2185bdddaf3c8d1876e16ccf5fbcdc0366d4907ea69683aefa2fa420c",
   "ordinary_process_profile": "JLC-ordinary-4L-7628",
   "layer_roles": {
     "F_Cu.gtl": "Copper,L1,Top",
@@ -43,12 +43,12 @@
     {
       "drill": 0.3,
       "land": 0.6,
-      "copper_flashes_all_layers": 252
+      "copper_flashes_all_layers": 256
     },
     {
       "drill": 0.4,
       "land": 0.8,
-      "copper_flashes_all_layers": 2344
+      "copper_flashes_all_layers": 2340
     }
   ],
   "plated_round_component_count": 1,
@@ -69,10 +69,11 @@
   },
   "SW1_pad2_registration": {
     "via_uuid": "d7990fa7-e065-4db3-9c82-ebd8246d6e0b",
-    "nominal_native_mask_gap_mm": 0.037469,
+    "nominal_native_mask_gap_mm": 0.23,
     "published_drill_position_tolerance_mm": 0.075,
-    "gap_after_drill_position_tolerance_only_mm": -0.037531,
-    "status": "factory-confirmation-open"
+    "published_maximum_positive_hole_diameter_tolerance_mm": 0.13,
+    "gap_after_drill_position_and_size_screen_mm": 0.058934,
+    "status": "drill-tolerance-screen-passed-mask-registration-open"
   },
   "production_approved": false,
   "capabilities": "https://jlcpcb.com/capabilities/Capabilities"

@@ -2,7 +2,7 @@ English | [Chinese](BUILD.zh-CN.md)
 
 # YETI60 E73: current build and review entry
 
-The selected design is **E73 CORNER-05**, with the module on the front in the unused lower-right HHKB corner. Open the [current KiCad project](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro) and [PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb). [Revision and project-file checks](docs/build/e73-project-files.md) explain how to distinguish the historical candidates.
+The selected design is **E73 CORNER-06**, with the module on the front in the unused lower-right HHKB corner. Open the [current KiCad project](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro) and [PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb). [Revision and project-file checks](docs/build/e73-project-files.md) explain how to distinguish the historical candidates.
 
 **Engineering review; order release remains open.** Native routing/reference checks and matching firmware builds passed. The nine-conductor route, 16 rigid retainers and 17 film pieces passed bounded static checks. Retainer manufacturing/service, closed-case installation and withdrawal, supplier pack, factory CAM and first-article charging review and physical acceptance remain open. A clean DRC or a verified file manifest does not close those gates.
 

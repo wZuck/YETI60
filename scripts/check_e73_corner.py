@@ -224,6 +224,12 @@ def main():
     charge_patch_path = ROOT / s['post_route_charge_repair'] if s.get('post_route_charge_repair') else None
     charge_patch = json.loads(charge_patch_path.read_text()) if charge_patch_path else None
     charge_retired = {row['UUID'] for row in charge_patch['retired']} if charge_patch else set()
+    if s.get('post_route_switch_repair'):
+        from e73_corner_switch_repair import check_geometry
+
+        switch_patch = json.loads((ROOT / s['post_route_switch_repair']).read_text())
+        check_geometry(b, switch_patch, 'after')
+        assert {switch_patch['via_uuid'], switch_patch['segment_uuid']} <= retired
     if connector_patch:
         assert not ({row['uuid'] for row in connector_patch['retired']} - charge_retired).intersection(actual_tracks), 'Retired J5 copper survives'
     if charge_patch:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare CORNER-05 CAD meshes and native KiCad visual layers for Blender."""
+"""Prepare CORNER-06 CAD meshes and native KiCad visual layers for Blender."""
 
 import hashlib
 import json

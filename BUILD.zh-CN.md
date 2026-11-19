@@ -2,7 +2,7 @@
 
 # YETI60 E73：当前制作与审查入口
 
-当前选择 **E73 CORNER-05**，模组正面安装在标准 HHKB 未用的右下角。请打开[当前 KiCad 工程](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro)和 [PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb)。[版本及工程文件核对](docs/build/e73-project-files.zh-CN.md)说明了如何区分历史候选。
+当前选择 **E73 CORNER-06**，模组正面安装在标准 HHKB 未用的右下角。请打开[当前 KiCad 工程](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro)和 [PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb)。[版本及工程文件核对](docs/build/e73-project-files.zh-CN.md)说明了如何区分历史候选。
 
 **工程审查版，尚未放行下单。** 原生布线／参考地检查及配套固件构建通过；九根导线、16 件刚性理线件和 17 片胶膜通过静态公差检查。理线件制造工艺／拆修、完整关壳装拆、电池供应商、工厂制造预览和首件充电复核及实物验收仍待完成。原生规则检查或文件清单校验通过，不能关闭这些未完成项。
 

@@ -1,16 +1,17 @@
 {
   "status": "repaired-power-routing-and-aperture-checks-passed",
   "source_sha256": {
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
     "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
     "hardware/e73-power-repair-spec.json": "0fe91a6ff17ff29b224dcf3933eb98eea86e3efe5f252fcdaebb760f0a1c5e01",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
-    "hardware/e73-hhkb-corner/audit/harness-study.json": "266c12e49947cacf98984ff8c4a62f36274e72352337d426b86beeb9e5d64440",
-    "scripts/check_e73_corner_power.py": "5e66fde15cd04bbe6b646bc285c901b713856e8b14035e68a82408f7c1b4b774",
+    "hardware/e73-hhkb-corner/audit/harness-study.json": "d6f8896f10b3fcc61641040b93f9c29477d53a84bfb5af2615d74c9278a850c1",
+    "scripts/check_e73_corner_power.py": "9ee352cc9423c9a99ca596174ef33d92f331ce7d2621377fe018474f79617361",
     "scripts/check_yeti60_signal_paths.py": "66543ccc4c2d3c8f0bb2da9a1ccd5717f6c8e37ac6d97e300392a80d38740513",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
     "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
-    "hardware/e73-corner-charge-trial.json": "a3c1d24e28a51af9baadcf5bae9e7eac23e5a561e71f6df2dcc1568681112161"
+    "hardware/e73-corner-charge-trial.json": "a3c1d24e28a51af9baadcf5bae9e7eac23e5a561e71f6df2dcc1568681112161",
+    "hardware/e73-corner-sw1-repair.json": "9da76b459d21424f8d2c92ad25f643d7ab776dc14e42558f5aee7234dd77c7ae"
   },
   "physical_verification": false,
   "production_approved": false,
@@ -308,12 +309,12 @@
       {
         "diameter_mm": 0.6,
         "drill_mm": 0.3,
-        "count": 63
+        "count": 64
       },
       {
         "diameter_mm": 0.8,
         "drill_mm": 0.4,
-        "count": 586
+        "count": 585
       }
     ],
     "minimum_via_drill_edge_gap_mm": 0.357647,
@@ -2207,21 +2208,6 @@
         }
       },
       {
-        "reference": "SW1",
-        "pad": "2",
-        "via_uuid": "d7990fa7-e065-4db3-9c82-ebd8246d6e0b",
-        "net": "GND",
-        "xy_PCB_mm": [
-          322.362531,
-          122.337058
-        ],
-        "drill_mm": 0.4,
-        "same_footprint_drill_to_aperture_mm": {
-          "B.Mask": 0.037469,
-          "B.Paste": 0.037469
-        }
-      },
-      {
         "reference": "D2",
         "pad": "1",
         "via_uuid": "2fbc09c8-3af4-4563-8086-fe4bd03b626d",
@@ -2407,6 +2393,17 @@
       "nominal_drill_to_own_opening_mm": {
         "B.Mask": 0.23692300000000002,
         "B.Paste": 0.23692300000000002
+      }
+    },
+    "SW1": {
+      "via_uuid": "d7990fa7-e065-4db3-9c82-ebd8246d6e0b",
+      "xy_PCB_mm": [
+        322.22,
+        122.37
+      ],
+      "nominal_drill_to_own_opening_mm": {
+        "B.Mask": 0.23,
+        "B.Paste": 0.23
       }
     }
   },

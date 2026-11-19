@@ -75250,9 +75250,9 @@
 		(uuid "d7911687-855a-4cef-b415-42c8a81b0090")
 	)
 	(via
-		(at 322.362531 122.337058)
-		(size 0.8)
-		(drill 0.4)
+		(at 322.22 122.37)
+		(size 0.6)
+		(drill 0.3)
 		(layers "F.Cu" "B.Cu")
 		(free yes)
 		(capping no)
@@ -77943,7 +77943,7 @@
 		(uuid "85437bb2-9867-4b56-8a57-cc0a3f9f8cee")
 	)
 	(segment
-		(start 322.362531 122.337058)
+		(start 322.22 122.37)
 		(end 323.188 122.337)
 		(width 0.2)
 		(layer "B.Cu")

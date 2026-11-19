@@ -27,7 +27,7 @@ Coordinates are PCB top-view coordinates in millimetres, including back-mounted 
 - Restore the old upper-right wing to the original straight PCB edge in both the board and frozen outline library.
 - Replace USB data routing with a paired B.Cu path avoiding the retained side-clamp mask openings, and one ordinary through-via per data net to a short F.Cu module launch. The planned pair has 0.30 mm trace width and 0.50 mm centre spacing. These dimensions are not a certified 90 Ω stack-up. Fresh native DRC, reference connectivity and impedance review are required after all routing is complete.
 - Move the former right-edge COL14 backbone from In2.Cu to In1.Cu between existing through-via connections. This frees the adjacent In2 ground reference corridor without changing an effective sensor land or its net. The exact retired primitives and replacement path are recorded in the replay specification and checked against the actual PCB.
-- Provide 33 placement/USB escape vias and 86 final routed/repair vias: 119 newly generated ordinary 0.50/0.30 mm through-vias, both faces tented, outside SMD copper. This excludes the two relocated inherited ground vias and other inherited vias. The complete board has 852 through vias. Signal additions use B.Cu, In2.Cu and In1.Cu. The sensing electrodes retain their original footprints.
+- Provide 33 placement/USB escape vias and 86 final routed/repair vias. All 119 newly generated vias are ordinary 0.50/0.30 mm mechanical through vias, with both faces tented and the land outside SMD copper. The complete board has 852 through vias, including the three relocated inherited ground vias at C42, C48 and SW1. Signal additions use B.Cu, In2.Cu and In1.Cu. The sensing electrodes retain their original footprints.
 - Preserve the SH3 battery repair and current power-stage repair. Their earlier results do not constitute whole-board acceptance of the relocated module.
 
 ## Antenna and assembly limits
@@ -51,9 +51,9 @@ The [base routing patch](https://github.com/wZuck/YETI60/blob/master/hardware/e7
 | Ordinary vias | Same report: 33 placement vias plus 83 final routing/repair vias; all 0.50/0.30 mm through-vias, both faces tented, outside SMD copper |
 | USB and ground | [Actual-copper screen](USB-reference.json): paired-route reference, local ground stitches and whole-ground connectivity screened successfully; no impedance or physical USB acceptance |
 | Models and assembly bounds | [J4/J5/C32 models and feet](local-models.json), [body/case/plate envelopes](corner-fit.json); project-bound XY separation covers 60 NiZ housings, six stabilizer sides, three wire bands and 28 mounts; supplier plastic geometry and harness motion remain open |
-| Current power routing and fabrication | [CORNER-05 supply paths, voltage drop and paste openings](power-process.md) reviewed. Pack and charging remain first-article gates |
+| Current power routing and fabrication | [CORNER-06 supply paths, voltage drop and paste openings](power-process.md) reviewed. Pack and charging remain first-article gates |
 | Verifier fault witnesses | [Placement mutation tests](placement-faults.json) reject a wrong GPIO, sensor overlap, a removed antenna keepout and the wrong J5 orientation |
-| Firmware and fabrication | [Candidate images and source manifest](../05-firmware/manifest.json) built and host/linked-target suite passed; pre-migration root images do not match CORNER-05; no fabrication release |
+| Firmware and fabrication | [Candidate images and source manifest](../05-firmware/manifest.json) built and host/linked-target suite passed; pre-migration root images do not match CORNER-06; no fabrication release |
 | RF and battery measurements | Steel remains over the provisional antenna band; RF, EC noise, actual pack parameters, charging/discharging and thermal acceptance remain open |
 
 ## Reproduction and acceptance

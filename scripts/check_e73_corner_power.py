@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only CORNER-05 power, charge-headroom and solder-aperture review."""
+"""Read-only E73 power, charge-headroom and solder-aperture review."""
 
 import argparse
 from collections import Counter
@@ -166,9 +166,10 @@ def process_checks(board, path, power, profile):
     }
 
 
-def repaired_apertures(board, patch):
+def repaired_apertures(board, patch, switch_patch):
     moved = {'93479cbe-e898-4dfd-ae63-fa5383607b43': 'C42',
-             'd17868b1-6489-4c01-b95e-c5c196fb1bea': 'C48'}
+             'd17868b1-6489-4c01-b95e-c5c196fb1bea': 'C48',
+             switch_patch['via_uuid']: 'SW1'}
     vias = {uid(via):via for via in board.GetTracks() if isinstance(via,pcb.PCB_VIA)}
     footprints = {part.GetReference():part for part in board.GetFootprints()}
     result = {}
@@ -176,14 +177,16 @@ def repaired_apertures(board, patch):
     for identifier, ref in moved.items():
         via = vias[identifier]
         coordinates = list(pcb.ToMM(via.GetPosition()))
-        assert coordinates == list(map(float,child(expected[identifier],'at')[1:3]))
+        expected_center = (switch_patch['after']['center_PCB_mm'] if ref == 'SW1'
+                           else list(map(float,child(expected[identifier],'at')[1:3])))
+        assert coordinates == expected_center
         assert via.GetNetname() == 'GND' and pcb.ToMM(via.GetDrillValue()) == .3
         openings = {}
         for layer in (pcb.B_Mask,pcb.B_Paste):
             shapes = layer_shapes(footprints[ref],layer)
             assert not any(shape.Contains(via.GetPosition()) for shape in shapes)
             gap = pcb.ToMM(min(shape.Distance(via.GetPosition()) for shape in shapes)) - .15
-            assert gap >= .10, (ref, gap)
+            assert gap >= (.20 if ref == 'SW1' else .10), (ref, gap)
             openings[board.GetLayerName(layer)] = gap
         result[ref] = {'via_uuid':identifier,'xy_PCB_mm':coordinates,
                        'nominal_drill_to_own_opening_mm':openings}
@@ -248,7 +251,8 @@ def main():
     paths = route_checks(board,power,profile)
     process = process_checks(board,path,power,profile)
     patch_path = ROOT/'hardware/e73-corner-charge-trial.json'
-    repaired = repaired_apertures(board,load(patch_path))
+    switch_path = ROOT/'hardware/e73-corner-sw1-repair.json'
+    repaired = repaired_apertures(board,load(patch_path),load(switch_path))
     assert not any(gap < 0 for row in process['annulus_overlaps_SMD_lands']
                    for gap in row['same_footprint_drill_to_aperture_mm'].values())
     assert process['through_vias'] == 852
@@ -256,7 +260,7 @@ def main():
     assert headroom['modeled_series_at_temperature_ohm'] < .425
     source_paths = [path, path.with_suffix('.kicad_pro'), power_path, profile_path, harness_path,
                     Path(__file__), ROOT/'scripts/check_yeti60_signal_paths.py', ROOT/'scripts/kicad_sexpr.py',
-                    ROOT/'mechanical/assembly-spec.json',patch_path]
+                    ROOT/'mechanical/assembly-spec.json',patch_path,switch_path]
     digests = {str(p.relative_to(ROOT)):sha(p) for p in source_paths}
     assert sha(path) == board_hash
     document = {

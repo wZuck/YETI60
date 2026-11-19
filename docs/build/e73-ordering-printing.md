@@ -32,7 +32,7 @@ The [fabrication ZIP audit](../../delivery/YETI60-E73/06-validation/cam-ordinary
 
 JLC ordinary-process references: [capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/) and [stack-ups](https://jlcpcb.com/impedance). Availability/options must be checked against the actual quotation. Neither this document nor a clean DRC is a factory DFM approval.
 
-CORNER-05 moves the C42 and C48 ground drills outside both mask and paste openings and reroutes three USB supply spans. The nominal drill-to-mask gap at SW1.2 is 0.037 mm. Applying the published ±0.075 mm drill-position tolerance alone can consume that gap. Ask the factory to assess that location and the U5/U6 mask islands before ordering. [JLCPCB drill tolerances](https://jlcpcb.com/capabilities/Capabilities) · [Current power and process review](../engineering/e73-corner-power-process.md)
+CORNER-06 moves the SW1.2 ground via and its short connection. The nominal drill-to-mask and drill-to-paste gaps are now 0.230 mm. The conservative drill-position and finished-hole-size screen leaves 0.059 mm for additional relative shifts. Confirm mask registration and the U5/U6 mask islands with the factory before ordering. [JLCPCB drill tolerances](https://jlcpcb.com/capabilities/Capabilities) · [Current power and process review](../engineering/e73-corner-power-process.md)
 
 ## Which mechanical files to send
 

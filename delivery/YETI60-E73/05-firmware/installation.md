@@ -2,7 +2,7 @@
 
 # Firmware for the E73 lower-right PCB
 
-Use the CORNER-05 build under `hardware/e73-hhkb-corner/firmware/`, with `manifest.json` and both `releases/normal/yeti60-e73.hex` and `releases/calibrator/yeti60-e73.hex`. Root-level pre-migration images and Raytac images do not match this PCB calibration identity. The [corner review](../06-validation/corner-review.md) controls the design hold.
+Use the CORNER-06 build under `hardware/e73-hhkb-corner/firmware/`, with `manifest.json` and both `releases/normal/yeti60-e73.hex` and `releases/calibrator/yeti60-e73.hex`. Root-level pre-migration images and Raytac images do not match this PCB calibration identity. The [corner review](../06-validation/corner-review.md) controls the design hold.
 
 Reproduce after the current native routing, USB-reference and bounded-fit checks:
 

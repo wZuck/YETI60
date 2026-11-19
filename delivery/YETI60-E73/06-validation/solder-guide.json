@@ -101,13 +101,13 @@
     "12": []
   },
   "source_sha256": {
-    ".assembly-work/e73-corner/solder-map.json": "5a07c9d8908d1bdca845cccd6612d4554f218326b8fb3257daa8a447c811d66c",
+    ".assembly-work/e73-corner/solder-map.json": "abdf6d6d524e4ea69ab8577ecc7a5d2de523f277cc612c9e68ed3420b9c63ada",
     "docs/assembly/e73-corner/steps.json": "915052b04a8f455c15f0d6d249ecef53e0378d597591e7f0c63e2775d8bb7f55",
     "docs/audit/yeti60-key-geometry.json": "49d53c2e3a8a230fb679337535bdfde013d9ae934569220d4efe917968d92f24",
     "tests/audit/test_e73_solder_guide.py": "7176e80c2ad1dbbbfe73fbf78441df9a645565fdea2a686e076da4d63d38dbd1",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
     "hardware/e73-hhkb-corner/mainboard-purchase.csv": "57652fe1efdbed769da1e48b968a6e424df8cb3f7a2131e65ce7af1ea4020c1e",
-    "scripts/build_e73_solder_guide.py": "e1c12940f6249bc6717239c4517431cfe0fb111333ef62beeb190e819d4e1b36"
+    "scripts/build_e73_solder_guide.py": "940f85781c6521c5a23efa796d3f7303ceec5bd10ef35b8bbd0282e1e52014d6"
   },
   "outputs": {
     "docs/assembly/e73-corner/images/step-01.svg": "abc0693a6f2e5632d7e54de546833cbb32d168d68e7b7a2b29a05c5a6eb186f2",
@@ -137,7 +137,7 @@
     "docs/assembly/e73-corner/images/step-11.svg": "4775a124f6a6c1b22d2ffe6ecfcbf978055a91de24b12950dad661e853c7a0c0",
     "docs/assembly/e73-corner/images/step-12.svg": "1ecc4d71c01f53fdd4aa9c221f800bd7c8011b5a3c0773ea8d3ce407c4c51a43",
     "docs/assembly/e73-corner/soldering.md": "f010bb408fddaf50c19107a8818c4f51ccbd9d79e053c657580158ac9cb9be2b",
-    "docs/assembly/e73-corner/soldering.html": "ac3770f705749d20ea4c48708cc6f74f13d5f558cd86a2e23533af066051f0d2",
+    "docs/assembly/e73-corner/soldering.html": "918ac5ef4abc371faacfb682116d64497dfa025872a87e1a4b938cae7ba2cbbe",
     "docs/assembly/e73-corner/images/step-01.zh-CN.svg": "5e453612b25f70ceef822248a8b2fdef9cb0eb85ca0b8b5c020570f958c942e1",
     "docs/assembly/e73-corner/images/step-02.zh-CN.svg": "fe665f78da30cf473259e9a63800a60e923a5579a4daa24365645f88e52cbf13",
     "docs/assembly/e73-corner/images/step-02.zh-CN-detail-0.svg": "b2f8e00cefef6f3cb2bacc3a7b33119737cd0033e222efad5a2605fa003a6695",
@@ -165,7 +165,7 @@
     "docs/assembly/e73-corner/images/step-11.zh-CN.svg": "f0dedd79ba652ebbcfeeea7ee19d6de9a16c73bd03a5dc0cb46cc8c79aa47aa6",
     "docs/assembly/e73-corner/images/step-12.zh-CN.svg": "e2001a064b6ce7b28043bb293e6bdf168bdc12aed984e5a4f0bfd3e1e9f2ce51",
     "docs/assembly/e73-corner/soldering.zh-CN.md": "07609365727b2e6703b87ff589161bde1471bf35a8c1249f8db71fcd14c64e1e",
-    "docs/assembly/e73-corner/soldering.zh-CN.html": "9d1fa918d333ddd8138d9b641a8c83006dba729280ecc61e792fdf357ff36e72",
+    "docs/assembly/e73-corner/soldering.zh-CN.html": "7a6fd891b63cd259e9decdcc27c0067578c68776f0ae421c31ee74416a579b16",
     "docs/assembly/e73-corner/calibration-keys.csv": "65e9118c08335e2e45fa71830a9ce007dbfa396c7b6a7eaada7289c76fd7ff91",
     "docs/assembly/e73-corner/images/calibration.svg": "0959ebb319a9fcd799108997fe6f132e8923b19526aeef8412e700b56802acd5",
     "docs/assembly/e73-corner/images/calibration.zh-CN.svg": "6a8dc079fa14fd85a710ac5577a40ddcd3fdb1421cec8d807c2aef361f1c9716"

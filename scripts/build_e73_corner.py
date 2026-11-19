@@ -31,8 +31,7 @@ def main():
     assert sha(source / (NAME + '.kicad_pcb')) == s['source_board_sha256'], 'Review changed relocation source before rebuilding'
     out.mkdir(parents=True, exist_ok=True)
     (out / 'audit').mkdir(exist_ok=True)
-    for old in (out / 'audit').glob('*.json'):
-        old.unlink()
+    (out / 'audit/placement-build.json').unlink(missing_ok=True)
     inputs = [SPEC, Path(__file__), ROOT / 'scripts/kicad_sexpr.py', ROOT / 'scripts/check_schematic_current.py', ROOT / 'scripts/screen_yeti60_interference.py']
     for p in sorted(source.iterdir()):
         if p.is_file() and (p.suffix in ['.kicad_pcb', '.kicad_pro', '.kicad_sch', '.kicad_sym', '.xml', '.csv', '.json'] or p.name in ['sym-lib-table', 'fp-lib-table']):
@@ -275,6 +274,11 @@ def main():
         charge_patch = ROOT / s['post_route_charge_repair']
         removed.extend(apply(pcb_path, json.loads(charge_patch.read_text())))
         inputs.extend([charge_patch, ROOT/'scripts/e73_corner_charge_repair.py'])
+    if s.get('post_route_switch_repair'):
+        from e73_corner_switch_repair import apply
+        switch_patch = ROOT / s['post_route_switch_repair']
+        removed.extend(apply(pcb_path, json.loads(switch_patch.read_text())))
+        inputs.extend([switch_patch, ROOT/'scripts/e73_corner_switch_repair.py'])
     plugin = pcb.PCB_IO_MGR.FindPlugin(pcb.PCB_IO_MGR.KICAD_SEXP)
     plugin.FootprintSave(str(out / 'YAECKB.pretty'), fps['REF**'])
     # Remove the two unused sensing symbols and only their generated dedicated

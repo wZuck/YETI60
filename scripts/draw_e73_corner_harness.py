@@ -45,7 +45,7 @@ def main():
   text=['线束 / 针    自由长度 mm'if zh else'Harness / pin    Free length mm']+[f'{({"usb":"USB","power":"电源桥","battery":"电池"}[w["family"]]if zh else w["family"]):8s} {w["pin"]:>2s}     {w["free_length_mm"]:8.3f}'for w in nominal['wires']]
   text+=['','含公差绝缘外径 ≤0.65 mm；不是裁线长度'if zh else'Insulation OD incl. tolerance <=0.65 mm; not cut lengths','USB 数据对几何等长；不代表阻抗／实物验收'if zh else'USB data geometrically matched; impedance/physical tests open','M04 内部线槽；外壳外包围尺寸保持'if zh else'M04 internal channel; exterior envelope retained','工程示意；不是照片、理线件或整机装配放行'if zh else'Engineering plan, not a photo or complete assembly release']
   info.text(.01,.97,'\n'.join(text),transform=info.transAxes,va='top',fontsize=10,linespacing=1.6)
-  fig.suptitle('YETI60 / E73 / CORNER-05',x=.07,ha='left',fontweight='bold',fontsize=18);fig.subplots_adjust(top=.9,left=.07,right=.97,bottom=.07,hspace=.35,wspace=.2)
+  fig.suptitle('YETI60 / E73 / CORNER-06',x=.07,ha='left',fontweight='bold',fontsize=18);fig.subplots_adjust(top=.9,left=.07,right=.97,bottom=.07,hspace=.35,wspace=.2)
   for ext in ['png','svg']:
    target=ROOT/'docs/engineering/images'/('e73-corner-harness'+('.zh-CN'if zh else'')+'.'+ext);fig.savefig(target,dpi=160,metadata={'Date':None}if ext=='svg'else{});
    if ext=='svg':target.write_text('\n'.join(line.rstrip()for line in target.read_text().splitlines())+'\n')

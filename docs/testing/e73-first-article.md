@@ -1,6 +1,6 @@
 English | [Chinese](e73-first-article.zh-CN.md)
 
-# CORNER-05 first article
+# CORNER-06 first article
 
 Start with the bare board and the already-made C5 daughterboard. The bench stages do not require a case. Use a battery simulator for the first charging tests. The later stages require the NiZ mechanism, the specified pack and the closed case.
 
