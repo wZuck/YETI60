@@ -28,7 +28,7 @@ The charger can reduce input current at its 4.35–4.63 V input-voltage threshol
 
 At an assumed U5 IN of 5.25 V, BAT of 3.10 V and OUT of 4.50 V with a 40 mA load, `P = (VIN−VBAT)×IBAT + (VIN−VOUT)×IOUT` gives **0.99 W** at 445.63 mA. TI's 44.5 °C/W figure is for a standardized test board. It does not determine junction or cell temperature in this case. Verify closed-case temperature at the charger, PCB and battery before qualifying the charging profile. [TI BQ24074 thermal data and equation 11](https://www.ti.com/lit/ds/symlink/bq24074.pdf)
 
-For the next layout, shorten the protected 5 V path between F1 and the charger and reduce the length of the power round trip. A direct C5-to-power-stage branch needs a new harness geometry and separate verification of the USB data pair and its ground return. Keep the existing C5 board. An input-current reduction also requires a new timer and charge-termination check. For the prototype, record jack, J4, J1, F1, U5 IN and U1 VBUS voltages under load and during enumeration and suspend. Verify stable typing while charge current folds back on a weak USB source. First use a battery simulator and follow the pack supplier checks before attaching a qualified pack.
+The combined trial below shortens the three PCB supply paths. Further harness improvement would require a shorter power round trip. A direct C5-to-power-stage branch needs a new harness geometry and separate verification of the USB data pair and its ground return. Keep the existing C5 board. An input-current reduction also requires a new timer and charge-termination check. For the prototype, record jack, J4, J1, F1, U5 IN and U1 VBUS voltages under load and during enumeration and suspend. Verify stable typing while charge current folds back on a weak USB source. First use a battery simulator and follow the pack supplier checks before attaching a qualified pack.
 
 ## Fabrication and paste
 
@@ -48,3 +48,21 @@ The screen reads the copper, mask and paste geometry from the current footprint 
 ## Via relocation trial
 
 The trial uses Ø0.30 mm mechanical through drills on Ø0.50 mm via lands. C42 moves to PCB (122.120, 142.315) mm with a 0.25 mm ground link. C48 lands on the existing ground bend at (107.1368, 147.6572) mm. The minimum nominal margins to the respective mask and paste openings are 0.130 and 0.237 mm. Refilled KiCad DRC found zero errors, zero opens and zero schematic parity findings. The trial PCB is generated in a scratch directory. The selected delivery still contains the current board. See the [trial record](../../hardware/e73-hhkb-corner/audit/paste-repair-trial.json).
+
+## Combined trial results
+
+The trial combines the C42/C48 via relocation and three rerouted USB supply spans on one PCB. It preserves the fitted parts, pad geometry, outline, sensing electrodes, USB data pair and harness endpoints from CORNER-04. Added vias are ordinary Ø0.30 mm mechanical through drills.
+
+| Mainboard supply span | Current length and trace resistance | Combined trial length and trace resistance |
+|---|---:|---:|
+| J4.1 to J5.1 | 23.16 mm, 0.086 Ω | 13.55 mm, 0.015 Ω |
+| J1.1 to F1.2 | 43.81 mm, 0.057 Ω | 36.30 mm, 0.029 Ω |
+| F1.1 to U5 IN | 68.21 mm, 0.292 Ω | 52.78 mm, 0.089 Ω |
+
+At the same assumed 60 °C, included series resistance falls from **0.772 Ω to 0.423 Ω**, a 45.2% reduction. At 4.75 V at the Type-C jack and an assumed 500 mA input, U5 IN rises from 4.364 V to **4.539 V** before fuse, contact and additional board losses. The result remains below the upper 4.63 V charger DPM threshold. First-article checks must cover USB data during charge-current foldback. [TI BQ24074](https://www.ti.com/lit/ds/symlink/bq24074.pdf)
+
+The combined trial passed strict refilled DRC, schematic parity and the connected USB reference test. The nominal drill gaps to each component's own mask and paste openings are 0.130 and 0.237 mm for C42 and C48. The report records 852 ordinary through vias and 100 courtyard warnings on non-purchased geometry. The trial PCB is generated in a work directory. The delivery Gerber still describes the current board while the revised package is awaiting regeneration and validation. [Combined trial evidence](../../hardware/e73-hhkb-corner/audit/charge-feed-trial.json)
+
+The specified SSH-003T-P0.2-H terminal accepts AWG32–28. The current wire model already uses the largest listed conductor size. A larger conductor would require a different termination and new crimp and insulation-envelope checks. [JST SH specification](https://www.jst-mfg.com/product/pdf/eng/eSH.pdf)
+
+Run `scripts/study_e73_corner_charge_feed.py` with KiCad 10's Python runtime to reproduce the trial and its checks.

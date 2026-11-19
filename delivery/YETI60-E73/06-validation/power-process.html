@@ -51,7 +51,7 @@
 </table>
 <p>The charger can reduce input current at its 4.35–4.63 V input-voltage threshold. At 4.75 V, the table shows that the unabated 450–500 mA operating point has insufficient margin. The nRF52840 USB supply has a 4.35 V operating minimum. U1 uses its own branch after F1, so verify its voltage at U1 relative to local ground, separately from U5 IN. The calculation does not solve the charger feedback loop or predict disconnects. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI charger input regulation</a> · <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/power.html">Nordic USB supply limits</a></p>
 <p>At an assumed U5 IN of 5.25 V, BAT of 3.10 V and OUT of 4.50 V with a 40 mA load, <code>P = (VIN−VBAT)×IBAT + (VIN−VOUT)×IOUT</code> gives <strong>0.99 W</strong> at 445.63 mA. TI's 44.5 °C/W figure is for a standardized test board. It does not determine junction or cell temperature in this case. Verify closed-case temperature at the charger, PCB and battery before qualifying the charging profile. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 thermal data and equation 11</a></p>
-<p>For the next layout, shorten the protected 5 V path between F1 and the charger and reduce the length of the power round trip. A direct C5-to-power-stage branch needs a new harness geometry and separate verification of the USB data pair and its ground return. Keep the existing C5 board. An input-current reduction also requires a new timer and charge-termination check. For the prototype, record jack, J4, J1, F1, U5 IN and U1 VBUS voltages under load and during enumeration and suspend. Verify stable typing while charge current folds back on a weak USB source. First use a battery simulator and follow the pack supplier checks before attaching a qualified pack.</p>
+<p>The combined trial below shortens the three PCB supply paths. Further harness improvement would require a shorter power round trip. A direct C5-to-power-stage branch needs a new harness geometry and separate verification of the USB data pair and its ground return. Keep the existing C5 board. An input-current reduction also requires a new timer and charge-termination check. For the prototype, record jack, J4, J1, F1, U5 IN and U1 VBUS voltages under load and during enumeration and suspend. Verify stable typing while charge current folds back on a weak USB source. First use a battery simulator and follow the pack supplier checks before attaching a qualified pack.</p>
 <h2 id="fabrication-and-paste">Fabrication and paste</h2>
 <p>The 856 vias are mechanically drilled through all four layers. The nominal drill and land combinations are 0.30/0.50 mm (200), 0.30/0.60 mm (65) and 0.40/0.80 mm (591). The minimum via drill-edge spacing is 0.358 mm. The smallest track is 0.127 mm. The specified stack, widths and drilling are within published ordinary capability. Submit the actual CAM for a fabrication review after the solder-aperture issue is resolved. <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">JLCPCB capabilities</a></p>
 <table>
@@ -89,4 +89,36 @@
 <p><a href="power-process.json">Source-bound audit, dimensions and calculations</a>. Reproduce with KiCad 10's Python runtime using <code>python3 scripts/check_e73_corner_power.py</code>.</p>
 <h2 id="via-relocation-trial">Via relocation trial</h2>
 <p>The trial uses Ø0.30 mm mechanical through drills on Ø0.50 mm via lands. C42 moves to PCB (122.120, 142.315) mm with a 0.25 mm ground link. C48 lands on the existing ground bend at (107.1368, 147.6572) mm. The minimum nominal margins to the respective mask and paste openings are 0.130 and 0.237 mm. Refilled KiCad DRC found zero errors, zero opens and zero schematic parity findings. The trial PCB is generated in a scratch directory. The selected delivery still contains the current board. See the <a href="paste-repair-trial.json">trial record</a>.</p>
+<h2 id="combined-trial-results">Combined trial results</h2>
+<p>The trial combines the C42/C48 via relocation and three rerouted USB supply spans on one PCB. It preserves the fitted parts, pad geometry, outline, sensing electrodes, USB data pair and harness endpoints from CORNER-04. Added vias are ordinary Ø0.30 mm mechanical through drills.</p>
+<table>
+<thead>
+<tr>
+<th>Mainboard supply span</th>
+<th style="text-align:right">Current length and trace resistance</th>
+<th style="text-align:right">Combined trial length and trace resistance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J4.1 to J5.1</td>
+<td style="text-align:right">23.16 mm, 0.086 Ω</td>
+<td style="text-align:right">13.55 mm, 0.015 Ω</td>
+</tr>
+<tr>
+<td>J1.1 to F1.2</td>
+<td style="text-align:right">43.81 mm, 0.057 Ω</td>
+<td style="text-align:right">36.30 mm, 0.029 Ω</td>
+</tr>
+<tr>
+<td>F1.1 to U5 IN</td>
+<td style="text-align:right">68.21 mm, 0.292 Ω</td>
+<td style="text-align:right">52.78 mm, 0.089 Ω</td>
+</tr>
+</tbody>
+</table>
+<p>At the same assumed 60 °C, included series resistance falls from <strong>0.772 Ω to 0.423 Ω</strong>, a 45.2% reduction. At 4.75 V at the Type-C jack and an assumed 500 mA input, U5 IN rises from 4.364 V to <strong>4.539 V</strong> before fuse, contact and additional board losses. The result remains below the upper 4.63 V charger DPM threshold. First-article checks must cover USB data during charge-current foldback. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074</a></p>
+<p>The combined trial passed strict refilled DRC, schematic parity and the connected USB reference test. The nominal drill gaps to each component's own mask and paste openings are 0.130 and 0.237 mm for C42 and C48. The report records 852 ordinary through vias and 100 courtyard warnings on non-purchased geometry. The trial PCB is generated in a work directory. The delivery Gerber still describes the current board while the revised package is awaiting regeneration and validation. <a href="charge-feed-trial.json">Combined trial evidence</a></p>
+<p>The specified SSH-003T-P0.2-H terminal accepts AWG32–28. The current wire model already uses the largest listed conductor size. A larger conductor would require a different termination and new crimp and insulation-envelope checks. <a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH specification</a></p>
+<p>Run <code>scripts/study_e73_corner_charge_feed.py</code> with KiCad 10's Python runtime to reproduce the trial and its checks.</p>
 </main></html>
