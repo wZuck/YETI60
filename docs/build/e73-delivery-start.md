@@ -19,6 +19,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Assemble the NiZ mechanism and plate stabilizers | [Parts, plate and mechanism guide](key-mechanism.md) |
 | Connect SWD, install calibration firmware, calibrate all 60 keys and install normal firmware | [Firmware installation and calibration](../testing/e73-corner-firmware.md) |
 | Review electrical, fit, antenna and release limitations | [Current E73 engineering review](../engineering/e73-hhkb-corner.md) |
+| Review charging headroom, dissipation and ordinary PCB fabrication | [Current power and process review](../engineering/e73-corner-power-process.md) |
 | Browse offline | Open `index.html` in the delivery folder; no server or network is needed for bundled content |
 | Verify file provenance | Read `manifest.json`; checksums bind the copied files to their source PCB and matching firmware |
 

@@ -1,0 +1,92 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-04 power and ordinary PCB process review</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="power-process.zh-CN.html">Chinese</a></p>
+<h1 id="corner-04-power-and-ordinary-pcb-process-review">CORNER-04 power and ordinary PCB process review</h1>
+<p>The current PCB passes the ten local power trace limits. Two exposed solder apertures still intersect mechanical via drills. The USB input path also has significant series loss at the planned charging current. These findings keep the present Gerbers on engineering review.</p>
+<h2 id="local-power-stage-and-charging">Local power stage and charging</h2>
+<p>The native board connects U1 to the BQ24074's EN1, EN2 and active-low CE pins, with 100 kΩ pull-downs. SW100 controls the TPS63031 enable. The linked firmware checks cover host configuration, USB HID with charging enabled, suspend and BLE fallback. The switch-off pull-down state permits USB100 charging without firmware. See the <a href="../05-firmware/installation.html">firmware guide</a> for the linked-binary evidence and the <a href="../03-bom/battery-requirements.html">pack specification</a> for the minimum rating and independent thermal interruption.</p>
+<p>The regulator-to-inductor routes are 3.29 and 3.63 mm measured between pad centres through actual copper contacts, with 0.30 mm traces and no layer changes. The regulator input and its closest output capacitor measure 3.45 and 1.52 mm. The charger IN, BAT and OUT capacitor paths are 3.88, 3.42 and 3.05 mm. These are PCB geometry checks. Actual ripple, converter startup, capacitor effective capacitance and settling during sensing still need validation. Buy to the effective-capacitance rows in the <a href="../03-bom/mainboard-purchase.csv">BOM</a>. <a href="https://www.ti.com/lit/ds/symlink/tps63031.pdf">TI TPS63031 layout guidance</a></p>
+<p>The charger’s 2.21 kΩ setting and the published ISET factors give 357.06 / 402.71 / 445.63 mA minimum / typical / maximum programmed charge current. The 4.16–4.23 V regulation limits still govern pack selection. The cell vendor must confirm the complete protected pack and the inconsistent bare-cell charge-current data. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 characteristics</a></p>
+<h2 id="voltage-drop-and-heat">Voltage drop and heat</h2>
+<p>The positive path runs from C5 through J4 and J5, then J1, F1 and U5 IN. The four AWG28 supply and return leads total <strong>1.083 m</strong> between housing exits. Their modeled loop resistance is 0.232 Ω at 20 °C using a nominal 0.0804 mm² copper cross-section. The selected PCB positive trace route contributes 0.435 Ω, of which 0.292 Ω is between F1 output and U5 IN. Copper resistance uses <code>R = ρL/(width × thickness)</code> and the selected stack. Applying <code>R60 = R20 × (1 + 0.00393 × 40)</code> gives <strong>0.772 Ω</strong>. This screen excludes the PCB ground return, via barrels, C5 traces, both fuses, mated connectors, crimp joints and external cable losses.</p>
+<table>
+<thead>
+<tr>
+<th>Voltage measured at the Type-C jack under load</th>
+<th style="text-align:right">Assumed input current</th>
+<th style="text-align:right">Included voltage drop</th>
+<th style="text-align:right">Estimated U5 IN before omitted losses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.75 V</td>
+<td style="text-align:right">100 mA</td>
+<td style="text-align:right">0.077 V</td>
+<td style="text-align:right">4.673 V</td>
+</tr>
+<tr>
+<td>4.75 V</td>
+<td style="text-align:right">450 mA</td>
+<td style="text-align:right">0.347 V</td>
+<td style="text-align:right">4.403 V</td>
+</tr>
+<tr>
+<td>4.75 V</td>
+<td style="text-align:right">500 mA</td>
+<td style="text-align:right">0.386 V</td>
+<td style="text-align:right">4.364 V</td>
+</tr>
+<tr>
+<td>5.00 V</td>
+<td style="text-align:right">450 mA</td>
+<td style="text-align:right">0.347 V</td>
+<td style="text-align:right">4.653 V</td>
+</tr>
+<tr>
+<td>5.00 V</td>
+<td style="text-align:right">500 mA</td>
+<td style="text-align:right">0.386 V</td>
+<td style="text-align:right">4.614 V</td>
+</tr>
+</tbody>
+</table>
+<p>The charger can reduce input current at its 4.35–4.63 V input-voltage threshold. At 4.75 V, the table shows that the unabated 450–500 mA operating point has insufficient margin. The nRF52840 USB supply has a 4.35 V operating minimum. U1 uses its own branch after F1, so verify its voltage at U1 relative to local ground, separately from U5 IN. The calculation does not solve the charger feedback loop or predict disconnects. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI charger input regulation</a> · <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/power.html">Nordic USB supply limits</a></p>
+<p>At an assumed U5 IN of 5.25 V, BAT of 3.10 V and OUT of 4.50 V with a 40 mA load, <code>P = (VIN−VBAT)×IBAT + (VIN−VOUT)×IOUT</code> gives <strong>0.99 W</strong> at 445.63 mA. TI's 44.5 °C/W figure is for a standardized test board. It does not determine junction or cell temperature in this case. Verify closed-case temperature at the charger, PCB and battery before qualifying the charging profile. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 thermal data and equation 11</a></p>
+<p>For the next layout, shorten the protected 5 V path between F1 and the charger and reduce the length of the power round trip. A direct C5-to-power-stage branch needs a new harness geometry and separate verification of the USB data pair and its ground return. Keep the existing C5 board. An input-current reduction also requires a new timer and charge-termination check. For the prototype, record jack, J4, J1, F1, U5 IN and U1 VBUS voltages under load and during enumeration and suspend. Verify stable typing while charge current folds back on a weak USB source. First use a battery simulator and follow the pack supplier checks before attaching a qualified pack.</p>
+<h2 id="fabrication-and-paste">Fabrication and paste</h2>
+<p>The 856 vias are mechanically drilled through all four layers. The nominal drill and land combinations are 0.30/0.50 mm (200), 0.30/0.60 mm (65) and 0.40/0.80 mm (591). The minimum via drill-edge spacing is 0.358 mm. The smallest track is 0.127 mm. The specified stack, widths and drilling are within published ordinary capability. Submit the actual CAM for a fabrication review after the solder-aperture issue is resolved. <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">JLCPCB capabilities</a></p>
+<table>
+<thead>
+<tr>
+<th>Contact</th>
+<th>Drill-to-opening relationship in nominal PCB geometry</th>
+<th>Disposition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C42.2</td>
+<td>The Ø0.40 mm drill centre is inside both back-side openings</td>
+<td>Move the ground drill clear of the openings and reconnect C42.2. Check the competing COL2 copper on In2.Cu</td>
+</tr>
+<tr>
+<td>C48.2</td>
+<td>The Ø0.40 mm drill reaches 0.170 mm into both openings by the centre-distance screen</td>
+<td>Move the ground drill to the adjacent ground route outside the paste and mask</td>
+</tr>
+<tr>
+<td>SW1.2 and D2.1</td>
+<td>Nominal drill clearance to both apertures is 0.037 mm and 0.142 mm respectively</td>
+<td>Check drill registration and mask in factory CAM, especially the smaller SW1 margin</td>
+</tr>
+<tr>
+<td>U5.17 and U6.11</td>
+<td>Both Ø0.30 mm drills have 0.100 mm to the nearest nominal mask opening. The paste gaps are 0.150 mm and 0.167 mm</td>
+<td>Preserve mask islands and split stencil apertures, and inspect actual tenting and reflow</td>
+</tr>
+</tbody>
+</table>
+<p>The screen reads the copper, mask and paste geometry from the current footprint definitions. A negative radius-adjusted centre distance denotes intersection. For a centre inside the opening it is reported as minus the drill radius. Opening areas containing no stencil geometry, such as the unpopulated sensing electrodes, are listed separately in the raw output. Ordinary tenting needs a valid mask island. It cannot close a drill intentionally exposed by the surrounding pad opening. <a href="https://jlcpcb.com/help/article/pcb-via-covering">JLCPCB via covering options</a></p>
+<p><a href="power-process.json">Source-bound audit, dimensions and calculations</a>. Reproduce with KiCad 10's Python runtime using <code>python3 scripts/check_e73_corner_power.py</code>.</p>
+<h2 id="via-relocation-trial">Via relocation trial</h2>
+<p>The trial uses Ø0.30 mm mechanical through drills on Ø0.50 mm via lands. C42 moves to PCB (122.120, 142.315) mm with a 0.25 mm ground link. C48 lands on the existing ground bend at (107.1368, 147.6572) mm. The minimum nominal margins to the respective mask and paste openings are 0.130 and 0.237 mm. Refilled KiCad DRC found zero errors, zero opens and zero schematic parity findings. The trial PCB is generated in a scratch directory. The selected delivery still contains the current board. See the <a href="paste-repair-trial.json">trial record</a>.</p>
+</main></html>

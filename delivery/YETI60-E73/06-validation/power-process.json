@@ -1,0 +1,2429 @@
+{
+  "status": "source-bound-power-process-review-open",
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "cbe66a53abd9f4e5674115a2891e27735a093c13d25cfff900507fe63420447e",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro": "9171262be39e092c51ed3e6cdeda88321f43394c402c57bc016df5e9a9bbf00a",
+    "hardware/e73-power-repair-spec.json": "0fe91a6ff17ff29b224dcf3933eb98eea86e3efe5f252fcdaebb760f0a1c5e01",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "hardware/e73-hhkb-corner/audit/harness-study.json": "1f708152b7192e8b490125ba4e016af84c66ff2eeab0a31830f2a876d47e53dc",
+    "scripts/check_e73_corner_power.py": "a939bb4f08552551505396eb22759631ba54c231bd3cb3b26f2c17aa7b6bde37",
+    "scripts/check_yeti60_signal_paths.py": "66543ccc4c2d3c8f0bb2da9a1ccd5717f6c8e37ac6d97e300392a80d38740513",
+    "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a",
+    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81"
+  },
+  "physical_verification": false,
+  "production_approved": false,
+  "local_power_paths": {
+    "U6.4 to L1.1": {
+      "net": "BUCK_L1",
+      "contact_aware_path_mm": 3.2914794979815536,
+      "trace_width_min_mm": 0.3,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.004644914909066845,
+      "vertical_graph_edges": 0,
+      "project_limits": {
+        "max_mm": 4,
+        "min_width_mm": 0.3
+      }
+    },
+    "U6.2 to L1.2": {
+      "net": "BUCK_L2",
+      "contact_aware_path_mm": 3.6271916206129378,
+      "trace_width_min_mm": 0.3,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.0028881719677994666,
+      "vertical_graph_edges": 0,
+      "project_limits": {
+        "max_mm": 4,
+        "min_width_mm": 0.3
+      }
+    },
+    "U6.5 to C43.1": {
+      "net": "VSYS",
+      "contact_aware_path_mm": 3.453828580592719,
+      "trace_width_min_mm": 0.25,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.006805029111933539,
+      "vertical_graph_edges": 0,
+      "project_limits": {
+        "max_mm": 4,
+        "min_width_mm": 0.25
+      }
+    },
+    "U6.8 to C44.1": {
+      "net": "REG_VINA",
+      "contact_aware_path_mm": 2.334169432589637,
+      "trace_width_min_mm": 0.2,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.00574872585969219,
+      "vertical_graph_edges": 0,
+      "project_limits": {
+        "max_mm": 3,
+        "min_width_mm": 0.2
+      }
+    },
+    "U6.1 to C45.1": {
+      "net": "+3.3V",
+      "contact_aware_path_mm": 1.5186856982272505,
+      "trace_width_min_mm": 0.25,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.0029922447357071764,
+      "vertical_graph_edges": 0,
+      "project_limits": {
+        "max_mm": 3,
+        "min_width_mm": 0.25
+      }
+    },
+    "U6.1 to C46.1": {
+      "net": "+3.3V",
+      "contact_aware_path_mm": 4.990956925630382,
+      "trace_width_min_mm": 0.2,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.011295118302733349,
+      "vertical_graph_edges": 0,
+      "project_limits": {
+        "max_mm": 8.5,
+        "min_width_mm": 0.2
+      }
+    },
+    "U6.1 to U6.10": {
+      "net": "+3.3V",
+      "contact_aware_path_mm": 2.612537254782992,
+      "trace_width_min_mm": 0.2,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.006434306038922682,
+      "vertical_graph_edges": 0,
+      "project_limits": {
+        "max_mm": 5,
+        "min_width_mm": 0.2
+      }
+    },
+    "U5.13 to C40.1": {
+      "net": "USB_5V",
+      "contact_aware_path_mm": 3.877062142002777,
+      "trace_width_min_mm": 0.3,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.0053788521359152824,
+      "vertical_graph_edges": 0,
+      "project_limits": {
+        "max_mm": 4.5,
+        "min_width_mm": 0.3
+      }
+    },
+    "U5.2 to C41.1": {
+      "net": "BAT_CELL",
+      "contact_aware_path_mm": 3.4217669130421866,
+      "trace_width_min_mm": 0.25,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.0066679727520968434,
+      "vertical_graph_edges": 0,
+      "project_limits": {
+        "max_mm": 4,
+        "min_width_mm": 0.25
+      }
+    },
+    "U5.10 to C42.1": {
+      "net": "VSYS",
+      "contact_aware_path_mm": 3.051755757222582,
+      "trace_width_min_mm": 0.3,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.004022179683888365,
+      "vertical_graph_edges": 0,
+      "project_limits": {
+        "max_mm": 4,
+        "min_width_mm": 0.3
+      }
+    },
+    "J4.1 to J5.1": {
+      "net": "USB_FEED",
+      "contact_aware_path_mm": 23.155228340428284,
+      "trace_width_min_mm": 0.25,
+      "trace_layers": [
+        "B.Cu",
+        "In1.Cu",
+        "In2.Cu"
+      ],
+      "trace_only_20C_ohm": 0.08613211563945151,
+      "vertical_graph_edges": 4
+    },
+    "J1.1 to F1.2": {
+      "net": "VBUS",
+      "contact_aware_path_mm": 43.81187266838978,
+      "trace_width_min_mm": 0.35,
+      "trace_layers": [
+        "B.Cu",
+        "F.Cu"
+      ],
+      "trace_only_20C_ohm": 0.056709850509408494,
+      "vertical_graph_edges": 6
+    },
+    "F1.1 to U5.13": {
+      "net": "USB_5V",
+      "contact_aware_path_mm": 68.21106419283682,
+      "trace_width_min_mm": 0.2,
+      "trace_layers": [
+        "B.Cu",
+        "In1.Cu",
+        "In2.Cu"
+      ],
+      "trace_only_20C_ohm": 0.2917712675433511,
+      "vertical_graph_edges": 4
+    },
+    "F1.1 to U1.27": {
+      "net": "USB_5V",
+      "contact_aware_path_mm": 344.2534008203639,
+      "trace_width_min_mm": 0.2,
+      "trace_layers": [
+        "B.Cu",
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu"
+      ],
+      "trace_only_20C_ohm": 1.1125520629327437,
+      "vertical_graph_edges": 15
+    },
+    "J2.1 to U5.2": {
+      "net": "BAT_CELL",
+      "contact_aware_path_mm": 78.71279937056923,
+      "trace_width_min_mm": 0.2,
+      "trace_layers": [
+        "B.Cu",
+        "In1.Cu"
+      ],
+      "trace_only_20C_ohm": 0.2781430424155442,
+      "vertical_graph_edges": 4
+    },
+    "U5.11 to U6.5": {
+      "net": "VSYS",
+      "contact_aware_path_mm": 18.12465601952671,
+      "trace_width_min_mm": 0.25,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.033720099743559585,
+      "vertical_graph_edges": 0
+    },
+    "U1.3 to U5.6": {
+      "net": "CHG_EN1",
+      "contact_aware_path_mm": 294.80867622105154,
+      "trace_width_min_mm": 0.127,
+      "trace_layers": [
+        "B.Cu",
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu"
+      ],
+      "trace_only_20C_ohm": 1.7806989536277122,
+      "vertical_graph_edges": 7
+    },
+    "U1.7 to U5.5": {
+      "net": "CHG_EN2",
+      "contact_aware_path_mm": 286.5000257583298,
+      "trace_width_min_mm": 0.127,
+      "trace_layers": [
+        "B.Cu",
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu"
+      ],
+      "trace_only_20C_ohm": 1.5979754580446457,
+      "vertical_graph_edges": 9
+    },
+    "U1.6 to U5.4": {
+      "net": "CHG_CE_N",
+      "contact_aware_path_mm": 299.8737305222303,
+      "trace_width_min_mm": 0.127,
+      "trace_layers": [
+        "B.Cu",
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu"
+      ],
+      "trace_only_20C_ohm": 1.8414720825287536,
+      "vertical_graph_edges": 7
+    },
+    "U5.6 to R42.1": {
+      "net": "CHG_EN1",
+      "contact_aware_path_mm": 4.5751972270343115,
+      "trace_width_min_mm": 0.2,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.010899497654016776,
+      "vertical_graph_edges": 0
+    },
+    "U5.5 to R43.1": {
+      "net": "CHG_EN2",
+      "contact_aware_path_mm": 7.3842253408811915,
+      "trace_width_min_mm": 0.2,
+      "trace_layers": [
+        "B.Cu"
+      ],
+      "trace_only_20C_ohm": 0.018093934982398825,
+      "vertical_graph_edges": 0
+    },
+    "U5.4 to R44.1": {
+      "net": "CHG_CE_N",
+      "contact_aware_path_mm": 11.65473838519423,
+      "trace_width_min_mm": 0.2,
+      "trace_layers": [
+        "B.Cu",
+        "In2.Cu"
+      ],
+      "trace_only_20C_ohm": 0.051663443704081415,
+      "vertical_graph_edges": 2
+    }
+  },
+  "fabrication_geometry": {
+    "layer_thickness_mm": {
+      "F.Cu": 0.035,
+      "In1.Cu": 0.0152,
+      "In2.Cu": 0.0152,
+      "B.Cu": 0.035
+    },
+    "through_vias": 856,
+    "via_size_counts": [
+      {
+        "diameter_mm": 0.5,
+        "drill_mm": 0.3,
+        "count": 200
+      },
+      {
+        "diameter_mm": 0.6,
+        "drill_mm": 0.3,
+        "count": 65
+      },
+      {
+        "diameter_mm": 0.8,
+        "drill_mm": 0.4,
+        "count": 591
+      }
+    ],
+    "minimum_via_drill_edge_gap_mm": 0.357647,
+    "minimum_trace_width_mm": 0.127,
+    "annulus_overlaps_SMD_lands": [
+      {
+        "reference": "SW70",
+        "pad": "1",
+        "via_uuid": "68112985-c08a-47ac-858f-1aa6542b96ea",
+        "net": "COL9",
+        "xy_PCB_mm": [
+          266.700352,
+          188.307692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW70",
+        "pad": "2",
+        "via_uuid": "89658388-3966-453d-9978-f8ee73a31c64",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          266.700356,
+          190.309676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW33",
+        "pad": "1",
+        "via_uuid": "490b1592-5809-4494-9196-8fedfeaaa06a",
+        "net": "COL0",
+        "xy_PCB_mm": [
+          88.106454,
+          150.20766
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW33",
+        "pad": "1",
+        "via_uuid": "ca8c281c-6b66-4812-87ff-d0c1ed05026d",
+        "net": "COL0",
+        "xy_PCB_mm": [
+          83.34395,
+          150.20766
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW33",
+        "pad": "2",
+        "via_uuid": "db97f603-7d59-4027-a540-ffe9544c394f",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          83.343954,
+          152.209644
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW33",
+        "pad": "2",
+        "via_uuid": "ff6bb9f7-2869-4583-9958-c8f2620bb5bb",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          88.106458,
+          152.209644
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW60",
+        "pad": "1",
+        "via_uuid": "e39251f5-18c0-42da-a1da-269e1da64af1",
+        "net": "COL12",
+        "xy_PCB_mm": [
+          313.3254,
+          170.259708
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW60",
+        "pad": "2",
+        "via_uuid": "ae543beb-b4d0-4bc0-8482-b7f08cf3b5d7",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          320.469156,
+          170.259708
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW60",
+        "pad": "2",
+        "via_uuid": "e8ac74fa-54f4-4eb4-8bff-9dcf0aa7a74c",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          315.3254,
+          170.259708
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW60",
+        "pad": "3",
+        "via_uuid": "99f541e6-906d-4036-aeb8-4f2ba237e662",
+        "net": "COL13",
+        "xy_PCB_mm": [
+          322.469156,
+          170.259708
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW28",
+        "pad": "1",
+        "via_uuid": "71611922-8c20-4c0f-8796-0fd1898f7bf3",
+        "net": "COL10",
+        "xy_PCB_mm": [
+          279.987872,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW28",
+        "pad": "2",
+        "via_uuid": "f3c5b704-fbc4-450a-99b6-86002a182b8d",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          281.987872,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW43",
+        "pad": "1",
+        "via_uuid": "e0919294-651d-48c8-b68c-8e0bad74821a",
+        "net": "COL10",
+        "xy_PCB_mm": [
+          284.750376,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW43",
+        "pad": "2",
+        "via_uuid": "76326990-d64c-4464-ba26-b31b7d77a925",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          286.750376,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW10",
+        "pad": "1",
+        "via_uuid": "703cb30e-c2dc-46b9-a5c3-d309a6887d0b",
+        "net": "COL8",
+        "xy_PCB_mm": [
+          234.362576,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW10",
+        "pad": "2",
+        "via_uuid": "f6266393-6f6f-4038-8440-a6ac6ad68192",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          232.362576,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW17",
+        "pad": "1",
+        "via_uuid": "1ca0f4e9-0d21-44b2-b3bd-f7dc6e507b02",
+        "net": "COL14",
+        "xy_PCB_mm": [
+          346.662928,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW17",
+        "pad": "2",
+        "via_uuid": "01bfcfa2-6b30-4391-acf6-503f5c0f75bf",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          348.662928,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW11",
+        "pad": "1",
+        "via_uuid": "5f9bc2b5-cb71-4dc3-98d5-0ffa3465602e",
+        "net": "COL9",
+        "xy_PCB_mm": [
+          253.41256,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW11",
+        "pad": "2",
+        "via_uuid": "28b7aae6-c359-4b2e-bb42-cdfe1542b59c",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          251.41256,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW55",
+        "pad": "1",
+        "via_uuid": "f7d60d8b-d5a8-43b2-a096-f768c59fa7bb",
+        "net": "COL7",
+        "xy_PCB_mm": [
+          220.075088,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW55",
+        "pad": "2",
+        "via_uuid": "d11b47fd-4629-4556-86d1-4126d4eb6c3c",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          218.075088,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW24",
+        "pad": "1",
+        "via_uuid": "2da6b86e-0778-4579-a9f4-43bdee80bfc9",
+        "net": "COL6",
+        "xy_PCB_mm": [
+          203.787808,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW24",
+        "pad": "2",
+        "via_uuid": "fdd6defa-15c8-4018-8dd9-8127eaa08043",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          205.787808,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW27",
+        "pad": "1",
+        "via_uuid": "33a7599a-59de-4798-860f-4b899c7016ae",
+        "net": "COL9",
+        "xy_PCB_mm": [
+          260.937856,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW27",
+        "pad": "2",
+        "via_uuid": "4156628a-44c2-4717-bf93-6f7fef507e44",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          262.937856,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW65",
+        "pad": "1",
+        "via_uuid": "b5720574-e730-4054-8e56-a40994e80ecb",
+        "net": "COL2",
+        "xy_PCB_mm": [
+          133.35014,
+          188.309702
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW65",
+        "pad": "2",
+        "via_uuid": "db3292ae-74ef-438d-8508-48c08ddc0802",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          133.35014,
+          190.309702
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW45",
+        "pad": "1",
+        "via_uuid": "b88847f8-2a00-4ad6-a55d-8af2534ebe37",
+        "net": "COL12",
+        "xy_PCB_mm": [
+          322.850408,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW45",
+        "pad": "2",
+        "via_uuid": "f9b95bf7-e6f8-4fe3-a581-966f168b807b",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          324.850204,
+          151.20966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW47",
+        "pad": "1",
+        "via_uuid": "aa9e7235-5e6e-44c3-beeb-278eef998635",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          83.343954,
+          171.25966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW47",
+        "pad": "2",
+        "via_uuid": "117e55b3-9153-4553-b3ae-e9c3afd4c131",
+        "net": "COL0",
+        "xy_PCB_mm": [
+          83.34395,
+          169.257676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW21",
+        "pad": "1",
+        "via_uuid": "56e1be51-5326-48fd-bc74-dcd3205ca1d0",
+        "net": "COL3",
+        "xy_PCB_mm": [
+          146.63776,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW21",
+        "pad": "2",
+        "via_uuid": "bdb656aa-4d4d-4725-b671-122cbca02787",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          148.63776,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW50",
+        "pad": "1",
+        "via_uuid": "20e0efee-c77f-4d00-a130-aef560e14f84",
+        "net": "COL2",
+        "xy_PCB_mm": [
+          124.825168,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW50",
+        "pad": "2",
+        "via_uuid": "ae3c1e1c-aac0-47a4-b020-6154791a1e68",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          122.825168,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW53",
+        "pad": "1",
+        "via_uuid": "de50b7cc-177e-413e-8d1d-a43bb9f22da1",
+        "net": "COL5",
+        "xy_PCB_mm": [
+          181.97512,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW53",
+        "pad": "2",
+        "via_uuid": "89a7ac36-39ee-4f93-9d72-e643206ccc53",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          179.97512,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW59",
+        "pad": "1",
+        "via_uuid": "aa868455-bfce-48fb-9882-dcbb9e80d564",
+        "net": "COL11",
+        "xy_PCB_mm": [
+          296.275024,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW59",
+        "pad": "2",
+        "via_uuid": "806ce9eb-f666-48ee-914d-78910ffcbabb",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          294.275024,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW56",
+        "pad": "1",
+        "via_uuid": "a2d07095-d362-4bcc-b02b-e468c8c3e24b",
+        "net": "COL8",
+        "xy_PCB_mm": [
+          239.125072,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW56",
+        "pad": "2",
+        "via_uuid": "152e15ee-b8d7-468f-b965-0a67bd1eb34f",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          237.125072,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW66",
+        "pad": "1",
+        "via_uuid": "eee12bdb-2b19-44c0-aad2-942923e29bce",
+        "net": "COL4",
+        "xy_PCB_mm": [
+          161.92514,
+          188.309726
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW66",
+        "pad": "2",
+        "via_uuid": "fdfb31c3-8d3c-4ef3-8ef1-d0fd07173427",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          161.92514,
+          190.309726
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW62",
+        "pad": "1",
+        "via_uuid": "8aaf58c7-61dd-4605-b1ce-ececa425c78e",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          339.519172,
+          170.259708
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW62",
+        "pad": "2",
+        "via_uuid": "9d1bb256-5217-42ee-99bf-ab0038c8313c",
+        "net": "COL14",
+        "xy_PCB_mm": [
+          346.662928,
+          170.259708
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW62",
+        "pad": "2",
+        "via_uuid": "d2fa5d52-04e2-4ac7-ba94-b54a02072c2b",
+        "net": "COL14",
+        "xy_PCB_mm": [
+          341.519172,
+          170.259708
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW62",
+        "pad": "3",
+        "via_uuid": "85540abc-8768-4b2f-91e1-262bb2c2086a",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          348.662928,
+          170.259708
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW23",
+        "pad": "1",
+        "via_uuid": "65d61861-87ff-4885-af22-7a3177c8e5ad",
+        "net": "COL5",
+        "xy_PCB_mm": [
+          184.737792,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW23",
+        "pad": "2",
+        "via_uuid": "b98aedd9-a094-443a-9780-2ce14c0fa45e",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          186.737792,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW20",
+        "pad": "1",
+        "via_uuid": "2984c14f-438a-4b3c-853d-4efe4097154f",
+        "net": "COL2",
+        "xy_PCB_mm": [
+          127.587744,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW20",
+        "pad": "2",
+        "via_uuid": "096bd327-5c53-4ada-99db-5d438c8cebc0",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          129.587744,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW46",
+        "pad": "1",
+        "via_uuid": "e9676b50-19cf-4c16-95bb-07877f3bbd33",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          334.756668,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW46",
+        "pad": "2",
+        "via_uuid": "f3ded963-0f28-4b7a-a1be-8a44fd916777",
+        "net": "COL13",
+        "xy_PCB_mm": [
+          336.756668,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW69",
+        "pad": "1",
+        "via_uuid": "0889aa3c-1646-4901-b004-e41645a6b4d4",
+        "net": "COL7",
+        "xy_PCB_mm": [
+          238.125328,
+          188.307692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW69",
+        "pad": "1",
+        "via_uuid": "78ca89c7-24b2-4f43-9625-32520deede4f",
+        "net": "COL7",
+        "xy_PCB_mm": [
+          233.362824,
+          188.307692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW69",
+        "pad": "2",
+        "via_uuid": "70ad7270-b287-4b51-9473-c0119bcb0fad",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          238.125332,
+          190.309676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW69",
+        "pad": "2",
+        "via_uuid": "c9d1b72e-13f5-492c-ba68-7cba016aae82",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          233.362828,
+          190.309676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW29",
+        "pad": "1",
+        "via_uuid": "4996ca38-fef6-4e4f-97cd-5802e22b06ed",
+        "net": "COL11",
+        "xy_PCB_mm": [
+          299.037888,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW29",
+        "pad": "2",
+        "via_uuid": "4eabb95f-9302-4dea-a927-4159ead84f5d",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          301.037888,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW3",
+        "pad": "1",
+        "via_uuid": "22c68bec-3657-4af3-bea6-b1d34776b1f3",
+        "net": "COL1",
+        "xy_PCB_mm": [
+          101.012688,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW3",
+        "pad": "2",
+        "via_uuid": "89089169-e926-4d34-80c5-a6ff381aff46",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          99.012688,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW39",
+        "pad": "1",
+        "via_uuid": "cab0c0ab-659d-42f4-835f-d18022d0ff9c",
+        "net": "COL6",
+        "xy_PCB_mm": [
+          208.550312,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW39",
+        "pad": "2",
+        "via_uuid": "b431f446-43d1-4044-94ae-1c10d81e8191",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          210.550312,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW2",
+        "pad": "1",
+        "via_uuid": "b2a727a0-a41b-4a4d-9116-3f92d898b332",
+        "net": "COL0",
+        "xy_PCB_mm": [
+          79.962704,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW2",
+        "pad": "2",
+        "via_uuid": "ea7deafc-2ba3-413c-aace-45b362d059db",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          81.962704,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW57",
+        "pad": "1",
+        "via_uuid": "2fb700cc-85ca-4492-9c1f-d86dad6dd959",
+        "net": "COL9",
+        "xy_PCB_mm": [
+          258.175056,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW57",
+        "pad": "2",
+        "via_uuid": "558b2e3e-4421-4467-b7ef-d7132887a535",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          256.175056,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW19",
+        "pad": "1",
+        "via_uuid": "a0ab9a5a-c5c2-45fb-b820-3255e9429318",
+        "net": "COL1",
+        "xy_PCB_mm": [
+          108.537728,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW19",
+        "pad": "2",
+        "via_uuid": "92b07ea9-736e-4f3f-b3df-c4cabc5185b2",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          110.537728,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW51",
+        "pad": "1",
+        "via_uuid": "b9efd8d1-5338-42a7-8969-208cebbe35fe",
+        "net": "COL3",
+        "xy_PCB_mm": [
+          143.875152,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW51",
+        "pad": "2",
+        "via_uuid": "d12faebc-6e02-4449-840b-f37e3deccf45",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          141.875152,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW48",
+        "pad": "1",
+        "via_uuid": "46b38783-b8a2-4666-8f30-66e51c14f3c6",
+        "net": "COL0",
+        "xy_PCB_mm": [
+          92.868958,
+          169.257676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW48",
+        "pad": "2",
+        "via_uuid": "eb06b8fd-6c7f-4073-ae9f-8c96b9989a2d",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          92.868962,
+          171.25966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW7",
+        "pad": "1",
+        "via_uuid": "c4811ece-5603-492b-a340-cec38ba5d7cf",
+        "net": "COL5",
+        "xy_PCB_mm": [
+          177.212624,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW7",
+        "pad": "2",
+        "via_uuid": "d515d408-ae6d-493f-94da-07d5f237aef6",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          175.212624,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW5",
+        "pad": "1",
+        "via_uuid": "09e901d0-514e-4a0a-bf65-89d4f3f35f89",
+        "net": "COL3",
+        "xy_PCB_mm": [
+          139.112656,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW5",
+        "pad": "2",
+        "via_uuid": "ae8b9768-9284-4ceb-8e72-f13a7b13ab21",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          137.112656,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW8",
+        "pad": "1",
+        "via_uuid": "0dd465bb-9dec-4f45-8b8f-046404274cf2",
+        "net": "COL6",
+        "xy_PCB_mm": [
+          196.262608,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW8",
+        "pad": "2",
+        "via_uuid": "267fd747-a665-40ee-99f9-497a0287512a",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          194.262608,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW64",
+        "pad": "1",
+        "via_uuid": "ff1a3a4e-956d-4e92-9251-4d8817138ed4",
+        "net": "COL1",
+        "xy_PCB_mm": [
+          109.53764,
+          188.309682
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW64",
+        "pad": "2",
+        "via_uuid": "1841052a-aeca-468c-8da7-3cda9fcee802",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          109.53764,
+          190.309682
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW74",
+        "pad": "1",
+        "via_uuid": "0b05dffe-1dbe-4a19-95d9-d223471d5020",
+        "net": "COL9",
+        "xy_PCB_mm": [
+          276.22536,
+          188.307692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW74",
+        "pad": "2",
+        "via_uuid": "a9dc9d93-69be-456c-838b-3b4e0017282b",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          276.225364,
+          190.309676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW26",
+        "pad": "1",
+        "via_uuid": "47db55f0-a2cb-4ff7-ac39-01471fa80683",
+        "net": "COL8",
+        "xy_PCB_mm": [
+          241.88784,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW26",
+        "pad": "2",
+        "via_uuid": "d87506a7-e9f5-4d68-ad6b-31983caf905a",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          243.88784,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW58",
+        "pad": "1",
+        "via_uuid": "319ad8ed-e0c3-4123-8735-7b5f0e7ac358",
+        "net": "COL10",
+        "xy_PCB_mm": [
+          277.22504,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW58",
+        "pad": "2",
+        "via_uuid": "bd86c96f-1e83-48ec-9002-32c86d604003",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          275.22504,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW41",
+        "pad": "1",
+        "via_uuid": "86e96636-6931-4979-9332-ce730c4f68ff",
+        "net": "COL8",
+        "xy_PCB_mm": [
+          246.650344,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW41",
+        "pad": "2",
+        "via_uuid": "85977bb9-a65a-4c26-aab4-55f80c25c73d",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          248.650344,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW38",
+        "pad": "1",
+        "via_uuid": "5e3d21d9-a175-42ff-a5d3-06692564fbb3",
+        "net": "COL5",
+        "xy_PCB_mm": [
+          189.500296,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW38",
+        "pad": "2",
+        "via_uuid": "371761e8-69a4-4aab-98ea-d5f2a2406c2f",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          191.500296,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW30",
+        "pad": "1",
+        "via_uuid": "aeffc122-7e26-4c12-a9b9-1b2f3c55a92f",
+        "net": "COL12",
+        "xy_PCB_mm": [
+          318.087904,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW30",
+        "pad": "2",
+        "via_uuid": "261ca5a1-096e-437d-bb62-0f312d373626",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          320.087904,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW9",
+        "pad": "1",
+        "via_uuid": "72634e20-abf8-40c2-8c4f-5cc06f1c547b",
+        "net": "COL7",
+        "xy_PCB_mm": [
+          215.312592,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW9",
+        "pad": "2",
+        "via_uuid": "8102f868-e492-4ce4-9eea-660f25176909",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          213.312592,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW35",
+        "pad": "1",
+        "via_uuid": "f45f09d4-183d-462b-9168-b4491136cf0b",
+        "net": "COL2",
+        "xy_PCB_mm": [
+          132.350248,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW35",
+        "pad": "2",
+        "via_uuid": "7faee9ec-ade0-4cd2-a352-1fda22e1dd94",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          134.350248,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW25",
+        "pad": "1",
+        "via_uuid": "f617799b-58a0-45f2-a201-867992a2c605",
+        "net": "COL7",
+        "xy_PCB_mm": [
+          222.837824,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW25",
+        "pad": "2",
+        "via_uuid": "11cd7b76-e3f4-40aa-926b-cb5825cbfe4c",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          224.837824,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW54",
+        "pad": "1",
+        "via_uuid": "35f2167d-d352-46b9-b495-45f1dafb9e4f",
+        "net": "COL6",
+        "xy_PCB_mm": [
+          201.025104,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW54",
+        "pad": "2",
+        "via_uuid": "80cc4348-e190-462f-b7c5-319ff7b53dfb",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          199.025104,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW15",
+        "pad": "1",
+        "via_uuid": "3d92f122-90c9-4a80-a8c8-6b279b5bf144",
+        "net": "COL13",
+        "xy_PCB_mm": [
+          327.612912,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW15",
+        "pad": "2",
+        "via_uuid": "de3d59f6-8998-4d81-aebb-3421d87cff71",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          329.612912,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW52",
+        "pad": "1",
+        "via_uuid": "0d53c09e-534a-4a5a-8ad3-8d2b63bba2b4",
+        "net": "COL4",
+        "xy_PCB_mm": [
+          162.925136,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW52",
+        "pad": "2",
+        "via_uuid": "73d2999b-beeb-4888-a4fc-eee702277b7d",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          160.925136,
+          170.259612
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW16",
+        "pad": "1",
+        "via_uuid": "2c982613-341b-458c-bcc7-acb869c76bf7",
+        "net": "COL14",
+        "xy_PCB_mm": [
+          339.13792,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW16",
+        "pad": "2",
+        "via_uuid": "e16c2e65-9f7b-476a-b00b-d3966b211913",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          337.13792,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW71",
+        "pad": "1",
+        "via_uuid": "94bf7c8b-2cf9-46fa-a946-72c0bc8a2a3d",
+        "net": "COL10",
+        "xy_PCB_mm": [
+          295.275376,
+          188.307692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW71",
+        "pad": "1",
+        "via_uuid": "ab1b927b-eb05-4bea-a79f-d2b31572a3e3",
+        "net": "COL10",
+        "xy_PCB_mm": [
+          300.03788,
+          188.307692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW71",
+        "pad": "2",
+        "via_uuid": "98fffb42-1341-4e01-ac1a-977c91045367",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          300.037884,
+          190.309676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW71",
+        "pad": "2",
+        "via_uuid": "d9ca0cad-0409-4b84-9973-8baf8d8643d3",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          295.27538,
+          190.309676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW61",
+        "pad": "1",
+        "via_uuid": "4e121283-7d95-4d05-9820-1fb8160be8eb",
+        "net": "COL13",
+        "xy_PCB_mm": [
+          329.994164,
+          170.259708
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW61",
+        "pad": "2",
+        "via_uuid": "26543a95-9bd6-4b62-921d-a9fae9304301",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          331.994164,
+          170.259708
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW36",
+        "pad": "1",
+        "via_uuid": "16ab3e79-9127-41e5-b111-d058b106ce60",
+        "net": "COL3",
+        "xy_PCB_mm": [
+          151.400264,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW36",
+        "pad": "2",
+        "via_uuid": "254f8536-c8dd-424c-8874-50a54cd9b8b4",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          153.400264,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW75",
+        "pad": "1",
+        "via_uuid": "39d86270-6be1-4ad8-b6c3-97e97b08fe77",
+        "net": "COL6",
+        "xy_PCB_mm": [
+          214.312808,
+          188.307692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW75",
+        "pad": "2",
+        "via_uuid": "38fd45a4-5892-411d-add4-2149db9beda0",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          214.312812,
+          190.309676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW42",
+        "pad": "1",
+        "via_uuid": "2e30293f-4ea4-4da4-9bb7-d61539888069",
+        "net": "COL9",
+        "xy_PCB_mm": [
+          265.70036,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW42",
+        "pad": "2",
+        "via_uuid": "ec6c312a-4dc7-474f-87fb-fdf9b8e8daed",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          267.70036,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW49",
+        "pad": "1",
+        "via_uuid": "26306151-456c-414b-9b16-8f782e2318da",
+        "net": "ROW3",
+        "xy_PCB_mm": [
+          104.775222,
+          171.25966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW49",
+        "pad": "2",
+        "via_uuid": "78b3c321-54cc-4e8e-ac87-4a4dedbfe433",
+        "net": "COL1",
+        "xy_PCB_mm": [
+          104.775218,
+          169.257676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW63",
+        "pad": "1",
+        "via_uuid": "1aef9e52-78b3-428d-ba45-73ff32576a62",
+        "net": "COL0",
+        "xy_PCB_mm": [
+          85.72514,
+          188.309662
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW63",
+        "pad": "2",
+        "via_uuid": "386586be-2d81-40dd-8305-f26687d2ecde",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          85.72514,
+          190.309662
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW67",
+        "pad": "1",
+        "via_uuid": "05133edf-4903-4ee0-ad5d-2f143941eee3",
+        "net": "COL5",
+        "xy_PCB_mm": [
+          176.212768,
+          188.309582
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW67",
+        "pad": "2",
+        "via_uuid": "18d39f41-c2a2-4ecb-8e71-924fd8a98f1e",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          176.212768,
+          190.309582
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW12",
+        "pad": "1",
+        "via_uuid": "cf1a1d22-4009-4940-a28d-dce229eb4b2b",
+        "net": "COL10",
+        "xy_PCB_mm": [
+          272.462544,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW12",
+        "pad": "2",
+        "via_uuid": "85bff60c-df74-423c-b002-eff292001747",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          270.462544,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW22",
+        "pad": "1",
+        "via_uuid": "3fbc49fb-4fa3-41a4-80ce-f772e291892d",
+        "net": "COL4",
+        "xy_PCB_mm": [
+          165.687776,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW22",
+        "pad": "2",
+        "via_uuid": "2b1b9236-0042-49d4-9185-3a7208d24133",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          167.687776,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW14",
+        "pad": "1",
+        "via_uuid": "af5e43ce-cde1-437c-8903-9c7ef75d2e15",
+        "net": "COL12",
+        "xy_PCB_mm": [
+          310.562512,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW14",
+        "pad": "2",
+        "via_uuid": "fecbdade-0b9e-4426-8cec-91e45032a113",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          308.562512,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW4",
+        "pad": "1",
+        "via_uuid": "c47f88be-c131-4555-a653-1e9dceb81b6a",
+        "net": "COL2",
+        "xy_PCB_mm": [
+          120.062672,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW4",
+        "pad": "2",
+        "via_uuid": "9d7ac704-36ce-4d24-8557-2ef1565ab113",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          118.062672,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW31",
+        "pad": "1",
+        "via_uuid": "ec84ecdd-9087-468a-afb1-76f7535951ca",
+        "net": "COL13",
+        "xy_PCB_mm": [
+          344.9,
+          130.949999
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW31",
+        "pad": "2",
+        "via_uuid": "cccb4746-dff7-4061-a565-7934b4d27ba4",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          342.7,
+          133.159628
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW37",
+        "pad": "1",
+        "via_uuid": "c32fe8c9-afcc-41b0-a09f-dd9dc92ac24d",
+        "net": "COL4",
+        "xy_PCB_mm": [
+          170.45028,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW37",
+        "pad": "2",
+        "via_uuid": "dd8ea7de-3024-4d9a-b6e6-3ee8e3e048e4",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          172.45028,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW40",
+        "pad": "1",
+        "via_uuid": "92850d0c-ea61-4640-97e2-57bb5756aecb",
+        "net": "COL7",
+        "xy_PCB_mm": [
+          227.600328,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW40",
+        "pad": "2",
+        "via_uuid": "d49fae17-31e7-4017-9c36-a55a5d468b0c",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          229.600328,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW44",
+        "pad": "1",
+        "via_uuid": "f7a6a2ee-8364-4a17-8d86-e24a499cbd40",
+        "net": "COL11",
+        "xy_PCB_mm": [
+          303.800392,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW44",
+        "pad": "2",
+        "via_uuid": "c6130a1a-a7fa-4c9b-a79f-6e4ba85ee37e",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          305.800392,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW34",
+        "pad": "1",
+        "via_uuid": "cd612b53-40cc-4c28-8bfd-cf821a473238",
+        "net": "COL1",
+        "xy_PCB_mm": [
+          113.300232,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW34",
+        "pad": "2",
+        "via_uuid": "8df4908c-1f47-416f-a2d5-0862c62bc64d",
+        "net": "ROW2",
+        "xy_PCB_mm": [
+          115.300232,
+          151.209692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW32",
+        "pad": "1",
+        "via_uuid": "2e257ab5-e64d-494b-8742-051eb294afd8",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          345.28167,
+          140.682652
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW32",
+        "pad": "2",
+        "via_uuid": "bbea47a4-5654-411d-a6e1-76f1af73c13d",
+        "net": "COL13",
+        "xy_PCB_mm": [
+          345.281454,
+          142.68466
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW18",
+        "pad": "1",
+        "via_uuid": "f3d75d3c-c01b-4ce1-951e-ae89213e0ee7",
+        "net": "COL0",
+        "xy_PCB_mm": [
+          84.725208,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW18",
+        "pad": "2",
+        "via_uuid": "8c44ce99-fc3d-4df0-8882-e5cfdaf456b8",
+        "net": "ROW1",
+        "xy_PCB_mm": [
+          86.725208,
+          132.159676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW6",
+        "pad": "1",
+        "via_uuid": "633c455a-bc58-4c22-bb9f-48df5a326df9",
+        "net": "COL4",
+        "xy_PCB_mm": [
+          158.16264,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW6",
+        "pad": "2",
+        "via_uuid": "42443cd1-d9ff-4c96-a827-7dc5a9b76fda",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          156.16264,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW13",
+        "pad": "1",
+        "via_uuid": "52e5ce6c-88fb-4735-a582-6c1ab78edf9e",
+        "net": "COL11",
+        "xy_PCB_mm": [
+          291.512528,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW13",
+        "pad": "2",
+        "via_uuid": "5f83e524-2581-4484-ad61-e319d44fb438",
+        "net": "ROW0",
+        "xy_PCB_mm": [
+          289.512528,
+          113.10966
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW68",
+        "pad": "1",
+        "via_uuid": "7089eb89-f3cb-4bc5-99b1-90ba6bfac90d",
+        "net": "COL6",
+        "xy_PCB_mm": [
+          200.025296,
+          188.307692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW68",
+        "pad": "1",
+        "via_uuid": "d816f272-ebbb-4aab-9b1a-d75cfe60a51f",
+        "net": "COL6",
+        "xy_PCB_mm": [
+          204.7878,
+          188.307692
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW68",
+        "pad": "2",
+        "via_uuid": "851a388d-230f-44c8-84a0-7cd84428d122",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          204.787804,
+          190.309676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "SW68",
+        "pad": "2",
+        "via_uuid": "870fb2cf-6866-4773-a7ff-e97d524d6c9b",
+        "net": "ROW4",
+        "xy_PCB_mm": [
+          200.0253,
+          190.309676
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {}
+      },
+      {
+        "reference": "U5",
+        "pad": "17",
+        "via_uuid": "1df4dc1f-1f79-484a-8421-f92423a6f7d0",
+        "net": "GND",
+        "xy_PCB_mm": [
+          117.65,
+          145.0
+        ],
+        "drill_mm": 0.3,
+        "same_footprint_drill_to_aperture_mm": {
+          "B.Mask": 0.1,
+          "B.Paste": 0.15
+        }
+      },
+      {
+        "reference": "C48",
+        "pad": "2",
+        "via_uuid": "d17868b1-6489-4c01-b95e-c5c196fb1bea",
+        "net": "GND",
+        "xy_PCB_mm": [
+          107.454177,
+          147.340215
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {
+          "B.Mask": -0.16978500000000002,
+          "B.Paste": -0.16978500000000002
+        }
+      },
+      {
+        "reference": "SW1",
+        "pad": "2",
+        "via_uuid": "d7990fa7-e065-4db3-9c82-ebd8246d6e0b",
+        "net": "GND",
+        "xy_PCB_mm": [
+          322.362531,
+          122.337058
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {
+          "B.Mask": 0.037469,
+          "B.Paste": 0.037469
+        }
+      },
+      {
+        "reference": "C42",
+        "pad": "2",
+        "via_uuid": "93479cbe-e898-4dfd-ae63-fa5383607b43",
+        "net": "GND",
+        "xy_PCB_mm": [
+          122.634684,
+          142.577802
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {
+          "B.Mask": -0.2,
+          "B.Paste": -0.2
+        }
+      },
+      {
+        "reference": "D2",
+        "pad": "1",
+        "via_uuid": "2fbc09c8-3af4-4563-8086-fe4bd03b626d",
+        "net": "GND",
+        "xy_PCB_mm": [
+          315.51642,
+          122.188229
+        ],
+        "drill_mm": 0.4,
+        "same_footprint_drill_to_aperture_mm": {
+          "B.Mask": 0.14246399999999998,
+          "B.Paste": 0.14246399999999998
+        }
+      },
+      {
+        "reference": "U6",
+        "pad": "11",
+        "via_uuid": "bd7c6e02-592d-46f4-91c6-9f93a4948ee5",
+        "net": "GND",
+        "xy_PCB_mm": [
+          133.0,
+          140.8
+        ],
+        "drill_mm": 0.3,
+        "same_footprint_drill_to_aperture_mm": {
+          "B.Mask": 0.1,
+          "B.Paste": 0.16734600000000002
+        }
+      }
+    ]
+  },
+  "charge_headroom": {
+    "copper_temperature_C_assumed": 60,
+    "AWG28_copper_area_mm2_assumed": 0.0804,
+    "four_wire_free_lengths_sum_mm": 1082.7520651107043,
+    "wire_loop_20C_ohm": 0.23217220898642466,
+    "positive_PCB_centerline_20C_ohm": 0.4346132336922111,
+    "modeled_series_at_temperature_ohm": 0.7716041142677172,
+    "excluded": [
+      "PCB ground return and via barrels",
+      "C5 traces",
+      "both fuses",
+      "mated contacts and crimp joints",
+      "external USB cable and source droop",
+      "U1 dedicated branch voltage drop and ground differential"
+    ],
+    "input_headroom_sensitivity": [
+      {
+        "type_c_input_V_assumed": 4.75,
+        "current_A_assumed": 0.1,
+        "included_path_drop_V": 0.07716041142677173,
+        "U5_IN_V_before_unmodeled_losses": 4.672839588573228,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.04283958857322823,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.3228395885732285
+      },
+      {
+        "type_c_input_V_assumed": 4.75,
+        "current_A_assumed": 0.45,
+        "included_path_drop_V": 0.3472218514204728,
+        "U5_IN_V_before_unmodeled_losses": 4.402778148579527,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": -0.2272218514204729,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.05277814857952734
+      },
+      {
+        "type_c_input_V_assumed": 4.75,
+        "current_A_assumed": 0.5,
+        "included_path_drop_V": 0.3858020571338586,
+        "U5_IN_V_before_unmodeled_losses": 4.3641979428661415,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": -0.2658020571338584,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.014197942866141844
+      },
+      {
+        "type_c_input_V_assumed": 5,
+        "current_A_assumed": 0.1,
+        "included_path_drop_V": 0.07716041142677173,
+        "U5_IN_V_before_unmodeled_losses": 4.922839588573228,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.2928395885732282,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.5728395885732285
+      },
+      {
+        "type_c_input_V_assumed": 5,
+        "current_A_assumed": 0.45,
+        "included_path_drop_V": 0.3472218514204728,
+        "U5_IN_V_before_unmodeled_losses": 4.652778148579527,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.02277814857952709,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.30277814857952734
+      },
+      {
+        "type_c_input_V_assumed": 5,
+        "current_A_assumed": 0.5,
+        "included_path_drop_V": 0.3858020571338586,
+        "U5_IN_V_before_unmodeled_losses": 4.6141979428661415,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": -0.015802057133858405,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.26419794286614184
+      },
+      {
+        "type_c_input_V_assumed": 5.25,
+        "current_A_assumed": 0.1,
+        "included_path_drop_V": 0.07716041142677173,
+        "U5_IN_V_before_unmodeled_losses": 5.172839588573228,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.5428395885732282,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.8228395885732285
+      },
+      {
+        "type_c_input_V_assumed": 5.25,
+        "current_A_assumed": 0.45,
+        "included_path_drop_V": 0.3472218514204728,
+        "U5_IN_V_before_unmodeled_losses": 4.902778148579527,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.2727781485795271,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.5527781485795273
+      },
+      {
+        "type_c_input_V_assumed": 5.25,
+        "current_A_assumed": 0.5,
+        "included_path_drop_V": 0.3858020571338586,
+        "U5_IN_V_before_unmodeled_losses": 4.8641979428661415,
+        "margin_to_BQ_max_DPM_V_before_unmodeled_losses": 0.2341979428661416,
+        "margin_to_nRF_VBUS_min_V_before_unmodeled_losses": 0.5141979428661418
+      }
+    ],
+    "BQ24074_dissipation_sensitivity": [
+      {
+        "IN_V": 5.25,
+        "BAT_V_assumed": 3.1,
+        "OUT_V_assumed": 4.5,
+        "OUT_A_assumed": 0.04,
+        "BAT_A_max_programmed": 0.44563279857397503,
+        "linear_loss_W_before_thermal_derating": 0.9881105169340463
+      },
+      {
+        "IN_V": 5.25,
+        "BAT_V_assumed": 3.7,
+        "OUT_V_assumed": 4.5,
+        "OUT_A_assumed": 0.04,
+        "BAT_A_max_programmed": 0.44563279857397503,
+        "linear_loss_W_before_thermal_derating": 0.7207308377896613
+      },
+      {
+        "IN_V": 5.25,
+        "BAT_V_assumed": 4.2,
+        "OUT_V_assumed": 4.5,
+        "OUT_A_assumed": 0.04,
+        "BAT_A_max_programmed": 0.44563279857397503,
+        "linear_loss_W_before_thermal_derating": 0.4979144385026737
+      }
+    ],
+    "current_A_min_typ_max": [
+      0.35706285560682766,
+      0.40271493212669685,
+      0.44563279857397503
+    ],
+    "BQ24074_VIN_DPM_min_typ_max_V": [
+      4.35,
+      4.5,
+      4.63
+    ],
+    "nRF52840_VBUS_min_V": 4.35,
+    "BQ24074_CV_min_typ_max_V": [
+      4.16,
+      4.2,
+      4.23
+    ],
+    "BQ24074_RGT_JEDEC_RthetaJA_C_per_W": 44.5
+  },
+  "references": {
+    "charger": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+    "regulator": "https://www.ti.com/lit/ds/symlink/tps63031.pdf",
+    "USB_VBUS": "https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/power.html",
+    "fabrication": "https://jlcpcb.com/capabilities/pcb-capabilities/",
+    "via_covering": "https://jlcpcb.com/help/article/pcb-via-covering"
+  }
+}

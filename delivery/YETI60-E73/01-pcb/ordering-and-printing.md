@@ -30,6 +30,8 @@ Upload the **single matching Gerber/drill ZIP**, then inspect the factory previe
 
 JLC ordinary-process references: [capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/) and [stack-ups](https://jlcpcb.com/impedance). Availability/options must be checked against the actual quotation. Neither this document nor a clean DRC is a factory DFM approval.
 
+On the current PCB, C42 and C48 ground drills intersect both paste and mask openings. Correct the board and regenerate the CAM before sending it for factory review. See the [current power and process review](../06-validation/power-process.md) for dimensions and the ordinary-process constraint.
+
 ## Which mechanical files to send
 
 | Item / net quantity | Delivery path | Manufacturing instructions |

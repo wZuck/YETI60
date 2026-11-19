@@ -82,6 +82,7 @@
 </table>
 <p>Upload the <strong>single matching Gerber/drill ZIP</strong>, then inspect the factory preview: correct board outline, four copper layers, slot/non-plated holes, sensing geometry and mask openings. Stop if it imports as two layers or the factory proposes changing the specified geometry/process. The exported position file contains 75 fitted parts; sensing electrodes, mounting holes and pogo pads are not purchased components.</p>
 <p>JLC ordinary-process references: <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">capabilities</a> and <a href="https://jlcpcb.com/impedance">stack-ups</a>. Availability/options must be checked against the actual quotation. Neither this document nor a clean DRC is a factory DFM approval.</p>
+<p>On the current PCB, C42 and C48 ground drills intersect both paste and mask openings. Correct the board and regenerate the CAM before sending it for factory review. See the <a href="../06-validation/power-process.html">current power and process review</a> for dimensions and the ordinary-process constraint.</p>
 <h2 id="which-mechanical-files-to-send">Which mechanical files to send</h2>
 <table>
 <thead>

@@ -30,6 +30,8 @@
 
 JLC 普通工艺参考：[制造能力](https://jlcpcb.com/capabilities/pcb-capabilities/)、[叠层](https://jlcpcb.com/impedance)。选项以实际报价核对。本说明和无错误 DRC 均不能替代工厂可制造性审核。
 
+当前 PCB 的 C42、C48 地过孔与锡膏及阻焊开窗相交。应先修改 PCB 并重新导出制造文件，再请工厂检查。详见[本版电源与工艺复核](../06-validation/power-process.zh-CN.md)。
+
 ## 机械文件发哪些
 
 | 零件／净数量 | 交付路径 | 制造要求 |

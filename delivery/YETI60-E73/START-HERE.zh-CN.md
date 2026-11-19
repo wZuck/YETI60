@@ -19,6 +19,7 @@
 | 安装 NiZ 机构和钢板卫星轴 | [材料、定位板及机构说明](04-assembly/key-mechanism.zh-CN.md) |
 | 接 SWD、安装校准固件、校准全部 60 键、安装正式功能固件 | [固件安装与校准教程](05-firmware/installation.zh-CN.md) |
 | 查看电气、装配、天线与放行边界 | [当前 E73 工程审查](06-validation/corner-review.zh-CN.md) |
+| 核对充电压降、发热及普通制板问题 | [本版电源与工艺复核](06-validation/power-process.zh-CN.md) |
 | 离线阅读 | 用浏览器打开交付目录的 `index.zh-CN.html`；包内内容不需要服务器或联网 |
 | 校验文件来源与一致性 | 查看 `manifest.json`；校验值将复制文件绑定到来源 PCB 及配套固件 |
 
