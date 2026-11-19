@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M05 access prototype for E73</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../../index.html">Back to delivery index</a></header><p>English | <a href="print-guide.zh-CN.html">Chinese</a></p>
+<h1 id="m05-access-prototype-for-e73">M05 access prototype for E73</h1>
+<p>M05 adds two removable covers to the CORNER-05 mechanical trial. It retains the M04 outer dimensions and the location of the footpads, upper shell, steel plate and C5 daughterboard. The original right rear foot recess is part of the J4 cover, so its footpad comes off with that cover. The current M04 files remain the baseline in the main ordering table.</p>
+<p><img src="../../06-validation/m05-access-exploded.png" alt="M05 underside with the J2 and J4 covers removed" /></p>
+<h2 id="files-and-parts-for-one-prototype">Files and parts for one prototype</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th style="text-align:right">Quantity</th>
+<th>File or specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M05 bottom</td>
+<td style="text-align:right">1</td>
+<td><a href="bottom-m05-REVIEW.stl">Print STL</a> · <a href="bottom-m05-REVIEW.step">STEP</a></td>
+</tr>
+<tr>
+<td>J2 cover</td>
+<td style="text-align:right">1</td>
+<td><a href="cover-J2-REVIEW.stl">Print STL</a> · <a href="cover-J2-REVIEW.step">STEP</a></td>
+</tr>
+<tr>
+<td>J4 cover</td>
+<td style="text-align:right">1</td>
+<td><a href="cover-J4-REVIEW.stl">Print STL</a> · <a href="cover-J4-REVIEW.step">STEP</a></td>
+</tr>
+<tr>
+<td>Cover screws</td>
+<td style="text-align:right">4</td>
+<td>M2 × 0.4, 4 mm under the head, low socket head with flat bearing face, head Ø ≤3.90 mm and height ≤1.50 mm. The SUNCO M2 low-head series gives a 3.8 × 1.3 mm nominal head. <a href="https://th.misumi-ec.com/en/vona2/detail/221005676582/?Tab=codeList">Manufacturer dimensions</a></td>
+</tr>
+<tr>
+<td>Cover inserts</td>
+<td style="text-align:right">4</td>
+<td>M2 × 0.4 knurled brass, Ø3.2 × 2.5 mm, same size as the C5 insert specification. Prepare four extra and use the cover bore depth in this guide.</td>
+</tr>
+<tr>
+<td>Adhesive and footpads</td>
+<td style="text-align:right">As required</td>
+<td>Use the case's cold-bond adhesive for the inserts. Use the four footpads from the keyboard materials list, one on the removable J4 cover.</td>
+</tr>
+</tbody>
+</table>
+<p>Print at 100% in millimetres using tough engineering SLA resin. Make one of each of the three parts and choose either STEP or STL for each part. Both formats use the same case coordinates. Inspect the seating faces, foot recess and blind bores after the resin is fully post-cured. Choose supports and drainage before printing and keep support damage off those faces.</p>
+<h2 id="fit-the-covers-before-installing-electronics">Fit the covers before installing electronics</h2>
+<ol>
+<li>Dry-fit each cover to its matching pocket and confirm that it comes off straight down. The nominal perimeter clearance is 0.35 mm per side and the exterior surfaces are flush in CAD. Keep the cover and the right rear foot recess flush when finishing the parts.</li>
+<li>Finish the four blind insert bores to <strong>Ø3.35 ±0.05 mm</strong>. Set the depth stop to <strong>2.90 mm from the seating shelf at the bore axis</strong>. Cold-bond the inserts with the outward face recessed <strong>0.30 mm</strong> at that axis. Bond and cure the empty shell before installing the battery or PCB.</li>
+<li>Confirm the screws clamp each cover and clear the blind bottom. CAD gives <strong>2.15 mm</strong> nominal thread overlap and <strong>0.45 mm</strong> at the screw tip. Inspect the actual head envelope and tip clearance. Check for cover flex, stripped resin, loose inserts and rocking with the feet fitted.</li>
+<li>Attach the right rear footpad wholly within the J4 cover recess. Keep both screw heads exposed. Remove the two covers to gain access to J2 and J4. Open-shell trials use an inert gauge in place of the battery and unpowered harnesses.</li>
+</ol>
+<p>The <a href="../../06-validation/service-case-m05.json">CAD report</a> checks envelope dimensions, the four new insert supports, the eight existing screw regions, full cover withdrawal and the open paths around J2 and J4. <a href="../../06-validation/case-service.html">Case service checks</a> document the paired wire routing trial. M05 is for mechanical fit testing. It still needs a qualified release tool, a complete wired service demonstration, load and repeated removal tests before production use.</p>
+</main></html>

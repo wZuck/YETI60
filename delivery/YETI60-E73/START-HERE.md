@@ -13,6 +13,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Check all nine leads, pin maps, free lengths and open gates | [Current harness study](04-assembly/harness-routing.md) |
 | Print and locate the 16 retainers and cut 17 films | [Retainer files, placement plan and dry-fit guide](04-assembly/retainers.md) |
 | Check plug access and lifting the PCB before closing the case | [Case assembly and removal checks](06-validation/case-service.md) |
+| Review the M05 access prototype and its removable covers | [Prototype print files and materials](02-mechanical/service-case-m05/print-guide.md) |
 | Buy parts, credit existing inventory, identify every fitted reference | [Complete materials](03-bom/materials.md), [mainboard BOM / stock CSV](03-bom/mainboard-purchase.csv) |
 | Ask the battery supplier to confirm pack parameters | [Complete pack specification](03-bom/battery-requirements.md) |
 | Solder a blank PCB in stages and test each stage | [12-step PCB soldering and bench guide](04-assembly/soldering.md), [illustrated web guide](04-assembly/soldering.html) |

@@ -1,0 +1,19 @@
+{
+  "status": "checked-M05-meshes-rendered",
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step": "4f6a72e62dcf592945097c293bb3ca795cc395b6915328bb41256eb37c7cf007",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.stl": "1557da74ee648bf1d16952f4b1c6036ddc22cd34cd626c7c45eda8dfe16429ce",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J2-REVIEW.step": "6abd35db97361ab6b492467a912eb9680be975e93964d44cccdfecbba6af45fb",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J2-REVIEW.stl": "ce980d3492d38157f8aeb6082eaa8bf00627d6e9b293ad44295a2ffa136840b0",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.step": "0b93cbec60c942be89abc7c58051409762b8f0eade6e2c43bb28355744445e71",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.stl": "833537930ecc9fc02b0b96df24ab53921f066bbe71cdea32f8223c7e8e71890a",
+    "hardware/e73-hhkb-corner/audit/service-case-m05.json": "945cf7db9812bca33b4a9571ce2e2e8e407c384658a27e789361f731cac0acb6",
+    "scripts/render_e73_service_case.py": "763b2c3d694c98afac846b09c5fe41c4e56a4166ec66e3d938ab430a8f07c1c3",
+    "scripts/render_e73_corner_assembly.py": "cc4178fed20ce1b23256524482cb852be3c8541f625484971225b990bf6931cd"
+  },
+  "outputs": {
+    "hardware/e73-hhkb-corner/audit/m05-access-exploded.png": "c2e4be2757d73598496db47d2445112dbd3d9ddb9217450843c35ba59394a548"
+  },
+  "cover_explosion_mm": 35,
+  "physical_verification": false
+}

@@ -27,6 +27,8 @@ At each thickness, the PCB, fitted component and mount proxies, power-bridge hou
 
 Two hypothetical underside openings admit the geometric tip envelopes of a pair of jaws throughout 4 mm of axial travel. The J4 opening is 11.50 × 7.50 mm and the J2 opening is 6.50 × 11.50 mm in XY. The tips clear the checked solid obstacles by at least 0.30 mm at all three thicknesses, and the openings avoid the insert guards. These sizes describe a CAD experiment. A workable solution needs room for the actual tool, wire movement and connector parking, plus closure parts and strength checks for any opening. The supplied M04 shell uses its existing geometry.
 
+The [M05 mechanical prototype](../02-mechanical/service-case-m05/print-guide.md) provides a bottom and two removable covers while retaining the checked access paths. The models support a first fit test of the cover hardware and the right rear foot.
+
 ## Cable feed and parking trial
 
 The trial disconnects J2 first and J4 second. It translates each housing along its extraction axis, 4.50 mm for J2 and 4.00 mm for J4, then lowers it 0.45 mm. The two-step housing sweeps clear the checked rigid geometry at all three thicknesses. They approach within 0.10 mm of the PCB before lowering. Once parked, the housings clear the checked rigid objects by more than 0.50 mm during the 25 mm PCB lift. A real tool still needs to reach and move the actual housings through the full sequence.

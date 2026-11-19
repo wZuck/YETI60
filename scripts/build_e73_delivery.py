@@ -13,7 +13,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
  native=json.loads((BASE/'audit/placement-check.json').read_text());assert native['electrical_routing_complete']
- for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','service-motion','service-leads','service-reference']:
+ for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render']:
   report=json.loads((BASE/'audit'/f'{name}.json').read_text())
   for path,digest in report['source_sha256'].items():assert sha(ROOT/path)==digest,('Stale delivery input',path)
   if name=='power-process':assert report['status']=='repaired-power-routing-and-aperture-checks-passed'
@@ -43,6 +43,12 @@ def main():
    assert not report['selected_for_assembly']and len(report['outputs'])==2
    assert report['plate_clearance']['remaining_air_gap_mm']>=.15
    assert len(report['rigid_housing_travel'])==6
+  if name=='service-case-m05':
+   assert report['status']=='M05-prototype-case-and-covers-exported'
+   assert not report['selected_for_assembly']and len(report['outputs'])==6
+   assert len(report['meshes'])==3 and all(mesh['two_faces_per_welded_edge'] for mesh in report['meshes'])
+   access_models=report['outputs']
+  if name=='service-case-m05-render':assert report['status']=='checked-M05-meshes-rendered'
   for path,digest in report.get('outputs',{}).items():assert sha(ROOT/path)==digest,('Stale engineering output',path)
  assembly_render=ROOT/'renders/e73-corner-assembly/manifest.json'
  render_report=json.loads(assembly_render.read_text())
@@ -71,12 +77,14 @@ def main():
  for rel,target in [('hardware/ec60-nrf52840/LICENSE.EC60','licenses/LICENSE.EC60'),('firmware/LICENSE.GPL-2.0','licenses/LICENSE.GPL-2.0'),('hardware/usb-daughterboard/LICENSE.upstream','licenses/LICENSE.UDB')]:copy(rel,target)
  for name in ['README.md','README.zh-CN.md']:copy(name,'03-bom/materials'+('.zh-CN'if 'zh-CN'in name else '')+'.md')
  for rel,target in [('mechanical/generated/yeti60-top.step','02-mechanical/top.step'),('hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step','02-mechanical/bottom.step'),('hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.stl','02-mechanical/bottom.stl'),('mechanical/e73-fit/yeti60-e73-niz-m01.dxf','02-mechanical/steel-plate.dxf'),('mechanical/generated/yeti60-standoff-46.step','02-mechanical/standoff.step'),('mechanical/assembly-spec.json','02-mechanical/assembly-spec.json'),('mechanical/pcb-fabrication-spec.json','01-pcb/process-spec.json')]:copy(rel,target)
+ for rel in access_models:copy(rel,'02-mechanical/service-case-m05/'+Path(rel).name)
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/export_e73_delivery_top.py'),'--output',str(out/'02-mechanical/top.stl')],check=True)
  inputs['scripts/export_e73_delivery_top.py']=sha(ROOT/'scripts/export_e73_delivery_top.py')
  for p in sorted((BASE/'firmware').rglob('*')):
   if p.is_file():copy(str(p.relative_to(ROOT)),'05-firmware/'+str(p.relative_to(BASE/'firmware')))
  docs={'docs/build/e73-delivery-start':'START-HERE','docs/build/e73-ordering-printing':'01-pcb/ordering-and-printing','docs/build/e73-project-files':'01-pcb/project-files','docs/build/e73-assembly-views':'04-assembly/assembly-views','docs/engineering/e73-retention':'04-assembly/retainers','docs/engineering/e73-corner-power-process':'06-validation/power-process','docs/testing/e73-first-article':'06-validation/first-article','docs/engineering/e73-corner-harness':'04-assembly/harness-routing','docs/engineering/e73-hhkb-corner':'06-validation/corner-review','docs/testing/e73-corner-firmware':'05-firmware/installation','docs/build/key-mechanism':'04-assembly/key-mechanism','docs/engineering/battery-pack-specification':'03-bom/battery-requirements'}
  docs['docs/engineering/e73-corner-service']='06-validation/case-service'
+ docs['docs/build/e73-m05-prototype']='02-mechanical/service-case-m05/print-guide'
  for source,target in docs.items():
   for suffix in ['.md','.zh-CN.md']:copy(source+suffix,target+suffix)
  for lang in ['', '.zh-CN']:
