@@ -25,4 +25,4 @@
 
 ![主板背面元件](../../renders/e73-corner-assembly/pcb-underside.png)
 
-图内 73 个主板位号采用三维模型，U1 和 SW100 采用设计包络。五个配对插头、电池外皮、NiZ 塑料件、胶碗、弹簧、键帽、卫星轴、垫条和螺纹细节为示意。[来源清单](../../renders/e73-corner-assembly/manifest.json)记录具体版本、模型覆盖及图像校验值。工具空间、线束装拆运动、树脂和胶带性能、射频及实物电气仍待验收。
+图内 73 个主板位号采用三维模型，U1 和 SW100 采用设计包络。五个配对插头、电池外皮、NiZ 塑料件、胶碗、弹簧、键帽、卫星轴、垫条和螺纹细节为示意。[来源清单](../../renders/e73-corner-assembly/manifest.json)记录具体版本、模型覆盖及图像校验值。工具空间和线束动作见[关壳装拆检查](../engineering/e73-corner-service.zh-CN.md)。树脂和胶带性能、射频及实物电气仍待验收。

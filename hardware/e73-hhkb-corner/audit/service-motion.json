@@ -1,0 +1,893 @@
+{
+  "status": "service-obstructions-reproduced",
+  "physical_verification": false,
+  "manufacturing_released": false,
+  "complete_service_path_qualified": false,
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/audit/harness-study.json": "266c12e49947cacf98984ff8c4a62f36274e72352337d426b86beeb9e5d64440",
+    "hardware/e73-hhkb-corner/audit/retention-study.json": "694421fc4085fa27a585166b575d24e77e169fe43c7cbc2f70790866f9c8f4cd",
+    "hardware/e73-hhkb-corner/audit/harness-native.json": "c29375fda599b341429018a55e9bb7c1ab2dbdaa4ba21520b945add62c4abe8f",
+    "hardware/e73-hhkb-corner/audit/local-models.json": "9d9f309a1e3831cbe65df8ddcb3072d4de59006ea26f6cdc04214048b0b278e2",
+    "hardware/e73-hhkb-corner/audit/retention-prints.json": "87ac2bde682bcf9e6e1e1d3d2f9c90d62a57463f7ae8cbb7b5b5d4d7d98f8e29",
+    "hardware/e73-corner-harness-spec.json": "015f0904c0868a9563cf9e797a1e858f4b8eb31116829e525f27e6bcf57b930c",
+    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
+    "docs/audit/yeti60-daughterboard.json": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
+    "scripts/check_e73_corner_harness.py": "f2692a9d6944b3373fa48c9b771dd06cb4425b892b775b9fd9dc69fb9c26ff1e",
+    "scripts/e73_corner_harness_paths.py": "d8d9e29d0d3654526705790a46d43d37531a6a975e12cd6f4ff70c30dbf5c464",
+    "scripts/interconnect_geometry.py": "a3ea2cd5cbe15cfa5aebaf89d961e3387e9c183e147564f27fa4d5aa9477c5c2",
+    "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_yeti60_interconnects.py": "9365de90575ef18e053954a4bdf1ec26d6188d3b1df9fc860cb92f7e1b356c3e",
+    "scripts/e73_service_route.py": "be7e91db87e5a4d2e21f4697004adbae898d28bbb48a35341c689d52cbe4653b",
+    "scripts/check_e73_corner_service.py": "b65c8519f5752f96b8fb830067f3b9783d82a4d0897fd9cd9f051d20a5e5647b",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "e56d92076d41d2fde4dd22c68fb84d05b7e9b69f4513aa918e51d61ee08db56d",
+    "hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step": "05df1190f4a9a418e9861851fa32bb15da3e71a9545af5b2126141a647411428",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R1.step": "844b682a2d7c61f1a59ac5f4705cd7fa754195b463ea0e8bb3ed153f368d0709",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R2.step": "5c44ae8a2ac274eb0a48005d2c44905e74b35b0e3e5abdfde28ee83d2afeabab",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R3.step": "82530eba1de2ec6d1534fb88d0b35231681d7def132ab143c7438eaf8ebd365c",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-base.step": "33bb209e74ab8bd0ef6a3ef6fd20b419a1b487e7f53483a64162902bb9f329cc",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-lid.step": "050b07126775d08413d3ba7a803bbc6d760a8c67880ad24f705dd6c0f6fa2094",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-base.step": "22b831e2b8e4c530620d3cd8fd44b543e9a8fac8574833ac6fb28a9c89fa5428",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-lid.step": "93c06b3e549505c1535649512b490280da27827ddbd8a60f4f377fd7825e3f8c",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R1.step": "092552e8a1daba392a72e0870c344c623fff67f2f22923eab6bca9d0ee636fdf",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R2.step": "1d28b56fa57c4071ccfcace2198c9117775cdb6e25911a28fca025452379b766",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R1.step": "579e74f220b7dd3ebdb9226942c3a616c912433c99e9daa27c8184ae1ccce2fb",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R2.step": "a971c534f5a83a6c0bd348dafd24e9368aecd3a277344dc5ba6190f49a8b3cde",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R3.step": "46b910e54e659fdf9791b4ac6549769139e6f979983aad3969846a10692b0729",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R4.step": "b264711f6263edaaf28d1eee6acdc1a6da2b0d1bbbdb0d8a600fce37f2aceb1c",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R5.step": "9f93d9d301c8ffaeb5b100d589b613376dca2a70e4e33c7ca5dfb960febb6c48",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-upper.step": "dcffdd7fbfaf4b01e5fa7a1f6284f6f461fca132e41bb6fb3f3fe4bbe5610192",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-lower.step": "cbe4daa06b4b79b0da90d8c6a8e54ef7848b33751939fe62b0839b61ca15dbb7",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R1-film.step": "8bd19ba1275a34a150ee2b5b01a4944923c29c2f83baa44dbf741303a4a674dc",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R2-film.step": "5cf84a02f6df49864ad569cd27a0b6c2de7dc61538af6ff05033bbd8fbfc8185",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R3-film.step": "9249d652e021143a70e34cd0a71dd4a00984537484571bb0d15fd558bbc366ad",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-seam-1.step": "382c34ced31c134562dcf0821c5b1e125b1bdae2edc96cc01a8d0b30d21c547a",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-seam-2.step": "b2ffc67ab26d839d0358ecadd0a9cb799764be5aec5aa9078336ff66eb326d49",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-seam-1.step": "612c0c56269141f20132795dc58cd651e1cdf30009a54f13fb63b8e2cf48d8a9",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-seam-2.step": "f5d0826241817191c34ae589e0a2edb118852d34fdabdec69910af5bb27cc8da",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R1-film.step": "f74dc48f0c4a98fac4f784a3338ecf30a72b0e58b925950142847d0ac65b4c76",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R2-film.step": "33352a8bed2961fcfaf20b18822a193e7af6bc18ac8f5587d46a6bfaee14bd92",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R1-film.step": "d5bd1100f503455b4975bee28885ba5a9787fa3d0b395ed1f4a6447051f43523",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R2-film.step": "ff1f43d3679d29e7a940301f4c9c5684e08503e378414dfb47a663f530bfb7d2",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R3-film.step": "9064d2ad27e7762bdeb4d0446c10ab296ba2ffa4e3fc85019f43e9d895a41ad3",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R4-film.step": "53e98e5700c93d86d67a22c1efef4f33d865eba266f422b679abc0d709bb91f7",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R5-film.step": "123ed8897490042fc83025a45dfc4ea40ba3be4e2c2b4e99e20aac9b062add7a",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-seam-1.step": "13f86f9bb530bd58f08f93b8199210676e451d225ffa45eb0237f761c76d5f29",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-seam-2.step": "a4da1db40b7d9c1def15e614e2c368b4e6669f149169e079c5bb73eec5e626bb",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-lower-film.step": "63293a25ed0509679ad5ddeb9f115fec8fc4582823e99c974e3becfd9bc9ff34"
+  },
+  "derived_copper_export_sha256": "7e82ce3752a73bfa749332cbad563ca9d4d6d4568619f8f16106eaef2772b486",
+  "plug_axis_sweeps": [
+    {
+      "ref": "J4",
+      "PCB_thickness_mm": 1.6062,
+      "plug_bounds_case_mm": [
+        341.52500000000003,
+        -113.2,
+        -5.1,
+        346.52500000000003,
+        -108.2,
+        -2.0999999999999996
+      ],
+      "trial_stroke_mm": 4.0,
+      "swept_bounds_case_mm": [
+        337.52500000000003,
+        -113.2,
+        -5.1,
+        346.52500000000003,
+        -108.2,
+        -2.0999999999999996
+      ],
+      "nearest_nominal_rigid_obstacles": [
+        {
+          "obstacle": "bottom",
+          "gap_mm": 1.2000000000000002,
+          "intersection_mm3": 0
+        }
+      ],
+      "nominal_rigid_sweep_has_intersection": false,
+      "straight_top_tool_cross_section_mm": [
+        2,
+        2
+      ],
+      "straight_top_tool_intersection_with_PCB_mm3": 6.424800000000001
+    },
+    {
+      "ref": "J2",
+      "PCB_thickness_mm": 1.6062,
+      "plug_bounds_case_mm": [
+        153.5,
+        -129.425,
+        -5.1,
+        157.5,
+        -124.425,
+        -2.0999999999999996
+      ],
+      "trial_stroke_mm": 4.0,
+      "swept_bounds_case_mm": [
+        153.5,
+        -129.425,
+        -5.1,
+        157.5,
+        -120.425,
+        -2.0999999999999996
+      ],
+      "nearest_nominal_rigid_obstacles": [
+        {
+          "obstacle": "bottom",
+          "gap_mm": 1.3815924762965361,
+          "intersection_mm3": 0
+        }
+      ],
+      "nominal_rigid_sweep_has_intersection": false,
+      "straight_top_tool_cross_section_mm": [
+        2,
+        2
+      ],
+      "straight_top_tool_intersection_with_PCB_mm3": 6.424800000000001
+    },
+    {
+      "ref": "C5",
+      "PCB_thickness_mm": 1.6062,
+      "plug_bounds_case_mm": [
+        211.812702,
+        -121.63470000000001,
+        -9.4038,
+        216.812702,
+        -116.63470000000001,
+        -6.4038
+      ],
+      "trial_stroke_mm": 4.0,
+      "swept_bounds_case_mm": [
+        211.812702,
+        -125.63470000000001,
+        -9.4038,
+        216.812702,
+        -116.63470000000001,
+        -6.4038
+      ],
+      "nearest_nominal_rigid_obstacles": [],
+      "nominal_rigid_sweep_has_intersection": false,
+      "straight_top_tool_cross_section_mm": [
+        2,
+        2
+      ],
+      "straight_top_tool_intersection_with_PCB_mm3": 6.424800000000001
+    },
+    {
+      "ref": "J4",
+      "PCB_thickness_mm": 1.44,
+      "plug_bounds_case_mm": [
+        341.52500000000003,
+        -113.2,
+        -4.9338,
+        346.52500000000003,
+        -108.2,
+        -1.9337999999999997
+      ],
+      "trial_stroke_mm": 4.0,
+      "swept_bounds_case_mm": [
+        337.52500000000003,
+        -113.2,
+        -4.9338,
+        346.52500000000003,
+        -108.2,
+        -1.9337999999999997
+      ],
+      "nearest_nominal_rigid_obstacles": [
+        {
+          "obstacle": "bottom",
+          "gap_mm": 1.3662,
+          "intersection_mm3": 0
+        }
+      ],
+      "nominal_rigid_sweep_has_intersection": false,
+      "straight_top_tool_cross_section_mm": [
+        2,
+        2
+      ],
+      "straight_top_tool_intersection_with_PCB_mm3": 5.76
+    },
+    {
+      "ref": "J2",
+      "PCB_thickness_mm": 1.44,
+      "plug_bounds_case_mm": [
+        153.5,
+        -129.425,
+        -4.9338,
+        157.5,
+        -124.425,
+        -1.9337999999999997
+      ],
+      "trial_stroke_mm": 4.0,
+      "swept_bounds_case_mm": [
+        153.5,
+        -129.425,
+        -4.9338,
+        157.5,
+        -120.425,
+        -1.9337999999999997
+      ],
+      "nearest_nominal_rigid_obstacles": [],
+      "nominal_rigid_sweep_has_intersection": false,
+      "straight_top_tool_cross_section_mm": [
+        2,
+        2
+      ],
+      "straight_top_tool_intersection_with_PCB_mm3": 5.759999999999999
+    },
+    {
+      "ref": "C5",
+      "PCB_thickness_mm": 1.44,
+      "plug_bounds_case_mm": [
+        211.812702,
+        -121.63470000000001,
+        -9.4038,
+        216.812702,
+        -116.63470000000001,
+        -6.4038
+      ],
+      "trial_stroke_mm": 4.0,
+      "swept_bounds_case_mm": [
+        211.812702,
+        -125.63470000000001,
+        -9.4038,
+        216.812702,
+        -116.63470000000001,
+        -6.4038
+      ],
+      "nearest_nominal_rigid_obstacles": [],
+      "nominal_rigid_sweep_has_intersection": false,
+      "straight_top_tool_cross_section_mm": [
+        2,
+        2
+      ],
+      "straight_top_tool_intersection_with_PCB_mm3": 5.759999999999999
+    },
+    {
+      "ref": "J4",
+      "PCB_thickness_mm": 1.76,
+      "plug_bounds_case_mm": [
+        341.52500000000003,
+        -113.2,
+        -5.2538,
+        346.52500000000003,
+        -108.2,
+        -2.2537999999999996
+      ],
+      "trial_stroke_mm": 4.0,
+      "swept_bounds_case_mm": [
+        337.52500000000003,
+        -113.2,
+        -5.2538,
+        346.52500000000003,
+        -108.2,
+        -2.2537999999999996
+      ],
+      "nearest_nominal_rigid_obstacles": [
+        {
+          "obstacle": "bottom",
+          "gap_mm": 1.0461999999999998,
+          "intersection_mm3": 0
+        }
+      ],
+      "nominal_rigid_sweep_has_intersection": false,
+      "straight_top_tool_cross_section_mm": [
+        2,
+        2
+      ],
+      "straight_top_tool_intersection_with_PCB_mm3": 7.039999999999999
+    },
+    {
+      "ref": "J2",
+      "PCB_thickness_mm": 1.76,
+      "plug_bounds_case_mm": [
+        153.5,
+        -129.425,
+        -5.2538,
+        157.5,
+        -124.425,
+        -2.2537999999999996
+      ],
+      "trial_stroke_mm": 4.0,
+      "swept_bounds_case_mm": [
+        153.5,
+        -129.425,
+        -5.2538,
+        157.5,
+        -120.425,
+        -2.2537999999999996
+      ],
+      "nearest_nominal_rigid_obstacles": [
+        {
+          "obstacle": "bottom",
+          "gap_mm": 1.2503328399107152,
+          "intersection_mm3": 0
+        }
+      ],
+      "nominal_rigid_sweep_has_intersection": false,
+      "straight_top_tool_cross_section_mm": [
+        2,
+        2
+      ],
+      "straight_top_tool_intersection_with_PCB_mm3": 7.039999999999998
+    },
+    {
+      "ref": "C5",
+      "PCB_thickness_mm": 1.76,
+      "plug_bounds_case_mm": [
+        211.812702,
+        -121.63470000000001,
+        -9.4038,
+        216.812702,
+        -116.63470000000001,
+        -6.4038
+      ],
+      "trial_stroke_mm": 4.0,
+      "swept_bounds_case_mm": [
+        211.812702,
+        -125.63470000000001,
+        -9.4038,
+        216.812702,
+        -116.63470000000001,
+        -6.4038
+      ],
+      "nearest_nominal_rigid_obstacles": [],
+      "nominal_rigid_sweep_has_intersection": false,
+      "straight_top_tool_cross_section_mm": [
+        2,
+        2
+      ],
+      "straight_top_tool_intersection_with_PCB_mm3": 7.039999999999999
+    }
+  ],
+  "selected_vertical_lift": {
+    "lift_mm": 25.0,
+    "bare_PCB_case_gap_mm": 0.7999600064058053,
+    "PCB_mounted_guide_case_near_contacts": [],
+    "blocked_power_conductor_witnesses": [
+      {
+        "moving_wire": "power.1",
+        "fixed_wire": "usb.3",
+        "lift_mm": 0.75,
+        "intersection_mm3": 0.0008976474048414133
+      }
+    ]
+  },
+  "alternate_crossing_trial": {
+    "USB": {
+      "early_descent_y_mm": -108.8,
+      "crossing_z_mm": -4.73,
+      "return_to_front_run_y_mm": -124,
+      "twist_rear_turns": 3.06,
+      "twist_down_turns": 0.69
+    },
+    "power": {
+      "crossing_y_mm": -118,
+      "return_x_mm": 182
+    },
+    "lift_mm": 25.0,
+    "minimum_gap_mm": 0.15,
+    "variants": [
+      {
+        "PCB_thickness_mm": 1.6062,
+        "minimum_static_residual_gap_mm": 0.15819237886466836,
+        "USB_geometric_pair_skew_mm": 0.9493181677027565,
+        "free_lengths_mm": {
+          "usb.1": 277.517397651658,
+          "usb.2": 284.7126247721475,
+          "usb.3": 285.66194293985023,
+          "usb.4": 291.65456459281205,
+          "power.1": 263.6221482061046,
+          "power.2": 262.47921367596217,
+          "battery.1": 113.70311561493173,
+          "battery.2": 110.39162222527611,
+          "battery.3": 107.41993030775215
+        },
+        "crossings": [
+          {
+            "families": [
+              "usb",
+              "power"
+            ],
+            "gap_mm": 0.3603595203774774,
+            "wires": [
+              [
+                "usb",
+                "2"
+              ],
+              [
+                "power",
+                "1"
+              ]
+            ],
+            "witness_mm": [
+              193.30217735791368,
+              -118.5,
+              -4.035359520377477
+            ]
+          },
+          {
+            "families": [
+              "usb",
+              "battery"
+            ],
+            "gap_mm": 0.5153595203774772,
+            "wires": [
+              [
+                "usb",
+                "3"
+              ],
+              [
+                "battery",
+                "1"
+              ]
+            ],
+            "witness_mm": [
+              193.47453861892402,
+              -104.6,
+              -3.7596404796225222
+            ]
+          },
+          {
+            "families": [
+              "power",
+              "battery"
+            ],
+            "gap_mm": 0.6000000000000001,
+            "wires": [
+              [
+                "power",
+                "1"
+              ],
+              [
+                "battery",
+                "1"
+              ]
+            ],
+            "witness_mm": [
+              154.25136374907947,
+              -110.0,
+              -3.6749999999999994
+            ]
+          }
+        ],
+        "wire_lift_pairs": [
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.3"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.4"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "battery.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "battery.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "battery.3"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.3"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.4"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "battery.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "battery.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "battery.3"
+          }
+        ]
+      },
+      {
+        "PCB_thickness_mm": 1.44,
+        "minimum_static_residual_gap_mm": 0.15819237886466925,
+        "USB_geometric_pair_skew_mm": 0.9493181677028701,
+        "free_lengths_mm": {
+          "usb.1": 277.6149282573969,
+          "usb.2": 284.81554343811973,
+          "usb.3": 285.7648616058226,
+          "usb.4": 291.752095198551,
+          "power.1": 263.6221482061046,
+          "power.2": 262.47921367596217,
+          "battery.1": 113.74027027615068,
+          "battery.2": 110.42877688649506,
+          "battery.3": 107.45708496897109
+        },
+        "crossings": [
+          {
+            "families": [
+              "usb",
+              "power"
+            ],
+            "gap_mm": 0.5265595203774813,
+            "wires": [
+              [
+                "usb",
+                "2"
+              ],
+              [
+                "power",
+                "1"
+              ]
+            ],
+            "witness_mm": [
+              193.30217735791368,
+              -118.5,
+              -4.03535952037748
+            ]
+          },
+          {
+            "families": [
+              "usb",
+              "battery"
+            ],
+            "gap_mm": 0.681559520377478,
+            "wires": [
+              [
+                "usb",
+                "3"
+              ],
+              [
+                "battery",
+                "1"
+              ]
+            ],
+            "witness_mm": [
+              193.47453861892402,
+              -104.6,
+              -3.5934404796225214
+            ]
+          },
+          {
+            "families": [
+              "power",
+              "battery"
+            ],
+            "gap_mm": 0.7662000000000004,
+            "wires": [
+              [
+                "power",
+                "1"
+              ],
+              [
+                "battery",
+                "1"
+              ]
+            ],
+            "witness_mm": [
+              222.24863625092053,
+              -110.0,
+              -3.508799999999999
+            ]
+          }
+        ],
+        "wire_lift_pairs": [
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.3"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.4"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "battery.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "battery.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "battery.3"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.3"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.4"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "battery.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "battery.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "battery.3"
+          }
+        ]
+      },
+      {
+        "PCB_thickness_mm": 1.76,
+        "minimum_static_residual_gap_mm": 0.15819237886466925,
+        "USB_geometric_pair_skew_mm": 0.949318167702927,
+        "free_lengths_mm": {
+          "usb.1": 277.44034591486036,
+          "usb.2": 284.6257069344305,
+          "usb.3": 285.57502510213345,
+          "usb.4": 291.57751285601444,
+          "power.1": 263.6221482061046,
+          "power.2": 262.47921367596217,
+          "battery.1": 113.6709591700786,
+          "battery.2": 110.35946578042298,
+          "battery.3": 107.38777386289902
+        },
+        "crossings": [
+          {
+            "families": [
+              "usb",
+              "power"
+            ],
+            "gap_mm": 0.20655952037747793,
+            "wires": [
+              [
+                "usb",
+                "2"
+              ],
+              [
+                "power",
+                "1"
+              ]
+            ],
+            "witness_mm": [
+              193.30217735791368,
+              -118.5,
+              -4.035359520377477
+            ]
+          },
+          {
+            "families": [
+              "usb",
+              "battery"
+            ],
+            "gap_mm": 0.3615595203774751,
+            "wires": [
+              [
+                "usb",
+                "3"
+              ],
+              [
+                "battery",
+                "1"
+              ]
+            ],
+            "witness_mm": [
+              193.47453861892402,
+              -104.6,
+              -3.9134404796225244
+            ]
+          },
+          {
+            "families": [
+              "power",
+              "battery"
+            ],
+            "gap_mm": 0.4462000000000006,
+            "wires": [
+              [
+                "power",
+                "1"
+              ],
+              [
+                "battery",
+                "1"
+              ]
+            ],
+            "witness_mm": [
+              154.25136374907947,
+              -110.0,
+              -3.828799999999999
+            ]
+          }
+        ],
+        "wire_lift_pairs": [
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.3"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "usb.4"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "battery.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "battery.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.1",
+            "fixed_conductor": "battery.3"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.3"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "usb.4"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "battery.1"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "battery.2"
+          },
+          {
+            "certified_gap_mm": 0.15,
+            "evaluations": 1,
+            "power_conductor": "power.2",
+            "fixed_conductor": "battery.3"
+          }
+        ]
+      }
+    ],
+    "fixed_wire_route_envelope_diameter_mm": 1.15,
+    "moving_wire_route_envelope_diameter_mm": 1.15,
+    "selected_for_assembly": false
+  },
+  "scope": [
+    "Four millimetres is a trial stroke for nominal rigid housings, excluding each plug\u2019s owning header and PCB mating plane. It does not qualify travel, release force, tool tolerance, or lead flex.",
+    "The rigid lift translates the power bridge relative to the seated USB and battery routes. Interference with the assumed full insulation diameter is a counterexample to this motion, not a proof that all removal motions fail.",
+    "No new case opening or harness retainer placement is released by this report.",
+    "The alternate crossing proves only installed wire clearances and relative wire translation. It does not prove deck or mount motion, parked plugs, release and re-mating, retention, strain, or electrical performance."
+  ]
+}

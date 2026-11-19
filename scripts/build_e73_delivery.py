@@ -13,7 +13,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
  native=json.loads((BASE/'audit/placement-check.json').read_text());assert native['electrical_routing_complete']
- for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process']:
+ for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','service-motion']:
   report=json.loads((BASE/'audit'/f'{name}.json').read_text())
   for path,digest in report['source_sha256'].items():assert sha(ROOT/path)==digest,('Stale delivery input',path)
   if name=='power-process':assert report['status']=='repaired-power-routing-and-aperture-checks-passed'
@@ -22,6 +22,13 @@ def main():
   if name=='retention-study':assert report['status']=='bounded-retainer-study-passed-service-and-process-open'and not report['failures']and len(report['variants'])==3 and report['guide_count']==16 and report['film_piece_count']==17
   if name=='retention-prints':assert report['status']=='local-mm-rigid-mesh-and-film-blank-exports-passed'and len(report['rigid_parts'])==16 and len(report['film_blanks'])==17
   if name=='retention-drawing':assert report['status']=='source-bound-retainer-placement-plans-generated'
+  if name=='service-motion':
+   trial=report['alternate_crossing_trial']
+   assert report['status']=='service-obstructions-reproduced'and not report['complete_service_path_qualified']
+   assert not trial['selected_for_assembly']and len(trial['variants'])==3
+   for variant in trial['variants']:
+    assert len(variant['wire_lift_pairs'])==14
+    assert all(pair['certified_gap_mm']>=trial['minimum_gap_mm']for pair in variant['wire_lift_pairs'])
   for path,digest in report.get('outputs',{}).items():assert sha(ROOT/path)==digest,('Stale engineering output',path)
  assembly_render=ROOT/'renders/e73-corner-assembly/manifest.json'
  render_report=json.loads(assembly_render.read_text())
@@ -55,6 +62,7 @@ def main():
  for p in sorted((BASE/'firmware').rglob('*')):
   if p.is_file():copy(str(p.relative_to(ROOT)),'05-firmware/'+str(p.relative_to(BASE/'firmware')))
  docs={'docs/build/e73-delivery-start':'START-HERE','docs/build/e73-ordering-printing':'01-pcb/ordering-and-printing','docs/build/e73-project-files':'01-pcb/project-files','docs/build/e73-assembly-views':'04-assembly/assembly-views','docs/engineering/e73-retention':'04-assembly/retainers','docs/engineering/e73-corner-power-process':'06-validation/power-process','docs/testing/e73-first-article':'06-validation/first-article','docs/engineering/e73-corner-harness':'04-assembly/harness-routing','docs/engineering/e73-hhkb-corner':'06-validation/corner-review','docs/testing/e73-corner-firmware':'05-firmware/installation','docs/build/key-mechanism':'04-assembly/key-mechanism','docs/engineering/battery-pack-specification':'03-bom/battery-requirements'}
+ docs['docs/engineering/e73-corner-service']='06-validation/case-service'
  for source,target in docs.items():
   for suffix in ['.md','.zh-CN.md']:copy(source+suffix,target+suffix)
  for lang in ['', '.zh-CN']:

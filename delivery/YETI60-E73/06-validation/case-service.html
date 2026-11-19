@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E73 case assembly and removal checks</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="case-service.zh-CN.html">Chinese</a></p>
+<h1 id="e73-case-assembly-and-removal-checks">E73 case assembly and removal checks</h1>
+<p>This check covers the CORNER-05 PCB, the M04 bottom, the installed C5 daughterboard and the selected nine-wire harness. Removing the top shell leaves the J2 battery and J4 USB plugs under the mainboard. Keep the keyboard unpowered for dry fitting.</p>
+<h2 id="findings-for-the-selected-harness">Findings for the selected harness</h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pull the J4, J2 and C5 housing proxies along their respective mating axes</td>
+<td>Nine continuous 4 mm sweeps clear the checked rigid obstacles at 1.44, 1.6062 and 1.76 mm PCB thickness. The check excludes each connector's own header and the PCB mating plane.</td>
+</tr>
+<tr>
+<td>Reach a plug from above</td>
+<td>A straight 2 × 2 mm tool at each wire exit intersects the PCB by 5.76–7.04 mm³ across those thicknesses. This rules out that tool approach.</td>
+</tr>
+<tr>
+<td>Raise the bare PCB 25 mm at fixed XY</td>
+<td>The bare board has 0.800 mm nominal clearance to the bottom. The PCB-mounted guides also clear the bottom in this separate check.</td>
+</tr>
+<tr>
+<td>Raise the deck with its power bridge as the USB and battery routes remain in their guides</td>
+<td>The power bridge's pin 1 conductor intersects USB D+ at the checked 0.75 mm height. Pulling the deck straight up in this configuration can catch the wire.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="alternate-wiring-trial">Alternate wiring trial</h2>
+<p>The trial drops the USB section sooner and moves the power bridge forward locally. At the crossover near case X 193 mm, the power bridge passes <strong>above</strong> the USB route. It retains all connector endpoints and pin assignments. The CAD trial meets the 0.15 mm residual static gap and 4 mm minimum bend requirement at all three PCB thicknesses. The measured geometric USB pair skew stays below 1 mm.</p>
+<p>The 14 moving-versus-fixed conductor pairs at each thickness maintain at least 0.15 mm clearance through the modeled 0–25 mm vertical lift. The proof uses an envelope of the 0.65 mm maximum wire outer diameter plus 0.25 mm placement allowance per side, with an additional envelope around the twisted data pair. Interval bounds cover the continuous motion between distance evaluations.</p>
+<p>The <a href="service-motion.json">machine-readable report</a> includes the trial's free lengths. Use the <a href="../04-assembly/harness-routing.html">selected harness table</a> for the current build. The alternate still requires retention, parked plug and tool clearance, controlled mating/release with strain relief, and data checks. The 4 mm trial stroke is a geometric input. Sample housing release travel and the force needed to release or re-seat it still need to be measured. <a href="https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf">JST SH series drawing</a></p>
+<h2 id="dry-fit-and-bench-verification">Dry fit and bench verification</h2>
+<ol>
+<li>Verify the board, USB, charging and keys outside the case using the <a href="first-article.html">first-article record</a>.</li>
+<li>For mechanical checks, use disconnected harnesses and an inert pack-size gauge. Temporarily locate the retainers. Check that a tool can grip each housing and release it along its mating axis without loading the leads or the PCB header.</li>
+<li>Confirm where each unplugged housing and lead can park before moving the deck. During insertion and removal, inspect them and the power crossover for catching, pinching, strain and damage. Record the tool and motion in the first-article record before permanently attaching the retainers or closing the case.</li>
+</ol>
+</main></html>

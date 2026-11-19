@@ -1,0 +1,41 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E73 关壳装拆检查</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="case-service.html">English</a> | 中文</p>
+<h1 id="e73-关壳装拆检查">E73 关壳装拆检查</h1>
+<p>本次检查针对 CORNER-05 主板、M04 底壳、已制作的 C5 子板和当前九根导线。拆掉上壳后，J2 电池插头和 J4 USB 插头仍在主板下方。机械试装全程断电。</p>
+<h2 id="当前线束的检查结果">当前线束的检查结果</h2>
+<table>
+<thead>
+<tr>
+<th>检查动作</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分别沿配合轴线拔出 J4、J2 和 C5 插头</td>
+<td>在 1.44、1.6062 和 1.76 mm 三种板厚下，9 项连续 4 mm 胶壳行程均避开了所检刚体。计算排除了插头所属的插座及 PCB 配合面。</td>
+</tr>
+<tr>
+<td>从上方伸工具到插头</td>
+<td>在各插头出线处，截面 2 × 2 mm 的直工具与 PCB 相交 5.76–7.04 mm³。这条入口不可用。</td>
+</tr>
+<tr>
+<td>平移抬升裸 PCB 25 mm</td>
+<td>XY 坐标固定时，裸板与底壳的最小标称间隙为 0.800 mm。单独检查随 PCB 移动的理线件时，也未撞到底壳。</td>
+</tr>
+<tr>
+<td>USB 和电池线留在槽内，垂直抬起带电源桥的叠层</td>
+<td>在采样的 0.75 mm 抬升位置，电源桥 1 号导线与 USB D+ 导线相交。按这个动作提板会卡线。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="备选改线试验">备选改线试验</h2>
+<p>试验将 USB 线束提前下沉，电源桥在交叉处局部向前绕。在外壳坐标 X 约 193 mm 处，电源桥从 <strong>USB 上方</strong>经过。各插头端点和针序保持一致。三种板厚均满足静态余隙至少 0.15 mm、最小弯曲半径 4 mm，USB 数据双线的几何长度差小于 1 mm。</p>
+<p>每种板厚各检查 14 对运动导线与留在底壳的导线。在模拟的 0–25 mm 连续抬升内，各对均保有至少 0.15 mm 间隙。单线包络计入 0.65 mm 最大线径和每侧 0.25 mm 位置裕量，另为绞合数据对保留绞合包络。区间界同时覆盖了测距点之间的运动。</p>
+<p><a href="service-motion.json">数据报告</a>记录了备选线长。当前制作仍使用<a href="../04-assembly/harness-routing.zh-CN.html">现行线束表</a>。备选走法仍需验证理线件、拔下插头的停放、工具可达性、推入／退出时的应力释放和数据质量。4 mm 为模型的试验行程，实际插头的脱开行程与插拔力需要用样品测量。<a href="https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf">JST SH 系列规格图</a></p>
+<h2 id="断电试装与台架验收">断电试装与台架验收</h2>
+<ol>
+<li>按<a href="first-article.zh-CN.html">首件验收表</a>先在壳外验主板、USB、充电和按键。</li>
+<li>机械检查使用断开的线束和无电池尺寸量块，临时定位理线件。工具需能夹住胶壳，并能沿轴线解除配合，同时确认导线及板端插座没有承受拆卸拉力。</li>
+<li>移动叠层前确认拔下的插头和导线有可停放的空间。装入与取出时同时观察接头和电源桥交叉处，检查卡线、夹伤、受拉及损伤。将工具和动作录入首件验收表，再永久粘接理线件和关壳。</li>
+</ol>
+</main></html>

@@ -12,6 +12,7 @@
 | 确认需要下单哪些板、各项参数怎么选 | [PCB 与机械件制造说明](01-pcb/ordering-and-printing.zh-CN.md) |
 | 核对九根导线、针序、线长和未通过项 | [当前线束检查](04-assembly/harness-routing.zh-CN.md) |
 | 打印并定位 16 件理线件、裁切 17 片胶膜 | [固定件文件、位置图及试装说明](04-assembly/retainers.zh-CN.md) |
+| 关壳前核对插拔工具空间和抬板动作 | [关壳装拆检查](06-validation/case-service.zh-CN.md) |
 | 采购材料、抵扣已有库存、找到每个元件位号 | [完整材料表](03-bom/materials.zh-CN.md)、[主板材料与库存表格](03-bom/mainboard-purchase.zh-CN.csv) |
 | 请电池供应商核实参数 | [完整保护电池包规格](03-bom/battery-requirements.zh-CN.md) |
 | 从空板开始分阶段焊接、逐段检查 | [12 步焊接与台架教程](04-assembly/soldering.zh-CN.md)、[图文网页](04-assembly/soldering.zh-CN.html) |

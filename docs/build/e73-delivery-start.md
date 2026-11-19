@@ -12,6 +12,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Understand what to order and which options to select | [PCB and mechanical manufacturing instructions](e73-ordering-printing.md) |
 | Check all nine leads, pin maps, free lengths and open gates | [Current harness study](../engineering/e73-corner-harness.md) |
 | Print and locate the 16 retainers and cut 17 films | [Retainer files, placement plan and dry-fit guide](../engineering/e73-retention.md) |
+| Check plug access and lifting the PCB before closing the case | [Case assembly and removal checks](../engineering/e73-corner-service.md) |
 | Buy parts, credit existing inventory, identify every fitted reference | [Complete materials](../../README.md), [mainboard BOM / stock CSV](../../hardware/e73-hhkb-corner/mainboard-purchase.csv) |
 | Ask the battery supplier to confirm pack parameters | [Complete pack specification](../engineering/battery-pack-specification.md) |
 | Solder a blank PCB in stages and test each stage | [12-step PCB soldering and bench guide](../assembly/e73-corner/soldering.md), [illustrated web guide](../assembly/e73-corner/soldering.html) |
