@@ -2,6 +2,8 @@ English | [Chinese](case-service.zh-CN.md)
 
 # E73 case assembly and removal checks
 
+This page records the M04 baseline. For the first article, use the [M05 print checklist and wire lengths](../02-mechanical/service-case-m05/print-guide.md).
+
 This check covers the CORNER-06 PCB, the M04 bottom, the installed C5 daughterboard and the selected nine-wire harness. Removing the top shell leaves the J2 battery and J4 USB plugs under the mainboard. Keep the keyboard unpowered for dry fitting.
 
 ## Findings for the selected harness

@@ -2,13 +2,15 @@ English | [Chinese](harness-routing.zh-CN.md)
 
 # E73 corner harness and internal case channel
 
+This page records the M04 baseline. For the first article, use the [M05 print checklist and wire lengths](../02-mechanical/service-case-m05/print-guide.md).
+
 CORNER-06 uses **mainboard J5 rotated by 180° at the same origin** and the already-made **C5 JSH daughterboard**. J5 exits toward the front of the case, permitting a separate route past the J4 USB cable. The local connector repair is replayed after the original routing patch and checked by native DRC. It touches GND, USB_FEED and ROW_DRV4 near J5.
 
 **Engineering routing study, not complete closed-case assembly acceptance.** [Native wire/plug/obstacle study](../06-validation/harness-study.json) and [source specification](../02-mechanical/interconnect-spec.json). The static retainers and assembly views are in the delivery. Actual insertion and service motion remain open. The drawings are coordinate plans, not photographs or measured assemblies.
 
 ![Nine-conductor coordinate plan](images/e73-corner-harness.png)
 
-[Per-conductor length table](../03-bom/harness-conductors.csv)
+[Per-conductor length table](../03-bom/reference/m04-harness-conductors.csv)
 
 ## Connections and purchasing
 
@@ -28,7 +30,7 @@ The USB pair uses 3.25 rear turns, a half-turn on the descending run and a quart
 
 ## Case and battery interface
 
-The [M04 bottom STEP](../02-mechanical/bottom.step) and [STL](../02-mechanical/bottom.stl) add an **internal** rear channel to the reviewed M03 baseline. The exterior envelope is preserved. The new removal is screened against selected native exterior faces and all four M3 / four M2 insert support guards; this is a geometric screen, not structural FEA or resin qualification. Retained wall after the specified case tolerance is approximately **2.01 mm**.
+The [M04 bottom STEP](../02-mechanical/reference/m04-bottom.step) and [STL](../02-mechanical/reference/m04-bottom.stl) add an **internal** rear channel to the reviewed M03 baseline. The exterior envelope is preserved. The new removal is screened against selected native exterior faces and all four M3 / four M2 insert support guards; this is a geometric screen, not structural FEA or resin qualification. Retained wall after the specified case tolerance is approximately **2.01 mm**.
 
 The protected pack body remains ≤85 ×43 ×4.8 mm including protection, sensors, wrap, tabs and growth. Its required **external pigtail exit** is at local `[0,14,4.5]` mm relative to the minimum-X/Y/Z pack-body corner, pointing −X; in the case this is `[228.5,-135,-4.9]` mm. External insulated leads are screened separately from the pack-body box. Have the supplier show the complete strain relief, body and pigtail exit on one drawing; do not substitute a bare-cell outline.
 

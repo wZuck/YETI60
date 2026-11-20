@@ -189,7 +189,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | ID | Material | Quantity | Detailed specification/acceptance |
 |---|---|---:|---|
 | M01 | Top shell | 1 | Derived FELK60 HHKB STEP, tough SLA resin, post-cured; no exterior scaling |
-| M02 | Bottom shell | 1 | Selected [E73 M04 STEP](hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step), protected-pack pocket, SW100 relief and current internal cable channel; original exterior |
+| M02 | M05 bottom and access covers | 3 | One bottom, one J2 cover and one J4 cover. Use the matched nine-wire M05 harness. [Print checklist](docs/build/e73-m05-prototype.md) |
 | M03 | Plate | 1 | K07 E73 M01 NiZ plate-mount DXF, 304 stainless, CAD thickness 1.60 mm, finished 1.55-1.60 mm, 28 M2 x 0.4 axes; no H26 plate mounting hole |
 | M04 | NiZ housings / sliders / original rings | 60 | K01 five per pack, buy 13 packs / 65; install 60, spare 5; ordinary center housings for big keys, no Deskeys wide assembly |
 | M05 | Rubber domes | 60 positions | K03 NiZ 45g sheet, one sheet; use 60 complete positions trimmed for HHKB; not included in K01 |
@@ -208,6 +208,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | M18 | Case feet | 4 | [SKUF silicone feet](https://keeb.io/products/skuf-silicone-rubber-keyboard-feet), 41.8 x 5.8 x 2 mm, 45A, adhesive backed; four approximately 42.2 x 6.2 mm case pockets. One 8-pack leaves four spares |
 | M19 | Insert adhesive | As needed | Resin-compatible structural epoxy; cold-bond only, cure per adhesive/resin supplier, keep thread bores clear |
 | M20 | Battery retention and insulation | 1 set | Nonconductive removable retention and edge protection; include tape thickness in the pocket budget; do not clamp the pouch |
+| M21 | M05 cover hardware | 4 sets | Four low-head M2 × 0.4 × 4 mm screws, head diameter ≤3.90 mm and height ≤1.50 mm. Four additional Ø3.2 × 2.5 mm brass M2 cold-bond inserts, separate from the four C5 inserts. [Cover fitting](docs/build/e73-m05-prototype.md) |
 
 **The selected mechanism is NiZ plus plate-mounted stabilizers.** Use the [E73 mechanism specification](docs/build/key-mechanism.md), including the 6U wire datum, 28 mounting sets and H26 omission. Supplier plastic dimensions, retention, dome preload and full travel require local samples before metal-part production.
 
@@ -217,7 +218,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 |---|---:|---|
 | Shell screw shims | 4 | 0.30 mm thick, M3 clearance, used with the four M3 x 5 screws above; OD must fit the screw seat |
 | Daughterboard insulating washers | 4 | 0.30 mm thick, M2 clearance, for four M2 x 4 screws |
-| Current E73 cable retainers | **16 rigid parts + 17 film pieces** | [Files, part table, printing and dry fitting](docs/engineering/e73-retention.md); one of each rigid local-mm STL, films cut separately. Static bounded checks passed; process, installation and service acceptance remain open |
+| M05 cable retainers | 16 rigid parts and 17 film pieces | [M05 print and cut checklist](docs/build/e73-m05-prototype.md). Use 14 shared rigid parts and two M05 battery guides. |
 | Polyimide insulation stock | 1 sheet | At least 100 x 100 x 0.10 mm; supplies the 28 insulating discs; do not double-count pre-cut parts. Upper harness retention uses the separately listed adhesive-backed film |
 | Gasket stock | 2 sheets | One >=150 x 50 x 2.0 mm lower sheet and one >=150 x 50 x 1.2 mm upper sheet; cut four 33 x 3 mm pads from each. Replaces M17 stock allowance; force/creep and adhesive qualification open |
 | Resin-compatible structural adhesive | 1 small two-part kit | For inserts and guides; qualify and cure per adhesive/resin suppliers; quantity denotes a purchase package, not measured consumption |
@@ -234,6 +235,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | Calipers and thickness gauge | 1 each | Complete pack envelope, PCB, standoffs and insulation |
 | Low-torque driver and matching bits | 1 set | M1.6/M2/M3; qualify torque against sample threads |
 | Insulated switch tool | 1 | SW100 access through underside service port |
+| M05 release and parking fixtures | Two tools and two supports | One per port at J2 and J4. [Tool materials](docs/build/e73-m05-service-tool.md) and [parking supports and hardware](docs/build/e73-m05-parking-support.md). |
 | Cutting/deburring tools and tweezers | 1 set | Gaskets/guides/assembly, without damaging battery insulation |
 | Soldering, hot-air/reflow equipment, solder, flux and cleaning supplies | 1 each (self-assembly only) | Must support 0402, module and exposed-pad assembly; not installed keyboard parts |
 | Mainboard stencils | 1 front + 1 back (self-reflow only) | Laser cut from matching F.Paste and B.Paste Gerbers; 0.10 mm stainless prototype proposal, final thickness/thermal-pad apertures require assembly-process acceptance |

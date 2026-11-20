@@ -12,15 +12,15 @@ Review the mainboard as ordinary 4-layer FR-4, nominal 1.6 mm, JLC04161H-7628, E
 |---|---|
 | 00 | [Start here](START-HERE.md) |
 | 01 | [PCB fabrication](01-pcb/YETI60-E73-gerbers-REVIEW.zip) |
-| 02 | [Case and plate](02-mechanical/bottom.stl) |
+| 02 | [M05 prototype case and harness](02-mechanical/service-case-m05/print-guide.md) |
 | 03 | [Materials and inventory](03-bom/materials.md) |
 | 04 | [Soldering and bench assembly](04-assembly/soldering.html) |
 | 05 | [Full keyboard assembly](04-assembly/assembly-views.html) |
 | 06 | [Firmware installation](05-firmware/installation.md) |
 | 07 | [Validation and limits](06-validation/corner-review.md) |
 
-Static geometry for nine wires, 16 rigid retainers and 17 film pieces has passed; assembled and exploded views are included. Retainer process and closed-case service remain open. The C42/C48 apertures and charge feed are repaired. Pack and factory review and physical USB/BLE/EC and thermal acceptance remain open. The mechanism guide is not complete assembly release. The Gerber ZIP is for review, not an accepted order.
+The first article uses the M05 bottom, two access covers and matched nine-wire harness. The assembly views, print checklist and wire lengths all use M05. Factory mask registration, pack verification, physical case service and USB, BLE, sensing and thermal tests remain open.
 
-[Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [Bottom STEP](02-mechanical/bottom.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase.csv) · [Checksums](manifest.json)
+[Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [M05 bottom STEP](02-mechanical/service-case-m05/bottom-m05-REVIEW.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase.csv) · [Checksums](manifest.json)
 
 [JLC capabilities](https://jlcpcb.com/capabilities/Capabilities) · [JLC stack-ups](https://jlcpcb.com/impedance)

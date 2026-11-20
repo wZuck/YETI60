@@ -15,7 +15,7 @@
 | 当前电气与机械检查证据 | [右下角审查及复现命令](docs/engineering/e73-hhkb-corner.zh-CN.md) |
 | 全部材料、封装、数量和库存 | [准备清单](README.zh-CN.md#一把键盘需要准备的完整材料)、[主板 75 件采购表](hardware/e73-hhkb-corner/mainboard-purchase.zh-CN.csv) |
 | 从空 PCB 开始制作 | [12 步焊接与台架教程](docs/assembly/e73-corner/soldering.zh-CN.md)、[图文网页](docs/assembly/e73-corner/soldering.zh-CN.html) |
-| 线束、准确针序和自由长度 | [九根导线线束](docs/engineering/e73-corner-harness.zh-CN.md) |
+| 首件底壳、理线件和专用线长 | [M05 试装指南](docs/build/e73-m05-prototype.zh-CN.md) |
 | 理线件文件、位置和裁膜模板 | [16 件刚性件及 17 片胶膜](docs/engineering/e73-retention.zh-CN.md) |
 | 整机、爆炸、底壳线束和 PCB 背面 | [装配图及试装步骤](docs/build/e73-assembly-views.zh-CN.md) |
 | NiZ 轴座／滑块及钢板卫星轴 | [机构与装配](docs/build/key-mechanism.zh-CN.md)；60 键、三组卫星轴、28 套固定件，H26 不装 |

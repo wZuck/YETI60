@@ -2,7 +2,7 @@
 
 # E73 的 M05 维修口试制件
 
-M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形尺寸、脚垫位置及上壳、钢定位板和 C5 子板的安装基准。右后脚垫槽完整位于 J4 封盖上，拆盖时脚垫一起取下。制造总表仍列 M04 作为当前底壳基线。
+M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形尺寸、脚垫位置及上壳、钢定位板和 C5 子板的安装基准。右后脚垫槽完整位于 J4 封盖上，拆盖时脚垫一起取下。CORNER-06 的首件装配使用这套 M05 配置。
 
 ![拆开 J2 与 J4 封盖后的 M05 底面](../../06-validation/m05-access-exploded.png)
 
@@ -10,6 +10,7 @@ M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形
 
 | 零件 | 数量 | 文件或规格 |
 |---|---:|---|
+| FELK60 尺寸上壳 | 1 | [打印 STL](../top.stl) · [STEP](../top.step) |
 | M05 底壳 | 1 | [打印 STL](bottom-m05-REVIEW.stl) · [STEP](bottom-m05-REVIEW.step) |
 | J2 封盖 | 1 | [打印 STL](cover-J2-REVIEW.stl) · [STEP](cover-J2-REVIEW.step) |
 | J4 封盖 | 1 | [打印 STL](cover-J4-REVIEW.stl) · [STEP](cover-J4-REVIEW.step) |
@@ -19,7 +20,7 @@ M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形
 | 平行夹头工具 | 每个端口 1 套 | [工具说明](tool-guide.zh-CN.md)提供握块打印文件、夹片下料图和试配步骤。 |
 | 停放支撑 | 每个端口 1 套 | [支撑说明](parking-guide.zh-CN.md)提供两套底座、托架、紧固件和停放顺序。 |
 
-使用韧性工程 SLA 树脂，按毫米、100% 比例打印。三种零件各做一件，每件从 STEP 和 STL 中选一个文件。两种格式使用相同的壳体坐标。在树脂完全后固化后复查承压面、脚垫槽和盲孔。安排打印支撑和排液方向时，避免支撑损伤这些面。
+使用韧性工程 SLA 树脂，按毫米、100% 比例打印四件外壳零件，每种各一件。每件从 STEP 和 STL 中选一个文件，两种格式使用同一壳体坐标。树脂完全后固化后复查承压面、脚垫槽和盲孔。避免在这些面上留打印支撑。
 
 ## 制作 M05 配套线束
 
@@ -34,6 +35,17 @@ M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形
 | 保护包到 J2 | 主板端用一只 SHR-03V-S 和三只端子，针序为 PACK+、PACK−、NTC。实物须为符合规格的完整保护包，试配可用无电量块。 |
 | 电池理线件 | 两件新打印件 [BAT-R1](harness/BAT-R1-M05.stl) 和 [BAT-R2](harness/BAT-R2-M05.stl)。中心分别位于外壳 X 186 mm 和 189 mm，两件的 Y 均为 −106.60 mm。[BAT-R1 定位 STEP](harness/BAT-R1-M05.step)与 [BAT-R2 定位 STEP](harness/BAT-R2-M05.step)保留装配坐标。 |
 | 其他理线件及胶膜 | 其余 14 件刚性件和 17 片胶膜的下料形状沿用[现有理线件套件](../../04-assembly/retainers.zh-CN.md)。两片电池胶膜装到新支架，可对照 [BAT-R1](harness/BAT-R1-film-M05.step) 和 [BAT-R2](harness/BAT-R2-film-M05.step) 的折后模型。 |
+
+### 16 件理线件打印清单
+
+每个链接打印 1 件。胶膜按模板裁切，共 17 片。
+
+| 分组 | 数量 | STL |
+|---|---:|---|
+| USB 后侧导槽 | 3 | [USB-R1](../retention/print/USB-R1.stl), [USB-R2](../retention/print/USB-R2.stl), [USB-R3](../retention/print/USB-R3.stl) |
+| USB 前侧导槽 | 4 | [USB-F1-base](../retention/print/USB-F1-base.stl), [USB-F1-lid](../retention/print/USB-F1-lid.stl), [USB-F2-base](../retention/print/USB-F2-base.stl), [USB-F2-lid](../retention/print/USB-F2-lid.stl) |
+| 电源桥导槽 | 7 | [PWR-R1](../retention/print/PWR-R1.stl), [PWR-R2](../retention/print/PWR-R2.stl), [PWR-R3](../retention/print/PWR-R3.stl), [PWR-R4](../retention/print/PWR-R4.stl), [PWR-R5](../retention/print/PWR-R5.stl), [PWR-F-upper](../retention/print/PWR-F-upper.stl), [PWR-F-lower](../retention/print/PWR-F-lower.stl) |
+| 电池导槽 | 2 | [BAT-R1-M05](harness/BAT-R1-M05.stl), [BAT-R2-M05](harness/BAT-R2-M05.stl) |
 
 两件电池支架按其他理线件的比例和工艺打印。试配壳底时核查标称 0.10 mm 的胶层。线槽内避免溢胶，固定后导线仍需能沿槽轴向滑动。
 

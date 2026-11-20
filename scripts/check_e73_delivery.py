@@ -15,6 +15,24 @@ def main():
  files={str(p.relative_to(base))for p in base.rglob('*')if p.is_file()and p!=base/'manifest.json'and p.name!='.DS_Store'}
  assert files==set(m['files_sha256']),'Unlisted or missing delivery file'
  for name,digest in m['files_sha256'].items():assert sha(base/name)==digest,('Changed delivery file',name)
+ prototype=m['mechanical_first_article']
+ assert prototype['revision']=='M05' and prototype['use']=='first-article-dry-fit'
+ assert not prototype['physical_verification']
+ assert len(set(prototype['shell_STL']))==4 and len(set(prototype['retainer_STL'].values()))==16
+ assert len(prototype['harness_lengths'])==len(prototype['assembly_views'])==2
+ required=set(prototype['shell_STL']+list(prototype['retainer_STL'].values())+
+              prototype['harness_lengths']+prototype['assembly_views'])
+ assert required<=files
+ case_dir='02-mechanical/service-case-m05/'
+ for name in ('BAT-R1','BAT-R2'):assert prototype['retainer_STL'][name]==case_dir+'harness/'+name+'-M05.stl'
+ for name in ('bottom-m05','cover-J2','cover-J4'):assert case_dir+name+'-REVIEW.stl' in prototype['shell_STL']
+ assert all(path.startswith(case_dir+'harness/wire-lengths-m05') for path in prototype['harness_lengths'])
+ render=json.loads((base/'06-validation/assembly-render.json').read_text())
+ harness=json.loads((base/'06-validation/m05-harness.json').read_text())
+ lengths=harness['trial_variants'][0]['seated_free_lengths_mm']
+ assert render['case_revision']==prototype['revision'] and len(lengths)==9
+ assert all(abs(value-render['wire_free_lengths_mm'][key])<.000001 for key,value in lengths.items())
+ assert render['views']['case-underside']['objects_by_group']['covers']==2
  for p in base.rglob('*'):
   if p.suffix=='.html':
    parser=Links();parser.feed(p.read_text());links=parser.links
@@ -36,7 +54,7 @@ def main():
  assert m['revision']==json.loads((ROOT/'hardware/e73-corner-spec.json').read_text())['revision']
  assert (base/'05-firmware/manifest.json').is_file()
  fm=json.loads((base/'05-firmware/manifest.json').read_text());assert fm['source_PCB_sha256']==m['source_PCB_sha256']
- print('Delivery hashes, current sources, local links, Gerber archive and firmware/PCB identity passed')
+ print('Delivery hashes, M05 first-article files, local links, Gerber archive and firmware/PCB identity passed')
  if args.require_release and (m['pending']or not m['production_approved']):
   print('Delivery remains a review draft:',', '.join(m['pending']));return 2
  return 0

@@ -2,7 +2,7 @@ English | [Chinese](print-guide.zh-CN.md)
 
 # M05 access prototype for E73
 
-M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the M04 outer dimensions and the location of the footpads, upper shell, steel plate and C5 daughterboard. The original right rear foot recess is part of the J4 cover, so its footpad comes off with that cover. The current M04 files remain the baseline in the main ordering table.
+M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the M04 outer dimensions and the location of the footpads, upper shell, steel plate and C5 daughterboard. The original right rear foot recess is part of the J4 cover, so its footpad comes off with that cover. Use this M05 configuration for the CORNER-06 first article.
 
 ![M05 underside with the J2 and J4 covers removed](../../06-validation/m05-access-exploded.png)
 
@@ -10,6 +10,7 @@ M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the 
 
 | Part | Quantity | File or specification |
 |---|---:|---|
+| FELK60-based top | 1 | [Print STL](../top.stl) · [STEP](../top.step) |
 | M05 bottom | 1 | [Print STL](bottom-m05-REVIEW.stl) · [STEP](bottom-m05-REVIEW.step) |
 | J2 cover | 1 | [Print STL](cover-J2-REVIEW.stl) · [STEP](cover-J2-REVIEW.step) |
 | J4 cover | 1 | [Print STL](cover-J4-REVIEW.stl) · [STEP](cover-J4-REVIEW.step) |
@@ -19,7 +20,7 @@ M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the 
 | Parallel-jaw tool | 1 per port | The [tool guide](tool-guide.md) contains the print, blade-cutting pattern and fitting instructions. |
 | Parking supports | 1 per port | The [support guide](parking-guide.md) contains both carriers, shelves, fasteners and the parking sequence. |
 
-Print at 100% in millimetres using tough engineering SLA resin. Make one of each of the three parts and choose either STEP or STL for each part. Both formats use the same case coordinates. Inspect the seating faces, foot recess and blind bores after the resin is fully post-cured. Choose supports and drainage before printing and keep support damage off those faces.
+Print one of each of the four shell parts at 100% in millimetres using tough engineering SLA resin. Choose either STEP or STL for each part. Both formats use the same case coordinates. Inspect the seating faces, foot recess and blind bores after the resin is fully post-cured. Keep supports off those faces.
 
 ## Build the matched M05 harness
 
@@ -34,6 +35,17 @@ Use the [M05 free lengths](harness/wire-lengths-m05.csv) for all nine conductors
 | Pack to J2 | One SHR-03V-S with three contacts on the PCB end. Pin order is PACK+, PACK−, NTC. Use the specified complete protected pack or an inert gauge during fitting. |
 | Battery retainers | Two new prints, [BAT-R1](harness/BAT-R1-M05.stl) and [BAT-R2](harness/BAT-R2-M05.stl). Locate their centers at case X 186 and 189 mm respectively, both at Y −106.60 mm. The [BAT-R1 placement STEP](harness/BAT-R1-M05.step) and [BAT-R2 placement STEP](harness/BAT-R2-M05.step) retain the original case datums. |
 | Other retainers and films | Reuse the 14 remaining rigid files and 17 film blank shapes from the [retainer set](../../04-assembly/retainers.md). Place the two battery films on the new battery retainers. Use their [BAT-R1](harness/BAT-R1-film-M05.step) and [BAT-R2](harness/BAT-R2-film-M05.step) folded shapes as placement references. |
+
+### Print checklist for the 16 retainers
+
+Print one of each linked STL. Cut the 17 film pieces using the film templates.
+
+| Group | Quantity | STL |
+|---|---:|---|
+| USB rear guides | 3 | [USB-R1](../retention/print/USB-R1.stl), [USB-R2](../retention/print/USB-R2.stl), [USB-R3](../retention/print/USB-R3.stl) |
+| USB front guides | 4 | [USB-F1-base](../retention/print/USB-F1-base.stl), [USB-F1-lid](../retention/print/USB-F1-lid.stl), [USB-F2-base](../retention/print/USB-F2-base.stl), [USB-F2-lid](../retention/print/USB-F2-lid.stl) |
+| Power bridge guides | 7 | [PWR-R1](../retention/print/PWR-R1.stl), [PWR-R2](../retention/print/PWR-R2.stl), [PWR-R3](../retention/print/PWR-R3.stl), [PWR-R4](../retention/print/PWR-R4.stl), [PWR-R5](../retention/print/PWR-R5.stl), [PWR-F-upper](../retention/print/PWR-F-upper.stl), [PWR-F-lower](../retention/print/PWR-F-lower.stl) |
+| Battery guides | 2 | [BAT-R1-M05](harness/BAT-R1-M05.stl), [BAT-R2-M05](harness/BAT-R2-M05.stl) |
 
 Print the two battery retainers at the same scale and finish as the other guides. Match their case surfaces and inspect the 0.10 mm nominal bonding gap. Leave the slots free of adhesive and retain the wires without clamping their axial movement.
 

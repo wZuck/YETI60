@@ -12,15 +12,15 @@
 |---|---|
 | 00 | [从这里开始](START-HERE.zh-CN.md) |
 | 01 | [PCB 下单文件](01-pcb/YETI60-E73-gerbers-REVIEW.zip) |
-| 02 | [外壳及定位板](02-mechanical/bottom.stl) |
+| 02 | [M05 首件外壳及线束](02-mechanical/service-case-m05/print-guide.zh-CN.md) |
 | 03 | [材料及库存](03-bom/materials.zh-CN.md) |
 | 04 | [焊接与台架装配](04-assembly/soldering.zh-CN.html) |
 | 05 | [整机装配图](04-assembly/assembly-views.zh-CN.html) |
 | 06 | [固件与安装](05-firmware/installation.zh-CN.md) |
 | 07 | [验收与边界](06-validation/corner-review.zh-CN.md) |
 
-九根导线、16 件刚性理线件及 17 片胶膜的静态几何检查已通过；整机装配图已附上，固定件工艺和实际关壳装拆仍需验收；C42／C48 焊盘开窗及充电路线已修补，电池包及工厂复核仍待处理，实物 USB／蓝牙／静电容／温升仍待验收。当前机构指南不是整机装配放行。Gerber ZIP 仅供审查，不能当作已放行订单。
+首件试装选用 M05 底壳、两块检修盖及配套九线线束。整机渲染、打印清单和线长表均对应 M05。工厂阻焊对位、电池包确认、实际装拆及 USB／蓝牙／静电容／温升仍待实测。
 
-[Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [Bottom STEP](02-mechanical/bottom.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase.zh-CN.csv) · [Checksums](manifest.json)
+[Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [M05 bottom STEP](02-mechanical/service-case-m05/bottom-m05-REVIEW.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase.zh-CN.csv) · [Checksums](manifest.json)
 
 [JLC capabilities](https://jlcpcb.com/capabilities/Capabilities) · [JLC stack-ups](https://jlcpcb.com/impedance)

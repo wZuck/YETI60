@@ -15,7 +15,7 @@ The already-made **UDB-C-JSH C5 daughterboard stays unchanged**. No replacement 
 | Current electrical and mechanical evidence | [Corner review and reproduction commands](docs/engineering/e73-hhkb-corner.md) |
 | Full materials, packages, counts and inventory | [Preparation list](README.md#complete-materials-for-one-keyboard), [75-part mainboard purchase CSV](hardware/e73-hhkb-corner/mainboard-purchase.csv) |
 | Start from a blank PCB | [12-step soldering and bench guide](docs/assembly/e73-corner/soldering.md), [illustrated web guide](docs/assembly/e73-corner/soldering.html) |
-| Cables, exact pin connections and free lengths | [Nine-conductor harness](docs/engineering/e73-corner-harness.md) |
+| First-article shell, guides and matched wire lengths | [M05 prototype guide](docs/build/e73-m05-prototype.md) |
 | Retainer files, placement and film templates | [16 rigid parts and 17 film pieces](docs/engineering/e73-retention.md) |
 | Assembled, exploded, case interior and PCB underside views | [Assembly views and dry-fit stages](docs/build/e73-assembly-views.md) |
 | NiZ housings/sliders and steel-plate stabilizers | [Mechanism and assembly](docs/build/key-mechanism.md); 60 keys, three stabilizer pairs, 28 mounting sets, H26 unused |

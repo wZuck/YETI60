@@ -4,16 +4,13 @@ English | [Chinese](START-HERE.zh-CN.md)
 
 This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this whole folder together. The English and Chinese manuals are separate documents; filenames and part numbers identify the same physical design.
 
-**Current state: engineering review, not an order release.** Matching PCB, CAM, BOM and buildable firmware are bundled. The nine-wire route and 16 rigid retainers / 17 film pieces have passed bounded static checks. The delivery includes assembled, exploded, interior and PCB underside views. Retainer process, closed-case service and the final power/battery/manufacturing review remain open. The supplied bottom is the reviewed mechanical baseline, not a qualified complete harness assembly. The manifest records these limitations; a successful file-integrity check does not waive them.
+**Engineering review.** The first article uses the CORNER-06 PCB and firmware together with the M05 bottom, two access covers, nine matched conductors, 16 rigid retainers and 17 film pieces. The assembly views and wire lengths use M05. Factory registration, pack confirmation and physical acceptance remain open.
 
 | Task | Read / use |
 |---|---|
 | Open the current native KiCad project, identify the revision | [Project files and revision checks](01-pcb/project-files.md) |
 | Understand what to order and which options to select | [PCB and mechanical manufacturing instructions](01-pcb/ordering-and-printing.md) |
-| Check all nine leads, pin maps, free lengths and open gates | [Current harness study](04-assembly/harness-routing.md) |
-| Print and locate the 16 retainers and cut 17 films | [Retainer files, placement plan and dry-fit guide](04-assembly/retainers.md) |
-| Check plug access and lifting the PCB before closing the case | [Case assembly and removal checks](06-validation/case-service.md) |
-| Dry-fit the M05 case, covers and matched harness | [M05 prototype print files, wiring and materials](02-mechanical/service-case-m05/print-guide.md) |
+| Download the M05 case, access covers, retainers and matching wire lengths | [M05 first-article printing, wiring and service](02-mechanical/service-case-m05/print-guide.md) |
 | Buy parts, credit existing inventory, identify every fitted reference | [Complete materials](03-bom/materials.md), [mainboard BOM / stock CSV](03-bom/mainboard-purchase.csv) |
 | Ask the battery supplier to confirm pack parameters | [Complete pack specification](03-bom/battery-requirements.md) |
 | Solder a blank PCB in stages and test each stage | [12-step PCB soldering and bench guide](04-assembly/soldering.md), [illustrated web guide](04-assembly/soldering.html) |
@@ -36,7 +33,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 6. Assemble the NiZ/plate mechanism for meaningful key calibration. A shell is not needed to begin USB enumeration, firmware, raw sensing and BLE bench validation; domes/springs and the completed mechanism are needed to qualify all keys. Bare-board simulation is not physical EC acceptance.
 7. Flash the supplied calibrator HEX, calibrate/save all 60 positions, then flash the matching normal HEX while preserving settings as documented. HEX is address-bearing; do not guess the address of the raw BIN. The USB connector is not a claim of an installed USB bootloader.
 8. Validate USB data while charging from the same host connection, unplug-to-BLE behavior, battery-temperature faults and key sensing on the prototype. Insert the battery only after its complete-pack drawing, protection and NTC parameters are confirmed.
-9. Build the shell and install the final cables only after the current harness, retention and closed-case drawings are released. Recheck all keys, cable trapping, charging temperatures and BLE in the assembled keyboard.
+9. Follow the [M05 first-article guide](02-mechanical/service-case-m05/print-guide.md). Temporarily position the retainers and trial the service sequence with an inert pack gauge. Record closed-case harness, charging temperature and BLE tests on the physical article.
 
 ## Read the evidence correctly
 

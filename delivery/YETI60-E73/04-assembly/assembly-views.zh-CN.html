@@ -1,7 +1,7 @@
 <!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-06 整机装配图</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="assembly-views.html">English</a> | 中文</p>
 <h1 id="corner-06-整机装配图">CORNER-06 整机装配图</h1>
 <p><img src="images/assembled.png" alt="装好的 YETI60" /></p>
-<p>上下壳采用本交付包中基于 FELK60 的上壳和 M04 底壳，保留原始尺寸。钢定位板使用当前 NiZ 版 DXF。主板的铜层、阻焊、标记和钻孔来自当前原生 PCB。表面质感、键帽轮廓和字符是示意，采购成品可能有所不同。</p>
+<p>上下壳采用本交付包中基于 FELK60 的上壳和 M05 底壳及两块检修盖，保留原始尺寸。钢定位板使用当前 NiZ 版 DXF。主板的铜层、阻焊、标记和钻孔来自当前原生 PCB。表面质感、键帽轮廓和字符是示意，采购成品可能有所不同。</p>
 <p><img src="images/exploded.png" alt="含线束和紧固件的 YETI60 爆炸图" /></p>
 <p>从底壳向上看，依次对应主板、绝缘隔柱、锥形弹簧、胶碗、钢定位板、NiZ 轴座与滑块、上壳和键帽。为了看清线束、电池和 C5 子板，爆炸图将它们移出安装位置。四个脚垫集中展示在外壳下方。各线槽和安装基准请查阅配套图纸及指南。</p>
 <table>
@@ -14,7 +14,7 @@
 <tbody>
 <tr>
 <td>1. 准备外壳和钢定位板</td>
-<td>检查外壳成品尺寸、孔和轴座开口试片。准备 4 个 M3 和 4 个 M2 冷粘嵌件。定位板上下各裁 4 片垫条。<a href="../01-pcb/ordering-and-printing.zh-CN.html">制造要求</a></td>
+<td>检查外壳成品尺寸、孔和轴座开口试片。准备 4 个 M3 及 8 个 M2 冷粘嵌件，M2 中有 4 个用于检修盖。定位板上下各裁 4 片垫条。<a href="../01-pcb/ordering-and-printing.zh-CN.html">制造要求</a></td>
 </tr>
 <tr>
 <td>2. 焊装主板</td>
@@ -30,16 +30,18 @@
 </tr>
 <tr>
 <td>5. 试装底壳</td>
-<td>用 4 颗 M2 螺钉和绝缘垫片检查现有 C5 的安装。确认完整保护包尺寸，保持电池插头断开。用临时方式定位三组线束和 16 件刚性理线件，并与 M04 底壳试配。<a href="harness-routing.zh-CN.html">线束走向</a> · <a href="retainers.zh-CN.html">理线件指南</a></td>
+<td>安装已有 C5 子板，用无电量块代表电池。按 <a href="../02-mechanical/service-case-m05/print-guide.zh-CN.html">M05 首件指南</a> 临时定位九根导线和 16 件刚性理线件，检查两块检修盖可下取。</td>
 </tr>
 <tr>
-<td>6. 核实装拆空间</td>
-<td>永久粘接之前，用实际插头和导线验证装入及取出过程，确认插头、导线和电池未被拉扯或夹住。在这些检查与样机电气验收完成后，用 4 颗 M3 合壳螺钉及垫片验证关壳状态。<a href="../03-bom/battery-requirements.zh-CN.html">电池包要求</a></td>
+<td>6. 核实装拆和合壳</td>
+<td>依次试拔 J2、J4，停放后垂直抬起主板和定位板。按相反顺序复装，检查线束和电池无拉扯或夹压，再验证四颗 M3 合壳螺钉。<a href="../02-mechanical/service-case-m05/parking-guide.zh-CN.html">停放支撑与动作顺序</a></td>
 </tr>
 </tbody>
 </table>
 <p><img src="images/interior.png" alt="主板隐藏后可见的 C5、电池和九根导线" /></p>
-<p>底壳图将主板隐藏，以便查看线束的安装位置。图中部分夹件实际固定在主板底面，请按理线件 STEP 确定其 Z 高度和粘接面。九根导线的中心线来自标称线束检查，直径使用规定的绝缘外径上限。</p>
+<p>底壳图将主板隐藏，以便查看线束的安装位置。图中部分夹件实际固定在主板底面，请按理线件 STEP 确定其 Z 高度和粘接面。九根导线的中心线来自已检查的 M05 坐合路线，直径使用规定的绝缘外径上限。</p>
+<p><img src="images/case-underside.png" alt="M05 底部，两块检修盖均已装上" /></p>
+<p>这是安装脚垫前的底部视图。图左较宽的是 J4 盖，较窄的是 J2 盖。两块盖上共装四颗低头螺钉。</p>
 <p><img src="images/pcb-underside.png" alt="主板背面元件" /></p>
 <p>图内 73 个主板位号采用三维模型，U1 和 SW100 采用设计包络。五个配对插头、电池外皮、NiZ 塑料件、胶碗、弹簧、键帽、卫星轴、垫条和螺纹细节为示意。<a href="../06-validation/assembly-render.json">来源清单</a>记录具体版本、模型覆盖及图像校验值。工具空间和线束动作见<a href="../06-validation/case-service.zh-CN.html">关壳装拆检查</a>。树脂和胶带性能、射频及实物电气仍待验收。</p>
 </main></html>

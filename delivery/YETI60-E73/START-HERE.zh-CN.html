@@ -1,7 +1,7 @@
 <!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YETI60 E73 — 从这里开始</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="index.zh-CN.html">返回交付目录</a></header><p><a href="START-HERE.html">English</a> | 中文</p>
 <h1 id="yeti60-e73-从这里开始">YETI60 E73 — 从这里开始</h1>
 <p>这是 <strong>E73 右下角模块、标准 HHKB 排列方案</strong>的交付入口。请完整保留整个文件夹。中英文说明分别成文；文件名和料号指向同一套实物设计。</p>
-<p><strong>当前状态：工程审查版，尚未放行下单。</strong> 包内已有配套 PCB、制造文件、材料表及可构建固件。九根导线、16 件刚性理线件及 17 片胶膜已通过静态公差检查。包内附整机、爆炸、底壳线束及主板背面图。理线件制造工艺、关壳装拆及最终电源、电池和制造复核仍待验收。目前附带的底壳是已审查的机械基线，不代表完整线束已经装配验收。文件清单记录这些边界；文件校验通过不能替代工程验收。</p>
+<p><strong>当前状态为工程审查版。</strong> CORNER-06 主板和固件配套使用。首件试装选用 M05 底壳、两块检修盖和配套的九根导线、16 件刚性理线件及 17 片胶膜。整机图和线长表与 M05 配套。工厂对位、电池确认和实物验收仍待完成。</p>
 <table>
 <thead>
 <tr>
@@ -19,20 +19,8 @@
 <td><a href="01-pcb/ordering-and-printing.zh-CN.html">PCB 与机械件制造说明</a></td>
 </tr>
 <tr>
-<td>核对九根导线、针序、线长和未通过项</td>
-<td><a href="04-assembly/harness-routing.zh-CN.html">当前线束检查</a></td>
-</tr>
-<tr>
-<td>打印并定位 16 件理线件、裁切 17 片胶膜</td>
-<td><a href="04-assembly/retainers.zh-CN.html">固定件文件、位置图及试装说明</a></td>
-</tr>
-<tr>
-<td>关壳前核对插拔工具空间和抬板动作</td>
-<td><a href="06-validation/case-service.zh-CN.html">关壳装拆检查</a></td>
-</tr>
-<tr>
-<td>试配 M05 底壳、封盖与配套线束</td>
-<td><a href="02-mechanical/service-case-m05/print-guide.zh-CN.html">M05 试制打印、布线和材料</a></td>
+<td>下载 M05 外壳、检修盖、理线件和专用线长表</td>
+<td><a href="02-mechanical/service-case-m05/print-guide.zh-CN.html">M05 首件打印、布线和装拆</a></td>
 </tr>
 <tr>
 <td>采购材料、抵扣已有库存、找到每个元件位号</td>
@@ -90,7 +78,7 @@
 <li>需要有效校准按键时安装 NiZ 和定位板机构。不做外壳也可以开始验证 USB 枚举、固件、原始感应和蓝牙台架功能；全部按键验收需要胶碗、弹簧及装好的机构。空板模拟不等于实物静电容验收。</li>
 <li>先刷包内校准用 HEX，逐一校准并保存 60 个位置，再按教程保留设置、刷入配套功能用 HEX。HEX 自带地址；不要猜测裸 BIN 的烧录地址。有 USB 接口不代表已经安装 USB 引导程序。</li>
 <li>在样机上验证同一电脑 USB 连接下的数据与充电、拔线切换蓝牙、电池温度故障及按键感应。核实完整保护包图纸、保护机制与 NTC 参数后，才接入电池。</li>
-<li>等当前线束、固定方式和关壳图纸放行后，再制作外壳并装入最终线束。关壳后重新检查全部按键、夹线、充电温升和蓝牙功能。</li>
+<li>按 <a href="02-mechanical/service-case-m05/print-guide.zh-CN.html">M05 首件指南</a> 暂时定位夹件，用无电量块做装拆试验。通过后按首件记录验证实物合壳、线束、充电温升和蓝牙。</li>
 </ol>
 <h2 id="如何理解检查结果">如何理解检查结果</h2>
 <p>下单前可以检查原生 DRC、绑定设计来源的固件及主机模拟。供应商引线尺寸、压接质量、到货元件、树脂收缩、实际 NiZ 卡扣与行程、USB 信号完整性、蓝牙距离／静电容抗干扰、电池热行为，需要到货材料或样机验证。保留的钢定位板仍覆盖临时天线区域，项目没有宣称已经验证两三米蓝牙使用。</p>

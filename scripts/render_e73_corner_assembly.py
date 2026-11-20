@@ -177,7 +177,8 @@ def main():
     scene.world.node_tree.nodes['Background'].inputs['Color'].default_value = (.69, .76, .84, 1)
     scene.world.node_tree.nodes['Background'].inputs['Strength'].default_value = .26
 
-    group_names = ['bottom', 'top', 'plate', 'pcb', 'electronics', 'daughterboard', 'retainers',
+    group_names = ['bottom', 'covers', 'cover-screws', 'cover-inserts',
+                   'top', 'plate', 'pcb', 'electronics', 'daughterboard', 'retainers',
                    'battery', 'wires', 'plugs', 'gaskets', 'mounts', 'screws', 'inserts',
                    'caps', 'housings', 'domes', 'springs', 'stabilizers', 'feet']
     groups = {}
@@ -284,6 +285,16 @@ def main():
         cylinder('C5 M2 screw', x, y, 1, -13.0038, -9.0038, 'steel', 'daughterboard')
         cylinder('C5 M2 screw head', x, y, 1.8, -9.0038, -7.8, 'steel', 'daughterboard')
         ring('C5 washer', x, y, 2, 1.05, -9.3038, -9.0038, 'film', 'daughterboard')
+    for port in source['cover_fasteners']:
+        for fastener in port['fasteners']:
+            x, y = fastener['xy_mm']
+            z = fastener['head_seat_z_mm']
+            tip = fastener['insert_bore_end_z_mm'] - fastener['screw_tip_to_blind_bottom_mm']
+            face = fastener['shelf_center_z_mm'] + fastener['insert_face_recess_from_shelf_at_axis_mm']
+            label = port['ref'] + ' cover'
+            ring(label + ' insert', x, y, 1.6, 1, face, face + 2.5, 'brass', 'cover-inserts')
+            cylinder(label + ' screw shank', x, y, 1, z, tip, 'steel', 'cover-screws')
+            ring(label + ' screw head', x, y, 1.9, .65, z - 1.3, z, 'steel', 'cover-screws')
 
     widths = [[1]*15, [1.5]+[1]*12+[1.5], [1.75]+[1]*11+[2.25],
               [2.25]+[1]*10+[1.75,1], [1,1.5,6,1.5,1]]
@@ -391,9 +402,12 @@ def main():
             'wires': (.064,-.148,.031), 'plugs': (.064,-.148,.031),
             'retainers': (.064,-.148,.031), 'battery': (.087,-.248,.038),
             'daughterboard': (-.001,-.142,.039), 'feet': (-.030,-.073,.008),
+            'covers': (0,-.153,-.018), 'cover-screws': (0,-.174,-.034),
+            'cover-inserts': (0,-.136,-.005),
         },
         'interior': {},
         'pcb-underside': {'pcb': (0,0,.038), 'electronics': (0,0,.038)},
+        'case-underside': {},
     }
     proof = {}
     for view, offsets in placements.items():
@@ -402,16 +416,19 @@ def main():
             visible.remove('feet')
         if view == 'interior':
             visible -= {'top','plate','pcb','electronics','gaskets','mounts','screws','inserts',
-                        'caps','housings','domes','springs','stabilizers','feet'}
+                        'caps','housings','domes','springs','stabilizers','feet','cover-inserts'}
         if view == 'pcb-underside':
             visible = {'pcb', 'electronics'}
+        if view == 'case-underside':
+            visible = {'bottom', 'covers', 'cover-screws'}
         for name, parent in groups.items():
             parent.location = offsets.get(name, (0,0,0))
             for child in parent.children_recursive:
                 child.hide_render = name not in visible
         scene.render.resolution_x = 1100 if args.preview else 2200
         scene.render.resolution_y = 860 if args.preview else 1650
-        direction = Vector({'interior': (.22,-.43,.92), 'pcb-underside': (.15,-.45,-.9)}
+        direction = Vector({'interior': (.22,-.43,.92), 'pcb-underside': (.15,-.45,-.9),
+                            'case-underside': (-.12,.37,-.92)}
                            .get(view, (.36,-.74,.62))).normalized()
         camera.location = direction*.8
         aim(camera, (0,0,0))
@@ -425,8 +442,9 @@ def main():
         hi = [max(v[i] for v in projected) for i in range(3)]
         camera.location += camera.rotation_euler.to_matrix() @ Vector(((lo[0]+hi[0])/2,(lo[1]+hi[1])/2,0))
         cam.ortho_scale = max(hi[0]-lo[0],(hi[1]-lo[1])*scene.render.resolution_x/scene.render.resolution_y)*1.12
-        floor.hide_render = view == 'pcb-underside'
-        lighting['Underside'].hide_render = view != 'pcb-underside'
+        below = view in {'pcb-underside', 'case-underside'}
+        floor.hide_render = below
+        lighting['Underside'].hide_render = not below
         floor.location.z = min(p.z for p in points)-.0006
         bpy.context.view_layer.update()
         uv = [world_to_camera_view(scene,camera,p) for p in points]
@@ -444,6 +462,7 @@ def main():
         for name, digest in inputs.items():
             assert sha(ROOT / name) == digest, name
         report = dict(status='current-source-assembly-views-rendered', physical_verification=False,
+                      case_revision=source['case_revision'], wire_free_lengths_mm=source['wire_free_lengths_mm'],
                       case_scale=[1,1,1], source_sha256=inputs, native_component_models=source['native_refs'],
                       component_envelope_proxies=source['proxy_refs'], daughter_mesh_sha256=source['daughter_mesh_sha256'],
                       views=proof, outputs={str((OUT/(view+'.png')).relative_to(ROOT)): row['sha256']

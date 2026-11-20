@@ -39,10 +39,10 @@ CORNER-06 moves the SW1.2 ground via and its short connection. The nominal drill
 | Item / net quantity | Delivery path | Manufacturing instructions |
 |---|---|---|
 | Top / 1 | `02-mechanical/top.step` or `top.stl` | Fully post-cured tough engineering SLA resin; millimetres; 100% scale |
-| Bottom / 1 | `02-mechanical/bottom.step` or `bottom.stl` | Same resin/units; current baseline only while final retained harness is open; do not print an old bottom found elsewhere |
+| M05 lower shell and access covers / three parts, one each | [M05 print files and cover hardware](e73-m05-prototype.md) | Tough engineering SLA resin, millimetres, 100% scale. Use the matched M05 harness and retainers |
 | Plate / 1 | `02-mechanical/steel-plate.dxf` | **304 stainless steel**, CAD nominal 1.60 mm, finished 1.55–1.60 mm; machine and deburr functional openings; not a PCB or resin print |
 | Standoffs / 28 | `02-mechanical/standoff.step`, `assembly-spec.json` | Machined brass, OD3.5, 4.50 ±0.03 mm shoulder; top M2×0.4 stud 1.0 mm, bottom M1.6×0.35 internal thread depth 3.2 mm; model alone does not specify qualified threads |
-| Cable guides / 16 rigid parts + 17 cut films | `02-mechanical/retention/print/` and `parts.csv` | [Retainer manufacturing and dry-fit requirements](../engineering/e73-retention.md); print each rigid STL once or the ALL-16 layout once, cut films separately. Process and service acceptance remain open |
+| M05 cable guides / 16 rigid parts and 17 cut films | [Print checklist and placement](e73-m05-prototype.md) | Use 14 shared rigid parts plus two M05 battery guides and the M05 wire cut list |
 
 Use STEP as the dimension reference; STL is a mesh export in the same millimetre coordinates. Do not rescale the FELK60 shell or add an arbitrary shrinkage percentage. Agree on the supplier's process compensation and verify the finished dimensions. Orient/support the resin parts so mating ledges, insert bores and cable channels remain dimensionally controlled; clean and post-cure before finishing bores. Printed threads are not substitutes for the specified brass inserts or machined standoff threads.
 

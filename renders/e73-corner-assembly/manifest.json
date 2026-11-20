@@ -1,6 +1,18 @@
 {
   "status": "current-source-assembly-views-rendered",
   "physical_verification": false,
+  "case_revision": "M05",
+  "wire_free_lengths_mm": {
+    "usb.1": 277.517397651658,
+    "usb.2": 285.1892262509256,
+    "usb.3": 285.18868953232493,
+    "usb.4": 291.65456459281205,
+    "power.1": 263.6221482061046,
+    "power.2": 262.47921367596217,
+    "battery.1": 113.51185474360706,
+    "battery.2": 110.30910490905966,
+    "battery.3": 107.22866943642748
+  },
   "case_scale": [
     1,
     1,
@@ -17,7 +29,7 @@
     "hardware/e73-hhkb-corner/audit/retention-prints.json": "de5bb4d8676dfffac1d4980910b730a044e6512c9937f041f431da25baff94a3",
     "hardware/e73-hhkb-corner/audit/retention-study.json": "887d80b2651426f44b0ceb7100f6ceefad7e98e202e601f993b2e0c140e6addd",
     "docs/audit/yeti60-daughterboard.json": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
-    "scripts/export_e73_corner_assembly_scene.py": "8c02adaa6b59d9dda4c80111674a2e1b51787d0ffbe9ec0e94c1d1f579fbd003",
+    "scripts/export_e73_corner_assembly_scene.py": "80c25ce690c4ec6505352d72b557c72804c49a4ebb1172879010e3200665db75",
     "scripts/export_yeti60_render_meshes.py": "48abaa65007227b3c3cb03b270041ad78eb395b7f2a4e195f5335f25c4a1a826",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
@@ -26,8 +38,12 @@
     "hardware/e73-corner-harness-spec.json": "015f0904c0868a9563cf9e797a1e858f4b8eb31116829e525f27e6bcf57b930c",
     "hardware/e73-corner-spec.json": "d0f457d9a376f782d4cde0560417ca22cd179fe0b52dd974be96ff709d6fe89e",
     "scripts/interconnect_geometry.py": "a3ea2cd5cbe15cfa5aebaf89d961e3387e9c183e147564f27fa4d5aa9477c5c2",
+    "hardware/e73-hhkb-corner/audit/service-case-m05.json": "07cd8d36f3081ec17a23d0816297156f629cfcc4f07606ade0aa26904e6d6c02",
+    "hardware/e73-hhkb-corner/audit/m05-harness.json": "373038e86c138bfd26fc172b3a72ec6532c1d579e4ce838228f7713224476026",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
-    "hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step": "05df1190f4a9a418e9861851fa32bb15da3e71a9545af5b2126141a647411428",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step": "4f6a72e62dcf592945097c293bb3ca795cc395b6915328bb41256eb37c7cf007",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J2-REVIEW.step": "6abd35db97361ab6b492467a912eb9680be975e93964d44cccdfecbba6af45fb",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.step": "0b93cbec60c942be89abc7c58051409762b8f0eade6e2c43bb28355744445e71",
     "hardware/e73-hhkb-corner/YAECKB.pretty/JST-SR-4__J1.kicad_mod": "1e791e4505712fa9296ed34f36e25e3a0a5b0167d4691488ce0ef5326efe7a4d",
     "docs/audit/yeti60-interconnect-connectors.json": "7ac3fa5d4a558af34cceef15510850e1d57087715fd3588ebf9292e3926b1604",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R1.step": "844b682a2d7c61f1a59ac5f4705cd7fa754195b463ea0e8bb3ed153f368d0709",
@@ -37,8 +53,8 @@
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-lid.step": "050b07126775d08413d3ba7a803bbc6d760a8c67880ad24f705dd6c0f6fa2094",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-base.step": "22b831e2b8e4c530620d3cd8fd44b543e9a8fac8574833ac6fb28a9c89fa5428",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-lid.step": "93c06b3e549505c1535649512b490280da27827ddbd8a60f4f377fd7825e3f8c",
-    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R1.step": "092552e8a1daba392a72e0870c344c623fff67f2f22923eab6bca9d0ee636fdf",
-    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R2.step": "1d28b56fa57c4071ccfcace2198c9117775cdb6e25911a28fca025452379b766",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/BAT-R1-M05.step": "fc6c6e514e40d4cfcd2f0d8f1e2fb0b0bf490b5b51a5ab69559d37036a429c10",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/BAT-R2-M05.step": "59d6406c30116f852fd502590330adc798dcab9b52a9a5667b9d64533f3f6efa",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R1.step": "579e74f220b7dd3ebdb9226942c3a616c912433c99e9daa27c8184ae1ccce2fb",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R2.step": "a971c534f5a83a6c0bd348dafd24e9368aecd3a277344dc5ba6190f49a8b3cde",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R3.step": "46b910e54e659fdf9791b4ac6549769139e6f979983aad3969846a10692b0729",
@@ -53,8 +69,8 @@
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-seam-2.step": "b2ffc67ab26d839d0358ecadd0a9cb799764be5aec5aa9078336ff66eb326d49",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-seam-1.step": "612c0c56269141f20132795dc58cd651e1cdf30009a54f13fb63b8e2cf48d8a9",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-seam-2.step": "f5d0826241817191c34ae589e0a2edb118852d34fdabdec69910af5bb27cc8da",
-    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R1-film.step": "f74dc48f0c4a98fac4f784a3338ecf30a72b0e58b925950142847d0ac65b4c76",
-    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/BAT-R2-film.step": "33352a8bed2961fcfaf20b18822a193e7af6bc18ac8f5587d46a6bfaee14bd92",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/BAT-R1-film-M05.step": "6447573f71cb80484fd2730d3ec4966fcc5e1573b45fcc1facecb08934e2f5d1",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/BAT-R2-film-M05.step": "43e30e4da65b96ce6b6dbd611e3543455f2759f01ff68416cfb4e1d4ce4e00ed",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R1-film.step": "d5bd1100f503455b4975bee28885ba5a9787fa3d0b395ed1f4a6447051f43523",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R2-film.step": "ff1f43d3679d29e7a940301f4c9c5684e08503e378414dfb47a663f530bfb7d2",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R3-film.step": "9064d2ad27e7762bdeb4d0446c10ab296ba2ffa4e3fc85019f43e9d895a41ad3",
@@ -63,7 +79,7 @@
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-seam-1.step": "13f86f9bb530bd58f08f93b8199210676e451d225ffa45eb0237f761c76d5f29",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-seam-2.step": "a4da1db40b7d9c1def15e614e2c368b4e6669f149169e079c5bb73eec5e626bb",
     "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-lower-film.step": "63293a25ed0509679ad5ddeb9f115fec8fc4582823e99c974e3becfd9bc9ff34",
-    "scripts/render_e73_corner_assembly.py": "7012f419f2a85819d8ec496659213e5d792b9dc6050707b71f0c95a4ab60ca89"
+    "scripts/render_e73_corner_assembly.py": "dce690a6b76c955107a9c63e10c17eefdd6f78e42f0dc661e7ad072e4309c973"
   },
   "native_component_models": [
     "C10",
@@ -156,6 +172,9 @@
         "battery": 1,
         "bottom": 1,
         "caps": 119,
+        "cover-inserts": 4,
+        "cover-screws": 8,
+        "covers": 2,
         "daughterboard": 16,
         "domes": 60,
         "electronics": 175,
@@ -174,13 +193,16 @@
         "wires": 9
       },
       "minimum_image_border_fraction": 0.0535714216530323,
-      "sha256": "863ada049f241593b86931a8b2c32565c1e16160eb4ca82948a1b0ea5fd2da46"
+      "sha256": "c570d07c6e434b50fedd351bbd2a71e849469a2abf9a58aa592478412b6107fd"
     },
     "exploded": {
       "objects_by_group": {
         "battery": 1,
         "bottom": 1,
         "caps": 119,
+        "cover-inserts": 4,
+        "cover-screws": 8,
+        "covers": 2,
         "daughterboard": 16,
         "domes": 60,
         "electronics": 175,
@@ -200,19 +222,21 @@
         "wires": 9
       },
       "minimum_image_border_fraction": 0.053571343421936035,
-      "sha256": "7422903bfc33a7c79a06bfaaeb07bc5a684e23fa11faaa82c4de8b4bbf16e6fa"
+      "sha256": "1c5960dbab14f7de8f717d853400fe42ebc1ac73134f018a973226d539ac515b"
     },
     "interior": {
       "objects_by_group": {
         "battery": 1,
         "bottom": 1,
+        "cover-screws": 8,
+        "covers": 2,
         "daughterboard": 16,
         "plugs": 5,
         "retainers": 33,
         "wires": 9
       },
       "minimum_image_border_fraction": 0.053571343421936035,
-      "sha256": "5c273fe20a4db984e2d612ec137af2b3227b58695bb86e1f997fb3455aed42e4"
+      "sha256": "bc3a269aa0b6c14d8fe710fedf82eed3718175fab5abbe0dd01c3f76a2ec027d"
     },
     "pcb-underside": {
       "objects_by_group": {
@@ -220,14 +244,24 @@
         "pcb": 9
       },
       "minimum_image_border_fraction": 0.053571343421936035,
-      "sha256": "728d5c598db7b1d115f7fdb69e05c3402d58584dffe824676418df44ad8155ef"
+      "sha256": "d5cebe8c4c5e9ca511304e15fe56fd590dc75086a8d5adfdcb704c63e2af26c4"
+    },
+    "case-underside": {
+      "objects_by_group": {
+        "bottom": 1,
+        "cover-screws": 8,
+        "covers": 2
+      },
+      "minimum_image_border_fraction": 0.053571105003356934,
+      "sha256": "55a1d3c777368692f9114b7d81a13de3a69f3af4352244b137834106fe013e9d"
     }
   },
   "outputs": {
-    "renders/e73-corner-assembly/assembled.png": "863ada049f241593b86931a8b2c32565c1e16160eb4ca82948a1b0ea5fd2da46",
-    "renders/e73-corner-assembly/exploded.png": "7422903bfc33a7c79a06bfaaeb07bc5a684e23fa11faaa82c4de8b4bbf16e6fa",
-    "renders/e73-corner-assembly/interior.png": "5c273fe20a4db984e2d612ec137af2b3227b58695bb86e1f997fb3455aed42e4",
-    "renders/e73-corner-assembly/pcb-underside.png": "728d5c598db7b1d115f7fdb69e05c3402d58584dffe824676418df44ad8155ef"
+    "renders/e73-corner-assembly/assembled.png": "c570d07c6e434b50fedd351bbd2a71e849469a2abf9a58aa592478412b6107fd",
+    "renders/e73-corner-assembly/exploded.png": "1c5960dbab14f7de8f717d853400fe42ebc1ac73134f018a973226d539ac515b",
+    "renders/e73-corner-assembly/interior.png": "bc3a269aa0b6c14d8fe710fedf82eed3718175fab5abbe0dd01c3f76a2ec027d",
+    "renders/e73-corner-assembly/pcb-underside.png": "d5cebe8c4c5e9ca511304e15fe56fd590dc75086a8d5adfdcb704c63e2af26c4",
+    "renders/e73-corner-assembly/case-underside.png": "55a1d3c777368692f9114b7d81a13de3a69f3af4352244b137834106fe013e9d"
   },
   "case_bounds_mm": {
     "top": [

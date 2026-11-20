@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M05 access prototype for E73</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../../index.html">Back to delivery index</a></header><p>English | <a href="print-guide.zh-CN.html">Chinese</a></p>
 <h1 id="m05-access-prototype-for-e73">M05 access prototype for E73</h1>
-<p>M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the M04 outer dimensions and the location of the footpads, upper shell, steel plate and C5 daughterboard. The original right rear foot recess is part of the J4 cover, so its footpad comes off with that cover. The current M04 files remain the baseline in the main ordering table.</p>
+<p>M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the M04 outer dimensions and the location of the footpads, upper shell, steel plate and C5 daughterboard. The original right rear foot recess is part of the J4 cover, so its footpad comes off with that cover. Use this M05 configuration for the CORNER-06 first article.</p>
 <p><img src="../../06-validation/m05-access-exploded.png" alt="M05 underside with the J2 and J4 covers removed" /></p>
 <h2 id="files-and-parts-for-one-prototype">Files and parts for one prototype</h2>
 <table>
@@ -12,6 +12,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>FELK60-based top</td>
+<td style="text-align:right">1</td>
+<td><a href="../top.stl">Print STL</a> · <a href="../top.step">STEP</a></td>
+</tr>
 <tr>
 <td>M05 bottom</td>
 <td style="text-align:right">1</td>
@@ -54,7 +59,7 @@
 </tr>
 </tbody>
 </table>
-<p>Print at 100% in millimetres using tough engineering SLA resin. Make one of each of the three parts and choose either STEP or STL for each part. Both formats use the same case coordinates. Inspect the seating faces, foot recess and blind bores after the resin is fully post-cured. Choose supports and drainage before printing and keep support damage off those faces.</p>
+<p>Print one of each of the four shell parts at 100% in millimetres using tough engineering SLA resin. Choose either STEP or STL for each part. Both formats use the same case coordinates. Inspect the seating faces, foot recess and blind bores after the resin is fully post-cured. Keep supports off those faces.</p>
 <h2 id="build-the-matched-m05-harness">Build the matched M05 harness</h2>
 <p>Use the <a href="harness/wire-lengths-m05.csv">M05 free lengths</a> for all nine conductors. These are lengths along the insulation, from housing exit to housing exit or to the pack strain-relief face. Add the termination and stripping allowances for the actual contacts when cutting the wire. The trial uses stranded AWG28 copper with a maximum finished insulation diameter of 0.65 mm.</p>
 <p><img src="../../06-validation/m05-harness-plan.png" alt="M05 installed cable paths and winding stations" /></p>
@@ -85,6 +90,39 @@
 <tr>
 <td>Other retainers and films</td>
 <td>Reuse the 14 remaining rigid files and 17 film blank shapes from the <a href="../../04-assembly/retainers.html">retainer set</a>. Place the two battery films on the new battery retainers. Use their <a href="harness/BAT-R1-film-M05.step">BAT-R1</a> and <a href="harness/BAT-R2-film-M05.step">BAT-R2</a> folded shapes as placement references.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="print-checklist-for-the-16-retainers">Print checklist for the 16 retainers</h3>
+<p>Print one of each linked STL. Cut the 17 film pieces using the film templates.</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th style="text-align:right">Quantity</th>
+<th>STL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USB rear guides</td>
+<td style="text-align:right">3</td>
+<td><a href="../retention/print/USB-R1.stl">USB-R1</a>, <a href="../retention/print/USB-R2.stl">USB-R2</a>, <a href="../retention/print/USB-R3.stl">USB-R3</a></td>
+</tr>
+<tr>
+<td>USB front guides</td>
+<td style="text-align:right">4</td>
+<td><a href="../retention/print/USB-F1-base.stl">USB-F1-base</a>, <a href="../retention/print/USB-F1-lid.stl">USB-F1-lid</a>, <a href="../retention/print/USB-F2-base.stl">USB-F2-base</a>, <a href="../retention/print/USB-F2-lid.stl">USB-F2-lid</a></td>
+</tr>
+<tr>
+<td>Power bridge guides</td>
+<td style="text-align:right">7</td>
+<td><a href="../retention/print/PWR-R1.stl">PWR-R1</a>, <a href="../retention/print/PWR-R2.stl">PWR-R2</a>, <a href="../retention/print/PWR-R3.stl">PWR-R3</a>, <a href="../retention/print/PWR-R4.stl">PWR-R4</a>, <a href="../retention/print/PWR-R5.stl">PWR-R5</a>, <a href="../retention/print/PWR-F-upper.stl">PWR-F-upper</a>, <a href="../retention/print/PWR-F-lower.stl">PWR-F-lower</a></td>
+</tr>
+<tr>
+<td>Battery guides</td>
+<td style="text-align:right">2</td>
+<td><a href="harness/BAT-R1-M05.stl">BAT-R1-M05</a>, <a href="harness/BAT-R2-M05.stl">BAT-R2-M05</a></td>
 </tr>
 </tbody>
 </table>

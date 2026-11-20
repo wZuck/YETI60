@@ -1,6 +1,6 @@
 <!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E73 的 M05 维修口试制件</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../../index.zh-CN.html">返回交付目录</a></header><p><a href="print-guide.html">English</a> | 中文</p>
 <h1 id="e73-的-m05-维修口试制件">E73 的 M05 维修口试制件</h1>
-<p>M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形尺寸、脚垫位置及上壳、钢定位板和 C5 子板的安装基准。右后脚垫槽完整位于 J4 封盖上，拆盖时脚垫一起取下。制造总表仍列 M04 作为当前底壳基线。</p>
+<p>M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形尺寸、脚垫位置及上壳、钢定位板和 C5 子板的安装基准。右后脚垫槽完整位于 J4 封盖上，拆盖时脚垫一起取下。CORNER-06 的首件装配使用这套 M05 配置。</p>
 <p><img src="../../06-validation/m05-access-exploded.png" alt="拆开 J2 与 J4 封盖后的 M05 底面" /></p>
 <h2 id="一套试制件需要的文件和材料">一套试制件需要的文件和材料</h2>
 <table>
@@ -12,6 +12,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>FELK60 尺寸上壳</td>
+<td style="text-align:right">1</td>
+<td><a href="../top.stl">打印 STL</a> · <a href="../top.step">STEP</a></td>
+</tr>
 <tr>
 <td>M05 底壳</td>
 <td style="text-align:right">1</td>
@@ -54,7 +59,7 @@
 </tr>
 </tbody>
 </table>
-<p>使用韧性工程 SLA 树脂，按毫米、100% 比例打印。三种零件各做一件，每件从 STEP 和 STL 中选一个文件。两种格式使用相同的壳体坐标。在树脂完全后固化后复查承压面、脚垫槽和盲孔。安排打印支撑和排液方向时，避免支撑损伤这些面。</p>
+<p>使用韧性工程 SLA 树脂，按毫米、100% 比例打印四件外壳零件，每种各一件。每件从 STEP 和 STL 中选一个文件，两种格式使用同一壳体坐标。树脂完全后固化后复查承压面、脚垫槽和盲孔。避免在这些面上留打印支撑。</p>
 <h2 id="制作-m05-配套线束">制作 M05 配套线束</h2>
 <p>九根导线均按 <a href="harness/wire-lengths-m05.zh-CN.csv">M05 自由长度表</a>制作。自由长度沿绝缘层测量，从一端胶壳出口量到另一端出口或保护包的应力释放面。裁线时按实际端子另计剥皮和压接的余量。试装使用 AWG28 多股铜线，成品绝缘外径最大 0.65 mm。</p>
 <p><img src="../../06-validation/m05-harness-plan.zh-CN.png" alt="M05 坐合状态的线束走向与绞线位置" /></p>
@@ -85,6 +90,39 @@
 <tr>
 <td>其他理线件及胶膜</td>
 <td>其余 14 件刚性件和 17 片胶膜的下料形状沿用<a href="../../04-assembly/retainers.zh-CN.html">现有理线件套件</a>。两片电池胶膜装到新支架，可对照 <a href="harness/BAT-R1-film-M05.step">BAT-R1</a> 和 <a href="harness/BAT-R2-film-M05.step">BAT-R2</a> 的折后模型。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="16-件理线件打印清单">16 件理线件打印清单</h3>
+<p>每个链接打印 1 件。胶膜按模板裁切，共 17 片。</p>
+<table>
+<thead>
+<tr>
+<th>分组</th>
+<th style="text-align:right">数量</th>
+<th>STL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USB 后侧导槽</td>
+<td style="text-align:right">3</td>
+<td><a href="../retention/print/USB-R1.stl">USB-R1</a>, <a href="../retention/print/USB-R2.stl">USB-R2</a>, <a href="../retention/print/USB-R3.stl">USB-R3</a></td>
+</tr>
+<tr>
+<td>USB 前侧导槽</td>
+<td style="text-align:right">4</td>
+<td><a href="../retention/print/USB-F1-base.stl">USB-F1-base</a>, <a href="../retention/print/USB-F1-lid.stl">USB-F1-lid</a>, <a href="../retention/print/USB-F2-base.stl">USB-F2-base</a>, <a href="../retention/print/USB-F2-lid.stl">USB-F2-lid</a></td>
+</tr>
+<tr>
+<td>电源桥导槽</td>
+<td style="text-align:right">7</td>
+<td><a href="../retention/print/PWR-R1.stl">PWR-R1</a>, <a href="../retention/print/PWR-R2.stl">PWR-R2</a>, <a href="../retention/print/PWR-R3.stl">PWR-R3</a>, <a href="../retention/print/PWR-R4.stl">PWR-R4</a>, <a href="../retention/print/PWR-R5.stl">PWR-R5</a>, <a href="../retention/print/PWR-F-upper.stl">PWR-F-upper</a>, <a href="../retention/print/PWR-F-lower.stl">PWR-F-lower</a></td>
+</tr>
+<tr>
+<td>电池导槽</td>
+<td style="text-align:right">2</td>
+<td><a href="harness/BAT-R1-M05.stl">BAT-R1-M05</a>, <a href="harness/BAT-R2-M05.stl">BAT-R2-M05</a></td>
 </tr>
 </tbody>
 </table>
