@@ -1,0 +1,102 @@
+{
+  "status": "source-bound-planning-budget-first-article-open",
+  "physical_verification": false,
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e",
+    "hardware/e73-hhkb-corner/firmware/manifest.json": "d6d4adb2ab846eab00de0bd5e0e686864a8a8ac9c5e9821aa37163a0418e3c41",
+    "hardware/e73-hhkb-corner/firmware/yeti60-target-check.json": "df87de3b20257006757ec06c527d64cce2ae07c61fc8ecb61467eb170f0a9b59",
+    "firmware/target/src/usb_policy.c": "a59aae14ae70c1e90d1d6c053447981ba4e8396a0539311956d67689ef94a0ac",
+    "docs/audit/yeti60-daughterboard.json": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
+    "scripts/check_e73_host_current.py": "07ff006a9fccc71f62f9bcfa1b2866a2bffbff5d5f86efa37f41d88a9521226a",
+    "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a"
+  },
+  "host_current_limits_mA": {
+    "before_configuration": 100,
+    "configured": 500
+  },
+  "pin_assignments": {
+    "F1": {
+      "1": "USB_5V",
+      "2": "VBUS"
+    },
+    "U1": {
+      "27": "USB_5V"
+    },
+    "U5": {
+      "12": "ILIM_SET",
+      "13": "USB_5V",
+      "16": "ICHG_SET",
+      "10": "VSYS"
+    },
+    "C32": {
+      "1": "USB_5V",
+      "2": "GND"
+    },
+    "C40": {
+      "1": "USB_5V",
+      "2": "GND"
+    },
+    "R40": {
+      "1": "ICHG_SET",
+      "2": "GND"
+    },
+    "R41": {
+      "1": "ILIM_SET",
+      "2": "GND"
+    }
+  },
+  "BQ24074_input_limit_mA": {
+    "USB100_min_typ_max": [
+      90,
+      95,
+      100
+    ],
+    "USB500_min_typ_max": [
+      450,
+      475,
+      500
+    ]
+  },
+  "nRF52840_VBUS_typical_mA": {
+    "active": 2.4,
+    "suspend": 0.262
+  },
+  "mainboard_direct_VBUS_nominal_capacitance_uF": {
+    "C32": 4.7,
+    "C40": 2.2
+  },
+  "mainboard_nominal_direct_capacitor_charge_at_5V_uC": 34.5,
+  "assumed_non_battery_current_mA": {
+    "U5_OUT": 40,
+    "U5_internal": 2,
+    "U1_and_other_bypass": 10
+  },
+  "CORNER_07_R40": {
+    "R40_ohm": 2210,
+    "programmed_charge_min_typ_max_mA": [
+      357.0629,
+      402.7149,
+      445.6328
+    ],
+    "estimated_port_mA_at_charge_tolerance_max": 497.6328,
+    "margin_to_500_mA_in_planning_case": 2.3672,
+    "fast_charge_equivalent_1600mAh_hours_at_typical_setting": 3.973
+  },
+  "unqualified_R40_derating_trial": {
+    "R40_ohm": 2490,
+    "programmed_charge_min_typ_max_mA": [
+      316.9112,
+      357.4297,
+      395.5215
+    ],
+    "estimated_port_mA_at_charge_tolerance_max": 447.5215,
+    "margin_to_500_mA_in_planning_case": 52.4785,
+    "fast_charge_equivalent_1600mAh_hours_at_typical_setting": 4.4764
+  },
+  "references": {
+    "charger": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+    "nRF52840_USBD_running": "https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/_tmp/nrf52840/autodita/current/parameters.i_usbd.html?contentId=0~r9OOfQs0Fo3SLnXciN~A",
+    "USB_host_port": "https://compliance.usb.org/index.asp?Format=Standard&UpdateFile=Policies",
+    "USB_inrush_test": "https://www.usb.org/sites/default/files/USB-IFTestProc1_3.pdf"
+  }
+}

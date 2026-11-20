@@ -15,10 +15,11 @@ def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
  native=json.loads((BASE/'audit/placement-check.json').read_text());assert native['electrical_routing_complete']
  (out/'06-validation/aperture-trial.json').unlink(missing_ok=True)
- for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','bench-power-plan','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift','m05-tool','m05-tool-drawing','m05-parking-support','m05-parking-support-render']:
+ for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','usb-host-current','bench-power-plan','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift','m05-tool','m05-tool-drawing','m05-parking-support','m05-parking-support-render']:
   report=json.loads((BASE/'audit'/f'{name}.json').read_text())
   for path,digest in report['source_sha256'].items():assert sha(ROOT/path)==digest,('Stale delivery input',path)
   if name=='power-process':assert report['status']=='repaired-power-routing-and-aperture-checks-passed'
+  if name=='usb-host-current':assert report['status']=='source-bound-planning-budget-first-article-open'
   if name=='bench-power-plan':
    assert report['status']=='native-bench-pad-map-and-M05-headroom-checked'
    assert report['pcb_sha256']==sha(BASE/'EC60-nRF52840.kicad_pcb')
@@ -250,6 +251,6 @@ def main():
   (out/('index'+suffix+'.html')).write_text(page)
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with','markdown-it-py==4.0.0','python',str(ROOT/'scripts/render_e73_delivery_docs.py'),'--base',str(out)],check=True)
  inputs['scripts/render_e73_delivery_docs.py']=sha(ROOT/'scripts/render_e73_delivery_docs.py')
- manifest=dict(revision=revision,status='draft-delivery-engineering-review-not-order-release',production_approved=False,physical_verification=False,source_PCB_sha256=sha(board),source_sha256=inputs,source_mapping=mapping,mechanical_first_article=prototype,pending=['Retainer manufacturing process, physical routing and service','Closed-case insertion and withdrawal qualification','Charging and pack first-article acceptance and factory CAM review','Physical acceptance'],files_sha256={str(p.relative_to(out)):sha(p)for p in sorted(out.rglob('*'))if p.is_file()and p!=out/'manifest.json'and p.name!='.DS_Store'})
+ manifest=dict(revision=revision,status='draft-delivery-engineering-review-not-order-release',production_approved=False,physical_verification=False,source_PCB_sha256=sha(board),source_sha256=inputs,source_mapping=mapping,mechanical_first_article=prototype,pending=['Retainer manufacturing process, physical routing and service','Closed-case insertion and withdrawal qualification','Charging and pack first-article acceptance and factory CAM review','Whole-device USB port current and hot-plug inrush','Physical acceptance'],files_sha256={str(p.relative_to(out)):sha(p)for p in sorted(out.rglob('*'))if p.is_file()and p!=out/'manifest.json'and p.name!='.DS_Store'})
  (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');print('Delivery review assets assembled:',out)
 if __name__=='__main__':main()

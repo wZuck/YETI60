@@ -59,6 +59,7 @@
 </table>
 <h2 id="test-in-order">Test in order</h2>
 <p>Record both minimum transient voltage and steady voltage where relevant. Start with the simulator and valid NTC setting. Record the host, cable, ambient temperature, configured image and recorded current resolution. TI input limits are for the charger IC. Evaluate total current at the host as well. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI electrical and logic limits, §8.5</a> · <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/power.html">Nordic USB operating conditions</a></p>
+<p>For the total-current check, use a data-capable connection at 5.0 V loaded at C5 first. Set the simulator above the precharge threshold and below the constant-voltage region, then confirm that battery current is positive. Test both firmware builds in their normal activity, including HID polling or calibration sampling. Measure upstream of the C5 daughterboard. Add the instrument's stated current uncertainty to the maximum steady reading when comparing with the 100 mA preconfiguration and 500 mA configured limits. Measure hot-plug inrush separately with a current probe or an appropriate USB test fixture and retain the trace. Run the reduced-VBUS test separately so foldback does not hide a high-current operating point. <a href="power-process.html">Host-current budget</a> · <a href="https://www.usb.org/sites/default/files/USB-IFTestProc1_3.pdf">USB-IF attach test, §B.4</a></p>
 <table>
 <thead>
 <tr>
