@@ -1,6 +1,6 @@
 English | [Chinese](first-article.zh-CN.md)
 
-# CORNER-06 first article
+# CORNER-07 first article
 
 Start with the bare board and the already-made C5 daughterboard. The bench stages do not require a case. Use a battery simulator for the first charging tests. The later stages require the NiZ mechanism, the specified pack and the closed case.
 
@@ -8,7 +8,7 @@ Copy this page for each unit. Record the PCB and firmware digests from the deliv
 
 | Stage | Test and evidence | Pass condition |
 |---|---|---|
-| Factory CAM | Compare board preview and stack offer with the [order instructions](../01-pcb/ordering-and-printing.md). Inspect NPTH, slots, two stencil layers, C42/C48 drill relocation and SW1, U5 and U6 registration | Ordinary four-layer process and the reviewed geometry accepted by the factory. Record any proposed CAM changes before accepting them |
+| Factory CAM | Compare the board preview and proposed stack with the [order instructions](../01-pcb/ordering-and-printing.md). Inspect non-plated holes, slots, both stencil layers, drill locations at C42, C48 and D2, and aperture registration at C42, SW1, U5 and U6 | The factory accepts the geometry and ordinary four-layer process. Record any proposed CAM changes before accepting them |
 | Bare board | Check joints and polarity, then use the staged limited-power test. Confirm the 3.3 V rail and the J3 contact map | No short, abnormal current or heating. Correct rail and SWD identification. [Soldering steps](../04-assembly/soldering.md) |
 | Flash and open bench | Program the calibrator using SWD. Start with the pack disconnected. Check the C5 cable orientation and USB enumeration | Programmer verifies the image. Correct USB device enumerates and stays connected. [Firmware and J3 pin map](../05-firmware/installation.md) |
 | Pack simulator | Observe charger IN, OUT, BAT, current and VBUS at the E73 during USB preconfiguration, configuration, weak input, suspend, resume and board-off USB100. Check new and worn cable conditions as applicable | Charging follows the documented policy. Keyboard stays on USB HID during current foldback. VBUS at U1 stays within its operating range while active. No reset or loss of the typed sequence. [Bench connections and test points](bench-power.md) |

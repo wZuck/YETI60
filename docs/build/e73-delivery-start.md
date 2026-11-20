@@ -4,7 +4,7 @@ English | [Chinese](e73-delivery-start.zh-CN.md)
 
 This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this whole folder together. The English and Chinese manuals are separate documents; filenames and part numbers identify the same physical design.
 
-**Engineering review.** The first article uses the CORNER-06 PCB and firmware together with the M05 bottom, two access covers, nine matched conductors, 16 rigid retainers and 17 film pieces. The assembly views and wire lengths use M05. Factory registration, pack confirmation and physical acceptance remain open.
+**Engineering review.** The first article uses the CORNER-07 PCB and firmware together with the M05 bottom, two access covers, nine matched conductors, 16 rigid retainers and 17 film pieces. The assembly views and wire lengths use M05. Factory registration, pack confirmation and physical acceptance remain open.
 
 | Task | Read / use |
 |---|---|
@@ -20,7 +20,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Verify open-bench power, charging and USB/BLE switching with a simulator | [Bench connections, probe map and record](../testing/e73-bench-power.md) |
 | Review electrical, fit, antenna and release limitations | [Current E73 engineering review](../engineering/e73-hhkb-corner.md) |
 | Review charging headroom, dissipation and ordinary PCB fabrication | [Current power and process review](../engineering/e73-corner-power-process.md) |
-| Check the via clearances in the fabrication ZIP and compare the isolated repair | [Drill, mask and stencil review](../engineering/e73-aperture-review.md) |
+| Check via clearances and stencil coverage in the fabrication ZIP | [Drill, mask and stencil review](../engineering/e73-aperture-review.md) |
 | Record CAM, soldering, charging, all keys, case closure and BLE | [First-article record](../testing/e73-first-article.md) |
 | Browse offline | Open `index.html` in the delivery folder; no server or network is needed for bundled content |
 | Verify file provenance | Read `manifest.json`; checksums bind the copied files to their source PCB and matching firmware |

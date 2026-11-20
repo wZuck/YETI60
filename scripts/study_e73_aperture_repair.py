@@ -21,10 +21,13 @@ BASE = ROOT / "hardware/e73-hhkb-corner"
 WORK = ROOT / ".assembly-work/e73-corner/aperture-replay"
 CLI = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
 BASELINE = "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7"
+BASELINE_COMMIT = "e94fe4ee2e16914f796e27543dccfbd14cb4bbc7"
+CHECKED_PCB = "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e"
 BOARD = BASE / "EC60-nRF52840.kicad_pcb"
 REFS = {"C42", "SW1", "U5", "U6"}
 D2_VIA = "2fbc09c8-3af4-4563-8086-fe4bd03b626d"
 D2_TRACK = "4631e8d9-6ecf-41ff-af6a-6b7201efc21b"
+D2_CENTER_MM = [315.51642, 122.07]
 CAM_COMMAND = ["uv", "run", "--offline", "--python", "3.14.7", "--with", "gerbonara==1.6.3",
                "--with", "shapely==2.1.2", "python", str(ROOT / "scripts/check_e73_apertures.py")]
 
@@ -97,7 +100,7 @@ def apply(path):
     via, track = items[D2_VIA], items[D2_TRACK]
     assert child(via, "net")[1] == child(track, "net")[1] == "GND"
     assert child(via, "at")[1:] == child(track, "start")[1:]
-    child(via, "at")[1:] = child(track, "start")[1:] = [315.51642, 122.07]
+    child(via, "at")[1:] = child(track, "start")[1:] = D2_CENTER_MM.copy()
     child(via, "size")[1], child(via, "drill")[1] = .60, .30
     parts = footprints(tree)
     for ref in ("C42", "SW1"):
@@ -109,6 +112,7 @@ def apply(path):
     board.BuildConnectivity()
     assert pcb.ZONE_FILLER(board).Fill(board.Zones())
     assert pcb.SaveBoard(str(path), board)
+    assert sha(path) == CHECKED_PCB, "The replay differs from the audited aperture repair"
     result = loads(path.read_text())
     assert electrical_pads(result) == source_pads
     after = copper(result)
@@ -123,6 +127,7 @@ def apply(path):
         library.SetPosition(pcb.VECTOR2I(0, 0))
         library.SetOrientationDegrees(0)
         plugin.FootprintSave(str(path.parent / "YAECKB.pretty"), library)
+    return [{"uuid": key, "net": "GND"} for key in (D2_VIA, D2_TRACK)]
 
 
 def electrical_pads(tree):
@@ -148,10 +153,12 @@ def main():
     WORK.mkdir(parents=True, exist_ok=True)
     assert not (WORK / "YAECKB.pretty").is_symlink(), "The trial needs a private footprint library"
     for source in sorted(BASE.iterdir()):
-        if source.suffix in {".kicad_pcb", ".kicad_pro", ".kicad_sch", ".kicad_sym"} or source.name in {"fp-lib-table", "sym-lib-table"}:
+        if source.suffix in {".kicad_pro", ".kicad_sch", ".kicad_sym"} or source.name in {"fp-lib-table", "sym-lib-table"}:
             shutil.copyfile(source, WORK / source.name)
     shutil.copytree(BASE / "YAECKB.pretty", WORK / "YAECKB.pretty", dirs_exist_ok=True)
     trial = WORK / BOARD.name
+    trial.write_bytes(subprocess.check_output(
+        ["git", "show", f"{BASELINE_COMMIT}:{BOARD.relative_to(ROOT)}"], cwd=ROOT))
     apply(trial)
     drc_path = WORK / "drc.json"
     config_path = trial.with_suffix(".kicad_pro")
@@ -192,11 +199,12 @@ def main():
         assert .50 <= pad["paste_fraction"] <= .70
         assert pad["paste_fraction"] == pad["paste_on_open_mask_fraction"]
         assert pad["minimum_stencil_web_mm"] >= .15 and pad["minimum_area_ratio_at_0p125mm"] > .66
-    source_paths = [BOARD, Path(__file__), ROOT / "scripts/check_e73_apertures.py",
+    source_paths = [Path(__file__), ROOT / "scripts/check_e73_apertures.py",
                     ROOT / "scripts/kicad_sexpr.py", ROOT / "scripts/e73_corner_charge_repair.py",
                     BOARD.with_suffix(".kicad_pro"), BASE / "fp-lib-table", BASE / "sym-lib-table",
                     *sorted(BASE.glob("*.kicad_sch")), BASE / "YAECKB.kicad_sym"]
     result = dict(status="ordinary-process-aperture-trial-passed-digital-checks",
+                  baseline_commit=BASELINE_COMMIT, baseline_PCB_sha256=BASELINE,
                   selected_for_order=False, physical_verification=False,
                   source_sha256={str(p.relative_to(ROOT)): sha(p) for p in source_paths},
                   candidate_PCB_sha256=proof["source_PCB_sha256"],
@@ -205,7 +213,7 @@ def main():
                   native_DRC_warnings=dict(warnings),
                   copper_lands_unchanged=True, changed_track_or_via_UUIDs=[D2_VIA, D2_TRACK],
                   modified_footprints=sorted(REFS), layers=proof["layers"], thermal_lands=proof["thermal_lands"])
-    (BASE / "audit/aperture-trial.json").write_text(json.dumps(result, indent=2) + "\n")
+    (WORK / "aperture-trial.json").write_text(json.dumps(result, indent=2) + "\n")
     print(result["status"])
 
 

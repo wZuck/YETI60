@@ -26,7 +26,7 @@
     "Real Zephyr workqueue timing, USB or BLE packet delivery, host interpretation and transport switching",
     "Tap-dance timing and actual BT profile/bond operations are covered separately; BLE operations are mocks and the dance router only records invocations"
   ],
-  "target_build_manifest_sha256": "2539f308859a4cc1e0498f71f69d67f8d6f3ea6cdd4e175ac715902bf1a7db20",
+  "target_build_manifest_sha256": "52a2765699da0b4e4b309f1c3871e5774c54f02386920e4b094f3473441149d0",
   "compiled_maps": {
     "normal": [
       0,

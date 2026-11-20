@@ -2,7 +2,7 @@ English | [Chinese](print-guide.zh-CN.md)
 
 # M05 access prototype for E73
 
-M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the M04 outer dimensions and the location of the footpads, upper shell, steel plate and C5 daughterboard. The original right rear foot recess is part of the J4 cover, so its footpad comes off with that cover. Use this M05 configuration for the CORNER-06 first article.
+M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the M04 outer dimensions and the location of the footpads, upper shell, steel plate and C5 daughterboard. The original right rear foot recess is part of the J4 cover, so its footpad comes off with that cover. Use this M05 configuration for the CORNER-07 first article.
 
 ![M05 underside with the J2 and J4 covers removed](../../06-validation/m05-access-exploded.png)
 

@@ -14,7 +14,8 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
  native=json.loads((BASE/'audit/placement-check.json').read_text());assert native['electrical_routing_complete']
- for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','bench-power-plan','aperture-trial','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift','m05-tool','m05-tool-drawing','m05-parking-support','m05-parking-support-render']:
+ (out/'06-validation/aperture-trial.json').unlink(missing_ok=True)
+ for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','bench-power-plan','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift','m05-tool','m05-tool-drawing','m05-parking-support','m05-parking-support-render']:
   report=json.loads((BASE/'audit'/f'{name}.json').read_text())
   for path,digest in report['source_sha256'].items():assert sha(ROOT/path)==digest,('Stale delivery input',path)
   if name=='power-process':assert report['status']=='repaired-power-routing-and-aperture-checks-passed'
@@ -22,9 +23,6 @@ def main():
    assert report['status']=='native-bench-pad-map-and-M05-headroom-checked'
    assert report['pcb_sha256']==sha(BASE/'EC60-nRF52840.kicad_pcb')
    assert not report['physical_verification'] and len(report['outputs'])==2
-  if name=='aperture-trial':
-   assert report['status']=='ordinary-process-aperture-trial-passed-digital-checks'
-   assert not report['selected_for_order'] and not report['physical_verification']
   if name=='USB-reference':assert report['checks_passed']
   if name=='harness-study':assert report['status']=='continuous-wire-study-passed-guides-open'and not report['failures']and len(report['variants'])==3
   if name=='retention-study':assert report['status']=='bounded-retainer-study-passed-service-and-process-open'and not report['failures']and len(report['variants'])==3 and report['guide_count']==16 and report['film_piece_count']==17
@@ -108,6 +106,7 @@ def main():
  subprocess.run(['python3',str(ROOT/'scripts/check_e73_corner_firmware.py')],check=True)
  revision_path=ROOT/'hardware/e73-corner-spec.json'
  revision=json.loads(revision_path.read_text())['revision']
+ revision_label=revision.removeprefix('YETI60-E73-HHKB-')
  inputs={'scripts/build_e73_delivery.py':sha(Path(__file__)),
          str(revision_path.relative_to(ROOT)):sha(revision_path)};mapping={}
  def copy(rel,target):
@@ -215,6 +214,13 @@ def main():
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with','gerbonara==1.6.3','--with','shapely==2.1.2',
                  'python',str(ROOT/'scripts/check_e73_apertures.py'),'--archive',str(archive),
                  '--output',str(out/'06-validation/cam-apertures.json')],check=True)
+ apertures=json.loads((out/'06-validation/cam-apertures.json').read_text())
+ assert len(apertures['layers'])==4 and apertures['vias']==852
+ for layer in apertures['layers'].values():
+  assert not layer['holes_below_conservative_reserve'] and layer['min_nominal_gap_mm']>=.229, layer
+ for pad in apertures['thermal_lands'].values():
+  assert .50<=pad['paste_fraction']<=.70 and pad['paste_fraction']==pad['paste_on_open_mask_fraction'], pad
+  assert pad['minimum_stencil_web_mm']>=.15 and pad['minimum_area_ratio_at_0p125mm']>.66, pad
  sources={'capabilities':'https://jlcpcb.com/capabilities/Capabilities','stackup':'https://jlcpcb.com/impedance'}
  for zh in [False,True]:
   suffix='.zh-CN'if zh else '';lang='zh-CN'if zh else 'en'
@@ -224,10 +230,22 @@ def main():
   notes=('主板按普通四层 FR-4、标称 1.6 mm、JLC04161H-7628、ENIG、机械贯通孔、过孔两面盖油审查；不选择盲埋孔、激光孔、树脂塞孔或铜盖帽。板框 285.0 × 94.6 mm；装配 1 块主板，数量按工厂起订量。已有 C5 子板保持不变，无需重做。钢定位板不是 PCB，也不是树脂打印件，使用 304 不锈钢，成品厚度 1.55–1.60 mm。外壳按毫米、100% 比例，工程树脂完全后固化；按装配规格修孔、冷粘嵌件，不将热熔嵌件压入热固性树脂。'if zh else 'Review the mainboard as ordinary 4-layer FR-4, nominal 1.6 mm, JLC04161H-7628, ENIG, mechanical through holes and both-side tented vias. No blind/buried/laser vias, resin fill or copper capping. Board envelope: 285.0 × 94.6 mm; install one mainboard, order quantity subject to the factory minimum. Reuse the existing C5 daughterboard. The plate is machined 304 stainless steel, finished 1.55–1.60 mm; it is neither a PCB nor a resin print. Case files use millimetres at 100% scale; fully post-cure engineering resin, finish bores and cold-bond inserts per the assembly specification.')
   pending=('首件试装选用 M05 底壳、两块检修盖及配套九线线束。整机渲染、打印清单和线长表均对应 M05。工厂阻焊对位、电池包确认、实际装拆及 USB／蓝牙／静电容／温升仍待实测。' if zh else 'The first article uses the M05 bottom, two access covers and matched nine-wire harness. The assembly views, print checklist and wire lengths all use M05. Factory mask registration, pack verification, physical case service and USB, BLE, sensing and thermal tests remain open.')
   if zh:sections=[(a,b,c,d)for (a,b,c,_),d in zip(sections,['制作顺序','Gerber 压缩包','打印与布线','完整材料表','焊接／台架教程','整机及爆炸图','SWD／校准教程','当前审查'])]
+  quick_links=[
+   ('KiCad 工程' if zh else 'KiCad project','01-pcb/project-files'+suffix+'.md'),
+   ('上壳 STL' if zh else 'Top STL','02-mechanical/top.stl'),
+   ('上壳 STEP' if zh else 'Top STEP','02-mechanical/top.step'),
+   ('M05 底壳 STEP' if zh else 'M05 bottom STEP',m05_dir+'bottom-m05-REVIEW.step'),
+   ('定位板 DXF' if zh else 'Plate DXF','02-mechanical/steel-plate.dxf'),
+   ('采购清单 CSV' if zh else 'Purchase BOM CSV','03-bom/mainboard-purchase'+suffix+'.csv'),
+   ('文件校验值' if zh else 'Checksums','manifest.json'),
+  ]
+  quick_markdown=' · '.join(f'[{label}]({url})' for label,url in quick_links)
+  quick_html=' · '.join(f'<a href="{url}">{label}</a>' for label,url in quick_links)
+  jlc_caps,jlc_stackup=('嘉立创制造能力','嘉立创叠层') if zh else ('JLC capabilities','JLC stack-ups')
   rows='\n'.join('| '+n+' | ['+label+']('+url+') |'for n,label,url,_ in sections)
-  (out/('README'+suffix+'.md')).write_text(('[English](README.md) | [中文](README.zh-CN.md)\n\n'if zh else 'English | [Chinese](README.zh-CN.md)\n\n')+'# '+title+'\n\n'+('[离线网页入口](index.zh-CN.html)'if zh else '[Offline web entry](index.html)')+'\n\n**'+status+'**\n\n'+notes+'\n\n'+('| 序号 | 入口 |'if zh else '| Step | Entry |')+'\n|---|---|\n'+rows+'\n\n'+pending+'\n\n[Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [M05 bottom STEP](02-mechanical/service-case-m05/bottom-m05-REVIEW.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase'+suffix+'.csv) · [Checksums](manifest.json)\n\n[JLC capabilities]('+sources['capabilities']+') · [JLC stack-ups]('+sources['stackup']+')\n')
+  (out/('README'+suffix+'.md')).write_text(('[English](README.md) | [中文](README.zh-CN.md)\n\n'if zh else 'English | [Chinese](README.zh-CN.md)\n\n')+'# '+title+'\n\n'+('[离线网页入口](index.zh-CN.html)'if zh else '[Offline web entry](index.html)')+'\n\n**'+status+'**\n\n'+notes+'\n\n'+('| 序号 | 入口 |'if zh else '| Step | Entry |')+'\n|---|---|\n'+rows+'\n\n'+pending+'\n\n'+quick_markdown+'\n\n['+jlc_caps+']('+sources['capabilities']+') · ['+jlc_stackup+']('+sources['stackup']+')\n')
   cards=''.join('<section><span>'+n+'</span><h2>'+html.escape(label)+'</h2><a href="'+url+'">'+html.escape(link)+' ↗</a></section>'for n,label,url,link in sections)
-  page=f'''<!doctype html><html lang="{lang}"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><style>:root{{--paper:#edece5;--ink:#1e2c26;--line:#bbc3b9;--accent:#b84a24}}*{{box-sizing:border-box}}body{{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 Georgia,"Noto Serif CJK SC",serif}}main{{max-width:1120px;margin:auto;padding:48px 28px}}header{{border-top:8px solid var(--ink);padding-top:16px;display:flex;justify-content:space-between}}h1{{font-size:clamp(42px,7vw,88px);line-height:1.05;letter-spacing:-.045em;margin:40px 0 25px}}.status{{font:12px/1.5 monospace;letter-spacing:.12em;color:var(--accent)}}.grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:36px 0;border-top:1px solid var(--line)}}section{{padding:26px 20px;border-bottom:1px solid var(--line)}}section span{{font:13px monospace;color:var(--accent)}}h2{{font-size:23px;font-weight:400}}a{{color:inherit;text-underline-offset:5px}}a:hover{{color:var(--accent)}}.note{{border-left:4px solid var(--accent);padding:12px 22px;background:#e3e2d8}}img{{width:100%;display:block;margin:36px 0}}footer{{border-top:1px solid var(--ink);padding:20px 0;font:12px monospace}}@media(max-width:700px){{.grid{{grid-template-columns:1fr}}main{{padding:25px 18px}}}}@media print{{a{{color:black}}}}</style><main><header><strong>{'YETI60 / 制作手册'if zh else 'YETI60 / FIELD MANUAL'}</strong><a href="index{''if zh else '.zh-CN'}.html">{'English'if zh else '中文'}</a></header><h1>{title}</h1><p class="status">{status}</p><p>{notes}</p><div class="grid">{cards}</div><aside class="note">{pending}</aside><a href="04-assembly/assembly-views{suffix}.html"><img src="04-assembly/images/assembled.png" alt="{'装配后的 YETI60'if zh else 'Assembled YETI60'}"></a><p><a href="02-mechanical/top.step">{'上壳 STEP'if zh else 'Top STEP'}</a> · <a href="02-mechanical/steel-plate.dxf">{'定位板 DXF'if zh else 'Plate DXF'}</a> · <a href="README{suffix}.md">Markdown</a> · <a href="manifest.json">{'文件清单／SHA-256'if zh else 'Manifest / SHA-256'}</a></p><footer>YETI60 · E73-2G4M08S1C · CORNER-06 · M05</footer></main></html>'''
+  page=f'''<!doctype html><html lang="{lang}"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><style>:root{{--paper:#edece5;--ink:#1e2c26;--line:#bbc3b9;--accent:#b84a24}}*{{box-sizing:border-box}}body{{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 Georgia,"Noto Serif CJK SC",serif}}main{{max-width:1120px;margin:auto;padding:48px 28px}}header{{border-top:8px solid var(--ink);padding-top:16px;display:flex;justify-content:space-between}}h1{{font-size:clamp(42px,7vw,88px);line-height:1.05;letter-spacing:-.045em;margin:40px 0 25px}}.status{{font:12px/1.5 monospace;letter-spacing:.12em;color:var(--accent)}}.grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:36px 0;border-top:1px solid var(--line)}}section{{padding:26px 20px;border-bottom:1px solid var(--line)}}section span{{font:13px monospace;color:var(--accent)}}h2{{font-size:23px;font-weight:400}}a{{color:inherit;text-underline-offset:5px}}a:hover{{color:var(--accent)}}.note{{border-left:4px solid var(--accent);padding:12px 22px;background:#e3e2d8}}img{{width:100%;display:block;margin:36px 0}}footer{{border-top:1px solid var(--ink);padding:20px 0;font:12px monospace}}@media(max-width:700px){{.grid{{grid-template-columns:1fr}}main{{padding:25px 18px}}}}@media print{{a{{color:black}}}}</style><main><header><strong>{'YETI60 / 制作手册'if zh else 'YETI60 / FIELD MANUAL'}</strong><a href="index{''if zh else '.zh-CN'}.html">{'English'if zh else '中文'}</a></header><h1>{title}</h1><p class="status">{status}</p><p>{notes}</p><div class="grid">{cards}</div><aside class="note">{pending}</aside><a href="04-assembly/assembly-views{suffix}.html"><img src="04-assembly/images/assembled.png" alt="{'装配后的 YETI60'if zh else 'Assembled YETI60'}"></a><p>{quick_html} · <a href="README{suffix}.md">Markdown</a></p><footer>YETI60 · E73-2G4M08S1C · {revision_label} · M05</footer></main></html>'''
   (out/('index'+suffix+'.html')).write_text(page)
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with','markdown-it-py==4.0.0','python',str(ROOT/'scripts/render_e73_delivery_docs.py'),'--base',str(out)],check=True)
  inputs['scripts/render_e73_delivery_docs.py']=sha(ROOT/'scripts/render_e73_delivery_docs.py')

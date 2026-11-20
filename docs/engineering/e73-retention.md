@@ -4,7 +4,7 @@ English | [Chinese](e73-retention.zh-CN.md)
 
 This page records the M04 baseline. For the first article, use the [M05 print checklist and wire lengths](../build/e73-m05-prototype.md).
 
-This set follows **E73 CORNER-06**, its rotated mainboard J5 and the nine-conductor route to the existing C5 daughterboard. Use the current [wire connections and conductor lengths](e73-corner-harness.md).
+This set follows **E73 CORNER-07**, its rotated mainboard J5 and the nine-conductor route to the existing C5 daughterboard. Use the current [wire connections and conductor lengths](e73-corner-harness.md).
 
 **Engineering parts for review and measured dry fitting.** Rigid-body, film, wire-capture and tolerance checks do not qualify resin strength, tape adhesion, human access or the complete installation/withdrawal sequence. Complete closed-case assembly release remains open. Do not permanently bond the review set before the process and service gates are resolved.
 

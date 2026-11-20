@@ -1,8 +1,8 @@
 [English](bench-power.md) | 中文
 
-# CORNER-06 台架供电与充电测试
+# CORNER-07 台架供电与充电测试
 
-使用 CORNER-06 主板、已有 C5 JSH 子板，以及 [M05 指南](../02-mechanical/service-case-m05/print-guide.zh-CN.md)里的 J4 至 C5 线束和 J5 至 J1 电源桥。外壳打印前即可把主板放到绝缘支座上开始测试，先断开实物电池。完成分段焊接检查和 SWD 刷写。打字测试需要已装好并校准的 NiZ 感应机构。[焊接与首次上电](../04-assembly/soldering.zh-CN.md) · [固件安装](../05-firmware/installation.zh-CN.md)
+使用 CORNER-07 主板、已有 C5 JSH 子板，以及 [M05 指南](../02-mechanical/service-case-m05/print-guide.zh-CN.md)里的 J4 至 C5 线束和 J5 至 J1 电源桥。外壳打印前即可把主板放到绝缘支座上开始测试，先断开实物电池。完成分段焊接检查和 SWD 刷写。打字测试需要已装好并校准的 NiZ 感应机构。[焊接与首次上电](../04-assembly/soldering.zh-CN.md) · [固件安装](../05-firmware/installation.zh-CN.md)
 
 ## 仪器与接线
 
@@ -13,7 +13,7 @@
 
 ## 主板背面测点
 
-![CORNER-06 台架测试用主板背面测点](bench-probe-map.zh-CN.png)
+![CORNER-07 台架测试用主板背面测点](bench-probe-map.zh-CN.png)
 
 圆点标出 KiCad 中的焊盘中心，灰色为地。用焊装后露出的端点，插座挡住焊盘时用测试转接线。各电压按表中配对测点量取。[绑定到 PCB 的测点坐标和网络](bench-power-plan.json)
 

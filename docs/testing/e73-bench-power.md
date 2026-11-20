@@ -1,8 +1,8 @@
 English | [Chinese](e73-bench-power.zh-CN.md)
 
-# CORNER-06 bench power and charging
+# CORNER-07 bench power and charging
 
-Use the CORNER-06 mainboard, existing C5 JSH daughterboard, and the J4-to-C5 harness and J5-to-J1 bridge from the [M05 build](../build/e73-m05-prototype.md). These tests can begin with the PCB on insulating supports, before printing the shell. Keep a real pack disconnected. Use the staged soldering checks and SWD install first. An operable and calibrated NiZ stack is needed for the typing tests. [Soldering and first power](../assembly/e73-corner/soldering.md) · [Firmware installation](e73-corner-firmware.md)
+Use the CORNER-07 mainboard, existing C5 JSH daughterboard, and the J4-to-C5 harness and J5-to-J1 bridge from the [M05 build](../build/e73-m05-prototype.md). These tests can begin with the PCB on insulating supports, before printing the shell. Keep a real pack disconnected. Use the staged soldering checks and SWD install first. An operable and calibrated NiZ stack is needed for the typing tests. [Soldering and first power](../assembly/e73-corner/soldering.md) · [Firmware installation](e73-corner-firmware.md)
 
 ## Instruments and connections
 
@@ -13,7 +13,7 @@ Use the CORNER-06 mainboard, existing C5 JSH daughterboard, and the J4-to-C5 har
 
 ## Probe points on the back of the mainboard
 
-![CORNER-06 solder-side pads for the bench tests](../../hardware/e73-hhkb-corner/audit/bench-probe-map.png)
+![CORNER-07 solder-side pads for the bench tests](../../hardware/e73-hhkb-corner/audit/bench-probe-map.png)
 
 The dots mark solder-pad centers from KiCad. Grey denotes ground. Use the exposed end of an installed pad or a breakout where the connector blocks access. Use the component's matching ground in the table. [PCB-bound coordinates and nets](../../hardware/e73-hhkb-corner/audit/bench-power-plan.json)
 

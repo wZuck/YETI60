@@ -1,12 +1,12 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-06 电源和普通 PCB 工艺复核</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="power-process.html">English</a> | 中文</p>
-<h1 id="corner-06-电源和普通-pcb-工艺复核">CORNER-06 电源和普通 PCB 工艺复核</h1>
-<p>CORNER-06 移动了 SW1 接地过孔，并沿用 CORNER-05 的低电阻 USB 供电走线及已移出开窗的 C42、C48 接地孔。交付包中的原生 PCB、固件、材料表和制板文件对应此版。电脑完成 USB 配置后，固件允许同时走 USB HID 和充电。</p>
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-07 电源和普通 PCB 工艺复核</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="power-process.html">English</a> | 中文</p>
+<h1 id="corner-07-电源和普通-pcb-工艺复核">CORNER-07 电源和普通 PCB 工艺复核</h1>
+<p>CORNER-07 调整 U5、U6、C42 和 SW1 的开窗，并移动 D2 接地过孔。USB 供电走线和 C42、C48、SW1 的接地过孔位置沿用前两版。交付包中的原生 PCB、固件、材料表和制板文件对应此版。电脑完成 USB 配置后，固件允许同时走 USB HID 和充电。</p>
 <table>
 <thead>
 <tr>
 <th>主板供电段</th>
 <th style="text-align:right">CORNER-04 铜线电阻</th>
-<th style="text-align:right">CORNER-06 铜线电阻</th>
+<th style="text-align:right">CORNER-07 铜线电阻</th>
 </tr>
 </thead>
 <tbody>
@@ -75,7 +75,7 @@
 <p>在 4.75 V 带载输入和 4.63 V 阈值下，按简化模型到达降流阈值时电流约为 <code>(4.75 − 4.63) / 0.42608 = 0.282 A</code>。这是未扣除其余路径损失的总输入电流估算，需实测充电电流和 U1 VBUS。</p>
 <p>10 条局部电源走线符合项目线宽和长度限制。R40 为 2.21 kΩ，充电电流设定的最小／典型／最大值为 357.06／402.71／445.63 mA。完整保护包须接受 4.16–4.23 V 调节范围。假设 U5 IN 为 5.25 V、BAT 为 3.10 V、OUT 为 4.50 V 且负载为 40 mA，按 <code>P = (VIN−VBAT)×IBAT + (VIN−VOUT)×IOUT</code>，在 445.63 mA 时损耗约为 <strong>0.99 W</strong>。标准测试板的热阻无法预测本键盘温度。<a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 充电及热参数</a></p>
 <h2 id="普通钻孔和焊盘开窗">普通钻孔和焊盘开窗</h2>
-<p>852 个过孔均为机械贯通孔。标称钻孔／焊环外径为 0.30／0.50 mm（203 个）、0.30／0.60 mm（64 个）、0.40／0.80 mm（585 个）。最小走线宽度为 0.127 mm。主板采用指定的普通四层叠层和盖油工艺。请用实际制造文件与工厂确认阻焊对位。<a href="https://jlcpcb.com/capabilities/pcb-capabilities/">嘉立创制造能力</a></p>
+<p>852 个过孔均为机械贯通孔。标称钻孔／焊环外径为 0.30／0.50 mm（203 个）、0.30／0.60 mm（65 个）、0.40／0.80 mm（584 个）。最小走线宽度为 0.127 mm。主板采用指定的普通四层叠层和盖油工艺。请用实际制造文件与工厂确认阻焊对位。 <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">嘉立创制造能力</a></p>
 <table>
 <thead>
 <tr>
@@ -86,7 +86,7 @@
 <tbody>
 <tr>
 <td>C42.2</td>
-<td>地过孔位于 PCB 坐标 (122.120, 142.315) mm，距自身锡膏及阻焊开窗均为 0.130 mm</td>
+<td>地过孔位于 PCB 坐标 (122.120, 142.315) mm，距自身锡膏及阻焊开窗均为 0.230 mm</td>
 </tr>
 <tr>
 <td>C48.2</td>
@@ -98,15 +98,15 @@
 </tr>
 <tr>
 <td>D2.1</td>
-<td>钻孔到开窗标称距离为 0.142 mm，核对工厂对位</td>
+<td>地过孔位于 PCB 坐标 (315.516, 122.070) mm，钻孔 0.30 mm，焊环外径 0.60 mm</td>
 </tr>
 <tr>
 <td>U5.17、U6.11</td>
-<td>保留阻焊岛，钻孔至阻焊开窗标称间隙均为 0.100 mm，距分割锡膏开窗分别为 0.150 和 0.167 mm</td>
+<td>更新阻焊岛及分割钢网开窗，钻孔至阻焊开窗的标称间距均为 0.230 mm。锡膏覆盖率见全板开窗复核</td>
 </tr>
 </tbody>
 </table>
-<p>按公布的孔位公差保守计算对角偏移，再扣除成品孔径最大增量的一半，SW1 的间距余量为 <code>0.230 − √2 × 0.075 − 0.13 / 2 = 0.059 mm</code>。阻焊对位仍须工厂确认。实物检查两颗裸露散热焊盘的盖油及分割钢网。<a href="https://jlcpcb.com/capabilities/Capabilities">嘉立创钻孔公差</a> · <a href="https://jlcpcb.com/help/article/pcb-via-covering">嘉立创过孔覆盖</a> · <a href="cam-ordinary.json">制板压缩包核对报告</a></p>
+<p>四张制造图层的最小钻孔余量为 <code>0.230 − √2 × 0.075 − 0.13 / 2 − 0.0002 ≈ 0.059 mm</code>，已扣除孔位、孔径和曲边近似。阻焊实际对位须向工厂确认，散热焊盘须检查过孔盖油和钢网锡膏转移。 <a href="https://jlcpcb.com/capabilities/Capabilities">嘉立创钻孔公差</a> · <a href="https://jlcpcb.com/help/article/pcb-via-covering">嘉立创盖油工艺</a> · <a href="aperture-review.zh-CN.html">阻焊及钢网复核</a></p>
 <p>JST SH 端子适用 AWG32–28，线束采用此范围内的 AWG28，并须满足绝缘外径及压接质量要求。<a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH 规格</a></p>
 <h2 id="样机验收">样机验收</h2>
 <p>按<a href="bench-power.zh-CN.html">台架供电与充电测试</a>完成壳外测量，再按<a href="../03-bom/battery-requirements.zh-CN.html">电池包规格</a>验证实物电池。</p>

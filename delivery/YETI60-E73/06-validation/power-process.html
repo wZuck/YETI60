@@ -1,12 +1,12 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-06 power and ordinary PCB process review</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="power-process.zh-CN.html">Chinese</a></p>
-<h1 id="corner-06-power-and-ordinary-pcb-process-review">CORNER-06 power and ordinary PCB process review</h1>
-<p>CORNER-06 relocates the SW1 ground via and retains the lower-resistance USB supply route and relocated C42 and C48 ground drills from CORNER-05. The native PCB, firmware, BOM and CAM in this delivery identify this revision. The current path preserves direct USB HID while charging after host configuration.</p>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-07 power and ordinary PCB process review</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="power-process.zh-CN.html">Chinese</a></p>
+<h1 id="corner-07-power-and-ordinary-pcb-process-review">CORNER-07 power and ordinary PCB process review</h1>
+<p>CORNER-07 revises the U5, U6, C42 and SW1 openings and relocates the D2 ground via. It carries forward the USB supply paths and the C42, C48 and SW1 ground via locations from CORNER-05 and CORNER-06. The native PCB, firmware, BOM and CAM in this delivery identify this revision. The current path preserves direct USB HID while charging after host configuration.</p>
 <table>
 <thead>
 <tr>
 <th>Mainboard supply span</th>
 <th style="text-align:right">CORNER-04 trace resistance</th>
-<th style="text-align:right">CORNER-06 trace resistance</th>
+<th style="text-align:right">CORNER-07 trace resistance</th>
 </tr>
 </thead>
 <tbody>
@@ -75,7 +75,7 @@
 <p>At a 4.75 V loaded jack and the 4.63 V threshold corner, the included path reaches the threshold at about <code>(4.75 − 4.63) / 0.42608 = 0.282 A</code> of total input current. This estimate excludes the other losses. Measure charging current and U1 VBUS under load.</p>
 <p>The ten local power paths meet their project width and length limits. The programmed charge current remains 357.06 / 402.71 / 445.63 mA min / typ / max with R40 at 2.21 kΩ. The approved supply range of the complete pack must cover 4.16–4.23 V. At an assumed U5 IN of 5.25 V, BAT of 3.10 V and OUT of 4.50 V with a 40 mA load, <code>P = (VIN−VBAT)×IBAT + (VIN−VOUT)×IOUT</code> gives about <strong>0.99 W</strong> at 445.63 mA. The standardized thermal resistance cannot predict temperature inside this case. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 charge and thermal data</a></p>
 <h2 id="ordinary-drilling-and-solder-apertures">Ordinary drilling and solder apertures</h2>
-<p>All 852 vias are mechanical through holes. Nominal drill / land sizes are 0.30 / 0.50 mm (203), 0.30 / 0.60 mm (64) and 0.40 / 0.80 mm (585). The minimum trace width is 0.127 mm. The mainboard uses the specified ordinary four-layer stack and tenting. Review the actual CAM and mask alignment with the factory. <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">JLCPCB capabilities</a></p>
+<p>All 852 vias are mechanical through holes. Nominal drill / land sizes are 0.30 / 0.50 mm (203), 0.30 / 0.60 mm (65) and 0.40 / 0.80 mm (584). The minimum trace width is 0.127 mm. The mainboard uses the specified ordinary four-layer stack and tenting. Review the actual CAM and mask alignment with the factory. <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">JLCPCB capabilities</a></p>
 <table>
 <thead>
 <tr>
@@ -86,7 +86,7 @@
 <tbody>
 <tr>
 <td>C42.2</td>
-<td>Ground via at PCB (122.120, 142.315) mm. Gap to the respective paste and mask openings is 0.130 mm</td>
+<td>Ground via at PCB (122.120, 142.315) mm. Gap to the respective paste and mask openings is 0.230 mm</td>
 </tr>
 <tr>
 <td>C48.2</td>
@@ -98,15 +98,15 @@
 </tr>
 <tr>
 <td>D2.1</td>
-<td>The nominal drill-to-opening gap is 0.142 mm. Verify factory registration</td>
+<td>Ground via at PCB (315.516, 122.070) mm with a 0.30 mm drill and 0.60 mm land</td>
 </tr>
 <tr>
 <td>U5.17, U6.11</td>
-<td>Mask islands retain 0.100 mm nominal drill-to-mask gap. Split paste gaps are 0.150 and 0.167 mm respectively</td>
+<td>Revised mask islands and split paste windows. Drill-to-mask gap is 0.230 mm on both pads. See the full artwork audit for paste and stencil coverage</td>
 </tr>
 </tbody>
 </table>
-<p>The SW1 drill screen uses <code>0.230 − √2 × 0.075 − 0.13 / 2 = 0.059 mm</code> of residual gap after a conservative diagonal position error and maximum radial growth from the published finished-hole diameter tolerance. Mask registration remains a factory check. Inspect actual tenting and the split stencil for both exposed pads. <a href="https://jlcpcb.com/capabilities/Capabilities">JLCPCB drill tolerances</a> · <a href="https://jlcpcb.com/help/article/pcb-via-covering">JLCPCB via covering</a> · <a href="cam-ordinary.json">Fabrication ZIP audit</a></p>
+<p>The smallest drill budget across the four layers is <code>0.230 − √2 × 0.075 − 0.13 / 2 − 0.0002 ≈ 0.059 mm</code> after position, diameter and polygon allowances. Mask registration remains a factory check. Inspect actual tenting and the split stencil for both exposed pads. <a href="https://jlcpcb.com/capabilities/Capabilities">JLCPCB drill tolerances</a> · <a href="https://jlcpcb.com/help/article/pcb-via-covering">JLCPCB via covering</a> · <a href="aperture-review.html">Mask and stencil audit</a></p>
 <p>The JST SH terminals accept AWG32–28. The harness uses AWG28 within that wire-size range and needs the specified crimp quality and insulation diameter. <a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH specification</a></p>
 <h2 id="prototype-checks">Prototype checks</h2>
 <p>Follow the <a href="bench-power.html">bench power and charging procedure</a> for open-bench measurements and the <a href="../03-bom/battery-requirements.html">pack specification</a> for the physical pack.</p>

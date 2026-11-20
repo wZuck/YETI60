@@ -1,6 +1,6 @@
 [English](e73-assembly-views.md) | 中文
 
-# CORNER-06 整机装配图
+# CORNER-07 整机装配图
 
 ![装好的 YETI60](../../renders/e73-corner-assembly/assembled.png)
 

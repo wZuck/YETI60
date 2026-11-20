@@ -4,7 +4,7 @@ English | [Chinese](e73-corner-service.zh-CN.md)
 
 This page records the M04 baseline. For the first article, use the [M05 print checklist and wire lengths](../build/e73-m05-prototype.md).
 
-This check covers the CORNER-06 PCB, the M04 bottom, the installed C5 daughterboard and the selected nine-wire harness. Removing the top shell leaves the J2 battery and J4 USB plugs under the mainboard. Keep the keyboard unpowered for dry fitting.
+This check covers the CORNER-07 PCB, the M04 bottom, the installed C5 daughterboard and the selected nine-wire harness. Removing the top shell leaves the J2 battery and J4 USB plugs under the mainboard. Keep the keyboard unpowered for dry fitting.
 
 ## Findings for the selected harness
 

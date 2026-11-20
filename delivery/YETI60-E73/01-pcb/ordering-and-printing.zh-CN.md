@@ -32,9 +32,7 @@
 
 JLC 普通工艺参考：[制造能力](https://jlcpcb.com/capabilities/pcb-capabilities/)、[叠层](https://jlcpcb.com/impedance)。选项以实际报价核对。本说明和无错误 DRC 均不能替代工厂可制造性审核。
 
-CORNER-06 移动了 SW1.2 的接地过孔及短接线，钻孔到阻焊与锡膏开窗的标称距离均增至 0.230 mm。按保守的孔位与成品孔径公差计算，剩余 0.059 mm 供其他相对偏移使用。下单前请工厂确认阻焊对位和 U5、U6 的阻焊岛。[嘉立创钻孔公差](https://jlcpcb.com/capabilities/Capabilities) · [本版电源及工艺](../06-validation/power-process.zh-CN.md)
-
-全板开窗检查识别出当前 ZIP 中靠近背面开窗的四处过孔，分别在 U5、U6、C42 和 D2。请工厂确认这些位置的实际对位公差。独立试改的背面最小间距为 0.230 mm，当前仍为试验版本。[制造图层量测与试改](../06-validation/aperture-review.zh-CN.md)
+CORNER-07 调整 U5、U6、C42、SW1 的开窗，并移动 D2 接地过孔。完整制板 ZIP 内钻孔至开窗的最小标称间距为 0.230 mm。按保守的孔位和成品孔径公差扣减后，其他相对偏移可用余量至少为 0.059 mm。请工厂确认普通工艺的阻焊对位及 U5、U6 阻焊岛。 [制造图层量测](../06-validation/aperture-review.zh-CN.md) · [嘉立创钻孔公差](https://jlcpcb.com/capabilities/Capabilities)
 
 ## 机械文件发哪些
 

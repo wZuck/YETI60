@@ -279,6 +279,11 @@ def main():
         switch_patch = ROOT / s['post_route_switch_repair']
         removed.extend(apply(pcb_path, json.loads(switch_patch.read_text())))
         inputs.extend([switch_patch, ROOT/'scripts/e73_corner_switch_repair.py'])
+    if s.get('post_route_aperture_repair'):
+        from study_e73_aperture_repair import apply
+
+        removed.extend(apply(pcb_path))
+        inputs.append(ROOT/'scripts/study_e73_aperture_repair.py')
     plugin = pcb.PCB_IO_MGR.FindPlugin(pcb.PCB_IO_MGR.KICAD_SEXP)
     plugin.FootprintSave(str(out / 'YAECKB.pretty'), fps['REF**'])
     # Remove the two unused sensing symbols and only their generated dedicated

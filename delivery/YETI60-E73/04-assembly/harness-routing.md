@@ -4,7 +4,7 @@ English | [Chinese](harness-routing.zh-CN.md)
 
 This page records the M04 baseline. For the first article, use the [M05 print checklist and wire lengths](../02-mechanical/service-case-m05/print-guide.md).
 
-CORNER-06 uses **mainboard J5 rotated by 180° at the same origin** and the already-made **C5 JSH daughterboard**. J5 exits toward the front of the case, permitting a separate route past the J4 USB cable. The local connector repair is replayed after the original routing patch and checked by native DRC. It touches GND, USB_FEED and ROW_DRV4 near J5.
+CORNER-07 uses **mainboard J5 rotated by 180° at the same origin** and the already-made **C5 JSH daughterboard**. J5 exits toward the front of the case, permitting a separate route past the J4 USB cable. The local connector repair is replayed after the original routing patch and checked by native DRC. It touches GND, USB_FEED and ROW_DRV4 near J5.
 
 **Engineering routing study, not complete closed-case assembly acceptance.** [Native wire/plug/obstacle study](../06-validation/harness-study.json) and [source specification](../02-mechanical/interconnect-spec.json). The static retainers and assembly views are in the delivery. Actual insertion and service motion remain open. The drawings are coordinate plans, not photographs or measured assemblies.
 

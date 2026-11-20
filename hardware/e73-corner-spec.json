@@ -1,5 +1,5 @@
 {
-  "revision": "YETI60-E73-HHKB-CORNER-06",
+  "revision": "YETI60-E73-HHKB-CORNER-07",
   "source_directory": "hardware/e73-usb-repair",
   "source_board_sha256": "0353992782a636a6ca04028aca4e6a660da7ae27ce0909aba2f7d3b29d4af8ee",
   "output_directory": "hardware/e73-hhkb-corner",
@@ -492,5 +492,6 @@
   },
   "post_route_header_repair": "hardware/e73-corner-j5-repair.json",
   "post_route_charge_repair": "hardware/e73-corner-charge-trial.json",
-  "post_route_switch_repair": "hardware/e73-corner-sw1-repair.json"
+  "post_route_switch_repair": "hardware/e73-corner-sw1-repair.json",
+  "post_route_aperture_repair": true
 }

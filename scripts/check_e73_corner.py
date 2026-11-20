@@ -30,9 +30,10 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def pads(f):
+def pads(f, copper_only=False):
     return {p.m_Uuid.AsString(): (p.GetNumber(), p.GetNetname(), p.GetPosition().x, p.GetPosition().y,
-                                  p.GetSize().x, p.GetSize().y, p.GetShape(), p.GetOrientationDegrees()) for p in f.Pads()}
+                                 p.GetSize().x, p.GetSize().y, p.GetShape(), p.GetOrientationDegrees())
+            for p in f.Pads() if not copper_only or p.IsOnLayer(pcb.F_Cu) or p.IsOnLayer(pcb.B_Cu)}
 
 
 def main():
@@ -59,12 +60,17 @@ def main():
     active_refs = {q['electrode'] for q in active}
     assert len(active) == 60 and not active_refs.intersection(s['removed_electrodes'])
     changed = set(s['rigid_cluster']) | set(s['other_placements_PCB_mm']) | {'REF**'}
+    aperture_refs = set()
+    if s.get('post_route_aperture_repair'):
+        from study_e73_aperture_repair import REFS
+
+        aperture_refs = REFS
     for ref in set(now) - changed:
-        assert pads(before[ref]) == pads(now[ref]), ('Changed retained lands', ref)
+        assert pads(before[ref], ref in aperture_refs) == pads(now[ref], ref in aperture_refs), ('Changed retained lands', ref)
         assert before[ref].GetPosition() == now[ref].GetPosition(), ('Moved retained part', ref)
         assert before[ref].GetLayer() == now[ref].GetLayer(), ('Flipped retained part', ref)
     for ref in changed - {'REF**'}:
-        old_pads, new_pads = pads(before[ref]), pads(now[ref])
+        old_pads, new_pads = pads(before[ref], ref in aperture_refs), pads(now[ref], ref in aperture_refs)
         assert set(old_pads) == set(new_pads)
         for key in old_pads:
             assert old_pads[key][:2] == new_pads[key][:2], ('Changed pin identity or role', ref, key)
@@ -230,6 +236,23 @@ def main():
         switch_patch = json.loads((ROOT / s['post_route_switch_repair']).read_text())
         check_geometry(b, switch_patch, 'after')
         assert {switch_patch['via_uuid'], switch_patch['segment_uuid']} <= retired
+    aperture_retired = set()
+    if s.get('post_route_aperture_repair'):
+        from study_e73_aperture_repair import D2_CENTER_MM, D2_TRACK, D2_VIA
+
+        aperture_retired = {D2_VIA, D2_TRACK}
+        assert aperture_retired <= retired
+        via = actual_tracks[D2_VIA]
+        assert via.GetClass() == 'PCB_VIA' and via.GetNetname() == 'GND'
+        assert list(pcb.ToMM(via.GetPosition())) == D2_CENTER_MM
+        assert via.GetViaType() == pcb.VIATYPE_THROUGH and via.GetDrillValue() == pcb.FromMM(.30)
+        assert via.GetWidth(pcb.F_Cu) == via.GetWidth(pcb.B_Cu) == pcb.FromMM(.60)
+        assert child(via_forms[D2_VIA], 'layers')[1:] == ['F.Cu', 'B.Cu']
+        trace = actual_tracks[D2_TRACK]
+        assert list(pcb.ToMM(trace.GetStart())) == D2_CENTER_MM
+        assert list(pcb.ToMM(trace.GetEnd())) == [315.2125, 122.4915]
+        assert trace.GetLayer() == pcb.B_Cu and trace.GetWidth() == pcb.FromMM(.2)
+        assert trace.GetNetname() == 'GND'
     if connector_patch:
         assert not ({row['uuid'] for row in connector_patch['retired']} - charge_retired).intersection(actual_tracks), 'Retired J5 copper survives'
     if charge_patch:
@@ -253,7 +276,7 @@ def main():
         if connector_patch:
             retired_ids={q['uuid']for q in connector_patch['retired']}
             texts=[text for text in texts if str(child(loads(text),'uuid')[1])not in retired_ids]+connector_patch['added']
-        texts = [text for text in texts if child(loads(text), 'uuid')[1] not in charge_retired]
+        texts = [text for text in texts if child(loads(text), 'uuid')[1] not in charge_retired | aperture_retired]
         for text in texts:
             q=loads(text);identifier=str(child(q,'uuid')[1]);actual=actual_tracks[identifier]
             assert actual.GetNetname()==child(q,'net')[1], ('Changed routed net',identifier)

@@ -3,19 +3,19 @@
   "physical_verification": false,
   "manufacturing_released": false,
   "source_sha256": {
-    "hardware/e73-hhkb-corner/audit/harness-study.json": "d6f8896f10b3fcc61641040b93f9c29477d53a84bfb5af2615d74c9278a850c1",
+    "hardware/e73-hhkb-corner/audit/harness-study.json": "9d6a896fe599873ac8bcaac12e260570739bc143f59fbf4fbc285656d6ae2138",
     "hardware/e73-corner-harness-spec.json": "015f0904c0868a9563cf9e797a1e858f4b8eb31116829e525f27e6bcf57b930c",
     "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
-    "scripts/draw_e73_corner_harness.py": "a97649156dcc27d930f447c9d4723e1979187b802e4eb2bd6f8d8aa8a0454ccd",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e",
+    "scripts/draw_e73_corner_harness.py": "b3923ed924cae29e92721c7716addfe46a5846ff38a86cda841f7ef57e686f31",
     "scripts/e73_corner_harness_paths.py": "d8d9e29d0d3654526705790a46d43d37531a6a975e12cd6f4ff70c30dbf5c464"
   },
   "outputs": {
     "hardware/e73-hhkb-corner/mechanical/harness-conductors.csv": "cf70b924873aaa1f84333390b2e6f9c8d78e4db6926add235ed08f6df940c193",
     "hardware/e73-hhkb-corner/mechanical/harness-conductors.zh-CN.csv": "3bf0bb8672099bf854910435524d2e27ba08e96e10454db651df8a38f7528cb6",
-    "docs/engineering/images/e73-corner-harness.png": "4cc702177a67cb3901a3d9c2c64036185dcec4249654281aab254573464f6906",
-    "docs/engineering/images/e73-corner-harness.svg": "5f2f9f933fe7de5037347702b4eda66ed49e57d0e8efdfeb3c06e1284cff73a8",
-    "docs/engineering/images/e73-corner-harness.zh-CN.png": "845f64270a7822ad4bd1a669cde9709dc901455114b1157370c54c6a7374ba21",
-    "docs/engineering/images/e73-corner-harness.zh-CN.svg": "83d2c2c9be9106dcc4a1f818175e1e5007e9ee54195bffeb61e0683dae1a2b42"
+    "docs/engineering/images/e73-corner-harness.png": "50093378b6ac41a11a5adeb5e721b37bf9ee68c3b4bffb66197c4ef62d031b1e",
+    "docs/engineering/images/e73-corner-harness.svg": "f79a39995f4dbd2bcc918df63e12691d1b6d6d3b78ae40402a1b74419f31493d",
+    "docs/engineering/images/e73-corner-harness.zh-CN.png": "ee5bbc45fc5d5b375383afaf70ad4031fefeb33ef2e4b9132867a2da82b3a781",
+    "docs/engineering/images/e73-corner-harness.zh-CN.svg": "730d0d17b14d57077153f5e3939cb483e6a164a0208d83acdeedc846c3548968"
   }
 }

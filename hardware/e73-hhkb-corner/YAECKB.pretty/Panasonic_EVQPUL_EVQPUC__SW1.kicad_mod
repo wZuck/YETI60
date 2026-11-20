@@ -6,9 +6,9 @@
 	(descr "http://industrial.panasonic.com/cdbs/www-data/pdf/ATV0000/ATV0000CE5.pdf")
 	(tags "SMD SMT SPST EVQPUL EVQPUC")
 	(property "Reference" "SW1"
-		(at 0 -4.5 180)
+		(at 0 -4.5 0)
 		(layer "F.Fab")
-		(uuid "61656627-e5ca-4007-a4c9-6b21832b92a8")
+		(uuid "8a4bccd4-48ea-4122-b478-dc9df1bfce20")
 		(effects
 			(font
 				(size 1 1)
@@ -17,9 +17,9 @@
 		)
 	)
 	(property "Value" "EVQPUC02K_RESET"
-		(at 0 3.5 180)
+		(at 0 3.5 0)
 		(layer "F.Fab")
-		(uuid "43fa0a3a-2017-4949-a4bc-56d90f5e5fce")
+		(uuid "b575a9fa-051c-46b0-9c95-b76d5608d426")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "11c18372-a429-477f-b69e-d5e2ae0113d3")
+		(uuid "64a843a1-6c8f-4f47-9178-ee4bd5c6a42d")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -45,7 +45,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "b605dec4-44a9-45a1-886e-751f620bf45f")
+		(uuid "c7c299a7-259b-4a65-b67b-d6d52c6a3c42")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -63,7 +63,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "90abd6c9-cf9b-4047-b367-9335b00e9470")
+		(uuid "6d7ecde7-a29d-4b1c-9955-311be3e15a31")
 	)
 	(fp_line
 		(start 3.9 -3.25)
@@ -73,7 +73,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "dec6c2af-110a-4a5a-bfbd-b037fc9f9563")
+		(uuid "009fae02-ddb7-407e-a953-352920542fff")
 	)
 	(fp_line
 		(start 3.9 2.25)
@@ -83,7 +83,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "1c75cbd0-79a3-471f-b223-1cc27724323f")
+		(uuid "453d7209-7e27-449a-9b5e-fffb1fded152")
 	)
 	(fp_line
 		(start 3.9 2.25)
@@ -93,7 +93,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "38b71033-ea2c-47fc-8215-7315103cd2fc")
+		(uuid "1c753e33-e9fe-436b-98e0-af498e217919")
 	)
 	(fp_line
 		(start -2.45 0.275)
@@ -103,7 +103,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "db15a8c0-690d-493c-a795-bde1df3dc0cc")
+		(uuid "48f7ba20-e3dd-49e5-986d-e4ad19de84ae")
 	)
 	(fp_line
 		(start -2.35 1.75)
@@ -113,7 +113,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "63d2848e-2e41-4be9-a617-9969dcda2162")
+		(uuid "99c4226e-9f53-4a98-894a-d0d7bc860509")
 	)
 	(fp_line
 		(start -1.425 -1.85)
@@ -123,7 +123,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "b6af1f53-7908-4918-8478-e950647ffd6f")
+		(uuid "d916ffbb-85bf-48b4-847a-00a34860e9f6")
 	)
 	(fp_line
 		(start -1.3 -2.75)
@@ -133,7 +133,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "03988219-eea0-4261-81dc-88cab9461064")
+		(uuid "7a0c25f8-91cd-401a-9250-4112612c2506")
 	)
 	(fp_line
 		(start 1.3 -2.75)
@@ -143,7 +143,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "c506b1fa-2bdd-4e49-94eb-e648f41e4af3")
+		(uuid "276ddb40-a6da-4076-90d5-0f172cacbbef")
 	)
 	(fp_line
 		(start 1.3 -2.75)
@@ -153,7 +153,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "0911c1b1-697b-4443-8b05-aeaa0a2532e9")
+		(uuid "2a143477-76ee-4e09-8446-55783ece1e5d")
 	)
 	(fp_line
 		(start 2.35 -1.85)
@@ -163,7 +163,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "5e4223fa-d6e5-46bb-9c0a-a719781c06e7")
+		(uuid "78dd01eb-44a8-495d-9d8c-4122d51654d7")
 	)
 	(fp_line
 		(start 2.35 -1.75)
@@ -173,7 +173,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "86326253-57b4-4402-af3c-4565848334f7")
+		(uuid "a448b30b-4a5b-41ad-926c-b852185e1956")
 	)
 	(fp_line
 		(start 2.35 1.75)
@@ -183,7 +183,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "05413d18-3ef5-47ad-a314-d7b59b23fa98")
+		(uuid "05fee86d-24fb-4554-9ad8-5a152128e021")
 	)
 	(fp_line
 		(start 2.35 1.75)
@@ -193,7 +193,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "43c7b96c-101f-44a4-9917-199266411f8d")
+		(uuid "e1dd234d-95c2-417e-8ebf-61497f8f06ce")
 	)
 	(fp_line
 		(start 2.35 1.85)
@@ -203,7 +203,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "cb3946d5-4b5e-4e6c-a4d2-da76ab9752bb")
+		(uuid "481f7821-6fc6-4422-9e98-ebb5af4595ce")
 	)
 	(fp_line
 		(start 2.45 0.275)
@@ -213,12 +213,12 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "3ccc3df8-f45d-46b8-b9c1-aa8ea0e98ed4")
+		(uuid "2287de4d-247e-4b83-9ede-125f90c6e322")
 	)
 	(fp_text user "${REFERENCE}"
-		(at 0 0 180)
+		(at 0 0 0)
 		(layer "F.Fab")
-		(uuid "e3dacd74-73e6-4af5-9b73-2084ef0e4c41")
+		(uuid "dc57a564-47e5-4dd9-88d0-b949caa577ac")
 		(effects
 			(font
 				(size 1 1)
@@ -226,45 +226,71 @@
 			)
 		)
 	)
+	(pad "" smd rect
+		(at -2.625 -0.82 180)
+		(size 1.55 0.94)
+		(layers "F.Mask" "F.Paste")
+		(uuid "7c1304de-88f3-550f-b460-45539e580165")
+	)
+	(pad "" smd rect
+		(at -2.625 0.82 180)
+		(size 1.55 0.94)
+		(layers "F.Mask" "F.Paste")
+		(zone_connect 2)
+		(uuid "690b11db-ca7d-59b9-a5d9-cc7b86d7300f")
+	)
 	(pad "" np_thru_hole circle
 		(at 0 -1.375 180)
 		(size 0.75 0.75)
 		(drill 0.75)
 		(layers "*.Mask" "F.Cu" "B.Cu" "In1.Cu" "In2.Cu")
-		(uuid "2779e757-9a0e-42b9-962a-6b6a062f94a3")
+		(uuid "65af03d8-7b9f-47c2-bcec-439fe33b871b")
 	)
 	(pad "" np_thru_hole circle
 		(at 0 1.375 180)
 		(size 0.75 0.75)
 		(drill 0.75)
 		(layers "*.Mask" "F.Cu" "B.Cu" "In1.Cu" "In2.Cu")
-		(uuid "58d88788-ecd3-4c46-8604-61f221c3152a")
+		(uuid "57bce840-3ec9-49ac-9ac3-2b32f2d01bc7")
+	)
+	(pad "" smd rect
+		(at 2.625 -0.82 180)
+		(size 1.55 0.94)
+		(layers "F.Mask" "F.Paste")
+		(uuid "67298130-90f1-57b6-90ce-1def04062cec")
+	)
+	(pad "" smd rect
+		(at 2.625 0.82 180)
+		(size 1.55 0.94)
+		(layers "F.Mask" "F.Paste")
+		(zone_connect 2)
+		(uuid "7f6ca118-0fb1-5145-a51e-cd65cce72d36")
 	)
 	(pad "1" smd rect
 		(at -2.625 -0.85 180)
 		(size 1.55 1)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "58848945-3e29-4a3c-85ff-993a7fae7ae3")
+		(layers "F.Cu")
+		(uuid "ddce5a04-426d-4873-b96f-46326721c428")
 	)
 	(pad "1" smd rect
 		(at 2.625 -0.85 180)
 		(size 1.55 1)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "7f349600-6a2b-4aac-8787-12ef80ace0a4")
+		(layers "F.Cu")
+		(uuid "81335f2b-8fb3-4cf9-88bd-3274b3738772")
 	)
 	(pad "2" smd rect
 		(at -2.625 0.85 180)
 		(size 1.55 1)
-		(layers "F.Cu" "F.Mask" "F.Paste")
+		(layers "F.Cu")
 		(zone_connect 2)
-		(uuid "544b4840-d194-45d9-aa49-ccde073b679d")
+		(uuid "a4b8e50b-1aa0-4f93-8ab2-1454d3d0050a")
 	)
 	(pad "2" smd rect
 		(at 2.625 0.85 180)
 		(size 1.55 1)
-		(layers "F.Cu" "F.Mask" "F.Paste")
+		(layers "F.Cu")
 		(zone_connect 2)
-		(uuid "93a7da82-ab54-471e-a196-b8fb7b1ff955")
+		(uuid "1f9e3c06-bee5-4fd1-9337-286dc669daf0")
 	)
 	(embedded_fonts no)
 	(model "${KICAD10_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/Panasonic_EVQPUL_EVQPUC.step"

@@ -56,7 +56,8 @@ def main():
  apertures=json.loads((base/'06-validation/cam-apertures.json').read_text())
  assert apertures['archive_sha256']==cam['archive_sha256'] and apertures['source_PCB_sha256']==m['source_PCB_sha256']
  assert apertures['vias']==cam['through_via_count'] and len(apertures['layers'])==4
- assert not any(layer['nominal_intersections'] for layer in apertures['layers'].values())
+ assert all(not layer['nominal_intersections'] and not layer['holes_below_conservative_reserve']
+            and layer['min_nominal_gap_mm']>=.229 for layer in apertures['layers'].values())
  assert sha(base/'01-pcb/source/EC60-nRF52840.kicad_pcb')==m['source_PCB_sha256']
  assert m['revision']==json.loads((ROOT/'hardware/e73-corner-spec.json').read_text())['revision']
  assert (base/'05-firmware/manifest.json').is_file()

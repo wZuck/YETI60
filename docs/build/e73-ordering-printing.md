@@ -32,9 +32,7 @@ The [fabrication ZIP audit](../../delivery/YETI60-E73/06-validation/cam-ordinary
 
 JLC ordinary-process references: [capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/) and [stack-ups](https://jlcpcb.com/impedance). Availability/options must be checked against the actual quotation. Neither this document nor a clean DRC is a factory DFM approval.
 
-CORNER-06 moves the SW1.2 ground via and its short connection. The nominal drill-to-mask and drill-to-paste gaps are now 0.230 mm. The conservative drill-position and finished-hole-size screen leaves 0.059 mm for additional relative shifts. Confirm mask registration and the U5/U6 mask islands with the factory before ordering. [JLCPCB drill tolerances](https://jlcpcb.com/capabilities/Capabilities) · [Current power and process review](../engineering/e73-corner-power-process.md)
-
-The full mask and paste check identifies four closely spaced back-side vias at U5, U6, C42 and D2 in the current ZIP. Record the fabricator's tolerances for those points. The isolated repair has a 0.230 mm minimum back-side gap and remains a trial. [Artwork measurements and trial](../engineering/e73-aperture-review.md)
+CORNER-07 changes the U5, U6, C42 and SW1 apertures and relocates the D2 ground via. The complete ZIP has a 0.230 mm minimum nominal drill-to-opening gap. A conservative drill-position and finished-hole-size screen leaves at least 0.059 mm for other relative shifts. Ask the factory to confirm mask registration and the U5 and U6 mask islands for its ordinary process. [Artwork measurements](../engineering/e73-aperture-review.md) · [JLCPCB drill tolerances](https://jlcpcb.com/capabilities/Capabilities)
 
 ## Which mechanical files to send
 

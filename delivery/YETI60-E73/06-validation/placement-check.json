@@ -18,7 +18,7 @@
   ],
   "module_pin_count": 43,
   "unchanged_effective_keys": 60,
-  "unchanged_retained_copper_items": 4894,
+  "unchanged_retained_copper_items": 4892,
   "ordinary_front_escape_vias": [
     {
       "reference": "U1",
@@ -2417,13 +2417,13 @@
   ],
   "schematic_parity_items": 0,
   "source_sha256": {
-    "hardware/e73-corner-spec.json": "d0f457d9a376f782d4cde0560417ca22cd179fe0b52dd974be96ff709d6fe89e",
-    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
-    "hardware/e73-hhkb-corner/audit/placement-build.json": "e866fa0967be72731310ca3f3952b67faeb84394bb4fea791b5b0b28271df347",
+    "hardware/e73-corner-spec.json": "ef6be31e0064764e622404fab90be05624166b41900120c9a50a2d4dc69126bf",
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e",
+    "hardware/e73-hhkb-corner/audit/placement-build.json": "03ca4fc81584c57b20e0f615b6948c313a9f9aec57671f71aa50fe40440b2a41",
     "hardware/e73-usb-repair/EC60-nRF52840.kicad_pcb": "0353992782a636a6ca04028aca4e6a660da7ae27ce0909aba2f7d3b29d4af8ee",
     "docs/audit/yeti60-key-geometry.json": "49d53c2e3a8a230fb679337535bdfde013d9ae934569220d4efe917968d92f24",
     "hardware/e73-usb-repair/mainboard-purchase.csv": "57652fe1efdbed769da1e48b968a6e424df8cb3f7a2131e65ce7af1ea4020c1e",
-    "scripts/check_e73_corner.py": "f85d9a4fb449f36edb6d14ecee7689330d108eb987421973cd5980022d5cbd58",
+    "scripts/check_e73_corner.py": "7db59dd7c825d123ad0d5decd4008422badfc761a5cc81ac4b2a250d07fe0e45",
     "scripts/screen_yeti60_interference.py": "fb3bc69b0a34f40536fb759c07a3448455326829ad26d1aef31959871ccc2ee5"
   },
   "limits": [

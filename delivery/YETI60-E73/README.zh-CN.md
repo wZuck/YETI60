@@ -21,6 +21,6 @@
 
 首件试装选用 M05 底壳、两块检修盖及配套九线线束。整机渲染、打印清单和线长表均对应 M05。工厂阻焊对位、电池包确认、实际装拆及 USB／蓝牙／静电容／温升仍待实测。
 
-[Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [M05 bottom STEP](02-mechanical/service-case-m05/bottom-m05-REVIEW.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [BOM CSV](03-bom/mainboard-purchase.zh-CN.csv) · [Checksums](manifest.json)
+[KiCad 工程](01-pcb/project-files.zh-CN.md) · [上壳 STL](02-mechanical/top.stl) · [上壳 STEP](02-mechanical/top.step) · [M05 底壳 STEP](02-mechanical/service-case-m05/bottom-m05-REVIEW.step) · [定位板 DXF](02-mechanical/steel-plate.dxf) · [采购清单 CSV](03-bom/mainboard-purchase.zh-CN.csv) · [文件校验值](manifest.json)
 
-[JLC capabilities](https://jlcpcb.com/capabilities/Capabilities) · [JLC stack-ups](https://jlcpcb.com/impedance)
+[嘉立创制造能力](https://jlcpcb.com/capabilities/Capabilities) · [嘉立创叠层](https://jlcpcb.com/impedance)

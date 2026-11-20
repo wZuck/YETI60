@@ -4,7 +4,7 @@
 
 本页记录 M04 基线。M05 首件请按 [M05 打印与布线清单](../build/e73-m05-prototype.zh-CN.md) 选取线长和配套零件。
 
-CORNER-06 使用**在原坐标旋转 180° 的主板 J5**和已经制作的 **C5 JSH 子板**。J5 朝外壳前侧出线，电源线可与 J4 USB 线分开绕行。连接器附近的 GND、USB_FEED、ROW_DRV4 局部修补在基础布线补丁之后重放，并通过原生 DRC 检查。
+CORNER-07 使用**在原坐标旋转 180° 的主板 J5**和已经制作的 **C5 JSH 子板**。J5 朝外壳前侧出线，电源线可与 J4 USB 线分开绕行。连接器附近的 GND、USB_FEED、ROW_DRV4 局部修补在基础布线补丁之后重放，并通过原生 DRC 检查。
 
 **这是工程绕线检查，不是整机关壳验收。** 证据见[导线／插头／障碍物检查](../../hardware/e73-hhkb-corner/audit/harness-study.json)和[来源规格](../../hardware/e73-corner-harness-spec.json)。理线件静态试装和整机图已纳入交付。实际安装和维修动作仍须验收。配图是坐标示意，不是照片或实测装配。
 

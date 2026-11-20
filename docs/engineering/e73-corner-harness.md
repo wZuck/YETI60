@@ -4,7 +4,7 @@ English | [Chinese](e73-corner-harness.zh-CN.md)
 
 This page records the M04 baseline. For the first article, use the [M05 print checklist and wire lengths](../build/e73-m05-prototype.md).
 
-CORNER-06 uses **mainboard J5 rotated by 180° at the same origin** and the already-made **C5 JSH daughterboard**. J5 exits toward the front of the case, permitting a separate route past the J4 USB cable. The local connector repair is replayed after the original routing patch and checked by native DRC. It touches GND, USB_FEED and ROW_DRV4 near J5.
+CORNER-07 uses **mainboard J5 rotated by 180° at the same origin** and the already-made **C5 JSH daughterboard**. J5 exits toward the front of the case, permitting a separate route past the J4 USB cable. The local connector repair is replayed after the original routing patch and checked by native DRC. It touches GND, USB_FEED and ROW_DRV4 near J5.
 
 **Engineering routing study, not complete closed-case assembly acceptance.** [Native wire/plug/obstacle study](../../hardware/e73-hhkb-corner/audit/harness-study.json) and [source specification](../../hardware/e73-corner-harness-spec.json). The static retainers and assembly views are in the delivery. Actual insertion and service motion remain open. The drawings are coordinate plans, not photographs or measured assemblies.
 

@@ -37,4 +37,4 @@ Pack local origin is its minimum X/Y/Z corner. Required strain-relief lead-exit 
 
 Inspect the signed drawing, polarity, NTC resistance and complete envelope before connection. Exercise the charger with a battery simulator first. On qualified packs, record full CC/CV/termination and timer behavior with board-on configured USB500 and separately with board-off USB100, across accepted source voltage, system load and temperature conditions. Verify independent hot/cold interruption/recovery and closed-case charger/cell temperatures. Record switch-off leakage, capacity and normal-firmware battery-side current with USB/debugger disconnected. First-article testing and acceptance remain open; calculation is not a substitute.
 
-This root specification applies to E73 CORNER-06 and its SH3 battery interface. The separate Raytac variant retains its own supplier document and wiring datums. Final E73 cable retention and supplier acceptance remain open.
+This root specification applies to E73 CORNER-07 and its SH3 battery interface. The separate Raytac variant retains its own supplier document and wiring datums. Final E73 cable retention and supplier acceptance remain open.

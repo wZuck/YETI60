@@ -1,8 +1,10 @@
 [English](e73-aperture-review.md) | 中文
 
-# CORNER-06 钻孔、阻焊与钢网复核
+# CORNER-07 钻孔、阻焊与钢网复核
 
-本交付包的制板 ZIP 对应 CORNER-06。逐个将 Excellon 钻孔匹配到 KiCad 主板，并对照四张实际阻焊与锡膏 Gerber，每层检查 852 个过孔。标称几何下钻孔均未与开窗相交，背面有四处小于保守钻孔余量。[出厂 ZIP 量测结果](../../delivery/YETI60-E73/06-validation/cam-apertures.json)
+将 CORNER-07 制板 ZIP 内的 852 个 Excellon 钻孔逐个匹配到 KiCad 主板，并与四张阻焊、锡膏 Gerber 分别比对。没有钻孔与标称开窗相交，也没有间距小于保守钻孔余量。 [CORNER-07 制板 ZIP 量测](../../delivery/YETI60-E73/06-validation/cam-apertures.json)
+
+下表为 CORNER-06 的背面原始间距。 [CORNER-06 制板 ZIP 存档量测](https://github.com/wZuck/YETI60/blob/e94fe4ee2e16914f796e27543dccfbd14cb4bbc7/delivery/YETI60-E73/06-validation/cam-apertures.json)
 
 | 位置 | 背面阻焊间距 | 背面锡膏间距 |
 |---|---:|---:|
@@ -14,11 +16,11 @@
 
 按 `√2 × 0.075 + 0.130/2 = 0.17107 mm` 作保守估算，将厂商公布的孔位值视为每轴偏移，再计入孔径最大正偏差的一半。曲边近似另预留 0.0002 mm。钻孔、阻焊和钢网之间的实际相对对位须向厂商确认。[嘉立创钻孔与阻焊能力](https://jlcpcb.com/capabilities/Capabilities)
 
-## 独立工程副本试改
+## 已合入的开窗修补
 
-试改依然使用普通机械通孔、0.30／0.40 mm 钻孔和两面盖油。原有铜焊盘的尺寸与坐标保持原几何。C42 两端开窗内侧各收窄 0.10 mm，SW1 各开窗沿 Y 的外侧收窄 0.06 mm，让复位过孔能保留原位。D2 接地过孔移到 (315.516, 122.070) mm，规格为 0.30 mm 钻孔／0.60 mm 焊环，原接地短线接到新孔位。U5、U6 保留原散热过孔和铜面，扩大阻焊岛并重排钢网开口。
+修补继续使用普通机械通孔、0.30／0.40 mm 钻孔和两面盖油。原有铜焊盘的尺寸与坐标保持原几何。C42 两端开窗内侧各收窄 0.10 mm，SW1 各开窗沿 Y 的外侧收窄 0.06 mm，让复位过孔能保留原位。D2 接地过孔移到 (315.516, 122.070) mm，规格为 0.30 mm 钻孔／0.60 mm 焊环，原接地短线接到新孔位。U5、U6 保留原散热过孔和铜面，扩大阻焊岛并重排钢网开口。
 
-| 复测结果 | 数值 |
+| CORNER-07 制板 ZIP 结果 | 数值 |
 |---|---:|
 | 过孔到正面阻焊或锡膏开窗的最小标称间距 | 0.328 mm |
 | 过孔到背面阻焊或锡膏开窗的最小标称间距 | 0.230 mm |
@@ -28,8 +30,8 @@
 | U5.17 与 U6.11 钢网开口间最小钢宽 | 0.17／0.78 mm |
 | 以 0.125 mm 钢网计算的最小面积比，U5.17／U6.11 | 1.15／1.56 |
 
-KiCad 严格检查为 0 条错误、0 项未连接、0 项原理图差异，保留原有 100 项非采购几何的庭院层提示。[试改量测与来源校验值](../../hardware/e73-hhkb-corner/audit/aperture-trial.json)
+KiCad 严格检查为 0 条错误、0 项未连接、0 项原理图差异，保留原有 100 项非采购几何的庭院层提示。[独立试改存档](https://github.com/wZuck/YETI60/blob/e94fe4ee2e16914f796e27543dccfbd14cb4bbc7/hardware/e73-hhkb-corner/audit/aperture-trial.json) · [当前主板 DRC](../../hardware/e73-hhkb-corner/audit/DRC-routing-open.json)
 
 TI 通用 QFN／SON 装配说明给出的典型锡膏覆盖率为 50–70%，具体器件手册的示例则约为 U5 85%、U6 84%。本板用分割开窗，首件须验收印刷转移、焊点和稳压器／充电器温升。[TI 装配说明，第 4.4 节](https://www.ti.com/lit/an/slua271c/slua271c.pdf) · [BQ24074 封装图](https://www.ti.com/lit/ds/symlink/bq24074.pdf) · [TPS63031 封装图](https://www.ti.com/lit/ds/symlink/tps63031.pdf)
 
-试改已在工程副本中同步封装库并通过 KiCad 和制造图层检查。集中交付的 Gerber 仍为 CORNER-06。正式合入后须重新生成绑定主板的固件、制造文件和验收报告。普通工艺对位和实物首件验收仍待完成。
+CORNER-07 的原生 PCB、本地封装、制板 ZIP 和固件采用同一版主板来源。工厂对位确认和实物首件验收仍待完成。

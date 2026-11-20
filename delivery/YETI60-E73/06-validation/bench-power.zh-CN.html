@@ -1,6 +1,6 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-06 台架供电与充电测试</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="bench-power.html">English</a> | 中文</p>
-<h1 id="corner-06-台架供电与充电测试">CORNER-06 台架供电与充电测试</h1>
-<p>使用 CORNER-06 主板、已有 C5 JSH 子板，以及 <a href="../02-mechanical/service-case-m05/print-guide.zh-CN.html">M05 指南</a>里的 J4 至 C5 线束和 J5 至 J1 电源桥。外壳打印前即可把主板放到绝缘支座上开始测试，先断开实物电池。完成分段焊接检查和 SWD 刷写。打字测试需要已装好并校准的 NiZ 感应机构。<a href="../04-assembly/soldering.zh-CN.html">焊接与首次上电</a> · <a href="../05-firmware/installation.zh-CN.html">固件安装</a></p>
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-07 台架供电与充电测试</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="bench-power.html">English</a> | 中文</p>
+<h1 id="corner-07-台架供电与充电测试">CORNER-07 台架供电与充电测试</h1>
+<p>使用 CORNER-07 主板、已有 C5 JSH 子板，以及 <a href="../02-mechanical/service-case-m05/print-guide.zh-CN.html">M05 指南</a>里的 J4 至 C5 线束和 J5 至 J1 电源桥。外壳打印前即可把主板放到绝缘支座上开始测试，先断开实物电池。完成分段焊接检查和 SWD 刷写。打字测试需要已装好并校准的 NiZ 感应机构。<a href="../04-assembly/soldering.zh-CN.html">焊接与首次上电</a> · <a href="../05-firmware/installation.zh-CN.html">固件安装</a></p>
 <h2 id="仪器与接线">仪器与接线</h2>
 <ol>
 <li>确认 J4 到 C5 的 1–4 号针逐一对应。电源桥 J5.1 接 J1.1、J5.2 接 J1.4，J1 中间两孔留空。插上之前用万用表核对各线导通。</li>
@@ -9,7 +9,7 @@
 <li>断电固定探头。按表中成对测点用浮地万用表或差分测量，F1 压降也按此方式测。共地示波器只接一个电路地。充电电流用串入模拟器回路的仪表或模拟器的有符号读数，流入模拟器记为正。</li>
 </ol>
 <h2 id="主板背面测点">主板背面测点</h2>
-<p><img src="bench-probe-map.zh-CN.png" alt="CORNER-06 台架测试用主板背面测点" /></p>
+<p><img src="bench-probe-map.zh-CN.png" alt="CORNER-07 台架测试用主板背面测点" /></p>
 <p>圆点标出 KiCad 中的焊盘中心，灰色为地。用焊装后露出的端点，插座挡住焊盘时用测试转接线。各电压按表中配对测点量取。<a href="bench-power-plan.json">绑定到 PCB 的测点坐标和网络</a></p>
 <table>
 <thead>

@@ -186,7 +186,7 @@ def repaired_apertures(board, patch, switch_patch):
             shapes = layer_shapes(footprints[ref],layer)
             assert not any(shape.Contains(via.GetPosition()) for shape in shapes)
             gap = pcb.ToMM(min(shape.Distance(via.GetPosition()) for shape in shapes)) - .15
-            assert gap >= (.20 if ref == 'SW1' else .10), (ref, gap)
+            assert gap >= .22, (ref, gap)
             openings[board.GetLayerName(layer)] = gap
         result[ref] = {'via_uuid':identifier,'xy_PCB_mm':coordinates,
                        'nominal_drill_to_own_opening_mm':openings}

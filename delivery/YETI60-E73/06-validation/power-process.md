@@ -1,10 +1,10 @@
 English | [Chinese](power-process.zh-CN.md)
 
-# CORNER-06 power and ordinary PCB process review
+# CORNER-07 power and ordinary PCB process review
 
-CORNER-06 relocates the SW1 ground via and retains the lower-resistance USB supply route and relocated C42 and C48 ground drills from CORNER-05. The native PCB, firmware, BOM and CAM in this delivery identify this revision. The current path preserves direct USB HID while charging after host configuration.
+CORNER-07 revises the U5, U6, C42 and SW1 openings and relocates the D2 ground via. It carries forward the USB supply paths and the C42, C48 and SW1 ground via locations from CORNER-05 and CORNER-06. The native PCB, firmware, BOM and CAM in this delivery identify this revision. The current path preserves direct USB HID while charging after host configuration.
 
-| Mainboard supply span | CORNER-04 trace resistance | CORNER-06 trace resistance |
+| Mainboard supply span | CORNER-04 trace resistance | CORNER-07 trace resistance |
 |---|---:|---:|
 | J4.1 to J5.1 | 0.086 Ω | 0.015 Ω |
 | J1.1 to F1.2 | 0.057 Ω | 0.029 Ω |
@@ -30,17 +30,17 @@ The ten local power paths meet their project width and length limits. The progra
 
 ## Ordinary drilling and solder apertures
 
-All 852 vias are mechanical through holes. Nominal drill / land sizes are 0.30 / 0.50 mm (203), 0.30 / 0.60 mm (64) and 0.40 / 0.80 mm (585). The minimum trace width is 0.127 mm. The mainboard uses the specified ordinary four-layer stack and tenting. Review the actual CAM and mask alignment with the factory. [JLCPCB capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/)
+All 852 vias are mechanical through holes. Nominal drill / land sizes are 0.30 / 0.50 mm (203), 0.30 / 0.60 mm (65) and 0.40 / 0.80 mm (584). The minimum trace width is 0.127 mm. The mainboard uses the specified ordinary four-layer stack and tenting. Review the actual CAM and mask alignment with the factory. [JLCPCB capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/)
 
 | Contact | Nominal drill-to-opening result |
 |---|---|
-| C42.2 | Ground via at PCB (122.120, 142.315) mm. Gap to the respective paste and mask openings is 0.130 mm |
+| C42.2 | Ground via at PCB (122.120, 142.315) mm. Gap to the respective paste and mask openings is 0.230 mm |
 | C48.2 | Ground via at PCB (107.1368, 147.6572) mm. Gap to the respective paste and mask openings is 0.237 mm |
 | SW1.2 | Ground via at PCB (322.220, 122.370) mm with a 0.30 mm drill and 0.60 mm land. Both gaps increase from 0.037 mm to 0.230 mm |
-| D2.1 | The nominal drill-to-opening gap is 0.142 mm. Verify factory registration |
-| U5.17, U6.11 | Mask islands retain 0.100 mm nominal drill-to-mask gap. Split paste gaps are 0.150 and 0.167 mm respectively |
+| D2.1 | Ground via at PCB (315.516, 122.070) mm with a 0.30 mm drill and 0.60 mm land |
+| U5.17, U6.11 | Revised mask islands and split paste windows. Drill-to-mask gap is 0.230 mm on both pads. See the full artwork audit for paste and stencil coverage |
 
-The SW1 drill screen uses `0.230 − √2 × 0.075 − 0.13 / 2 = 0.059 mm` of residual gap after a conservative diagonal position error and maximum radial growth from the published finished-hole diameter tolerance. Mask registration remains a factory check. Inspect actual tenting and the split stencil for both exposed pads. [JLCPCB drill tolerances](https://jlcpcb.com/capabilities/Capabilities) · [JLCPCB via covering](https://jlcpcb.com/help/article/pcb-via-covering) · [Fabrication ZIP audit](cam-ordinary.json)
+The smallest drill budget across the four layers is `0.230 − √2 × 0.075 − 0.13 / 2 − 0.0002 ≈ 0.059 mm` after position, diameter and polygon allowances. Mask registration remains a factory check. Inspect actual tenting and the split stencil for both exposed pads. [JLCPCB drill tolerances](https://jlcpcb.com/capabilities/Capabilities) · [JLCPCB via covering](https://jlcpcb.com/help/article/pcb-via-covering) · [Mask and stencil audit](aperture-review.md)
 
 The JST SH terminals accept AWG32–28. The harness uses AWG28 within that wire-size range and needs the specified crimp quality and insulation diameter. [JST SH specification](https://www.jst-mfg.com/product/pdf/eng/eSH.pdf)
 
