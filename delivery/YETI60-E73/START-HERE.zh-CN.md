@@ -20,6 +20,7 @@
 | 用模拟器验证壳外供电、充电及 USB／蓝牙切换 | [台架接法、测点及记录](06-validation/bench-power.zh-CN.md) |
 | 查看电气、装配、天线与放行边界 | [当前 E73 工程审查](06-validation/corner-review.zh-CN.md) |
 | 核对充电压降、发热及普通制板问题 | [本版电源与工艺复核](06-validation/power-process.zh-CN.md) |
+| 核对制板 ZIP 的过孔余量和独立试改结果 | [钻孔、阻焊与钢网复核](06-validation/aperture-review.zh-CN.md) |
 | 记录首件的制板、焊接、充电、全键、关壳和蓝牙实测 | [首件验收表](06-validation/first-article.zh-CN.md) |
 | 离线阅读 | 用浏览器打开交付目录的 `index.zh-CN.html`；包内内容不需要服务器或联网 |
 | 校验文件来源与一致性 | 查看 `manifest.json`；校验值将复制文件绑定到来源 PCB 及配套固件 |

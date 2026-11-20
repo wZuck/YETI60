@@ -20,6 +20,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Verify open-bench power, charging and USB/BLE switching with a simulator | [Bench connections, probe map and record](06-validation/bench-power.md) |
 | Review electrical, fit, antenna and release limitations | [Current E73 engineering review](06-validation/corner-review.md) |
 | Review charging headroom, dissipation and ordinary PCB fabrication | [Current power and process review](06-validation/power-process.md) |
+| Check the via clearances in the fabrication ZIP and compare the isolated repair | [Drill, mask and stencil review](06-validation/aperture-review.md) |
 | Record CAM, soldering, charging, all keys, case closure and BLE | [First-article record](06-validation/first-article.md) |
 | Browse offline | Open `index.html` in the delivery folder; no server or network is needed for bundled content |
 | Verify file provenance | Read `manifest.json`; checksums bind the copied files to their source PCB and matching firmware |

@@ -34,6 +34,8 @@ JLC 普通工艺参考：[制造能力](https://jlcpcb.com/capabilities/pcb-capa
 
 CORNER-06 移动了 SW1.2 的接地过孔及短接线，钻孔到阻焊与锡膏开窗的标称距离均增至 0.230 mm。按保守的孔位与成品孔径公差计算，剩余 0.059 mm 供其他相对偏移使用。下单前请工厂确认阻焊对位和 U5、U6 的阻焊岛。[嘉立创钻孔公差](https://jlcpcb.com/capabilities/Capabilities) · [本版电源及工艺](../engineering/e73-corner-power-process.zh-CN.md)
 
+全板开窗检查识别出当前 ZIP 中靠近背面开窗的四处过孔，分别在 U5、U6、C42 和 D2。请工厂确认这些位置的实际对位公差。独立试改的背面最小间距为 0.230 mm，当前仍为试验版本。[制造图层量测与试改](../engineering/e73-aperture-review.zh-CN.md)
+
 ## 机械文件发哪些
 
 | 零件／净数量 | 交付路径 | 制造要求 |

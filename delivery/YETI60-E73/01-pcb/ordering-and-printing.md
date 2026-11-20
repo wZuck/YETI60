@@ -34,6 +34,8 @@ JLC ordinary-process references: [capabilities](https://jlcpcb.com/capabilities/
 
 CORNER-06 moves the SW1.2 ground via and its short connection. The nominal drill-to-mask and drill-to-paste gaps are now 0.230 mm. The conservative drill-position and finished-hole-size screen leaves 0.059 mm for additional relative shifts. Confirm mask registration and the U5/U6 mask islands with the factory before ordering. [JLCPCB drill tolerances](https://jlcpcb.com/capabilities/Capabilities) · [Current power and process review](../06-validation/power-process.md)
 
+The full mask and paste check identifies four closely spaced back-side vias at U5, U6, C42 and D2 in the current ZIP. Record the fabricator's tolerances for those points. The isolated repair has a 0.230 mm minimum back-side gap and remains a trial. [Artwork measurements and trial](../06-validation/aperture-review.md)
+
 ## Which mechanical files to send
 
 | Item / net quantity | Delivery path | Manufacturing instructions |

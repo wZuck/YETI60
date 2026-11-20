@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-06 drill, solder mask and stencil review</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="aperture-review.zh-CN.html">Chinese</a></p>
+<h1 id="corner-06-drill-solder-mask-and-stencil-review">CORNER-06 drill, solder mask and stencil review</h1>
+<p>The fabrication ZIP in this delivery uses CORNER-06. Its Excellon via hits were matched to the native PCB and measured against all four actual mask and paste Gerbers. The screen covers 852 vias per layer. No nominal via-drill intersections were found. Four back-side vias have small margins once a conservative drill allowance is applied. <a href="cam-apertures.json">Fabrication ZIP measurements</a></p>
+<table>
+<thead>
+<tr>
+<th>Location</th>
+<th style="text-align:right">Back mask gap</th>
+<th style="text-align:right">Back paste gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U5.17, exposed charger pad</td>
+<td style="text-align:right">0.100 mm</td>
+<td style="text-align:right">0.150 mm</td>
+</tr>
+<tr>
+<td>U6.11, exposed regulator pad</td>
+<td style="text-align:right">0.100 mm</td>
+<td style="text-align:right">0.168 mm</td>
+</tr>
+<tr>
+<td>C42.2, output capacitor ground</td>
+<td style="text-align:right">0.130 mm</td>
+<td style="text-align:right">0.130 mm</td>
+</tr>
+<tr>
+<td>D2.1, LED ground</td>
+<td style="text-align:right">0.143 mm</td>
+<td style="text-align:right">0.143 mm</td>
+</tr>
+<tr>
+<td>SW1.1 reset via at (329.350, 124.675) mm</td>
+<td style="text-align:right">0.175 mm</td>
+<td style="text-align:right">0.175 mm</td>
+</tr>
+</tbody>
+</table>
+<p>The planning allowance is <code>sqrt(2) × 0.075 + 0.130/2 = 0.17107 mm</code>. It treats the published positional figure as a per-axis allowance and uses half the maximum positive diameter change as radial growth. The polygon calculation reserves another 0.0002 mm for curved edges. Confirm actual relative drill, mask and stencil registration with the fabricator. <a href="https://jlcpcb.com/capabilities/Capabilities">JLCPCB drilling and mask capabilities</a></p>
+<h2 id="isolated-repair-trial">Isolated repair trial</h2>
+<p>The trial retains ordinary 0.30/0.40 mm drill sizes, through-vias and tenting. All original copper lands and their positions are preserved. C42 loses 0.10 mm at the inner edge of each solder opening. SW1 loses 0.06 mm at the outer edge of each opening in Y. This increases the reset-via gap without moving it into the nearby 3.3 V traces. The D2 ground via moves to (315.516, 122.070) mm and uses a 0.30 mm drill / 0.60 mm land. Its existing ground segment is shortened or extended to meet the via. U5 and U6 retain their original thermal vias and copper with larger mask islands and revised stencil windows.</p>
+<table>
+<thead>
+<tr>
+<th>Result after replay</th>
+<th style="text-align:right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum via gap to either front artwork layer</td>
+<td style="text-align:right">0.328 mm</td>
+</tr>
+<tr>
+<td>Minimum via gap to either back artwork layer</td>
+<td style="text-align:right">0.230 mm</td>
+</tr>
+<tr>
+<td>Smallest conservative drill-only residual including curve allowance</td>
+<td style="text-align:right">0.059 mm</td>
+</tr>
+<tr>
+<td>U5.17 paste coverage of copper land</td>
+<td style="text-align:right">58.36%</td>
+</tr>
+<tr>
+<td>U6.11 paste coverage of copper land</td>
+<td style="text-align:right">53.97%</td>
+</tr>
+<tr>
+<td>U5.17 and U6.11 minimum stencil web</td>
+<td style="text-align:right">0.17 / 0.78 mm</td>
+</tr>
+<tr>
+<td>U5.17 and U6.11 minimum area ratio at 0.125 mm stencil thickness</td>
+<td style="text-align:right">1.15 / 1.56</td>
+</tr>
+</tbody>
+</table>
+<p>KiCad reports zero DRC errors, zero unconnected items and zero schematic parity differences. The strict run retains 100 missing-courtyard warnings for existing non-purchased geometry. <a href="aperture-trial.json">Trial measurements and source hashes</a></p>
+<p>TI's general QFN/SON guidance gives a typical 50–70% paste coverage range. The package examples in the individual TI data sheets use about 85% for U5 and 84% for U6. This board's split apertures require first-article stencil transfer, joint inspection and regulator/charger thermal testing. <a href="https://www.ti.com/lit/an/slua271c/slua271c.pdf">TI assembly note, §4.4</a> · <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">BQ24074 package drawing</a> · <a href="https://www.ti.com/lit/ds/symlink/tps63031.pdf">TPS63031 package drawing</a></p>
+<p>The repair is an isolated candidate with synchronized footprint copies and its own KiCad and CAM evidence. The consolidated Gerber ZIP still identifies CORNER-06. Before replacing it, integrate the repair into the native project and regenerate the board-bound firmware, fabrication files and acceptance reports. The ordinary-process fabrication and physical first-article checks remain open.</p>
+</main></html>

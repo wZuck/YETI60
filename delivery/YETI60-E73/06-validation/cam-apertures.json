@@ -1,0 +1,230 @@
+{
+  "status": "gerber-mask-and-paste-clearance-measured",
+  "physical_verification": false,
+  "archive_sha256": "d681f2a2185bdddaf3c8d1876e16ccf5fbcdc0366d4907ea69683aefa2fa420c",
+  "source_PCB_sha256": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
+    "scripts/check_e73_apertures.py": "725187f9a9cf0590f04f4a72ad463e0c6ab25d7394020ebf7507f3763c271d51",
+    "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a"
+  },
+  "vias": 852,
+  "via_drills_mm": {
+    "0.3": 267,
+    "0.4": 585
+  },
+  "arc_geometry_allowance_mm": 0.0002,
+  "conservative_drill_reserve_mm": 0.171066,
+  "hole_pos_per_axis_mm_assumed": 0.075,
+  "maximum_positive_diameter_tolerance_mm_used": 0.13,
+  "mask_and_stencil_registration_included": false,
+  "drilling_reference": "https://jlcpcb.com/capabilities/Capabilities",
+  "layers": {
+    "F.Mask": {
+      "min_nominal_gap_mm": 0.32807,
+      "constructed_shapes": 84,
+      "nearest": {
+        "via_uuid": "19bbbbbc-4c33-434e-b553-aa503cabb901",
+        "net": "CHG_CE_N",
+        "pcb_xy_mm": [
+          328.55,
+          130.75
+        ],
+        "drill_mm": 0.3,
+        "artwork_reference": "REF\\u002A\\u002A",
+        "nominal_gap_mm": 0.32807,
+        "drill_reserve_remaining_mm": 0.156804,
+        "nominal_intersection": false
+      },
+      "holes_below_conservative_reserve": 0,
+      "nominal_intersections": 0,
+      "tight_locations": []
+    },
+    "B.Mask": {
+      "min_nominal_gap_mm": 0.1,
+      "constructed_shapes": 1773,
+      "nearest": {
+        "via_uuid": "1df4dc1f-1f79-484a-8421-f92423a6f7d0",
+        "net": "GND",
+        "pcb_xy_mm": [
+          117.65,
+          145.0
+        ],
+        "drill_mm": 0.3,
+        "artwork_reference": null,
+        "nominal_gap_mm": 0.1,
+        "drill_reserve_remaining_mm": -0.071266,
+        "nominal_intersection": false
+      },
+      "holes_below_conservative_reserve": 4,
+      "nominal_intersections": 0,
+      "tight_locations": [
+        {
+          "via_uuid": "1df4dc1f-1f79-484a-8421-f92423a6f7d0",
+          "net": "GND",
+          "pcb_xy_mm": [
+            117.65,
+            145.0
+          ],
+          "drill_mm": 0.3,
+          "artwork_reference": null,
+          "nominal_gap_mm": 0.1,
+          "drill_reserve_remaining_mm": -0.071266,
+          "nominal_intersection": false
+        },
+        {
+          "via_uuid": "bd7c6e02-592d-46f4-91c6-9f93a4948ee5",
+          "net": "GND",
+          "pcb_xy_mm": [
+            133.0,
+            140.8
+          ],
+          "drill_mm": 0.3,
+          "artwork_reference": null,
+          "nominal_gap_mm": 0.1,
+          "drill_reserve_remaining_mm": -0.071266,
+          "nominal_intersection": false
+        },
+        {
+          "via_uuid": "93479cbe-e898-4dfd-ae63-fa5383607b43",
+          "net": "GND",
+          "pcb_xy_mm": [
+            122.12,
+            142.315
+          ],
+          "drill_mm": 0.3,
+          "artwork_reference": "C42",
+          "nominal_gap_mm": 0.130148,
+          "drill_reserve_remaining_mm": -0.041118,
+          "nominal_intersection": false
+        },
+        {
+          "via_uuid": "2fbc09c8-3af4-4563-8086-fe4bd03b626d",
+          "net": "GND",
+          "pcb_xy_mm": [
+            315.516,
+            122.188
+          ],
+          "drill_mm": 0.4,
+          "artwork_reference": "D2",
+          "nominal_gap_mm": 0.143472,
+          "drill_reserve_remaining_mm": -0.027794,
+          "nominal_intersection": false
+        }
+      ]
+    },
+    "F.Paste": {
+      "min_nominal_gap_mm": 0.3497,
+      "constructed_shapes": 43,
+      "nearest": {
+        "via_uuid": "142ce69d-bc06-5013-8dda-9186494c55cd",
+        "net": "AFE_EN",
+        "pcb_xy_mm": [
+          335.873,
+          180.5
+        ],
+        "drill_mm": 0.3,
+        "artwork_reference": "U1",
+        "nominal_gap_mm": 0.3497,
+        "drill_reserve_remaining_mm": 0.178434,
+        "nominal_intersection": false
+      },
+      "holes_below_conservative_reserve": 0,
+      "nominal_intersections": 0,
+      "tight_locations": []
+    },
+    "B.Paste": {
+      "min_nominal_gap_mm": 0.130148,
+      "constructed_shapes": 1790,
+      "nearest": {
+        "via_uuid": "93479cbe-e898-4dfd-ae63-fa5383607b43",
+        "net": "GND",
+        "pcb_xy_mm": [
+          122.12,
+          142.315
+        ],
+        "drill_mm": 0.3,
+        "artwork_reference": "C42",
+        "nominal_gap_mm": 0.130148,
+        "drill_reserve_remaining_mm": -0.041118,
+        "nominal_intersection": false
+      },
+      "holes_below_conservative_reserve": 4,
+      "nominal_intersections": 0,
+      "tight_locations": [
+        {
+          "via_uuid": "93479cbe-e898-4dfd-ae63-fa5383607b43",
+          "net": "GND",
+          "pcb_xy_mm": [
+            122.12,
+            142.315
+          ],
+          "drill_mm": 0.3,
+          "artwork_reference": "C42",
+          "nominal_gap_mm": 0.130148,
+          "drill_reserve_remaining_mm": -0.041118,
+          "nominal_intersection": false
+        },
+        {
+          "via_uuid": "2fbc09c8-3af4-4563-8086-fe4bd03b626d",
+          "net": "GND",
+          "pcb_xy_mm": [
+            315.516,
+            122.188
+          ],
+          "drill_mm": 0.4,
+          "artwork_reference": "D2",
+          "nominal_gap_mm": 0.143472,
+          "drill_reserve_remaining_mm": -0.027794,
+          "nominal_intersection": false
+        },
+        {
+          "via_uuid": "1df4dc1f-1f79-484a-8421-f92423a6f7d0",
+          "net": "GND",
+          "pcb_xy_mm": [
+            117.65,
+            145.0
+          ],
+          "drill_mm": 0.3,
+          "artwork_reference": "U5",
+          "nominal_gap_mm": 0.15,
+          "drill_reserve_remaining_mm": -0.021266,
+          "nominal_intersection": false
+        },
+        {
+          "via_uuid": "bd7c6e02-592d-46f4-91c6-9f93a4948ee5",
+          "net": "GND",
+          "pcb_xy_mm": [
+            133.0,
+            140.8
+          ],
+          "drill_mm": 0.3,
+          "artwork_reference": "U6",
+          "nominal_gap_mm": 0.167854,
+          "drill_reserve_remaining_mm": -0.003412,
+          "nominal_intersection": false
+        }
+      ]
+    }
+  },
+  "thermal_lands": {
+    "U5.17": {
+      "land_mm2": 2.8224,
+      "paste_apertures": 4,
+      "paste_fraction": 0.580986,
+      "exposed_copper_fraction": 0.911423,
+      "paste_on_open_mask_fraction": 0.580986,
+      "minimum_stencil_web_mm": 0.16,
+      "minimum_area_ratio_at_0p125mm": 1.146037
+    },
+    "U6.11": {
+      "land_mm2": 2.4,
+      "paste_apertures": 4,
+      "paste_fraction": 0.507869,
+      "exposed_copper_fraction": 0.895833,
+      "paste_on_open_mask_fraction": 0.507869,
+      "minimum_stencil_web_mm": 0.16,
+      "minimum_area_ratio_at_0p125mm": 1.113953
+    }
+  }
+}
