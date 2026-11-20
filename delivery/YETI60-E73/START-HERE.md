@@ -23,7 +23,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Check via clearances and stencil coverage in the fabrication ZIP | [Drill, mask and stencil review](06-validation/aperture-review.md) |
 | Record CAM, soldering, charging, all keys, case closure and BLE | [First-article record](06-validation/first-article.md) |
 | Browse offline | Open `index.html` in the delivery folder; no server or network is needed for bundled content |
-| Verify file provenance | Read `manifest.json`; checksums bind the copied files to their source PCB and matching firmware |
+| Verify an unpacked copy | Run `python3 verify.py` in the delivery directory. The [manifest](https://github.com/wZuck/YETI60/blob/master/delivery/YETI60-E73/manifest.json) lists file checksums and the matching PCB and firmware |
 
 ## Follow this sequence
 
@@ -41,4 +41,4 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 
 Native DRC and source-bound firmware/host simulation can be checked before ordering. Vendor lead dimensions, crimp quality, incoming parts, resin shrinkage, actual NiZ retention/travel, USB signal integrity, BLE range/EC immunity and battery thermal behavior require supplied parts or a prototype. The steel plate still overlaps the provisional antenna region; the project does not claim verified 2–3 m operation.
 
-The consolidated folder is an offline snapshot. External manufacturer/provenance links are references, while the indexed local files are the snapshot's deliverables. Recheck its manifest after any file is replaced.
+The consolidated folder is an offline snapshot. To verify a download, run `python3 verify.py` from an untouched copy before opening the KiCad project. Python 3 is the only requirement for this check.

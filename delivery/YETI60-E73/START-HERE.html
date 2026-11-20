@@ -71,8 +71,8 @@
 <td>Open <code>index.html</code> in the delivery folder; no server or network is needed for bundled content</td>
 </tr>
 <tr>
-<td>Verify file provenance</td>
-<td>Read <code>manifest.json</code>; checksums bind the copied files to their source PCB and matching firmware</td>
+<td>Verify an unpacked copy</td>
+<td>Run <code>python3 verify.py</code> in the delivery directory. The <a href="https://github.com/wZuck/YETI60/blob/master/delivery/YETI60-E73/manifest.json">manifest</a> lists file checksums and the matching PCB and firmware</td>
 </tr>
 </tbody>
 </table>
@@ -90,5 +90,5 @@
 </ol>
 <h2 id="read-the-evidence-correctly">Read the evidence correctly</h2>
 <p>Native DRC and source-bound firmware/host simulation can be checked before ordering. Vendor lead dimensions, crimp quality, incoming parts, resin shrinkage, actual NiZ retention/travel, USB signal integrity, BLE range/EC immunity and battery thermal behavior require supplied parts or a prototype. The steel plate still overlaps the provisional antenna region; the project does not claim verified 2–3 m operation.</p>
-<p>The consolidated folder is an offline snapshot. External manufacturer/provenance links are references, while the indexed local files are the snapshot's deliverables. Recheck its manifest after any file is replaced.</p>
+<p>The consolidated folder is an offline snapshot. To verify a download, run <code>python3 verify.py</code> from an untouched copy before opening the KiCad project. Python 3 is the only requirement for this check.</p>
 </main></html>

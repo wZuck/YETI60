@@ -71,8 +71,8 @@
 <td>用浏览器打开交付目录的 <code>index.zh-CN.html</code>；包内内容不需要服务器或联网</td>
 </tr>
 <tr>
-<td>校验文件来源与一致性</td>
-<td>查看 <code>manifest.json</code>；校验值将复制文件绑定到来源 PCB 及配套固件</td>
+<td>校验解压后的文件</td>
+<td>在交付目录运行 <code>python3 verify.py</code>。<a href="https://github.com/wZuck/YETI60/blob/master/delivery/YETI60-E73/manifest.json">文件清单</a>列出校验值和配套的 PCB 与固件</td>
 </tr>
 </tbody>
 </table>
@@ -90,5 +90,5 @@
 </ol>
 <h2 id="如何理解检查结果">如何理解检查结果</h2>
 <p>下单前可以检查原生 DRC、绑定设计来源的固件及主机模拟。供应商引线尺寸、压接质量、到货元件、树脂收缩、实际 NiZ 卡扣与行程、USB 信号完整性、蓝牙距离／静电容抗干扰、电池热行为，需要到货材料或样机验证。保留的钢定位板仍覆盖临时天线区域，项目没有宣称已经验证两三米蓝牙使用。</p>
-<p>集中交付目录是可离线阅读的快照。外部厂商／来源链接用于追溯，索引里的本地文件才是本快照产物。替换任何文件后都应重新核对文件清单。</p>
+<p>集中交付目录可离线阅读。下载后，用 KiCad 打开工程之前，可以在未改动的副本中运行 <code>python3 verify.py</code> 校验。此检查只需要 Python 3。</p>
 </main></html>

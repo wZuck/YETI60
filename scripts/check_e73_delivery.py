@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify bundle bytes, current inputs, local links and factory archive contents."""
+"""Verify an offline E73 bundle, or verify the bundle and source checkout together."""
 import argparse,hashlib,json,re,zipfile
 from html.parser import HTMLParser
 from pathlib import Path
@@ -10,8 +10,19 @@ class Links(HTMLParser):
  def handle_starttag(self,tag,attrs):
   self.links.extend(v for k,v in attrs if k in ['href','src'])
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('--require-release',action='store_true');args=parser.parse_args();base=ROOT/'delivery/YETI60-E73';m=json.loads((base/'manifest.json').read_text())
- for name,digest in m['source_sha256'].items():assert sha(ROOT/name)==digest,('Stale source',name)
+ parser=argparse.ArgumentParser(description=__doc__)
+ parser.add_argument('--bundle',type=Path,help='Path to an unpacked delivery directory')
+ parser.add_argument('--require-release',action='store_true')
+ args=parser.parse_args()
+ if not __debug__:
+  parser.error('Run Python without optimization so the verification checks are enabled')
+ sibling=Path(__file__).resolve().parent
+ in_checkout=args.bundle is None and not (sibling/'manifest.json').is_file()
+ base=(ROOT/'delivery/YETI60-E73' if in_checkout else args.bundle or sibling).resolve()
+ m=json.loads((base/'manifest.json').read_text())
+ if in_checkout:
+  for name,digest in m['source_sha256'].items():assert sha(ROOT/name)==digest,('Stale source',name)
+  assert m['revision']==json.loads((ROOT/'hardware/e73-corner-spec.json').read_text())['revision']
  files={str(p.relative_to(base))for p in base.rglob('*')if p.is_file()and p!=base/'manifest.json'and p.name!='.DS_Store'}
  assert files==set(m['files_sha256']),'Unlisted or missing delivery file'
  for name,digest in m['files_sha256'].items():assert sha(base/name)==digest,('Changed delivery file',name)
@@ -43,7 +54,8 @@ def main():
   else:continue
   for link in links:
    if re.match(r'^[a-z]+:|^#',link):continue
-   assert (p.parent/link.split('#')[0]).is_file(),('Broken local delivery link',str(p.relative_to(base)),link)
+   target=(p.parent/link.split('#')[0]).resolve()
+   assert base in target.parents and target.is_file(),('Broken local delivery link',str(p.relative_to(base)),link)
  archive=base/'01-pcb/YETI60-E73-gerbers-REVIEW.zip'
  with zipfile.ZipFile(archive)as z:
   expected={p.name for p in (base/'01-pcb/gerbers').iterdir()
@@ -59,10 +71,17 @@ def main():
  assert all(not layer['nominal_intersections'] and not layer['holes_below_conservative_reserve']
             and layer['min_nominal_gap_mm']>=.229 for layer in apertures['layers'].values())
  assert sha(base/'01-pcb/source/EC60-nRF52840.kicad_pcb')==m['source_PCB_sha256']
- assert m['revision']==json.loads((ROOT/'hardware/e73-corner-spec.json').read_text())['revision']
- assert (base/'05-firmware/manifest.json').is_file()
- fm=json.loads((base/'05-firmware/manifest.json').read_text());assert fm['source_PCB_sha256']==m['source_PCB_sha256']
- print('Delivery hashes, M05 first-article files, local links, Gerber archive and firmware/PCB identity passed')
+ firmware=base/'05-firmware'
+ fm=json.loads((firmware/'manifest.json').read_text())
+ assert fm['source_PCB_sha256']==m['source_PCB_sha256']
+ expected_images={f'releases/{variant}/yeti60-e73.{extension}'
+                  for variant in ('normal','calibrator') for extension in ('hex','bin')}
+ firmware_prefix='hardware/e73-hhkb-corner/firmware/'
+ assert fm['published_outputs'].keys()=={firmware_prefix+image for image in expected_images}
+ for image in expected_images:
+  assert sha(firmware/image)==fm['published_outputs'][firmware_prefix+image],('Firmware image mismatch',image)
+ message='Delivery hashes, M05 files, local links, Gerber archive and firmware/PCB identity passed'
+ print(message+(' against the source checkout' if in_checkout else ' in the offline bundle'))
  if args.require_release and (m['pending']or not m['production_approved']):
   print('Delivery remains a review draft:',', '.join(m['pending']));return 2
  return 0

@@ -111,6 +111,7 @@ def main():
          str(revision_path.relative_to(ROOT)):sha(revision_path)};mapping={}
  def copy(rel,target):
   source=ROOT/rel;dest=out/target;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,dest);inputs[rel]=sha(source);mapping[rel]=target
+ copy('scripts/check_e73_delivery.py','verify.py')
  for p in sorted(BASE.iterdir()):
   if p.suffix in ['.kicad_pcb','.kicad_pro','.kicad_sch','.kicad_sym']or p.name in ['fp-lib-table','sym-lib-table']:copy(str(p.relative_to(ROOT)),'01-pcb/source/'+p.name)
  for folder in ['YAECKB.pretty','models']:

@@ -2,18 +2,9 @@
 
 # Firmware for the E73 lower-right PCB
 
-Use the CORNER-07 build under `hardware/e73-hhkb-corner/firmware/`, with `manifest.json` and both `releases/normal/yeti60-e73.hex` and `releases/calibrator/yeti60-e73.hex`. Root-level pre-migration images and Raytac images do not match this PCB calibration identity. The [corner review](../06-validation/corner-review.md) controls the design hold.
+The CORNER-07 delivery contains the normal and calibrator HEX files and their firmware manifest. In the delivery folder, use the files in `05-firmware/releases/`. [Board and firmware acceptance checks](../06-validation/corner-review.md)
 
-Reproduce after the current native routing, USB-reference and bounded-fit checks:
-
-```sh
-uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts/build_e73_corner_firmware.py
-python3 scripts/check_e73_corner_firmware.py
-```
-
-The builder requires the pinned ZMK workspace, its pinned Docker image and a running Docker daemon. It builds in an ignored isolated root, checks both linked ARM images, runs the core/calibration/USB/GPIO/scan/key-pipeline/NVS/recovery and RC sensitivity suite, and runs linked-target and suite mutation tests before copying images. `--prepare-only` prepares the pin contract without building. `--development-build` builds/tests in the ignored workspace and publishes no images.
-
-Use **HEX for initial SWD programming**: it also releases NFC pins as GPIO through UICR. The BIN omits that explicit record. Application address is zero; no UF2 bootloader is assumed. Confirm the custom J3 pinout before connecting a probe. Follow the [existing calibration procedure](https://github.com/wZuck/YETI60/blob/master/firmware/target/README.md#calibration-and-operation), substituting these candidate HEX files. Program calibrator first, complete all 60 keys, save, then program normal while preserving the final 64 KiB settings partition. Full erase loses calibration and BLE bonds. A changed PCB fingerprint requires fresh calibration.
+Use **HEX for initial SWD programming**. It writes the UICR record that releases the NFC pins for GPIO. Application code starts at address zero. Confirm the custom J3 pinout before connecting a probe, then follow the calibration procedure below.
 
 Both images use internal RC low-frequency clock and REG1 LDO. After host configuration, charging and USB HID operate together with USB priority; suspend disables charger input, and detach permits BLE fallback. These are linked-binary and host-model checks. No unit has passed physical USB/BLE/EC, battery charging, thermal or RF tests. Battery reporting remains disabled pending pack/measurement integration. The passive RC model uses assumed parasitics, not extracted PCB/NiZ capacitance.
 
@@ -57,3 +48,14 @@ Use the [60-key row/column sheet](../04-assembly/calibration-keys.csv) and front
 5. Confirm USB key-down/release, modifiers, Fn and large-key edge return; then test BLE pairing, reconnect, wake and USB priority. A changed housing/dome/spring/plate stack or PCB fingerprint requires recalibration.
 
 Record real results; the delivered host tests do not replace these unit tests.
+
+## Rebuild from source
+
+Run from the full source checkout after the native routing, USB reference-ground and fit checks.
+
+```sh
+uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts/build_e73_corner_firmware.py
+python3 scripts/check_e73_corner_firmware.py
+```
+
+The builder requires the pinned ZMK workspace, its pinned Docker image and a running Docker daemon. It builds in an ignored isolated root, checks both linked ARM images, runs the core/calibration/USB/GPIO/scan/key-pipeline/NVS/recovery and RC sensitivity suite, and runs linked-target and suite mutation tests before copying images. `--prepare-only` prepares the pin contract without building. `--development-build` builds/tests in the ignored workspace and publishes no images.
