@@ -14,10 +14,14 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
  native=json.loads((BASE/'audit/placement-check.json').read_text());assert native['electrical_routing_complete']
- for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift','m05-tool','m05-tool-drawing','m05-parking-support','m05-parking-support-render']:
+ for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','bench-power-plan','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift','m05-tool','m05-tool-drawing','m05-parking-support','m05-parking-support-render']:
   report=json.loads((BASE/'audit'/f'{name}.json').read_text())
   for path,digest in report['source_sha256'].items():assert sha(ROOT/path)==digest,('Stale delivery input',path)
   if name=='power-process':assert report['status']=='repaired-power-routing-and-aperture-checks-passed'
+  if name=='bench-power-plan':
+   assert report['status']=='native-bench-pad-map-and-M05-headroom-checked'
+   assert report['pcb_sha256']==sha(BASE/'EC60-nRF52840.kicad_pcb')
+   assert not report['physical_verification'] and len(report['outputs'])==2
   if name=='USB-reference':assert report['checks_passed']
   if name=='harness-study':assert report['status']=='continuous-wire-study-passed-guides-open'and not report['failures']and len(report['variants'])==3
   if name=='retention-study':assert report['status']=='bounded-retainer-study-passed-service-and-process-open'and not report['failures']and len(report['variants'])==3 and report['guide_count']==16 and report['film_piece_count']==17
@@ -128,6 +132,7 @@ def main():
  docs['docs/build/e73-m05-prototype']='02-mechanical/service-case-m05/print-guide'
  docs['docs/build/e73-m05-service-tool']='02-mechanical/service-case-m05/tool-guide'
  docs['docs/build/e73-m05-parking-support']='02-mechanical/service-case-m05/parking-guide'
+ docs['docs/testing/e73-bench-power']='06-validation/bench-power'
  for source,target in docs.items():
   for suffix in ['.md','.zh-CN.md']:copy(source+suffix,target+suffix)
  for lang in ['', '.zh-CN']:

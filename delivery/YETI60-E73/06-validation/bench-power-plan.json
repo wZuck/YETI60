@@ -1,0 +1,269 @@
+{
+  "status": "native-bench-pad-map-and-M05-headroom-checked",
+  "physical_verification": false,
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
+    "hardware/e73-hhkb-corner/mainboard-purchase.csv": "57652fe1efdbed769da1e48b968a6e424df8cb3f7a2131e65ce7af1ea4020c1e",
+    "scripts/export_e73_solder_map.py": "e3e38299f772e24621c47cd4bb09c66b71377e9a6a6e2bb9eb410318403f895b",
+    "scripts/export_e73_usb_ground.py": "e4ea61fb15f833db6458a545d5e98955c39f4902fcfba10590a708caf89aef30",
+    "hardware/e73-hhkb-corner/audit/power-process.json": "90f8dc652ffdf9e6c8128787f403266308815cf951aee4f0c3cbe9199fba8b70",
+    "hardware/e73-hhkb-corner/audit/m05-harness.json": "373038e86c138bfd26fc172b3a72ec6532c1d579e4ce838228f7713224476026",
+    "scripts/draw_e73_bench_map.py": "4287a7b111b701e4cb1a45e39f275bd623ba79116e5796edeb61928b30c22c70"
+  },
+  "outputs": {
+    "hardware/e73-hhkb-corner/audit/bench-probe-map.png": "c83e27e28b01517a2057bd0349a6bf4250646ecabaf326222e164e4926f0185a",
+    "hardware/e73-hhkb-corner/audit/bench-probe-map.zh-CN.png": "f3e6b5a37804cfe4fe5e6ec3e428afe4944fad885e0b30a6019c12738d375e62"
+  },
+  "pcb_sha256": "3fe9b9ce5fae01da567351a1b676287ba82e2f354f8d52c5045d09e781c0dac7",
+  "solder_side_probe_pads": {
+    "F1.1": {
+      "net": "USB_5V",
+      "xy_PCB_mm": [
+        88.609827,
+        115.532024
+      ]
+    },
+    "F1.2": {
+      "net": "VBUS",
+      "xy_PCB_mm": [
+        88.609827,
+        112.865024
+      ]
+    },
+    "J1.1": {
+      "net": "VBUS",
+      "xy_PCB_mm": [
+        117.635337,
+        122.027723
+      ]
+    },
+    "J1.4": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        117.635337,
+        125.027723
+      ]
+    },
+    "J2.1": {
+      "net": "BAT_CELL",
+      "xy_PCB_mm": [
+        154.5,
+        131.0
+      ]
+    },
+    "J2.2": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        155.5,
+        131.0
+      ]
+    },
+    "J2.3": {
+      "net": "BAT_NTC",
+      "xy_PCB_mm": [
+        156.5,
+        131.0
+      ]
+    },
+    "J4.1": {
+      "net": "USB_FEED",
+      "xy_PCB_mm": [
+        348.1,
+        112.2
+      ]
+    },
+    "J4.2": {
+      "net": "USB_DM",
+      "xy_PCB_mm": [
+        348.1,
+        111.2
+      ]
+    },
+    "J4.3": {
+      "net": "USB_DP",
+      "xy_PCB_mm": [
+        348.1,
+        110.2
+      ]
+    },
+    "J4.4": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        348.1,
+        109.2
+      ]
+    },
+    "J5.1": {
+      "net": "USB_FEED",
+      "xy_PCB_mm": [
+        336.0,
+        115.5
+      ]
+    },
+    "J5.2": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        335.0,
+        115.5
+      ]
+    },
+    "C32.1": {
+      "net": "USB_5V",
+      "xy_PCB_mm": [
+        337.275,
+        194.0
+      ]
+    },
+    "C32.2": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        335.725,
+        194.0
+      ]
+    },
+    "C40.1": {
+      "net": "USB_5V",
+      "xy_PCB_mm": [
+        122.0,
+        145.95
+      ]
+    },
+    "C40.2": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        122.0,
+        147.85
+      ]
+    },
+    "C41.1": {
+      "net": "BAT_CELL",
+      "xy_PCB_mm": [
+        113.95,
+        143.7
+      ]
+    },
+    "C41.2": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        112.05,
+        143.7
+      ]
+    },
+    "C42.1": {
+      "net": "VSYS",
+      "xy_PCB_mm": [
+        120.95,
+        142.7
+      ]
+    },
+    "C42.2": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        122.85,
+        142.7
+      ]
+    },
+    "C45.1": {
+      "net": "+3.3V",
+      "xy_PCB_mm": [
+        131.55,
+        143.3
+      ]
+    },
+    "C45.2": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        133.45,
+        143.3
+      ]
+    },
+    "R42.1": {
+      "net": "CHG_EN1",
+      "xy_PCB_mm": [
+        120.49,
+        141.0
+      ]
+    },
+    "R42.2": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        121.51,
+        141.0
+      ]
+    },
+    "R43.1": {
+      "net": "CHG_EN2",
+      "xy_PCB_mm": [
+        122.49,
+        141.0
+      ]
+    },
+    "R43.2": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        123.51,
+        141.0
+      ]
+    },
+    "R44.1": {
+      "net": "CHG_CE_N",
+      "xy_PCB_mm": [
+        124.49,
+        141.0
+      ]
+    },
+    "R44.2": {
+      "net": "GND",
+      "xy_PCB_mm": [
+        125.51,
+        141.0
+      ]
+    }
+  },
+  "charge_headroom_M05": {
+    "four_wire_mm": 1095.2733241265369,
+    "model_R_60C_ohm": 0.42608359402003904,
+    "v_drop_at_500mA_V": 0.21304179701001952,
+    "example_rows": [
+      {
+        "jack_V": 4.75,
+        "input_mA": 100,
+        "included_drop_V": 0.042608,
+        "U5_IN_before_omitted_losses_V": 4.707392
+      },
+      {
+        "jack_V": 4.75,
+        "input_mA": 450,
+        "included_drop_V": 0.191738,
+        "U5_IN_before_omitted_losses_V": 4.558262
+      },
+      {
+        "jack_V": 4.75,
+        "input_mA": 500,
+        "included_drop_V": 0.213042,
+        "U5_IN_before_omitted_losses_V": 4.536958
+      },
+      {
+        "jack_V": 5,
+        "input_mA": 450,
+        "included_drop_V": 0.191738,
+        "U5_IN_before_omitted_losses_V": 4.808262
+      },
+      {
+        "jack_V": 5,
+        "input_mA": 500,
+        "included_drop_V": 0.213042,
+        "U5_IN_before_omitted_losses_V": 4.786958
+      }
+    ],
+    "theoretical_limit_at_4p75V_and_max_DPM_mA": 281.635,
+    "omitted_losses": [
+      "PCB ground return and via barrels",
+      "C5 traces",
+      "both fuses",
+      "mated contacts and crimp joints",
+      "external USB cable and source droop",
+      "U1 dedicated branch voltage drop and ground differential"
+    ]
+  }
+}

@@ -17,6 +17,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | View the closed keyboard, exploded parts and dry-fit stages | [Assembly views](04-assembly/assembly-views.md) |
 | Assemble the NiZ mechanism and plate stabilizers | [Parts, plate and mechanism guide](04-assembly/key-mechanism.md) |
 | Connect SWD, install calibration firmware, calibrate all 60 keys and install normal firmware | [Firmware installation and calibration](05-firmware/installation.md) |
+| Verify open-bench power, charging and USB/BLE switching with a simulator | [Bench connections, probe map and record](06-validation/bench-power.md) |
 | Review electrical, fit, antenna and release limitations | [Current E73 engineering review](06-validation/corner-review.md) |
 | Review charging headroom, dissipation and ordinary PCB fabrication | [Current power and process review](06-validation/power-process.md) |
 | Record CAM, soldering, charging, all keys, case closure and BLE | [First-article record](06-validation/first-article.md) |

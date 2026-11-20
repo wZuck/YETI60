@@ -1,0 +1,125 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-06 bench power and charging</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="bench-power.zh-CN.html">Chinese</a></p>
+<h1 id="corner-06-bench-power-and-charging">CORNER-06 bench power and charging</h1>
+<p>Use the CORNER-06 mainboard, existing C5 JSH daughterboard, and the J4-to-C5 harness and J5-to-J1 bridge from the <a href="../02-mechanical/service-case-m05/print-guide.html">M05 build</a>. These tests can begin with the PCB on insulating supports, before printing the shell. Keep a real pack disconnected. Use the staged soldering checks and SWD install first. An operable and calibrated NiZ stack is needed for the typing tests. <a href="../04-assembly/soldering.html">Soldering and first power</a> · <a href="../05-firmware/installation.html">Firmware installation</a></p>
+<h2 id="instruments-and-connections">Instruments and connections</h2>
+<ol>
+<li>Inspect J4 pins 1–4 to C5 pin-for-pin and the two-wire bridge J5.1 → J1.1, J5.2 → J1.4. J1.2 and J1.3 in this bridge are empty. Verify the isolated cables with a meter before mating.</li>
+<li>After the current-limited, no-host first-power check, physically disconnect that bench supply. Use one data-capable USB host connection through C5, with an inline current logger that passes data. Measure total host input current upstream of C5 so the separate MCU VBUS branch and daughterboard are included.</li>
+<li>At J2, use a current-limited battery simulator that can <strong>sink charge current and source system current</strong>. Use its battery emulation mode at a mid-charge setting around 3.7 V, with suitable current limits and stable source/sink crossover. Check with power off: J2.1 is simulator positive, J2.2 return, J2.3 the simulator's NTC fixture, referenced to J2.2. Confirm latch orientation and continuity from the mated plug before applying power. A nominal 10 kΩ thermistor-network setting is for the simulator test only. The solder map shows PCB pads, so use the mated orientation for the plug.</li>
+<li>Secure probes with power off. Use a floating meter or differential instrumentation for each specified pad pair and for F1 voltage drop. A common-ground scope must use one circuit ground connection. Measure charge current in series with the simulator lead or from the simulator's signed readout, with positive current into the simulator.</li>
+</ol>
+<h2 id="probe-points-on-the-back-of-the-mainboard">Probe points on the back of the mainboard</h2>
+<p><img src="bench-probe-map.png" alt="CORNER-06 solder-side pads for the bench tests" /></p>
+<p>The dots mark solder-pad centers from KiCad. Grey denotes ground. Use the exposed end of an installed pad or a breakout where the connector blocks access. Use the component's matching ground in the table. <a href="bench-power-plan.json">PCB-bound coordinates and nets</a></p>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th>Positive and reference points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USB at the jack</td>
+<td>Log the voltage and current at the <strong>C5 input</strong> with a data-capable fixture</td>
+</tr>
+<tr>
+<td>C5 cable arrival</td>
+<td>J4.1 relative to J4.4</td>
+</tr>
+<tr>
+<td>Send and receive at the power bridge</td>
+<td>J5.1 relative to J5.2, then J1.1 relative to J1.4</td>
+</tr>
+<tr>
+<td>F1 drop</td>
+<td>F1.2 upstream relative to F1.1 downstream</td>
+</tr>
+<tr>
+<td>Charger IN, BAT, OUT</td>
+<td>C40.1 → C40.2, C41.1 → C41.2, C42.1 → C42.2, respectively</td>
+</tr>
+<tr>
+<td>Regulated rail</td>
+<td>C45.1 → C45.2</td>
+</tr>
+<tr>
+<td>Module VBUS</td>
+<td>C32.1 → C32.2 beside U1. This is a local proxy. Resolve borderline readings at U1.27 relative to U1's local ground with suitable instrumentation</td>
+</tr>
+<tr>
+<td>Charger control</td>
+<td>R42.1 EN1, R43.1 EN2, R44.1 CE, each relative to its own pad 2</td>
+</tr>
+<tr>
+<td>Thermistor signal</td>
+<td>J2.3 relative to J2.2 at the breakout</td>
+</tr>
+</tbody>
+</table>
+<h2 id="test-in-order">Test in order</h2>
+<p>Record both minimum transient voltage and steady voltage where relevant. Start with the simulator and valid NTC setting. Record the host, cable, ambient temperature, configured image and recorded current resolution. TI input limits are for the charger IC. Evaluate total current at the host as well. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI electrical and logic limits, §8.5</a> · <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/power.html">Nordic USB operating conditions</a></p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>What to verify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SW100 on, USB attached before host configuration</td>
+<td>Capture enumeration with USB and control signal timestamps. Once firmware initializes, expect EN1/EN2/CE = 0/0/1 and no sustained charging. Check that steady pre-configuration host current stays within 100 mA. Capture the uninitialized interval separately because all three control lines have hardware pull-downs</td>
+</tr>
+<tr>
+<td>Host configured</td>
+<td>Expect 1/0/0, valid USB HID, and positive battery current at the mid-charge simulator setting with valid TS. Total steady host draw must stay within the 500 mA descriptor. The charger IC's input cap is 450–500 mA across its tolerance. Check C32 and the actual U1 VBUS when required against 4.35–5.50 V while USB runs</td>
+</tr>
+<tr>
+<td>Reduced available VBUS</td>
+<td>Use a USB test fixture with an isolated, adjustable downstream VBUS and data passed to the host. Record loaded C5 input, C40 IN, C32/U1 and current. Verify charge-current foldback without resets, USB link loss or HID errors inside the declared operating range. Stop and record any drop below the USB operating window</td>
+</tr>
+<tr>
+<td>Host suspend and resume</td>
+<td>Expect 1/1/1 in suspend, no sustained battery charging, and low USB input current. Record host/USB suspend current separately. Resume restores charge only with configuration in place. Reset/deconfiguration returns to the charge-disabled state</td>
+</tr>
+<tr>
+<td>USB detach</td>
+<td>Verify no positive charging current. With the simulator sourcing battery current and a previously paired, calibrated normal image, check BLE typing. Reattach and check that USB takes priority</td>
+</tr>
+<tr>
+<td>SW100 off, USB present</td>
+<td>Run as a separate test. Expect 0/0/0 and USB100 autonomous charging when the simulated pack and NTC allow it. Check the 3.3 V rail is off and steady upstream USB draw stays within 100 mA. Record the mode's charging current and timer behavior</td>
+</tr>
+<tr>
+<td>NTC abnormal and recovery</td>
+<td>Use the simulator's resistance fixture to drive the TS measurement outside each applicable TI threshold, then restore the valid value. Verify charge stops and resumes using BAT current. The CHG signal can remain asserted during temperature suspension. Run the separate pack protection test only with a supplier-approved procedure</td>
+</tr>
+</tbody>
+</table>
+<p>A simulator can exercise CC/CV controls and fault transitions. A fixed 3.7 V setting alone cannot demonstrate taper, termination or charge time. For a real pack, first obtain signed electrical and thermal limits, verify the independent protector, and record CC, CV, termination and temperatures in both charging modes according to the <a href="../03-bom/battery-requirements.html">pack specification</a>. TI specifies 4.16–4.23 V CV regulation and conditional termination. Leave the safety timer enabled. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI charge cycle and temperature monitoring, §§9.3.5–9.3.6</a></p>
+<h3 id="record-for-each-unit">Record for each unit</h3>
+<table>
+<thead>
+<tr>
+<th>State and time</th>
+<th>C5 V / mA</th>
+<th>U5 IN / OUT / BAT V</th>
+<th>U1 VBUS min</th>
+<th>EN1 / EN2 / CE</th>
+<th>Signed BAT mA, temperature and HID result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Mark any uninstrumented state unmeasured. The <a href="power-process.html">M05 headroom model</a> helps interpret the voltage loss. Use the <a href="first-article.html">first-article record</a> for the final disposition.</p>
+</main></html>

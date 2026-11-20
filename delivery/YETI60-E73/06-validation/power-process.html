@@ -28,7 +28,7 @@
 </tbody>
 </table>
 <h2 id="charge-headroom">Charge headroom</h2>
-<p>Sum the three copper paths using <code>R = ρL/(width × thickness)</code>. Add the four AWG28 supply and return leads, 1.083 m total at a nominal 0.0804 mm² copper area. The corresponding wire resistance is 0.232 Ω at 20 °C. Apply <code>R60 = R20 × (1 + 0.00393 × 40)</code> to the wires and traces to obtain <strong>0.423 Ω</strong>, down from 0.772 Ω for CORNER-04. The model excludes the PCB ground return, via barrels, C5 traces, both fuses, contacts, crimp joints and external USB cable.</p>
+<p>The three positive PCB traces total 0.13335 Ω at 20 °C using <code>R = ρL/(width × thickness)</code>. The four M05 AWG28 supply and return leads span 1.09527 m with nominal copper area 0.0804 mm², for 0.23486 Ω at 20 °C. At 60 °C, <code>R60 = (0.13335 + 0.23486) × (1 + 0.00393 × 40)</code> gives <strong>0.42608 Ω</strong> and a <strong>0.213 V</strong> drop at 500 mA. The M04 reference is 0.423 Ω. The model excludes the PCB ground return, via barrels, C5 traces, fuses, contacts and crimps. The table starts at the loaded jack. <a href="bench-power-plan.json">Probe map and M05 calculation data</a></p>
 <table>
 <thead>
 <tr>
@@ -42,36 +42,37 @@
 <tr>
 <td>4.75 V</td>
 <td style="text-align:right">100 mA</td>
-<td style="text-align:right">0.042 V</td>
-<td style="text-align:right">4.708 V</td>
+<td style="text-align:right">0.043 V</td>
+<td style="text-align:right">4.707 V</td>
 </tr>
 <tr>
 <td>4.75 V</td>
 <td style="text-align:right">450 mA</td>
-<td style="text-align:right">0.190 V</td>
-<td style="text-align:right">4.560 V</td>
+<td style="text-align:right">0.192 V</td>
+<td style="text-align:right">4.558 V</td>
 </tr>
 <tr>
 <td>4.75 V</td>
 <td style="text-align:right">500 mA</td>
-<td style="text-align:right">0.211 V</td>
-<td style="text-align:right">4.539 V</td>
+<td style="text-align:right">0.213 V</td>
+<td style="text-align:right">4.537 V</td>
 </tr>
 <tr>
 <td>5.00 V</td>
 <td style="text-align:right">450 mA</td>
-<td style="text-align:right">0.190 V</td>
-<td style="text-align:right">4.810 V</td>
+<td style="text-align:right">0.192 V</td>
+<td style="text-align:right">4.808 V</td>
 </tr>
 <tr>
 <td>5.00 V</td>
 <td style="text-align:right">500 mA</td>
-<td style="text-align:right">0.211 V</td>
-<td style="text-align:right">4.789 V</td>
+<td style="text-align:right">0.213 V</td>
+<td style="text-align:right">4.787 V</td>
 </tr>
 </tbody>
 </table>
 <p>The BQ24074 can reduce current at its 4.35–4.63 V input threshold. At a weak source, the upper end of that threshold can still cause charge-current foldback at the requested load. The nRF52840 VBUS operating minimum is 4.35 V. U1 has its own branch after F1, so measure U1 VBUS relative to its local ground and U5 IN relative to the charger ground. This calculation does not solve the input-control loop. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 electrical characteristics</a> · <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/power.html">Nordic USB supply limits</a></p>
+<p>At a 4.75 V loaded jack and the 4.63 V threshold corner, the included path reaches the threshold at about <code>(4.75 − 4.63) / 0.42608 = 0.282 A</code> of total input current. This estimate excludes the other losses. Measure charging current and U1 VBUS under load.</p>
 <p>The ten local power paths meet their project width and length limits. The programmed charge current remains 357.06 / 402.71 / 445.63 mA min / typ / max with R40 at 2.21 kΩ. The approved supply range of the complete pack must cover 4.16–4.23 V. At an assumed U5 IN of 5.25 V, BAT of 3.10 V and OUT of 4.50 V with a 40 mA load, <code>P = (VIN−VBAT)×IBAT + (VIN−VOUT)×IOUT</code> gives about <strong>0.99 W</strong> at 445.63 mA. The standardized thermal resistance cannot predict temperature inside this case. <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 charge and thermal data</a></p>
 <h2 id="ordinary-drilling-and-solder-apertures">Ordinary drilling and solder apertures</h2>
 <p>All 852 vias are mechanical through holes. Nominal drill / land sizes are 0.30 / 0.50 mm (203), 0.30 / 0.60 mm (64) and 0.40 / 0.80 mm (585). The minimum trace width is 0.127 mm. The mainboard uses the specified ordinary four-layer stack and tenting. Review the actual CAM and mask alignment with the factory. <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">JLCPCB capabilities</a></p>
@@ -108,6 +109,6 @@
 <p>The SW1 drill screen uses <code>0.230 − √2 × 0.075 − 0.13 / 2 = 0.059 mm</code> of residual gap after a conservative diagonal position error and maximum radial growth from the published finished-hole diameter tolerance. Mask registration remains a factory check. Inspect actual tenting and the split stencil for both exposed pads. <a href="https://jlcpcb.com/capabilities/Capabilities">JLCPCB drill tolerances</a> · <a href="https://jlcpcb.com/help/article/pcb-via-covering">JLCPCB via covering</a> · <a href="cam-ordinary.json">Fabrication ZIP audit</a></p>
 <p>The JST SH terminals accept AWG32–28. The harness uses AWG28 within that wire-size range and needs the specified crimp quality and insulation diameter. <a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH specification</a></p>
 <h2 id="prototype-checks">Prototype checks</h2>
-<p>First use a battery simulator. Record jack, J4, J1, F1, U5 IN and U1 VBUS voltages during enumeration, charging under USB load, suspend and resume. Check typing while current folds back, then BLE on detach. Verify pack protections and the separate NTC before physical charging. Measure charger, PCB and cell temperatures on the closed first article. See the <a href="../03-bom/battery-requirements.html">battery pack</a> and <a href="../05-firmware/installation.html">firmware</a> requirements.</p>
+<p>Follow the <a href="bench-power.html">bench power and charging procedure</a> for open-bench measurements and the <a href="../03-bom/battery-requirements.html">pack specification</a> for the physical pack.</p>
 <p>Run <code>scripts/check_e73_corner_power.py</code> with KiCad 10 Python after regenerating the harness report. <a href="power-process.json">Current audit and calculations</a> · <a href="https://github.com/wZuck/YETI60/tree/c3872db49bbff5188b7be3fab3fa73b81b2b9028/hardware/e73-hhkb-corner/audit">CORNER-04 comparison and combined trial</a></p>
 </main></html>

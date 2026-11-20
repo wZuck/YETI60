@@ -33,6 +33,9 @@ def main():
  assert render['case_revision']==prototype['revision'] and len(lengths)==9
  assert all(abs(value-render['wire_free_lengths_mm'][key])<.000001 for key,value in lengths.items())
  assert render['views']['case-underside']['objects_by_group']['covers']==2
+ bench=json.loads((base/'06-validation/bench-power-plan.json').read_text())
+ assert bench['pcb_sha256']==m['source_PCB_sha256'] and not bench['physical_verification']
+ assert bench['charge_headroom_M05']['model_R_60C_ohm']==harness['charging_path_sensitivity']['model_R_at_temperature_ohm']
  for p in base.rglob('*'):
   if p.suffix=='.html':
    parser=Links();parser.feed(p.read_text());links=parser.links

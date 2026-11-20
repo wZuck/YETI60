@@ -28,7 +28,7 @@
 </tbody>
 </table>
 <h2 id="充电电压余量">充电电压余量</h2>
-<p>按 <code>R = ρL/(线宽 × 铜厚)</code> 合计三段铜线。四根 AWG28 供电及回流导线总自由长度 1.083 m，标称铜截面 0.0804 mm²，对应 20 °C 线束回路电阻 0.232 Ω。将线束和铜线按 <code>R60 = R20 × (1 + 0.00393 × 40)</code> 折算得 <strong>0.423 Ω</strong>，CORNER-04 为 0.772 Ω。计算未计入主板地回路、孔铜、C5 走线、两颗保险丝、连接器、压接点和外部 USB 线。</p>
+<p>三段主板正向铜线按 <code>R = ρL/(线宽 × 铜厚)</code> 合计为 0.13335 Ω。M05 的四根 AWG28 供电和回流导线总自由长度为 1.09527 m，标称铜截面 0.0804 mm²，20 °C 线束回路为 0.23486 Ω。按 <code>R60 = (0.13335 + 0.23486) × (1 + 0.00393 × 40)</code> 折算，纳入模型的串联电阻为 <strong>0.42608 Ω</strong>，500 mA 时压降 <strong>0.213 V</strong>。M04 对照值为 0.423 Ω。模型未计主板地回路、孔铜、C5 走线、保险丝、连接器和压接；表中从插座带载电压算起。<a href="bench-power-plan.json">测点及 M05 计算记录</a></p>
 <table>
 <thead>
 <tr>
@@ -42,36 +42,37 @@
 <tr>
 <td>4.75 V</td>
 <td style="text-align:right">100 mA</td>
-<td style="text-align:right">0.042 V</td>
-<td style="text-align:right">4.708 V</td>
+<td style="text-align:right">0.043 V</td>
+<td style="text-align:right">4.707 V</td>
 </tr>
 <tr>
 <td>4.75 V</td>
 <td style="text-align:right">450 mA</td>
-<td style="text-align:right">0.190 V</td>
-<td style="text-align:right">4.560 V</td>
+<td style="text-align:right">0.192 V</td>
+<td style="text-align:right">4.558 V</td>
 </tr>
 <tr>
 <td>4.75 V</td>
 <td style="text-align:right">500 mA</td>
-<td style="text-align:right">0.211 V</td>
-<td style="text-align:right">4.539 V</td>
+<td style="text-align:right">0.213 V</td>
+<td style="text-align:right">4.537 V</td>
 </tr>
 <tr>
 <td>5.00 V</td>
 <td style="text-align:right">450 mA</td>
-<td style="text-align:right">0.190 V</td>
-<td style="text-align:right">4.810 V</td>
+<td style="text-align:right">0.192 V</td>
+<td style="text-align:right">4.808 V</td>
 </tr>
 <tr>
 <td>5.00 V</td>
 <td style="text-align:right">500 mA</td>
-<td style="text-align:right">0.211 V</td>
-<td style="text-align:right">4.789 V</td>
+<td style="text-align:right">0.213 V</td>
+<td style="text-align:right">4.787 V</td>
 </tr>
 </tbody>
 </table>
 <p>BQ24074 在 4.35–4.63 V 输入阈值处可能降流。在弱供电情况下，阈值较高的充电器仍可能达不到假设电流。nRF52840 的 VBUS 工作下限为 4.35 V。U1 从 F1 后的独立支路取电，测量 U1 VBUS 时使用 U1 本地地线，U5 IN 则用充电器地线。上述计算未求解实际调节闭环。<a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 电气参数</a> · <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/power.html">Nordic USB 供电条件</a></p>
+<p>在 4.75 V 带载输入和 4.63 V 阈值下，按简化模型到达降流阈值时电流约为 <code>(4.75 − 4.63) / 0.42608 = 0.282 A</code>。这是未扣除其余路径损失的总输入电流估算，需实测充电电流和 U1 VBUS。</p>
 <p>10 条局部电源走线符合项目线宽和长度限制。R40 为 2.21 kΩ，充电电流设定的最小／典型／最大值为 357.06／402.71／445.63 mA。完整保护包须接受 4.16–4.23 V 调节范围。假设 U5 IN 为 5.25 V、BAT 为 3.10 V、OUT 为 4.50 V 且负载为 40 mA，按 <code>P = (VIN−VBAT)×IBAT + (VIN−VOUT)×IOUT</code>，在 445.63 mA 时损耗约为 <strong>0.99 W</strong>。标准测试板的热阻无法预测本键盘温度。<a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 充电及热参数</a></p>
 <h2 id="普通钻孔和焊盘开窗">普通钻孔和焊盘开窗</h2>
 <p>852 个过孔均为机械贯通孔。标称钻孔／焊环外径为 0.30／0.50 mm（203 个）、0.30／0.60 mm（64 个）、0.40／0.80 mm（585 个）。最小走线宽度为 0.127 mm。主板采用指定的普通四层叠层和盖油工艺。请用实际制造文件与工厂确认阻焊对位。<a href="https://jlcpcb.com/capabilities/pcb-capabilities/">嘉立创制造能力</a></p>
@@ -108,6 +109,6 @@
 <p>按公布的孔位公差保守计算对角偏移，再扣除成品孔径最大增量的一半，SW1 的间距余量为 <code>0.230 − √2 × 0.075 − 0.13 / 2 = 0.059 mm</code>。阻焊对位仍须工厂确认。实物检查两颗裸露散热焊盘的盖油及分割钢网。<a href="https://jlcpcb.com/capabilities/Capabilities">嘉立创钻孔公差</a> · <a href="https://jlcpcb.com/help/article/pcb-via-covering">嘉立创过孔覆盖</a> · <a href="cam-ordinary.json">制板压缩包核对报告</a></p>
 <p>JST SH 端子适用 AWG32–28，线束采用此范围内的 AWG28，并须满足绝缘外径及压接质量要求。<a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH 规格</a></p>
 <h2 id="样机验收">样机验收</h2>
-<p>先使用电池模拟器。在 USB 枚举、充电、键盘使用、挂起及恢复期间，测量插座、J4、J1、F1、U5 IN 和 U1 VBUS。弱供电下应验证充电降流时可以正常打字，拔线后进入蓝牙。按供应商规范确认电池包保护和独立 NTC 后再接合格的保护包。关壳样机须实测充电器、PCB 及电池温度。详见<a href="../03-bom/battery-requirements.zh-CN.html">电池包规格</a>和<a href="../05-firmware/installation.zh-CN.html">固件指南</a>。</p>
+<p>按<a href="bench-power.zh-CN.html">台架供电与充电测试</a>完成壳外测量，再按<a href="../03-bom/battery-requirements.zh-CN.html">电池包规格</a>验证实物电池。</p>
 <p>重新生成线束报告后，用 KiCad 10 Python 运行 <code>scripts/check_e73_corner_power.py</code>。 <a href="power-process.json">现板检查及计算</a> · <a href="https://github.com/wZuck/YETI60/tree/c3872db49bbff5188b7be3fab3fa73b81b2b9028/hardware/e73-hhkb-corner/audit">CORNER-04 对照与合并试验</a></p>
 </main></html>
