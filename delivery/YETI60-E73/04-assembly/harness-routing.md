@@ -10,7 +10,7 @@ CORNER-07 uses **mainboard J5 rotated by 180° at the same origin** and the alre
 
 ![Nine-conductor coordinate plan](images/e73-corner-harness.png)
 
-[Per-conductor length table](../03-bom/reference/m04-harness-conductors.csv)
+[Per-conductor length table](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/hardware/e73-hhkb-corner/mechanical/harness-conductors.csv)
 
 ## Connections and purchasing
 
@@ -30,7 +30,7 @@ The USB pair uses 3.25 rear turns, a half-turn on the descending run and a quart
 
 ## Case and battery interface
 
-The [M04 bottom STEP](../02-mechanical/reference/m04-bottom.step) and [STL](../02-mechanical/reference/m04-bottom.stl) add an **internal** rear channel to the reviewed M03 baseline. The exterior envelope is preserved. The new removal is screened against selected native exterior faces and all four M3 / four M2 insert support guards; this is a geometric screen, not structural FEA or resin qualification. Retained wall after the specified case tolerance is approximately **2.01 mm**.
+The [M04 bottom STEP](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step) and [STL](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.stl) add an **internal** rear channel to the reviewed M03 baseline. The exterior envelope is preserved. The new removal is screened against selected native exterior faces and all four M3 / four M2 insert support guards; this is a geometric screen, not structural FEA or resin qualification. Retained wall after the specified case tolerance is approximately **2.01 mm**.
 
 The protected pack body remains ≤85 ×43 ×4.8 mm including protection, sensors, wrap, tabs and growth. Its required **external pigtail exit** is at local `[0,14,4.5]` mm relative to the minimum-X/Y/Z pack-body corner, pointing −X; in the case this is `[228.5,-135,-4.9]` mm. External insulated leads are screened separately from the pack-body box. Have the supplier show the complete strain relief, body and pigtail exit on one drawing; do not substitute a bare-cell outline.
 

@@ -2,7 +2,7 @@
 
 # YETI60 E73：当前制作与审查入口
 
-当前选择 **E73 CORNER-06**，模组正面安装在标准 HHKB 未用的右下角。请打开[当前 KiCad 工程](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro)和 [PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb)。[版本及工程文件核对](docs/build/e73-project-files.zh-CN.md)说明了如何区分历史候选。
+当前选择 **E73 CORNER-07**，模组正面安装在标准 HHKB 未用的右下角。请打开[当前 KiCad 工程](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pro)和 [PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb)。[版本及工程文件核对](docs/build/e73-project-files.zh-CN.md)说明了如何区分历史候选。
 
 **工程审查版，尚未放行下单。** 原生布线／参考地检查及配套固件构建通过；九根导线、16 件刚性理线件和 17 片胶膜通过静态公差检查。理线件制造工艺／拆修、完整关壳装拆、电池供应商、工厂制造预览和首件充电复核及实物验收仍待完成。原生规则检查或文件清单校验通过，不能关闭这些未完成项。
 
@@ -27,4 +27,4 @@
 
 E73 有五个实际连接的底部焊盘，只焊模块边缘不够；需要两面锡膏文件、分阶段检查和合适的回流工艺。无需外壳即可开始限流上电、USB 枚举、SWD、原始感应及蓝牙台架检查；有意义的 60 键校准需要装好的 NiZ／定位板机构。实际充电温升、USB 数据、蓝牙距离、静电容干扰和树脂／胶粘配合仍需样机验证。
 
-旧 `hardware/ec60-nrf52840`、中间 `hardware/e73-usb-repair`、旧整机渲染及历史 `scripts/run_e73_review.py`／`scripts/run_audit.py` 对应其他版本，仅供追溯，不能验收当前右下角板。Raytac 资料位于其[独立入口](variants/raytac/BUILD.zh-CN.md)。
+旧版 E73 的 28 步指南、PCB 动画、渲染和配套审计可在[清理前的工程记录](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/docs/audit/README.zh-CN.md)查阅。Raytac 有[独立制作入口](variants/raytac/BUILD.zh-CN.md)。

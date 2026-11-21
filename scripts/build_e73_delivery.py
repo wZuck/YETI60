@@ -124,8 +124,10 @@ def main():
  for name in ['mainboard-purchase.csv','mainboard-purchase.zh-CN.csv','components.json']:copy('hardware/e73-hhkb-corner/'+name,'03-bom/'+name)
  for rel,target in [('hardware/ec60-nrf52840/LICENSE.EC60','licenses/LICENSE.EC60'),('firmware/LICENSE.GPL-2.0','licenses/LICENSE.GPL-2.0'),('hardware/usb-daughterboard/LICENSE.upstream','licenses/LICENSE.UDB')]:copy(rel,target)
  for name in ['README.md','README.zh-CN.md']:copy(name,'03-bom/materials'+('.zh-CN'if 'zh-CN'in name else '')+'.md')
- for rel,target in [('mechanical/generated/yeti60-top.step','02-mechanical/top.step'),('hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step','02-mechanical/reference/m04-bottom.step'),('hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.stl','02-mechanical/reference/m04-bottom.stl'),('mechanical/e73-fit/yeti60-e73-niz-m01.dxf','02-mechanical/steel-plate.dxf'),('mechanical/generated/yeti60-standoff-46.step','02-mechanical/standoff.step'),('mechanical/assembly-spec.json','02-mechanical/assembly-spec.json'),('mechanical/pcb-fabrication-spec.json','01-pcb/process-spec.json')]:copy(rel,target)
- for old in ('02-mechanical/bottom.step','02-mechanical/bottom.stl'): (out/old).unlink(missing_ok=True)
+ for rel,target in [('mechanical/generated/yeti60-top.step','02-mechanical/top.step'),('mechanical/e73-fit/yeti60-e73-niz-m01.dxf','02-mechanical/steel-plate.dxf'),('mechanical/generated/yeti60-standoff-46.step','02-mechanical/standoff.step'),('mechanical/assembly-spec.json','02-mechanical/assembly-spec.json'),('mechanical/pcb-fabrication-spec.json','01-pcb/process-spec.json')]:copy(rel,target)
+ for old in ('02-mechanical/bottom.step','02-mechanical/bottom.stl',
+             '02-mechanical/reference/m04-bottom.step','02-mechanical/reference/m04-bottom.stl'):
+  (out/old).unlink(missing_ok=True)
  for rel in access_models:copy(rel,'02-mechanical/service-case-m05/'+Path(rel).name)
  for rel in harness_models:copy(rel,'02-mechanical/service-case-m05/harness/'+Path(rel).name)
  for rel in tool_models:copy(rel,'02-mechanical/service-case-m05/tool/'+Path(rel).name)
@@ -148,7 +150,7 @@ def main():
  for lang in ['', '.zh-CN']:
   for ext in ['png','svg']:copy('docs/engineering/images/key-mechanism'+lang+'.'+ext,'04-assembly/images/key-mechanism'+lang+'.'+ext)
  for lang in ['', '.zh-CN']:
-  copy('hardware/e73-hhkb-corner/mechanical/harness-conductors'+lang+'.csv','03-bom/reference/m04-harness-conductors'+lang+'.csv')
+  (out/('03-bom/reference/m04-harness-conductors'+lang+'.csv')).unlink(missing_ok=True)
   (out/('03-bom/harness-conductors'+lang+'.csv')).unlink(missing_ok=True)
   for ext in ['png','svg']:copy('docs/engineering/images/e73-corner-harness'+lang+'.'+ext,'04-assembly/images/e73-corner-harness'+lang+'.'+ext)
  for p in sorted((BASE/'mechanical/retention').rglob('*')):

@@ -10,7 +10,7 @@ CORNER-07 使用**在原坐标旋转 180° 的主板 J5**和已经制作的 **C5
 
 ![九根导线坐标示意](images/e73-corner-harness.zh-CN.png)
 
-[每根导线的长度表](../../hardware/e73-hhkb-corner/mechanical/harness-conductors.zh-CN.csv)
+[每根导线的长度表](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/hardware/e73-hhkb-corner/mechanical/harness-conductors.zh-CN.csv)
 
 ## 接法与采购
 
@@ -30,7 +30,7 @@ USB 数据对在后段绕 3.25 圈，下降段半圈，返回段四分之一圈�
 
 ## 外壳与电池接口
 
-[M04 底壳 STEP](../../hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step)和 [STL](../../hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.stl)在已审查 M03 基线上增加**内部**后线槽，保留外包围尺寸。新增切削按原生外表面及四个 M3、四个 M2 嵌件支撑保护区检查；这是几何检查，不是结构有限元或树脂性能验收。扣除指定外壳公差后，剩余壁厚约 **2.01 mm**。
+[M04 底壳 STEP](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.step)和 [STL](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/hardware/e73-hhkb-corner/mechanical/yeti60-e73-corner-bottom-m04.stl)在已审查 M03 基线上增加**内部**后线槽，保留外包围尺寸。新增切削按原生外表面及四个 M3、四个 M2 嵌件支撑保护区检查；这是几何检查，不是结构有限元或树脂性能验收。扣除指定外壳公差后，剩余壁厚约 **2.01 mm**。
 
 保护包主体仍须不超过 85 ×43 ×4.8 mm，包括保护板、传感器、包膜、极耳和增长余量。要求的**外部引线出口**位于主体最小 X／Y／Z 角为原点的局部 `[0,14,4.5]` mm，朝 −X；对应外壳坐标 `[228.5,-135,-4.9]` mm。外部绝缘导线另行检查，不计入保护包主体方盒。请供应商在同一张图中画清完整应力释放、主体和引线出口，不能用裸电芯尺寸替代。
 

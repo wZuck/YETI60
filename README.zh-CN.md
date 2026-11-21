@@ -1,50 +1,17 @@
-[英文](README.md) | 简体中文
+[English](README.md) | 中文
 
 # YETI60
 
-> **当前首样集中使用 Raytac MDBT50Q-1MV2。** 从 [START-HERE.zh-CN.md](START-HERE.zh-CN.md) 或[下单与制作总手册](variants/raytac/BUILD.zh-CN.md)进入，查找制板参数、库存抵扣材料、焊接、固件、完整爆炸图和本轮审查。主目录保留 E73 另一方案；使用前请先查看其[当前审查与制作入口](BUILD.zh-CN.md)。实物与供应商验收仍待完成。
+适配 FELK60 外壳的单 nRF52840 静电容键盘，保留 60 个 HHKB 感应位。两套方案均使用 C5 JSH USB 子板。电脑接受 USB 配置后，键盘通过 USB 发送按键并给电池充电。拔线后切回当前蓝牙配置。
 
-以 Cipulot EC60 为基础、使用 FELK60 外壳的单 nRF52840 静电容键盘 PCB。保留 60 个有效感应位置及安装孔；Raytac 保留其射频翼部，E73 右下角开发板恢复直边、正面安装模组，并由 C5 经 J4 输入 USB，J5／J1 连接电源桥。
-
-**有线使用：**电脑接受 USB 配置后，键盘一边给电池充电，一边通过 USB 发送按键。USB 自动优先于历史保存的蓝牙偏好；拔线后由 ZMK 回退到当前蓝牙配置。E73 和 Raytac 两套方案采用同一策略。描述符中的 500 mA 是输入预算，并非恒定电池充电电流。
-
-> **P2 阶段提交：**保留 C5 JSH 子板；默认改为定制 1600 mAh 单电芯，正式底壳含凹槽，充电设定和 USB500 固件同步更新。工程装配图、PCB 动画及装配渲染记录来源哈希。见[阶段记录](docs/design-checkpoint.zh-CN.md)。
-
-> **验收暂停：**E73 已迁移到 HHKB 右下角，目前严格 DRC 违规错误为零，但仍有 0 项未连接；旧版零开路及固件报告不验收新布局。详见[当前迁移检查](docs/engineering/e73-hhkb-corner.zh-CN.md)。Raytac 使用其[独立审查](variants/raytac/BUILD.zh-CN.md)，两者均未放行量产。
-
-## 当前复查
-
-**E73 右下角版本已完成原生布线，整板综合验收仍未完成。** 从 [BUILD.zh-CN.md](BUILD.zh-CN.md)进入；下列检查对应[迁移候选](docs/engineering/e73-hhkb-corner.zh-CN.md)，不沿用旧版右上角放置的验收结论。
-
-| 范围 | 当前结果 |
+| 方案 | 制作入口 |
 |---|---|
-| PCB | 严格 DRC 违规错误 0、未连接项 0、原理图一致性差异 0；保留 60 个有效感应位置及 43 个模组焊盘用途，不能投板放行 |
-| 固件 | [对应本板的正常／校准固件及清单](hardware/e73-hhkb-corner/firmware/manifest.json)已重建；链接产物和主机套件通过，实物测试仍待完成 |
-| 机构 | NiZ、1.6 mm 钢定位板和 28 套固定件保留；模组及相关元件边界检查通过，完整机构／线束运动仍待验收 |
-| 电池 | 85 × 43 × 4.8 mm、1600 mAh 单节保护包规格保留；主板电池接口为 SH 三针，供应商参数与独立温度保护仍待确认 |
-| 可视化 | [当前原生 PCB 位置图](hardware/e73-hhkb-corner/audit/corner-layout.zh-CN.png)；旧 28 步指南和整机渲染属于迁移前参考，不能当作本版装配证明 |
+| Raytac MDBT50Q-1MV2 | [下单、装配和验收](variants/raytac/BUILD.zh-CN.md) · [首件文件](variants/raytac/hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md) |
+| E73-2G4M08S1C，CORNER-07 | [集中交付目录](delivery/YETI60-E73/START-HERE.zh-CN.md) · [离线网页](delivery/YETI60-E73/index.zh-CN.html) · [可编辑工程和验证](BUILD.zh-CN.md) |
 
-以下其余研究和逐步指南链接保留迁移前的参考记录；本版验收使用上方右下角候选报告。
+E73 模组位于 PCB 正面右下角，使用 M05 底壳和配套九线线束。Raytac 保留天线侧翼，采用自己的定位板、底壳和固件。两套方案的工厂审查、电池包确认与实物验收分别进行。旧版 E73 的图解、动画和验证资料可从 [Git 历史](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/docs/audit/README.zh-CN.md)查阅。
 
-- [内部连接及线束装配图](docs/engineering/interconnects.zh-CN.md)
-- [可行性评估回应](docs/engineering/assessment-response.zh-CN.md)
-- [普通工艺制板审查包](docs/engineering/fabrication-review.zh-CN.md)
-- [工程装配图及步骤](docs/engineering/assembly.zh-CN.md)
-- [当前 12 步 PCB 焊接与台架指南](docs/assembly/e73-corner/soldering.zh-CN.md)
-- [电池下挖可行性](docs/engineering/battery-study.zh-CN.md)
-- [功耗、续航及充电计算](docs/engineering/power-budget.zh-CN.md)
-- [材料与采购表](docs/engineering/materials.zh-CN.md)
-- [PCB 标记清理](docs/engineering/board-markings.zh-CN.md)
-- [完整复查](docs/audit/yeti60-comprehensive-review.zh-CN.md)
-- [普通工艺 PCB 下单及机械件打印要求](docs/build/e73-ordering-printing.zh-CN.md)
-- [控制核心、模拟和轨迹](firmware/yeti60/README.zh-CN.md)
-- [装配渲染](renders/yeti60-assembly/README.zh-CN.md)
-- [迁移前 PCB 渲染及动画，仅供参考](renders/ec60-nrf52840/README.zh-CN.md)
-- [当前审查索引](docs/audit/README.zh-CN.md)
-
-外壳暂按树脂，信号／射频检查已开始，天线布局阻塞项及实物验收仍待解决。项目文档默认英文并提供 `.zh-CN.md`，机器数据字段保持稳定。
-
-基于 [Cipulot/EC60](https://github.com/Cipulot/EC60) 和 [fredlb/felk60](https://github.com/fredlb/felk60)，保留上游作者、许可证和原名称。`EC60-nRF52840.*` 文件名及 `YAECKB` 库标识为技术兼容保留，公开项目名统一为 **YETI60**。
+源自 [Cipulot/EC60](https://github.com/Cipulot/EC60) 与 [fredlb/felk60](https://github.com/fredlb/felk60)。保留上游署名、许可证、KiCad 文件名和库标识。
 
 ## 一把键盘需要准备的完整材料
 
@@ -69,12 +36,12 @@
 
 ### 需要下单制作哪些 PCB
 
-数量为一把键盘的净用量，板厂起订数量另计。购买成品 C5 时，只制作 **一块主板**；自行焊子板时，制作 **一块主板加一块 C5 JSH 裸板**。
+本版使用 **一块主板和已经做好的 C5 JSH**。下单数量按工厂起订量。下表子板文件供日后补做或自行焊接时使用。
 
 | PCB | 数量 | 规格 | 文件 |
 |---|---:|---|---|
-| YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [当前可编辑 KiCad PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb)、[迁移检查及放行条件](docs/engineering/e73-hhkb-corner.zh-CN.md)；尚无本版投板包，不得使用旧 Gerber 替代 |
-| Unified Daughterboard C5 JSH 子板 | 自焊时 1 块；买成品时 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](hardware/bom/daughterboard.zh-CN.csv) |
+| YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [当前可编辑 KiCad PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb)、[CORNER-07 Gerber 与钻孔审查包](delivery/YETI60-E73/01-pcb/YETI60-E73-gerbers-REVIEW.zip) |
+| Unified Daughterboard C5 JSH 子板 | 复用现有 C5，新制 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](hardware/bom/daughterboard.zh-CN.csv) |
 
 用 [CORNER-07 Gerber 与钻孔审查包](delivery/YETI60-E73/01-pcb/YETI60-E73-gerbers-REVIEW.zip)向工厂核对普通四层工艺。阻焊对位和钢网转移待首件确认。复用已经做好的 C5 JSH 子板。主板自行回流时，E73 用 **F.Paste**，其余实装元件用 **B.Paste**。J3 使用主板上的探针触点。不锈钢定位板、树脂壳体和理线件按机械件制作。 [制造参数](docs/build/e73-ordering-printing.zh-CN.md)
 
@@ -238,7 +205,7 @@
 | M05 拔插及停放夹具 | 2 套工具＋2 套支撑 | J2、J4 各一套。[工具用料](docs/build/e73-m05-service-tool.zh-CN.md)及[停放支撑和紧固件](docs/build/e73-m05-parking-support.zh-CN.md)。 |
 | 切割／去毛刺工具、镊子 | 1 套 | 裁垫片、清理支座与安装；不得损伤电池绝缘 |
 | 焊台、热风或回流设备、焊料、助焊剂和清洗耗材 | 各 1 套（自行焊接时） | 0402、模组及裸露散热盘需要适合的焊装能力；购买焊装板时不属于随键盘材料 |
-| 主板钢网 | 正面、背面各 1 张（自行回流焊接时） | 按本版配套 F.Paste 与 B.Paste 光绘激光切割，样机暂按 0.10 mm 不锈钢；最终厚度与散热盘开口由贴片工艺确认 |
+| 主板钢网 | 正面、背面各 1 张（自行回流焊接时） | 按本版配套 F.Paste 与 B.Paste 光绘激光切割，均用 0.12 mm 普通无框不锈钢，首件核对开口与锡膏转移。[下单参数](docs/build/e73-ordering-printing.zh-CN.md#钢网下单) |
 | 定位板攻牙工具 | 1 套（自行加工定位板时） | M2×0.4 丝锥及匹配底孔加工工具；买已攻牙定位板时不需要重复加工 |
 | 嵌件孔精修工具 | 1 套（壳厂未精加工时） | 按 Ø4.85±0.05／Ø3.35±0.05 mm 及规定孔深加工，不能用未测量的打印孔直接代替 |
 | 限流电源、电池模拟器、电流记录仪和温度探头 | 各 1 套（样机验证时） | 用于首次上电、充电／终止／温升和续航验收；不计入键盘装机数量 |

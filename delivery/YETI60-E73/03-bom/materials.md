@@ -23,12 +23,12 @@ Use the [stock-adjusted mainboard purchase CSV](mainboard-purchase.csv) and [inv
 
 ### Which PCBs to fabricate
 
-Quantities are net boards per keyboard; the fabricator's minimum order quantity is separate. Fabricate **one mainboard** when buying a populated C5, or **one mainboard plus one C5 JSH bare board** when soldering the daughterboard yourself.
+The build uses **one mainboard and the existing C5 JSH**. The fabricator sets the minimum order quantity. The C5 files below are for replacement or self-assembly if required.
 
 | PCB | Quantity | Specification | Files |
 |---|---:|---|---|
-| YETI60 E73 mainboard | 1 | 285.0 × 94.6 mm restored straight-edge outline; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Current KiCad PCB](../01-pcb/source/EC60-nRF52840.kicad_pcb), [migration gates](../06-validation/corner-review.md); no fabrication package released for this revision; do not substitute old Gerbers |
-| Unified Daughterboard C5 JSH | 1 only for self-assembly; 0 if purchased populated | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](https://github.com/wZuck/YETI60/blob/master/hardware/bom/daughterboard.csv) |
+| YETI60 E73 mainboard | 1 | 285.0 × 94.6 mm restored straight-edge outline; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Current KiCad PCB](../01-pcb/source/EC60-nRF52840.kicad_pcb), [CORNER-07 Gerber and drill review ZIP](../01-pcb/YETI60-E73-gerbers-REVIEW.zip) |
+| Unified Daughterboard C5 JSH | 0 new boards with the existing C5 | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](https://github.com/wZuck/YETI60/blob/master/hardware/bom/daughterboard.csv) |
 
 Use the [CORNER-07 Gerber and drill review ZIP](../01-pcb/YETI60-E73-gerbers-REVIEW.zip) for the ordinary four-layer factory review. Mask registration and stencil transfer need first-article checks. Reuse the already-made C5 JSH daughterboard. For the mainboard reflow, use **F.Paste** for E73 and **B.Paste** for the other fitted parts. J3 uses a pogo fixture on the mainboard. Order the stainless plate, resin shells and cable retainers as mechanical parts. [Fabrication options](../01-pcb/ordering-and-printing.md)
 
@@ -192,7 +192,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | M05 release and parking fixtures | Two tools and two supports | One per port at J2 and J4. [Tool materials](../02-mechanical/service-case-m05/tool-guide.md) and [parking supports and hardware](../02-mechanical/service-case-m05/parking-guide.md). |
 | Cutting/deburring tools and tweezers | 1 set | Gaskets/guides/assembly, without damaging battery insulation |
 | Soldering, hot-air/reflow equipment, solder, flux and cleaning supplies | 1 each (self-assembly only) | Must support 0402, module and exposed-pad assembly; not installed keyboard parts |
-| Mainboard stencils | 1 front + 1 back (self-reflow only) | Laser cut from matching F.Paste and B.Paste Gerbers; 0.10 mm stainless prototype proposal, final thickness/thermal-pad apertures require assembly-process acceptance |
+| Mainboard stencils | 1 front + 1 back (self-reflow only) | Laser cut from matching F.Paste and B.Paste Gerbers; 0.12 mm standard frameless stainless on both sides. Inspect transfer on the first article. [Order settings](../01-pcb/ordering-and-printing.md#stencil-order) |
 | Plate tapping tools | 1 set (self-machined plate only) | M2 x 0.4 tap and matching pilot-hole tools; do not retap a supplied finished plate unnecessarily |
 | Insert-bore finishing tools | 1 set (unless supplied finished) | Finish to diameter 4.85 +/-0.05 and 3.35 +/-0.05 mm and specified depths; unmeasured printed bores are not equivalent |
 | Current-limited supply, battery simulator, current logger and temperature probes | 1 each (prototype qualification) | Bring-up, charging/termination/thermal/runtime acceptance; not fitted parts |

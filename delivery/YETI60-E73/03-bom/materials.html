@@ -38,7 +38,7 @@
 </table>
 <p>Use the <a href="mainboard-purchase.csv">stock-adjusted mainboard purchase CSV</a> and <a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/inventory-allocation.md">inventory decisions</a> alongside the full preparation list below. Other assemblies and mechanical materials still require procurement or compatibility confirmation. A populated C5 includes its seven parts; if self-assembling a bare C5 instead, two stocked 5.1 kohm resistors can supply C5 R1/R2. The stock nice!nano, 110 mAh cell, 0805 capacitors and short PCB screws do not directly replace the specified parts. No board or case dimensions change for this allocation.</p>
 <h3 id="which-pcbs-to-fabricate">Which PCBs to fabricate</h3>
-<p>Quantities are net boards per keyboard; the fabricator's minimum order quantity is separate. Fabricate <strong>one mainboard</strong> when buying a populated C5, or <strong>one mainboard plus one C5 JSH bare board</strong> when soldering the daughterboard yourself.</p>
+<p>The build uses <strong>one mainboard and the existing C5 JSH</strong>. The fabricator sets the minimum order quantity. The C5 files below are for replacement or self-assembly if required.</p>
 <table>
 <thead>
 <tr>
@@ -53,11 +53,11 @@
 <td>YETI60 E73 mainboard</td>
 <td style="text-align:right">1</td>
 <td>285.0 × 94.6 mm restored straight-edge outline; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only</td>
-<td><a href="../01-pcb/source/EC60-nRF52840.kicad_pcb">Current KiCad PCB</a>, <a href="../06-validation/corner-review.html">migration gates</a>; no fabrication package released for this revision; do not substitute old Gerbers</td>
+<td><a href="../01-pcb/source/EC60-nRF52840.kicad_pcb">Current KiCad PCB</a>, <a href="../01-pcb/YETI60-E73-gerbers-REVIEW.zip">CORNER-07 Gerber and drill review ZIP</a></td>
 </tr>
 <tr>
 <td>Unified Daughterboard C5 JSH</td>
-<td style="text-align:right">1 only for self-assembly; 0 if purchased populated</td>
+<td style="text-align:right">0 new boards with the existing C5</td>
 <td>18.0 x 16.5 mm; <strong>four layers</strong>, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle</td>
 <td><a href="https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb">Pinned upstream KiCad PCB</a>, <a href="https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip">download pinned Gerber/drill ZIP</a>, <a href="https://github.com/wZuck/YETI60/blob/master/hardware/bom/daughterboard.csv">seven loose parts</a></td>
 </tr>
@@ -1163,7 +1163,7 @@
 <tr>
 <td>Mainboard stencils</td>
 <td style="text-align:right">1 front + 1 back (self-reflow only)</td>
-<td>Laser cut from matching F.Paste and B.Paste Gerbers; 0.10 mm stainless prototype proposal, final thickness/thermal-pad apertures require assembly-process acceptance</td>
+<td>Laser cut from matching F.Paste and B.Paste Gerbers; 0.12 mm standard frameless stainless on both sides. Inspect transfer on the first article. <a href="../01-pcb/ordering-and-printing.html#stencil-order">Order settings</a></td>
 </tr>
 <tr>
 <td>Plate tapping tools</td>

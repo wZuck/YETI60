@@ -2,49 +2,16 @@ English | [Chinese](README.zh-CN.md)
 
 # YETI60
 
-> **Active prototype: Raytac MDBT50Q-1MV2.** Start at [START-HERE.md](START-HERE.md) or the [ordering and build handbook](variants/raytac/BUILD.md) for PCB settings, inventory-adjusted materials, soldering, firmware, complete explosion and current review. E73 remains a separate option; see its [current review and build entry](BUILD.md) before using those files. Physical and supplier acceptance remain open.
+A single-nRF52840 electrocapacitive keyboard for the FELK60 case, with 60 HHKB sensing positions and a C5 JSH USB daughterboard. Both variants charge the battery and send USB HID reports once the host configures USB. Unplugging returns the keyboard to the active Bluetooth profile.
 
-A single-nRF52840 electrocapacitive keyboard PCB for the FELK60 case, derived from Cipulot EC60. The 60 effective sensing positions and mounts are retained. Raytac retains its RF wing; the E73 corner candidate restores the straight edge and front-mounts the module. C5 feeds USB through J4, with a J5/J1 power bridge.
-
-**Wired operation:** after a computer accepts the USB configuration, the keyboard charges the battery and sends HID input over USB at the same time. USB automatically takes priority over a retained Bluetooth preference; unplugging lets ZMK fall back to the active Bluetooth profile. The E73 and Raytac options use the same policy. The 500 mA descriptor is an input budget, not a constant battery charging current.
-
-> **P2 design checkpoint:** C5 JSH is retained. The default is now a custom 1600 mAh single-cell pack with a canonical recessed bottom, revised charger settings and USB500 firmware. Engineering sheets, PCB animation and assembly renders record their source hashes. See [checkpoint details](docs/design-checkpoint.md).
-
-> **Acceptance hold:** E73 is now in the lower-right HHKB corner. Strict DRC has zero violation errors but zero unconnected items; earlier zero-open and firmware reports do not qualify this placement. See the [current migration review](docs/engineering/e73-hhkb-corner.md). Raytac has a separate [review](variants/raytac/BUILD.md). Neither is a production release.
-
-## Current review
-
-**The E73 corner version has completed native routing; whole-board acceptance remains open.** Start at [BUILD.md](BUILD.md). The results below describe the [corner candidate](docs/engineering/e73-hhkb-corner.md); earlier upper-right acceptance does not transfer.
-
-| Scope | Current evidence and result |
+| Variant | Build entry |
 |---|---|
-| PCB | Strict DRC: 0 violation errors, zero unconnected items, 0 schematic-parity differences; 60 effective sensing positions and 43 module pad roles retained; fabrication remains on hold |
-| Firmware | [Candidate normal/calibrator images and manifest](hardware/e73-hhkb-corner/firmware/manifest.json) rebuilt for this PCB; linked-target and host suite passed; physical tests remain open |
-| Mechanical | NiZ, the 1.6 mm steel plate and 28 mounting sets retained; module/local body bounds passed, complete mechanism and harness motion still open |
-| Battery | Protected 1S 1600 mAh, complete 85 × 43 × 4.8 mm envelope retained; mainboard uses a three-pin SH connector; supplier parameters and independent thermal protection remain open |
-| Visualization | [Current native PCB placement](hardware/e73-hhkb-corner/audit/corner-layout.png); old 28-step guide and complete renders are pre-migration references, not this revision's assembly proof |
+| Raytac MDBT50Q-1MV2 | [Ordering, assembly and validation](variants/raytac/BUILD.md) · [First-article files](variants/raytac/hardware/usb-short-route/FIRST-ARTICLE.md) |
+| E73-2G4M08S1C, CORNER-07 | [Consolidated delivery](delivery/YETI60-E73/START-HERE.md) · [Offline index](delivery/YETI60-E73/index.html) · [Editable project and verification](BUILD.md) |
 
-The remaining study and step-guide links below retain pre-migration reference records; use the corner reports above for this revision.
+The E73 module sits at the front lower-right corner of the PCB. It uses the M05 bottom and matched nine-conductor harness. Raytac retains its antenna wing and uses its own plate, bottom and firmware. Factory review, battery pack confirmation and physical acceptance apply to each variant. The previous E73 illustrations, animation and audits are available in [Git history](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/docs/audit/README.md).
 
-- [Internal connections and cable drawing](docs/engineering/interconnects.md)
-- [Feasibility assessment response](docs/engineering/assessment-response.md)
-- [Ordinary fabrication review package](docs/engineering/fabrication-review.md)
-- [Engineering assembly sheets and sequence](docs/engineering/assembly.md)
-- [Current 12-step PCB soldering and bench guide](docs/assembly/e73-corner/soldering.md)
-- [Battery recess feasibility](docs/engineering/battery-study.md)
-- [Power, runtime and charging calculation](docs/engineering/power-budget.md)
-- [Materials and procurement table](docs/engineering/materials.md)
-- [PCB marking cleanup](docs/engineering/board-markings.md)
-- [Complete review](docs/audit/yeti60-comprehensive-review.md)
-- [Ordinary PCB ordering and mechanical printing requirements](docs/build/e73-ordering-printing.md)
-- [Firmware core, simulation and trace](firmware/yeti60/README.md)
-- [Assembly renders](renders/yeti60-assembly/README.md)
-- [Pre-migration PCB renders and animation, reference only](renders/ec60-nrf52840/README.md)
-- [Current audit index](docs/audit/README.md)
-
-The case material is provisionally resin. SI/RF screening has started; antenna layout blockers and physical qualification remain open. Project-owned prose defaults to English with a parallel `.zh-CN.md`; machine-readable field names stay stable.
-
-Based on [Cipulot/EC60](https://github.com/Cipulot/EC60) and [fredlb/felk60](https://github.com/fredlb/felk60). Upstream authors, licenses and original project names are retained. Existing `EC60-nRF52840.*` filenames and `YAECKB` library identifiers remain for technical compatibility; the public project name is **YETI60**.
+Based on [Cipulot/EC60](https://github.com/Cipulot/EC60) and [fredlb/felk60](https://github.com/fredlb/felk60). Upstream attribution, licenses, KiCad filenames and library identifiers are retained.
 
 ## Complete materials for one keyboard
 
@@ -69,12 +36,12 @@ Use the [stock-adjusted mainboard purchase CSV](hardware/e73-hhkb-corner/mainboa
 
 ### Which PCBs to fabricate
 
-Quantities are net boards per keyboard; the fabricator's minimum order quantity is separate. Fabricate **one mainboard** when buying a populated C5, or **one mainboard plus one C5 JSH bare board** when soldering the daughterboard yourself.
+The build uses **one mainboard and the existing C5 JSH**. The fabricator sets the minimum order quantity. The C5 files below are for replacement or self-assembly if required.
 
 | PCB | Quantity | Specification | Files |
 |---|---:|---|---|
-| YETI60 E73 mainboard | 1 | 285.0 × 94.6 mm restored straight-edge outline; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Current KiCad PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb), [migration gates](docs/engineering/e73-hhkb-corner.md); no fabrication package released for this revision; do not substitute old Gerbers |
-| Unified Daughterboard C5 JSH | 1 only for self-assembly; 0 if purchased populated | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](hardware/bom/daughterboard.csv) |
+| YETI60 E73 mainboard | 1 | 285.0 × 94.6 mm restored straight-edge outline; JLC ordinary four-layer FR-4, nominal 1.6 mm, through vias only | [Current KiCad PCB](hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb), [CORNER-07 Gerber and drill review ZIP](delivery/YETI60-E73/01-pcb/YETI60-E73-gerbers-REVIEW.zip) |
+| Unified Daughterboard C5 JSH | 0 new boards with the existing C5 | 18.0 x 16.5 mm; **four layers**, nominal 1.6 mm, ordinary through vias; 14 x 12.5 mm mounting rectangle | [Pinned upstream KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb), [download pinned Gerber/drill ZIP](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip), [seven loose parts](hardware/bom/daughterboard.csv) |
 
 Use the [CORNER-07 Gerber and drill review ZIP](delivery/YETI60-E73/01-pcb/YETI60-E73-gerbers-REVIEW.zip) for the ordinary four-layer factory review. Mask registration and stencil transfer need first-article checks. Reuse the already-made C5 JSH daughterboard. For the mainboard reflow, use **F.Paste** for E73 and **B.Paste** for the other fitted parts. J3 uses a pogo fixture on the mainboard. Order the stainless plate, resin shells and cable retainers as mechanical parts. [Fabrication options](docs/build/e73-ordering-printing.md)
 
@@ -238,7 +205,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | M05 release and parking fixtures | Two tools and two supports | One per port at J2 and J4. [Tool materials](docs/build/e73-m05-service-tool.md) and [parking supports and hardware](docs/build/e73-m05-parking-support.md). |
 | Cutting/deburring tools and tweezers | 1 set | Gaskets/guides/assembly, without damaging battery insulation |
 | Soldering, hot-air/reflow equipment, solder, flux and cleaning supplies | 1 each (self-assembly only) | Must support 0402, module and exposed-pad assembly; not installed keyboard parts |
-| Mainboard stencils | 1 front + 1 back (self-reflow only) | Laser cut from matching F.Paste and B.Paste Gerbers; 0.10 mm stainless prototype proposal, final thickness/thermal-pad apertures require assembly-process acceptance |
+| Mainboard stencils | 1 front + 1 back (self-reflow only) | Laser cut from matching F.Paste and B.Paste Gerbers; 0.12 mm standard frameless stainless on both sides. Inspect transfer on the first article. [Order settings](docs/build/e73-ordering-printing.md#stencil-order) |
 | Plate tapping tools | 1 set (self-machined plate only) | M2 x 0.4 tap and matching pilot-hole tools; do not retap a supplied finished plate unnecessarily |
 | Insert-bore finishing tools | 1 set (unless supplied finished) | Finish to diameter 4.85 +/-0.05 and 3.35 +/-0.05 mm and specified depths; unmeasured printed bores are not equivalent |
 | Current-limited supply, battery simulator, current logger and temperature probes | 1 each (prototype qualification) | Bring-up, charging/termination/thermal/runtime acceptance; not fitted parts |

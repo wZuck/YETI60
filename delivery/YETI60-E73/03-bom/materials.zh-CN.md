@@ -23,12 +23,12 @@
 
 ### 需要下单制作哪些 PCB
 
-数量为一把键盘的净用量，板厂起订数量另计。购买成品 C5 时，只制作 **一块主板**；自行焊子板时，制作 **一块主板加一块 C5 JSH 裸板**。
+本版使用 **一块主板和已经做好的 C5 JSH**。下单数量按工厂起订量。下表子板文件供日后补做或自行焊接时使用。
 
 | PCB | 数量 | 规格 | 文件 |
 |---|---:|---|---|
-| YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [当前可编辑 KiCad PCB](../01-pcb/source/EC60-nRF52840.kicad_pcb)、[迁移检查及放行条件](../06-validation/corner-review.zh-CN.md)；尚无本版投板包，不得使用旧 Gerber 替代 |
-| Unified Daughterboard C5 JSH 子板 | 自焊时 1 块；买成品时 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](https://github.com/wZuck/YETI60/blob/master/hardware/bom/daughterboard.zh-CN.csv) |
+| YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [当前可编辑 KiCad PCB](../01-pcb/source/EC60-nRF52840.kicad_pcb)、[CORNER-07 Gerber 与钻孔审查包](../01-pcb/YETI60-E73-gerbers-REVIEW.zip) |
+| Unified Daughterboard C5 JSH 子板 | 复用现有 C5，新制 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](https://github.com/wZuck/YETI60/blob/master/hardware/bom/daughterboard.zh-CN.csv) |
 
 用 [CORNER-07 Gerber 与钻孔审查包](../01-pcb/YETI60-E73-gerbers-REVIEW.zip)向工厂核对普通四层工艺。阻焊对位和钢网转移待首件确认。复用已经做好的 C5 JSH 子板。主板自行回流时，E73 用 **F.Paste**，其余实装元件用 **B.Paste**。J3 使用主板上的探针触点。不锈钢定位板、树脂壳体和理线件按机械件制作。 [制造参数](../01-pcb/ordering-and-printing.zh-CN.md)
 
@@ -192,7 +192,7 @@
 | M05 拔插及停放夹具 | 2 套工具＋2 套支撑 | J2、J4 各一套。[工具用料](../02-mechanical/service-case-m05/tool-guide.zh-CN.md)及[停放支撑和紧固件](../02-mechanical/service-case-m05/parking-guide.zh-CN.md)。 |
 | 切割／去毛刺工具、镊子 | 1 套 | 裁垫片、清理支座与安装；不得损伤电池绝缘 |
 | 焊台、热风或回流设备、焊料、助焊剂和清洗耗材 | 各 1 套（自行焊接时） | 0402、模组及裸露散热盘需要适合的焊装能力；购买焊装板时不属于随键盘材料 |
-| 主板钢网 | 正面、背面各 1 张（自行回流焊接时） | 按本版配套 F.Paste 与 B.Paste 光绘激光切割，样机暂按 0.10 mm 不锈钢；最终厚度与散热盘开口由贴片工艺确认 |
+| 主板钢网 | 正面、背面各 1 张（自行回流焊接时） | 按本版配套 F.Paste 与 B.Paste 光绘激光切割，均用 0.12 mm 普通无框不锈钢，首件核对开口与锡膏转移。[下单参数](../01-pcb/ordering-and-printing.zh-CN.md#钢网下单) |
 | 定位板攻牙工具 | 1 套（自行加工定位板时） | M2×0.4 丝锥及匹配底孔加工工具；买已攻牙定位板时不需要重复加工 |
 | 嵌件孔精修工具 | 1 套（壳厂未精加工时） | 按 Ø4.85±0.05／Ø3.35±0.05 mm 及规定孔深加工，不能用未测量的打印孔直接代替 |
 | 限流电源、电池模拟器、电流记录仪和温度探头 | 各 1 套（样机验证时） | 用于首次上电、充电／终止／温升和续航验收；不计入键盘装机数量 |

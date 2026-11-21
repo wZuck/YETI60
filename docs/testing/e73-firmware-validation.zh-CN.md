@@ -31,6 +31,6 @@ E73 的正常版、校准版 ARM 构建已加入此前在 Raytac 上检查过的
 
 ## 复现
 
-使用固定版本 Docker 工作区运行[构建脚本](../../scripts/build_yeti60_firmware.py)，再运行 `python3 scripts/run_audit.py --baseline HEAD`。总检查在组合验证前执行目标镜像、GPIO、扫描、按键流水线、CRC、恢复、NVS 和波形检查。`python3 scripts/check_yeti60_firmware_suite.py` 仅核对已有证据，不重建或重新执行测试。文件检查通过后，运行 `python3 scripts/run_e73_review.py --reuse-artifact-audit --require-design` 获取独立设计结论。在 USB 保护、电池插头检修、完整机构验收或其他设计门槛未关闭时，设计验收返回非零仍是预期行为。
+使用固定版本 Docker 工作区运行[构建脚本](../../scripts/build_yeti60_firmware.py)，再运行 [`python3 scripts/run_audit.py --baseline HEAD`](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/scripts/run_audit.py)。总检查在组合验证前执行目标镜像、GPIO、扫描、按键流水线、CRC、恢复、NVS 和波形检查。`python3 scripts/check_yeti60_firmware_suite.py` 仅核对已有证据，不重建或重新执行测试。文件检查通过后，运行 `python3 scripts/run_e73_review.py --reuse-artifact-audit --require-design` 获取独立设计结论。在 USB 保护、电池插头检修、完整机构验收或其他设计门槛未关闭时，设计验收返回非零仍是预期行为。
 
 实物验收仍需首板电源、SWD、实际叠层逐键采集、60 键按下／释放、USB 枚举与充电同时工作、USB／蓝牙切换、空闲唤醒、写入中断、温度保护及射频／模拟信号测量。本文没有将任何实物项目记为通过。

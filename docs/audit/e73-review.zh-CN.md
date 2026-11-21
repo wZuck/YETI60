@@ -39,7 +39,7 @@
 
 ## 复现方式
 
-使用 KiCad 和 CAD Python 环境运行 `scripts/run_audit.py`；`scripts/test_yeti60_usb_events.py` 使用固定的完整上游回调。运行射频／USB 提取脚本、`scripts/study_e73_service.py`，再运行 `scripts/review_e73_readiness.py`。审查会写入明确的暂停放行结果及失败／未完成门槛；使用 `--require-design` 时，只要仍有未解决项就返回非零。测试程序执行成功不等于方案验收通过。
+使用 KiCad 和 CAD Python 环境运行 [`scripts/run_audit.py`](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/scripts/run_audit.py)；`scripts/test_yeti60_usb_events.py` 使用固定的完整上游回调。运行射频／USB 提取脚本、`scripts/study_e73_service.py`，再运行 `scripts/review_e73_readiness.py`。审查会写入明确的暂停放行结果及失败／未完成门槛；使用 `--require-design` 时，只要仍有未解决项就返回非零。测试程序执行成功不等于方案验收通过。
 
 ## USB 修补阶段记录
 

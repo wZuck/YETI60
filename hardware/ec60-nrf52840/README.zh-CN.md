@@ -22,6 +22,6 @@ U8 控制模拟前端，U7 控制 1M:1M、电容 10 nF 的电池分压。关闭 
 
 当前 KiCad PCB、项目及原理图文件是可编辑设计源文件。`pinmap.json`、仅覆盖改版元件的 `components.json`、导出的 `netlist.xml` 和按元件引用固定的本地封装必须保持一致。`YAECKB` 库标识为兼容性保留。
 
-原理图变更后，通过 KiCad CLI 导出 `netlist.xml`，更新显式契约，必要时重新生成 `firmware/yeti60/board_pins.h`，然后运行 `python3 scripts/run_audit.py`。审计分别检查重新导出的原理图一致性、原生 DRC、PCB 契约和物理连通回归。历史生成器和布线快照已移除。
+原理图变更后，通过 KiCad CLI 导出 `netlist.xml`，更新显式契约，必要时重新生成 `firmware/yeti60/board_pins.h`，然后运行 [`python3 scripts/run_audit.py`](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/scripts/run_audit.py)。审计分别检查重新导出的原理图一致性、原生 DRC、PCB 契约和物理连通回归。历史生成器和布线快照已移除。
 
-[PCB 渲染](../../renders/ec60-nrf52840/README.zh-CN.md)和[条件装配图](../../renders/yeti60-assembly/README.zh-CN.md)关联源文件。电源回路、器件额定值、普通工艺验收、树脂嵌件、胶碗／螺钉结构、子板／线缆、真实固件／校准及后续信号／射频仍未定型。
+[PCB 渲染](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/renders/ec60-nrf52840/README.zh-CN.md)和[条件装配图](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/renders/yeti60-assembly/README.zh-CN.md)关联源文件。电源回路、器件额定值、普通工艺验收、树脂嵌件、胶碗／螺钉结构、子板／线缆、真实固件／校准及后续信号／射频仍未定型。

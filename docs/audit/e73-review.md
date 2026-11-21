@@ -39,7 +39,7 @@ After design closure, obtain fabricator DFM and inspect the first board. Bench a
 
 ## Reproduce
 
-Run `scripts/run_audit.py` with KiCad and the CAD Python runtime; `scripts/test_yeti60_usb_events.py` exercises the actual pinned upstream callback. Run the RF/USB extraction scripts, `scripts/study_e73_service.py`, then `scripts/review_e73_readiness.py`. The review writes an explicit HOLD with failed/open gates. `--require-design` returns a nonzero status while those gates remain unresolved; successful test execution must not be presented as design acceptance.
+Run [`scripts/run_audit.py`](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/scripts/run_audit.py) with KiCad and the CAD Python runtime; `scripts/test_yeti60_usb_events.py` exercises the actual pinned upstream callback. Run the RF/USB extraction scripts, `scripts/study_e73_service.py`, then `scripts/review_e73_readiness.py`. The review writes an explicit HOLD with failed/open gates. `--require-design` returns a nonzero status while those gates remain unresolved; successful test execution must not be presented as design acceptance.
 
 ## USB repair checkpoint
 

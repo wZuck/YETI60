@@ -10,4 +10,4 @@
 
 [可构建目标固件](target/README.zh-CN.md)现提供 YETI60 自定义板、同一可移植核心、ZMK USB／蓝牙 HID、持久校准和普通／校准版 HEX；实机验证仍待样机。
 
-[定位板／铜箔／固件检查](../docs/audit/yeti60-key-geometry.json)将 60 个开孔中心对应到实际 ROW／COL 铜箔，包括 SW60／SW62 内的备选焊盘。右 Shift 对应 ROW3／COL13，Fn 对应 ROW3／COL14；目标键位变换和校准掩码均已纠正之前的 ROW3／COL12、ROW4／COL14 选择，两版固件已经重新构建。几何覆盖检查不能替代实物逐键校准。安装及刷写参见 [逐图指南](../docs/assembly/build-guide.zh-CN.md)。
+[定位板／铜箔／固件检查](../docs/audit/yeti60-key-geometry.json)将 60 个开孔中心对应到实际 ROW／COL 铜箔，包括 SW60／SW62 内的备选焊盘。右 Shift 对应 ROW3／COL13，Fn 对应 ROW3／COL14；目标键位变换和校准掩码均已纠正之前的 ROW3／COL12、ROW4／COL14 选择，两版固件已经重新构建。几何覆盖检查不能替代实物逐键校准。安装及刷写参见 [逐图指南](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/docs/assembly/build-guide.zh-CN.md)。

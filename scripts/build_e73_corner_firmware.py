@@ -55,11 +55,15 @@ def main():
         copied[str(source.relative_to(ROOT))]=sha(source)
     copied[str(Path(__file__).relative_to(ROOT))]=sha(Path(__file__))
     copied['requirements-audit.txt']=sha(ROOT/'requirements-audit.txt')
-    for rel in ['firmware/target','firmware/yeti60','tests/yeti60','tests/audit']:
+    for rel in ['firmware/target','firmware/yeti60','tests/yeti60']:
         for source in sorted((ROOT/rel).rglob('*')):
             local=source.relative_to(ROOT/rel)
             if not source.is_file() or any(q in ['third_party','__pycache__','.git']for q in local.parts):continue
             copy(source,WORK/rel/local)
+    audit_tests = ['test_target.py', 'test_firmware_suite.py']
+    for name in audit_tests:
+        rel = Path('tests/audit') / name
+        copy(ROOT/rel,WORK/rel)
     actions=['build_yeti60_firmware.py','check_yeti60_target.py','simulate_yeti60_firmware.py',
              'test_yeti60_calibration.py','test_yeti60_usb_events.py','test_yeti60_recovery.py',
              'test_yeti60_gpio_modes.py','test_yeti60_scan_control.py','test_yeti60_key_pipeline.py',
@@ -99,7 +103,7 @@ def main():
     for name in actions:
         print('Running '+name,flush=True)
         subprocess.run([sys.executable,str(WORK/'scripts'/name)],check=True,env=env)
-    for name in ['test_target.py','test_firmware_suite.py']:
+    for name in audit_tests:
         subprocess.run([sys.executable,str(WORK/'tests/audit'/name)],check=True,env=env)
     for name,digest in copied.items():assert sha(ROOT/name)==digest,('Source changed during build',name)
     if args.development_build:

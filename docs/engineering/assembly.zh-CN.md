@@ -2,7 +2,7 @@
 
 # 装配图及装配顺序
 
-[28 步逐图指南](../assembly/build-guide.zh-CN.md)涵盖主板从裸板开始焊接、可选 C5 自焊、分阶段通电、刷写及完整安装；机械图示以下方尺寸为准。
+[28 步逐图指南](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/docs/assembly/build-guide.zh-CN.md)涵盖主板从裸板开始焊接、可选 C5 自焊、分阶段通电、刷写及完整安装；机械图示以下方尺寸为准。
 
 E73 正式使用 [M01 定位板](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf)及 [M01 底壳](../../mechanical/e73-fit/yeti60-e73-bottom-m01.step)。下侧 **2.0 mm**、上侧 **1.2 mm** 胶棉各裁四块 **33 × 3 mm**。[局部配合证据](e73-mechanical-fit-candidate.zh-CN.md)不代表其他机械公差已经通过。
 

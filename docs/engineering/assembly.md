@@ -2,7 +2,7 @@ English | [Chinese](assembly.zh-CN.md)
 
 # Assembly drawings and build sequence
 
-Use the [28-step illustrated guide](../assembly/build-guide.md) for mainboard soldering from bare PCB, optional C5 self-assembly, staged bring-up, programming and complete installation. The dimensions below govern its mechanical illustrations.
+Use the [28-step illustrated guide](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/docs/assembly/build-guide.md) for mainboard soldering from bare PCB, optional C5 self-assembly, staged bring-up, programming and complete installation. The dimensions below govern its mechanical illustrations.
 
 E73 uses the selected [M01 plate](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf) and [M01 bottom shell](../../mechanical/e73-fit/yeti60-e73-bottom-m01.step). Cut four **33 × 3 mm** pads from each gasket stock: lower **2.0 mm**, upper **1.2 mm**. The [bounded fit evidence](e73-mechanical-fit-candidate.md) does not qualify the remaining mechanical tolerances.
 

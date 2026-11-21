@@ -1,13 +1,8 @@
-[English](START-HERE.md) | 简体中文
+[English](START-HERE.md) | 中文
 
-# YETI60：从这里开始
+# 从这里开始制作 YETI60
 
-[Raytac USB 修补候选板](variants/raytac/hardware/usb-short-route/README.zh-CN.md)：更新的原生主板及验收证据，尚未发布下单包。
+- **Raytac** · [制作手册](variants/raytac/BUILD.zh-CN.md) · [PCB、钢网和下单参数](variants/raytac/hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md) · [无外壳台架验收](variants/raytac/OPEN-BENCH.zh-CN.md)
+- **E73 CORNER-07** · [集中交付](delivery/YETI60-E73/START-HERE.zh-CN.md) · [离线网页](delivery/YETI60-E73/index.zh-CN.html) · [KiCad 工程和工程检查](BUILD.zh-CN.md)
 
-当前首样集中采用 **Raytac MDBT50Q-1MV2**。请打开 [Raytac 下单与制作总手册](variants/raytac/BUILD.zh-CN.md)：从这一份文档可以找到制板文件、下单选项、库存抵扣后的材料、逐步焊接图、固件和验收流程。E73 保留为另一方案，本次不要混用它的主板文件或固件。
-
-**Raytac 首样下单暂停放行：**[新增 USB 及电池研究](variants/raytac/docs/engineering/prototype-qualification.zh-CN.md)要求继续修补／验收，DRC 通过不能代替这些项目。先看[含电池的无外壳首样流程](variants/raytac/OPEN-BENCH.zh-CN.md)，初测不需要外壳。当前 `dfm-review` 压缩包仍未放行下单。
-
-[已选定的按键机构、直接购买清单与定位板](variants/raytac/docs/build/key-mechanism.zh-CN.md)：NiZ 轴座滑块＋独立钢板卫星轴＋居中 6U 键帽，使用新 1.6 mm 定位板。
-
-**E73 另一方案：**从 [E73 审查与制作入口](BUILD.zh-CN.md)查看完整检查、匹配固件及材料。当前已确认 USB 保护支路、定位板和电池插头拔出干涉问题，尚不能作为已验收方案下单；已做好的 C5 子板保留。
+选择一套方案后，使用该方案配套的 PCB、定位板、下壳、线束和固件。两版均可复用已制作的 C5 JSH 子板。工厂审查和实物验收见各自手册。
