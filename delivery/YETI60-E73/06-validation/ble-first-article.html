@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E73 CORNER-07 Bluetooth range and interference</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="ble-first-article.zh-CN.html">Chinese</a></p>
+<h1 id="e73-corner-07-bluetooth-range-and-interference">E73 CORNER-07 Bluetooth range and interference</h1>
+<h2 id="antenna-surroundings-in-m05">Antenna surroundings in M05</h2>
+<p>The E73-2G4M08S1C drawing shows the ceramic antenna at the end opposite the 13 mm pad row. On CORNER-07 this end faces right. Ebyte advises keeping metal away from the antenna and provides no numeric installed clearance in this manual. The 3 × 13 mm band used here is a project screening region. <a href="https://www.ebyte.com/downpdf/444.html">Ebyte manual, drawing and installation guidance</a></p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Current design</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mainboard copper in the provisional keepout</td>
+<td>Zero overlap across all four layers</td>
+</tr>
+<tr>
+<td>304 stainless-steel plate</td>
+<td>Covers the entire 39 mm² band in projection. Closest gap to the bounded U1 body envelope is 1.10 mm</td>
+</tr>
+<tr>
+<td>Right-hand side of the M05 enclosure</td>
+<td>Nine horizontal CAD paths from the outer end of the antenna band cross 15.69–19.23 mm of shell material before the outer wall. The sampled paths pass beneath the plate. The planned shell material is unfilled engineering resin</td>
+</tr>
+<tr>
+<td>Transmitter configuration</td>
+<td>0 dBm in the normal and calibrator builds. The evaluated configuration hashes match the firmware build record</td>
+</tr>
+</tbody>
+</table>
+<p>The case-path values describe material thickness along the chosen CAD lines. They do not supply the dielectric properties of the printed parts, antenna impedance, radiation pattern or attenuation. The steel remains close to the antenna, and nearby hands, screws, resin formulation, the desk and the host affect the link. <a href="radio-path.json">CAD probes and calculation inputs</a></p>
+<h2 id="reference-at-2-m-and-3-m">Reference at 2 m and 3 m</h2>
+<p>Free-space loss is <code>20 log10(4πdf/c)</code>, with distance in metres, frequency in hertz and <code>c = 299792458 m/s</code>. The example uses 0 dBm transmit power and 0 dBi antenna gains at both ends. It allows 15 dB for fading as a planning reserve. Nordic lists typical receiver sensitivity of −95 dBm at LE 1M for short packets and −92 dBm at LE 2M. The example host sensitivity is an assumed −85 dBm. Its power and sensitivity depend on the actual host. <a href="https://www.itu.int/rec/R-REC-P.525-5-202411-I/en">ITU-R P.525-5</a> · <a href="https://www.bluetooth.com/wp-content/uploads/2023/03/bluetooth-le-regulatory-aspects-document.pdf">Bluetooth LE channels</a> · <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/radio.html">Nordic receiver table</a></p>
+<table>
+<thead>
+<tr>
+<th>Distance</th>
+<th style="text-align:right">Free-space loss across 2402–2480 MHz</th>
+<th style="text-align:right">Additional loss available toward E73 at 1M / 2M</th>
+<th style="text-align:right">Additional loss available toward example host</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 m</td>
+<td style="text-align:right">46.08–46.36 dB</td>
+<td style="text-align:right">33.64 / 30.64 dB</td>
+<td style="text-align:right">23.64 dB</td>
+</tr>
+<tr>
+<td>3 m</td>
+<td style="text-align:right">49.60–49.88 dB</td>
+<td style="text-align:right">30.12 / 27.12 dB</td>
+<td style="text-align:right">20.12 dB</td>
+</tr>
+</tbody>
+</table>
+<p>The last two columns use the upper band edge and subtract the 15 dB reserve. Going from 2 m to 3 m adds 3.52 dB in free space. The link budget gives room for additional loss under these assumptions. Measuring the assembled keyboard is necessary to determine how much of that room remains.</p>
+<h2 id="verify-the-first-article">Verify the first article</h2>
+<ol>
+<li>With the case off, run the <a href="bench-power.html">bench power checks</a>. Use the simulator to confirm BLE pairing and reconnect on battery power with USB disconnected. If the key stack is already fitted and calibrated, check typing at 2 m and 3 m on the intended host. Record this as the open-stack reference.</li>
+<li>Fit the complete M05 enclosure, steel plate, intended protected battery and all fasteners. Repeat on the same host and desk, with the USB cable disconnected. Measure from the antenna end to the host. At each distance rotate the keyboard through 0°, 90°, 180° and 270° and type the same known sequence with a normal hand position. Include one trial with the right hand near the antenna end. Record at least 100 expected key-downs per distance across the orientations and check the releases as well. Look for unexpected events during a 60-second idle period. Check reconnect after a power cycle at 3 m.</li>
+<li>Test USB typing while the host configures and charges the battery. Log charge current, missing or false keys, and any reconnects. USB takes priority while configured. Repeat BLE typing on battery after detach and compare with the open-stack log. Test on the intended desk with usual Wi-Fi and peripherals operating.</li>
+<li>If the closed case fails and the open stack passes, repeat the same orientation and distance with the top removed to distinguish an enclosure effect. For radio-only comparisons without the steel plate, support the board safely and compare pairing, link continuity and RSSI if the host reports it. Keep the host, distance, geometry and radio settings fixed. Test typing with the calibrated key stack in place.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Case / power</th>
+<th>Host and orientation</th>
+<th style="text-align:right">Distance</th>
+<th>Expected / observed keys</th>
+<th>Link loss, reconnect and idle events</th>
+<th>RSSI if available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Pass when the assembled keyboard repeats the expected input without loss, duplicates, false input or link drop across the recorded 2 m and 3 m conditions. Enter the results in the <a href="first-article.html">first-article acceptance record</a>.</p>
+</main></html>

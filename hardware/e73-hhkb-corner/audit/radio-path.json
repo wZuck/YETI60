@@ -1,0 +1,354 @@
+{
+  "status": "M05_antenna_geometry_and_reference_link_budget_checked",
+  "physical_verification": false,
+  "electromagnetic_field_solution": false,
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e",
+    "hardware/e73-hhkb-corner/audit/placement-check.json": "81f86fade3c166599c31b9b0efe7fc94b24a36a848bfa800d58532c0d5d7ff1b",
+    "hardware/e73-hhkb-corner/audit/corner-fit.json": "00f88a28c1cf4f234d512ac98df575f6a4d825e2be66702dd70d126a2c536730",
+    "hardware/e73-hhkb-corner/audit/service-case-m05.json": "4bdfc9e112fdcf3829dcc5aeb9f36ddd32006e008c526ab66a134288673bc140",
+    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
+    "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step": "4f6a72e62dcf592945097c293bb3ca795cc395b6915328bb41256eb37c7cf007",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J2-REVIEW.step": "6abd35db97361ab6b492467a912eb9680be975e93964d44cccdfecbba6af45fb",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.step": "0b93cbec60c942be89abc7c58051409762b8f0eade6e2c43bb28355744445e71",
+    "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
+    "hardware/e73-hhkb-corner/firmware/yeti60-target-build.json": "52a2765699da0b4e4b309f1c3871e5774c54f02386920e4b094f3473441149d0",
+    "hardware/e73-hhkb-corner/firmware/manifest.json": "d6d4adb2ab846eab00de0bd5e0e686864a8a8ac9c5e9821aa37163a0418e3c41",
+    "firmware/target/config/yeti60.conf": "13332769ae78f197d3268ec8ad9c9aa1e7578f19387c3f8a1ef4f9355a6acc7f",
+    "scripts/check_e73_radio_path.py": "86e4fb81b1840e8654fca409abdbb7edd692bbb5819c237ca925bc2f98ff1430",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1"
+  },
+  "references": {
+    "module_manual_pdf": "https://www.ebyte.com/downpdf/444.html",
+    "module_specifications": "https://www.cdebyte.com/products/E73-2G4M08S1C/1",
+    "Nordic_receiver_operation": "https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/radio.html",
+    "Bluetooth_LE_channels": "https://www.bluetooth.com/wp-content/uploads/2023/03/bluetooth-le-regulatory-aspects-document.pdf",
+    "free_space_attenuation": "https://www.itu.int/rec/R-REC-P.525-5-202411-I/en"
+  },
+  "antenna_band_PCB_mm": [
+    347.0,
+    182.0,
+    350.0,
+    195.0
+  ],
+  "host_board_copper_in_keepout": [
+    {
+      "layer": "F.Cu",
+      "overlap_mm2": 0.0
+    },
+    {
+      "layer": "In1.Cu",
+      "overlap_mm2": 0.0
+    },
+    {
+      "layer": "In2.Cu",
+      "overlap_mm2": 0.0
+    },
+    {
+      "layer": "B.Cu",
+      "overlap_mm2": 0.0
+    }
+  ],
+  "steel_projection_intersection_mm2": 39.0,
+  "bounded_U1_envelope_to_steel_plate_mm": 1.1,
+  "east_ray_direction_case": [
+    1,
+    0,
+    0
+  ],
+  "east_paths_through_case": [
+    {
+      "origin_case_mm": [
+        350.0,
+        -193.5,
+        0.4062
+      ],
+      "resin_intervals_from_origin_mm": {
+        "top": [
+          [
+            22.162715,
+            27.162715
+          ]
+        ],
+        "bottom-m05": [
+          [
+            7.662715,
+            12.533856
+          ],
+          [
+            16.091573,
+            21.912715
+          ]
+        ],
+        "cover-J2": [],
+        "cover-J4": []
+      },
+      "resin_total_mm": 15.692283,
+      "outer_exit_from_origin_mm": 27.162715
+    },
+    {
+      "origin_case_mm": [
+        350.0,
+        -193.5,
+        1.2062
+      ],
+      "resin_intervals_from_origin_mm": {
+        "top": [
+          [
+            22.162715,
+            27.162715
+          ]
+        ],
+        "bottom-m05": [
+          [
+            7.662715,
+            12.533856
+          ],
+          [
+            16.091573,
+            21.912715
+          ]
+        ],
+        "cover-J2": [],
+        "cover-J4": []
+      },
+      "resin_total_mm": 15.692283,
+      "outer_exit_from_origin_mm": 27.162715
+    },
+    {
+      "origin_case_mm": [
+        350.0,
+        -193.5,
+        2.0062
+      ],
+      "resin_intervals_from_origin_mm": {
+        "top": [
+          [
+            22.162715,
+            27.162715
+          ]
+        ],
+        "bottom-m05": [
+          [
+            7.662715,
+            12.533856
+          ],
+          [
+            16.091573,
+            21.912715
+          ]
+        ],
+        "cover-J2": [],
+        "cover-J4": []
+      },
+      "resin_total_mm": 15.692283,
+      "outer_exit_from_origin_mm": 27.162715
+    },
+    {
+      "origin_case_mm": [
+        350.0,
+        -188.5,
+        0.4062
+      ],
+      "resin_intervals_from_origin_mm": {
+        "top": [
+          [
+            22.162714,
+            27.162714
+          ]
+        ],
+        "bottom-m05": [
+          [
+            7.662714,
+            13.279395
+          ],
+          [
+            15.346034,
+            21.912714
+          ]
+        ],
+        "cover-J2": [],
+        "cover-J4": []
+      },
+      "resin_total_mm": 17.183361,
+      "outer_exit_from_origin_mm": 27.162714
+    },
+    {
+      "origin_case_mm": [
+        350.0,
+        -188.5,
+        1.2062
+      ],
+      "resin_intervals_from_origin_mm": {
+        "top": [
+          [
+            22.162714,
+            27.162714
+          ]
+        ],
+        "bottom-m05": [
+          [
+            7.662714,
+            13.279395
+          ],
+          [
+            15.346034,
+            21.912714
+          ]
+        ],
+        "cover-J2": [],
+        "cover-J4": []
+      },
+      "resin_total_mm": 17.183361,
+      "outer_exit_from_origin_mm": 27.162714
+    },
+    {
+      "origin_case_mm": [
+        350.0,
+        -188.5,
+        2.0062
+      ],
+      "resin_intervals_from_origin_mm": {
+        "top": [
+          [
+            22.162714,
+            27.162714
+          ]
+        ],
+        "bottom-m05": [
+          [
+            7.662714,
+            13.279395
+          ],
+          [
+            15.346034,
+            21.912714
+          ]
+        ],
+        "cover-J2": [],
+        "cover-J4": []
+      },
+      "resin_total_mm": 17.183361,
+      "outer_exit_from_origin_mm": 27.162714
+    },
+    {
+      "origin_case_mm": [
+        350.0,
+        -183.5,
+        0.4062
+      ],
+      "resin_intervals_from_origin_mm": {
+        "top": [
+          [
+            22.182363,
+            27.162713
+          ]
+        ],
+        "bottom-m05": [
+          [
+            7.662713,
+            21.914149
+          ]
+        ],
+        "cover-J2": [],
+        "cover-J4": []
+      },
+      "resin_total_mm": 19.231786,
+      "outer_exit_from_origin_mm": 27.162713
+    },
+    {
+      "origin_case_mm": [
+        350.0,
+        -183.5,
+        1.2062
+      ],
+      "resin_intervals_from_origin_mm": {
+        "top": [
+          [
+            22.182363,
+            27.162713
+          ]
+        ],
+        "bottom-m05": [
+          [
+            7.662713,
+            21.914149
+          ]
+        ],
+        "cover-J2": [],
+        "cover-J4": []
+      },
+      "resin_total_mm": 19.231786,
+      "outer_exit_from_origin_mm": 27.162713
+    },
+    {
+      "origin_case_mm": [
+        350.0,
+        -183.5,
+        2.0062
+      ],
+      "resin_intervals_from_origin_mm": {
+        "top": [
+          [
+            22.182363,
+            27.162713
+          ]
+        ],
+        "bottom-m05": [
+          [
+            7.662713,
+            21.914149
+          ]
+        ],
+        "cover-J2": [],
+        "cover-J4": []
+      },
+      "resin_total_mm": 19.231786,
+      "outer_exit_from_origin_mm": 27.162713
+    }
+  ],
+  "controller_profiles": {
+    "normal": {
+      "Zephyr_config_sha256": "f77e2739958b227b96066459ed298b6ab305c6dc7579df19309381a06711b877",
+      "configured_TX_power_dBm": 0
+    },
+    "calibrator": {
+      "Zephyr_config_sha256": "6b190ab3084c34c0a93469f4ae8d2a1a372f58c5dd6e582eaa80c2c6e54bc6c1",
+      "configured_TX_power_dBm": 0
+    }
+  },
+  "reference_link_budget": {
+    "reference_TX_dBm": 0,
+    "reference_antenna_gain_each_dBi": 0,
+    "assumed_host_RX_dBm": -85,
+    "planning_reserve_dB": 15,
+    "rows": [
+      {
+        "distance_m": 2,
+        "free_space_loss_at_band_edges_dB": [
+          46.08,
+          46.357
+        ],
+        "remaining_additional_loss_after_15dB_reserve_dB": {
+          "toward_E73_1M_typical_-95dBm": 33.643,
+          "toward_E73_2M_typical_-92dBm": 30.643,
+          "toward_example_host_-85dBm": 23.643
+        }
+      },
+      {
+        "distance_m": 3,
+        "free_space_loss_at_band_edges_dB": [
+          49.602,
+          49.879
+        ],
+        "remaining_additional_loss_after_15dB_reserve_dB": {
+          "toward_E73_1M_typical_-95dBm": 30.121,
+          "toward_E73_2M_typical_-92dBm": 27.121,
+          "toward_example_host_-85dBm": 20.121
+        }
+      }
+    ]
+  }
+}
