@@ -37,6 +37,18 @@ On the quotation, specify four parts at 1:1 in millimetres. Request support plac
 
 For a rigid M3 screw, the nominal radial clearance through the lower pilot is `(3.40 − 3.00) / 2 = 0.20 mm`. Taking ±0.15 mm on one part and ±0.05 mm on the opposing insert per axis yields a worst-case example of `√2 × (0.15 + 0.05) = 0.283 mm` center offset. Check the matched shell pair before committing to extra prints. Record the actual part dimensions, assembly alignment and cable used with the first-article record.
 
+### Optional finishing of a binding M3 screw passage
+
+If the cured shells register by hand and the screws bind at the lower passages or head recesses, have the four lower features finished in a fixture using the existing pilot axes. The original Ø5.80 mm recess gives a Ø5.60 mm head just **0.10 mm** radial clearance, so the evaluated finish enlarges both concentric diameters. Check that the original passage is at most Ø3.70 mm and that the original recess radius plus its center offset from the pilot is at most **3.30 mm**. Use the unpopulated lower shell for machining.
+
+| Feature | Finished condition |
+|---|---|
+| Lower M3 passage | **Ø3.90 ±0.05 mm**, coaxial with the finished head recess |
+| Lower head recess | **Ø6.80 ±0.05 mm**, retaining the original nominal seat at Z = 2.59 mm. Keep cutter centering within ±0.05 mm per axis of the pilot and seat depth change within 0.05 mm |
+| Screw and shim | M3×5, head Ø ≤5.60 mm. A 0.30 mm flat shim with M3 clearance and OD **5.50–5.80 mm**, centered within **0.10 mm** of the screw. Check that the screw head and the shim seat flat |
+
+The worst dimensions and offsets in this screen leave **0.071 mm** radial shank clearance, **0.021 mm** clearance to the shim and **0.321 mm** minimum shim bearing width. The STEP check found a continuous **0.50 mm** outer material sleeve through the evaluated recess depth and **2.15 mm** minimum modeled seat thickness at all four locations. These measurements describe the drawing. Inspect the machined resin for cracking, confirm the actual thread engagement and repeat the screw and footpad fit before final assembly. [M3 closure calculation and sectional checks](../../06-validation/m05-print-fit.json)
+
 ## Build the matched M05 harness
 
 Use the [M05 free lengths](harness/wire-lengths-m05.csv) for all nine conductors. These are lengths along the insulation, from housing exit to housing exit or to the pack strain-relief face. Add the termination and stripping allowances for the actual contacts when cutting the wire. The trial uses stranded AWG28 copper with a maximum finished insulation diameter of 0.65 mm.

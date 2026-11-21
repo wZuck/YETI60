@@ -83,6 +83,116 @@
       ]
     }
   },
+  "lower_m3_finish": {
+    "scope": "CAD screen of optional finishing on a matched, fully cured lower shell",
+    "finished_passage_diameter_mm": [
+      3.85,
+      3.95
+    ],
+    "finished_head_recess_diameter_mm": [
+      6.75,
+      6.85
+    ],
+    "shim_outside_diameter_mm": [
+      5.5,
+      5.8
+    ],
+    "shim_thickness_mm": 0.3,
+    "shim_max_eccentricity_to_screw_mm": 0.1,
+    "cutter_xy_allowance_per_axis_mm": 0.05,
+    "maximum_existing_pilot_diameter_mm": 3.7,
+    "maximum_existing_recess_radius_plus_offset_to_pilot_mm": 3.3043,
+    "maximum_seat_depth_change_mm": 0.05,
+    "bounded_screw_axis_offset_mm": 0.3536,
+    "minimum_shank_gap_mm": 0.0714,
+    "minimum_head_gap_mm": 0.2214,
+    "minimum_shim_gap_mm": 0.0214,
+    "minimum_shim_over_seat_radial_width_mm": 0.3214,
+    "minimum_modeled_outside_sleeve_mm": 0.5,
+    "worst_case_cut_model_is_one_valid_solid_with_original_bounds": true,
+    "locations": [
+      {
+        "center_xy_mm": [
+          64.312702,
+          -101.209701
+        ],
+        "original_head_recess": {
+          "center_xy_mm": [
+            64.312702,
+            -101.209701
+          ],
+          "diameter_mm": 5.8,
+          "z_span_mm": [
+            -7.41,
+            2.59
+          ]
+        },
+        "outside_sleeve_material_fraction": 1.0,
+        "seat_material_fraction": 1.0,
+        "minimum_axial_seat_thickness_mm": 2.15
+      },
+      {
+        "center_xy_mm": [
+          64.312715,
+          -191.209701
+        ],
+        "original_head_recess": {
+          "center_xy_mm": [
+            64.312715,
+            -191.209701
+          ],
+          "diameter_mm": 5.8,
+          "z_span_mm": [
+            -7.41,
+            2.59
+          ]
+        },
+        "outside_sleeve_material_fraction": 1.0,
+        "seat_material_fraction": 1.0,
+        "minimum_axial_seat_thickness_mm": 2.15
+      },
+      {
+        "center_xy_mm": [
+          364.312715,
+          -191.209659
+        ],
+        "original_head_recess": {
+          "center_xy_mm": [
+            364.312715,
+            -191.209659
+          ],
+          "diameter_mm": 5.8,
+          "z_span_mm": [
+            -7.41,
+            2.59
+          ]
+        },
+        "outside_sleeve_material_fraction": 1.0,
+        "seat_material_fraction": 1.0,
+        "minimum_axial_seat_thickness_mm": 2.15
+      },
+      {
+        "center_xy_mm": [
+          364.312702,
+          -101.209659
+        ],
+        "original_head_recess": {
+          "center_xy_mm": [
+            364.312702,
+            -101.209659
+          ],
+          "diameter_mm": 5.8,
+          "z_span_mm": [
+            -7.41,
+            2.59
+          ]
+        },
+        "outside_sleeve_material_fraction": 1.0,
+        "seat_material_fraction": 1.0,
+        "minimum_axial_seat_thickness_mm": 2.15
+      }
+    ]
+  },
   "closure_passages_and_inserts": [
     {
       "insert": {
@@ -394,7 +504,7 @@
   "source_sha256": {
     "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
     "hardware/e73-hhkb-corner/audit/service-case-m05.json": "4bdfc9e112fdcf3829dcc5aeb9f36ddd32006e008c526ab66a134288673bc140",
-    "scripts/check_e73_print_fit.py": "0cd8e6e9eaf62bfa2b90089f6a29928ee14798100bb28a25b81bc09705c188f9",
+    "scripts/check_e73_print_fit.py": "2624dcea7126b14c172895c7b6fc3c34d44ae4e95d5077f219bd25ecdf9d4987",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b"
   },
   "STEP_sha256": {

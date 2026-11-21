@@ -90,6 +90,31 @@
 </tbody>
 </table>
 <p>For a rigid M3 screw, the nominal radial clearance through the lower pilot is <code>(3.40 − 3.00) / 2 = 0.20 mm</code>. Taking ±0.15 mm on one part and ±0.05 mm on the opposing insert per axis yields a worst-case example of <code>√2 × (0.15 + 0.05) = 0.283 mm</code> center offset. Check the matched shell pair before committing to extra prints. Record the actual part dimensions, assembly alignment and cable used with the first-article record.</p>
+<h3 id="optional-finishing-of-a-binding-m3-screw-passage">Optional finishing of a binding M3 screw passage</h3>
+<p>If the cured shells register by hand and the screws bind at the lower passages or head recesses, have the four lower features finished in a fixture using the existing pilot axes. The original Ø5.80 mm recess gives a Ø5.60 mm head just <strong>0.10 mm</strong> radial clearance, so the evaluated finish enlarges both concentric diameters. Check that the original passage is at most Ø3.70 mm and that the original recess radius plus its center offset from the pilot is at most <strong>3.30 mm</strong>. Use the unpopulated lower shell for machining.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Finished condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lower M3 passage</td>
+<td><strong>Ø3.90 ±0.05 mm</strong>, coaxial with the finished head recess</td>
+</tr>
+<tr>
+<td>Lower head recess</td>
+<td><strong>Ø6.80 ±0.05 mm</strong>, retaining the original nominal seat at Z = 2.59 mm. Keep cutter centering within ±0.05 mm per axis of the pilot and seat depth change within 0.05 mm</td>
+</tr>
+<tr>
+<td>Screw and shim</td>
+<td>M3×5, head Ø ≤5.60 mm. A 0.30 mm flat shim with M3 clearance and OD <strong>5.50–5.80 mm</strong>, centered within <strong>0.10 mm</strong> of the screw. Check that the screw head and the shim seat flat</td>
+</tr>
+</tbody>
+</table>
+<p>The worst dimensions and offsets in this screen leave <strong>0.071 mm</strong> radial shank clearance, <strong>0.021 mm</strong> clearance to the shim and <strong>0.321 mm</strong> minimum shim bearing width. The STEP check found a continuous <strong>0.50 mm</strong> outer material sleeve through the evaluated recess depth and <strong>2.15 mm</strong> minimum modeled seat thickness at all four locations. These measurements describe the drawing. Inspect the machined resin for cracking, confirm the actual thread engagement and repeat the screw and footpad fit before final assembly. <a href="../../06-validation/m05-print-fit.json">M3 closure calculation and sectional checks</a></p>
 <h2 id="build-the-matched-m05-harness">Build the matched M05 harness</h2>
 <p>Use the <a href="harness/wire-lengths-m05.csv">M05 free lengths</a> for all nine conductors. These are lengths along the insulation, from housing exit to housing exit or to the pack strain-relief face. Add the termination and stripping allowances for the actual contacts when cutting the wire. The trial uses stranded AWG28 copper with a maximum finished insulation diameter of 0.65 mm.</p>
 <h3 id="wire-and-contacts-to-buy">Wire and contacts to buy</h3>

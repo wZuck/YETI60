@@ -8,12 +8,16 @@ import math
 from pathlib import Path
 
 from OCP.BRepAdaptor import BRepAdaptor_Surface
+from OCP.BRepAlgoAPI import BRepAlgoAPI_Cut
+from OCP.BRepCheck import BRepCheck_Analyzer
+from OCP.BRepPrimAPI import BRepPrimAPI_MakeCylinder
 from OCP.GeomAbs import GeomAbs_Cylinder
-from OCP.TopAbs import TopAbs_FACE
+from OCP.TopAbs import TopAbs_FACE, TopAbs_SOLID
 from OCP.TopExp import TopExp_Explorer
 from OCP.TopoDS import TopoDS
+from OCP.gp import gp_Ax2, gp_Dir, gp_Pnt
 
-from cad_geometry import bounds, load
+from cad_geometry import bounds, intersection_volume, load
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,6 +60,105 @@ def hole(cylinders, center, diameter):
         "diameter_mm": round(d, 4),
         "z_span_mm": [round(min(bore[2] for bore in matching), 6),
                       round(max(bore[3] for bore in matching), 6)],
+    }
+
+
+def vertical_cylinder(xy, z0, z1, radius):
+    axis = gp_Ax2(gp_Pnt(*xy, z0), gp_Dir(0, 0, 1))
+    return BRepPrimAPI_MakeCylinder(axis, radius, z1 - z0).Shape()
+
+
+def annulus_material_fraction(shape, xy, z0, z1, inner, outer):
+    outer_cylinder = vertical_cylinder(xy, z0, z1, outer)
+    inner_cylinder = vertical_cylinder(xy, z0, z1, inner)
+    annulus_volume = math.pi * (outer**2 - inner**2) * (z1 - z0)
+    return ((intersection_volume(shape, outer_cylinder)
+             - intersection_volume(shape, inner_cylinder)) / annulus_volume)
+
+
+def closure_finish(lower_shape, lower_faces, closure, case):
+    """Screen concentric machining of the lower shell, using the cured part as the reference."""
+    passage_min, passage_max = 3.85, 3.95
+    recess_min, recess_max = 6.75, 6.85
+    washer_min, washer_max = 5.5, 5.8
+    cutter_xy_each_axis = .05
+    seat_depth_allowance = .05
+    washer_eccentricity = .10
+    cutter_center_offset = math.sqrt(2) * cutter_xy_each_axis
+    maximum_existing_pilot = 3.70
+    assert maximum_existing_pilot / 2 + cutter_center_offset < passage_min / 2
+    offset = math.sqrt(2) * (
+        case["linear_tolerance"] + case["finished_bore_position_tolerance"] + cutter_xy_each_axis
+    )
+    washer_offset = offset + washer_eccentricity
+    minimum_shank_gap = (passage_min - 3.0) / 2 - offset
+    minimum_head_gap = (recess_min - 5.6) / 2 - offset
+    minimum_washer_gap = (recess_min - washer_max) / 2 - washer_offset
+    minimum_washer_bearing = (washer_min - passage_max) / 2 - washer_offset
+    assert min(minimum_shank_gap, minimum_head_gap, minimum_washer_gap) > 0
+    assert minimum_washer_bearing > .30
+    # Bound every cutter position by a containing cylinder in nominal lower-part coordinates.
+    lower_axis_offset = math.sqrt(2) * (case["linear_tolerance"] + cutter_xy_each_axis)
+    passage_envelope = passage_max / 2 + lower_axis_offset
+    recess_envelope = recess_max / 2 + lower_axis_offset
+    checks = []
+    original_bounds = bounds(lower_shape)
+    worst_case = lower_shape
+    for location in closure:
+        passage = location["passage"]
+        xy = passage["center_xy_mm"]
+        head = hole(lower_faces, xy, 5.8)
+        entrance, seat = head["z_span_mm"]
+        interface = passage["z_span_mm"][1]
+        assert abs(passage["z_span_mm"][0] - seat) < .0001
+        deepest_seat = seat + seat_depth_allowance
+        outer_guard = annulus_material_fraction(
+            lower_shape, xy, entrance + .01, deepest_seat, recess_envelope, recess_envelope + .50
+        )
+        seat_guard = annulus_material_fraction(
+            lower_shape, xy, deepest_seat, interface, passage_envelope, recess_envelope
+        )
+        assert abs(outer_guard - 1) < .0001 and abs(seat_guard - 1) < .0001, xy
+        outboard = original_bounds[2] - 1
+        for radius, end in ((recess_envelope, deepest_seat), (passage_envelope, interface + .20)):
+            operation = BRepAlgoAPI_Cut(worst_case, vertical_cylinder(xy, outboard, end, radius))
+            operation.Build()
+            assert operation.IsDone()
+            worst_case = operation.Shape()
+        checks.append({
+            "center_xy_mm": xy,
+            "original_head_recess": head,
+            "outside_sleeve_material_fraction": round(outer_guard, 6),
+            "seat_material_fraction": round(seat_guard, 6),
+            "minimum_axial_seat_thickness_mm": round(interface - deepest_seat, 4),
+        })
+    assert BRepCheck_Analyzer(worst_case).IsValid()
+    solids = TopExp_Explorer(worst_case, TopAbs_SOLID)
+    assert solids.More()
+    solids.Next()
+    assert not solids.More()
+    assert all(abs(a - b) < .0001 for a, b in zip(bounds(worst_case), original_bounds))
+    return {
+        "scope": "CAD screen of optional finishing on a matched, fully cured lower shell",
+        "finished_passage_diameter_mm": [passage_min, passage_max],
+        "finished_head_recess_diameter_mm": [recess_min, recess_max],
+        "shim_outside_diameter_mm": [washer_min, washer_max],
+        "shim_thickness_mm": .30,
+        "shim_max_eccentricity_to_screw_mm": washer_eccentricity,
+        "cutter_xy_allowance_per_axis_mm": cutter_xy_each_axis,
+        "maximum_existing_pilot_diameter_mm": maximum_existing_pilot,
+        "maximum_existing_recess_radius_plus_offset_to_pilot_mm": round(
+            recess_min / 2 - cutter_center_offset, 4
+        ),
+        "maximum_seat_depth_change_mm": seat_depth_allowance,
+        "bounded_screw_axis_offset_mm": round(offset, 4),
+        "minimum_shank_gap_mm": round(minimum_shank_gap, 4),
+        "minimum_head_gap_mm": round(minimum_head_gap, 4),
+        "minimum_shim_gap_mm": round(minimum_washer_gap, 4),
+        "minimum_shim_over_seat_radial_width_mm": round(minimum_washer_bearing, 4),
+        "minimum_modeled_outside_sleeve_mm": .50,
+        "worst_case_cut_model_is_one_valid_solid_with_original_bounds": True,
+        "locations": checks,
     }
 
 
@@ -147,6 +250,7 @@ def run(bundle):
                                                           position + insert_position), 4),
         },
         "insert_diameter_comparison": assembly_bores,
+        "lower_m3_finish": closure_finish(shapes["lower"], features["lower"], closure, case),
         "closure_passages_and_inserts": closure,
         "daughterboard_inserts": daughterboard,
         "covers": cover_fits,

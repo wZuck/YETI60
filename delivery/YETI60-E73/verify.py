@@ -48,6 +48,13 @@ def main():
  assert set(print_fit['STEP_sha256'])=={'02-mechanical/top.step',case_dir+'bottom-m05-REVIEW.step',
                                       case_dir+'cover-J2-REVIEW.step',case_dir+'cover-J4-REVIEW.step'}
  assert all(m['files_sha256'][name]==digest for name,digest in print_fit['STEP_sha256'].items())
+ closure_finish=print_fit['lower_m3_finish']
+ assert len(closure_finish['locations'])==4
+ assert closure_finish['worst_case_cut_model_is_one_valid_solid_with_original_bounds']
+ assert min(closure_finish[key] for key in
+            ('minimum_shank_gap_mm','minimum_head_gap_mm','minimum_shim_gap_mm'))>0
+ assert all(site['outside_sleeve_material_fraction']==site['seat_material_fraction']==1
+            for site in closure_finish['locations'])
  render=json.loads((base/'06-validation/assembly-render.json').read_text())
  harness=json.loads((base/'06-validation/m05-harness.json').read_text())
  lengths=harness['trial_variants'][0]['seated_free_lengths_mm']
