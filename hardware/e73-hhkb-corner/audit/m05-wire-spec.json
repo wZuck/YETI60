@@ -1,0 +1,102 @@
+{
+  "status": "published_wire_dimensions_and_M05_headroom_checked",
+  "physical_verification": false,
+  "differential_impedance_qualified": false,
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e",
+    "hardware/e73-hhkb-corner/audit/m05-harness.json": "076e45f9da7e8e68318972a693443be077c879167ed603d79b47729e5809ce14",
+    "hardware/e73-hhkb-corner/audit/power-process.json": "a60aedcc5599d31f4b5d087e8f5dd74440f34045baee7be1b5e7950ed1807205",
+    "hardware/e73-corner-harness-spec.json": "015f0904c0868a9563cf9e797a1e858f4b8eb31116829e525f27e6bcf57b930c",
+    "scripts/check_e73_m05_wire_spec.py": "d8eca6b2640581b1850786e527b934f8c1ef8cfa1cf7e3cbb90e547c7a079bad"
+  },
+  "vendor_references": {
+    "wire_datasheet": "https://www.cnctech.us/pdfs/10064-XX-1-0500-0XX-1-TS.pdf",
+    "wire_change_notice": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6791/Change%20Notice%20Hook-up-Wire%203-2025.pdf",
+    "JST_SH_datasheet": "https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf"
+  },
+  "wire": {
+    "AWG": 28,
+    "tinned_copper_strands": 7,
+    "nominal_strand_diameter_mm": 0.12,
+    "insulation": "FEP",
+    "insulation_OD_mm_min_max": [
+      0.55,
+      0.65
+    ],
+    "nominal_geometric_conductor_section_mm2": 0.07916813487046279,
+    "manufacturer_maximum_20C_resistance_ohm_per_km": 239
+  },
+  "contact": {
+    "MPN": "SSH-003T-P0.2-H",
+    "conductor_area_mm2_min_max": [
+      0.032,
+      0.081
+    ],
+    "insulation_OD_mm_min_max": [
+      0.4,
+      0.8
+    ],
+    "fitted_non_pack_contacts": 12,
+    "fitted_non_pack_housings": {
+      "SHR-04V-S": 3,
+      "SHR-02V-S": 1
+    }
+  },
+  "purchase_for_USB_and_bridge": [
+    {
+      "color": "red",
+      "MPN": "10064-28-1-0500-004-1-TS",
+      "positions": [
+        "usb.1",
+        "power.1"
+      ],
+      "combined_free_length_mm": 541.14,
+      "suggested_purchase_length_m": 0.75
+    },
+    {
+      "color": "black",
+      "MPN": "10064-28-1-0500-001-1-TS",
+      "positions": [
+        "usb.4",
+        "power.2"
+      ],
+      "combined_free_length_mm": 554.134,
+      "suggested_purchase_length_m": 0.75
+    },
+    {
+      "color": "white",
+      "MPN": "10064-28-1-0500-002-1-TS",
+      "positions": [
+        "usb.2"
+      ],
+      "combined_free_length_mm": 285.189,
+      "suggested_purchase_length_m": 0.5
+    },
+    {
+      "color": "green",
+      "MPN": "10064-28-1-0500-007-1-TS",
+      "positions": [
+        "usb.3"
+      ],
+      "combined_free_length_mm": 285.189,
+      "suggested_purchase_length_m": 0.5
+    }
+  ],
+  "M05_charge_path": {
+    "four_lead_free_length_mm": 1095.2733241265369,
+    "max_wire_resistance_20C_ohm": 0.2617703244662423,
+    "positive_trace_resistance_20C_ohm": 0.13334509129840383,
+    "estimated_combined_60C_ohm": 0.4572275591228485,
+    "estimated_included_drop_at_500mA_V": 0.22861377956142426,
+    "estimated_current_at_4p75V_input_and_U5_DPM_max_mA": 262.4513715450786,
+    "excluded": [
+      "PCB ground return and via barrels",
+      "C5 traces",
+      "both fuses",
+      "mated contacts and crimp joints",
+      "external USB cable and source droop",
+      "U1 dedicated branch voltage drop and ground differential",
+      "wire captured inside the two connectors at each lead"
+    ]
+  }
+}

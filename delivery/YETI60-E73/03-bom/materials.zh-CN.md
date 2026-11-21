@@ -30,7 +30,7 @@
 | YETI60 E73 主板 | 1 块 | 板框包围尺寸 285.0×94.6 mm；JLC 普通四层 FR-4、标称 1.6 mm，只用普通通孔 | [当前可编辑 KiCad PCB](../01-pcb/source/EC60-nRF52840.kicad_pcb)、[迁移检查及放行条件](../06-validation/corner-review.zh-CN.md)；尚无本版投板包，不得使用旧 Gerber 替代 |
 | Unified Daughterboard C5 JSH 子板 | 自焊时 1 块；买成品时 0 块 | 18.0×16.5 mm；**四层板**、标称 1.6 mm、普通通孔；安装孔矩形 14×12.5 mm | [上游固定版本 KiCad PCB](https://github.com/Unified-Daughterboard/UDB-C-JSH/blob/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/UDB.kicad_pcb)、[下载固定版本 Gerber／钻孔包](https://raw.githubusercontent.com/Unified-Daughterboard/UDB-C-JSH/2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea/production/UDB-C-JSH_5.0_gerbers.zip)、[七只焊装散件](https://github.com/wZuck/YETI60/blob/master/hardware/bom/daughterboard.zh-CN.csv) |
 
-本版右下角主板尚无放行的制造包，不能使用旧主板压缩包替代。C5 使用独立且不变的四层文件，不能按双层板下单；已做好的 C5 不必重做。最终钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及线束固定件属于机械件，不是额外 PCB。自行回流焊时，主板现在需要 **F.Paste 与 B.Paste**（E73 在正面，其余散件在背面），C5 用 **F.Paste**，钢网和温度曲线须与实际物料匹配。
+用 [CORNER-07 Gerber 与钻孔审查包](../01-pcb/YETI60-E73-gerbers-REVIEW.zip)向工厂核对普通四层工艺。阻焊对位和钢网转移待首件确认。复用已经做好的 C5 JSH 子板。主板自行回流时，E73 用 **F.Paste**，其余实装元件用 **B.Paste**。J3 使用主板上的探针触点。不锈钢定位板、树脂壳体和理线件按机械件制作。 [制造参数](../01-pcb/ordering-and-printing.zh-CN.md)
 
 ### 电子总成、电池和连接线
 
@@ -39,8 +39,8 @@
 | 主板 PCB | 1 块 | 当前 YETI60 原生 PCB；普通四层 FR-4，目标 1.6 mm 标称厚度，保留 EC 电极／板框／安装中心；CAD 包络 1.6062 mm；待本版放行后再按匹配的制造文件下单 |
 | 主板焊装散件 | 75 件 | 下表列明全部位号、数值、封装及指定／候选型号；购买焊装主板时此行已包含 |
 | USB 子板 | 1 块焊装成品 | Unified Daughterboard C5 JSH，版本提交 `2b6c52a`；含 USB-C 母座、SH 板端座及其余元件，共 7 个实装元件；不选 S 版 |
-| USB 内部线束 | 1 条四芯 | AWG28 多股铜线，绝缘外径 ≤0.65 mm；两端共 2 个 SHR-04V-S 插壳和 8 个 SSH-003T-P0.2-H 端子；C5 到 J4 按 1→1 电源、2→2 D−、3→3 D+、4→4 地连接。新版本完整路径未验收，暂不按旧 150 mm 数值裁线 |
-| J5 到 J1 电源桥 | 1 条两芯 | AWG28、绝缘外径 ≤0.65 mm；SHR-02V-S 与 SHR-04V-S 各 1 个、SSH-003T-P0.2-H 共 4 个；J5.1→J1.1，J5.2→J1.4，J1.2／J1.3 留空；最终长度与理线待验收 |
+| USB 内部线束 | 1 条四芯 | AWG28 多股铜线，绝缘外径 ≤0.65 mm。共 2 个 SHR-04V-S 胶壳和 8 个 SSH-003T-P0.2-H 端子。C5 到 J4 的 1–4 脚逐针直连。 [M05 线材料号、用量及自由长度](../02-mechanical/service-case-m05/print-guide.zh-CN.md) |
+| J5 到 J1 电源桥 | 1 条两芯 | AWG28，绝缘外径 ≤0.65 mm。SHR-02V-S、SHR-04V-S 各 1 个，共 4 个 SSH-003T-P0.2-H。J5.1→J1.1，J5.2→J1.4，J1.2／J1.3 留空。 [M05 线长与理线](../02-mechanical/service-case-m05/print-guide.zh-CN.md) |
 | 电池总成 | 1 包 | 定制单电芯 YETI60-BAT-1600-1S，最低目标 1600 mAh，整个电池包不超过 85×43×4.8 mm，已包含保护板、温度传感器、包覆、焊片和增长空间；独立温度断充，实际充电窗口须在 15…43°C 内；供方须接受至少 500 mA 连续充电及 4.16–4.23 V 充电稳压范围 |
 | 电池引线及插头 | 1 套三线，含在电池总成中 | AWG28、外径不大于 0.65 mm；SHR-03V-S 插壳 1 个、SSH-003T-P0.2-H 端子 3 个；配合主板 SM03B-SRSS-TB，1.00 mm 间距；1 红色正极、2 黑色负极、3 黄色独立 10k NTC 温度线。温度保护和第三线 NTC 反馈须分开；尺寸和出线位置须供方签图 |
 | 外部 USB 数据线 | 1 条 | 主机端按电脑选择 USB-A／USB-C，键盘端 USB-C；必须支持 USB 数据，不能用仅充电线 |

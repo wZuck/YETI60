@@ -26,6 +26,23 @@ M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形
 
 九根导线均按 [M05 自由长度表](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/wire-lengths-m05.zh-CN.csv)制作。自由长度沿绝缘层测量，从一端胶壳出口量到另一端出口或保护包的应力释放面。裁线时按实际端子另计剥皮和压接的余量。试装使用 AWG28 多股铜线，成品绝缘外径最大 0.65 mm。
 
+### 线材和端子采购
+
+可按 **CnC Tech 10064-28-1-0500-0XX-1-TS** 采购短料。规格为 FEP 绝缘、镀锡铜 28 AWG、7 股每股 0.12 mm，按标称股径计算导体截面积约 0.0792 mm²，成品绝缘外径 **0.60 ±0.05 mm**，额定 30 V、105 °C。有库存时按图纸验证同规格即可使用。只标 UL10064 或 AWG28 的线材可能有不同的绝缘外径或股径。 [CnC Tech 规格和颜色表](https://www.cnctech.us/pdfs/10064-XX-1-0500-0XX-1-TS.pdf) · [CnC Tech 变更公告](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6791/Change%20Notice%20Hook-up-Wire%203-2025.pdf)
+
+| 颜色 | CnC Tech 料号 | 装机自由长度合计 | 含预留采购长度 |
+|---|---|---:|---:|
+| 红 | `10064-28-1-0500-004-1-TS` | 541.14 mm | 0.75 m |
+| 黑 | `10064-28-1-0500-001-1-TS` | 554.13 mm | 0.75 m |
+| 白，D− | `10064-28-1-0500-002-1-TS` | 285.19 mm | 0.50 m |
+| 绿，D+ | `10064-28-1-0500-007-1-TS` | 285.19 mm | 0.50 m |
+
+上表只计 USB 线束和主板电源桥。另备 **SHR-04V-S 胶壳 3 只、SHR-02V-S 胶壳 1 只、SSH-003T-P0.2-H 端子实装 12 只**。自行压接可买 20 只，留 8 只试压和备用。红、黑、黄电池引线、SHR-03V-S 和 3 只端子计入完整保护包。 [JST SH 尺寸和压接工具](https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf) · [保护包采购规格](../engineering/battery-pack-specification.zh-CN.md)
+
+裁线前先量到货绝缘外径。JST 端子适用 0.032–0.081 mm² 导体和 0.4–0.8 mm 绝缘外径，M05 自身上限为 0.65 mm。本候选线材的图纸尺寸符合两处限制。用 JST 端子对应工装或能核对该搭配的线束商，先试压到货样件。检查导体和绝缘两段压接，确认端子能在胶壳内卡牢。每端在试压件上量线芯端头到胶壳出口平面的距离。实际裁线长度等于表中自由长度加两端的这个预留量。 [绑定本版的线材计算](../../hardware/e73-hhkb-corner/audit/m05-wire-spec.json)
+
+白、绿两根按指定路线绞成一对。FEP 单线的规格没有给出绞成后的阻抗。作为 M05 数据对前，按 [USB 全速验收](../testing/e73-usb-signal.zh-CN.md)验证。
+
 ![M05 坐合状态的线束走向与绞线位置](../../hardware/e73-hhkb-corner/audit/m05-harness-plan.zh-CN.png)
 
 | 项目 | 材料与安装位置 |

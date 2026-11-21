@@ -26,6 +26,23 @@ Print one of each of the four shell parts at 100% in millimetres using tough eng
 
 Use the [M05 free lengths](harness/wire-lengths-m05.csv) for all nine conductors. These are lengths along the insulation, from housing exit to housing exit or to the pack strain-relief face. Add the termination and stripping allowances for the actual contacts when cutting the wire. The trial uses stranded AWG28 copper with a maximum finished insulation diameter of 0.65 mm.
 
+### Wire and contacts to buy
+
+The documented wire candidate is **CnC Tech 10064-28-1-0500-0XX-1-TS**, FEP-insulated tinned copper, 28 AWG, seven 0.12 mm strands, approximately 0.0792 mm² by nominal strand geometry, finished insulation OD **0.60 ±0.05 mm**, rated 30 V and 105 °C. Use the manufacturer drawing or verify equivalent wire from your stock. A listing marked only UL10064 or AWG28 can have a different insulation or strand diameter. [CnC Tech datasheet and colours](https://www.cnctech.us/pdfs/10064-XX-1-0500-0XX-1-TS.pdf) · [CnC Tech change notice](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6791/Change%20Notice%20Hook-up-Wire%203-2025.pdf)
+
+| Colour | CnC Tech part number | Combined free length installed | Purchase with allowance |
+|---|---|---:|---:|
+| Red | `10064-28-1-0500-004-1-TS` | 541.14 mm | 0.75 m |
+| Black | `10064-28-1-0500-001-1-TS` | 554.13 mm | 0.75 m |
+| White, D− | `10064-28-1-0500-002-1-TS` | 285.19 mm | 0.50 m |
+| Green, D+ | `10064-28-1-0500-007-1-TS` | 285.19 mm | 0.50 m |
+
+These quantities cover the USB cable and power bridge. Prepare **three SHR-04V-S housings, one SHR-02V-S housing and 12 SSH-003T-P0.2-H contacts**. For hand assembly, 20 contacts gives eight spares for setup and mistakes. The complete protected pack includes its own red, black and yellow leads, SHR-03V-S housing and three contacts. [JST SH tooling and dimensions](https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf) · [Pack procurement](../../03-bom/battery-requirements.md)
+
+Measure the received wire before cutting. JST's listed contact range is 0.032–0.081 mm² conductor area and 0.4–0.8 mm insulation OD. M05 sets its own 0.65 mm OD limit. The wire dimensions pass this paper screen. Confirm the actual crimp with a sample of each wire lot using the JST contact tooling or a harness shop that can qualify this combination. Inspect the conductor and insulation crimps, and check that each contact latches without side force. On a sample, measure from the cut conductor tip to the housing exit plane for each termination. The cut length equals the listed free length plus these two allowances. [Source-bound wire calculations](../../06-validation/m05-wire-spec.json)
+
+Twist the white and green wires together along the specified path. The FEP wire data does not give a finished-pair impedance. Use the [USB full-speed checks](../../06-validation/usb-signal.md) before accepting it as the M05 data pair.
+
 ![M05 installed cable paths and winding stations](../../06-validation/m05-harness-plan.png)
 
 | Set | Parts and placement |

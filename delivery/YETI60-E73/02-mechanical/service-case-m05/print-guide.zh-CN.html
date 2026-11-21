@@ -62,6 +62,47 @@
 <p>使用韧性工程 SLA 树脂，按毫米、100% 比例打印四件外壳零件，每种各一件。每件从 STEP 和 STL 中选一个文件，两种格式使用同一壳体坐标。树脂完全后固化后复查承压面、脚垫槽和盲孔。避免在这些面上留打印支撑。</p>
 <h2 id="制作-m05-配套线束">制作 M05 配套线束</h2>
 <p>九根导线均按 <a href="harness/wire-lengths-m05.zh-CN.csv">M05 自由长度表</a>制作。自由长度沿绝缘层测量，从一端胶壳出口量到另一端出口或保护包的应力释放面。裁线时按实际端子另计剥皮和压接的余量。试装使用 AWG28 多股铜线，成品绝缘外径最大 0.65 mm。</p>
+<h3 id="线材和端子采购">线材和端子采购</h3>
+<p>可按 <strong>CnC Tech 10064-28-1-0500-0XX-1-TS</strong> 采购短料。规格为 FEP 绝缘、镀锡铜 28 AWG、7 股每股 0.12 mm，按标称股径计算导体截面积约 0.0792 mm²，成品绝缘外径 <strong>0.60 ±0.05 mm</strong>，额定 30 V、105 °C。有库存时按图纸验证同规格即可使用。只标 UL10064 或 AWG28 的线材可能有不同的绝缘外径或股径。 <a href="https://www.cnctech.us/pdfs/10064-XX-1-0500-0XX-1-TS.pdf">CnC Tech 规格和颜色表</a> · <a href="https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6791/Change%20Notice%20Hook-up-Wire%203-2025.pdf">CnC Tech 变更公告</a></p>
+<table>
+<thead>
+<tr>
+<th>颜色</th>
+<th>CnC Tech 料号</th>
+<th style="text-align:right">装机自由长度合计</th>
+<th style="text-align:right">含预留采购长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>红</td>
+<td><code>10064-28-1-0500-004-1-TS</code></td>
+<td style="text-align:right">541.14 mm</td>
+<td style="text-align:right">0.75 m</td>
+</tr>
+<tr>
+<td>黑</td>
+<td><code>10064-28-1-0500-001-1-TS</code></td>
+<td style="text-align:right">554.13 mm</td>
+<td style="text-align:right">0.75 m</td>
+</tr>
+<tr>
+<td>白，D−</td>
+<td><code>10064-28-1-0500-002-1-TS</code></td>
+<td style="text-align:right">285.19 mm</td>
+<td style="text-align:right">0.50 m</td>
+</tr>
+<tr>
+<td>绿，D+</td>
+<td><code>10064-28-1-0500-007-1-TS</code></td>
+<td style="text-align:right">285.19 mm</td>
+<td style="text-align:right">0.50 m</td>
+</tr>
+</tbody>
+</table>
+<p>上表只计 USB 线束和主板电源桥。另备 <strong>SHR-04V-S 胶壳 3 只、SHR-02V-S 胶壳 1 只、SSH-003T-P0.2-H 端子实装 12 只</strong>。自行压接可买 20 只，留 8 只试压和备用。红、黑、黄电池引线、SHR-03V-S 和 3 只端子计入完整保护包。 <a href="https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf">JST SH 尺寸和压接工具</a> · <a href="../../03-bom/battery-requirements.zh-CN.html">保护包采购规格</a></p>
+<p>裁线前先量到货绝缘外径。JST 端子适用 0.032–0.081 mm² 导体和 0.4–0.8 mm 绝缘外径，M05 自身上限为 0.65 mm。本候选线材的图纸尺寸符合两处限制。用 JST 端子对应工装或能核对该搭配的线束商，先试压到货样件。检查导体和绝缘两段压接，确认端子能在胶壳内卡牢。每端在试压件上量线芯端头到胶壳出口平面的距离。实际裁线长度等于表中自由长度加两端的这个预留量。 <a href="../../06-validation/m05-wire-spec.json">绑定本版的线材计算</a></p>
+<p>白、绿两根按指定路线绞成一对。FEP 单线的规格没有给出绞成后的阻抗。作为 M05 数据对前，按 <a href="../../06-validation/usb-signal.zh-CN.html">USB 全速验收</a>验证。</p>
 <p><img src="../../06-validation/m05-harness-plan.zh-CN.png" alt="M05 坐合状态的线束走向与绞线位置" /></p>
 <table>
 <thead>

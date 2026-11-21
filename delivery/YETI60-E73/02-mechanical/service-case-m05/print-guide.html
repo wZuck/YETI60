@@ -62,6 +62,47 @@
 <p>Print one of each of the four shell parts at 100% in millimetres using tough engineering SLA resin. Choose either STEP or STL for each part. Both formats use the same case coordinates. Inspect the seating faces, foot recess and blind bores after the resin is fully post-cured. Keep supports off those faces.</p>
 <h2 id="build-the-matched-m05-harness">Build the matched M05 harness</h2>
 <p>Use the <a href="harness/wire-lengths-m05.csv">M05 free lengths</a> for all nine conductors. These are lengths along the insulation, from housing exit to housing exit or to the pack strain-relief face. Add the termination and stripping allowances for the actual contacts when cutting the wire. The trial uses stranded AWG28 copper with a maximum finished insulation diameter of 0.65 mm.</p>
+<h3 id="wire-and-contacts-to-buy">Wire and contacts to buy</h3>
+<p>The documented wire candidate is <strong>CnC Tech 10064-28-1-0500-0XX-1-TS</strong>, FEP-insulated tinned copper, 28 AWG, seven 0.12 mm strands, approximately 0.0792 mm² by nominal strand geometry, finished insulation OD <strong>0.60 ±0.05 mm</strong>, rated 30 V and 105 °C. Use the manufacturer drawing or verify equivalent wire from your stock. A listing marked only UL10064 or AWG28 can have a different insulation or strand diameter. <a href="https://www.cnctech.us/pdfs/10064-XX-1-0500-0XX-1-TS.pdf">CnC Tech datasheet and colours</a> · <a href="https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6791/Change%20Notice%20Hook-up-Wire%203-2025.pdf">CnC Tech change notice</a></p>
+<table>
+<thead>
+<tr>
+<th>Colour</th>
+<th>CnC Tech part number</th>
+<th style="text-align:right">Combined free length installed</th>
+<th style="text-align:right">Purchase with allowance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td><code>10064-28-1-0500-004-1-TS</code></td>
+<td style="text-align:right">541.14 mm</td>
+<td style="text-align:right">0.75 m</td>
+</tr>
+<tr>
+<td>Black</td>
+<td><code>10064-28-1-0500-001-1-TS</code></td>
+<td style="text-align:right">554.13 mm</td>
+<td style="text-align:right">0.75 m</td>
+</tr>
+<tr>
+<td>White, D−</td>
+<td><code>10064-28-1-0500-002-1-TS</code></td>
+<td style="text-align:right">285.19 mm</td>
+<td style="text-align:right">0.50 m</td>
+</tr>
+<tr>
+<td>Green, D+</td>
+<td><code>10064-28-1-0500-007-1-TS</code></td>
+<td style="text-align:right">285.19 mm</td>
+<td style="text-align:right">0.50 m</td>
+</tr>
+</tbody>
+</table>
+<p>These quantities cover the USB cable and power bridge. Prepare <strong>three SHR-04V-S housings, one SHR-02V-S housing and 12 SSH-003T-P0.2-H contacts</strong>. For hand assembly, 20 contacts gives eight spares for setup and mistakes. The complete protected pack includes its own red, black and yellow leads, SHR-03V-S housing and three contacts. <a href="https://www.jst.com/wp-content/uploads/2025/06/eSH.pdf">JST SH tooling and dimensions</a> · <a href="../../03-bom/battery-requirements.html">Pack procurement</a></p>
+<p>Measure the received wire before cutting. JST's listed contact range is 0.032–0.081 mm² conductor area and 0.4–0.8 mm insulation OD. M05 sets its own 0.65 mm OD limit. The wire dimensions pass this paper screen. Confirm the actual crimp with a sample of each wire lot using the JST contact tooling or a harness shop that can qualify this combination. Inspect the conductor and insulation crimps, and check that each contact latches without side force. On a sample, measure from the cut conductor tip to the housing exit plane for each termination. The cut length equals the listed free length plus these two allowances. <a href="../../06-validation/m05-wire-spec.json">Source-bound wire calculations</a></p>
+<p>Twist the white and green wires together along the specified path. The FEP wire data does not give a finished-pair impedance. Use the <a href="../../06-validation/usb-signal.html">USB full-speed checks</a> before accepting it as the M05 data pair.</p>
 <p><img src="../../06-validation/m05-harness-plan.png" alt="M05 installed cable paths and winding stations" /></p>
 <table>
 <thead>

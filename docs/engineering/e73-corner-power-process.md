@@ -26,6 +26,8 @@ The BQ24074 can reduce current at its 4.35–4.63 V input threshold. At a weak s
 
 At a 4.75 V loaded jack and the 4.63 V threshold corner, the included path reaches the threshold at about `(4.75 − 4.63) / 0.42608 = 0.282 A` of total input current. This estimate excludes the other losses. Measure charging current and U1 VBUS under load.
 
+For the CnC Tech FEP wire listed in the M05 buying guide, replace the ideal conductor result with the specified maximum `239 Ω/km × 0.00109527 km = 0.26177 Ω` at 20 °C. Including the PCB positive traces and the same copper temperature factor gives **0.45723 Ω** at 60 °C, or **0.229 V** of included drop at 500 mA. At 4.75 V and the 4.63 V input threshold, the corresponding estimate is **262 mA** before connector, fuse, and other omitted losses. Prepare to measure U5 IN and U1 VBUS separately with the installed cable. [Manufacturer resistance limit](https://www.cnctech.us/pdfs/10064-XX-1-0500-0XX-1-TS.pdf) · [Wire procurement and loop calculation](../../hardware/e73-hhkb-corner/audit/m05-wire-spec.json)
+
 The ten local power paths meet their project width and length limits. The programmed charge current remains 357.06 / 402.71 / 445.63 mA min / typ / max with R40 at 2.21 kΩ. The approved supply range of the complete pack must cover 4.16–4.23 V. At an assumed U5 IN of 5.25 V, BAT of 3.10 V and OUT of 4.50 V with a 40 mA load, `P = (VIN−VBAT)×IBAT + (VIN−VOUT)×IOUT` gives about **0.99 W** at 445.63 mA. The standardized thermal resistance cannot predict temperature inside this case. [TI BQ24074 charge and thermal data](https://www.ti.com/lit/ds/symlink/bq24074.pdf)
 
 ## Current drawn from the USB host

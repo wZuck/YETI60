@@ -63,7 +63,7 @@
 </tr>
 </tbody>
 </table>
-<p>本版右下角主板尚无放行的制造包，不能使用旧主板压缩包替代。C5 使用独立且不变的四层文件，不能按双层板下单；已做好的 C5 不必重做。最终钢网及供应商验收仍待完成。J3 已在主板上，只需配探针治具，本设计无须再制作刷写小板。不锈钢定位板、树脂上下壳及线束固定件属于机械件，不是额外 PCB。自行回流焊时，主板现在需要 <strong>F.Paste 与 B.Paste</strong>（E73 在正面，其余散件在背面），C5 用 <strong>F.Paste</strong>，钢网和温度曲线须与实际物料匹配。</p>
+<p>用 <a href="../01-pcb/YETI60-E73-gerbers-REVIEW.zip">CORNER-07 Gerber 与钻孔审查包</a>向工厂核对普通四层工艺。阻焊对位和钢网转移待首件确认。复用已经做好的 C5 JSH 子板。主板自行回流时，E73 用 <strong>F.Paste</strong>，其余实装元件用 <strong>B.Paste</strong>。J3 使用主板上的探针触点。不锈钢定位板、树脂壳体和理线件按机械件制作。 <a href="../01-pcb/ordering-and-printing.zh-CN.html">制造参数</a></p>
 <h3 id="电子总成电池和连接线">电子总成、电池和连接线</h3>
 <table>
 <thead>
@@ -92,12 +92,12 @@
 <tr>
 <td>USB 内部线束</td>
 <td style="text-align:right">1 条四芯</td>
-<td>AWG28 多股铜线，绝缘外径 ≤0.65 mm；两端共 2 个 SHR-04V-S 插壳和 8 个 SSH-003T-P0.2-H 端子；C5 到 J4 按 1→1 电源、2→2 D−、3→3 D+、4→4 地连接。新版本完整路径未验收，暂不按旧 150 mm 数值裁线</td>
+<td>AWG28 多股铜线，绝缘外径 ≤0.65 mm。共 2 个 SHR-04V-S 胶壳和 8 个 SSH-003T-P0.2-H 端子。C5 到 J4 的 1–4 脚逐针直连。 <a href="../02-mechanical/service-case-m05/print-guide.zh-CN.html">M05 线材料号、用量及自由长度</a></td>
 </tr>
 <tr>
 <td>J5 到 J1 电源桥</td>
 <td style="text-align:right">1 条两芯</td>
-<td>AWG28、绝缘外径 ≤0.65 mm；SHR-02V-S 与 SHR-04V-S 各 1 个、SSH-003T-P0.2-H 共 4 个；J5.1→J1.1，J5.2→J1.4，J1.2／J1.3 留空；最终长度与理线待验收</td>
+<td>AWG28，绝缘外径 ≤0.65 mm。SHR-02V-S、SHR-04V-S 各 1 个，共 4 个 SSH-003T-P0.2-H。J5.1→J1.1，J5.2→J1.4，J1.2／J1.3 留空。 <a href="../02-mechanical/service-case-m05/print-guide.zh-CN.html">M05 线长与理线</a></td>
 </tr>
 <tr>
 <td>电池总成</td>
