@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Measure via-drill clearance to the actual Gerber mask and paste artwork."""
+"""Measure drill clearance and stencil aperture geometry in the fabrication ZIP."""
 import argparse
 from collections import Counter
 import hashlib
@@ -21,6 +21,9 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "hardware/e73-hhkb-corner"
 BOARD = BASE / "EC60-nRF52840.kicad_pcb"
 LIMITS_URL = "https://jlcpcb.com/capabilities/Capabilities"
+STENCIL_URL = "https://jlcpcb.com/capabilities/pcb-stencil-manufacturing"
+STENCIL_THICKNESSES_MM = (0.10, 0.12, 0.15, 0.18, 0.20)
+STENCIL_AREA_RATIO_SCREEN = 0.66
 LAYER_SUFFIXES = {
     "F.Mask": ("F_Mask.gts", "Soldermask,Top", "Negative"),
     "B.Mask": ("B_Mask.gbs", "Soldermask,Bot", "Negative"),
@@ -143,6 +146,33 @@ def thermal_coverage(native, artwork):
     return result
 
 
+def stencil_openings(polygons, references):
+    # Gerber macros can draw a single opening with several touching primitives.
+    # Measure the boundary of the cut opening after joining those primitives.
+    union = union_all(polygons)
+    windows = list(union.geoms) if union.geom_type == "MultiPolygon" else [union]
+    assert all(window.geom_type == "Polygon" and not window.interiors for window in windows)
+    limiting = min(windows, key=lambda window: (window.area / window.length, window.bounds))
+    x1, y1, x2, y2 = limiting.bounds
+    tree = STRtree(polygons)
+    limiting_references = {references[index] for index in tree.query(limiting, predicate="intersects")}
+    assert len(limiting_references) == 1 and None not in limiting_references
+    return dict(
+        cuts=len(windows),
+        component_references=sorted(set(references)),
+        limiting_reference=limiting_references.pop(),
+        limiting_bounds_pcb_mm=[round(value, 6) for value in (x1, -y2, x2, -y1)],
+        limiting_area_mm2=round(limiting.area, 6),
+        limiting_perimeter_mm=round(limiting.length, 6),
+        standard_thicknesses={
+            f"{thickness:.2f}": dict(
+                minimum_area_ratio=round(limiting.area / (limiting.length * thickness), 6),
+                cuts_below_screen=sum(
+                    window.area / (window.length * thickness) < STENCIL_AREA_RATIO_SCREEN
+                    for window in windows))
+            for thickness in STENCIL_THICKNESSES_MM})
+
+
 def run(archive, board=BOARD):
     native = loads(board.read_text())
     with ZipFile(archive) as bundle:
@@ -160,7 +190,12 @@ def run(archive, board=BOARD):
                 hole_pos_per_axis_mm_assumed=HOLE_POS_PER_AXIS_MM,
                 maximum_positive_diameter_tolerance_mm_used=HOLE_DIAMETER_GROWTH_MM,
                 mask_and_stencil_registration_included=False,
-                drilling_reference=LIMITS_URL, layers=layers, thermal_lands=thermal_coverage(native, artwork))
+                drilling_reference=LIMITS_URL, layers=layers,
+                thermal_lands=thermal_coverage(native, artwork),
+                stencil=dict(area_ratio_screen=STENCIL_AREA_RATIO_SCREEN,
+                             standard_thickness_reference=STENCIL_URL,
+                             sides={side: stencil_openings(*artwork[side])
+                                    for side in ("F.Paste", "B.Paste")}))
 
 
 def main():

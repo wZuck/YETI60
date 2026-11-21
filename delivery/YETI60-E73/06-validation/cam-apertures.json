@@ -5,7 +5,7 @@
   "source_PCB_sha256": "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e",
   "source_sha256": {
     "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e",
-    "scripts/check_e73_apertures.py": "725187f9a9cf0590f04f4a72ad463e0c6ab25d7394020ebf7507f3763c271d51",
+    "scripts/check_e73_apertures.py": "c990a8793c28c10846c5122cae5021635fa15878d9a35695fe254615fb6804cc",
     "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a"
   },
   "vias": 852,
@@ -119,6 +119,160 @@
       "paste_on_open_mask_fraction": 0.539682,
       "minimum_stencil_web_mm": 0.78,
       "minimum_area_ratio_at_0p125mm": 1.564661
+    }
+  },
+  "stencil": {
+    "area_ratio_screen": 0.66,
+    "standard_thickness_reference": "https://jlcpcb.com/capabilities/pcb-stencil-manufacturing",
+    "sides": {
+      "F.Paste": {
+        "cuts": 43,
+        "component_references": [
+          "U1"
+        ],
+        "limiting_reference": "U1",
+        "limiting_bounds_pcb_mm": [
+          336.105,
+          192.1,
+          336.905,
+          193.3
+        ],
+        "limiting_area_mm2": 0.96,
+        "limiting_perimeter_mm": 4.0,
+        "standard_thicknesses": {
+          "0.10": {
+            "minimum_area_ratio": 2.4,
+            "cuts_below_screen": 0
+          },
+          "0.12": {
+            "minimum_area_ratio": 2.0,
+            "cuts_below_screen": 0
+          },
+          "0.15": {
+            "minimum_area_ratio": 1.6,
+            "cuts_below_screen": 0
+          },
+          "0.18": {
+            "minimum_area_ratio": 1.333333,
+            "cuts_below_screen": 0
+          },
+          "0.20": {
+            "minimum_area_ratio": 1.2,
+            "cuts_below_screen": 0
+          }
+        }
+      },
+      "B.Paste": {
+        "cuts": 236,
+        "component_references": [
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C30",
+          "C31",
+          "C32",
+          "C40",
+          "C41",
+          "C42",
+          "C43",
+          "C44",
+          "C45",
+          "C46",
+          "C47",
+          "C48",
+          "C9",
+          "D2",
+          "F1",
+          "J1",
+          "J2",
+          "J4",
+          "J5",
+          "JP1",
+          "L1",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R18",
+          "R19",
+          "R20",
+          "R21",
+          "R23",
+          "R24",
+          "R25",
+          "R26",
+          "R3",
+          "R32",
+          "R4",
+          "R40",
+          "R41",
+          "R42",
+          "R43",
+          "R44",
+          "R45",
+          "R46",
+          "R47",
+          "R48",
+          "R49",
+          "R5",
+          "R50",
+          "R51",
+          "R52",
+          "R53",
+          "R54",
+          "R55",
+          "R56",
+          "R6",
+          "R7",
+          "R8",
+          "R9",
+          "SW1",
+          "SW100",
+          "U2",
+          "U3",
+          "U4",
+          "U5",
+          "U6",
+          "U7",
+          "U8"
+        ],
+        "limiting_reference": "U5",
+        "limiting_bounds_pcb_mm": [
+          118.13,
+          146.1,
+          118.37,
+          146.7
+        ],
+        "limiting_area_mm2": 0.141844,
+        "limiting_perimeter_mm": 1.59406,
+        "standard_thicknesses": {
+          "0.10": {
+            "minimum_area_ratio": 0.889829,
+            "cuts_below_screen": 0
+          },
+          "0.12": {
+            "minimum_area_ratio": 0.741524,
+            "cuts_below_screen": 0
+          },
+          "0.15": {
+            "minimum_area_ratio": 0.593219,
+            "cuts_below_screen": 16
+          },
+          "0.18": {
+            "minimum_area_ratio": 0.494349,
+            "cuts_below_screen": 26
+          },
+          "0.20": {
+            "minimum_area_ratio": 0.444914,
+            "cuts_below_screen": 26
+          }
+        }
+      }
     }
   }
 }

@@ -176,7 +176,8 @@ def main():
  inputs['scripts/check_e73_cam.py']=sha(ROOT/'scripts/check_e73_cam.py')
  inputs['scripts/check_e73_apertures.py']=sha(ROOT/'scripts/check_e73_apertures.py')
  for generated in ['01-pcb/YETI60-E73-gerbers-REVIEW.zip','02-mechanical/top.stl','06-validation/cam-ordinary.json',
-                   '06-validation/cam-apertures.json']:
+                   '06-validation/cam-apertures.json','01-pcb/gerbers/EC60-nRF52840-F_Paste.gtp',
+                   '01-pcb/gerbers/EC60-nRF52840-B_Paste.gbp']:
   mapping['delivery/YETI60-E73/'+generated]=generated
  # Resolve both Markdown and HTML assets into the offline bundle.
  for rel,target in list(mapping.items()):
@@ -228,6 +229,13 @@ def main():
  for pad in apertures['thermal_lands'].values():
   assert .50<=pad['paste_fraction']<=.70 and pad['paste_fraction']==pad['paste_on_open_mask_fraction'], pad
   assert pad['minimum_stencil_web_mm']>=.15 and pad['minimum_area_ratio_at_0p125mm']>.66, pad
+ for layer,side,documented_cuts in [('F.Paste','top',43),('B.Paste','bottom',236)]:
+  stencil=apertures['stencil']['sides'][layer]
+  expected={row['Ref'] for row in rows if row['Side']==side}
+  if side=='bottom':expected.add('JP1')  # Two distinct lands; keep the jumper open.
+  assert set(stencil['component_references'])==expected, (layer,stencil)
+  assert stencil['cuts']==documented_cuts, (layer,stencil)
+  assert not stencil['standard_thicknesses']['0.12']['cuts_below_screen'], (layer,stencil)
  sources={'capabilities':'https://jlcpcb.com/capabilities/Capabilities','stackup':'https://jlcpcb.com/impedance'}
  for zh in [False,True]:
   suffix='.zh-CN'if zh else '';lang='zh-CN'if zh else 'en'
@@ -239,6 +247,7 @@ def main():
   if zh:sections=[(a,b,c,d)for (a,b,c,_),d in zip(sections,['制作顺序','Gerber 压缩包','打印与布线','完整材料表','焊接／台架教程','整机及爆炸图','SWD／校准教程','当前审查'])]
   quick_links=[
    ('KiCad 工程' if zh else 'KiCad project','01-pcb/project-files'+suffix+'.md'),
+   ('PCB 与钢网下单参数' if zh else 'PCB and stencil order settings','01-pcb/ordering-and-printing'+suffix+'.md'),
    ('上壳 STL' if zh else 'Top STL','02-mechanical/top.stl'),
    ('上壳 STEP' if zh else 'Top STEP','02-mechanical/top.step'),
    ('M05 底壳 STEP' if zh else 'M05 bottom STEP',m05_dir+'bottom-m05-REVIEW.step'),

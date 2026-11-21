@@ -76,7 +76,7 @@
 </tr>
 <tr>
 <td>钢网</td>
-<td>需要正反两面焊膏层：E73 在正面，其余实装元件在背面。模块含底部焊盘，需要可检查的钢网／回流工艺</td>
+<td>正反各 1 张，均用 <strong>0.12 mm</strong> 普通激光切割不锈钢钢网，选项见下节</td>
 </tr>
 </tbody>
 </table>
@@ -84,6 +84,68 @@
 <p><a href="../06-validation/cam-ordinary.json">制板压缩包核对报告</a>确认 285.0 × 94.6 mm 的闭合板框与源文件中的 40 段直线和圆弧一致。报告逐孔核对了 852 个贯通过孔的钻孔及四层铜环、1 个金属化圆安装孔、2 个 2.20 × 5.00 mm 金属化槽和 30 个非金属化孔。最小过孔钻径为 0.30 mm，过孔孔边最小标称间距为 0.358 mm。</p>
 <p>JLC 普通工艺参考：<a href="https://jlcpcb.com/capabilities/pcb-capabilities/">制造能力</a>、<a href="https://jlcpcb.com/impedance">叠层</a>。选项以实际报价核对。本说明和无错误 DRC 均不能替代工厂可制造性审核。</p>
 <p>CORNER-07 调整 U5、U6、C42、SW1 的开窗，并移动 D2 接地过孔。完整制板 ZIP 内钻孔至开窗的最小标称间距为 0.230 mm。按保守的孔位和成品孔径公差扣减后，其他相对偏移可用余量至少为 0.059 mm。请工厂确认普通工艺的阻焊对位及 U5、U6 阻焊岛。 <a href="../06-validation/aperture-review.zh-CN.html">制造图层量测</a> · <a href="https://jlcpcb.com/capabilities/Capabilities">嘉立创钻孔公差</a></p>
+<h2 id="钢网下单">钢网下单</h2>
+<p>使用<a href="YETI60-E73-gerbers-REVIEW.zip">同一份 CORNER-07 Gerber 压缩包</a>。包内<a href="gerbers/EC60-nRF52840-F_Paste.gtp">正面焊膏层</a>用于 U1，<a href="gerbers/EC60-nRF52840-B_Paste.gbp">背面焊膏层</a>用于背面元件。随 PCB 下单时选单板。单独下单时，在钢网入口上传同一个压缩包。<a href="https://www.jlc.com/portal/server_guide_35103.html">嘉立创钢网下单流程</a></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>填写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型及数量</td>
+<td>普通 304 不锈钢焊膏钢网，无框。正反面分开，正面和背面各 1 张。如果表单需要分两条订单，分别选择仅正面和仅背面</td>
+</tr>
+<tr>
+<td>网片规格</td>
+<td>标准 380 × 280 mm，关闭自定义尺寸。确认每张有效开孔区域至少 285.0 × 94.6 mm。嘉立创列出的该规格有效区为 290 × 190 mm</td>
+</tr>
+<tr>
+<td>厚度</td>
+<td>客户指定，两张都选 <strong>0.12 mm</strong></td>
+</tr>
+<tr>
+<td>定位点及表面</td>
+<td>无定位点，普通表面处理，无纳米涂层</td>
+</tr>
+<tr>
+<td>方向</td>
+<td>单板，PCB 长边平行于网片长边。确认切割预览中的面别与方向</td>
+</tr>
+</tbody>
+</table>
+<p>下单备注可以直接复制。</p>
+<blockquote>
+<p>YETI60 E73 CORNER-07。请按对应面的原始焊膏层制作，保持各开口的形状及分窗。切割数据只使用焊膏层。请在切割前提供标明正反面的预览供核对。</p>
+</blockquote>
+<p>面积比为开口面积 ÷（开口周长 × 钢网厚度）。表格先合并 Gerber 图元，每个实际切口只记一次。0.66 为参考 TI QFN／SON 指南采用的工程筛选线。<a href="../06-validation/cam-apertures.json">Gerber 量测报告</a> · <a href="https://www.ti.com/lit/an/slua271c/slua271c.pdf">TI 装联指南第 4.3 节</a> · <a href="https://jlcpcb.com/help/article/how-to-order-a-stencil">嘉立创钢网规格与有效区</a> · <a href="https://www.jlc.com/portal/server_guide_23975.html">嘉立创常规钢网厚度</a></p>
+<table>
+<thead>
+<tr>
+<th>面别</th>
+<th style="text-align:right">切口数</th>
+<th style="text-align:right">0.12 mm 的最小面积比</th>
+<th style="text-align:right">0.12／0.15 mm 低于 0.66 的切口数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正面，仅 U1</td>
+<td style="text-align:right">43</td>
+<td style="text-align:right">2.000</td>
+<td style="text-align:right">0／0</td>
+</tr>
+<tr>
+<td>背面，最小值出现在 U5</td>
+<td style="text-align:right">236</td>
+<td style="text-align:right">0.742</td>
+<td style="text-align:right">0／16</td>
+</tr>
+</tbody>
+</table>
+<p>上膏前先干对位。正面以键帽侧视角右下角的 U1 对位，背面把实物翻过来，以相互分开的 J4、U5、SW1 三处核对。上传时保留两层原始坐标。JP1 保持断开，回流前清掉它两块焊盘上的锡膏。J3 弹簧针触点没有钢网开口。按电源阶段先印背面，之后刷正面 U1 时给已经焊好的背面元件留出支撑净空。首件检查锡膏转移和隐藏焊点。<a href="../04-assembly/soldering.zh-CN.html">分步焊接指南</a></p>
 <h2 id="机械文件发哪些">机械文件发哪些</h2>
 <table>
 <thead>

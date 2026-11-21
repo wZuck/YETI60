@@ -24,7 +24,7 @@ English | [Chinese](ordering-and-printing.zh-CN.md)
 | Drill files | Include separate plated and non-plated drills, plus the supplied board outline/slots |
 | Impedance | Preserve geometry and selected stack; USB signal integrity is not qualified by choosing an impedance option alone |
 | Assembly service | This guide assumes self-soldering; placement CSV is a reference, not an approved turnkey JLC assembly order |
-| Stencil | Front **and** back paste layers: E73 is on front; the other fitted components are on back. Hidden module lands require an inspected reflow/stencil process |
+| Stencil | One front and one back stencil, both **0.12 mm** standard laser-cut stainless steel. See the selections below |
 
 Use the [matching Gerber and drill ZIP](YETI60-E73-gerbers-REVIEW.zip) for the factory preview. Verify the outline, four copper layers, slots, non-plated holes, sensing geometry and mask openings before accepting the quotation. Stop if it imports as two layers or the factory proposes changing the specified geometry/process. The exported position file contains 75 fitted parts; sensing electrodes, mounting holes and pogo pads are not purchased components.
 
@@ -33,6 +33,31 @@ The [fabrication ZIP audit](../06-validation/cam-ordinary.json) matches the 285.
 JLC ordinary-process references: [capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/) and [stack-ups](https://jlcpcb.com/impedance). Availability/options must be checked against the actual quotation. Neither this document nor a clean DRC is a factory DFM approval.
 
 CORNER-07 changes the U5, U6, C42 and SW1 apertures and relocates the D2 ground via. The complete ZIP has a 0.230 mm minimum nominal drill-to-opening gap. A conservative drill-position and finished-hole-size screen leaves at least 0.059 mm for other relative shifts. Ask the factory to confirm mask registration and the U5 and U6 mask islands for its ordinary process. [Artwork measurements](../06-validation/aperture-review.md) · [JLCPCB drill tolerances](https://jlcpcb.com/capabilities/Capabilities)
+
+## Stencil order
+
+Use the [same CORNER-07 Gerber ZIP](YETI60-E73-gerbers-REVIEW.zip). It contains the [front paste layer](gerbers/EC60-nRF52840-F_Paste.gtp) for U1 and the [back paste layer](gerbers/EC60-nRF52840-B_Paste.gbp) for the back-side components. Order with the PCB and select a single PCB. For a separate stencil order, upload the same ZIP under SMT Stencil. [JLCPCB stencil ordering](https://jlcpcb.com/help/article/how-to-order-a-stencil)
+
+| Setting | Selection |
+|---|---|
+| Type and quantity | 304 stainless paste stencil, frameless. Select Top + Bottom on Separate Stencils, one sheet per side. If the form has separate items, select Top Only and Bottom Only once each |
+| Sheet size | Standard 380 × 280 mm, custom size off. Verify at least 285.0 × 94.6 mm usable area on each sheet. JLCPCB lists 290 × 190 mm for this model |
+| Thickness | Select by customer, **0.12 mm** on each sheet |
+| Fiducials and finish | No fiducials, standard finish and no nano-coating |
+| Orientation | One board per sheet, long edge parallel to the sheet's long edge. Review side and orientation in the cutting preview |
+
+Copy into the stencil remarks.
+
+> YETI60 E73 CORNER-07. Use the supplied paste layer for each side. Preserve all aperture shapes and split windows. Keep mask openings out of the cutting data. Please send the cutting preview with both sides identified for review before cutting.
+
+The area ratio is opening area ÷ (opening perimeter × foil thickness). The table uses the union of the actual Gerber shapes, so each physical cut is counted once. TI's QFN/SON guidance provides the 0.66 engineering screen. [Gerber geometry report](../06-validation/cam-apertures.json) · [TI assembly note, §4.3](https://www.ti.com/lit/an/slua271c/slua271c.pdf) · [JLCPCB stencil capabilities](https://jlcpcb.com/capabilities/pcb-stencil-manufacturing)
+
+| Side | Cuts | Min. ratio at 0.12 mm | Cuts below 0.66 at 0.12 / 0.15 mm |
+|---|---:|---:|---:|
+| Front, U1 only | 43 | 2.000 | 0 / 0 |
+| Back, limiting opening at U5 | 236 | 0.742 | 0 / 16 |
+
+Dry-align before printing. Match the front openings to U1 at the right-hand corner as viewed from the key side. For the back, turn the real PCB over and match J4, U5 and SW1 at three separated locations. Upload both paste layers in their original coordinates. Keep JP1 open by clearing paste from its two pads before reflow. J3's pogo pads have no stencil openings. Print the back for the first power stage. When printing U1 later, support the board so the populated back stays clear of the fixture. Check stencil transfer and hidden joints on the first article. [Staged soldering guide](../04-assembly/soldering.md)
 
 ## Which mechanical files to send
 
