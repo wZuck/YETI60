@@ -47,6 +47,20 @@
 
 模拟器用于验证充电控制及故障切换。只固定在 3.7 V 无法验收恒压收尾、终止或充满时间。实物电池应先取得签字确认的电气与温度限值并核实独立保护，然后按[电池包规格](../03-bom/battery-requirements.zh-CN.md)记录两种充电模式的恒流、恒压、终止和温升。TI 的恒压调节范围为 4.16–4.23 V，终止取决于测试条件。保持安全定时器启用。[TI 充电周期及温度监测，第 9.3.5–9.3.6 节](https://www.ti.com/lit/ds/symlink/bq24074.pdf)
 
+### 插入浪涌和挂起电流
+
+做 USB 2.0 插入预检时，使用计划配套的线材和 USB 测试夹具，从 C5 上游测量整机电流。采集期间保持链路未配置，避开已配置充电阶段。使用电池模拟器和正常 NTC 设置，分别测 SW100 开和关。以 VBUS／地触点接合为时间零点，保留触发前采样。从接合到首个浪涌脉冲后至少 **100 ms**，采样率至少 **1 MS/s**。如果没有浪涌脉冲，从接合起至少采集 100 ms。保留所有脉冲及其回落段，避免过载削顶或抽取采样。[USB-IF 浪涌分析规则](https://compliance.usb.org/index.asp?Format=Standard&UpdateFile=Electrical)
+
+导出时间为秒、电流为安培的 CSV，列名为 `time_s,current_a`。运行[离线浪涌检查工具](check-usb-inrush.py)，同时填入电流探头的绝对误差，单位为 mA。以下命令在交付目录内运行。
+
+```sh
+python3 06-validation/check-usb-inrush.py attach.csv --current-uncertainty-ma 2
+```
+
+示例使用 2 mA 余量，实际按探头规格填写。程序对高于 **100 mA** 的部分线性插值并积分。电流连续低于该值 **100 µs** 后，才切分下一个脉冲区间。以电荷最大的区间与 **50.0 µC** 初筛线比较，每次保留原始 CSV、结果和夹具信息。正式 USB 合规测试使用规定夹具和 USBET。[USB-IF 低速／全速程序第 B.4 节](https://www.usb.org/sites/default/files/USB-IFTestProc1_3.pdf) · [USBET20](https://www.usb.org/document-library/usbet20)
+
+挂起电流另行测试。枚举后让主机挂起，等待电流稳定，用 C5 上游的整机电流实测值加仪表误差与 **2.5 mA** 比较。挂起和恢复时的瞬态另存波形。[USB-IF 挂起电流修订说明](https://compliance.usb.org/index.asp?Format=Standard&UpdateFile=Electrical)
+
 ### 每台首件记录
 
 | 状态和时间 | C5 电压／电流 | U5 IN／OUT／BAT 电压 | U1 VBUS 最低值 | EN1／EN2／CE | BAT 有符号电流、温度及 HID 结果 |

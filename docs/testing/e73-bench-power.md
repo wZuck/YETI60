@@ -47,6 +47,20 @@ For the total-current check, use a data-capable connection at 5.0 V loaded at C5
 
 A simulator can exercise CC/CV controls and fault transitions. A fixed 3.7 V setting alone cannot demonstrate taper, termination or charge time. For a real pack, first obtain signed electrical and thermal limits, verify the independent protector, and record CC, CV, termination and temperatures in both charging modes according to the [pack specification](../engineering/battery-pack-specification.md). TI specifies 4.16–4.23 V CV regulation and conditional termination. Leave the safety timer enabled. [TI charge cycle and temperature monitoring, §§9.3.5–9.3.6](https://www.ti.com/lit/ds/symlink/bq24074.pdf)
 
+### Attach inrush and suspend current
+
+For the USB 2.0 attach screen, measure upstream of C5 with the planned cable and the USB test fixture. Keep the link unconfigured during this capture so configured charging stays outside the trace. Repeat with SW100 on and off, using the battery simulator and the valid NTC setting. Capture from VBUS/GND contact through at least **100 ms after the first pulse** at **1 MS/s or faster**. If there is no pulse, capture at least 100 ms after contact. Record the physical contact as time zero, keep the pretrigger samples, and capture each current pulse and its return to baseline without clipping or decimating the trace. [USB-IF inrush analysis](https://compliance.usb.org/index.asp?Format=Standard&UpdateFile=Electrical)
+
+Export current in amperes and time in seconds with columns named `time_s,current_a`. Run the [offline inrush checker](../../scripts/check_e73_usb_inrush.py) with the CSV and the current probe's absolute uncertainty in mA. For example, from the delivery folder:
+
+```sh
+python3 06-validation/check-usb-inrush.py attach.csv --current-uncertainty-ma 2
+```
+
+The example uses a 2 mA probe allowance. Substitute the actual value. The script integrates the current above **100 mA** using linear interpolation and separates pulses after **100 µs** continuously below that level. The worst region is screened against **50.0 µC**. Preserve the CSV, result and fixture details for each run. Use USBET and the specified test fixture for formal USB compliance. [USB-IF low/full-speed procedure, §B.4](https://www.usb.org/sites/default/files/USB-IFTestProc1_3.pdf) · [USBET20](https://www.usb.org/document-library/usbet20)
+
+Suspend is a separate test after enumeration. Once the host reports suspend and the current has settled, compare total upstream current plus meter uncertainty with **2.5 mA**. Capture suspend and resume transients separately. [USB-IF suspend current change](https://compliance.usb.org/index.asp?Format=Standard&UpdateFile=Electrical)
+
 ### Record for each unit
 
 | State and time | C5 V / mA | U5 IN / OUT / BAT V | U1 VBUS min | EN1 / EN2 / CE | Signed BAT mA, temperature and HID result |
