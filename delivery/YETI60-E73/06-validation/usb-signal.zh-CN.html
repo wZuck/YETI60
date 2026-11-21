@@ -1,0 +1,48 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E73 CORNER-07 USB 全速链路</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="usb-signal.html">English</a> | 中文</p>
+<h1 id="e73-corner-07-usb-全速链路">E73 CORNER-07 USB 全速链路</h1>
+<p>信号从电脑经外接 USB 线、已制作的 C5 JSH 子板、M05 双绞线和 J4，进入 CORNER-07 主板 U1。nRF52840 使用 12 Mb/s 的 USB 全速模式。J4.2 为 D−，J4.3 为 D+。 <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/usbd.html">Nordic USB 规格</a> · <a href="../02-mechanical/service-case-m05/print-guide.zh-CN.html">M05 打印和布线</a></p>
+<h2 id="模型结果">模型结果</h2>
+<p>主板两条 PCB 数据线中较长的一条为 101.29 mm，未计垂直过孔。大部分线路在 B.Cu，标称线宽 0.30 mm、铜边间距 0.20 mm，参考 In2.Cu 地铜。M05 数据导线在装配几何算例中的最长值为 285.29 mm，从插头出线口量到另一端。 <a href="USB-reference.json">原生走线和回流检查</a> · <a href="usb-signal.json">绑定本版的计算及仿真数据</a></p>
+<p>主板直线段用 0.2104 mm 参考层距离、35 µm 铜厚、7628 介电常数 4.4 和嘉立创的代表性阻焊参数。横截面静电模型给差分线分别施加 ±0.5 V，求有介质电容 <code>C</code> 和真空电容 <code>C0</code>，再按 <code>Zdiff = 1 / (c × sqrt(C × C0))</code> 算阻抗。细网格结果为 <strong>88.26 Ω</strong>，与粗网格相差 0.17 Ω。将线宽设为 0.27–0.33 mm、反向改变线间距、将介质厚度设为 0.18–0.24 mm、Dk 设为 4.2–4.6，两个敏感性算例分别得到 <strong>76.19 Ω 和 100.91 Ω</strong>。普通工艺实际公差以工厂报价确认。 <a href="https://jlcpcb.com/impedance">嘉立创叠层与材料数据</a></p>
+<p>标称模型的主板传播延迟为 0.59 ns。M05 导线按传播速度 0.65c 估算为 1.46 ns，两段合计约 <strong>2.05 ns</strong>。ngspice 将主板走线等效为一段均匀线。参考场景使用 3 米、90 Ω、延迟 15 ns 的外接 USB 线，90 Ω 差分源，15 pF 负载和 15 kΩ 差分直流负载，源的 10–90% 边沿为 4 ns。C5 的每根数据线并接两个 TPD4E05U06 通道，每根线对地典型 1.0 pF，折算为 0.5 pF 差分电容。 <a href="https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf">TI 保护二极管数据</a> · <a href="https://compliance.usb.org/index.asp?Format=Standard&amp;UpdateFile=Electrical">USB-IF 全速电气说明</a></p>
+<table>
+<thead>
+<tr>
+<th>假设 M05 数据对阻抗，主板为标称值</th>
+<th style="text-align:right">上升沿越过零点后最大回落，电脑 → U1</th>
+<th style="text-align:right">U1 → 电脑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>75 Ω</td>
+<td style="text-align:right">&lt;0.01 V</td>
+<td style="text-align:right">0.38 V</td>
+</tr>
+<tr>
+<td>90 Ω</td>
+<td style="text-align:right">&lt;0.01 V</td>
+<td style="text-align:right">0.04 V</td>
+</tr>
+<tr>
+<td>120 Ω</td>
+<td style="text-align:right">0.43 V</td>
+<td style="text-align:right">0.48 V</td>
+</tr>
+<tr>
+<td>150 Ω</td>
+<td style="text-align:right">0.91 V</td>
+<td style="text-align:right">0.88 V</td>
+</tr>
+</tbody>
+</table>
+<p>表中量的是差分电压越过零点后 60 ns 内相对之前峰值的最大回落。把线束固定在 90 Ω、改用两个主板几何边界算例时，最大回落约 0.15 V。首件优先测成品线束阻抗。理想传输线未建模连接器和过孔过渡、端点回流缺口、线材损耗及共模转换。实际收发器特性也待验证。正式信号验收使用成品、配套外接线和 USB-IF 测试方法。 <a href="https://www.usb.org/sites/default/files/USB-IFTestProc1_3.pdf">USB-IF 信号质量流程</a></p>
+<h2 id="首件测试">首件测试</h2>
+<ol>
+<li>断电核对 C5 JSH 的 2 脚到 J4.2、3 脚到 J4.3，检查 4 脚接地和各脚无短路。使用已经验证过的数据线。保持 M05 数据对成对，安装导线夹前核对绝缘外径。</li>
+<li>壳外分别运行两份 HEX，做充电测试时接电池模拟器。观察全速枚举、键盘报告或校准数据，并测复位、挂起、恢复、拔插。USB-C 插头的两个方向都测，使用计划日常使用的外接线。按<a href="bench-power.zh-CN.html">台架流程</a>验证充电时 USB 输入。</li>
+<li>安装 M05 理线件及外壳后复测。记录数据线、主机端口、枚举速度、充电状态、是否掉线或出现协议错误，以及按键的预期与实收结果。</li>
+<li>若壳外与合壳结果不同，在同一 C5 和主板上，用已知正常的短数据对与 M05 线束对照。保持地线和针序一致。正式电气验收时，对成品数据对或等效端接样件测差分时域反射，并用 USB-IF 夹具测成品全速信号。选线时以 <strong>90 Ω 差分</strong>为匹配目标，同时满足 M05 所需的绝缘外径及端子规格。</li>
+</ol>
+<p>把结果填入<a href="first-article.zh-CN.html">首件验收表</a>。一根外接线通过功能测试时，记录该次使用的主机、线材和配置。</p>
+</main></html>

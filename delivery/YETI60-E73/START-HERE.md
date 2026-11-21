@@ -20,6 +20,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Verify open-bench power, charging and USB/BLE switching with a simulator | [Bench connections, probe map and record](06-validation/bench-power.md) |
 | Review electrical, fit, antenna and release limitations | [Current E73 engineering review](06-validation/corner-review.md) |
 | Check Bluetooth at 2 m and 3 m and isolate enclosure effects | [M05 antenna geometry and Bluetooth test](06-validation/ble-first-article.md) |
+| Check the USB pair and test with the final cable | [USB full-speed path and signal checks](06-validation/usb-signal.md) |
 | Review charging headroom, dissipation and ordinary PCB fabrication | [Current power and process review](06-validation/power-process.md) |
 | Check via clearances and stencil coverage in the fabrication ZIP | [Drill, mask and stencil review](06-validation/aperture-review.md) |
 | Record CAM, soldering, charging, all keys, case closure and BLE | [First-article record](06-validation/first-article.md) |

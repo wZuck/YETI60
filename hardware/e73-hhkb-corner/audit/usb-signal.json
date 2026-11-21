@@ -1,0 +1,170 @@
+{
+  "status": "USB_pair_cross_section_and_link_sensitivity_checked",
+  "physical_verification": false,
+  "source_sha256": {
+    "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e",
+    "hardware/e73-hhkb-corner/audit/placement-check.json": "81f86fade3c166599c31b9b0efe7fc94b24a36a848bfa800d58532c0d5d7ff1b",
+    "hardware/e73-hhkb-corner/audit/m05-harness.json": "076e45f9da7e8e68318972a693443be077c879167ed603d79b47729e5809ce14",
+    "hardware/e73-hhkb-corner/audit/USB-reference.json": "bcc6662713fe66f9d708b8724c5b44e6763c947bc6136787cff3ba62b21fb693",
+    "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
+    "docs/audit/yeti60-daughterboard.json": "9af13e681ffd0f32fb42a2049a0c007abd4580e320112fb41dcc85215a7bfc58",
+    "scripts/check_e73_usb_signal.py": "8ec0d65c708035b2060592792d0e97c2ea366878004116844ea4600309bab7a7",
+    "scripts/kicad_sexpr.py": "f23960516af458b03b534772a4e90a4ad0c1eee69769e3bd53f1dc8aa031b13a"
+  },
+  "tools": {
+    "scipy": "1.18.1",
+    "numpy": "2.5.5",
+    "ngspice": "** ngspice-47 : Circuit level simulation program"
+  },
+  "C5_signals": {
+    "source_commit": "2b6c52aa2de6f9f60ca99c6250e4bdf01e8f4eea",
+    "source_pcb_sha256": "1d9e2732d68fbb83dfeadb0c33d573a14483963fae61aaa02cd57d2bb7f98b35",
+    "tvs_diode_channels_per_conductor": 2,
+    "typical_C_per_channel_pF": 0.5,
+    "equivalent_differential_shunt_pF": 0.5
+  },
+  "PCB_and_wire": {
+    "track_width_mm": 0.3,
+    "minimum_edge_gap_mm": 0.2,
+    "plane_height_mm": 0.2104,
+    "longest_PCB_trace_centerline_mm_excluding_via": 101.2902087464968,
+    "longest_M05_data_conductor_mm": 285.2921449168979,
+    "mainboard_modeled_delay_ns": 0.5897076567975298,
+    "harness_modeled_delay_ns_at_0p65c": 1.4640494797899246
+  },
+  "cross_section": {
+    "spacing_0p01mm": {
+      "impedance_ohm": 88.42556269367176,
+      "velocity_m_per_s": 171748701.77252233,
+      "capacitance_pF_per_m": 65.84589496897419
+    },
+    "spacing_0p0075mm": {
+      "impedance_ohm": 88.26004807595464,
+      "velocity_m_per_s": 171763428.16466734,
+      "capacitance_pF_per_m": 65.96372020354191
+    },
+    "extended_domain": {
+      "impedance_ohm": 88.43259666249766,
+      "velocity_m_per_s": 171739541.64833182,
+      "capacitance_pF_per_m": 65.84416931982612
+    },
+    "illustrative_geometric_corners": {
+      "0.27mm_width_0.23mm_gap_0.24mm_height_Dk4.2": {
+        "impedance_ohm": 100.91224738213994,
+        "velocity_m_per_s": 175960031.57394636,
+        "capacitance_pF_per_m": 56.31733437065728
+      },
+      "0.33mm_width_0.17mm_gap_0.18mm_height_Dk4.6": {
+        "impedance_ohm": 76.19446627813501,
+        "velocity_m_per_s": 167343469.28426516,
+        "capacitance_pF_per_m": 78.42739688129865
+      }
+    }
+  },
+  "transient_assumptions": {
+    "external_Zdiff_ohm": 90,
+    "external_3m_delay_ns": 15,
+    "driver_diff_ohm": 90,
+    "diff_load_pF": 15,
+    "source_10_to_90_percent_ns": 4,
+    "waveform_measurement_after_half_swing_ns": 60
+  },
+  "transient_sweep": [
+    {
+      "assumed_internal_Zdiff_ohm": 75,
+      "mainboard_cross_section": "nominal",
+      "reference_edge": {
+        "host_to_U1": {
+          "half_swing_from_source_start_ns": 20.8505,
+          "peak_above_DC_differential_V": 0.0,
+          "largest_reverse_excursion_after_half_swing_V": 1e-05
+        },
+        "U1_to_host": {
+          "half_swing_from_source_start_ns": 20.8551,
+          "peak_above_DC_differential_V": 0.02892,
+          "largest_reverse_excursion_after_half_swing_V": 0.37587
+        }
+      }
+    },
+    {
+      "assumed_internal_Zdiff_ohm": 90,
+      "mainboard_cross_section": "nominal",
+      "reference_edge": {
+        "host_to_U1": {
+          "half_swing_from_source_start_ns": 20.8423,
+          "peak_above_DC_differential_V": 1e-05,
+          "largest_reverse_excursion_after_half_swing_V": 3e-05
+        },
+        "U1_to_host": {
+          "half_swing_from_source_start_ns": 20.8368,
+          "peak_above_DC_differential_V": 0.00631,
+          "largest_reverse_excursion_after_half_swing_V": 0.04136
+        }
+      }
+    },
+    {
+      "assumed_internal_Zdiff_ohm": 120,
+      "mainboard_cross_section": "nominal",
+      "reference_edge": {
+        "host_to_U1": {
+          "half_swing_from_source_start_ns": 20.9074,
+          "peak_above_DC_differential_V": 0.40353,
+          "largest_reverse_excursion_after_half_swing_V": 0.43006
+        },
+        "U1_to_host": {
+          "half_swing_from_source_start_ns": 20.8899,
+          "peak_above_DC_differential_V": 0.46995,
+          "largest_reverse_excursion_after_half_swing_V": 0.48212
+        }
+      }
+    },
+    {
+      "assumed_internal_Zdiff_ohm": 150,
+      "mainboard_cross_section": "nominal",
+      "reference_edge": {
+        "host_to_U1": {
+          "half_swing_from_source_start_ns": 21.0165,
+          "peak_above_DC_differential_V": 0.80409,
+          "largest_reverse_excursion_after_half_swing_V": 0.90871
+        },
+        "U1_to_host": {
+          "half_swing_from_source_start_ns": 20.9993,
+          "peak_above_DC_differential_V": 0.84028,
+          "largest_reverse_excursion_after_half_swing_V": 0.87812
+        }
+      }
+    },
+    {
+      "assumed_internal_Zdiff_ohm": 90,
+      "mainboard_cross_section": "0.27mm_width_0.23mm_gap_0.24mm_height_Dk4.2",
+      "reference_edge": {
+        "host_to_U1": {
+          "half_swing_from_source_start_ns": 20.7956,
+          "peak_above_DC_differential_V": 1e-05,
+          "largest_reverse_excursion_after_half_swing_V": 5e-05
+        },
+        "U1_to_host": {
+          "half_swing_from_source_start_ns": 20.827,
+          "peak_above_DC_differential_V": 0.08201,
+          "largest_reverse_excursion_after_half_swing_V": 0.08229
+        }
+      }
+    },
+    {
+      "assumed_internal_Zdiff_ohm": 90,
+      "mainboard_cross_section": "0.33mm_width_0.17mm_gap_0.18mm_height_Dk4.6",
+      "reference_edge": {
+        "host_to_U1": {
+          "half_swing_from_source_start_ns": 20.9074,
+          "peak_above_DC_differential_V": 0.0,
+          "largest_reverse_excursion_after_half_swing_V": 2e-05
+        },
+        "U1_to_host": {
+          "half_swing_from_source_start_ns": 20.8595,
+          "peak_above_DC_differential_V": 0.00626,
+          "largest_reverse_excursion_after_half_swing_V": 0.15108
+        }
+      }
+    }
+  ]
+}

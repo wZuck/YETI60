@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E73 CORNER-07 USB full-speed path</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="usb-signal.zh-CN.html">Chinese</a></p>
+<h1 id="e73-corner-07-usb-full-speed-path">E73 CORNER-07 USB full-speed path</h1>
+<p>The path is the host cable, the existing C5 JSH daughterboard, the M05 twisted pair, J4, and the CORNER-07 mainboard to U1. The nRF52840 uses USB full speed at 12 Mb/s. J4.2 carries D− and J4.3 carries D+. <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/usbd.html">Nordic USBD specification</a> · <a href="../02-mechanical/service-case-m05/print-guide.html">M05 print and wiring guide</a></p>
+<h2 id="model-results">Model results</h2>
+<p>The longer PCB centreline is 101.29 mm excluding the vertical via. Most of it is a 0.30 mm trace on B.Cu, with a nominal 0.20 mm copper gap and In2.Cu reference copper. The M05 pair reaches 285.29 mm across the geometric cases, from connector exit to connector exit. <a href="USB-reference.json">Native route check</a> · <a href="usb-signal.json">Bound calculations and model sweeps</a></p>
+<p>The straight PCB section uses 0.2104 mm between copper and the reference plane, 35 µm copper, a 7628 dielectric constant of 4.4, and JLC's representative solder mask parameters. A two-dimensional electrostatic solve drives the traces at ±0.5 V, finds capacitance per unit length with the dielectric and with vacuum, and computes <code>Zdiff = 1 / (c × sqrt(C × C0))</code>. The fine-grid estimate is <strong>88.26 Ω</strong>, within 0.17 Ω of the coarser mesh. Varying assumed etched width from 0.27 to 0.33 mm, changing the gap oppositely, and varying dielectric height from 0.18 to 0.24 mm and Dk from 4.2 to 4.6 gives illustrative extrema of <strong>76.19 and 100.91 Ω</strong>. These corners are a sensitivity test. The ordinary fabrication quote determines actual tolerances. <a href="https://jlcpcb.com/impedance">JLC stack and material data</a></p>
+<p>At the nominal calculation, the modeled PCB delay is 0.59 ns. A harness propagation speed of 0.65c gives 1.46 ns for the longest M05 data conductor. The two estimated delays total about <strong>2.05 ns</strong>. The ngspice sweep uses the full routed PCB length as one uniform section. A 3 m, 90 Ω external cable with 15 ns of delay, a 90 Ω differential source, a 15 pF load with a 15 kΩ differential DC path, and a 4 ns source edge (10–90%) define the reference experiment. C5 has two TPD4E05U06 protection channels per conductor. The model uses a 0.5 pF differential equivalent for the two 1.0 pF per-line shunts. <a href="https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf">TI protection diode data</a> · <a href="https://compliance.usb.org/index.asp?Format=Standard&amp;UpdateFile=Electrical">USB-IF full-speed electrical test notes</a></p>
+<table>
+<thead>
+<tr>
+<th>Assumed M05 pair impedance, nominal PCB</th>
+<th style="text-align:right">Largest modeled reverse excursion after the rising-edge zero crossing, host → U1</th>
+<th style="text-align:right">U1 → host</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>75 Ω</td>
+<td style="text-align:right">&lt;0.01 V</td>
+<td style="text-align:right">0.38 V</td>
+</tr>
+<tr>
+<td>90 Ω</td>
+<td style="text-align:right">&lt;0.01 V</td>
+<td style="text-align:right">0.04 V</td>
+</tr>
+<tr>
+<td>120 Ω</td>
+<td style="text-align:right">0.43 V</td>
+<td style="text-align:right">0.48 V</td>
+</tr>
+<tr>
+<td>150 Ω</td>
+<td style="text-align:right">0.91 V</td>
+<td style="text-align:right">0.88 V</td>
+</tr>
+</tbody>
+</table>
+<p>The sweep measures how much the differential voltage drops from an earlier peak during the 60 ns after the crossing. With the harness held at 90 Ω, the two PCB geometry corners gave up to 0.15 V of reverse excursion. The result puts the harness impedance high on the list of first-article measurements. The ideal lines exclude connector and via transitions, return discontinuities at the launches, conductor and dielectric loss, and common-mode conversion. Actual transmitter and receiver models and the finished cable impedance are open. USB compliance requires the finished device, its cable, and the USB-IF measurement procedure. <a href="https://www.usb.org/sites/default/files/USB-IFTestProc1_3.pdf">USB-IF signal quality procedure</a></p>
+<h2 id="first-article-test">First-article test</h2>
+<ol>
+<li>Before power, confirm C5 JSH pin 2 to J4.2 and pin 3 to J4.3, verify ground continuity on pin 4, and check for shorts. Use a known data cable. Keep the M05 pair together and verify the insulation envelope before installing guides.</li>
+<li>With the case off and a battery simulator fitted for charging tests, run both HEX images. Observe full-speed enumeration, reports or calibration traffic, reset, suspend/resume, and detach/reconnect. Repeat both plug orientations and use the intended external USB cable. Verify USB HID during charging using the <a href="bench-power.html">bench procedure</a>.</li>
+<li>Repeat when the M05 guides and case are fitted. Record the cable, host port, negotiated speed, charge state, any link resets or protocol errors, and the expected versus received key sequence.</li>
+<li>If the bare board and assembled case behave differently, compare the assembled M05 harness with a known short USB pair on the same C5 and mainboard. Preserve the ground connection and pin order. For an electrical sign-off, measure the finished pair or an equivalent terminated sample by differential TDR and check the finished full-speed device with the USB-IF test setup. Use <strong>90 Ω differential</strong> as the matching target when selecting the pair, with insulation and contacts that fit the released M05 geometry.</li>
+</ol>
+<p>Record the results with the <a href="first-article.html">first-article checks</a>. A passing functional test on one cable documents that operating combination.</p>
+</main></html>

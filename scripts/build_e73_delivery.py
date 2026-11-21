@@ -15,11 +15,12 @@ def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
  native=json.loads((BASE/'audit/placement-check.json').read_text());assert native['electrical_routing_complete']
  (out/'06-validation/aperture-trial.json').unlink(missing_ok=True)
- for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','usb-host-current','radio-path','bench-power-plan','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift','m05-tool','m05-tool-drawing','m05-parking-support','m05-parking-support-render']:
+ for name in ['placement-check','USB-reference','corner-fit','harness-study','harness-drawing','retention-study','retention-prints','retention-drawing','power-process','usb-host-current','usb-signal','radio-path','bench-power-plan','service-motion','service-leads','service-reference','service-case-m05','service-case-m05-render','m05-harness','m05-harness-plan','m05-lift','m05-tool','m05-tool-drawing','m05-parking-support','m05-parking-support-render']:
   report=json.loads((BASE/'audit'/f'{name}.json').read_text())
   for path,digest in report['source_sha256'].items():assert sha(ROOT/path)==digest,('Stale delivery input',path)
   if name=='power-process':assert report['status']=='repaired-power-routing-and-aperture-checks-passed'
   if name=='usb-host-current':assert report['status']=='source-bound-planning-budget-first-article-open'
+  if name=='usb-signal':assert report['status']=='USB_pair_cross_section_and_link_sensitivity_checked'
   if name=='radio-path':assert report['status']=='M05_antenna_geometry_and_reference_link_budget_checked'
   if name=='bench-power-plan':
    assert report['status']=='native-bench-pad-map-and-M05-headroom-checked'
@@ -139,6 +140,7 @@ def main():
  docs['docs/build/e73-m05-parking-support']='02-mechanical/service-case-m05/parking-guide'
  docs['docs/testing/e73-bench-power']='06-validation/bench-power'
  docs['docs/testing/e73-ble-first-article']='06-validation/ble-first-article'
+ docs['docs/testing/e73-usb-signal']='06-validation/usb-signal'
  docs['docs/engineering/e73-aperture-review']='06-validation/aperture-review'
  for source,target in docs.items():
   for suffix in ['.md','.zh-CN.md']:copy(source+suffix,target+suffix)

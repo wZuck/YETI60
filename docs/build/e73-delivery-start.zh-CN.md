@@ -20,6 +20,7 @@
 | 用模拟器验证壳外供电、充电及 USB／蓝牙切换 | [台架接法、测点及记录](../testing/e73-bench-power.zh-CN.md) |
 | 查看电气、装配、天线与放行边界 | [当前 E73 工程审查](../engineering/e73-hhkb-corner.zh-CN.md) |
 | 验收 2 米、3 米蓝牙及排查外壳影响 | [M05 天线几何和蓝牙测试](../testing/e73-ble-first-article.zh-CN.md) |
+| 核对 USB 数据对及配套线材 | [USB 全速链路与信号测试](../testing/e73-usb-signal.zh-CN.md) |
 | 核对充电压降、发热及普通制板问题 | [本版电源与工艺复核](../engineering/e73-corner-power-process.zh-CN.md) |
 | 核对制板 ZIP 的过孔余量与钢网覆盖率 | [钻孔、阻焊与钢网复核](../engineering/e73-aperture-review.zh-CN.md) |
 | 记录首件的制板、焊接、充电、全键、关壳和蓝牙实测 | [首件验收表](../testing/e73-first-article.zh-CN.md) |
