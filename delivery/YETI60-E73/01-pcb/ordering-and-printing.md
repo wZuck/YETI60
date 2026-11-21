@@ -66,6 +66,7 @@ Dry-align before printing. Match the front openings to U1 at the right-hand corn
 | Top / 1 | `02-mechanical/top.step` or `top.stl` | Fully post-cured tough engineering SLA resin; millimetres; 100% scale |
 | M05 lower shell and access covers / three parts, one each | [M05 print files and cover hardware](../02-mechanical/service-case-m05/print-guide.md) | Tough engineering SLA resin, millimetres, 100% scale. Use the matched M05 harness and retainers |
 | Plate / 1 | `02-mechanical/steel-plate.dxf` | **304 stainless steel**, CAD nominal 1.60 mm, finished 1.55–1.60 mm; machine and deburr functional openings; not a PCB or resin print |
+| Plate trial-fit coupon / 1 before the full plate | [Coupon DXF](../02-mechanical/plate-fit-coupon.dxf) | 120 × 64 mm, same 304 stock, finished thickness and machining as the full plate. [Fit checks](../04-assembly/key-mechanism.md#trial-fit-coupon) |
 | Standoffs / 28 | `02-mechanical/standoff.step`, `assembly-spec.json` | Machined brass, OD3.5, 4.50 ±0.03 mm shoulder; top M2×0.4 stud 1.0 mm, bottom M1.6×0.35 internal thread depth 3.2 mm; model alone does not specify qualified threads |
 | M05 cable guides / 16 rigid parts and 17 cut films | [Print checklist and placement](../02-mechanical/service-case-m05/print-guide.md) | Use 14 shared rigid parts plus two M05 battery guides and the M05 wire cut list |
 

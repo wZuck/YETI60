@@ -15,7 +15,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Ask the battery supplier to confirm pack parameters | [Complete pack specification](../engineering/battery-pack-specification.md) |
 | Solder a blank PCB in stages and test each stage | [12-step PCB soldering and bench guide](../assembly/e73-corner/soldering.md), [illustrated web guide](../assembly/e73-corner/soldering.html) |
 | View the closed keyboard, exploded parts and dry-fit stages | [Assembly views](e73-assembly-views.md) |
-| Assemble the NiZ mechanism and plate stabilizers | [Parts, plate and mechanism guide](key-mechanism.md) |
+| Trial-fit the NiZ housings and steel plate stabilizers | [Trial-fit coupon](key-mechanism.md#trial-fit-coupon), [complete mechanism guide](key-mechanism.md) |
 | Connect SWD, install calibration firmware, calibrate all 60 keys and install normal firmware | [Firmware installation and calibration](../testing/e73-corner-firmware.md) |
 | Verify open-bench power, charging and USB/BLE switching with a simulator | [Bench connections, probe map and record](../testing/e73-bench-power.md) |
 | Review electrical, fit, antenna and release limitations | [Current E73 engineering review](../engineering/e73-hhkb-corner.md) |

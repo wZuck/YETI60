@@ -1,0 +1,63 @@
+{
+  "status": "m01-opening-profiles-translated-and-read-back",
+  "physical_fit_verified": false,
+  "outline_mm": [
+    120,
+    64
+  ],
+  "material": "304 stainless steel",
+  "finished_thickness_mm": [
+    1.55,
+    1.6
+  ],
+  "minimum_edge_web_mm": 8.175,
+  "minimum_opening_to_opening_web_mm": 16.5,
+  "openings": [
+    {
+      "opening": "1U",
+      "datum_mm": [
+        86,
+        47
+      ],
+      "m01_active_indexes_zero_based": [
+        0
+      ],
+      "stabilizer_stem_spacing_mm": null
+    },
+    {
+      "opening": "2.25U",
+      "datum_mm": [
+        27,
+        47
+      ],
+      "m01_active_indexes_zero_based": [
+        41,
+        42
+      ],
+      "stabilizer_stem_spacing_mm": 23.8
+    },
+    {
+      "opening": "6U",
+      "datum_mm": [
+        60,
+        17
+      ],
+      "m01_active_indexes_zero_based": [
+        57
+      ],
+      "stabilizer_stem_spacing_mm": 95.25
+    }
+  ],
+  "source_plate_sha256": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
+  "source_sha256": {
+    "mechanical/felk60_plate_hhkb.audited.dxf": "a68d0bd7c0d9464e599206d7af027f6e2714bc535ea8d557a4f6a6c61e700a51",
+    "mechanical/yeti60-key-mechanism.e73.json": "7ec89cc69dd1d842f7cd8ce7f0b588d08c2df00967f64bdfe706d8ff73902b39",
+    "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
+    "scripts/build_e73_plate_coupon.py": "3199adb8f9c6fde748b1e7d53a652563bfa8a7d5144acfca4eb303813ddcafd9",
+    "scripts/check_yeti60_plate_mount.py": "3fa66f7d6674957623f1126a4bf76ad2d1a306a82a120b1bdcdd868e8cec283f"
+  },
+  "files_sha256": {
+    "02-mechanical/plate-fit-coupon.dxf": "e7f90f102100b504c94d9ac45907be1fbf89565baf8e0d751d95b90a1ca3becb",
+    "02-mechanical/plate-fit-coupon.svg": "bd4f842e2aa9e1050b944503e61089067afa2c20bbd502e9bbdb106c007e0f8a"
+  }
+}

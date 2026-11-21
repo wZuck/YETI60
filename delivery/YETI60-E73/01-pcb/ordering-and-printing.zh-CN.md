@@ -66,6 +66,7 @@ CORNER-07 调整 U5、U6、C42、SW1 的开窗，并移动 D2 接地过孔。完
 | 上壳／1 | `02-mechanical/top.step` 或 `top.stl` | 韧性工程 SLA 树脂，充分后固化；毫米单位，100% 比例 |
 | M05 底壳及检修盖／各 1 件，共 3 件 | [M05 打印文件与封盖紧固件](../02-mechanical/service-case-m05/print-guide.zh-CN.md) | 韧性工程 SLA 树脂，毫米，100% 比例。用配套的 M05 线束和理线件试装 |
 | 定位板／1 | `02-mechanical/steel-plate.dxf` | **304 不锈钢**，CAD 标称 1.60 mm，成品 1.55–1.60 mm；加工、去毛刺，保留功能开孔；不是 PCB，也不是树脂打印件 |
+| 定位板试装片／整板前先做 1 件 | [试片 DXF](../02-mechanical/plate-fit-coupon.dxf) | 120 × 64 mm，采用与整板一致的 304 板材、成品厚度和加工工艺。[试装步骤](../04-assembly/key-mechanism.zh-CN.md#定位板试装片) |
 | 隔柱／28 | `02-mechanical/standoff.step`、`assembly-spec.json` | 黄铜机加工，外径 3.5，肩长 4.50 ±0.03 mm；顶部 M2×0.4 螺柱长 1.0 mm，底部 M1.6×0.35 内螺纹深 3.2 mm；仅模型不能替代合格螺纹要求 |
 | M05 理线件／16 件刚性件＋17 片裁膜 | [打印清单和对应坐标](../02-mechanical/service-case-m05/print-guide.zh-CN.md) | 14 件通用刚性件加两件 M05 电池理线件。按本版线长表下料 |
 

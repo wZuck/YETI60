@@ -134,6 +134,11 @@ def main():
  for rel in parking_models:copy(rel,'02-mechanical/service-case-m05/parking-support/'+Path(rel).name)
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/export_e73_delivery_top.py'),'--output',str(out/'02-mechanical/top.stl')],check=True)
  inputs['scripts/export_e73_delivery_top.py']=sha(ROOT/'scripts/export_e73_delivery_top.py')
+ subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',
+                 str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/build_e73_plate_coupon.py'),
+                 '--output',str(out)],check=True)
+ coupon=json.loads((out/'06-validation/plate-fit-coupon.json').read_text())
+ inputs.update(coupon['source_sha256'])
  for p in sorted((BASE/'firmware').rglob('*')):
   if p.is_file():copy(str(p.relative_to(ROOT)),'05-firmware/'+str(p.relative_to(BASE/'firmware')))
  docs={'docs/build/e73-delivery-start':'START-HERE','docs/build/e73-ordering-printing':'01-pcb/ordering-and-printing','docs/build/e73-project-files':'01-pcb/project-files','docs/build/e73-assembly-views':'04-assembly/assembly-views','docs/engineering/e73-retention':'04-assembly/retainers','docs/engineering/e73-corner-power-process':'06-validation/power-process','docs/testing/e73-first-article':'06-validation/first-article','docs/engineering/e73-corner-harness':'04-assembly/harness-routing','docs/engineering/e73-hhkb-corner':'06-validation/corner-review','docs/testing/e73-corner-firmware':'05-firmware/installation','docs/build/key-mechanism':'04-assembly/key-mechanism','docs/engineering/battery-pack-specification':'03-bom/battery-requirements'}
@@ -179,7 +184,8 @@ def main():
  inputs['scripts/check_e73_apertures.py']=sha(ROOT/'scripts/check_e73_apertures.py')
  for generated in ['01-pcb/YETI60-E73-gerbers-REVIEW.zip','02-mechanical/top.stl','06-validation/cam-ordinary.json',
                    '06-validation/cam-apertures.json','01-pcb/gerbers/EC60-nRF52840-F_Paste.gtp',
-                   '01-pcb/gerbers/EC60-nRF52840-B_Paste.gbp']:
+                   '01-pcb/gerbers/EC60-nRF52840-B_Paste.gbp','02-mechanical/plate-fit-coupon.dxf',
+                   '02-mechanical/plate-fit-coupon.svg','06-validation/plate-fit-coupon.json']:
   mapping['delivery/YETI60-E73/'+generated]=generated
  # Resolve both Markdown and HTML assets into the offline bundle.
  for rel,target in list(mapping.items()):

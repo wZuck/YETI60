@@ -38,6 +38,11 @@ def main():
  for name in ('BAT-R1','BAT-R2'):assert prototype['retainer_STL'][name]==case_dir+'harness/'+name+'-M05.stl'
  for name in ('bottom-m05','cover-J2','cover-J4'):assert case_dir+name+'-REVIEW.stl' in prototype['shell_STL']
  assert all(path.startswith(case_dir+'harness/wire-lengths-m05') for path in prototype['harness_lengths'])
+ coupon=json.loads((base/'06-validation/plate-fit-coupon.json').read_text())
+ assert coupon['status']=='m01-opening-profiles-translated-and-read-back' and not coupon['physical_fit_verified']
+ assert coupon['source_plate_sha256']==sha(base/'02-mechanical/steel-plate.dxf')
+ assert set(coupon['files_sha256'])=={'02-mechanical/plate-fit-coupon.dxf','02-mechanical/plate-fit-coupon.svg'}
+ assert all(m['files_sha256'][name]==digest for name,digest in coupon['files_sha256'].items())
  render=json.loads((base/'06-validation/assembly-render.json').read_text())
  harness=json.loads((base/'06-validation/m05-harness.json').read_text())
  lengths=harness['trial_variants'][0]['seated_free_lengths_mm']

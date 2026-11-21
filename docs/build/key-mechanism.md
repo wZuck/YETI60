@@ -54,6 +54,20 @@ The 6U label alone does not establish exact fit. Before final metalwork/bulk ord
 
 [Vector guide](../engineering/images/key-mechanism.svg)
 
+## Trial-fit coupon
+
+Cut one **120 × 64 mm** coupon from the same 304 stainless stock and with the same cutting and deburring process intended for the M01 plate. Specify **1.55–1.60 mm finished thickness**, millimetres and **100% scale**. The DXF contains one outer contour and three internal cuts. Preserve every notch and corner without smoothing or enlarging the openings. [Coupon DXF](../../delivery/YETI60-E73/02-mechanical/plate-fit-coupon.dxf) · [DXF readback report](../../delivery/YETI60-E73/06-validation/plate-fit-coupon.json)
+
+![Coupon openings for 1U, 2.25U and 6U](../../delivery/YETI60-E73/02-mechanical/plate-fit-coupon.svg)
+
+| Opening | Parts to fit and inspect |
+|---|---|
+| 1U | One K01 housing/slider/ring and a matching 1U cap. Check the finished thickness, the 14.00 × 14.00 mm opening and that its inside corners stay within 0.30 mm radius. Verify the clips seat flat and hold when the cap is pulled upward |
+| 2.25U | One K01 set and one K04 stabilizer pair with its 2U wire. Trial both the Enter and left Shift caps in the same opening. Their M01 profiles match by translation and use **23.80 mm** stem spacing |
+| 6U | One K01 set, one K04 pair fitted with the separate K05 6U wire, and the centered K06 spacebar. Confirm the end bends engage and the cap seats on all three stems without forcing the sides. The spacing datum is **95.25 mm** |
+
+With the underside accessible, move each cap by hand through its stroke at the center and both ends. Lift it by hand if a dome is absent. Inspect the stabilizer wire against the NiZ skirt, then note any rubbing, lift-out, cap side load or need to trim a skirt. Record the stock thickness, part revisions, measured cap socket spacing, wire end geometry and result for each opening. Use the production-size plate and assembled sensing stack for return force, flex, dome preload and EC calibration checks.
+
 ## Assemble in this order
 
 1. Inventory all seven purchase lines. Identify six plate-mount housings/stems, two short wires and the separate 6U wire. Fit the long wire and spacebar cap to their side stems locally; confirm centered cap geometry, straightness, free movement and matching end spacing before assembling the full keyboard.

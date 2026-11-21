@@ -15,7 +15,7 @@
 | 请电池供应商核实参数 | [完整保护电池包规格](03-bom/battery-requirements.zh-CN.md) |
 | 从空板开始分阶段焊接、逐段检查 | [12 步焊接与台架教程](04-assembly/soldering.zh-CN.md)、[图文网页](04-assembly/soldering.zh-CN.html) |
 | 查看装好的键盘、完整爆炸图及试装步骤 | [整机装配图](04-assembly/assembly-views.zh-CN.md) |
-| 安装 NiZ 机构和钢板卫星轴 | [材料、定位板及机构说明](04-assembly/key-mechanism.zh-CN.md) |
+| 试装 NiZ 轴座和钢板卫星轴 | [定位板试装片](04-assembly/key-mechanism.zh-CN.md#定位板试装片)、[完整机构说明](04-assembly/key-mechanism.zh-CN.md) |
 | 接 SWD、安装校准固件、校准全部 60 键、安装正式功能固件 | [固件安装与校准教程](05-firmware/installation.zh-CN.md) |
 | 用模拟器验证壳外供电、充电及 USB／蓝牙切换 | [台架接法、测点及记录](06-validation/bench-power.zh-CN.md) |
 | 查看电气、装配、天线与放行边界 | [当前 E73 工程审查](06-validation/corner-review.zh-CN.md) |
