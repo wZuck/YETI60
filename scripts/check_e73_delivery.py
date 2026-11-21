@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Verify an offline E73 bundle, or verify the bundle and source checkout together."""
-import argparse,hashlib,json,re,zipfile
+import argparse,csv,hashlib,json,re,zipfile
 from html.parser import HTMLParser
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -38,6 +38,17 @@ def main():
  for name in ('BAT-R1','BAT-R2'):assert prototype['retainer_STL'][name]==case_dir+'harness/'+name+'-M05.stl'
  for name in ('bottom-m05','cover-J2','cover-J4'):assert case_dir+name+'-REVIEW.stl' in prototype['shell_STL']
  assert all(path.startswith(case_dir+'harness/wire-lengths-m05') for path in prototype['harness_lengths'])
+ pack_review=json.loads((base/'06-validation/pack-source-review.json').read_text())
+ assert not pack_review['physical_verification'] and not pack_review['supplier_pack_accepted']
+ assert not pack_review['published_standard_pack']['yeti60_direct_replacement']
+ pack_target=pack_review['yeti60_e73_m05']
+ assembly=json.loads((base/'02-mechanical/assembly-spec.json').read_text())
+ assert pack_target['maximum_finished_pack_envelope_mm']==assembly['battery']['full_envelope_including_growth']
+ with (base/(case_dir+'harness/wire-lengths-m05.csv')).open() as stream:
+  leads=[float(row['FreeLength_mm']) for row in csv.DictReader(stream) if row['Harness']=='battery']
+ assert leads==pack_target['required_free_lead_lengths_mm']
+ cell_size=pack_review['reference_cell']['maximum_body_cycled_mm']
+ assert [round(limit-size,3) for limit,size in zip(pack_target['maximum_finished_pack_envelope_mm'],cell_size)]==pack_target['difference_to_maximum_cycled_body_mm']
  coupon=json.loads((base/'06-validation/plate-fit-coupon.json').read_text())
  assert coupon['status']=='m01-opening-profiles-translated-and-read-back' and not coupon['physical_fit_verified']
  assert coupon['source_plate_sha256']==sha(base/'02-mechanical/steel-plate.dxf')

@@ -157,6 +157,7 @@ def main():
  docs['docs/engineering/e73-aperture-review']='06-validation/aperture-review'
  for source,target in docs.items():
   for suffix in ['.md','.zh-CN.md']:copy(source+suffix,target+suffix)
+ copy('docs/engineering/e73-pack-source-review.json','06-validation/pack-source-review.json')
  for lang in ['', '.zh-CN']:
   for ext in ['png','svg']:copy('docs/engineering/images/key-mechanism'+lang+'.'+ext,'04-assembly/images/key-mechanism'+lang+'.'+ext)
  for lang in ['', '.zh-CN']:

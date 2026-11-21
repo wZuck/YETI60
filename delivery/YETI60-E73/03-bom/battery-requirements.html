@@ -2,9 +2,12 @@
 <h1 id="yeti60-bat-1600-1s-supplier-drawing-and-acceptance-specification">YETI60-BAT-1600-1S supplier drawing and acceptance specification</h1>
 <p>This is a review/RFQ specification for one custom protected single-cell pack per keyboard. No supplier has accepted it and no order is authorized. The <a href="../02-mechanical/assembly-spec.json">assembly specification</a>, <a href="../02-mechanical/interconnect-spec.json">interconnect specification</a>, <a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/power-budget.md">power calculation</a> and <a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/battery-study.md">battery study</a> are its controlled inputs.</p>
 <h2 id="cell-and-complete-package">Cell and complete package</h2>
-<p>Reference cell: Honcell HCP404074, sheet dated 2024-04-01, 3.7 V nominal, minimum 1600 mAh/typical 1620 mAh under its stated test protocol. It is a cell reference, not an accepted finished pack. Its 0.2C=270 mA and 1C=1350 mA current rows conflict with the capacity rating. Require a corrected manufacturer sheet or signed clarification before procurement; do not reinterpret these numbers as confirmed 320/1600 mA limits. <a href="https://www.honcell.com/Public/Uploads/uploadfile/files/20240401/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf">Manufacturer sheet</a></p>
+<p>Reference cell <strong>Honcell HCP404074</strong> is rated 3.7 V, with 1600 mAh minimum and 1620 mAh typical under the stated test protocol. The later manufacturer file lists 320 mA standard charge at 0–45 °C and 1600 mA maximum at 15–45 °C for the bare cell. It lists <strong>4.20 V</strong> as the charge endpoint. The finished-pack supplier still needs to approve the full BQ24074 regulation range, including <strong>4.23 V</strong>. <a href="https://www.honcell.com/Public/Uploads/uploadfile/files/20250219/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf">Honcell bare-cell sheet, pp. 1–2</a> · <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 §8.5</a></p>
 <p>The <strong>entire finished pack must remain within 85 x 43 x 4.8 mm</strong>, including PCM, thermal protection, thermistor, weld/tab folds, wrap, insulation, adhesives, strain relief and the specified life/growth condition. The source cell's delivered/cycled thickness allowances must be included, not added later. Confirm full length including tabs and fold geometry; the bare-cell nominal outline is not the finished-pack envelope. Provide an orthographic dimensioned drawing with tolerances and sections through the thickest protection/tab/sensor areas, usable removal surfaces, mass and wire-exit datums.</p>
 <p>The nominal pack bounds in the case are <code>[228.5,-149,-9.4]</code> to <code>[313.5,-106,-4.6]</code> mm. Do not scale the enclosure or clamp the pouch. Nominal floor-to-pack space is 0.20 mm in total; retention tape/insulation/assembly allowance must share it. The current pocket already belongs to the canonical bottom shell.</p>
+<p>The maximum cycled bare-cell body is <strong>74.5 × 40.5 × 4.32 mm</strong>, excluding tabs. Subtraction from the finished envelope leaves <strong>10.5 mm length, 2.5 mm width and 0.48 mm thickness</strong> in total, before pack parts and tolerances. With the longest 7 mm straight tabs, 3.5 mm remains in the length direction. Confirm the stack-ups, tab section and aged pack thickness on the supplier drawing. <a href="../06-validation/pack-source-review.json">Source values and arithmetic</a></p>
+<h2 id="compare-the-published-honcell-pack">Compare the published Honcell pack</h2>
+<p>Honcell publishes an <strong>HCP404074NZC</strong> pack drawing. Its <strong>77.0 × 40.5 × 4.2 mm</strong> body fits within the design envelope on paper. The drawing gives a PHR-3 connector and a 50 ±3 mm lead dimension. M05 uses the SH3 housing below and individual free leads of 107.229–113.512 mm. The stock pack rates maximum charging at 800 mA over 15–45 °C. Its circuit shows one external NTC feedback lead and a voltage/current PCM. The sheet leaves independent hot/cold charge interruption, the complete cycled envelope and approval for 4.23 V regulation open. Use this drawing as a supplier reference for a <strong>custom finished pack</strong>. <a href="https://www.honcell.com/Public/Uploads/uploadfile/files/20250219/DATASHEETHCP404074NZC3.7V1600mAhPACK2024.pdf">Honcell pack sheet, pp. 4–7</a></p>
 <h2 id="electrical-and-temperature-requirements">Electrical and temperature requirements</h2>
 <table>
 <thead>
@@ -16,7 +19,7 @@
 <tbody>
 <tr>
 <td>Charge protocol</td>
-<td>1S lithium-ion, nominal 4.2 V CC/CV; supplier must approve the BQ24074 <strong>4.16/4.20/4.23 V min/typ/max</strong> regulation range, with the corrected cell's absolute voltage and protection limits</td>
+<td>1S lithium-ion, nominal 4.2 V CC/CV; supplier must approve the BQ24074 <strong>4.16/4.20/4.23 V min/typ/max</strong> regulation range, with the supplied cell's absolute voltage and protection limits</td>
 </tr>
 <tr>
 <td>Continuous charge capability</td>
@@ -24,7 +27,7 @@
 </tr>
 <tr>
 <td>Termination</td>
-<td>R56=1.69k/1%, calculated USB500 termination 16.87/22.94/29.26 mA; supplier must accept the actual protocol and prove termination within the configured timer under the test conditions</td>
+<td>The Honcell reference protocol ends at 0.02C, or 32 mA for a 1600 mAh cell. R56 = 1.69 kΩ ±1% gives calculated E73 USB500 thresholds of <strong>16.87 / 22.94 / 29.26 mA</strong>. Ask the supplier to approve the lower threshold range and demonstrate taper to termination within the configured timer</td>
 </tr>
 <tr>
 <td>Capacity</td>
@@ -44,7 +47,7 @@
 </tr>
 <tr>
 <td>Evidence</td>
-<td>Signed corrected limits, pack drawing, capacity/charging curves, temperature interruption/recovery records and production inspection criteria</td>
+<td>Signed pack limits, pack drawing, capacity/charging curves, temperature interruption/recovery records and production inspection criteria</td>
 </tr>
 </tbody>
 </table>

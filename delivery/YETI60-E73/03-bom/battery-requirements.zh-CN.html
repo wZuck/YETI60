@@ -2,9 +2,12 @@
 <h1 id="yeti60-bat-1600-1s-电池包供方图纸与验收规格">YETI60-BAT-1600-1S 电池包供方图纸与验收规格</h1>
 <p>本文件用于定制单电芯保护包的审查与询价，每把键盘 1 包。尚无供方接受该规格，也未授权下单。受控输入为<a href="../02-mechanical/assembly-spec.json">装配规格</a>、<a href="../02-mechanical/interconnect-spec.json">连接规格</a>、<a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/power-budget.zh-CN.md">充电计算</a>与<a href="https://github.com/wZuck/YETI60/blob/master/docs/engineering/battery-study.zh-CN.md">电池研究</a>。</p>
 <h2 id="电芯及完整包络">电芯及完整包络</h2>
-<p>参考电芯为 Honcell HCP404074，数据表日期 2024-04-01，标称 3.7 V；按表内测试协议最低 1600 mAh、典型 1620 mAh。这是电芯参考，不是已验收的成品电池包。表内 0.2C=270 mA、1C=1350 mA 与容量标注矛盾，采购前必须取得更正数据或签署澄清；不能自行将其改写为已确认的 320／1600 mA 限值。<a href="https://www.honcell.com/Public/Uploads/uploadfile/files/20240401/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf">制造商数据表</a></p>
+<p>参考电芯 <strong>Honcell HCP404074</strong> 标称 3.7 V，按原厂条件测试最低 1600 mAh、典型 1620 mAh。后续发布的原厂资料列出裸电芯标准充电电流为 320 mA（0–45 °C），最高为 1600 mA（15–45 °C）。充电终点列为 <strong>4.20 V</strong>。成品包供应商仍须确认可接受 BQ24074 的完整稳压范围，包括 <strong>4.23 V</strong> 高端。<a href="https://www.honcell.com/Public/Uploads/uploadfile/files/20250219/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf">Honcell 裸电芯规格第 1–2 页</a> · <a href="https://www.ti.com/lit/ds/symlink/bq24074.pdf">TI BQ24074 第 8.5 节</a></p>
 <p><strong>完整成品包不得超过 85×43×4.8 mm</strong>，须包含保护板、温度保护、热敏电阻、焊片折叠、包覆、绝缘、胶粘剂、应力释放及规定寿命／增长条件。必须计入原电芯的交付及循环后厚度余量，不能随后追加。供方须确认包含焊片及折弯的全长；裸电芯外形不是成品包外形。提交正投影尺寸图、公差及保护板／焊片／传感器最厚处剖面、可拆取表面、重量和出线基准。</p>
 <p>电池在壳体中的名义边界为 <code>[228.5,-149,-9.4]</code> 至 <code>[313.5,-106,-4.6]</code> mm。外壳不缩放，不能夹压软包。槽底到电池仅有名义 0.20 mm，总计用于固定胶、绝缘及装配余量；凹槽已包含在正式底壳中。</p>
+<p>循环后裸电芯本体最大 <strong>74.5 × 40.5 × 4.32 mm</strong>，长度未含焊片。用成品包络减去裸电芯，各方向的总余量为<strong>长 10.5 mm、宽 2.5 mm、厚 0.48 mm</strong>，须覆盖相应方向的部件与公差。若焊片按最长 7 mm 直伸，长度余量剩 3.5 mm。要求供方提供保护区和焊片剖面及完整包循环后的尺寸。<a href="../06-validation/pack-source-review.json">数据来源与余量计算</a></p>
+<h2 id="honcell-原厂成品包对照">Honcell 原厂成品包对照</h2>
+<p>原厂公开了 <strong>HCP404074NZC</strong>。图纸外形 <strong>77.0 × 40.5 × 4.2 mm</strong> 落在设计包络内，图上接头为 PHR-3，引线尺寸为 50 ±3 mm。M05 使用下文的 SH3，三根导线的自由长度为 107.229–113.512 mm。公开成品包在 15–45 °C 下最大充电电流为 800 mA。保护电路显示一路外接 NTC 反馈和电压／电流保护，资料尚未证明独立高低温断充、循环后的整包包络或允许 4.23 V 稳压。用该图作为询价<strong>定制成品包</strong>的参考。<a href="https://www.honcell.com/Public/Uploads/uploadfile/files/20250219/DATASHEETHCP404074NZC3.7V1600mAhPACK2024.pdf">Honcell 成品包规格第 4–7 页</a></p>
 <h2 id="电气与温度要求">电气与温度要求</h2>
 <table>
 <thead>
@@ -16,7 +19,7 @@
 <tbody>
 <tr>
 <td>充电协议</td>
-<td>单节锂离子、名义 4.2 V 恒流／恒压；供方须接受 BQ24074 <strong>4.16／4.20／4.23 V 最小／典型／最大</strong>稳压范围，并与更正后的电芯绝对电压、保护阈值核对</td>
+<td>单节锂离子、名义 4.2 V 恒流／恒压；供方须接受 BQ24074 <strong>4.16／4.20／4.23 V 最小／典型／最大</strong>稳压范围，并与所供电芯的绝对电压、保护阈值核对</td>
 </tr>
 <tr>
 <td>连续充电能力</td>
@@ -24,7 +27,7 @@
 </tr>
 <tr>
 <td>终止电流</td>
-<td>R56=1.69k／1%，USB500 计算为 16.87／22.94／29.26 mA；供方须接受完整协议，并在配置计时内验证实际终止</td>
+<td>Honcell 参考协议以 0.02C 终止，1600 mAh 对应 32 mA。R56 = 1.69 kΩ ±1% 时，E73 的 USB500 终止电流计算为 <strong>16.87／22.94／29.26 mA</strong>。请供方确认较低的终止电流范围，并证明恒压降流可在配置计时内达到终止条件</td>
 </tr>
 <tr>
 <td>容量</td>
@@ -44,7 +47,7 @@
 </tr>
 <tr>
 <td>证据</td>
-<td>签署的更正限值、完整包图、容量／充电曲线、温度断充与恢复记录和生产检验标准</td>
+<td>签署的成品包限值、完整包图、容量／充电曲线、温度断充与恢复记录和生产检验标准</td>
 </tr>
 </tbody>
 </table>

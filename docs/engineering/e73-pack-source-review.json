@@ -1,0 +1,61 @@
+{
+  "status": "current-cell-limits-reviewed-standard-pack-requires-customization",
+  "physical_verification": false,
+  "supplier_pack_accepted": false,
+  "sources": {
+    "cell": {
+      "url": "https://www.honcell.com/Public/Uploads/uploadfile/files/20250219/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf",
+      "pages": [1, 2],
+      "sha256": "6caa70a8083e6d54ff45399bf5adc848e96dedd6e6b958664b6219ca0cedb470"
+    },
+    "standard_pack": {
+      "url": "https://www.honcell.com/Public/Uploads/uploadfile/files/20250219/DATASHEETHCP404074NZC3.7V1600mAhPACK2024.pdf",
+      "pages": [4, 5, 6, 7],
+      "sha256": "79252b83d7b5c510caffcdf8bb517f432bcaf5d281b7c627ec20c3ce43d44053"
+    },
+    "charger": {
+      "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf",
+      "locator": "Section 8.5, VBAT(REG)"
+    }
+  },
+  "reference_cell": {
+    "model": "HCP404074",
+    "minimum_capacity_mAh": 1600,
+    "standard_charge_mA": 320,
+    "standard_charge_temperature_C": [0, 45],
+    "maximum_charge_mA": 1600,
+    "maximum_rate_temperature_C": [15, 45],
+    "charge_end_voltage_V": 4.20,
+    "standard_termination_mA_at_0p02C": 32,
+    "maximum_body_delivered_mm": [74.5, 40.5, 4.0],
+    "maximum_body_cycled_mm": [74.5, 40.5, 4.32],
+    "maximum_straight_tab_length_mm": 7.0
+  },
+  "yeti60_e73_m05": {
+    "maximum_finished_pack_envelope_mm": [85, 43, 4.8],
+    "difference_to_maximum_cycled_body_mm": [10.5, 2.5, 0.48],
+    "length_remaining_after_maximum_straight_tab_mm": 3.5,
+    "required_connector": "JST SHR-03V-S",
+    "required_free_lead_lengths_mm": [113.512, 110.309, 107.229],
+    "requested_minimum_continuous_pack_charge_rating_mA": 500,
+    "maximum_programmed_charge_mA": 445.63,
+    "USB500_termination_min_typ_max_mA": [16.87, 22.94, 29.26],
+    "charger_regulation_min_typ_max_V": [4.16, 4.20, 4.23],
+    "required_actual_charge_temperature_window_C": [15, 43]
+  },
+  "published_standard_pack": {
+    "model": "HCP404074NZC",
+    "drawing_envelope_mm": [77.0, 40.5, 4.2],
+    "difference_to_yeti60_envelope_as_drawn_mm": [8.0, 2.5, 0.6],
+    "complete_pack_cycled_envelope_provided": false,
+    "maximum_charge_mA": 800,
+    "maximum_rate_temperature_C": [15, 45],
+    "specified_charge_end_voltage_V": 4.20,
+    "connector": "JST PHR-3",
+    "lead_length_nominal_mm": 50,
+    "lead_length_tolerance_mm": 3,
+    "thermal_feedback": "10k NTC, B=3435 K, third wire",
+    "independent_hot_and_cold_charge_interruption_documented": false,
+    "yeti60_direct_replacement": false
+  }
+}

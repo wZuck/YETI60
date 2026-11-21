@@ -20,9 +20,9 @@ The [catalog snapshot](../../hardware/bom/cell-catalog.json) contains 249 Honcel
 | Epec 502699 | 1450 mAh catalog value | Lower-capacity geometric candidate; not individually qualified |
 | Epec 453969 | 1360 mAh catalog value | Lower-capacity geometric candidate; not individually qualified |
 
-The [manufacturer's individual HCP404074 PDF](https://www.honcell.com/Public/Uploads/uploadfile/files/20240401/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf), pp1–2, gives minimum 1600 / typical 1620 mAh at 0.2C and 23±2°C, 3.7 V nominal, 4.2 V charging, and 3.0 V discharge cutoff. Body maxima are 74.5×40.5×4.0 mm delivered, with thickness up to 4.3 mm after cycling; length excludes 6±1 mm tabs. The default pack budget rounds the screening size 84.5×42.5×4.8 upward to 85×43×4.8 mm. These allowances are engineering requirements, not a manufacturer's finished-pack drawing.
+The later [HCP404074 bare-cell sheet](https://www.honcell.com/Public/Uploads/uploadfile/files/20250219/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf) lists 1600 mAh minimum and 1620 mAh typical at 0.2C and 23±2 °C. It gives 320 mA standard charge at 0–45 °C and 1600 mA maximum at 15–45 °C. The maximum delivered body is 74.5 × 40.5 × 4.00 mm. Cycled thickness reaches 4.32 mm and length excludes the 6 ±1 mm tabs. Subtracting the updated cycled thickness from the 4.8 mm finished envelope leaves 0.48 mm.
 
-**Source discrepancy:** the charge rows label 0.2C as 270 mA and 1C as 1350 mA, inconsistent with 1600 mAh. Their explicit conditions are 270 mA over 0…45°C and 1350 mA over 15…45°C. Do not replace these with calculated 320/1600 mA or use the reference charge graph to promise a charge time. The supplier must correct/confirm the current limits, capacity test and permitted charger voltage tolerance in writing before order release.
+The 270/1350 mA entries remain in the [earlier manufacturer sheet](https://www.honcell.com/Public/Uploads/uploadfile/files/20240401/DATASHEETHCP4040743.7V1600mAhCELL2024.pdf). The [current supplier specification](battery-pack-specification.md) compares the published finished pack and lists the connector, lead lengths, independent thermal interruption and charging range for E73.
 
 ## Exact selected geometry
 
@@ -53,7 +53,7 @@ The canonical bottom must remain one valid solid, have unchanged exterior boundi
 
 ## Electrical and procurement contract
 
-P2 retains BQ24074 with R40=2.21k, R55=69.8k and R56=1.69k, all 1%; USB500 is enabled only after configuration. See the [current, timer, termination and runtime calculations](power-budget.md). The pack must independently interrupt charging outside a guaranteed **actual cell window within 15…43°C**, target 18…40°C including all sensor/IC tolerances, and provide separate third-wire 10k 103AT-2 NTC feedback. Ordinary voltage/current-only PCM or a two-wire pouch is not an equivalent substitute. J2/PHR-3 is custom: 1 PACK+, 2 PACK−, 3 NTC to PACK−.
+P2 retains BQ24074 with R40=2.21k, R55=69.8k and R56=1.69k, all 1%; USB500 is enabled only after configuration. See the [current, timer, termination and runtime calculations](power-budget.md). The pack must independently interrupt charging outside a guaranteed **actual cell window within 15…43°C**, target 18…40°C including all sensor/IC tolerances, and provide separate third-wire 10k 103AT-2 NTC feedback. Ordinary voltage/current-only PCM or a two-wire pouch is not an equivalent substitute. For E73 CORNER-07, use the SH3 pinout and lead dimensions in the [current supplier specification](battery-pack-specification.md).
 
 The supplier must sign the complete envelope and lead exit/bend geometry, protection thresholds, thermal interruption, NTC coupling, charge-current limits and capacity. Insulate and retain the pack without pouch compression; the whole mounting system must fit the 0.2 mm floor budget. Do not use the old small-pack electrical configuration with this battery or the P2 charger with the old small pack.
 
