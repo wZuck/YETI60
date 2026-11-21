@@ -26,9 +26,28 @@ q
 <li>全部按键释放，执行 <code>yeti_calibrate release</code>，等待 128 帧完成提示。</li>
 <li><strong>先完全按住</strong>一个键，再输入对应命令。图中 <code>0,0</code> 位置使用 <code>yeti_calibrate press 0 0</code>。保持到 128 样本完成提示再松开，依图对全部 60 个有效位置重复操作。</li>
 <li>执行 <code>yeti_calibrate status</code>。样本不足、区间重叠、饱和或保护量不合格时先排查，不绕过保护。全部按键通过后才执行 <code>yeti_calibrate save</code>。</li>
-<li>按相同电压和极性要求重新接 SWD，使用上述流程写入 <code>releases/normal/yeti60-e73.hex</code>，保留设置分区；不要混用别的交付包中的正常版。</li>
-<li>检查 USB 按下／释放、修饰键、Fn 和大键边缘回弹，再测试蓝牙配对、重连、唤醒和 USB 优先。轴座、胶碗、弹簧、定位板叠层或 PCB 指纹变化后必须重新校准。</li>
+<li>按相同电压和极性要求重新接 SWD，再按下节保留设置的流程安装正常版。</li>
 </ol>
+<h3 id="安装正常版并保留校准">安装正常版并保留校准</h3>
+<p>在交付包的 <code>05-firmware/</code> 目录操作。先退出 J-Link Commander，让 nRF Util 可以使用探针。首次安装 <code>device</code> 命令时执行下列第一行。列出探针后换成自己的序列号，备份和更新期间保持同一块主板供电并连接。<a href="https://docs.nordicsemi.com/r/bundle/nrfutil/page/guides/installing.html/prerequisites">Nordic 安装要求</a> · <a href="https://docs.nordicsemi.com/r/bundle/nrfutil/page/guides/installing_commands.html/installing-latest-commands">安装 device 命令</a></p>
+<pre><code class="language-sh">nrfutil install device
+nrfutil device list
+PROBE=123456789
+python3 prepare-normal-update.py prepare yeti60-e73-update.hex
+nrfutil device read --serial-number &quot;$PROBE&quot; --address 0x1000120C --bytes 4
+nrfutil device read --serial-number &quot;$PROBE&quot; --address 0xF0000 --bytes 65536 \
+  --to-file settings-before.hex
+python3 prepare-normal-update.py check-settings settings-before.hex
+</code></pre>
+<p><a href="prepare-normal-update.py">离线升级工具</a>先比对正常版 HEX 的发布校验值，再生成地址低于 <code>0xF0000</code> 的应用区镜像。读回 <strong>NFCPINS = 0xFFFFFFFE</strong>，且工具确认设置备份完整、非空后，再开始编程。空白设置要回校准版检查保存结果。备份可能含有蓝牙配对数据，请留在本机。<a href="https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/nrfutil-device-read.html/syntax">Nordic 内存读取语法</a></p>
+<pre><code class="language-sh">nrfutil device program --serial-number &quot;$PROBE&quot; --firmware yeti60-e73-update.hex \
+  --options chip_erase_mode=ERASE_RANGES_TOUCHED_BY_FIRMWARE,verify=VERIFY_READ,reset=RESET_NONE
+nrfutil device read --serial-number &quot;$PROBE&quot; --address 0xF0000 --bytes 65536 \
+  --to-file settings-after.hex
+python3 prepare-normal-update.py compare-settings settings-before.hex settings-after.hex
+</code></pre>
+<p>使用上述显式擦除选项，nRF Util 的默认模式为全片擦除。编程校验和回读均成功、工具输出 <code>same_settings: true</code> 后，执行 <code>nrfutil device reset --serial-number &quot;$PROBE&quot;</code>。如果校验或比对失败，保留原备份，先排查原因再进行擦除或复位。<a href="https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/nrfutil-device-program.html/programming-options">Nordic 编程选项</a></p>
+<p>检查 USB 按下／释放、修饰键、Fn 和大键边缘回弹，再测试蓝牙配对、重连、唤醒和 USB 优先。轴座、胶碗、弹簧、定位板叠层或 PCB 指纹变化后重新校准。</p>
 <p>记录真实结果；交付的主机测试不能代替这些样机测试。</p>
 <h2 id="从源码重建">从源码重建</h2>
 <p>在完整源码仓库中完成原生布线、USB 参考地和装配检查后，运行以下命令。</p>

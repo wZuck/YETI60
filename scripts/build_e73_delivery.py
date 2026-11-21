@@ -159,6 +159,7 @@ def main():
   for suffix in ['.md','.zh-CN.md']:copy(source+suffix,target+suffix)
  copy('docs/engineering/e73-pack-source-review.json','06-validation/pack-source-review.json')
  copy('scripts/check_e73_usb_inrush.py','06-validation/check-usb-inrush.py')
+ copy('scripts/prepare_e73_normal_update.py','05-firmware/prepare-normal-update.py')
  for lang in ['', '.zh-CN']:
   for ext in ['png','svg']:copy('docs/engineering/images/key-mechanism'+lang+'.'+ext,'04-assembly/images/key-mechanism'+lang+'.'+ext)
  for lang in ['', '.zh-CN']:

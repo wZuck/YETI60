@@ -26,9 +26,28 @@ q
 <li>Release every key, run <code>yeti_calibrate release</code>, and wait for the 128-frame completion message.</li>
 <li>Hold one key fully down <strong>before</strong> running its command. For the diagram's <code>0,0</code> position use <code>yeti_calibrate press 0 0</code>. Keep it held until the 128-sample completion message, then release. Repeat the corresponding command for all 60 active positions.</li>
 <li>Run <code>yeti_calibrate status</code>. Resolve insufficient samples, overlap, saturation or guard failures; do not bypass them. Run <code>yeti_calibrate save</code> only after every key passes.</li>
-<li>Reconnect the SWD probe with the same voltage/polarity precautions and program <code>releases/normal/yeti60-e73.hex</code> using the sequence above, preserving the settings partition. Do not mix a normal image from another bundle.</li>
-<li>Confirm USB key-down/release, modifiers, Fn and large-key edge return; then test BLE pairing, reconnect, wake and USB priority. A changed housing/dome/spring/plate stack or PCB fingerprint requires recalibration.</li>
+<li>Reconnect the SWD probe with the same voltage and polarity precautions, then follow the settings-preserving upgrade below.</li>
 </ol>
+<h3 id="upgrade-to-normal-firmware-and-preserve-calibration">Upgrade to normal firmware and preserve calibration</h3>
+<p>Work in the delivery's <code>05-firmware/</code> directory. Exit J-Link Commander so nRF Util can use your probe. Install the <code>device</code> command once, list the probes, then replace the example serial with your own. Keep the same PCB powered and connected throughout the backup and update. <a href="https://docs.nordicsemi.com/r/bundle/nrfutil/page/guides/installing.html/prerequisites">Nordic installation notes</a> · <a href="https://docs.nordicsemi.com/r/bundle/nrfutil/page/guides/installing_commands.html/installing-latest-commands">Install the device command</a></p>
+<pre><code class="language-sh">nrfutil install device
+nrfutil device list
+PROBE=123456789
+python3 prepare-normal-update.py prepare yeti60-e73-update.hex
+nrfutil device read --serial-number &quot;$PROBE&quot; --address 0x1000120C --bytes 4
+nrfutil device read --serial-number &quot;$PROBE&quot; --address 0xF0000 --bytes 65536 \
+  --to-file settings-before.hex
+python3 prepare-normal-update.py check-settings settings-before.hex
+</code></pre>
+<p>The <a href="prepare-normal-update.py">offline update helper</a> checks the normal HEX against the manifest and emits only application addresses below <code>0xF0000</code>. Program after the UICR read shows <strong>NFCPINS = 0xFFFFFFFE</strong> and the helper confirms a complete nonblank backup. A blank backup means the stored calibration needs checking in the calibrator. Keep the backup local because it can contain Bluetooth bonds. <a href="https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/nrfutil-device-read.html/syntax">Nordic memory read syntax</a></p>
+<pre><code class="language-sh">nrfutil device program --serial-number &quot;$PROBE&quot; --firmware yeti60-e73-update.hex \
+  --options chip_erase_mode=ERASE_RANGES_TOUCHED_BY_FIRMWARE,verify=VERIFY_READ,reset=RESET_NONE
+nrfutil device read --serial-number &quot;$PROBE&quot; --address 0xF0000 --bytes 65536 \
+  --to-file settings-after.hex
+python3 prepare-normal-update.py compare-settings settings-before.hex settings-after.hex
+</code></pre>
+<p>Use the explicit erase option above. The default nRF Util mode is whole-chip erase. After programming and readback succeed and <code>same_settings</code> is <code>true</code>, run <code>nrfutil device reset --serial-number &quot;$PROBE&quot;</code>. If verification or the comparison fails, keep the original backup and investigate before any further erase or reset. <a href="https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/nrfutil-device-program.html/programming-options">Nordic programming options</a></p>
+<p>Confirm USB key-down and release, modifiers, Fn and large-key edge return. Then test BLE pairing, reconnect, wake and USB priority. A changed housing, dome, spring, plate stack or PCB fingerprint requires recalibration.</p>
 <p>Record real results; the delivered host tests do not replace these unit tests.</p>
 <h2 id="rebuild-from-source">Rebuild from source</h2>
 <p>Run from the full source checkout after the native routing, USB reference-ground and fit checks.</p>

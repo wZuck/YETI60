@@ -44,8 +44,36 @@ q
 1. 全部按键释放，执行 `yeti_calibrate release`，等待 128 帧完成提示。
 2. **先完全按住**一个键，再输入对应命令。图中 `0,0` 位置使用 `yeti_calibrate press 0 0`。保持到 128 样本完成提示再松开，依图对全部 60 个有效位置重复操作。
 3. 执行 `yeti_calibrate status`。样本不足、区间重叠、饱和或保护量不合格时先排查，不绕过保护。全部按键通过后才执行 `yeti_calibrate save`。
-4. 按相同电压和极性要求重新接 SWD，使用上述流程写入 `releases/normal/yeti60-e73.hex`，保留设置分区；不要混用别的交付包中的正常版。
-5. 检查 USB 按下／释放、修饰键、Fn 和大键边缘回弹，再测试蓝牙配对、重连、唤醒和 USB 优先。轴座、胶碗、弹簧、定位板叠层或 PCB 指纹变化后必须重新校准。
+4. 按相同电压和极性要求重新接 SWD，再按下节保留设置的流程安装正常版。
+
+### 安装正常版并保留校准
+
+在交付包的 `05-firmware/` 目录操作。先退出 J-Link Commander，让 nRF Util 可以使用探针。首次安装 `device` 命令时执行下列第一行。列出探针后换成自己的序列号，备份和更新期间保持同一块主板供电并连接。[Nordic 安装要求](https://docs.nordicsemi.com/r/bundle/nrfutil/page/guides/installing.html/prerequisites) · [安装 device 命令](https://docs.nordicsemi.com/r/bundle/nrfutil/page/guides/installing_commands.html/installing-latest-commands)
+
+```sh
+nrfutil install device
+nrfutil device list
+PROBE=123456789
+python3 prepare-normal-update.py prepare yeti60-e73-update.hex
+nrfutil device read --serial-number "$PROBE" --address 0x1000120C --bytes 4
+nrfutil device read --serial-number "$PROBE" --address 0xF0000 --bytes 65536 \
+  --to-file settings-before.hex
+python3 prepare-normal-update.py check-settings settings-before.hex
+```
+
+[离线升级工具](prepare-normal-update.py)先比对正常版 HEX 的发布校验值，再生成地址低于 `0xF0000` 的应用区镜像。读回 **NFCPINS = 0xFFFFFFFE**，且工具确认设置备份完整、非空后，再开始编程。空白设置要回校准版检查保存结果。备份可能含有蓝牙配对数据，请留在本机。[Nordic 内存读取语法](https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/nrfutil-device-read.html/syntax)
+
+```sh
+nrfutil device program --serial-number "$PROBE" --firmware yeti60-e73-update.hex \
+  --options chip_erase_mode=ERASE_RANGES_TOUCHED_BY_FIRMWARE,verify=VERIFY_READ,reset=RESET_NONE
+nrfutil device read --serial-number "$PROBE" --address 0xF0000 --bytes 65536 \
+  --to-file settings-after.hex
+python3 prepare-normal-update.py compare-settings settings-before.hex settings-after.hex
+```
+
+使用上述显式擦除选项，nRF Util 的默认模式为全片擦除。编程校验和回读均成功、工具输出 `same_settings: true` 后，执行 `nrfutil device reset --serial-number "$PROBE"`。如果校验或比对失败，保留原备份，先排查原因再进行擦除或复位。[Nordic 编程选项](https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/nrfutil-device-program.html/programming-options)
+
+检查 USB 按下／释放、修饰键、Fn 和大键边缘回弹，再测试蓝牙配对、重连、唤醒和 USB 优先。轴座、胶碗、弹簧、定位板叠层或 PCB 指纹变化后重新校准。
 
 记录真实结果；交付的主机测试不能代替这些样机测试。
 
