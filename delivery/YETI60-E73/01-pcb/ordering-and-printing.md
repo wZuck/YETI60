@@ -72,7 +72,7 @@ Dry-align before printing. Match the front openings to U1 at the right-hand corn
 
 Use STEP as the dimension reference; STL is a mesh export in the same millimetre coordinates. Do not rescale the FELK60 shell or add an arbitrary shrinkage percentage. Agree on the supplier's process compensation and verify the finished dimensions. Orient/support the resin parts so mating ledges, insert bores and cable channels remain dimensionally controlled; clean and post-cure before finishing bores. Printed threads are not substitutes for the specified brass inserts or machined standoff threads.
 
-The project case coordinate tolerance is ±0.15 mm per axis; a print supplier must demonstrate it at the functional datums, not only at the outer bounding box. Plate opening corners, finished thickness and actual NiZ/stabilizer retention require a local sample. Fit without force.
+The project case coordinate tolerance is ±0.15 mm per axis at the functional datums. Use the [SLA quotation and receiving checks](../02-mechanical/service-case-m05/print-guide.md#resin-printing-tolerance-and-receiving-inspection) for all four shell pieces and the installed C5. Plate opening corners, finished thickness and NiZ/stabilizer retention require a local sample. Fit without force.
 
 ## Finish and inspect before electronics
 

@@ -22,6 +22,21 @@ M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the 
 
 Print one of each of the four shell parts at 100% in millimetres using tough engineering SLA resin. Choose either STEP or STL for each part. Both formats use the same case coordinates. Inspect the seating faces, foot recess and blind bores after the resin is fully post-cured. Keep supports off those faces.
 
+## Resin printing tolerance and receiving inspection
+
+JLC3DP lists ordinary SLA dimensional tolerances of **±0.20 mm through 100 mm**, **±0.30% above 100 mm** and **±0.30 mm for holes**. Its size figures assume no deformation, warping or added finish. The 325.70 mm shell length corresponds to about **±0.98 mm** under that rule. The finished project still needs **±0.15 mm per axis at functional surfaces**. Treat the published figures as a quotation screen and agree with the supplier on the critical features to measure after post-cure. [JLC3DP §10](https://jlc3dp.com/help/article/3d-printing-design-guideline) · [Four-part STEP readback](../../06-validation/m05-print-fit.json)
+
+On the quotation, specify four parts at 1:1 in millimetres. Request support placement clear of the mating ledges, USB opening, cover seating faces and screw/insert bores. Keep coating and heavy sanding off functional surfaces. Ask whether the shop can finish the insert bores after curing. If the plan uses undersize pilots, agree on the pilot dimensions and finishing sequence before the parts are made. The delivered STEP files show the finished nominal bores.
+
+| Check before bonding the inserts | Drawing target and parts to use |
+|---|---|
+| Upper/lower registration and four M3 fasteners | Hole pattern nominally **300 × 90 mm**, with **Ø3.40 mm** passages in the lower shell. Check both diagonals, seat the shells by hand, and hold the inserts in place for a dry alignment check with the actual screws. Upper insert bores finish to **Ø4.80–4.90 mm** and **3.50 mm** depth |
+| C5 board and incoming USB plug | Confirm the **14 × 12.5 mm** pattern against the existing C5. With the board located at its seating height and unpowered, insert and withdraw the actual USB cable from outside. Check that the plug reaches full mating depth without rubbing or moving the board |
+| C5 and both cover insert bores | Finish to **Ø3.30–3.40 mm** and **2.90 mm** depth from the local seating face. Check cured bore size before bonding. An undersized, correctly located bore can be finished with a depth stop. Set aside oversize or misplaced bores for supplier disposition |
+| J2 and J4 covers | Hole center distances **25.35 mm** and **17.00 mm**, respectively. CAD clearance is **0.35 mm per side**, with a **0.45 mm** nominal screw-tip reserve. Check flush seating and straight withdrawal with the actual screws. When seated, the right rear foot belongs in the J4 recess and the case should rest on all four feet |
+
+For a rigid M3 screw, the nominal radial clearance through the lower pilot is `(3.40 − 3.00) / 2 = 0.20 mm`. Taking ±0.15 mm on one part and ±0.05 mm on the opposing insert per axis yields a worst-case example of `√2 × (0.15 + 0.05) = 0.283 mm` center offset. Check the matched shell pair before committing to extra prints. Record the actual part dimensions, assembly alignment and cable used with the first-article record.
+
 ## Build the matched M05 harness
 
 Use the [M05 free lengths](harness/wire-lengths-m05.csv) for all nine conductors. These are lengths along the insulation, from housing exit to housing exit or to the pack strain-relief face. Add the termination and stripping allowances for the actual contacts when cutting the wire. The trial uses stranded AWG28 copper with a maximum finished insulation diameter of 0.65 mm.

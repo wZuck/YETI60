@@ -1,0 +1,406 @@
+{
+  "status": "m05-step-readback-and-ordinary-sla-fit-screen",
+  "physical_verification": false,
+  "supplier_guide": "https://jlc3dp.com/help/article/3d-printing-design-guideline",
+  "parts": {
+    "upper": {
+      "nominal_xyz_mm": [
+        325.7,
+        119.95,
+        19.2
+      ],
+      "ordinary_sla_size_tolerance_mm": [
+        0.9771,
+        0.3599,
+        0.2
+      ]
+    },
+    "lower": {
+      "nominal_xyz_mm": [
+        325.7,
+        115.2,
+        31.1896
+      ],
+      "ordinary_sla_size_tolerance_mm": [
+        0.9771,
+        0.3456,
+        0.2
+      ]
+    },
+    "J2": {
+      "nominal_xyz_mm": [
+        11.1,
+        32.1,
+        7.9414
+      ],
+      "ordinary_sla_size_tolerance_mm": [
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    "J4": {
+      "nominal_xyz_mm": [
+        46.4,
+        16.9,
+        6.0751
+      ],
+      "ordinary_sla_size_tolerance_mm": [
+        0.2,
+        0.2,
+        0.2
+      ]
+    }
+  },
+  "nominal_passage_radial_clearance_mm": {
+    "upper_lower_M3": 0.2,
+    "cover_M2": 0.2
+  },
+  "example_M3_independent_xy_error_mm": {
+    "lower_per_axis": 0.15,
+    "upper_finished_insert_per_axis": 0.05,
+    "resultant_center_offset_mm": 0.2828
+  },
+  "insert_diameter_comparison": {
+    "top_insert": {
+      "finished_diameter_range_mm": [
+        4.8,
+        4.9
+      ],
+      "ordinary_sla_diameter_range_mm": [
+        4.55,
+        5.15
+      ]
+    },
+    "daughterboard_insert": {
+      "finished_diameter_range_mm": [
+        3.3,
+        3.4
+      ],
+      "ordinary_sla_diameter_range_mm": [
+        3.05,
+        3.65
+      ]
+    }
+  },
+  "closure_passages_and_inserts": [
+    {
+      "insert": {
+        "center_xy_mm": [
+          64.312702,
+          -101.209701
+        ],
+        "diameter_mm": 4.85,
+        "z_span_mm": [
+          4.79,
+          8.29
+        ]
+      },
+      "passage": {
+        "center_xy_mm": [
+          64.312702,
+          -101.209701
+        ],
+        "diameter_mm": 3.4,
+        "z_span_mm": [
+          2.59,
+          4.79
+        ]
+      }
+    },
+    {
+      "insert": {
+        "center_xy_mm": [
+          64.312715,
+          -191.209701
+        ],
+        "diameter_mm": 4.85,
+        "z_span_mm": [
+          4.79,
+          8.29
+        ]
+      },
+      "passage": {
+        "center_xy_mm": [
+          64.312715,
+          -191.209701
+        ],
+        "diameter_mm": 3.4,
+        "z_span_mm": [
+          2.59,
+          4.79
+        ]
+      }
+    },
+    {
+      "insert": {
+        "center_xy_mm": [
+          364.312715,
+          -191.209659
+        ],
+        "diameter_mm": 4.85,
+        "z_span_mm": [
+          4.79,
+          8.29
+        ]
+      },
+      "passage": {
+        "center_xy_mm": [
+          364.312715,
+          -191.209659
+        ],
+        "diameter_mm": 3.4,
+        "z_span_mm": [
+          2.59,
+          4.79
+        ]
+      }
+    },
+    {
+      "insert": {
+        "center_xy_mm": [
+          364.312702,
+          -101.209659
+        ],
+        "diameter_mm": 4.85,
+        "z_span_mm": [
+          4.79,
+          8.29
+        ]
+      },
+      "passage": {
+        "center_xy_mm": [
+          364.312702,
+          -101.209659
+        ],
+        "diameter_mm": 3.4,
+        "z_span_mm": [
+          2.59,
+          4.79
+        ]
+      }
+    }
+  ],
+  "daughterboard_inserts": [
+    {
+      "center_xy_mm": [
+        207.312702,
+        -105.3597
+      ],
+      "diameter_mm": 3.35,
+      "z_span_mm": [
+        -13.81,
+        -10.91
+      ]
+    },
+    {
+      "center_xy_mm": [
+        221.312702,
+        -105.3597
+      ],
+      "diameter_mm": 3.35,
+      "z_span_mm": [
+        -13.81,
+        -10.91
+      ]
+    },
+    {
+      "center_xy_mm": [
+        207.312702,
+        -117.8597
+      ],
+      "diameter_mm": 3.35,
+      "z_span_mm": [
+        -13.81,
+        -10.91
+      ]
+    },
+    {
+      "center_xy_mm": [
+        221.312702,
+        -117.8597
+      ],
+      "diameter_mm": 3.35,
+      "z_span_mm": [
+        -13.81,
+        -10.91
+      ]
+    }
+  ],
+  "covers": {
+    "J2": {
+      "hole_center_distance_mm": 25.35,
+      "nominal_per_side_xy_gap_mm": [
+        0.35,
+        0.35
+      ],
+      "screw_axes": [
+        {
+          "insert": {
+            "center_xy_mm": [
+              155.5,
+              -135.35
+            ],
+            "diameter_mm": 3.35,
+            "z_span_mm": [
+              -11.592689,
+              -8.487025
+            ]
+          },
+          "passage": {
+            "center_xy_mm": [
+              155.5,
+              -135.35
+            ],
+            "diameter_mm": 2.4,
+            "z_span_mm": [
+              -12.937025,
+              -11.239683
+            ]
+          },
+          "head_recess": {
+            "center_xy_mm": [
+              155.5,
+              -135.35
+            ],
+            "diameter_mm": 4.5,
+            "z_span_mm": [
+              -15.66329,
+              -12.937025
+            ]
+          },
+          "nominal_tip_gap_mm": 0.45
+        },
+        {
+          "insert": {
+            "center_xy_mm": [
+              155.5,
+              -110.0
+            ],
+            "diameter_mm": 3.35,
+            "z_span_mm": [
+              -14.705277,
+              -11.599613
+            ]
+          },
+          "passage": {
+            "center_xy_mm": [
+              155.5,
+              -110.0
+            ],
+            "diameter_mm": 2.4,
+            "z_span_mm": [
+              -16.049613,
+              -14.352272
+            ]
+          },
+          "head_recess": {
+            "center_xy_mm": [
+              155.5,
+              -110.0
+            ],
+            "diameter_mm": 4.5,
+            "z_span_mm": [
+              -18.775878,
+              -16.049613
+            ]
+          },
+          "nominal_tip_gap_mm": 0.45
+        }
+      ]
+    },
+    "J4": {
+      "hole_center_distance_mm": 17.0,
+      "nominal_per_side_xy_gap_mm": [
+        0.35,
+        0.35
+      ],
+      "screw_axes": [
+        {
+          "insert": {
+            "center_xy_mm": [
+              331.5,
+              -118.65
+            ],
+            "diameter_mm": 3.35,
+            "z_span_mm": [
+              -13.643188,
+              -10.537524
+            ]
+          },
+          "passage": {
+            "center_xy_mm": [
+              331.5,
+              -118.65
+            ],
+            "diameter_mm": 2.4,
+            "z_span_mm": [
+              -14.987524,
+              -13.290182
+            ]
+          },
+          "head_recess": {
+            "center_xy_mm": [
+              331.5,
+              -118.65
+            ],
+            "diameter_mm": 4.5,
+            "z_span_mm": [
+              -17.713789,
+              -14.987524
+            ]
+          },
+          "nominal_tip_gap_mm": 0.45
+        },
+        {
+          "insert": {
+            "center_xy_mm": [
+              348.5,
+              -118.65
+            ],
+            "diameter_mm": 3.35,
+            "z_span_mm": [
+              -13.643187,
+              -10.537523
+            ]
+          },
+          "passage": {
+            "center_xy_mm": [
+              348.5,
+              -118.65
+            ],
+            "diameter_mm": 2.4,
+            "z_span_mm": [
+              -14.987523,
+              -13.290182
+            ]
+          },
+          "head_recess": {
+            "center_xy_mm": [
+              348.5,
+              -118.65
+            ],
+            "diameter_mm": 4.5,
+            "z_span_mm": [
+              -17.713789,
+              -14.987523
+            ]
+          },
+          "nominal_tip_gap_mm": 0.45
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
+    "hardware/e73-hhkb-corner/audit/service-case-m05.json": "4bdfc9e112fdcf3829dcc5aeb9f36ddd32006e008c526ab66a134288673bc140",
+    "scripts/check_e73_print_fit.py": "0cd8e6e9eaf62bfa2b90089f6a29928ee14798100bb28a25b81bc09705c188f9",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b"
+  },
+  "STEP_sha256": {
+    "02-mechanical/top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
+    "02-mechanical/service-case-m05/bottom-m05-REVIEW.step": "4f6a72e62dcf592945097c293bb3ca795cc395b6915328bb41256eb37c7cf007",
+    "02-mechanical/service-case-m05/cover-J2-REVIEW.step": "6abd35db97361ab6b492467a912eb9680be975e93964d44cccdfecbba6af45fb",
+    "02-mechanical/service-case-m05/cover-J4-REVIEW.step": "0b93cbec60c942be89abc7c58051409762b8f0eade6e2c43bb28355744445e71"
+  }
+}

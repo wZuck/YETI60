@@ -135,6 +135,11 @@ def main():
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/export_e73_delivery_top.py'),'--output',str(out/'02-mechanical/top.stl')],check=True)
  inputs['scripts/export_e73_delivery_top.py']=sha(ROOT/'scripts/export_e73_delivery_top.py')
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',
+                 str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/check_e73_print_fit.py'),
+                 '--bundle',str(out)],check=True)
+ print_fit=json.loads((out/'06-validation/m05-print-fit.json').read_text())
+ inputs.update(print_fit['source_sha256'])
+ subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',
                  str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/build_e73_plate_coupon.py'),
                  '--output',str(out)],check=True)
  coupon=json.loads((out/'06-validation/plate-fit-coupon.json').read_text())
@@ -185,7 +190,8 @@ def main():
  for generated in ['01-pcb/YETI60-E73-gerbers-REVIEW.zip','02-mechanical/top.stl','06-validation/cam-ordinary.json',
                    '06-validation/cam-apertures.json','01-pcb/gerbers/EC60-nRF52840-F_Paste.gtp',
                    '01-pcb/gerbers/EC60-nRF52840-B_Paste.gbp','02-mechanical/plate-fit-coupon.dxf',
-                   '02-mechanical/plate-fit-coupon.svg','06-validation/plate-fit-coupon.json']:
+                   '02-mechanical/plate-fit-coupon.svg','06-validation/plate-fit-coupon.json',
+                   '06-validation/m05-print-fit.json']:
   mapping['delivery/YETI60-E73/'+generated]=generated
  # Resolve both Markdown and HTML assets into the offline bundle.
  for rel,target in list(mapping.items()):

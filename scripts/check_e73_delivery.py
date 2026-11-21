@@ -43,6 +43,11 @@ def main():
  assert coupon['source_plate_sha256']==sha(base/'02-mechanical/steel-plate.dxf')
  assert set(coupon['files_sha256'])=={'02-mechanical/plate-fit-coupon.dxf','02-mechanical/plate-fit-coupon.svg'}
  assert all(m['files_sha256'][name]==digest for name,digest in coupon['files_sha256'].items())
+ print_fit=json.loads((base/'06-validation/m05-print-fit.json').read_text())
+ assert print_fit['status']=='m05-step-readback-and-ordinary-sla-fit-screen' and not print_fit['physical_verification']
+ assert set(print_fit['STEP_sha256'])=={'02-mechanical/top.step',case_dir+'bottom-m05-REVIEW.step',
+                                      case_dir+'cover-J2-REVIEW.step',case_dir+'cover-J4-REVIEW.step'}
+ assert all(m['files_sha256'][name]==digest for name,digest in print_fit['STEP_sha256'].items())
  render=json.loads((base/'06-validation/assembly-render.json').read_text())
  harness=json.loads((base/'06-validation/m05-harness.json').read_text())
  lengths=harness['trial_variants'][0]['seated_free_lengths_mm']
