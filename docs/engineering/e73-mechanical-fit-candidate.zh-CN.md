@@ -4,11 +4,13 @@
 
 **M01 现已接入 E73 正式装配、校准指纹及渲染流程。** 已测出的三个定位板／地板接口在规定尺寸包络内通过。这不代表整机或制造验收完成：整板取出、柔性检修运动及其他零件公差仍待检查。已有 C5 子板、PCB、电池基准、感应中心、卫星轴开孔和安装轴均保持原位。
 
-## 可审阅文件
+## M01 基准文件
 
-- [M01 定位板 DXF](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf)及 [STEP](../../mechanical/e73-fit/yeti60-e73-niz-m01.step)：1.6 mm 304 不锈钢，仅外缘内收 0.40 mm。
-- [M01 底壳 STEP](../../mechanical/e73-fit/yeti60-e73-bottom-m01.step)及 [STL](../../mechanical/e73-fit/yeti60-e73-bottom-m01.stl)：只增加内部开关地板避空，保留原外形边界及八处受保护嵌件支撑。
-- [验收限值](../../mechanical/e73-fit-spec.json)、[生成／测量证据](../audit/e73-fit-candidate.json)、[实现脚本](../../scripts/build_e73_fit_candidate.py)和 [10 项回归测试](../../tests/audit/test_e73_fit_candidate.py)。
+CORNER-07 继续采用下列定位板 DXF。底壳请按当前 M05 指南制作。下列 M01 定位板 STEP 和底壳 STL 是归档参考产物。[M05 打印指南](../build/e73-m05-prototype.zh-CN.md)
+
+- [M01 定位板 DXF](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf)及 [STEP](https://github.com/wZuck/YETI60/blob/f2bd3636a9b694a403767fa7dab6499a057c671f/mechanical/e73-fit/yeti60-e73-niz-m01.step)：1.6 mm 304 不锈钢，仅外缘内收 0.40 mm。
+- [M01 底壳 STEP](../../mechanical/e73-fit/yeti60-e73-bottom-m01.step)及 [STL](https://github.com/wZuck/YETI60/blob/f2bd3636a9b694a403767fa7dab6499a057c671f/mechanical/e73-fit/yeti60-e73-bottom-m01.stl)：只增加内部开关地板避空，保留原外形边界及八处受保护嵌件支撑。
+- [验收限值](../../mechanical/e73-fit-spec.json)、[生成／测量证据](../audit/e73-fit-candidate.json)、[实现脚本](../../scripts/build_e73_fit_candidate.py)和 [10 项回归测试](https://github.com/wZuck/YETI60/blob/e9883769784555b024e90e325686911e42715be3/tests/audit/test_e73_fit_candidate.py)。
 
 图纸逐项保留 **88 个内部 DXF 实体**：60 个按键／卫星轴轮廓与 28 个安装圆孔。H26 继续不装。外缘至开孔的最小剩余金属为 **1.7498 mm**，高于 1.60 mm 标称设计要求；这只是几何检查，不代表钢板强度或挠曲已验收。
 
@@ -41,7 +43,7 @@ SW100 每轴 XY 误差包含 0.10 mm 安装包络增量及 0.25 mm 已安装 PCB
 
 ## 复现与接入
 
-运行 `uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts/build_e73_fit_candidate.py`，再用同一环境运行 `tests/audit/test_e73_fit_candidate.py`。主审查也执行这两项。测试会拒绝原版定位板、原地板、过大的内收、偏位胶棉和超高开关；测试通过仅证明报告所列的有界接口。
+在回归测试链接对应的历史版本运行 `uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts/build_e73_fit_candidate.py`，再用同一环境运行 `tests/audit/test_e73_fit_candidate.py`。测试会拒绝原版定位板、原地板、过大的内收、偏位胶棉和超高开关；测试通过仅证明报告所列的有界接口。
 
 装配现使用 M01 定位板和底壳引用。正常／校准固件及其校准标识绑定选定定位板、误差限值、机构和叠层规格。指南及四张整机图按这些正式输入重新生成。生成顺序为：原壳／PCB 元数据 → M01 零件 → 选定定位板检查 → 完整标称装配 → 线束／网格／渲染，消除了循环依赖。射频／壳体检查同样读取正式壳体、定位板及完整 1.6 mm 板高。文件名中的 `candidate` 仅为保留既有链接；报告用 `selected_by_assembly` 记录当前选用状态。
 

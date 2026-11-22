@@ -4,7 +4,7 @@ English | [Chinese](e73-review.zh-CN.md)
 
 The measurements below describe the selected canonical M01/PH board. Later isolated USB/SH3 repair checkpoints are recorded at the end; they do not replace the full review or close whole-keyboard gates.
 
-**Disposition: design hold.** Passing DRC and ARM builds do not resolve the measured USB protection branches, PH connector service obstruction or complete mechanical tolerance qualification; the NiZ/plate-stabilizer geometry and bounded M01 repair are integrated. Use the [build/review entry](../../BUILD.md) and [machine-readable gates](e73-readiness.json). The existing UDB-C-JSH C5 remains unchanged.
+**Disposition: design hold.** Passing DRC and ARM builds do not resolve the measured USB protection branches, PH connector service obstruction or complete mechanical tolerance qualification; the NiZ/plate-stabilizer geometry and bounded M01 repair are integrated. Use the [build/review entry](../../BUILD.md) and [machine-readable gates](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/docs/audit/e73-readiness.json). The existing UDB-C-JSH C5 remains unchanged.
 
 Executed results: the base artifact audit passed **63/63 stages**; the subsequent complete review executed **13/13 steps successfully**, including 28 analog-front-end SPICE sensitivity cases, RF/USB/withdrawal extraction and fault tests. See the [review execution record](e73-review-run.json). With `--require-design`, the command returned **2** because measured design defects and open gates remain. Successful execution is not design release.
 
@@ -29,7 +29,7 @@ Executed results: the base artifact audit passed **63/63 stages**; the subsequen
 | Bounded fit passed; full tolerance open | Selected M01 residuals after declared allowances are 0.1881 mm at each plate/case interface and 0.3944 mm at SW100/floor, exceeding the 0.15 mm local target. | The [selected M01 repair](../engineering/e73-mechanical-fit-candidate.md) is integrated into the assembly, drawings, renders and firmware calibration identity. Eight gasket supports and eight insert guards pass. Other components, mounts, NiZ/stabilizer travel and complete service/strength tolerances remain open. The [pre-M01 calculation](../engineering/e73-mechanical-tolerances.md) is retained as regression evidence. |
 | P1 | Raytac's improved local power routing, component landing/mask/stencil checks and nine-wire service evidence have not all been ported. | Review U5/U6 power loops, complete package dimensions, capacitor derating, ordinary thermal-via paste/mask and battery connector clearances against E73. Existing net continuity does not qualify these. |
 
-Measured source data: [USB path extraction](USB-signal-paths.json), [continuous PH withdrawal](e73-service-motion.json), [nominal assembly](yeti60-assembly.json), [USB event tests](usb-event-policy.json), [full artifact audit](outcome.json). The source hashes and individual gates are in [e73-readiness.json](e73-readiness.json).
+Measured source data: [USB path extraction](USB-signal-paths.json), [continuous PH withdrawal](e73-service-motion.json), [nominal assembly](yeti60-assembly.json), [USB event tests](usb-event-policy.json), [full artifact audit](outcome.json). The source hashes and individual gates are in [e73-readiness.json](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/docs/audit/e73-readiness.json).
 
 ## Supplier and physical qualification
 
@@ -37,9 +37,9 @@ The battery remains required: protected 1S 4.2 V, 1600 mAh planning capacity, co
 
 After design closure, obtain fabricator DFM and inspect the first board. Bench acceptance includes power rails and USB states, simultaneous charging plus USB HID, USB/BLE handover, per-key calibration, 60-key press/release, interrupted power/storage behavior, cell-temperature interruption and the applicable discharge limits. The full enclosure additionally needs flexible-wire service/tool access, actual NiZ/stabilizer travel, resin/insert tolerance and RF/EC testing. None of these physical tests is recorded as passed.
 
-## Reproduce
+## Reproduce the historical review
 
-Run [`scripts/run_audit.py`](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/scripts/run_audit.py) with KiCad and the CAD Python runtime; `scripts/test_yeti60_usb_events.py` exercises the actual pinned upstream callback. Run the RF/USB extraction scripts, `scripts/study_e73_service.py`, then `scripts/review_e73_readiness.py`. The review writes an explicit HOLD with failed/open gates. `--require-design` returns a nonzero status while those gates remain unresolved; successful test execution must not be presented as design acceptance.
+Use the pinned historical checkout for the commands below. Run [`scripts/run_audit.py`](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/scripts/run_audit.py) with KiCad and the CAD Python runtime; `scripts/test_yeti60_usb_events.py` exercises the actual pinned upstream callback. Run the RF/USB extraction scripts, `scripts/study_e73_service.py`, then `scripts/review_e73_readiness.py`. The review writes an explicit HOLD with failed/open gates. `--require-design` returns a nonzero status while those gates remain unresolved; successful test execution must not be presented as design acceptance.
 
 ## USB repair checkpoint
 

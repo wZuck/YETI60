@@ -6,7 +6,7 @@
 
 | 方案 | 受控入口 | 当前状态 |
 |---|---|---|
-| 亿佰特 E73-2G4M08S1C | [E73 制作与审查入口](../../BUILD.zh-CN.md)、[当前门禁](../audit/e73-readiness.json) | 原生 270 组信号／电源及 142 组地连通性通过，普通／校准固件可构建。USB 支路、旧定位板和 PH 插头拔出干涉使设计继续暂停。 |
+| 亿佰特 E73-2G4M08S1C | [E73 制作与审查入口](../../BUILD.zh-CN.md)、[当前审查](e73-hhkb-corner.zh-CN.md) | CORNER-07 把模组装在正面右下角，配套 M05 底壳。工厂审查及实物验收待完成。 |
 | Raytac MDBT50Q-1MV2 | [Raytac 手册](../../variants/raytac/BUILD.zh-CN.md)、[USB 修补候选板](../../variants/raytac/hardware/usb-short-route/README.zh-CN.md) | 独立候选板、九线线束和 SH3 电池接口；供方、制板审查及实物验收仍待完成。 |
 
 保留已经制作的 UDB-C-JSH C5 子板。主板只有满足对应放行条件后才制作所选的一套。使用各入口中的当前物料表和库存抵扣；旧元件总数及历史两方案合并检查不代表当前候选包。继续限定 JLC 普通四层工艺。
@@ -62,9 +62,9 @@
 
 | 方案 | 制板包 | 固件电源模式 | 1600 mAh 条件规划续航 |
 |---|---|---|---|
-| E73 | [E73 制板审查包](../../hardware/fabrication/yeti60-e73-p2-dfm-review.zip) | REG1 LDO | 90.77 小时 |
+| E73 | [CORNER-07 制造指南](../build/e73-ordering-printing.zh-CN.md) | REG1 LDO | 90.77 小时 |
 | Raytac | [Raytac 当前首板文件](../../variants/raytac/hardware/usb-short-route/FIRST-ARTICLE.zh-CN.md) | REG1 DC/DC | 106.64 小时 |
 
-表中续航是条件模型值，不是实测或保证。当前 Raytac 修补候选板装 75 件器件，使用 813 个普通过孔，原生检查为 0 错误、0 断线，仅保留 102 条非实装图形的封装外框警告。以上链接提供其当前 Gerber、钢网、接线及无外壳流程；C5 单独处理。E73 的具体文件与审查状态以它的制作入口为准，不能套用 Raytac 的数量或结论。
+表中续航是两套旧基准设计的条件模型估算。当前 Raytac 修补候选板装 75 件器件，使用 813 个普通过孔，原生检查为 0 错误、0 断线，仅保留 102 条非实装图形的封装外框警告。以上链接提供其当前 Gerber、钢网、接线及无外壳流程；C5 单独处理。E73 的具体文件与审查状态以它的制作入口为准，不能套用 Raytac 的数量或结论。
 
 [验收与干扰流程](../testing/README.zh-CN.md)：几何与文件检查不能替代实际射频、静电容扫描或 USB 验收。按各自方案制作入口选择对应的焊接、安装和首件测试资料。

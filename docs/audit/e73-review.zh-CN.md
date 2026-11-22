@@ -4,7 +4,7 @@
 
 下列测量对应正式选定的 M01／PH 主板。后续独立 USB／SH 三针修补检查点记录在本页末尾，不能代替完整复查，也没有关闭整机门槛。
 
-**结论：暂停设计放行。** DRC 和 ARM 构建通过，不能消除已测得的 USB 保护支路问题、PH 电池插头检修干涉及完整机械公差验收缺口；NiZ／钢板卫星轴几何与 M01 局部修补现已同步。使用[制作／审查入口](../../BUILD.zh-CN.md)和[机器可读门槛](e73-readiness.json)。已经做好的 UDB-C-JSH C5 子板保持不变。
+**结论：暂停设计放行。** DRC 和 ARM 构建通过，不能消除已测得的 USB 保护支路问题、PH 电池插头检修干涉及完整机械公差验收缺口；NiZ／钢板卫星轴几何与 M01 局部修补现已同步。使用[制作／审查入口](../../BUILD.zh-CN.md)和[机器可读门槛](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/docs/audit/e73-readiness.json)。已经做好的 UDB-C-JSH C5 子板保持不变。
 
 本轮实际执行结果：基础资料审查 **63／63 项通过（含指南重生成）**；随后完整复查的 **13／13 个执行步骤成功**，包含 28 个模拟前端 SPICE 灵敏度场景、射频／USB／插拔检查和故障测试。见[本轮复查记录](e73-review-run.json)。命令使用 `--require-design` 返回 **2**，因为测得的设计失败项和未完成门槛仍存在；执行成功不是设计放行。
 
@@ -29,7 +29,7 @@
 | 局部配合通过；完整公差未关闭 | 正式 M01 在规定误差下，两处定位板／壳体剩余净空均约 0.1881 mm，SW100／地板约 0.3944 mm，高于 0.15 mm 局部要求。 | [正式 M01 修补](../engineering/e73-mechanical-fit-candidate.zh-CN.md)已接入装配、图纸、渲染和固件校准指纹。八处胶棉承托与八处嵌件保护通过；其他元件、安装五金、NiZ／卫星轴行程、完整检修及强度公差仍未关闭。[修补前公差计算](../engineering/e73-mechanical-tolerances.zh-CN.md)保留用于回归。 |
 | P1 | Raytac 改进后的局部电源布局、封装落点／阻焊／钢网和九线检修证据尚未全部移植。 | 针对 E73 检查 U5／U6 电源回路、完整封装尺寸、电容降额、普通散热孔的锡膏／阻焊及电池接口净空。网络接通不代表这些项目已验收。 |
 
-测量来源：[USB 路径](USB-signal-paths.json)、[PH 连续插拔](e73-service-motion.json)、[标称装配](yeti60-assembly.json)、[USB 事件测试](usb-event-policy.json)、[完整文件检查](outcome.json)。来源哈希及逐项门槛见 [e73-readiness.json](e73-readiness.json)。
+测量来源：[USB 路径](USB-signal-paths.json)、[PH 连续插拔](e73-service-motion.json)、[标称装配](yeti60-assembly.json)、[USB 事件测试](usb-event-policy.json)、[完整文件检查](outcome.json)。来源哈希及逐项门槛见 [e73-readiness.json](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/docs/audit/e73-readiness.json)。
 
 ## 供应商与实物验收
 
@@ -37,9 +37,9 @@
 
 设计收尾后，先获得板厂 DFM，再检查首板。开台验收包括电源轨、USB 各状态、充电与 USB HID 同时工作、USB／BLE 切换、逐键校准、60 键按下／释放、存储写入断电、温度中断及相应放电限值。完整关壳还需柔性线束／工具检修通道、NiZ／卫星轴实际行程、树脂／嵌件公差和射频／静电容检查。当前没有把任何上述实物项目记为通过。
 
-## 复现方式
+## 复现历史审查
 
-使用 KiCad 和 CAD Python 环境运行 [`scripts/run_audit.py`](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/scripts/run_audit.py)；`scripts/test_yeti60_usb_events.py` 使用固定的完整上游回调。运行射频／USB 提取脚本、`scripts/study_e73_service.py`，再运行 `scripts/review_e73_readiness.py`。审查会写入明确的暂停放行结果及失败／未完成门槛；使用 `--require-design` 时，只要仍有未解决项就返回非零。测试程序执行成功不等于方案验收通过。
+以下命令请在链接对应的历史提交中执行。使用 KiCad 和 CAD Python 环境运行 [`scripts/run_audit.py`](https://github.com/wZuck/YETI60/blob/55e544c34cd60b2066ff665839c5c3e544cc7021/scripts/run_audit.py)；`scripts/test_yeti60_usb_events.py` 使用固定的完整上游回调。运行射频／USB 提取脚本、`scripts/study_e73_service.py`，再运行 `scripts/review_e73_readiness.py`。审查会写入明确的暂停放行结果及失败／未完成门槛；使用 `--require-design` 时，只要仍有未解决项就返回非零。测试程序执行成功不等于方案验收通过。
 
 ## USB 修补阶段记录
 

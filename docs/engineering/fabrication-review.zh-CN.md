@@ -1,8 +1,10 @@
 [English](fabrication-review.md) | 中文
 
-# P2 制板与贴装审查交付
+# P2 历史制板与贴装审查
 
-[审查压缩包](../../hardware/fabrication/yeti60-e73-p2-dfm-review.zip)供板厂和贴片厂进行可制造性审查，不代表已获下单许可。运行 `python3 scripts/export_yeti60_fabrication.py` 可重新生成；[清单](../audit/yeti60-fabrication.json)记录压缩包与 PCB、物料表、工艺说明的哈希关系。
+当前 E73 工程应使用 CORNER-07 文件和下单参数。[当前制造指南](../build/e73-ordering-printing.zh-CN.md)
+
+[审查压缩包](https://github.com/wZuck/YETI60/blob/fe1d4996c99d9a57b7bf7ed9447e328ffdb6248e/hardware/fabrication/yeti60-e73-p2-dfm-review.zip)供板厂和贴片厂进行可制造性审查，不代表已获下单许可。运行 `python3 scripts/export_yeti60_fabrication.py` 可重新生成；[清单](../audit/yeti60-fabrication.json)记录压缩包与 PCB、物料表、工艺说明的哈希关系。
 
 ## 交付内容
 

@@ -4,11 +4,13 @@ English | [Chinese](e73-mechanical-fit-candidate.zh-CN.md)
 
 **M01 is now selected by the canonical E73 assembly, calibration fingerprint and render pipeline.** The three measured plate/floor interfaces pass in the stated dimensional envelopes. This is not complete keyboard or manufacturing acceptance: whole-board extraction, flexible service motion and other part tolerances remain open. The existing C5 daughterboard, PCB, battery datum, sensing centers, stabilizer openings and mounting axes are unchanged.
 
-## Reviewable outputs
+## M01 baseline files
 
-- [M01 plate DXF](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf) and [STEP](../../mechanical/e73-fit/yeti60-e73-niz-m01.step): 1.6 mm 304 stainless steel, with the outer perimeter inset by 0.40 mm.
-- [M01 lower shell STEP](../../mechanical/e73-fit/yeti60-e73-bottom-m01.step) and [STL](../../mechanical/e73-fit/yeti60-e73-bottom-m01.stl): internal switch-floor relief only; the original external bounds and eight guarded insert supports are preserved.
-- [Acceptance limits](../../mechanical/e73-fit-spec.json), [build/measurement evidence](../audit/e73-fit-candidate.json), [implementation](../../scripts/build_e73_fit_candidate.py) and [ten regression tests](../../tests/audit/test_e73_fit_candidate.py).
+The plate DXF is still used by CORNER-07. Use the current M05 print guide for the lower shell. The M01 plate STEP and shell STL below are archived reference exports. [M05 print guide](../build/e73-m05-prototype.md)
+
+- [M01 plate DXF](../../mechanical/e73-fit/yeti60-e73-niz-m01.dxf) and [STEP](https://github.com/wZuck/YETI60/blob/f2bd3636a9b694a403767fa7dab6499a057c671f/mechanical/e73-fit/yeti60-e73-niz-m01.step): 1.6 mm 304 stainless steel, with the outer perimeter inset by 0.40 mm.
+- [M01 lower shell STEP](../../mechanical/e73-fit/yeti60-e73-bottom-m01.step) and [STL](https://github.com/wZuck/YETI60/blob/f2bd3636a9b694a403767fa7dab6499a057c671f/mechanical/e73-fit/yeti60-e73-bottom-m01.stl): internal switch-floor relief only; the original external bounds and eight guarded insert supports are preserved.
+- [Acceptance limits](../../mechanical/e73-fit-spec.json), [build/measurement evidence](../audit/e73-fit-candidate.json), [implementation](../../scripts/build_e73_fit_candidate.py) and [ten regression tests](https://github.com/wZuck/YETI60/blob/e9883769784555b024e90e325686911e42715be3/tests/audit/test_e73_fit_candidate.py).
 
 The drawing retains all **88 internal DXF entities** verbatim: 60 key/stabilizer profiles and 28 mounting circles. H26 remains empty. The minimum exterior-to-cutout/hole metal web is **1.7498 mm**, above the 1.60 mm nominal design requirement. This is a geometric web check, not strength or plate-flex qualification.
 
@@ -42,7 +44,7 @@ Four **33 × 3 mm** gasket pads per layer remain fully on the plate and actual u
 
 ## Reproduce and integrate
 
-Run `uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts/build_e73_fit_candidate.py`, then the same runtime with `tests/audit/test_e73_fit_candidate.py`. The main audit runs both. Tests reject the actual original plate and original floor under these bounds, oversize inset, shifted gasket and an overheight installed switch. Successful execution proves only the reported bounded interfaces.
+From the linked historical test revision, run `uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts/build_e73_fit_candidate.py`, then the same runtime with `tests/audit/test_e73_fit_candidate.py`. Tests reject the actual original plate and original floor under these bounds, oversize inset, shifted gasket and an overheight installed switch. Successful execution proves only the reported bounded interfaces.
 
 The assembly uses the M01 plate and bottom references. Normal/calibrator firmware and their calibration identity include the selected plate, fit limits, mechanism and stack specifications. Guides and four assembly views are regenerated from these selected inputs. The build order is acyclic: original shell/PCB metadata → M01 parts → selected plate contract → full nominal assembly → wiring/meshes/rendering. The RF/case screen also reads the selected shell, plate and full 1.6 mm plate height. The legacy `candidate` report/document filenames are retained for stable links; `selected_by_assembly` records the current selection.
 

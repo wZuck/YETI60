@@ -6,7 +6,7 @@ Both alternatives remain in this branch and each uses a single nRF52840. Choose 
 
 | Alternative | Controlled entry | Current status |
 |---|---|---|
-| Ebyte E73-2G4M08S1C | [E73 build/review entry](../../BUILD.md), [current gates](../audit/e73-readiness.json) | Native 270 signal/power and 142 ground pairs pass; normal/calibrator firmware builds. Design hold: USB branch lengths, old plate and PH plug withdrawal. |
+| Ebyte E73-2G4M08S1C | [E73 build/review entry](../../BUILD.md), [current review](e73-hhkb-corner.md) | CORNER-07 places the module on the front lower-right corner and uses the M05 shell. The factory review and physical checks are open. |
 | Raytac MDBT50Q-1MV2 | [Raytac handbook](../../variants/raytac/BUILD.md), [USB repair candidate](../../variants/raytac/hardware/usb-short-route/README.md) | Separate candidate PCB, nine-wire harness and SH3 battery connector; supplier/DFM and physical acceptance remain open. |
 
 Retain the already-made UDB-C-JSH C5 daughterboard. Fabricate only the selected mainboard after its release conditions are met. Use each current entry's BOM and inventory allocation; older component counts and the historical combined audit do not describe the current candidate packages. Ordinary JLC four-layer processing remains the constraint.
@@ -62,9 +62,9 @@ Run `scripts/check_e73_reference.py` and `scripts/check_e73_variant.py` using Ki
 
 | Alternative | Fabrication package | Firmware power mode | Conditional 1600 mAh planning runtime |
 |---|---|---|---|
-| E73 | [E73 DFM review ZIP](../../hardware/fabrication/yeti60-e73-p2-dfm-review.zip) | REG1 LDO | 90.77 hours |
+| E73 | [CORNER-07 fabrication guide](../build/e73-ordering-printing.md) | REG1 LDO | 90.77 hours |
 | Raytac | [Current Raytac first-article files](../../variants/raytac/hardware/usb-short-route/FIRST-ARTICLE.md) | REG1 DC/DC | 106.64 hours |
 
-Runtime figures are conditional model points, not measurements or guarantees. The current Raytac repair fits 75 components and uses 813 ordinary through vias; native checks report zero errors/opens and 102 noncomponent-courtyard warnings. Its link above provides current Gerbers, stencil, wiring and case-free steps; C5 is separate. Obtain E73 files and current review status from its own build entry rather than applying Raytac counts or conclusions.
+The runtime figures are historical model points for the respective baseline designs. The current Raytac repair fits 75 components and uses 813 ordinary through vias; native checks report zero errors/opens and 102 noncomponent-courtyard warnings. Its link above provides current Gerbers, stencil, wiring and case-free steps; C5 is separate. Obtain E73 files and current review status from its own build entry rather than applying Raytac counts or conclusions.
 
 [Acceptance and interference procedures](../testing/README.md): geometry and file checks do not replace physical RF, EC scan or USB acceptance. Follow each variant build entry for matching soldering, assembly and first-article tests.

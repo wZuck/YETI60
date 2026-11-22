@@ -1,8 +1,10 @@
 English | [Chinese](fabrication-review.zh-CN.md)
 
-# P2 fabrication and assembly review handoff
+# Historical P2 fabrication and assembly review
 
-The [review archive](../../hardware/fabrication/yeti60-e73-p2-dfm-review.zip) is for fabricator/assembler DFM review. It does not authorize an order. Rebuild it with `python3 scripts/export_yeti60_fabrication.py`; the [manifest](../audit/yeti60-fabrication.json) binds the archive to the PCB, BOM and instructions.
+For the current E73 project, use the CORNER-07 files and ordering parameters. [Current fabrication guide](../build/e73-ordering-printing.md)
+
+The [review archive](https://github.com/wZuck/YETI60/blob/fe1d4996c99d9a57b7bf7ed9447e328ffdb6248e/hardware/fabrication/yeti60-e73-p2-dfm-review.zip) is for fabricator/assembler DFM review. It does not authorize an order. Rebuild it with `python3 scripts/export_yeti60_fabrication.py`; the [manifest](../audit/yeti60-fabrication.json) binds the archive to the PCB, BOM and instructions.
 
 ## Supplied outputs
 

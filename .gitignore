@@ -17,3 +17,9 @@ hardware/ec60-nrf52840/*.dsn
 .firmware-work/
 
 .study-work/
+
+# Archived E73 exports that baseline engineering scripts can regenerate.
+/mechanical/e73-fit/yeti60-e73-niz-m01.step
+/mechanical/e73-fit/yeti60-e73-bottom-m01.stl
+/hardware/e73-usb-repair/mechanical/yeti60-e73-usb-battery-bottom-m03.stl
+/hardware/fabrication/yeti60-e73-p2-dfm-review.zip
