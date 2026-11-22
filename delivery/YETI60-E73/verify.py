@@ -178,6 +178,15 @@ def main():
  cam=json.loads((base/'06-validation/cam-ordinary.json').read_text())
  assert cam['status']=='cam-geometry-matches-native-pcb' and cam['archive_sha256']==sha(archive)
  assert cam['source_sha256']['hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb']==m['source_PCB_sha256']
+ ipc = cam['electrical_test_netlist']
+ assert ipc['format'] == 'IPC-D-356A' and ipc['physical_verification'] is False
+ assert ipc['file'] == 'EC60-nRF52840.d356' and ipc['through_vias_checked'] == cam['through_via_count']
+ netlist = base/'01-pcb/gerbers'/ipc['file']
+ assert sha(netlist) == ipc['sha256']
+ records = netlist.read_text(encoding='ascii').splitlines()
+ assert all(len(line) == 80 for line in records) and records[-1].strip() == '999'
+ assert sum(line.startswith(('317','327','367')) for line in records) == ipc['records_checked']
+ assert 0 <= ipc['maximum_coordinate_axis_error_mm'] <= ipc['coordinate_unit_mm'] / 2
  apertures=json.loads((base/'06-validation/cam-apertures.json').read_text())
  assert apertures['archive_sha256']==cam['archive_sha256'] and apertures['source_PCB_sha256']==m['source_PCB_sha256']
  assert apertures['vias']==cam['through_via_count'] and len(apertures['layers'])==4

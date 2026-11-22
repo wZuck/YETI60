@@ -22,6 +22,7 @@ English | [Chinese](ordering-and-printing.zh-CN.md)
 | Via treatment | Both-side tenting; no resin-fill/copper-cap requirement; no blind, buried or laser vias |
 | Solder mask / legend | Retain the supplied mask and functional pin/hole/reference legends; normal offered colour |
 | Drill files | Include separate plated and non-plated drills, plus the supplied board outline/slots |
+| Bare-board electrical test | Ask the factory to use the included [IPC-D-356A netlist](gerbers/EC60-nRF52840.d356) for CAM comparison and confirm open/short testing |
 | Impedance | Preserve geometry and selected stack; USB signal integrity is not qualified by choosing an impedance option alone |
 | Assembly service | This guide assumes self-soldering; placement CSV is a reference, not an approved turnkey JLC assembly order |
 | Stencil | One front and one back stencil, both **0.12 mm** standard laser-cut stainless steel. See the selections below |
@@ -29,6 +30,8 @@ English | [Chinese](ordering-and-printing.zh-CN.md)
 Use the [matching Gerber and drill ZIP](YETI60-E73-gerbers-REVIEW.zip) for the factory preview. Verify the outline, four copper layers, slots, non-plated holes, sensing geometry and mask openings before accepting the quotation. Stop if it imports as two layers or the factory proposes changing the specified geometry/process. The exported position file contains 75 fitted parts; sensing electrodes, mounting holes and pogo pads are not purchased components.
 
 The [fabrication ZIP audit](../06-validation/cam-ordinary.json) matches the 285.0 × 94.6 mm closed profile to all 40 source segments and arcs. It also matches 852 through-via drill hits and their land flashes on each copper layer, one plated round mounting hole, two plated 2.20 × 5.00 mm slots and 30 non-plated holes. The smallest routed via drill is 0.30 mm and the tightest nominal via-hole edge gap is 0.358 mm.
+
+The same ZIP includes the IPC-D-356A reference. The audit matches all **1,457 records** to the native PCB, including 852 vias, 572 surface pad records, three plated component records and 30 non-plated holes. The legacy inch coordinates use the same origin and orientation as the Gerbers and drills. Maximum coordinate readback error is 0.001261 mm per axis. The factory chooses probe points based on actual accessibility and confirms test coverage, including how it handles tented vias and EC electrodes. [JLCPCB guidance on netlists and fabrication files](https://jlcpcb.com/blog/prepare-perfect-gerber-files)
 
 JLC ordinary-process references: [capabilities](https://jlcpcb.com/capabilities/pcb-capabilities/) and [stack-ups](https://jlcpcb.com/impedance). Availability/options must be checked against the actual quotation. Neither this document nor a clean DRC is a factory DFM approval.
 

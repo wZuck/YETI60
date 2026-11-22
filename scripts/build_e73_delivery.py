@@ -4,7 +4,7 @@
 No order authorization is issued. Re-run after all current source checks and
 firmware publication. The web index works offline, without a build server.
 """
-import argparse,hashlib,json,shutil,subprocess,zipfile,re,html,csv
+import argparse,hashlib,json,shutil,subprocess,zipfile,re,html,csv,tempfile
 from pathlib import Path
 from check_e73_delivery import first_article_keys
 ROOT=Path(__file__).resolve().parents[1]
@@ -12,6 +12,20 @@ BASE=ROOT/'hardware/e73-hhkb-corner'
 CLI='/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli'
 KICAD_PYTHON='/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def export_e73_ipc(board, output):
+    """Align KiCad's auxiliary-origin IPC output to the absolute Gerber frame."""
+    with tempfile.TemporaryDirectory(prefix='yeti60-ipc-export-') as folder:
+        temporary_board = Path(folder) / board.name
+        body, replacements = re.subn(r'\(aux_axis_origin [-.\d]+ [-.\d]+\)',
+                                      '(aux_axis_origin 0 0)', board.read_text())
+        assert replacements == 1, 'Missing or ambiguous IPC auxiliary origin'
+        temporary_board.write_text(body)
+        subprocess.run([CLI, 'pcb', 'export', 'ipcd356', '-o', str(output), str(temporary_board)],
+                       check=True, capture_output=True)
+
+
 def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,default=ROOT/'delivery/YETI60-E73');args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
  native=json.loads((BASE/'audit/placement-check.json').read_text());assert native['electrical_routing_complete']
@@ -206,6 +220,7 @@ def main():
  inputs['scripts/check_e73_cam.py']=sha(ROOT/'scripts/check_e73_cam.py')
  inputs['scripts/check_e73_apertures.py']=sha(ROOT/'scripts/check_e73_apertures.py')
  for generated in ['01-pcb/YETI60-E73-gerbers-REVIEW.zip','01-pcb/YETI60-E73-stencils-REVIEW.zip',
+                   '01-pcb/gerbers/EC60-nRF52840.d356',
                    '02-mechanical/top.stl','06-validation/cam-ordinary.json',
                    '06-validation/cam-apertures.json','01-pcb/gerbers/EC60-nRF52840-F_Paste.gtp',
                    '01-pcb/gerbers/EC60-nRF52840-B_Paste.gbp','02-mechanical/plate-fit-coupon.dxf',
@@ -236,7 +251,8 @@ def main():
  cam=out/'01-pcb/gerbers';cam.mkdir(parents=True,exist_ok=True);board=BASE/'EC60-nRF52840.kicad_pcb'
  for kind,extra in [('gerbers',['--check-zones','--layers','F.Cu,In1.Cu,In2.Cu,B.Cu,F.Mask,B.Mask,F.Paste,B.Paste,F.SilkS,B.SilkS,Edge.Cuts','--subtract-soldermask']),('drill',['--format','excellon','--excellon-units','mm','--excellon-separate-th','--generate-report','--report-path',str(cam/'drill-report.txt')])]:subprocess.run([CLI,'pcb','export',kind,*extra,'-o',str(cam),str(board)],check=True,capture_output=True)
  for p in cam.iterdir():
-  if p.is_file()and p.name!='.DS_Store':p.write_text(re.sub(r'20\d\d-\d\d-\d\d[T ]\d\d:\d\d:\d\d(?:[.+Z0-9:-]*)','2000-01-01T00:00:00',p.read_text()))
+  if p.is_file()and p.name!='.DS_Store' and p.suffix!='.d356':p.write_text(re.sub(r'20\d\d-\d\d-\d\d[T ]\d\d:\d\d:\d\d(?:[.+Z0-9:-]*)','2000-01-01T00:00:00',p.read_text()))
+ export_e73_ipc(board,cam/f'{board.stem}.d356')
  # Export only fitted procurement references, excluding electrodes, mounts and pogo pads.
  positions=out/'01-pcb/placements.csv'
  subprocess.run([CLI,'pcb','export','pos','--format','csv','--units','mm','--side','both','-o',str(positions),str(board)],check=True,capture_output=True)

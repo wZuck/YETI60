@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Match the KiCad 10 X2 and Excellon fabrication ZIP to the native E73 PCB."""
-from collections import Counter
+from collections import Counter, defaultdict
 import argparse
 import hashlib
 from itertools import combinations
@@ -19,6 +19,7 @@ BOARD = BASE / f"{STEM}.kicad_pcb"
 PROFILE = ROOT / "mechanical/pcb-fabrication-spec.json"
 POWER = BASE / "audit/power-process.json"
 ZIP_NAME = "YETI60-E73-gerbers-REVIEW.zip"
+NETLIST_NAME = f"{STEM}.d356"
 LAYERS = {
     "F_Cu.gtl": "Copper,L1,Top",
     "In1_Cu.g1": "Copper,L2,Inr",
@@ -37,6 +38,9 @@ DRILL_POINT = r"X(-?\d+(?:\.\d+)?)Y(-?\d+(?:\.\d+)?)"
 GERBER_POINT = r"X(-?\d+)Y(-?\d+)"
 # Excellon uses three decimal places. Retain both nearest positions on exact ties.
 DRILL_ROUNDING_NM = 500
+# The KiCad IPC header selects CUST 0, with coordinates in 0.0001 inches.
+IPC_UNIT_NM = 2540
+IPC_ROUNDING_NM = IPC_UNIT_NM // 2
 
 
 def sha(path):
@@ -45,6 +49,94 @@ def sha(path):
 
 def plot_point(vector):
     return (vector.x, -vector.y)
+
+
+def check_ipc(data, board, vias):
+    """Compare each KiCad IPC-D-356A test site with the original native board."""
+    lines = data.decode("ascii").splitlines()
+    assert all(len(line) == 80 for line in lines)
+    assert lines[-1].strip() == "999"
+    headers = [line.rstrip() for line in lines if line.startswith("P  ")]
+    assert {"P  UNITS CUST 0", "P  VER   IPC-D-356A", "P  IMAGE PRIMARY"} <= set(headers)
+    aliases = {}
+    for line in headers:
+        if line.startswith("P  NNAME"):
+            alias, net = line.removeprefix("P  NNAME").split(maxsplit=1)
+            assert alias not in aliases
+            aliases[alias] = net
+
+    native = defaultdict(list)
+    for via in vias:
+        native["317", "VIA", "", 0].append(
+            (plot_point(via.GetPosition()), via.GetNetname(), via.GetDrillValue()))
+    for footprint in board.GetFootprints():
+        ref = footprint.GetReference()
+        for pad in footprint.Pads():
+            drill = pad.GetDrillSize()
+            pin = pad.GetNumber()
+            net = pad.GetNetname()
+            point = plot_point(pad.GetPosition())
+            if drill.x or drill.y:
+                kind = {pcb.PAD_ATTRIB_PTH: "317", pcb.PAD_ATTRIB_NPTH: "367"}[pad.GetAttribute()]
+                native[kind, ref, pin, 0].append((point, net, min(drill.x, drill.y)))
+            else:
+                sides = [access for layer, access in ((pcb.F_Cu, 1), (pcb.B_Cu, 4))
+                         if pad.IsOnLayer(layer)]
+                assert sides or (not pin and not net), ("Missing IPC access policy", ref, pin)
+                for access in sides:
+                    native["327", ref, pin, access].append((point, net, 0))
+    names = {net for sites in native.values() for _, net, _ in sites if net}
+    assert len({name.casefold() for name in names}) == len(names), "IPC net name case collision"
+    assert "n/c" not in {name.casefold() for name in names}
+
+    matches = Counter()
+    worst_axis_error = 0
+    seen_aliases = set()
+    for line in lines[:-1]:
+        if line.startswith("P  "):
+            continue
+        kind = line[:3]
+        assert kind in {"317", "327", "367"} and (line[38], line[41], line[49]) == ("A", "X", "Y")
+        key = (kind, line[20:26].strip(), line[27:31].strip(), int(line[39:41]))
+        point = (int(line[42:49]) * IPC_UNIT_NM, int(line[50:57]) * IPC_UNIT_NM)
+        tag = line[3:17].strip()
+        net = "" if tag == "N/C" else aliases.get(tag, tag)
+        if tag in aliases:
+            seen_aliases.add(tag)
+        candidates = []
+        for site in native[key]:
+            expected_point, expected_net, expected_drill = site
+            error = max(abs(a - b) for a, b in zip(point, expected_point))
+            if error <= IPC_ROUNDING_NM and net.casefold() == expected_net.casefold():
+                candidates.append((site, error, expected_drill))
+        assert len(candidates) == 1, ("IPC site or net mismatch", key, point, net)
+        site, error, expected_drill = candidates[0]
+        if expected_drill:
+            assert line[32] == "D" and line[37] == ("U" if kind == "367" else "P")
+            assert abs(int(line[33:37]) * IPC_UNIT_NM - expected_drill) <= IPC_ROUNDING_NM, ("IPC drill mismatch", key)
+        else:
+            assert line[32] == line[37] == " ", ("Unexpected IPC drill", key)
+        native[key].remove(site)
+        worst_axis_error = max(worst_axis_error, error)
+        matches["vias" if key[1] == "VIA" else kind] += 1
+    assert not any(native.values()), "IPC is missing one or more native test records"
+    assert seen_aliases == set(aliases)
+    return {
+        "format": "IPC-D-356A",
+        "file": NETLIST_NAME,
+        "sha256": hashlib.sha256(data).hexdigest(),
+        "records_checked": sum(matches.values()),
+        "through_vias_checked": matches["vias"],
+        "SMD_pad_records_checked": matches["327"],
+        "plated_component_records_checked": matches["317"],
+        "nonplated_hole_records_checked": matches["367"],
+        "native_named_nets_checked": len(names),
+        "long_net_aliases": len(aliases),
+        "coordinate_frame": "KiCad absolute X and negative Y, same as the Gerbers",
+        "coordinate_unit_mm": IPC_UNIT_NM / 1e6,
+        "maximum_coordinate_axis_error_mm": worst_axis_error / 1e6,
+        "physical_verification": False,
+    }
 
 
 def parse_drills(data, plating):
@@ -215,12 +307,13 @@ def check(archive):
 
     with ZipFile(archive) as bundle:
         names = {f"{STEM}-{suffix}" for suffix in (*LAYERS, "PTH.drl", "NPTH.drl", "job.gbrjob")}
-        names.add("drill-report.txt")
+        names.update(("drill-report.txt", NETLIST_NAME))
         assert set(bundle.namelist()) == names and len(bundle.namelist()) == len(names)
         files = {suffix: bundle.read(f"{STEM}-{suffix}").decode("ascii") for suffix in LAYERS}
         job = json.loads(bundle.read(f"{STEM}-job.gbrjob"))
         drill = {role: parse_drills(bundle.read(f"{STEM}-{role}.drl").decode("ascii"), role)
                  for role in expected}
+        ipc = check_ipc(bundle.read(NETLIST_NAME), board, vias)
     frames = set()
     for suffix, data in files.items():
         role = LAYERS[suffix]
@@ -280,6 +373,7 @@ def check(archive):
         "status": "cam-geometry-matches-native-pcb",
         "source_sha256": {str(p.relative_to(ROOT)): sha(p) for p in (BOARD, PROFILE, POWER, Path(__file__))},
         "archive_sha256": sha(archive),
+        "electrical_test_netlist": ipc,
         "ordinary_process_profile": profile["profile"],
         "layer_roles": LAYERS,
         "stackup": profile["stackup"],

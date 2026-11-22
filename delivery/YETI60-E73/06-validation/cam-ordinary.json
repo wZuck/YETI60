@@ -4,9 +4,25 @@
     "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
     "hardware/e73-hhkb-corner/audit/power-process.json": "a60aedcc5599d31f4b5d087e8f5dd74440f34045baee7be1b5e7950ed1807205",
-    "scripts/check_e73_cam.py": "1c20936222bcf126ba45035c7f5c9bcc0204f483e345f9593dcab8b63dd190bd"
+    "scripts/check_e73_cam.py": "1b62b99a126048a696775b57c824481cc3b2f95a93fce6ace19bf400768f2622"
   },
-  "archive_sha256": "1223c8ef4eac6b84fad813ddda8e3cefc6768cf33f4a32ed480123b717b2a1b4",
+  "archive_sha256": "356c74a70a3283309eb8dab1f3c521a77512df10d4fd78241105b2278b5ae376",
+  "electrical_test_netlist": {
+    "format": "IPC-D-356A",
+    "file": "EC60-nRF52840.d356",
+    "sha256": "1424715b31ddf1712fa625812e4efa786deda2fdfe80b7f6669730a30f22b07d",
+    "records_checked": 1457,
+    "through_vias_checked": 852,
+    "SMD_pad_records_checked": 572,
+    "plated_component_records_checked": 3,
+    "nonplated_hole_records_checked": 30,
+    "native_named_nets_checked": 83,
+    "long_net_aliases": 17,
+    "coordinate_frame": "KiCad absolute X and negative Y, same as the Gerbers",
+    "coordinate_unit_mm": 0.00254,
+    "maximum_coordinate_axis_error_mm": 0.001261,
+    "physical_verification": false
+  },
   "ordinary_process_profile": "JLC-ordinary-4L-7628",
   "layer_roles": {
     "F_Cu.gtl": "Copper,L1,Top",
