@@ -49,6 +49,8 @@ python3 prepare-normal-update.py compare-settings settings-before.hex settings-a
 <p>使用上述显式擦除选项，nRF Util 的默认模式为全片擦除。编程校验和回读均成功、工具输出 <code>same_settings: true</code> 后，执行 <code>nrfutil device reset --serial-number &quot;$PROBE&quot;</code>。如果校验或比对失败，保留原备份，先排查原因再进行擦除或复位。<a href="https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/nrfutil-device-program.html/programming-options">Nordic 编程选项</a></p>
 <p>检查 USB 按下／释放、修饰键、Fn 和大键边缘回弹，再测试蓝牙配对、重连、唤醒和 USB 优先。轴座、胶碗、弹簧、定位板叠层或 PCB 指纹变化后重新校准。</p>
 <p>记录真实结果；交付的主机测试不能代替这些样机测试。</p>
+<h2 id="蓝牙配置槽与清除">蓝牙配置槽与清除</h2>
+<p>按住 Fn，点按 Q、W、E、R 或 T，可依次选择 0–4 号蓝牙配置槽。首件验证时选一个备用槽。确认按住 Fn 后，单击或长按退格键都会保留绑定。在按住 Fn 的同时于 400 ms 内点按两次退格键，只清除当前槽。需要时先在该主机上移除旧配对，再重新配对。确认其他已配对槽仍可重连，键盘仍能使用之前保存的校准。普通层的退格键保留原功能。<a href="firmware-recovery.json">编译固件及恢复行为检查</a></p>
 <h2 id="从源码重建">从源码重建</h2>
 <p>在完整源码仓库中完成原生布线、USB 参考地和装配检查后，运行以下命令。</p>
 <pre><code class="language-sh">uv run --python 3.14.7 --with-requirements requirements-audit.txt python scripts/build_e73_corner_firmware.py

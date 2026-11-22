@@ -39,7 +39,7 @@
 <tr>
 <td>All keys</td>
 <td>Assemble the plate, domes and springs outside the case. Save 60 calibration positions and program the matching normal image with settings retained. Test each press and release, plus both stabilized ends of the three large keys</td>
-<td>All 60 physical positions produce their expected key or layer behavior. Both edges of each stabilized key return without sticking. <a href="../04-assembly/key-mechanism.html">Mechanism guide</a></td>
+<td>All 60 physical positions produce their expected key or layer behavior. Both edges of each stabilized key return without sticking. <a href="../04-assembly/key-mechanism.html">Mechanism guide</a> <a href="#key-by-key-record">Key-by-key record</a></td>
 </tr>
 <tr>
 <td>Physical battery</td>
@@ -63,5 +63,14 @@
 </tr>
 </tbody>
 </table>
+<h2 id="key-by-key-record">Key-by-key record</h2>
+<p>Copy the <a href="key-acceptance.csv">key acceptance CSV</a> for each unit. Position, row/column and electrode IDs come from the current assembly drawing. Expected HID usages come from the compiled maps shared by the matching normal and calibrator builds. Each <code>not-run</code> cell starts unmeasured. Test with the normal build after saving calibration for all 60 keys. Record the observed result and trace location. <code>0x07/0x29</code> gives the hexadecimal page and usage for Escape.</p>
+<ol>
+<li><strong>Open bench, configured USB and charging</strong>. Assemble the NiZ housings, plate, domes and springs. Use a battery simulator with a valid NTC setting. Confirm positive BAT current, then fill <code>usb_while_charging</code>. Log upstream C5 current and BAT current during input. <a href="bench-power.html">Bench connections and limits</a></li>
+<li><strong>USB detached, BLE on battery</strong>. After the simulator checks pass, connect an accepted protected pack and pair a BLE host. Detach USB, confirm BLE receives input, then fill <code>ble_on_battery</code>. Reattach USB and verify that input returns to USB and positive charge current resumes. Use separate receiving endpoints or per-transport traces to identify the path. A text field shared by both transports cannot identify the source.</li>
+<li>For <code>center</code>, press the middle of the cap. For <code>left_edge</code> and <code>right_edge</code>, press the respective ends of Enter, left Shift and Space. Each stroke should assert only the expected key, then clear its usage or modifier bit on release. The two ends of Space report the same usage. Fn by itself changes a layer and emits no keyboard event.</li>
+<li>For <code>with_fn</code>, hold Fn, press and release the target key, then release Fn. For <code>release_fn_first</code>, hold Fn and press <strong>1</strong>. Release Fn before <strong>1</strong>. The trace must show F1 asserted and cleared with no <strong>1</strong> event. A subsequent tap of <strong>1</strong> must use the base layer. Test Bluetooth profile selection and clearing using the <a href="../05-firmware/installation.html#bluetooth-profiles-and-recovery">firmware recovery procedure</a>.</li>
+<li>Use a trace that shows presses, releases and modifier bits. An editor cannot verify a standalone modifier. Input methods, host shortcuts and typematic repeat can also change the displayed text. Mark missing, wrong, duplicate or stuck events as failures and save the test conditions. Repeat after case closure. Save separate copies of the record for open and closed tests.</li>
+</ol>
 <p>Record a failed stage before continuing. Do not qualify the finished build until the relevant failures are corrected and retested.</p>
 </main></html>

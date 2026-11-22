@@ -77,6 +77,10 @@ Confirm USB key-down and release, modifiers, Fn and large-key edge return. Then 
 
 Record real results; the delivered host tests do not replace these unit tests.
 
+## Bluetooth profiles and recovery
+
+Hold Fn and tap Q, W, E, R or T to select profile slots 0–4. During bring-up, use a spare slot. On that slot, confirm that a single Fn + Backspace tap and a hold leave the bond intact. Holding Fn and tapping Backspace twice within 400 ms clears only the selected slot. Forget the old pairing on that host if needed, then pair the slot again. Confirm other paired slots still reconnect and the keys work with their saved calibration. Base-layer Backspace retains its normal function. [Compiled firmware and host recovery checks](../../hardware/e73-hhkb-corner/firmware/firmware-recovery.json)
+
 ## Rebuild from source
 
 Run from the full source checkout after the native routing, USB reference-ground and fit checks.

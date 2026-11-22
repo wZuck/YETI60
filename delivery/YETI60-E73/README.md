@@ -21,6 +21,6 @@ Review the mainboard as ordinary 4-layer FR-4, nominal 1.6 mm, JLC04161H-7628, E
 
 The first article uses the M05 bottom, two access covers and matched nine-wire harness. The assembly views, print checklist and wire lengths all use M05. Factory mask registration, pack verification, physical case service and USB, BLE, sensing and thermal tests remain open.
 
-[KiCad project](01-pcb/project-files.md) · [PCB and stencil order settings](01-pcb/ordering-and-printing.md) · [Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [M05 bottom STEP](02-mechanical/service-case-m05/bottom-m05-REVIEW.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [Purchase BOM CSV](03-bom/mainboard-purchase.csv) · [Checksums](manifest.json)
+[KiCad project](01-pcb/project-files.md) · [PCB and stencil order settings](01-pcb/ordering-and-printing.md) · [Top STL](02-mechanical/top.stl) · [Top STEP](02-mechanical/top.step) · [M05 bottom STEP](02-mechanical/service-case-m05/bottom-m05-REVIEW.step) · [Plate DXF](02-mechanical/steel-plate.dxf) · [Purchase BOM CSV](03-bom/mainboard-purchase.csv) · [First-article acceptance and key record](06-validation/first-article.md) · [Checksums](manifest.json)
 
 [JLC capabilities](https://jlcpcb.com/capabilities/Capabilities) · [JLC stack-ups](https://jlcpcb.com/impedance)

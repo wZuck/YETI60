@@ -5,6 +5,73 @@ from html.parser import HTMLParser
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def first_article_keys(bundle):
+    """Join the physical position sheet to the compiled normal/calibrator maps."""
+    firmware = bundle / '05-firmware'
+    manifest = json.loads((firmware / 'manifest.json').read_text())
+    pipeline_path = firmware / 'key-pipeline.json'
+    pipeline = json.loads(pipeline_path.read_text())
+    build_path = firmware / 'yeti60-target-build.json'
+    assert manifest['evidence']['hardware/e73-hhkb-corner/firmware/key-pipeline.json'] == sha(pipeline_path)
+    assert pipeline['target_build_manifest_sha256'] == sha(build_path)
+    assert pipeline['status'] == 'passed' and pipeline['physical_verification'] is False
+    matrix = pipeline['compiled_maps']['normal']
+    base_layer, fn_layer = pipeline['compiled_bindings']['normal']
+    assert pipeline['compiled_maps']['calibrator'] == matrix
+    assert pipeline['compiled_bindings']['calibrator'] == [base_layer, fn_layer]
+    positions_path = bundle / '04-assembly/calibration-keys.csv'
+    labels_path = firmware / 'calibration-bindings.csv'
+    mechanism_path = bundle / '02-mechanical/key-mechanism.json'
+    assert manifest['source_sha256']['firmware/target/calibration-keys.csv'] == sha(labels_path)
+    assert manifest['source_sha256']['mechanical/yeti60-key-mechanism.e73.json'] == sha(mechanism_path)
+    with positions_path.open(newline='') as stream:
+        positions = list(csv.DictReader(stream))
+    with labels_path.open(newline='') as stream:
+        labels = list(csv.DictReader(stream))
+    assert len(positions) == len(labels) == len(base_layer) == len(fn_layer) == len(set(matrix)) == 60
+    assert len({key['Electrode'] for key in positions}) == 60
+    mechanism = json.loads(mechanism_path.read_text())
+    stabilized = {key['active_index'] for key in mechanism['stabilized_keys']}
+    assert len(stabilized) == 3
+    fn_positions = [i for i, binding in enumerate(base_layer)
+                    if binding == ['zmk,behavior-momentary-layer', 1]]
+    assert len(fn_positions) == 1
+
+    rows = []
+    for index, key in enumerate(positions):
+        label = labels[index]
+        row, column = divmod(matrix[index], 256)
+        assert int(key['Index']) == int(label['index']) == index
+        assert (int(key['Row']), int(key['Column'])) == (row, column)
+        assert (int(label['row']), int(label['column'])) == (row, column)
+        is_fn = index in fn_positions
+        expected = 'none' if is_fn else keyboard_usage(base_layer[index])
+        physical_key = 'Fn' if is_fn else label['key_binding'].removeprefix('&kp ')
+        assert label['key_binding'] == ('&mo 1' if is_fn else '&kp ' + physical_key)
+        common = dict(position_index=index, row=row, column=column,
+                      electrode=key['Electrode'], physical_key=physical_key)
+        pending = dict(usb_while_charging='not-run', ble_on_battery='not-run', notes='')
+        rows.append(dict(**common, action='center', expected_usage=expected, **pending))
+        if index in stabilized:
+            for action in ('left_edge', 'right_edge'):
+                rows.append(dict(**common, action=action, expected_usage=expected, **pending))
+        if fn_layer[index][0] == 'zmk,behavior-key-press':
+            fn_usage = keyboard_usage(fn_layer[index])
+            rows.append(dict(**common, action='with_fn', expected_usage=fn_usage, **pending))
+            if fn_usage == '0x07/0x3A':  # F1, with Fn released before the key.
+                rows.append(dict(**common, action='release_fn_first', expected_usage=fn_usage, **pending))
+    assert sum(row['action'] == 'release_fn_first' for row in rows) == 1
+    return rows
+
+
+def keyboard_usage(binding):
+    behavior, value = binding
+    assert behavior == 'zmk,behavior-key-press' and value >> 16 == 7
+    return f'0x07/0x{value & 0xFFFF:02X}'
+
+
 class Links(HTMLParser):
  def __init__(self):super().__init__();self.links=[]
  def handle_starttag(self,tag,attrs):
@@ -118,6 +185,10 @@ def main():
  assert fm['published_outputs'].keys()=={firmware_prefix+image for image in expected_images}
  for image in expected_images:
   assert sha(firmware/image)==fm['published_outputs'][firmware_prefix+image],('Firmware image mismatch',image)
+ with (base/'06-validation/key-acceptance.csv').open(newline='') as stream:
+  key_rows = list(csv.DictReader(stream))
+ expected_rows = first_article_keys(base)
+ assert key_rows == [{key: str(value) for key, value in row.items()} for row in expected_rows], 'Stale key acceptance template'
  message='Delivery hashes, M05 files, local links, Gerber archive and firmware/PCB identity passed'
  print(message+(' against the source checkout' if in_checkout else ' in the offline bundle'))
  if args.require_release and (m['pending']or not m['production_approved']):

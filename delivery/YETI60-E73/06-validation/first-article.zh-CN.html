@@ -39,7 +39,7 @@
 <tr>
 <td>全键</td>
 <td>在壳外装定位板、胶碗和弹簧。保存全部 60 键的校准值，再保留设置刷正常版。逐键测试按下、释放，以及三个卫星轴大键的两侧</td>
-<td>60 个位置均触发预期键值或层功能。大键两侧均能回弹且不卡滞。<a href="../04-assembly/key-mechanism.zh-CN.html">机构指南</a></td>
+<td>60 个位置均触发预期键值或层功能。大键两侧均能回弹且不卡滞。<a href="../04-assembly/key-mechanism.zh-CN.html">机构指南</a> <a href="#%E9%80%90%E9%94%AE%E8%AE%B0%E5%BD%95">逐键记录</a></td>
 </tr>
 <tr>
 <td>实物电池</td>
@@ -63,5 +63,14 @@
 </tr>
 </tbody>
 </table>
+<h2 id="逐键记录">逐键记录</h2>
+<p>按首件复制一份<a href="key-acceptance.csv">逐键验收 CSV</a>。表中位置、矩阵行列和电极编号来自当前装配图，预期用法码来自配套正常版和校准版的编译映射。模板中的 <code>not-run</code> 表示尚未实测。用保存了全部校准值的正常版测试。记录实测值和原始日志位置。<code>0x07/0x29</code> 分别是 Esc 的十六进制用法页和用法码。</p>
+<ol>
+<li><strong>壳外、USB 配置后充电</strong>：装好 NiZ、定位板、胶碗和弹簧，使用有效 NTC 设定的电池模拟器。确认 BAT 电流为正，再填写 <code>usb_while_charging</code>。按键期间同步记录 C5 上游电流和 BAT 电流。<a href="bench-power.zh-CN.html">台架接法和限值</a></li>
+<li><strong>拔线、蓝牙电池供电</strong>：模拟器通过后，使用已验收的完整保护包并与蓝牙主机配对。拔掉 USB，确认蓝牙开始接收输入，再填写 <code>ble_on_battery</code>。重连 USB，确认输入回到 USB，同时测得正向充电电流。用两个接收端或分链路日志辨明输入来自哪一端；同一个文本框不能区分 USB 与蓝牙。</li>
+<li><code>center</code> 按键帽中央，<code>left_edge</code> 和 <code>right_edge</code> 测 Enter、左 Shift 和空格的两端。每次只有预期键按下，松手后用法码或修饰位清除。空格两侧不会生成独立键值。单按 Fn 只切层，不发键盘事件。</li>
+<li><code>with_fn</code> 先按住 Fn，再按下并释放目标键，最后松开 Fn。<code>release_fn_first</code> 按住 Fn 后按 <strong>1</strong>，先松 Fn 再松 <strong>1</strong>，确认 F1 的按下和释放都出现，且没有 <strong>1</strong> 的事件。松手后单按 <strong>1</strong> 应恢复普通功能。蓝牙配置切换与清除另按<a href="../05-firmware/installation.zh-CN.html#%E8%93%9D%E7%89%99%E9%85%8D%E7%BD%AE%E6%A7%BD%E4%B8%8E%E6%B8%85%E9%99%A4">固件恢复说明</a>验证。</li>
+<li>用可记录按下、释放及修饰位的日志。单独检查修饰键时不要用文本编辑器判断；输入法、主机快捷键和长按重复也会影响文字输出。将漏键、误键、重复触发和卡键记为失败，保留实测条件。关壳后重复。如壳外与关壳分别验收，为两种状态各保存一份表。</li>
+</ol>
 <p>出现失败时先记录并整改，再按对应条件复测。所有使用条件相关项目通过后再验收整机。</p>
 </main></html>

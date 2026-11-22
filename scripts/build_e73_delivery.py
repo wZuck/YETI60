@@ -6,6 +6,7 @@ firmware publication. The web index works offline, without a build server.
 """
 import argparse,hashlib,json,shutil,subprocess,zipfile,re,html,csv
 from pathlib import Path
+from check_e73_delivery import first_article_keys
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'hardware/e73-hhkb-corner'
 CLI='/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli'
@@ -151,6 +152,8 @@ def main():
  inputs.update(antenna_trial['source_sha256'])
  for p in sorted((BASE/'firmware').rglob('*')):
   if p.is_file():copy(str(p.relative_to(ROOT)),'05-firmware/'+str(p.relative_to(BASE/'firmware')))
+ copy('firmware/target/calibration-keys.csv','05-firmware/calibration-bindings.csv')
+ copy('mechanical/yeti60-key-mechanism.e73.json','02-mechanical/key-mechanism.json')
  docs={'docs/build/e73-delivery-start':'START-HERE','docs/build/e73-ordering-printing':'01-pcb/ordering-and-printing','docs/build/e73-project-files':'01-pcb/project-files','docs/build/e73-assembly-views':'04-assembly/assembly-views','docs/engineering/e73-retention':'04-assembly/retainers','docs/engineering/e73-corner-power-process':'06-validation/power-process','docs/testing/e73-first-article':'06-validation/first-article','docs/engineering/e73-corner-harness':'04-assembly/harness-routing','docs/engineering/e73-hhkb-corner':'06-validation/corner-review','docs/testing/e73-corner-firmware':'05-firmware/installation','docs/build/key-mechanism':'04-assembly/key-mechanism','docs/engineering/battery-pack-specification':'03-bom/battery-requirements'}
  docs['docs/engineering/e73-corner-service']='06-validation/case-service'
  docs['docs/build/e73-m05-prototype']='02-mechanical/service-case-m05/print-guide'
@@ -191,6 +194,13 @@ def main():
  copy('hardware/e73-corner-j5-repair.json','06-validation/j5-repair.json')
  for p in sorted((ROOT/'docs/assembly/e73-corner').rglob('*')):
   if p.is_file():copy(str(p.relative_to(ROOT)),'04-assembly/'+str(p.relative_to(ROOT/'docs/assembly/e73-corner')))
+ key_record='06-validation/key-acceptance.csv'
+ key_rows=first_article_keys(out)
+ with (out/key_record).open('w',newline='') as stream:
+  writer=csv.DictWriter(stream,fieldnames=list(key_rows[0]),lineterminator='\n')
+  writer.writeheader()
+  writer.writerows(key_rows)
+ mapping['delivery/YETI60-E73/'+key_record]=key_record
  for p in sorted((BASE/'audit').glob('*')):
   if p.suffix in ['.json','.png','.svg']:copy(str(p.relative_to(ROOT)),'06-validation/'+p.name)
  inputs['scripts/check_e73_cam.py']=sha(ROOT/'scripts/check_e73_cam.py')
@@ -277,6 +287,7 @@ def main():
    ('M05 底壳 STEP' if zh else 'M05 bottom STEP',m05_dir+'bottom-m05-REVIEW.step'),
    ('定位板 DXF' if zh else 'Plate DXF','02-mechanical/steel-plate.dxf'),
    ('采购清单 CSV' if zh else 'Purchase BOM CSV','03-bom/mainboard-purchase'+suffix+'.csv'),
+   ('首件验收与逐键记录' if zh else 'First-article acceptance and key record','06-validation/first-article'+suffix+'.md'),
    ('文件校验值' if zh else 'Checksums','manifest.json'),
   ]
   quick_markdown=' · '.join(f'[{label}]({url})' for label,url in quick_links)
