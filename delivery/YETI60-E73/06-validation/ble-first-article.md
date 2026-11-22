@@ -15,6 +15,21 @@ The E73-2G4M08S1C drawing shows the ceramic antenna at the end opposite the 13 m
 
 The case-path values describe material thickness along the chosen CAD lines. They do not supply the dielectric properties of the printed parts, antenna impedance, radiation pattern or attenuation. The steel remains close to the antenna, and nearby hands, screws, resin formulation, the desk and the host affect the link. [CAD probes and calculation inputs](radio-path.json)
 
+## Optional antenna-window plate trial
+
+The alternate plate adds one **6.00 × 14.20 mm** opening with nominal R0.60 internal corners, using the same 1.55–1.60 mm finished 304 stainless steel as M01. The DXF readback retains the full outline, all 60 key cutouts and all 28 mounting axes. The cut clears the expanded gasket footprints by at least **5.20 mm**. [Trial DXF](../02-mechanical/antenna-trial/M01-antenna-window-TRIAL.dxf) · [Geometry report](antenna-window-trial.json)
+
+![Steel plate window, nearest switch cutout and E73 antenna region](../02-mechanical/antenna-trial/M01-antenna-window-TRIAL.svg)
+
+| Geometry | Trial result |
+|---|---:|
+| Steel over the 3 × 13 mm antenna region | 39 → 0 mm², including the trial with relative XY motion bounded by ±0.30 mm per axis |
+| Minimum plate web to SW62 | 4.14 mm |
+| Minimum plate web to the outer edge | 2.51 mm |
+| Minimum plate web to a mounting pilot | 35.26 mm |
+
+The default build and its calibration images use the original M01. Use the window plate for an A/B radio comparison if the standard plate needs further investigation. Fit the same stack, board, shell and fasteners with each plate. Keep the host, power, orientation and distances fixed at 2 m and 3 m. Compare link continuity, reconnects and RSSI when available. Test key feel, plate flex and full-stack sensing separately. A permanent plate change requires rebuilding the firmware pair for the new plate fingerprint and recalibrating all keys. Ebyte gives qualitative metal-clearance guidance. This trial verifies the projected opening and webs. Range and stiffness remain physical checks. [Ebyte installation guidance](https://www.ebyte.com/downpdf/444.html)
+
 ## Reference at 2 m and 3 m
 
 Free-space loss is `20 log10(4πdf/c)`, with distance in metres, frequency in hertz and `c = 299792458 m/s`. The example uses 0 dBm transmit power and 0 dBi antenna gains at both ends. It allows 15 dB for fading as a planning reserve. Nordic lists typical receiver sensitivity of −95 dBm at LE 1M for short packets and −92 dBm at LE 2M. The example host sensitivity is an assumed −85 dBm. Its power and sensitivity depend on the actual host. [ITU-R P.525-5](https://www.itu.int/rec/R-REC-P.525-5-202411-I/en) · [Bluetooth LE channels](https://www.bluetooth.com/wp-content/uploads/2023/03/bluetooth-le-regulatory-aspects-document.pdf) · [Nordic receiver table](https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/radio.html)

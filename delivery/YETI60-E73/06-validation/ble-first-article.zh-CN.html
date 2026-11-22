@@ -29,6 +29,36 @@
 </tbody>
 </table>
 <p>CAD 测线给出的是沿线材料厚度。实际衰减还取决于打印材料介电性质、天线匹配和方向性。钢板距离较近，手位、螺钉、桌面和主机也会影响链路。 <a href="radio-path.json">CAD 测线与计算输入</a></p>
+<h2 id="可选天线开窗定位板试验">可选天线开窗定位板试验</h2>
+<p>试验板增加一个 <strong>6.00 × 14.20 mm</strong> 的内开窗，内圆角标称 R0.60，沿用 M01 的 304 不锈钢和 <strong>1.55–1.60 mm</strong> 成品厚度。DXF 回读确认外轮廓、60 个键孔及 28 个安装轴全部保留。开窗与计入位置公差的垫条轮廓至少相隔 <strong>5.20 mm</strong>。<a href="../02-mechanical/antenna-trial/M01-antenna-window-TRIAL.dxf">试验 DXF</a> · <a href="antenna-window-trial.json">几何回读报告</a></p>
+<p><img src="../02-mechanical/antenna-trial/M01-antenna-window-TRIAL.svg" alt="钢板开窗、最近的轴座孔及 E73 天线区域" /></p>
+<table>
+<thead>
+<tr>
+<th>几何检查项</th>
+<th style="text-align:right">试验板结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>钢板覆盖 3 × 13 mm 天线区域的投影</td>
+<td style="text-align:right">从 39 降为 0 mm²。天线相对开窗的 XY 偏移按各轴 ±0.30 mm 筛查后仍无覆盖</td>
+</tr>
+<tr>
+<td>开窗与 SW62 键孔间最窄钢材</td>
+<td style="text-align:right">4.14 mm</td>
+</tr>
+<tr>
+<td>开窗与定位板外沿间最窄钢材</td>
+<td style="text-align:right">2.51 mm</td>
+</tr>
+<tr>
+<td>开窗与安装底孔间最窄钢材</td>
+<td style="text-align:right">35.26 mm</td>
+</tr>
+</tbody>
+</table>
+<p>默认制作和配套校准固件仍按原 M01。需要进一步排查时，用开窗板对比无线链路。两次使用相同的主板、装配堆叠、外壳、紧固件、供电和主机，在 2 米、3 米下保持位置及朝向一致，记录连接是否稳定、重连情况及可读到的 RSSI。按键手感、板件挠度和完整静电容堆叠另行实测。若正式采用开窗板，要按新定位板指纹重建两份固件并重新校准 60 键。亿佰特的安装说明给出定性的金属避让要求，试验图已核实投影和剩余钢材尺寸，实际距离和刚度由样品确认。<a href="https://www.ebyte.com/downpdf/444.html">亿佰特安装说明</a></p>
 <h2 id="2-米和-3-米的参照值">2 米和 3 米的参照值</h2>
 <p>自由空间损耗为 <code>20 log10(4πdf/c)</code>。距离用米、频率用 Hz，<code>c = 299792458 m/s</code>。示例采用 0 dBm 发射功率、两端天线各 0 dBi，规划时留出 15 dB 衰落余量。Nordic 的典型接收灵敏度为 LE 1M 短包 −95 dBm、LE 2M −92 dBm。示例主机按 −85 dBm 计算，其实际灵敏度和发射功率取决于设备。 <a href="https://www.itu.int/rec/R-REC-P.525-5-202411-I/en">国际电联 P.525-5</a> · <a href="https://www.bluetooth.com/wp-content/uploads/2023/03/bluetooth-le-regulatory-aspects-document.pdf">蓝牙低功耗信道</a> · <a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/radio.html">Nordic 接收规格</a></p>
 <table>

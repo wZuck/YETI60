@@ -1,0 +1,42 @@
+{
+  "status": "alternate-plate-geometry-checked-ab-trial-only",
+  "physical_verification": false,
+  "electromagnetic_field_solution": false,
+  "selected_as_default_plate": false,
+  "window_case_bounds_mm": [
+    345.5,
+    -195.6,
+    351.5,
+    -181.4
+  ],
+  "window_internal_corner_radius_mm": 0.6,
+  "window_area_mm2": 84.889157,
+  "steel_over_antenna_before_after_mm2": [
+    39.0,
+    0
+  ],
+  "relative_antenna_motion_screen_each_axis_mm": 0.3,
+  "minimum_remaining_web_mm": {
+    "plate_edge": 2.509699,
+    "switch_opening": 4.14034,
+    "mounting_pilot": 35.256108
+  },
+  "closest_switch_reference": "SW62",
+  "minimum_distance_to_expanded_gasket_mm": 5.204967,
+  "preserved_openings_and_mounts": [
+    60,
+    28
+  ],
+  "default_plate_sha256": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
+  "source_sha256": {
+    "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
+    "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
+    "hardware/e73-hhkb-corner/audit/radio-path.json": "8ffb703d73cad5d0614e706334cf58d1bbad3477c247ef1b258398d4746c082e",
+    "docs/assembly/e73-corner/calibration-keys.csv": "65e9118c08335e2e45fa71830a9ce007dbfa396c7b6a7eaada7289c76fd7ff91",
+    "scripts/build_e73_antenna_plate_trial.py": "8e992fb3a2485aed7a71597ca391b1eed1e2c2b6b7c54eafd2b1616847f351ed"
+  },
+  "trial_sha256": {
+    "02-mechanical/antenna-trial/M01-antenna-window-TRIAL.dxf": "481acf549eaac828318ab9b9c7506fe8638e5a6c4aed1d50df9e8a74da5976a8",
+    "02-mechanical/antenna-trial/M01-antenna-window-TRIAL.svg": "c24b8456af95ab0d71788e25333ea81b873a8d6d530a316aaa4d6575cc57b05e"
+  }
+}

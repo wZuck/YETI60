@@ -54,6 +54,16 @@ def main():
  assert coupon['source_plate_sha256']==sha(base/'02-mechanical/steel-plate.dxf')
  assert set(coupon['files_sha256'])=={'02-mechanical/plate-fit-coupon.dxf','02-mechanical/plate-fit-coupon.svg'}
  assert all(m['files_sha256'][name]==digest for name,digest in coupon['files_sha256'].items())
+ antenna_trial=json.loads((base/'06-validation/antenna-window-trial.json').read_text())
+ assert not antenna_trial['physical_verification'] and not antenna_trial['selected_as_default_plate']
+ assert antenna_trial['default_plate_sha256']==coupon['source_plate_sha256']
+ assert antenna_trial['preserved_openings_and_mounts']==[60,28]
+ assert antenna_trial['steel_over_antenna_before_after_mm2']==[39,0]
+ assert set(antenna_trial['trial_sha256'])=={
+  '02-mechanical/antenna-trial/M01-antenna-window-TRIAL.dxf',
+  '02-mechanical/antenna-trial/M01-antenna-window-TRIAL.svg',
+ }
+ assert all(m['files_sha256'][name]==digest for name,digest in antenna_trial['trial_sha256'].items())
  print_fit=json.loads((base/'06-validation/m05-print-fit.json').read_text())
  assert print_fit['status']=='m05-step-readback-and-ordinary-sla-fit-screen' and not print_fit['physical_verification']
  assert set(print_fit['STEP_sha256'])=={'02-mechanical/top.step',case_dir+'bottom-m05-REVIEW.step',
