@@ -36,28 +36,28 @@ CORNER-07 调整 U5、U6、C42、SW1 的开窗，并移动 D2 接地过孔。完
 
 ## 钢网下单
 
-使用[同一份 CORNER-07 Gerber 压缩包](../../delivery/YETI60-E73/01-pcb/YETI60-E73-gerbers-REVIEW.zip)。包内[正面焊膏层](../../delivery/YETI60-E73/01-pcb/gerbers/EC60-nRF52840-F_Paste.gtp)用于 U1，[背面焊膏层](../../delivery/YETI60-E73/01-pcb/gerbers/EC60-nRF52840-B_Paste.gbp)用于背面元件。随 PCB 下单时选单板。单独下单时，在钢网入口上传同一个压缩包。[嘉立创钢网下单流程](https://www.jlc.com/portal/server_guide_35103.html)
+在嘉立创的**开激光钢网 → 在线下钢网订单**上传 [CORNER-07 钢网压缩包](../../delivery/YETI60-E73/01-pcb/YETI60-E73-stencils-REVIEW.zip)。下单 PCB 时用上一节的 Gerber 和钻孔压缩包。钢网包包含 U1 的正面焊膏层、实装元件的背面焊膏层及对位用板框。背面省去 JP1 的两个开口，让跳线保持断开。每张钢网选单板图案。[嘉立创钢网下单流程](https://www.jlc.com/portal/server_guide_35103.html)
 
 | 选项 | 填写 |
 |---|---|
 | 类型及数量 | 普通 304 不锈钢焊膏钢网，无框。正反面分开，正面和背面各 1 张。如果表单需要分两条订单，分别选择仅正面和仅背面 |
-| 网片规格 | 标准 380 × 280 mm，关闭自定义尺寸。确认每张有效开孔区域至少 285.0 × 94.6 mm。嘉立创列出的该规格有效区为 290 × 190 mm |
+| 网片规格 | 选标准 **28 × 38 cm 无铝框钢片**，关闭自定义尺寸。嘉立创公布的 290 × 190 mm 有效区能容纳 285.0 × 94.6 mm 单板。确认每面在有效区居中 |
 | 厚度 | 客户指定，两张都选 **0.12 mm** |
 | 定位点及表面 | 无定位点，普通表面处理，无纳米涂层 |
 | 方向 | 单板，PCB 长边平行于网片长边。确认切割预览中的面别与方向 |
 
 下单备注可以直接复制。
 
-> YETI60 E73 CORNER-07。请按对应面的原始焊膏层制作，保持各开口的形状及分窗。切割数据只使用焊膏层。请在切割前提供标明正反面的预览供核对。
+> YETI60 E73 CORNER-07。请按提交的焊膏层 1:1 切割，保留开口形状及分窗。Edge.Cuts 板框只用于对位。JP1 和 J3 位置不开孔。请在切割前提供标明正反面的预览供核对。
 
-面积比为开口面积 ÷（开口周长 × 钢网厚度）。表格先合并 Gerber 图元，每个实际切口只记一次。0.66 为参考 TI QFN／SON 指南采用的工程筛选线。[Gerber 量测报告](../../delivery/YETI60-E73/06-validation/cam-apertures.json) · [TI 装联指南第 4.3 节](https://www.ti.com/lit/an/slua271c/slua271c.pdf) · [嘉立创钢网规格与有效区](https://jlcpcb.com/help/article/how-to-order-a-stencil) · [嘉立创常规钢网厚度](https://www.jlc.com/portal/server_guide_23975.html)
+面积比为开口面积 ÷（开口周长 × 钢网厚度）。表格先合并 Gerber 图元，每个实际切口只记一次。0.66 为参考 TI QFN／SON 指南采用的工程筛选线。[Gerber 量测报告](../../delivery/YETI60-E73/06-validation/cam-apertures.json) · [TI 装联指南第 4.3 节](https://www.ti.com/lit/an/slua271c/slua271c.pdf) · [嘉立创钢网规格与常规厚度](https://www.jlc.com/portal/q7i4016.html) · [嘉立创公布的有效区](https://jlcpcb.com/help/article/how-to-order-a-stencil)
 
 | 面别 | 切口数 | 0.12 mm 的最小面积比 | 0.12／0.15 mm 低于 0.66 的切口数 |
 |---|---:|---:|---:|
 | 正面，仅 U1 | 43 | 2.000 | 0／0 |
-| 背面，最小值出现在 U5 | 236 | 0.742 | 0／16 |
+| 背面，最小值出现在 U5 | 234 | 0.742 | 0／16 |
 
-上膏前先干对位。正面以键帽侧视角右下角的 U1 对位，背面把实物翻过来，以相互分开的 J4、U5、SW1 三处核对。上传时保留两层原始坐标。JP1 保持断开，回流前清掉它两块焊盘上的锡膏。J3 弹簧针触点没有钢网开口。按电源阶段先印背面，之后刷正面 U1 时给已经焊好的背面元件留出支撑净空。首件检查锡膏转移和隐藏焊点。[分步焊接指南](../assembly/e73-corner/soldering.zh-CN.md)
+上膏前先干对位。正面以键帽侧视角右下角的 U1 对位，背面把实物翻过来，以相互分开的 J4、U5、SW1 三处核对。确认钢网在 JP1 和 J3 弹簧针焊盘处无开口。按电源阶段先印背面，之后刷正面 U1 时给已经焊好的背面元件留出支撑净空。首件检查锡膏转移和隐藏焊点。[分步焊接指南](../assembly/e73-corner/soldering.zh-CN.md)
 
 ## 机械文件发哪些
 

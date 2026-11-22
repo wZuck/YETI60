@@ -85,7 +85,7 @@
 <p>JLC 普通工艺参考：<a href="https://jlcpcb.com/capabilities/pcb-capabilities/">制造能力</a>、<a href="https://jlcpcb.com/impedance">叠层</a>。选项以实际报价核对。本说明和无错误 DRC 均不能替代工厂可制造性审核。</p>
 <p>CORNER-07 调整 U5、U6、C42、SW1 的开窗，并移动 D2 接地过孔。完整制板 ZIP 内钻孔至开窗的最小标称间距为 0.230 mm。按保守的孔位和成品孔径公差扣减后，其他相对偏移可用余量至少为 0.059 mm。请工厂确认普通工艺的阻焊对位及 U5、U6 阻焊岛。 <a href="../06-validation/aperture-review.zh-CN.html">制造图层量测</a> · <a href="https://jlcpcb.com/capabilities/Capabilities">嘉立创钻孔公差</a></p>
 <h2 id="钢网下单">钢网下单</h2>
-<p>使用<a href="YETI60-E73-gerbers-REVIEW.zip">同一份 CORNER-07 Gerber 压缩包</a>。包内<a href="gerbers/EC60-nRF52840-F_Paste.gtp">正面焊膏层</a>用于 U1，<a href="gerbers/EC60-nRF52840-B_Paste.gbp">背面焊膏层</a>用于背面元件。随 PCB 下单时选单板。单独下单时，在钢网入口上传同一个压缩包。<a href="https://www.jlc.com/portal/server_guide_35103.html">嘉立创钢网下单流程</a></p>
+<p>在嘉立创的<strong>开激光钢网 → 在线下钢网订单</strong>上传 <a href="YETI60-E73-stencils-REVIEW.zip">CORNER-07 钢网压缩包</a>。下单 PCB 时用上一节的 Gerber 和钻孔压缩包。钢网包包含 U1 的正面焊膏层、实装元件的背面焊膏层及对位用板框。背面省去 JP1 的两个开口，让跳线保持断开。每张钢网选单板图案。<a href="https://www.jlc.com/portal/server_guide_35103.html">嘉立创钢网下单流程</a></p>
 <table>
 <thead>
 <tr>
@@ -100,7 +100,7 @@
 </tr>
 <tr>
 <td>网片规格</td>
-<td>标准 380 × 280 mm，关闭自定义尺寸。确认每张有效开孔区域至少 285.0 × 94.6 mm。嘉立创列出的该规格有效区为 290 × 190 mm</td>
+<td>选标准 <strong>28 × 38 cm 无铝框钢片</strong>，关闭自定义尺寸。嘉立创公布的 290 × 190 mm 有效区能容纳 285.0 × 94.6 mm 单板。确认每面在有效区居中</td>
 </tr>
 <tr>
 <td>厚度</td>
@@ -118,9 +118,9 @@
 </table>
 <p>下单备注可以直接复制。</p>
 <blockquote>
-<p>YETI60 E73 CORNER-07。请按对应面的原始焊膏层制作，保持各开口的形状及分窗。切割数据只使用焊膏层。请在切割前提供标明正反面的预览供核对。</p>
+<p>YETI60 E73 CORNER-07。请按提交的焊膏层 1:1 切割，保留开口形状及分窗。Edge.Cuts 板框只用于对位。JP1 和 J3 位置不开孔。请在切割前提供标明正反面的预览供核对。</p>
 </blockquote>
-<p>面积比为开口面积 ÷（开口周长 × 钢网厚度）。表格先合并 Gerber 图元，每个实际切口只记一次。0.66 为参考 TI QFN／SON 指南采用的工程筛选线。<a href="../06-validation/cam-apertures.json">Gerber 量测报告</a> · <a href="https://www.ti.com/lit/an/slua271c/slua271c.pdf">TI 装联指南第 4.3 节</a> · <a href="https://jlcpcb.com/help/article/how-to-order-a-stencil">嘉立创钢网规格与有效区</a> · <a href="https://www.jlc.com/portal/server_guide_23975.html">嘉立创常规钢网厚度</a></p>
+<p>面积比为开口面积 ÷（开口周长 × 钢网厚度）。表格先合并 Gerber 图元，每个实际切口只记一次。0.66 为参考 TI QFN／SON 指南采用的工程筛选线。<a href="../06-validation/cam-apertures.json">Gerber 量测报告</a> · <a href="https://www.ti.com/lit/an/slua271c/slua271c.pdf">TI 装联指南第 4.3 节</a> · <a href="https://www.jlc.com/portal/q7i4016.html">嘉立创钢网规格与常规厚度</a> · <a href="https://jlcpcb.com/help/article/how-to-order-a-stencil">嘉立创公布的有效区</a></p>
 <table>
 <thead>
 <tr>
@@ -139,13 +139,13 @@
 </tr>
 <tr>
 <td>背面，最小值出现在 U5</td>
-<td style="text-align:right">236</td>
+<td style="text-align:right">234</td>
 <td style="text-align:right">0.742</td>
 <td style="text-align:right">0／16</td>
 </tr>
 </tbody>
 </table>
-<p>上膏前先干对位。正面以键帽侧视角右下角的 U1 对位，背面把实物翻过来，以相互分开的 J4、U5、SW1 三处核对。上传时保留两层原始坐标。JP1 保持断开，回流前清掉它两块焊盘上的锡膏。J3 弹簧针触点没有钢网开口。按电源阶段先印背面，之后刷正面 U1 时给已经焊好的背面元件留出支撑净空。首件检查锡膏转移和隐藏焊点。<a href="../04-assembly/soldering.zh-CN.html">分步焊接指南</a></p>
+<p>上膏前先干对位。正面以键帽侧视角右下角的 U1 对位，背面把实物翻过来，以相互分开的 J4、U5、SW1 三处核对。确认钢网在 JP1 和 J3 弹簧针焊盘处无开口。按电源阶段先印背面，之后刷正面 U1 时给已经焊好的背面元件留出支撑净空。首件检查锡膏转移和隐藏焊点。<a href="../04-assembly/soldering.zh-CN.html">分步焊接指南</a></p>
 <h2 id="机械文件发哪些">机械文件发哪些</h2>
 <table>
 <thead>

@@ -7,6 +7,14 @@ ROOT=Path(__file__).resolve().parents[1]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
+def strip_jp1_paste(artwork):
+    """Remove the two flashes without changing the modal aperture selection."""
+    block = rb'(?m)^%TO\.C,JP1\*%\n(?:X-?\d+Y-?\d+D03\*\n){2}%TD\*%\n'
+    filtered, count = re.subn(block, b'', artwork)
+    assert count == 1 and b'%TO.C,JP1*%' not in filtered, 'Unexpected JP1 paste artwork'
+    return filtered
+
+
 def first_article_keys(bundle):
     """Join the physical position sheet to the compiled normal/calibrator maps."""
     firmware = bundle / '05-firmware'
@@ -175,6 +183,22 @@ def main():
  assert apertures['vias']==cam['through_via_count'] and len(apertures['layers'])==4
  assert all(not layer['nominal_intersections'] and not layer['holes_below_conservative_reserve']
             and layer['min_nominal_gap_mm']>=.229 for layer in apertures['layers'].values())
+ stencil = apertures['order_stencil']
+ stencil_path = base/'01-pcb/YETI60-E73-stencils-REVIEW.zip'
+ assert stencil['archive_sha256'] == sha(stencil_path)
+ assert stencil['omitted_reference'] == 'JP1' and len(stencil['omitted_cut_centers_PCB_mm']) == 2
+ names = {f'EC60-nRF52840-{layer}' for layer in ('F_Paste.gtp', 'B_Paste.gbp', 'Edge_Cuts.gm1')}
+ with zipfile.ZipFile(stencil_path) as order:
+  assert len(order.namelist()) == len(names) and set(order.namelist()) == names
+  assert stencil['files_sha256'] == {name: hashlib.sha256(order.read(name)).hexdigest() for name in names}
+  for name in names:
+   original = (base/'01-pcb/gerbers'/name).read_bytes()
+   if name.endswith('B_Paste.gbp'):
+    original = strip_jp1_paste(original)
+   assert order.read(name) == original, ('Stencil artwork changed outside JP1', name)
+ assert [stencil['sides'][side]['cuts'] for side in ('F.Paste','B.Paste')] == [43, 234]
+ assert all(side['standard_thicknesses']['0.12']['cuts_below_screen'] == 0
+            for side in stencil['sides'].values())
  assert sha(base/'01-pcb/source/EC60-nRF52840.kicad_pcb')==m['source_PCB_sha256']
  firmware=base/'05-firmware'
  fm=json.loads((firmware/'manifest.json').read_text())

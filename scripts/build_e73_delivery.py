@@ -205,7 +205,8 @@ def main():
   if p.suffix in ['.json','.png','.svg']:copy(str(p.relative_to(ROOT)),'06-validation/'+p.name)
  inputs['scripts/check_e73_cam.py']=sha(ROOT/'scripts/check_e73_cam.py')
  inputs['scripts/check_e73_apertures.py']=sha(ROOT/'scripts/check_e73_apertures.py')
- for generated in ['01-pcb/YETI60-E73-gerbers-REVIEW.zip','02-mechanical/top.stl','06-validation/cam-ordinary.json',
+ for generated in ['01-pcb/YETI60-E73-gerbers-REVIEW.zip','01-pcb/YETI60-E73-stencils-REVIEW.zip',
+                   '02-mechanical/top.stl','06-validation/cam-ordinary.json',
                    '06-validation/cam-apertures.json','01-pcb/gerbers/EC60-nRF52840-F_Paste.gtp',
                    '01-pcb/gerbers/EC60-nRF52840-B_Paste.gbp','02-mechanical/plate-fit-coupon.dxf',
                    '02-mechanical/plate-fit-coupon.svg','06-validation/plate-fit-coupon.json',
@@ -255,6 +256,7 @@ def main():
                  '--output',str(out/'06-validation/cam-ordinary.json')],check=True)
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with','gerbonara==1.6.3','--with','shapely==2.1.2',
                  'python',str(ROOT/'scripts/check_e73_apertures.py'),'--archive',str(archive),
+                 '--stencil-archive',str(out/'01-pcb/YETI60-E73-stencils-REVIEW.zip'),
                  '--output',str(out/'06-validation/cam-apertures.json')],check=True)
  apertures=json.loads((out/'06-validation/cam-apertures.json').read_text())
  assert len(apertures['layers'])==4 and apertures['vias']==852
@@ -263,10 +265,9 @@ def main():
  for pad in apertures['thermal_lands'].values():
   assert .50<=pad['paste_fraction']<=.70 and pad['paste_fraction']==pad['paste_on_open_mask_fraction'], pad
   assert pad['minimum_stencil_web_mm']>=.15 and pad['minimum_area_ratio_at_0p125mm']>.66, pad
- for layer,side,documented_cuts in [('F.Paste','top',43),('B.Paste','bottom',236)]:
-  stencil=apertures['stencil']['sides'][layer]
+ for layer,side,documented_cuts in [('F.Paste','top',43),('B.Paste','bottom',234)]:
+  stencil=apertures['order_stencil']['sides'][layer]
   expected={row['Ref'] for row in rows if row['Side']==side}
-  if side=='bottom':expected.add('JP1')  # Two distinct lands; keep the jumper open.
   assert set(stencil['component_references'])==expected, (layer,stencil)
   assert stencil['cuts']==documented_cuts, (layer,stencil)
   assert not stencil['standard_thicknesses']['0.12']['cuts_below_screen'], (layer,stencil)
@@ -282,6 +283,7 @@ def main():
   quick_links=[
    ('KiCad 工程' if zh else 'KiCad project','01-pcb/project-files'+suffix+'.md'),
    ('PCB 与钢网下单参数' if zh else 'PCB and stencil order settings','01-pcb/ordering-and-printing'+suffix+'.md'),
+   ('双面钢网压缩包' if zh else 'Two-sided stencil ZIP','01-pcb/YETI60-E73-stencils-REVIEW.zip'),
    ('上壳 STL' if zh else 'Top STL','02-mechanical/top.stl'),
    ('上壳 STEP' if zh else 'Top STEP','02-mechanical/top.step'),
    ('M05 底壳 STEP' if zh else 'M05 bottom STEP',m05_dir+'bottom-m05-REVIEW.step'),

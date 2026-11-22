@@ -36,7 +36,7 @@ CORNER-07 changes the U5, U6, C42 and SW1 apertures and relocates the D2 ground 
 
 ## Stencil order
 
-Use the [same CORNER-07 Gerber ZIP](YETI60-E73-gerbers-REVIEW.zip). It contains the [front paste layer](gerbers/EC60-nRF52840-F_Paste.gtp) for U1 and the [back paste layer](gerbers/EC60-nRF52840-B_Paste.gbp) for the back-side components. Order with the PCB and select a single PCB. For a separate stencil order, upload the same ZIP under SMT Stencil. [JLCPCB stencil ordering](https://jlcpcb.com/help/article/how-to-order-a-stencil)
+Upload the [CORNER-07 stencil ZIP](YETI60-E73-stencils-REVIEW.zip) under **SMT Stencil**. Use the Gerber and drill ZIP from the PCB section for the board order. The stencil ZIP contains the front paste for U1, the back paste for fitted parts and the outline for alignment. It omits the two paste openings at JP1 so the jumper stays open. Select a single board pattern per sheet. [JLCPCB stencil ordering](https://jlcpcb.com/help/article/how-to-order-a-stencil)
 
 | Setting | Selection |
 |---|---|
@@ -48,16 +48,16 @@ Use the [same CORNER-07 Gerber ZIP](YETI60-E73-gerbers-REVIEW.zip). It contains 
 
 Copy into the stencil remarks.
 
-> YETI60 E73 CORNER-07. Use the supplied paste layer for each side. Preserve all aperture shapes and split windows. Keep mask openings out of the cutting data. Please send the cutting preview with both sides identified for review before cutting.
+> YETI60 E73 CORNER-07. Cut the supplied paste layers 1:1 and preserve the aperture shapes and split windows. Use Edge.Cuts for alignment only. Keep JP1 and J3 uncut. Please send a cutting preview identifying the two sides before cutting.
 
 The area ratio is opening area ÷ (opening perimeter × foil thickness). The table uses the union of the actual Gerber shapes, so each physical cut is counted once. TI's QFN/SON guidance provides the 0.66 engineering screen. [Gerber geometry report](../06-validation/cam-apertures.json) · [TI assembly note, §4.3](https://www.ti.com/lit/an/slua271c/slua271c.pdf) · [JLCPCB stencil capabilities](https://jlcpcb.com/capabilities/pcb-stencil-manufacturing)
 
 | Side | Cuts | Min. ratio at 0.12 mm | Cuts below 0.66 at 0.12 / 0.15 mm |
 |---|---:|---:|---:|
 | Front, U1 only | 43 | 2.000 | 0 / 0 |
-| Back, limiting opening at U5 | 236 | 0.742 | 0 / 16 |
+| Back, limiting opening at U5 | 234 | 0.742 | 0 / 16 |
 
-Dry-align before printing. Match the front openings to U1 at the right-hand corner as viewed from the key side. For the back, turn the real PCB over and match J4, U5 and SW1 at three separated locations. Upload both paste layers in their original coordinates. Keep JP1 open by clearing paste from its two pads before reflow. J3's pogo pads have no stencil openings. Print the back for the first power stage. When printing U1 later, support the board so the populated back stays clear of the fixture. Check stencil transfer and hidden joints on the first article. [Staged soldering guide](../04-assembly/soldering.md)
+Dry-align before printing. Match the front openings to U1 at the right-hand corner as viewed from the key side. For the back, turn the real PCB over and match J4, U5 and SW1 at three separated locations. Confirm the stencil leaves JP1 and the J3 pogo pads clear. Print the back for the first power stage. When printing U1 later, support the board so the populated back stays clear of the fixture. Check stencil transfer and hidden joints on the first article. [Staged soldering guide](../04-assembly/soldering.md)
 
 ## Which mechanical files to send
 

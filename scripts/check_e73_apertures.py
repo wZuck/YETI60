@@ -7,7 +7,7 @@ import json
 import math
 from pathlib import Path
 import warnings
-from zipfile import ZipFile
+from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 from gerbonara import ExcellonFile, GerberFile, MM
 from gerbonara.graphic_objects import Flash
@@ -15,6 +15,7 @@ from shapely import union_all
 from shapely.geometry import Point, Polygon, box
 from shapely.strtree import STRtree
 
+from check_e73_delivery import strip_jp1_paste
 from kicad_sexpr import child, children, loads
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -173,6 +174,45 @@ def stencil_openings(polygons, references):
             for thickness in STENCIL_THICKNESSES_MM})
 
 
+def export_order_stencil(archive, output, board=BOARD):
+    """Keep the native panel origin and omit only the unpopulated JP1 flashes."""
+    front_name = f"{board.stem}-F_Paste.gtp"
+    back_name = f"{board.stem}-B_Paste.gbp"
+    profile_name = f"{board.stem}-Edge_Cuts.gm1"
+    with ZipFile(archive) as fabrication:
+        files = {name: fabrication.read(name) for name in (front_name, back_name, profile_name)}
+    original_back = files[back_name].decode("ascii")
+    files[back_name] = strip_jp1_paste(files[back_name])
+    with ZipFile(output, "w", compression=ZIP_DEFLATED) as stencil:
+        for name, data in sorted(files.items()):
+            entry = ZipInfo(name, (2000, 1, 1, 0, 0, 0))
+            entry.compress_type = ZIP_DEFLATED
+            stencil.writestr(entry, data)
+
+    # Read the finished upload ZIP back through the Gerber parser. Compare
+    # the complete multiset of aperture shapes and reference attributes.
+    with ZipFile(output) as stencil:
+        assert set(stencil.namelist()) == set(files) and len(stencil.namelist()) == 3
+        finished = {name: stencil.read(name) for name in files}
+    assert finished[front_name] == files[front_name] and finished[profile_name] == files[profile_name]
+    before_shapes, before_refs = openings(original_back, "Paste,Bot", "Positive")
+    after_shapes, after_refs = openings(finished[back_name].decode("ascii"), "Paste,Bot", "Positive")
+    # Rounded apertures expand to multiple arc/polygon primitives per flash.
+    removed = union_all([shape for shape, ref in zip(before_shapes, before_refs) if ref == "JP1"])
+    assert removed.geom_type == "MultiPolygon" and len(removed.geoms) == 2
+    wanted = Counter((ref, shape.wkb) for shape, ref in zip(before_shapes, before_refs) if ref != "JP1")
+    assert Counter((ref, shape.wkb) for shape, ref in zip(after_shapes, after_refs)) == wanted
+    front = openings(finished[front_name].decode("ascii"), "Paste,Top", "Positive")
+    return dict(
+        archive_sha256=sha(output),
+        files_sha256={name: hashlib.sha256(data).hexdigest() for name, data in finished.items()},
+        omitted_reference="JP1",
+        omitted_cut_centers_PCB_mm=sorted(
+            [round(shape.centroid.x, 6), round(-shape.centroid.y, 6)] for shape in removed.geoms),
+        sides={"F.Paste": stencil_openings(*front), "B.Paste": stencil_openings(after_shapes, after_refs)},
+    )
+
+
 def run(archive, board=BOARD):
     native = loads(board.read_text())
     with ZipFile(archive) as bundle:
@@ -203,8 +243,14 @@ def main():
     parser.add_argument("--archive", type=Path, default=ROOT / "delivery/YETI60-E73/01-pcb/YETI60-E73-gerbers-REVIEW.zip")
     parser.add_argument("--board", type=Path, default=BOARD)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--stencil-archive", type=Path, help="Write the dedicated stencil-order ZIP")
     args = parser.parse_args()
-    result = run(args.archive, args.board.resolve())
+    board = args.board.resolve()
+    result = run(args.archive, board)
+    if args.stencil_archive:
+        assert args.archive.resolve() != args.stencil_archive.resolve(), "Use a separate stencil output"
+        result["order_stencil"] = export_order_stencil(args.archive, args.stencil_archive, board)
+        result["source_sha256"]["scripts/check_e73_delivery.py"] = sha(ROOT / "scripts/check_e73_delivery.py")
     args.output.write_text(json.dumps(result, indent=2) + "\n")
     for layer, row in result["layers"].items():
         print(layer, row["min_nominal_gap_mm"], "mm,", row["holes_below_conservative_reserve"],
