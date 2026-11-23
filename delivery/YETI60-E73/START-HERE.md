@@ -11,6 +11,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Open the current native KiCad project, identify the revision | [Project files and revision checks](01-pcb/project-files.md) |
 | Understand what to order and which options to select | [PCB and mechanical manufacturing instructions](01-pcb/ordering-and-printing.md) |
 | Download the M05 case, access covers, retainers and matching wire lengths | [M05 first-article printing, wiring and service](02-mechanical/service-case-m05/print-guide.md) |
+| Trial-print the enlarged USB front guides and matched floor | [Retainer SLA coupons and finishing](04-assembly/retainers.md) |
 | Buy parts, credit existing inventory, identify every fitted reference | [Complete materials](03-bom/materials.md), [mainboard BOM / stock CSV](03-bom/mainboard-purchase.csv) |
 | Ask the battery supplier to confirm pack parameters | [Complete pack specification](03-bom/battery-requirements.md) |
 | Solder a blank PCB in stages and test each stage | [12-step PCB soldering and bench guide](04-assembly/soldering.md), [illustrated web guide](04-assembly/soldering.html) |

@@ -57,7 +57,40 @@
 <p>若按 <strong>0.20 mm</strong> 表面点误差进行设计试算，单线槽半径需至少 <strong>0.625 mm</strong>，名义壁厚须至少 <strong>0.70 mm</strong>，才能保留 <strong>0.30 mm</strong> 成品余肉。沿原轴线放大线对槽并加厚前端支架会占用壳底和 PCB 净空。这里的 0.20 mm 是用于试算的表面误差假设，嘉立创公布的普通 SLA 尺寸公差不能直接作为这些局部特征的验收值。<a href="https://jlc3dp.com/help/article/3d-printing-design-guideline">嘉立创尺寸公差说明</a></p>
 <p>在 CAD 中将 USB 前端线束轴线下移 <strong>0.60 mm</strong>，两处支架座各下沉 <strong>1.05 mm</strong>。板厚为 <strong>1.76 mm</strong> 时，支架对裸 PCB 扣除公差的净空为 <strong>0.174 mm</strong>。原先深约 <strong>0.62 mm</strong> 的壳底让位可为插头就位时的导线保留 <strong>0.158 mm</strong> 净空。J4 拔到一半时，地线净空只有 <strong>0.073 mm</strong>。J4 完全轴向退出时，D− 线扣除公差后的净空降至 <strong>−0.215 mm</strong>。<a href="../06-validation/m05-usb-retainer-recess.json">CAD 报告</a></p>
 <p>将让位<strong>向前延伸 2.00 mm</strong> 后，已核对 <strong>1.44、1.6062 和 1.76 mm</strong> 三种板厚下的 7 个姿态。9 根导线到元件、紧固件、电池包络、外壳和其他线束的最小净空为 <strong>0.158 mm</strong>。到已核对外表面扣除公差后的余壁至少 <strong>3.56 mm</strong>，两块检修盖和 8 处现有螺纹嵌件的保护区均避开切削范围。<a href="../06-validation/m05-usb-retainer-recess.json">CAD 报告</a></p>
-<p>移除上壳及两块检修盖，并停放 J2、J4 插头后，三种板厚下的主板组件及电源桥线均可在模型中<strong>连续垂直抬升 25 mm</strong>。主板组件包含钢定位板、PCB、已装元件、紧固件和板载理线件。扣除公差后的最小刚体净空为 <strong>0.174 mm</strong>，出现在最厚 PCB 与加大后的前端理线件包络之间。两只停放插头与抬升组件各有 <strong>0.550 mm</strong> 净空，随板移动的电源桥线具有至少 <strong>0.150 mm</strong> 的净空下界。成品线槽、胶粘、拔插过程中的连续线束运动和实物操作仍待验证。当前制作继续使用交付中的 M05 外壳。<a href="../06-validation/m05-usb-retainer-recess.json">CAD 报告</a></p>
+<p>移除上壳及两块检修盖，并停放 J2、J4 插头后，三种板厚下的主板组件及电源桥线均可在模型中<strong>连续垂直抬升 25 mm</strong>。主板组件包含钢定位板、PCB、已装元件、紧固件和板载理线件。扣除公差后的最小刚体净空为 <strong>0.174 mm</strong>，出现在最厚 PCB 与加大后的前端理线件包络之间。两只停放插头与抬升组件各有 <strong>0.550 mm</strong> 净空，随板移动的电源桥线具有至少 <strong>0.150 mm</strong> 的净空下界。打印成品的槽形尺寸、胶粘、拔插过程中的连续线束运动和实物操作仍待验证。当前制作继续使用交付中的 M05 外壳。<a href="../06-validation/m05-usb-retainer-recess.json">CAD 报告</a></p>
+<h2 id="加大版-usb-前端理线件的-sla-试片">加大版 USB 前端理线件的 SLA 试片</h2>
+<p>两份 STL 复现了加大线槽和修正后的支架座，可以先做局部试片。<strong>12.25 × 22.00 × 2.16 mm</strong> 的连体排版包含两座两盖，四条支臂的截面均为 <strong>2.00 × 2.00 mm</strong>。<strong>31.00 × 49.00 × 10.50 mm</strong> 的壳底试片保留两处支架座、周围壳壁和局部线束让位。两个网格均通过公布的最小尺寸筛查。嘉立创连体打印规定每文件最多十件，连接处厚度必须大于 <strong>1.50 mm</strong>。工厂审单和局部尺寸精度仍待确认。<a href="https://jlc3dp.com/help/article/connected-parts-printing-guide">嘉立创连体打印指南</a> · <a href="https://jlc3dp.com/3d-printing/stereolithography">嘉立创 SLA 尺寸和公差</a></p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>数量与用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../02-mechanical/front-retainer-coupon/M05-front-guides-SLA-COUPON.stl">理线件连体 STL</a></td>
+<td>用计划采用的外壳树脂，按 100% 比例打印一件。</td>
+</tr>
+<tr>
+<td><a href="../02-mechanical/front-retainer-coupon/M05-front-floor-SLA-COUPON.stl">壳底试片 STL</a></td>
+<td>用相同树脂单独打印一件，比例 100%。</td>
+</tr>
+<tr>
+<td><a href="../02-mechanical/front-retainer-coupon/cut-map.svg">下料和修整图</a></td>
+<td>先对照图标记四个位置。绿色是毛坯，棕色是连体支臂，细线标出修整后的两侧面。</td>
+</tr>
+<tr>
+<td><a href="../02-mechanical/front-retainer-coupon/fit-reference-DO-NOT-UPLOAD.step">修整后试配 STEP</a></td>
+<td>在机壳坐标中查看修整后的四件理线件和壳底。询价时上传上面两份 STL。</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>标记四个位置，锯开连体支臂并保留端面余量。修整左右侧面及背向线槽开口的平面。CAD 每面预留 <strong>0.30 mm</strong>，实际加工按成品尺寸量测。底座为 <strong>5.65 × 2.00 × 1.86 mm</strong>，上盖为 <strong>5.65 × 2.00 × 1.81 mm</strong>。清除槽口和胶膜贴合处的支撑残留与碎屑。</li>
+<li>量测薄壁与线槽。打印毛坯的 CAD 名义壁厚为 <strong>1.00 mm</strong>，修整后为 <strong>0.70 mm</strong>，实测要求至少 <strong>0.30 mm</strong>。按 <strong>0.20 mm</strong> 的试算表面点误差限核对成品轮廓。扩大后的支架座扣除试算公差，侧向净空为 <strong>0.238 mm</strong>。底座按实际壳底贴合，胶层标称 <strong>0.10 mm</strong>。</li>
+<li>使用断电的实际导线，在两处支架座各试装一座一盖和四根 USB 线，核对 <strong>0.65 mm 最大线径</strong>及绞合数据线。两侧接缝共用四片 <strong>2.00 × 1.40 mm</strong> 胶膜，总厚度各 <strong>≤0.075 mm</strong>。永久粘接前检查导线能否顺畅滑移，以及接缝固定、串槽、夹线和磨损。三个槽口相通，CAD 检查覆盖两处支架、七个姿态与三种板厚下的四根线。实际拉动、弯折仍需用试片检验。完整 M05 底壳继续配套现有标准理线件。<a href="../06-validation/m05-usb-retainer-coupon.json">试片测量报告</a></li>
+</ol>
 <h2 id="薄膜材料及裁切">薄膜材料及裁切</h2>
 <p>候选为 <strong>3M 5413 聚酰亚胺胶带</strong>，制造商给出的典型总厚度为 <strong>0.069 mm</strong>。本项目要求到货批次<strong>含胶总厚不超过 0.075 mm</strong>；典型值不是保证上限，也不能替代在所选树脂上的粘接验收。<a href="https://multimedia.3m.com/mws/media/136011O/3m-polyimide-film-tape-5413-tds.pdf">3M 技术资料</a></p>
 <p>准备一小卷，按表裁出 17 片，不是购买 17 卷。SVG 使用毫米单位，附 50 mm 标尺；纸质打印时关闭“适应页面”，先测量标尺。CSV 给出名义下料尺寸；折叠片每端另留 <strong>0.5 mm 修剪量</strong>，在实物支架上折弯后，按装配 STEP 包络修剪。这不是宣称精确展开的弯曲中性层尺寸。多余胶膜不能伸进 PCB、壳壁或其他导线。</p>

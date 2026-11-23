@@ -260,6 +260,14 @@ def main():
                  '--output',str(out/recess_report)],check=True)
  inputs.update(json.loads((out/recess_report).read_text())['source_sha256'])
  mapping['delivery/YETI60-E73/'+recess_report] = recess_report
+ subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',
+                 str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/build_e73_retainer_coupon.py'),
+                 '--output',str(out)],check=True)
+ retainer_coupon = '06-validation/m05-usb-retainer-coupon.json'
+ coupon_report = json.loads((out/retainer_coupon).read_text())
+ inputs.update(coupon_report['source_sha256'])
+ for path in [*coupon_report['files_sha256'],retainer_coupon]:
+  mapping['delivery/YETI60-E73/'+path] = path
  copy('hardware/e73-corner-harness-spec.json','02-mechanical/interconnect-spec.json')
  copy('hardware/e73-corner-j5-repair.json','06-validation/j5-repair.json')
  for p in sorted((ROOT/'docs/assembly/e73-corner').rglob('*')):

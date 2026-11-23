@@ -11,6 +11,7 @@
 | 打开当前原生 KiCad 工程，辨认版本 | [工程文件与版本核对](e73-project-files.zh-CN.md) |
 | 确认需要下单哪些板、各项参数怎么选 | [PCB 与机械件制造说明](e73-ordering-printing.zh-CN.md) |
 | 下载 M05 外壳、检修盖、理线件和专用线长表 | [M05 首件打印、布线和装拆](e73-m05-prototype.zh-CN.md) |
+| 打样加大版 USB 前端理线件及配套壳底 | [理线试片与修整说明](../engineering/e73-retention.zh-CN.md) |
 | 采购材料、抵扣已有库存、找到每个元件位号 | [完整材料表](../../README.zh-CN.md)、[主板材料与库存表格](../../hardware/e73-hhkb-corner/mainboard-purchase.zh-CN.csv) |
 | 请电池供应商核实参数 | [完整保护电池包规格](../engineering/battery-pack-specification.zh-CN.md) |
 | 从空板开始分阶段焊接、逐段检查 | [12 步焊接与台架教程](../assembly/e73-corner/soldering.zh-CN.md)、[图文网页](../assembly/e73-corner/soldering.zh-CN.html) |

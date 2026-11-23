@@ -261,6 +261,42 @@ def main():
              for part in {*enlarged, 'bottom', 'pack', 'J2-plug', 'J4-plug'})
   assert all(proof['certified_residual_gap_mm'] >= required_gap and proof['distance_evaluations'] >= 0
              for proof in lift['moving_wire_checks'])
+ coupon_dir = '02-mechanical/front-retainer-coupon/'
+ coupon = json.loads((base/'06-validation/m05-usb-retainer-coupon.json').read_text())
+ assert coupon['status'] == 'm05-front-retainer-sla-coupons-exported-and-cad-checked'
+ assert all(coupon[key] is False for key in (
+     'selected_for_assembly', 'manufacturing_released', 'physical_verification', 'factory_process_qualified'))
+ assert coupon['recess_report_sha256'] == sha(base/'06-validation/m05-usb-retainer-recess.json')
+ required_coupon_files = {coupon_dir+name for name in (
+     'M05-front-guides-SLA-COUPON.stl', 'M05-front-floor-SLA-COUPON.stl',
+     'fit-reference-DO-NOT-UPLOAD.step', 'cut-map.svg')}
+ assert set(coupon['files_sha256']) == required_coupon_files and required_coupon_files <= files
+ assert all(sha(base/name) == digest for name, digest in coupon['files_sha256'].items())
+ assert set(coupon['print_meshes']) == {name for name in required_coupon_files if name.endswith('.stl')}
+ assert not required_coupon_files & required
+ for name, mesh in coupon['print_meshes'].items():
+  triangles, dimensions = retainer_mesh((base/name).read_bytes())
+  assert mesh == {'triangles':triangles, 'dimensions_xyz_mm':dimensions, 'closed_connected_shells':1}
+  a,b,c = sorted(dimensions,reverse=True)
+  assert (a>=5 and b>=5 and c>=5) or (a>=10 and b>=2 and c>=2)
+ stations = [row['station'] for row in recess['stations']]
+ printed = coupon['guide_print_parts']
+ assert set(printed) == {station+suffix for station in stations for suffix in ('-base','-lid')}
+ assert len(printed) <= coupon['published_connected_part_count_max'] == 10
+ assert coupon['connection_square_mm'] - 2*coupon['hypothetical_surface_point_error_L2_mm'] > 1.5
+ assert coupon['nominal_print_web_mm'] >= 1.0 and coupon['nominal_finished_web_mm'] == recess['minimum_nominal_web_mm']
+ assert all(row['trim_recovery_volume_error_mm3'] < 1.e-6 for row in printed.values())
+ assert [row['station'] for row in coupon['measurements']] == stations
+ assert all(row['lateral_gap_after_allowances_mm'] >= recess['minimum_target_seat_lateral_gap_mm']
+            and row['base_bondline_mm'] == .10 and min(row['tape_contact_areas_mm2']) >= .30
+            for row in coupon['measurements'])
+ capture_rows = coupon['wire_capture_checks']
+ assert len(capture_rows) == 42 and {
+     (row['PCB_thickness_mm'],row['state'],row['station']) for row in capture_rows
+ } == {(variant['PCB_thickness_mm'],pose,station)
+       for variant in motion['variants'] for pose in poses for station in stations}
+ assert all(row['pins_captured_after_groove_shrink'] == ['1','2','3','4']
+            and row['maximum_wire_overlap_with_finished_guide_mm3'] < 1.e-6 for row in capture_rows)
  assert all(path.startswith(case_dir+'harness/wire-lengths-m05') for path in prototype['harness_lengths'])
  pack_review=json.loads((base/'06-validation/pack-source-review.json').read_text())
  assert not pack_review['physical_verification'] and not pack_review['supplier_pack_accepted']

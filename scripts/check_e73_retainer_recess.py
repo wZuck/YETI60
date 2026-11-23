@@ -48,8 +48,8 @@ C5_REPORT = "docs/audit/yeti60-daughterboard.json"
 C5_STEP = "hardware/usb-daughterboard/C5-JSH-clearance.step"
 KICAD_PYTHON = "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3"
 STATIONS = ("USB-F1", "USB-F2")
-REFERENCE_RECESS_ALLOWANCE_MM = .30
 TRIAL_SURFACE_ERROR_MM = .20
+TRIAL_SEAT_MINIMUM_LATERAL_GAP_MM = .20
 
 
 def read(path):
@@ -470,8 +470,14 @@ def screen(copper_export):
     axis_drop = math.ceil(min_axis_drop * 20) / 20  # 0.05 mm design step
     trial_axis_z = axis_z - axis_drop
     seat_z = trial_axis_z - section_half_height - guides["bond_gap"]
-    half_x = section_half_width + REFERENCE_RECESS_ALLOWANCE_MM
-    half_y = guides["depth"] / 2 + REFERENCE_RECESS_ALLOWANCE_MM
+    guide_error = TRIAL_SURFACE_ERROR_MM + limits["guide_installed_datum_error_L2_mm"]
+    half_width = section_half_width + guide_error + guides["retention_film_thickness"] + limits["film_edge_error_L2_mm"]
+    half_depth = guides["depth"] / 2 + guide_error
+    # Leave room for the full guide and film envelope at the vertical walls.
+    # The bottom is a matched bond surface and uses its own Z allowance.
+    lateral_budget = shell_error + guard + TRIAL_SEAT_MINIMUM_LATERAL_GAP_MM
+    half_x = math.ceil((half_width + lateral_budget) * 20) / 20
+    half_y = math.ceil((half_depth + lateral_budget) * 20) / 20
 
     checks = []
     candidate = case
@@ -533,9 +539,6 @@ def screen(copper_export):
     route, seated, lowered_wire_spec = screen_usb_floor(case, candidate, exterior, wires, native, assembly,
                                                         trial_axis_z, shell_error, guard)
     assert route["minimum_wall_to_selected_exterior_after_allowances_mm"] >= minimum_wall
-    guide_error = TRIAL_SURFACE_ERROR_MM + limits["guide_installed_datum_error_L2_mm"]
-    half_width = section_half_width + guide_error + guides["retention_film_thickness"] + limits["film_edge_error_L2_mm"]
-    half_depth = guides["depth"] / 2 + guide_error
     envelopes = {}
     for row in checks:
         x, y = row["center_case_xy_mm"]
@@ -569,6 +572,7 @@ def screen(copper_export):
         "trial_axis_drop_mm": axis_drop,
         "PCB_finished_thickness_range_mm": thicknesses,
         "minimum_target_bare_PCB_gap_mm": target_gap,
+        "minimum_target_seat_lateral_gap_mm": TRIAL_SEAT_MINIMUM_LATERAL_GAP_MM,
         "minimum_screened_exterior_wall_mm": minimum_wall,
         "stations": checks,
         "seated_USB_nominal_trial": route,

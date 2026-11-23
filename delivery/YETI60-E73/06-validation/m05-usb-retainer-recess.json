@@ -13,6 +13,7 @@
     1.76
   ],
   "minimum_target_bare_PCB_gap_mm": 0.15,
+  "minimum_target_seat_lateral_gap_mm": 0.2,
   "minimum_screened_exterior_wall_mm": 2.0,
   "stations": [
     {
@@ -29,15 +30,15 @@
       "trial_floor_Z_mm": -6.96,
       "trial_recess_depth_mm": 1.0499999999999945,
       "trial_recess_bounds_case_mm": [
-        189.875,
-        -141.3,
+        189.3,
+        -141.75,
         -6.96,
-        196.125,
-        -138.7,
+        196.7,
+        -138.25,
         0
       ],
-      "trial_removed_volume_mm3": 17.062500000000057,
-      "trial_min_wall_to_selected_exterior_after_allowances_mm": 7.117472227971325,
+      "trial_removed_volume_mm3": 27.194999999999776,
+      "trial_min_wall_to_selected_exterior_after_allowances_mm": 7.062631013465583,
       "trial_bare_PCB_gap_after_allowances_mm": 0.17439237886466863
     },
     {
@@ -54,15 +55,15 @@
       "trial_floor_Z_mm": -6.96,
       "trial_recess_depth_mm": 1.0500000000000016,
       "trial_recess_bounds_case_mm": [
-        211.187702,
-        -154.3,
+        210.612702,
+        -154.75,
         -6.96,
-        217.437702,
-        -151.7,
+        218.012702,
+        -151.25,
         0
       ],
-      "trial_removed_volume_mm3": 17.062500000000163,
-      "trial_min_wall_to_selected_exterior_after_allowances_mm": 5.533170394033279,
+      "trial_removed_volume_mm3": 27.19499999999994,
+      "trial_min_wall_to_selected_exterior_after_allowances_mm": 5.4783291795275355,
       "trial_bare_PCB_gap_after_allowances_mm": 0.17439237886466863
     }
   ],
@@ -70,19 +71,19 @@
     "nominal_PCB_thickness_mm": 1.6062,
     "wire_collision_volume_after_station_recesses_mm3": {
       "1": 0.0,
-      "2": 2.6678571070928077,
-      "3": 2.6678571070928077,
+      "2": 2.5472002530022406,
+      "3": 2.5472002530022406,
       "4": 0.0
     },
     "continuous_floor_relief_bounds_case_mm": [
-      191.06315182984252,
+      191.0631518298476,
       -171.9368481701489,
       -6.531807621135331,
-      216.24955027015824,
+      216.2495502701496,
       -130.0796827587427,
       0
     ],
-    "continuous_floor_relief_removed_volume_mm3": 638.6922314799501,
+    "continuous_floor_relief_removed_volume_mm3": 630.5239633639694,
     "worst_wire_to_bottom_gap_after_allowances_mm": 0.15819237886466836,
     "wire_to_bottom_gaps_after_allowances_mm": {
       "1": 0.34319237886466797,
@@ -128,14 +129,14 @@
       }
     ],
     "motion_floor_relief_bounds_case_mm": [
-      191.06315182984252,
+      191.0631518298476,
       -173.9368481701489,
       -6.531807621135331,
-      216.24955027015824,
+      216.2495502701496,
       -130.0796827587427,
       0
     ],
-    "motion_floor_relief_removed_volume_mm3": 670.0144204782292,
+    "motion_floor_relief_removed_volume_mm3": 661.8461523622315,
     "minimum_wall_to_selected_exterior_after_allowances_mm": 3.5650413194057258,
     "existing_main_and_daughterboard_insert_guards_checked": 8,
     "bottom_covers_untouched_by_cut": [
@@ -1597,7 +1598,7 @@
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/check_e73_corner_harness.py": "f2692a9d6944b3373fa48c9b771dd06cb4425b892b775b9fd9dc69fb9c26ff1e",
     "scripts/check_e73_corner_service.py": "b61a438a6f35e4a67a918ebc9c2eb1fa7d09be4f1aa2f8845f7868ee93213941",
-    "scripts/check_e73_retainer_recess.py": "21186921a283c2433eb21115139c25d39b561e5be9ef28c131b51b5cd091a994",
+    "scripts/check_e73_retainer_recess.py": "3ecfe8844f72245880abeb1b2e12fc02d0cdbf68179f2e20e3d6f728aa672eee",
     "scripts/check_e73_service_leads.py": "6cd4a3a7971da2e073648ba9da217cc091ffd94e04a8eb870a21c38868f81021",
     "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
     "scripts/check_yeti60_interconnects.py": "9365de90575ef18e053954a4bdf1ec26d6188d3b1df9fc860cb92f7e1b356c3e",
