@@ -28,7 +28,7 @@ M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形
 加大前端理线件通过壳外试片检查后，可用同一树脂及上述后处理要求，按 **100% 毫米比例**打印配套完整底壳。两处加宽支架座及前侧线束让位与壳底试片一致。支架座为 **7.40 × 3.50 mm**，比 M05 当地底面下沉 **1.05 mm**。[完整试制底壳 STL](../../delivery/YETI60-E73/02-mechanical/service-case-m05/relieved-trial/bottom-m05-relieved-REVIEW.stl) · [可编辑 STEP](../../delivery/YETI60-E73/02-mechanical/service-case-m05/relieved-trial/bottom-m05-relieved-REVIEW.step) · [理线试片与修整说明](../engineering/e73-retention.zh-CN.md)
 
 1. 用一件让位版底壳搭配上表的上壳和 J2、J4 检修盖。STEP 已核对两处盖板座及 12 处螺丝接口的位置、直径和深度。打印件后固化后，实测支架座，并检查螺丝和检修盖的配合。
-2. 前端四件使用连体打印后修整的加大件，另外 12 件刚性理线件及对应的 13 片胶膜使用 M05 套装。将前端接缝胶膜修齐到理线件端面以内。线束断电，按实测壳底配好粘接面后再固定。
+2. 前端四件使用连体打印后修整的加大件，其余 12 件刚性理线件来自两份连体毛坯，修整后使用。对应的 13 片胶膜按 M05 模板裁切。将前端接缝胶膜修齐到理线件端面以内。线束断电，按实测壳底配好粘接面后再固定。[其余理线件的连体毛坯与修整](../engineering/e73-retention.zh-CN.md#其余-12-件理线件的连体毛坯)
 3. 按配套自由长度表制作九根导线。数据绞对按表中等长目标制作，裁线时另加端子规定的剥线和压接余量。带无电量块检查线束、检修盖通道以及开壳后垂直抬板 25 mm，再做带电测试。[配套自由长度表](../../delivery/YETI60-E73/02-mechanical/service-case-m05/relieved-trial/wire-lengths-relieved.zh-CN.csv) · [整壳验证报告](../../delivery/YETI60-E73/06-validation/m05-relieved-bottom.json)
 
 该试制版仍需验证实物配合和线束运动。两种底壳都按 M05 首件材料和电气验收步骤执行。

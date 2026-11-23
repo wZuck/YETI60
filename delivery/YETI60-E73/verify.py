@@ -203,6 +203,48 @@ def main():
  case_dir='02-mechanical/service-case-m05/'
  for name in ('BAT-R1','BAT-R2'):assert prototype['retainer_STL'][name]==case_dir+'harness/'+name+'-M05.stl'
  for name in ('bottom-m05','cover-J2','cover-J4'):assert case_dir+name+'-REVIEW.stl' in prototype['shell_STL']
+ blank_dir = '02-mechanical/retained-guide-blanks/'
+ blank = json.loads((base/'06-validation/m05-retained-guide-blanks.json').read_text())
+ assert blank['status'] == 'm05-retained-guide-connected-blank-meshes-and-trim-checked'
+ assert all(blank[key] is False for key in (
+     'manufacturing_released','physical_verification','selected_for_assembly','factory_process_qualified'))
+ case_carrier,power_carrier = [blank_dir+name for name in ('M05-case-guides-SLA-BLANKS.stl','M05-power-guides-SLA-BLANKS.stl')]
+ blank_tables = [blank_dir+name for name in ('finishing.csv','finishing.zh-CN.csv')]
+ assert set(blank['files_sha256']) == {case_carrier,power_carrier,blank_dir+'cut-map.svg',*blank_tables}
+ assert set(blank['files_sha256']) <= files and not set(blank['files_sha256']) & required
+ assert all(sha(base/name) == digest for name,digest in blank['files_sha256'].items())
+ assert blank['finished_guide_count'] == 12 and blank['maximum_printed_parts_per_connected_file'] == 10
+ assert blank['branch_cross_section_mm'] == [2.,2.] and blank['published_connection_web_mm_must_exceed'] == 1.5
+ assert blank['backing_stock_mm'] == 2.40 and blank['stock_on_each_transverse_side_mm'] == .60
+ assert blank['maximum_finished_surface_point_error_L2_mm'] == .05 and blank['minimum_finished_web_mm'] == .30
+ assert set(blank['carriers']) == {case_carrier,power_carrier}
+ assert set(blank['carriers'][case_carrier]['parts']) == {'USB-R1','USB-R2','USB-R3','BAT-R1','BAT-R2'}
+ assert set(blank['carriers'][power_carrier]['parts']) == {*(f'PWR-R{i}' for i in range(1,6)),'PWR-F-upper','PWR-F-lower'}
+ assert {name for model in blank['carriers'].values() for name in model['parts']} == {
+     name for name in retainers if not name.startswith('USB-F')}
+ trim_table = []
+ for model_path,model in blank['carriers'].items():
+  triangles,dimensions = retainer_mesh((base/model_path).read_bytes())
+  assert triangles == model['triangles'] and dimensions == model['dimensions_xyz_mm']
+  assert model['connected_closed_shells'] == 1 and dimensions[1] >= 10 and min(dimensions) >= 2
+  assert [row['order'] for row in model['parts'].values()] == list(range(1,len(model['parts'])+1))
+  for name,row in model['parts'].items():
+   expected = case_dir+f'harness/{name}-M05.step' if name.startswith('BAT-') else RETAINER_DIR+f'assembly-reference/{name}.step'
+   assert row['finished_reference'] == expected and row['finished_reference_sha256'] == sha(base/expected)
+   assert max(row['trim_removed_from_finished_mm3'],row['trim_stock_remaining_mm3']) < 1e-6
+   planes = row['underside_planes']
+   x,y,_ = row['finished_dimensions_mm']
+   assert planes[0]['region_xy_mm'][1] == 0 and planes[-1]['region_xy_mm'][3] == y
+   assert all(a['region_xy_mm'][3] == b['region_xy_mm'][1] for a,b in zip(planes,planes[1:]))
+   for plane in planes:
+    X,start,extent,end = plane['region_xy_mm']
+    assert X == 0 and extent == x and end > start
+    trim_table.append([Path(model_path).name,str(row['order']),name,*map(str,row['finished_dimensions_mm']),
+                       str(start),str(end),str(plane['height_above_finished_base_mm']),expected])
+ for name in blank_tables:
+  with (base/name).open(newline='') as stream:
+   header,*rows = list(csv.reader(stream))
+  assert len(header) == 10 and rows == trim_table
  recess = json.loads((base/'06-validation/m05-usb-retainer-recess.json').read_text())
  assert recess['status'] == 'USB-front-recess-service-poses-and-parked-lift-checked'
  assert recess['selected_for_assembly'] is False and recess['physical_verification'] is False

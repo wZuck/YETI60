@@ -5,7 +5,7 @@
   "physical_verification": false,
   "source_reports_sha256": {
     "06-validation/m05-usb-retainer-recess.json": "fc728bdce2bdabc7d33aad31bb78cbcc5971159a3612fc4995d2d926cead88dc",
-    "06-validation/m05-usb-retainer-coupon.json": "53ea6ffcfb660d90418e016637ac3d09e586bec6d4d3f6485cfa0a2cc6ffa87b"
+    "06-validation/m05-usb-retainer-coupon.json": "ba031afbd80e73181663586afdb16fca287f3ab491e3b15de8eb0595e17f41ad"
   },
   "geometry": {
     "removed_volume_mm3": 716.236152,
@@ -447,7 +447,7 @@
     "scripts/check_e73_print_fit.py": "2624dcea7126b14c172895c7b6fc3c34d44ae4e95d5077f219bd25ecdf9d4987",
     "scripts/check_e73_retainer_recess.py": "3ecfe8844f72245880abeb1b2e12fc02d0cdbf68179f2e20e3d6f728aa672eee",
     "scripts/check_e73_service_leads.py": "6cd4a3a7971da2e073648ba9da217cc091ffd94e04a8eb870a21c38868f81021",
-    "scripts/check_e73_delivery.py": "fb41dc7cdaa2ee70603975d53a381bafae54f771d947b6f3586352a66313be51"
+    "scripts/check_e73_delivery.py": "eb4f65c2e8f487ccc963458299730aed06f2052b42275850e014a11f8c7f74a8"
   },
   "limits": [
     "A matched engineering trial. Existing cover, screw, pack and guide process acceptance still applies.",

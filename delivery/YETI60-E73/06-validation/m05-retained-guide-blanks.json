@@ -1,0 +1,591 @@
+{
+  "status": "m05-retained-guide-connected-blank-meshes-and-trim-checked",
+  "physical_verification": false,
+  "factory_process_qualified": false,
+  "manufacturing_released": false,
+  "selected_for_assembly": false,
+  "finished_guide_count": 12,
+  "branch_cross_section_mm": [
+    2.0,
+    2.0
+  ],
+  "backing_stock_mm": 2.4,
+  "stock_on_each_transverse_side_mm": 0.6,
+  "minimum_finished_web_mm": 0.3,
+  "maximum_finished_surface_point_error_L2_mm": 0.05,
+  "maximum_printed_parts_per_connected_file": 10,
+  "published_connection_web_mm_must_exceed": 1.5,
+  "carriers": {
+    "02-mechanical/retained-guide-blanks/M05-case-guides-SLA-BLANKS.stl": {
+      "parts": {
+        "USB-R1": {
+          "order": 1,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            1.5,
+            0.0,
+            8.0,
+            7.8,
+            4.55
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            2.1,
+            2.4,
+            8.0,
+            7.2,
+            4.55
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            5.1,
+            2.15
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                3.65
+              ],
+              "height_above_finished_base_mm": 0.0
+            },
+            {
+              "region_xy_mm": [
+                0.0,
+                3.65,
+                2.0,
+                5.1
+              ],
+              "height_above_finished_base_mm": 1.39
+            }
+          ],
+          "finished_reference": "02-mechanical/retention/assembly-reference/USB-R1.step",
+          "finished_reference_sha256": "844b682a2d7c61f1a59ac5f4705cd7fa754195b463ea0e8bb3ed153f368d0709",
+          "trim_removed_from_finished_mm3": 0.0,
+          "trim_stock_remaining_mm3": 0
+        },
+        "USB-R2": {
+          "order": 2,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            9.3,
+            0.0,
+            8.0,
+            15.6,
+            4.55
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            9.9,
+            2.4,
+            8.0,
+            15.0,
+            4.55
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            5.1,
+            2.15
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                3.65
+              ],
+              "height_above_finished_base_mm": 0.0
+            },
+            {
+              "region_xy_mm": [
+                0.0,
+                3.65,
+                2.0,
+                5.1
+              ],
+              "height_above_finished_base_mm": 1.39
+            }
+          ],
+          "finished_reference": "02-mechanical/retention/assembly-reference/USB-R2.step",
+          "finished_reference_sha256": "5c44ae8a2ac274eb0a48005d2c44905e74b35b0e3e5abdfde28ee83d2afeabab",
+          "trim_removed_from_finished_mm3": 0.0,
+          "trim_stock_remaining_mm3": 0
+        },
+        "USB-R3": {
+          "order": 3,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            17.1,
+            0.0,
+            8.0,
+            23.4,
+            4.55
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            17.7,
+            2.4,
+            8.0,
+            22.8,
+            4.55
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            5.1,
+            2.15
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                3.65
+              ],
+              "height_above_finished_base_mm": 0.0
+            },
+            {
+              "region_xy_mm": [
+                0.0,
+                3.65,
+                2.0,
+                5.1
+              ],
+              "height_above_finished_base_mm": 1.39
+            }
+          ],
+          "finished_reference": "02-mechanical/retention/assembly-reference/USB-R3.step",
+          "finished_reference_sha256": "82530eba1de2ec6d1534fb88d0b35231681d7def132ab143c7438eaf8ebd365c",
+          "trim_removed_from_finished_mm3": 0.0,
+          "trim_stock_remaining_mm3": 0
+        },
+        "BAT-R1": {
+          "order": 4,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            24.9,
+            0.0,
+            8.0,
+            31.9,
+            3.36
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            25.5,
+            2.4,
+            8.0,
+            31.3,
+            3.36
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            5.8,
+            0.96
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                5.8
+              ],
+              "height_above_finished_base_mm": 0.0
+            }
+          ],
+          "finished_reference": "02-mechanical/service-case-m05/harness/BAT-R1-M05.step",
+          "finished_reference_sha256": "fc6c6e514e40d4cfcd2f0d8f1e2fb0b0bf490b5b51a5ab69559d37036a429c10",
+          "trim_removed_from_finished_mm3": 0,
+          "trim_stock_remaining_mm3": 0
+        },
+        "BAT-R2": {
+          "order": 5,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            33.4,
+            0.0,
+            8.0,
+            40.4,
+            3.36
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            34.0,
+            2.4,
+            8.0,
+            39.8,
+            3.36
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            5.8,
+            0.96
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                5.8
+              ],
+              "height_above_finished_base_mm": 0.0
+            }
+          ],
+          "finished_reference": "02-mechanical/service-case-m05/harness/BAT-R2-M05.step",
+          "finished_reference_sha256": "59d6406c30116f852fd502590330adc798dcab9b52a9a5667b9d64533f3f6efa",
+          "trim_removed_from_finished_mm3": 0,
+          "trim_stock_remaining_mm3": 0
+        }
+      },
+      "triangles": 5148,
+      "dimensions_xyz_mm": [
+        8.0,
+        41.900002,
+        4.55
+      ],
+      "connected_closed_shells": 1
+    },
+    "02-mechanical/retained-guide-blanks/M05-power-guides-SLA-BLANKS.stl": {
+      "parts": {
+        "PWR-R1": {
+          "order": 1,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            1.5,
+            0.0,
+            8.0,
+            6.1,
+            3.4
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            2.1,
+            2.4,
+            8.0,
+            5.5,
+            3.4
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            3.4,
+            1.0
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                3.4
+              ],
+              "height_above_finished_base_mm": 0.0
+            }
+          ],
+          "finished_reference": "02-mechanical/retention/assembly-reference/PWR-R1.step",
+          "finished_reference_sha256": "579e74f220b7dd3ebdb9226942c3a616c912433c99e9daa27c8184ae1ccce2fb",
+          "trim_removed_from_finished_mm3": 0.0,
+          "trim_stock_remaining_mm3": 0
+        },
+        "PWR-R2": {
+          "order": 2,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            7.6,
+            0.0,
+            8.0,
+            12.2,
+            3.4
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            8.2,
+            2.4,
+            8.0,
+            11.6,
+            3.4
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            3.4,
+            1.0
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                3.4
+              ],
+              "height_above_finished_base_mm": 0.0
+            }
+          ],
+          "finished_reference": "02-mechanical/retention/assembly-reference/PWR-R2.step",
+          "finished_reference_sha256": "a971c534f5a83a6c0bd348dafd24e9368aecd3a277344dc5ba6190f49a8b3cde",
+          "trim_removed_from_finished_mm3": 0.0,
+          "trim_stock_remaining_mm3": 0
+        },
+        "PWR-R3": {
+          "order": 3,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            13.7,
+            0.0,
+            8.0,
+            18.3,
+            3.4
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            14.3,
+            2.4,
+            8.0,
+            17.7,
+            3.4
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            3.4,
+            1.0
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                3.4
+              ],
+              "height_above_finished_base_mm": 0.0
+            }
+          ],
+          "finished_reference": "02-mechanical/retention/assembly-reference/PWR-R3.step",
+          "finished_reference_sha256": "46b910e54e659fdf9791b4ac6549769139e6f979983aad3969846a10692b0729",
+          "trim_removed_from_finished_mm3": 0.0,
+          "trim_stock_remaining_mm3": 0
+        },
+        "PWR-R4": {
+          "order": 4,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            19.8,
+            0.0,
+            8.0,
+            24.4,
+            3.4
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            20.4,
+            2.4,
+            8.0,
+            23.8,
+            3.4
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            3.4,
+            1.0
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                3.4
+              ],
+              "height_above_finished_base_mm": 0.0
+            }
+          ],
+          "finished_reference": "02-mechanical/retention/assembly-reference/PWR-R4.step",
+          "finished_reference_sha256": "b264711f6263edaaf28d1eee6acdc1a6da2b0d1bbbdb0d8a600fce37f2aceb1c",
+          "trim_removed_from_finished_mm3": 0.0,
+          "trim_stock_remaining_mm3": 0
+        },
+        "PWR-R5": {
+          "order": 5,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            25.9,
+            0.0,
+            8.0,
+            30.5,
+            3.4
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            26.5,
+            2.4,
+            8.0,
+            29.9,
+            3.4
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            3.4,
+            1.0
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                3.4
+              ],
+              "height_above_finished_base_mm": 0.0
+            }
+          ],
+          "finished_reference": "02-mechanical/retention/assembly-reference/PWR-R5.step",
+          "finished_reference_sha256": "9f93d9d301c8ffaeb5b100d589b613376dca2a70e4e33c7ca5dfb960febb6c48",
+          "trim_removed_from_finished_mm3": 0.0,
+          "trim_stock_remaining_mm3": 0
+        },
+        "PWR-F-upper": {
+          "order": 6,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            32.0,
+            0.0,
+            8.0,
+            38.2,
+            3.4
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            32.6,
+            2.4,
+            8.0,
+            37.6,
+            3.4
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            5.0,
+            1.0
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                5.0
+              ],
+              "height_above_finished_base_mm": 0.0
+            }
+          ],
+          "finished_reference": "02-mechanical/retention/assembly-reference/PWR-F-upper.step",
+          "finished_reference_sha256": "dcffdd7fbfaf4b01e5fa7a1f6284f6f461fca132e41bb6fb3f3fe4bbe5610192",
+          "trim_removed_from_finished_mm3": 0,
+          "trim_stock_remaining_mm3": 0
+        },
+        "PWR-F-lower": {
+          "order": 7,
+          "untrimmed_layout_bounds_mm": [
+            6.0,
+            39.7,
+            0.0,
+            8.0,
+            45.9,
+            4.01
+          ],
+          "finished_layout_bounds_mm": [
+            6.0,
+            40.3,
+            2.4,
+            8.0,
+            45.3,
+            4.01
+          ],
+          "finished_dimensions_mm": [
+            2.0,
+            5.0,
+            1.61
+          ],
+          "underside_planes": [
+            {
+              "region_xy_mm": [
+                0.0,
+                0.0,
+                2.0,
+                0.7
+              ],
+              "height_above_finished_base_mm": 0.0
+            },
+            {
+              "region_xy_mm": [
+                0.0,
+                0.7,
+                2.0,
+                4.3
+              ],
+              "height_above_finished_base_mm": 0.55
+            },
+            {
+              "region_xy_mm": [
+                0.0,
+                4.3,
+                2.0,
+                5.0
+              ],
+              "height_above_finished_base_mm": 0.0
+            }
+          ],
+          "finished_reference": "02-mechanical/retention/assembly-reference/PWR-F-lower.step",
+          "finished_reference_sha256": "cbe4daa06b4b79b0da90d8c6a8e54ef7848b33751939fe62b0839b61ca15dbb7",
+          "trim_removed_from_finished_mm3": 0,
+          "trim_stock_remaining_mm3": 0.0
+        }
+      },
+      "triangles": 14772,
+      "dimensions_xyz_mm": [
+        8.0,
+        47.400002,
+        4.01
+      ],
+      "connected_closed_shells": 1
+    }
+  },
+  "files_sha256": {
+    "02-mechanical/retained-guide-blanks/M05-case-guides-SLA-BLANKS.stl": "0353755c6be953e46dad754bdf490ca5c46c56b49b0949ab81d0831c7197a244",
+    "02-mechanical/retained-guide-blanks/M05-power-guides-SLA-BLANKS.stl": "69405dc12e2e3ae969530c5ed25e5b99db38ffc45d0a78f111405f221dbf5c4e",
+    "02-mechanical/retained-guide-blanks/cut-map.svg": "0139ae746dc99c0a39873504d33e4f365838420bab1046a0b9a1cfab0b02d67a",
+    "02-mechanical/retained-guide-blanks/finishing.csv": "8eac52723498e5a281f0b7c06bc5e9b757d09fb1c15fe2f21405abaa96df9235",
+    "02-mechanical/retained-guide-blanks/finishing.zh-CN.csv": "bffd6edcab491bb116e04d80b77a82c364d7fbc68fc78c9feebe4e47a61f81fd"
+  },
+  "source_sha256": {
+    "hardware/e73-corner-retention-spec.json": "45fbaa8132a87181daf1d9139ecb7b2ccb5db6e6dda8ea1d43db69d0c0c081b1",
+    "hardware/e73-hhkb-corner/audit/m05-harness.json": "076e45f9da7e8e68318972a693443be077c879167ed603d79b47729e5809ce14",
+    "hardware/e73-hhkb-corner/audit/retention-prints.json": "f3f8e3201518f92c813ff2f0cb7473b6525c95e595a041101b6f16754f73dd2a",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-lower.step": "cbe4daa06b4b79b0da90d8c6a8e54ef7848b33751939fe62b0839b61ca15dbb7",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-F-upper.step": "dcffdd7fbfaf4b01e5fa7a1f6284f6f461fca132e41bb6fb3f3fe4bbe5610192",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R1.step": "579e74f220b7dd3ebdb9226942c3a616c912433c99e9daa27c8184ae1ccce2fb",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R2.step": "a971c534f5a83a6c0bd348dafd24e9368aecd3a277344dc5ba6190f49a8b3cde",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R3.step": "46b910e54e659fdf9791b4ac6549769139e6f979983aad3969846a10692b0729",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R4.step": "b264711f6263edaaf28d1eee6acdc1a6da2b0d1bbbdb0d8a600fce37f2aceb1c",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/PWR-R5.step": "9f93d9d301c8ffaeb5b100d589b613376dca2a70e4e33c7ca5dfb960febb6c48",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R1.step": "844b682a2d7c61f1a59ac5f4705cd7fa754195b463ea0e8bb3ed153f368d0709",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R2.step": "5c44ae8a2ac274eb0a48005d2c44905e74b35b0e3e5abdfde28ee83d2afeabab",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R3.step": "82530eba1de2ec6d1534fb88d0b35231681d7def132ab143c7438eaf8ebd365c",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/BAT-R1-M05.step": "fc6c6e514e40d4cfcd2f0d8f1e2fb0b0bf490b5b51a5ab69559d37036a429c10",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/BAT-R2-M05.step": "59d6406c30116f852fd502590330adc798dcab9b52a9a5667b9d64533f3f6efa",
+    "scripts/build_e73_retained_guide_blanks.py": "99da95013ff45375a1dc3f663fd57a49c70e8b651252b075a4d5bb94ec46f775",
+    "scripts/build_e73_retainer_coupon.py": "85a352279205d5fa871fb50e10b0e2f01409c3f936b1aff67c9181b34be8d9b3",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_e73_corner_harness.py": "f2692a9d6944b3373fa48c9b771dd06cb4425b892b775b9fd9dc69fb9c26ff1e",
+    "scripts/check_e73_delivery.py": "eb4f65c2e8f487ccc963458299730aed06f2052b42275850e014a11f8c7f74a8",
+    "scripts/e73_corner_retention.py": "225a62f28ebf9f2861ed903ba005c265b306c5265b11dbb77b66fdc9a5e66dbc",
+    "scripts/export_e73_retention_prints.py": "a9e3e667dacbf5b901e8e05144b9c04ec021882b01fd6fd282007e7c6783d86d"
+  },
+  "limits": [
+    "The carrier meshes pass the published connected-part count, model-size and connector-section screens.",
+    "Trim reconstruction recovers the existing M05 STEP geometry. The printed side faces, wire grooves and steps require physical measurements.",
+    "The published SLA size tolerance does not guarantee 0.05 mm local surface accuracy. The current grooves require a process sample."
+  ]
+}

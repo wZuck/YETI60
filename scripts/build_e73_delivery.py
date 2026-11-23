@@ -254,6 +254,14 @@ def main():
  copy('hardware/e73-corner-retention-spec.json','02-mechanical/retention-spec.json')
  process = retainer_process_screen(out, retainers)
  (out/RETAINER_SCREEN).write_text(json.dumps(process, indent=2)+'\n')
+ subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',
+                 str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/build_e73_retained_guide_blanks.py'),
+                 '--output',str(out)],check=True)
+ retained_blanks = '06-validation/m05-retained-guide-blanks.json'
+ blank_report = json.loads((out/retained_blanks).read_text())
+ inputs.update(blank_report['source_sha256'])
+ for path in [*blank_report['files_sha256'],retained_blanks]:
+  mapping['delivery/YETI60-E73/'+path] = path
  recess_report = '06-validation/m05-usb-retainer-recess.json'
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',
                  str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/check_e73_retainer_recess.py'),
