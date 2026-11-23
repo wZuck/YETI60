@@ -5,6 +5,7 @@ import argparse
 from concurrent.futures import ProcessPoolExecutor
 from contextlib import redirect_stdout
 import hashlib
+from itertools import product
 import json
 import math
 import os
@@ -13,6 +14,7 @@ import subprocess
 import tempfile
 from unittest.mock import patch
 
+import ezdxf
 from OCP.BRep import BRep_Builder
 from OCP.BRepAlgoAPI import BRepAlgoAPI_Common
 from OCP.BRepCheck import BRepCheck_Analyzer
@@ -26,13 +28,15 @@ from build_e73_m05_harness import matched_spec
 from build_e73_service_case import cylinder, skin_z
 from cad_geometry import bounds, intersection_volume, load
 import check_e73_corner_harness as harness
+import check_e73_corner_service as service
 from check_e73_corner_harness import cut, datums
 from check_e73_service_leads import STATES
-from check_yeti60_assembly import box, distance
+from check_yeti60_assembly import box, distance, move
 from check_yeti60_interconnects import surface_z
 from e73_corner_harness_paths import envelope_wire, length, paired_data
-from e73_fit_geometry import external_faces, volume
-from e73_service_leads import flex_routes, position_exits
+from e73_corner_retention import build
+from e73_fit_geometry import external_faces, plate_envelope, volume
+from e73_service_leads import BATTERY_GUIDE_STATIONS, flex_routes, position_exits
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -154,8 +158,112 @@ def screen_usb_floor(case, recessed, exterior, wires, native, assembly, axis_z, 
     }, trial, spec
 
 
+def clearance_witness(moving, fixed, allowances):
+    """Find the closest pair, pruning only with a lower bound on solid distance."""
+    worst = (math.inf, "", "")
+    fixed_bounds = {name: bounds(shape) for name, shape in fixed.items()}
+    for name, shape in moving.items():
+        a = bounds(shape)
+        for other, stationary in fixed.items():
+            b = fixed_bounds[other]
+            allowance = allowances.get(other, 0)
+            box_gap = math.hypot(*(max(0, a[i] - b[i + 3], b[i] - a[i + 3]) for i in range(3)))
+            if box_gap - allowance <= worst[0] + 1e-6:
+                gap = round(distance(shape, stationary) - allowance, 9)
+                worst = min(worst, (gap, name, other))
+    gap, name, other = worst
+    return {"clearance_mm": gap, "moving_part": name, "stationary_part": other}
+
+
+def check_parked_lift(spec, native, assembly, case, bottom, delta, exits, parked, routes,
+                      guide_boxes, retention, fit, shell_allowance):
+    """Raise the open-case deck and power bridge from the final parked pose."""
+    spec = dict(spec, guides=dict(retention["guides"], battery_x=BATTERY_GUIDE_STATIONS))
+    limits = retention["tolerance_contract"]
+    guide_error = limits["guide_maximum_surface_point_error_L2_mm"] + limits["guide_installed_datum_error_L2_mm"]
+    seated, _, _ = flex_routes(spec, exits, exits, 0)
+    guides, films = build(spec, case, seated, exits, bottom)
+    fitted = harness.bodies(native, assembly, spec, bottom, delta)
+    fixed = {name: shape for name, shape in fitted.items() if name.startswith("C5")}
+    moving = {name: shape for name, shape in fitted.items() if name not in fixed}
+    fixed["bottom"] = case
+    wire_allowances = {"bottom": shell_allowance}
+    for part in guides + films:
+        name, shape = part["name"], part["shape"]
+        if name.startswith("USB-F"):
+            continue  # The enlarged envelopes below replace both front assemblies.
+        if part["mount"].startswith("PCB"):
+            moving[name] = move(shape, z=delta)
+        else:
+            fixed[name] = shape
+            wire_allowances[name] = guide_error
+
+    battery = assembly["battery"]
+    x, y, X, Y = battery["bounds_xy"]
+    z, error = battery["top_z"], battery["position_tolerance"]
+    fixed["pack"] = box([x - error, y - error, z - battery["full_envelope_including_growth"][2] - error,
+                         X + error, Y + error, z + error])
+    fixed.update({name: box(bb) for name, bb in guide_boxes.items()})
+    for ref in service.PORTS:
+        x, y, z = parked[ref]
+        fixed[ref + "-plug"] = box(service.plug_bounds((x, y, z + (0 if ref == "C5" else delta)), *service.PORTS[ref]))
+    for ref, count, vx, vy in (("J1", 4, 1, 0), ("J5", 2, 0, -1)):
+        x, y, z = exits[ref]
+        moving[ref + "-plug"] = box(service.plug_bounds((x, y, z + delta), count, vx, vy))
+
+    travel = (0, 0, service.LIFT_MM)
+    swept = {name: box(service.translated_union_bounds(bounds(shape), travel)) for name, shape in moving.items()}
+    swept["PCB"] = harness.pcb_solid(bottom + delta, assembly["stack"]["pcb_thickness"] - delta + service.LIFT_MM)
+    stack = dict(assembly["stack"], plate_thickness_mm=assembly["stack"]["plate_thickness"])
+    swept["steel plate"] = plate_envelope(ezdxf.readfile(ROOT / assembly["geometry"]["plate"]),
+                                          fit, stack, travel=service.LIFT_MM)
+
+    rigid_allowances = dict(wire_allowances)
+    rigid_allowances.update({name: shell_allowance + limits["PCB_installed_pose_Z_error_mm"] for name in guide_boxes})
+    rigid = clearance_witness(swept, fixed, rigid_allowances)
+    assert rigid["clearance_mm"] >= service.MIN_GAP_MM, ("rigid lift", rigid)
+
+    housings = {}
+    for ref in ("J2", "J4"):
+        name = ref + "-plug"
+        others = {key: shape for key, shape in fixed.items() if key != name}
+        deck = clearance_witness(swept, {name: fixed[name]}, {})
+        rest = clearance_witness({name: fixed[name]}, others, rigid_allowances)
+        assert deck["clearance_mm"] > .50 and rest["clearance_mm"] >= service.MIN_GAP_MM, (ref, deck, rest)
+        housings[ref] = {"deck_clearance_mm": deck["clearance_mm"],
+                         "closest_moving_part": deck["moving_part"], "fixed_objects": rest}
+
+    wire = spec["wire"]
+    diameter = wire["insulation_od_max"] + 2 * wire["case_and_route_position_allowance"]
+    wire_shapes = {f"{family}.{pin}": envelope_wire(path, diameter)
+                   for family, leads in routes.items() for pin, path in leads.items()}
+    fixed_wires = {name: shape for name, shape in wire_shapes.items() if not name.startswith("power.")}
+    deck_to_wire = clearance_witness(swept, fixed_wires, {})
+    assert deck_to_wire["clearance_mm"] >= service.MIN_GAP_MM, ("deck to fixed wires", deck_to_wire)
+    fixed.update(fixed_wires)
+    moving_wires = {name: shape for name, shape in wire_shapes.items() if name not in fixed_wires}
+    wire_results = []
+    for left, right in product(moving_wires, fixed):
+        allowance = wire_allowances.get(right, 0)
+        with patch.object(service, "MIN_GAP_MM", service.MIN_GAP_MM + allowance):
+            proof = service.certify_lift_pair(moving_wires[left], fixed[right])
+        gap = round(proof["certified_gap_mm"] - allowance, 9)
+        assert gap >= service.MIN_GAP_MM, (left, right, gap)
+        wire_results.append({"moving_wire": left, "stationary_part": right, "certified_residual_gap_mm": gap,
+                             "distance_evaluations": proof["evaluations"]})
+    return {
+        "moving_rigid_envelopes": len(swept),
+        "stationary_rigid_envelopes": len(fixed) - len(fixed_wires),
+        "stationary_wire_envelopes": len(fixed_wires),
+        "rigid_deck_to_stationary_objects": rigid,
+        "rigid_deck_to_stationary_wires": deck_to_wire,
+        "parked_housings": housings,
+        "moving_wire_checks": wire_results,
+    }
+
+
 def check_thickness(inputs):
-    thickness, cutter, station_cutters, spec, native, assembly, outline, shell_allowance = inputs
+    thickness, cutter, station_cutters, spec, native, assembly, outline, shell_allowance, lift_inputs = inputs
     case = modified_case(station_cutters + [cutter])
     builder = BRep_Builder()
     closed = TopoDS_Compound()
@@ -220,7 +328,11 @@ def check_thickness(inputs):
             "largest_free_length_change_from_seated_mm": round(length_change, 9),
             "USB_pair_geometric_skew_mm": round(skew, 9),
         })
-    return {"PCB_thickness_mm": thickness, "states": results}
+    assert name == "both-parked"
+    with patch.object(harness, "read", read_geometry):
+        lift = check_parked_lift(spec, native, assembly, case, bottom, delta, exits, shifted, checked["routes"],
+                                 *lift_inputs, shell_allowance)
+    return {"PCB_thickness_mm": thickness, "states": results, "parked_lift": lift}
 
 
 def modified_case(cutters):
@@ -231,7 +343,7 @@ def modified_case(cutters):
 
 
 def screen_usb_motion(original, recessed, seated, exterior, station_cutters, spec, native, assembly,
-                      shell_error, guard, outline, minimum_wall):
+                      shell_error, guard, outline, minimum_wall, lift_inputs):
     _, exits = datums(native, assembly, spec)
     wire = spec["wire"]
     diameter = wire["insulation_od_max"] + 2 * wire["case_and_route_position_allowance"]
@@ -276,9 +388,9 @@ def screen_usb_motion(original, recessed, seated, exterior, station_cutters, spe
         cover = load(CASE_DIR / f"cover-{ref}-REVIEW.step")
         assert not common(all_removed, cover).NbChildren(), ref
 
-    configurations = [(t, cutter, station_cutters, spec, native, assembly, outline, shell_allowance)
+    configurations = [(t, cutter, station_cutters, spec, native, assembly, outline, shell_allowance, lift_inputs)
                       for t in thicknesses]
-    print("Checking three PCB thicknesses across seven M05 service poses", flush=True)
+    print("Checking seven M05 service poses and the 25 mm open-case lift at three PCB thicknesses", flush=True)
     with ProcessPoolExecutor(max_workers=len(configurations)) as pool:
         results = list(pool.map(check_thickness, configurations))
     return {
@@ -289,6 +401,8 @@ def screen_usb_motion(original, recessed, seated, exterior, station_cutters, spe
         "existing_main_and_daughterboard_insert_guards_checked": checked_axes,
         "bottom_covers_untouched_by_cut": ["J2", "J4"],
         "minimum_wire_to_obstacle_gap_required_mm": target_gap,
+        "vertical_lift_travel_mm": service.LIFT_MM,
+        "larger_USB_guide_envelopes_case_mm": lift_inputs[0],
         "variants": results,
     }
 
@@ -322,6 +436,7 @@ def screen(copper_export):
     assert all(sha(ROOT / name) == digest for name, digest in copper["source_sha256"].items())
     assembly, fit = read(paths["assembly"]), read(paths["fit"])
     paths["top"] = ROOT / assembly["geometry"]["top"]
+    paths["plate"] = ROOT / assembly["geometry"]["plate"]
     assert sha(paths["daughterboard_step"]) == read(paths["daughterboard"])["exported_step_sha256"]
     wires, spec = read(paths["wires"]), read(paths["guides"])
     limits, guides = spec["tolerance_contract"], spec["guides"]
@@ -418,22 +533,32 @@ def screen(copper_export):
     route, seated, lowered_wire_spec = screen_usb_floor(case, candidate, exterior, wires, native, assembly,
                                                         trial_axis_z, shell_error, guard)
     assert route["minimum_wall_to_selected_exterior_after_allowances_mm"] >= minimum_wall
+    guide_error = TRIAL_SURFACE_ERROR_MM + limits["guide_installed_datum_error_L2_mm"]
+    half_width = section_half_width + guide_error + guides["retention_film_thickness"] + limits["film_edge_error_L2_mm"]
+    half_depth = guides["depth"] / 2 + guide_error
+    envelopes = {}
+    for row in checks:
+        x, y = row["center_case_xy_mm"]
+        envelopes[row["station"] + "-envelope"] = [
+            x - half_width, y - half_depth, seat_z + guides["bond_gap"] - guide_error,
+            x + half_width, y + half_depth, trial_axis_z + section_half_height + guide_error,
+        ]
     motion = screen_usb_motion(case, candidate, seated, exterior,
                                [row["trial_recess_bounds_case_mm"] for row in checks],
                                lowered_wire_spec, native, assembly, shell_error, guard,
-                               copper["outline"], minimum_wall)
+                               copper["outline"], minimum_wall, (envelopes, spec, fit))
     dependencies = {
         Path(__file__), *paths.values(), *copper_sources,
         *(ROOT / "scripts" / name for name in (
             "build_e73_m05_harness.py", "build_e73_service_case.py", "cad_geometry.py",
-            "check_e73_corner_harness.py", "check_e73_service_leads.py", "check_yeti60_assembly.py",
+            "check_e73_corner_harness.py", "check_e73_corner_service.py", "check_e73_service_leads.py", "check_yeti60_assembly.py",
             "check_yeti60_interconnects.py", "export_e73_usb_ground.py",
-            "e73_corner_harness_paths.py", "e73_fit_geometry.py", "e73_service_leads.py",
+            "e73_corner_harness_paths.py", "e73_corner_retention.py", "e73_fit_geometry.py", "e73_service_leads.py",
             "e73_service_route.py", "interconnect_geometry.py",
         )),
     }
     return {
-        "status": "USB-front-recess-seven-service-poses-checked",
+        "status": "USB-front-recess-service-poses-and-parked-lift-checked",
         "selected_for_assembly": False,
         "physical_verification": False,
         "hypothetical_surface_point_error_L2_mm": TRIAL_SURFACE_ERROR_MM,
@@ -452,7 +577,9 @@ def screen(copper_export):
         "source_sha256": {rel(path): sha(path) for path in sorted(dependencies)},
         "limits": [
             "0.20 mm is a hypothetical L2 surface-error budget, not a qualified supplier surface limit.",
-            "Nine wire envelopes are checked at seven defined service poses across three PCB thicknesses. Guide profiles, contact and pull checks, intermediate poses and the lift with the altered route remain open.",
+            "Nine wire envelopes are checked at seven defined service poses across three PCB thicknesses.",
+            "The 25 mm fixed-XY lift starts after the top and access covers have been removed and J2/J4 have been parked. The modeled deck includes the tolerance-expanded steel plate, PCB, fitted bodies, mounts, guides and bridge wires. The larger front guides are conservative external envelopes.",
+            "Guide profiles, bonding, pull force, intermediate cable positions during plug movement and hand/tool operation remain open.",
             "The chosen M05 files and wire lengths are untouched. No manufacturing data is generated by this study.",
         ],
     }

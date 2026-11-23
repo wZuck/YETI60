@@ -204,7 +204,7 @@ def main():
  for name in ('BAT-R1','BAT-R2'):assert prototype['retainer_STL'][name]==case_dir+'harness/'+name+'-M05.stl'
  for name in ('bottom-m05','cover-J2','cover-J4'):assert case_dir+name+'-REVIEW.stl' in prototype['shell_STL']
  recess = json.loads((base/'06-validation/m05-usb-retainer-recess.json').read_text())
- assert recess['status'] == 'USB-front-recess-seven-service-poses-checked'
+ assert recess['status'] == 'USB-front-recess-service-poses-and-parked-lift-checked'
  assert recess['selected_for_assembly'] is False and recess['physical_verification'] is False
  case_source = 'hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step'
  assert recess['source_sha256'][case_source] == sha(base/(case_dir+'bottom-m05-REVIEW.step'))
@@ -233,6 +233,11 @@ def main():
  assert motion['minimum_wall_to_selected_exterior_after_allowances_mm'] >= recess['minimum_screened_exterior_wall_mm']
  assert motion['existing_main_and_daughterboard_insert_guards_checked'] == 8
  assert motion['bottom_covers_untouched_by_cut'] == ['J2', 'J4']
+ assert motion['vertical_lift_travel_mm'] == 25
+ enlarged = motion['larger_USB_guide_envelopes_case_mm']
+ assert set(enlarged) == {'USB-F1-envelope', 'USB-F2-envelope'}
+ assert all(len(box) == 6 and all(box[i] < box[i+3] for i in range(3))
+            for box in enlarged.values())
  for row in motion['variants']:
   assert [state['state'] for state in row['states']] == poses
   assert all(required_gap <= min(state['minimum_residual_air_gap_mm'], state['minimum_USB_to_other_harness_gap_mm'],
@@ -240,6 +245,22 @@ def main():
              and state['minimum_static_bend_radius_mm'] >= 4
              and state['largest_free_length_change_from_seated_mm'] < .06
              and state['USB_pair_geometric_skew_mm'] < .005 for state in row['states'])
+  lift = row['parked_lift']
+  assert lift['moving_rigid_envelopes'] == 122
+  assert lift['stationary_rigid_envelopes'] == 22 and lift['stationary_wire_envelopes'] == 7
+  assert all(lift[proof]['clearance_mm'] >= required_gap for proof in (
+      'rigid_deck_to_stationary_objects', 'rigid_deck_to_stationary_wires'))
+  assert set(lift['parked_housings']) == {'J2', 'J4'}
+  assert all(plug['deck_clearance_mm'] > .5 and plug['fixed_objects']['clearance_mm'] >= required_gap
+             for plug in lift['parked_housings'].values())
+  pairs = {(proof['moving_wire'], proof['stationary_part']) for proof in lift['moving_wire_checks']}
+  assert len(pairs) == len(lift['moving_wire_checks']) == 58
+  assert {wire for wire, _ in pairs} == {'power.1', 'power.2'}
+  assert all(len({part for wire, part in pairs if wire == name}) == 29 for name in ('power.1', 'power.2'))
+  assert all((wire, part) in pairs for wire in ('power.1', 'power.2')
+             for part in {*enlarged, 'bottom', 'pack', 'J2-plug', 'J4-plug'})
+  assert all(proof['certified_residual_gap_mm'] >= required_gap and proof['distance_evaluations'] >= 0
+             for proof in lift['moving_wire_checks'])
  assert all(path.startswith(case_dir+'harness/wire-lengths-m05') for path in prototype['harness_lengths'])
  pack_review=json.loads((base/'06-validation/pack-source-review.json').read_text())
  assert not pack_review['physical_verification'] and not pack_review['supplier_pack_accepted']

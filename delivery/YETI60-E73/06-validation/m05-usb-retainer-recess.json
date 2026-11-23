@@ -1,5 +1,5 @@
 {
-  "status": "USB-front-recess-seven-service-poses-checked",
+  "status": "USB-front-recess-service-poses-and-parked-lift-checked",
   "selected_for_assembly": false,
   "physical_verification": false,
   "hypothetical_surface_point_error_L2_mm": 0.2,
@@ -143,6 +143,25 @@
       "J4"
     ],
     "minimum_wire_to_obstacle_gap_required_mm": 0.15,
+    "vertical_lift_travel_mm": 25.0,
+    "larger_USB_guide_envelopes_case_mm": {
+      "USB-F1-envelope": [
+        189.8,
+        -141.25,
+        -7.11,
+        196.2,
+        -138.75,
+        -2.8899999999999997
+      ],
+      "USB-F2-envelope": [
+        211.112702,
+        -154.25,
+        -7.11,
+        217.512702,
+        -151.75,
+        -2.8899999999999997
+      ]
+    },
     "variants": [
       {
         "PCB_thickness_mm": 1.44,
@@ -224,7 +243,392 @@
             "largest_free_length_change_from_seated_mm": 0.042859976,
             "USB_pair_geometric_skew_mm": 0.000536719
           }
-        ]
+        ],
+        "parked_lift": {
+          "moving_rigid_envelopes": 122,
+          "stationary_rigid_envelopes": 22,
+          "stationary_wire_envelopes": 7,
+          "rigid_deck_to_stationary_objects": {
+            "clearance_mm": 0.188092308,
+            "moving_part": "steel plate",
+            "stationary_part": "bottom"
+          },
+          "rigid_deck_to_stationary_wires": {
+            "clearance_mm": 0.37035952,
+            "moving_part": "PCB",
+            "stationary_part": "usb.2"
+          },
+          "parked_housings": {
+            "J2": {
+              "deck_clearance_mm": 0.55,
+              "closest_moving_part": "PCB",
+              "fixed_objects": {
+                "clearance_mm": 3.899056044,
+                "moving_part": "J2-plug",
+                "stationary_part": "bottom"
+              }
+            },
+            "J4": {
+              "deck_clearance_mm": 0.55,
+              "closest_moving_part": "PCB",
+              "fixed_objects": {
+                "clearance_mm": 1.517767171,
+                "moving_part": "J4-plug",
+                "stationary_part": "bottom"
+              }
+            }
+          },
+          "moving_wire_checks": [
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5",
+              "certified_residual_gap_mm": 0.9299999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-0",
+              "certified_residual_gap_mm": 1.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-1",
+              "certified_residual_gap_mm": 1.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-2",
+              "certified_residual_gap_mm": 1.7311999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-3",
+              "certified_residual_gap_mm": 1.7311999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "bottom",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 3
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R1",
+              "certified_residual_gap_mm": 4.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R2",
+              "certified_residual_gap_mm": 4.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R3",
+              "certified_residual_gap_mm": 4.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R1-film",
+              "certified_residual_gap_mm": 4.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R2-film",
+              "certified_residual_gap_mm": 4.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R3-film",
+              "certified_residual_gap_mm": 4.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R1-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R2-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "pack",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-F1-envelope",
+              "certified_residual_gap_mm": 3.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-F2-envelope",
+              "certified_residual_gap_mm": 16.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "J4-plug",
+              "certified_residual_gap_mm": 0.9499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "J2-plug",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-plug",
+              "certified_residual_gap_mm": 1.2349999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.4",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "battery.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "battery.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "battery.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5",
+              "certified_residual_gap_mm": 0.9299999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-0",
+              "certified_residual_gap_mm": 0.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-1",
+              "certified_residual_gap_mm": 0.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-2",
+              "certified_residual_gap_mm": 1.7311999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-3",
+              "certified_residual_gap_mm": 1.7311999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "bottom",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 3
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R1",
+              "certified_residual_gap_mm": 3.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R2",
+              "certified_residual_gap_mm": 3.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R3",
+              "certified_residual_gap_mm": 3.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R1-film",
+              "certified_residual_gap_mm": 3.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R2-film",
+              "certified_residual_gap_mm": 3.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R3-film",
+              "certified_residual_gap_mm": 3.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R1-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R2-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "pack",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-F1-envelope",
+              "certified_residual_gap_mm": 4.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-F2-envelope",
+              "certified_residual_gap_mm": 17.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "J4-plug",
+              "certified_residual_gap_mm": 1.9499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "J2-plug",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-plug",
+              "certified_residual_gap_mm": 1.2349999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.4",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "battery.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "battery.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "battery.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            }
+          ]
+        }
       },
       {
         "PCB_thickness_mm": 1.6062,
@@ -306,7 +710,392 @@
             "largest_free_length_change_from_seated_mm": 0.043066132,
             "USB_pair_geometric_skew_mm": 0.000536719
           }
-        ]
+        ],
+        "parked_lift": {
+          "moving_rigid_envelopes": 122,
+          "stationary_rigid_envelopes": 22,
+          "stationary_wire_envelopes": 7,
+          "rigid_deck_to_stationary_objects": {
+            "clearance_mm": 0.188092308,
+            "moving_part": "steel plate",
+            "stationary_part": "bottom"
+          },
+          "rigid_deck_to_stationary_wires": {
+            "clearance_mm": 0.37035952,
+            "moving_part": "PCB",
+            "stationary_part": "usb.2"
+          },
+          "parked_housings": {
+            "J2": {
+              "deck_clearance_mm": 0.55,
+              "closest_moving_part": "PCB",
+              "fixed_objects": {
+                "clearance_mm": 3.73845487,
+                "moving_part": "J2-plug",
+                "stationary_part": "bottom"
+              }
+            },
+            "J4": {
+              "deck_clearance_mm": 0.55,
+              "closest_moving_part": "PCB",
+              "fixed_objects": {
+                "clearance_mm": 1.460109915,
+                "moving_part": "J4-plug",
+                "stationary_part": "bottom"
+              }
+            }
+          },
+          "moving_wire_checks": [
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5",
+              "certified_residual_gap_mm": 0.7637999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-0",
+              "certified_residual_gap_mm": 1.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-1",
+              "certified_residual_gap_mm": 1.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-2",
+              "certified_residual_gap_mm": 1.5649999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-3",
+              "certified_residual_gap_mm": 1.5649999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "bottom",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 3
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R1",
+              "certified_residual_gap_mm": 4.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R2",
+              "certified_residual_gap_mm": 4.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R3",
+              "certified_residual_gap_mm": 4.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R1-film",
+              "certified_residual_gap_mm": 4.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R2-film",
+              "certified_residual_gap_mm": 4.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R3-film",
+              "certified_residual_gap_mm": 4.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R1-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R2-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "pack",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-F1-envelope",
+              "certified_residual_gap_mm": 3.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-F2-envelope",
+              "certified_residual_gap_mm": 16.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "J4-plug",
+              "certified_residual_gap_mm": 0.9499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "J2-plug",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-plug",
+              "certified_residual_gap_mm": 1.0687999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.4",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "battery.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "battery.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "battery.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5",
+              "certified_residual_gap_mm": 0.7637999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-0",
+              "certified_residual_gap_mm": 0.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-1",
+              "certified_residual_gap_mm": 0.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-2",
+              "certified_residual_gap_mm": 1.5649999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-3",
+              "certified_residual_gap_mm": 1.5649999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "bottom",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 3
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R1",
+              "certified_residual_gap_mm": 3.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R2",
+              "certified_residual_gap_mm": 3.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R3",
+              "certified_residual_gap_mm": 3.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R1-film",
+              "certified_residual_gap_mm": 3.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R2-film",
+              "certified_residual_gap_mm": 3.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R3-film",
+              "certified_residual_gap_mm": 3.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R1-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R2-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "pack",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-F1-envelope",
+              "certified_residual_gap_mm": 4.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-F2-envelope",
+              "certified_residual_gap_mm": 17.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "J4-plug",
+              "certified_residual_gap_mm": 1.9499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "J2-plug",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-plug",
+              "certified_residual_gap_mm": 1.0687999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.4",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "battery.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "battery.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "battery.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            }
+          ]
+        }
       },
       {
         "PCB_thickness_mm": 1.76,
@@ -388,7 +1177,392 @@
             "largest_free_length_change_from_seated_mm": 0.043218701,
             "USB_pair_geometric_skew_mm": 0.000536719
           }
-        ]
+        ],
+        "parked_lift": {
+          "moving_rigid_envelopes": 122,
+          "stationary_rigid_envelopes": 22,
+          "stationary_wire_envelopes": 7,
+          "rigid_deck_to_stationary_objects": {
+            "clearance_mm": 0.174392379,
+            "moving_part": "PCB",
+            "stationary_part": "USB-F1-envelope"
+          },
+          "rigid_deck_to_stationary_wires": {
+            "clearance_mm": 0.2212,
+            "moving_part": "mount-26",
+            "stationary_part": "battery.1"
+          },
+          "parked_housings": {
+            "J2": {
+              "deck_clearance_mm": 0.55,
+              "closest_moving_part": "PCB",
+              "fixed_objects": {
+                "clearance_mm": 3.590259154,
+                "moving_part": "J2-plug",
+                "stationary_part": "bottom"
+              }
+            },
+            "J4": {
+              "deck_clearance_mm": 0.55,
+              "closest_moving_part": "PCB",
+              "fixed_objects": {
+                "clearance_mm": 1.398901396,
+                "moving_part": "J4-plug",
+                "stationary_part": "bottom"
+              }
+            }
+          },
+          "moving_wire_checks": [
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5",
+              "certified_residual_gap_mm": 0.6099999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-0",
+              "certified_residual_gap_mm": 1.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-1",
+              "certified_residual_gap_mm": 1.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-2",
+              "certified_residual_gap_mm": 1.4111999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-mount-3",
+              "certified_residual_gap_mm": 1.4111999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "bottom",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 3
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R1",
+              "certified_residual_gap_mm": 4.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R2",
+              "certified_residual_gap_mm": 4.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R3",
+              "certified_residual_gap_mm": 4.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R1-film",
+              "certified_residual_gap_mm": 4.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R2-film",
+              "certified_residual_gap_mm": 4.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-R3-film",
+              "certified_residual_gap_mm": 4.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R1-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "BAT-R2-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "pack",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-F1-envelope",
+              "certified_residual_gap_mm": 3.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "USB-F2-envelope",
+              "certified_residual_gap_mm": 16.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "J4-plug",
+              "certified_residual_gap_mm": 0.9499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "J2-plug",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "C5-plug",
+              "certified_residual_gap_mm": 0.9149999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "usb.4",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "battery.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "battery.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.1",
+              "stationary_part": "battery.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5",
+              "certified_residual_gap_mm": 0.6099999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-0",
+              "certified_residual_gap_mm": 0.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-1",
+              "certified_residual_gap_mm": 0.9652999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-2",
+              "certified_residual_gap_mm": 1.4111999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-mount-3",
+              "certified_residual_gap_mm": 1.4111999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "bottom",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 3
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R1",
+              "certified_residual_gap_mm": 3.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R2",
+              "certified_residual_gap_mm": 3.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R3",
+              "certified_residual_gap_mm": 3.9249999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R1-film",
+              "certified_residual_gap_mm": 3.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R2-film",
+              "certified_residual_gap_mm": 3.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-R3-film",
+              "certified_residual_gap_mm": 3.8499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R1-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "BAT-R2-film",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "pack",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-F1-envelope",
+              "certified_residual_gap_mm": 4.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "USB-F2-envelope",
+              "certified_residual_gap_mm": 17.450975918,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "J4-plug",
+              "certified_residual_gap_mm": 1.9499999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "J2-plug",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "C5-plug",
+              "certified_residual_gap_mm": 0.9149999,
+              "distance_evaluations": 0
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "usb.4",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "battery.1",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "battery.2",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            },
+            {
+              "moving_wire": "power.2",
+              "stationary_part": "battery.3",
+              "certified_residual_gap_mm": 0.15,
+              "distance_evaluations": 1
+            }
+          ]
+        }
       }
     ]
   },
@@ -415,17 +1589,20 @@
     "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.step": "0b93cbec60c942be89abc7c58051409762b8f0eade6e2c43bb28355744445e71",
     "hardware/usb-daughterboard/C5-JSH-clearance.step": "d39e4f1ea393125461292acd87f5fd46bd66c4857b4f34610b4613628226482d",
     "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
+    "mechanical/e73-fit/yeti60-e73-niz-m01.dxf": "326d026a4782334666b7d8a5eeb6c88f8db2c1f85faa9626c8104d783d58d452",
     "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
     "mechanical/generated/yeti60-top.step": "cbd59c41a843802d56e9e1a831e120d5d571e92bb03f21e071c8c2dd6db2947b",
     "scripts/build_e73_m05_harness.py": "9388c6f090f55d95c9c03c636c5100f76c5a864cfe40e49fce390c63da03682b",
     "scripts/build_e73_service_case.py": "2b6680a864a24f5a7ddd2cb0f7c27b9dac8ec7de0056b9a15cb9af73ae221b38",
     "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
     "scripts/check_e73_corner_harness.py": "f2692a9d6944b3373fa48c9b771dd06cb4425b892b775b9fd9dc69fb9c26ff1e",
-    "scripts/check_e73_retainer_recess.py": "408fb1cf8914be4bbe149a69bfc1f2c46107cf0bbfb7af97c0e16509204c1409",
+    "scripts/check_e73_corner_service.py": "b61a438a6f35e4a67a918ebc9c2eb1fa7d09be4f1aa2f8845f7868ee93213941",
+    "scripts/check_e73_retainer_recess.py": "21186921a283c2433eb21115139c25d39b561e5be9ef28c131b51b5cd091a994",
     "scripts/check_e73_service_leads.py": "6cd4a3a7971da2e073648ba9da217cc091ffd94e04a8eb870a21c38868f81021",
     "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
     "scripts/check_yeti60_interconnects.py": "9365de90575ef18e053954a4bdf1ec26d6188d3b1df9fc860cb92f7e1b356c3e",
     "scripts/e73_corner_harness_paths.py": "d8d9e29d0d3654526705790a46d43d37531a6a975e12cd6f4ff70c30dbf5c464",
+    "scripts/e73_corner_retention.py": "225a62f28ebf9f2861ed903ba005c265b306c5265b11dbb77b66fdc9a5e66dbc",
     "scripts/e73_fit_geometry.py": "ca10466e3df2cad126ebcae704b0452e6556d71bdadb97f8bf2563ea4e10716f",
     "scripts/e73_service_leads.py": "4ce7fbde3e959b7b89c1b2d7408820da6e961bfc3fb36b9f8d56fa714af83ec5",
     "scripts/e73_service_route.py": "be7e91db87e5a4d2e21f4697004adbae898d28bbb48a35341c689d52cbe4653b",
@@ -435,7 +1612,9 @@
   },
   "limits": [
     "0.20 mm is a hypothetical L2 surface-error budget, not a qualified supplier surface limit.",
-    "Nine wire envelopes are checked at seven defined service poses across three PCB thicknesses. Guide profiles, contact and pull checks, intermediate poses and the lift with the altered route remain open.",
+    "Nine wire envelopes are checked at seven defined service poses across three PCB thicknesses.",
+    "The 25 mm fixed-XY lift starts after the top and access covers have been removed and J2/J4 have been parked. The modeled deck includes the tolerance-expanded steel plate, PCB, fitted bodies, mounts, guides and bridge wires. The larger front guides are conservative external envelopes.",
+    "Guide profiles, bonding, pull force, intermediate cable positions during plug movement and hand/tool operation remain open.",
     "The chosen M05 files and wire lengths are untouched. No manufacturing data is generated by this study."
   ]
 }
