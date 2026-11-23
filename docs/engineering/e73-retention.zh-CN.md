@@ -2,22 +2,22 @@
 
 # E73 理线件：材料、打印与试装
 
-本页记录 M04 基线。M05 首件请按 [M05 打印与布线清单](../build/e73-m05-prototype.zh-CN.md) 选取线长和配套零件。
+CORNER-07 首件使用 [M05 打印与布线清单](../build/e73-m05-prototype.zh-CN.md)。M05 沿用 M04 的 14 个 USB 和电源桥理线件，更新两件电池理线件及其折弯胶膜的安装位置。
 
 本套对应 **E73 CORNER-07**、旋转后的主板 J5 及连接现有 C5 子板的九根导线。接法及线长见[当前线束说明](e73-corner-harness.zh-CN.md)。
 
 **这是供审查和测量试装的工程零件。** 刚体、胶膜、导线入槽及公差检查，不能证明树脂强度、胶粘保持力、工具可达性或完整装入／退出流程。整机关壳仍未放行；工艺及维修动作解决前，不要永久粘接审查版零件。
 
-![理线件安装位置](images/e73-retention.zh-CN.png)
+![M05 坐合状态的线束走向](../../hardware/e73-hhkb-corner/audit/m05-harness-plan.zh-CN.png)
 
 ## 需要制作什么
 
 | 项目 | 净数量 | 文件／工艺 |
 |---|---:|---|
-| 刚性支架及可拆盖 | **16 个** | [局部坐标 STL 套装](../../hardware/e73-hhkb-corner/mechanical/retention/print/ALL-16-GUIDES-ONE-EACH.stl)，每种各一；也可逐个打印命名 STL，各一份，二选一，不能重复下单 |
-| 支架装配参考 | 16 个 | [装配参考目录](../../hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R1.step)，STEP 保留实际壳体安装坐标 |
+| 刚性支架及可拆盖 | **16 个** | [M05 独立 STL 套装](../../delivery/YETI60-E73/02-mechanical/retention/M05-retainer-STLs-REVIEW.zip)，每件一个文件。报价前查看下方工艺筛查 |
+| 支架装配参考 | 16 个 | 沿用 USB 和电源桥的 STEP，例如 [USB-R1](../../hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-R1.step)，电池支架用 [M05 装配 STEP](../build/e73-m05-prototype.zh-CN.md#制作-m05-配套线束)。这些文件保留壳体安装坐标 |
 | 裁切／折弯胶膜 | **17 片** | [胶膜下料图](../../hardware/e73-hhkb-corner/mechanical/retention/film-blanks.zh-CN.svg)，从指定薄膜裁切，**胶膜 STEP 不能用于 3D 打印** |
-| 完整零件及数量表 | 合计 33 件 | [理线件表格](../../hardware/e73-hhkb-corner/mechanical/retention/parts.zh-CN.csv) |
+| 完整零件及数量表 | 合计 33 件 | [M05 理线件和胶膜表格](../../delivery/YETI60-E73/02-mechanical/retention/parts.zh-CN.csv) |
 | 几何要求 | 1 份规格 | [理线件规格](../../hardware/e73-corner-retention-spec.json) |
 
 刚性件包括：3 个 `USB-R` 顶部支架；2 个 `USB-F` 底座及对应 2 个可拆盖；2 个 `BAT-R` 底壳支架；5 个 `PWR-R` PCB 支架；`PWR-F-upper` 与 `PWR-F-lower`。其中 7 个固定在壳内、6 个固定在 PCB，另有 3 个可拆盖／半件。
@@ -27,7 +27,7 @@
 ## 制作要求
 
 - **毫米单位，100% 比例。** 打印 STL 已移到局部原点，必要时刚性翻转，使线槽便于制作；形状、体积均与装配 STEP 核对，不含缩放或收缩补偿。
-- `ALL-16-GUIDES-ONE-EACH` 排版只含每种刚性件一个，方便一次制作，不能另算第 17 个零件。若供方需要逐件安排方向和支撑，使用单独文件。
+- 解压 M05 套装可得到 16 个独立 STL。嘉立创要求每个上传文件放一个模型。普通 SLA 公布的最小单件尺寸为 **5 × 5 × 5 mm** 或 **10 × 2 × 2 mm**，16 件都低于两种下限。对应尺寸范围的普通公差为 **±0.20 mm**。本项目仍要求成品表面点误差最大 **0.05 mm**、余肉至少 **0.30 mm**。正式装配前需由供方确认小件工艺，并用样件量测。 [嘉立创建模规格](https://jlc3dp.com/help/article/3d-printing-design-guideline) · [嘉立创上传要求](https://jlc3dp.com/help/article/how-to-place-a-3d-printing-order) · [M05 工艺筛查](../../delivery/YETI60-E73/06-validation/m05-retainer-process.json)
 - 使用满足成品尺寸的韧性工程树脂或绝缘机加工聚合物。文件不能证明所有低价 SLA 服务都能达到要求；先与供方核实小件工艺、支撑去除和后固化方式。
 - 成品任一点的最大三维位置误差 **0.05 mm**；去支撑及修整粘接面后，实测最小余肉 **0.30 mm**。重点检查后部台阶顶壁、槽边、前盖顶壁及电池支架侧壁；不能随意扩槽或把薄壁磨到限值以下。
 - 单线槽半径 **0.50 mm**，USB 中央线对槽半径 **1.01 mm**。检查中缩小可用槽域是为了计入零件误差，不是让工厂修改 CAD 尺寸。
@@ -46,7 +46,7 @@ CAD 已包含侧腿及前部／分线接缝片。保持粘接区清洁，遵循�
 
 1. 先完成[空板焊接和台架检查](../assembly/e73-corner/soldering.zh-CN.md)。支架和胶不得接触回流焊热区、裸焊盘、感应表面及 J3 刷写触点。
 2. 清点 16 个刚性件和 17 片薄膜。局部 STL 用于制造，壳体坐标 STEP 用于定位。接近 PCB 前先测量槽、顶壁和余肉。
-3. 外壳与电子组件**分开**时，先在 M04 底壳试配 3 个 USB 后支架、2 个 USB 前底座、2 个电池支架，核实粘接面与胶层。审查阶段仅临时定位，最终装入／维修流程尚未放行。
+3. 外壳与电子组件**分开**时，先在 M05 底壳试配 3 个 USB 后支架、2 个 USB 前底座、2 个电池支架，核实粘接面与胶层。电池支架的位置为 X **186** 和 **189 mm**，两者的 Y 均为 **−106.60 mm**。试装阶段采用临时定位。
 4. 在 PCB 背面试配 5 个 `PWR-R` 和 `PWR-F-upper`，避开元件、必须保留可达的过孔／焊盘及紧固件。其安装方向通常与打印方向相反，要按实际板厚及装配参考核对。
 5. USB 四线分别进入外侧槽／中央线对槽，保护包三线进入对应编号槽，电源桥两线进入各自槽位。J5.1／J5.2 不能交叉；J1.2／J1.3 留空。每个支架必须真的容纳目标导线，不能让导线从支架下面或旁边绕过。
 6. 试配两只 USB 前盖及下层电源分线件。USB 侧贴片固定相应底座／盖；电源侧贴片固定上下半件。核对两个配合件和底部保持带，再考虑把临时定位换成胶粘。
@@ -55,6 +55,6 @@ CAD 已包含侧腿及前部／分线接缝片。保持粘接区清洁，遵循�
 
 ## 证据及边界
 
-[理线件检查](../../hardware/e73-hhkb-corner/audit/retention-study.json)覆盖标称板及 1.44／1.76 mm 端点、完整薄膜、支架／薄膜／PCB／外壳／保护包／元件／紧固件干涉和其他线束。逐针入槽检查要求非空导线段处于正确的缩限槽域内；错位空支架、悬空平膜、过厚膜及穿入 PCB 的错误样本均须拒绝。
+[M04 理线件检查](../../hardware/e73-hhkb-corner/audit/retention-study.json)覆盖标称板及 1.44／1.76 mm 端点、薄膜、线束及装配干涉。[M05 线束检查](../../hardware/e73-hhkb-corner/audit/m05-harness.json)记录移动后的两件电池支架和胶膜。
 
 [打印导出检查](../../hardware/e73-hhkb-corner/audit/retention-prints.json)核实刚性坐标变换、毫米网格边界及体积。这些是绑定来源的设计证据，不能替代实物焊接、胶、树脂、USB／蓝牙、静电容、充放电及电池温升验收。

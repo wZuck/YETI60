@@ -1,9 +1,9 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>E73 cable retainers: parts, printing and dry fitting</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="retainers.zh-CN.html">Chinese</a></p>
 <h1 id="e73-cable-retainers-parts-printing-and-dry-fitting">E73 cable retainers: parts, printing and dry fitting</h1>
-<p>This page records the M04 baseline. For the first article, use the <a href="../02-mechanical/service-case-m05/print-guide.html">M05 print checklist and wire lengths</a>.</p>
+<p>Use the <a href="../02-mechanical/service-case-m05/print-guide.html">M05 print checklist and wire lengths</a> for the CORNER-07 first article. M05 reuses the fourteen USB and power guides from M04 and moves both battery guides and their folded films.</p>
 <p>This set follows <strong>E73 CORNER-07</strong>, its rotated mainboard J5 and the nine-conductor route to the existing C5 daughterboard. Use the current <a href="harness-routing.html">wire connections and conductor lengths</a>.</p>
 <p><strong>Engineering parts for review and measured dry fitting.</strong> Rigid-body, film, wire-capture and tolerance checks do not qualify resin strength, tape adhesion, human access or the complete installation/withdrawal sequence. Complete closed-case assembly release remains open. Do not permanently bond the review set before the process and service gates are resolved.</p>
-<p><img src="images/e73-retention.png" alt="Retainer placement" /></p>
+<p><img src="../06-validation/m05-harness-plan.png" alt="M05 seated cable paths" /></p>
 <h2 id="what-to-make">What to make</h2>
 <table>
 <thead>
@@ -17,12 +17,12 @@
 <tr>
 <td>Rigid guides and removable covers</td>
 <td style="text-align:right"><strong>16</strong></td>
-<td><a href="../02-mechanical/retention/print/ALL-16-GUIDES-ONE-EACH.stl">Local print STL set</a>: one copy of each part. Alternatively print each named STL once; do not order both options</td>
+<td><a href="../02-mechanical/retention/M05-retainer-STLs-REVIEW.zip">M05 individual STL set</a>, one per part. See the process screen below before quoting</td>
 </tr>
 <tr>
 <td>Guide assembly references</td>
 <td style="text-align:right">16</td>
-<td><a href="../02-mechanical/retention/assembly-reference/USB-R1.step">Assembly-reference directory</a>; STEP files retain their installed case coordinates</td>
+<td>Use the shared USB and power STEP files, such as <a href="../02-mechanical/retention/assembly-reference/USB-R1.step">USB-R1</a>, and the <a href="../02-mechanical/service-case-m05/print-guide.html#build-the-matched-m05-harness">M05 battery STEP references</a>. These files retain installed case coordinates</td>
 </tr>
 <tr>
 <td>Cut/fold film pieces</td>
@@ -32,7 +32,7 @@
 <tr>
 <td>Full part/count table</td>
 <td style="text-align:right">33 pieces total</td>
-<td><a href="../02-mechanical/retention/parts.csv">Retainer CSV</a></td>
+<td><a href="../02-mechanical/retention/parts.csv">M05 retainer and film CSV</a></td>
 </tr>
 <tr>
 <td>Geometric requirements</td>
@@ -46,7 +46,7 @@
 <h2 id="manufacturing-requirements">Manufacturing requirements</h2>
 <ul>
 <li><strong>Millimetres, 100% scale.</strong> Local STL files are translated to the origin and, where needed, rigidly turned so the channel is accessible for printing. Their shape and volume are checked against the assembly STEP. No scale or shrink compensation is baked into them.</li>
-<li><code>ALL-16-GUIDES-ONE-EACH</code> is a spaced layout containing exactly one of every rigid part. It is a convenience layout, not a seventeenth component. Send individual files if the supplier needs to choose support/orientation separately.</li>
+<li>Extract the M05 ZIP to get 16 individual STL files. JLC3DP asks for one model per uploaded file. Its ordinary SLA size floor is <strong>5 × 5 × 5 mm</strong> or <strong>10 × 2 × 2 mm</strong>. All 16 guides fall below both options. Its general size tolerance for parts of this length is <strong>±0.20 mm</strong>. The required <strong>0.05 mm</strong> surface-point limit and <strong>0.30 mm</strong> finished web remain specific to these guide geometries. The parts need a supplier-confirmed process and measured trial parts before final assembly. <a href="https://jlc3dp.com/help/article/3d-printing-design-guideline">JLC3DP model limits</a> · <a href="https://jlc3dp.com/help/article/how-to-place-a-3d-printing-order">JLC3DP upload instructions</a> · <a href="../06-validation/m05-retainer-process.json">M05 process screen</a></li>
 <li>Use an insulating tough engineering resin or an insulating machined polymer that can meet the finished dimensions. The files do not establish that every low-cost SLA service can meet them. Agree on the small-part process, support removal and post-cure before fabrication.</li>
 <li>Maximum finished surface-point error: <strong>0.05 mm in 3D</strong>. Minimum measured remaining web: <strong>0.30 mm</strong> after support removal and bonding-face finishing. Inspect the rear stepped roofs, groove edges, front lid roofs and battery guide walls. Do not enlarge wire channels or sand a thin web below the limit.</li>
 <li>Single-wire groove radius: <strong>0.50 mm</strong>; central USB pair channel radius: <strong>1.01 mm</strong>. The shrink allowance in the checker accounts for the stated part-profile error; it is not an instruction to change these CAD dimensions.</li>
@@ -61,7 +61,7 @@
 <ol>
 <li>Complete the <a href="soldering.html">bare-PCB soldering and bench tests</a>. Keep guides/adhesive away from reflow heat, exposed lands, sensing surfaces and the J3 programming contacts.</li>
 <li>Inventory all 16 rigid parts and 17 film pieces. Use the local STL files for fabrication and the case-coordinate STEP files for placement. Measure the groove, roof and web dimensions before touching a PCB.</li>
-<li>With the case and electronics <strong>separate</strong>, dry-fit the three USB rear guides, two USB front bases and two battery guides to the M04 case. Match their mounting faces and the inspected bondline. Use temporary positioning for this review stage; the final insertion/service sequence has not been released.</li>
+<li>With the case and electronics <strong>separate</strong>, dry-fit the three USB rear guides, two USB front bases and two battery guides to the M05 case. Match their mounting faces and the inspected bondline. Locate the battery guides at X <strong>186</strong> and <strong>189 mm</strong>, both at Y <strong>−106.60 mm</strong>. Use temporary positioning for this review stage.</li>
 <li>Dry-fit five <code>PWR-R</code> guides and <code>PWR-F-upper</code> on the PCB underside, avoiding components, vias/pads that must remain accessible and mounting hardware. The printed pose is often upside-down relative to this installed pose. Check against the actual board thickness and assembly reference.</li>
 <li>Seat the four USB conductors in their assigned outer/pair channels, the three pack conductors in their numbered battery channels, and the two bridge wires in their own power channels. Do not cross J5.1/J5.2; J1.2/J1.3 remain empty. Ensure each guide actually contains its intended wire rather than leaving the wire underneath or beside it.</li>
 <li>Trial the two USB front lids and lower power fan-out half. The USB side patches retain each base/lid pair; the power side patches retain its upper/lower pair. Check both mating pieces and the bottom strap before replacing any temporary positioning with adhesive.</li>
@@ -69,6 +69,6 @@
 <li><strong>Hold final bonding and closure</strong> until the complete installation/withdrawal and tool-access procedure is qualified. Opening the top case or turning SW100 off is not full battery isolation; unplug USB and isolate the pack before electrical rework. Use the current electrical guide for the actual power checks.</li>
 </ol>
 <h2 id="evidence-and-limits">Evidence and limits</h2>
-<p><a href="../06-validation/retention-study.json">Retainer study</a> covers the nominal board plus 1.44/1.76 mm thickness endpoints, complete films, guide/film/PCB/case/pack/component/fastener collisions and foreign wires. Per-pin channel tests require a nonempty wire segment inside the correct shrink-bounded channel. A misplaced empty guide and a floating flat film must fail, alongside a thick-film and PCB-intersection witness.</p>
+<p><a href="../06-validation/retention-study.json">M04 retainer study</a> covers the nominal board plus 1.44/1.76 mm thickness endpoints, complete films, guide/film/PCB/case/pack/component/fastener collisions and foreign wires. The <a href="../06-validation/m05-harness.json">M05 harness study</a> records the moved battery guides and films.</p>
 <p><a href="../06-validation/retention-prints.json">Print-export study</a> checks rigid transforms, millimetre mesh bounds and volume. These reports are source-bound design evidence, not physical solder, adhesive, resin, USB/BLE, EC, charging or battery thermal acceptance.</p>
 </main></html>

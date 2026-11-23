@@ -91,7 +91,7 @@ Twist the white and green wires together along the specified path. The FEP wire 
 
 ### Print checklist for the 16 retainers
 
-Print one of each linked STL. Cut the 17 film pieces using the film templates.
+Use one of each individual STL from the [M05 retainer ZIP](../retention/M05-retainer-STLs-REVIEW.zip). Cut the 17 films using the templates. The small guides fall below the ordinary JLC3DP SLA single-part size floor. Confirm a process that meets the guide tolerances before printing. [Retainer process requirements](../../04-assembly/retainers.md)
 
 | Group | Quantity | STL |
 |---|---:|---|

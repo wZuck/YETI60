@@ -6,12 +6,36 @@ firmware publication. The web index works offline, without a build server.
 """
 import argparse,hashlib,json,shutil,subprocess,zipfile,re,html,csv,tempfile
 from pathlib import Path
-from check_e73_delivery import first_article_keys
+from posixpath import relpath
+from check_e73_delivery import (
+    first_article_keys, LEGACY_RETAINER_FILES, RETAINER_ARCHIVE,
+    RETAINER_DIR, RETAINER_SCREEN, retainer_process_screen,
+)
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'hardware/e73-hhkb-corner'
 CLI='/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli'
 KICAD_PYTHON='/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def write_flat_zip(archive, paths):
+    assert len({path.name for path in paths}) == len(paths)
+    with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_DEFLATED) as output:
+        for path in sorted(paths, key=lambda item: item.name):
+            entry = zipfile.ZipInfo(path.name, (2000, 1, 1, 0, 0, 0))
+            entry.compress_type = zipfile.ZIP_DEFLATED
+            output.writestr(entry, path.read_bytes())
+
+
+def write_m05_parts_table(source, target, retainers):
+    with source.open(newline='') as stream:
+        header, *rows = list(csv.reader(stream))
+    for row in rows:
+        if row[0] in retainers:
+            row[3] = relpath(retainers[row[0]], RETAINER_DIR)
+    with target.open('w', newline='') as stream:
+        writer = csv.writer(stream, lineterminator='\n')
+        writer.writerows([header, *rows])
 
 
 def export_e73_ipc(board, output):
@@ -195,22 +219,41 @@ def main():
   (out/('03-bom/reference/m04-harness-conductors'+lang+'.csv')).unlink(missing_ok=True)
   (out/('03-bom/harness-conductors'+lang+'.csv')).unlink(missing_ok=True)
   for ext in ['png','svg']:copy('docs/engineering/images/e73-corner-harness'+lang+'.'+ext,'04-assembly/images/e73-corner-harness'+lang+'.'+ext)
- for p in sorted((BASE/'mechanical/retention').rglob('*')):
-  if p.is_file()and p.name!='.DS_Store':copy(str(p.relative_to(ROOT)),'02-mechanical/retention/'+str(p.relative_to(BASE/'mechanical/retention')))
+ retention_source = BASE/'mechanical/retention'
+ for name in LEGACY_RETAINER_FILES:
+  (out/(RETAINER_DIR+name)).unlink(missing_ok=True)
+ for p in sorted(retention_source.rglob('*')):
+  name = p.relative_to(retention_source).as_posix()
+  if p.is_file() and p.name not in {'.DS_Store','parts.csv','parts.zh-CN.csv'} and name not in LEGACY_RETAINER_FILES:
+   copy(str(p.relative_to(ROOT)), RETAINER_DIR+name)
  shifted=m05_harness['shifted_battery_parts']
  m05_dir='02-mechanical/service-case-m05/'
  prototype={
   'revision':'M05','use':'first-article-dry-fit','physical_verification':False,
   'shell_STL':['02-mechanical/top.stl',*[m05_dir+n for n in ('bottom-m05-REVIEW.stl','cover-J2-REVIEW.stl','cover-J4-REVIEW.stl')]],
   'retainer_STL':{part['name']:mapping[shifted[part['name']]['print_STL'] if part['name'] in shifted else part['local_STL']] for part in retention['rigid_parts']},
+  'retainer_STL_archive':RETAINER_ARCHIVE,
   'harness_lengths':[m05_dir+'harness/wire-lengths-m05'+lang+'.csv' for lang in ('','.zh-CN')],
   'assembly_views':[f'04-assembly/assembly-views{lang}.html' for lang in ('','.zh-CN')],
  }
+ retainers = prototype['retainer_STL']
+ write_flat_zip(out/RETAINER_ARCHIVE, [out/name for name in retainers.values()])
+ for lang in ('','.zh-CN'):
+  table = 'parts'+lang+'.csv'
+  source = retention_source/table
+  destination = RETAINER_DIR+table
+  write_m05_parts_table(source, out/destination, retainers)
+  inputs[str(source.relative_to(ROOT))] = sha(source)
+  mapping['delivery/YETI60-E73/'+destination] = destination
+ for name in (RETAINER_ARCHIVE, RETAINER_SCREEN):
+  mapping['delivery/YETI60-E73/'+name] = name
  for lang in ['', '.zh-CN']:
   for ext in ['png','svg']:copy('docs/engineering/images/e73-retention'+lang+'.'+ext,'04-assembly/images/e73-retention'+lang+'.'+ext)
  for path in render_report['outputs']:copy(path,'04-assembly/images/'+Path(path).name)
  copy(str(assembly_render.relative_to(ROOT)),'06-validation/assembly-render.json')
  copy('hardware/e73-corner-retention-spec.json','02-mechanical/retention-spec.json')
+ process = retainer_process_screen(out, retainers)
+ (out/RETAINER_SCREEN).write_text(json.dumps(process, indent=2)+'\n')
  copy('hardware/e73-corner-harness-spec.json','02-mechanical/interconnect-spec.json')
  copy('hardware/e73-corner-j5-repair.json','06-validation/j5-repair.json')
  for p in sorted((ROOT/'docs/assembly/e73-corner').rglob('*')):
@@ -272,10 +315,7 @@ def main():
  assert len(list(cam.glob('*.drl')))>=2
  assert not any(re.search(r'in[12]',p.name,re.I)for p in cam.glob('*.drl')),'Unexpected layer-pair drill'
  archive=out/'01-pcb/YETI60-E73-gerbers-REVIEW.zip'
- with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED)as z:
-  for p in sorted(cam.iterdir()):
-   if p.name=='.DS_Store':continue
-   info=zipfile.ZipInfo(p.name,(2000,1,1,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;z.writestr(info,p.read_bytes())
+ write_flat_zip(archive, [p for p in cam.iterdir() if p.name!='.DS_Store'])
  subprocess.run([KICAD_PYTHON,str(ROOT/'scripts/check_e73_cam.py'),'--archive',str(archive),
                  '--output',str(out/'06-validation/cam-ordinary.json')],check=True)
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with','gerbonara==1.6.3','--with','shapely==2.1.2',

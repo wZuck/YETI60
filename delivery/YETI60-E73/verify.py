@@ -1,10 +1,84 @@
 #!/usr/bin/env python3
 """Verify an offline E73 bundle, or verify the bundle and source checkout together."""
-import argparse,csv,hashlib,json,re,zipfile
+import argparse,csv,hashlib,json,math,re,struct,zipfile
+from collections import defaultdict
 from html.parser import HTMLParser
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
+RETAINER_DIR = '02-mechanical/retention/'
+RETAINER_ARCHIVE = RETAINER_DIR + 'M05-retainer-STLs-REVIEW.zip'
+RETAINER_SCREEN = '06-validation/m05-retainer-process.json'
+LEGACY_RETAINER_FILES = frozenset(
+    ['print/ALL-16-GUIDES-ONE-EACH' + ext for ext in ('.step', '.stl')] +
+    [f'print/BAT-R{number}.stl' for number in (1, 2)] +
+    [f'assembly-reference/BAT-R{number}{suffix}.step'
+     for number in (1, 2) for suffix in ('', '-film')]
+)
+
+
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def retainer_mesh(data):
+    """Read a single closed binary STL component in its supplied millimetre pose."""
+    triangles, = struct.unpack_from('<I', data, 80)
+    assert triangles > 0 and len(data) == 84 + 50 * triangles
+    edges = defaultdict(list)
+    vertices = set()
+    for index, face in enumerate(struct.iter_unpack('<12fH', data[84:])):
+        points = [tuple(round(coord, 6) for coord in face[offset:offset + 3])
+                  for offset in (3, 6, 9)]
+        assert len(set(points)) == 3 and all(math.isfinite(coord) for point in points for coord in point)
+        for start, end in zip(points, points[1:] + points[:1]):
+            edges[tuple(sorted((start, end)))].append(index)
+        vertices.update(points)
+    assert all(len(faces) == 2 for faces in edges.values()), 'Open or non-manifold retainer mesh'
+    neighbors = defaultdict(list)
+    for first, second in edges.values():
+        neighbors[first].append(second)
+        neighbors[second].append(first)
+    visited = {0}
+    remaining = [0]
+    while remaining:
+        for face in neighbors[remaining.pop()]:
+            if face not in visited:
+                visited.add(face)
+                remaining.append(face)
+    assert len(visited) == triangles, 'Multiple disconnected components in retainer STL'
+    dimensions = [round(max(axis) - min(axis), 6) for axis in zip(*vertices)]
+    assert min(dimensions) > 0
+    return triangles, dimensions
+
+
+def retainer_process_screen(bundle, retainers):
+    """Screen the archived geometry against ordinary SLA's published size floor."""
+    minimums = [[5, 5, 5], [10, 2, 2]]
+    specification = json.loads((bundle/'02-mechanical/retention-spec.json').read_text())
+    limits = specification['tolerance_contract']
+    rows = {}
+    for name, path in sorted(retainers.items()):
+        data = (bundle/path).read_bytes()
+        triangles, dimensions = retainer_mesh(data)
+        ordered = sorted(dimensions, reverse=True)
+        rows[name] = {
+            'STL': path, 'sha256': hashlib.sha256(data).hexdigest(),
+            'dimensions_xyz_mm': dimensions, 'triangles': triangles, 'connected_closed_shells': 1,
+            'meets_published_standard_SLA_minimum_size': any(
+                all(actual >= minimum for actual, minimum in zip(ordered, model))
+                for model in minimums
+            ),
+        }
+    return {
+        'revision': 'M05', 'physical_verification': False, 'factory_process_qualified': False,
+        'published_ordinary_SLA': {
+            'minimum_model_sizes_mm': minimums,
+            'general_size_tolerance_through_100_mm': 0.20,
+            'source': 'https://jlc3dp.com/help/article/3d-printing-design-guideline',
+        },
+        'project_surface_point_error_L2_max_mm': limits['guide_maximum_surface_point_error_L2_mm'],
+        'project_minimum_finished_web_mm': limits['minimum_finished_web_mm'],
+        'parts': rows,
+    }
 
 
 def strip_jp1_paste(artwork):
@@ -106,6 +180,23 @@ def main():
  assert not prototype['physical_verification']
  assert len(set(prototype['shell_STL']))==4 and len(set(prototype['retainer_STL'].values()))==16
  assert len(prototype['harness_lengths'])==len(prototype['assembly_views'])==2
+ assert prototype['retainer_STL_archive'] == RETAINER_ARCHIVE
+ retainers = prototype['retainer_STL']
+ assert not {RETAINER_DIR + name for name in LEGACY_RETAINER_FILES} & files
+ with zipfile.ZipFile(base/RETAINER_ARCHIVE) as archive:
+  names = {Path(path).name:path for path in retainers.values()}
+  assert len(names) == len(archive.namelist()) == 16 and set(names) == set(archive.namelist())
+  assert all(archive.read(name) == (base/path).read_bytes() for name, path in names.items())
+ assert json.loads((base/RETAINER_SCREEN).read_text()) == retainer_process_screen(base, retainers)
+ films = json.loads((base/'06-validation/retention-prints.json').read_text())['film_blanks']
+ for lang in ('','.zh-CN'):
+  table = base/(RETAINER_DIR+'parts'+lang+'.csv')
+  with table.open(newline='') as stream:
+   header, *rows = list(csv.reader(stream))
+  assert len(header) == 4 and len(rows) == 33 and all(len(row) == 4 and row[1] == '1' for row in rows)
+  assert set(row[0] for row in rows) == set(retainers) | {film['name'] for film in films}
+  assert all((table.parent/row[3]).resolve() == (base/retainers[row[0]]).resolve()
+             for row in rows if row[0] in retainers)
  required=set(prototype['shell_STL']+list(prototype['retainer_STL'].values())+
               prototype['harness_lengths']+prototype['assembly_views'])
  assert required<=files

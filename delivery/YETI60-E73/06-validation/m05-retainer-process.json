@@ -1,0 +1,217 @@
+{
+  "revision": "M05",
+  "physical_verification": false,
+  "factory_process_qualified": false,
+  "published_ordinary_SLA": {
+    "minimum_model_sizes_mm": [
+      [
+        5,
+        5,
+        5
+      ],
+      [
+        10,
+        2,
+        2
+      ]
+    ],
+    "general_size_tolerance_through_100_mm": 0.2,
+    "source": "https://jlc3dp.com/help/article/3d-printing-design-guideline"
+  },
+  "project_surface_point_error_L2_max_mm": 0.05,
+  "project_minimum_finished_web_mm": 0.3,
+  "parts": {
+    "BAT-R1": {
+      "STL": "02-mechanical/service-case-m05/harness/BAT-R1-M05.stl",
+      "sha256": "1e164f1dc694477a9e6e9c7041b37e65fb882c8f27e1706eb87236612b02dedd",
+      "dimensions_xyz_mm": [
+        2.0,
+        5.8,
+        0.96
+      ],
+      "triangles": 972,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "BAT-R2": {
+      "STL": "02-mechanical/service-case-m05/harness/BAT-R2-M05.stl",
+      "sha256": "1e164f1dc694477a9e6e9c7041b37e65fb882c8f27e1706eb87236612b02dedd",
+      "dimensions_xyz_mm": [
+        2.0,
+        5.8,
+        0.96
+      ],
+      "triangles": 972,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "PWR-F-lower": {
+      "STL": "02-mechanical/retention/print/PWR-F-lower.stl",
+      "sha256": "e40c1edb52c53710c3100a456f1589b2015c7e8e26c367dff293f65098770d14",
+      "dimensions_xyz_mm": [
+        2.0,
+        5.0,
+        1.61
+      ],
+      "triangles": 5492,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "PWR-F-upper": {
+      "STL": "02-mechanical/retention/print/PWR-F-upper.stl",
+      "sha256": "3c6dba8b9f6d2b3dd10b75b598caa8554b37cf440582157eafa26105a633ec06",
+      "dimensions_xyz_mm": [
+        2.0,
+        5.0,
+        1.0
+      ],
+      "triangles": 5476,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "PWR-R1": {
+      "STL": "02-mechanical/retention/print/PWR-R1.stl",
+      "sha256": "3bc6bbf4df89474d100a708d37ba451d3d4ede08f5659c7b2aa0ae8cd43d547d",
+      "dimensions_xyz_mm": [
+        2.0,
+        3.4,
+        1.0
+      ],
+      "triangles": 656,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "PWR-R2": {
+      "STL": "02-mechanical/retention/print/PWR-R2.stl",
+      "sha256": "3bc6bbf4df89474d100a708d37ba451d3d4ede08f5659c7b2aa0ae8cd43d547d",
+      "dimensions_xyz_mm": [
+        2.0,
+        3.4,
+        1.0
+      ],
+      "triangles": 656,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "PWR-R3": {
+      "STL": "02-mechanical/retention/print/PWR-R3.stl",
+      "sha256": "3bc6bbf4df89474d100a708d37ba451d3d4ede08f5659c7b2aa0ae8cd43d547d",
+      "dimensions_xyz_mm": [
+        2.0,
+        3.4,
+        1.0
+      ],
+      "triangles": 656,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "PWR-R4": {
+      "STL": "02-mechanical/retention/print/PWR-R4.stl",
+      "sha256": "3bc6bbf4df89474d100a708d37ba451d3d4ede08f5659c7b2aa0ae8cd43d547d",
+      "dimensions_xyz_mm": [
+        2.0,
+        3.4,
+        1.0
+      ],
+      "triangles": 656,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "PWR-R5": {
+      "STL": "02-mechanical/retention/print/PWR-R5.stl",
+      "sha256": "3bc6bbf4df89474d100a708d37ba451d3d4ede08f5659c7b2aa0ae8cd43d547d",
+      "dimensions_xyz_mm": [
+        2.0,
+        3.4,
+        1.0
+      ],
+      "triangles": 656,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "USB-F1-base": {
+      "STL": "02-mechanical/retention/print/USB-F1-base.stl",
+      "sha256": "dc06f0a662e0a77a1961748ae249a2ee6c8e3b0d7b6ed7686545349ba29af58a",
+      "dimensions_xyz_mm": [
+        5.4,
+        2.0,
+        1.41
+      ],
+      "triangles": 916,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "USB-F1-lid": {
+      "STL": "02-mechanical/retention/print/USB-F1-lid.stl",
+      "sha256": "86a8e4a057948ce30d0c294aff51558d785f32d0d41e63f99a3895f17c20aca3",
+      "dimensions_xyz_mm": [
+        5.4,
+        2.0,
+        1.36
+      ],
+      "triangles": 904,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "USB-F2-base": {
+      "STL": "02-mechanical/retention/print/USB-F2-base.stl",
+      "sha256": "dc06f0a662e0a77a1961748ae249a2ee6c8e3b0d7b6ed7686545349ba29af58a",
+      "dimensions_xyz_mm": [
+        5.4,
+        2.0,
+        1.41
+      ],
+      "triangles": 916,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "USB-F2-lid": {
+      "STL": "02-mechanical/retention/print/USB-F2-lid.stl",
+      "sha256": "150d5db37fea91d58ffd40d0fa825203a114353b5084db2369ba7bc5c7e0388c",
+      "dimensions_xyz_mm": [
+        5.4,
+        2.0,
+        1.36
+      ],
+      "triangles": 904,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "USB-R1": {
+      "STL": "02-mechanical/retention/print/USB-R1.stl",
+      "sha256": "677cac278d447409e86e363a0853deb3e0630278b2f2bccb6828c6e0468afe37",
+      "dimensions_xyz_mm": [
+        2.0,
+        5.1,
+        2.15
+      ],
+      "triangles": 936,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "USB-R2": {
+      "STL": "02-mechanical/retention/print/USB-R2.stl",
+      "sha256": "677cac278d447409e86e363a0853deb3e0630278b2f2bccb6828c6e0468afe37",
+      "dimensions_xyz_mm": [
+        2.0,
+        5.1,
+        2.15
+      ],
+      "triangles": 936,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    },
+    "USB-R3": {
+      "STL": "02-mechanical/retention/print/USB-R3.stl",
+      "sha256": "677cac278d447409e86e363a0853deb3e0630278b2f2bccb6828c6e0468afe37",
+      "dimensions_xyz_mm": [
+        2.0,
+        5.1,
+        2.15
+      ],
+      "triangles": 936,
+      "connected_closed_shells": 1,
+      "meets_published_standard_SLA_minimum_size": false
+    }
+  }
+}
