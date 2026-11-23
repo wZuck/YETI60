@@ -204,7 +204,7 @@ def main():
  for name in ('BAT-R1','BAT-R2'):assert prototype['retainer_STL'][name]==case_dir+'harness/'+name+'-M05.stl'
  for name in ('bottom-m05','cover-J2','cover-J4'):assert case_dir+name+'-REVIEW.stl' in prototype['shell_STL']
  recess = json.loads((base/'06-validation/m05-usb-retainer-recess.json').read_text())
- assert recess['status'] == 'USB-front-recess-local-witness-only'
+ assert recess['status'] == 'USB-front-recess-seven-service-poses-checked'
  assert recess['selected_for_assembly'] is False and recess['physical_verification'] is False
  case_source = 'hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step'
  assert recess['source_sha256'][case_source] == sha(base/(case_dir+'bottom-m05-REVIEW.step'))
@@ -219,6 +219,27 @@ def main():
  assert [row['PCB_thickness_mm'] for row in endpoints] == recess['PCB_finished_thickness_range_mm']
  assert all(min(row['wire_to_bottom_gaps_mm'].values()) >= route['minimum_wire_to_bottom_gap_required_mm']
             for row in endpoints)
+ motion = recess['USB_service_motion_trial']
+ poses = ['seated', 'J2-halfway', 'J2-axial-end', 'J2-parked', 'J4-halfway', 'J4-axial-end', 'both-parked']
+ assert [row['PCB_thickness_mm'] for row in motion['variants']] == [
+     endpoints[0]['PCB_thickness_mm'], route['nominal_PCB_thickness_mm'], endpoints[1]['PCB_thickness_mm']]
+ required_gap = motion['minimum_wire_to_obstacle_gap_required_mm']
+ assert required_gap == route['minimum_wire_to_bottom_gap_required_mm'] == .15
+ witnesses = motion['seated_only_relief_failure_witnesses']
+ assert [(row['state'], row['USB_wire_pin']) for row in witnesses] == [
+     ('J4-halfway', '4'), ('J4-axial-end', '2')]
+ assert all(row['residual_gap_mm'] < required_gap for row in witnesses)
+ assert motion['motion_floor_relief_bounds_case_mm'][1] < route['continuous_floor_relief_bounds_case_mm'][1]
+ assert motion['minimum_wall_to_selected_exterior_after_allowances_mm'] >= recess['minimum_screened_exterior_wall_mm']
+ assert motion['existing_main_and_daughterboard_insert_guards_checked'] == 8
+ assert motion['bottom_covers_untouched_by_cut'] == ['J2', 'J4']
+ for row in motion['variants']:
+  assert [state['state'] for state in row['states']] == poses
+  assert all(required_gap <= min(state['minimum_residual_air_gap_mm'], state['minimum_USB_to_other_harness_gap_mm'],
+                                  state['minimum_USB_to_fitted_body_gap_mm'])
+             and state['minimum_static_bend_radius_mm'] >= 4
+             and state['largest_free_length_change_from_seated_mm'] < .06
+             and state['USB_pair_geometric_skew_mm'] < .005 for state in row['states'])
  assert all(path.startswith(case_dir+'harness/wire-lengths-m05') for path in prototype['harness_lengths'])
  pack_review=json.loads((base/'06-validation/pack-source-review.json').read_text())
  assert not pack_review['physical_verification'] and not pack_review['supplier_pack_accepted']

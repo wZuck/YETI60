@@ -2,34 +2,47 @@
 """Screen added depth for larger USB front retainers on the M05 case."""
 
 import argparse
+from concurrent.futures import ProcessPoolExecutor
+from contextlib import redirect_stdout
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
+import subprocess
+import tempfile
+from unittest.mock import patch
 
+from OCP.BRep import BRep_Builder
 from OCP.BRepAlgoAPI import BRepAlgoAPI_Common
 from OCP.BRepCheck import BRepCheck_Analyzer
 from OCP.BRepBuilderAPI import BRepBuilderAPI_MakeVertex
 from OCP.TopAbs import TopAbs_FACE, TopAbs_SOLID
 from OCP.TopExp import TopExp_Explorer
-from OCP.TopoDS import TopoDS
+from OCP.TopoDS import TopoDS, TopoDS_Compound
 from OCP.gp import gp_Pnt
 
 from build_e73_m05_harness import matched_spec
-from build_e73_service_case import skin_z
-from cad_geometry import bounds, load
+from build_e73_service_case import cylinder, skin_z
+from cad_geometry import bounds, intersection_volume, load
+import check_e73_corner_harness as harness
 from check_e73_corner_harness import cut, datums
+from check_e73_service_leads import STATES
 from check_yeti60_assembly import box, distance
 from check_yeti60_interconnects import surface_z
 from e73_corner_harness_paths import envelope_wire, length, paired_data
 from e73_fit_geometry import external_faces, volume
-from e73_service_leads import flex_routes
+from e73_service_leads import flex_routes, position_exits
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CORNER = ROOT / "hardware/e73-hhkb-corner"
 BASE = CORNER / "mechanical"
 AUDIT = CORNER / "audit"
+CASE_DIR = BASE / "service-case-m05"
+C5_REPORT = "docs/audit/yeti60-daughterboard.json"
+C5_STEP = "hardware/usb-daughterboard/C5-JSH-clearance.step"
+KICAD_PYTHON = "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3"
 STATIONS = ("USB-F1", "USB-F2")
 REFERENCE_RECESS_ALLOWANCE_MM = .30
 TRIAL_SURFACE_ERROR_MM = .20
@@ -77,6 +90,19 @@ def common(shape, envelope):
     return tool.Shape()
 
 
+def floor_cutter(floor, routes, diameter, nominal_gap):
+    hits = []
+    for route in routes:
+        for path in route.values():
+            protected = envelope_wire(path, diameter + 2 * (nominal_gap + .01))
+            hit = common(floor, protected)
+            if volume(hit) > 1e-6:
+                hits.append(bounds(hit))
+    lower = [min(item[i] for item in hits) - .03 for i in range(3)]
+    upper = [max(item[i] for item in hits) + .03 for i in (3, 4)] + [0]
+    return lower + upper
+
+
 def screen_usb_floor(case, recessed, exterior, wires, native, assembly, axis_z, shell_error, guard):
     """Try a localized relief for the seated USB route."""
     spec = matched_spec(wires)
@@ -97,15 +123,8 @@ def screen_usb_floor(case, recessed, exterior, wires, native, assembly, axis_z, 
     # Restrict the experiment to the front U-run. Derive the rectangle from
     # the part of the lower shell within wire clearance distance.
     front_floor = common(recessed, box([188, -174, -13, 219, -126, 0]))
-    hit_bounds = []
-    for path in paths["usb"].values():
-        protected = envelope_wire(path, diameter + 2 * (nominal_gap + .01))
-        hit = common(front_floor, protected)
-        if volume(hit) > 1e-6:
-            hit_bounds.append(bounds(hit))
-    lower = [min(item[i] for item in hit_bounds) - .03 for i in range(3)]
-    upper = [max(item[i] for item in hit_bounds) + .03 for i in (3, 4)] + [0]
-    trial, removed = apply_recess(case, recessed, lower + upper)
+    cutter = floor_cutter(front_floor, [paths["usb"]], diameter, nominal_gap)
+    trial, removed = apply_recess(case, recessed, cutter)
     residuals = {pin: distance(trial, shape) - shell_error - guard for pin, shape in envelopes.items()}
     assert min(residuals.values()) >= target_gap
     stack = assembly["stack"]
@@ -124,7 +143,7 @@ def screen_usb_floor(case, recessed, exterior, wires, native, assembly, axis_z, 
     return {
         "nominal_PCB_thickness_mm": assembly["stack"]["pcb_thickness"],
         "wire_collision_volume_after_station_recesses_mm3": overlap,
-        "continuous_floor_relief_bounds_case_mm": lower + upper,
+        "continuous_floor_relief_bounds_case_mm": cutter,
         "continuous_floor_relief_removed_volume_mm3": volume(removed),
         "worst_wire_to_bottom_gap_after_allowances_mm": min(residuals.values()),
         "wire_to_bottom_gaps_after_allowances_mm": residuals,
@@ -132,10 +151,149 @@ def screen_usb_floor(case, recessed, exterior, wires, native, assembly, axis_z, 
         "minimum_wall_to_selected_exterior_after_allowances_mm": wall,
         "minimum_wire_to_bottom_gap_required_mm": target_gap,
         "USB_pair_geometric_skew_mm": abs(length(paths["usb"]["2"]) - length(paths["usb"]["3"])),
+    }, trial, spec
+
+
+def check_thickness(inputs):
+    thickness, cutter, station_cutters, spec, native, assembly, outline, shell_allowance = inputs
+    case = modified_case(station_cutters + [cutter])
+    builder = BRep_Builder()
+    closed = TopoDS_Compound()
+    builder.MakeCompound(closed)
+    for part in (case, *(load(CASE_DIR / f"cover-{ref}-REVIEW.step") for ref in ("J2", "J4"))):
+        builder.Add(closed, part)
+    bottom, exits = datums(native, assembly, spec)
+    delta = assembly["stack"]["pcb_thickness"] - thickness
+    original_read = harness.read
+    c5 = dict(original_read(C5_REPORT), exported_step=C5_STEP)
+
+    def read_geometry(path):
+        if path == ".assembly-work/e73-corner/copper.json":
+            return {"outline": outline}
+        if path == C5_REPORT:
+            return c5
+        return original_read(path)
+
+    with patch.object(harness, "read", read_geometry):
+        pcb = harness.pcb_solid(bottom + delta, thickness)
+    seated_lengths = {}
+    results = []
+    for name, state in STATES.items():
+        shifted = position_exits(exits, *state)
+        routes, centre, _ = flex_routes(spec, exits, shifted, delta)
+        with (patch.object(harness, "paths", return_value=(routes, centre)),
+              patch.object(harness, "read", read_geometry),
+              patch.object(harness, "pcb_solid", return_value=pcb)):
+            # The baseline evaluator prints every evaluated wire. Keep the
+            # per-pose summary plus any exception in the parent process.
+            with open(os.devnull, "w") as quiet, redirect_stdout(quiet):
+                checked = harness.evaluate(spec, native, assembly, shifted, bottom, closed, delta)
+        gaps = []
+        lengths = {}
+        for wire in checked["wires"]:
+            label = f'{wire["family"]}.{wire["pin"]}'
+            lengths[label] = wire["free_length_mm"]
+            for obstacle, gap in wire["clearances_mm"].items():
+                allowance = shell_allowance if obstacle in ("top", "bottom") else 0
+                gaps.append((round(gap - allowance, 9), label, obstacle))
+        crossings = [(round(row["gap_mm"], 9), " / ".join(".".join(wire) for wire in row["wires"]), "crossing")
+                     for row in checked["crossings"]]
+        worst, wire, obstacle = min(gaps + crossings)
+        bend = min(row["minimum_bend_radius_mm"] for row in checked["wires"])
+        if name == "seated":
+            seated_lengths = lengths
+        length_change = max(abs(value - seated_lengths[key]) for key, value in lengths.items())
+        skew = checked["USB_geometric_pair_skew_mm"]
+        assert worst >= spec["wire"]["minimum_air_gap_after_allowance"], (thickness, name, worst, wire, obstacle)
+        assert bend >= spec["wire"]["minimum_static_bend_radius"] - 1e-6, (thickness, name, bend)
+        assert length_change < .06 and skew < .005, (thickness, name, length_change, skew)
+        results.append({
+            "state": name,
+            "minimum_residual_air_gap_mm": worst,
+            "closest_wire": wire,
+            "closest_obstacle": obstacle,
+            "minimum_USB_to_other_harness_gap_mm": min(gap for gap, pair, _ in crossings if "usb." in pair),
+            "minimum_USB_to_fitted_body_gap_mm": min(
+                gap for gap, key, ref in gaps if key.startswith("usb.") and ref not in ("top", "bottom", "PCB", "pack")
+            ),
+            "minimum_static_bend_radius_mm": round(bend, 9),
+            "largest_free_length_change_from_seated_mm": round(length_change, 9),
+            "USB_pair_geometric_skew_mm": round(skew, 9),
+        })
+    return {"PCB_thickness_mm": thickness, "states": results}
+
+
+def modified_case(cutters):
+    trial = original = load(CASE_DIR / "bottom-m05-REVIEW.step")
+    for cutter in cutters:
+        trial, _ = apply_recess(original, trial, cutter)
+    return trial
+
+
+def screen_usb_motion(original, recessed, seated, exterior, station_cutters, spec, native, assembly,
+                      shell_error, guard, outline, minimum_wall):
+    _, exits = datums(native, assembly, spec)
+    wire = spec["wire"]
+    diameter = wire["insulation_od_max"] + 2 * wire["case_and_route_position_allowance"]
+    target_gap = wire["minimum_air_gap_after_allowance"]
+    shell_allowance = shell_error + guard
+    stack = assembly["stack"]
+    nominal = stack["pcb_thickness"]
+    thin, thick = stack["ordinary_manufacturer_finished_thickness_range_mm"]
+    thicknesses = (thin, nominal, thick)
+    routes = []
+    # J2 moves alone in the first four configurations. Their USB geometry is
+    # identical and represented by the J2-parked pose for deriving the relief.
+    for thickness in thicknesses:
+        for name in ("J2-parked", "J4-halfway", "J4-axial-end", "both-parked"):
+            shifted = position_exits(exits, *STATES[name])
+            leads, centre, _ = flex_routes(spec, exits, shifted, nominal - thickness)
+            routes.append(dict(leads["usb"], **paired_data(centre, spec)[0]))
+    probes = []
+    for name, pin in (("J4-halfway", "4"), ("J4-axial-end", "2")):
+        shifted = position_exits(exits, *STATES[name])
+        leads, centre, _ = flex_routes(spec, exits, shifted, 0)
+        leads["usb"].update(paired_data(centre, spec)[0])
+        residual = distance(seated, envelope_wire(leads["usb"][pin], diameter)) - shell_allowance
+        assert residual < target_gap, (name, pin, residual)
+        probes.append({"state": name, "USB_wire_pin": pin, "residual_gap_mm": round(residual, 9)})
+    floor = common(recessed, box([188, -180, -13, 219, -126, 0]))
+    cutter = floor_cutter(floor, routes, diameter, target_gap + shell_allowance)
+    trial, removed = apply_recess(original, recessed, cutter)
+    all_removed = cut(original, trial)
+    wall = min(distance(all_removed, face) for face in exterior) - 2 * shell_error - guard
+    assert wall >= minimum_wall
+    case_spec = assembly["case"]
+    checked_axes = 0
+    for group in ("top", "daughterboard"):
+        insert = case_spec[group + "_insert"]
+        radius = ((insert["bore_diameter"] + insert["bore_tolerance"]) / 2 +
+                  case_spec["finished_bore_position_tolerance"] + 2)
+        for x, y in case_spec[group + "_screw_axes"]:
+            assert intersection_volume(all_removed, cylinder(x, y, -25, radius, 35)) < 1e-6
+            checked_axes += 1
+    for ref in ("J2", "J4"):
+        cover = load(CASE_DIR / f"cover-{ref}-REVIEW.step")
+        assert not common(all_removed, cover).NbChildren(), ref
+
+    configurations = [(t, cutter, station_cutters, spec, native, assembly, outline, shell_allowance)
+                      for t in thicknesses]
+    print("Checking three PCB thicknesses across seven M05 service poses", flush=True)
+    with ProcessPoolExecutor(max_workers=len(configurations)) as pool:
+        results = list(pool.map(check_thickness, configurations))
+    return {
+        "seated_only_relief_failure_witnesses": probes,
+        "motion_floor_relief_bounds_case_mm": cutter,
+        "motion_floor_relief_removed_volume_mm3": volume(removed),
+        "minimum_wall_to_selected_exterior_after_allowances_mm": wall,
+        "existing_main_and_daughterboard_insert_guards_checked": checked_axes,
+        "bottom_covers_untouched_by_cut": ["J2", "J4"],
+        "minimum_wire_to_obstacle_gap_required_mm": target_gap,
+        "variants": results,
     }
 
 
-def screen():
+def screen(copper_export):
     paths = {
         "case": BASE / "service-case-m05/bottom-m05-REVIEW.step",
         "case_report": AUDIT / "service-case-m05.json",
@@ -147,10 +305,24 @@ def screen():
         "reuse": AUDIT / "m05-harness.json",
         "native": AUDIT / "harness-native.json",
         "print_report": AUDIT / "retention-prints.json",
+        "service": AUDIT / "service-motion.json",
+        "local_models": AUDIT / "local-models.json",
+        "daughterboard": ROOT / C5_REPORT,
+        "daughterboard_step": ROOT / C5_STEP,
     }
     rel = lambda path: path.relative_to(ROOT).as_posix()
-    assert read(paths["case_report"])["outputs"][rel(paths["case"])] == sha(paths["case"])
+    case_outputs = read(paths["case_report"])["outputs"]
+    for ref in ("J2", "J4"):
+        paths[f"cover-{ref}"] = CASE_DIR / f"cover-{ref}-REVIEW.step"
+    for part in ("case", "cover-J2", "cover-J4"):
+        assert case_outputs[rel(paths[part])] == sha(paths[part])
+    copper = read(copper_export)
+    assert read(paths["service"])["derived_copper_export_sha256"] == sha(copper_export)
+    copper_sources = {ROOT / name for name in copper["source_sha256"]}
+    assert all(sha(ROOT / name) == digest for name, digest in copper["source_sha256"].items())
     assembly, fit = read(paths["assembly"]), read(paths["fit"])
+    paths["top"] = ROOT / assembly["geometry"]["top"]
+    assert sha(paths["daughterboard_step"]) == read(paths["daughterboard"])["exported_step_sha256"]
     wires, spec = read(paths["wires"]), read(paths["guides"])
     limits, guides = spec["tolerance_contract"], spec["guides"]
     baseline = read(paths["baseline"])
@@ -242,20 +414,26 @@ def screen():
         })
         candidate = result
 
-    route = screen_usb_floor(case, candidate, exterior, wires, read(paths["native"]), assembly,
-                             trial_axis_z, shell_error, guard)
+    native = read(paths["native"])
+    route, seated, lowered_wire_spec = screen_usb_floor(case, candidate, exterior, wires, native, assembly,
+                                                        trial_axis_z, shell_error, guard)
     assert route["minimum_wall_to_selected_exterior_after_allowances_mm"] >= minimum_wall
+    motion = screen_usb_motion(case, candidate, seated, exterior,
+                               [row["trial_recess_bounds_case_mm"] for row in checks],
+                               lowered_wire_spec, native, assembly, shell_error, guard,
+                               copper["outline"], minimum_wall)
     dependencies = {
-        Path(__file__), *paths.values(),
+        Path(__file__), *paths.values(), *copper_sources,
         *(ROOT / "scripts" / name for name in (
             "build_e73_m05_harness.py", "build_e73_service_case.py", "cad_geometry.py",
-            "check_e73_corner_harness.py", "check_yeti60_assembly.py", "check_yeti60_interconnects.py",
+            "check_e73_corner_harness.py", "check_e73_service_leads.py", "check_yeti60_assembly.py",
+            "check_yeti60_interconnects.py", "export_e73_usb_ground.py",
             "e73_corner_harness_paths.py", "e73_fit_geometry.py", "e73_service_leads.py",
             "e73_service_route.py", "interconnect_geometry.py",
         )),
     }
     return {
-        "status": "USB-front-recess-local-witness-only",
+        "status": "USB-front-recess-seven-service-poses-checked",
         "selected_for_assembly": False,
         "physical_verification": False,
         "hypothetical_surface_point_error_L2_mm": TRIAL_SURFACE_ERROR_MM,
@@ -269,10 +447,12 @@ def screen():
         "minimum_screened_exterior_wall_mm": minimum_wall,
         "stations": checks,
         "seated_USB_nominal_trial": route,
+        "USB_service_motion_trial": motion,
+        "native_copper_export_sha256": sha(copper_export),
         "source_sha256": {rel(path): sha(path) for path in sorted(dependencies)},
         "limits": [
             "0.20 mm is a hypothetical L2 surface-error budget, not a qualified supplier surface limit.",
-            "In-memory geometry tests only local floor thickness, bare PCB gap and the seated cable-to-bottom gap. Component clearances, guide profiles and the full harness motion remain open.",
+            "Nine wire envelopes are checked at seven defined service poses across three PCB thicknesses. Guide profiles, contact and pull checks, intermediate poses and the lift with the altered route remain open.",
             "The chosen M05 files and wire lengths are untouched. No manufacturing data is generated by this study.",
         ],
     }
@@ -281,7 +461,11 @@ def screen():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    output = parser.parse_args().output
-    report = screen()
-    output.write_text(json.dumps(report, indent=2) + "\n")
+    args = parser.parse_args()
+    with tempfile.TemporaryDirectory(prefix="yeti60-recess-outline-") as folder:
+        export = Path(folder) / "copper.json"
+        subprocess.run([KICAD_PYTHON, str(ROOT / "scripts/export_e73_corner_geometry.py"),
+                        "--output", str(export)], check=True)
+        report = screen(export)
+    args.output.write_text(json.dumps(report, indent=2) + "\n")
     print(report["status"])
