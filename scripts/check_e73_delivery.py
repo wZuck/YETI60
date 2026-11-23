@@ -19,14 +19,14 @@ LEGACY_RETAINER_FILES = frozenset(
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
-def retainer_mesh(data):
+def retainer_mesh(data, weld_digits=6):
     """Read a single closed binary STL component in its supplied millimetre pose."""
     triangles, = struct.unpack_from('<I', data, 80)
     assert triangles > 0 and len(data) == 84 + 50 * triangles
     edges = defaultdict(list)
     vertices = set()
     for index, face in enumerate(struct.iter_unpack('<12fH', data[84:])):
-        points = [tuple(round(coord, 6) for coord in face[offset:offset + 3])
+        points = [tuple(round(coord, weld_digits) for coord in face[offset:offset + 3])
                   for offset in (3, 6, 9)]
         assert len(set(points)) == 3 and all(math.isfinite(coord) for point in points for coord in point)
         for start, end in zip(points, points[1:] + points[:1]):
@@ -297,6 +297,49 @@ def main():
        for variant in motion['variants'] for pose in poses for station in stations}
  assert all(row['pins_captured_after_groove_shrink'] == ['1','2','3','4']
             and row['maximum_wire_overlap_with_finished_guide_mm3'] < 1.e-6 for row in capture_rows)
+ relieved_dir = case_dir+'relieved-trial/'
+ relieved = json.loads((base/'06-validation/m05-relieved-bottom.json').read_text())
+ assert relieved['status'] == 'm05-relieved-trial-bottom-exported-and-verified'
+ assert all(relieved[key] is False for key in ('selected_for_assembly','manufacturing_released','physical_verification'))
+ assert relieved['source_reports_sha256'] == {name:sha(base/name) for name in (
+     '06-validation/m05-usb-retainer-recess.json','06-validation/m05-usb-retainer-coupon.json')}
+ relieved_files = {relieved_dir+name for name in (
+     'bottom-m05-relieved-REVIEW.step','bottom-m05-relieved-REVIEW.stl',
+     'wire-lengths-relieved.csv','wire-lengths-relieved.zh-CN.csv')}
+ assert set(relieved['files_sha256']) == relieved_files and relieved_files <= files and not relieved_files & required
+ assert all(sha(base/name) == digest for name,digest in relieved['files_sha256'].items())
+ mesh = relieved['mesh']
+ assert mesh['connected_closed_shells'] == 1 and mesh['weld_decimal_places'] == 5
+ assert retainer_mesh((base/(relieved_dir+'bottom-m05-relieved-REVIEW.stl')).read_bytes(),weld_digits=5) == (
+     mesh['triangles'],mesh['dimensions_xyz_mm'])
+ geometry = relieved['geometry']
+ assert geometry['identical_to_crop_in_coupon_reference'] and geometry['cover_interfaces_clear'] == ['J2','J4']
+ assert len(geometry['m05_holes_read_back']) == 12
+ assert {row['interface'] for row in geometry['m05_holes_read_back']} == {
+     'M3 lower passage','C5 insert','J2 cover insert','J4 cover insert'}
+ assert math.isclose(geometry['minimum_leftover_skin_after_allowances_mm'],
+                     motion['minimum_wall_to_selected_exterior_after_allowances_mm'],abs_tol=1e-5)
+ assert [row['PCB_thickness_mm'] for row in relieved['variants']] == [row['PCB_thickness_mm'] for row in motion['variants']]
+ for variant in relieved['variants']:
+  checks = variant['guide_checks']
+  assert [row['state'] for row in checks] == poses
+  assert all(row['channels_checked'] == 30 and min(row['foreign_route_gap_mm_at_least'],
+                 row['front_guide_to_foreign_wire_gap_mm']) >= required_gap for row in checks)
+ lengths = relieved['variants'][1]['seated_free_lengths_mm']
+ port_families = {'J4':'usb','J5':'power','J2':'battery'}
+ for language in ('.csv','.zh-CN.csv'):
+  with (base/(case_dir+'harness/wire-lengths-m05'+language)).open(newline='') as stream:
+   before_header,*before = list(csv.reader(stream))
+  with (base/(relieved_dir+'wire-lengths-relieved'+language)).open(newline='') as stream:
+   after_header,*after = list(csv.reader(stream))
+  assert before_header == after_header and len(before) == len(after) == len(lengths) == 9
+  for old,new in zip(before,after):
+   key = port_families[new[1]]+'.'+new[2]
+   value = (lengths['usb.2']+lengths['usb.3'])/2 if key in ('usb.2','usb.3') else lengths[key]
+   assert old[:6] == new[:6] and old[7] == new[7] and new[6] == f'{value:.3f}'
+   delta = round(float(new[6])-float(old[6]),3)
+   assert delta == relieved['seated_free_length_target_delta_from_m05_mm'][key]
+   assert key.startswith('usb.') or delta == 0
  assert all(path.startswith(case_dir+'harness/wire-lengths-m05') for path in prototype['harness_lengths'])
  pack_review=json.loads((base/'06-validation/pack-source-review.json').read_text())
  assert not pack_review['physical_verification'] and not pack_review['supplier_pack_accepted']

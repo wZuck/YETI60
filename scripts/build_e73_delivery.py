@@ -268,6 +268,14 @@ def main():
  inputs.update(coupon_report['source_sha256'])
  for path in [*coupon_report['files_sha256'],retainer_coupon]:
   mapping['delivery/YETI60-E73/'+path] = path
+ subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',
+                 str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/build_e73_relieved_bottom.py'),
+                 '--output',str(out)],check=True)
+ relieved_bottom = '06-validation/m05-relieved-bottom.json'
+ relieved_report = json.loads((out/relieved_bottom).read_text())
+ inputs.update(relieved_report['source_sha256'])
+ for path in [*relieved_report['files_sha256'],relieved_bottom]:
+  mapping['delivery/YETI60-E73/'+path] = path
  copy('hardware/e73-corner-harness-spec.json','02-mechanical/interconnect-spec.json')
  copy('hardware/e73-corner-j5-repair.json','06-validation/j5-repair.json')
  for p in sorted((ROOT/'docs/assembly/e73-corner').rglob('*')):

@@ -1,0 +1,457 @@
+{
+  "status": "m05-relieved-trial-bottom-exported-and-verified",
+  "selected_for_assembly": false,
+  "manufacturing_released": false,
+  "physical_verification": false,
+  "source_reports_sha256": {
+    "06-validation/m05-usb-retainer-recess.json": "fc728bdce2bdabc7d33aad31bb78cbcc5971159a3612fc4995d2d926cead88dc",
+    "06-validation/m05-usb-retainer-coupon.json": "53ea6ffcfb660d90418e016637ac3d09e586bec6d4d3f6485cfa0a2cc6ffa87b"
+  },
+  "geometry": {
+    "removed_volume_mm3": 716.236152,
+    "removed_bounds_case_mm": [
+      189.3,
+      -173.936848,
+      -6.96,
+      218.012702,
+      -130.10968,
+      -5.91
+    ],
+    "outer_case_bounds_mm": [
+      51.462701,
+      -206.309702,
+      -19.399594,
+      377.162713,
+      -91.109658,
+      11.79
+    ],
+    "m05_holes_read_back": [
+      {
+        "center_xy_mm": [
+          64.312702,
+          -101.209701
+        ],
+        "diameter_mm": 3.4,
+        "z_span_mm": [
+          2.59,
+          4.79
+        ],
+        "interface": "M3 lower passage"
+      },
+      {
+        "center_xy_mm": [
+          64.312715,
+          -191.209701
+        ],
+        "diameter_mm": 3.4,
+        "z_span_mm": [
+          2.59,
+          4.79
+        ],
+        "interface": "M3 lower passage"
+      },
+      {
+        "center_xy_mm": [
+          364.312715,
+          -191.209659
+        ],
+        "diameter_mm": 3.4,
+        "z_span_mm": [
+          2.59,
+          4.79
+        ],
+        "interface": "M3 lower passage"
+      },
+      {
+        "center_xy_mm": [
+          364.312702,
+          -101.209659
+        ],
+        "diameter_mm": 3.4,
+        "z_span_mm": [
+          2.59,
+          4.79
+        ],
+        "interface": "M3 lower passage"
+      },
+      {
+        "center_xy_mm": [
+          207.312702,
+          -105.3597
+        ],
+        "diameter_mm": 3.35,
+        "z_span_mm": [
+          -13.81,
+          -10.91
+        ],
+        "interface": "C5 insert"
+      },
+      {
+        "center_xy_mm": [
+          221.312702,
+          -105.3597
+        ],
+        "diameter_mm": 3.35,
+        "z_span_mm": [
+          -13.81,
+          -10.91
+        ],
+        "interface": "C5 insert"
+      },
+      {
+        "center_xy_mm": [
+          207.312702,
+          -117.8597
+        ],
+        "diameter_mm": 3.35,
+        "z_span_mm": [
+          -13.81,
+          -10.91
+        ],
+        "interface": "C5 insert"
+      },
+      {
+        "center_xy_mm": [
+          221.312702,
+          -117.8597
+        ],
+        "diameter_mm": 3.35,
+        "z_span_mm": [
+          -13.81,
+          -10.91
+        ],
+        "interface": "C5 insert"
+      },
+      {
+        "center_xy_mm": [
+          155.5,
+          -135.35
+        ],
+        "diameter_mm": 3.35,
+        "z_span_mm": [
+          -11.592689,
+          -8.487025
+        ],
+        "interface": "J2 cover insert"
+      },
+      {
+        "center_xy_mm": [
+          155.5,
+          -110.0
+        ],
+        "diameter_mm": 3.35,
+        "z_span_mm": [
+          -14.705277,
+          -11.599613
+        ],
+        "interface": "J2 cover insert"
+      },
+      {
+        "center_xy_mm": [
+          331.5,
+          -118.65
+        ],
+        "diameter_mm": 3.35,
+        "z_span_mm": [
+          -13.643188,
+          -10.537524
+        ],
+        "interface": "J4 cover insert"
+      },
+      {
+        "center_xy_mm": [
+          348.5,
+          -118.65
+        ],
+        "diameter_mm": 3.35,
+        "z_span_mm": [
+          -13.643187,
+          -10.537523
+        ],
+        "interface": "J4 cover insert"
+      }
+    ],
+    "cover_interfaces_clear": [
+      "J2",
+      "J4"
+    ],
+    "nominal_minimum_leftover_skin_mm": 4.086657,
+    "minimum_leftover_skin_after_allowances_mm": 3.565041,
+    "identical_to_crop_in_coupon_reference": true
+  },
+  "mesh": {
+    "part": "bottom-m05-relieved-REVIEW",
+    "triangles": 71912,
+    "removed_degenerate_facets": 8,
+    "mesh_volume_mm3": 301938.1041846881,
+    "STEP_volume_mm3": 301940.2930327512,
+    "two_faces_per_welded_edge": true,
+    "dimensions_xyz_mm": [
+      325.70002,
+      115.20005,
+      31.18959
+    ],
+    "connected_closed_shells": 1,
+    "weld_decimal_places": 5
+  },
+  "variants": [
+    {
+      "PCB_thickness_mm": 1.44,
+      "seated_free_lengths_mm": {
+        "usb.1": 277.568455647,
+        "usb.2": 285.245476942,
+        "usb.3": 285.244940223,
+        "usb.4": 291.705622588,
+        "power.1": 263.622148206,
+        "power.2": 262.479213676,
+        "battery.1": 113.538889359,
+        "battery.2": 110.336230396,
+        "battery.3": 107.255704052
+      },
+      "guide_checks": [
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "seated",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J2-halfway",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J2-axial-end",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J2-parked",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J4-halfway",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J4-axial-end",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "both-parked",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        }
+      ]
+    },
+    {
+      "PCB_thickness_mm": 1.6062,
+      "seated_free_lengths_mm": {
+        "usb.1": 277.470925041,
+        "usb.2": 285.142558276,
+        "usb.3": 285.142021557,
+        "usb.4": 291.608091983,
+        "power.1": 263.622148206,
+        "power.2": 262.479213676,
+        "battery.1": 113.511854744,
+        "battery.2": 110.309104909,
+        "battery.3": 107.228669436
+      },
+      "guide_checks": [
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "seated",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J2-halfway",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J2-axial-end",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J2-parked",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J4-halfway",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J4-axial-end",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "both-parked",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        }
+      ]
+    },
+    {
+      "PCB_thickness_mm": 1.76,
+      "seated_free_lengths_mm": {
+        "usb.1": 277.393873305,
+        "usb.2": 285.055640438,
+        "usb.3": 285.055103719,
+        "usb.4": 291.531040246,
+        "power.1": 263.622148206,
+        "power.2": 262.479213676,
+        "battery.1": 113.489810139,
+        "battery.2": 110.286985984,
+        "battery.3": 107.206624832
+      },
+      "guide_checks": [
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "seated",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J2-halfway",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J2-axial-end",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J2-parked",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J4-halfway",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "J4-axial-end",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        },
+        {
+          "channels_checked": 30,
+          "foreign_route_gap_mm_at_least": 0.16,
+          "state": "both-parked",
+          "front_guide_to_foreign_wire_gap_mm": 16.38739433,
+          "nearest_front_guide": "USB-F2-envelope",
+          "nearest_foreign_wire": "battery.3"
+        }
+      ]
+    }
+  ],
+  "seated_free_length_target_delta_from_m05_mm": {
+    "usb.1": -0.046,
+    "usb.2": -0.047,
+    "usb.3": -0.047,
+    "usb.4": -0.047,
+    "power.1": 0.0,
+    "power.2": 0.0,
+    "battery.1": 0.0,
+    "battery.2": 0.0,
+    "battery.3": 0.0
+  },
+  "files_sha256": {
+    "02-mechanical/service-case-m05/relieved-trial/bottom-m05-relieved-REVIEW.step": "4b495a09257c4fad870cc83cfe806e8b3dde489c7a056b407f474183e6bfbdf4",
+    "02-mechanical/service-case-m05/relieved-trial/bottom-m05-relieved-REVIEW.stl": "0ee9d344dd8341baa2a9c00e2c759a7662c881826d76e9b3082c851c5b96ab40",
+    "02-mechanical/service-case-m05/relieved-trial/wire-lengths-relieved.csv": "9d809709b2c00b5d3bc2e3c13024aa39abfecaaf5f3872054c667ded5cf69871",
+    "02-mechanical/service-case-m05/relieved-trial/wire-lengths-relieved.zh-CN.csv": "d6e1f2ba4f070ed7580121165189eb403993da5daeb129f5be5ba8023f94687a"
+  },
+  "source_sha256": {
+    "scripts/build_e73_relieved_bottom.py": "6a499f512783905b5c433d92549ba3724d06a4fda0a9e827d26486b5a87715b0",
+    "hardware/e73-hhkb-corner/audit/service-case-m05.json": "4bdfc9e112fdcf3829dcc5aeb9f36ddd32006e008c526ab66a134288673bc140",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step": "4f6a72e62dcf592945097c293bb3ca795cc395b6915328bb41256eb37c7cf007",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J2-REVIEW.step": "6abd35db97361ab6b492467a912eb9680be975e93964d44cccdfecbba6af45fb",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.step": "0b93cbec60c942be89abc7c58051409762b8f0eade6e2c43bb28355744445e71",
+    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
+    "hardware/e73-corner-harness-spec.json": "015f0904c0868a9563cf9e797a1e858f4b8eb31116829e525f27e6bcf57b930c",
+    "hardware/e73-corner-retention-spec.json": "45fbaa8132a87181daf1d9139ecb7b2ccb5db6e6dda8ea1d43db69d0c0c081b1",
+    "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
+    "hardware/e73-hhkb-corner/audit/harness-native.json": "99b5692eb2929f82c4e749c8c7fe3bb777cab7289ec502e1ca6193cc749c777a",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/wire-lengths-m05.csv": "26d85a4b0343b661a92db25efd9d5d54ab346b361257812ff49c8db2b819eb1d",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/wire-lengths-m05.zh-CN.csv": "a001686f00205ec7d72871f4c3bdbb023fe9ce600794917e5dd960398fdc5176",
+    "scripts/build_e73_service_case.py": "2b6680a864a24f5a7ddd2cb0f7c27b9dac8ec7de0056b9a15cb9af73ae221b38",
+    "scripts/build_e73_retainer_coupon.py": "85a352279205d5fa871fb50e10b0e2f01409c3f936b1aff67c9181b34be8d9b3",
+    "scripts/check_e73_print_fit.py": "2624dcea7126b14c172895c7b6fc3c34d44ae4e95d5077f219bd25ecdf9d4987",
+    "scripts/check_e73_retainer_recess.py": "3ecfe8844f72245880abeb1b2e12fc02d0cdbf68179f2e20e3d6f728aa672eee",
+    "scripts/check_e73_service_leads.py": "6cd4a3a7971da2e073648ba9da217cc091ffd94e04a8eb870a21c38868f81021",
+    "scripts/check_e73_delivery.py": "fb41dc7cdaa2ee70603975d53a381bafae54f771d947b6f3586352a66313be51"
+  },
+  "limits": [
+    "A matched engineering trial. Existing cover, screw, pack and guide process acceptance still applies.",
+    "The model checks the retained 12 rigid guides and associated films in prescribed poses.",
+    "Physical assembly, finished resins, cable motion between poses and the pack, BLE and USB first article remain open."
+  ]
+}
