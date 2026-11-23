@@ -254,6 +254,12 @@ def main():
  copy('hardware/e73-corner-retention-spec.json','02-mechanical/retention-spec.json')
  process = retainer_process_screen(out, retainers)
  (out/RETAINER_SCREEN).write_text(json.dumps(process, indent=2)+'\n')
+ recess_report = '06-validation/m05-usb-retainer-recess.json'
+ subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',
+                 str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/check_e73_retainer_recess.py'),
+                 '--output',str(out/recess_report)],check=True)
+ inputs.update(json.loads((out/recess_report).read_text())['source_sha256'])
+ mapping['delivery/YETI60-E73/'+recess_report] = recess_report
  copy('hardware/e73-corner-harness-spec.json','02-mechanical/interconnect-spec.json')
  copy('hardware/e73-corner-j5-repair.json','06-validation/j5-repair.json')
  for p in sorted((ROOT/'docs/assembly/e73-corner').rglob('*')):

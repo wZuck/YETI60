@@ -203,6 +203,22 @@ def main():
  case_dir='02-mechanical/service-case-m05/'
  for name in ('BAT-R1','BAT-R2'):assert prototype['retainer_STL'][name]==case_dir+'harness/'+name+'-M05.stl'
  for name in ('bottom-m05','cover-J2','cover-J4'):assert case_dir+name+'-REVIEW.stl' in prototype['shell_STL']
+ recess = json.loads((base/'06-validation/m05-usb-retainer-recess.json').read_text())
+ assert recess['status'] == 'USB-front-recess-local-witness-only'
+ assert recess['selected_for_assembly'] is False and recess['physical_verification'] is False
+ case_source = 'hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step'
+ assert recess['source_sha256'][case_source] == sha(base/(case_dir+'bottom-m05-REVIEW.step'))
+ assert [row['station'] for row in recess['stations']] == ['USB-F1','USB-F2']
+ assert all(row['larger_section_fixed_axis_floor_deficit_mm'] > 0 for row in recess['stations'])
+ assert all(row['larger_section_fixed_axis_PCB_gap_after_allowances_mm'] < 0 for row in recess['stations'])
+ route = recess['seated_USB_nominal_trial']
+ assert all(route['wire_collision_volume_after_station_recesses_mm3'][pin] > 0 for pin in ('2','3'))
+ assert route['worst_wire_to_bottom_gap_after_allowances_mm'] >= route['minimum_wire_to_bottom_gap_required_mm']
+ assert route['minimum_wall_to_selected_exterior_after_allowances_mm'] >= recess['minimum_screened_exterior_wall_mm']
+ endpoints = route['PCB_thickness_endpoint_gaps_after_allowances']
+ assert [row['PCB_thickness_mm'] for row in endpoints] == recess['PCB_finished_thickness_range_mm']
+ assert all(min(row['wire_to_bottom_gaps_mm'].values()) >= route['minimum_wire_to_bottom_gap_required_mm']
+            for row in endpoints)
  assert all(path.startswith(case_dir+'harness/wire-lengths-m05') for path in prototype['harness_lengths'])
  pack_review=json.loads((base/'06-validation/pack-source-review.json').read_text())
  assert not pack_review['physical_verification'] and not pack_review['supplier_pack_accepted']

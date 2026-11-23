@@ -1,0 +1,150 @@
+{
+  "status": "USB-front-recess-local-witness-only",
+  "selected_for_assembly": false,
+  "physical_verification": false,
+  "hypothetical_surface_point_error_L2_mm": 0.2,
+  "minimum_single_wire_groove_radius_mm": 0.625,
+  "trial_usb_pair_groove_radius_mm": 1.1600000000000001,
+  "minimum_nominal_web_mm": 0.7,
+  "minimum_axis_drop_to_clear_bare_PCB_mm": 0.5756076211353309,
+  "trial_axis_drop_mm": 0.6,
+  "PCB_finished_thickness_range_mm": [
+    1.44,
+    1.76
+  ],
+  "minimum_target_bare_PCB_gap_mm": 0.15,
+  "minimum_screened_exterior_wall_mm": 2.0,
+  "stations": [
+    {
+      "station": "USB-F1",
+      "center_case_xy_mm": [
+        193.0,
+        -140.0
+      ],
+      "original_floor_z_mm": -5.9100000000000055,
+      "original_roof_Z_mm": -2.99,
+      "original_PCB_nominal_gap_at_max_thickness_mm": 0.836200000000002,
+      "larger_section_fixed_axis_floor_deficit_mm": 0.44999999999999485,
+      "larger_section_fixed_axis_PCB_gap_after_allowances_mm": -0.425607621135331,
+      "trial_floor_Z_mm": -6.96,
+      "trial_recess_depth_mm": 1.0499999999999945,
+      "trial_recess_bounds_case_mm": [
+        189.875,
+        -141.3,
+        -6.96,
+        196.125,
+        -138.7,
+        0
+      ],
+      "trial_removed_volume_mm3": 17.062500000000057,
+      "trial_min_wall_to_selected_exterior_after_allowances_mm": 7.117472227971325,
+      "trial_bare_PCB_gap_after_allowances_mm": 0.17439237886466863
+    },
+    {
+      "station": "USB-F2",
+      "center_case_xy_mm": [
+        214.312702,
+        -153.0
+      ],
+      "original_floor_z_mm": -5.909999999999998,
+      "original_roof_Z_mm": -2.99,
+      "original_PCB_nominal_gap_at_max_thickness_mm": 0.836200000000002,
+      "larger_section_fixed_axis_floor_deficit_mm": 0.45000000000000195,
+      "larger_section_fixed_axis_PCB_gap_after_allowances_mm": -0.425607621135331,
+      "trial_floor_Z_mm": -6.96,
+      "trial_recess_depth_mm": 1.0500000000000016,
+      "trial_recess_bounds_case_mm": [
+        211.187702,
+        -154.3,
+        -6.96,
+        217.437702,
+        -151.7,
+        0
+      ],
+      "trial_removed_volume_mm3": 17.062500000000163,
+      "trial_min_wall_to_selected_exterior_after_allowances_mm": 5.533170394033279,
+      "trial_bare_PCB_gap_after_allowances_mm": 0.17439237886466863
+    }
+  ],
+  "seated_USB_nominal_trial": {
+    "nominal_PCB_thickness_mm": 1.6062,
+    "wire_collision_volume_after_station_recesses_mm3": {
+      "1": 0.0,
+      "2": 2.6678571070928077,
+      "3": 2.6678571070928077,
+      "4": 0.0
+    },
+    "continuous_floor_relief_bounds_case_mm": [
+      191.06315182984252,
+      -171.9368481701489,
+      -6.531807621135331,
+      216.24955027015824,
+      -130.0796827587427,
+      0
+    ],
+    "continuous_floor_relief_removed_volume_mm3": 638.6922314799501,
+    "worst_wire_to_bottom_gap_after_allowances_mm": 0.15819237886466836,
+    "wire_to_bottom_gaps_after_allowances_mm": {
+      "1": 0.34319237886466797,
+      "2": 0.15819237886466836,
+      "3": 0.15819237886466836,
+      "4": 0.1726161371358983
+    },
+    "PCB_thickness_endpoint_gaps_after_allowances": [
+      {
+        "PCB_thickness_mm": 1.44,
+        "wire_to_bottom_gaps_mm": {
+          "1": 0.34319237886466797,
+          "2": 0.15819237886466925,
+          "3": 0.15819237886466925,
+          "4": 0.1726161371358983
+        }
+      },
+      {
+        "PCB_thickness_mm": 1.76,
+        "wire_to_bottom_gaps_mm": {
+          "1": 0.34319237886466797,
+          "2": 0.15819237886466925,
+          "3": 0.15819237886466925,
+          "4": 0.1726161371358983
+        }
+      }
+    ],
+    "minimum_wall_to_selected_exterior_after_allowances_mm": 3.808780006215809,
+    "minimum_wire_to_bottom_gap_required_mm": 0.15,
+    "USB_pair_geometric_skew_mm": 0.0005367186006992597
+  },
+  "source_sha256": {
+    "hardware/e73-corner-harness-spec.json": "015f0904c0868a9563cf9e797a1e858f4b8eb31116829e525f27e6bcf57b930c",
+    "hardware/e73-corner-retention-spec.json": "45fbaa8132a87181daf1d9139ecb7b2ccb5db6e6dda8ea1d43db69d0c0c081b1",
+    "hardware/e73-hhkb-corner/audit/harness-native.json": "99b5692eb2929f82c4e749c8c7fe3bb777cab7289ec502e1ca6193cc749c777a",
+    "hardware/e73-hhkb-corner/audit/m05-harness.json": "076e45f9da7e8e68318972a693443be077c879167ed603d79b47729e5809ce14",
+    "hardware/e73-hhkb-corner/audit/retention-prints.json": "f3f8e3201518f92c813ff2f0cb7473b6525c95e595a041101b6f16754f73dd2a",
+    "hardware/e73-hhkb-corner/audit/retention-study.json": "a35cf7d8c2ee3daa95d65e89aa8ab439c12659cd0039b6b2ace6d22bfeb32c34",
+    "hardware/e73-hhkb-corner/audit/service-case-m05.json": "4bdfc9e112fdcf3829dcc5aeb9f36ddd32006e008c526ab66a134288673bc140",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-base.step": "33bb209e74ab8bd0ef6a3ef6fd20b419a1b487e7f53483a64162902bb9f329cc",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F1-lid.step": "050b07126775d08413d3ba7a803bbc6d760a8c67880ad24f705dd6c0f6fa2094",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-base.step": "22b831e2b8e4c530620d3cd8fd44b543e9a8fac8574833ac6fb28a9c89fa5428",
+    "hardware/e73-hhkb-corner/mechanical/retention/assembly-reference/USB-F2-lid.step": "93c06b3e549505c1535649512b490280da27827ddbd8a60f4f377fd7825e3f8c",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step": "4f6a72e62dcf592945097c293bb3ca795cc395b6915328bb41256eb37c7cf007",
+    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
+    "mechanical/e73-fit-spec.json": "10a3810181938c59512117b1f137a75ff824b4f14d0634e2aa9d6caec29451a8",
+    "scripts/build_e73_m05_harness.py": "9388c6f090f55d95c9c03c636c5100f76c5a864cfe40e49fce390c63da03682b",
+    "scripts/build_e73_service_case.py": "2b6680a864a24f5a7ddd2cb0f7c27b9dac8ec7de0056b9a15cb9af73ae221b38",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_e73_corner_harness.py": "f2692a9d6944b3373fa48c9b771dd06cb4425b892b775b9fd9dc69fb9c26ff1e",
+    "scripts/check_e73_retainer_recess.py": "11d5507dcd7744c8eff171690b182b69dd745e20e12596db4f1cc6e1a961a97c",
+    "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
+    "scripts/check_yeti60_interconnects.py": "9365de90575ef18e053954a4bdf1ec26d6188d3b1df9fc860cb92f7e1b356c3e",
+    "scripts/e73_corner_harness_paths.py": "d8d9e29d0d3654526705790a46d43d37531a6a975e12cd6f4ff70c30dbf5c464",
+    "scripts/e73_fit_geometry.py": "ca10466e3df2cad126ebcae704b0452e6556d71bdadb97f8bf2563ea4e10716f",
+    "scripts/e73_service_leads.py": "4ce7fbde3e959b7b89c1b2d7408820da6e961bfc3fb36b9f8d56fa714af83ec5",
+    "scripts/e73_service_route.py": "be7e91db87e5a4d2e21f4697004adbae898d28bbb48a35341c689d52cbe4653b",
+    "scripts/interconnect_geometry.py": "a3ea2cd5cbe15cfa5aebaf89d961e3387e9c183e147564f27fa4d5aa9477c5c2"
+  },
+  "limits": [
+    "0.20 mm is a hypothetical L2 surface-error budget, not a qualified supplier surface limit.",
+    "In-memory geometry tests only local floor thickness, bare PCB gap and the seated cable-to-bottom gap. Component clearances, guide profiles and the full harness motion remain open.",
+    "The chosen M05 files and wire lengths are untouched. No manufacturing data is generated by this study."
+  ]
+}

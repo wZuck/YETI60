@@ -34,6 +34,12 @@ Film pieces: three USB rear straps, four USB front side patches, two battery str
 - Fit bonding lands to the **actual post-cured case** and inspect the nominal **0.10 mm bondline** and remaining webs. Two independently printed, unfinished surfaces are not assumed to fit that gap automatically. Do not force a guide against a wall or compress the battery to make it fit.
 - Print orientation is not installation orientation. Restore the part to its assembly STEP pose using the indexed drawing/datums. Do not mirror parts or transfer the slicer's arrangement coordinates into the keyboard.
 
+## USB front clearance study
+
+Applying a hypothetical **0.20 mm** surface-point error to the current guide design calls for a **0.625 mm** single-wire groove radius and a **0.70 mm** nominal web to retain the specified **0.30 mm** finished web. Enlarging the pair groove and thickening the USB front guides at their current axis consumes the floor and PCB clearances. The 0.20 mm value is an engineering trial budget for these surfaces. The public SLA size tolerance does not establish that budget on these features. [JLC3DP dimensional guidance](https://jlc3dp.com/help/article/3d-printing-design-guideline)
+
+The in-memory trial lowered the USB front wire axis by **0.60 mm** and recessed each guide seat by **1.05 mm**. These two recesses leave **0.174 mm** clearance to the bare PCB after allowances at **1.76 mm** board thickness. A continuous floor relief of about **0.62 mm** between and beyond the seats is also needed for the lowered seated wires. At nominal board thickness and the 1.44 and 1.76 mm endpoints, the combined seated trial gives **0.158 mm** minimum wire-to-bottom clearance after allowances and leaves at least **3.81 mm** to the checked exterior faces. The trial covers the seated lower-shell condition. Component clearances, the actual larger guide profile, the remaining retainers and service motion still need verification. Use the supplied M05 shell for the current build. [Source-bound CAD report](../06-validation/m05-usb-retainer-recess.json)
+
 ## Film material and cutting
 
 Candidate: **3M 5413 polyimide film tape**. Its manufacturer lists **0.069 mm typical total thickness**. The project requires **≤0.075 mm including adhesive on the actual received lot**; the typical value is not a guaranteed maximum or an adhesive qualification on the selected resin. [3M technical data](https://multimedia.3m.com/mws/media/136011O/3m-polyimide-film-tape-5413-tds.pdf)
