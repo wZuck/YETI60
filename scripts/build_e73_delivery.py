@@ -164,6 +164,13 @@ def main():
                  '--output',str(out)],check=True)
  antenna_trial=json.loads((out/'06-validation/antenna-window-trial.json').read_text())
  inputs.update(antenna_trial['source_sha256'])
+ subprocess.run(['uv','run','--offline','--python','3.14.7','--with-requirements',
+                 str(ROOT/'requirements-audit.txt'),'python',str(ROOT/'scripts/build_e73_pack_gauge.py'),
+                 '--output',str(out)],check=True)
+ gauge=json.loads((out/'06-validation/m05-pack-gauge.json').read_text())
+ inputs.update(gauge['source_sha256'])
+ for path in [*gauge['files_sha256'],'06-validation/m05-pack-gauge.json']:
+  mapping['delivery/YETI60-E73/'+path]=path
  for p in sorted((BASE/'firmware').rglob('*')):
   if p.is_file():copy(str(p.relative_to(ROOT)),'05-firmware/'+str(p.relative_to(BASE/'firmware')))
  copy('firmware/target/calibration-keys.csv','05-firmware/calibration-bindings.csv')
@@ -218,6 +225,7 @@ def main():
  for p in sorted((BASE/'audit').glob('*')):
   if p.suffix in ['.json','.png','.svg']:copy(str(p.relative_to(ROOT)),'06-validation/'+p.name)
  inputs['scripts/check_e73_cam.py']=sha(ROOT/'scripts/check_e73_cam.py')
+ inputs['scripts/check_e73_copper_lands.py']=sha(ROOT/'scripts/check_e73_copper_lands.py')
  inputs['scripts/check_e73_apertures.py']=sha(ROOT/'scripts/check_e73_apertures.py')
  for generated in ['01-pcb/YETI60-E73-gerbers-REVIEW.zip','01-pcb/YETI60-E73-stencils-REVIEW.zip',
                    '01-pcb/gerbers/EC60-nRF52840.d356',

@@ -12,6 +12,8 @@ from zipfile import ZipFile
 
 import pcbnew as pcb
 
+from check_e73_copper_lands import check_copper_lands
+
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "hardware/e73-hhkb-corner"
 STEM = "EC60-nRF52840"
@@ -36,6 +38,8 @@ LAYERS = {
 COPPER = (pcb.F_Cu, pcb.In1_Cu, pcb.In2_Cu, pcb.B_Cu)
 DRILL_POINT = r"X(-?\d+(?:\.\d+)?)Y(-?\d+(?:\.\d+)?)"
 GERBER_POINT = r"X(-?\d+)Y(-?\d+)"
+GERBER_COORDINATE = re.compile(GERBER_POINT + r"(?:I(-?\d+)J(-?\d+))?D(0[123])\*")
+ARC_ENDPOINT_TOLERANCE_NM = 100
 # Excellon uses three decimal places. Retain both nearest positions on exact ties.
 DRILL_ROUNDING_NM = 500
 # The KiCad IPC header selects CUST 0, with coordinates in 0.0001 inches.
@@ -195,25 +199,97 @@ def match_drills(actual, expected):
     assert not unmatched, ("Missing drills", [expected[index] for index in sorted(unmatched)])
 
 
-def via_flashes(data):
+def copper_routing(data, board, layer, vias):
+    """Match X2 conductor strokes and via lands, including their net attributes."""
     apertures = {}
-    via_aperture = False
-    active = None
-    result = Counter()
+    aperture_role = active = net = previous = None
+    interpolation = "01"
+    inside_region = False
+    flashes, lines = Counter(), Counter()
+    arcs = []
     for line in data.splitlines():
         if line.startswith("%TA.AperFunction,"):
-            via_aperture = line == "%TA.AperFunction,ViaPad*%"
+            aperture_role = line.removeprefix("%TA.AperFunction,").removesuffix("*%")
         elif line == "%TD*%":
-            via_aperture = False
-        elif line.startswith("%ADD") and via_aperture:
+            aperture_role = net = None
+        elif line == "%TD.AperFunction*%":
+            aperture_role = None
+        elif line.startswith("%TO.N,"):
+            net = line.removeprefix("%TO.N,").removesuffix("*%")
+        elif line.startswith("%ADD") and aperture_role in {"ViaPad", "Conductor"}:
             definition = re.fullmatch(r"%ADD(\d+)C,(\d+\.\d+)\*%", line)
-            assert definition, ("Noncircular via land", line)
-            apertures[definition[1]] = round(float(definition[2]) * 1e6)
+            assert definition, ("Noncircular track or via aperture", line)
+            apertures[definition[1]] = (aperture_role, round(float(definition[2]) * 1e6))
         elif selection := re.fullmatch(r"D(\d+)\*", line):
             active = apertures.get(selection[1])
-        elif active and (flash := re.fullmatch(GERBER_POINT + r"D03\*", line)):
-            result[(int(flash[1]), int(flash[2])), active] += 1
-    return result
+        elif line in {"G01*", "G02*", "G03*"}:
+            interpolation = line[1:3]
+        elif line in {"G36*", "G37*"}:
+            assert inside_region != (line == "G36*")
+            inside_region = line == "G36*"
+        elif line.startswith("%LP"):
+            assert line == "%LPD*%", "Copper routing readback requires dark artwork"
+        elif line.startswith("X"):
+            hit = GERBER_COORDINATE.fullmatch(line)
+            assert hit, ("Unexpected Gerber coordinate", line)
+            point = (int(hit[1]), int(hit[2]))
+            if active and not inside_region and hit[5] != "02":
+                role, width = active
+                assert net is not None, ("Copper routing has no net attribute", line)
+                if role == "ViaPad":
+                    assert hit[5] == "03" and hit[3] is None, ("Unexpected via command", line)
+                    flashes[point, width, net] += 1
+                else:
+                    assert hit[5] == "01" and previous is not None
+                    if interpolation == "01":
+                        assert hit[3] is None
+                        lines[(net, width, *sorted((previous, point)))] += 1
+                    else:
+                        assert hit[3] is not None
+                        center = (previous[0] + int(hit[3]), previous[1] + int(hit[4]))
+                        start, end = (point, previous) if interpolation == "02" else (previous, point)
+                        arcs.append((net, width, start, end, center))
+            previous = point
+    assert not inside_region
+
+    expected_flashes = Counter((plot_point(v.GetPosition()), v.GetWidth(layer), v.GetNetname())
+                               for v in vias)
+    assert flashes == expected_flashes, "Gerber via land or net mismatch"
+    expected_lines = Counter()
+    arc_groups = defaultdict(list)
+    for track in board.GetTracks():
+        if track.GetLayer() != layer or isinstance(track, pcb.PCB_VIA):
+            continue
+        endpoints = sorted((plot_point(track.GetStart()), plot_point(track.GetEnd())))
+        key = (track.GetNetname(), track.GetWidth())
+        if isinstance(track, pcb.PCB_ARC):
+            arc_groups[key].append((endpoints, plot_point(track.GetCenter()), plot_point(track.GetMid())))
+        else:
+            expected_lines[(*key, *endpoints)] += 1
+    assert lines == expected_lines, f"Gerber straight trace mismatch on {board.GetLayerName(layer)}"
+    worst_endpoint = 0.0
+    for net, width, start, end, center in arcs:
+        group = arc_groups[net, width]
+        candidates = []
+        for arc in group:
+            endpoints, native_center, _ = arc
+            error = max(math.dist(gerber, native) for gerber, native in zip(sorted((start, end)), endpoints))
+            if native_center == center and error <= ARC_ENDPOINT_TOLERANCE_NM:
+                candidates.append((arc, error))
+        assert len(candidates) == 1, ("Gerber arc geometry mismatch", net, start, end)
+        arc, error = candidates[0]
+        mid = arc[2]
+        sa, ea, ma = [math.atan2(y - center[1], x - center[0]) for x, y in (start, end, mid)]
+        assert 0 < (ma - sa) % math.tau < (ea - sa) % math.tau, ("Gerber arc sweep mismatch", net)
+        group.remove(arc)
+        worst_endpoint = max(worst_endpoint, error)
+    assert not any(arc_groups.values()), f"Missing Gerber arcs on {board.GetLayerName(layer)}"
+    return {
+        "straight_traces": sum(lines.values()),
+        "arc_traces": len(arcs),
+        "via_lands": sum(flashes.values()),
+        "maximum_arc_endpoint_delta_mm": round(worst_endpoint / 1e6, 9),
+    }
 
 
 def profile_geometry(data, board):
@@ -345,9 +421,10 @@ def check(archive):
     assert [outline["width_mm"], outline["height_mm"]] == [285.0, 94.6]
     for plating in drill:
         match_drills(drill[plating], expected[plating])
-    for suffix, layer in zip(LAYERS, COPPER):
-        expected_flashes = Counter((plot_point(v.GetPosition()), v.GetWidth(layer)) for v in vias)
-        assert via_flashes(files[suffix]) == expected_flashes, ("Gerber via land mismatch", suffix)
+    copper_files = {layer: files[suffix] for suffix, layer in zip(LAYERS, COPPER)}
+    routing = {board.GetLayerName(layer): copper_routing(artwork, board, layer, vias)
+               for layer, artwork in copper_files.items()}
+    lands = check_copper_lands(board, copper_files)
     via_hits = [(diameter, points[0]) for kind, diameter, points in drill["PTH"] if kind == "ViaDrill"]
     spacing = min(math.dist(a, b) - (d + e) / 2 for (d, a), (e, b) in combinations(via_hits, 2)) / 1e6
     assert spacing >= .2
@@ -371,9 +448,13 @@ def check(archive):
     assert gap > drill_budget
     return {
         "status": "cam-geometry-matches-native-pcb",
-        "source_sha256": {str(p.relative_to(ROOT)): sha(p) for p in (BOARD, PROFILE, POWER, Path(__file__))},
+        "source_sha256": {str(p.relative_to(ROOT)): sha(p)
+                          for p in (BOARD, PROFILE, POWER, Path(__file__),
+                                    ROOT / "scripts/check_e73_copper_lands.py")},
         "archive_sha256": sha(archive),
         "electrical_test_netlist": ipc,
+        "copper_routing": routing,
+        "copper_lands": lands,
         "ordinary_process_profile": profile["profile"],
         "layer_roles": LAYERS,
         "stackup": profile["stackup"],

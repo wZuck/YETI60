@@ -4,7 +4,8 @@
     "hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb": "b648911a5f099118ff034f7e53112beef2d1d6a609550604f88e4c478d20b08e",
     "mechanical/pcb-fabrication-spec.json": "3275b155538b27e78c24cbb83a3d41bb787bbfdadb6c6ef0282db8295d2d3fed",
     "hardware/e73-hhkb-corner/audit/power-process.json": "a60aedcc5599d31f4b5d087e8f5dd74440f34045baee7be1b5e7950ed1807205",
-    "scripts/check_e73_cam.py": "1b62b99a126048a696775b57c824481cc3b2f95a93fce6ace19bf400768f2622"
+    "scripts/check_e73_cam.py": "5605e3aff9e4a804d17ef7bc985149b9d73f0b36de81db1939ae82ba933ed734",
+    "scripts/check_e73_copper_lands.py": "e899f540f6bbcdd20a943dcba999bd39fb0d6bfd457234440c9491cb6c6cae75"
   },
   "archive_sha256": "356c74a70a3283309eb8dab1f3c521a77512df10d4fd78241105b2278b5ae376",
   "electrical_test_netlist": {
@@ -22,6 +23,42 @@
     "coordinate_unit_mm": 0.00254,
     "maximum_coordinate_axis_error_mm": 0.001261,
     "physical_verification": false
+  },
+  "copper_routing": {
+    "F.Cu": {
+      "straight_traces": 1041,
+      "arc_traces": 11,
+      "via_lands": 852,
+      "maximum_arc_endpoint_delta_mm": 5.8e-05
+    },
+    "In1.Cu": {
+      "straight_traces": 958,
+      "arc_traces": 94,
+      "via_lands": 852,
+      "maximum_arc_endpoint_delta_mm": 8.5e-05
+    },
+    "In2.Cu": {
+      "straight_traces": 790,
+      "arc_traces": 139,
+      "via_lands": 852,
+      "maximum_arc_endpoint_delta_mm": 7.7e-05
+    },
+    "B.Cu": {
+      "straight_traces": 1583,
+      "arc_traces": 106,
+      "via_lands": 852,
+      "maximum_arc_endpoint_delta_mm": 8.3e-05
+    }
+  },
+  "copper_lands": {
+    "comparison": "X2 flashed lands matched by copper layer, reference, pin where exported, net and origin",
+    "land_flashes_checked_by_layer": {
+      "F.Cu": 266,
+      "In1.Cu": 3,
+      "In2.Cu": 3,
+      "B.Cu": 312
+    },
+    "land_flashes_checked": 584
   },
   "ordinary_process_profile": "JLC-ordinary-4L-7628",
   "layer_roles": {

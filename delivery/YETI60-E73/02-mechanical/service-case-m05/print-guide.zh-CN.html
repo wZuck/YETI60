@@ -33,6 +33,11 @@
 <td><a href="cover-J4-REVIEW.stl">打印 STL</a> · <a href="cover-J4-REVIEW.step">STEP</a></td>
 </tr>
 <tr>
+<td>电池试装量块</td>
+<td style="text-align:right">干试装用 1 个</td>
+<td><a href="pack-gauge/M05-inert-pack-gauge.stl">打印 STL</a> · <a href="pack-gauge/M05-inert-pack-gauge.step">STEP</a></td>
+</tr>
+<tr>
 <td>封盖螺钉</td>
 <td style="text-align:right">4</td>
 <td>M2 × 0.4，头下长度 4 mm，带平底承压面的低头内六角。头部直径 ≤3.90 mm，高度 ≤1.50 mm。SUNCO M2 低头系列的标称头部尺寸为 Ø3.8 × 1.3 mm。<a href="https://th.misumi-ec.com/en/vona2/detail/221005676582/?Tab=codeList">厂商尺寸表</a></td>
@@ -60,6 +65,10 @@
 </tbody>
 </table>
 <p>使用韧性工程 SLA 树脂，按毫米、100% 比例打印四件外壳零件，每种各一件。每件从 STEP 和 STL 中选一个文件，两种格式使用同一壳体坐标。树脂完全后固化后复查承压面、脚垫槽和盲孔。避免在这些面上留打印支撑。</p>
+<h2 id="电池试装量块">电池试装量块</h2>
+<p>用绝缘塑料或树脂按毫米、100% 比例打印，标记 <strong>仅作机械试装</strong>，全过程断开电源。完全后固化或冷却后，按整包标称上限 <strong>85.00 × 43.00 × 4.80 mm</strong> 复核量块尺寸。量块偏小无法验证最大包络。顶面线槽和底面承压面不得留有支撑残渣。STEP 和 STL 均采用量块局部坐标。</p>
+<p>线槽面向上，出线端朝外壳 −X 方向。量块最小坐标角按壳体坐标 <strong>(228.5, −149.0, −9.40) mm</strong> 定位。三处检查支点的壳底建模高度为 <strong>Z = −9.60 mm</strong>，采用实测厚度的绝缘垫片支撑，标称 <strong>0.20 mm</strong>。装入实际外壳后，按电池槽和坐合线束复核位置。<a href="../../06-validation/m05-pack-gauge.json">量块几何与定位报告</a></p>
+<p>带线试装另备一只 SHR-03V-S 胶壳、三只 SSH-003T-P0.2-H 端子和三根同规格 AWG28 导线，绝缘外径不超过 0.65 mm。用绝缘胶将线尾固定在顶面的三个线槽内，固化后的胶留在槽内。出线点在量块局部坐标 <strong>X = 0、Z = 4.50 mm</strong>，对应 J2 的 1、2、3 号针，<strong>Y 分别为 16、14、12 mm</strong>。固化前核对线心，出线面以外的导线保持自由。按 <a href="harness/wire-lengths-m05.zh-CN.csv">M05 自由长度表</a>从量块出线面量到胶壳出口。该线束只用于验证走线、停放和拆卸，与电芯和外部电源隔离。</p>
 <h2 id="树脂打印公差与到货检查">树脂打印公差与到货检查</h2>
 <p>嘉立创公布的常规 SLA 尺寸公差为 <strong>100 mm 以内 ±0.20 mm</strong>、<strong>超过 100 mm 为 ±0.30%</strong>，孔径公差为 <strong>±0.30 mm</strong>。尺寸值以无变形、无翘曲且未喷涂为前提。<strong>325.70 mm</strong> 长的外壳按该规则约为 <strong>±0.98 mm</strong>。本项目的功能表面要求各轴 <strong>±0.15 mm</strong>。报价时和工厂确认哪些关键位置可在后固化后量测，按成品复核。<a href="https://jlc3dp.com/help/article/3d-printing-design-guideline">嘉立创打印设计指南第 10 节</a> · <a href="../../06-validation/m05-print-fit.json">四件 STEP 回读报告</a></p>
 <p>询价时注明四件按毫米、1:1 打印，避免在合壳台阶、USB 开口、检修盖承压面和螺钉／嵌件孔内布置支撑。功能面避免喷涂和重度打磨。确认后固化之后能否精加工嵌件孔。若采用预留小孔后加工，应在制件前确认小孔尺寸和工序。交付的 STEP 使用成品标称孔径。</p>

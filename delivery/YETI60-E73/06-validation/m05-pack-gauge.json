@@ -1,0 +1,136 @@
+{
+  "status": "cad-only-m05-inert-pack-gauge",
+  "physical_verification": false,
+  "pack_envelope_mm": [
+    85.0,
+    43.0,
+    4.8
+  ],
+  "case_origin_of_gauge_mm": [
+    228.5,
+    -149.0,
+    -9.4
+  ],
+  "body_clearance_to_nominal_case_parts_mm": {
+    "bottom-m05-REVIEW.step": 0.2,
+    "cover-J2-REVIEW.step": 67.47049,
+    "cover-J4-REVIEW.step": 3.607778
+  },
+  "nominal_support_points": [
+    {
+      "xy_case_mm": [
+        237.0,
+        -140.4
+      ],
+      "floor_z_mm": -9.6,
+      "nominal_support_thickness_mm": 0.2
+    },
+    {
+      "xy_case_mm": [
+        305.0,
+        -140.4
+      ],
+      "floor_z_mm": -9.6,
+      "nominal_support_thickness_mm": 0.2
+    },
+    {
+      "xy_case_mm": [
+        271.0,
+        -114.6
+      ],
+      "floor_z_mm": -9.6,
+      "nominal_support_thickness_mm": 0.2
+    }
+  ],
+  "lead_exits": [
+    {
+      "J2_pin": "1",
+      "lead": "PACK+",
+      "exit_local_mm": [
+        0,
+        16,
+        4.5
+      ],
+      "exit_case_mm": [
+        228.5,
+        -133.0,
+        -4.9
+      ],
+      "free_length_mm": 113.512
+    },
+    {
+      "J2_pin": "2",
+      "lead": "PACK-",
+      "exit_local_mm": [
+        0,
+        14,
+        4.5
+      ],
+      "exit_case_mm": [
+        228.5,
+        -135.0,
+        -4.9
+      ],
+      "free_length_mm": 110.309
+    },
+    {
+      "J2_pin": "3",
+      "lead": "NTC",
+      "exit_local_mm": [
+        0,
+        12,
+        4.5
+      ],
+      "exit_case_mm": [
+        228.5,
+        -137.0,
+        -4.9
+      ],
+      "free_length_mm": 107.229
+    }
+  ],
+  "maximum_surrogate_lead_od_mm": 0.65,
+  "channel_nominal_width_mm": 0.9,
+  "channel_nominal_length_mm": 6.0,
+  "channel_floor_local_z_mm": 4.175,
+  "nominal_wire_protrusion_at_maximum_od_mm": 0.025,
+  "mesh": {
+    "triangles": 60,
+    "mesh_bounds_mm": [
+      0.0,
+      0.0,
+      0.0,
+      85.0,
+      43.0,
+      4.800000190734863
+    ],
+    "mesh_volume_mm3": 17533.87569785118,
+    "STEP_volume_mm3": 17533.875
+  },
+  "source_sha256": {
+    "scripts/build_e73_pack_gauge.py": "d7cfa37635f7ccf4cb263e434e5842e1b7219bdc49bf7532d3573ce9d9524c05",
+    "mechanical/assembly-spec.json": "70ffe081e664c3868febb0f4549ebc9c10e43a25ee4164893628805d693e6a81",
+    "hardware/e73-corner-harness-spec.json": "015f0904c0868a9563cf9e797a1e858f4b8eb31116829e525f27e6bcf57b930c",
+    "hardware/e73-hhkb-corner/audit/harness-study.json": "9d6a896fe599873ac8bcaac12e260570739bc143f59fbf4fbc285656d6ae2138",
+    "hardware/e73-hhkb-corner/audit/service-case-m05.json": "4bdfc9e112fdcf3829dcc5aeb9f36ddd32006e008c526ab66a134288673bc140",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/wire-lengths-m05.csv": "26d85a4b0343b661a92db25efd9d5d54ab346b361257812ff49c8db2b819eb1d",
+    "hardware/e73-hhkb-corner/audit/m05-harness.json": "076e45f9da7e8e68318972a693443be077c879167ed603d79b47729e5809ce14",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step": "4f6a72e62dcf592945097c293bb3ca795cc395b6915328bb41256eb37c7cf007",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J2-REVIEW.step": "6abd35db97361ab6b492467a912eb9680be975e93964d44cccdfecbba6af45fb",
+    "hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.step": "0b93cbec60c942be89abc7c58051409762b8f0eade6e2c43bb28355744445e71",
+    "scripts/cad_geometry.py": "4199d5ac7069ffe290e42e391eb175b504c140c5a75cbb2ace292846fd64c90b",
+    "scripts/check_yeti60_assembly.py": "551c68ce01afeaf27ad7de002bc6a2cea0939d615ad261e68f336e0210a862d1",
+    "scripts/check_yeti60_interconnects.py": "9365de90575ef18e053954a4bdf1ec26d6188d3b1df9fc860cb92f7e1b356c3e",
+    "scripts/e73_fit_geometry.py": "ca10466e3df2cad126ebcae704b0452e6556d71bdadb97f8bf2563ea4e10716f",
+    "scripts/export_e73_retention_prints.py": "a9e3e667dacbf5b901e8e05144b9c04ec021882b01fd6fd282007e7c6783d86d"
+  },
+  "files_sha256": {
+    "02-mechanical/service-case-m05/pack-gauge/M05-inert-pack-gauge.step": "986c16b02b5e12ab410f457f110b5520c676f399dd9cf4b1f48ca17bfa760019",
+    "02-mechanical/service-case-m05/pack-gauge/M05-inert-pack-gauge.stl": "b047650155ea677c32ed5e38cff8da69f58f7e844854aa3d18fd92f99cbb411c"
+  },
+  "limits": [
+    "The finished gauge dimensions and position must be measured on the actual parts.",
+    "The gauge models the bounded pack shape and surrogate lead origins for an unpowered dry fit.",
+    "Wire/adhesive behavior, connector release, assembled tolerances, physical operation and actual pack compliance still need verification."
+  ]
+}

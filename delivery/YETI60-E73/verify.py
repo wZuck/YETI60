@@ -119,6 +119,23 @@ def main():
  pack_target=pack_review['yeti60_e73_m05']
  assembly=json.loads((base/'02-mechanical/assembly-spec.json').read_text())
  assert pack_target['maximum_finished_pack_envelope_mm']==assembly['battery']['full_envelope_including_growth']
+ gauge = json.loads((base/'06-validation/m05-pack-gauge.json').read_text())
+ assert gauge['status'] == 'cad-only-m05-inert-pack-gauge' and gauge['physical_verification'] is False
+ battery = assembly['battery']
+ assert gauge['pack_envelope_mm'] == battery['full_envelope_including_growth']
+ expected_origin = [*battery['bounds_xy'][:2], round(battery['top_z'] - gauge['pack_envelope_mm'][2], 6)]
+ assert gauge['case_origin_of_gauge_mm'] == expected_origin
+ assert all(clearance > 0 for clearance in gauge['body_clearance_to_nominal_case_parts_mm'].values())
+ for name in ('bottom-m05-REVIEW.step','cover-J2-REVIEW.step','cover-J4-REVIEW.step'):
+  source = 'hardware/e73-hhkb-corner/mechanical/service-case-m05/' + name
+  assert gauge['source_sha256'][source] == sha(base/(case_dir+name))
+ assert set(gauge['files_sha256']) == {case_dir+'pack-gauge/M05-inert-pack-gauge'+ext for ext in ('.step','.stl')}
+ assert all(m['files_sha256'][name] == digest for name,digest in gauge['files_sha256'].items())
+ harness_spec = json.loads((base/'02-mechanical/interconnect-spec.json').read_text())
+ exit_x, exit_y, exit_z = harness_spec['battery']['pack_exit_local']
+ assert [lead['exit_local_mm'] for lead in gauge['lead_exits']] == [
+  [exit_x, exit_y+offset, exit_z] for offset in harness_spec['battery']['lateral_offsets']]
+ assert [lead['J2_pin'] for lead in gauge['lead_exits']] == ['1','2','3']
  with (base/(case_dir+'harness/wire-lengths-m05.csv')).open() as stream:
   leads=[float(row['FreeLength_mm']) for row in csv.DictReader(stream) if row['Harness']=='battery']
  assert leads==pack_target['required_free_lead_lengths_mm']
@@ -178,6 +195,13 @@ def main():
  cam=json.loads((base/'06-validation/cam-ordinary.json').read_text())
  assert cam['status']=='cam-geometry-matches-native-pcb' and cam['archive_sha256']==sha(archive)
  assert cam['source_sha256']['hardware/e73-hhkb-corner/EC60-nRF52840.kicad_pcb']==m['source_PCB_sha256']
+ copper = cam['copper_routing']
+ lands = cam['copper_lands']['land_flashes_checked_by_layer']
+ assert set(copper) == set(lands) == {'F.Cu','In1.Cu','In2.Cu','B.Cu'}
+ assert all(row['via_lands'] == cam['through_via_count'] for row in copper.values())
+ assert all(0 <= row['maximum_arc_endpoint_delta_mm'] <= .0001 for row in copper.values())
+ assert sum(lands.values()) == cam['copper_lands']['land_flashes_checked'] == 584
+ assert sum(row['straight_traces'] + row['arc_traces'] for row in copper.values()) == 4722
  ipc = cam['electrical_test_netlist']
  assert ipc['format'] == 'IPC-D-356A' and ipc['physical_verification'] is False
  assert ipc['file'] == 'EC60-nRF52840.d356' and ipc['through_vias_checked'] == cam['through_via_count']

@@ -14,6 +14,7 @@ M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形
 | M05 底壳 | 1 | [打印 STL](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.stl) · [STEP](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step) |
 | J2 封盖 | 1 | [打印 STL](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J2-REVIEW.stl) · [STEP](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J2-REVIEW.step) |
 | J4 封盖 | 1 | [打印 STL](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.stl) · [STEP](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.step) |
+| 电池试装量块 | 干试装用 1 个 | [打印 STL](../../delivery/YETI60-E73/02-mechanical/service-case-m05/pack-gauge/M05-inert-pack-gauge.stl) · [STEP](../../delivery/YETI60-E73/02-mechanical/service-case-m05/pack-gauge/M05-inert-pack-gauge.step) |
 | 封盖螺钉 | 4 | M2 × 0.4，头下长度 4 mm，带平底承压面的低头内六角。头部直径 ≤3.90 mm，高度 ≤1.50 mm。SUNCO M2 低头系列的标称头部尺寸为 Ø3.8 × 1.3 mm。[厂商尺寸表](https://th.misumi-ec.com/en/vona2/detail/221005676582/?Tab=codeList) |
 | 封盖螺纹嵌件 | 4 | M2 × 0.4，滚花黄铜，Ø3.2 × 2.5 mm，与 C5 规格相同。另备四枚，孔深按本页施工。 |
 | 胶和脚垫 | 按需 | 用外壳规定的冷粘胶固定嵌件。使用整机清单中的四个脚垫，其中一个装在 J4 封盖上。 |
@@ -21,6 +22,14 @@ M05 为 CORNER-06 的装拆试验增加两个可拆盖。它保留 M04 的外形
 | 停放支撑 | 每个端口 1 套 | [支撑说明](e73-m05-parking-support.zh-CN.md)提供两套底座、托架、紧固件和停放顺序。 |
 
 使用韧性工程 SLA 树脂，按毫米、100% 比例打印四件外壳零件，每种各一件。每件从 STEP 和 STL 中选一个文件，两种格式使用同一壳体坐标。树脂完全后固化后复查承压面、脚垫槽和盲孔。避免在这些面上留打印支撑。
+
+## 电池试装量块
+
+用绝缘塑料或树脂按毫米、100% 比例打印，标记 **仅作机械试装**，全过程断开电源。完全后固化或冷却后，按整包标称上限 **85.00 × 43.00 × 4.80 mm** 复核量块尺寸。量块偏小无法验证最大包络。顶面线槽和底面承压面不得留有支撑残渣。STEP 和 STL 均采用量块局部坐标。
+
+线槽面向上，出线端朝外壳 −X 方向。量块最小坐标角按壳体坐标 **(228.5, −149.0, −9.40) mm** 定位。三处检查支点的壳底建模高度为 **Z = −9.60 mm**，采用实测厚度的绝缘垫片支撑，标称 **0.20 mm**。装入实际外壳后，按电池槽和坐合线束复核位置。[量块几何与定位报告](../../delivery/YETI60-E73/06-validation/m05-pack-gauge.json)
+
+带线试装另备一只 SHR-03V-S 胶壳、三只 SSH-003T-P0.2-H 端子和三根同规格 AWG28 导线，绝缘外径不超过 0.65 mm。用绝缘胶将线尾固定在顶面的三个线槽内，固化后的胶留在槽内。出线点在量块局部坐标 **X = 0、Z = 4.50 mm**，对应 J2 的 1、2、3 号针，**Y 分别为 16、14、12 mm**。固化前核对线心，出线面以外的导线保持自由。按 [M05 自由长度表](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/wire-lengths-m05.zh-CN.csv)从量块出线面量到胶壳出口。该线束只用于验证走线、停放和拆卸，与电芯和外部电源隔离。
 
 ## 树脂打印公差与到货检查
 

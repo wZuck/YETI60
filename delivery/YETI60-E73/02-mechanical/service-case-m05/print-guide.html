@@ -33,6 +33,11 @@
 <td><a href="cover-J4-REVIEW.stl">Print STL</a> · <a href="cover-J4-REVIEW.step">STEP</a></td>
 </tr>
 <tr>
+<td>Inert battery fit gauge</td>
+<td style="text-align:right">1 for dry fitting</td>
+<td><a href="pack-gauge/M05-inert-pack-gauge.stl">Print STL</a> · <a href="pack-gauge/M05-inert-pack-gauge.step">STEP</a></td>
+</tr>
+<tr>
 <td>Cover screws</td>
 <td style="text-align:right">4</td>
 <td>M2 × 0.4, 4 mm under the head, low socket head with flat bearing face, head Ø ≤3.90 mm and height ≤1.50 mm. The SUNCO M2 low-head series gives a 3.8 × 1.3 mm nominal head. <a href="https://th.misumi-ec.com/en/vona2/detail/221005676582/?Tab=codeList">Manufacturer dimensions</a></td>
@@ -60,6 +65,10 @@
 </tbody>
 </table>
 <p>Print one of each of the four shell parts at 100% in millimetres using tough engineering SLA resin. Choose either STEP or STL for each part. Both formats use the same case coordinates. Inspect the seating faces, foot recess and blind bores after the resin is fully post-cured. Keep supports off those faces.</p>
+<h2 id="inert-battery-fit-gauge">Inert battery fit gauge</h2>
+<p>Print the gauge at 100% in millimetres using insulating plastic or resin. Mark it <strong>MECHANICAL TEST ONLY</strong> and keep all power disconnected. After curing or cooling, measure its body against the nominal <strong>85.00 × 43.00 × 4.80 mm</strong> finished-pack envelope. An undersized gauge cannot establish fit for a pack at the size limit. Leave the top grooves and lower seating face free of support residue. The STEP and STL share local gauge coordinates.</p>
+<p>Place the grooved face up and the slotted end toward case −X. Set the lower corner to case <strong>(228.5, −149.0, −9.40) mm</strong>. The modeled pocket floor is at <strong>Z = −9.60 mm</strong> at the three checked support points, so use measured insulating shims at those points, <strong>0.20 mm</strong> nominal. Verify the actual gauge position against the pocket and seated harness instead of relying on the nominal shim thickness alone. <a href="../../06-validation/m05-pack-gauge.json">Gauge geometry and placement report</a></p>
+<p>For the wired dry fit, make a dedicated dummy J2 lead with one spare SHR-03V-S housing, three SSH-003T-P0.2-H contacts and three matching AWG28 wires, each at most 0.65 mm outside diameter. Fix their ends in the three top grooves with cured nonconductive adhesive kept inside the grooves. In local coordinates the outlets are at <strong>X = 0, Z = 4.50 mm</strong> and <strong>Y = 16, 14, 12 mm</strong> for J2 pins 1, 2 and 3 respectively. Check the centers before the adhesive cures. Leave each wire free beyond the gauge face and use the <a href="harness/wire-lengths-m05.csv">M05 free lengths</a> from that face to the housing exit. The dummy lead serves only to check routing, parking and removal. Keep it isolated from any cell or live supply.</p>
 <h2 id="resin-printing-tolerance-and-receiving-inspection">Resin printing tolerance and receiving inspection</h2>
 <p>JLC3DP lists ordinary SLA dimensional tolerances of <strong>±0.20 mm through 100 mm</strong>, <strong>±0.30% above 100 mm</strong> and <strong>±0.30 mm for holes</strong>. Its size figures assume no deformation, warping or added finish. The 325.70 mm shell length corresponds to about <strong>±0.98 mm</strong> under that rule. The finished project still needs <strong>±0.15 mm per axis at functional surfaces</strong>. Treat the published figures as a quotation screen and agree with the supplier on the critical features to measure after post-cure. <a href="https://jlc3dp.com/help/article/3d-printing-design-guideline">JLC3DP §10</a> · <a href="../../06-validation/m05-print-fit.json">Four-part STEP readback</a></p>
 <p>On the quotation, specify four parts at 1:1 in millimetres. Request support placement clear of the mating ledges, USB opening, cover seating faces and screw/insert bores. Keep coating and heavy sanding off functional surfaces. Ask whether the shop can finish the insert bores after curing. If the plan uses undersize pilots, agree on the pilot dimensions and finishing sequence before the parts are made. The delivered STEP files show the finished nominal bores.</p>

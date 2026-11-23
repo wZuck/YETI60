@@ -14,6 +14,7 @@ M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the 
 | M05 bottom | 1 | [Print STL](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.stl) · [STEP](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/bottom-m05-REVIEW.step) |
 | J2 cover | 1 | [Print STL](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J2-REVIEW.stl) · [STEP](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J2-REVIEW.step) |
 | J4 cover | 1 | [Print STL](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.stl) · [STEP](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/cover-J4-REVIEW.step) |
+| Inert battery fit gauge | 1 for dry fitting | [Print STL](../../delivery/YETI60-E73/02-mechanical/service-case-m05/pack-gauge/M05-inert-pack-gauge.stl) · [STEP](../../delivery/YETI60-E73/02-mechanical/service-case-m05/pack-gauge/M05-inert-pack-gauge.step) |
 | Cover screws | 4 | M2 × 0.4, 4 mm under the head, low socket head with flat bearing face, head Ø ≤3.90 mm and height ≤1.50 mm. The SUNCO M2 low-head series gives a 3.8 × 1.3 mm nominal head. [Manufacturer dimensions](https://th.misumi-ec.com/en/vona2/detail/221005676582/?Tab=codeList) |
 | Cover inserts | 4 | M2 × 0.4 knurled brass, Ø3.2 × 2.5 mm, same size as the C5 insert specification. Prepare four extra and use the cover bore depth in this guide. |
 | Adhesive and footpads | As required | Use the case's cold-bond adhesive for the inserts. Use the four footpads from the keyboard materials list, one on the removable J4 cover. |
@@ -21,6 +22,14 @@ M05 adds two removable covers to the CORNER-06 mechanical trial. It retains the 
 | Parking supports | 1 per port | The [support guide](e73-m05-parking-support.md) contains both carriers, shelves, fasteners and the parking sequence. |
 
 Print one of each of the four shell parts at 100% in millimetres using tough engineering SLA resin. Choose either STEP or STL for each part. Both formats use the same case coordinates. Inspect the seating faces, foot recess and blind bores after the resin is fully post-cured. Keep supports off those faces.
+
+## Inert battery fit gauge
+
+Print the gauge at 100% in millimetres using insulating plastic or resin. Mark it **MECHANICAL TEST ONLY** and keep all power disconnected. After curing or cooling, measure its body against the nominal **85.00 × 43.00 × 4.80 mm** finished-pack envelope. An undersized gauge cannot establish fit for a pack at the size limit. Leave the top grooves and lower seating face free of support residue. The STEP and STL share local gauge coordinates.
+
+Place the grooved face up and the slotted end toward case −X. Set the lower corner to case **(228.5, −149.0, −9.40) mm**. The modeled pocket floor is at **Z = −9.60 mm** at the three checked support points, so use measured insulating shims at those points, **0.20 mm** nominal. Verify the actual gauge position against the pocket and seated harness instead of relying on the nominal shim thickness alone. [Gauge geometry and placement report](../../delivery/YETI60-E73/06-validation/m05-pack-gauge.json)
+
+For the wired dry fit, make a dedicated dummy J2 lead with one spare SHR-03V-S housing, three SSH-003T-P0.2-H contacts and three matching AWG28 wires, each at most 0.65 mm outside diameter. Fix their ends in the three top grooves with cured nonconductive adhesive kept inside the grooves. In local coordinates the outlets are at **X = 0, Z = 4.50 mm** and **Y = 16, 14, 12 mm** for J2 pins 1, 2 and 3 respectively. Check the centers before the adhesive cures. Leave each wire free beyond the gauge face and use the [M05 free lengths](../../hardware/e73-hhkb-corner/mechanical/service-case-m05/harness/wire-lengths-m05.csv) from that face to the housing exit. The dummy lead serves only to check routing, parking and removal. Keep it isolated from any cell or live supply.
 
 ## Resin printing tolerance and receiving inspection
 
