@@ -209,6 +209,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 | Plate tapping tools | 1 set (self-machined plate only) | M2 x 0.4 tap and matching pilot-hole tools; do not retap a supplied finished plate unnecessarily |
 | Insert-bore finishing tools | 1 set (unless supplied finished) | Finish to diameter 4.85 +/-0.05 and 3.35 +/-0.05 mm and specified depths; unmeasured printed bores are not equivalent |
 | Current-limited supply, battery simulator, current logger and temperature probes | 1 each (prototype qualification) | Bring-up, charging/termination/thermal/runtime acceptance; not fitted parts |
+| J2 battery simulator lead | 1 shared fixture | 1 SHR-03V-S housing, 3 SSH-003T-P0.2-H contacts, 3 AWG28 wires, 1 break-before-make SP3T switch and one each 2.2 kΩ, 10 kΩ and 33 kΩ resistor, ±1%, ≥0.125 W. [Connections and test settings](docs/testing/e73-bench-power.md#j2-simulator-lead-and-temperature-input-test) |
 
 See [materials](docs/engineering/materials.md) and [power/charging calculations](docs/engineering/power-budget.md) for purchasing limits. Supplier pack approval, unselected parts, key mechanism and ordinary-process conversion acceptance remain required before treating this preparation list as a production purchase order.
 

@@ -10,7 +10,7 @@
     },
     "standard_pack": {
       "url": "https://www.honcell.com/Public/Uploads/uploadfile/files/20250219/DATASHEETHCP404074NZC3.7V1600mAhPACK2024.pdf",
-      "pages": [4, 5, 6, 7],
+      "pages": [4, 5, 6, 7, 12, 14],
       "sha256": "79252b83d7b5c510caffcdf8bb517f432bcaf5d281b7c627ec20c3ce43d44053"
     },
     "charger": {
@@ -51,6 +51,12 @@
     "maximum_charge_mA": 800,
     "maximum_rate_temperature_C": [15, 45],
     "specified_charge_end_voltage_V": 4.20,
+    "PCM_overcharge_trip_nominal_V": 4.28,
+    "PCM_overcharge_trip_tolerance_V": 0.025,
+    "PCM_overcharge_trip_minimum_V": 4.255,
+    "absolute_charge_voltage_and_PCM_design_ceiling_V": 4.25,
+    "published_trip_minimum_above_design_ceiling_V": 0.005,
+    "supplier_resolution_required": true,
     "connector": "JST PHR-3",
     "lead_length_nominal_mm": 50,
     "lead_length_tolerance_mm": 3,

@@ -11,6 +11,22 @@ Use the CORNER-07 mainboard, existing C5 JSH daughterboard, and the J4-to-C5 har
 3. At J2, use a current-limited battery simulator that can **sink charge current and source system current**. Use its battery emulation mode at a mid-charge setting around 3.7 V, with suitable current limits and stable source/sink crossover. Check with power off: J2.1 is simulator positive, J2.2 return, J2.3 the simulator's NTC fixture, referenced to J2.2. Confirm latch orientation and continuity from the mated plug before applying power. A nominal 10 kΩ thermistor-network setting is for the simulator test only. The solder map shows PCB pads, so use the mated orientation for the plug.
 4. Secure probes with power off. Use a floating meter or differential instrumentation for each specified pad pair and for F1 voltage drop. A common-ground scope must use one circuit ground connection. Measure charge current in series with the simulator lead or from the simulator's signed readout, with positive current into the simulator.
 
+### J2 simulator lead and temperature input test
+
+Make a dedicated bench lead with **one SHR-03V-S housing**, **three SSH-003T-P0.2-H contacts** and three AWG28 stranded wires. Label both ends and verify each wire to the mated J2 pins before powering the board. The simulator connects only to pin 1 (BAT+) and pin 2 (GND). Connect the selector common to pin 3 (BAT_NTC). Connect one resistor between each switch position and pin 2. The native board connects BAT_NTC directly to U5 pin 1 (TS).
+
+Use a lab battery simulator or an SMU in fixed-voltage mode that can both source and sink at **3.70 V**. Start with **0.50 A** current limits in both directions for this CORNER-07 test. The published maximum programmed charge current is 445.63 mA, so 0.50 A covers that current and corresponds to 1.85 W at 3.70 V. Check the limits and sign convention before attaching the board. For example, a Keithley 2450 supports bipolar current limiting and source/sink operation on its 20 V and 1 A ranges. A fixture with this capability can be shared across builds. [Keithley 2450 limits](https://www.tek.com/en/sitewide-content/datasheets/m/o/d/model-2450-touchscreen-source-measure-unit-smu-instrument)
+
+For the selector, use one break-before-make SP3T switch and **one each 2.2 kΩ, 10 kΩ and 33 kΩ resistor, ±1%, at least 0.125 W**. Label the three positions. Use this lead with the simulator and no cell. Start at Normal with USB configured and positive BAT current, then test each fault and return to Normal while logging TS and signed BAT current.
+
+| Position | Resistor between J2.3 and J2.2 | Calculated TS voltage range | Expected charge result |
+|---|---:|---:|---|
+| Hot | 2.2 kΩ | 0.157–0.173 V | Below the 0.270 V minimum hot trip. Sustained positive BAT current stops |
+| Normal | 10 kΩ | 0.713–0.788 V | Inside the valid window, including recovery hysteresis. Charging resumes |
+| Cold | 33 kΩ | 2.352–2.600 V | Above the 2.200 V maximum cold trip. Sustained positive BAT current stops |
+
+Calculate `VTS = INTC × R` using TI's **72–78 µA** bias and both ±1% resistor extremes. Compare measured TS with the trip direction and verify BAT current at each stable setting. These three resistor positions exercise the mainboard's TS input. The pack's independent protection has a separate evidence requirement. [TI electrical characteristics and §9.3.6](https://www.ti.com/lit/ds/symlink/bq24074.pdf) · [Pack acceptance](../engineering/battery-pack-specification.md)
+
 ## Probe points on the back of the mainboard
 
 ![CORNER-07 solder-side pads for the bench tests](../../hardware/e73-hhkb-corner/audit/bench-probe-map.png)

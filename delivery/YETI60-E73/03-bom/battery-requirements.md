@@ -18,6 +18,25 @@ The maximum cycled bare-cell body is **74.5 × 40.5 × 4.32 mm**, excluding tabs
 
 Honcell publishes an **HCP404074NZC** pack drawing. Its **77.0 × 40.5 × 4.2 mm** body fits within the design envelope on paper. The drawing gives a PHR-3 connector and a 50 ±3 mm lead dimension. M05 uses the SH3 housing below and individual free leads of 107.229–113.512 mm. The stock pack rates maximum charging at 800 mA over 15–45 °C. Its circuit shows one external NTC feedback lead and a voltage/current PCM. The sheet leaves independent hot/cold charge interruption, the complete cycled envelope and approval for 4.23 V regulation open. Use this drawing as a supplier reference for a **custom finished pack**. [Honcell pack sheet, pp. 4–7](https://www.honcell.com/Public/Uploads/uploadfile/files/20250219/DATASHEETHCP404074NZC3.7V1600mAhPACK2024.pdf)
 
+Resolve the published protection limits in writing. The stock pack's overcharge detector is specified at **4.28 ±0.025 V**, so its lowest published trip is **4.255 V**. The same sheet gives **4.20 V** for normal charging and **4.25 V** as the absolute maximum and the ceiling for the protection threshold. Ask for the signed normal charge range, the initial and including-tolerance detector limits, and the peak cell voltage before interruption under the worst-case fault and delay. Evaluate the corrected limits for the exact pack revision before applying charge. [Honcell pack sheet, pp. 7, 12 and 14](https://www.honcell.com/Public/Uploads/uploadfile/files/20250219/DATASHEETHCP404074NZC3.7V1600mAhPACK2024.pdf)
+
+## Sample quotation
+
+Ask each supplier to quote its minimum engineering-sample quantity and return the signed data below against the offered pack part number and drawing revision. Request the highest documented single-cell capacity that meets the complete aged envelope and all charge limits, with **1600 mAh** as the reference target. Ask for the available capacity under **4.16 V** charging, the lowest regulation point of this board.
+
+| Supplier | What its public page supports |
+|---|---|
+| Honcell | Source of the reference cell and pack drawings. The general FAQ lists a 3,000-piece production minimum. Ask separately about engineering samples. [Honcell FAQ](https://www.honcell.com/resources/faqs) |
+| A&S Power | Offers custom connectors and PCM/BMS. The general FAQ lists 5–10 pieces depending on battery type. Request the minimum and the charge-protection schematic for this specific pack. [A&S Power custom packs](https://www.szaspower.com/custom-lithium-ion-battery-manufacturer/index.html) |
+| Outputs Power | Its quote form accepts requests for sample runs below 10 pieces. Request dimensions, protection limits and applicable sample quantity in the quotation. [Outputs Power custom packs](https://outputspower.com/battery-packs/) |
+
+Use the same four acceptance items to compare all replies.
+
+1. Signed cell/pack identifiers and maximum finished **85 × 43 × 4.8 mm** drawing through the protection area, with life growth and the actual strain-relief exit.
+2. Approved **4.16–4.23 V** charger regulation, **500 mA** continuous charge rating within the accepted window, termination tolerance and separately documented normal/full-charge and fault-voltage limits.
+3. Independent hot/cold charge interruption, plus the separate 10 kΩ thermistor feedback curve, J2 pin-number drawing and actual finished lead lengths.
+4. Minimum sample quantity, lead time, sample test/inspection report and transport documents for the exact offered variant.
+
 ## Electrical and temperature requirements
 
 | Item | Required response/acceptance |
