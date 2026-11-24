@@ -134,11 +134,8 @@ def main():
  render_report=json.loads(assembly_render.read_text())
  assert render_report['status']=='current-source-assembly-views-rendered'
  assert render_report['case_scale']==[1,1,1] and not render_report['physical_verification']
- assert render_report['case_revision']=='M05'
+ assert render_report['case_revision']=='M05-relieved-trial'
  assert set(render_report['views'])=={'assembled','exploded','interior','pcb-underside','case-underside'}
- nominal=m05_harness['trial_variants'][0]['seated_free_lengths_mm']
- assert nominal.keys()==render_report['wire_free_lengths_mm'].keys()
- assert all(abs(nominal[key]-value)<.000001 for key,value in render_report['wire_free_lengths_mm'].items())
  assert render_report['views']['exploded']['objects_by_group']['covers']==2
  assert len(render_report['native_component_models'])+len(render_report['component_envelope_proxies'])==75
  for section in ['source_sha256','outputs']:
@@ -281,6 +278,11 @@ def main():
                  '--output',str(out)],check=True)
  relieved_bottom = '06-validation/m05-relieved-bottom.json'
  relieved_report = json.loads((out/relieved_bottom).read_text())
+ thickness = json.loads((out/'02-mechanical/assembly-spec.json').read_text())['stack']['pcb_thickness']
+ nominal = next(variant['seated_free_lengths_mm'] for variant in relieved_report['variants']
+                if variant['PCB_thickness_mm'] == thickness)
+ assert nominal.keys() == render_report['wire_free_lengths_mm'].keys()
+ assert all(abs(nominal[key]-value)<.000001 for key,value in render_report['wire_free_lengths_mm'].items())
  inputs.update(relieved_report['source_sha256'])
  for path in [*relieved_report['files_sha256'],relieved_bottom]:
   mapping['delivery/YETI60-E73/'+path] = path

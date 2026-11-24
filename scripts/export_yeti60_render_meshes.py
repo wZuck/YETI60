@@ -20,7 +20,10 @@ WORK = ROOT / '.assembly-work'
 REPORT = ROOT / 'docs/audit/yeti60-assembly.json'
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def tessellate(path):
-    shape = load(path)
+    return tessellate_shape(load(path), path)
+
+
+def tessellate_shape(shape, description):
     BRepMesh_IncrementalMesh(shape, .015, False, .08, True).Perform()
     vertices, triangles = [], []
     faces = TopExp_Explorer(shape, TopAbs_FACE)
@@ -39,7 +42,7 @@ def tessellate(path):
         faces.Next()
     vb = [min(p[i] for p in vertices) for i in range(3)] + [max(p[i] for p in vertices) for i in range(3)]
     bb = bounds(shape)
-    assert max(abs(a-b) for a,b in zip(vb,bb)) < .02, (path,vb,bb)
+    assert max(abs(a-b) for a,b in zip(vb,bb)) < .02, (description,vb,bb)
     return {'vertices_mm':vertices,'triangles':triangles,'brep_bounds_mm':bb,'mesh_bounds_mm':vb}
 def main():
     data = json.loads(REPORT.read_text())

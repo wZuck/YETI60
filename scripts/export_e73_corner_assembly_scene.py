@@ -3,14 +3,19 @@
 
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
 import struct
 import subprocess
 
-from check_yeti60_assembly import build_plate, write_step
-from export_yeti60_render_meshes import tessellate
+from OCP.TopAbs import TopAbs_SOLID
+from OCP.TopExp import TopExp_Explorer
+
+from cad_geometry import bounds, load
+from check_yeti60_assembly import box, build_plate, write_step
+from export_yeti60_render_meshes import tessellate, tessellate_shape
 from build_e73_m05_harness import OUT as M05, matched_spec
 from check_e73_corner_harness import datums
 from e73_corner_harness_paths import length, paired_data
@@ -35,6 +40,40 @@ def verify(report, sections):
     for section in sections:
         for path, digest in report[section].items():
             assert sha(ROOT / path) == digest, ('Stale scene input', path)
+
+
+def relieved_front_guides(reference, recess, guides, axis):
+    # The trial reference STEP contains the crop of the lower shell and four
+    # finished guide solids, all exported in installed case coordinates.
+    model = load(reference)
+    solids = TopExp_Explorer(model, TopAbs_SOLID)
+    pieces = {}
+    while solids.More():
+        shape = solids.Current()
+        bb = bounds(shape)
+        solids.Next()
+        if bb[3] - bb[0] > 10:
+            continue
+        x, y = ((bb[i] + bb[i+3]) / 2 for i in (0, 1))
+        station = next(row['station'] for row in recess['stations']
+                       if max(abs(x-row['center_case_xy_mm'][0]),
+                              abs(y-row['center_case_xy_mm'][1])) < .00001)
+        side = 'base' if bb[2] < axis else 'lid'
+        name = f'{station}-{side}'
+        assert name not in pieces
+        pieces[name] = dict(tessellate_shape(shape, name), group='retainers', material='guide')
+    assert set(pieces) == {f'USB-F{i}-{side}' for i in (1, 2) for side in ('base', 'lid')}
+    for station in recess['stations']:
+        name = station['station']
+        _, y = station['center_case_xy_mm']
+        left, _, _, right, _, _ = pieces[f'{name}-base']['brep_bounds_mm']
+        tape = guides['retention_film_thickness']
+        half_depth = guides['depth'] / 2
+        for i, (x1, x2) in enumerate(((left-tape, left), (right, right+tape)), 1):
+            label = f'{name}-seam-{i}'
+            film = box([x1, y-half_depth, axis-.7, x2, y+half_depth, axis+.7])
+            pieces[label] = dict(tessellate_shape(film, label), group='retainers', material='film')
+    return pieces
 
 
 def main():
@@ -64,6 +103,22 @@ def main():
     prototype, wiring = read(prototype_path), read(wiring_path)
     for report in (prototype, wiring):
         verify(report, ['source_sha256', 'outputs'])
+    delivery = ROOT / 'delivery/YETI60-E73'
+    trial = read(delivery / '06-validation/m05-relieved-bottom.json')
+    recess = read(delivery / '06-validation/m05-usb-retainer-recess.json')
+    coupon = read(delivery / '06-validation/m05-usb-retainer-coupon.json')
+    assert trial['source_reports_sha256']['06-validation/m05-usb-retainer-recess.json'] == sha(
+        delivery / '06-validation/m05-usb-retainer-recess.json')
+    assert trial['source_reports_sha256']['06-validation/m05-usb-retainer-coupon.json'] == sha(
+        delivery / '06-validation/m05-usb-retainer-coupon.json')
+    relieved_case = '02-mechanical/service-case-m05/relieved-trial/bottom-m05-relieved-REVIEW.step'
+    front_reference = '02-mechanical/front-retainer-coupon/fit-reference-DO-NOT-UPLOAD.step'
+    assert sha(delivery / relieved_case) == trial['files_sha256'][relieved_case]
+    assert sha(delivery / front_reference) == coupon['files_sha256'][front_reference]
+    retention_spec_path = ROOT / 'hardware/e73-corner-retention-spec.json'
+    wire_spec = matched_spec(read(ROOT / 'hardware/e73-corner-harness-spec.json'))
+    axis = wire_spec['usb']['front_z'] - recess['trial_axis_drop_mm']
+    wire_spec['usb']['front_z'] = math.nextafter(axis, math.inf)
     assembly = read(assembly_path)
     stack = assembly['stack']
     sources = [board, native_path, assembly_path, fit_path, mechanism_path, key_path,
@@ -72,7 +127,8 @@ def main():
                ROOT / 'scripts/check_yeti60_assembly.py', ROOT / 'scripts/e73_corner_harness_paths.py',
                ROOT / assembly['geometry']['plate'], ROOT / 'hardware/e73-corner-harness-spec.json',
                ROOT / 'hardware/e73-corner-spec.json', ROOT / 'scripts/interconnect_geometry.py',
-               prototype_path, wiring_path]
+               prototype_path, wiring_path, retention_spec_path, delivery / front_reference,
+               ROOT / 'scripts/e73_service_leads.py']
     source_hashes = {str(path.relative_to(ROOT)): sha(path) for path in sources}
     meshes = {}
 
@@ -85,7 +141,9 @@ def main():
         meshes[name] = dict(mesh, group=group, material=material)
 
     add('top', ROOT / assembly['geometry']['top'], 'top', 'resin')
-    add('bottom', M05 / 'bottom-m05-REVIEW.step', 'bottom', 'resin')
+    add('bottom', delivery / relieved_case, 'bottom', 'resin')
+    assert max(abs(a-b) for a, b in zip(meshes['bottom']['brep_bounds_mm'],
+                                        trial['geometry']['outer_case_bounds_mm'])) < .00001
     for ref in ('J2', 'J4'):
         add(ref + ' cover', M05 / f'cover-{ref}-REVIEW.step', 'covers', 'resin')
     plate, keys = build_plate(stack['plate_bottom_z'], stack['plate_thickness'])
@@ -127,12 +185,16 @@ def main():
     shifted = wiring['shifted_battery_parts']
     for part in retention['rigid_parts'] + retention['film_blanks']:
         name = part['name']
+        if name.startswith('USB-F'):
+            continue
         rigid = 'local_STL' in part
         path = BOARD_DIR / 'mechanical/retention/assembly-reference' / (name + '.step')
         assert sha(path) == retention['outputs'][str(path.relative_to(ROOT))]
         if name in shifted:
             path = ROOT / shifted[name]['source']
         add(name, path, 'retainers', 'guide' if rigid else 'film')
+    meshes.update(relieved_front_guides(delivery / front_reference, recess,
+                                        read(retention_spec_path)['guides'], axis))
     assert sum(part['group'] == 'retainers' for part in meshes.values()) == 33
 
     refs = sorted(set(native['parts']) - {'U1', 'J1'})
@@ -168,22 +230,21 @@ def main():
     proxy_refs = sorted(set(native['parts']) - set(native_refs))
     print('Native component models:', len(native_refs), 'Envelope stand-ins:', proxy_refs, flush=True)
 
-    wire_spec = matched_spec(read(ROOT / 'hardware/e73-corner-harness-spec.json'))
     _, exits = datums(native, assembly, wire_spec)
     routes, center, _ = flex_routes(wire_spec, exits, exits, 0)
     routes['usb'].update(paired_data(center, wire_spec)[0])
-    nominal = next(v for v in wiring['trial_variants'] if v['PCB_thickness_mm'] == stack['pcb_thickness'])
+    nominal = next(v for v in trial['variants'] if v['PCB_thickness_mm'] == stack['pcb_thickness'])
     lengths = {f'{family}.{pin}': length(path)
                for family, leads in routes.items() for pin, path in leads.items()}
     assert len(lengths) == 9 and lengths.keys() == nominal['seated_free_lengths_mm'].keys()
     assert all(abs(value - nominal['seated_free_lengths_mm'][key]) < .000001
-               for key, value in lengths.items()), 'Rendered routes differ from checked M05 wiring'
+               for key, value in lengths.items()), 'Rendered routes differ from checked relieved wiring'
     scene = dict(source_sha256=source_hashes, native=native_artifacts,
                  native_refs=native_refs, proxy_refs=proxy_refs, parts=native['parts'],
                  meshes=meshes, keys=key_geometry, mounts=native['mounts'],
                  assembly=assembly, mechanism=read(mechanism_path), gaskets=read(fit_path)['gaskets'],
                  corner=read(ROOT / 'hardware/e73-corner-spec.json'), wire_spec=wire_spec,
-                 case_revision='M05', cover_fasteners=prototype['ports'],
+                 case_revision='M05-relieved-trial', cover_fasteners=prototype['ports'],
                  routes=routes, exits=exits, wire_free_lengths_mm=lengths,
                  daughter_mesh_sha256={name: item['sha256'] for name, item in daughter['render_parts'].items()})
     verify(scene, ['source_sha256'])

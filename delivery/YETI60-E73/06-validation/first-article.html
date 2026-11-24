@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-07 first article</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.html">Back to delivery index</a></header><p>English | <a href="first-article.zh-CN.html">Chinese</a></p>
 <h1 id="corner-07-first-article">CORNER-07 first article</h1>
 <p>Start with the bare board and the already-made C5 daughterboard. The bench stages do not require a case. Use a battery simulator for the first charging tests. The later stages require the NiZ mechanism, the specified pack and the closed case.</p>
-<p>Copy this page for each unit. Record the PCB and firmware digests from the delivery manifest, the actual PCB thickness, the C5 revision, the pack identifier, ambient temperature, host, cable and instruments. Record measurements beside each result. A checked design report cannot populate a physical result.</p>
+<p>Copy this page for each unit. Record the PCB and firmware digests from the delivery manifest, the actual PCB thickness, the C5 revision, the pack identifier, ambient temperature, host, cable and instruments. Record the bottom version and matching wire-length table before dry-fitting. Record measurements beside each result. A checked design report cannot populate a physical result.</p>
 <table>
 <thead>
 <tr>
@@ -22,14 +22,14 @@
 <td>The factory confirms that the CAM nets match the design reference and records the bare-board test result. Review any coverage gaps before soldering</td>
 </tr>
 <tr>
-<td>Bare board</td>
+<td>Staged board assembly</td>
 <td>Check joints and polarity, then use the staged limited-power test. Confirm the 3.3 V rail and the J3 contact map</td>
 <td>No short, abnormal current or heating. Correct rail and SWD identification. <a href="../04-assembly/soldering.html">Soldering steps</a></td>
 </tr>
 <tr>
 <td>Flash and open bench</td>
-<td>Program the calibrator using SWD. Start with the pack disconnected. Check the C5 cable orientation and USB enumeration</td>
-<td>Programmer verifies the image. Correct USB device enumerates at full speed and stays connected with the intended cable. <a href="usb-signal.html">USB path and signal checks</a> <a href="../05-firmware/installation.html">Firmware and J3 pin map</a></td>
+<td>Leave the pack disconnected. Program the calibrator over SWD and save the cold-start SWD readback before key calibration. Check the C5 cable orientation and USB enumeration</td>
+<td>Programmer verifies the image. The two SWD words match the CORNER-07 calibrator after a complete power cycle. The host enumerates the device at full speed with the intended cable. <a href="usb-signal.html">USB path and signal checks</a> · <a href="../05-firmware/installation.html">Firmware and J3 pin map</a></td>
 </tr>
 <tr>
 <td>Pack simulator</td>
@@ -50,6 +50,11 @@
 <td>Physical battery</td>
 <td>Review the pack supplier drawing, ratings, polarity, thermistor and separately implemented temperature interruption. Measure charge current, termination, temperature and off-state draw after the simulator test</td>
 <td>Meets the complete supplier-confirmed <a href="../03-bom/battery-requirements.html">pack specification</a>, including independent temperature interruption and full charge timing</td>
+</tr>
+<tr>
+<td>Relieved trial pilot</td>
+<td>Print the front guide carrier and floor coupon in the intended case resin before ordering the full relieved bottom. Record the finished guide web thickness and the dry fit with the actual cable insulation</td>
+<td>Each finished web is at least <strong>0.30 mm</strong>. Both guides seat and retain all four USB conductors through the dry-fit feed and flex checks. <a href="../04-assembly/retainers.html#sla-coupons-for-the-enlarged-usb-front-guides">Pilot setup and measurements</a></td>
 </tr>
 <tr>
 <td>Cured resin parts</td>

@@ -504,9 +504,15 @@ def main():
             for site in closure_finish['locations'])
  render=json.loads((base/'06-validation/assembly-render.json').read_text())
  harness=json.loads((base/'06-validation/m05-harness.json').read_text())
- lengths=harness['trial_variants'][0]['seated_free_lengths_mm']
- assert render['case_revision']==prototype['revision'] and len(lengths)==9
+ thickness=json.loads((base/'02-mechanical/assembly-spec.json').read_text())['stack']['pcb_thickness']
+ lengths=next(trial['seated_free_lengths_mm'] for trial in relieved['variants']
+              if trial['PCB_thickness_mm']==thickness)
+ assert render['case_revision']==prototype['revision']+'-relieved-trial'
+ assert lengths.keys()==render['wire_free_lengths_mm'].keys() and len(lengths)==9
  assert all(abs(value-render['wire_free_lengths_mm'][key])<.000001 for key,value in lengths.items())
+ for model in (relieved_dir+'bottom-m05-relieved-REVIEW.step',
+               '02-mechanical/front-retainer-coupon/fit-reference-DO-NOT-UPLOAD.step'):
+  assert render['source_sha256']['delivery/YETI60-E73/'+model]==m['files_sha256'][model]
  assert render['views']['case-underside']['objects_by_group']['covers']==2
  bench=json.loads((base/'06-validation/bench-power-plan.json').read_text())
  assert bench['pcb_sha256']==m['source_PCB_sha256'] and not bench['physical_verification']

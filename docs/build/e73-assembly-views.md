@@ -4,13 +4,13 @@ English | [Chinese](e73-assembly-views.zh-CN.md)
 
 ![Assembled YETI60](../../renders/e73-corner-assembly/assembled.png)
 
-The shell surfaces use the FELK60-based upper case and M05 lower case and its two access covers from this delivery. Both retain their source dimensions. The steel plate uses the current NiZ DXF. The mainboard shows copper, solder mask, markings and drills from the selected native PCB. The illustrated finish, keycap profile and legends can differ from purchased parts.
+The shell surfaces use the FELK60-based upper case, the M05 relieved trial bottom and its two access covers at their source dimensions. The steel plate uses the current NiZ DXF. The mainboard shows copper, solder mask, markings and drills from the selected native PCB. The illustrated finish, keycap profile and legends can differ from purchased parts.
 
 ![Exploded YETI60 with wiring and hardware](../../renders/e73-corner-assembly/exploded.png)
 
 Read the stack from the bottom case upward through the PCB, insulated standoffs, conical springs, silicone domes, steel plate, NiZ housings and sliders, upper case and caps. The illustration separates the wiring, battery and C5 from their installed positions so they can be seen. It shows the four feet together below the shell. Use the CAD and guides for slot assignments and installation datums.
 
-The exploded and interior views depict the standard M05 bottom, front guides and harness route. For the relieved trial, use the revised seats, enlarged front guides and matching wire lengths in the first-article guide. The external shape, mounting stack and cover interfaces are shared. [Relieved trial assembly](e73-m05-prototype.md#m05-relieved-bottom-trial)
+The exploded and interior views show the enlarged front guides in the relieved seats and the matching USB line route. The standard M05 shares the external shape, mounting stack and cover interfaces. [Relieved trial assembly](e73-m05-prototype.md#m05-relieved-bottom-trial)
 
 | Assembly stage | Parts and reference |
 |---|---|
@@ -23,7 +23,7 @@ The exploded and interior views depict the standard M05 bottom, front guides and
 
 ![C5, pack and nine-wire route before installing the PCB](../../renders/e73-corner-assembly/interior.png)
 
-The interior view shows the installed geometry with the PCB hidden. Some clips in this view attach to the removed PCB. Match their installed Z positions and mating faces to the retainer STEP references. The nine wire centrelines come from the checked M05 seated routes, with diameter set to the specified insulation limit.
+The interior view shows the installed geometry with the PCB hidden. Some clips in this view attach to the removed PCB. Match their installed Z positions and mating faces to the retainer STEP references. The nine wire centrelines come from the checked relieved-trial seated routes, with diameter set to the specified insulation limit.
 
 ![M05 underside with both access covers installed](../../renders/e73-corner-assembly/case-underside.png)
 

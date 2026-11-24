@@ -4,7 +4,7 @@ English | [Chinese](e73-delivery-start.zh-CN.md)
 
 This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this whole folder together. The English and Chinese manuals are separate documents; filenames and part numbers identify the same physical design.
 
-**Engineering review.** The first article uses the CORNER-07 PCB and firmware together with the M05 bottom, two access covers, nine matched conductors, 16 rigid retainers and 17 film pieces. The assembly views and wire lengths use M05. Factory registration, pack confirmation and physical acceptance remain open.
+**Engineering review.** Use the CORNER-07 PCB and matching firmware. The assembly views show the M05 relieved trial with two access covers, nine conductors, 16 rigid retainers and 17 film pieces. Use the wire-length table for the bottom and front guides you print. Factory registration, pack confirmation and physical acceptance remain open.
 
 | Task | Read / use |
 |---|---|

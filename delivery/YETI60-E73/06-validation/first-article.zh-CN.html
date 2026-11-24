@@ -1,7 +1,7 @@
 <!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CORNER-07 首件验收</title><style>body{margin:0;background:#eeede6;color:#203128;font:17px/1.75 Georgia,"Noto Serif CJK SC",serif}main{max-width:1100px;padding:36px 24px;margin:auto}header{border-top:7px solid #203128;padding:16px 0}h1{font-size:clamp(30px,4vw,50px);line-height:1.2}h2{border-top:1px solid #b9c2b5;padding-top:28px;margin-top:38px}a{color:inherit;text-underline-offset:4px}img{max-width:100%}pre{overflow:auto;background:#dfe3d9;padding:20px}code{font-size:14px}table{display:block;overflow-x:auto;border-collapse:collapse;font-size:14px}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c2c9bc;min-width:70px}blockquote{border-left:4px solid #af4c29;padding-left:18px}@media(max-width:600px){main{padding:22px 15px}body{font-size:16px}}@media print{body{background:white}table{display:table;font-size:10px}pre{white-space:pre-wrap}}</style><main><header><a href="../index.zh-CN.html">返回交付目录</a></header><p><a href="first-article.html">English</a> | 中文</p>
 <h1 id="corner-07-首件验收">CORNER-07 首件验收</h1>
 <p>从裸主板和已经制作的 C5 子板开始，壳外即可完成台架阶段。最初充电测试使用电池模拟器。之后的步骤使用 NiZ 机构、符合规格的保护电池包及合壳样机。</p>
-<p>每台样机复制一份本页。记录交付清单中的 PCB 和固件摘要、板材实测厚度、C5 版本、电池包编号、环境温度、主机、USB 线和仪器。逐项填写测量结果。设计报告的检查结果与实测结果分别记录。</p>
+<p>每台样机复制一份本页。记录交付清单中的 PCB 和固件摘要、板材实测厚度、C5 版本、电池包编号、环境温度、主机、USB 线和仪器。试装前记录底壳版本及配套线长表。逐项填写测量结果。设计报告的检查结果与实测结果分别记录。</p>
 <table>
 <thead>
 <tr>
@@ -22,14 +22,14 @@
 <td>工厂确认 CAM 网络与设计网表相符，并记录裸板电测结果。焊接前复核未覆盖项</td>
 </tr>
 <tr>
-<td>裸板</td>
+<td>主板分阶段焊装</td>
 <td>检查焊点和极性，按顺序限流上电。确认 3.3 V 和 J3 针序</td>
 <td>无短路、异常电流或发热。电源轨及 SWD 识别正确。<a href="../04-assembly/soldering.zh-CN.html">焊接步骤</a></td>
 </tr>
 <tr>
 <td>壳外刷写</td>
-<td>电池断开时通过 SWD 刷校准固件。核对 C5 线束针序，检查 USB 枚举</td>
-<td>烧录器校验通过。电脑使用计划配套线材以全速识别设备且连接稳定。 <a href="usb-signal.zh-CN.html">USB 链路与信号测试</a><a href="../05-firmware/installation.zh-CN.html">固件和 J3 针序</a></td>
+<td>电池断开时通过 SWD 刷校准固件。逐键校准前保存 SWD 冷启动读回结果。核对 C5 线束针序，检查 USB 枚举</td>
+<td>烧录器校验通过。彻底断电重启后读回的两个字与 CORNER-07 校准固件一致。电脑使用计划配套线材以全速识别设备。<a href="usb-signal.zh-CN.html">USB 链路与信号测试</a> · <a href="../05-firmware/installation.zh-CN.html">固件和 J3 针序</a></td>
 </tr>
 <tr>
 <td>电池模拟器</td>
@@ -50,6 +50,11 @@
 <td>实物电池</td>
 <td>核对供应商图纸、电流、极性、热敏电阻和独立过温／低温断充。模拟器通过后再实测充电电流、终止、温度及关机电流</td>
 <td>符合供应商确认的<a href="../03-bom/battery-requirements.zh-CN.html">完整保护包要求</a>，包括独立断充及正常充满所需时间</td>
+</tr>
+<tr>
+<td>让位版试片</td>
+<td>下单完整让位底壳前，用计划采用的外壳树脂打印前端连体理线件和壳底试片。记录修整后的理线件壁厚和使用实际线材的试配结果</td>
+<td>修整后的壁厚均不小于 <strong>0.30 mm</strong>。两处理线件均能落座，在送线和弯折试验中保持四根 USB 导线。<a href="../04-assembly/retainers.zh-CN.html#%E5%8A%A0%E5%A4%A7%E7%89%88-usb-%E5%89%8D%E7%AB%AF%E7%90%86%E7%BA%BF%E4%BB%B6%E7%9A%84-sla-%E8%AF%95%E7%89%87">试片装配及量测</a></td>
 </tr>
 <tr>
 <td>树脂件到货检查</td>
