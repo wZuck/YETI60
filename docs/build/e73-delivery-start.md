@@ -12,7 +12,7 @@ This is the handoff entry for the **E73 lower-right HHKB candidate**. Keep this 
 | Understand what to order and which options to select | [PCB and mechanical manufacturing instructions](e73-ordering-printing.md) |
 | Download the M05 case, access covers, retainers and matching wire lengths | [M05 first-article printing, wiring and service](e73-m05-prototype.md) |
 | Trial-print the enlarged USB front guides and matched floor | [Retainer SLA coupons and finishing](../engineering/e73-retention.md) |
-| Build the full relieved trial bottom with the enlarged guides | [M05 trial bottom and matching harness](e73-m05-prototype.md#m05-relieved-bottom-trial) |
+| Order and assemble the relieved trial bottom with the enlarged guides | [Seven SLA uploads](e73-ordering-printing.md#m05-relieved-trial-stl-upload-list), [matching assembly and harness](e73-m05-prototype.md#m05-relieved-bottom-trial) |
 | Buy parts, credit existing inventory, identify every fitted reference | [Complete materials](../../README.md), [mainboard BOM / stock CSV](../../hardware/e73-hhkb-corner/mainboard-purchase.csv) |
 | Ask the battery supplier to confirm pack parameters | [Complete pack specification](../engineering/battery-pack-specification.md) |
 | Solder a blank PCB in stages and test each stage | [12-step PCB soldering and bench guide](../assembly/e73-corner/soldering.md), [illustrated web guide](../assembly/e73-corner/soldering.html) |

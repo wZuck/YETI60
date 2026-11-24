@@ -4,6 +4,8 @@ English | [Chinese](e73-firmware-validation.zh-CN.md)
 
 The E73 normal and calibrator ARM builds now include the scanner, calibration, storage, GPIO and key-reporting corrections previously checked on Raytac. They are built and tested against E73's own pin map and native PCB. This closes the software regression gap; it does not release the E73 PCB or qualify physical analog, USB, radio or charging operation. See the [remaining design gates](../audit/e73-review.md).
 
+This page records the pre-corner E73 validation. CORNER-07 uses its own files and calibration identifier. For the lower-right module board, follow the [CORNER-07 firmware installation](e73-corner-firmware.md).
+
 ## Images and calibration
 
 Use only [E73 normal files](../../firmware/releases/normal/) and [E73 calibrator files](../../firmware/releases/calibrator/), named `yeti60-e73.*`. Start with HEX over SWD: it includes UICR.NFCPINS = `0xfffffffe`; the BIN alone does not. Internal LF RC clock, REG1 LDO, scan AIN4, battery AIN3 and charger CE_N on P1.13 are retained. Neither Raytac image is interchangeable with E73. The [target build record](../audit/yeti60-target-build.json) and [linked-image checks](../audit/yeti60-target-check.json) bind both images to current inputs.

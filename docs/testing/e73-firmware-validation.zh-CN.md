@@ -4,6 +4,8 @@
 
 E73 的正常版、校准版 ARM 构建已加入此前在 Raytac 上检查过的扫描、校准、存储、GPIO 和按键上报修补，并针对 E73 自身引脚分配及原生 PCB 重新构建和测试。这关闭了相应软件回归缺口；E73 主板设计、实物模拟信号、USB、射频及充电仍需分别验收。参见[剩余设计门槛](../audit/e73-review.zh-CN.md)。
 
+本页记录右下角方案之前的 E73 验证。CORNER-07 使用自己的固件和校准标识。右下角模组主板请按 [CORNER-07 固件安装](e73-corner-firmware.zh-CN.md)操作。
+
 ## 固件与校准
 
 只使用文件名为 `yeti60-e73.*` 的 [E73 正常版](../../firmware/releases/normal/)和 [E73 校准版](../../firmware/releases/calibrator/)。首次通过 SWD 刷入 HEX，其中含有 UICR.NFCPINS = `0xfffffffe`；单独的 BIN 没有该记录。保留内部低频 RC 时钟、REG1 LDO、扫描 AIN4、电池 AIN3 和 P1.13 充电使能。不能与 Raytac 固件互换。[构建记录](../audit/yeti60-target-build.json)及[链接后镜像检查](../audit/yeti60-target-check.json)将两个固件与当前输入绑定。

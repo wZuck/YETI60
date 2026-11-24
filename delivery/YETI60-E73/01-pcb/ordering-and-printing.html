@@ -89,9 +89,9 @@
 <p>The same ZIP includes the IPC-D-356A reference. The audit matches all <strong>1,457 records</strong> to the native PCB, including 852 vias, 572 surface pad records, three plated component records and 30 non-plated holes. The legacy inch coordinates use the same origin and orientation as the Gerbers and drills. Maximum coordinate readback error is 0.001261 mm per axis. The factory chooses probe points based on actual accessibility and confirms test coverage, including how it handles tented vias and EC electrodes. <a href="https://jlcpcb.com/blog/prepare-perfect-gerber-files">JLCPCB guidance on netlists and fabrication files</a></p>
 <p>The copper readback also matches <strong>4,722 trace segments and arcs</strong> by layer, width, position and net, plus <strong>584 flashed lands</strong> by layer, position, reference and net. Each of the 852 via lands on each layer matches its native net. Confirm filled copper, pad contours and resulting connectivity in the factory CAM review.</p>
 <p>JLC ordinary-process references: <a href="https://jlcpcb.com/capabilities/pcb-capabilities/">capabilities</a> and <a href="https://jlcpcb.com/impedance">stack-ups</a>. Availability/options must be checked against the actual quotation. Neither this document nor a clean DRC is a factory DFM approval.</p>
-<p>CORNER-07 changes the U5, U6, C42 and SW1 apertures and relocates the D2 ground via. The complete ZIP has a 0.230 mm minimum nominal drill-to-opening gap. A conservative drill-position and finished-hole-size screen leaves at least 0.059 mm for other relative shifts. Ask the factory to confirm mask registration and the U5 and U6 mask islands for its ordinary process. <a href="../06-validation/aperture-review.html">Artwork measurements</a> · <a href="https://jlcpcb.com/capabilities/Capabilities">JLCPCB drill tolerances</a></p>
+<p>CORNER-07 changes the U5, U6, C42 and SW1 apertures and relocates the D2 ground via. The complete ZIP has a 0.230 mm minimum nominal drill-to-opening gap. A conservative drill-position and finished-hole-size screen leaves at least 0.0587 mm for other relative shifts. Ask the factory to confirm mask registration and the U5 and U6 mask islands for its ordinary process. <a href="../06-validation/aperture-review.html">Artwork measurements</a> · <a href="https://jlcpcb.com/capabilities/Capabilities">JLCPCB drill tolerances</a></p>
 <h2 id="stencil-order">Stencil order</h2>
-<p>Upload the <a href="YETI60-E73-stencils-REVIEW.zip">CORNER-07 stencil ZIP</a> under <strong>SMT Stencil</strong>. Use the Gerber and drill ZIP from the PCB section for the board order. The stencil ZIP contains the front paste for U1, the back paste for fitted parts and the outline for alignment. It omits the two paste openings at JP1 so the jumper stays open. Select a single board pattern per sheet. <a href="https://jlcpcb.com/help/article/how-to-order-a-stencil">JLCPCB stencil ordering</a></p>
+<p>Upload the <a href="YETI60-E73-stencils-REVIEW.zip">CORNER-07 stencil ZIP</a> as a separate <strong>SMT Stencil</strong> order. Leave the PCB form’s bundled stencil option off and use the Gerber and drill ZIP from the PCB section for the board order. The stencil ZIP contains the front paste for U1, the back paste for fitted parts and the outline for alignment. It omits the two paste openings at JP1 so the jumper stays open. Select a single board pattern per sheet. <a href="https://jlcpcb.com/help/article/how-to-order-a-stencil">JLCPCB stencil ordering</a></p>
 <table>
 <thead>
 <tr>
@@ -152,7 +152,7 @@
 </tbody>
 </table>
 <p>Dry-align before printing. Match the front openings to U1 at the right-hand corner as viewed from the key side. For the back, turn the real PCB over and match J4, U5 and SW1 at three separated locations. Confirm the stencil leaves JP1 and the J3 pogo pads clear. Print the back for the first power stage. When printing U1 later, support the board so the populated back stays clear of the fixture. Check stencil transfer and hidden joints on the first article. <a href="../04-assembly/soldering.html">Staged soldering guide</a></p>
-<h2 id="which-mechanical-files-to-send">Which mechanical files to send</h2>
+<h2 id="steel-plate-and-brass-standoffs">Steel plate and brass standoffs</h2>
 <table>
 <thead>
 <tr>
@@ -163,18 +163,8 @@
 </thead>
 <tbody>
 <tr>
-<td>Top / 1</td>
-<td><code>02-mechanical/top.step</code> or <code>top.stl</code></td>
-<td>Fully post-cured tough engineering SLA resin; millimetres; 100% scale</td>
-</tr>
-<tr>
-<td>M05 lower shell and access covers / three parts, one each</td>
-<td><a href="../02-mechanical/service-case-m05/print-guide.html">M05 print files and cover hardware</a></td>
-<td>Tough engineering SLA resin, millimetres, 100% scale. Use the matched M05 harness and retainers</td>
-</tr>
-<tr>
 <td>Plate / 1</td>
-<td><code>02-mechanical/steel-plate.dxf</code></td>
+<td><a href="../02-mechanical/steel-plate.dxf"><code>02-mechanical/steel-plate.dxf</code></a></td>
 <td><strong>304 stainless steel</strong>, CAD nominal 1.60 mm, finished 1.55–1.60 mm; machine and deburr functional openings; not a PCB or resin print</td>
 </tr>
 <tr>
@@ -184,18 +174,89 @@
 </tr>
 <tr>
 <td>Standoffs / 28</td>
-<td><code>02-mechanical/standoff.step</code>, <code>assembly-spec.json</code></td>
+<td><a href="../02-mechanical/standoff.step"><code>02-mechanical/standoff.step</code></a>, <a href="../02-mechanical/assembly-spec.json"><code>assembly-spec.json</code></a></td>
 <td>Machined brass, OD3.5, 4.50 ±0.03 mm shoulder; top M2×0.4 stud 1.0 mm, bottom M1.6×0.35 internal thread depth 3.2 mm; model alone does not specify qualified threads</td>
-</tr>
-<tr>
-<td>M05 cable guides / 16 rigid parts and 17 cut films</td>
-<td><a href="../02-mechanical/service-case-m05/print-guide.html">Print checklist and placement</a></td>
-<td>Use 14 shared rigid parts plus two M05 battery guides and the M05 wire cut list</td>
 </tr>
 </tbody>
 </table>
 <p>Use STEP as the dimension reference; STL is a mesh export in the same millimetre coordinates. Do not rescale the FELK60 shell or add an arbitrary shrinkage percentage. Agree on the supplier's process compensation and verify the finished dimensions. Orient/support the resin parts so mating ledges, insert bores and cable channels remain dimensionally controlled; clean and post-cure before finishing bores. Printed threads are not substitutes for the specified brass inserts or machined standoff threads.</p>
 <p>The project case coordinate tolerance is ±0.15 mm per axis at the functional datums. Use the <a href="../02-mechanical/service-case-m05/print-guide.html#resin-printing-tolerance-and-receiving-inspection">SLA quotation and receiving checks</a> for all four shell pieces and the installed C5. Plate opening corners, finished thickness and NiZ/stabilizer retention require a local sample. Fit without force.</p>
+<h2 id="m05-relieved-trial-stl-upload-list">M05 relieved trial STL upload list</h2>
+<p>For the M05 relieved trial, quote one copy of each of the seven mandatory STL files below as separate items in tough engineering SLA resin at <strong>100% scale in millimetres</strong>. For the first article, print the front guide carrier and separate floor coupon first. Confirm the fit before ordering the full bottom. Keep the relieved bottom, enlarged front guides and relieved wire lengths together as one set. The standard M05 uses its own bottom, retainers and wire lengths. <a href="../02-mechanical/service-case-m05/print-guide.html">Standard M05 setup and relieved trial sequence</a></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Direct STL upload link</th>
+<th style="text-align:right">Quantity per STL</th>
+<th>Units / scale</th>
+<th>Mode / yield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shell model (1 of 4)</td>
+<td><a href="../02-mechanical/top.stl"><code>02-mechanical/top.stl</code></a></td>
+<td style="text-align:right">1</td>
+<td><code>mm</code> / 100%</td>
+<td>Separate file; top shell</td>
+</tr>
+<tr>
+<td>Shell model (2 of 4)</td>
+<td><a href="../02-mechanical/service-case-m05/relieved-trial/bottom-m05-relieved-REVIEW.stl"><code>02-mechanical/service-case-m05/relieved-trial/bottom-m05-relieved-REVIEW.stl</code></a></td>
+<td style="text-align:right">1</td>
+<td><code>mm</code> / 100%</td>
+<td>Separate file; M05 relieved-trial lower shell</td>
+</tr>
+<tr>
+<td>Shell model (3 of 4)</td>
+<td><a href="../02-mechanical/service-case-m05/cover-J2-REVIEW.stl"><code>02-mechanical/service-case-m05/cover-J2-REVIEW.stl</code></a></td>
+<td style="text-align:right">1</td>
+<td><code>mm</code> / 100%</td>
+<td>Separate file; J2 access cover</td>
+</tr>
+<tr>
+<td>Shell model (4 of 4)</td>
+<td><a href="../02-mechanical/service-case-m05/cover-J4-REVIEW.stl"><code>02-mechanical/service-case-m05/cover-J4-REVIEW.stl</code></a></td>
+<td style="text-align:right">1</td>
+<td><code>mm</code> / 100%</td>
+<td>Separate file; J4 access cover</td>
+</tr>
+<tr>
+<td>Guide carrier (1 of 3)</td>
+<td><a href="../02-mechanical/front-retainer-coupon/M05-front-guides-SLA-COUPON.stl"><code>02-mechanical/front-retainer-coupon/M05-front-guides-SLA-COUPON.stl</code></a></td>
+<td style="text-align:right">1</td>
+<td><code>mm</code> / 100%</td>
+<td>Separate file; yields <strong>4</strong> guides</td>
+</tr>
+<tr>
+<td>Guide carrier (2 of 3)</td>
+<td><a href="../02-mechanical/retained-guide-blanks/M05-case-guides-SLA-BLANKS.stl"><code>02-mechanical/retained-guide-blanks/M05-case-guides-SLA-BLANKS.stl</code></a></td>
+<td style="text-align:right">1</td>
+<td><code>mm</code> / 100%</td>
+<td>Separate file; yields <strong>5</strong> guides</td>
+</tr>
+<tr>
+<td>Guide carrier (3 of 3)</td>
+<td><a href="../02-mechanical/retained-guide-blanks/M05-power-guides-SLA-BLANKS.stl"><code>02-mechanical/retained-guide-blanks/M05-power-guides-SLA-BLANKS.stl</code></a></td>
+<td style="text-align:right">1</td>
+<td><code>mm</code> / 100%</td>
+<td>Separate file; yields <strong>7</strong> guides</td>
+</tr>
+<tr>
+<td>Separate pilot floor coupon</td>
+<td><a href="../02-mechanical/front-retainer-coupon/M05-front-floor-SLA-COUPON.stl"><code>02-mechanical/front-retainer-coupon/M05-front-floor-SLA-COUPON.stl</code></a></td>
+<td style="text-align:right">1 for pilot</td>
+<td><code>mm</code> / 100%</td>
+<td>First-article guide-seat fit check</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Use the relieved-trial wire lengths to make the nine conductors. <a href="../02-mechanical/service-case-m05/relieved-trial/wire-lengths-relieved.csv"><code>02-mechanical/service-case-m05/relieved-trial/wire-lengths-relieved.csv</code></a></li>
+<li>Fully post-cure before finishing the bores. Finish all three carriers and test fit the isolated harness before installing electronics. Standard SLA tolerances do not guarantee the project’s ±0.15 mm functional datum tolerance. Confirm post-cure measurements and any finishing work with the supplier. <a href="../04-assembly/retainers.html#sla-coupons-for-the-enlarged-usb-front-guides">Carrier cut maps and finishing</a></li>
+</ul>
+<p>For the dry fit, also prepare the inert 85.00 × 43.00 × 4.80 mm pack gauge, extraction tools and parking supports. These fixtures are for measuring fit and the 25 mm deck lift. <a href="../02-mechanical/service-case-m05/print-guide.html#inert-battery-fit-gauge">Gauge model</a> · <a href="../02-mechanical/service-case-m05/tool-guide.html">Service tools</a> · <a href="../02-mechanical/service-case-m05/parking-guide.html">Parking supports</a></p>
 <h2 id="finish-and-inspect-before-electronics">Finish and inspect before electronics</h2>
 <ul>
 <li>Shell closure: four cold-bonded M3×0.5 knurled inserts, OD4.6 × length3.0 mm; finished bore Ø4.85 ±0.05 mm, depth3.5 mm. Use four M3×5 screws with 0.30 mm shim washers and confirm actual head clearance/engagement.</li>

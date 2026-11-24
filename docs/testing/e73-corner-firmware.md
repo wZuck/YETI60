@@ -14,6 +14,8 @@ Both images use internal RC low-frequency clock and REG1 LDO. After host configu
 
 Install the [SEGGER J-Link software](https://kb.segger.com/J-Link_Commander), and use a probe with 3.3 V target logic. Power the board through the verified supply path, switch SW100 on and confirm 3.3 V before connecting. J3 pin 1 is VTref, not a probe power input; pins 2/3/4/5/6 are SWDIO/GND/SWDCLK/RESET_N/GND. Do not connect two competing 5 V sources.
 
+Keep the real battery disconnected for first programming and USB enumeration. Use the J2 battery simulator for the unplugged BLE test. Repeat that test with a protected pack after the pack passes first-article checks. [Bench power and charging sequence](e73-bench-power.md)
+
 Open a terminal in the directory containing this image manifest and `releases/`: `05-firmware/` in the delivery folder, or `hardware/e73-hhkb-corner/firmware/` in the repository. Start Commander (Windows uses `JLink.exe`):
 
 ```sh
@@ -32,6 +34,10 @@ q
 ```
 
 Check that download/verification succeeds. These are documented Commander commands, not a physical flash test of this board. A locked factory module may require recovery; recovery/full-chip erase loses settings. Do not use it for an update after calibration. The code partition is `0x00000–0xEFFFF`; preserve settings at `0xF0000–0xFFFFF`. Inspect the programmer's erase plan and back up settings before updating. If it proposes a full erase, stop and resolve preservation first. HEX includes the required UICR record; no UF2 drive is expected.
+
+Before 60-key calibration, disconnect the probe and fully remove target power. Restore the verified supply and let the calibrator start. Reconnect through J3 and use `Mem32 0x00000000 2` to read the first two words. For this CORNER-07 calibrator expect `200100A0 0000D25D`. Decline any unlock or erase prompt during this readback. Resume the CPU with `g` if halted, then quit with `q`. [J-Link read commands](https://kb.segger.com/J-Link_Commander#Mem32)
+
+On nRF52840 Fxx and later, application startup consumes `UICR.APPROTECT` `HwDisabled` (low byte `0x5A`), which is not supplied in the calibrator HEX. Only if first flash or this cold-cycle readback fails with access protection on a blank first article, follow [Nordic nRF Util recovery](https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/guides/programming_recovery.html/recovering-nrf52-nrf54l-and-nrf91-series-devices) (which erases flash and sets persistent UICR access) and then reflash the calibrator HEX. Do not recover calibrated boards. [nRF52840 DIF / APPROTECT](https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/dif.html)
 
 ## Capture every key and install normal firmware
 

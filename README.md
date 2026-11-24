@@ -196,7 +196,7 @@ The stock 5.1 kohm resistors cover R1/R2, so this option needs **five more loose
 
 | Tool | Quantity | Use/specification |
 |---|---:|---|
-| nRF52840-compatible SWD probe | 1 | 3.3 V target logic, SWDIO/SWDCLK/GND/reset |
+| SEGGER J-Link SWD probe | 1 | Support nRF52840 and 3.3 V target logic. Confirm Nordic nRF Util detects the probe. Use a 2×3 pogo fixture with 1.27 mm pitch on both axes for backside J3. [Pinout and tool setup](docs/testing/e73-corner-firmware.md) |
 | J3 pogo fixture | 1 set | Six pins to the J3 pad drawing; 3.3 V is target reference, avoid backfeeding an already powered board |
 | Multimeter | 1 | Every wire's continuity/polarity and power short checks |
 | Calipers and thickness gauge | 1 each | Complete pack envelope, PCB, standoffs and insulation |

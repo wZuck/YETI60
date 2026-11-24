@@ -9,7 +9,7 @@ from pathlib import Path
 from posixpath import relpath
 from check_e73_delivery import (
     first_article_keys, LEGACY_RETAINER_FILES, RETAINER_ARCHIVE,
-    RETAINER_DIR, RETAINER_SCREEN, retainer_process_screen,
+    RETAINER_DIR, RETAINER_SCREEN, ordinary_sla_trial, retainer_process_screen,
 )
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'hardware/e73-hhkb-corner'
@@ -302,7 +302,9 @@ def main():
  inputs['scripts/check_e73_apertures.py']=sha(ROOT/'scripts/check_e73_apertures.py')
  for generated in ['01-pcb/YETI60-E73-gerbers-REVIEW.zip','01-pcb/YETI60-E73-stencils-REVIEW.zip',
                    '01-pcb/gerbers/EC60-nRF52840.d356',
-                   '02-mechanical/top.stl','06-validation/cam-ordinary.json',
+                   *prototype['shell_STL'],'02-mechanical/steel-plate.dxf',
+                   '02-mechanical/standoff.step','02-mechanical/assembly-spec.json',
+                   '06-validation/cam-ordinary.json',
                    '06-validation/cam-apertures.json','01-pcb/gerbers/EC60-nRF52840-F_Paste.gtp',
                    '01-pcb/gerbers/EC60-nRF52840-B_Paste.gbp','02-mechanical/plate-fit-coupon.dxf',
                    '02-mechanical/plate-fit-coupon.svg','06-validation/plate-fit-coupon.json',
@@ -396,6 +398,6 @@ def main():
   (out/('index'+suffix+'.html')).write_text(page)
  subprocess.run(['uv','run','--offline','--python','3.14.7','--with','markdown-it-py==4.0.0','python',str(ROOT/'scripts/render_e73_delivery_docs.py'),'--base',str(out)],check=True)
  inputs['scripts/render_e73_delivery_docs.py']=sha(ROOT/'scripts/render_e73_delivery_docs.py')
- manifest=dict(revision=revision,status='draft-delivery-engineering-review-not-order-release',production_approved=False,physical_verification=False,source_PCB_sha256=sha(board),source_sha256=inputs,source_mapping=mapping,mechanical_first_article=prototype,pending=['Retainer manufacturing process, physical routing and service','Closed-case insertion and withdrawal qualification','Charging and pack first-article acceptance and factory CAM review','Whole-device USB port current and hot-plug inrush','Physical acceptance'],files_sha256={str(p.relative_to(out)):sha(p)for p in sorted(out.rglob('*'))if p.is_file()and p!=out/'manifest.json'and p.name!='.DS_Store'})
+ manifest=dict(revision=revision,status='draft-delivery-engineering-review-not-order-release',production_approved=False,physical_verification=False,source_PCB_sha256=sha(board),source_sha256=inputs,source_mapping=mapping,mechanical_first_article=prototype,ordinary_SLA_relieved_trial=ordinary_sla_trial(prototype),pending=['Retainer manufacturing process, physical routing and service','Closed-case insertion and withdrawal qualification','Charging and pack first-article acceptance and factory CAM review','Whole-device USB port current and hot-plug inrush','Physical acceptance'],files_sha256={str(p.relative_to(out)):sha(p)for p in sorted(out.rglob('*'))if p.is_file()and p!=out/'manifest.json'and p.name!='.DS_Store'})
  (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');print('Delivery review assets assembled:',out)
 if __name__=='__main__':main()

@@ -4,6 +4,7 @@ import argparse,csv,hashlib,json,math,re,struct,zipfile
 from collections import defaultdict
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import unquote
 ROOT=Path(__file__).resolve().parents[1]
 RETAINER_DIR = '02-mechanical/retention/'
 RETAINER_ARCHIVE = RETAINER_DIR + 'M05-retainer-STLs-REVIEW.zip'
@@ -158,6 +159,57 @@ class Links(HTMLParser):
  def __init__(self):super().__init__();self.links=[]
  def handle_starttag(self,tag,attrs):
   self.links.extend(v for k,v in attrs if k in ['href','src'])
+
+
+def ordinary_sla_trial(prototype):
+    case_dir = '02-mechanical/service-case-m05/'
+    trial_dir = case_dir + 'relieved-trial/'
+    coupon_dir = '02-mechanical/front-retainer-coupon/'
+    return {
+        'status': 'engineering-trial',
+        'units': 'mm',
+        'scale_percent': 100,
+        'quantity_per_STL': 1,
+        'shell_STL': [
+            trial_dir+'bottom-m05-relieved-REVIEW.stl' if path == case_dir+'bottom-m05-REVIEW.stl' else path
+            for path in prototype['shell_STL']
+        ],
+        'guide_carriers_STL': {
+            coupon_dir+'M05-front-guides-SLA-COUPON.stl': 4,
+            '02-mechanical/retained-guide-blanks/M05-case-guides-SLA-BLANKS.stl': 5,
+            '02-mechanical/retained-guide-blanks/M05-power-guides-SLA-BLANKS.stl': 7,
+        },
+        'separate_floor_coupon_STL': coupon_dir+'M05-front-floor-SLA-COUPON.stl',
+        'harness_lengths': [trial_dir+'wire-lengths-relieved'+suffix+'.csv' for suffix in ('','.zh-CN')],
+    }
+
+
+def check_sla_order_links(guide, selection, harness):
+    # Limit this check to the actual upload section. Other sections may
+    # describe the stock M05 option or separate test fixtures.
+    guide = guide.resolve()
+    heading = '<h2 id="m05-relieved-trial-stl-upload-list">'
+    chinese_heading = '<h2 id="m05-让位版-stl-上传清单">'
+    body = guide.read_text()
+    headings = (heading, chinese_heading)
+    assert sum(body.count(title) for title in headings) == 1, (
+        'Missing unique SLA upload section', guide.name)
+    title = next(title for title in headings if title in body)
+    section = body.split(title, 1)[1].split('<h2', 1)[0]
+    parsed = Links()
+    parsed.feed(section)
+    paths = [
+        (guide.parent/unquote(link.split('#',1)[0])).resolve()
+        for link in parsed.links if not re.match(r'^[a-z]+:|^#',link)
+    ]
+    bundle = guide.parent.parent
+    expected = [*selection['shell_STL'], *selection['guide_carriers_STL'], selection['separate_floor_coupon_STL']]
+    assert sorted(p for p in paths if p.suffix == '.stl') == sorted(bundle/p for p in expected), (
+        'Wrong or duplicate M05 trial STL links', guide.name)
+    assert [path for path in paths if path.suffix == '.csv'] == [bundle/harness], (
+        'Wrong or duplicate harness length table', guide.name)
+
+
 def main():
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--bundle',type=Path,help='Path to an unpacked delivery directory')
@@ -349,6 +401,18 @@ def main():
      'bottom-m05-relieved-REVIEW.step','bottom-m05-relieved-REVIEW.stl',
      'wire-lengths-relieved.csv','wire-lengths-relieved.zh-CN.csv')}
  assert set(relieved['files_sha256']) == relieved_files and relieved_files <= files and not relieved_files & required
+ order = m['ordinary_SLA_relieved_trial']
+ assert order == ordinary_sla_trial(prototype)
+ assert len(set(order['shell_STL'])) == 4 and case_dir+'bottom-m05-REVIEW.stl' not in order['shell_STL']
+ assert set(order['shell_STL']) - set(prototype['shell_STL']) == {relieved_dir+'bottom-m05-relieved-REVIEW.stl'}
+ assert set(order['guide_carriers_STL']) | {order['separate_floor_coupon_STL']} == (
+     set(blank['carriers']) | set(coupon['print_meshes']))
+ assert {(path, count) for path, count in order['guide_carriers_STL'].items()
+         if path in blank['carriers']} == {(path,len(item['parts'])) for path,item in blank['carriers'].items()}
+ assert sum(order['guide_carriers_STL'].values()) == len(retainers)
+ assert set(order['harness_lengths']) == {name for name in relieved_files if name.endswith('.csv')}
+ for suffix, table in zip(('', '.zh-CN'), order['harness_lengths']):
+  check_sla_order_links(base/f'01-pcb/ordering-and-printing{suffix}.html', order, table)
  assert all(sha(base/name) == digest for name,digest in relieved['files_sha256'].items())
  mesh = relieved['mesh']
  assert mesh['connected_closed_shells'] == 1 and mesh['weld_decimal_places'] == 5

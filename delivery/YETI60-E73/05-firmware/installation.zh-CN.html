@@ -6,6 +6,7 @@
 <p><a href="manifest.json">固件清单</a> · <a href="releases/normal/yeti60-e73.hex">正常版 HEX</a> · <a href="releases/calibrator/yeti60-e73.hex">校准版 HEX</a></p>
 <h2 id="使用-j-link-首次刷写">使用 J-Link 首次刷写</h2>
 <p>安装 <a href="https://kb.segger.com/J-Link_Commander">SEGGER J-Link 软件</a>，探针使用 3.3 V 目标逻辑。通过已检查的电源路径供电，打开 SW100，先确认 3.3 V。J3 的 1 脚是 VTref，不是探针供电输入；2／3／4／5／6 分别为 SWDIO／GND／SWDCLK／RESET_N／GND。不要同时接入两个互相竞争的 5 V 电源。</p>
+<p>首次刷写和 USB 枚举期间保持实物电池断开。拔掉 USB 后，用 J2 电池模拟器验证蓝牙。保护电池包通过首件验收后，再用实物电池复测。<a href="../06-validation/bench-power.zh-CN.html">台架供电与充电顺序</a></p>
 <p>在包含本版固件清单及 <code>releases/</code> 的目录打开终端：集中交付版为 <code>05-firmware/</code>，仓库内为 <code>hardware/e73-hhkb-corner/firmware/</code>。启动 Commander，Windows 程序名为 <code>JLink.exe</code>：</p>
 <pre><code class="language-sh">JLinkExe -device nRF52840_xxAA -if SWD -speed 1000 -autoconnect 1
 </code></pre>
@@ -18,6 +19,8 @@ g
 q
 </code></pre>
 <p>确认下载／校验成功。这是按工具文档给出的命令，不是本板的实物刷写通过记录。出厂锁定模组可能需要恢复，但恢复／全片擦除会清空设置，完成校准后的更新不得这样操作。代码分区为 <code>0x00000～0xEFFFF</code>，必须保留 <code>0xF0000～0xFFFFF</code> 的设置。更新前检查烧录器擦除计划并备份设置；若工具要求全片擦除，先停止并解决保留问题。HEX 已包含所需 UICR 记录，不会出现 UF2 拖拽盘。</p>
+<p>开始 60 键校准前，断开探针和主板的所有电源。恢复已核对的供电，让校准版启动。重新连接 J3 后运行 <code>Mem32 0x00000000 2</code>，本版校准固件前两个字应为 <code>200100A0 0000D25D</code>。读回时拒绝任何解锁或擦除提示。若调试器暂停了 CPU，运行 <code>g</code> 恢复，再运行 <code>q</code> 退出。<a href="https://kb.segger.com/J-Link_Commander#Mem32">J-Link 读内存命令</a></p>
+<p>对于 nRF52840 Fxx 及之后版本，应用启动依赖 <code>UICR.APPROTECT</code> 为 <code>HwDisabled</code>（低字节 <code>0x5A</code>），校准版 HEX 不提供该项。仅当空白首件在首次刷写或冷重启回读时因访问保护失败，才按 <a href="https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/guides/programming_recovery.html/recovering-nrf52-nrf54l-and-nrf91-series-devices">Nordic nRF Util 恢复指南</a>执行恢复（会擦除 Flash 并写入持久 UICR 访问配置），再重新刷入校准版 HEX；切勿对已校准主板执行恢复。<a href="https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/dif.html">nRF52840 DIF／APPROTECT 规格</a></p>
 <h2 id="逐键采样并安装正常版">逐键采样并安装正常版</h2>
 <p>连接电脑 USB 前物理断开台架电源。校准版提供 USB 日志／命令行接口，在串口终端打开对应端口，可设置为 115200、8N1、无硬件流控。用另一把键盘输入命令。先安装定位板、胶碗和弹簧；用手触摸裸电极不能替代完整机构的校准。</p>
 <p>使用 <a href="../04-assembly/calibration-keys.csv">60 键行列坐标表</a>及正面图。空格仅中央静电容位置参与采样，卫星轴侧柱是被动机构。</p>

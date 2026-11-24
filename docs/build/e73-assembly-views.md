@@ -10,6 +10,8 @@ The shell surfaces use the FELK60-based upper case and M05 lower case and its tw
 
 Read the stack from the bottom case upward through the PCB, insulated standoffs, conical springs, silicone domes, steel plate, NiZ housings and sliders, upper case and caps. The illustration separates the wiring, battery and C5 from their installed positions so they can be seen. It shows the four feet together below the shell. Use the CAD and guides for slot assignments and installation datums.
 
+The exploded and interior views depict the standard M05 bottom, front guides and harness route. For the relieved trial, use the revised seats, enlarged front guides and matching wire lengths in the first-article guide. The external shape, mounting stack and cover interfaces are shared. [Relieved trial assembly](e73-m05-prototype.md#m05-relieved-bottom-trial)
+
 | Assembly stage | Parts and reference |
 |---|---|
 | 1. Prepare the case and steel plate | Inspect finished case dimensions, bores and switch opening samples. Prepare four M3 inserts and eight M2 inserts, including four for the access covers. Cut four gaskets for each of the two plate faces. [Manufacturing instructions](e73-ordering-printing.md) |

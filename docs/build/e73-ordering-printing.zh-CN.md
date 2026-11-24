@@ -37,11 +37,11 @@
 
 JLC 普通工艺参考：[制造能力](https://jlcpcb.com/capabilities/pcb-capabilities/)、[叠层](https://jlcpcb.com/impedance)。选项以实际报价核对。本说明和无错误 DRC 均不能替代工厂可制造性审核。
 
-CORNER-07 调整 U5、U6、C42、SW1 的开窗，并移动 D2 接地过孔。完整制板 ZIP 内钻孔至开窗的最小标称间距为 0.230 mm。按保守的孔位和成品孔径公差扣减后，其他相对偏移可用余量至少为 0.059 mm。请工厂确认普通工艺的阻焊对位及 U5、U6 阻焊岛。 [制造图层量测](../engineering/e73-aperture-review.zh-CN.md) · [嘉立创钻孔公差](https://jlcpcb.com/capabilities/Capabilities)
+CORNER-07 调整 U5、U6、C42、SW1 的开窗，并移动 D2 接地过孔。完整制板 ZIP 内钻孔至开窗的最小标称间距为 0.230 mm。按保守的孔位和成品孔径公差扣减后，其他相对偏移可用余量至少为 0.0587 mm。请工厂确认普通工艺的阻焊对位及 U5、U6 阻焊岛。 [制造图层量测](../engineering/e73-aperture-review.zh-CN.md) · [嘉立创钻孔公差](https://jlcpcb.com/capabilities/Capabilities)
 
 ## 钢网下单
 
-在嘉立创的**开激光钢网 → 在线下钢网订单**上传 [CORNER-07 钢网压缩包](../../delivery/YETI60-E73/01-pcb/YETI60-E73-stencils-REVIEW.zip)。下单 PCB 时用上一节的 Gerber 和钻孔压缩包。钢网包包含 U1 的正面焊膏层、实装元件的背面焊膏层及对位用板框。背面省去 JP1 的两个开口，让跳线保持断开。每张钢网选单板图案。[嘉立创钢网下单流程](https://www.jlc.com/portal/server_guide_35103.html)
+在嘉立创的**开激光钢网 → 在线下钢网订单**上传 [CORNER-07 钢网压缩包](../../delivery/YETI60-E73/01-pcb/YETI60-E73-stencils-REVIEW.zip)。钢网单独下单。PCB 订单关闭随板钢网选项，并使用上一节的 Gerber 和钻孔压缩包。钢网包包含 U1 的正面焊膏层、实装元件的背面焊膏层及对位用板框。背面省去 JP1 的两个开口，让跳线保持断开。每张钢网选单板图案。[嘉立创钢网下单流程](https://www.jlc.com/portal/server_guide_35103.html)
 
 | 选项 | 填写 |
 |---|---|
@@ -64,20 +64,37 @@ CORNER-07 调整 U5、U6、C42、SW1 的开窗，并移动 D2 接地过孔。完
 
 上膏前先干对位。正面以键帽侧视角右下角的 U1 对位，背面把实物翻过来，以相互分开的 J4、U5、SW1 三处核对。确认钢网在 JP1 和 J3 弹簧针焊盘处无开口。按电源阶段先印背面，之后刷正面 U1 时给已经焊好的背面元件留出支撑净空。首件检查锡膏转移和隐藏焊点。[分步焊接指南](../assembly/e73-corner/soldering.zh-CN.md)
 
-## 机械文件发哪些
+## 钢定位板与黄铜隔柱
 
 | 零件／净数量 | 交付路径 | 制造要求 |
 |---|---|---|
-| 上壳／1 | `02-mechanical/top.step` 或 `top.stl` | 韧性工程 SLA 树脂，充分后固化；毫米单位，100% 比例 |
-| M05 底壳及检修盖／各 1 件，共 3 件 | [M05 打印文件与封盖紧固件](e73-m05-prototype.zh-CN.md) | 韧性工程 SLA 树脂，毫米，100% 比例。用配套的 M05 线束和理线件试装 |
-| 定位板／1 | `02-mechanical/steel-plate.dxf` | **304 不锈钢**，CAD 标称 1.60 mm，成品 1.55–1.60 mm；加工、去毛刺，保留功能开孔；不是 PCB，也不是树脂打印件 |
+| 定位板／1 | [`02-mechanical/steel-plate.dxf`](../../delivery/YETI60-E73/02-mechanical/steel-plate.dxf) | **304 不锈钢**，CAD 标称 1.60 mm，成品 1.55–1.60 mm；加工、去毛刺，保留功能开孔；不是 PCB，也不是树脂打印件 |
 | 定位板试装片／整板前先做 1 件 | [试片 DXF](../../delivery/YETI60-E73/02-mechanical/plate-fit-coupon.dxf) | 120 × 64 mm，采用与整板一致的 304 板材、成品厚度和加工工艺。[试装步骤](key-mechanism.zh-CN.md#定位板试装片) |
-| 隔柱／28 | `02-mechanical/standoff.step`、`assembly-spec.json` | 黄铜机加工，外径 3.5，肩长 4.50 ±0.03 mm；顶部 M2×0.4 螺柱长 1.0 mm，底部 M1.6×0.35 内螺纹深 3.2 mm；仅模型不能替代合格螺纹要求 |
-| M05 理线件／16 件刚性件＋17 片裁膜 | [打印清单和对应坐标](e73-m05-prototype.zh-CN.md) | 14 件通用刚性件加两件 M05 电池理线件。按本版线长表下料 |
+| 隔柱／28 | [`02-mechanical/standoff.step`](../../delivery/YETI60-E73/02-mechanical/standoff.step)、[`assembly-spec.json`](../../delivery/YETI60-E73/02-mechanical/assembly-spec.json) | 黄铜机加工，外径 3.5，肩长 4.50 ±0.03 mm；顶部 M2×0.4 螺柱长 1.0 mm，底部 M1.6×0.35 内螺纹深 3.2 mm；仅模型不能替代合格螺纹要求 |
 
 STEP 用于尺寸核对，STL 是相同毫米坐标下的网格导出。不要缩放 FELK60 外壳或随意增加收缩补偿百分比。与工厂确认其工艺补偿方式，并核对成品尺寸。安排方向与支撑时，应保证合壳台阶、嵌件孔和线槽尺寸；清洗、充分后固化后再精加工孔。打印螺纹不能替代规定的黄铜嵌件或隔柱机加工螺纹。
 
 项目外壳功能基准坐标公差为各轴 ±0.15 mm。用 [SLA 询价及到货检查](e73-m05-prototype.zh-CN.md#树脂打印公差与到货检查)核对四件外壳及 C5 的安装配合。定位板内角、成品厚度及 NiZ／卫星轴卡扣用局部样片核对，装配时保持自然落位。
+
+## M05 让位版 STL 上传清单
+
+M05 让位版的七个必需 STL 各询价一件，分开上传，采用韧性工程 SLA 树脂，按**毫米、100% 比例**制作。首件先打印前端理线件连体框和独立壳底试片，试配通过后再下单完整底壳。让位底壳、加大前端理线件和让位版线长配套使用。标准 M05 有自己的底壳、理线件和线长表。[标准 M05 清单和让位版试装顺序](e73-m05-prototype.zh-CN.md)
+
+| 类别 | STL 直接上传链接 | 每个 STL 数量 | 单位／比例 | 上传方式与产出数量 |
+|---|---|---:|---|---|
+| 外壳模型（1/4） | [`02-mechanical/top.stl`](../../delivery/YETI60-E73/02-mechanical/top.stl) | 1 | `mm`／100% | 独立文件；上壳 |
+| 外壳模型（2/4） | [`02-mechanical/service-case-m05/relieved-trial/bottom-m05-relieved-REVIEW.stl`](../../delivery/YETI60-E73/02-mechanical/service-case-m05/relieved-trial/bottom-m05-relieved-REVIEW.stl) | 1 | `mm`／100% | 独立文件；M05 让位版底壳 |
+| 外壳模型（3/4） | [`02-mechanical/service-case-m05/cover-J2-REVIEW.stl`](../../delivery/YETI60-E73/02-mechanical/service-case-m05/cover-J2-REVIEW.stl) | 1 | `mm`／100% | 独立文件；J2 检修盖 |
+| 外壳模型（4/4） | [`02-mechanical/service-case-m05/cover-J4-REVIEW.stl`](../../delivery/YETI60-E73/02-mechanical/service-case-m05/cover-J4-REVIEW.stl) | 1 | `mm`／100% | 独立文件；J4 检修盖 |
+| 理线件连体框（1/3） | [`02-mechanical/front-retainer-coupon/M05-front-guides-SLA-COUPON.stl`](../../delivery/YETI60-E73/02-mechanical/front-retainer-coupon/M05-front-guides-SLA-COUPON.stl) | 1 | `mm`／100% | 独立文件；产出 **4** 件理线件 |
+| 理线件连体框（2/3） | [`02-mechanical/retained-guide-blanks/M05-case-guides-SLA-BLANKS.stl`](../../delivery/YETI60-E73/02-mechanical/retained-guide-blanks/M05-case-guides-SLA-BLANKS.stl) | 1 | `mm`／100% | 独立文件；产出 **5** 件理线件 |
+| 理线件连体框（3/3） | [`02-mechanical/retained-guide-blanks/M05-power-guides-SLA-BLANKS.stl`](../../delivery/YETI60-E73/02-mechanical/retained-guide-blanks/M05-power-guides-SLA-BLANKS.stl) | 1 | `mm`／100% | 独立文件；产出 **7** 件理线件 |
+| 独立壳底试片 | [`02-mechanical/front-retainer-coupon/M05-front-floor-SLA-COUPON.stl`](../../delivery/YETI60-E73/02-mechanical/front-retainer-coupon/M05-front-floor-SLA-COUPON.stl) | 首件试装用 1 件 | `mm`／100% | 首件试配前端理线件底座 |
+
+- 按让位版线长制作九根导线。 [`02-mechanical/service-case-m05/relieved-trial/wire-lengths-relieved.zh-CN.csv`](../../delivery/YETI60-E73/02-mechanical/service-case-m05/relieved-trial/wire-lengths-relieved.zh-CN.csv)
+- 充分后固化后再精加工孔位。装电子件之前修整三份连体毛坯，用断电线束试配。项目功能基准公差为各轴 ±0.15 mm，普通 SLA 报价公差无法保证达标。请与供应商确认后固化实测及精加工安排。[连体件切割图和修整要求](../engineering/e73-retention.zh-CN.md#加大版-usb-前端理线件的-sla-试片)
+
+试装还需准备 85.00 × 43.00 × 4.80 mm 的无电电池量块、拔插工具和停放支撑件，用于测量配合和验证 25 mm 垂直抬升。[量块模型](e73-m05-prototype.zh-CN.md#电池试装量块) · [拔插工具](e73-m05-service-tool.zh-CN.md) · [停放支撑件](e73-m05-parking-support.zh-CN.md)
 
 ## 装电子件前先加工检查
 

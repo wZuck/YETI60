@@ -14,6 +14,8 @@ CORNER-07 交付包包含正常版、校准版 HEX 和配套固件清单。使�
 
 安装 [SEGGER J-Link 软件](https://kb.segger.com/J-Link_Commander)，探针使用 3.3 V 目标逻辑。通过已检查的电源路径供电，打开 SW100，先确认 3.3 V。J3 的 1 脚是 VTref，不是探针供电输入；2／3／4／5／6 分别为 SWDIO／GND／SWDCLK／RESET_N／GND。不要同时接入两个互相竞争的 5 V 电源。
 
+首次刷写和 USB 枚举期间保持实物电池断开。拔掉 USB 后，用 J2 电池模拟器验证蓝牙。保护电池包通过首件验收后，再用实物电池复测。[台架供电与充电顺序](../06-validation/bench-power.zh-CN.md)
+
 在包含本版固件清单及 `releases/` 的目录打开终端：集中交付版为 `05-firmware/`，仓库内为 `hardware/e73-hhkb-corner/firmware/`。启动 Commander，Windows 程序名为 `JLink.exe`：
 
 ```sh
@@ -32,6 +34,10 @@ q
 ```
 
 确认下载／校验成功。这是按工具文档给出的命令，不是本板的实物刷写通过记录。出厂锁定模组可能需要恢复，但恢复／全片擦除会清空设置，完成校准后的更新不得这样操作。代码分区为 `0x00000～0xEFFFF`，必须保留 `0xF0000～0xFFFFF` 的设置。更新前检查烧录器擦除计划并备份设置；若工具要求全片擦除，先停止并解决保留问题。HEX 已包含所需 UICR 记录，不会出现 UF2 拖拽盘。
+
+开始 60 键校准前，断开探针和主板的所有电源。恢复已核对的供电，让校准版启动。重新连接 J3 后运行 `Mem32 0x00000000 2`，本版校准固件前两个字应为 `200100A0 0000D25D`。读回时拒绝任何解锁或擦除提示。若调试器暂停了 CPU，运行 `g` 恢复，再运行 `q` 退出。[J-Link 读内存命令](https://kb.segger.com/J-Link_Commander#Mem32)
+
+对于 nRF52840 Fxx 及之后版本，应用启动依赖 `UICR.APPROTECT` 为 `HwDisabled`（低字节 `0x5A`），校准版 HEX 不提供该项。仅当空白首件在首次刷写或冷重启回读时因访问保护失败，才按 [Nordic nRF Util 恢复指南](https://docs.nordicsemi.com/r/bundle/nrfutil/page/nrfutil-device/guides/programming_recovery.html/recovering-nrf52-nrf54l-and-nrf91-series-devices)执行恢复（会擦除 Flash 并写入持久 UICR 访问配置），再重新刷入校准版 HEX；切勿对已校准主板执行恢复。[nRF52840 DIF／APPROTECT 规格](https://docs.nordicsemi.com/r/bundle/ps_nrf52840/page/dif.html)
 
 ## 逐键采样并安装正常版
 
